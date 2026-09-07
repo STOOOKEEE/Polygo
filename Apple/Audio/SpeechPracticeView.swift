@@ -17,6 +17,7 @@ public struct SpeechPracticeView: View {
     @State private var isRecording = false
     @State private var recordingStartedAt: Date?
     @State private var isSelfEvaluationAvailable = false
+    @State private var selectedSelfRating: SelfRating?
     @State private var selectedRate: SpeechRate = .normal
     @State private var isModelPlaying = false
     @State private var modelTask: Task<Void, Never>?
@@ -37,7 +38,7 @@ public struct SpeechPracticeView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 12) {
             referenceCard
             modelControls
             recordingControls
@@ -74,6 +75,10 @@ public struct SpeechPracticeView: View {
                 stopModelPlayback(message: "Lecture du modèle arrêtée.")
             }
         }
+        .onAppear(perform: synchronizeAnswerState)
+        .onChange(of: answer) { _, _ in
+            synchronizeAnswerState()
+        }
         .onDisappear {
             // A lesson transition must never leave the microphone or model
             // voice running. The recording is intentionally temporary.
@@ -89,6 +94,9 @@ public struct SpeechPracticeView: View {
             let ephemeralRecording = recording
             recording = nil
             transcript = nil
+            selectedSelfRating = nil
+            isSelfEvaluationAvailable = false
+            showEvaluationDetails = false
             if let ephemeralRecording {
                 Task {
                     try? await audio.delete(recording: ephemeralRecording)
@@ -98,48 +106,45 @@ public struct SpeechPracticeView: View {
     }
 
     private var referenceCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Label("Phrase cible", systemImage: "text.quote")
-                .font(.headline)
-                .foregroundStyle(.secondary)
-
+        VStack(alignment: .leading, spacing: 8) {
             Button(action: speakReference) {
-                Text(mandarinReferenceText)
-                    .font(.system(size: 36, weight: .semibold, design: .rounded))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .textSelection(.enabled)
-                    .accessibilityAddTraits(.isHeader)
+                VStack(spacing: 4) {
+                    Text(mandarinReferenceText)
+                        .font(.system(size: 32, weight: .semibold, design: .rounded))
+                    Text(exercise.referencePinyin)
+                        .font(.title3.weight(.medium))
+                        .foregroundStyle(Color.accentColor)
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+                .contentShape(Rectangle())
+                .textSelection(.enabled)
+                .accessibilityAddTraits(.isHeader)
             }
             .buttonStyle(.plain)
             .accessibilityLabel("\(mandarinReferenceText), écouter la phrase cible en mandarin")
             .accessibilityHint("Lit la phrase cible avec la voix locale")
 
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Pinyin")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                Text(exercise.referencePinyin)
-                    .font(.title3)
-                    .foregroundStyle(Color.accentColor)
-                Text("Repères de ton : \(MandarinToneMarkers.annotated(exercise.referencePinyin))")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-
-            Text("Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
+            DisclosureGroup("Comment comparer ma voix") {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Repères de ton : \(MandarinToneMarkers.annotated(exercise.referencePinyin))")
+                    Text("Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
+                }
                 .font(.caption)
                 .foregroundStyle(.secondary)
+                .padding(.top, 2)
+            }
+            .font(.caption.weight(.semibold))
+            .tint(.secondary)
+            .accessibilityLabel("Comment comparer ma voix. Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .padding(12)
+        .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private var modelControls: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Modèle")
-                .font(.headline)
-
+        HStack(alignment: .center, spacing: 8) {
             Button {
                 if isModelPlaying {
                     stopModelPlayback(message: "Lecture du modèle arrêtée.")
@@ -151,9 +156,9 @@ public struct SpeechPracticeView: View {
                     isModelPlaying ? "Arrêter" : "Écouter",
                     systemImage: isModelPlaying ? "stop.fill" : "speaker.wave.2.fill"
                 )
-                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             }
             .buttonStyle(.borderedProminent)
+            .controlSize(.regular)
             .accessibilityIdentifier("model-audio-toggle")
             .accessibilityLabel(isModelPlaying ? "Arrêter le modèle" : "Écouter le modèle")
             .accessibilityHint("Lit uniquement la phrase cible en mandarin, à la vitesse choisie")
@@ -163,24 +168,25 @@ public struct SpeechPracticeView: View {
                 Text("Lente").tag(SpeechRate.slow)
             }
             .pickerStyle(.segmented)
+            .frame(maxWidth: .infinity)
             .accessibilityHint("Choisis une vitesse de lecture du modèle")
         }
-        .padding(14)
+        .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private var recordingControls: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 10) {
             Text("Ta voix")
                 .font(.headline)
 
             ViewThatFits(in: .horizontal) {
-                HStack(alignment: .center, spacing: 16) {
+                HStack(alignment: .center, spacing: 12) {
                     recordButton
                     recordingDescription
                 }
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 8) {
                     recordButton
                     recordingDescription
                 }
@@ -250,23 +256,34 @@ public struct SpeechPracticeView: View {
     }
 
     private var selfEvaluationCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Auto-évaluation")
                 .font(.headline)
             Text("La transcription locale n’est pas disponible ou ne confirme pas la phrase. Choisis ton ressenti ; aucun score de ton n’est déduit.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 8)], spacing: 8) {
+            if let selectedSelfRating {
+                Label(
+                    "Sélection actuelle : \(selfRatingLabel(selectedSelfRating))",
+                    systemImage: "checkmark.circle.fill"
+                )
+                .font(.callout.weight(.semibold))
+                .foregroundStyle(.tint)
+                .accessibilityIdentifier("speech-selected-self-rating")
+            }
+            LazyVGrid(
+                columns: [
+                    GridItem(.flexible(minimum: 0), spacing: 8),
+                    GridItem(.flexible(minimum: 0), spacing: 8)
+                ],
+                spacing: 8
+            ) {
                 ForEach(SelfRating.allCases, id: \.self) { rating in
-                    Button(selfRatingLabel(rating)) {
-                        answer = .selfRating(rating)
-                        statusMessage = "Auto-évaluation enregistrée : \(selfRatingLabel(rating))."
-                    }
-                    .buttonStyle(.bordered)
+                    selfRatingButton(rating)
                 }
             }
         }
-        .padding(16)
+        .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
@@ -277,12 +294,12 @@ public struct SpeechPracticeView: View {
                 Image(systemName: isRecording ? "stop.fill" : "mic.fill")
                     .font(.system(size: 27, weight: .semibold))
                 Text(isRecording ? "Arrêter" : "Enregistrer")
-                    .font(.headline)
+                    .font(.callout.weight(.semibold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.65)
             }
             .foregroundStyle(.white)
-            .frame(width: 116, height: 116)
+            .frame(width: 100, height: 100)
             .background(isRecording ? Color.red : Color.accentColor, in: Circle())
             .shadow(color: .black.opacity(0.14), radius: 5, y: 3)
             .contentShape(Circle())
@@ -293,16 +310,10 @@ public struct SpeechPracticeView: View {
     }
 
     private var recordingDescription: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(isRecording ? "Parle maintenant…" : "Enregistre la phrase cible")
-                .font(.body.weight(.semibold))
-            Text(isRecording
-                 ? "Tu peux arrêter quand tu as fini."
-                 : "Tu pourras réécouter ta voix et demander une transcription locale.")
-                .font(.callout)
-                .foregroundStyle(.secondary)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        Text(isRecording ? "Parle maintenant…" : "Enregistre puis compare.")
+            .font(.callout.weight(.semibold))
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var mandarinReferenceText: String {
@@ -481,11 +492,74 @@ public struct SpeechPracticeView: View {
         let oldRecording = recording
         recording = nil
         transcript = nil
+        selectedSelfRating = nil
         answer = nil
         isSelfEvaluationAvailable = false
+        showEvaluationDetails = false
         guard let oldRecording else { return }
         Task {
             try? await audio.delete(recording: oldRecording)
+        }
+    }
+
+    private func selfRatingButton(_ rating: SelfRating) -> some View {
+        Button {
+            selectedSelfRating = rating
+            answer = .selfRating(rating)
+            showEvaluationDetails = true
+            statusMessage = "Auto-évaluation enregistrée : \(selfRatingLabel(rating))."
+        } label: {
+            Text(selfRatingLabel(rating))
+                .multilineTextAlignment(.center)
+                .lineLimit(nil)
+                .frame(maxWidth: .infinity, minHeight: 44)
+        }
+        .buttonStyle(.bordered)
+        .tint(selectedSelfRating == rating ? Color.accentColor : Color.secondary)
+        .accessibilityValue(selectedSelfRating == rating ? "Sélectionnée" : "")
+    }
+
+    private func synchronizeAnswerState() {
+        switch answer {
+        case .some(.speech(let savedAnswer)):
+            let restoredTranscript = SpeechTranscript(
+                rawText: savedAnswer.transcript,
+                normalizedText: savedAnswer.normalizedTranscript,
+                confidence: savedAnswer.confidence,
+                isFinal: true,
+                localeIdentifier: savedAnswer.localeIdentifier
+            )
+            // A restored SpeechAnswer contains the transcription metadata, but
+            // its temporary recording may no longer exist. Rebuild only the
+            // displayable result and leave `recording` untouched.
+            transcript = restoredTranscript
+            selectedSelfRating = nil
+            isSelfEvaluationAvailable = exercise.allowSelfRating &&
+                (restoredTranscript.rawText.isEmpty || !transcriptMatches(restoredTranscript))
+            showEvaluationDetails = true
+            statusMessage = isSelfEvaluationAvailable
+                ? "Transcription restaurée. Tu peux choisir une auto-évaluation."
+                : "Transcription restaurée."
+
+        case .some(.selfRating(let rating)):
+            transcript = nil
+            selectedSelfRating = rating
+            isSelfEvaluationAvailable = exercise.allowSelfRating
+            showEvaluationDetails = true
+            // A local tap updates the binding and then reaches this observer
+            // on the next SwiftUI pass. Preserve its immediate confirmation;
+            // use the restored wording only when the answer arrived from the
+            // parent checkpoint.
+            if statusMessage?.hasPrefix("Auto-évaluation enregistrée") != true {
+                statusMessage = "Auto-évaluation restaurée : \(selfRatingLabel(rating))."
+            }
+
+        default:
+            transcript = nil
+            selectedSelfRating = nil
+            isSelfEvaluationAvailable = false
+            showEvaluationDetails = false
+            statusMessage = nil
         }
     }
 

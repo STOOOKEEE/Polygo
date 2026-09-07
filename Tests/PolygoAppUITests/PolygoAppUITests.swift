@@ -103,6 +103,7 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func navigateToTab(_ label: String) {
+        leaveLessonBeforeSelectingTab()
         let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
         if tab.waitForExistence(timeout: 5) {
             tab.tap()
@@ -114,6 +115,17 @@ final class PolygoAppUITests: XCTestCase {
         let sidebarItem = element(containing: label, type: .any)
         XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
         sidebarItem.tap()
+    }
+
+    private func leaveLessonBeforeSelectingTab() {
+        let lessonControl = app.buttons.matching(
+            NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
+        ).firstMatch
+        guard lessonControl.exists else { return }
+
+        let back = app.navigationBars.buttons.firstMatch
+        XCTAssertTrue(back.waitForExistence(timeout: timeout), "Le parcours doit pouvoir quitter la leçon avant un changement d’onglet")
+        back.tap()
     }
 
     private func goBack() {

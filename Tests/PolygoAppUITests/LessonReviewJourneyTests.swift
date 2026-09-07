@@ -192,6 +192,17 @@ final class LessonReviewJourneyTests: XCTestCase {
         }
 
         let selfRating = button(exactly: "À l’aise")
+        if !selfRating.waitForExistence(timeout: 3) {
+            // The permission result normally opens this disclosure itself.
+            // Expand it explicitly when the simulator keeps the result group
+            // collapsed so the rating assertion tests the real control.
+            let details = button(exactly: "Voir les résultats")
+            if details.waitForExistence(timeout: 2) {
+                bringIntoView(details)
+                XCTAssertTrue(details.isHittable, "Les résultats audio doivent pouvoir être ouverts")
+                details.tap()
+            }
+        }
         if selfRating.waitForExistence(timeout: 8) {
             // The fallback is an explicit learner report. It carries no
             // acoustic, phoneme, or tone score.
@@ -199,10 +210,17 @@ final class LessonReviewJourneyTests: XCTestCase {
                 element(containing: "aucun score de ton", type: .any).waitForExistence(timeout: timeout),
                 "Le mode d’auto-évaluation oral doit expliquer l’absence de score de ton"
             )
+            bringIntoView(selfRating)
+            XCTAssertTrue(selfRating.isHittable, "L’auto-évaluation À l’aise doit être touchable après défilement")
             selfRating.tap()
             XCTAssertTrue(
                 text(containing: "Auto-évaluation enregistrée").waitForExistence(timeout: timeout),
                 "L’auto-évaluation orale doit être enregistrée avant validation"
+            )
+            XCTAssertEqual(
+                selfRating.value as? String,
+                "Sélectionnée",
+                "Le choix À l’aise doit rester sélectionné après son enregistrement"
             )
         } else {
             // If the simulator has an already-authorized recognizer and it
@@ -277,6 +295,7 @@ final class LessonReviewJourneyTests: XCTestCase {
     private func evaluateAndAdvance(isLast: Bool) {
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Chaque exercice doit proposer Vérifier")
+        XCTAssertTrue(verify.isEnabled, "Une réponse doit être sélectionnée avant chaque validation")
         verify.tap()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "Chaque réponse du parcours doit être acceptée")
 
@@ -332,6 +351,7 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func navigateToTab(_ label: String) {
+        leaveLessonBeforeSelectingTab()
         let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
         if tab.waitForExistence(timeout: 5) {
             tab.tap()
@@ -341,6 +361,17 @@ final class LessonReviewJourneyTests: XCTestCase {
         let sidebarItem = element(containing: label, type: .any)
         XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
         sidebarItem.tap()
+    }
+
+    private func leaveLessonBeforeSelectingTab() {
+        let lessonControl = app.buttons.matching(
+            NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
+        ).firstMatch
+        guard lessonControl.exists else { return }
+
+        let back = app.navigationBars.buttons.firstMatch
+        XCTAssertTrue(back.waitForExistence(timeout: timeout), "Le parcours doit pouvoir quitter la leçon avant un changement d’onglet")
+        back.tap()
     }
 
     private func bringIntoView(_ element: XCUIElement) {
@@ -376,20 +407,20 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func dismissPermissionPrompts() {
-        let deadline = Date().addingTimeInterval(5)
-        while Date() < deadline {
-            // XCTest only runs an interruption monitor while the test tries
-            // to interact with the application.  The system permission sheet
-            // is owned by SpringBoard, so querying `app.alerts` alone leaves
-            // the request pending and the app waiting forever for its result.
-            // A harmless application tap gives the monitor a chance to deny
-            // the sheet; when no sheet is present it is simply a no-op.
-            app.tap()
-            let alert = app.alerts.firstMatch
-            if alert.exists {
-                if Self.denyPermission(in: alert) { return }
-            }
-            RunLoop.main.run(until: Date().addingTimeInterval(0.1))
+        let alert = app.alerts.firstMatch
+        if alert.waitForExistence(timeout: 2) {
+            XCTAssertTrue(Self.denyPermission(in: alert), "La demande d’autorisation audio doit proposer un refus")
+            return
+        }
+
+        // XCTest invokes interruption monitors when the test interacts with
+        // the app. Trigger that monitor once from the unused top-right corner;
+        // repeated center taps can toggle the results disclosure underneath
+        // a permission sheet and leave the fallback rating unselected.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.02)).tap()
+        let promptedAlert = app.alerts.firstMatch
+        if promptedAlert.waitForExistence(timeout: 5) {
+            XCTAssertTrue(Self.denyPermission(in: promptedAlert), "La demande d’autorisation audio doit proposer un refus")
         }
     }
 

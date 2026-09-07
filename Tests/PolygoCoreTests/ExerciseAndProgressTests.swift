@@ -323,6 +323,145 @@ final class ExerciseAndProgressTests: XCTestCase {
         XCTAssertNil(progress.completedAt)
     }
 
+    func testTerminalCheckpointKeepsAnUnfinishedLessonResettable() throws {
+        let profileKey = profileID("profile-terminal")
+        let lessonKey = lessonID("lesson-terminal")
+        let terminal = event(
+            "terminal-checkpoint",
+            profileID: profileKey,
+            lamport: 2,
+            payload: .lessonCheckpointSaved(
+                lessonID: lessonKey,
+                exerciseIndex: 6,
+                exerciseID: nil,
+                answer: nil,
+                evaluation: nil,
+                dialogueDrafts: [:],
+                dialogueResults: [:],
+                at: now
+            )
+        )
+
+        var snapshot = try reducer.reduce(
+            .empty(now: now),
+            event(
+                "terminal-onboarding",
+                profileID: profileKey,
+                lamport: 1,
+                payload: .onboardingCompleted(profile: profileIDValue(profileKey))
+            )
+        )
+        snapshot = try reducer.reduce(snapshot, terminal)
+
+        let terminalProgress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(terminalProgress.currentExerciseIndex, 6)
+        XCTAssertNil(terminalProgress.completedAt)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "terminal-complete",
+                profileID: profileKey,
+                lamport: 3,
+                payload: .lessonCompleted(lessonID: lessonKey, at: now.addingTimeInterval(1))
+            )
+        )
+        let completedProgress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(completedProgress.currentExerciseIndex, 6)
+        XCTAssertNotNil(completedProgress.completedAt)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "terminal-restart",
+                profileID: profileKey,
+                lamport: 4,
+                payload: .lessonRestarted(lessonID: lessonKey, at: now.addingTimeInterval(2))
+            )
+        )
+        let resetProgress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(resetProgress.currentExerciseIndex, 0)
+        XCTAssertNil(resetProgress.currentExerciseID)
+        XCTAssertNil(resetProgress.pendingAnswer)
+        XCTAssertNil(resetProgress.pendingEvaluation)
+        XCTAssertNil(resetProgress.completedAt)
+    }
+
+    func testCheckpointCanClearVisibleFeedbackWithoutDroppingHistory() throws {
+        let profileKey = profileID("profile-feedback-clear")
+        let lessonKey = lessonID("lesson-feedback-clear")
+        let exerciseKey = exerciseID("exercise-feedback-clear")
+        let evaluation = try ExerciseEvaluation(
+            exerciseID: exerciseKey,
+            outcome: .incorrect,
+            score: 0,
+            feedback: .unchecked(["fr": "Réessaie."]),
+            accepted: false
+        )
+        var snapshot = try reducer.reduce(
+            .empty(now: now),
+            event(
+                "feedback-clear-onboarding",
+                profileID: profileKey,
+                lamport: 1,
+                payload: .onboardingCompleted(profile: profileIDValue(profileKey))
+            )
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "feedback-clear-evaluation",
+                profileID: profileKey,
+                lamport: 2,
+                payload: .exerciseEvaluated(
+                    lessonID: lessonKey,
+                    blockID: blockID("feedback-clear-block"),
+                    evaluation: evaluation,
+                    at: now
+                )
+            )
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "feedback-clear-visible",
+                profileID: profileKey,
+                lamport: 3,
+                payload: .lessonCheckpointSaved(
+                    lessonID: lessonKey,
+                    exerciseIndex: 0,
+                    exerciseID: exerciseKey,
+                    answer: nil,
+                    evaluation: evaluation,
+                    dialogueDrafts: [:],
+                    dialogueResults: [:],
+                    at: now
+                )
+            )
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "feedback-clear-retry",
+                profileID: profileKey,
+                lamport: 4,
+                payload: .lessonCheckpointSaved(
+                    lessonID: lessonKey,
+                    exerciseIndex: 0,
+                    exerciseID: exerciseKey,
+                    answer: nil,
+                    evaluation: nil,
+                    dialogueDrafts: [:],
+                    dialogueResults: [:],
+                    at: now.addingTimeInterval(1)
+                )
+            )
+        )
+        let progress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertNil(progress.pendingEvaluation)
+        XCTAssertEqual(progress.lastEvaluations[exerciseKey], evaluation)
+    }
+
     func testProgressionIsIdempotentForTheSameEventAndCardAddsDoNotReplaceState() throws {
         let profileID = profileID("profile-idempotence")
         let cardID = cardID("card-idempotence")

@@ -14,6 +14,7 @@ public struct LessonView: View {
     @State private var didStart = false
     @State private var didRestore = false
     @State private var isEvaluating = false
+    @State private var isFinalizing = false
     @State private var finished = false
     @State private var preambleExpanded = false
     @State private var dialogueDrafts: [BlockID: String] = [:]
@@ -34,7 +35,7 @@ public struct LessonView: View {
                 if finished { completionView(lesson) }
                 else if exercises.isEmpty { ContentUnavailableView("Cette leçon n’a pas d’exercice", systemImage: "rectangle.and.pencil.and.ellipsis") }
                 else if currentIndex < exercises.count { exerciseView(lesson, block: exercises[currentIndex]) }
-                else { completionView(lesson) }
+                else { ProgressView("Enregistrement de la leçon…") }
             } else {
                 ProgressView("Chargement de la leçon…")
             }
@@ -42,6 +43,7 @@ public struct LessonView: View {
         .background(SylluneColor.canvas)
         .navigationTitle(lesson?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon")
         #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
         #endif
         .task {
@@ -56,10 +58,9 @@ public struct LessonView: View {
             }
         }
         .onChange(of: answer) { _, _ in
-            // A learner can edit a draft only before validation. If an
-            // embedded control nevertheless changes after feedback appears,
-            // invalidate that feedback instead of showing a stale correction.
-            if evaluation != nil { evaluation = nil }
+            // Controls are disabled while feedback is visible. Keeping this
+            // observer persistence-only also lets restored answer and feedback
+            // arrive in either SwiftUI update order without losing the latter.
             scheduleCheckpoint()
         }
         .onChange(of: evaluation) { _, _ in scheduleCheckpoint() }
@@ -93,7 +94,10 @@ public struct LessonView: View {
         guard currentIndex < exercises.count else {
             answer = nil
             evaluation = nil
-            finished = progress.completedAt != nil
+            // A terminal checkpoint can exist before the completion event (or
+            // when the learner skipped a failed required answer). It is still
+            // a resumable terminal screen, and must always offer a reset.
+            finished = true
             return
         }
 
@@ -105,7 +109,12 @@ public struct LessonView: View {
             return
         }
         answer = progress.pendingAnswer
-        evaluation = progress.pendingEvaluation ?? progress.lastEvaluations[currentExercise.id]
+        // New checkpoints carry the stable current exercise ID, so a nil
+        // pending evaluation means the learner intentionally cleared feedback
+        // (for example by tapping Réessayer). Only old snapshots without that
+        // field may fall back to their last evaluation.
+        evaluation = progress.pendingEvaluation ??
+            (progress.currentExerciseID == nil ? progress.lastEvaluations[currentExercise.id] : nil)
         finished = progress.completedAt != nil
     }
 
@@ -142,14 +151,23 @@ public struct LessonView: View {
                     Spacer()
                     ProgressView(value: Double(currentIndex), total: Double(max(1, exercises.count))).tint(SylluneColor.jade).frame(maxWidth: 180)
                 }
-                ChineseSelectableText(
-                    spec.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Exercice",
-                    font: .title2.weight(.semibold),
-                    wordInteractionEnabled: false
-                )
-                    .foregroundStyle(SylluneColor.ink)
-                Text(spec.header.instruction.resolve(preferred: model.preferredLanguageCodes) ?? "")
-                    .font(.body).foregroundStyle(SylluneColor.inkMuted)
+                if case .speaking = spec {
+                    // The speaking control already presents the target phrase
+                    // and its pinyin. Keep the lesson shell to one short cue
+                    // so the recording action remains visible on an iPhone.
+                    Text("À toi de parler")
+                        .font(.headline)
+                        .foregroundStyle(SylluneColor.ink)
+                } else {
+                    ChineseSelectableText(
+                        spec.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Exercice",
+                        font: .title2.weight(.semibold),
+                        wordInteractionEnabled: false
+                    )
+                        .foregroundStyle(SylluneColor.ink)
+                    Text(spec.header.instruction.resolve(preferred: model.preferredLanguageCodes) ?? "")
+                        .font(.body).foregroundStyle(SylluneColor.inkMuted)
+                }
 
                 answerControl(spec)
                     // Each exercise owns small control state (typed text,
@@ -179,7 +197,7 @@ public struct LessonView: View {
                     Spacer()
                     Button(actionTitle) { submitOrAdvance(spec: spec, blockID: block.0) }
                         .buttonStyle(SyllunePrimaryButtonStyle())
-                        .disabled(isEvaluating || !canSubmit(spec))
+                        .disabled(isEvaluating || isFinalizing || !canSubmit(spec))
                         .frame(maxWidth: 240)
                 }
             }
@@ -376,15 +394,38 @@ public struct LessonView: View {
         } else {
             let required = exercises.filter { $0.1.header.required }.map(\.1.id)
             let complete = required.allSatisfy { evaluationCountsAsComplete(answered[$0]) }
-            // Persist the terminal cursor before the completion event so a
-            // relaunch between the two writes still opens the same recap.
-            currentIndex = exercises.count
-            answer = nil
-            evaluation = nil
-            scheduleCheckpoint()
+            guard !isFinalizing else { return }
+            // The terminal checkpoint must finish before the completion event
+            // and before the recap becomes visible. This keeps a process kill
+            // or a failed append from presenting an unrecorded finish screen.
+            let terminalDrafts = dialogueDrafts
+            let terminalResults = dialogueResults
+            isFinalizing = true
             Task { @MainActor in
-                if complete { _ = await model.completeLesson(lessonID) }
+                let checkpointSaved = await model.saveLessonCheckpoint(
+                    lessonID,
+                    exerciseIndex: exercises.count,
+                    exerciseID: nil,
+                    answer: nil,
+                    evaluation: nil,
+                    dialogueDrafts: terminalDrafts,
+                    dialogueResults: terminalResults
+                )
+                guard checkpointSaved else {
+                    isFinalizing = false
+                    return
+                }
+                if complete {
+                    guard await model.completeLesson(lessonID) else {
+                        isFinalizing = false
+                        return
+                    }
+                }
+                currentIndex = exercises.count
+                answer = nil
+                evaluation = nil
                 finished = true
+                isFinalizing = false
             }
         }
     }
@@ -398,22 +439,20 @@ public struct LessonView: View {
                 .font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
             Text("\(successCount) / \(exercises.count) exercices réussis. Les erreurs restent disponibles pour une nouvelle tentative.")
                 .font(.body).foregroundStyle(SylluneColor.inkMuted)
-            if model.snapshot.lessonProgress[lessonID]?.completedAt != nil {
-                Button("Recommencer cette leçon") {
-                    Task { @MainActor in
-                        guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
-                        currentIndex = 0
-                        answer = nil
-                        evaluation = nil
-                        answered = [:]
-                        dialogueDrafts = [:]
-                        dialogueResults = [:]
-                        finished = false
-                        preambleExpanded = false
-                    }
+            Button("Recommencer cette leçon") {
+                Task { @MainActor in
+                    guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
+                    currentIndex = 0
+                    answer = nil
+                    evaluation = nil
+                    answered = [:]
+                    dialogueDrafts = [:]
+                    dialogueResults = [:]
+                    finished = false
+                    preambleExpanded = false
                 }
-                .buttonStyle(.bordered)
             }
+            .buttonStyle(.bordered)
             if let next = model.nextLessonID, successCount == exercises.count {
                 NavigationLink(destination: LessonView(lessonID: next)) { Text("Continuer le parcours") }
                     .buttonStyle(SyllunePrimaryButtonStyle())

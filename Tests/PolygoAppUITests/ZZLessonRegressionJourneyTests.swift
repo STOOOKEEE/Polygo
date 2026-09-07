@@ -31,6 +31,8 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     func testLessonDraftFeedbackDialogueAndOralJourney() throws {
         completeOnboardingIfNeeded()
+        navigateToTab("Aujourd’hui")
+        XCTAssertTrue(text(containing: "Ton parcours").waitForExistence(timeout: timeout), "La capture d’accueil doit montrer le tableau de bord")
         attachScreenshot(named: "home-after-onboarding")
         openFirstLesson()
         expandDiscoveryIfNeeded()
@@ -208,9 +210,29 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             dismissPermissionPrompts()
         }
         let fallback = button(exactly: "À l’aise")
+        if !fallback.waitForExistence(timeout: 3) {
+            // The permission result normally opens this disclosure itself.
+            // Expand it explicitly when the simulator keeps the result group
+            // collapsed so the rating assertion tests the real control.
+            let details = button(exactly: "Voir les résultats")
+            if details.waitForExistence(timeout: 2) {
+                tapWhenVisible(details)
+            }
+        }
         if fallback.waitForExistence(timeout: 8) {
             XCTAssertTrue(text(containing: "aucun score de ton").waitForExistence(timeout: timeout), "Le fallback oral doit rester honnête sur l’absence de score")
-            tapWhenVisible(fallback)
+            bringIntoView(fallback)
+            XCTAssertTrue(fallback.isHittable, "L’auto-évaluation À l’aise doit être touchable après défilement")
+            fallback.tap()
+            XCTAssertTrue(
+                text(containing: "Auto-évaluation enregistrée").waitForExistence(timeout: timeout),
+                "L’auto-évaluation orale doit être enregistrée avant la suite du parcours"
+            )
+            XCTAssertEqual(
+                fallback.value as? String,
+                "Sélectionnée",
+                "Le choix À l’aise doit rester sélectionné après son enregistrement"
+            )
         } else {
             XCTAssertTrue(text(containing: "Transcription locale").waitForExistence(timeout: timeout), "L’oral doit afficher la transcription ou son fallback")
         }
@@ -277,19 +299,16 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func openFirstLesson() {
-        let restart = button(exactly: "Recommencer cette leçon")
-        if restart.waitForExistence(timeout: 3) {
-            tapWhenVisible(restart)
-            XCTAssertTrue(text(containing: "Quel ton porte 早").waitForExistence(timeout: timeout), "La leçon recommencée doit revenir au premier exercice")
-            return
-        }
-
-        if text(containing: "Quel ton porte 早").waitForExistence(timeout: 4) { return }
+        // The suite intentionally runs this journey after the other UI
+        // journeys. Always reopen the lesson from the path so a completed
+        // dataset can be restarted through the product UI before exercising
+        // draft and feedback restoration.
         navigateToTab("Parcours")
         let lesson = button(containing: "Dire bonjour")
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible")
         tapWhenVisible(lesson)
 
+        let restart = button(exactly: "Recommencer cette leçon")
         if restart.waitForExistence(timeout: 4) {
             tapWhenVisible(restart)
         }
@@ -361,6 +380,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func navigateToTab(_ label: String) {
+        leaveLessonBeforeSelectingTab()
         let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
         if tab.waitForExistence(timeout: 5) {
             tab.tap()
@@ -371,13 +391,31 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         sidebarItem.tap()
     }
 
+    private func leaveLessonBeforeSelectingTab() {
+        let lessonControl = app.buttons.matching(
+            NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
+        ).firstMatch
+        guard lessonControl.exists else { return }
+
+        let back = app.navigationBars.buttons.firstMatch
+        XCTAssertTrue(back.waitForExistence(timeout: timeout), "Le parcours doit pouvoir quitter la leçon avant un changement d’onglet")
+        back.tap()
+    }
+
     private func dismissPermissionPrompts() {
-        let deadline = Date().addingTimeInterval(5)
-        while Date() < deadline {
-            app.tap()
-            let alert = app.alerts.firstMatch
-            if alert.exists, Self.denyPermission(in: alert) { return }
-            RunLoop.main.run(until: Date().addingTimeInterval(0.1))
+        let alert = app.alerts.firstMatch
+        if alert.waitForExistence(timeout: 2) {
+            XCTAssertTrue(Self.denyPermission(in: alert), "La demande d’autorisation audio doit proposer un refus")
+            return
+        }
+
+        // Trigger the interruption monitor once from an unused corner. A
+        // repeated center tap can toggle the results disclosure underneath
+        // the permission sheet and hide the fallback rating.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.02)).tap()
+        let promptedAlert = app.alerts.firstMatch
+        if promptedAlert.waitForExistence(timeout: 5) {
+            XCTAssertTrue(Self.denyPermission(in: promptedAlert), "La demande d’autorisation audio doit proposer un refus")
         }
     }
 
