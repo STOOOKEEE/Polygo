@@ -1,200 +1,159 @@
 # Pédagogie et progression Polygo
+Contrat éditorial V1, 7 septembre 2026. Ce document complète `docs/ARCHITECTURE.md`, `docs/UX.md`, `docs/CONTENT_SCHEMA.md` et `docs/SRS.md`.
+Il décrit la cible pédagogique du MVP et indique séparément ce que le pack JSON livre déjà. Il ne modifie aucun contenu ni contrat Swift.
+Les états ont un sens précis : **disponible** signifie présent et chargeable dans le pack ; **critère éditorial** signifie règle à vérifier sur les données
+et les parcours ; **extension architecture** signifie clé ou comportement facultatif, dont la présence ne prouve pas l’usage par l’UI ; **futur** signifie
+prévu mais non déverrouillable. Aucun état ne vaut promesse d’examen.
 
-Contrat éditorial V1, 7 septembre 2026. Ce document complète ARCHITECTURE.md,
-UX.md et CONTENT_SCHEMA.md. Il définit une progression originale, extensible
-et mesurable. Le pack `unit-01` est livré en JSON avec quatre leçons, quatre
-histoires inline et trois guides de tracé vérifiables ; aucun audio enregistré
-n’est déclaré disponible.
-
-Les états utilisés ici sont : spécifié V1 (objectif et séquence définis),
-contenu à produire (données, audio ou assets manquants), futur (emplacement
-prévu mais non déverrouillable) et validé (relecture pédagogique et contrôle
-éditorial effectués).
-
-## Principes
-
+## Principes et cycle
 Une unité répond à une tâche quotidienne observable. Une leçon dure quatre à
-sept minutes, peut être interrompue après chaque exercice et reprend au
-prochain item dû. Le cycle Polygo est :
+sept minutes, s’interrompt après chaque exercice et reprend au prochain item dû.
+Le cycle Polygo est toujours :
 
-1. Observer : entendre et lire un exemple avec contrôles séparés pour
-   caractères, pinyin, traduction et audio ;
-2. Récupérer : rappeler avant d’afficher la réponse ;
-3. Produire : choisir, remettre en ordre, écrire ou dire une réponse courte ;
-4. Transférer : réutiliser la fonction dans une situation légèrement nouvelle.
+1. **Observer** : entendre et lire un exemple, avec contrôles séparés pour caractères, pinyin, traduction et audio quand un audio existe.
+2. **Récupérer** : rappeler avant d’afficher la réponse.
+3. **Produire** : remettre en ordre, écrire ou dire une réponse courte.
+4. **Transférer** : réutiliser la fonction dans une situation légèrement nouvelle.
+Une aide reste une condition de tentative et ne retire pas de crédit. Les réponses ouvertes déclarent les variantes éditorialement acceptées. La confiance
+d’une transcription Speech ne devient jamais seule un score de prononciation.
 
-L’aide n’enlève pas de crédit ; elle est enregistrée comme condition de
-tentative. Une traduction ou une production ouverte accepte les variantes
-éditorialement listées. La confiance d’une transcription Speech ne devient
-jamais seule un score de prononciation.
+## Hiérarchie et contrats
+Les IDs sont opaques, non vides, stables et indépendants de l’ordre des tableaux.
+Le contrat minimal relie le catalogue au document de leçon :
 
-## Hiérarchie et contrat de contenu
-
-Les identifiants sont opaques, stables et indépendants de l’ordre des tableaux.
-
-| Élément | Exemple | Données requises |
+| Élément | Exemple local | Contrat attendu |
 | --- | --- | --- |
-| Cours | mandarin-starter | langues, versions des référentiels, scripts et règles du catalogue |
-| Niveau Polygo | level-01 | profil de compétences et alignements versionnés |
-| Section | section-01 | famille de situations et prérequis communs |
-| Unité | unit-01 | tâche, sujet, prérequis, durée, leçons et critères de sortie |
-| Leçon | lesson-01 | intention, au plus 6 entrées lexicales nouvelles, grammaire, exercices, cartes |
-| Objectif | obj-u1-identite | verbe observable, compétence, preuve, seuil et caractère requis |
-| Mot/caractère | vocab-u1-ni, char-u1-ni | simplifié, traditionnel, pinyin accentué, tons, sens FR, nature, audio, exemple |
-| Grammaire | gram-u1-jiao | fonction, patron, contraintes, exemples originaux, erreurs et variantes |
-| Exercice | ex-u1-01 | objectif(s), mode, stimulus, réponse, feedback, aide et tags d’erreur |
-| Carte | card-u1-ni-meaning | direction de rappel, compétence, source et état SRS |
+| Cours | `mandarin-starter` | langues, catalogue et références versionnées |
+| Niveau / section | `level-01` / `section-01` | compétences et prérequis |
+| Unité | `unit-01` | tâche, durée, leçons et sortie |
+| Leçon | `lesson-01` | intention, nouveautés (≤6), grammaire, blocs, cartes |
+| Objectif | `l1-greet-understand` | verbe observable, preuve et seuil éditorial |
+| Vocabulaire | `vocab-ni-hao` | scripts, pinyin, tons, sens FR, nature, exemple |
+| Grammaire | `grammar-vocab-jiao` | fonction, patron, contraintes, exemples, erreurs |
+| Exercice | `ex-l1-meaning` | mode, stimulus, réponse, feedback, aide et tags |
+| Carte | `card-vocab-ni-hao` | direction, dimension, source et état SRS |
+Chaque document conserve `schemaVersion: 1` et `contentVersion: "2026.09.0"`.
+`LessonDocument` reste le type Swift de référence : objectifs, vocabulaire, blocs et cartes. Les modes éditoriaux peuvent être `listenChoose`, `toneChoose`,
+`meaningChoose`, `sentenceOrder`, `fillBlank`, `speakPrompt`, `writeCharacter`
+ou `reviewRecall`; `toneChoose` et `meaningChoose` sont sérialisés comme choix
+spécialisés quand le schéma l’exige.
+Chaque entrée lexicale porte `hanzi` (simplifié), `traditionalHanzi`, pinyin
+accentué, un numéro par syllabe (`1` à `4`, `0` neutre), sens français,
+`partOfSpeech`, exemple original et `audio`. Les deux scripts restent associés
+au même ID ; le choix d’affichage ne change ni le sens ni la carte.
+`standardID`, `standardVersion`, `levelID`, `sectionID`, `unitID`, `stage`, `skill`, `errorTags`, `feedback`, `acceptedVariants`, `reviewDimensions`,
+`reviewDirections` et `adaptation` sont des extensions JSON facultatives. Le loader V1 peut les ignorer : elles expriment une intention éditoriale et ne
+prouvent donc ni adaptation active, ni score Speech, ni seuil déjà implémenté.
+Elles ne remplacent jamais les champs normatifs (`acceptedAnswers`,
+`acceptedTranscripts`, formes, tons et traductions).
 
-ARCHITECTURE.md représente actuellement l’unité par ModuleSummary et la leçon
-par LessonDocument. Le pack ajoute déjà ces informations sous des clés JSON
-optionnelles : levelID, sectionID et unitID, standardID et standardVersion,
-GrammarPoint, compétences et preuves, variantes acceptées, tags d’erreur, mode
-reconnaissance/production et direction de carte. Le contrat Swift requis reste
-inchangé ; une future version pourra décoder ces métadonnées explicitement.
+## Référentiels versionnés
+Le catalogue conserve des repères distincts, sans fusionner leurs listes :
 
-## HSK versionné
-
-Au 7 septembre 2026, le CTI publie encore l’ancien système à six niveaux et le
-cadre HSK 3.0 à trois étapes et neuf niveaux. Le syllabus consulté est publié
-en novembre 2025 et indique une mise en œuvre en juillet 2026 ; les calendriers
-et pilotes montrent une transition opérationnelle. Polygo conserve les deux
-références et ne mélange pas leurs listes.
-
-| Référence | Usage et affichage |
+| Référence | Affichage autorisé |
 | --- | --- |
-| HSK-3.0 / 2025-11 | « Aligné HSK 3.0 niveau N » seulement après vérification éditoriale item par item |
-| HSK-legacy-2.0 / 2.0 | « Repère HSK 2.0 niveau N (legacy) » pour les ressources historiques |
-| Polygo / 2026.09 | « Progression Polygo » pour les décisions propres au produit |
-| CEFR / 2020 | Descripteur complémentaire ; aucune conversion HSK–CECR n’est affichée |
+| `HSK-3.0` / `2025-11` | « Aligné HSK 3.0 niveau N » après contrôle item par item |
+| `HSK-legacy-2.0` / `2.0` | « Repère HSK 2.0 niveau N (legacy) » |
+| `CEFR` / `2020` | descripteur complémentaire, sans conversion HSK–CECR |
+| `Polygo` / `2026.09` | progression et décisions propres au produit |
+Une référence non vérifiée reste « repère » ou « à vérifier ». Toute interface montre l’ID et la version ; un niveau, un compteur ou une unité terminée ne
+garantit ni couverture d’une liste CTI, ni score, ni réussite à un examen.
 
-Chaque interface montre la référence et sa version. Un alignement non vérifié
-reste « repère » ou « à vérifier ». Un niveau Polygo, un compteur de mots ou
-une unité terminée ne garantit ni score ni réussite à l’examen.
+## Cible MVP : `unit-01` en trois leçons
+La cible de ce document est une unité courte `mandarin-starter / level-01 / section-01 / unit-01`, en trois leçons concrètes. Chaque leçon réutilise les
+mots antérieurs, introduit au plus six entrées et fait passer par les quatre étapes du cycle. Les trois leçons et leur plafond lexical sont :
 
-## Progression débutant-avancé
+| Leçon cible | Fonction | Nouveautés |
+| --- | --- | ---: |
+| L1 — Saluer | saluer, remercier, prendre congé | 5 |
+| L2 — Nom | demander et donner son nom | 5 |
+| L3 — Origine | demander et dire un pays | 6 |
+Le mot « cible » est important : ces trois leçons définissent le périmètre éditorial MVP, elles ne déclarent pas que chaque critère est déjà mesuré par
+l’application. L’unité vise une courte interaction après L3 ; les preuves de
+reconnaissance et de production restent distinctes.
 
-Seule la première tranche est spécifiée V1 ; tout le reste est futur et ne doit
-pas être affiché comme disponible.
+### Lexique, scripts, tons et exemples
+Dans les lignes suivantes, la forme est `simplifié / traditionnel — pinyin accentué [tons] — sens FR`. Les phrases sont originales et affichent toujours
+les caractères, la lecture accentuée, les numéros et la traduction.
 
-| Niveau | État | Tâches et critère de sortie |
-| --- | --- | --- |
-| level-00 | onboarding spécifié, assets futurs | distinguer syllabe, initiale, finale, tons 1–4 et neutre ; 8/10 en écoute |
-| level-01 | unit-01 disponible V1 | saluer, se nommer, demander une origine et tenir un mini-échange ; reconnaissance, production contrôlée et transfert |
-| level-02 | futur | heure, routine, besoins, achats et formulaires ; réponses courtes dans deux contextes |
-| level-03 | futur | déplacements, santé, études et travail ; enchaîner plusieurs phrases et réparer un malentendu |
-| level-04 | futur | problèmes, technologie, culture et société ; expliquer cause et conséquence |
-| level-05 | futur | travail, études et argumentation ; résumer et choisir un registre |
-| level-06 | futur | discours denses et situations professionnelles ; expliquer avec précision et reformuler |
-| level-07 à 09 | futur, groupe HSK publié | domaines spécialisés, recherche, médias, droit, affaires et écrits académiques |
-
-Les tableaux de bord séparent écoute, oral, lecture, écriture, tons,
-vocabulaire, grammaire et interaction. Une sélection correcte ne valide jamais
-une compétence productive.
-
-## Unité V1 : Premiers échanges
-
-| Champ | Valeur |
+| Leçon | Entrées nouvelles |
 | --- | --- |
-| Cours / niveau / section / unité | mandarin-starter / level-01 / section-01 / unit-01 |
-| Statut | pack JSON disponible ; audio enregistré absent, TTS de l’adaptateur et guides SHA-256 livrés |
-| Intention | commencer une conversation polie, dire son nom, demander et dire un pays |
-| Prérequis / durée | aucun / 4 leçons de 4–7 minutes |
-| Plafond lexical | au plus 6 entrées nouvelles par leçon ; les reprises ne sont pas recomptées |
-| Scripts | simplifié et traditionnel associés ; préférence d’affichage indépendante du sens |
+| L1 (5) | `你好 / 你好 — nǐ hǎo [3,3] — salut`; `早 / 早 — zǎo [3] — bonjour (matin)`; `再见 / 再見 — zàijiàn [4,4] — au revoir`; `谢谢 / 謝謝 — xièxie [4,0] — merci`; `不客气 / 不客氣 — bú kèqi [2,4,0] — de rien` |
+| L2 (5) | `你 / 你 — nǐ [3] — tu/vous`; `我 / 我 — wǒ [3] — je`; `叫 / 叫 — jiào [4] — s’appeler`; `什么 / 什麼 — shénme [2,0] — quoi/quel`; `名字 / 名字 — míngzi [2,0] — nom` |
+| L3 (6) | `是 / 是 — shì [4] — être`; `哪 / 哪 — nǎ [3] — quel`; `国 / 國 — guó [2] — pays`; `法国 / 法國 — Fǎguó [3,2] — France`; `中国 / 中國 — Zhōngguó [1,2] — Chine`; `人 / 人 — rén [2] — personne` |
+Exemples de référence :
 
-Les objectifs requis sont portés par les leçons : `l1-greet-*` (saluer, tons,
-oral et tracé), `l2-name-*` (demander et donner un nom), `l3-country-*`
-(demander et dire une origine) et `l4-exchange-*` (observer, récupérer,
-produire et transférer un mini-échange). Les preuves sont attachées à des
-exercices identifiés ; une sélection correcte ne devient donc pas une preuve
-de production.
-
-### Vocabulaire nouveau
-
-Le chiffre de ton 0 désigne le neutre ; les diacritiques sont visibles dans le
-pinyin. La graphie nǐ hǎo conserve les tons lexicaux 3,3, même si le premier
-est souvent réalisé comme 2 en parole continue.
-
-| Leçon | Entrées nouvelles en simplifié | Traditionnel | Pinyin / tons | Sens français |
+| Fonction | Simplifié | Traditionnel | Pinyin [tons] | Français |
 | --- | --- | --- | --- | --- |
-| 1 (5) | 你好, 早, 再见, 谢谢, 不客气 | 你好, 早, 再見, 謝謝, 不客氣 | nǐ hǎo (3,3), zǎo (3), zàijiàn (4,4), xièxie (4,0), bú kèqi (2,4,0) | salut, bonjour du matin, au revoir, merci, de rien |
-| 2 (5) | 你, 我, 叫, 什么, 名字 | 你, 我, 叫, 什麼, 名字 | nǐ (3), wǒ (3), jiào (4), shénme (2,0), míngzi (2,0) | tu/vous, je, s’appeler, quoi, nom |
-| 3 (6) | 是, 哪, 国, 法国, 中国, 人 | 是, 哪, 國, 法國, 中國, 人 | shì (4), nǎ (3), guó (2), Fǎguó (3,2), Zhōngguó (1,2), rén (2) | être, quel, pays, France, Chine, personne |
-| 4 (1) | 呢 | 呢 | ne (0) | relance : et toi ? |
+| L1 | 你好！ | 你好！ | nǐ hǎo! [3,3] | Bonjour ! |
+| L2 | 你叫什么名字？ | 你叫什麼名字？ | nǐ jiào shénme míngzi? [3,4,2,0,2,0] | Comment t’appelles-tu ? |
+| L3 | 你是哪国人？ | 你是哪國人？ | nǐ shì nǎ guó rén? [3,4,3,2,2] | De quel pays es-tu ? |
+| L3 réponse | 我是法国人。 | 我是法國人。 | wǒ shì Fǎguó rén. [3,4,3,2,2] | Je suis français(e). |
+La couverture attendue est : ton 1 dans `中`; ton 2 dans `国`, `人`, `什`; ton 3 dans `你`, `好`, `早`, `我`, `哪`; ton 4 dans `再`, `见`, `谢`,
+`叫`, `是`; ton neutre dans la seconde syllabe de `谢谢`, `什么`, `名字`,
+et dans `呢`. On écrit `nǐ hǎo` [3,3] (`ni3 hao3`), même si le premier ton 3 est souvent réalisé comme 2 en parole continue ; `bú kèqi` [2,4,0] note les réalisations
+éditoriales de `不` et de la dernière syllabe légère.
+L1 travaille `你好！谢谢。再见！`; L2 `你叫什么？/ 我叫安。`; L3 `你是哪国人？/ 我是中国人。`. Chaque entrée doit garder une nature
+grammaticale, une phrase, les deux graphies, le français et son repère
+versionné. Dans le pack actuel, les champs audio sont `null` : aucun audio
+enregistré n’est déclaré ; le TTS n’est qu’un repli de l’adaptateur. Les guides
+locaux livrés sont `guide-hanzi-ni`, `guide-hanzi-wo` et `guide-hanzi-guo`.
 
-La couverture est vérifiable : ton 1 dans 中 de 中国, ton 2 dans 国/人/什, ton 3
-dans 你/好/早/我/哪, ton 4 dans 再/见/谢/叫/是 et neutre dans 谢谢/什么/
-名字/呢. Les 17 entrées nouvelles ont une phrase originale, une nature
-grammaticale, les deux graphies, un alignement HSK versionné et `audio: null` ;
-la lecture TTS n’est proposée que par l’adaptateur lorsqu’une voix Mandarin est
-disponible.
+### Objectifs et critères observables
+Les objectifs MVP suivent les familles d’IDs `l1-greet-*`, `l2-name-*` et `l3-country-*`. Un critère éditorial exige une preuve attachée à un exercice ;
+une sélection correcte ne valide jamais une compétence productive.
 
-### Grammaire, exercices et preuves
+| Leçon | Reconnaissance | Production / transfert |
+| --- | --- | --- |
+| L1 | identifier salutation, sens et ton ; cible 4 réussites sur 5 | dire bonjour et prendre congé, puis adapter au matin |
+| L2 | reconnaître question, nom et ordre des mots | produire `我叫 + nom`, puis demander le nom après une salutation |
+| L3 | reconnaître `哪国` et le patron `是…人` | dire une origine dans un contexte nouveau et relancer l’échange |
+Pour toute leçon, le seuil de 80 % et la présence d’une preuve par objectif sont des critères éditoriaux à contrôler ; ce document ne prétend pas qu’ils
+sont tous implémentés dans les écrans ou les données actuelles. Une réponse
+ouverte utilise une canonique et ses `acceptedVariants`, avec feedback court et
+lié à une erreur (`tone`, `meaning`, `script`, `word-order`, `grammar`,
+`listening`, `speaking`, `writing` ou `transfer`).
 
-| Leçon | Patron et exemple | Exercices requis | Critère |
-| --- | --- | --- | --- |
-| lesson-01 Saluer (6 exercices) | 你好！谢谢。再见！ | ton, sens, ordre, lecture, oral et tracé | quatre reconnaissances sur cinq et une formule produite |
-| lesson-02 Se nommer (7 exercices) | 你叫什么？/ 我叫安。 | ton, sens, ordre, trou, lecture, oral et tracé | question et réponse produites avec deux niveaux d’aide |
-| lesson-03 Origine (7 exercices) | 你是哪国人？/ 我是中国人。 | ton, sens, ordre, rappel, lecture, oral et tracé | réponse dans un contexte nouveau et origine reconnue |
-| lesson-04 Mini-échange (7 exercices) | 你好！你叫什么名字？你呢？ | graphie, relance, ordre, trou, lecture, interaction et carte | enchaîner quatre tours, puis relancer avec 你呢？ |
+## Adaptation et SRS
+L’adaptation éditoriale prévoit H0 sans aide ; H1 réécoute, débit 0,75×, boucle et numéro de ton ; H2 pinyin, traduction ou segmentation ; H3 modèle, premier
+token ou trace fantôme ; H4 guidage puis rappel reprogrammé. Un échec donne un
+feedback immédiat, une nouvelle tentative après un à trois items, puis une
+carte. Deux réussites indépendantes peuvent diminuer l’aide d’un niveau ;
+l’apprenant peut toujours la choisir. Sans micro, Speech ou guide, le résultat
+est `selfReported` ou `unavailable`, jamais un score fabriqué.
+Le scheduler `PolygoSRS.SM2Scheduler` applique le SM-2 déterministe. Pour une
+qualité `q`, `EF' = EF + (0.1 - (5-q) × (0.08 + (5-q) × 0.02))`, avec EF initial
+2,5 et plancher 1,3. L’interface expose `again` (q=0), `hard` (q=3), `good`
+(q=4) et `easy` (q=5) ; q<3 remet la répétition à zéro, incrémente le lapse et
+programme J+1. Une première réussite programme J+1, la deuxième J+6, puis
+`round(intervalle × EF)` avec au moins un jour ; un jour vaut 86 400 secondes.
+Chaque transition conserve carte, date, qualité, intervalle, EF et lapse dans
+l’historique, et l’événement est idempotent. `dueCards` trie par échéance puis
+ID ; la suspension conserve les statistiques et utilise `Date.distantFuture`.
+`CoreReviewPlanner` et `PolygoSRS` doivent garder ces constantes alignées.
+Cette règle SRS est disponible ; l’adaptation détaillée ci-dessus reste une
+spécification éditoriale tant que les métadonnées et l’UI ne la démontrent pas.
 
-Les profils d’exercice sont listenChoose, toneChoose, meaningChoose,
-sentenceOrder, fillBlank, speakPrompt, writeCharacter et reviewRecall. toneChoose
-et meaningChoose peuvent être sérialisés comme choice avec un profil spécialisé.
-Chaque leçon porte les quatre étapes `observer → recuperer → produire →
-transferer` dans ses métadonnées de document et d’activité ; les échecs restent
-rejouables. Les réponses ouvertes exposent `acceptedVariants` en plus des
-réponses canoniques, avec un feedback correctif court et lié au tag d’erreur.
+## Disponible, extensions et futur
+Le document vise trois leçons, mais le pack `Content` actuellement livré en
+`2026.09.0` compte quatre leçons dans `unit-01` : `lesson-01` à `lesson-04`.
+Il contient 27 exercices (6/7/7/7), 17 cartes sans doublon et quatre histoires.
+`lesson-04` est une extension déjà présente : mini-échange avec `呢`, une
+nouvelle entrée, `story-mini-exchange` et sept exercices. Elle reste livrée et
+n’est pas supprimée par ce document ; l’écart cible/pack est intentionnel.
+Le niveau `level-01` et les trois premières leçons sont le périmètre éditorial
+MVP. L’onboarding `level-00` est spécifié avec les tons 1–4 et neutre, mais ses
+assets sont futurs. `level-02` et les niveaux avancés, leurs leçons, histoires
+et volumes lexicaux sont futurs ; aucun compteur ou calendrier n’est promis.
 
-## Adaptation et révision
-
-Les aides sont réversibles et déclarées par le document : H0 masque les aides ; H1 offre réécoute, débit
-0,75×, boucle et numéro de ton ; H2 montre pinyin, traduction ou segmentation ;
-H3 fournit modèle, premier token ou trace fantôme ; H4 guide puis reprogramme un
-rappel. Après deux réussites indépendantes, le niveau redescend. L’apprenant
-peut toujours choisir l’aide.
-
-Les tags d’erreur sont tone-1 à tone-4, tone-neutral, initial, final, meaning,
-script, character, word-order, grammar, listening, speaking, writing, audio et
-transfer. Un échec déclenche feedback immédiat, nouvelle tentative après un à
-trois items, puis carte. Les cartes séparent mot, grammaire, ton, caractère,
-écoute et oral et proposent plusieurs directions de rappel. Une absence de
-microphone, de Speech ou de guide ne fabrique pas de score : l’oral et le tracé
-peuvent être `selfReported` ou `unavailable`, tandis que l’audio de référence
-reste `null` et passe par le TTS réel de l’adaptateur.
-
-Le scheduler SM-2 de l’architecture programme une première réussite à J+1, une
-seconde à J+6 et une erreur à J+1 avec incrément d’oubli. Chaque événement
-conserve source, dimension, réponse, aide, note et échéance ; les états sont
-idempotents. Le tableau de bord mesure rappel immédiat, J+1, J+7 et J+30.
-
-## Critères vérifiables et feuille de route
-
-Une leçon est terminée quand tous les exercices requis ont une réponse, chaque
-objectif requis a une preuve et les tâches évaluables atteignent 80 %. Une
-auto-évaluation orale ou manuscrite reste marquée selfReported ou unavailable.
-Une unité exige pour chaque objectif une reconnaissance, une production
-contrôlée et, lorsqu’il est demandé, un transfert. La recommandation de niveau
-requiert au moins deux sessions et un rappel différé ; elle peut rester « à
-consolider » sur un axe faible.
-
-Le pack livré contient 27 exercices, 17 cartes sans doublon et quatre histoires
-distinctes ; les trois histoires historiques (`story-hello-on-the-corner`,
-`story-name-and-smile`, `story-country-on-a-map`) sont conservées et
-`story-mini-exchange` est ajouté pour la leçon 04. Les quatre leçons ont
-respectivement 5, 5, 6 et 1 entrée nouvelle ; les IDs réutilisés sont listés
-dans `metadata.reusedVocabularyIDs` et ne gonflent pas ce compteur.
-
-Avant publication, vérifier : plafond de six nouveautés, pinyin et tons,
-simplifié/traditionnel, français, audio, réponses variantes, IDs résolus,
-exercices par compétence, cartes sans doublon, accessibilité des aides,
-alternative si Speech ou écriture est indisponible, contenu original et
-alignements versionnés. Les audios enregistrés restent à produire ; TTS est un
-repli d’adaptateur et ne vaut pas asset hors ligne. Les unités 2 et suivantes,
-histoires graduées et
-niveaux 2–9 sont futurs ; leur nombre de mots et de leçons sera défini avec
-leurs propres objectifs plutôt qu’annoncé à l’avance.
-
-Les sources HSK et les décisions de conception sont conservées dans
-RESEARCH_NOTES.md. Les versions CTI doivent être revérifiées à chaque
-publication.
+## Contrôle avant publication
+Vérifier dans `Content/manifest.json`, `Content/courses/mandarin-starter.json`
+et les leçons que les IDs se résolvent, que les nouveautés restent ≤6, que les
+cartes ne doublonnent pas, et que les exercices portent leurs objectifs et
+preuves. Vérifier aussi scripts simplifié/traditionnel, pinyin accentué et
+numérique, tons 0–4, français, variantes, audio réellement présent ou `null`,
+guides et contenu original.
+Recontrôler les repères `HSK-3.0/2025-11`, `HSK-legacy-2.0/2.0`, `CEFR/2020`,
+les critères reconnaissance/production, l’adaptation et la transition SM-2 à
+chaque publication. Les références locales de ce contrat sont
+`ARCHITECTURE.md`, `CONTENT_SCHEMA.md`, `UX.md`, `SRS.md` et `RESEARCH_NOTES.md`.
