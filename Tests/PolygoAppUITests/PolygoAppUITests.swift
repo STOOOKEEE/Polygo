@@ -18,7 +18,7 @@ final class PolygoAppUITests: XCTestCase {
         completeOnboardingIfNeeded()
 
         navigateToTab("Parcours")
-        let lesson = element(containing: "Dire bonjour", type: .any)
+        let lesson = element(containing: "Dire bonjour", type: .button)
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans le parcours")
         lesson.tap()
 
