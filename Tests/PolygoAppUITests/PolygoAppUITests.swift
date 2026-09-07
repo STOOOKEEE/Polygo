@@ -33,31 +33,23 @@ final class PolygoAppUITests: XCTestCase {
         let verify = element(containing: "Vérifier", type: .button)
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le premier exercice doit être chargé")
 
-        // The first lesson preamble exposes its vocabulary before the first
-        // exercise. Open one word sheet and activate its honest no-audio path.
-        // The introduction mentions 你好 in explanatory prose before the
-        // vocabulary card. Target the actual navigation control so the tap
-        // opens the word sheet instead of landing on that static paragraph.
+        // The lesson keeps its optional discovery material collapsed. Expand
+        // it before targeting a vocabulary token so the test follows the
+        // learner-facing path rather than matching text in the introduction.
+        let discovery = element(containing: "Découvrir avant de répondre", type: .button)
+        XCTAssertTrue(discovery.waitForExistence(timeout: timeout), "La découverte facultative doit être proposée")
+        discovery.tap()
+
+        // Vocabulary tokens in the lesson are pronunciation controls. They
+        // must leave the exercise usable; the dedicated dictionary below is
+        // the explicit route to the optional word detail screen.
         let word = element(containing: "你好", type: .button)
         XCTAssertTrue(word.waitForExistence(timeout: timeout), "Le mot 你好 doit être lié depuis la leçon")
-        word.tap()
-        let wordSheet = element(containing: "Fiche mot", type: .any)
-        XCTAssertTrue(wordSheet.waitForExistence(timeout: timeout), "La fiche mot doit s’ouvrir")
-        let audio = element(containing: "Écouter", type: .button)
-        XCTAssertTrue(audio.waitForExistence(timeout: timeout), "La fiche mot doit proposer l’action audio")
-        audio.tap()
-
-        goBack()
-        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le retour doit restaurer la leçon")
+        tapWhenVisible(word)
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La lecture du mot doit laisser la leçon utilisable")
 
         navigateToTab("Cartes")
         XCTAssertTrue(element(containing: "Cartes", type: .any).waitForExistence(timeout: timeout), "La section Cartes doit être accessible")
-
-        navigateToTab("Explorer")
-        let story = element(containing: "Le premier échange", type: .any)
-        XCTAssertTrue(story.waitForExistence(timeout: timeout), "Une histoire locale doit être proposée")
-        story.tap()
-        XCTAssertTrue(element(containing: "Lecture", type: .any).waitForExistence(timeout: timeout), "La lecture de l’histoire doit s’ouvrir")
 
         navigateToTab("Profil")
         // The surrounding card title also contains « Réglages »; target the
@@ -74,6 +66,18 @@ final class PolygoAppUITests: XCTestCase {
         XCTAssertTrue(element(containing: "Sombre", type: .any).waitForExistence(timeout: timeout), "Le thème choisi doit être appliqué")
         XCTAssertTrue(findAfterScrolling(element(containing: "Hors ligne", type: .any)), "Les réglages doivent exposer le statut hors ligne")
         XCTAssertTrue(findAfterScrolling(element(containing: "Sur cet appareil", type: .any)), "Le statut de synchronisation doit être honnête")
+
+        navigateToTab("Explorer")
+        let story = element(containing: "Le premier échange", type: .any)
+        XCTAssertTrue(story.waitForExistence(timeout: timeout), "Une histoire locale doit être proposée")
+        story.tap()
+        XCTAssertTrue(element(containing: "Lecture", type: .any).waitForExistence(timeout: timeout), "La lecture de l’histoire doit s’ouvrir")
+
+        // Return to Explorer's root before opening the dictionary sheet. The
+        // sheet's list uses an ASCII pinyin query so the test does not depend
+        // on the simulator keyboard layout for Chinese input.
+        goBack()
+        openVocabularyDetailFromDictionary()
     }
 
     private func completeOnboardingIfNeeded() {
@@ -152,6 +156,35 @@ final class PolygoAppUITests: XCTestCase {
             if element.waitForExistence(timeout: 1) { return true }
         }
         return false
+    }
+
+    private func openVocabularyDetailFromDictionary() {
+        let dictionary = element(containing: "Dictionnaire de l’unité 1", type: .button)
+        XCTAssertTrue(dictionary.waitForExistence(timeout: timeout), "L’explorateur doit proposer le dictionnaire")
+        dictionary.tap()
+
+        XCTAssertTrue(element(containing: "Dictionnaire", type: .any).waitForExistence(timeout: timeout), "Le dictionnaire doit s’ouvrir")
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: timeout), "Le dictionnaire doit proposer sa recherche")
+        search.tap()
+        search.typeText("nihao")
+
+        let word = element(containing: "你好", type: .button)
+        XCTAssertTrue(word.waitForExistence(timeout: timeout), "La recherche pinyin doit trouver 你好")
+        tapWhenVisible(word)
+        XCTAssertTrue(element(containing: "Fiche mot", type: .any).waitForExistence(timeout: timeout), "La fiche mot doit s’ouvrir depuis le dictionnaire")
+        let audio = element(containing: "Écouter", type: .button)
+        XCTAssertTrue(audio.waitForExistence(timeout: timeout), "La fiche mot doit proposer l’action audio")
+        audio.tap()
+    }
+
+    private func tapWhenVisible(_ element: XCUIElement) {
+        for _ in 0..<8 {
+            if element.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(element.isHittable, "L’élément doit être touchable : \(element.label)")
+        element.tap()
     }
 
     private func element(containing text: String, type: XCUIElement.ElementType) -> XCUIElement {

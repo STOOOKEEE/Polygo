@@ -515,6 +515,16 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         else {
             throw FixtureError.invalidParticipation
         }
+        // XCTest types through the simulator's active keyboard layout. Use
+        // the authored ASCII pinyin variant when available; the app's
+        // normalizer deliberately accepts it alongside the Chinese answer.
+        if let asciiAnswer = participation.acceptedResponses.first(where: { answer in
+            !answer.isEmpty && answer.unicodeScalars.allSatisfy {
+                $0.value < 128 && CharacterSet.alphanumerics.contains($0)
+            }
+        }) {
+            return asciiAnswer
+        }
         return lines[participation.audioLineIndex - 1].hanzi
     }
 }

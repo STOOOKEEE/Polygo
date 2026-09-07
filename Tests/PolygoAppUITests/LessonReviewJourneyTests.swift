@@ -180,6 +180,7 @@ final class LessonReviewJourneyTests: XCTestCase {
 
         let record = button(exactly: "Enregistrer")
         XCTAssertTrue(record.waitForExistence(timeout: timeout), "L’exercice oral doit proposer l’enregistrement")
+        attachScreenshot(named: "oral-controls")
         record.tap()
         dismissPermissionPrompts()
 
@@ -231,6 +232,14 @@ final class LessonReviewJourneyTests: XCTestCase {
                 "L’oral doit fournir une transcription locale ou son fallback explicite"
             )
         }
+        attachScreenshot(named: "oral-result")
+    }
+
+    private func attachScreenshot(named name: String) {
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 
     private func answerHandwriting(_ exercise: ExerciseFixture) throws {
