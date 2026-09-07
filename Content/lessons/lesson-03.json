@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.0",
+  "id": "lesson-03",
+  "moduleID": "unit-01",
+  "order": 3,
+  "title": {
+    "fr": "Dire d'où l'on vient"
+  },
+  "summary": {
+    "fr": "Demander un pays et dire de quel pays on est."
+  },
+  "estimatedMinutes": 7,
+  "objectives": [
+    {
+      "id": "l3-country-ask",
+      "statement": {
+        "fr": "Demander le pays d'une personne avec 你是哪国人？"
+      },
+      "required": true
+    },
+    {
+      "id": "l3-country-answer",
+      "statement": {
+        "fr": "Dire 我是 + pays + 人 et reconnaître le motif 是...人."
+      },
+      "required": true
+    },
+    {
+      "id": "l3-country-tones",
+      "statement": {
+        "fr": "Identifier les tons de 国 et de 法国 à l'aide des marques et des numéros."
+      },
+      "required": true
+    },
+    {
+      "id": "l3-country-write",
+      "statement": {
+        "fr": "Tracer 国 à partir d'un guide de traits, avec auto-évaluation."
+      },
+      "required": true
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-shi",
+      "hanzi": "是",
+      "traditionalHanzi": "是",
+      "pinyin": "shì",
+      "toneNumbers": [4],
+      "segmentation": [
+        {
+          "surface": "是",
+          "vocabularyID": "vocab-shi",
+          "pinyin": "shì",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "A 是 B",
+          "explanation": {
+            "fr": "是 relie le sujet et son identité ou sa catégorie : 我是法国人 signifie « je suis français·e »."
+          },
+          "examples": [
+            {
+              "hanzi": "我是法国人。",
+              "pinyin": "wǒ shì Fǎguó rén.",
+              "translation": {
+                "fr": "Je suis français·e."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "être ; c'est"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我是法国人。",
+        "pinyin": "wǒ shì Fǎguó rén.",
+        "translation": {
+          "fr": "Je suis français·e."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "是 relie deux informations comme un petit pont : je suis..."
+      }
+    },
+    {
+      "id": "vocab-na",
+      "hanzi": "哪",
+      "traditionalHanzi": "哪",
+      "pinyin": "nǎ",
+      "toneNumbers": [3],
+      "segmentation": [
+        {
+          "surface": "哪",
+          "vocabularyID": "vocab-na",
+          "pinyin": "nǎ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [
+        {
+          "pattern": "哪 + nom",
+          "explanation": {
+            "fr": "哪 signifie « quel / lequel ». Il précède 国 dans 哪国, « quel pays »."
+          },
+          "examples": [
+            {
+              "hanzi": "你是哪国人？",
+              "pinyin": "nǐ shì nǎ guó rén?",
+              "translation": {
+                "fr": "De quel pays es-tu ?"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "quel ; lequel"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你是哪国人？",
+        "pinyin": "nǐ shì nǎ guó rén?",
+        "translation": {
+          "fr": "De quel pays es-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "哪 pointe une option parmi plusieurs pays."
+      }
+    },
+    {
+      "id": "vocab-guo",
+      "hanzi": "国",
+      "traditionalHanzi": "國",
+      "pinyin": "guó",
+      "toneNumbers": [2],
+      "segmentation": [
+        {
+          "surface": "国",
+          "vocabularyID": "vocab-guo",
+          "pinyin": "guó",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pays ; nation"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "哪个国家？",
+        "pinyin": "nǎ ge guójiā?",
+        "translation": {
+          "fr": "Quel pays ?"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "Le cadre 囗 entoure un pays sur une carte : 国."
+      }
+    },
+    {
+      "id": "vocab-faguo",
+      "hanzi": "法国",
+      "traditionalHanzi": "法國",
+      "pinyin": "Fǎguó",
+      "toneNumbers": [3, 2],
+      "segmentation": [
+        {
+          "surface": "法国",
+          "vocabularyID": "vocab-faguo",
+          "pinyin": "Fǎguó",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "France"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "法国人",
+        "pinyin": "Fǎguó rén",
+        "translation": {
+          "fr": "Français·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "法 est le premier caractère de 法国, la France."
+      }
+    },
+    {
+      "id": "vocab-zhongguo",
+      "hanzi": "中国",
+      "traditionalHanzi": "中國",
+      "pinyin": "Zhōngguó",
+      "toneNumbers": [1, 2],
+      "segmentation": [
+        {
+          "surface": "中国",
+          "vocabularyID": "vocab-zhongguo",
+          "pinyin": "Zhōngguó",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "Chine"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "translation": {
+          "fr": "Chinois·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "中 signifie centre ; 中国 est le pays du centre dans son nom."
+      }
+    },
+    {
+      "id": "vocab-ren",
+      "hanzi": "人",
+      "traditionalHanzi": "人",
+      "pinyin": "rén",
+      "toneNumbers": [2],
+      "segmentation": [
+        {
+          "surface": "人",
+          "vocabularyID": "vocab-ren",
+          "pinyin": "rén",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [
+        {
+          "pattern": "pays + 人",
+          "explanation": {
+            "fr": "Après un nom de pays, 人 signifie « personne de ce pays » : 法国人, français·e ; 中国人, chinois·e."
+          },
+          "examples": [
+            {
+              "hanzi": "我是中国人。",
+              "pinyin": "wǒ shì Zhōngguó rén.",
+              "translation": {
+                "fr": "Je suis chinois·e."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "personne ; humain"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "法国人",
+        "pinyin": "Fǎguó rén",
+        "translation": {
+          "fr": "Français·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "人 ressemble à une personne qui marche."
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-l3-introduction",
+      "title": {
+        "fr": "Un pays en quelques mots"
+      },
+      "body": {
+        "fr": "Situation : lors d'un échange international, tu veux savoir d'où vient une personne. La question 你是哪国人？ suit le modèle tu + être + quel pays + personne. Pour répondre, utilise 我是 + pays + 人. 法国 et 中国 gardent leurs tons propres ; 国 se prononce guó, ton 2."
+      },
+      "audio": null
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-l3-vocabulary",
+      "vocabularyIDs": [
+        "vocab-shi",
+        "vocab-na",
+        "vocab-guo",
+        "vocab-faguo",
+        "vocab-zhongguo",
+        "vocab-ren"
+      ]
+    },
+    {
+      "kind": "dialogue",
+      "id": "block-l3-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你好！你是哪国人？",
+          "pinyin": "nǐ hǎo! nǐ shì nǎ guó rén?",
+          "translation": {
+            "fr": "Bonjour ! De quel pays es-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我是法国人。",
+          "pinyin": "wǒ shì Fǎguó rén.",
+          "translation": {
+            "fr": "Je suis français·e."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我是中国人。",
+          "pinyin": "wǒ shì Zhōngguó rén.",
+          "translation": {
+            "fr": "Je suis chinois·e."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "再见！",
+          "pinyin": "zàijiàn!",
+          "translation": {
+            "fr": "Au revoir !"
+          },
+          "audio": null
+        }
+      ]
+    },
+    {
+      "kind": "reading",
+      "id": "block-l3-reading",
+      "storyID": "story-country-on-a-map",
+      "title": {
+        "fr": "Deux pays sur une carte"
+      },
+      "paragraphs": [
+        {
+          "id": "story-country-p1",
+          "hanzi": "我是法国人。",
+          "pinyin": "wǒ shì Fǎguó rén.",
+          "translation": {
+            "fr": "Je suis français·e."
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "法国",
+              "vocabularyID": "vocab-faguo",
+              "pinyin": "Fǎguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "人",
+              "vocabularyID": "vocab-ren",
+              "pinyin": "rén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-country-p2",
+          "hanzi": "你是哪国人？",
+          "pinyin": "nǐ shì nǎ guó rén?",
+          "translation": {
+            "fr": "De quel pays es-tu ?"
+          },
+          "segmentation": [
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "哪",
+              "vocabularyID": "vocab-na",
+              "pinyin": "nǎ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "国",
+              "vocabularyID": "vocab-guo",
+              "pinyin": "guó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "人",
+              "vocabularyID": "vocab-ren",
+              "pinyin": "rén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-country-p3",
+          "hanzi": "我是中国人。",
+          "pinyin": "wǒ shì Zhōngguó rén.",
+          "translation": {
+            "fr": "Je suis chinois·e."
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "中国",
+              "vocabularyID": "vocab-zhongguo",
+              "pinyin": "Zhōngguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "人",
+              "vocabularyID": "vocab-ren",
+              "pinyin": "rén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-country-p4",
+          "hanzi": "你好！",
+          "pinyin": "nǐ hǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "segmentation": [
+            {
+              "surface": "你好",
+              "vocabularyID": "vocab-ni-hao",
+              "pinyin": "nǐ hǎo",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l3-reading-country"
+      ]
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-tone",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l3-tone",
+          "prompt": {
+            "fr": "Quel ton porte 国 (guó) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le contour correspondant."
+          },
+          "objectiveIDs": [
+            "l3-country-tones"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l3-tone-1",
+            "label": {
+              "fr": "1 — haut et stable"
+            },
+            "audio": null
+          },
+          {
+            "id": "l3-tone-2",
+            "label": {
+              "fr": "2 — montant"
+            },
+            "audio": null
+          },
+          {
+            "id": "l3-tone-3",
+            "label": {
+              "fr": "3 — descend puis remonte"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l3-tone-2"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l3-meaning",
+          "prompt": {
+            "fr": "Que signifie 法国 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le pays correspondant."
+          },
+          "objectiveIDs": [
+            "l3-country-answer"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l3-meaning-france",
+            "label": {
+              "fr": "France"
+            },
+            "audio": null
+          },
+          {
+            "id": "l3-meaning-china",
+            "label": {
+              "fr": "Chine"
+            },
+            "audio": null
+          },
+          {
+            "id": "l3-meaning-japan",
+            "label": {
+              "fr": "Japon"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l3-meaning-france"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l3-order",
+          "prompt": {
+            "fr": "Construis « Je suis français·e »."
+          },
+          "instruction": {
+            "fr": "Place les groupes de mots dans l'ordre chinois."
+          },
+          "objectiveIDs": [
+            "l3-country-answer"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "tok-l3-ren",
+            "hanzi": "人",
+            "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "tok-l3-wo",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "tok-l3-faguo",
+            "hanzi": "法国",
+            "pinyin": "Fǎguó",
+            "audio": null
+          },
+          {
+            "id": "tok-l3-shi",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "tok-l3-wo",
+          "tok-l3-shi",
+          "tok-l3-faguo",
+          "tok-l3-ren"
+        ]
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-fill",
+      "spec": {
+        "kind": "flashcard",
+        "header": {
+          "id": "ex-l3-card",
+          "prompt": {
+            "fr": "Rappelle le mot français 法国 avant de révéler le verso."
+          },
+          "instruction": {
+            "fr": "Révèle la carte, puis choisis À refaire, Difficile, Bien ou Facile."
+          },
+          "objectiveIDs": [
+            "l3-country-answer"
+          ],
+          "required": true
+        },
+        "cardID": "card-vocab-faguo"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l3-reading-country",
+          "prompt": {
+            "fr": "Dans « Deux pays sur une carte », le premier locuteur dit-il 法国 ?"
+          },
+          "instruction": {
+            "fr": "Relis la première phrase de l'histoire."
+          },
+          "objectiveIDs": [
+            "l3-country-answer"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l3-reading-yes",
+            "label": {
+              "fr": "Oui, il dit 我是法国人。"
+            },
+            "audio": null
+          },
+          {
+            "id": "l3-reading-no",
+            "label": {
+              "fr": "Non, il dit 我是中国人。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l3-reading-yes"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l3-speak",
+          "prompt": {
+            "fr": "Demande de quel pays vient ton interlocuteur."
+          },
+          "instruction": {
+            "fr": "Dis 你是哪国人？, enregistre-toi, puis réécoute ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l3-country-ask",
+            "l3-country-tones"
+          ],
+          "required": true
+        },
+        "referenceText": "你是哪国人？",
+        "referencePinyin": "nǐ shì nǎ guó rén?",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你是哪国人",
+          "你是哪国人？",
+          "nǐ shì nǎ guó rén"
+        ],
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l3-ex-write",
+      "spec": {
+        "kind": "handwriting",
+        "header": {
+          "id": "ex-l3-write",
+          "prompt": {
+            "fr": "Trace 国."
+          },
+          "instruction": {
+            "fr": "Suis le modèle de traits, puis auto-évalue ton tracé."
+          },
+          "objectiveIDs": [
+            "l3-country-write"
+          ],
+          "required": true
+        },
+        "targetHanzi": "国",
+        "guideAsset": {
+          "id": "guide-hanzi-guo",
+          "kind": "handwritingGuide",
+          "relativePath": "media/handwriting/guide-hanzi-guo.png",
+          "sha256": "pending-writing-guide",
+          "durationMilliseconds": null
+        },
+        "expectedStrokeCount": 8,
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-l3-recap",
+      "vocabularyIDs": [
+        "vocab-shi",
+        "vocab-na",
+        "vocab-guo",
+        "vocab-faguo",
+        "vocab-zhongguo",
+        "vocab-ren"
+      ],
+      "objectiveIDs": [
+        "l3-country-ask",
+        "l3-country-answer",
+        "l3-country-tones",
+        "l3-country-write"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-shi",
+      "vocabularyID": "vocab-shi",
+      "front": {
+        "hanzi": "是",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "是",
+        "pinyin": "shì · 4",
+        "text": {
+          "fr": "être ; c'est"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "identity"
+      ]
+    },
+    {
+      "id": "card-vocab-na",
+      "vocabularyID": "vocab-na",
+      "front": {
+        "hanzi": "哪",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "哪",
+        "pinyin": "nǎ · 3",
+        "text": {
+          "fr": "quel ; lequel"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "question"
+      ]
+    },
+    {
+      "id": "card-vocab-guo",
+      "vocabularyID": "vocab-guo",
+      "front": {
+        "hanzi": "国",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "国",
+        "pinyin": "guó · 2",
+        "text": {
+          "fr": "pays ; nation"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "country"
+      ]
+    },
+    {
+      "id": "card-vocab-faguo",
+      "vocabularyID": "vocab-faguo",
+      "front": {
+        "hanzi": "法国",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "法国",
+        "pinyin": "Fǎguó · 3-2",
+        "text": {
+          "fr": "France"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "country"
+      ]
+    },
+    {
+      "id": "card-vocab-zhongguo",
+      "vocabularyID": "vocab-zhongguo",
+      "front": {
+        "hanzi": "中国",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "中国",
+        "pinyin": "Zhōngguó · 1-2",
+        "text": {
+          "fr": "Chine"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "country"
+      ]
+    },
+    {
+      "id": "card-vocab-ren",
+      "vocabularyID": "vocab-ren",
+      "front": {
+        "hanzi": "人",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "人",
+        "pinyin": "rén · 2",
+        "text": {
+          "fr": "personne ; humain"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "people"
+      ]
+    }
+  ]
+}

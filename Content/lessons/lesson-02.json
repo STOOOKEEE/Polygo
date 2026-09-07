@@ -1,0 +1,873 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.0",
+  "id": "lesson-02",
+  "moduleID": "unit-01",
+  "order": 2,
+  "title": {
+    "fr": "Dire son nom"
+  },
+  "summary": {
+    "fr": "Demander et dire un nom avec une question courte."
+  },
+  "estimatedMinutes": 7,
+  "objectives": [
+    {
+      "id": "l2-name-ask",
+      "statement": {
+        "fr": "Demander le nom d'une personne avec 你叫什么名字？"
+      },
+      "required": true
+    },
+    {
+      "id": "l2-name-answer",
+      "statement": {
+        "fr": "Répondre 我叫 + nom et reconnaître 什么 comme mot interrogatif."
+      },
+      "required": true
+    },
+    {
+      "id": "l2-name-reuse",
+      "statement": {
+        "fr": "Réutiliser une salutation et une formule de politesse dans un échange."
+      },
+      "required": true
+    },
+    {
+      "id": "l2-name-write",
+      "statement": {
+        "fr": "Tracer 我 à partir d'un guide de traits, avec auto-évaluation."
+      },
+      "required": true
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-ni",
+      "hanzi": "你",
+      "traditionalHanzi": "你",
+      "pinyin": "nǐ",
+      "toneNumbers": [3],
+      "segmentation": [
+        {
+          "surface": "你",
+          "vocabularyID": "vocab-ni",
+          "pinyin": "nǐ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tu ; vous"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你好！",
+        "pinyin": "nǐ hǎo!",
+        "translation": {
+          "fr": "Bonjour !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "你 désigne la personne à qui l'on parle."
+      }
+    },
+    {
+      "id": "vocab-wo",
+      "hanzi": "我",
+      "traditionalHanzi": "我",
+      "pinyin": "wǒ",
+      "toneNumbers": [3],
+      "segmentation": [
+        {
+          "surface": "我",
+          "vocabularyID": "vocab-wo",
+          "pinyin": "wǒ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "je ; moi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "我 commence la phrase quand je parle de moi."
+      }
+    },
+    {
+      "id": "vocab-jiao",
+      "hanzi": "叫",
+      "traditionalHanzi": "叫",
+      "pinyin": "jiào",
+      "toneNumbers": [4],
+      "segmentation": [
+        {
+          "surface": "叫",
+          "vocabularyID": "vocab-jiao",
+          "pinyin": "jiào",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "我叫 + nom",
+          "explanation": {
+            "fr": "Pour se présenter, 我叫 est suivi directement du nom : 我叫安 signifie « je m'appelle An »."
+          },
+          "examples": [
+            {
+              "hanzi": "我叫林。",
+              "pinyin": "wǒ jiào Lín.",
+              "translation": {
+                "fr": "Je m'appelle Lin."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "s'appeler ; appeler"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "叫 est le verbe qui donne son nom à la phrase."
+      }
+    },
+    {
+      "id": "vocab-shenme",
+      "hanzi": "什么",
+      "traditionalHanzi": "什麼",
+      "pinyin": "shénme",
+      "toneNumbers": [2, 0],
+      "segmentation": [
+        {
+          "surface": "什么",
+          "vocabularyID": "vocab-shenme",
+          "pinyin": "shénme",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [
+        {
+          "pattern": "什么 + nom",
+          "explanation": {
+            "fr": "什么 signifie « quoi / quel ». Dans 你叫什么名字？, il demande quel nom, sans ajouter de mot pour « est-ce que ». La seconde syllabe est légère."
+          },
+          "examples": [
+            {
+              "hanzi": "你叫什么？",
+              "pinyin": "nǐ jiào shénme?",
+              "translation": {
+                "fr": "Comment t'appelles-tu ?"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "quoi ; quel"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你叫什么名字？",
+        "pinyin": "nǐ jiào shénme míngzi?",
+        "translation": {
+          "fr": "Comment t'appelles-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "什么 ouvre une petite fenêtre sur l'information que l'on cherche."
+      }
+    },
+    {
+      "id": "vocab-mingzi",
+      "hanzi": "名字",
+      "traditionalHanzi": "名字",
+      "pinyin": "míngzi",
+      "toneNumbers": [2, 0],
+      "segmentation": [
+        {
+          "surface": "名字",
+          "vocabularyID": "vocab-mingzi",
+          "pinyin": "míngzi",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [
+        {
+          "pattern": "轻声 dans le nom",
+          "explanation": {
+            "fr": "Dans 名字, zi est généralement une syllabe légère : míngzi, notée 2-0."
+          },
+          "examples": [
+            {
+              "hanzi": "你的名字是什么？",
+              "pinyin": "nǐ de míngzi shì shénme?",
+              "translation": {
+                "fr": "Quel est ton nom ?"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "nom ; prénom"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的名字是安。",
+        "pinyin": "wǒ de míngzi shì Ān.",
+        "translation": {
+          "fr": "Mon nom est An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "名字 est le nom que l'on écrit sur une étiquette."
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-l2-introduction",
+      "title": {
+        "fr": "Faire connaissance"
+      },
+      "body": {
+        "fr": "Situation : une nouvelle personne s'assoit à côté de toi dans une salle de cours. Après 你好, demande 你叫什么名字？. Pour répondre, place 我 avant 叫 puis ton nom. Une question chinoise peut se terminer par un point d'interrogation comme en français."
+      },
+      "audio": null
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-l2-vocabulary",
+      "vocabularyIDs": [
+        "vocab-ni",
+        "vocab-wo",
+        "vocab-jiao",
+        "vocab-shenme",
+        "vocab-mingzi"
+      ]
+    },
+    {
+      "kind": "dialogue",
+      "id": "block-l2-dialogue",
+      "lines": [
+        {
+          "speaker": "An",
+          "hanzi": "你好！",
+          "pinyin": "nǐ hǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "你好！你叫什么名字？",
+          "pinyin": "nǐ hǎo! nǐ jiào shénme míngzi?",
+          "translation": {
+            "fr": "Bonjour ! Comment t'appelles-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "我叫安。你呢？",
+          "pinyin": "wǒ jiào Ān. nǐ ne?",
+          "translation": {
+            "fr": "Je m'appelle An. Et toi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "我叫林。谢谢！",
+          "pinyin": "wǒ jiào Lín. xièxie!",
+          "translation": {
+            "fr": "Je m'appelle Lin. Merci !"
+          },
+          "audio": null
+        }
+      ]
+    },
+    {
+      "kind": "reading",
+      "id": "block-l2-reading",
+      "storyID": "story-name-and-smile",
+      "title": {
+        "fr": "Un nom, un sourire"
+      },
+      "paragraphs": [
+        {
+          "id": "story-name-p1",
+          "hanzi": "我叫安。",
+          "pinyin": "wǒ jiào Ān.",
+          "translation": {
+            "fr": "Je m'appelle An."
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "安",
+              "vocabularyID": null,
+              "pinyin": "Ān",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-name-p2",
+          "hanzi": "你叫什么名字？",
+          "pinyin": "nǐ jiào shénme míngzi?",
+          "translation": {
+            "fr": "Comment t'appelles-tu ?"
+          },
+          "segmentation": [
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "什么",
+              "vocabularyID": "vocab-shenme",
+              "pinyin": "shénme",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "名字",
+              "vocabularyID": "vocab-mingzi",
+              "pinyin": "míngzi",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-name-p3",
+          "hanzi": "我叫林。",
+          "pinyin": "wǒ jiào Lín.",
+          "translation": {
+            "fr": "Je m'appelle Lin."
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "林",
+              "vocabularyID": null,
+              "pinyin": "Lín",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-name-p4",
+          "hanzi": "谢谢！",
+          "pinyin": "xièxie!",
+          "translation": {
+            "fr": "Merci !"
+          },
+          "segmentation": [
+            {
+              "surface": "谢谢",
+              "vocabularyID": "vocab-xiexie",
+              "pinyin": "xièxie",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l2-reading-name"
+      ]
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-tone",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l2-tone",
+          "prompt": {
+            "fr": "Quel est le premier ton de 名字 (míngzi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le numéro de míng. La deuxième syllabe est légère."
+          },
+          "objectiveIDs": [
+            "l2-name-answer"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l2-tone-1",
+            "label": {
+              "fr": "1 — haut et stable"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-tone-2",
+            "label": {
+              "fr": "2 — montant"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-tone-4",
+            "label": {
+              "fr": "4 — chute nette"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l2-tone-2"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l2-meaning",
+          "prompt": {
+            "fr": "Que demande 什么 dans une question ?"
+          },
+          "instruction": {
+            "fr": "Choisis son sens le plus utile ici."
+          },
+          "objectiveIDs": [
+            "l2-name-ask"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l2-meaning-what",
+            "label": {
+              "fr": "Quoi ; quel"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-meaning-who",
+            "label": {
+              "fr": "Qui"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-meaning-where",
+            "label": {
+              "fr": "Où"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l2-meaning-what"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l2-order",
+          "prompt": {
+            "fr": "Construis la question « Comment t'appelles-tu ? »"
+          },
+          "instruction": {
+            "fr": "Place les mots dans l'ordre chinois."
+          },
+          "objectiveIDs": [
+            "l2-name-ask"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "tok-l2-mingzi",
+            "hanzi": "名字",
+            "pinyin": "míngzi",
+            "audio": null
+          },
+          {
+            "id": "tok-l2-jiao",
+            "hanzi": "叫",
+            "pinyin": "jiào",
+            "audio": null
+          },
+          {
+            "id": "tok-l2-ni",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "tok-l2-shenme",
+            "hanzi": "什么",
+            "pinyin": "shénme",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "tok-l2-ni",
+          "tok-l2-jiao",
+          "tok-l2-shenme",
+          "tok-l2-mingzi"
+        ]
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l2-fill",
+          "prompt": {
+            "fr": "Complète la réponse."
+          },
+          "instruction": {
+            "fr": "Écris le mot qui manque : 我___安。"
+          },
+          "objectiveIDs": [
+            "l2-name-answer"
+          ],
+          "required": true
+        },
+        "sentence": "我___安。",
+        "acceptedAnswers": [
+          "叫"
+        ],
+        "caseSensitive": false
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l2-reading-name",
+          "prompt": {
+            "fr": "Dans « Un nom, un sourire », comment s'appelle la personne qui répond ?"
+          },
+          "instruction": {
+            "fr": "Relis la troisième ligne."
+          },
+          "objectiveIDs": [
+            "l2-name-answer"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "l2-name-an",
+            "label": {
+              "fr": "安 (Ān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-name-lin",
+            "label": {
+              "fr": "林 (Lín)"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-name-unknown",
+            "label": {
+              "fr": "On ne le sait pas"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "l2-name-lin"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l2-speak",
+          "prompt": {
+            "fr": "Demande le nom de ton interlocuteur."
+          },
+          "instruction": {
+            "fr": "Dis 你叫什么名字？, enregistre-toi, puis réécoute ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l2-name-ask",
+            "l2-name-reuse"
+          ],
+          "required": true
+        },
+        "referenceText": "你叫什么名字？",
+        "referencePinyin": "nǐ jiào shénme míngzi?",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你叫什么名字",
+          "你叫什么名字？",
+          "nǐ jiào shénme míngzi"
+        ],
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l2-ex-write",
+      "spec": {
+        "kind": "handwriting",
+        "header": {
+          "id": "ex-l2-write",
+          "prompt": {
+            "fr": "Trace 我."
+          },
+          "instruction": {
+            "fr": "Suis le modèle de traits, puis auto-évalue ton tracé."
+          },
+          "objectiveIDs": [
+            "l2-name-write"
+          ],
+          "required": true
+        },
+        "targetHanzi": "我",
+        "guideAsset": {
+          "id": "guide-hanzi-wo",
+          "kind": "handwritingGuide",
+          "relativePath": "media/handwriting/guide-hanzi-wo.png",
+          "sha256": "pending-writing-guide",
+          "durationMilliseconds": null
+        },
+        "expectedStrokeCount": 7,
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-l2-recap",
+      "vocabularyIDs": [
+        "vocab-ni",
+        "vocab-wo",
+        "vocab-jiao",
+        "vocab-shenme",
+        "vocab-mingzi"
+      ],
+      "objectiveIDs": [
+        "l2-name-ask",
+        "l2-name-answer",
+        "l2-name-reuse",
+        "l2-name-write"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-ni",
+      "vocabularyID": "vocab-ni",
+      "front": {
+        "hanzi": "你",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "你",
+        "pinyin": "nǐ · 3",
+        "text": {
+          "fr": "tu ; vous"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ]
+    },
+    {
+      "id": "card-vocab-wo",
+      "vocabularyID": "vocab-wo",
+      "front": {
+        "hanzi": "我",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "我",
+        "pinyin": "wǒ · 3",
+        "text": {
+          "fr": "je ; moi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ]
+    },
+    {
+      "id": "card-vocab-jiao",
+      "vocabularyID": "vocab-jiao",
+      "front": {
+        "hanzi": "叫",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "叫",
+        "pinyin": "jiào · 4",
+        "text": {
+          "fr": "s'appeler ; appeler"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "self-introduction"
+      ]
+    },
+    {
+      "id": "card-vocab-shenme",
+      "vocabularyID": "vocab-shenme",
+      "front": {
+        "hanzi": "什么",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "什么",
+        "pinyin": "shénme · 2-0",
+        "text": {
+          "fr": "quoi ; quel"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "question"
+      ]
+    },
+    {
+      "id": "card-vocab-mingzi",
+      "vocabularyID": "vocab-mingzi",
+      "front": {
+        "hanzi": "名字",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "名字",
+        "pinyin": "míngzi · 2-0",
+        "text": {
+          "fr": "nom ; prénom"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "self-introduction"
+      ]
+    }
+  ]
+}

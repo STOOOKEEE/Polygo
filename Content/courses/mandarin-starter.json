@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.0",
+  "id": "mandarin-starter",
+  "slug": "mandarin-starter",
+  "title": {
+    "fr": "Mandarin au quotidien"
+  },
+  "description": {
+    "fr": "Un parcours débutant pour saluer, se présenter, dire son pays et donner un âge. Repère HSK 1 et A1, sans promesse de réussite à un examen."
+  },
+  "alignment": [
+    {
+      "framework": "HSK",
+      "level": "1"
+    },
+    {
+      "framework": "CEFR",
+      "level": "A1"
+    }
+  ],
+  "modules": [
+    {
+      "id": "unit-01",
+      "order": 1,
+      "title": {
+        "fr": "Premiers échanges"
+      },
+      "lessonIDs": [
+        "lesson-01",
+        "lesson-02",
+        "lesson-03"
+      ]
+    }
+  ]
+}

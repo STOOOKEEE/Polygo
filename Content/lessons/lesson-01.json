@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.0",
+  "id": "lesson-01",
+  "moduleID": "unit-01",
+  "order": 1,
+  "title": {
+    "fr": "Dire bonjour"
+  },
+  "summary": {
+    "fr": "Saluer, remercier et prendre congé en faisant attention aux tons."
+  },
+  "estimatedMinutes": 7,
+  "objectives": [
+    {
+      "id": "l1-greet-understand",
+      "statement": {
+        "fr": "Comprendre et choisir une salutation ou une formule de politesse simple."
+      },
+      "required": true
+    },
+    {
+      "id": "l1-greet-tones",
+      "statement": {
+        "fr": "Identifier le ton principal de 早 et entendre la différence entre 你好 et 再见."
+      },
+      "required": true
+    },
+    {
+      "id": "l1-greet-say",
+      "statement": {
+        "fr": "Dire 你好 et une formule de départ avec une intonation attentive."
+      },
+      "required": true
+    },
+    {
+      "id": "l1-greet-write",
+      "statement": {
+        "fr": "Recopier 你 en respectant le modèle de traits fourni par l'application."
+      },
+      "required": true
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-ni-hao",
+      "hanzi": "你好",
+      "traditionalHanzi": "你好",
+      "pinyin": "nǐ hǎo",
+      "toneNumbers": [3, 3],
+      "segmentation": [
+        {
+          "surface": "你好",
+          "vocabularyID": "vocab-ni-hao",
+          "pinyin": "nǐ hǎo",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [
+        {
+          "pattern": "3+3 变调",
+          "explanation": {
+            "fr": "Dans 你好, le premier ton 3 se prononce souvent comme un ton 2 devant le second ton 3. On écrit toutefois nǐ hǎo dans la forme de référence."
+          },
+          "examples": [
+            {
+              "hanzi": "你好！",
+              "pinyin": "nǐ hǎo!",
+              "translation": {
+                "fr": "Bonjour !"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "bonjour ; salut"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你好！",
+        "pinyin": "nǐ hǎo!",
+        "translation": {
+          "fr": "Bonjour !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "Deux syllabes qui se répondent comme deux personnes qui se saluent."
+      }
+    },
+    {
+      "id": "vocab-zao",
+      "hanzi": "早",
+      "traditionalHanzi": "早",
+      "pinyin": "zǎo",
+      "toneNumbers": [3],
+      "segmentation": [
+        {
+          "surface": "早",
+          "vocabularyID": "vocab-zao",
+          "pinyin": "zǎo",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "bonjour (le matin)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "早！",
+        "pinyin": "zǎo!",
+        "translation": {
+          "fr": "Bonjour !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "Un soleil tôt le matin : 早."
+      }
+    },
+    {
+      "id": "vocab-zaijian",
+      "hanzi": "再见",
+      "traditionalHanzi": "再見",
+      "pinyin": "zàijiàn",
+      "toneNumbers": [4, 4],
+      "segmentation": [
+        {
+          "surface": "再见",
+          "vocabularyID": "vocab-zaijian",
+          "pinyin": "zàijiàn",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "au revoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "明天再见！",
+        "pinyin": "míngtiān zàijiàn!",
+        "translation": {
+          "fr": "À demain !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "再 signifie encore et 见 signifie voir : on se reverra."
+      }
+    },
+    {
+      "id": "vocab-xiexie",
+      "hanzi": "谢谢",
+      "traditionalHanzi": "謝謝",
+      "pinyin": "xièxie",
+      "toneNumbers": [4, 0],
+      "segmentation": [
+        {
+          "surface": "谢谢",
+          "vocabularyID": "vocab-xiexie",
+          "pinyin": "xièxie",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "réduplication et 轻声",
+          "explanation": {
+            "fr": "Dans 谢谢, la seconde syllabe est généralement légère : xièxie, avec le numéro 0 pour le ton neutre."
+          },
+          "examples": [
+            {
+              "hanzi": "谢谢你！",
+              "pinyin": "xièxie nǐ!",
+              "translation": {
+                "fr": "Merci !"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "merci"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "谢谢你！",
+        "pinyin": "xièxie nǐ!",
+        "translation": {
+          "fr": "Merci !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "On remercie deux fois, mais la deuxième syllabe reste légère."
+      }
+    },
+    {
+      "id": "vocab-bu-keqi",
+      "hanzi": "不客气",
+      "traditionalHanzi": "不客氣",
+      "pinyin": "bú kèqi",
+      "toneNumbers": [2, 4, 0],
+      "segmentation": [
+        {
+          "surface": "不客气",
+          "vocabularyID": "vocab-bu-keqi",
+          "pinyin": "bú kèqi",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [
+        {
+          "pattern": "不 + 4e ton",
+          "explanation": {
+            "fr": "Le 不 de 不客气 se réalise souvent bú devant le ton 4 de 客. 客气 se termine par une syllabe légère : kèqi."
+          },
+          "examples": [
+            {
+              "hanzi": "不客气！",
+              "pinyin": "bú kèqi!",
+              "translation": {
+                "fr": "Je vous en prie !"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "meaning": {
+        "fr": "de rien ; je vous en prie"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "不客气！",
+        "pinyin": "bú kèqi!",
+        "translation": {
+          "fr": "De rien !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "La politesse ouvre la porte : 客气 signifie être courtois."
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-l1-introduction",
+      "title": {
+        "fr": "Une salutation en trois gestes"
+      },
+      "body": {
+        "fr": "Situation : tu arrives dans une petite boulangerie et tu salues la personne au comptoir. Commence par écouter, regarde les marques de ton, puis dis la formule. 你好 est une salutation ; 早 est une forme courte pour le matin ; 谢谢 et 不客气 forment une paire de politesse ; 再见 clôt l'échange."
+      },
+      "audio": null
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-l1-vocabulary",
+      "vocabularyIDs": [
+        "vocab-ni-hao",
+        "vocab-zao",
+        "vocab-zaijian",
+        "vocab-xiexie",
+        "vocab-bu-keqi"
+      ]
+    },
+    {
+      "kind": "dialogue",
+      "id": "block-l1-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "早！",
+          "pinyin": "zǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "你好！",
+          "pinyin": "nǐ hǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "谢谢！",
+          "pinyin": "xièxie!",
+          "translation": {
+            "fr": "Merci !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不客气。",
+          "pinyin": "bú kèqi.",
+          "translation": {
+            "fr": "De rien."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "再见！",
+          "pinyin": "zàijiàn!",
+          "translation": {
+            "fr": "Au revoir !"
+          },
+          "audio": null
+        }
+      ]
+    },
+    {
+      "kind": "reading",
+      "id": "block-l1-reading",
+      "storyID": "story-hello-on-the-corner",
+      "title": {
+        "fr": "Le premier échange"
+      },
+      "paragraphs": [
+        {
+          "id": "story-hello-p1",
+          "hanzi": "早！",
+          "pinyin": "zǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "segmentation": [
+            {
+              "surface": "早",
+              "vocabularyID": "vocab-zao",
+              "pinyin": "zǎo",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-hello-p2",
+          "hanzi": "你好！",
+          "pinyin": "nǐ hǎo!",
+          "translation": {
+            "fr": "Bonjour !"
+          },
+          "segmentation": [
+            {
+              "surface": "你好",
+              "vocabularyID": "vocab-ni-hao",
+              "pinyin": "nǐ hǎo",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-hello-p3",
+          "hanzi": "谢谢！",
+          "pinyin": "xièxie!",
+          "translation": {
+            "fr": "Merci !"
+          },
+          "segmentation": [
+            {
+              "surface": "谢谢",
+              "vocabularyID": "vocab-xiexie",
+              "pinyin": "xièxie",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        },
+        {
+          "id": "story-hello-p4",
+          "hanzi": "再见！",
+          "pinyin": "zàijiàn!",
+          "translation": {
+            "fr": "Au revoir !"
+          },
+          "segmentation": [
+            {
+              "surface": "再见",
+              "vocabularyID": "vocab-zaijian",
+              "pinyin": "zàijiàn",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l1-reading-last-word"
+      ]
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-tone",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l1-tone",
+          "prompt": {
+            "fr": "Quel ton porte 早 (zǎo) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le numéro du ton."
+          },
+          "objectiveIDs": [
+            "l1-greet-tones"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "tone-1",
+            "label": {
+              "fr": "1 — haut et stable"
+            },
+            "audio": null
+          },
+          {
+            "id": "tone-3",
+            "label": {
+              "fr": "3 — descend puis remonte"
+            },
+            "audio": null
+          },
+          {
+            "id": "tone-4",
+            "label": {
+              "fr": "4 — chute nette"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "tone-3"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l1-meaning",
+          "prompt": {
+            "fr": "Que signifie 你好 ?"
+          },
+          "instruction": {
+            "fr": "Relie la forme chinoise à son sens."
+          },
+          "objectiveIDs": [
+            "l1-greet-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "meaning-hello",
+            "label": {
+              "fr": "Bonjour ; salut"
+            },
+            "audio": null
+          },
+          {
+            "id": "meaning-thanks",
+            "label": {
+              "fr": "Merci"
+            },
+            "audio": null
+          },
+          {
+            "id": "meaning-goodbye",
+            "label": {
+              "fr": "Au revoir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "meaning-hello"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l1-order",
+          "prompt": {
+            "fr": "Remets la salutation dans l'ordre."
+          },
+          "instruction": {
+            "fr": "Place les deux tuiles pour former Bonjour."
+          },
+          "objectiveIDs": [
+            "l1-greet-understand"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "tok-l1-hao",
+            "hanzi": "好",
+            "pinyin": "hǎo",
+            "audio": null
+          },
+          {
+            "id": "tok-l1-ni",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "tok-l1-ni",
+          "tok-l1-hao"
+        ]
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l1-reading-last-word",
+          "prompt": {
+            "fr": "Dans « Le premier échange », le dernier mot est-il 再见 ?"
+          },
+          "instruction": {
+            "fr": "Réponds après avoir relu les quatre lignes."
+          },
+          "objectiveIDs": [
+            "l1-greet-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "reading-yes",
+            "label": {
+              "fr": "Oui, 再见 clôt l'échange."
+            },
+            "audio": null
+          },
+          {
+            "id": "reading-no",
+            "label": {
+              "fr": "Non, c'est 谢谢."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "reading-yes"
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l1-speak",
+          "prompt": {
+            "fr": "Dis 你好 à la personne en face de toi."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle si disponible, enregistre-toi, puis réécoute ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l1-greet-say"
+          ],
+          "required": true
+        },
+        "referenceText": "你好",
+        "referencePinyin": "nǐ hǎo",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你好",
+          "你好！",
+          "nǐ hǎo"
+        ],
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-l1-ex-write",
+      "spec": {
+        "kind": "handwriting",
+        "header": {
+          "id": "ex-l1-write",
+          "prompt": {
+            "fr": "Trace 你."
+          },
+          "instruction": {
+            "fr": "Suis le modèle de traits, puis indique si tu veux recommencer."
+          },
+          "objectiveIDs": [
+            "l1-greet-write"
+          ],
+          "required": true
+        },
+        "targetHanzi": "你",
+        "guideAsset": {
+          "id": "guide-hanzi-ni",
+          "kind": "handwritingGuide",
+          "relativePath": "media/handwriting/guide-hanzi-ni.png",
+          "sha256": "pending-writing-guide",
+          "durationMilliseconds": null
+        },
+        "expectedStrokeCount": 7,
+        "allowSelfRating": true
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-l1-recap",
+      "vocabularyIDs": [
+        "vocab-ni-hao",
+        "vocab-zao",
+        "vocab-zaijian",
+        "vocab-xiexie",
+        "vocab-bu-keqi"
+      ],
+      "objectiveIDs": [
+        "l1-greet-understand",
+        "l1-greet-tones",
+        "l1-greet-say",
+        "l1-greet-write"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-ni-hao",
+      "vocabularyID": "vocab-ni-hao",
+      "front": {
+        "hanzi": "你好",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "你好",
+        "pinyin": "nǐ hǎo · 3-3",
+        "text": {
+          "fr": "bonjour ; salut"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "greetings"
+      ]
+    },
+    {
+      "id": "card-vocab-zao",
+      "vocabularyID": "vocab-zao",
+      "front": {
+        "hanzi": "早",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "早",
+        "pinyin": "zǎo · 3",
+        "text": {
+          "fr": "bonjour (le matin)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "greetings"
+      ]
+    },
+    {
+      "id": "card-vocab-zaijian",
+      "vocabularyID": "vocab-zaijian",
+      "front": {
+        "hanzi": "再见",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "再见",
+        "pinyin": "zàijiàn · 4-4",
+        "text": {
+          "fr": "au revoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "greetings"
+      ]
+    },
+    {
+      "id": "card-vocab-xiexie",
+      "vocabularyID": "vocab-xiexie",
+      "front": {
+        "hanzi": "谢谢",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "谢谢",
+        "pinyin": "xièxie · 4-0",
+        "text": {
+          "fr": "merci"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "politeness"
+      ]
+    },
+    {
+      "id": "card-vocab-bu-keqi",
+      "vocabularyID": "vocab-bu-keqi",
+      "front": {
+        "hanzi": "不客气",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "不客气",
+        "pinyin": "bú kèqi · 2-4-0",
+        "text": {
+          "fr": "de rien ; je vous en prie"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "politeness"
+      ]
+    }
+  ]
+}
