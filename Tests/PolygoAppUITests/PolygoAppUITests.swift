@@ -52,7 +52,9 @@ final class PolygoAppUITests: XCTestCase {
         XCTAssertTrue(element(containing: "Lecture", type: .any).waitForExistence(timeout: timeout), "La lecture de l’histoire doit s’ouvrir")
 
         navigateToTab("Profil")
-        let settingsLink = element(containing: "Réglages", type: .any)
+        // The surrounding card title also contains « Réglages »; target the
+        // navigation control rather than that static heading.
+        let settingsLink = element(containing: "Réglages", type: .button)
         XCTAssertTrue(settingsLink.waitForExistence(timeout: timeout), "Le profil doit proposer les réglages")
         settingsLink.tap()
         XCTAssertTrue(element(containing: "Thème", type: .any).waitForExistence(timeout: timeout), "Les réglages doivent exposer le thème")
