@@ -234,6 +234,7 @@ public struct LearningPathView: View {
                     else { Image(systemName: "chevron.right").foregroundStyle(SylluneColor.inkMuted) }
                 }
                 .padding(16)
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .sylluneCard(radius: 14)
