@@ -99,7 +99,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
         // First exercise: preserve a selected choice while the app is
         // backgrounded and again after the process is relaunched.
-        let firstPrompt = text(containing: "Quel ton porte 早").waitForExistence(timeout: timeout)
+        let firstPrompt = firstExercisePrompt().waitForExistence(timeout: timeout)
         XCTAssertTrue(firstPrompt, "Le premier exercice doit rester accessible après le préambule")
         // The fixture's correct answer is the third tone; use its stable
         // visible prefix so this assertion also catches a missing choice.
@@ -110,13 +110,13 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le premier exercice doit proposer Vérifier")
         XCTAssertTrue(verify.isEnabled, "Une réponse sélectionnée doit activer Vérifier")
         backgroundAndReactivate()
-        XCTAssertTrue(text(containing: "Quel ton porte 早").waitForExistence(timeout: timeout), "Le même exercice doit survivre au changement d’application")
+        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "Le même exercice doit survivre au changement d’application")
         XCTAssertTrue(button(exactly: "Vérifier").isEnabled, "La réponse choisie doit rester validable après le retour au premier plan")
 
         app.terminate()
         app.launch()
         reopenCurrentLessonIfNeeded()
-        XCTAssertTrue(text(containing: "Quel ton porte 早").waitForExistence(timeout: timeout), "Le même exercice doit être restauré après relance")
+        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "Le même exercice doit être restauré après relance")
         let restoredVerify = button(exactly: "Vérifier")
         XCTAssertTrue(restoredVerify.waitForExistence(timeout: timeout), "Le contrôle de validation doit être restauré")
         XCTAssertTrue(restoredVerify.isEnabled, "La réponse sélectionnée doit être visible comme réponse en cours après relance")
@@ -312,11 +312,11 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if restart.waitForExistence(timeout: 4) {
             tapWhenVisible(restart)
         }
-        XCTAssertTrue(text(containing: "Quel ton porte 早").waitForExistence(timeout: timeout), "La première activité doit être visible")
+        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La première activité doit être visible")
     }
 
     private func reopenCurrentLessonIfNeeded() {
-        if text(containing: "Quel ton porte 早").waitForExistence(timeout: 5) || text(containing: "Correct").waitForExistence(timeout: 2) {
+        if firstExercisePrompt().waitForExistence(timeout: 5) || text(containing: "Correct").waitForExistence(timeout: 2) {
             return
         }
         navigateToTab("Parcours")
@@ -469,6 +469,14 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func text(containing value: String) -> XCUIElement {
         element(containing: value, type: .any)
+    }
+
+    private func firstExercisePrompt() -> XCUIElement {
+        // ChineseSelectableText exposes the authored prompt and its Chinese
+        // token as separate accessibility elements. Match the stable authored
+        // prefix so the assertion follows the visible exercise through
+        // restart/background/relaunch without depending on token grouping.
+        text(containing: "Quel ton porte")
     }
 
     private func text(containingAny values: [String]) -> XCUIElement {

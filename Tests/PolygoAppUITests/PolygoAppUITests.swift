@@ -22,6 +22,14 @@ final class PolygoAppUITests: XCTestCase {
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans le parcours")
         lesson.tap()
 
+        // The suite may run after the lesson completion journey on the same
+        // simulator. Reopen the completed lesson through its explicit reset
+        // action before asserting the first exercise surface.
+        let restart = element(containing: "Recommencer cette leçon", type: .button)
+        if restart.waitForExistence(timeout: 4) {
+            restart.tap()
+        }
+
         let verify = element(containing: "Vérifier", type: .button)
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le premier exercice doit être chargé")
 

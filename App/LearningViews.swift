@@ -167,7 +167,9 @@ public struct TodayView: View {
         let progress = model.snapshot.lessonProgress[lessonID]
         let completed = progress?.completedAt != nil
         let unlocked = model.isLessonUnlocked(lessonID)
-        let active = model.resumeLessonID == lessonID && !completed
+        // A newly unlocked lesson is the next lesson to start, but it is not
+        // an in-progress lesson until the learner has opened it once.
+        let active = progress?.lastOpenedAt != nil && model.resumeLessonID == lessonID && !completed
         let title = model.loadedLessons[lessonID]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon \(index + 1)"
         let row = HStack(spacing: 10) {
             Image(systemName: completed ? "checkmark.circle.fill" : unlocked ? active ? "play.circle.fill" : "circle" : "lock.fill")
@@ -206,12 +208,13 @@ public struct TodayView: View {
     }
 
     private var streakBadge: some View {
-        Label("\(model.streakDays) jours", systemImage: "flame.fill")
+        let dayLabel = model.streakDays == 1 ? "jour" : "jours"
+        Label("\(model.streakDays) \(dayLabel)", systemImage: "flame.fill")
             .font(.callout.weight(.semibold))
             .foregroundStyle(SylluneColor.inkOnSun)
             .padding(.horizontal, 12).padding(.vertical, 8)
             .background(SylluneColor.sun, in: Capsule())
-            .accessibilityLabel("Série actuelle : \(model.streakDays) jours")
+            .accessibilityLabel("Série actuelle : \(model.streakDays) \(dayLabel)")
             .frame(minHeight: 44, alignment: .leading)
     }
 
