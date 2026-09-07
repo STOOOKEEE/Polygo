@@ -294,6 +294,7 @@ public struct SplitShell: View {
         } detail: {
             NavigationStack {
                 routeView(model.selectedRoute)
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
             }
         }
         .onChange(of: selection) { _, value in

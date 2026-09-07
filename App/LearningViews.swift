@@ -220,7 +220,7 @@ public struct LearningPathView: View {
         let unlocked = model.isLessonUnlocked(lessonID)
         let title = lessons[lessonID]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon \(lessonID.rawValue)"
         if unlocked {
-            NavigationLink(destination: LessonView(lessonID: lessonID)) {
+            NavigationLink(value: AppRoute.lesson(lessonID)) {
                 HStack(spacing: 14) {
                     Image(systemName: progress?.completedAt == nil ? "circle" : "checkmark.circle.fill")
                         .font(.title2).foregroundStyle(progress?.completedAt == nil ? SylluneColor.jade : SylluneColor.success)
