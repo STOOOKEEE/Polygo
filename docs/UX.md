@@ -111,13 +111,15 @@ Une action ouvre directement une route identifiée (`lessonID`, `reviewQueueID`,
 
 Vue en chemin vertical sur iPhone et liste structurée dans la sidebar iPad/Mac. Une unité affiche son thème, le nombre de leçons terminées et le bouton de reprise. Une leçon verrouillée explique sa condition (« Termine la leçon 3 ») et n’est pas interactive.
 
-Le MVP contient **l’unité 1, « Premiers échanges » (HSK 1 / A1)**, avec trois leçons réellement alimentées :
+La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
 | Leçon | Notions et exemples | Exercices requis |
 | --- | --- | ---: |
 | 1. Dire bonjour | 你好 nǐ hǎo, 早 zǎo, 再见 zàijiàn, 谢谢 xièxie | 6 |
 | 2. Dire son nom | 我 wǒ, 叫 jiào, 什么 shénme, 名字 míngzi ; 你叫什么名字？ | 7 |
 | 3. Dire d’où l’on vient | 是 shì, 哪 nǎ, 国 guó, 法国 Fǎguó ; 你是哪国人？ | 7 |
+
+Le pack JSON actuellement livré contient ces trois leçons et une extension déjà disponible : **4. Mener un mini-échange**, avec `呢 ne` et **7 exercices**. Cette quatrième leçon porte la sortie « mini-échange » du pack ; elle reste distincte de la cible éditoriale en trois leçons. Les nombres d’exercices du tableau décrivent chaque leçon et ne sont pas un compteur de leçons ; le « 6 cartes » de l’exemple du dashboard désigne la file de rappel du jour.
 
 Chaque leçon montre les mots utiles avant le premier exercice, puis une barre de progression avec `répondu / total`. Une leçon est marquée terminée quand tous les exercices requis ont une réponse et que le taux de correction est au moins de 80 %. Les exercices ratés restent rejouables depuis l’écran de résultat.
 
@@ -158,7 +160,7 @@ L’écran d’entrée indique « 6 cartes dues » et propose « Commencer ». C
 
 ### Histoires
 
-Bibliothèque locale filtrée par niveau et durée. Le MVP livre trois histoires originales : **« Le premier échange »**, **« Un nom, un sourire »** et **« Deux pays sur une carte »**. La fiche indique le nombre de mots connus et l’état des médias disponibles hors ligne. En lecture : phrase courante, audio phrase lorsqu’un asset est livré, précédent/suivant, barre de progression et bouton d’affichage du pinyin. Chaque mot sélectionnable ouvre sa fiche. Quand aucune histoire ne correspond au filtre, afficher « Effacer le filtre » ; ne pas afficher des vignettes vides.
+Bibliothèque locale filtrée par niveau et durée. La cible éditoriale MVP couvre trois histoires originales : **« Le premier échange »**, **« Un nom, un sourire »** et **« Deux pays sur une carte »**. Le pack livré en contient quatre et ajoute **« Deux présentations »** (`story-mini-exchange`), l’histoire de l’extension L4. La fiche indique le nombre de mots connus et l’état des médias disponibles hors ligne. En lecture : phrase courante, audio phrase lorsqu’un asset est livré, précédent/suivant, barre de progression et bouton d’affichage du pinyin. Chaque mot sélectionnable ouvre sa fiche. Quand aucune histoire ne correspond au filtre, afficher « Effacer le filtre » ; ne pas afficher des vignettes vides.
 
 ### Dictionnaire
 
@@ -212,7 +214,7 @@ Découpage recommandé : `DesignSystem` (tokens, composants, assets), `Onboardin
 ## 8. Checklist d’acceptation MVP
 
 1. Après l’onboarding, un nouvel apprenant ouvre l’unité 1 et commence la leçon 1 sans compte ni réseau.
-2. Les trois leçons livrées de l’unité 1 contiennent respectivement 6, 7 et 7 exercices et sauvegardent chaque tentative après validation.
+2. La cible pédagogique porte sur les trois leçons L1–L3 de l’unité 1, qui contiennent respectivement 6, 7 et 7 exercices ; le pack livré ajoute la leçon d’extension L4 avec 7 exercices. Chaque tentative est sauvegardée après validation.
 3. Une erreur affiche une correction ; une leçon terminée apparaît dans le parcours et alimente le dashboard.
 4. Un mot peut être ouvert depuis une leçon ou une histoire, lu hors ligne et ajouté aux cartes ; l’état du bouton suit la donnée.
 5. Un oral peut être enregistré, relu et auto-évalué ; permission refusée et absence de réseau ont un chemin utilisable.
