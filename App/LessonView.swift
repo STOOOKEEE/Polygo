@@ -315,6 +315,7 @@ private struct PedagogicalBlockView: View {
                                 Spacer(); Image(systemName: "chevron.right").foregroundStyle(SylluneColor.inkMuted)
                             }
                             .padding(.vertical, 4)
+                            .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
                     }
