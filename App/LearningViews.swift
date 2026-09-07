@@ -55,7 +55,7 @@ public struct TodayView: View {
     }
 
     private var resumeCard: some View {
-        Group {
+        VStack(spacing: 0) {
             if let lessonID = model.nextLessonID {
                 NavigationLink(destination: LessonView(lessonID: lessonID)) {
                     HStack(spacing: 16) {
@@ -318,7 +318,7 @@ public struct DictionaryView: View {
     }
 
     public var body: some View {
-        Group {
+        VStack(spacing: 0) {
             if filtered.isEmpty && !query.isEmpty {
                 ContentUnavailableView("Aucun mot pour « \(query) »", systemImage: "character.book.closed", description: Text("Parcours l’unité 1 pour découvrir son vocabulaire."))
             } else {
@@ -328,16 +328,13 @@ public struct DictionaryView: View {
                             Text(entry.hanzi)
                                 .font(.title2)
                                 .foregroundStyle(SylluneColor.ink)
-                                .accessibilityLanguage("zh-CN")
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(entry.pinyin)
                                     .font(.body)
                                     .foregroundStyle(SylluneColor.jadeDeep)
-                                    .accessibilityLanguage("fr-FR")
                                 Text(entry.meaning.resolve(preferred: ["fr", "en"]) ?? "—")
                                     .font(.callout)
                                     .foregroundStyle(SylluneColor.inkMuted)
-                                    .accessibilityLanguage("fr-FR")
                             }
                         }
                     }
@@ -387,19 +384,16 @@ public struct WordDetailView: View {
                             .font(.title2)
                             .foregroundStyle(SylluneColor.jadeDeep)
                             .accessibilityLabel("Pinyin : \(entry.pinyin)")
-                            .accessibilityLanguage("fr-FR")
                         if !entry.toneNumbers.isEmpty {
                             Text("Ton \(entry.toneNumbers.map(String.init).joined(separator: " · "))")
                                 .font(.caption)
                                 .foregroundStyle(SylluneColor.inkMuted)
                                 .accessibilityLabel("Tons : \(entry.toneNumbers.map(String.init).joined(separator: ", "))")
-                                .accessibilityLanguage("fr-FR")
                         }
                         Text(entry.meaning.resolve(preferred: ["fr", "en"]) ?? "—")
                             .font(.title3)
                             .foregroundStyle(SylluneColor.ink)
                             .accessibilityLabel("Sens : \(entry.meaning.resolve(preferred: ["fr", "en"]) ?? "—")")
-                            .accessibilityLanguage("fr-FR")
                     }
                     .accessibilityElement(children: .contain)
                     ViewThatFits(in: .horizontal) {
@@ -422,12 +416,10 @@ public struct WordDetailView: View {
                                 .font(.body)
                                 .foregroundStyle(SylluneColor.jadeDeep)
                                 .accessibilityLabel("Pinyin : \(example.pinyin)")
-                                .accessibilityLanguage("fr-FR")
                             Text(example.translation.resolve(preferred: ["fr", "en"]) ?? "")
                                 .font(.body)
                                 .foregroundStyle(SylluneColor.inkMuted)
                                 .accessibilityLabel("Traduction : \(example.translation.resolve(preferred: ["fr", "en"]) ?? "")")
-                                .accessibilityLanguage("fr-FR")
                         }
                         .padding(16).sylluneCard()
                     }

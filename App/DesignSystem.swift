@@ -404,20 +404,19 @@ public struct ChineseSelectableText: View {
                     .font(.callout)
                     .foregroundStyle(SylluneColor.jadeDeep)
                     .accessibilityLabel("Pinyin : \(pinyin)")
-                    .accessibilityLanguage("fr-FR")
             }
             if let translation, !translation.isEmpty {
                 Text(translation)
                     .font(.body)
                     .foregroundStyle(SylluneColor.inkMuted)
                     .accessibilityLabel("Traduction : \(translation)")
-                    .accessibilityLanguage("fr-FR")
             }
             if let statusMessage {
                 Text(statusMessage)
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
-                    .accessibilityLiveRegion(.polite)
+                    .accessibilityLabel("État de la lecture")
+                    .accessibilityValue(statusMessage)
             }
         }
         .onAppear { registerKeyboardPhrase() }
@@ -454,7 +453,6 @@ public struct ChineseSelectableText: View {
             Text(text)
                 .font(font)
                 .textSelection(.enabled)
-                .accessibilityLanguage("zh-CN")
         }
     }
 
@@ -471,13 +469,11 @@ public struct ChineseSelectableText: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(token.surface)
-            .accessibilityLanguage("zh-CN")
             .accessibilityHint("Ouvre la fiche de ce mot et lance son audio local.")
         } else {
             Text(token.surface)
                 .font(font)
                 .textSelection(.enabled)
-                .accessibilityLanguage("zh-CN")
         }
     }
 
