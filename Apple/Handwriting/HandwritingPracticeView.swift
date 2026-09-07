@@ -1,5 +1,8 @@
 import SwiftUI
 import PolygoCore
+#if os(iOS)
+import UIKit
+#endif
 
 public enum HandwritingPracticeMode: String, CaseIterable, Codable, Hashable, Sendable, Identifiable {
     case guided
@@ -152,15 +155,25 @@ public struct HandwritingPracticeView: View {
                         renderCanvas(context: &context, size: size)
                     }
 
-                    // Canvas itself is a drawing output and is not a reliable
-                    // touch target when it is embedded in a ScrollView. Keep
-                    // the output underneath a real, transparent shape so the
-                    // accessible target and its gesture share the same hit
-                    // surface.
+                    #if os(iOS)
+                    // A SwiftUI DragGesture attached below a Canvas can lose
+                    // the touch to the UIScrollView used by the lesson. This
+                    // UIKit surface owns a real UIPanGestureRecognizer and
+                    // lets that recognizer coordinate with the ancestor
+                    // scroll pan.
+                    HandwritingTouchSurface(
+                        strokeCount: strokes.count,
+                        isEnabled: !isSaving,
+                        accessibilityLabel: "Zone de tracé pour \(exercise.targetHanzi)",
+                        onChanged: appendPoint,
+                        onEnded: finishStroke
+                    )
+                    #else
                     Rectangle()
                         .fill(.clear)
                         .contentShape(Rectangle())
                         .highPriorityGesture(drawingGesture(for: proxy.size))
+                    #endif
                 }
                 // The canvas lives inside the lesson's vertical ScrollView.
                 // Give the drawing surface priority so a vertical stroke is
@@ -168,10 +181,12 @@ public struct HandwritingPracticeView: View {
                 // scroll gesture by the parent.
                 .allowsHitTesting(!isSaving)
                 .onAppear { canvasSize = proxy.size }
+#if !os(iOS)
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel("Zone de tracé pour \(exercise.targetHanzi)")
                 .accessibilityValue("\(strokes.count) traits tracés")
                 .accessibilityHint("Dessine avec le doigt, le Pencil, la souris ou le trackpad.")
+#endif
             }
             .aspectRatio(1, contentMode: .fit)
             .frame(minHeight: 280, maxHeight: 520)
@@ -618,6 +633,119 @@ public struct HandwritingPracticeView: View {
         return (dx * dx + dy * dy).squareRoot()
     }
 }
+
+#if os(iOS)
+/// A transparent UIKit touch surface for handwriting inside a SwiftUI
+/// ScrollView. UIKit's recognizer relationship is explicit here because a
+/// SwiftUI DragGesture can otherwise be cancelled by the ancestor scroll pan
+/// before it receives its first changed value.
+private struct HandwritingTouchSurface: UIViewRepresentable {
+    let strokeCount: Int
+    let isEnabled: Bool
+    let accessibilityLabel: String
+    let onChanged: (CGPoint, CGSize) -> Void
+    let onEnded: () -> Void
+
+    func makeCoordinator() -> Coordinator { Coordinator() }
+
+    func makeUIView(context: Context) -> TouchView {
+        let view = TouchView()
+        view.pan.delegate = context.coordinator
+        view.pan.addTarget(context.coordinator, action: #selector(Coordinator.handlePan(_:)))
+        context.coordinator.view = view
+        return view
+    }
+
+    func updateUIView(_ uiView: TouchView, context: Context) {
+        context.coordinator.onChanged = onChanged
+        context.coordinator.onEnded = onEnded
+        uiView.isUserInteractionEnabled = isEnabled
+        uiView.pan.isEnabled = isEnabled
+        uiView.isAccessibilityElement = true
+        uiView.accessibilityLabel = accessibilityLabel
+        uiView.accessibilityValue = "\(strokeCount) traits tracés"
+        uiView.accessibilityHint = "Dessine avec le doigt, le Pencil, la souris ou le trackpad."
+        uiView.installScrollPriority()
+    }
+
+    final class Coordinator: NSObject, UIGestureRecognizerDelegate {
+        weak var view: TouchView?
+        var onChanged: ((CGPoint, CGSize) -> Void)?
+        var onEnded: (() -> Void)?
+
+        @objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
+            guard let view else { return }
+            switch recognizer.state {
+            case .began, .changed:
+                onChanged?(recognizer.location(in: view), view.bounds.size)
+            case .ended, .cancelled, .failed:
+                onEnded?()
+            default:
+                break
+            }
+        }
+
+        func gestureRecognizer(
+            _ gestureRecognizer: UIGestureRecognizer,
+            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
+        ) -> Bool {
+            // Keep the callback alive even if a platform scroll recognizer
+            // still begins during a vertical stroke.
+            true
+        }
+
+        func gestureRecognizer(
+            _ gestureRecognizer: UIGestureRecognizer,
+            shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer
+        ) -> Bool {
+            // The ancestor scroll pan must wait for this surface. The custom
+            // pan begins as soon as the touch moves, so normal scrolling is
+            // unaffected once the user starts outside the surface.
+            otherGestureRecognizer.view is UIScrollView
+        }
+    }
+
+    final class TouchView: UIView {
+        let pan: UIPanGestureRecognizer
+        private var installedScrollViews: [UIScrollView] = []
+
+        override init(frame: CGRect) {
+            pan = UIPanGestureRecognizer()
+            super.init(frame: frame)
+            backgroundColor = .clear
+            isOpaque = false
+            pan.minimumNumberOfTouches = 1
+            pan.maximumNumberOfTouches = 1
+            pan.cancelsTouchesInView = true
+            addGestureRecognizer(pan)
+        }
+
+        @available(*, unavailable)
+        required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+        override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+            installScrollPriority()
+        }
+
+        override func didMoveToWindow() {
+            super.didMoveToWindow()
+            installScrollPriority()
+        }
+
+        func installScrollPriority() {
+            var ancestor = superview
+            while let view = ancestor {
+                if let scroll = view as? UIScrollView, !installedScrollViews.contains(where: { $0 === scroll }) {
+                    scroll.panGestureRecognizer.require(toFail: pan)
+                    installedScrollViews.append(scroll)
+                }
+                ancestor = view.superview
+            }
+        }
+    }
+}
+#endif
 
 private extension HandwritingPoint {
     init(clamped point: CGPoint, in size: CGSize) {

@@ -22,6 +22,12 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        if let app, app.exists {
+            let screenshot = XCTAttachment(screenshot: app.screenshot())
+            screenshot.name = "lesson-review-final-screen"
+            screenshot.lifetime = .keepAlways
+            add(screenshot)
+        }
         if let permissionMonitor {
             removeUIInterruptionMonitor(permissionMonitor)
         }
@@ -194,6 +200,10 @@ final class LessonReviewJourneyTests: XCTestCase {
         let canvas = element(containing: "Zone de tracé pour \(target)", type: .any)
         XCTAssertTrue(canvas.waitForExistence(timeout: timeout), "La zone de tracé doit être exposée par VoiceOver")
         bringIntoView(canvas)
+        XCTAssertTrue(
+            isFullyVisible(canvas),
+            "La zone de tracé doit être entièrement dans la fenêtre avant les gestes (canevas : \(frameDescription(canvas.frame)), fenêtre : \(frameDescription(viewportFrame())))"
+        )
 
         for stroke in guide.strokes {
             guard let first = stroke.points.first, let last = stroke.points.last else {
@@ -305,9 +315,30 @@ final class LessonReviewJourneyTests: XCTestCase {
 
     private func bringIntoView(_ element: XCUIElement) {
         for _ in 0..<8 {
-            if element.isHittable { return }
-            app.swipeUp()
+            if element.isHittable && isFullyVisible(element) { return }
+            // Start the scroll from the far edge of the app so this helper
+            // cannot become a handwriting stroke when the target is the
+            // drawing surface itself.
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: 0.86))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: 0.16))
+            start.press(forDuration: 0.01, thenDragTo: end)
         }
+    }
+
+    private func isFullyVisible(_ element: XCUIElement) -> Bool {
+        let frame = element.frame
+        let viewport = viewportFrame()
+        return frame.width > 0 && frame.height > 0 && viewport.contains(frame)
+    }
+
+    private func viewportFrame() -> CGRect {
+        let window = app.windows.firstMatch
+        if window.exists && !window.frame.isEmpty { return window.frame }
+        return app.frame
+    }
+
+    private func frameDescription(_ frame: CGRect) -> String {
+        String(format: "x=%.1f y=%.1f w=%.1f h=%.1f", frame.minX, frame.minY, frame.width, frame.height)
     }
 
     private func dismissPermissionPrompts() {

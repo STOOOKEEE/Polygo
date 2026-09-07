@@ -62,7 +62,16 @@ jobs:
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
+            -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests.xcresult" \
             test
+
+      - name: Upload iOS UI test result bundle
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: PolygoAppUITests-${{ github.run_id }}
+          path: ${{ runner.temp }}/PolygoAppUITests.xcresult
+          if-no-files-found: warn
 
   build-macos:
     runs-on: macos-15
