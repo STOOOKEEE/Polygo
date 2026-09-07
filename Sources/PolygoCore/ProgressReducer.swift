@@ -61,9 +61,47 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 answeredExerciseIDs: existing.answeredExerciseIDs,
                 correctExerciseIDs: existing.correctExerciseIDs,
                 mistakeExerciseIDs: existing.mistakeExerciseIDs,
-                lastEvaluations: existing.lastEvaluations
+                lastEvaluations: existing.lastEvaluations,
+                currentExerciseIndex: existing.currentExerciseIndex,
+                currentExerciseID: existing.currentExerciseID,
+                pendingAnswer: existing.pendingAnswer,
+                pendingEvaluation: existing.pendingEvaluation,
+                dialogueDrafts: existing.dialogueDrafts,
+                dialogueResults: existing.dialogueResults
             )
             activeRoute = "lesson/\(lessonID.rawValue)"
+
+        case .lessonRestarted(let lessonID, let date):
+            // Restarting is an explicit learner action. Clear the previous
+            // lesson session so its old answer/feedback cannot be mistaken
+            // for the new attempt, while retaining the fact that the lesson
+            // has been opened in the active route.
+            lessons[lessonID] = LessonProgress(
+                lessonID: lessonID,
+                lastOpenedAt: date
+            )
+            activeRoute = "lesson/\(lessonID.rawValue)"
+
+        case .lessonCheckpointSaved(let lessonID, let exerciseIndex, let exerciseID, let answer, let evaluation, let dialogueDrafts, let dialogueResults, _):
+            let existing = lessons[lessonID] ?? LessonProgress(lessonID: lessonID)
+            lessons[lessonID] = LessonProgress(
+                lessonID: existing.lessonID,
+                completedObjectiveIDs: existing.completedObjectiveIDs,
+                completedAt: existing.completedAt,
+                attemptCount: existing.attemptCount,
+                bestScore: existing.bestScore,
+                lastOpenedAt: existing.lastOpenedAt,
+                answeredExerciseIDs: existing.answeredExerciseIDs,
+                correctExerciseIDs: existing.correctExerciseIDs,
+                mistakeExerciseIDs: existing.mistakeExerciseIDs,
+                lastEvaluations: existing.lastEvaluations,
+                currentExerciseIndex: exerciseIndex,
+                currentExerciseID: exerciseID,
+                pendingAnswer: answer,
+                pendingEvaluation: evaluation,
+                dialogueDrafts: dialogueDrafts,
+                dialogueResults: dialogueResults
+            )
 
         case .exerciseEvaluated(let lessonID, _, let evaluation, _):
             let existing = lessons[lessonID] ?? LessonProgress(lessonID: lessonID)
@@ -91,7 +129,13 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 answeredExerciseIDs: answered,
                 correctExerciseIDs: correct,
                 mistakeExerciseIDs: mistakes,
-                lastEvaluations: evaluations
+                lastEvaluations: evaluations,
+                currentExerciseIndex: existing.currentExerciseIndex,
+                currentExerciseID: existing.currentExerciseID,
+                pendingAnswer: existing.pendingAnswer,
+                pendingEvaluation: existing.pendingEvaluation,
+                dialogueDrafts: existing.dialogueDrafts,
+                dialogueResults: existing.dialogueResults
             )
 
         case .lessonCompleted(let lessonID, let date):
@@ -106,7 +150,13 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 answeredExerciseIDs: existing.answeredExerciseIDs,
                 correctExerciseIDs: existing.correctExerciseIDs,
                 mistakeExerciseIDs: existing.mistakeExerciseIDs,
-                lastEvaluations: existing.lastEvaluations
+                lastEvaluations: existing.lastEvaluations,
+                currentExerciseIndex: existing.currentExerciseIndex,
+                currentExerciseID: existing.currentExerciseID,
+                pendingAnswer: existing.pendingAnswer,
+                pendingEvaluation: existing.pendingEvaluation,
+                dialogueDrafts: existing.dialogueDrafts,
+                dialogueResults: existing.dialogueResults
             )
 
         case .flashcardAdded(let cardID, let date):

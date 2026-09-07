@@ -537,6 +537,13 @@
           "audio": null
         }
       ],
+      "comprehensionExerciseIDs": ["ex-l2-reading-name"],
+      "participation": {
+        "prompt": {"fr": "Écoute la réponse, puis écris la question qui la précédait."},
+        "audioLineIndex": 2,
+        "acceptedResponses": ["你好！你叫什么名字？", "你好 你叫什么名字？"],
+        "hint": {"fr": "La question demande le nom de la personne."}
+      },
       "metadata": {
         "standardID": "HSK-3.0",
         "standardVersion": "2025-11",

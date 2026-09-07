@@ -18,6 +18,9 @@ public struct SpeechPracticeView: View {
     @State private var recordingStartedAt: Date?
     @State private var isSelfEvaluationAvailable = false
     @State private var selectedRate: SpeechRate = .normal
+    @State private var isModelPlaying = false
+    @State private var modelTask: Task<Void, Never>?
+    @State private var showEvaluationDetails = false
     @State private var statusMessage: String?
     @State private var captureTask: Task<Void, Never>?
 
@@ -39,27 +42,50 @@ public struct SpeechPracticeView: View {
             modelControls
             recordingControls
 
-            if let transcript {
-                transcriptCard(transcript)
-            }
+            if transcript != nil || (isSelfEvaluationAvailable && exercise.allowSelfRating) {
+                DisclosureGroup("Voir les résultats", isExpanded: $showEvaluationDetails) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        if let transcript {
+                            transcriptCard(transcript)
+                        }
 
-            if isSelfEvaluationAvailable && exercise.allowSelfRating {
-                selfEvaluationCard
+                        if isSelfEvaluationAvailable && exercise.allowSelfRating {
+                            selfEvaluationCard
+                        }
+                    }
+                    .padding(.top, 8)
+                }
+                .font(.headline)
+                .accessibilityIdentifier("speech-evaluation-details")
             }
 
             if let statusMessage {
                 Text(statusMessage)
                     .font(.callout)
                     .foregroundStyle(.secondary)
+                    .accessibilityIdentifier("speech-practice-status")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .onChange(of: selectedRate) { _, _ in
+            // A rate change must not leave the old model utterance playing at
+            // a different speed from the selected control.
+            if isModelPlaying {
+                stopModelPlayback(message: "Lecture du modèle arrêtée.")
+            }
+        }
         .onDisappear {
-            // A lesson transition must never leave the microphone recording.
+            // A lesson transition must never leave the microphone or model
+            // voice running. The recording is intentionally temporary.
+            modelTask?.cancel()
+            modelTask = nil
+            isModelPlaying = false
             captureTask?.cancel()
             captureTask = nil
+            audio.stopSpeaking()
             audio.stopRecording()
             audio.stopPlayback()
+
             let ephemeralRecording = recording
             recording = nil
             transcript = nil
@@ -72,76 +98,91 @@ public struct SpeechPracticeView: View {
     }
 
     private var referenceCard: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(exercise.referenceText)
-                .font(.system(size: 34, weight: .semibold, design: .rounded))
-                .accessibilityAddTraits(.isHeader)
-            Text(exercise.referencePinyin)
-                .font(.title3)
-                .foregroundStyle(Color.accentColor)
-            Text("Repères de ton : \(MandarinToneMarkers.annotated(exercise.referencePinyin))")
-                .font(.caption)
+        VStack(alignment: .leading, spacing: 10) {
+            Label("Phrase cible", systemImage: "text.quote")
+                .font(.headline)
                 .foregroundStyle(.secondary)
+
+            Button(action: speakReference) {
+                Text(mandarinReferenceText)
+                    .font(.system(size: 36, weight: .semibold, design: .rounded))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textSelection(.enabled)
+                    .accessibilityAddTraits(.isHeader)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("\(mandarinReferenceText), écouter la phrase cible en mandarin")
+            .accessibilityHint("Lit la phrase cible avec la voix locale")
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Pinyin")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                Text(exercise.referencePinyin)
+                    .font(.title3)
+                    .foregroundStyle(Color.accentColor)
+                Text("Repères de ton : \(MandarinToneMarkers.annotated(exercise.referencePinyin))")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
             Text("Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 
     private var modelControls: some View {
-        HStack(alignment: .center, spacing: 12) {
-            Button(action: playModel) {
-                Label("Écouter le modèle", systemImage: "speaker.wave.2.fill")
-            }
-            .buttonStyle(.borderedProminent)
-            .accessibilityHint("Lit la phrase en mandarin, à la vitesse choisie")
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Modèle")
+                .font(.headline)
 
             Button {
-                audio.stopSpeaking()
-                audio.stopPlayback()
-                statusMessage = "Lecture du modèle arrêtée."
+                if isModelPlaying {
+                    stopModelPlayback(message: "Lecture du modèle arrêtée.")
+                } else {
+                    playModel()
+                }
             } label: {
-                Label("Arrêter le modèle", systemImage: "stop.fill")
+                Label(
+                    isModelPlaying ? "Arrêter" : "Écouter",
+                    systemImage: isModelPlaying ? "stop.fill" : "speaker.wave.2.fill"
+                )
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(.borderedProminent)
+            .accessibilityIdentifier("model-audio-toggle")
+            .accessibilityLabel(isModelPlaying ? "Arrêter le modèle" : "Écouter le modèle")
+            .accessibilityHint("Lit uniquement la phrase cible en mandarin, à la vitesse choisie")
 
             Picker("Vitesse", selection: $selectedRate) {
                 Text("Normale").tag(SpeechRate.normal)
                 Text("Lente").tag(SpeechRate.slow)
             }
             .pickerStyle(.segmented)
-            .frame(maxWidth: 230)
+            .accessibilityHint("Choisis une vitesse de lecture du modèle")
         }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private var recordingControls: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 12) {
-                Button(action: isRecording ? stopRecording : startRecording) {
-                    Label(
-                        isRecording ? "Arrêter" : "Enregistrer",
-                        systemImage: isRecording ? "stop.fill" : "mic.fill"
-                    )
+            Text("Ta voix")
+                .font(.headline)
+
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .center, spacing: 16) {
+                    recordButton
+                    recordingDescription
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(isRecording ? .red : .accentColor)
-                .accessibilityHint(isRecording ? "Arrête et prépare la transcription" : "Demande l’accès au microphone puis démarre la capture")
-
-                if let recording {
-                    Button {
-                        replay(recording)
-                    } label: {
-                        Label("Réécouter", systemImage: "arrow.clockwise.circle")
-                    }
-                    .buttonStyle(.bordered)
-
-                    Button(role: .destructive, action: discardRecording) {
-                        Label("Supprimer", systemImage: "trash")
-                    }
-                    .buttonStyle(.bordered)
+                VStack(alignment: .leading, spacing: 10) {
+                    recordButton
+                    recordingDescription
                 }
             }
 
@@ -155,12 +196,29 @@ public struct SpeechPracticeView: View {
                     .monospacedDigit()
                     .foregroundStyle(.red)
                 }
-            } else if recording != nil {
+            }
+
+            if let recording {
+                HStack(spacing: 10) {
+                    Button {
+                        replay(recording)
+                    } label: {
+                        Label("Réécouter", systemImage: "arrow.clockwise.circle")
+                    }
+                    .buttonStyle(.bordered)
+
+                    Button(role: .destructive, action: discardRecording) {
+                        Label("Supprimer", systemImage: "trash")
+                    }
+                    .buttonStyle(.bordered)
+                }
+
                 Text("Le fichier reste temporaire et sera supprimé en quittant cet exercice.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func transcriptCard(_ transcript: SpeechTranscript) -> some View {
@@ -198,7 +256,7 @@ public struct SpeechPracticeView: View {
             Text("La transcription locale n’est pas disponible ou ne confirme pas la phrase. Choisis ton ressenti ; aucun score de ton n’est déduit.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
-            HStack(spacing: 8) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 8)], spacing: 8) {
                 ForEach(SelfRating.allCases, id: \.self) { rating in
                     Button(selfRatingLabel(rating)) {
                         answer = .selfRating(rating)
@@ -213,38 +271,132 @@ public struct SpeechPracticeView: View {
         .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
+    private var recordButton: some View {
+        Button(action: isRecording ? stopRecording : startRecording) {
+            VStack(spacing: 7) {
+                Image(systemName: isRecording ? "stop.fill" : "mic.fill")
+                    .font(.system(size: 27, weight: .semibold))
+                Text(isRecording ? "Arrêter" : "Enregistrer")
+                    .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.65)
+            }
+            .foregroundStyle(.white)
+            .frame(width: 116, height: 116)
+            .background(isRecording ? Color.red : Color.accentColor, in: Circle())
+            .shadow(color: .black.opacity(0.14), radius: 5, y: 3)
+            .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isRecording ? "Arrêter" : "Enregistrer")
+        .accessibilityHint(isRecording ? "Arrête la capture et prépare la transcription" : "Demande l’accès au microphone puis démarre la capture")
+    }
+
+    private var recordingDescription: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(isRecording ? "Parle maintenant…" : "Enregistre la phrase cible")
+                .font(.body.weight(.semibold))
+            Text(isRecording
+                 ? "Tu peux arrêter quand tu as fini."
+                 : "Tu pourras réécouter ta voix et demander une transcription locale.")
+                .font(.callout)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var mandarinReferenceText: String {
+        let target = PolygoCore.MandarinSpeechText.target(from: exercise.referenceText)
+        return target.isEmpty ? exercise.referenceText.trimmingCharacters(in: .whitespacesAndNewlines) : target
+    }
+
+    private func speakReference() {
+        if isModelPlaying {
+            stopModelPlayback(message: "Lecture du modèle arrêtée.")
+        } else {
+            playModel()
+        }
+    }
+
     private func playModel() {
+        guard !isModelPlaying else { return }
+        let target = PolygoCore.MandarinSpeechText.target(from: exercise.referenceText)
+        guard !target.isEmpty else {
+            statusMessage = "Aucun texte mandarin à lire."
+            return
+        }
+
+        modelTask?.cancel()
+        audio.stopSpeaking()
+        audio.stopPlayback()
         statusMessage = nil
-        Task { @MainActor in
+        isModelPlaying = true
+
+        modelTask = Task { @MainActor in
             do {
-                if let asset = exercise.referenceAudio {
+                if let asset = exercise.referenceAudio, selectedRate == .normal {
                     do {
                         try await audio.play(asset: asset)
+                        guard !Task.isCancelled else {
+                            isModelPlaying = false
+                            modelTask = nil
+                            return
+                        }
+                        // AudioService.play starts an AVAudioPlayer and returns
+                        // once it is accepted. Keep the toggle in its stop
+                        // state until the learner taps it or leaves the view.
+                        statusMessage = "Modèle lancé à vitesse normale."
+                        modelTask = nil
+                        return
+                    } catch is CancellationError {
+                        throw CancellationError()
                     } catch {
-                        // Content audio is optional. Every speaking exercise
-                        // still has a direct AVSpeechSynthesizer fallback.
-                        try await audio.speak(
-                            text: exercise.referenceText,
-                            localeIdentifier: "zh-CN",
-                            rate: selectedRate
-                        )
+                        // Bundled audio is optional. Fall back to the local
+                        // Mandarin voice when the asset is unavailable.
                     }
-                } else {
-                    try await audio.speak(
-                        text: exercise.referenceText,
-                        localeIdentifier: "zh-CN",
-                        rate: selectedRate
-                    )
                 }
+
+                try await audio.speak(
+                    text: target,
+                    localeIdentifier: "zh-CN",
+                    rate: selectedRate
+                )
+                guard !Task.isCancelled else {
+                    isModelPlaying = false
+                    modelTask = nil
+                    return
+                }
+                isModelPlaying = false
+                modelTask = nil
                 statusMessage = "Modèle lu à vitesse \(selectedRate == .normal ? "normale" : "lente")."
+            } catch is CancellationError {
+                if isModelPlaying {
+                    statusMessage = "Lecture du modèle arrêtée."
+                }
+                isModelPlaying = false
+                modelTask = nil
             } catch {
+                isModelPlaying = false
+                modelTask = nil
                 statusMessage = error.localizedDescription
             }
         }
     }
 
+    private func stopModelPlayback(message: String? = nil) {
+        modelTask?.cancel()
+        modelTask = nil
+        audio.stopSpeaking()
+        audio.stopPlayback()
+        isModelPlaying = false
+        if let message {
+            statusMessage = message
+        }
+    }
+
     private func startRecording() {
         guard !isRecording else { return }
+        stopModelPlayback()
         statusMessage = nil
         captureTask?.cancel()
         captureTask = Task { @MainActor in
@@ -258,6 +410,7 @@ public struct SpeechPracticeView: View {
             microphonePermission = permission
             guard permission == .authorized else {
                 isSelfEvaluationAvailable = true
+                showEvaluationDetails = true
                 statusMessage = microphoneMessage(for: permission)
                 return
             }
@@ -316,6 +469,8 @@ public struct SpeechPracticeView: View {
             do {
                 try await audio.play(recording: recording)
                 statusMessage = "Réécoute lancée."
+            } catch is CancellationError {
+                statusMessage = "Réécoute arrêtée."
             } catch {
                 statusMessage = "Réécoute indisponible : \(error.localizedDescription)"
             }
@@ -323,18 +478,21 @@ public struct SpeechPracticeView: View {
     }
 
     private func discardRecording() {
-        guard let oldRecording = recording else { return }
+        let oldRecording = recording
         recording = nil
         transcript = nil
         answer = nil
         isSelfEvaluationAvailable = false
+        guard let oldRecording else { return }
         Task {
             try? await audio.delete(recording: oldRecording)
         }
     }
 
     private func transcribe(_ recording: Recording) async {
+        guard !Task.isCancelled else { return }
         speechPermission = await audio.requestSpeechPermission()
+        guard !Task.isCancelled else { return }
         guard speechPermission == .authorized else {
             isSelfEvaluationAvailable = true
             statusMessage = speechMessage(for: speechPermission)
@@ -342,7 +500,9 @@ public struct SpeechPracticeView: View {
         }
         do {
             let result = try await audio.transcribe(recording, localeIdentifier: "zh-CN")
+            guard !Task.isCancelled else { return }
             transcript = result
+            showEvaluationDetails = true
             answer = .speech(SpeechAnswer(
                 transcript: result.rawText,
                 normalizedTranscript: result.normalizedText,
@@ -354,8 +514,12 @@ public struct SpeechPracticeView: View {
             statusMessage = result.rawText.isEmpty
                 ? "Aucun texte n’a été reconnu. Tu peux choisir une auto-évaluation."
                 : "Transcription prête à comparer."
+        } catch is CancellationError {
+            // The capture task is cancelled when the exercise disappears.
         } catch {
+            guard !Task.isCancelled else { return }
             isSelfEvaluationAvailable = true
+            showEvaluationDetails = true
             statusMessage = error.localizedDescription + " Tu peux choisir une auto-évaluation."
         }
     }

@@ -20,7 +20,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, paragraphs, comprehensionExerciseIDs, spec, objectiveIDs
+        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, paragraphs, comprehensionExerciseIDs, participation, spec, objectiveIDs
     }
     private enum Kind: String, Codable { case introduction, vocabulary, dialogue, reading, exercise, recap }
 
@@ -45,7 +45,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         case .vocabulary(let value):
             try container.encode(Kind.vocabulary, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.vocabularyIDs, forKey: .vocabularyIDs)
         case .dialogue(let value):
-            try container.encode(Kind.dialogue, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.lines, forKey: .lines)
+            try container.encode(Kind.dialogue, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.lines, forKey: .lines); try container.encodeIfPresent(value.participation, forKey: .participation); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .reading(let value):
             try container.encode(Kind.reading, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.storyID, forKey: .storyID); try container.encode(value.title, forKey: .title); try container.encode(value.paragraphs, forKey: .paragraphs); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .exercise(let value):
@@ -79,9 +79,55 @@ public struct VocabularyBlock: Codable, Hashable, Sendable {
 public struct DialogueBlock: Codable, Hashable, Sendable {
     public let id: BlockID
     public let lines: [DialogueLine]
+    /// Optional authored comprehension references. The lesson UI can place
+    /// the corresponding real exercise directly after the dialogue.
+    public let comprehensionExerciseIDs: [ExerciseID]
+    /// An authored listening/writing turn. `audioLineIndex` identifies the
+    /// response the learner hears; accepted responses contain the preceding
+    /// line they are asked to write.
+    public let participation: DialogueParticipation?
 
-    public init(id: BlockID, lines: [DialogueLine]) {
-        self.id = id; self.lines = lines
+    private enum CodingKeys: String, CodingKey { case id, lines, comprehensionExerciseIDs, participation }
+
+    public init(
+        id: BlockID,
+        lines: [DialogueLine],
+        comprehensionExerciseIDs: [ExerciseID] = [],
+        participation: DialogueParticipation? = nil
+    ) {
+        self.id = id
+        self.lines = lines
+        self.comprehensionExerciseIDs = comprehensionExerciseIDs
+        self.participation = participation
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(
+            id: try c.decode(BlockID.self, forKey: .id),
+            lines: try c.decode([DialogueLine].self, forKey: .lines),
+            comprehensionExerciseIDs: try c.decodeIfPresent([ExerciseID].self, forKey: .comprehensionExerciseIDs) ?? [],
+            participation: try c.decodeIfPresent(DialogueParticipation.self, forKey: .participation)
+        )
+    }
+}
+
+public struct DialogueParticipation: Codable, Hashable, Sendable {
+    public let prompt: LocalizedText
+    public let audioLineIndex: Int
+    public let acceptedResponses: [String]
+    public let hint: LocalizedText?
+
+    public init(
+        prompt: LocalizedText,
+        audioLineIndex: Int,
+        acceptedResponses: [String],
+        hint: LocalizedText? = nil
+    ) {
+        self.prompt = prompt
+        self.audioLineIndex = max(0, audioLineIndex)
+        self.acceptedResponses = acceptedResponses
+        self.hint = hint
     }
 }
 

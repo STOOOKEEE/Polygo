@@ -10,7 +10,7 @@ Le contenu local actuel comprend quatre leçons (`lesson-01` à `lesson-04`),
 de contrat lisent les JSON réels et vérifient les références fermées entre
 leçons, blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
-La suite portable `swift test --disable-sandbox --parallel` passe avec **35/35
+La suite portable `swift test --disable-sandbox --parallel` passe avec **41/41
 tests**. Le filtre `ContentContractTests` passe avec **6/6 tests**. La
 vérification `git diff --check` ne relève aucune erreur de formatage.
 
@@ -130,3 +130,27 @@ manuel ne sont pas certifiés. Speech avec permission accordée reste à vérifi
 sur appareil ; le parcours CI a exercé le fallback après refus du microphone.
 CloudKit reste prévu mais inactif : ses conflits réseau ne sont pas testés et
 seuls les scénarios du modèle local sont couverts.
+
+## Régressions du parcours en cours
+
+Tests/PolygoAppUITests/ZZLessonRegressionJourneyTests.swift couvre le
+parcours ajouté autour de la reprise :
+
+- une réponse choisie est conservée après passage en arrière-plan, retour au
+  premier plan et relance du processus ;
+- le feedback validé reste affiché et ne crée pas une seconde validation avant
+  Continuer ;
+- la sélection partielle des tuiles est restaurée avec ses positions ;
+- le dialogue expose une écoute complète, des cibles audio chinoises,
+  l’exercice de compréhension et l’écriture de la réplique précédente ;
+- l’écran oral expose cible, pinyin, modèle, arrêt, vitesse,
+  enregistrement et auto-évaluation sans score de phonèmes ou de tons.
+
+Le même fichier vérifie dans le JSON L1 la référence de compréhension, la
+réplique audio et les réponses acceptées. Cette couverture attend le prochain
+run Apple après intégration ; elle n’est pas exécutable dans ce conteneur sans
+Xcode, SwiftUI et le SDK iOS.
+
+Le workflow Apple conserve désormais aussi le bundle xcresult quand le run est
+vert. Les captures nommées du parcours pourront ainsi être téléchargées pour
+inspection visuelle avec le résultat de test.

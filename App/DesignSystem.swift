@@ -109,7 +109,11 @@ public final class SylluneAudioCommandCenter {
     @discardableResult
     public func register(text: String, audio: any AudioService) -> UUID {
         let id = UUID()
-        registrations[id] = Registration(id: id, text: text, audio: audio)
+        registrations[id] = Registration(
+            id: id,
+            text: PolygoCore.MandarinSpeechText.target(from: text),
+            audio: audio
+        )
         order.append(id)
         return id
     }
@@ -139,6 +143,9 @@ public final class SylluneAudioCommandCenter {
                     localeIdentifier: "zh-CN",
                     rate: .normal
                 )
+                if self?.speakingID == registration.id {
+                    self?.speakingID = nil
+                }
             } catch {
                 if self?.speakingID == registration.id {
                     self?.speakingID = nil
@@ -436,7 +443,10 @@ public struct ChineseSelectableText: View {
             )
         ) {
             if let selectedVocabularyID {
-                WordDetailView(vocabularyID: selectedVocabularyID, autoPlayAudio: true)
+                // The token button has already started local Mandarin speech.
+                // Avoid a second asset playback when the detail destination
+                // appears.
+                WordDetailView(vocabularyID: selectedVocabularyID, autoPlayAudio: false)
             }
         }
     }
@@ -459,6 +469,7 @@ public struct ChineseSelectableText: View {
     @ViewBuilder private func tokenView(_ token: ChineseToken) -> some View {
         if let entry = token.entry, wordInteractionEnabled {
             Button {
+                if speechEnabled { speakToken(token.surface) }
                 openWord(entry)
             } label: {
                 Text(token.surface)
@@ -469,7 +480,22 @@ public struct ChineseSelectableText: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(token.surface)
-            .accessibilityHint("Ouvre la fiche de ce mot et lance son audio local.")
+            .accessibilityHint(speechEnabled
+                ? "Écoute ce mot en mandarin et ouvre sa fiche."
+                : "Ouvre la fiche de ce mot.")
+        } else if speechEnabled && PolygoCore.MandarinSpeechText.containsHanzi(token.surface) {
+            Button {
+                speakToken(token.surface)
+            } label: {
+                Text(token.surface)
+                    .font(font)
+                    .foregroundStyle(SylluneColor.jadeDeep)
+                    .padding(.vertical, 5)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(token.surface)
+            .accessibilityHint("Écoute ce caractère en mandarin.")
         } else {
             Text(token.surface)
                 .font(font)
@@ -478,13 +504,11 @@ public struct ChineseSelectableText: View {
     }
 
     private var containsChinese: Bool {
-        text.unicodeScalars.contains { scalar in
-            (0x3400...0x4DBF).contains(scalar.value) || (0x4E00...0x9FFF).contains(scalar.value)
-        }
+        PolygoCore.MandarinSpeechText.containsHanzi(text)
     }
 
     private var shouldTokenize: Bool {
-        wordInteractionEnabled && (!segmentation.isEmpty || tokens.contains { $0.entry != nil })
+        (speechEnabled || wordInteractionEnabled) && containsChinese
     }
 
     private struct ChineseToken: Identifiable {
@@ -521,7 +545,6 @@ public struct ChineseSelectableText: View {
                 return lhs.surface.count > rhs.surface.count
             }
 
-        guard !dictionary.isEmpty else { return [] }
         var result: [ChineseToken] = []
         var cursor = text.startIndex
         while cursor < text.endIndex {
@@ -530,8 +553,24 @@ public struct ChineseSelectableText: View {
                 cursor = text.index(cursor, offsetBy: match.surface.count)
             } else {
                 let next = text.index(after: cursor)
-                result.append(ChineseToken(id: result.count, surface: String(text[cursor..<next]), entry: nil))
-                cursor = next
+                let character = String(text[cursor..<next])
+                if PolygoCore.MandarinSpeechText.containsHanzi(character) {
+                    result.append(ChineseToken(id: result.count, surface: character, entry: nil))
+                    cursor = next
+                } else {
+                    // Keep French instructions and punctuation in readable
+                    // runs while preserving one tappable token per unknown
+                    // Hanzi character.
+                    var end = next
+                    while end < text.endIndex {
+                        let following = text.index(after: end)
+                        let value = String(text[end..<following])
+                        if PolygoCore.MandarinSpeechText.containsHanzi(value) { break }
+                        end = following
+                    }
+                    result.append(ChineseToken(id: result.count, surface: String(text[cursor..<end]), entry: nil))
+                    cursor = end
+                }
             }
         }
         return result
@@ -543,7 +582,8 @@ public struct ChineseSelectableText: View {
     }
 
     private func registerKeyboardPhrase() {
-        guard commandRegistrationID == nil, speechEnabled, containsChinese else { return }
+        guard commandRegistrationID == nil, speechEnabled else { return }
+        guard !PolygoCore.MandarinSpeechText.target(from: text).isEmpty else { return }
         commandRegistrationID = SylluneAudioCommandCenter.shared.register(text: text, audio: model.dependencies.audio)
     }
 
@@ -556,20 +596,29 @@ public struct ChineseSelectableText: View {
             return
         }
 
+        let target = PolygoCore.MandarinSpeechText.target(from: text)
+        guard !target.isEmpty else {
+            statusMessage = "Aucun texte mandarin à lire."
+            return
+        }
         isSpeaking = true
         statusMessage = nil
         Task { @MainActor in
             do {
-                if let phraseAudio {
+                if let phraseAudio, PolygoCore.MandarinSpeechText.isTargetOnly(text) {
                     do {
                         try await model.dependencies.audio.play(asset: phraseAudio)
                     } catch {
-                        try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: .normal)
+                        try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal)
                     }
                 } else {
-                    try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: .normal)
+                    try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal)
                 }
-                statusMessage = "Lecture en cours."
+                isSpeaking = false
+                statusMessage = "Lecture terminée."
+            } catch is CancellationError {
+                isSpeaking = false
+                statusMessage = "Lecture arrêtée."
             } catch {
                 isSpeaking = false
                 statusMessage = "Audio indisponible hors ligne."
@@ -581,7 +630,24 @@ public struct ChineseSelectableText: View {
         selectedVocabularyID = entry.id
     }
 
+    private func speakToken(_ value: String) {
+        let target = PolygoCore.MandarinSpeechText.target(from: value)
+        guard !target.isEmpty else { return }
+        Task { @MainActor in
+            try? await model.dependencies.audio.speak(
+                text: target,
+                localeIdentifier: "zh-CN",
+                rate: .normal
+            )
+        }
+    }
+
     private func speakSlowly() {
+        let target = PolygoCore.MandarinSpeechText.target(from: text)
+        guard !target.isEmpty else {
+            statusMessage = "Aucun texte mandarin à lire."
+            return
+        }
         model.dependencies.audio.stopSpeaking()
         model.dependencies.audio.stopPlayback()
         isSpeaking = true
@@ -590,8 +656,12 @@ public struct ChineseSelectableText: View {
             do {
                 // A supplied asset has no rate control in AudioService. Slow
                 // playback therefore uses the local synthesizer explicitly.
-                try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: .slow)
-                statusMessage = "Lecture lente en cours."
+                try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .slow)
+                isSpeaking = false
+                statusMessage = "Lecture lente terminée."
+            } catch is CancellationError {
+                isSpeaking = false
+                statusMessage = "Lecture arrêtée."
             } catch {
                 isSpeaking = false
                 statusMessage = "Audio indisponible hors ligne."

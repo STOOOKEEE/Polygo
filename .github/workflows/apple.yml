@@ -101,7 +101,9 @@ jobs:
             test
 
       - name: Upload iOS UI test result bundle
-        if: ${{ failure() }}
+        # Keep successful UI attachments too: the journey adds named
+        # screenshots for visual review, and a green run is the useful case.
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: PolygoAppUITests-${{ github.run_id }}

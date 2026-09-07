@@ -590,6 +590,13 @@
           "audio": null
         }
       ],
+      "comprehensionExerciseIDs": ["ex-l3-reading-country"],
+      "participation": {
+        "prompt": {"fr": "Écoute la réponse, puis écris la question qui la précédait."},
+        "audioLineIndex": 1,
+        "acceptedResponses": ["你好！你是哪国人？", "你好 你是哪国人？"],
+        "hint": {"fr": "La question demande de quel pays vient la personne."}
+      },
       "metadata": {
         "standardID": "HSK-3.0",
         "standardVersion": "2025-11",

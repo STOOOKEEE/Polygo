@@ -21,6 +21,14 @@ public final class AppModel: ObservableObject {
 
     private let defaults: UserDefaults
     private var loadTask: Task<Void, Never>?
+    // Every progress event goes through one main-actor queue. Without this,
+    // two answer changes arriving while a file append is suspended can both
+    // be assigned the same Lamport value and the later checkpoint can replay
+    // before the evaluation it describes.
+    private var eventWriteTail: Task<Bool, Never>?
+    private var startsInFlight: Set<LessonID> = []
+    private var evaluationsInFlight: Set<String> = []
+    private var completionsInFlight: Set<LessonID> = []
 
     public init(dependencies: AppDependencies, defaults: UserDefaults = .standard) {
         self.dependencies = dependencies
@@ -128,25 +136,99 @@ public final class AppModel: ObservableObject {
 
     @discardableResult
     public func startLesson(_ id: LessonID, persistRouteInNavigation: Bool = true) async -> Bool {
+        guard startsInFlight.insert(id).inserted else {
+            // Another destination task is already recording this opening.
+            // Treat the second observation as successful without another
+            // event; the first append owns the durable state.
+            if persistRouteInNavigation { persistRoute(.lesson(id)) }
+            return true
+        }
+        defer { startsInFlight.remove(id) }
+        // SwiftUI can run a destination's task again after a tab switch or a
+        // scene recreation. A lesson that already has an opening checkpoint
+        // is already started; recording another opening would only inflate
+        // the journal and move its timestamp for no learner-visible reason.
+        if snapshot.lessonProgress[id]?.lastOpenedAt != nil {
+            if persistRouteInNavigation { persistRoute(.lesson(id)) }
+            return true
+        }
         guard await append(.lessonStarted(lessonID: id, at: dependencies.clock.now())) else { return false }
         if persistRouteInNavigation { persistRoute(.lesson(id)) }
         return true
     }
 
     @discardableResult
+    public func restartLesson(_ id: LessonID, persistRouteInNavigation: Bool = true) async -> Bool {
+        guard completionsInFlight.insert(id).inserted else { return false }
+        defer { completionsInFlight.remove(id) }
+        guard await append(.lessonRestarted(lessonID: id, at: dependencies.clock.now())) else { return false }
+        if persistRouteInNavigation { persistRoute(.lesson(id)) }
+        return true
+    }
+
+    @discardableResult
+    public func saveLessonCheckpoint(
+        _ id: LessonID,
+        exerciseIndex: Int,
+        exerciseID: ExerciseID?,
+        answer: ExerciseAnswer?,
+        evaluation: ExerciseEvaluation?,
+        dialogueDrafts: [BlockID: String] = [:],
+        dialogueResults: [BlockID: Bool] = [:]
+    ) async -> Bool {
+        let normalizedIndex = max(0, exerciseIndex)
+        // onDisappear and scenePhase can report the same state more than
+        // once. Avoid creating a second event for an identical checkpoint.
+        if let existing = snapshot.lessonProgress[id] {
+            if existing.completedAt != nil { return true }
+            if existing.currentExerciseIndex == normalizedIndex,
+               existing.currentExerciseID == exerciseID,
+               existing.pendingAnswer == answer,
+               existing.pendingEvaluation == evaluation,
+               existing.dialogueDrafts == dialogueDrafts,
+               existing.dialogueResults == dialogueResults {
+                return true
+            }
+        }
+        return await append(.lessonCheckpointSaved(
+            lessonID: id,
+            exerciseIndex: normalizedIndex,
+            exerciseID: exerciseID,
+            answer: answer,
+            evaluation: evaluation,
+            dialogueDrafts: dialogueDrafts,
+            dialogueResults: dialogueResults,
+            at: dependencies.clock.now()
+        ))
+    }
+
+    @discardableResult
     public func evaluate(_ spec: ExerciseSpec, answer: ExerciseAnswer, lessonID: LessonID, blockID: BlockID) async -> ExerciseEvaluation? {
+        let key = "\(lessonID.rawValue)/\(spec.id.rawValue)"
+        guard evaluationsInFlight.insert(key).inserted else { return nil }
+        defer { evaluationsInFlight.remove(key) }
         let evaluation = dependencies.exerciseEngine.evaluate(spec: spec, answer: answer)
         guard await append(.exerciseEvaluated(lessonID: lessonID, blockID: blockID, evaluation: evaluation, at: dependencies.clock.now())) else { return nil }
         return evaluation
     }
 
-    public func completeLesson(_ id: LessonID) async {
-        guard await append(.lessonCompleted(lessonID: id, at: dependencies.clock.now()) ) else { return }
+    @discardableResult
+    public func completeLesson(_ id: LessonID) async -> Bool {
+        guard completionsInFlight.insert(id).inserted else { return false }
+        defer { completionsInFlight.remove(id) }
+        if snapshot.lessonProgress[id]?.completedAt == nil {
+            guard await append(.lessonCompleted(lessonID: id, at: dependencies.clock.now()) ) else { return false }
+        }
         if let lesson = await loadLesson(id) {
             for card in lesson.cards {
-                _ = await append(.flashcardAdded(cardID: card.id, at: dependencies.clock.now()))
+                // Completion can be durable before the process is killed
+                // while cards are being added. Re-entering the completion
+                // path repairs only missing cards and remains idempotent.
+                guard snapshot.reviewStates[card.id] == nil else { continue }
+                guard await append(.flashcardAdded(cardID: card.id, at: dependencies.clock.now()) ) else { return false }
             }
         }
+        return true
     }
 
     @discardableResult
@@ -181,6 +263,17 @@ public final class AppModel: ObservableObject {
 
     @discardableResult
     public func append(_ payload: ProgressEventPayload) async -> Bool {
+        let previous = eventWriteTail
+        let task = Task { @MainActor [weak self] in
+            if let previous { _ = await previous.value }
+            guard let self else { return false }
+            return await self.appendNow(payload)
+        }
+        eventWriteTail = task
+        return await task.value
+    }
+
+    private func appendNow(_ payload: ProgressEventPayload) async -> Bool {
         guard let profile = snapshot.profile ?? (payload.profileValue) else {
             // Before onboarding there is no valid profile-scoped event. The
             // onboarding action itself is the only allowed first event.
@@ -250,7 +343,25 @@ public final class AppModel: ObservableObject {
     }
 
     public var nextLessonID: LessonID? {
-        orderedLessonIDs.first(where: { isLessonUnlocked($0) && snapshot.lessonProgress[$0]?.completedAt == nil })
+        resumeLessonID
+    }
+
+    /// Prefer the unfinished lesson opened most recently, then fall back to
+    /// the first unlocked lesson in the course. This keeps the home action a
+    /// true "Continuer" action after leaving a lesson midway.
+    public var resumeLessonID: LessonID? {
+        let unfinished = orderedLessonIDs.compactMap { id -> (LessonID, Date)? in
+            guard isLessonUnlocked(id), let progress = snapshot.lessonProgress[id], progress.completedAt == nil,
+                  let opened = progress.lastOpenedAt else { return nil }
+            return (id, opened)
+        }
+        if let mostRecent = unfinished.max(by: { lhs, rhs in
+            if lhs.1 != rhs.1 { return lhs.1 < rhs.1 }
+            return lhs.0.rawValue < rhs.0.rawValue
+        }) {
+            return mostRecent.0
+        }
+        return orderedLessonIDs.first(where: { isLessonUnlocked($0) && snapshot.lessonProgress[$0]?.completedAt == nil })
     }
 
     public func dictionaryEntries() async -> [VocabularyEntry] {

@@ -402,6 +402,13 @@
           "audio": null
         }
       ],
+      "comprehensionExerciseIDs": ["ex-l4-reading-ne"],
+      "participation": {
+        "prompt": {"fr": "Écoute la réponse, puis écris la réplique qui la précédait."},
+        "audioLineIndex": 5,
+        "acceptedResponses": ["我是中国人。你呢？", "我是中国人 你呢？"],
+        "hint": {"fr": "La réplique indique le pays puis relance avec 你呢？."}
+      },
       "metadata": {
         "stage": "observer",
         "skill": [

@@ -14,6 +14,20 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     private let streamLock = NSLock()
     private var streamContinuations: [UUID: AsyncStream<AudioPlaybackState>.Continuation] = [:]
 
+    // Speech requests are admitted under a lock because their cancellation
+    // handler may run while the initial main-queue hop is still pending. The
+    // active utterance and continuation themselves remain main-queue
+    // confined. A new request replaces the previous one and always resolves
+    // its continuation, so a view can never remain in a speaking state after
+    // navigation or a rapid second tap.
+    private let speechStateLock = NSLock()
+    private var queuedSpeechRequestIDs: Set<UUID> = []
+    private var cancelledSpeechRequestIDs: Set<UUID> = []
+    private var startingSpeechRequestIDs: Set<UUID> = []
+    private var speechContinuation: CheckedContinuation<Void, Error>?
+    private var speechRequestID: UUID?
+    private var speechUtterance: AVSpeechUtterance?
+
     // AVFoundation objects are used on the main queue. The class is marked
     // unchecked Sendable because AudioService is injected through a Sendable
     // existential while its mutable platform state remains queue-confined.
@@ -127,49 +141,209 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     // MARK: Speech synthesis
 
     public func speak(_ request: SpeechSynthesisRequest) async throws {
-        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
-            performOnMain { [weak self] in
-                guard let self else {
-                    continuation.resume(throwing: AudioServiceError.unavailable)
-                    return
-                }
-                let text = request.text.trimmingCharacters(in: .whitespacesAndNewlines)
-                guard !text.isEmpty else {
-                    continuation.resume(throwing: AudioServiceError.playbackFailed("Le texte à lire est vide"))
-                    return
-                }
-                guard let voice = AVSpeechSynthesisVoice(language: request.localeIdentifier) else {
-                    continuation.resume(throwing: AudioServiceError.voiceUnavailable(request.localeIdentifier))
-                    return
-                }
-                do {
-                    try self.prepareAudioForPlayback()
-                    self.stopCurrentPlayer()
-                    self.synthesizer.stopSpeaking(at: .immediate)
-                    let utterance = AVSpeechUtterance(string: text)
-                    utterance.voice = voice
-                    utterance.rate = request.rate.avSpeechRate
-                    self.synthesizer.speak(utterance)
-                    // AVSpeechSynthesizer queues the utterance. The delegate
-                    // reports completion separately; this method means that
-                    // the request was accepted by the local synthesizer.
-                    continuation.resume()
-                } catch {
-                    continuation.resume(throwing: AudioServiceError.playbackFailed(error.localizedDescription))
+        try Task.checkCancellation()
+        let requestID = UUID()
+        speechStateLock.lock()
+        // A speech surface is latest-request-wins. Cancel requests that have
+        // not reached the main queue yet; an already active request is
+        // replaced in `beginSpeech`.
+        let previousQueued = queuedSpeechRequestIDs
+        queuedSpeechRequestIDs = [requestID]
+        cancelledSpeechRequestIDs.formUnion(previousQueued)
+        speechStateLock.unlock()
+
+        return try await withTaskCancellationHandler(operation: {
+            try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+                performOnMain { [weak self] in
+                    guard let self else {
+                        continuation.resume(throwing: AudioServiceError.unavailable)
+                        return
+                    }
+                    self.beginSpeech(request, requestID: requestID, continuation: continuation)
                 }
             }
-        }
+        }, onCancel: { [weak self] in
+            self?.cancelSpeech(requestID: requestID)
+        })
     }
 
     public func stopSpeaking() {
+        cancelQueuedSpeech()
         performOnMain { [weak self] in
-            self?.synthesizer.stopSpeaking(at: .immediate)
+            self?.stopSpeechOnMain()
         }
+    }
+
+    private func beginSpeech(
+        _ request: SpeechSynthesisRequest,
+        requestID: UUID,
+        continuation: CheckedContinuation<Void, Error>
+    ) {
+        speechStateLock.lock()
+        queuedSpeechRequestIDs.remove(requestID)
+        let wasCancelled = cancelledSpeechRequestIDs.remove(requestID) != nil
+        if !wasCancelled {
+            startingSpeechRequestIDs.insert(requestID)
+        }
+        speechStateLock.unlock()
+
+        guard !wasCancelled else {
+            continuation.resume(throwing: CancellationError())
+            return
+        }
+
+        let requestedText = request.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let locale = request.localeIdentifier.lowercased()
+        let text = locale.hasPrefix("zh")
+            ? PolygoCore.MandarinSpeechText.target(from: requestedText)
+            : requestedText
+        guard !text.isEmpty else {
+            endStartingSpeech(requestID)
+            continuation.resume(throwing: AudioServiceError.playbackFailed("Le texte à lire est vide"))
+            return
+        }
+        guard let voice = AVSpeechSynthesisVoice(language: request.localeIdentifier) else {
+            endStartingSpeech(requestID)
+            continuation.resume(throwing: AudioServiceError.voiceUnavailable(request.localeIdentifier))
+            return
+        }
+
+        do {
+            if let previousID = speechRequestID {
+                finishSpeech(
+                    requestID: previousID,
+                    result: .failure(CancellationError()),
+                    stopSynthesizer: true
+                )
+            } else {
+                synthesizer.stopSpeaking(at: .immediate)
+            }
+
+            // Audio session setup can throw. Finish the previous request
+            // before this fallible operation so it is never orphaned if the
+            // new request cannot be admitted.
+            stopCurrentPlayer()
+            try prepareAudioForPlayback()
+
+            guard !consumeSpeechCancellation(requestID) else {
+                endStartingSpeech(requestID)
+                continuation.resume(throwing: CancellationError())
+                return
+            }
+
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = voice
+            utterance.rate = request.rate.avSpeechRate
+            // Install state before calling `speak`: a delegate callback can
+            // arrive synchronously on some Apple OS versions.
+            speechRequestID = requestID
+            speechContinuation = continuation
+            speechUtterance = utterance
+            endStartingSpeech(requestID)
+            synthesizer.speak(utterance)
+        } catch {
+            let wasCancelled = consumeSpeechCancellation(requestID)
+            endStartingSpeech(requestID)
+            continuation.resume(
+                throwing: wasCancelled
+                    ? CancellationError()
+                    : AudioServiceError.playbackFailed(error.localizedDescription)
+            )
+        }
+    }
+
+    private func endStartingSpeech(_ requestID: UUID) {
+        speechStateLock.lock()
+        startingSpeechRequestIDs.remove(requestID)
+        // If cancellation raced after the admission check, the active
+        // request will be stopped by the main-queue callback below. Do not
+        // retain a UUID that can no longer be admitted as a future request.
+        cancelledSpeechRequestIDs.remove(requestID)
+        speechStateLock.unlock()
+    }
+
+    private func consumeSpeechCancellation(_ requestID: UUID) -> Bool {
+        speechStateLock.lock()
+        let wasCancelled = cancelledSpeechRequestIDs.remove(requestID) != nil
+        speechStateLock.unlock()
+        return wasCancelled
+    }
+
+    private func cancelSpeech(requestID: UUID) {
+        speechStateLock.lock()
+        let wasPending = queuedSpeechRequestIDs.remove(requestID) != nil
+        if wasPending || startingSpeechRequestIDs.contains(requestID) {
+            cancelledSpeechRequestIDs.insert(requestID)
+        }
+        speechStateLock.unlock()
+
+        performOnMain { [weak self] in
+            guard let self, self.speechRequestID == requestID else { return }
+            self.finishSpeech(
+                requestID: requestID,
+                result: .failure(CancellationError()),
+                stopSynthesizer: true
+            )
+        }
+    }
+
+    private func cancelQueuedSpeech() {
+        speechStateLock.lock()
+        cancelledSpeechRequestIDs.formUnion(queuedSpeechRequestIDs)
+        queuedSpeechRequestIDs.removeAll()
+        speechStateLock.unlock()
+    }
+
+    private func stopSpeechOnMain() {
+        guard let requestID = speechRequestID else {
+            synthesizer.stopSpeaking(at: .immediate)
+            return
+        }
+        finishSpeech(
+            requestID: requestID,
+            result: .failure(CancellationError()),
+            stopSynthesizer: true
+        )
+    }
+
+    private func finishSpeech(
+        requestID: UUID,
+        result: Result<Void, Error>,
+        stopSynthesizer: Bool
+    ) {
+        guard speechRequestID == requestID else { return }
+        let continuation = speechContinuation
+        speechRequestID = nil
+        speechContinuation = nil
+        speechUtterance = nil
+        if stopSynthesizer {
+            synthesizer.stopSpeaking(at: .immediate)
+        }
+
+        switch result {
+        case .success:
+            continuation?.resume()
+        case .failure(let error):
+            continuation?.resume(throwing: error)
+        }
+    }
+
+    // MARK: AVSpeechSynthesizerDelegate
+
+    public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        guard speechUtterance === utterance, let requestID = speechRequestID else { return }
+        finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
+    }
+
+    public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        guard speechUtterance === utterance, let requestID = speechRequestID else { return }
+        finishSpeech(requestID: requestID, result: .failure(CancellationError()), stopSynthesizer: false)
     }
 
     // MARK: Asset and recording playback
 
     public func play(asset: AssetReference) async throws {
+        cancelQueuedSpeech()
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             performOnMain { [weak self] in
                 guard let self else {
@@ -180,7 +354,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                     let url = try self.assetURL(for: asset)
                     try self.prepareAudioForPlayback()
                     self.stopCurrentPlayer()
-                    self.synthesizer.stopSpeaking(at: .immediate)
+                    self.stopSpeechOnMain()
                     self.emit(.loading(asset.id))
                     let nextPlayer = try AVAudioPlayer(contentsOf: url)
                     nextPlayer.delegate = self
@@ -209,10 +383,11 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     public func stopPlayback() {
+        cancelQueuedSpeech()
         performOnMain { [weak self] in
             guard let self else { return }
             self.stopCurrentPlayer()
-            self.synthesizer.stopSpeaking(at: .immediate)
+            self.stopSpeechOnMain()
             self.emit(.stopped)
         }
     }
@@ -233,6 +408,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     public func record(_ request: AudioRecordingRequest) async throws -> Recording {
+        cancelQueuedSpeech()
         let requestID = UUID()
         recordingStateLock.lock()
         queuedRecordingRequestIDs.insert(requestID)
@@ -260,6 +436,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     public func play(recording: Recording) async throws {
+        cancelQueuedSpeech()
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             performOnMain { [weak self] in
                 guard let self else {
@@ -270,7 +447,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                     let url = try self.temporaryRecordingURL(for: recording.fileURL)
                     try self.prepareAudioForPlayback()
                     self.stopCurrentPlayer()
-                    self.synthesizer.stopSpeaking(at: .immediate)
+                    self.stopSpeechOnMain()
                     let nextPlayer = try AVAudioPlayer(contentsOf: url)
                     nextPlayer.delegate = self
                     nextPlayer.prepareToPlay()
@@ -556,7 +733,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             deleteCancelledRecording = false
             try prepareAudioForRecording()
             stopCurrentPlayer()
-            synthesizer.stopSpeaking(at: .immediate)
+            stopSpeechOnMain()
             let id = RecordingID(rawValue: UUID().uuidString)!
             let url = fileManager.temporaryDirectory
                 .appendingPathComponent("syllune-recording-\(id.rawValue)", isDirectory: false)

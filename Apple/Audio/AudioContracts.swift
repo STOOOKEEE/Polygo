@@ -139,6 +139,11 @@ public enum SpeechRate: String, Codable, Hashable, Sendable, CaseIterable {
     }
 }
 
+/// Publicly re-export the portable Mandarin extraction rule from PolygoCore so
+/// Apple clients can keep using the audio module's API while the behavior is
+/// covered by the package test target.
+public typealias MandarinSpeechText = PolygoCore.MandarinSpeechText
+
 /// A visual hint attached to a synthesis request. AVSpeechSynthesizer reads
 /// the Mandarin text; these markers are retained for the UI and never imply
 /// that Apple evaluated the learner’s tone.

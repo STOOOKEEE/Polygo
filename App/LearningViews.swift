@@ -3,7 +3,6 @@ import PolygoCore
 
 public struct TodayView: View {
     @EnvironmentObject private var model: AppModel
-    @State private var recentErrors: [String] = []
 
     public init() {}
     public var body: some View {
@@ -31,19 +30,8 @@ public struct TodayView: View {
                 }
 
                 resumeCard
-                reviewCard
-                objectiveCard
-
-                if !recentErrors.isEmpty {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Mes erreurs récentes").font(.title3.weight(.semibold)).foregroundStyle(SylluneColor.ink)
-                        ForEach(recentErrors, id: \.self) { value in
-                            Text(value).font(.body).foregroundStyle(SylluneColor.inkMuted)
-                        }
-                    }
-                    .padding(18)
-                    .sylluneCard()
-                }
+                pathCard
+                flashcardsCard
             }
             .frame(maxWidth: 760)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -51,18 +39,24 @@ public struct TodayView: View {
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Aujourd’hui")
-        .task { recentErrors = model.snapshot.lessonProgress.values.flatMap { $0.mistakeExerciseIDs.map(\.rawValue) }.sorted() }
+        .task(id: model.orderedLessonIDs) {
+            for lessonID in model.orderedLessonIDs {
+                _ = await model.loadLesson(lessonID)
+            }
+        }
     }
 
     private var resumeCard: some View {
         VStack(spacing: 0) {
-            if let lessonID = model.nextLessonID {
+            if let lessonID = model.resumeLessonID {
                 NavigationLink(destination: LessonView(lessonID: lessonID)) {
                     HStack(spacing: 16) {
-                        ProgressRing(value: model.snapshot.lessonProgress[lessonID]?.completionRate ?? 0)
+                        ProgressRing(value: lessonProgressFraction(for: lessonID))
                             .frame(width: 58, height: 58)
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("Reprendre").font(.headline).foregroundStyle(SylluneColor.ink)
+                            Text(model.snapshot.lessonProgress[lessonID]?.lastOpenedAt == nil ? "Commencer" : "Continuer")
+                                .font(.headline)
+                                .foregroundStyle(SylluneColor.ink)
                             Text(lessonTitle(lessonID)).font(.body).foregroundStyle(SylluneColor.inkMuted)
                             Text(progressText(for: lessonID)).font(.caption).foregroundStyle(SylluneColor.inkMuted)
                         }
@@ -70,6 +64,7 @@ public struct TodayView: View {
                         Image(systemName: "arrow.right.circle.fill").font(.title2).foregroundStyle(SylluneColor.jade)
                     }
                     .padding(20)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .sylluneCard(radius: 24)
@@ -83,6 +78,118 @@ public struct TodayView: View {
                 }
                 .padding(20).sylluneCard(radius: 24)
             }
+        }
+    }
+
+    private var pathCard: some View {
+        let total = model.orderedLessonIDs.count
+        let completed = model.snapshot.lessonProgress.values.filter { $0.completedAt != nil }.count
+        let value = total == 0 ? 0 : Double(completed) / Double(total)
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                Label("Ton parcours", systemImage: "map")
+                    .font(.headline)
+                    .foregroundStyle(SylluneColor.ink)
+                Spacer()
+                Text("\(completed) / \(total)")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+            ProgressView(value: value)
+                .tint(SylluneColor.jade)
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(Array(model.orderedLessonIDs.enumerated()), id: \.element) { index, lessonID in
+                    homeLessonRow(lessonID, index: index)
+                }
+            }
+            NavigationLink(destination: LearningPathView()) {
+                Label("Voir le parcours complet", systemImage: "arrow.right")
+            }
+            .buttonStyle(.bordered)
+            .tint(SylluneColor.jade)
+        }
+        .padding(18)
+        .sylluneCard()
+    }
+
+    private var flashcardsCard: some View {
+        let dueCount = model.snapshot.dueCards(at: model.dependencies.clock.now()).count
+        return ViewThatFits(in: .horizontal) {
+            flashcardsContent(dueCount: dueCount, compact: false)
+            flashcardsContent(dueCount: dueCount, compact: true)
+        }
+        .padding(18)
+        .sylluneCard()
+    }
+
+    @ViewBuilder
+    private func flashcardsContent(dueCount: Int, compact: Bool) -> some View {
+        if compact {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 14) {
+                    Image(systemName: "rectangle.stack.fill")
+                        .font(.title2)
+                        .foregroundStyle(SylluneColor.jade)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Flashcards").font(.headline).foregroundStyle(SylluneColor.ink)
+                        Text(dueCount == 0 ? "Aucune carte à revoir maintenant." : "\(dueCount) carte\(dueCount == 1 ? "" : "s") à revoir")
+                            .font(.body).foregroundStyle(SylluneColor.inkMuted)
+                    }
+                }
+                flashcardsLink(dueCount: dueCount)
+            }
+        } else {
+            HStack(spacing: 14) {
+                Image(systemName: "rectangle.stack.fill")
+                    .font(.title2)
+                    .foregroundStyle(SylluneColor.jade)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Flashcards").font(.headline).foregroundStyle(SylluneColor.ink)
+                    Text(dueCount == 0 ? "Aucune carte à revoir maintenant." : "\(dueCount) carte\(dueCount == 1 ? "" : "s") à revoir")
+                        .font(.body).foregroundStyle(SylluneColor.inkMuted)
+                }
+                Spacer(minLength: 8)
+                flashcardsLink(dueCount: dueCount)
+            }
+        }
+    }
+
+    private func flashcardsLink(dueCount: Int) -> some View {
+        NavigationLink(destination: ReviewCardsView()) {
+            Text(dueCount == 0 ? "Ouvrir" : "Réviser")
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(SylluneColor.jade)
+    }
+
+    @ViewBuilder
+    private func homeLessonRow(_ lessonID: LessonID, index: Int) -> some View {
+        let progress = model.snapshot.lessonProgress[lessonID]
+        let completed = progress?.completedAt != nil
+        let unlocked = model.isLessonUnlocked(lessonID)
+        let active = model.resumeLessonID == lessonID && !completed
+        let title = model.loadedLessons[lessonID]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon \(index + 1)"
+        let row = HStack(spacing: 10) {
+            Image(systemName: completed ? "checkmark.circle.fill" : unlocked ? active ? "play.circle.fill" : "circle" : "lock.fill")
+                .foregroundStyle(completed ? SylluneColor.success : unlocked ? SylluneColor.jade : SylluneColor.inkMuted)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.callout.weight(active ? .semibold : .regular))
+                    .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
+                Text(completed ? "Terminée" : active ? "En cours" : unlocked ? "À commencer" : "À débloquer")
+                    .font(.caption)
+                    .foregroundStyle(completed ? SylluneColor.success : active ? SylluneColor.jadeDeep : SylluneColor.inkMuted)
+            }
+            Spacer(minLength: 4)
+            if unlocked && !completed { Image(systemName: "chevron.right").foregroundStyle(SylluneColor.inkMuted) }
+        }
+        .padding(.vertical, 7)
+        .contentShape(Rectangle())
+        if unlocked {
+            NavigationLink(destination: LessonView(lessonID: lessonID)) { row }
+                .buttonStyle(.plain)
+        } else {
+            row
         }
     }
 
@@ -108,47 +215,31 @@ public struct TodayView: View {
             .frame(minHeight: 44, alignment: .leading)
     }
 
-    private var reviewCard: some View {
-        let count = model.snapshot.dueCards(at: model.dependencies.clock.now()).count
-        return VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Label("Révisions dues", systemImage: "rectangle.stack")
-                    .font(.headline).foregroundStyle(SylluneColor.ink)
-                Spacer()
-                Badge("\(count)", color: SylluneColor.surfaceRaised)
-            }
-            if count > 0 {
-                Text("Les cartes sont triées par échéance et restent disponibles hors ligne.")
-                    .font(.body).foregroundStyle(SylluneColor.inkMuted)
-                        NavigationLink(destination: ReviewCardsView()) { Text("Réviser") }
-                            .buttonStyle(SyllunePrimaryButtonStyle())
-            } else {
-                Text("Rien à revoir pour le moment.")
-                    .font(.body).foregroundStyle(SylluneColor.inkMuted)
-            }
-        }
-        .padding(18).sylluneCard()
-    }
-
-    private var objectiveCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Label("Objectif du jour", systemImage: "target")
-                .font(.headline).foregroundStyle(SylluneColor.ink)
-            Text("\(model.snapshot.profile?.dailyMinutes ?? 10) min")
-                .font(.title2.weight(.semibold)).foregroundStyle(SylluneColor.jadeDeep)
-            Text("Commence une leçon pour avancer dans ton objectif.")
-                .font(.callout).foregroundStyle(SylluneColor.inkMuted)
-        }
-        .padding(18).sylluneCard()
-    }
-
     private func lessonTitle(_ id: LessonID) -> String {
-        model.loadedLessons[id]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon \(id.rawValue)"
+        model.loadedLessons[id]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon en cours"
     }
 
     private func progressText(for id: LessonID) -> String {
         let progress = model.snapshot.lessonProgress[id]
-        return "\(progress?.answeredCount ?? 0) exercices répondus"
+        guard let lesson = model.loadedLessons[id] else {
+            return progress?.lastOpenedAt == nil ? "Première leçon" : "Reprise de ta leçon"
+        }
+        let count = lesson.blocks.reduce(into: 0) { result, block in
+            if case .exercise = block { result += 1 }
+        }
+        let index = min(progress?.currentExerciseIndex ?? 0, count)
+        return progress?.lastOpenedAt == nil ? "Prête à commencer" : "Exercice \(min(index + 1, max(1, count))) sur \(count)"
+    }
+
+    private func lessonProgressFraction(for id: LessonID) -> Double {
+        guard let lesson = model.loadedLessons[id] else {
+            return model.snapshot.lessonProgress[id]?.completedAt == nil ? 0 : 1
+        }
+        let count = lesson.blocks.reduce(into: 0) { result, block in
+            if case .exercise = block { result += 1 }
+        }
+        guard count > 0 else { return 0 }
+        return min(1, Double(model.snapshot.lessonProgress[id]?.currentExerciseIndex ?? 0) / Double(count))
     }
 }
 

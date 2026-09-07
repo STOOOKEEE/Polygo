@@ -40,7 +40,11 @@ final class LessonReviewJourneyTests: XCTestCase {
         let exercises = lesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
 
         XCTAssertEqual(lesson.id, "lesson-01")
-        XCTAssertEqual(exercises.count, 6, "L1 doit exposer ses six exercices dans le JSON")
+        XCTAssertGreaterThanOrEqual(
+            exercises.count,
+            6,
+            "L1 doit conserver ses activités de récupération, production et transfert"
+        )
         XCTAssertEqual(lesson.cards.count, 5, "L1 doit fournir cinq cartes dans le JSON")
 
         completeOnboardingIfNeeded()
@@ -99,10 +103,14 @@ final class LessonReviewJourneyTests: XCTestCase {
             answerChoice(exercise)
         case "wordOrder":
             answerWordOrder(exercise)
+        case "fillBlank":
+            answerFillBlank(exercise)
         case "speaking":
             answerSpeaking(exercise)
         case "handwriting":
             try answerHandwriting(exercise)
+        case "flashcard":
+            answerFlashcard()
         default:
             XCTFail("Type d’exercice L1 inattendu dans le JSON : \(exercise.kind)")
         }
@@ -142,6 +150,28 @@ final class LessonReviewJourneyTests: XCTestCase {
                 "La tuile \(token.hanzi) doit enregistrer sa position"
             )
         }
+    }
+
+    private func answerFillBlank(_ exercise: ExerciseFixture) {
+        guard let acceptedAnswer = exercise.acceptedAnswers?.first else {
+            XCTFail("La réponse acceptée manque dans le JSON pour \(exercise.header.id)")
+            return
+        }
+
+        let field = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS[c] %@ OR label CONTAINS[c] %@", "Mot manquant", "Mot manquant")).firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: timeout), "Le champ de réponse est absent pour \(exercise.header.id)")
+        field.tap()
+        field.typeText(acceptedAnswer)
+    }
+
+    private func answerFlashcard() {
+        let reveal = button(exactly: "Révéler")
+        XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "L’activité carte doit proposer sa révélation")
+        reveal.tap()
+
+        let good = button(exactly: "Bien")
+        XCTAssertTrue(good.waitForExistence(timeout: timeout), "La carte révélée doit proposer une auto-évaluation")
+        good.tap()
     }
 
     private func answerSpeaking(_ exercise: ExerciseFixture) {
@@ -467,6 +497,8 @@ private struct ExerciseFixture: Decodable {
     let correctChoiceID: String?
     let tokens: [TokenFixture]?
     let correctOrder: [String]?
+    let sentence: String?
+    let acceptedAnswers: [String]?
     let targetHanzi: String?
     let guideAsset: AssetFixture?
     let expectedStrokeCount: Int?

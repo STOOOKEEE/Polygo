@@ -138,6 +138,31 @@ public struct LessonProgress: Codable, Hashable, Sendable {
     public let correctExerciseIDs: Set<ExerciseID>
     public let mistakeExerciseIDs: Set<ExerciseID>
     public let lastEvaluations: [ExerciseID: ExerciseEvaluation]
+    /// The last exercise shown in the lesson. This is kept separately from
+    /// `answeredExerciseIDs`: a learner may leave an exercise before
+    /// submitting it, or may be looking at feedback after submitting it.
+    public let currentExerciseIndex: Int
+    /// Stable content identity for the exercise at `currentExerciseIndex`.
+    /// It lets a newer lesson document relocate a saved position safely.
+    public let currentExerciseID: ExerciseID?
+    /// The answer currently in the exercise controls, when one exists. It is
+    /// intentionally persisted so a background/relaunch round trip does not
+    /// discard a partially composed answer.
+    public let pendingAnswer: ExerciseAnswer?
+    /// Feedback currently visible for `currentExerciseIndex`, if any.
+    public let pendingEvaluation: ExerciseEvaluation?
+    /// Drafts and results for authored dialogue turn activities. They are
+    /// keyed by block ID so a lesson can contain more than one dialogue.
+    public let dialogueDrafts: [BlockID: String]
+    public let dialogueResults: [BlockID: Bool]
+
+    private enum CodingKeys: String, CodingKey {
+        case lessonID, completedObjectiveIDs, completedAt, attemptCount,
+             bestScore, lastOpenedAt, answeredExerciseIDs, correctExerciseIDs,
+             mistakeExerciseIDs, lastEvaluations, currentExerciseIndex,
+             currentExerciseID, pendingAnswer, pendingEvaluation,
+             dialogueDrafts, dialogueResults
+    }
 
     public init(
         lessonID: LessonID,
@@ -149,11 +174,45 @@ public struct LessonProgress: Codable, Hashable, Sendable {
         answeredExerciseIDs: Set<ExerciseID> = [],
         correctExerciseIDs: Set<ExerciseID> = [],
         mistakeExerciseIDs: Set<ExerciseID> = [],
-        lastEvaluations: [ExerciseID: ExerciseEvaluation] = [:]
+        lastEvaluations: [ExerciseID: ExerciseEvaluation] = [:],
+        currentExerciseIndex: Int = 0,
+        currentExerciseID: ExerciseID? = nil,
+        pendingAnswer: ExerciseAnswer? = nil,
+        pendingEvaluation: ExerciseEvaluation? = nil,
+        dialogueDrafts: [BlockID: String] = [:],
+        dialogueResults: [BlockID: Bool] = [:]
     ) {
         self.lessonID = lessonID; self.completedObjectiveIDs = completedObjectiveIDs; self.completedAt = completedAt
         self.attemptCount = max(0, attemptCount); self.bestScore = min(1, max(0, bestScore)); self.lastOpenedAt = lastOpenedAt
         self.answeredExerciseIDs = answeredExerciseIDs; self.correctExerciseIDs = correctExerciseIDs; self.mistakeExerciseIDs = mistakeExerciseIDs; self.lastEvaluations = lastEvaluations
+        self.currentExerciseIndex = max(0, currentExerciseIndex)
+        self.currentExerciseID = currentExerciseID
+        self.pendingAnswer = pendingAnswer
+        self.pendingEvaluation = pendingEvaluation
+        self.dialogueDrafts = dialogueDrafts
+        self.dialogueResults = dialogueResults
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(
+            lessonID: try c.decode(LessonID.self, forKey: .lessonID),
+            completedObjectiveIDs: try c.decodeIfPresent(Set<String>.self, forKey: .completedObjectiveIDs) ?? [],
+            completedAt: try c.decodeIfPresent(Date.self, forKey: .completedAt),
+            attemptCount: try c.decodeIfPresent(Int.self, forKey: .attemptCount) ?? 0,
+            bestScore: try c.decodeIfPresent(Double.self, forKey: .bestScore) ?? 0,
+            lastOpenedAt: try c.decodeIfPresent(Date.self, forKey: .lastOpenedAt),
+            answeredExerciseIDs: try c.decodeIfPresent(Set<ExerciseID>.self, forKey: .answeredExerciseIDs) ?? [],
+            correctExerciseIDs: try c.decodeIfPresent(Set<ExerciseID>.self, forKey: .correctExerciseIDs) ?? [],
+            mistakeExerciseIDs: try c.decodeIfPresent(Set<ExerciseID>.self, forKey: .mistakeExerciseIDs) ?? [],
+            lastEvaluations: try c.decodeIfPresent([ExerciseID: ExerciseEvaluation].self, forKey: .lastEvaluations) ?? [:],
+            currentExerciseIndex: try c.decodeIfPresent(Int.self, forKey: .currentExerciseIndex) ?? 0,
+            currentExerciseID: try c.decodeIfPresent(ExerciseID.self, forKey: .currentExerciseID),
+            pendingAnswer: try c.decodeIfPresent(ExerciseAnswer.self, forKey: .pendingAnswer),
+            pendingEvaluation: try c.decodeIfPresent(ExerciseEvaluation.self, forKey: .pendingEvaluation),
+            dialogueDrafts: try c.decodeIfPresent([BlockID: String].self, forKey: .dialogueDrafts) ?? [:],
+            dialogueResults: try c.decodeIfPresent([BlockID: Bool].self, forKey: .dialogueResults) ?? [:]
+        )
     }
 
     public var answeredCount: Int { answeredExerciseIDs.count }
@@ -216,6 +275,8 @@ public struct ProgressSnapshot: Codable, Hashable, Sendable {
 public enum ProgressEventPayload: Codable, Hashable, Sendable {
     case onboardingCompleted(profile: LearnerProfile)
     case lessonStarted(lessonID: LessonID, at: Date)
+    case lessonRestarted(lessonID: LessonID, at: Date)
+    case lessonCheckpointSaved(lessonID: LessonID, exerciseIndex: Int, exerciseID: ExerciseID?, answer: ExerciseAnswer?, evaluation: ExerciseEvaluation?, dialogueDrafts: [BlockID: String], dialogueResults: [BlockID: Bool], at: Date)
     case exerciseEvaluated(lessonID: LessonID, blockID: BlockID, evaluation: ExerciseEvaluation, at: Date)
     case lessonCompleted(lessonID: LessonID, at: Date)
     case flashcardAdded(cardID: CardID, at: Date)
@@ -224,14 +285,26 @@ public enum ProgressEventPayload: Codable, Hashable, Sendable {
     case recordingSaved(recordingID: RecordingID, exerciseID: ExerciseID, at: Date)
     case drawingSaved(drawingID: DrawingID, exerciseID: ExerciseID, at: Date)
 
-    private enum CodingKeys: String, CodingKey { case kind, profile, lessonID, blockID, evaluation, exerciseID, cardID, rating, recordingID, drawingID, at, suspended }
-    private enum Kind: String, Codable { case onboardingCompleted, lessonStarted, exerciseEvaluated, lessonCompleted, flashcardAdded, flashcardReviewed, flashcardSuspended, recordingSaved, drawingSaved }
+    private enum CodingKeys: String, CodingKey { case kind, profile, lessonID, blockID, evaluation, exerciseID, cardID, rating, recordingID, drawingID, at, suspended, exerciseIndex, answer, dialogueDrafts, dialogueResults }
+    private enum Kind: String, Codable { case onboardingCompleted, lessonStarted, lessonRestarted, lessonCheckpointSaved, exerciseEvaluated, lessonCompleted, flashcardAdded, flashcardReviewed, flashcardSuspended, recordingSaved, drawingSaved }
 
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         switch try c.decode(Kind.self, forKey: .kind) {
         case .onboardingCompleted: self = .onboardingCompleted(profile: try c.decode(LearnerProfile.self, forKey: .profile))
         case .lessonStarted: self = .lessonStarted(lessonID: try c.decode(LessonID.self, forKey: .lessonID), at: try c.decode(Date.self, forKey: .at))
+        case .lessonRestarted: self = .lessonRestarted(lessonID: try c.decode(LessonID.self, forKey: .lessonID), at: try c.decode(Date.self, forKey: .at))
+        case .lessonCheckpointSaved:
+            self = .lessonCheckpointSaved(
+                lessonID: try c.decode(LessonID.self, forKey: .lessonID),
+                exerciseIndex: max(0, try c.decode(Int.self, forKey: .exerciseIndex)),
+                exerciseID: try c.decodeIfPresent(ExerciseID.self, forKey: .exerciseID),
+                answer: try c.decodeIfPresent(ExerciseAnswer.self, forKey: .answer),
+                evaluation: try c.decodeIfPresent(ExerciseEvaluation.self, forKey: .evaluation),
+                dialogueDrafts: try c.decodeIfPresent([BlockID: String].self, forKey: .dialogueDrafts) ?? [:],
+                dialogueResults: try c.decodeIfPresent([BlockID: Bool].self, forKey: .dialogueResults) ?? [:],
+                at: try c.decode(Date.self, forKey: .at)
+            )
         case .exerciseEvaluated: self = .exerciseEvaluated(lessonID: try c.decode(LessonID.self, forKey: .lessonID), blockID: try c.decode(BlockID.self, forKey: .blockID), evaluation: try c.decode(ExerciseEvaluation.self, forKey: .evaluation), at: try c.decode(Date.self, forKey: .at))
         case .lessonCompleted: self = .lessonCompleted(lessonID: try c.decode(LessonID.self, forKey: .lessonID), at: try c.decode(Date.self, forKey: .at))
         case .flashcardAdded: self = .flashcardAdded(cardID: try c.decode(CardID.self, forKey: .cardID), at: try c.decode(Date.self, forKey: .at))
@@ -247,6 +320,9 @@ public enum ProgressEventPayload: Codable, Hashable, Sendable {
         switch self {
         case .onboardingCompleted(let profile): try c.encode(Kind.onboardingCompleted, forKey: .kind); try c.encode(profile, forKey: .profile)
         case .lessonStarted(let id, let date): try c.encode(Kind.lessonStarted, forKey: .kind); try c.encode(id, forKey: .lessonID); try c.encode(date, forKey: .at)
+        case .lessonRestarted(let id, let date): try c.encode(Kind.lessonRestarted, forKey: .kind); try c.encode(id, forKey: .lessonID); try c.encode(date, forKey: .at)
+        case .lessonCheckpointSaved(let id, let index, let exerciseID, let answer, let evaluation, let dialogueDrafts, let dialogueResults, let date):
+            try c.encode(Kind.lessonCheckpointSaved, forKey: .kind); try c.encode(id, forKey: .lessonID); try c.encode(max(0, index), forKey: .exerciseIndex); try c.encodeIfPresent(exerciseID, forKey: .exerciseID); try c.encodeIfPresent(answer, forKey: .answer); try c.encodeIfPresent(evaluation, forKey: .evaluation); try c.encode(dialogueDrafts, forKey: .dialogueDrafts); try c.encode(dialogueResults, forKey: .dialogueResults); try c.encode(date, forKey: .at)
         case .exerciseEvaluated(let lesson, let block, let evaluation, let date): try c.encode(Kind.exerciseEvaluated, forKey: .kind); try c.encode(lesson, forKey: .lessonID); try c.encode(block, forKey: .blockID); try c.encode(evaluation, forKey: .evaluation); try c.encode(date, forKey: .at)
         case .lessonCompleted(let id, let date): try c.encode(Kind.lessonCompleted, forKey: .kind); try c.encode(id, forKey: .lessonID); try c.encode(date, forKey: .at)
         case .flashcardAdded(let id, let date): try c.encode(Kind.flashcardAdded, forKey: .kind); try c.encode(id, forKey: .cardID); try c.encode(date, forKey: .at)

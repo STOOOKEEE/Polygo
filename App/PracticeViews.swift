@@ -17,7 +17,11 @@ public struct OralView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 if let exercise {
-                    ChineseSelectableText(exercise.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Oral", font: .largeTitle.weight(.semibold))
+                    ChineseSelectableText(
+                        exercise.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Oral",
+                        font: .largeTitle.weight(.semibold),
+                        speechEnabled: false
+                    )
                         .foregroundStyle(SylluneColor.ink)
                     SpeechPracticeView(
                         exercise: exercise,
