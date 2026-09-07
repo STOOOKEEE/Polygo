@@ -14,11 +14,11 @@ La suite portable `swift test --disable-sandbox --parallel` passe avec **35/35
 tests**. Le filtre `ContentContractTests` passe avec **6/6 tests**. La
 vérification `git diff --check` ne relève aucune erreur de formatage.
 
-Le run Apple `34116224643` sur le commit `28128b5` est vert pour le paquet,
-le build iOS, le smoke UI iOS et le build macOS. Il valide l’état alors suivi
-par CI. Le contenu curriculum courant et le nouveau parcours UI décrit
-ci-dessous sont encore dans l’arbre de travail et doivent être inclus dans un
-prochain run Apple.
+Le dernier run Apple **34131645170**, sur le commit
+`baed98864a06dd53eb81d1f916a17cc9c7240394`, a réussi les jobs `package`
+(35/35 tests) et `build-macos`, la compilation iOS, la vérification des
+métadonnées de l’application et les tests UI iOS. Les deux tests UI ont passé
+avec zéro échec.
 
 ## Contrats de contenu
 
@@ -89,15 +89,44 @@ données utilisateur et n’injecte ni backend ni réponse de test. Il est compi
 par la cible `PolygoAppUITests` puisque `project.yml` inclut tout le dossier
 `Tests/PolygoAppUITests`.
 
-## Vérifications en attente sur appareil Apple
+Le run Apple 34131645170 a exécuté les deux tests UI sur un iPhone 16 Pro,
+iOS 18.5. Le parcours ajouté est passé en 181,393 secondes et le smoke
+existant en 108,208 secondes :
+
+- `LessonReviewJourneyTests.testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch` : **PASS**, avec zéro échec ;
+- `PolygoAppUITests.testFrenchOnboardingAndPrimaryOfflineJourneys` : **PASS**, avec zéro échec.
+
+Le journal confirme le chemin oral de secours après le refus explicite de la
+permission microphone. Le test a ensuite émis les sept gestes du guide de `你`,
+validé puis enregistré le tracé localement, et poursuivi jusqu’à la fin de L1.
+Ses assertions successives ont confirmé les cinq cartes dues, la révélation et
+la note « Bien » de la première carte, puis quatre cartes dues après relance et
+la ligne L1 « Terminé ». Le log contient bien sept actions `Press ... then drag`
+sur la zone de tracé et le test s’est terminé avec zéro échec ; ces résultats
+valident donc les états observables vérifiés par le test, sans dépendre d’un
+backend ou d’une réinitialisation des données.
+
+Le smoke existant avait échoué après l’ouverture de la ligne de leçon terminée,
+avant ses vérifications de fiche mot, cartes, lecture et réglages. Le commit
+candidat ajoute une zone de toucher à toute la ligne de vocabulaire dans
+`LessonView.swift`. Le run 34131645170 confirme ensuite la navigation complète
+du smoke et toutes ses vérifications de fiche mot, cartes, lecture et réglages.
+
+## Vérifications manuelles restantes
 
 Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
-aucun test UI ne peut donc y être exécuté. Le nouveau parcours E2E est en
-attente d’un run Apple CI avec le contenu courant. Ce run devra confirmer les
-permissions microphone et reconnaissance vocale, l’auto-évaluation de
-secours, les sept gestes du canevas, la persistance du dessin, la relance et
-la conservation de l’état SRS.
+les tests UI ne peuvent donc pas y être exécutés localement. Le run Apple
+34131645170 valide le nouveau parcours E2E, y compris le fallback oral,
+l’écriture, la persistance locale, la revue et la relance, ainsi que le smoke
+existant jusqu’aux fiches vocabulaire, cartes, lecture et réglages. Le réglage
+Sombre a été sélectionné et confirmé par le smoke ; son rendu visuel reste à
+examiner manuellement.
 
-L’audit VoiceOver, Dynamic Type XXXL, contraste, mode sombre, réduction des
-animations, clavier macOS, fenêtres étroites et conflits de synchronisation
-reste statique tant qu’un appareil ou simulateur Apple n’est pas disponible.
+L’audit VoiceOver, Dynamic Type XXXL, contraste, rendu du mode sombre,
+réduction des animations, clavier macOS et fenêtres étroites reste à compléter
+par un audit manuel sur iPhone, iPad et Mac. Les labels et groupes sont présents,
+mais la langue et la prononciation VoiceOver ainsi que les parcours de toucher
+manuel ne sont pas certifiés. Speech avec permission accordée reste à vérifier
+sur appareil ; le parcours CI a exercé le fallback après refus du microphone.
+CloudKit reste prévu mais inactif : ses conflits réseau ne sont pas testés et
+seuls les scénarios du modèle local sont couverts.
