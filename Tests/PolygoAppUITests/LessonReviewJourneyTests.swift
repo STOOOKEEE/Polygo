@@ -319,8 +319,12 @@ final class LessonReviewJourneyTests: XCTestCase {
             // Start the scroll from the far edge of the app so this helper
             // cannot become a handwriting stroke when the target is the
             // drawing surface itself.
-            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: 0.86))
-            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: 0.16))
+            let viewport = viewportFrame()
+            let moveDown = element.frame.minY < viewport.minY
+            let startY = moveDown ? 0.16 : 0.86
+            let endY = moveDown ? 0.86 : 0.16
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: startY))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: endY))
             start.press(forDuration: 0.01, thenDragTo: end)
         }
     }
