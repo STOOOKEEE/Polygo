@@ -57,9 +57,15 @@ final class PolygoAppUITests: XCTestCase {
         let settingsLink = element(containing: "Réglages", type: .button)
         XCTAssertTrue(settingsLink.waitForExistence(timeout: timeout), "Le profil doit proposer les réglages")
         settingsLink.tap()
-        XCTAssertTrue(element(containing: "Thème", type: .any).waitForExistence(timeout: timeout), "Les réglages doivent exposer le thème")
-        XCTAssertTrue(element(containing: "Hors ligne", type: .any).waitForExistence(timeout: timeout), "Les réglages doivent exposer le statut hors ligne")
-        XCTAssertTrue(element(containing: "Sur cet appareil", type: .any).waitForExistence(timeout: timeout), "Le statut de synchronisation doit être honnête")
+        let theme = element(containing: "Thème", type: .any)
+        XCTAssertTrue(findAfterScrolling(theme), "Les réglages doivent exposer le thème")
+        theme.tap()
+        let darkTheme = element(containing: "Sombre", type: .any)
+        XCTAssertTrue(darkTheme.waitForExistence(timeout: timeout), "Le sélecteur de thème doit proposer le mode sombre")
+        darkTheme.tap()
+        XCTAssertTrue(element(containing: "Sombre", type: .any).waitForExistence(timeout: timeout), "Le thème choisi doit être appliqué")
+        XCTAssertTrue(findAfterScrolling(element(containing: "Hors ligne", type: .any)), "Les réglages doivent exposer le statut hors ligne")
+        XCTAssertTrue(findAfterScrolling(element(containing: "Sur cet appareil", type: .any)), "Le statut de synchronisation doit être honnête")
     }
 
     private func completeOnboardingIfNeeded() {
@@ -117,6 +123,15 @@ final class PolygoAppUITests: XCTestCase {
         } else {
             XCTFail("Le bouton de retour est absent")
         }
+    }
+
+    private func findAfterScrolling(_ element: XCUIElement, maxSwipes: Int = 6) -> Bool {
+        if element.waitForExistence(timeout: 2) { return true }
+        for _ in 0..<maxSwipes {
+            app.swipeUp()
+            if element.waitForExistence(timeout: 1) { return true }
+        }
+        return false
     }
 
     private func element(containing text: String, type: XCUIElement.ElementType) -> XCUIElement {
