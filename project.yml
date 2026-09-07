@@ -37,9 +37,12 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: App
-    resources:
       - path: Content
+        type: folder
+        buildPhase: resources
       - path: Design
+        type: folder
+        buildPhase: resources
     dependencies:
       - target: PolygoApple_iOS
       - package: PolygoPackage
@@ -59,9 +62,12 @@ targets:
     deploymentTarget: "14.0"
     sources:
       - path: App
-    resources:
       - path: Content
+        type: folder
+        buildPhase: resources
       - path: Design
+        type: folder
+        buildPhase: resources
     dependencies:
       - target: PolygoApple_macOS
       - package: PolygoPackage

@@ -26,6 +26,7 @@ public struct HandwritingPracticeView: View {
 
     private let handwritingService: any HandwritingService
     private let suppliedGuide: HandwritingGuide?
+    private let onDrawingCreated: ((DrawingID) -> Void)?
 
     @State private var mode: HandwritingPracticeMode = .guided
     @State private var strokes: [HandwritingStroke] = []
@@ -46,7 +47,7 @@ public struct HandwritingPracticeView: View {
         exercise: HandwritingExercise,
         answer: Binding<ExerciseAnswer?>
     ) {
-        self.init(exercise: exercise, answer: answer, service: nil, guide: nil)
+        self.init(exercise: exercise, answer: answer, service: nil, guide: nil, onDrawingCreated: nil)
     }
 
     /// The optional dependencies let the app inject its configured local
@@ -56,12 +57,14 @@ public struct HandwritingPracticeView: View {
         exercise: HandwritingExercise,
         answer: Binding<ExerciseAnswer?>,
         service: (any HandwritingService)?,
-        guide: HandwritingGuide? = nil
+        guide: HandwritingGuide? = nil,
+        onDrawingCreated: ((DrawingID) -> Void)? = nil
     ) {
         self.exercise = exercise
         self._answer = answer
         self.handwritingService = service ?? LocalHandwritingService.shared
         self.suppliedGuide = guide
+        self.onDrawingCreated = onDrawingCreated
     }
 
     private var guide: HandwritingGuide? {
@@ -85,7 +88,6 @@ public struct HandwritingPracticeView: View {
                 Text(statusMessage)
                     .font(.callout)
                     .foregroundStyle(.secondary)
-                    .accessibilityLiveRegion(.polite)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -403,15 +405,15 @@ public struct HandwritingPracticeView: View {
     private func invalidatePreviousAnswer() {
         answer = nil
         validation = nil
-        guard let savedDrawingID else { return }
+        guard savedDrawingID != nil else { return }
         self.savedDrawingID = nil
-        Task {
-            try? await handwritingService.delete(drawingID: savedDrawingID)
-        }
+        // A drawing that has already been handed to the app model belongs to
+        // the append-only history. Keep its local capture available when the
+        // learner starts a new attempt instead of leaving a dangling event.
     }
 
     private func submitAnswer(selfChecked: Bool) {
-        guard hasDrawing, !isSaving else { return }
+        guard hasDrawing, answer == nil, !isSaving else { return }
         finishStroke()
         guard !strokes.isEmpty else { return }
         isSaving = true
@@ -435,6 +437,7 @@ public struct HandwritingPracticeView: View {
             do {
                 let persistedID = try await handwritingService.persist(capture)
                 savedDrawingID = persistedID
+                onDrawingCreated?(persistedID)
                 answer = .handwriting(HandwritingAnswer(
                     drawingID: persistedID,
                     recognizedText: nil,

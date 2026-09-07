@@ -19,9 +19,17 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     // existential while its mutable platform state remains queue-confined.
     private var player: AVAudioPlayer?
     private var activeAssetID: AssetID?
+
+    // AVAudioRecorder state is main-queue confined. The admission sets are
+    // protected separately because cancellation may arrive while the request
+    // is waiting for its initial DispatchQueue.main hop.
+    private let recordingStateLock = NSLock()
+    private var queuedRecordingRequestIDs: Set<UUID> = []
+    private var cancelledRecordingRequestIDs: Set<UUID> = []
     private var recorder: AVAudioRecorder?
     private var recordingContinuation: CheckedContinuation<Recording, Error>?
     private var recordingID: RecordingID?
+    private var recordingRequestID: UUID?
     private var deleteCancelledRecording = false
 
     // Speech callbacks can arrive after a view has disappeared. Keep the
@@ -225,22 +233,23 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     public func record(_ request: AudioRecordingRequest) async throws -> Recording {
-        try await withTaskCancellationHandler(operation: {
+        let requestID = UUID()
+        recordingStateLock.lock()
+        queuedRecordingRequestIDs.insert(requestID)
+        recordingStateLock.unlock()
+
+        return try await withTaskCancellationHandler(operation: {
             try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Recording, Error>) in
                 performOnMain { [weak self] in
                     guard let self else {
                         continuation.resume(throwing: AudioServiceError.unavailable)
                         return
                     }
-                    self.beginRecording(request, continuation: continuation)
+                    self.beginRecording(request, requestID: requestID, continuation: continuation)
                 }
             }
         }, onCancel: { [weak self] in
-            self?.performOnMain { [weak self] in
-                guard let self, self.recorder != nil else { return }
-                self.deleteCancelledRecording = true
-                self.stopRecordingOnMain()
-            }
+            self?.cancelRecording(requestID: requestID)
         })
     }
 
@@ -485,17 +494,11 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     public func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
-        guard self.recorder === recorder else { return }
         let reason = error?.localizedDescription ?? "Erreur d’encodage"
-        let continuation = recordingContinuation
-        self.recorder = nil
-        recordingContinuation = nil
-        recordingID = nil
-        if fileManager.fileExists(atPath: recorder.url.path) {
-            try? fileManager.removeItem(at: recorder.url)
-        }
-        continuation?.resume(throwing: AudioServiceError.recordingFailed(reason))
-        deactivateAudioSession()
+        failRecording(
+            recorder,
+            with: AudioServiceError.recordingFailed(reason)
+        )
     }
 
     // MARK: AVAudioPlayerDelegate
@@ -520,8 +523,19 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
 
     private func beginRecording(
         _ request: AudioRecordingRequest,
+        requestID: UUID,
         continuation: CheckedContinuation<Recording, Error>
     ) {
+        recordingStateLock.lock()
+        queuedRecordingRequestIDs.remove(requestID)
+        let wasCancelled = cancelledRecordingRequestIDs.remove(requestID) != nil
+        recordingStateLock.unlock()
+
+        guard !wasCancelled else {
+            continuation.resume(throwing: CancellationError())
+            return
+        }
+
         guard recorder == nil else {
             continuation.resume(throwing: AudioServiceError.recordingInProgress)
             return
@@ -537,6 +551,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             return
         }
 
+        var recordingURL: URL?
         do {
             deleteCancelledRecording = false
             try prepareAudioForRecording()
@@ -546,6 +561,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             let url = fileManager.temporaryDirectory
                 .appendingPathComponent("syllune-recording-\(id.rawValue)", isDirectory: false)
                 .appendingPathExtension("m4a")
+            recordingURL = url
             let settings: [String: Any] = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                 AVSampleRateKey: 44_100.0,
@@ -554,19 +570,65 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             ]
             let nextRecorder = try AVAudioRecorder(url: url, settings: settings)
             nextRecorder.delegate = self
-            guard nextRecorder.record(forDuration: TimeInterval(request.maximumDurationSeconds)) else {
-                throw AudioServiceError.recordingFailed("Le microphone n’a pas démarré")
-            }
+            // Install the continuation before asking AVFoundation to start.
+            // This makes a synchronous delegate callback and a cancellation
+            // observe the same active request and leaves one cleanup path.
             recorder = nextRecorder
             recordingContinuation = continuation
             recordingID = id
+            recordingRequestID = requestID
+            guard nextRecorder.record(forDuration: TimeInterval(request.maximumDurationSeconds)) else {
+                failRecording(
+                    nextRecorder,
+                    with: AudioServiceError.recordingFailed("Le microphone n’a pas démarré")
+                )
+                return
+            }
         } catch let error as AudioServiceError {
+            if let recordingURL, fileManager.fileExists(atPath: recordingURL.path) {
+                try? fileManager.removeItem(at: recordingURL)
+            }
             deactivateAudioSession()
             continuation.resume(throwing: error)
         } catch {
+            if let recordingURL, fileManager.fileExists(atPath: recordingURL.path) {
+                try? fileManager.removeItem(at: recordingURL)
+            }
             deactivateAudioSession()
             continuation.resume(throwing: AudioServiceError.recordingFailed(error.localizedDescription))
         }
+    }
+
+    private func cancelRecording(requestID: UUID) {
+        // Mark a queued request synchronously, before posting to the main
+        // queue. The begin closure will consume this admission and resume its
+        // continuation without ever creating an AVAudioRecorder.
+        recordingStateLock.lock()
+        if queuedRecordingRequestIDs.remove(requestID) != nil {
+            cancelledRecordingRequestIDs.insert(requestID)
+        }
+        recordingStateLock.unlock()
+
+        performOnMain { [weak self] in
+            guard let self, self.recordingRequestID == requestID else { return }
+            self.deleteCancelledRecording = true
+            self.stopRecordingOnMain()
+        }
+    }
+
+    private func failRecording(_ recorder: AVAudioRecorder, with error: Error) {
+        guard self.recorder === recorder else { return }
+        let continuation = recordingContinuation
+        self.recorder = nil
+        recordingContinuation = nil
+        recordingID = nil
+        recordingRequestID = nil
+        deleteCancelledRecording = false
+        if fileManager.fileExists(atPath: recorder.url.path) {
+            try? fileManager.removeItem(at: recorder.url)
+        }
+        deactivateAudioSession()
+        continuation?.resume(throwing: error)
     }
 
     private func finishRecording(_ recorder: AVAudioRecorder, successfully: Bool) {
@@ -577,6 +639,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         self.recorder = nil
         recordingContinuation = nil
         recordingID = nil
+        recordingRequestID = nil
         deleteCancelledRecording = false
         let duration = max(0, Int((recorder.currentTime * 1_000).rounded()))
         let fileURL = recorder.url

@@ -66,45 +66,20 @@ public struct WritingView: View {
     @State private var answer: ExerciseAnswer?
     @State private var evaluation: ExerciseEvaluation?
     @State private var message: String?
-    @State private var strokeCount = 0
-    @State private var points: [[CGPoint]] = []
-    @State private var currentStroke: [CGPoint] = []
 
     public init(exerciseID: ExerciseID) { self.exerciseID = exerciseID }
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 if let exercise {
-                    Text(exercise.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Écriture")
-                        .font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
-                    ZStack {
-                    ChineseSelectableText(exercise.targetHanzi, font: .system(size: 150, design: .serif)).foregroundStyle(SylluneColor.ink.opacity(0.12))
-                        Canvas { context, _ in
-                            for stroke in points where stroke.count > 1 {
-                                var path = Path(); path.move(to: stroke[0]); for point in stroke.dropFirst() { path.addLine(to: point) }
-                                context.stroke(path, with: .color(SylluneColor.ink), lineWidth: 4)
-                            }
-                            if currentStroke.count > 1 {
-                                var path = Path(); path.move(to: currentStroke[0]); for point in currentStroke.dropFirst() { path.addLine(to: point) }
-                                context.stroke(path, with: .color(SylluneColor.coral), lineWidth: 4)
-                            }
+                    HandwritingPracticeView(
+                        exercise: exercise,
+                        answer: $answer,
+                        service: model.dependencies.handwriting,
+                        onDrawingCreated: { drawingID in
+                            Task { _ = await model.saveDrawing(drawingID, exerciseID: exerciseID) }
                         }
-                    }
-                    .frame(maxWidth: .infinity, minHeight: 260)
-                    .background(SylluneColor.surfaceRaised)
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius: 18).stroke(SylluneColor.border, lineWidth: 1))
-                    .gesture(DragGesture(minimumDistance: 0).onChanged { value in if currentStroke.isEmpty { currentStroke = [value.location] } else { currentStroke.append(value.location) } }.onEnded { _ in if currentStroke.count > 1 { points.append(currentStroke); strokeCount += 1 }; currentStroke = [] })
-                    .accessibilityLabel("Grille d’écriture pour \(exercise.targetHanzi). \(strokeCount) traits tracés.")
-                    HStack {
-                        Button("Effacer") { points.removeAll(); currentStroke.removeAll(); strokeCount = 0; answer = nil }.buttonStyle(.bordered)
-                        Button("Voir le modèle") { points.removeAll(); currentStroke.removeAll() }.buttonStyle(.bordered)
-                    }
-                    Text("Le tracé est conservé localement et peut être auto-évalué quand la reconnaissance n’est pas disponible.").font(.caption).foregroundStyle(SylluneColor.inkMuted)
-                    HStack {
-                        Button("À refaire") { answer = .handwriting(HandwritingAnswer(strokeCount: strokeCount, selfChecked: false)) }.buttonStyle(.bordered)
-                        Button("Bien") { answer = .handwriting(HandwritingAnswer(strokeCount: strokeCount, selfChecked: true)) }.buttonStyle(.borderedProminent).tint(SylluneColor.jade)
-                    }
+                    )
                     if let evaluation { FeedbackViewForPractice(evaluation: evaluation) }
                     Button(evaluation == nil ? "Vérifier" : "Terminer") { submit() }.buttonStyle(SyllunePrimaryButtonStyle()).disabled(answer == nil || lessonID == nil || blockID == nil)
                 } else if let message { ContentUnavailableView("Exercice d’écriture indisponible", systemImage: "pencil.slash", description: Text(message)) }

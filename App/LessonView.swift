@@ -64,6 +64,13 @@ public struct LessonView: View {
                     FeedbackView(evaluation: evaluation)
                 }
 
+                // Recap blocks are authored after the exercise sequence. Keep
+                // them in the lesson flow so the learner can see the bilan
+                // before deciding whether to finish the lesson.
+                if evaluation != nil, currentIndex == exercises.count - 1 {
+                    lessonEpilogue(lesson, after: block.0)
+                }
+
                 HStack(spacing: 12) {
                     if evaluation != nil {
                         Button("Réessayer") { self.evaluation = nil; self.answer = nil }
@@ -87,10 +94,48 @@ public struct LessonView: View {
         if let index = lesson.blocks.firstIndex(where: { $0.id == blockID }) {
             VStack(alignment: .leading, spacing: 14) {
                 ForEach(Array(lesson.blocks.prefix(upTo: index)), id: \.id) { block in
-                    PedagogicalBlockView(block: block, vocabulary: lesson.vocabulary, languageCodes: model.preferredLanguageCodes)
+                    PedagogicalBlockView(
+                        block: block,
+                        vocabulary: lesson.vocabulary,
+                        objectives: lesson.objectives,
+                        languageCodes: model.preferredLanguageCodes
+                    )
                 }
             }
         }
+    }
+
+    @ViewBuilder private func lessonEpilogue(_ lesson: LessonDocument, after blockID: BlockID) -> some View {
+        if let index = lesson.blocks.firstIndex(where: { $0.id == blockID }) {
+            let trailingBlocks = lesson.blocks.dropFirst(index + 1).filter { block in
+                if case .exercise = block { return false }
+                return true
+            }
+            if !trailingBlocks.isEmpty {
+                VStack(alignment: .leading, spacing: 14) {
+                    ForEach(Array(trailingBlocks), id: \.id) { block in
+                        PedagogicalBlockView(
+                            block: block,
+                            vocabulary: lesson.vocabulary,
+                            objectives: lesson.objectives,
+                            languageCodes: model.preferredLanguageCodes,
+                            objectiveResults: objectiveResults(for: block)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private func objectiveResults(for block: LessonBlock) -> [String: Bool] {
+        guard case .recap(let recap) = block else { return [:] }
+        var results: [String: Bool] = [:]
+        for objectiveID in recap.objectiveIDs {
+            let relatedExercises = exercises.filter { $0.1.header.objectiveIDs.contains(objectiveID) }
+            guard !relatedExercises.isEmpty else { continue }
+            results[objectiveID] = relatedExercises.allSatisfy { evaluationCountsAsComplete(answered[$0.1.id]) }
+        }
+        return results
     }
 
     @ViewBuilder private func answerControl(_ spec: ExerciseSpec) -> some View {
@@ -112,7 +157,10 @@ public struct LessonView: View {
             HandwritingPracticeView(
                 exercise: exercise,
                 answer: $answer,
-                service: model.dependencies.handwriting
+                service: model.dependencies.handwriting,
+                onDrawingCreated: { drawingID in
+                    Task { _ = await model.saveDrawing(drawingID, exerciseID: exercise.header.id) }
+                }
             )
         case .flashcard(let exercise): FlashcardAnswerView(exercise: exercise, card: model.reviewCard(for: exercise.cardID), answer: $answer)
         }
@@ -210,8 +258,24 @@ private struct FeedbackView: View {
 private struct PedagogicalBlockView: View {
     let block: LessonBlock
     let vocabulary: [VocabularyEntry]
+    let objectives: [LearningObjective]
     let languageCodes: [String]
+    let objectiveResults: [String: Bool]
     @EnvironmentObject private var model: AppModel
+
+    init(
+        block: LessonBlock,
+        vocabulary: [VocabularyEntry],
+        objectives: [LearningObjective] = [],
+        languageCodes: [String],
+        objectiveResults: [String: Bool] = [:]
+    ) {
+        self.block = block
+        self.vocabulary = vocabulary
+        self.objectives = objectives
+        self.languageCodes = languageCodes
+        self.objectiveResults = objectiveResults
+    }
 
     var body: some View {
         switch block {
@@ -259,9 +323,16 @@ private struct PedagogicalBlockView: View {
                     HStack(alignment: .top, spacing: 8) {
                         Text(line.speaker).font(.caption.weight(.semibold)).foregroundStyle(SylluneColor.inkMuted).frame(width: 56, alignment: .leading)
                         VStack(alignment: .leading, spacing: 2) {
-                            ChineseSelectableText(line.hanzi, speechEnabled: true).font(.body).foregroundStyle(SylluneColor.ink)
-                            Text(line.pinyin).font(.caption).foregroundStyle(SylluneColor.jadeDeep)
-                            Text(line.translation.resolve(preferred: languageCodes) ?? "").font(.caption).foregroundStyle(SylluneColor.inkMuted)
+                            ChineseSelectableText(
+                                hanzi: line.hanzi,
+                                font: .body,
+                                speechEnabled: true,
+                                vocabulary: vocabulary,
+                                pinyin: line.pinyin,
+                                translation: line.translation.resolve(preferred: languageCodes),
+                                audio: line.audio
+                            )
+                            .foregroundStyle(SylluneColor.ink)
                         }
                     }
                 }
@@ -274,20 +345,19 @@ private struct PedagogicalBlockView: View {
                     .font(.headline).foregroundStyle(SylluneColor.ink)
                 ForEach(value.paragraphs) { paragraph in
                     VStack(alignment: .leading, spacing: 4) {
-                        if paragraph.segmentation.isEmpty {
-                            ChineseSelectableText(paragraph.hanzi, font: .title3).foregroundStyle(SylluneColor.ink)
-                        } else {
-                            HStack(spacing: 0) {
-                                ForEach(Array(paragraph.segmentation.enumerated()), id: \.offset) { _, segment in
-                                    if let id = segment.vocabularyID {
-                                        NavigationLink(destination: WordDetailView(vocabularyID: id)) { Text(segment.surface).foregroundStyle(SylluneColor.jadeDeep) }.buttonStyle(.plain)
-                                    } else { Text(segment.surface).foregroundStyle(SylluneColor.ink) }
-                                }
-                            }
-                            .font(.title3)
-                        }
-                        Text(paragraph.pinyin).font(.callout).foregroundStyle(SylluneColor.jadeDeep)
-                        Text(paragraph.translation.resolve(preferred: languageCodes) ?? "").font(.caption).foregroundStyle(SylluneColor.inkMuted)
+                        ChineseSelectableText(
+                            hanzi: paragraph.hanzi,
+                            font: .title3,
+                            speechEnabled: true,
+                            vocabulary: vocabulary,
+                            segmentation: paragraph.segmentation,
+                            pinyin: paragraph.pinyin,
+                            translation: paragraph.translation.resolve(preferred: languageCodes),
+                            audio: paragraph.audio,
+                            wordInteractionEnabled: true
+                        )
+                        .foregroundStyle(SylluneColor.ink)
+                        .textSelection(.enabled)
                     }
                 }
             }
@@ -297,7 +367,58 @@ private struct PedagogicalBlockView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Label("À retenir", systemImage: "checklist").font(.headline).foregroundStyle(SylluneColor.ink)
                 Text("Revois les mots de cette leçon avant de continuer.").font(.body).foregroundStyle(SylluneColor.inkMuted)
-                Text("\(value.vocabularyIDs.count) mots · \(value.objectiveIDs.count) objectifs").font(.caption).foregroundStyle(SylluneColor.inkMuted)
+                Text("\(value.vocabularyIDs.count) mots · \(value.objectiveIDs.count) objectifs")
+                    .font(.caption)
+                    .foregroundStyle(SylluneColor.inkMuted)
+
+                if !value.vocabularyIDs.isEmpty {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Mots à revoir").font(.subheadline.weight(.semibold)).foregroundStyle(SylluneColor.ink)
+                        ForEach(value.vocabularyIDs, id: \.self) { id in
+                            if let word = vocabulary.first(where: { $0.id == id }) {
+                                NavigationLink(destination: WordDetailView(vocabularyID: word.id)) {
+                                    HStack(spacing: 8) {
+                                        ChineseSelectableText(
+                                            hanzi: word.hanzi,
+                                            font: .body,
+                                            speechEnabled: false,
+                                            vocabulary: [word],
+                                            segmentation: word.segmentation,
+                                            pinyin: word.pinyin,
+                                            translation: word.meaning.resolve(preferred: languageCodes),
+                                            audio: word.audio,
+                                            wordInteractionEnabled: false
+                                        )
+                                        Spacer(minLength: 0)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundStyle(SylluneColor.inkMuted)
+                                    }
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                    }
+                }
+
+                if !value.objectiveIDs.isEmpty {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Bilan des objectifs")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(SylluneColor.ink)
+                        ForEach(value.objectiveIDs, id: \.self) { objectiveID in
+                            let objective = objectives.first(where: { $0.id == objectiveID })
+                            let isComplete = objectiveResults[objectiveID]
+                            Label {
+                                Text(objective?.statement.resolve(preferred: languageCodes) ?? objectiveID)
+                                    .font(.body)
+                            } icon: {
+                                Image(systemName: isComplete == true ? "checkmark.circle.fill" : isComplete == false ? "arrow.counterclockwise.circle" : "circle")
+                                    .foregroundStyle(isComplete == true ? SylluneColor.success : isComplete == false ? SylluneColor.coral : SylluneColor.inkMuted)
+                            }
+                            .accessibilityValue(isComplete == true ? "réussi" : isComplete == false ? "à revoir" : "non évalué")
+                        }
+                    }
+                }
             }
             .padding(16).sylluneCard(radius: 14)
 

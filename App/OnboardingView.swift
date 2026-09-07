@@ -154,8 +154,18 @@ public struct OnboardingView: View {
             .sylluneCard()
             Button("Ouvrir ma première leçon") {
                 Task {
-                    if await model.completeOnboarding(displayName: name, level: level, minutes: minutes, reminderDays: days), let first = model.nextLessonID {
-                        await model.startLesson(first)
+                    guard await model.completeOnboarding(
+                        displayName: name,
+                        level: level,
+                        minutes: minutes,
+                        reminderDays: days
+                    ) else { return }
+                    guard let first = model.nextLessonID ?? model.orderedLessonIDs.first else { return }
+                    // Keep the destination as an identified lesson route. The
+                    // compact shell can select its tab while the lesson route
+                    // is handed to the navigation layer for the initial push.
+                    if await model.startLesson(first) {
+                        model.persistRoute(.lesson(first))
                     }
                 }
             }

@@ -51,7 +51,6 @@ public struct SpeechPracticeView: View {
                 Text(statusMessage)
                     .font(.callout)
                     .foregroundStyle(.secondary)
-                    .accessibilityLiveRegion(.polite)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -250,7 +249,12 @@ public struct SpeechPracticeView: View {
         captureTask?.cancel()
         captureTask = Task { @MainActor in
             defer { captureTask = nil }
+            guard !Task.isCancelled else { return }
             let permission = await audio.requestMicrophonePermission()
+            // Leaving the exercise while the system permission prompt is
+            // visible must not fall through into recorder setup when the
+            // prompt eventually completes.
+            guard !Task.isCancelled else { return }
             microphonePermission = permission
             guard permission == .authorized else {
                 isSelfEvaluationAvailable = true
@@ -268,9 +272,19 @@ public struct SpeechPracticeView: View {
                 localeIdentifier: "zh-CN",
                 maximumDurationSeconds: 30
             )
+            // Keep this check immediately before the async adapter call. The
+            // adapter also has a request admission token for cancellation that
+            // races this check with its main-queue setup.
+            guard !Task.isCancelled else {
+                isRecording = false
+                recordingStartedAt = nil
+                return
+            }
             do {
                 let saved = try await audio.record(request)
                 guard !Task.isCancelled else {
+                    isRecording = false
+                    recordingStartedAt = nil
                     try? await audio.delete(recording: saved)
                     return
                 }
@@ -279,6 +293,9 @@ public struct SpeechPracticeView: View {
                 recordingStartedAt = nil
                 onRecordingCreated?(saved.id)
                 await transcribe(saved)
+            } catch is CancellationError {
+                isRecording = false
+                recordingStartedAt = nil
             } catch {
                 isRecording = false
                 recordingStartedAt = nil

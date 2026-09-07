@@ -117,8 +117,11 @@ public final class AppModel: ObservableObject {
         return await append(.onboardingCompleted(profile: current.updating(dailyMinutes: minutes)))
     }
 
-    public func startLesson(_ id: LessonID) async {
-        if await append(.lessonStarted(lessonID: id, at: dependencies.clock.now())) { persistRoute(.lesson(id)) }
+    @discardableResult
+    public func startLesson(_ id: LessonID) async -> Bool {
+        guard await append(.lessonStarted(lessonID: id, at: dependencies.clock.now())) else { return false }
+        persistRoute(.lesson(id))
+        return true
     }
 
     @discardableResult
