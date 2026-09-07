@@ -312,6 +312,13 @@ final class LessonReviewJourneyTests: XCTestCase {
     private func dismissPermissionPrompts() {
         let deadline = Date().addingTimeInterval(5)
         while Date() < deadline {
+            // XCTest only runs an interruption monitor while the test tries
+            // to interact with the application.  The system permission sheet
+            // is owned by SpringBoard, so querying `app.alerts` alone leaves
+            // the request pending and the app waiting forever for its result.
+            // A harmless application tap gives the monitor a chance to deny
+            // the sheet; when no sheet is present it is simply a no-op.
+            app.tap()
             let alert = app.alerts.firstMatch
             if alert.exists {
                 if Self.denyPermission(in: alert) { return }
