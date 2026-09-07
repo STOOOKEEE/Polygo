@@ -62,8 +62,10 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.syllune.Polygo
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
         INFOPLIST_KEY_NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
         INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
   PolygoMacApp:
     type: application
     platform: macOS
