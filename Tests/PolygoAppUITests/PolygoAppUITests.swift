@@ -43,7 +43,10 @@ final class PolygoAppUITests: XCTestCase {
         // Vocabulary tokens in the lesson are pronunciation controls. They
         // must leave the exercise usable; the dedicated dictionary below is
         // the explicit route to the optional word detail screen.
-        let word = element(containing: "你好", type: .button)
+        // The expanded discovery block also exposes dialogue lines as
+        // buttons whose labels contain 你好. Match the token's exact label so
+        // this action follows the vocabulary control.
+        let word = button(exactly: "你好")
         XCTAssertTrue(word.waitForExistence(timeout: timeout), "Le mot 你好 doit être lié depuis la leçon")
         tapWhenVisible(word)
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La lecture du mot doit laisser la leçon utilisable")
@@ -176,6 +179,10 @@ final class PolygoAppUITests: XCTestCase {
         let audio = element(containing: "Écouter", type: .button)
         XCTAssertTrue(audio.waitForExistence(timeout: timeout), "La fiche mot doit proposer l’action audio")
         audio.tap()
+    }
+
+    private func button(exactly label: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
     }
 
     private func tapWhenVisible(_ element: XCUIElement) {

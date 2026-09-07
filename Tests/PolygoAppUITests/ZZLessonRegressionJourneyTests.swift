@@ -89,6 +89,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         XCTAssertTrue(participationField.waitForExistence(timeout: timeout), "La participation doit accepter une réponse écrite")
         tapWhenVisible(participationField)
         participationField.typeText(participationReply)
+        dismissKeyboardIfNeeded()
         let checkParticipation = button(containingAny: ["Vérifier ma réplique", "Vérifier la réplique", "Vérifier cette réponse"])
         XCTAssertTrue(checkParticipation.waitForExistence(timeout: timeout), "La réponse écrite doit pouvoir être vérifiée")
         tapWhenVisible(checkParticipation)
@@ -417,6 +418,26 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if promptedAlert.waitForExistence(timeout: 5) {
             XCTAssertTrue(Self.denyPermission(in: promptedAlert), "La demande d’autorisation audio doit proposer un refus")
         }
+    }
+
+    private func dismissKeyboardIfNeeded() {
+        let keyboard = app.keyboards.firstMatch
+        guard keyboard.exists else { return }
+
+        // The return key is localized by the simulator. Tapping it keeps the
+        // authored response intact while releasing the controls hidden behind
+        // the keyboard.
+        for label in ["Retour", "Return", "Done", "Terminé"] {
+            let key = keyboard.buttons[label]
+            if key.exists && key.isHittable {
+                key.tap()
+                return
+            }
+        }
+
+        // A single-line field can also dismiss its keyboard by tapping the
+        // unobstructed content above it when no localized return key exists.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.12)).tap()
     }
 
     @discardableResult
