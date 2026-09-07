@@ -1,0 +1,26 @@
+# Xcode and SwiftPM generated output
+.build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+.swiftpm/
+
+# Local signing and machine configuration
+*.mobileprovision
+*.p12
+*.cer
+*.entitlements.local
+
+# Syllune local-first data and media captures
+Application\ Support/
+PolygoData/
+*.m4a
+*.pkdrawing
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
