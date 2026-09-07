@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  package:
     runs-on: macos-15
     steps:
       - name: Check out source
@@ -21,7 +21,13 @@ jobs:
           swift --version
 
       - name: Run portable package tests
-        run: swift test
+        run: swift test --parallel
+
+  build-ios:
+    runs-on: macos-15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
 
       - name: Install XcodeGen
         run: |
@@ -57,6 +63,21 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             test
+
+  build-macos:
+    runs-on: macos-15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: |
+          if ! command -v xcodegen >/dev/null 2>&1; then
+            brew install xcodegen
+          fi
+
+      - name: Generate Xcode project
+        run: xcodegen generate --spec project.yml
 
       - name: Build macOS app
         run: >-
