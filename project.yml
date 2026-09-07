@@ -40,6 +40,8 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: App
+        excludes:
+          - Info*.plist
       - path: Content
         type: folder
         buildPhase: resources
@@ -47,10 +49,11 @@ targets:
         type: folder
         buildPhase: resources
     info:
-      path: App/Info.plist
+      path: App/Info-iOS.plist
       properties:
         NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
         NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."
+        UILaunchScreen: {}
     dependencies:
       - target: PolygoApple_iOS
       - package: PolygoPackage
@@ -66,12 +69,15 @@ targets:
         INFOPLIST_KEY_NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
         INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
   PolygoMacApp:
     type: application
     platform: macOS
     deploymentTarget: "14.0"
     sources:
       - path: App
+        excludes:
+          - Info*.plist
       - path: Content
         type: folder
         buildPhase: resources
@@ -79,7 +85,7 @@ targets:
         type: folder
         buildPhase: resources
     info:
-      path: App/Info.plist
+      path: App/Info-macOS.plist
       properties:
         NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
         NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."

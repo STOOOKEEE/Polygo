@@ -45,9 +45,43 @@ jobs:
           -scheme PolygoApp
           -destination 'generic/platform=iOS Simulator'
           -configuration Debug
+          -derivedDataPath "$RUNNER_TEMP/PolygoDerivedData"
           CODE_SIGNING_ALLOWED=NO
           CODE_SIGNING_REQUIRED=NO
           build
+
+      - name: Verify built iOS app metadata
+        run: |
+          set -euo pipefail
+          products_dir="$RUNNER_TEMP/PolygoDerivedData/Build/Products"
+          app_plist="$(find "$products_dir" -type f -path '*/PolygoApp.app/Info.plist' -print -quit)"
+          if [ -z "$app_plist" ]; then
+            echo "::error::PolygoApp.app/Info.plist is missing from the iOS build products"
+            find "$products_dir" -type f -name Info.plist -print
+            exit 1
+          fi
+
+          echo "Inspecting compiled iOS metadata: $app_plist"
+          plutil -p "$app_plist"
+
+          launch_screen="$(plutil -extract UILaunchScreen xml1 -o - "$app_plist" 2>/dev/null || true)"
+          launch_storyboard="$(/usr/libexec/PlistBuddy -c 'Print :UILaunchStoryboardName' "$app_plist" 2>/dev/null || true)"
+          if [ -n "$launch_screen" ]; then
+            echo "Modern UILaunchScreen declaration found"
+          elif [ -n "$launch_storyboard" ]; then
+            echo "Legacy UILaunchStoryboardName declaration found: $launch_storyboard"
+          else
+            echo "::error::The compiled iOS app has neither UILaunchScreen nor UILaunchStoryboardName"
+            exit 1
+          fi
+
+          device_family="$(plutil -extract UIDeviceFamily json -o - "$app_plist" 2>/dev/null || true)"
+          if ! printf '%s\n' "$device_family" | grep -Eq '(^|[^0-9])1([^0-9]|$)' \
+            || ! printf '%s\n' "$device_family" | grep -Eq '(^|[^0-9])2([^0-9]|$)'; then
+            echo "::error::The compiled iOS app must target iPhone and iPad (UIDeviceFamily=$device_family)"
+            exit 1
+          fi
+          echo "UIDeviceFamily includes iPhone and iPad: $device_family"
 
       - name: Run iOS UI smoke tests
         run: |
@@ -60,6 +94,7 @@ jobs:
             -destination "platform=iOS Simulator,id=$simulator_id" \
             -destination-timeout 120 \
             -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/PolygoDerivedData" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests.xcresult" \
