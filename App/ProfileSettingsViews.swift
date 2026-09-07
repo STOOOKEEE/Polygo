@@ -59,6 +59,7 @@ public struct ProfileView: View {
         return String(first).uppercased()
     }
 
+    @ViewBuilder
     private var stats: some View {
         let completed = model.snapshot.lessonProgress.values.filter { $0.completedAt != nil }.count
         let mastered = model.snapshot.reviewStates.values.filter { $0.repetition >= 2 && $0.lapseCount == 0 }.count
