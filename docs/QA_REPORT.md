@@ -1,153 +1,103 @@
 # Rapport QA Syllune
 
-Contrôle préparé le 7 septembre 2026. Le périmètre de cet agent est limité à
+Contrôle mis à jour le 7 septembre 2026. Le périmètre de cet agent couvre
 `Tests/PolygoCoreTests/**`, `Tests/PolygoAppUITests/**` et ce rapport.
 
-## Bloquants actuels — revue statique
+## Résultat de la vérification
 
-1. **Le lecteur perd le récapitulatif et le mot-à-mot de la lecture.**
-   `LessonView` affiche les blocs pédagogiques seulement avant le premier
-   exercice (`App/LessonView.swift:86-92`), alors que chaque JSON place son bloc
-   `recap` après le dernier exercice. Ce récapitulatif n’est donc jamais rendu.
-   Dans le bloc `reading`, les segments sont encore des `Text` et des
-   `NavigationLink` directs (`App/LessonView.swift:271-295`) : ils n’utilisent
-   pas `ChineseSelectableText`, ne fournissent pas le bouton audio par mot et
-   n’exposent pas son aide VoiceOver. Le mode histoire séparé a été raccordé,
-   mais le lecteur intégré à la leçon reste incomplet.
+Le contenu local actuel comprend quatre leçons (`lesson-01` à `lesson-04`),
+27 exercices, quatre lectures de quatre paragraphes et 17 cartes. Les tests
+de contrat lisent les JSON réels et vérifient les références fermées entre
+leçons, blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
-2. **Le bouton de fin d’onboarding n’ouvre pas la première leçon sur iPhone.**
-   `OnboardingView` appelle bien `startLesson` après « Ouvrir ma première
-   leçon », mais `PhoneTabShell` réduit toute route `.lesson` à l’onglet
-   `.today` (`App/OnboardingView.swift:144-149`, `App/Navigation.swift:137-142,
-   202-210`). Sur une taille compacte, l’action atterrit donc sur Aujourd’hui
-   et oblige l’apprenant à ouvrir Parcours manuellement.
+La suite portable `swift test --disable-sandbox --parallel` passe avec **35/35
+tests**. Le filtre `ContentContractTests` passe avec **6/6 tests**. La
+vérification `git diff --check` ne relève aucune erreur de formatage.
 
-3. **Une annulation orale peut laisser démarrer le microphone.**
-   `AppleAudioService.record` annule seulement si `recorder` existe déjà
-   (`Apple/Audio/AppleAudioService.swift:227-244`). Si la tâche est annulée
-   pendant le saut vers la file principale, la fermeture retourne sans marquer
-   la requête ; `beginRecording` peut alors créer l’enregistreur après la
-   disparition de `SpeechPracticeView` (`Apple/Audio/AppleAudioService.swift:521-562`,
-   `Apple/Audio/SpeechPracticeView.swift:58-70`). Il faut traiter cet état
-   « en attente » comme l’annulation Speech déjà corrigée.
+Le run Apple `34116224643` sur le commit `28128b5` est vert pour le paquet,
+le build iOS, le smoke UI iOS et le build macOS. Il valide l’état alors suivi
+par CI. Le contenu curriculum courant et le nouveau parcours UI décrit
+ci-dessous sont encore dans l’arbre de travail et doivent être inclus dans un
+prochain run Apple.
 
-4. **Le tracé est écrit sur disque, mais son événement de progression n’est
-   jamais appendu.** `HandwritingPracticeView` persiste le JSON via le service
-   local (`Apple/Handwriting/HandwritingPracticeView.swift:413-457`), tandis que
-   `LessonView` ne fournit aucun callback analogue à `onRecordingCreated`
-   (`App/LessonView.swift:102-116`). `AppModel.saveDrawing` existe
-   (`App/AppModel.swift:160-163`) mais n’est appelé nulle part : la reprise du
-   fichier et l’historique append-only ne décrivent donc pas le même dessin.
+## Contrats de contenu
 
-## État d’exécution
+`ContentContractTests.swift` vérifie notamment :
 
-### PASS exécuté
+- les quatre identifiants de leçon dans l’ordre du cours, les quantités
+  attendues (6, 7, 7 et 7 exercices ; 5, 5, 6 et 1 nouveaux mots) et la
+  version `2026.09.0` ;
+- les 27 exercices et leurs réponses canoniques, les 17 paires carte–mot,
+  les 16 paragraphes de lecture et les quatre histoires ;
+- les formes simplifiées et traditionnelles, les pinyins accentués et les
+  numéros de tons, y compris le ton neutre ;
+- les métadonnées éditoriales HSK-3.0 `2025-11` et HSK legacy `2.0` conservées
+  comme deux référentiels distincts, les quatre étapes pédagogiques
+  `observer`, `recuperer`, `produire`, `transferer`, le plafond de six
+  nouveaux mots par leçon, la réutilisation de mots antérieurs et les preuves
+  d’exercices pour les objectifs ;
+- l’absence honnête d’audio livré et les chemins, sommes SHA-256 et nombre de
+  traits des trois guides d’écriture locaux.
 
-- Inspection déterministe des JSON embarqués : `manifest.json`, le cours
-  `mandarin-starter` et `lesson-01` à `lesson-03` se lisent avec le schéma
-  attendu. Le cours référence les trois leçons dans l’ordre.
-- Contrôle des quantités du contenu : 5, 5 et 6 entrées lexicales ; 6, 7 et 7
-  exercices ; une histoire de quatre paragraphes par leçon, soit 3 histoires
-  et 20 exercices.
-- Contrôle des paires simplifié/traditionnel, pinyin accentué et numéros de
-  tons sur les 16 formes lexicales livrées.
-- Relecture statique des corrections déjà présentes : le lecteur de leçon
-  extrait tous les blocs `exercise` dans leur ordre et affiche les blocs
-  pédagogiques qui précèdent le premier exercice (`App/LessonView.swift:18-22`,
-  `App/LessonView.swift:86-92`) ; la fin réussie de la leçon ajoute toutes ses
-  cartes (`App/AppModel.swift:131-138`) ; l’ajout d’une carte existante ne
-  remplace pas son état (`Sources/PolygoCore/ProgressReducer.swift:112-115`).
-- Le bouton oral `Arrêter` appelle désormais `AudioService.stopRecording()` et
-  la sortie de l’exercice arrête lecture/capture et supprime l’enregistrement
-  temporaire (`Apple/Audio/SpeechPracticeView.swift:58-71,291-295`).
+`ExerciseAndProgressTests.swift` couvre la normalisation du pinyin, de la
+ponctuation et de la casse, les mauvaises formes de réponse, les scores
+invalides, les variantes de transcription, l’auto-évaluation, le parcours
+onboarding → leçon → exercice → fin → cartes, l’idempotence des événements,
+la conservation d’un état SRS lors d’un ajout répété, la correction d’une
+tentative et le rejet d’un événement d’un autre profil.
 
-### Tests XCTest ajoutés et vérifiés
+## Vérification statique du parcours
 
-`Tests/PolygoCoreTests/ContentContractTests.swift` couvre le décodage réel du
-contenu, les références fermées entre blocs/objectifs/mots/cartes/histoires,
-les 16 paires de script et pinyin, l’absence honnête d’audio livré et la
-réponse canonique acceptée pour chacun des 20 exercices.
+Le lecteur extrait les blocs `exercise` dans leur ordre, affiche les blocs
+pédagogiques qui précèdent le premier exercice et présente le récapitulatif
+placé après la séquence lorsque le dernier exercice est évalué. Les blocs de
+lecture intégrés utilisent `ChineseSelectableText`, leur segmentation et la
+fiche mot locale. Une fin réussie appelle `completeLesson`, qui ajoute toutes
+les cartes du document sans remplacer l’état SRS d’une carte déjà connue.
 
-`Tests/PolygoCoreTests/ExerciseAndProgressTests.swift` couvre la normalisation
-pinyin/ponctuation/casse, les réponses de mauvais type, les scores invalides,
-les variantes de transcription, l’auto-évaluation, la progression onboarding →
-leçon → exercice → fin → carte, l’idempotence d’un événement, la conservation
-d’un état SRS lors d’un ajout répété, la correction d’une tentative et le
-rejet d’un événement d’un autre profil.
+La navigation compacte conserve la route de leçon et l’onboarding transmet la
+première leçon au shell. L’annulation d’une tâche orale marque aussi une
+requête encore en attente avant le saut vers la file principale ; elle ne peut
+donc plus créer un enregistreur après la sortie de l’écran. La vue d’écriture
+injecte le service local, persiste le dessin et transmet l’identifiant au
+journal de progression via `onDrawingCreated`.
 
-`swift test --parallel` passe avec les 34 tests XCTest du paquet. Le smoke UI
-`Tests/PolygoAppUITests/PolygoAppUITests.swift` est écrit contre les labels
-français livrés, mais ne peut être compilé ou exécuté dans ce conteneur sans
-Xcode, SwiftUI et le SDK iOS.
+Le statut de synchronisation « Sur cet appareil » est cohérent avec l’absence
+de client CloudSync dans l’assemblage courant. Les documents, la progression,
+les enregistrements temporaires et les dessins sont stockés localement. Aucun
+bouton de réinitialisation n’est exposé dans l’interface utilisateur.
 
-## Contrôles statiques résolus ou encore ouverts
+## Parcours UI ajouté
 
-- **Mot-à-mot hors lecteur de leçon :** `ChineseSelectableText` tokenise les
-  phrases quand une segmentation ou un vocabulaire est fourni et ouvre la fiche
-  avec lecture locale (`App/DesignSystem.swift:445-475`,
-  `App/StoryViews.swift:76-97`, `App/LearningViews.swift:384-414`). Le défaut
-  résiduel est limité au bloc `reading` intégré signalé en tête.
-- **Écriture live :** `App/Dependencies.swift:43-55` injecte maintenant
-  `LocalHandwritingService` dans un dossier `drawings`; les interpolations du
-  service local sont correctes (`Apple/Handwriting/LocalHandwritingService.swift:25-29,115-116`).
-  Le raccord de l’événement `drawingSaved` reste à faire.
-- **Annulation Speech :** `AppleAudioService.transcribe` annule sa tâche,
-  termine sa continuation et traite aussi la requête encore en file
-  (`Apple/Audio/AppleAudioService.swift:327-479`). La course analogue de
-  `record` reste ouverte.
-- **Oral sans notation de prononciation :** la comparaison porte sur le texte
-  transcrit normalisé ; l’interface nomme la confiance comme confiance de
-  transcription et précise qu’aucun phonème ni ton n’est noté
-  (`Apple/Audio/SpeechPracticeView.swift:167-185,346-352`).
-- **Cartes :** `AppModel.completeLesson` ajoute toutes les cartes après la fin
-  réussie (`App/AppModel.swift:131-138`) et `ReviewCardsView` recharge les
-  cartes dues après relance (`App/ReviewViews.swift:44-48,107-110`). Le noyau
-  possède un reset testé (`Sources/PolygoSRS/ReviewDeck.swift:142-155`), mais
-  aucun bouton de réinitialisation de progression ou de carte n’est exposé
-  dans l’interface (`App/ReviewViews.swift`, `App/ProfileSettingsViews.swift`).
+`Tests/PolygoAppUITests/LessonReviewJourneyTests.swift` ajoute un test UI
+indépendant du smoke existant. Il :
 
-## Audit statique, sans verdict device
+1. charge les réponses correctes et les cinq cartes depuis
+   `Content/lessons/lesson-01.json` ;
+2. complète les six exercices L1 avec les contrôles visibles ;
+3. enregistre l’oral par auto-évaluation explicite lorsque le microphone ou la
+   transcription locale ne sont pas disponibles, en vérifiant que l’interface
+   ne prétend pas noter les phonèmes ou les tons ;
+4. trace les sept traits de `你` par gestes de coordonnées sur le vrai canevas,
+   vérifie le tracé et exige son enregistrement local ;
+5. vérifie les cinq cartes dues, révèle et note la première, relance
+   l’application, puis vérifie les quatre cartes restantes et la ligne L1
+   marquée « Terminé ».
 
-- **Leçon et onboarding :** les routes ont des identifiants opaques et la cible
-  iOS/macOS est séparée dans `project.yml`. Le lecteur conserve la progression
-  par événement et ajoute les cartes après une fin entièrement réussie. Le
-  démarrage, le lancement de la première leçon depuis l’onboarding et la
-  réouverture après écriture n’ont pas été exécutés sur un simulateur ; le
-  défaut de route compacte décrit en tête est visible par inspection du code.
-- **Oral :** le TTS local est utilisé quand la référence audio est absente ; la
-  confiance Speech est affichée comme confiance de transcription et ne devient
-  pas une note phonétique. Les états refus microphone, refus Speech, absence de
-  modèle local et auto-évaluation sont présents dans
-  `SpeechPracticeView.swift`. Permissions, interruption, arrêt manuel,
-  réécoute et suppression du fichier restent à vérifier sur iOS/macOS.
-- **Écriture :** le canevas accepte le doigt, Pencil, souris et trackpad ;
-  `Annuler`, `Effacer`, `Vérifier`, guide et auto-évaluation sont exposés. La
-  reconnaissance OCR renvoie explicitement `unsupported`. Les trois guides
-  JSON (`你`, `我`, `国`) sont livrés sous `Content/assets/handwriting/` et les
-  références des leçons portent désormais leurs chemins et SHA-256 réels. Aucun
-  tracé Apple n’a été exécuté faute de SDK et de simulateur.
-- **Hors ligne/sync :** les documents et la progression locale ont un chemin
-  JSON et les tests SRS/persistence existants couvrent déjà rejeu, outbox,
-  ordre déterministe et reprise. L’application n’injecte pas de
-  `CloudSyncClient`, ce qui rend son statut « Sur cet appareil » exact. Aucun
-  réseau, changement de curseur ou conflit CloudKit n’est testé ici.
-- **Accessibilité, thème et responsive :** `docs/ACCESSIBILITY.md` contient
-  l’audit statique détaillé. Aucun test VoiceOver, Dynamic Type XXXL, contraste,
-  mode sombre, réduction des animations, clavier Mac ou fenêtre étroite n’a été
-  exécuté faute de SDK et de simulateur.
+Ce test ne remplace pas le smoke `PolygoAppUITests.swift`, n’efface pas les
+données utilisateur et n’injecte ni backend ni réponse de test. Il est compilé
+par la cible `PolygoAppUITests` puisque `project.yml` inclut tout le dossier
+`Tests/PolygoAppUITests`.
 
-## Cible UI
+## Vérifications en attente sur appareil Apple
 
-Le fichier `Tests/PolygoAppUITests/PolygoAppUITests.swift` fournit le contrat
-smoke suivant : lancement en français, nom et choix du niveau/durée pendant
-l’onboarding, navigation vers `Parcours` et la première leçon, ouverture de la
-fiche `你好` et activation de `Écouter` sans supposer qu’un son est produit,
-accès à `Cartes`, `Explorer` et l’histoire `Le premier échange`, puis accès aux
-`Réglages` depuis `Profil` avec vérification du statut `Sur cet appareil`.
+Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
+aucun test UI ne peut donc y être exécuté. Le nouveau parcours E2E est en
+attente d’un run Apple CI avec le contenu courant. Ce run devra confirmer les
+permissions microphone et reconnaissance vocale, l’auto-évaluation de
+secours, les sept gestes du canevas, la persistance du dessin, la relance et
+la conservation de l’état SRS.
 
-La cible iOS `PolygoAppUITests` est maintenant déclarée dans `project.yml:78-100`
-avec `PolygoApp` comme application hôte, et le workflow CI contient l’étape
-`xcodebuild ... test` sur le premier iPhone disponible
-(`.github/workflows/apple.yml:46-59`). Aucun run Apple n’est encore disponible
-dans cette revue ; le smoke et les builds iOS/macOS restent donc en attente de
-logs device.
+L’audit VoiceOver, Dynamic Type XXXL, contraste, mode sombre, réduction des
+animations, clavier macOS, fenêtres étroites et conflits de synchronisation
+reste statique tant qu’un appareil ou simulateur Apple n’est pas disponible.
