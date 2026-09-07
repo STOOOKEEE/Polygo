@@ -93,6 +93,13 @@ public struct OnboardingView: View {
             TextField("Comment t’appeler ? (facultatif)", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .textContentType(.name)
+                // Keep the prompt discoverable as the text field's own
+                // accessibility label. SwiftUI can expose a placeholder-only
+                // TextField without its prompt in the UI test/accessibility
+                // tree on iOS, which makes the name step impossible to find
+                // for VoiceOver and automation.
+                .accessibilityLabel("Comment t’appeler")
+                .accessibilityHint("Facultatif")
                 .onChange(of: name) { _, _ in saveDraft() }
             VStack(alignment: .leading, spacing: 10) {
                 Text("Je me situe ici")
