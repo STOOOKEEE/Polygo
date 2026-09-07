@@ -17,28 +17,72 @@
       "statement": {
         "fr": "Demander le nom d'une personne avec 你叫什么名字？"
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "recognition",
+        "evidence": "l2-name-ask"
+      }
     },
     {
       "id": "l2-name-answer",
       "statement": {
         "fr": "Répondre 我叫 + nom et reconnaître 什么 comme mot interrogatif."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l2-name-answer"
+      }
     },
     {
       "id": "l2-name-reuse",
       "statement": {
         "fr": "Réutiliser une salutation et une formule de politesse dans un échange."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "transfer",
+        "evidence": "l2-name-reuse"
+      }
     },
     {
       "id": "l2-name-write",
       "statement": {
         "fr": "Tracer 我 à partir d'un guide de traits, avec auto-évaluation."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l2-name-write"
+      }
     }
   ],
   "vocabulary": [
@@ -47,7 +91,9 @@
       "hanzi": "你",
       "traditionalHanzi": "你",
       "pinyin": "nǐ",
-      "toneNumbers": [3],
+      "toneNumbers": [
+        3
+      ],
       "segmentation": [
         {
           "surface": "你",
@@ -72,6 +118,24 @@
       },
       "memoryStory": {
         "fr": "你 désigne la personne à qui l'on parle."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "你",
+          "traditional": "你"
+        }
       }
     },
     {
@@ -79,7 +143,9 @@
       "hanzi": "我",
       "traditionalHanzi": "我",
       "pinyin": "wǒ",
-      "toneNumbers": [3],
+      "toneNumbers": [
+        3
+      ],
       "segmentation": [
         {
           "surface": "我",
@@ -104,6 +170,24 @@
       },
       "memoryStory": {
         "fr": "我 commence la phrase quand je parle de moi."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "我",
+          "traditional": "我"
+        }
       }
     },
     {
@@ -111,7 +195,9 @@
       "hanzi": "叫",
       "traditionalHanzi": "叫",
       "pinyin": "jiào",
-      "toneNumbers": [4],
+      "toneNumbers": [
+        4
+      ],
       "segmentation": [
         {
           "surface": "叫",
@@ -136,7 +222,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-jiao",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -153,6 +254,24 @@
       },
       "memoryStory": {
         "fr": "叫 est le verbe qui donne son nom à la phrase."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "叫",
+          "traditional": "叫"
+        }
       }
     },
     {
@@ -160,7 +279,10 @@
       "hanzi": "什么",
       "traditionalHanzi": "什麼",
       "pinyin": "shénme",
-      "toneNumbers": [2, 0],
+      "toneNumbers": [
+        2,
+        0
+      ],
       "segmentation": [
         {
           "surface": "什么",
@@ -185,7 +307,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-shenme",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -202,6 +339,24 @@
       },
       "memoryStory": {
         "fr": "什么 ouvre une petite fenêtre sur l'information que l'on cherche."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "什么",
+          "traditional": "什麼"
+        }
       }
     },
     {
@@ -209,7 +364,10 @@
       "hanzi": "名字",
       "traditionalHanzi": "名字",
       "pinyin": "míngzi",
-      "toneNumbers": [2, 0],
+      "toneNumbers": [
+        2,
+        0
+      ],
       "segmentation": [
         {
           "surface": "名字",
@@ -234,7 +392,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-mingzi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -251,6 +424,24 @@
       },
       "memoryStory": {
         "fr": "名字 est le nom que l'on écrit sur une étiquette."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "名字",
+          "traditional": "名字"
+        }
       }
     }
   ],
@@ -264,7 +455,21 @@
       "body": {
         "fr": "Situation : une nouvelle personne s'assoit à côté de toi dans une salle de cours. Après 你好, demande 你叫什么名字？. Pour répondre, place 我 avant 叫 puis ton nom. Une question chinoise peut se terminer par un point d'interrogation comme en français."
       },
-      "audio": null
+      "audio": null,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "vocabulary",
@@ -275,7 +480,21 @@
         "vocab-jiao",
         "vocab-shenme",
         "vocab-mingzi"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "dialogue",
@@ -317,7 +536,22 @@
           },
           "audio": null
         }
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "listening",
+          "reading",
+          "interaction"
+        ]
+      }
     },
     {
       "kind": "reading",
@@ -464,7 +698,22 @@
       ],
       "comprehensionExerciseIDs": [
         "ex-l2-reading-name"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "listening"
+        ],
+        "storyID": "story-name-and-smile"
+      }
     },
     {
       "kind": "exercise",
@@ -507,7 +756,53 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l2-tone-2"
+        "correctChoiceID": "l2-tone-2",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "tones",
+          "errorTags": [
+            "tone",
+            "listening"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "tones",
+        "errorTags": [
+          "tone",
+          "listening"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -551,7 +846,51 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l2-meaning-what"
+        "correctChoiceID": "l2-meaning-what",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "recognition",
+          "errorTags": [
+            "meaning"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "recognition",
+        "errorTags": [
+          "meaning"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -603,7 +942,53 @@
           "tok-l2-jiao",
           "tok-l2-shenme",
           "tok-l2-mingzi"
-        ]
+        ],
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "production",
+          "errorTags": [
+            "word-order",
+            "grammar"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "production",
+        "errorTags": [
+          "word-order",
+          "grammar"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -628,7 +1013,57 @@
         "acceptedAnswers": [
           "叫"
         ],
-        "caseSensitive": false
+        "caseSensitive": false,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "production",
+          "errorTags": [
+            "word-order",
+            "grammar"
+          ],
+          "acceptedVariants": [
+            "叫"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "production",
+        "errorTags": [
+          "word-order",
+          "grammar"
+        ],
+        "acceptedVariants": [
+          "叫"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -672,7 +1107,55 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l2-name-lin"
+        "correctChoiceID": "l2-name-lin",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "transferer",
+          "skill": "transfer",
+          "errorTags": [
+            "reading",
+            "meaning",
+            "transfer"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "transferer",
+        "skill": "transfer",
+        "errorTags": [
+          "reading",
+          "meaning",
+          "transfer"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -702,7 +1185,61 @@
           "你叫什么名字？",
           "nǐ jiào shénme míngzi"
         ],
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "speaking",
+          "errorTags": [
+            "speaking",
+            "tone-neutral"
+          ],
+          "acceptedVariants": [
+            "你叫什么名字",
+            "你叫什么名字？",
+            "nǐ jiào shénme míngzi"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "speaking",
+        "errorTags": [
+          "speaking",
+          "tone-neutral"
+        ],
+        "acceptedVariants": [
+          "你叫什么名字",
+          "你叫什么名字？",
+          "nǐ jiào shénme míngzi"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -732,7 +1269,53 @@
           "durationMilliseconds": null
         },
         "expectedStrokeCount": 7,
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "writing",
+          "errorTags": [
+            "writing",
+            "character"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "writing",
+        "errorTags": [
+          "writing",
+          "character"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -750,7 +1333,22 @@
         "l2-name-answer",
         "l2-name-reuse",
         "l2-name-write"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "transferer",
+        "skill": [
+          "review",
+          "transfer"
+        ],
+        "criterion": "required-objectives-with-evidence"
+      }
     }
   ],
   "cards": [
@@ -775,7 +1373,41 @@
         "unit-01",
         "lesson-02",
         "pronouns"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-wo",
@@ -798,7 +1430,41 @@
         "unit-01",
         "lesson-02",
         "pronouns"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-jiao",
@@ -821,7 +1487,41 @@
         "unit-01",
         "lesson-02",
         "self-introduction"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-shenme",
@@ -844,7 +1544,41 @@
         "unit-01",
         "lesson-02",
         "question"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-mingzi",
@@ -867,7 +1601,169 @@
         "unit-01",
         "lesson-02",
         "self-introduction"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     }
-  ]
+  ],
+  "metadata": {
+    "standardID": "HSK-3.0",
+    "standardVersion": "2025-11",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-01",
+    "sectionID": "section-01",
+    "unitID": "unit-01",
+    "cycle": [
+      "observer",
+      "recuperer",
+      "produire",
+      "transferer"
+    ],
+    "newVocabularyIDs": [
+      "vocab-ni",
+      "vocab-wo",
+      "vocab-jiao",
+      "vocab-shenme",
+      "vocab-mingzi"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-ni-hao",
+      "vocab-xiexie"
+    ],
+    "newVocabularyCount": 5,
+    "skills": [
+      "listening",
+      "reading",
+      "speaking",
+      "writing",
+      "interaction",
+      "tones",
+      "script"
+    ],
+    "status": "available",
+    "examClaim": "none"
+  },
+  "grammarPoints": [
+    {
+      "id": "grammar-l2-name-question",
+      "pattern": "你叫 + 什么 + 名字？",
+      "function": "question sur le nom",
+      "skills": [
+        "recognition",
+        "production"
+      ],
+      "acceptedVariants": [
+        "你叫什么？",
+        "你叫什么名字？"
+      ],
+      "errors": [
+        "word-order",
+        "grammar",
+        "tone-neutral"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    },
+    {
+      "id": "grammar-l2-name-answer",
+      "pattern": "我叫 + nom",
+      "function": "présentation du nom",
+      "skills": [
+        "production",
+        "interaction"
+      ],
+      "acceptedVariants": [
+        "我叫安。",
+        "我叫林。"
+      ],
+      "errors": [
+        "word-order",
+        "grammar"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    }
+  ],
+  "adaptation": {
+    "helpLevels": [
+      {
+        "id": "H0",
+        "label": {
+          "fr": "Aucune aide"
+        }
+      },
+      {
+        "id": "H1",
+        "label": {
+          "fr": "Réécouter, ralentir et voir les numéros de ton"
+        }
+      },
+      {
+        "id": "H2",
+        "label": {
+          "fr": "Afficher pinyin, traduction ou segmentation"
+        }
+      },
+      {
+        "id": "H3",
+        "label": {
+          "fr": "Donner un modèle, le premier mot ou la trace fantôme"
+        }
+      },
+      {
+        "id": "H4",
+        "label": {
+          "fr": "Guider puis reprogrammer un rappel"
+        }
+      }
+    ],
+    "onError": "feedback-immediate-retry-after-one-to-three-items-card",
+    "onTwoIndependentSuccesses": "lower-help-one-level",
+    "speechFallback": "selfReported",
+    "handwritingFallback": "selfReported",
+    "audioFallback": "TTS-adapter-when-available"
+  }
 }

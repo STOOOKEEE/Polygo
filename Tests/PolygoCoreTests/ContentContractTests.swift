@@ -6,8 +6,14 @@ final class ContentContractTests: XCTestCase {
     private let expectedLessonIDs: [LessonID] = [
         LessonID(rawValue: "lesson-01")!,
         LessonID(rawValue: "lesson-02")!,
-        LessonID(rawValue: "lesson-03")!
+        LessonID(rawValue: "lesson-03")!,
+        LessonID(rawValue: "lesson-04")!
     ]
+
+    private let expectedExerciseCounts = [6, 7, 7, 7]
+    private let expectedNewVocabularyCounts = [5, 5, 6, 1]
+    private let expectedCycle = ["observer", "recuperer", "produire", "transferer"]
+    private let expectedContentVersion = "2026.09.0"
 
     private var contentRoot: URL {
         URL(fileURLWithPath: #filePath)
@@ -19,6 +25,38 @@ final class ContentContractTests: XCTestCase {
 
     private func store() -> JSONContentStore {
         JSONContentStore(rootURL: contentRoot)
+    }
+
+    private func rawJSON(relativePath: String) throws -> [String: Any] {
+        let url = contentRoot.appendingPathComponent(relativePath, isDirectory: false)
+        let data = try Data(contentsOf: url)
+        let object = try JSONSerialization.jsonObject(with: data, options: [])
+        guard let dictionary = object as? [String: Any] else {
+            throw NSError(domain: "ContentContractTests", code: 1, userInfo: [
+                NSLocalizedDescriptionKey: "Expected a JSON object at \(relativePath)"
+            ])
+        }
+        return dictionary
+    }
+
+    private func rawLesson(_ lessonID: LessonID) throws -> [String: Any] {
+        try rawJSON(relativePath: "lessons/\(lessonID.rawValue).json")
+    }
+
+    private func editorialMetadata(in block: [String: Any]) -> [String: Any]? {
+        if let metadata = block["metadata"] as? [String: Any] {
+            return metadata
+        }
+        if let spec = block["spec"] as? [String: Any],
+           let metadata = spec["metadata"] as? [String: Any] {
+            return metadata
+        }
+        if let spec = block["spec"] as? [String: Any],
+           let header = spec["header"] as? [String: Any],
+           let metadata = header["metadata"] as? [String: Any] {
+            return metadata
+        }
+        return nil
     }
 
     private func exerciseBlocks(in lesson: LessonDocument) -> [ExerciseBlock] {
@@ -35,12 +73,12 @@ final class ContentContractTests: XCTestCase {
         }
     }
 
-    func testBundledCourseDecodesThreeLessonsTwentyExercisesAndThreeStories() async throws {
+    func testBundledCourseDecodesFourLessonsTwentySevenExercisesAndFourStories() async throws {
         let content = store()
         let index = try await content.index()
 
         XCTAssertEqual(index.schemaVersion, 1)
-        XCTAssertEqual(index.contentVersion, "2026.09.0")
+        XCTAssertEqual(index.contentVersion, expectedContentVersion)
         XCTAssertEqual(index.courseIDs, [CourseID(rawValue: "mandarin-starter")!])
         XCTAssertEqual(index.defaultCourseID, CourseID(rawValue: "mandarin-starter")!)
 
@@ -52,7 +90,6 @@ final class ContentContractTests: XCTestCase {
 
         var allExerciseIDs = Set<ExerciseID>()
         var allStoryIDs = Set<StoryID>()
-        let expectedExerciseCounts = [6, 7, 7]
 
         for (index, lessonID) in expectedLessonIDs.enumerated() {
             let lesson = try await content.lesson(id: lessonID)
@@ -61,7 +98,7 @@ final class ContentContractTests: XCTestCase {
 
             XCTAssertEqual(lesson.id, lessonID)
             XCTAssertEqual(lesson.schemaVersion, 1)
-            XCTAssertEqual(lesson.contentVersion, "2026.09.0")
+            XCTAssertEqual(lesson.contentVersion, expectedContentVersion)
             XCTAssertEqual(exercises.count, expectedExerciseCounts[index])
             XCTAssertEqual(readings.count, 1)
             XCTAssertFalse(lesson.objectives.isEmpty)
@@ -77,13 +114,13 @@ final class ContentContractTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(allExerciseIDs.count, 20)
-        XCTAssertEqual(allStoryIDs.count, 3)
+        XCTAssertEqual(allExerciseIDs.count, 27)
+        XCTAssertEqual(allStoryIDs.count, 4)
 
         let stories = try await content.stories()
-        XCTAssertEqual(stories.count, 3)
+        XCTAssertEqual(stories.count, 4)
         XCTAssertEqual(Set(stories.map(\.id)), allStoryIDs)
-        XCTAssertEqual(stories.flatMap { $0.paragraphs }.count, 12)
+        XCTAssertEqual(stories.flatMap { $0.paragraphs }.count, 16)
         XCTAssertTrue(stories.allSatisfy { !$0.paragraphs.isEmpty && !$0.level.isEmpty })
     }
 
@@ -104,6 +141,10 @@ final class ContentContractTests: XCTestCase {
             let exercises = exerciseBlocks(in: lesson)
             let exerciseIDs = Set(exercises.map { $0.spec.id })
             XCTAssertEqual(exerciseIDs.count, exercises.count)
+            XCTAssertEqual(Set(lesson.cards.map(\.vocabularyID)), vocabularyIDs)
+            XCTAssertTrue(lesson.objectives.allSatisfy { objective in
+                exercises.contains { $0.spec.header.objectiveIDs.contains(objective.id) }
+            }, "Every objective needs exercise evidence in \(lesson.id.rawValue)")
 
             for block in lesson.blocks {
                 switch block {
@@ -140,7 +181,85 @@ final class ContentContractTests: XCTestCase {
                 XCTAssertFalse(card.back.text?.values.isEmpty ?? true)
             }
         }
-        XCTAssertEqual(globalCardIDs.count, 16)
+        XCTAssertEqual(globalCardIDs.count, 17)
+    }
+
+    func testEditorialMetadataDeclaresVocabularyCapReuseCycleVersionsAndGrammarEvidence() async throws {
+        let content = store()
+        let courseJSON = try rawJSON(relativePath: "courses/mandarin-starter.json")
+        let courseMetadata = try XCTUnwrap(courseJSON["metadata"] as? [String: Any])
+        XCTAssertEqual(courseMetadata["standardID"] as? String, "HSK-3.0")
+        XCTAssertEqual(courseMetadata["standardVersion"] as? String, "2025-11")
+        XCTAssertEqual(courseMetadata["legacyStandardID"] as? String, "HSK-legacy-2.0")
+        XCTAssertEqual(courseMetadata["legacyStandardVersion"] as? String, "2.0")
+        XCTAssertEqual(courseMetadata["transitionStatus"] as? String, "both-references-kept-separate")
+
+        let alignments = try XCTUnwrap(courseJSON["alignment"] as? [[String: Any]])
+        let alignmentReferences = Set(alignments.compactMap { alignment -> String? in
+            guard let standardID = alignment["standardID"] as? String,
+                  let standardVersion = alignment["standardVersion"] as? String else { return nil }
+            return "\(standardID)/\(standardVersion)"
+        })
+        XCTAssertTrue(alignmentReferences.contains("HSK-3.0/2025-11"))
+        XCTAssertTrue(alignmentReferences.contains("HSK-legacy-2.0/2.0"))
+
+        let lessons = try await expectedLessonIDs.asyncMap { try await content.lesson(id: $0) }
+        var vocabularyIntroducedEarlier = Set<String>()
+        var allNewVocabularyIDs = Set<String>()
+
+        for (index, pair) in zip(expectedLessonIDs, lessons).enumerated() {
+            let (lessonID, lesson) = pair
+            let raw = try rawLesson(lessonID)
+            let metadata = try XCTUnwrap(raw["metadata"] as? [String: Any])
+
+            XCTAssertEqual(metadata["standardID"] as? String, "HSK-3.0")
+            XCTAssertEqual(metadata["standardVersion"] as? String, "2025-11")
+            XCTAssertEqual(metadata["legacyStandardID"] as? String, "HSK-legacy-2.0")
+            XCTAssertEqual(metadata["legacyStandardVersion"] as? String, "2.0")
+            XCTAssertEqual(metadata["levelID"] as? String, "level-01")
+            XCTAssertEqual(metadata["sectionID"] as? String, "section-01")
+            XCTAssertEqual(metadata["unitID"] as? String, "unit-01")
+            XCTAssertEqual(metadata["cycle"] as? [String], expectedCycle)
+
+            let newVocabularyIDs = try XCTUnwrap(metadata["newVocabularyIDs"] as? [String])
+            XCTAssertEqual(newVocabularyIDs.count, expectedNewVocabularyCounts[index])
+            XCTAssertLessThanOrEqual(newVocabularyIDs.count, 6)
+            XCTAssertEqual(metadata["newVocabularyCount"] as? Int, expectedNewVocabularyCounts[index])
+            XCTAssertEqual(Set(newVocabularyIDs), Set(lesson.vocabulary.map(\.id.rawValue)))
+            XCTAssertEqual(newVocabularyIDs.count, Set(newVocabularyIDs).count)
+            XCTAssertTrue(allNewVocabularyIDs.isDisjoint(with: newVocabularyIDs))
+
+            let reusedVocabularyIDs = try XCTUnwrap(metadata["reusedVocabularyIDs"] as? [String])
+            XCTAssertEqual(reusedVocabularyIDs.count, Set(reusedVocabularyIDs).count)
+            XCTAssertTrue(Set(reusedVocabularyIDs).isDisjoint(with: newVocabularyIDs))
+            XCTAssertTrue(reusedVocabularyIDs.allSatisfy(vocabularyIntroducedEarlier.contains),
+                          "Reused vocabulary in \(lessonID.rawValue) must have been introduced earlier")
+
+            let blocks = try XCTUnwrap(raw["blocks"] as? [[String: Any]])
+            let stages = blocks.compactMap { editorialMetadata(in: $0)?["stage"] as? String }
+            XCTAssertEqual(stages.count, blocks.count, "Every block needs a pedagogical stage")
+            XCTAssertEqual(Set(stages), Set(expectedCycle))
+
+            let grammarPoints = try XCTUnwrap(raw["grammarPoints"] as? [[String: Any]])
+            XCTAssertFalse(grammarPoints.isEmpty)
+            for grammarPoint in grammarPoints {
+                XCTAssertFalse((grammarPoint["id"] as? String)?.isEmpty ?? true)
+                XCTAssertFalse((grammarPoint["pattern"] as? String)?.isEmpty ?? true)
+                XCTAssertFalse((grammarPoint["function"] as? String)?.isEmpty ?? true)
+                XCTAssertFalse((grammarPoint["acceptedVariants"] as? [String] ?? []).isEmpty)
+                XCTAssertFalse((grammarPoint["errors"] as? [String] ?? []).isEmpty)
+                let skills = (grammarPoint["skills"] as? [String]) ?? (grammarPoint["skill"] as? [String]) ?? []
+                XCTAssertFalse(skills.isEmpty)
+                XCTAssertEqual(grammarPoint["standardID"] as? String, "HSK-3.0")
+                XCTAssertEqual(grammarPoint["standardVersion"] as? String, "2025-11")
+            }
+
+            vocabularyIntroducedEarlier.formUnion(newVocabularyIDs)
+            allNewVocabularyIDs.formUnion(newVocabularyIDs)
+        }
+
+        XCTAssertEqual(allNewVocabularyIDs.count, 17)
+        XCTAssertEqual(allNewVocabularyIDs.count, lessons.flatMap(\.vocabulary).count)
     }
 
     func testPinyinTonesAndSimplifiedTraditionalPairsMatchTheStarterVocabulary() async throws {
@@ -153,7 +272,9 @@ final class ContentContractTests: XCTestCase {
                 !(entry.traditionalHanzi?.isEmpty ?? true) &&
                 !entry.pinyin.isEmpty &&
                 !entry.toneNumbers.isEmpty &&
-                entry.toneNumbers.allSatisfy { (0...5).contains($0) }
+                entry.toneNumbers.allSatisfy { (0...4).contains($0) } &&
+                !entry.segmentation.isEmpty &&
+                entry.segmentation.allSatisfy { !$0.surface.isEmpty }
         })
 
         let expectedPairs: [String: (traditional: String, pinyin: String, tones: [Int])] = [
@@ -172,11 +293,15 @@ final class ContentContractTests: XCTestCase {
             "国": ("國", "guó", [2]),
             "法国": ("法國", "Fǎguó", [3, 2]),
             "中国": ("中國", "Zhōngguó", [1, 2]),
-            "人": ("人", "rén", [2])
+            "人": ("人", "rén", [2]),
+            "呢": ("呢", "ne", [0])
         ]
 
+        XCTAssertEqual(entries.count, expectedPairs.count)
+        XCTAssertEqual(Set(entries.map(\.id)).count, entries.count)
         let actualHanzi = Set(entries.map(\.hanzi))
         XCTAssertEqual(actualHanzi, Set(expectedPairs.keys))
+        XCTAssertEqual(Set(entries.flatMap(\.toneNumbers)), Set(0...4))
         for (hanzi, expected) in expectedPairs {
             let matches = entries.filter { $0.hanzi == hanzi }
             XCTAssertFalse(matches.isEmpty, "Missing vocabulary \(hanzi)")
@@ -266,7 +391,7 @@ final class ContentContractTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(evaluatedCount, 20)
+        XCTAssertEqual(evaluatedCount, 27)
     }
 
     private func assertValidShape(_ spec: ExerciseSpec, cardIDs: Set<CardID>) {

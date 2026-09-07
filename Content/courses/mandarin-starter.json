@@ -7,18 +7,43 @@
     "fr": "Mandarin au quotidien"
   },
   "description": {
-    "fr": "Un parcours débutant pour saluer, se présenter, dire son pays et donner un âge. Repère HSK 1 et A1, sans promesse de réussite à un examen."
+    "fr": "Un parcours débutant pour saluer, se présenter, dire son pays et tenir un mini-échange. Repères HSK 3.0 (publication 2025-11) et HSK legacy 2.0 en transition, ainsi que CECR A1 ; aucun score ni examen n'est garanti."
   },
   "alignment": [
     {
       "framework": "HSK",
-      "level": "1"
+      "level": "1",
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "status": "reference-transition"
+    },
+    {
+      "framework": "HSK",
+      "level": "1",
+      "standardID": "HSK-legacy-2.0",
+      "standardVersion": "2.0",
+      "status": "legacy-reference-transition"
     },
     {
       "framework": "CEFR",
-      "level": "A1"
+      "level": "A1",
+      "standardID": "CEFR",
+      "standardVersion": "2020",
+      "status": "complementary"
     }
   ],
+  "metadata": {
+    "levelID": "level-01",
+    "sectionID": "section-01",
+    "unitID": "unit-01",
+    "standardID": "HSK-3.0",
+    "standardVersion": "2025-11",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "transitionStatus": "both-references-kept-separate",
+    "examClaim": "none",
+    "scriptPolicy": "simplified-and-traditional"
+  },
   "modules": [
     {
       "id": "unit-01",
@@ -29,8 +54,18 @@
       "lessonIDs": [
         "lesson-01",
         "lesson-02",
-        "lesson-03"
-      ]
+        "lesson-03",
+        "lesson-04"
+      ],
+      "metadata": {
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "cycle": ["observer", "recuperer", "produire", "transferer"],
+        "exitCriterion": "four-turn-mini-exchange"
+      }
     }
   ]
 }

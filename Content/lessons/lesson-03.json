@@ -17,28 +17,72 @@
       "statement": {
         "fr": "Demander le pays d'une personne avec 你是哪国人？"
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "recognition",
+        "evidence": "l3-country-ask"
+      }
     },
     {
       "id": "l3-country-answer",
       "statement": {
         "fr": "Dire 我是 + pays + 人 et reconnaître le motif 是...人."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l3-country-answer"
+      }
     },
     {
       "id": "l3-country-tones",
       "statement": {
         "fr": "Identifier les tons de 国 et de 法国 à l'aide des marques et des numéros."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "recognition",
+        "evidence": "l3-country-tones"
+      }
     },
     {
       "id": "l3-country-write",
       "statement": {
         "fr": "Tracer 国 à partir d'un guide de traits, avec auto-évaluation."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l3-country-write"
+      }
     }
   ],
   "vocabulary": [
@@ -47,7 +91,9 @@
       "hanzi": "是",
       "traditionalHanzi": "是",
       "pinyin": "shì",
-      "toneNumbers": [4],
+      "toneNumbers": [
+        4
+      ],
       "segmentation": [
         {
           "surface": "是",
@@ -72,7 +118,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-shi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -89,6 +150,24 @@
       },
       "memoryStory": {
         "fr": "是 relie deux informations comme un petit pont : je suis..."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "是",
+          "traditional": "是"
+        }
       }
     },
     {
@@ -96,7 +175,9 @@
       "hanzi": "哪",
       "traditionalHanzi": "哪",
       "pinyin": "nǎ",
-      "toneNumbers": [3],
+      "toneNumbers": [
+        3
+      ],
       "segmentation": [
         {
           "surface": "哪",
@@ -121,7 +202,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-na",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -138,6 +234,24 @@
       },
       "memoryStory": {
         "fr": "哪 pointe une option parmi plusieurs pays."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "哪",
+          "traditional": "哪"
+        }
       }
     },
     {
@@ -145,7 +259,9 @@
       "hanzi": "国",
       "traditionalHanzi": "國",
       "pinyin": "guó",
-      "toneNumbers": [2],
+      "toneNumbers": [
+        2
+      ],
       "segmentation": [
         {
           "surface": "国",
@@ -170,6 +286,24 @@
       },
       "memoryStory": {
         "fr": "Le cadre 囗 entoure un pays sur une carte : 国."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "国",
+          "traditional": "國"
+        }
       }
     },
     {
@@ -177,7 +311,10 @@
       "hanzi": "法国",
       "traditionalHanzi": "法國",
       "pinyin": "Fǎguó",
-      "toneNumbers": [3, 2],
+      "toneNumbers": [
+        3,
+        2
+      ],
       "segmentation": [
         {
           "surface": "法国",
@@ -202,6 +339,24 @@
       },
       "memoryStory": {
         "fr": "法 est le premier caractère de 法国, la France."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "法国",
+          "traditional": "法國"
+        }
       }
     },
     {
@@ -209,7 +364,10 @@
       "hanzi": "中国",
       "traditionalHanzi": "中國",
       "pinyin": "Zhōngguó",
-      "toneNumbers": [1, 2],
+      "toneNumbers": [
+        1,
+        2
+      ],
       "segmentation": [
         {
           "surface": "中国",
@@ -234,6 +392,24 @@
       },
       "memoryStory": {
         "fr": "中 signifie centre ; 中国 est le pays du centre dans son nom."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "中国",
+          "traditional": "中國"
+        }
       }
     },
     {
@@ -241,7 +417,9 @@
       "hanzi": "人",
       "traditionalHanzi": "人",
       "pinyin": "rén",
-      "toneNumbers": [2],
+      "toneNumbers": [
+        2
+      ],
       "segmentation": [
         {
           "surface": "人",
@@ -266,7 +444,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-ren",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -283,6 +476,24 @@
       },
       "memoryStory": {
         "fr": "人 ressemble à une personne qui marche."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "人",
+          "traditional": "人"
+        }
       }
     }
   ],
@@ -296,7 +507,21 @@
       "body": {
         "fr": "Situation : lors d'un échange international, tu veux savoir d'où vient une personne. La question 你是哪国人？ suit le modèle tu + être + quel pays + personne. Pour répondre, utilise 我是 + pays + 人. 法国 et 中国 gardent leurs tons propres ; 国 se prononce guó, ton 2."
       },
-      "audio": null
+      "audio": null,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "vocabulary",
@@ -308,7 +533,21 @@
         "vocab-faguo",
         "vocab-zhongguo",
         "vocab-ren"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "dialogue",
@@ -350,7 +589,22 @@
           },
           "audio": null
         }
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "listening",
+          "reading",
+          "interaction"
+        ]
+      }
     },
     {
       "kind": "reading",
@@ -515,7 +769,22 @@
       ],
       "comprehensionExerciseIDs": [
         "ex-l3-reading-country"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "listening"
+        ],
+        "storyID": "story-country-on-a-map"
+      }
     },
     {
       "kind": "exercise",
@@ -558,7 +827,53 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l3-tone-2"
+        "correctChoiceID": "l3-tone-2",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "tones",
+          "errorTags": [
+            "tone",
+            "listening"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "tones",
+        "errorTags": [
+          "tone",
+          "listening"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -602,7 +917,51 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l3-meaning-france"
+        "correctChoiceID": "l3-meaning-france",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "recognition",
+          "errorTags": [
+            "meaning"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "recognition",
+        "errorTags": [
+          "meaning"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -654,7 +1013,53 @@
           "tok-l3-shi",
           "tok-l3-faguo",
           "tok-l3-ren"
-        ]
+        ],
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "production",
+          "errorTags": [
+            "word-order",
+            "grammar"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "production",
+        "errorTags": [
+          "word-order",
+          "grammar"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -675,7 +1080,53 @@
           ],
           "required": true
         },
-        "cardID": "card-vocab-faguo"
+        "cardID": "card-vocab-faguo",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "review",
+          "errorTags": [
+            "meaning",
+            "tone"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "review",
+        "errorTags": [
+          "meaning",
+          "tone"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -712,7 +1163,55 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "l3-reading-yes"
+        "correctChoiceID": "l3-reading-yes",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "transferer",
+          "skill": "transfer",
+          "errorTags": [
+            "reading",
+            "meaning",
+            "transfer"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "transferer",
+        "skill": "transfer",
+        "errorTags": [
+          "reading",
+          "meaning",
+          "transfer"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -742,7 +1241,61 @@
           "你是哪国人？",
           "nǐ shì nǎ guó rén"
         ],
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "transferer",
+          "skill": "interaction",
+          "errorTags": [
+            "speaking",
+            "tone-neutral"
+          ],
+          "acceptedVariants": [
+            "你是哪国人",
+            "你是哪国人？",
+            "nǐ shì nǎ guó rén"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "transferer",
+        "skill": "interaction",
+        "errorTags": [
+          "speaking",
+          "tone-neutral"
+        ],
+        "acceptedVariants": [
+          "你是哪国人",
+          "你是哪国人？",
+          "nǐ shì nǎ guó rén"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -772,7 +1325,53 @@
           "durationMilliseconds": null
         },
         "expectedStrokeCount": 8,
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "writing",
+          "errorTags": [
+            "writing",
+            "character"
+          ],
+          "acceptedVariants": [],
+          "feedback": {
+            "correct": {
+              "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "writing",
+        "errorTags": [
+          "writing",
+          "character"
+        ],
+        "acceptedVariants": [],
+        "feedback": {
+          "correct": {
+            "fr": "Bonne réponse : réutilise ce patron dans le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -791,7 +1390,22 @@
         "l3-country-answer",
         "l3-country-tones",
         "l3-country-write"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "transferer",
+        "skill": [
+          "review",
+          "transfer"
+        ],
+        "criterion": "required-objectives-with-evidence"
+      }
     }
   ],
   "cards": [
@@ -816,7 +1430,41 @@
         "unit-01",
         "lesson-03",
         "identity"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-na",
@@ -839,7 +1487,41 @@
         "unit-01",
         "lesson-03",
         "question"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-guo",
@@ -862,7 +1544,41 @@
         "unit-01",
         "lesson-03",
         "country"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-faguo",
@@ -885,7 +1601,41 @@
         "unit-01",
         "lesson-03",
         "country"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-zhongguo",
@@ -908,7 +1658,41 @@
         "unit-01",
         "lesson-03",
         "country"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-ren",
@@ -931,7 +1715,173 @@
         "unit-01",
         "lesson-03",
         "people"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     }
-  ]
+  ],
+  "metadata": {
+    "standardID": "HSK-3.0",
+    "standardVersion": "2025-11",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-01",
+    "sectionID": "section-01",
+    "unitID": "unit-01",
+    "cycle": [
+      "observer",
+      "recuperer",
+      "produire",
+      "transferer"
+    ],
+    "newVocabularyIDs": [
+      "vocab-shi",
+      "vocab-na",
+      "vocab-guo",
+      "vocab-faguo",
+      "vocab-zhongguo",
+      "vocab-ren"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-ni-hao",
+      "vocab-ni",
+      "vocab-wo",
+      "vocab-zaijian"
+    ],
+    "newVocabularyCount": 6,
+    "skills": [
+      "listening",
+      "reading",
+      "speaking",
+      "writing",
+      "interaction",
+      "tones",
+      "script"
+    ],
+    "status": "available",
+    "examClaim": "none"
+  },
+  "grammarPoints": [
+    {
+      "id": "grammar-l3-country-question",
+      "pattern": "你是 + 哪国 + 人？",
+      "function": "question sur le pays",
+      "skills": [
+        "recognition",
+        "production"
+      ],
+      "acceptedVariants": [
+        "你是哪国人？",
+        "你是哪国人"
+      ],
+      "errors": [
+        "word-order",
+        "grammar",
+        "tone-2"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    },
+    {
+      "id": "grammar-l3-country-answer",
+      "pattern": "我是 + pays + 人",
+      "function": "réponse d’origine",
+      "skills": [
+        "production",
+        "transfer"
+      ],
+      "acceptedVariants": [
+        "我是法国人。",
+        "我是中国人。"
+      ],
+      "errors": [
+        "word-order",
+        "grammar",
+        "transfer"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    }
+  ],
+  "adaptation": {
+    "helpLevels": [
+      {
+        "id": "H0",
+        "label": {
+          "fr": "Aucune aide"
+        }
+      },
+      {
+        "id": "H1",
+        "label": {
+          "fr": "Réécouter, ralentir et voir les numéros de ton"
+        }
+      },
+      {
+        "id": "H2",
+        "label": {
+          "fr": "Afficher pinyin, traduction ou segmentation"
+        }
+      },
+      {
+        "id": "H3",
+        "label": {
+          "fr": "Donner un modèle, le premier mot ou la trace fantôme"
+        }
+      },
+      {
+        "id": "H4",
+        "label": {
+          "fr": "Guider puis reprogrammer un rappel"
+        }
+      }
+    ],
+    "onError": "feedback-immediate-retry-after-one-to-three-items-card",
+    "onTwoIndependentSuccesses": "lower-help-one-level",
+    "speechFallback": "selfReported",
+    "handwritingFallback": "selfReported",
+    "audioFallback": "TTS-adapter-when-available"
+  }
 }

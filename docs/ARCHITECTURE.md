@@ -232,9 +232,40 @@ public struct AssetReference: Codable, Hashable, Sendable {
 }
 ```
 
+### Extension éditoriale compatible V1
+
+Le contrat Swift ci-dessus reste le contrat de base : ses champs requis ne sont
+pas renommés et `schemaVersion` reste à 1 pour le pack courant. Les documents
+JSON peuvent toutefois ajouter des clés facultatives que `Codable` ignore tant
+qu'aucun type ne les déclare. Le pack `unit-01` utilise la clé `metadata` pour
+porter progressivement ces informations sans empêcher le décodage actuel.
+
+Chaque document et entité éditoriale peut y conserver `standardID`,
+`standardVersion`, `levelID`, `sectionID` et `unitID`. Les références HSK restent
+séparées : `HSK-3.0` / `2025-11` est le repère publié récent et
+`HSK-legacy-2.0` / `2.0` le repère historique en transition ; aucun de ces tags
+ne constitue une promesse d'examen. Les entrées lexicales gardent les champs
+normatifs `hanzi` et `traditionalHanzi`; une sous-clé facultative `script` peut
+répéter ce couple pour une UI future. `grammarPoints` peut décrire un patron,
+sa fonction, les contraintes, les compétences, les erreurs et les
+`acceptedVariants` sans remplacer `GrammarNote`.
+
+Les activités peuvent ajouter `stage` (`observer`, `recuperer`, `produire`,
+`transferer`), `skill`, `errorTags`, `feedback`, `acceptedVariants` et une
+description des niveaux d'aide. Les réponses évaluées continuent d'utiliser
+`acceptedAnswers` ou `acceptedTranscripts`, et le moteur garde la décision
+déterministe décrite plus bas. Les cartes peuvent ajouter
+`reviewDimensions` et `reviewDirections` pour distinguer rappel du mot, sens,
+ton, caractère, écoute, oral et grammaire. Les métadonnées indiquent une
+intention pour l'interface : la UI actuelle affiche le contrat de base, tandis
+qu'une UI future pourra choisir une aide, une compétence ou une direction de
+carte. Elles ne transforment jamais `audio: null` en asset et ne fabriquent pas
+un score Speech ou manuscrit.
+
 `LessonBlock` conserve l’ordre pédagogique. Les blocs `exercise` référencent un
 `ExerciseSpec` dans le même document ou un fichier indexé par ID. La première
-version doit livrer au moins trois leçons réellement distinctes dans un module,
+version doit livrer au moins trois leçons réellement distinctes dans un module ;
+le pack V1 actuel en livre quatre,
 avec du vocabulaire, de l’écoute, de l’oral, de l’écriture et une carte de
 révision répartis dans le parcours.
 
@@ -930,7 +961,7 @@ assets de grande taille.
   "modules": [{
     "id": "unit-01", "order": 1,
     "title": {"fr": "Premiers échanges", "en": "First exchanges"},
-    "lessonIDs": ["lesson-01", "lesson-02", "lesson-03"]
+    "lessonIDs": ["lesson-01", "lesson-02", "lesson-03", "lesson-04"]
   }]
 }
 ```
@@ -972,7 +1003,7 @@ Les tests Linux du package doivent vérifier au minimum :
 - chaque branche SM-2 (0, 3, 4, 5), intervalle 1/6, borne d’ease factor et
   ordre déterministe de deux appareils ;
 - moteur oral/écriture lorsque le service est indisponible ;
-- parcours de trois leçons : onboarding, exercice, completion, déverrouillage.
+- parcours de quatre leçons : onboarding, exercice, completion, déverrouillage.
 
 Sur macOS, la CI doit en plus générer le projet XcodeGen, compiler iOS sans
 signature et compiler/tester macOS. Les vues SwiftUI, wrappers PencilKit,

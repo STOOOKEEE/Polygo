@@ -17,28 +17,72 @@
       "statement": {
         "fr": "Comprendre et choisir une salutation ou une formule de politesse simple."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "recognition",
+        "evidence": "l1-greet-understand"
+      }
     },
     {
       "id": "l1-greet-tones",
       "statement": {
         "fr": "Identifier le ton principal de 早 et entendre la différence entre 你好 et 再见."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "recognition",
+        "evidence": "l1-greet-tones"
+      }
     },
     {
       "id": "l1-greet-say",
       "statement": {
         "fr": "Dire 你好 et une formule de départ avec une intonation attentive."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l1-greet-say"
+      }
     },
     {
       "id": "l1-greet-write",
       "statement": {
         "fr": "Recopier 你 en respectant le modèle de traits fourni par l'application."
       },
-      "required": true
+      "required": true,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": "production",
+        "evidence": "l1-greet-write"
+      }
     }
   ],
   "vocabulary": [
@@ -47,7 +91,10 @@
       "hanzi": "你好",
       "traditionalHanzi": "你好",
       "pinyin": "nǐ hǎo",
-      "toneNumbers": [3, 3],
+      "toneNumbers": [
+        3,
+        3
+      ],
       "segmentation": [
         {
           "surface": "你好",
@@ -72,7 +119,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-ni-hao",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -89,6 +151,24 @@
       },
       "memoryStory": {
         "fr": "Deux syllabes qui se répondent comme deux personnes qui se saluent."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "你好",
+          "traditional": "你好"
+        }
       }
     },
     {
@@ -96,7 +176,9 @@
       "hanzi": "早",
       "traditionalHanzi": "早",
       "pinyin": "zǎo",
-      "toneNumbers": [3],
+      "toneNumbers": [
+        3
+      ],
       "segmentation": [
         {
           "surface": "早",
@@ -121,6 +203,24 @@
       },
       "memoryStory": {
         "fr": "Un soleil tôt le matin : 早."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "早",
+          "traditional": "早"
+        }
       }
     },
     {
@@ -128,7 +228,10 @@
       "hanzi": "再见",
       "traditionalHanzi": "再見",
       "pinyin": "zàijiàn",
-      "toneNumbers": [4, 4],
+      "toneNumbers": [
+        4,
+        4
+      ],
       "segmentation": [
         {
           "surface": "再见",
@@ -153,6 +256,24 @@
       },
       "memoryStory": {
         "fr": "再 signifie encore et 见 signifie voir : on se reverra."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "再见",
+          "traditional": "再見"
+        }
       }
     },
     {
@@ -160,7 +281,10 @@
       "hanzi": "谢谢",
       "traditionalHanzi": "謝謝",
       "pinyin": "xièxie",
-      "toneNumbers": [4, 0],
+      "toneNumbers": [
+        4,
+        0
+      ],
       "segmentation": [
         {
           "surface": "谢谢",
@@ -185,7 +309,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-xiexie",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -202,6 +341,24 @@
       },
       "memoryStory": {
         "fr": "On remercie deux fois, mais la deuxième syllabe reste légère."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "谢谢",
+          "traditional": "謝謝"
+        }
       }
     },
     {
@@ -209,7 +366,11 @@
       "hanzi": "不客气",
       "traditionalHanzi": "不客氣",
       "pinyin": "bú kèqi",
-      "toneNumbers": [2, 4, 0],
+      "toneNumbers": [
+        2,
+        4,
+        0
+      ],
       "segmentation": [
         {
           "surface": "不客气",
@@ -234,7 +395,22 @@
               },
               "audio": null
             }
-          ]
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-bu-keqi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
         }
       ],
       "meaning": {
@@ -251,6 +427,24 @@
       },
       "memoryStory": {
         "fr": "La politesse ouvre la porte : 客气 signifie être courtois."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "不客气",
+          "traditional": "不客氣"
+        }
       }
     }
   ],
@@ -264,7 +458,21 @@
       "body": {
         "fr": "Situation : tu arrives dans une petite boulangerie et tu salues la personne au comptoir. Commence par écouter, regarde les marques de ton, puis dis la formule. 你好 est une salutation ; 早 est une forme courte pour le matin ; 谢谢 et 不客气 forment une paire de politesse ; 再见 clôt l'échange."
       },
-      "audio": null
+      "audio": null,
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "vocabulary",
@@ -275,7 +483,21 @@
         "vocab-zaijian",
         "vocab-xiexie",
         "vocab-bu-keqi"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "grammar"
+        ]
+      }
     },
     {
       "kind": "dialogue",
@@ -326,7 +548,22 @@
           },
           "audio": null
         }
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "listening",
+          "reading",
+          "interaction"
+        ]
+      }
     },
     {
       "kind": "reading",
@@ -431,7 +668,22 @@
       ],
       "comprehensionExerciseIDs": [
         "ex-l1-reading-last-word"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "observer",
+        "skill": [
+          "reading",
+          "listening"
+        ],
+        "storyID": "story-hello-on-the-corner"
+      }
     },
     {
       "kind": "exercise",
@@ -474,7 +726,59 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "tone-3"
+        "correctChoiceID": "tone-3",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "tones",
+          "errorTags": [
+            "tone-3",
+            "listening"
+          ],
+          "acceptedVariants": [
+            "3",
+            "ton 3"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Le ton 3 descend puis remonte."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "tones",
+        "errorTags": [
+          "tone-3",
+          "listening"
+        ],
+        "acceptedVariants": [
+          "3",
+          "ton 3"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Le ton 3 descend puis remonte."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -518,7 +822,57 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "meaning-hello"
+        "correctChoiceID": "meaning-hello",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "recuperer",
+          "skill": "recognition",
+          "errorTags": [
+            "meaning"
+          ],
+          "acceptedVariants": [
+            "bonjour",
+            "salut"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "你好 signifie « bonjour ; salut »."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "recuperer",
+        "skill": "recognition",
+        "errorTags": [
+          "meaning"
+        ],
+        "acceptedVariants": [
+          "bonjour",
+          "salut"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "你好 signifie « bonjour ; salut »."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -556,7 +910,59 @@
         "correctOrder": [
           "tok-l1-ni",
           "tok-l1-hao"
-        ]
+        ],
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "production",
+          "errorTags": [
+            "word-order",
+            "grammar"
+          ],
+          "acceptedVariants": [
+            "你好",
+            "nǐ hǎo"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "La salutation se construit 你 puis 好."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "production",
+        "errorTags": [
+          "word-order",
+          "grammar"
+        ],
+        "acceptedVariants": [
+          "你好",
+          "nǐ hǎo"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "La salutation se construit 你 puis 好."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -593,7 +999,59 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "reading-yes"
+        "correctChoiceID": "reading-yes",
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "transferer",
+          "skill": "transfer",
+          "errorTags": [
+            "reading",
+            "meaning",
+            "transfer"
+          ],
+          "acceptedVariants": [
+            "再见"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "再见 clôt le dialogue."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "transferer",
+        "skill": "transfer",
+        "errorTags": [
+          "reading",
+          "meaning",
+          "transfer"
+        ],
+        "acceptedVariants": [
+          "再见"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "再见 clôt le dialogue."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -622,7 +1080,61 @@
           "你好！",
           "nǐ hǎo"
         ],
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "speaking",
+          "errorTags": [
+            "speaking",
+            "tone-3"
+          ],
+          "acceptedVariants": [
+            "你好",
+            "你好！",
+            "nǐ hǎo"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Réécoute ta formule et vérifie le contour des tons."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "speaking",
+        "errorTags": [
+          "speaking",
+          "tone-3"
+        ],
+        "acceptedVariants": [
+          "你好",
+          "你好！",
+          "nǐ hǎo"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Réécoute ta formule et vérifie le contour des tons."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -652,7 +1164,57 @@
           "durationMilliseconds": null
         },
         "expectedStrokeCount": 7,
-        "allowSelfRating": true
+        "allowSelfRating": true,
+        "metadata": {
+          "standardID": "HSK-3.0",
+          "standardVersion": "2025-11",
+          "legacyStandardID": "HSK-legacy-2.0",
+          "legacyStandardVersion": "2.0",
+          "levelID": "level-01",
+          "sectionID": "section-01",
+          "unitID": "unit-01",
+          "stage": "produire",
+          "skill": "writing",
+          "errorTags": [
+            "writing",
+            "character"
+          ],
+          "acceptedVariants": [
+            "你"
+          ],
+          "feedback": {
+            "correct": {
+              "fr": "Le tracé est conservé ; tu peux recommencer."
+            },
+            "incorrect": {
+              "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+            }
+          },
+          "helpLevels": [
+            "H0",
+            "H1",
+            "H2",
+            "H3",
+            "H4"
+          ]
+        },
+        "stage": "produire",
+        "skill": "writing",
+        "errorTags": [
+          "writing",
+          "character"
+        ],
+        "acceptedVariants": [
+          "你"
+        ],
+        "feedback": {
+          "correct": {
+            "fr": "Le tracé est conservé ; tu peux recommencer."
+          },
+          "incorrect": {
+            "fr": "Reprends le modèle avec une aide adaptée, puis retente."
+          }
+        }
       }
     },
     {
@@ -670,7 +1232,22 @@
         "l1-greet-tones",
         "l1-greet-say",
         "l1-greet-write"
-      ]
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "stage": "transferer",
+        "skill": [
+          "review",
+          "transfer"
+        ],
+        "criterion": "required-objectives-with-evidence"
+      }
     }
   ],
   "cards": [
@@ -695,7 +1272,41 @@
         "unit-01",
         "lesson-01",
         "greetings"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-zao",
@@ -718,7 +1329,41 @@
         "unit-01",
         "lesson-01",
         "greetings"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-zaijian",
@@ -741,7 +1386,41 @@
         "unit-01",
         "lesson-01",
         "greetings"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-xiexie",
@@ -764,7 +1443,41 @@
         "unit-01",
         "lesson-01",
         "politeness"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     },
     {
       "id": "card-vocab-bu-keqi",
@@ -787,7 +1500,173 @@
         "unit-01",
         "lesson-01",
         "politeness"
-      ]
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
     }
-  ]
+  ],
+  "metadata": {
+    "standardID": "HSK-3.0",
+    "standardVersion": "2025-11",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-01",
+    "sectionID": "section-01",
+    "unitID": "unit-01",
+    "cycle": [
+      "observer",
+      "recuperer",
+      "produire",
+      "transferer"
+    ],
+    "newVocabularyIDs": [
+      "vocab-ni-hao",
+      "vocab-zao",
+      "vocab-zaijian",
+      "vocab-xiexie",
+      "vocab-bu-keqi"
+    ],
+    "reusedVocabularyIDs": [],
+    "newVocabularyCount": 5,
+    "skills": [
+      "listening",
+      "reading",
+      "speaking",
+      "writing",
+      "interaction",
+      "tones",
+      "script"
+    ],
+    "status": "available",
+    "examClaim": "none"
+  },
+  "grammarPoints": [
+    {
+      "id": "grammar-l1-politeness",
+      "pattern": "谢谢。—不客气。",
+      "function": "paire de politesse",
+      "skills": [
+        "recognition",
+        "production"
+      ],
+      "acceptedVariants": [
+        "谢谢",
+        "谢谢！",
+        "不客气",
+        "不客气！"
+      ],
+      "errors": [
+        "meaning",
+        "tone-neutral",
+        "speaking"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    },
+    {
+      "id": "grammar-l1-greeting-sequence",
+      "pattern": "你好！早！再见！",
+      "function": "salutation et prise de congé",
+      "skills": [
+        "recognition",
+        "production",
+        "transfer"
+      ],
+      "acceptedVariants": [
+        "你好",
+        "早",
+        "再见"
+      ],
+      "errors": [
+        "tone-1",
+        "tone-2",
+        "tone-3",
+        "tone-4",
+        "transfer"
+      ],
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "legacyStandardID": "HSK-legacy-2.0",
+      "legacyStandardVersion": "2.0",
+      "levelID": "level-01",
+      "sectionID": "section-01",
+      "unitID": "unit-01"
+    }
+  ],
+  "adaptation": {
+    "helpLevels": [
+      {
+        "id": "H0",
+        "label": {
+          "fr": "Aucune aide"
+        }
+      },
+      {
+        "id": "H1",
+        "label": {
+          "fr": "Réécouter, ralentir et voir les numéros de ton"
+        }
+      },
+      {
+        "id": "H2",
+        "label": {
+          "fr": "Afficher pinyin, traduction ou segmentation"
+        }
+      },
+      {
+        "id": "H3",
+        "label": {
+          "fr": "Donner un modèle, le premier mot ou la trace fantôme"
+        }
+      },
+      {
+        "id": "H4",
+        "label": {
+          "fr": "Guider puis reprogrammer un rappel"
+        }
+      }
+    ],
+    "onError": "feedback-immediate-retry-after-one-to-three-items-card",
+    "onTwoIndependentSuccesses": "lower-help-one-level",
+    "speechFallback": "selfReported",
+    "handwritingFallback": "selfReported",
+    "audioFallback": "TTS-adapter-when-available"
+  }
 }
