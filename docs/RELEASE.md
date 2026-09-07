@@ -2,29 +2,29 @@
 
 Ce document décrit la mise en release de Syllune. Le fichier
 [`project.yml`](../project.yml) est la source du projet Apple ;
-`Polygo.xcodeproj` est généré par XcodeGen. Le run Apple final
-[34131645170](https://github.com/STOOOKEEE/Polygo/actions/runs/34131645170), sur le
-commit [baed988](https://github.com/STOOOKEEE/Polygo/commit/baed98864a06dd53eb81d1f916a17cc9c7240394),
-est entièrement vert : package (35/35 tests), métadonnées de l’application,
-builds iOS/macOS et deux tests UI sur iPhone 16 Pro sous iOS 18.5. Le parcours
-E2E a duré 181,393 s et le smoke 108,208 s ; voir
-[docs/QA_REPORT.md](QA_REPORT.md) pour les assertions et les limites manuelles.
+`Polygo.xcodeproj` est généré par XcodeGen. Le code validé est le commit
+`f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`. Sa validation Apple est verte dans
+le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193) ;
+voir [docs/QA_REPORT.md](QA_REPORT.md) pour le périmètre et les limites. Ce run
+valide le package, les builds iOS/macOS, les métadonnées et les quatre méthodes
+UI.
 
-## État vérifié du jalon
+## État du candidat
 
-- `swift test --disable-sandbox --parallel` passe avec 35/35 XCTest du package via la toolchain Swift Linux ; le filtre `ContentContractTests` passe avec 6/6 tests.
-- Le contenu contractuel est vérifié : 4 leçons, 27 exercices, 4 histoires et 17 cartes. Les nouveaux mots par leçon sont 5, 5, 6 et 1 ; les exercices sont au nombre de 6, 7, 7 et 7 ; les cartes sont au nombre de 5, 5, 6 et 1.
-- `Tests/PolygoAppUITests/PolygoAppUITests.swift` et `LessonReviewJourneyTests.swift` sont déclarés ; les deux tests UI sont verts dans le run Apple final. Le parcours E2E a validé le fallback oral après refus du microphone, les sept gestes du guide, la persistance locale, les cinq cartes dues, la première réponse et la reprise après relance.
-- La génération XcodeGen, la vérification des métadonnées, les étapes de build iOS et macOS et les deux tests UI sont réussies dans le run Apple final [34131645170](https://github.com/STOOOKEEE/Polygo/actions/runs/34131645170) sur [baed988](https://github.com/STOOOKEEE/Polygo/commit/baed98864a06dd53eb81d1f916a17cc9c7240394).
-- Les `Info.plist` iOS et macOS sont séparés ; iOS déclare un écran de lancement moderne plein écran (`UILaunchScreen`) et cible iPhone/iPad. Le canevas capture les gestes dans le `ScrollView` via une surface tactile dédiée, avec contrôle de visibilité complète avant les gestes ; les lignes de leçon et les liens de vocabulaire ont une zone de toucher sur toute leur largeur.
+- Le package contient 43 tests XCTest, dont 6 tests de contrat de contenu ; les 43/43 tests réussissent dans le run Apple 34167951193.
+- Le contenu livré reste constitué de 4 leçons, 27 exercices, 4 histoires et 17 cartes. Les nouveaux mots par leçon sont 5, 5, 6 et 1 ; les exercices sont au nombre de 6, 7, 7 et 7 ; les cartes sont au nombre de 5, 5, 6 et 1.
+- La reprise locale conserve brouillon, feedback et réponses de dialogue ; l’accueil expose la reprise, le parcours et les flashcards.
+- Le dialogue propose écoute complète en mandarin, caractères chinois interactifs et réponse écrite vérifiée à partir de la réplique précédente.
+- L’oral extrait uniquement le mandarin pour le TTS, garde la cible, le modèle et le microphone compacts, restaure les réponses persistées sans créer d’enregistrement et n’invente aucun score de phonème ou de ton.
+- Les `Info.plist` iOS et macOS sont séparés ; iOS déclare un écran de lancement moderne plein écran (`UILaunchScreen`) et cible iPhone/iPad. Le canevas capture les gestes dans le `ScrollView` via une surface tactile dédiée ; les lignes de leçon et les liens de vocabulaire ont une zone de toucher sur toute leur largeur.
 
 ## Vérification avant intégration
 
-- [x] Lire `git status` et le diff complet ; ne conserver que les fichiers du jalon.
+- [x] Lire `git status` et le diff complet après l’intégration ; ne conserver que les fichiers du jalon documentaire.
 - [x] Vérifier qu’aucun secret, certificat, profil de provisioning, base locale ou fichier machine n’entre dans le commit.
-- [x] Lancer `swift test --disable-sandbox --parallel` et conserver le résultat des 35 tests.
+- [x] Obtenir le résultat `43/43` du package et le résultat des 6 tests de contrat dans le run Apple 34167951193.
 - [x] Reparser `Content/manifest.json`, le catalogue et les quatre leçons ; confirmer les références fermées, les comptes 4/27/4/17, les quantités par leçon 5/5/6/1 mots, 6/7/7/7 exercices et 5/5/6/1 cartes, ainsi que les hashes des trois guides.
-- [x] Vérifier `git diff --check` sur les documents et les JSON.
+- [x] Vérifier `git diff --check` sur les documents modifiés.
 
 Le contenu suit la chaîne `manifest.json` → catalogue du cours → documents de
 leçon. Les quatre histoires sont inline dans les blocs de lecture et les trois
@@ -47,18 +47,20 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-- [x] Générer le projet sans erreur et vérifier les schemes `PolygoApp` et `PolygoMacApp` dans le run Apple final.
+- [x] Générer le projet sans erreur et vérifier les schemes `PolygoApp` et `PolygoMacApp` dans le run Apple 34167951193.
 - [x] Compiler `PolygoApp` pour un simulateur iOS 17 ; ce target couvre iPhone et iPad.
 - [x] Compiler `PolygoMacApp` pour macOS 14.
 - [x] Vérifier les métadonnées compilées et que `Content` et `Design` sont bien copiés dans les deux applications.
-- [x] Valider `PolygoAppUITests` et `LessonReviewJourneyTests` sur un simulateur iOS en français ; les deux tests sont verts dans le run Apple final.
+- [x] Valider les quatre méthodes de test de la cible `PolygoAppUITests` sur un simulateur iOS en français.
 
-Le workflow Apple exécute ces étapes sur `macos-15`. Le parcours E2E couvre le
-fallback oral après refus du microphone, le tracé local et la reprise des cartes.
-La reconnaissance Speech avec permission accordée, les comportements de fenêtre
-et l’audit manuel d’accessibilité restent à compléter sur iPhone, iPad et Mac.
-Les trois guides `你`, `我` et `国` sont les seuls guides d’écriture livrés ;
-CloudKit reste prévu mais inactif et ses conflits réseau ne sont pas testés.
+Le workflow Apple exécute ces étapes sur `macos-15` ; le run 34167951193 les a
+toutes validées. Le parcours couvre la reprise de brouillon et de feedback, le
+dialogue et la réplique précédente interactive, le fallback oral, le tracé local,
+la persistance et la reprise des cartes. La reconnaissance Speech avec
+permission accordée, les comportements de fenêtre et l’audit manuel
+d’accessibilité restent à compléter sur iPhone, iPad et Mac. Les trois guides
+`你`, `我` et `国` sont les seuls guides d’écriture livrés ; CloudKit reste prévu
+mais inactif et ses conflits réseau ne sont pas testés.
 
 ## Contrôles produit et confidentialité
 
@@ -88,7 +90,7 @@ Avant une archive distribuable, l’intégration doit :
 
 ## Gate finale
 
-- [x] Package tests, métadonnées, génération XcodeGen, build iOS, build macOS et les deux tests UI réussis dans le run Apple final [34131645170](https://github.com/STOOOKEEE/Polygo/actions/runs/34131645170) sur [baed988](https://github.com/STOOOKEEE/Polygo/commit/baed98864a06dd53eb81d1f916a17cc9c7240394).
-- [x] `LessonReviewJourneyTests` et le smoke UI exécutés, avec rapport QA mis à jour ; les résultats sont limités aux états observables du simulateur et aux contrôles décrits.
+- [x] Package (43 tests), métadonnées, génération XcodeGen, build iOS, build macOS et les quatre méthodes UI réussis dans le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193) sur `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`.
+- [x] `LessonReviewJourneyTests`, `ZZLessonRegressionJourneyTests` et le smoke UI exécutés ; les résultats restent limités aux états observables du simulateur et aux contrôles décrits.
 - [x] Diff final relu, fichiers générés/secrets exclus, `git status` propre après commit.
 - [ ] Version, notes de release et tag publiés ensemble.

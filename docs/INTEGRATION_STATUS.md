@@ -1,40 +1,28 @@
 # Statut d’intégration
 
-Mis à jour le 2026-09-07 après le run Apple final
-[34131645170](https://github.com/STOOOKEEE/Polygo/actions/runs/34131645170).
+Mis à jour le 2026-09-08 pour le commit validé
+`f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`. La validation Apple est verte dans
+le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193).
 
 ## État
 
-- Le code applicatif validé est au checkpoint `baed988`, qui contient les quatre
-  leçons et le parcours E2E validé.
-- Le graphe SwiftPM, les cibles XcodeGen iOS/macOS, les vues Apple, le contenu et
-  les tests sont présents dans l’arbre de validation.
-- Le contenu comprend quatre leçons, 27 exercices, quatre histoires et 17
-  cartes ; chaque leçon apporte respectivement 5, 5, 6 et 1 nouveaux mots,
-  6, 7, 7 et 7 exercices, ainsi que 5, 5, 6 et 1 cartes.
-- Les trois références d’écriture pointent vers les guides JSON livrés et leurs
-  SHA-256; le service local est injecté dans les dépendances de l’application.
-- Les `Info.plist` iOS et macOS sont séparés ; iOS déclare `UILaunchScreen` et
-  cible iPhone/iPad. Le canevas capture les gestes dans le `ScrollView` via une
-  surface tactile dédiée, reste entièrement visible avant les gestes et les
-  lignes de leçon comme les liens de vocabulaire sont touchables sur toute leur
-  largeur.
+- Le dépôt contient quatre leçons, 27 exercices, quatre histoires et 17 cartes ; les trois guides d’écriture (`你`, `我`, `国`) sont livrés avec leurs références et sommes SHA-256.
+- Le package contient 43 tests XCTest, dont 6 tests de contrat de contenu. Le target UI contient quatre méthodes couvrant le smoke, la reprise de fin/revue et la régression dialogue/oral.
+- La leçon conserve et restaure le brouillon, le feedback et les réponses de dialogue par identifiant stable. Une fin incomplète reste réinitialisable.
+- L’accueil expose la reprise de leçon, l’état du parcours et l’accès aux flashcards. Le dialogue propose l’écoute des seules répliques mandarin, des cibles chinoises interactives et une réponse écrite vérifiée à partir de la réplique précédente.
+- L’oral extrait uniquement le mandarin pour le TTS, conserve la cible, le modèle et le microphone compacts, restaure les résultats persistés sans fabriquer d’enregistrement et n’invente aucun score de phonème ou de ton.
+- Les `Info.plist` iOS et macOS sont séparés ; iOS déclare `UILaunchScreen` et cible iPhone/iPad. Le canevas capture les gestes dans le `ScrollView` via une surface tactile dédiée et les lignes de leçon comme les liens de vocabulaire sont touchables sur toute leur largeur.
 
-## Validation
+## Validation CI
 
-- Hôte: Debian 13 x86_64; Swift/Xcode Apple absents, donc aucun build Apple local possible.
-- `swift test --disable-sandbox --parallel` passe avec 35/35 tests XCTest du
-  graphe portable via Swift 6.0.3 ; `ContentContractTests` passe avec 6/6 tests.
-- XcodeGen génère `Polygo.xcodeproj` sans erreur; le projet généré est ignoré
-  par Git et ne doit pas être ajouté au commit.
-- Dans le run Apple final [34131645170](https://github.com/STOOOKEEE/Polygo/actions/runs/34131645170), sur le commit [baed988](https://github.com/STOOOKEEE/Polygo/commit/baed98864a06dd53eb81d1f916a17cc9c7240394), le job package (35/35), la génération XcodeGen, la vérification des métadonnées, les builds iOS/macOS et les deux tests UI sont réussis. `LessonReviewJourneyTests` a duré 181,393 s et le smoke 108,208 s sur iPhone 16 Pro sous iOS 18.5 ; le [rapport QA](QA_REPORT.md) décrit les assertions.
-- Le smoke a confirmé le réglage Sombre et le statut local « Sur cet appareil ». L’API `.accessibilityLanguage` n’est pas utilisée car incompatible avec les cibles actuelles ; le rendu manuel, la langue et la prononciation VoiceOver, le toucher manuel et Speech sur appareil restent à compléter sur iPhone, iPad et Mac.
-- CloudKit reste prévu mais inactif : les conflits réseau ne sont pas testés et seuls les scénarios de fusion du modèle local sont couverts. Les trois guides d’écriture (`你`, `我`, `国`) sont les seuls guides livrés ; aucun audio de référence n’est embarqué et le TTS dépend d’une voix Mandarin installée.
+- Hôte de développement : Debian 13 x86_64 ; Swift/Xcode Apple absents, donc aucun build Apple local n’est possible.
+- Le contrôle local `git diff --check` des quatre documents est propre.
+- Le [run Apple 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193) est réussi sur `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1` : 43/43 tests package, génération XcodeGen, métadonnées, builds iOS/macOS et quatre méthodes UI sans échec. La durée cumulée des méthodes UI est de 565,379 s.
+- Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue compacte conserve la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
+- CloudKit reste prévu mais inactif : la progression, les documents, les dessins et les enregistrements temporaires restent locaux. Les conflits réseau ne sont pas testés.
 
 ## Suite
 
-1. Compléter l’audit manuel VoiceOver, Dynamic Type, contraste, rendu sombre,
-   clavier et fenêtres sur iPhone, iPad et Mac.
-2. Inspecter le diff complet, les secrets/fichiers locaux et `git diff --check`.
-3. Conserver CloudKit derrière son futur client et tester ses conflits quand la
-   synchronisation sera livrée.
+1. Relire le diff complet, vérifier les secrets/fichiers locaux et conserver les quatre documents synchronisés avec le résultat CI.
+2. Compléter l’audit manuel VoiceOver, Dynamic Type, contraste, rendu sombre, clavier et fenêtres sur iPhone, iPad et Mac ; vérifier Speech avec permission accordée.
+3. Activer et tester le client CloudKit seulement lorsque la synchronisation sera effectivement livrée.

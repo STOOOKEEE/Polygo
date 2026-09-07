@@ -1,24 +1,21 @@
 # Rapport QA Syllune
 
-Contrôle mis à jour le 7 septembre 2026. Le périmètre de cet agent couvre
+Contrôle préparé le 8 septembre 2026. Le périmètre de cet agent couvre
 `Tests/PolygoCoreTests/**`, `Tests/PolygoAppUITests/**` et ce rapport.
 
-## Résultat de la vérification
+## État de validation
 
 Le contenu local actuel comprend quatre leçons (`lesson-01` à `lesson-04`),
-27 exercices, quatre lectures de quatre paragraphes et 17 cartes. Les tests
-de contrat lisent les JSON réels et vérifient les références fermées entre
-leçons, blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
+27 exercices, quatre lectures de quatre paragraphes et 17 cartes. Les tests de
+contrat lisent les JSON réels et vérifient les références fermées entre leçons,
+blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
-La suite portable `swift test --disable-sandbox --parallel` passe avec **41/41
-tests**. Le filtre `ContentContractTests` passe avec **6/6 tests**. La
-vérification `git diff --check` ne relève aucune erreur de formatage.
-
-Le dernier run Apple **34131645170**, sur le commit
-`baed98864a06dd53eb81d1f916a17cc9c7240394`, a réussi les jobs `package`
-(35/35 tests) et `build-macos`, la compilation iOS, la vérification des
-métadonnées de l’application et les tests UI iOS. Les deux tests UI ont passé
-avec zéro échec.
+Le package courant contient **43 tests XCTest**, dont **6 tests de contrat de
+contenu**. Le contrôle `git diff --check` est propre. Le code validé est le
+commit `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1` ; le
+[run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193)
+est terminé avec succès. Il valide les **43/43 tests** package, la génération
+XcodeGen, les métadonnées, les builds iOS/macOS et les quatre méthodes UI.
 
 ## Contrats de contenu
 
@@ -42,85 +39,64 @@ avec zéro échec.
 `ExerciseAndProgressTests.swift` couvre la normalisation du pinyin, de la
 ponctuation et de la casse, les mauvaises formes de réponse, les scores
 invalides, les variantes de transcription, l’auto-évaluation, le parcours
-onboarding → leçon → exercice → fin → cartes, l’idempotence des événements,
-la conservation d’un état SRS lors d’un ajout répété, la correction d’une
-tentative et le rejet d’un événement d’un autre profil.
+onboarding → leçon → exercice → fin → cartes, la reprise d’un brouillon et du
+feedback, les checkpoints de dialogue, l’idempotence des événements, la
+conservation d’un état SRS lors d’un ajout répété, la correction d’une tentative
+et le rejet d’un événement d’un autre profil. `MandarinSpeechTextTests.swift`
+vérifie aussi que le TTS ne reçoit que le texte mandarin utile.
 
 ## Vérification statique du parcours
 
 Le lecteur extrait les blocs `exercise` dans leur ordre, affiche les blocs
 pédagogiques qui précèdent le premier exercice et présente le récapitulatif
-placé après la séquence lorsque le dernier exercice est évalué. Les blocs de
-lecture intégrés utilisent `ChineseSelectableText`, leur segmentation et la
-fiche mot locale. Une fin réussie appelle `completeLesson`, qui ajoute toutes
-les cartes du document sans remplacer l’état SRS d’une carte déjà connue.
+placé après la séquence lorsque le dernier exercice est évalué. Les checkpoints
+conservent la réponse en cours, le feedback visible et les brouillons/résultats
+de dialogue par identifiant stable ; la relance peut donc reprendre le même
+exercice ou réinitialiser proprement une fin incomplète. Une fin réussie appelle
+`completeLesson`, qui ajoute toutes les cartes du document sans remplacer l’état
+SRS d’une carte déjà connue.
 
-La navigation compacte conserve la route de leçon et l’onboarding transmet la
-première leçon au shell. L’annulation d’une tâche orale marque aussi une
-requête encore en attente avant le saut vers la file principale ; elle ne peut
-donc plus créer un enregistreur après la sortie de l’écran. La vue d’écriture
-injecte le service local, persiste le dessin et transmet l’identifiant au
-journal de progression via `onDrawingCreated`.
+L’accueil propose la reprise de la leçon, l’état du parcours et l’accès aux
+flashcards. Le dialogue expose une écoute de ses seules répliques mandarin, des
+caractères chinois interactifs et une réponse écrite contrôlée à partir de la
+réplique précédente. La navigation compacte conserve la route de leçon et
+l’onboarding transmet la première leçon au shell.
 
-Le statut de synchronisation « Sur cet appareil » est cohérent avec l’absence
-de client CloudSync dans l’assemblage courant. Les documents, la progression,
-les enregistrements temporaires et les dessins sont stockés localement. Aucun
+L’oral extrait le mandarin avant chaque synthèse et utilise une voix `zh-CN` ;
+les labels et instructions françaises ne sont pas lus. La vue orale compacte
+présente la cible, le modèle et le microphone dans le premier écran, restaure
+les résultats persistés sans fabriquer d’enregistrement et maintient une
+auto-évaluation explicite. La transcription et sa confiance ne produisent
+aucun score de phonème ou de ton. L’annulation d’une tâche orale marque aussi
+une requête encore en attente avant le saut vers la file principale ; elle ne
+peut donc plus créer un enregistreur après la sortie de l’écran.
+
+La vue d’écriture injecte le service local, persiste le dessin et transmet
+l’identifiant au journal de progression via `onDrawingCreated`. Le statut de
+synchronisation « Sur cet appareil » est cohérent avec l’absence de client
+CloudSync dans l’assemblage courant. Les documents, la progression, les
+enregistrements temporaires et les dessins sont stockés localement. Aucun
 bouton de réinitialisation n’est exposé dans l’interface utilisateur.
 
-## Parcours UI ajouté
+## Parcours UI validé par le run Apple
 
-`Tests/PolygoAppUITests/LessonReviewJourneyTests.swift` ajoute un test UI
-indépendant du smoke existant. Il :
+La cible `PolygoAppUITests` contient quatre méthodes de test :
 
-1. charge les réponses correctes et les cinq cartes depuis
-   `Content/lessons/lesson-01.json` ;
-2. complète les six exercices L1 avec les contrôles visibles ;
-3. enregistre l’oral par auto-évaluation explicite lorsque le microphone ou la
-   transcription locale ne sont pas disponibles, en vérifiant que l’interface
-   ne prétend pas noter les phonèmes ou les tons ;
-4. trace les sept traits de `你` par gestes de coordonnées sur le vrai canevas,
-   vérifie le tracé et exige son enregistrement local ;
-5. vérifie les cinq cartes dues, révèle et note la première, relance
-   l’application, puis vérifie les quatre cartes restantes et la ligne L1
-   marquée « Terminé ».
+- le smoke français `PolygoAppUITests.testFrenchOnboardingAndPrimaryOfflineJourneys` pour l’onboarding, le parcours, les cartes, les réglages, une histoire et le dictionnaire ;
+- `LessonReviewJourneyTests.testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch` pour la fin de leçon, les cinq cartes dues, la revue et la relance ;
+- `ZZLessonRegressionJourneyTests.testLessonDraftFeedbackDialogueAndOralJourney` pour le brouillon, le feedback, le dialogue, la réplique précédente interactive, le canevas et l’oral ;
+- `ZZLessonRegressionJourneyTests.testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply` pour la cohérence de la participation dialoguée dans le JSON L1.
 
-Ce test ne remplace pas le smoke `PolygoAppUITests.swift`, n’efface pas les
-données utilisateur et n’injecte ni backend ni réponse de test. Il est compilé
-par la cible `PolygoAppUITests` puisque `project.yml` inclut tout le dossier
-`Tests/PolygoAppUITests`.
-
-Le run Apple 34131645170 a exécuté les deux tests UI sur un iPhone 16 Pro,
-iOS 18.5. Le parcours ajouté est passé en 181,393 secondes et le smoke
-existant en 108,208 secondes :
-
-- `LessonReviewJourneyTests.testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch` : **PASS**, avec zéro échec ;
-- `PolygoAppUITests.testFrenchOnboardingAndPrimaryOfflineJourneys` : **PASS**, avec zéro échec.
-
-Le journal confirme le chemin oral de secours après le refus explicite de la
-permission microphone. Le test a ensuite émis les sept gestes du guide de `你`,
-validé puis enregistré le tracé localement, et poursuivi jusqu’à la fin de L1.
-Ses assertions successives ont confirmé les cinq cartes dues, la révélation et
-la note « Bien » de la première carte, puis quatre cartes dues après relance et
-la ligne L1 « Terminé ». Le log contient bien sept actions `Press ... then drag`
-sur la zone de tracé et le test s’est terminé avec zéro échec ; ces résultats
-valident donc les états observables vérifiés par le test, sans dépendre d’un
-backend ou d’une réinitialisation des données.
-
-Le smoke existant avait échoué après l’ouverture de la ligne de leçon terminée,
-avant ses vérifications de fiche mot, cartes, lecture et réglages. Le commit
-candidat ajoute une zone de toucher à toute la ligne de vocabulaire dans
-`LessonView.swift`. Le run 34131645170 confirme ensuite la navigation complète
-du smoke et toutes ses vérifications de fiche mot, cartes, lecture et réglages.
+Ces quatre tests ont réussi dans le [run Apple 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193), exécuté sur le commit `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`. Aucun test UI n’a échoué ; la durée cumulée affichée est de **565,379 s** : 224,033 s pour la fin/revue, 67,947 s pour le smoke français, 5,272 s pour le fixture de dialogue et 268,115 s pour le parcours brouillon/feedback/dialogue/oral. Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue orale compacte expose bien la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
 
 ## Vérifications manuelles restantes
 
 Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
 les tests UI ne peuvent donc pas y être exécutés localement. Le run Apple
-34131645170 valide le nouveau parcours E2E, y compris le fallback oral,
-l’écriture, la persistance locale, la revue et la relance, ainsi que le smoke
-existant jusqu’aux fiches vocabulaire, cartes, lecture et réglages. Le réglage
-Sombre a été sélectionné et confirmé par le smoke ; son rendu visuel reste à
-examiner manuellement.
+34167951193 a confirmé le nouveau parcours de reprise, le dialogue, l’oral
+compact, l’écriture, la persistance locale, la revue et le smoke jusqu’aux
+fiches vocabulaire, cartes, lecture et réglages. Le rendu visuel du mode sombre
+reste à examiner manuellement.
 
 L’audit VoiceOver, Dynamic Type XXXL, contraste, rendu du mode sombre,
 réduction des animations, clavier macOS et fenêtres étroites reste à compléter
@@ -131,26 +107,14 @@ sur appareil ; le parcours CI a exercé le fallback après refus du microphone.
 CloudKit reste prévu mais inactif : ses conflits réseau ne sont pas testés et
 seuls les scénarios du modèle local sont couverts.
 
-## Régressions du parcours en cours
+## Résultats de la CI
 
-Tests/PolygoAppUITests/ZZLessonRegressionJourneyTests.swift couvre le
-parcours ajouté autour de la reprise :
-
-- une réponse choisie est conservée après passage en arrière-plan, retour au
-  premier plan et relance du processus ;
-- le feedback validé reste affiché et ne crée pas une seconde validation avant
-  Continuer ;
-- la sélection partielle des tuiles est restaurée avec ses positions ;
-- le dialogue expose une écoute complète, des cibles audio chinoises,
-  l’exercice de compréhension et l’écriture de la réplique précédente ;
-- l’écran oral expose cible, pinyin, modèle, arrêt, vitesse,
-  enregistrement et auto-évaluation sans score de phonèmes ou de tons.
-
-Le même fichier vérifie dans le JSON L1 la référence de compréhension, la
-réplique audio et les réponses acceptées. Cette couverture attend le prochain
-run Apple après intégration ; elle n’est pas exécutable dans ce conteneur sans
-Xcode, SwiftUI et le SDK iOS.
+Le run 34167951193 confirme les états observables de reprise après arrière-plan
+et relance, le feedback sans double validation, les positions de tuiles, les
+cibles audio mandarin, la réplique précédente interactive, le fallback oral et
+la disposition compacte de l’oral. Les quatre méthodes UI ont réussi sans
+échec.
 
 Le workflow Apple conserve désormais aussi le bundle xcresult quand le run est
-vert. Les captures nommées du parcours pourront ainsi être téléchargées pour
-inspection visuelle avec le résultat de test.
+vert. Les captures nommées du parcours sont disponibles avec le résultat de
+test pour inspection visuelle.
