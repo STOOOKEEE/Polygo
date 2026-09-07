@@ -132,16 +132,140 @@ public struct AdaptiveShellView: View {
 
 public struct PhoneTabShell: View {
     @EnvironmentObject private var model: AppModel
+    @State private var selectedTab: AppRoute = .today
+    @State private var todayPath: [AppRoute] = []
+    @State private var pathPath: [AppRoute] = []
+    @State private var explorerPath: [AppRoute] = []
+    @State private var cardsPath: [AppRoute] = []
+    @State private var profilePath: [AppRoute] = []
+
     public init() {}
+
     public var body: some View {
-        TabView(selection: Binding(get: { model.selectedRoute.baseTab }, set: { model.persistRoute($0) })) {
-            NavigationStack { TodayView() }.tabItem { Label("Aujourd’hui", systemImage: "sun.max") }.tag(AppRoute.today)
-            NavigationStack { LearningPathView() }.tabItem { Label("Parcours", systemImage: "list.bullet.rectangle.portrait") }.tag(AppRoute.path)
-            NavigationStack { ExplorerView() }.tabItem { Label("Explorer", systemImage: "book.pages") }.tag(AppRoute.explorer)
-            NavigationStack { ReviewCardsView() }.tabItem { Label("Cartes", systemImage: "rectangle.stack") }.tag(AppRoute.cards)
-            NavigationStack { ProfileView() }.tabItem { Label("Profil", systemImage: "person.crop.circle") }.tag(AppRoute.profile)
+        TabView(selection: tabSelection) {
+            NavigationStack(path: $todayPath) {
+                TodayView()
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            }
+            .tabItem { Label("Aujourd’hui", systemImage: "sun.max") }
+            .tag(AppRoute.today)
+
+            NavigationStack(path: $pathPath) {
+                LearningPathView()
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            }
+            .tabItem { Label("Parcours", systemImage: "list.bullet.rectangle.portrait") }
+            .tag(AppRoute.path)
+
+            NavigationStack(path: $explorerPath) {
+                ExplorerView()
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            }
+            .tabItem { Label("Explorer", systemImage: "book.pages") }
+            .tag(AppRoute.explorer)
+
+            NavigationStack(path: $cardsPath) {
+                ReviewCardsView()
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            }
+            .tabItem { Label("Cartes", systemImage: "rectangle.stack") }
+            .tag(AppRoute.cards)
+
+            NavigationStack(path: $profilePath) {
+                ProfileView()
+                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            }
+            .tabItem { Label("Profil", systemImage: "person.crop.circle") }
+            .tag(AppRoute.profile)
         }
         .tint(SylluneColor.jade)
+        .onAppear { apply(route: model.selectedRoute) }
+        .onChange(of: model.selectedRoute) { _, route in
+            apply(route: route)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
+            popToRoot()
+        }
+    }
+
+    private var tabSelection: Binding<AppRoute> {
+        Binding(
+            get: { selectedTab },
+            set: { newTab in
+                // A second tap on the active tab is a familiar way to return
+                // to that tab's root. It also clears a pending lesson route.
+                if newTab == selectedTab, model.selectedRoute != newTab {
+                    popToRoot()
+                    model.persistRoute(newTab)
+                    return
+                }
+                selectedTab = newTab
+                if model.selectedRoute != newTab {
+                    model.persistRoute(newTab)
+                }
+            }
+        )
+    }
+
+    private func apply(route: AppRoute) {
+        let baseTab = route.baseTab
+        if selectedTab != baseTab {
+            selectedTab = baseTab
+        }
+
+        switch baseTab {
+        case .today:
+            todayPath = routePath(route, root: .today, existing: todayPath)
+        case .path:
+            pathPath = routePath(route, root: .path, existing: pathPath)
+        case .explorer:
+            explorerPath = routePath(route, root: .explorer, existing: explorerPath)
+        case .cards:
+            cardsPath = routePath(route, root: .cards, existing: cardsPath)
+        case .profile:
+            profilePath = routePath(route, root: .profile, existing: profilePath)
+        default:
+            break
+        }
+    }
+
+    private func routePath(_ route: AppRoute, root: AppRoute, existing: [AppRoute]) -> [AppRoute] {
+        if route == root {
+            return []
+        }
+        return existing == [route] ? existing : [route]
+    }
+
+    private func popToRoot() {
+        switch selectedTab {
+        case .today: todayPath.removeAll()
+        case .path: pathPath.removeAll()
+        case .explorer: explorerPath.removeAll()
+        case .cards: cardsPath.removeAll()
+        case .profile: profilePath.removeAll()
+        default: break
+        }
+        if model.selectedRoute != selectedTab {
+            model.persistRoute(selectedTab)
+        }
+    }
+
+    @ViewBuilder
+    private func routeView(_ route: AppRoute) -> some View {
+        switch route {
+        case .today: TodayView()
+        case .path: LearningPathView()
+        case .explorer: ExplorerView()
+        case .cards: ReviewCardsView()
+        case .profile: ProfileView()
+        case .settings: SettingsView()
+        case .lesson(let id): LessonView(lessonID: id)
+        case .word(let id): WordDetailView(vocabularyID: id)
+        case .story(let id): StoryDetailView(storyID: id)
+        case .dictionary(let query): DictionaryView(initialQuery: query)
+        case .oral(let id): OralView(exerciseID: id)
+        case .writing(let id): WritingView(exerciseID: id)
+        }
     }
 }
 
@@ -203,7 +327,7 @@ private extension AppRoute {
     var baseTab: AppRoute {
         switch self {
         case .path: return .path
-        case .explorer, .story, .dictionary: return .explorer
+        case .explorer, .story, .dictionary, .word: return .explorer
         case .cards: return .cards
         case .profile, .settings: return .profile
         default: return .today

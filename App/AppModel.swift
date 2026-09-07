@@ -46,6 +46,15 @@ public final class AppModel: ObservableObject {
             async let loadedSnapshot = dependencies.progress.load(profileID: profileID)
             index = try await loadedIndex
             snapshot = try await loadedSnapshot
+            if selectedRoute == .today,
+               let activeRoute = snapshot.activeRoute.flatMap({ AppRoute(rawValue: $0) }),
+               case .lesson(let activeLessonID) = activeRoute,
+               snapshot.lessonProgress[activeLessonID]?.completedAt == nil {
+                // A lesson opened from a tab NavigationLink records its
+                // active route in the journal. Restore that route when no
+                // newer explicit tab choice was persisted.
+                persistRoute(activeRoute)
+            }
             if let index {
                 course = try await dependencies.content.course(id: snapshot.profile?.selectedCourseID ?? index.defaultCourseID)
             }
@@ -118,9 +127,9 @@ public final class AppModel: ObservableObject {
     }
 
     @discardableResult
-    public func startLesson(_ id: LessonID) async -> Bool {
+    public func startLesson(_ id: LessonID, persistRouteInNavigation: Bool = true) async -> Bool {
         guard await append(.lessonStarted(lessonID: id, at: dependencies.clock.now())) else { return false }
-        persistRoute(.lesson(id))
+        if persistRouteInNavigation { persistRoute(.lesson(id)) }
         return true
     }
 

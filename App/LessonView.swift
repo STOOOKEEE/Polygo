@@ -37,7 +37,13 @@ public struct LessonView: View {
         .navigationTitle(lesson?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon")
         .task {
             lesson = await model.loadLesson(lessonID)
-            if !didStart { didStart = true; await model.startLesson(lessonID) }
+            if !didStart {
+                didStart = true
+                // NavigationLink destinations already live inside a tab's
+                // NavigationStack. Record the lesson event without asking the
+                // shell to push the same destination a second time.
+                _ = await model.startLesson(lessonID, persistRouteInNavigation: false)
+            }
         }
     }
 
