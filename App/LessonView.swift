@@ -557,7 +557,9 @@ private struct DialogueBlockView: View {
             .accessibilityHint("La réponse est lue en mandarin pour retrouver la réplique précédente.")
             TextField("Réplique en caractères chinois", text: $writtenResponse)
                 .textFieldStyle(.roundedBorder)
+#if os(iOS)
                 .textInputAutocapitalization(.never)
+#endif
                 .autocorrectionDisabled()
                 .onChange(of: writtenResponse) { _, _ in responseResult = nil }
             Button("Vérifier ma réplique") {
