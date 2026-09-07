@@ -27,7 +27,10 @@ final class PolygoAppUITests: XCTestCase {
 
         // The first lesson preamble exposes its vocabulary before the first
         // exercise. Open one word sheet and activate its honest no-audio path.
-        let word = element(containing: "你好", type: .any)
+        // The introduction mentions 你好 in explanatory prose before the
+        // vocabulary card. Target the actual navigation control so the tap
+        // opens the word sheet instead of landing on that static paragraph.
+        let word = element(containing: "你好", type: .button)
         XCTAssertTrue(word.waitForExistence(timeout: timeout), "Le mot 你好 doit être lié depuis la leçon")
         word.tap()
         let wordSheet = element(containing: "Fiche mot", type: .any)
