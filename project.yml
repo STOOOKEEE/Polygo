@@ -23,6 +23,9 @@ targets:
       macOS: "14.0"
     sources:
       - path: Apple
+    info:
+      path: Apple/Info.plist
+      properties: {}
     dependencies:
       - package: PolygoPackage
         product: PolygoCore
@@ -43,6 +46,11 @@ targets:
       - path: Design
         type: folder
         buildPhase: resources
+    info:
+      path: App/Info.plist
+      properties:
+        NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
+        NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."
     dependencies:
       - target: PolygoApple_iOS
       - package: PolygoPackage
@@ -68,6 +76,11 @@ targets:
       - path: Design
         type: folder
         buildPhase: resources
+    info:
+      path: App/Info.plist
+      properties:
+        NSMicrophoneUsageDescription: "Syllune utilise le microphone uniquement pour comparer ta phrase localement."
+        NSSpeechRecognitionUsageDescription: "Syllune utilise la reconnaissance vocale sur l’appareil pour transcrire ta phrase."
     dependencies:
       - target: PolygoApple_macOS
       - package: PolygoPackage
@@ -87,6 +100,9 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: Tests/PolygoAppUITests
+    info:
+      path: Tests/PolygoAppUITests/Info.plist
+      properties: {}
     dependencies:
       - target: PolygoApp
     settings:
