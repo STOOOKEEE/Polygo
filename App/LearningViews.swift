@@ -209,7 +209,7 @@ public struct TodayView: View {
 
     private var streakBadge: some View {
         let dayLabel = model.streakDays == 1 ? "jour" : "jours"
-        Label("\(model.streakDays) \(dayLabel)", systemImage: "flame.fill")
+        return Label("\(model.streakDays) \(dayLabel)", systemImage: "flame.fill")
             .font(.callout.weight(.semibold))
             .foregroundStyle(SylluneColor.inkOnSun)
             .padding(.horizontal, 12).padding(.vertical, 8)
