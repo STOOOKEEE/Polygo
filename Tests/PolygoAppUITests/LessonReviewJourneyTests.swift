@@ -207,9 +207,10 @@ final class LessonReviewJourneyTests: XCTestCase {
             start.press(forDuration: 0.05, thenDragTo: end)
         }
 
+        let expectedValue = "\(guide.strokes.count) traits tracés"
         XCTAssertTrue(
-            waitForValue(canvas, equals: "\(guide.strokes.count) traits tracés"),
-            "Le canevas doit recevoir les \(guide.strokes.count) gestes du guide"
+            waitForValue(canvas, equals: expectedValue),
+            "Le canevas doit recevoir les \(guide.strokes.count) gestes du guide (valeur observée : \(String(describing: canvas.value)))"
         )
 
         let verify = button(containing: "Vérifier le tracé")

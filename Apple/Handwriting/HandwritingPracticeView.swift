@@ -151,10 +151,14 @@ public struct HandwritingPracticeView: View {
                     Canvas { context, size in
                         renderCanvas(context: &context, size: size)
                     }
-                    .contentShape(Rectangle())
-                    .allowsHitTesting(!isSaving)
-                    .gesture(drawingGesture(for: proxy.size))
                 }
+                // The canvas lives inside the lesson's vertical ScrollView.
+                // Give the drawing surface priority so a vertical stroke is
+                // captured as handwriting instead of being consumed as a
+                // scroll gesture by the parent.
+                .contentShape(Rectangle())
+                .allowsHitTesting(!isSaving)
+                .highPriorityGesture(drawingGesture(for: proxy.size))
                 .onAppear { canvasSize = proxy.size }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel("Zone de tracé pour \(exercise.targetHanzi)")
