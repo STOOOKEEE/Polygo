@@ -318,7 +318,8 @@ public struct DictionaryView: View {
     }
 
     public var body: some View {
-        VStack(spacing: 0) {
+        applySearchFocus(
+            VStack(spacing: 0) {
             if filtered.isEmpty && !query.isEmpty {
                 ContentUnavailableView("Aucun mot pour « \(query) »", systemImage: "character.book.closed", description: Text("Parcours l’unité 1 pour découvrir son vocabulaire."))
             } else {
@@ -341,9 +342,9 @@ public struct DictionaryView: View {
                 }
                 .listStyle(.plain)
             }
-        }
-        .searchable(text: $query, prompt: "Caractère, pinyin ou sens")
-        .searchFocused($searchFocused)
+            }
+            .searchable(text: $query, prompt: "Caractère, pinyin ou sens")
+        )
         .navigationTitle("Dictionnaire")
         .background(SylluneColor.canvas)
         .task {
@@ -355,6 +356,15 @@ public struct DictionaryView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
             dismiss()
+        }
+    }
+
+    @ViewBuilder
+    private func applySearchFocus<Content: View>(_ content: Content) -> some View {
+        if #available(iOS 18.0, macOS 15.0, *) {
+            content.searchFocused($searchFocused)
+        } else {
+            content
         }
     }
 }
