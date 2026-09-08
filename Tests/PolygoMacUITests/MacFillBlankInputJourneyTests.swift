@@ -125,7 +125,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             waitForValue(correct, "Sélectionnée"),
             "Le choix 叫 doit exposer son état sélectionné"
         )
-        let selectedLabels = options.compactMap { option in
+        let selectedLabels: [String] = options.compactMap { (option: XCUIElement) -> String? in
             guard (option.value as? String) == "Sélectionnée" else { return nil }
             return option.label.trimmingCharacters(in: .whitespacesAndNewlines)
         }

@@ -332,7 +332,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         let option = app.buttons.matching(
             NSPredicate(
                 format: "identifier BEGINSWITH %@ AND label == %@",
-                "lesson.exercise.\(exercise.header.id.rawValue).choice.",
+                "lesson.exercise.\(exercise.header.id).choice.",
                 acceptedAnswer
             )
         ).firstMatch
