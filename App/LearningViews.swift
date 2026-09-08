@@ -579,7 +579,7 @@ private struct RoadmapModuleCanvas: View {
                                 y: 8
                             )
                         }
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(height: rowHeight, alignment: .top)
                     }
                 }
