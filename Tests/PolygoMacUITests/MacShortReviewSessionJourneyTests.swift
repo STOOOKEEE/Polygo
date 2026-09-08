@@ -39,11 +39,11 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         ).firstMatch
         XCTAssertTrue(home.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher la carte de révision")
         XCTAssertTrue(
-            element(containing: "cartes pour cette session").waitForExistence(timeout: timeout),
+            text(containing: "cartes pour cette session").waitForExistence(timeout: timeout),
             "Aujourd’hui doit annoncer la limite de la session courte"
         )
         XCTAssertTrue(
-            element(containing: "16 dues au total").waitForExistence(timeout: timeout),
+            text(containing: "16 dues au total").waitForExistence(timeout: timeout),
             "La file complète doit conserver les seize cartes dues"
         )
         app.launchEnvironment.removeValue(forKey: fixtureKey)
@@ -53,19 +53,19 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         XCTAssertTrue(review.isHittable, "Le lien de révision doit être accessible")
         review.click()
 
-        let sessionSummary = element(containing: "cartes sur 16 dues")
+        let sessionSummary = text(containing: "cartes sur 16 dues")
         XCTAssertTrue(
             sessionSummary.waitForExistence(timeout: timeout),
             "La route de session doit conserver la taille de la file complète"
         )
-        let expectedLimit = try firstInteger(in: sessionSummary.label)
+        let expectedLimit = try firstInteger(in: accessibleText(of: sessionSummary))
         XCTAssertGreaterThan(expectedLimit, 0, "La limite quotidienne doit être positive")
         XCTAssertLessThanOrEqual(expectedLimit, 10, "La session courte doit rester plafonnée à dix cartes")
         let start = button(exactly: "Commencer")
         XCTAssertTrue(start.waitForExistence(timeout: timeout), "La session courte doit pouvoir commencer")
         start.click()
 
-        let finished = element(containing: "Session terminée")
+        let finished = text(containing: "Session terminée")
         var completedCards = 0
         for _ in 0..<11 {
             if finished.waitForExistence(timeout: 0.25) { break }
@@ -85,10 +85,11 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         XCTAssertTrue(finished.waitForExistence(timeout: timeout), "La session courte doit se terminer après sa limite")
         XCTAssertEqual(completedCards, expectedLimit, "La session doit évaluer exactement la limite annoncée")
         XCTAssertTrue(
-            element(containing: "Il reste").waitForExistence(timeout: timeout),
+            text(containing: "Il reste").waitForExistence(timeout: timeout),
             "La fin de session doit indiquer les cartes encore dues"
         )
-        let remainingLabel = element(containing: "Il reste").label
+        let remainingText = text(containing: "Il reste")
+        let remainingLabel = accessibleText(of: remainingText)
         let remainingCards = try firstInteger(in: remainingLabel)
         XCTAssertEqual(remainingCards, 16 - expectedLimit, "La file complète doit conserver les cartes non révisées")
         let continueReview = button(exactly: "Poursuivre")
@@ -100,10 +101,17 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
     }
 
-    private func element(containing value: String) -> XCUIElement {
-        app.descendants(matching: .any)
-            .matching(NSPredicate(format: "label CONTAINS[c] %@", value))
-            .firstMatch
+    private func text(containing value: String) -> XCUIElement {
+        app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value)
+        ).firstMatch
+    }
+
+    private func accessibleText(of element: XCUIElement) -> String {
+        if let value = element.value as? String, !value.isEmpty {
+            return value
+        }
+        return element.label
     }
 
     private func firstInteger(in value: String) throws -> Int {
