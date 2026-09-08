@@ -102,7 +102,7 @@ public struct HandwritingPracticeView: View {
             if let statusMessage {
                 Text(statusMessage)
                     .font(.callout)
-                    .foregroundStyle(strokeError == nil ? .secondary : .red)
+                    .foregroundStyle(strokeError == nil ? Color.secondary : Color.red)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

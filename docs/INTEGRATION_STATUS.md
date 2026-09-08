@@ -25,6 +25,6 @@ Mis à jour le 2026-09-08 pour le commit validé
 
 ## Suite
 
-1. Relire le diff complet, vérifier les secrets/fichiers locaux et conserver les quatre documents synchronisés avec le résultat CI.
+1. Relire le diff complet, vérifier les secrets/fichiers locaux et conserver les documents synchronisés avec le résultat CI.
 2. Compléter l’audit manuel VoiceOver, Dynamic Type, contraste, rendu sombre, clavier et fenêtres sur iPhone, iPad et Mac ; vérifier Speech avec permission accordée.
 3. Activer et tester le client CloudKit seulement lorsque la synchronisation sera effectivement livrée.

@@ -30,8 +30,8 @@ réponse du moteur :
     SpeechPracticeView(
         exercise: exercise,
         audio: model.dependencies.audio,
-        pronunciation: model.dependencies.pronunciation,
-        answer: $answer
+        answer: $answer,
+        pronunciation: model.dependencies.pronunciation
     )
 
 Le callback facultatif onRecordingCreated sert seulement à notifier une
@@ -74,9 +74,10 @@ La composition livrée utilise `UnconfiguredSpeechPronunciationService` tant
 qu’aucun fournisseur n’est choisi et configuré. `OfflineSpeechPronunciationService`
 reste un emplacement explicite, mais ne déduit aucun score sans modèle
 phonétique. `FixedSpeechPronunciationService` sert uniquement aux tests et aux
-prévisualisations : ses rapports fixture vérifient l’affichage des verdicts,
-des scores par composante et la persistance du résultat, sans compte, réseau
-ou appel payant.
+prévisualisations ; il permet d’injecter des rapports fixture sans compte,
+réseau ou appel payant. Les tests portables couvrent les verdicts fournisseur
+réussi, à corriger et incertain, leurs scores, la compatibilité Codable et le
+passage `skipped`.
 
 La transcription Apple et sa confiance restent des informations descriptives.
 Une transcription seule, même identique à la phrase cible, ne constitue pas
