@@ -78,7 +78,7 @@ final class DailyPlanJourneyTests: XCTestCase {
         attachScreenshot(named: "ios-daily-plan-day-one")
 
         let openLesson = app.descendants(matching: .any).matching(
-            NSPredicate(format: "identifier == %@", "home.primaryAction")
+            NSPredicate(format: "identifier == %@", "home.hero")
         ).firstMatch
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "Aujourd’hui doit proposer la séance du jour")
         XCTAssertTrue(openLesson.isHittable, "L’action de la séance du jour doit être accessible")

@@ -102,7 +102,7 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
     }
 
     private func text(containing value: String) -> XCUIElement {
-        app.staticTexts.matching(
+        app.descendants(matching: .any).matching(
             NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value)
         ).firstMatch
     }

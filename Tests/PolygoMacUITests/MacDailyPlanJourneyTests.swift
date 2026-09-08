@@ -61,22 +61,10 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             "L5 doit conserver l’ordre contractuel jusqu’à l’écoute"
         )
 
-        let dayOne = app.descendants(matching: .any).matching(
-            NSPredicate(format: "label CONTAINS[c] %@", "Jour 1 sur 90")
-        ).firstMatch
+        let dayOne = element(containing: "Jour 1 sur 90")
         XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J1/90")
-        XCTAssertTrue(
-            app.descendants(matching: .any).matching(
-                NSPredicate(format: "label CONTAINS[c] %@", "minutes de cours")
-            ).firstMatch.waitForExistence(timeout: timeout),
-            "Aujourd’hui doit afficher le budget de cours"
-        )
-        XCTAssertTrue(
-            app.descendants(matching: .any).matching(
-                NSPredicate(format: "label CONTAINS[c] %@", "minutes de révision")
-            ).firstMatch.waitForExistence(timeout: timeout),
-            "Aujourd’hui doit afficher le budget de révision"
-        )
+        XCTAssertTrue(element(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
+        XCTAssertTrue(element(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
         // Keep relaunches focused on the durable events produced by the app.
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "mac-daily-plan-day-one")
@@ -84,9 +72,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         // AppKit exposes the accessibility identifier applied to the hero
         // container as the tappable button. The nested NavigationLink keeps
         // its iOS identifier, but is not a separate macOS accessibility node.
-        let openLesson = app.buttons.matching(
-            NSPredicate(format: "identifier == %@", "home.hero")
-        ).firstMatch
+        let openLesson = button(identifier: "home.hero")
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "Aujourd’hui doit proposer la séance du jour")
         XCTAssertTrue(openLesson.isHittable, "L’action de la séance du jour doit être accessible")
         openLesson.click()
@@ -102,9 +88,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(play.isHittable, "Le contrôle TTS doit être visible")
         play.click()
         XCTAssertTrue(
-            app.staticTexts.matching(
-                NSPredicate(format: "label CONTAINS[c] %@ OR label CONTAINS[c] %@", "Lecture terminée", "Audio indisponible")
-            ).firstMatch.waitForExistence(timeout: timeout),
+            element(containingAny: ["Lecture terminée", "Audio indisponible"]).waitForExistence(timeout: timeout),
             "Le contrôle TTS doit exposer un état observable"
         )
         attachScreenshot(named: "mac-daily-plan-lesson-five-listening")
@@ -119,10 +103,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse d’écoute doit pouvoir être enregistrée")
         XCTAssertTrue(verify.isEnabled, "Une réponse choisie doit activer l’enregistrement")
         verify.click()
-        XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Correct")).firstMatch.waitForExistence(timeout: timeout),
-            "La réponse d’écoute doit être évaluée"
-        )
+        XCTAssertTrue(element(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
         app.buttons.matching(NSPredicate(format: "label == %@", "Continuer")).firstMatch.click()
 
         // The listening evaluation and the following position must survive a
@@ -155,23 +136,15 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.click()
 
-        XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Leçon terminée")).firstMatch.waitForExistence(timeout: timeout),
-            "La séance terminée doit être confirmée"
-        )
+        XCTAssertTrue(element(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
         let path = app.buttons.matching(NSPredicate(format: "label == %@", "Retour au parcours")).firstMatch
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.click()
-        XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Parcours")).firstMatch.waitForExistence(timeout: timeout),
-            "Le retour doit afficher le parcours"
-        )
+        XCTAssertTrue(element(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
         attachScreenshot(named: "mac-daily-plan-path-after-day-one")
 
         selectSidebarItem("Aujourd’hui")
-        let dayTwo = app.descendants(matching: .any).matching(
-            NSPredicate(format: "label CONTAINS[c] %@", "Jour 2 sur 90")
-        ).firstMatch
+        let dayTwo = element(containing: "Jour 2 sur 90")
         XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J2")
         attachScreenshot(named: "mac-daily-plan-day-two")
     }
@@ -187,6 +160,28 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             }
         }
         XCTFail("Navigation absente : \(label)")
+    }
+
+    private func button(identifier: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
+    }
+
+    private func element(containing value: String) -> XCUIElement {
+        app.descendants(matching: .any)
+            .matching(NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value))
+            .firstMatch
+    }
+
+    private func element(containingAny values: [String]) -> XCUIElement {
+        let predicates = values.flatMap { value in
+            [
+                NSPredicate(format: "value CONTAINS[c] %@", value),
+                NSPredicate(format: "label CONTAINS[c] %@", value)
+            ]
+        }
+        return app.descendants(matching: .any)
+            .matching(NSCompoundPredicate(orPredicateWithSubpredicates: predicates))
+            .firstMatch
     }
 
     private func makeSeedProgressAfterStarterLessons() throws -> Data {
