@@ -199,8 +199,23 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         guard element.waitForExistence(timeout: timeout) else { return false }
         if element.isHittable { return true }
 
-        let scrollView = app.scrollViews.firstMatch
-        guard scrollView.waitForExistence(timeout: 2) else { return false }
+        // NavigationSplitView exposes its sidebar List as the first AX
+        // ScrollView. The lesson content is the wider scroll container, so
+        // choose it explicitly instead of relying on query order.
+        let scrollViews = app.scrollViews
+        var scrollView: XCUIElement?
+        var widestWidth: CGFloat = 0
+        for index in 0..<scrollViews.count {
+            let candidate = scrollViews.element(boundBy: index)
+            guard candidate.waitForExistence(timeout: 2) else { continue }
+            let frame = candidate.frame
+            guard frame.width > 0, frame.height > 0 else { continue }
+            if frame.width > widestWidth {
+                widestWidth = frame.width
+                scrollView = candidate
+            }
+        }
+        guard let scrollView else { return false }
 
         for _ in 0..<12 {
             let elementFrame = element.frame
