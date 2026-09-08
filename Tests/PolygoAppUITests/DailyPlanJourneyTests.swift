@@ -106,7 +106,7 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse d’écoute doit pouvoir être enregistrée")
         XCTAssertTrue(verify.isEnabled, "Une réponse choisie doit activer l’enregistrement")
         verify.tap()
-        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
+        XCTAssertTrue(element(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
         button(exactly: "Continuer").tap()
 
         // The listening evaluation and the following position must survive a
@@ -136,11 +136,11 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.tap()
 
-        XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
+        XCTAssertTrue(element(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
         let path = button(exactly: "Retour au parcours")
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.tap()
-        XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
+        XCTAssertTrue(element(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
         attachScreenshot(named: "ios-daily-plan-path-after-day-one")
 
         let today = app.tabBars.buttons["Aujourd’hui"]
