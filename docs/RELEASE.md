@@ -50,7 +50,10 @@ conception séparée, explicitement marquée `design-reference-only`.
 - [x] Ajouter `Tools/__pycache__/` et `*.pyc` aux exclusions Git ; vérifier
   l’absence de secrets, certificats, profils, bases locales et artefacts
   machine dans le périmètre.
-- [ ] Exécuter le workflow Apple automatique sur le commit final après le push.
+- [x] Finaliser le workflow Apple automatique sur `ac1daee` : le [run
+  34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) a
+  validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et les **5
+  méthodes UI macOS (5/5)**.
 
 ## Accès direct et tests natifs préparés
 
@@ -77,9 +80,12 @@ captures déjà archivées sont :
 - [écriture guidée iOS](screenshots/handwriting-guided-ios.png) et
   [reprise iOS](screenshots/handwriting-retry-ios.png).
 
-Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
-Apple, les méthodes UI, l’audit VoiceOver/Dynamic Type, les permissions Speech
-et les fenêtres étroites restent des contrôles du runner ou de l’appareil.
+Le run Apple canonique a produit les captures macOS de la séance quotidienne
+(J1, écoute, lecture, retour au parcours et J2) et de la session courte. Le
+bundle xcresult iOS du même run conserve les captures du parcours. Le conteneur
+Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds Apple,
+les méthodes UI, l’audit VoiceOver/Dynamic Type, les permissions Speech et les
+fenêtres étroites restent des contrôles du runner ou de l’appareil.
 
 ## Génération et builds Apple
 
@@ -98,9 +104,10 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-Le workflow Apple doit ensuite exécuter `PolygoAppUITests` (8 méthodes iOS) et
-`PolygoMacUITests` (5 méthodes macOS), puis conserver le bundle xcresult et les
-captures si le run est vert. Les runs historiques
+Le [run Apple 34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153)
+sur `ac1daee` a exécuté `PolygoMacUITests` (**5/5**) et le package (**55/55**).
+`PolygoAppUITests` a exécuté les **8 méthodes iOS (8/8)** ; le bundle xcresult et
+ses captures sont disponibles. Les runs historiques
 [34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577) et
 [34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020)
 restent documentés comme preuves de commits antérieurs, sans être présentés

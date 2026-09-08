@@ -24,9 +24,10 @@ corrections éditoriales des entrées 214, 317, 354, 410, 413, 448, 457, 462,
 
 La suite portable courante découvre le corpus réel et compte **55 tests
 XCTest**. Le run local `swift test --parallel` avec Swift 6.0.3 a réussi à
-**55/55** ; `git diff --check` est également propre. Le conteneur Linux ne
-fournit pas Xcode, SwiftUI ni les SDK Apple, donc la campagne native du snapshot
-intégré sera relancée sur CI Apple après le push final.
+**55/55** ; `git diff --check` est également propre. Le [run Apple canonique
+34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) sur
+`ac1daee` a validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et
+les **5 méthodes UI macOS (5/5)**.
 
 ## Contrats de contenu
 
@@ -87,8 +88,12 @@ reprise après validation d’écoute, le passage oral sans évaluation, le dial
 les écritures guidée et libre, le retour au parcours et la session courte de
 révision.
 
-Les captures déjà présentes dans `docs/screenshots/` et les runs suivants sont
-des preuves **historiques**, produites sur des snapshots antérieurs :
+Le run Apple canonique courant (`ac1daee`, [run 34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153))
+a produit les captures macOS de la séance quotidienne — [J2](screenshots/daily-plan-day-two-macos.png)
+et [lecture](screenshots/daily-plan-reading-macos.png) — ainsi que celles de la
+session courte. Son bundle xcresult conserve aussi les captures iOS du parcours.
+Les anciennes captures du parcours, du dialogue et de l’écriture, ainsi que les
+runs suivants, documentent des snapshots antérieurs :
 
 - [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185),
   vert pour son ancien périmètre (`c30d712`) ;
@@ -98,10 +103,9 @@ des preuves **historiques**, produites sur des snapshots antérieurs :
 - [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577),
   vert pour le corpus et les parcours UI de son snapshot précédent.
 
-Ces campagnes ne valident pas encore le pack intégré à 94 leçons. La campagne
-native complète sera lancée après le push final et devra vérifier le build iOS
-et macOS, les huit parcours iOS, les cinq parcours macOS et la nouvelle capture
-de la leçon 5 au stade écoute.
+Ces campagnes historiques ne valident pas le pack intégré à 94 leçons. Le run
+canonique courant a validé le package, les huit parcours iOS et les cinq
+parcours macOS.
 
 ## Vérifications hors automatisation
 

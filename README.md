@@ -49,10 +49,12 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
 ```
 
 La suite portable actuelle compte **55 tests**, dont **12 contrats de contenu** ;
-le dernier contrôle local est passé à **55/55**. Xcode et les SDK Apple ne sont
-pas présents dans l’environnement Linux, donc les tests UI natifs doivent être
-exécutés sur un runner Apple. Les sources préparent 8 méthodes UI iOS et 5
-méthodes UI macOS, avec captures conservées par XCTest.
+le dernier contrôle local est passé à **55/55**. Le [run Apple canonique
+34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) sur
+`ac1daee` a validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et
+les **5 méthodes UI macOS (5/5)**. Xcode et les SDK Apple ne sont pas présents
+dans l’environnement Linux, donc les tests UI natifs doivent être exécutés sur
+un runner Apple.
 
 ## Contenu livré
 
@@ -102,9 +104,10 @@ exactement la tranche annoncée et conserve les cartes restantes pour
 
 Les captures natives déjà archivées comprennent [le parcours macOS](docs/screenshots/roadmap-macos-dark.png),
 [le dialogue macOS](docs/screenshots/dialogue-macos-dark.png), [l’écriture guidée iOS](docs/screenshots/handwriting-guided-ios.png)
-et [la reprise iOS](docs/screenshots/handwriting-retry-ios.png). Les nouvelles
-méthodes de séance quotidienne et de session courte ajoutent leurs propres
-captures lors du prochain runner Apple.
+et [la reprise iOS](docs/screenshots/handwriting-retry-ios.png). Le run Apple
+canonique a produit [l’aperçu macOS de la séance quotidienne J1](docs/screenshots/daily-plan-day-one-macos.png),
+ainsi que les captures macOS de la session courte ; les captures iOS de ce
+parcours sont conservées dans le bundle xcresult du run.
 
 ## Organisation du code
 

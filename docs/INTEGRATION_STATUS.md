@@ -1,9 +1,10 @@
 # Statut d’intégration
 
-Mis à jour le 2026-09-08 pour le candidat de contenu `2026.10.0`. Le dépôt
-n’a pas encore reçu le commit de ce candidat ; les résultats Apple mentionnés
-ci-dessous sont donc des références historiques et ne valident pas encore ce
-diff final.
+Mis à jour le 2026-09-08 pour le candidat de contenu `2026.10.0`. Le commit
+`ac1daee` est publié. Le [run Apple canonique
+34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) a
+validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et les **5
+méthodes UI macOS (5/5)**.
 
 ## Bundle et curriculum
 
@@ -79,20 +80,19 @@ prépare 16 cartes dues, vérifie la limite de dix cartes maximum liée au budge
 résolvent les libellés via `correctChoiceID`, sans supposer une position de
 réponse.
 
-Les sources natives préparées contiennent 8 méthodes UI iOS et 5 méthodes UI
-macOS. Les captures déjà archivées couvrent le parcours et le dialogue macOS,
-ainsi que l’écriture guidée et la reprise iOS ; les nouveaux parcours
-quotidiens et de session courte attachent leurs captures avec XCTest lors du
-prochain runner Apple.
+Les sources natives contiennent 8 méthodes UI iOS et 5 méthodes UI macOS. Le run
+Apple canonique a attaché les captures macOS des parcours quotidiens et de
+session courte ; son bundle xcresult conserve aussi les captures iOS du parcours.
 
 ## Validation Apple et limites
 
-Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
+Le [run Apple canonique 34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153)
+sur `ac1daee` a validé le package (**55/55**), les **8 méthodes UI iOS (8/8)**
+et les **5 méthodes UI macOS (5/5)**. Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
 a validé un état antérieur (`906135d`) : 47/47 tests package, 2/2 tests UI
 macOS et 7/7 tests UI iOS. Le [run 34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020)
-a validé deux parcours d’écriture iOS sur `249f6d0`. Ces runs restent des
-preuves historiques ; une validation Apple du présent commit sera produite par
-le workflow automatique après le push.
+a validé deux parcours d’écriture iOS sur `249f6d0`. Ces deux runs restent des
+preuves historiques ; le run canonique courant valide le pack Apple complet.
 
 Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
 Apple, les 8 méthodes iOS, les 5 méthodes macOS, l’audit VoiceOver/Dynamic Type
