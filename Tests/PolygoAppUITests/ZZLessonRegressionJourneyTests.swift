@@ -115,7 +115,10 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         tapWhenVisible(correctTone)
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le premier exercice doit proposer Vérifier")
-        XCTAssertTrue(verify.isEnabled, "Une réponse sélectionnée doit activer Vérifier")
+        XCTAssertTrue(
+            waitForEnabled(verify),
+            "Une réponse sélectionnée doit activer Vérifier"
+        )
         backgroundAndReactivate()
         XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "Le même exercice doit survivre au changement d’application")
         XCTAssertTrue(button(exactly: "Vérifier").isEnabled, "La réponse choisie doit rester validable après le retour au premier plan")
@@ -377,6 +380,15 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         bringIntoView(element)
         XCTAssertTrue(element.isHittable, "L’élément doit être touchable après défilement : \(element.label)")
         element.tap()
+    }
+
+    private func waitForEnabled(_ element: XCUIElement) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            if element.exists && element.isEnabled { return true }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+        return element.exists && element.isEnabled
     }
 
     private func bringIntoView(_ element: XCUIElement) {

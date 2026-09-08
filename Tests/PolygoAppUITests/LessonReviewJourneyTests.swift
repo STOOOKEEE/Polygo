@@ -442,8 +442,10 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func openFirstLessonIfNeeded() {
-        let verify = button(exactly: "Vérifier")
-        if verify.waitForExistence(timeout: 4) { return }
+        // The lesson preamble's participation field also exposes a generic
+        // “Vérifier” button. Use the authored first-exercise prompt as the
+        // route marker so writing journeys do not stop in the dialogue.
+        if firstExercisePrompt().waitForExistence(timeout: 4) { return }
 
         navigateToTab("Parcours")
         let lesson = button(containing: "Dire bonjour")
