@@ -127,7 +127,10 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse Hanzi doit pouvoir être vérifiée")
         XCTAssertTrue(verify.isHittable, "Le bouton Vérifier doit être cliquable")
-        XCTAssertTrue(verify.isEnabled, "Une réponse Hanzi entourée d’espaces doit activer Vérifier")
+        XCTAssertTrue(
+            waitForEnabled(verify),
+            "Une réponse Hanzi entourée d’espaces doit activer Vérifier"
+        )
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse Hanzi doit être acceptée")
 
@@ -154,7 +157,10 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
         XCTAssertTrue(verify.isHittable, "Le bouton Vérifier de \(exerciseID) doit être cliquable")
-        XCTAssertTrue(verify.isEnabled, "La réponse de \(exerciseID) doit activer Vérifier")
+        XCTAssertTrue(
+            waitForEnabled(verify),
+            "La réponse de \(exerciseID) doit activer Vérifier"
+        )
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
@@ -181,7 +187,10 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
         XCTAssertTrue(verify.isHittable, "Le bouton Vérifier de \(exerciseID) doit être cliquable")
-        XCTAssertTrue(verify.isEnabled, "La bonne séquence doit activer Vérifier")
+        XCTAssertTrue(
+            waitForEnabled(verify),
+            "La bonne séquence doit activer Vérifier"
+        )
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
@@ -266,6 +275,14 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         let expectation = XCTNSPredicateExpectation(
             predicate: NSPredicate(format: "value == %@", expected),
             object: field
+        )
+        return XCTWaiter.wait(for: [expectation], timeout: timeout) == .completed
+    }
+
+    private func waitForEnabled(_ element: XCUIElement) -> Bool {
+        let expectation = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "isEnabled == true"),
+            object: element
         )
         return XCTWaiter.wait(for: [expectation], timeout: timeout) == .completed
     }
