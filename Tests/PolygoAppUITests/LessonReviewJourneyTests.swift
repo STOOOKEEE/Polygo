@@ -451,7 +451,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         let lesson = button(containing: "Dire bonjour")
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans Parcours")
         lesson.tap()
-        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La première leçon doit charger son premier exercice")
+        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La première leçon doit charger son premier exercice")
     }
 
     private func openWritingExercise() throws -> ExerciseFixture {
