@@ -156,6 +156,13 @@ public final class AppModel: ObservableObject {
             return true
         }
         defer { startsInFlight.remove(id) }
+        guard !Task.isCancelled else { return false }
+        if !persistRouteInNavigation {
+            // Destination based links do not own the shell route. Keep the
+            // lesson as the durable resume route without changing the
+            // currently selected shell root.
+            recordRestorationRoute(.lesson(id))
+        }
         // SwiftUI can run a destination's task again after a tab switch or a
         // scene recreation. A lesson that already has an opening checkpoint
         // is already started; recording another opening would only inflate
@@ -173,6 +180,10 @@ public final class AppModel: ObservableObject {
     public func restartLesson(_ id: LessonID, persistRouteInNavigation: Bool = true) async -> Bool {
         guard completionsInFlight.insert(id).inserted else { return false }
         defer { completionsInFlight.remove(id) }
+        guard !Task.isCancelled else { return false }
+        if !persistRouteInNavigation {
+            recordRestorationRoute(.lesson(id))
+        }
         guard await append(.lessonRestarted(lessonID: id, at: dependencies.clock.now())) else { return false }
         if persistRouteInNavigation { persistRoute(.lesson(id)) }
         return true
@@ -269,9 +280,13 @@ public final class AppModel: ObservableObject {
     }
 
     public func persistRoute(_ route: AppRoute) {
+        recordRestorationRoute(route)
+        selectedRoute = route
+    }
+
+    private func recordRestorationRoute(_ route: AppRoute) {
         routePersistenceGeneration += 1
         legacyRouteRestoreAvailable = false
-        selectedRoute = route
         defaults.set(route.rawValue, forKey: "syllune.last.route")
     }
 

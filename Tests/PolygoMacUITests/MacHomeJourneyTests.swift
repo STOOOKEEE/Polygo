@@ -90,6 +90,15 @@ final class MacHomeJourneyTests: XCTestCase {
         let lessonAction = button(exactly: "Vérifier")
         XCTAssertTrue(lessonAction.waitForExistence(timeout: timeout), "La leçon doit remplacer l’accueil dans le détail")
 
+        // Opening a lesson must persist its resume route before the app is
+        // terminated, even though the shell still has Today selected.
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(
+            button(exactly: "Vérifier").waitForExistence(timeout: timeout),
+            "La leçon doit reprendre après un redémarrage"
+        )
+
         // Today is already selected in the sidebar. This click must still
         // activate the route and recreate the detail stack at its root.
         selectSidebarItem("Aujourd’hui")
