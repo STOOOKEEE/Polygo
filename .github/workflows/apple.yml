@@ -132,6 +132,52 @@ jobs:
           -scheme PolygoMacApp
           -destination 'platform=macOS'
           -configuration Debug
+          -derivedDataPath "$RUNNER_TEMP/PolygoMacDerivedData"
           CODE_SIGNING_ALLOWED=NO
           CODE_SIGNING_REQUIRED=NO
           build
+
+      - name: Run macOS UI smoke tests
+        run: |
+          set -euo pipefail
+          # Keep this journey deterministic on a fresh runner and ensure the
+          # screenshot starts from the real onboarding flow.
+          rm -rf "$HOME/Library/Application Support/Polygo"
+          rm -rf "$HOME/Library/Saved Application State/com.syllune.PolygoMac.savedState"
+          defaults delete com.syllune.PolygoMac >/dev/null 2>&1 || true
+          xcodebuild \
+            -project Polygo.xcodeproj \
+            -scheme PolygoMacApp \
+            -destination 'platform=macOS' \
+            -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/PolygoMacDerivedData" \
+            -destination-timeout 120 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            -resultBundlePath "$RUNNER_TEMP/PolygoMacUITests.xcresult" \
+            test
+
+      - name: Export macOS UI screenshots
+        if: ${{ always() }}
+        run: |
+          set -euo pipefail
+          result_bundle="$RUNNER_TEMP/PolygoMacUITests.xcresult"
+          export_dir="$RUNNER_TEMP/PolygoMacScreenshots"
+          mkdir -p "$export_dir"
+          if [ -d "$result_bundle" ]; then
+            if ! xcrun xcresulttool export attachments \
+              --path "$result_bundle" \
+              --output-path "$export_dir"; then
+              echo "::warning::xcresulttool n’a pas exporté les pièces jointes; le bundle reste disponible"
+            fi
+          fi
+
+      - name: Upload macOS UI test result and screenshots
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: PolygoMacUITests-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/PolygoMacUITests.xcresult
+            ${{ runner.temp }}/PolygoMacScreenshots
+          if-no-files-found: warn

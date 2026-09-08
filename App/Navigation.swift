@@ -281,8 +281,12 @@ public struct SplitShell: View {
                     NavigationLink(value: AppRoute.path) { Label("Parcours", systemImage: "list.bullet.rectangle.portrait") }.keyboardShortcut("2", modifiers: .command)
                     NavigationLink(value: AppRoute.cards) { Label("Cartes", systemImage: "rectangle.stack") }.keyboardShortcut("4", modifiers: .command)
                 }
-                Section("Explorer") {
-                    NavigationLink(value: AppRoute.explorer) { Label("Histoires et dictionnaire", systemImage: "book.pages") }.keyboardShortcut("3", modifiers: .command)
+                Section("Découvrir") {
+                    NavigationLink(value: AppRoute.explorer) {
+                        Label("Explorer", systemImage: "book.pages")
+                    }
+                    .accessibilityLabel("Explorer : histoires et dictionnaire")
+                    .keyboardShortcut("3", modifiers: .command)
                 }
                 Section("Compte") {
                     NavigationLink(value: AppRoute.profile) { Label("Profil", systemImage: "person.crop.circle") }.keyboardShortcut("5", modifiers: .command)
@@ -291,6 +295,7 @@ public struct SplitShell: View {
             }
             .navigationTitle("Syllune")
             .listStyle(.sidebar)
+            .navigationSplitViewColumnWidth(min: 210, ideal: 240, max: 280)
         } detail: {
             NavigationStack {
                 routeView(model.selectedRoute)

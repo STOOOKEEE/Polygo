@@ -17,6 +17,7 @@ public struct PolygoApp: App {
                 .tint(SylluneColor.jade)
         }
         #if os(macOS)
+        .defaultSize(width: 1280, height: 860)
         .commands {
             CommandGroup(after: .appSettings) {
                 Button("Réglages") { model.persistRoute(.settings) }

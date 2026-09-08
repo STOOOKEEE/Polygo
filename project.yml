@@ -117,6 +117,21 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.syllune.PolygoAppUITests
         TEST_TARGET_NAME: PolygoApp
+  PolygoMacUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Tests/PolygoMacUITests
+    info:
+      path: Tests/PolygoMacUITests/Info.plist
+      properties: {}
+    dependencies:
+      - target: PolygoMacApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.syllune.PolygoMacUITests
+        TEST_TARGET_NAME: PolygoMacApp
 
 schemes:
   PolygoApp:
@@ -128,3 +143,12 @@ schemes:
       config: Debug
       targets:
         - name: PolygoAppUITests
+  PolygoMacApp:
+    build:
+      targets:
+        PolygoMacApp: all
+        PolygoMacUITests: test
+    test:
+      config: Debug
+      targets:
+        - name: PolygoMacUITests

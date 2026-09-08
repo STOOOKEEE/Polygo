@@ -67,6 +67,29 @@ public enum SylluneColor {
     public static let success = Color.sylluneAdaptive(light: SylluneRGB(0.06, 0.36, 0.24), dark: SylluneRGB(0.36, 0.80, 0.61))
     public static let error = Color.sylluneAdaptive(light: SylluneRGB(0.62, 0.10, 0.15), dark: SylluneRGB(0.95, 0.37, 0.43))
 
+    // Home and path accents are kept separate from the production palette so
+    // the refreshed shell can be expressive without changing lesson screens.
+    public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.05, 0.29, 0.25), dark: SylluneRGB(0.07, 0.25, 0.23))
+    public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.03, 0.16, 0.22), dark: SylluneRGB(0.04, 0.12, 0.18))
+    public static let heroInk = Color.sylluneAdaptive(light: SylluneRGB(0.98, 1.0, 0.97), dark: SylluneRGB(0.98, 1.0, 0.97))
+    public static let heroMuted = Color.sylluneAdaptive(light: SylluneRGB(0.78, 0.91, 0.86), dark: SylluneRGB(0.78, 0.90, 0.86))
+    public static let heroAccent = Color.sylluneAdaptive(light: SylluneRGB(0.31, 0.88, 0.70), dark: SylluneRGB(0.34, 0.91, 0.73))
+    public static let progressTrack = Color.sylluneAdaptive(light: SylluneRGB(0.84, 0.89, 0.86), dark: SylluneRGB(0.22, 0.31, 0.30))
+    public static let inkOnSuccess = Color.sylluneAdaptive(light: SylluneRGB(1.0, 1.0, 1.0), dark: SylluneRGB(0.04, 0.14, 0.11))
+    public static let pathJade = Color.sylluneAdaptive(light: SylluneRGB(0.04, 0.40, 0.30), dark: SylluneRGB(0.09, 0.40, 0.29))
+    public static let pathCoral = Color.sylluneAdaptive(light: SylluneRGB(0.67, 0.20, 0.13), dark: SylluneRGB(0.63, 0.20, 0.15))
+    public static let pathSky = Color.sylluneAdaptive(light: SylluneRGB(0.13, 0.34, 0.60), dark: SylluneRGB(0.18, 0.38, 0.64))
+    public static let pathViolet = Color.sylluneAdaptive(light: SylluneRGB(0.37, 0.24, 0.61), dark: SylluneRGB(0.38, 0.26, 0.58))
+
+    public static func pathAccent(for index: Int) -> Color {
+        switch index % 4 {
+        case 0: return pathJade
+        case 1: return pathCoral
+        case 2: return pathSky
+        default: return pathViolet
+        }
+    }
+
     /// Text placed on the selected-day accent. The accent is intentionally
     /// dark in dark mode, so its foreground must change with the appearance.
     public static let inkOnSun = Color.sylluneAdaptive(light: SylluneRGB(0.086, 0.137, 0.173), dark: SylluneRGB(0.94, 0.96, 0.94))
@@ -167,19 +190,93 @@ public final class SylluneAudioCommandCenter {
     }
 }
 
+public enum SylluneCardStyle {
+    case standard
+    case quiet
+    case interactive
+    case hero
+
+    fileprivate var border: Color {
+        switch self {
+        case .standard: return SylluneColor.border
+        case .quiet: return SylluneColor.border.opacity(0.18)
+        case .interactive: return SylluneColor.jade.opacity(0.28)
+        case .hero: return .clear
+        }
+    }
+
+    fileprivate var borderWidth: CGFloat {
+        switch self {
+        case .standard: return 1
+        case .quiet, .interactive: return 0.75
+        case .hero: return 0
+        }
+    }
+
+    fileprivate var shadowColor: Color {
+        switch self {
+        case .standard, .quiet: return .black.opacity(0.06)
+        case .interactive: return SylluneColor.jade.opacity(0.10)
+        case .hero: return SylluneColor.heroEnd.opacity(0.28)
+        }
+    }
+
+    fileprivate var shadowRadius: CGFloat {
+        switch self {
+        case .standard: return 0
+        case .quiet: return 8
+        case .interactive: return 12
+        case .hero: return 22
+        }
+    }
+
+    fileprivate var shadowY: CGFloat {
+        switch self {
+        case .standard: return 0
+        case .quiet: return 3
+        case .interactive: return 5
+        case .hero: return 10
+        }
+    }
+}
+
 public struct SylluneCard: ViewModifier {
     public let radius: CGFloat
-    public init(radius: CGFloat = 18) { self.radius = radius }
+    public let style: SylluneCardStyle
+
+    public init(radius: CGFloat = 18, style: SylluneCardStyle = .standard) {
+        self.radius = radius
+        self.style = style
+    }
+
     public func body(content: Content) -> some View {
+        let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
         content
-            .background(SylluneColor.surface)
-            .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: radius, style: .continuous).stroke(SylluneColor.border, lineWidth: 1))
+            .background {
+                switch style {
+                case .hero:
+                    LinearGradient(
+                        colors: [SylluneColor.heroStart, SylluneColor.heroEnd],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                case .quiet:
+                    SylluneColor.surfaceRaised
+                case .standard, .interactive:
+                    SylluneColor.surface
+                }
+            }
+            .clipShape(shape)
+            .overlay(shape.stroke(style.border, lineWidth: style.borderWidth))
+            .shadow(color: style.shadowColor, radius: style.shadowRadius, x: 0, y: style.shadowY)
     }
 }
 
 public extension View {
     func sylluneCard(radius: CGFloat = 18) -> some View { modifier(SylluneCard(radius: radius)) }
+    func sylluneCard(style: SylluneCardStyle, radius: CGFloat = 18) -> some View {
+        modifier(SylluneCard(radius: radius, style: style))
+    }
 }
 
 /// A portable wrapping layout for Chinese tokens. `HStack` keeps every token
@@ -286,9 +383,35 @@ public struct ProgressRing: View {
     }
     public var body: some View {
         ZStack {
-            Circle().stroke(SylluneColor.border, lineWidth: 7)
+            Circle().stroke(SylluneColor.progressTrack, lineWidth: 7)
             Circle().trim(from: 0, to: value).stroke(tint, style: StrokeStyle(lineWidth: 7, lineCap: .round)).rotationEffect(.degrees(-90))
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Progression")
+        .accessibilityValue("\(Int(value * 100)) pour cent")
+    }
+}
+
+public struct SylluneProgressBar: View {
+    public let value: Double
+    public let tint: Color
+
+    public init(value: Double, tint: Color = SylluneColor.jade) {
+        self.value = min(1, max(0, value))
+        self.tint = tint
+    }
+
+    public var body: some View {
+        GeometryReader { proxy in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(SylluneColor.progressTrack)
+                Capsule()
+                    .fill(tint)
+                    .frame(width: proxy.size.width * value)
+            }
+        }
+        .frame(minHeight: 6)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Progression")
         .accessibilityValue("\(Int(value * 100)) pour cent")
