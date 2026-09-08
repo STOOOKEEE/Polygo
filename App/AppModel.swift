@@ -270,6 +270,7 @@ public final class AppModel: ObservableObject {
 
     public func persistRoute(_ route: AppRoute) {
         routePersistenceGeneration += 1
+        legacyRouteRestoreAvailable = false
         selectedRoute = route
         defaults.set(route.rawValue, forKey: "syllune.last.route")
     }
