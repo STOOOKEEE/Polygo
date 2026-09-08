@@ -76,6 +76,26 @@ final class MacHomeJourneyTests: XCTestCase {
         add(screenshot)
     }
 
+    func testTodaySidebarReturnsFromLessonToHomeRoot() throws {
+        completeOnboardingIfNeeded()
+        selectSidebarItem("Aujourd’hui")
+
+        let hero = element(identifier: "home.hero")
+        XCTAssertTrue(hero.waitForExistence(timeout: timeout), "L’accueil doit être visible avant l’ouverture de la leçon")
+        let primaryAction = element(identifier: "home.primaryAction")
+        XCTAssertTrue(primaryAction.waitForExistence(timeout: timeout), "L’accueil doit proposer l’ouverture de la leçon")
+        XCTAssertTrue(primaryAction.isHittable, "L’ouverture de la leçon doit être accessible")
+        primaryAction.click()
+
+        let lessonAction = button(exactly: "Vérifier")
+        XCTAssertTrue(lessonAction.waitForExistence(timeout: timeout), "La leçon doit remplacer l’accueil dans le détail")
+
+        // Today is already selected in the sidebar. This click must still
+        // activate the route and recreate the detail stack at its root.
+        selectSidebarItem("Aujourd’hui")
+        XCTAssertTrue(hero.waitForExistence(timeout: timeout), "Aujourd’hui doit revenir à la racine après la leçon")
+    }
+
     private func completeOnboardingIfNeeded() {
         let start = button(exactly: "Commencer")
         guard start.waitForExistence(timeout: timeout) else {
