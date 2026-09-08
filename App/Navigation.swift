@@ -272,7 +272,7 @@ public struct PhoneTabShell: View {
 public struct SplitShell: View {
     @EnvironmentObject private var model: AppModel
     @State private var selection: AppRoute? = .today
-    @State private var detailNavigationRevision = 0
+    @State private var detailPath: [AppRoute] = []
     public init() {}
     public var body: some View {
         NavigationSplitView {
@@ -301,11 +301,10 @@ public struct SplitShell: View {
             .listStyle(.sidebar)
             .navigationSplitViewColumnWidth(min: 210, ideal: 240, max: 280)
         } detail: {
-            NavigationStack {
+            NavigationStack(path: $detailPath) {
                 routeView(model.selectedRoute)
                     .navigationDestination(for: AppRoute.self) { routeView($0) }
             }
-            .id(detailNavigationRevision)
         }
         .onChange(of: selection) { _, value in
             if let value { model.persistRoute(value) }
@@ -319,7 +318,7 @@ public struct SplitShell: View {
     private func sidebarItem(_ route: AppRoute, label: String, systemImage: String) -> some View {
         Button {
             selection = route
-            detailNavigationRevision += 1
+            detailPath.removeAll()
             model.persistRoute(route)
         } label: {
             Label(label, systemImage: systemImage)
