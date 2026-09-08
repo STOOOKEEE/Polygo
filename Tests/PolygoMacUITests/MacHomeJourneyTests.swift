@@ -95,6 +95,15 @@ final class MacHomeJourneyTests: XCTestCase {
         selectSidebarItem("Aujourd’hui")
         captureScreenshot(named: "mac-home-after-sidebar-reset")
         XCTAssertTrue(hero.waitForExistence(timeout: timeout), "Aujourd’hui doit revenir à la racine après la leçon")
+
+        // A persisted Today choice must also win when the app is restarted;
+        // an unfinished lesson in the journal must not be restored over it.
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(
+            button(identifier: "home.hero").waitForExistence(timeout: timeout),
+            "Aujourd’hui doit rester la racine après un redémarrage"
+        )
     }
 
     private func completeOnboardingIfNeeded() {

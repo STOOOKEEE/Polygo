@@ -20,6 +20,11 @@ public final class AppModel: ObservableObject {
     @Published public var preferredLanguageCodes: [String] = ["fr", "en"]
 
     private let defaults: UserDefaults
+    // A journal active route is only a legacy bootstrap fallback. Once a
+    // route has been persisted during this process, an in-flight reload must
+    // not put the old journal route back into the UI.
+    private var routePersistenceGeneration = 0
+    private var legacyRouteRestoreAvailable: Bool
     private var loadTask: Task<Void, Never>?
     // Every progress event goes through one main-actor queue. Without this,
     // two answer changes arriving while a file append is suspended can both
@@ -38,7 +43,9 @@ public final class AppModel: ObservableObject {
             defaults.set(storedID, forKey: "syllune.profile.id")
         }
         self.profileID = ProfileID(rawValue: storedID)!
-        if let rawRoute = defaults.string(forKey: "syllune.last.route"), let route = AppRoute(rawValue: rawRoute) {
+        let storedRoute = defaults.string(forKey: "syllune.last.route")
+        self.legacyRouteRestoreAvailable = storedRoute == nil
+        if let rawRoute = storedRoute, let route = AppRoute(rawValue: rawRoute) {
             selectedRoute = route
         }
         loadTask = Task { [weak self] in await self?.reload() }
@@ -47,6 +54,9 @@ public final class AppModel: ObservableObject {
     deinit { loadTask?.cancel() }
 
     public func reload() async {
+        let restoreGeneration = routePersistenceGeneration
+        let shouldRestoreLegacyRoute = legacyRouteRestoreAvailable
+        legacyRouteRestoreAvailable = false
         isLoading = true
         defer { isLoading = false }
         do {
@@ -54,13 +64,15 @@ public final class AppModel: ObservableObject {
             async let loadedSnapshot = dependencies.progress.load(profileID: profileID)
             index = try await loadedIndex
             snapshot = try await loadedSnapshot
-            if selectedRoute == .today,
+            if shouldRestoreLegacyRoute,
+               routePersistenceGeneration == restoreGeneration,
+               selectedRoute == .today,
                let activeRoute = snapshot.activeRoute.flatMap({ AppRoute(rawValue: $0) }),
                case .lesson(let activeLessonID) = activeRoute,
                snapshot.lessonProgress[activeLessonID]?.completedAt == nil {
-                // A lesson opened from a tab NavigationLink records its
-                // active route in the journal. Restore that route when no
-                // newer explicit tab choice was persisted.
+                // Older installs may have an unfinished lesson in the
+                // journal without a persisted UI route. Restore it once at
+                // bootstrap, unless navigation changed while loading.
                 persistRoute(activeRoute)
             }
             if let index {
@@ -257,6 +269,7 @@ public final class AppModel: ObservableObject {
     }
 
     public func persistRoute(_ route: AppRoute) {
+        routePersistenceGeneration += 1
         selectedRoute = route
         defaults.set(route.rawValue, forKey: "syllune.last.route")
     }
