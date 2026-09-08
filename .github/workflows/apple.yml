@@ -140,7 +140,7 @@ jobs:
           # padding, and the 240 point sidebar. Pick a supported mode that
           # leaves room for that composition on the hosted runner.
           mode="$(printf '%s\n' "$display_info" \
-            | sed -nE 's/.*mode [0-9]+: (res:[0-9]+x[0-9]+ hz:[0-9]+ color_depth:[0-9]+ scaling:[^ ]+).*/\1/p' \
+            | sed -nE 's/.*mode [0-9]+: (res:[0-9]+x[0-9]+ hz:[0-9]+ color_depth:[0-9]+).*/\1 scaling:off/p' \
             | awk '
               {
                 split($1, resolution, ":"); split(resolution[2], dimensions, "x")
