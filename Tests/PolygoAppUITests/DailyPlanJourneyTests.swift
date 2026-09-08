@@ -167,7 +167,11 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.tap()
 
-        XCTAssertTrue(element(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
+        XCTAssertTrue(element(containing: "Leçon enregistrée").waitForExistence(timeout: timeout), "La séance enregistrée doit être confirmée")
+        XCTAssertTrue(
+            element(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
+            "Le bilan doit signaler l’oral passé sans évaluation"
+        )
         let path = button(exactly: "Retour au parcours")
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.tap()

@@ -167,7 +167,11 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.click()
 
-        XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
+        XCTAssertTrue(text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout), "La séance enregistrée doit être confirmée")
+        XCTAssertTrue(
+            text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
+            "Le bilan doit signaler l’oral passé sans évaluation"
+        )
         let path = app.buttons.matching(NSPredicate(format: "label == %@", "Retour au parcours")).firstMatch
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.click()
