@@ -494,6 +494,7 @@ public struct LessonView: View {
 
     @ViewBuilder private func completionView(_ lesson: LessonDocument) -> some View {
         let successCount = answered.values.filter { evaluationCountsAsComplete($0) }.count
+        let skippedCount = answered.values.filter { $0.outcome == .skipped }.count
         VStack(alignment: .leading, spacing: 16) {
             Image(systemName: successCount == exercises.count ? "checkmark.circle.fill" : "arrow.counterclockwise.circle")
                 .font(.system(size: 48)).foregroundStyle(successCount == exercises.count ? SylluneColor.success : SylluneColor.coral)
@@ -501,6 +502,10 @@ public struct LessonView: View {
                 .font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
             Text("\(successCount) / \(exercises.count) exercices réussis. Les erreurs restent disponibles pour une nouvelle tentative.")
                 .font(.body).foregroundStyle(SylluneColor.inkMuted)
+            if skippedCount > 0 {
+                Text(skippedCount == 1 ? "1 exercice passé sans évaluation" : "\(skippedCount) exercices passés sans évaluation")
+                    .font(.body).foregroundStyle(SylluneColor.inkMuted)
+            }
             Button("Recommencer cette leçon") {
                 Task { @MainActor in
                     guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }

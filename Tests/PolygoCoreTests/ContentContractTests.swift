@@ -124,6 +124,24 @@ final class ContentContractTests: XCTestCase {
         XCTAssertTrue(stories.allSatisfy { !$0.paragraphs.isEmpty && !$0.level.isEmpty })
     }
 
+    func testEveryLessonKeepsOralPracticeOptionalForOfflineProgression() async throws {
+        let content = store()
+
+        for lessonID in expectedLessonIDs {
+            let lesson = try await content.lesson(id: lessonID)
+            let speaking = exerciseBlocks(in: lesson).filter { block in
+                if case .speaking = block.spec { return true }
+                return false
+            }
+
+            XCTAssertEqual(speaking.count, 1, "Chaque leçon doit conserver une activité orale")
+            XCTAssertTrue(
+                speaking.allSatisfy { !$0.spec.header.required },
+                "L’activité orale de \(lessonID.rawValue) ne doit pas bloquer la progression quand le service est indisponible"
+            )
+        }
+    }
+
     func testContentReferencesAndExerciseShapesAreClosedAndStable() async throws {
         let content = store()
         let course = try await content.course(id: CourseID(rawValue: "mandarin-starter")!)

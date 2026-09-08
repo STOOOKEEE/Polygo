@@ -14,7 +14,13 @@ final class LessonReviewJourneyTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-AppleLanguages", "(fr)", "-AppleLocale", "fr_FR"]
+        // Each XCTest method gets its own persisted profile. Relaunches
+        // inside a journey keep this identifier, while another method cannot
+        // resume its lesson checkpoint.
+        app.launchArguments = [
+            "-syllune.profile.id", "ui-\(UUID().uuidString.lowercased())",
+            "-AppleLanguages", "(fr)", "-AppleLocale", "fr_FR"
+        ]
         permissionMonitor = addUIInterruptionMonitor(withDescription: "Local audio permissions") { alert in
             Self.denyPermission(in: alert)
         }
@@ -64,6 +70,10 @@ final class LessonReviewJourneyTests: XCTestCase {
             text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
             "Le bilan doit exclure l’exercice oral passé sans évaluation"
         )
+        XCTAssertTrue(
+            text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
+            "Le bilan doit compter explicitement l’exercice oral sans évaluation"
+        )
 
         app.terminate()
         app.launch()
@@ -76,6 +86,23 @@ final class LessonReviewJourneyTests: XCTestCase {
             text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
             "Le bilan non évalué doit conserver ses compteurs après relance"
         )
+        XCTAssertTrue(
+            text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
+            "Le bilan non évalué doit conserver le compteur des exercices passés"
+        )
+
+        // Completing every required exercise unlocks the next lesson even
+        // when the oral exercise remains explicitly unevaluated. Verify the
+        // learner-facing path and destination rather than inferring unlock
+        // state from the local event journal.
+        navigateToTab("Parcours")
+        let nextLesson = button(containing: "Dire son nom")
+        XCTAssertTrue(nextLesson.waitForExistence(timeout: timeout), "La leçon suivante doit apparaître dans le parcours")
+        XCTAssertTrue(nextLesson.isEnabled, "La leçon suivante doit être activée après la fin de L1")
+        tapWhenVisible(nextLesson)
+        XCTAssertTrue(text(containing: "Dire son nom").waitForExistence(timeout: timeout), "Le titre de L2 doit être visible après son ouverture")
+        let nextFirstExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch
+        XCTAssertTrue(nextFirstExercise.waitForExistence(timeout: timeout), "Le premier exercice de L2 doit être chargé")
     }
 
     func testGuidedWritingRejectsWrongStrokeThenAcceptsRetry() throws {
@@ -590,8 +617,20 @@ final class LessonReviewJourneyTests: XCTestCase {
 
     private func viewportFrame() -> CGRect {
         let window = app.windows.firstMatch
-        if window.exists && !window.frame.isEmpty { return window.frame }
-        return app.frame
+        var viewport = window.exists && !window.frame.isEmpty ? window.frame : app.frame
+        let navigationBar = app.navigationBars.firstMatch
+        if navigationBar.exists && !navigationBar.frame.isEmpty {
+            let top = min(viewport.maxY, navigationBar.frame.maxY + 8)
+            viewport.origin.y = max(viewport.minY, top)
+            viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
+        }
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon"] {
+            let candidate = button(exactly: label)
+            guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
+            viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
+            break
+        }
+        return viewport
     }
 
     private func frameDescription(_ frame: CGRect) -> String {

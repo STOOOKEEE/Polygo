@@ -14,7 +14,12 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-AppleLanguages", "(fr)", "-AppleLocale", "fr_FR"]
+        // Keep the event journal isolated per XCTest method while retaining
+        // the same profile for the terminate/relaunch checks in this journey.
+        app.launchArguments = [
+            "-syllune.profile.id", "ui-\(UUID().uuidString.lowercased())",
+            "-AppleLanguages", "(fr)", "-AppleLocale", "fr_FR"
+        ]
         permissionMonitor = addUIInterruptionMonitor(withDescription: "Local audio permissions") { alert in
             Self.denyPermission(in: alert)
         }
@@ -112,9 +117,11 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         // visible prefix so this assertion also catches a missing choice.
         let correctTone = button(containingAny: ["3 — descend puis remonte", "3 —"])
         XCTAssertTrue(correctTone.waitForExistence(timeout: timeout), "Le bon choix du premier exercice est absent")
-        tapWhenVisible(correctTone)
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le premier exercice doit proposer Vérifier")
+        attachInteractionDiagnostics(named: "tone-choice-before-tap", focus: correctTone, action: verify)
+        tapWhenVisible(correctTone)
+        attachInteractionDiagnostics(named: "tone-choice-after-tap", focus: correctTone, action: verify)
         XCTAssertTrue(
             waitForEnabled(verify),
             "Une réponse sélectionnée doit activer Vérifier"
@@ -376,6 +383,26 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         add(attachment)
     }
 
+    private func attachInteractionDiagnostics(named name: String, focus: XCUIElement, action: XCUIElement) {
+        attachScreenshot(named: name)
+        let attachment = XCTAttachment(string: """
+        focus: \(focus.debugDescription)
+        focus frame: \(frameDescription(focus.frame))
+        focus hittable: \(focus.isHittable)
+        action: \(action.debugDescription)
+        action frame: \(frameDescription(action.frame))
+        action enabled: \(action.isEnabled)
+        action hittable: \(action.isHittable)
+        viewport: \(frameDescription(viewportFrame()))
+
+        Accessibility hierarchy:
+        \(app.debugDescription)
+        """)
+        attachment.name = "\(name)-ax"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
     private func tapWhenVisible(_ element: XCUIElement) {
         bringIntoView(element)
         XCTAssertTrue(element.isHittable, "L’élément doit être touchable après défilement : \(element.label)")
@@ -413,8 +440,24 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func viewportFrame() -> CGRect {
         let window = app.windows.firstMatch
-        if window.exists && !window.frame.isEmpty { return window.frame }
-        return app.frame
+        var viewport = window.exists && !window.frame.isEmpty ? window.frame : app.frame
+        let navigationBar = app.navigationBars.firstMatch
+        if navigationBar.exists && !navigationBar.frame.isEmpty {
+            let top = min(viewport.maxY, navigationBar.frame.maxY + 8)
+            viewport.origin.y = max(viewport.minY, top)
+            viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
+        }
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon"] {
+            let candidate = button(exactly: label)
+            guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
+            viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
+            break
+        }
+        return viewport
+    }
+
+    private func frameDescription(_ frame: CGRect) -> String {
+        String(format: "x=%.1f y=%.1f w=%.1f h=%.1f", frame.minX, frame.minY, frame.width, frame.height)
     }
 
     private func backgroundAndReactivate() {
