@@ -601,7 +601,7 @@ private struct RoadmapModuleCanvas: View {
     ) -> [CGPoint] {
         let center = width / 2
         let spread = min(compact ? 104 : 145, max(76, width * 0.28))
-        lessonIDs.indices.map { index in
+        return lessonIDs.indices.map { index in
             CGPoint(
                 x: index.isMultiple(of: 2) ? center - spread : center + spread,
                 y: rowHeight * CGFloat(index) + nodeCenterY
