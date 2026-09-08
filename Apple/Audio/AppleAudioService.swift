@@ -258,9 +258,10 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             speechUtteranceIndex = 0
             speechUtterance = utterances[0]
             endStartingSpeech(requestID)
-            for utterance in utterances {
-                synthesizer.speak(utterance)
-            }
+            // Feed one utterance at a time. Native queue cancellation can
+            // leave a resumed request behind a stopped queue; advancing from
+            // the delegate keeps the active request and its callback paired.
+            synthesizer.speak(utterances[0])
         } catch {
             let wasCancelled = consumeSpeechCancellation(requestID)
             endStartingSpeech(requestID)
@@ -353,16 +354,29 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     // MARK: AVSpeechSynthesizerDelegate
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        performOnMain { [weak self] in
+            self?.handleSpeechDidFinish(utterance)
+        }
+    }
+
+    private func handleSpeechDidFinish(_ utterance: AVSpeechUtterance) {
         guard speechUtterance === utterance, let requestID = speechRequestID else { return }
         if speechUtteranceIndex + 1 < speechUtterances.count {
             speechUtteranceIndex += 1
             speechUtterance = speechUtterances[speechUtteranceIndex]
+            synthesizer.speak(speechUtterances[speechUtteranceIndex])
         } else {
             finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
         }
     }
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        performOnMain { [weak self] in
+            self?.handleSpeechDidCancel(utterance)
+        }
+    }
+
+    private func handleSpeechDidCancel(_ utterance: AVSpeechUtterance) {
         guard speechUtterance === utterance, let requestID = speechRequestID else { return }
         finishSpeech(requestID: requestID, result: .failure(CancellationError()), stopSynthesizer: false)
     }
