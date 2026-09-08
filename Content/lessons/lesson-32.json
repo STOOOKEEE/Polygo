@@ -1,0 +1,1281 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-32",
+  "moduleID": "unit-04",
+  "order": 32,
+  "title": {
+    "fr": "Essayer une tenue"
+  },
+  "summary": {
+    "fr": "Décrire une tenue, demander plusieurs pièces et choisir ensemble."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l32-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l32-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-268",
+      "canonicalID": "休息|xiū xī|268",
+      "hanzi": "休息",
+      "pinyin": "xiū xī",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "休息",
+          "vocabularyID": "vocab-hsk20-268",
+          "pinyin": "xiū xī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "se reposer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "累了就休息。",
+        "pinyin": "lèi le jiù xiū xī。",
+        "translation": {
+          "fr": "Quand tu es fatigué, repose-toi."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "休息|xiū xī|268",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 268,
+        "level": 2
+      },
+      "traditionalHanzi": "休息"
+    },
+    {
+      "id": "vocab-hsk20-270",
+      "canonicalID": "颜色|yán sè|270",
+      "hanzi": "颜色",
+      "pinyin": "yán sè",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "颜色",
+          "vocabularyID": "vocab-hsk20-270",
+          "pinyin": "yán sè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "couleur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你喜欢什么颜色？",
+        "pinyin": "nǐ xǐ huān shén me yán sè？",
+        "translation": {
+          "fr": "Quelle couleur aimes-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "颜色|yán sè|270",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 270,
+        "level": 2
+      },
+      "traditionalHanzi": "顏色"
+    },
+    {
+      "id": "vocab-hsk20-271",
+      "canonicalID": "眼睛|yǎn jīng|271",
+      "hanzi": "眼睛",
+      "pinyin": "yǎn jīng",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "眼睛",
+          "vocabularyID": "vocab-hsk20-271",
+          "pinyin": "yǎn jīng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "yeux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的眼睛很累。",
+        "pinyin": "wǒ de yǎn jīng hěn lèi。",
+        "translation": {
+          "fr": "Mes yeux sont très fatigués."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "眼睛|yǎn jīng|271",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 271,
+        "level": 2
+      },
+      "traditionalHanzi": "眼睛"
+    },
+    {
+      "id": "vocab-hsk20-276",
+      "canonicalID": "一起|yì qǐ|276",
+      "hanzi": "一起",
+      "pinyin": "yì qǐ",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "一起",
+          "vocabularyID": "vocab-hsk20-276",
+          "pinyin": "yì qǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ensemble"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们一起回家。",
+        "pinyin": "wǒ men yì qǐ huí jiā。",
+        "translation": {
+          "fr": "Nous rentrons ensemble."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "一起|yì qǐ|276",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 276,
+        "level": 2
+      },
+      "traditionalHanzi": "一起"
+    },
+    {
+      "id": "vocab-hsk20-277",
+      "canonicalID": "已经|yǐ jīng|277",
+      "hanzi": "已经",
+      "pinyin": "yǐ jīng",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "已经",
+          "vocabularyID": "vocab-hsk20-277",
+          "pinyin": "yǐ jīng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "déjà"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我已经吃饭了。",
+        "pinyin": "wǒ yǐ jīng chī fàn le。",
+        "translation": {
+          "fr": "J’ai déjà mangé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "已经|yǐ jīng|277",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 277,
+        "level": 2
+      },
+      "traditionalHanzi": "已經"
+    },
+    {
+      "id": "vocab-hsk20-282",
+      "canonicalID": "右边|yòu biān|282",
+      "hanzi": "右边",
+      "pinyin": "yòu biān",
+      "toneNumbers": [
+        4,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "右边",
+          "vocabularyID": "vocab-hsk20-282",
+          "pinyin": "yòu biān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "droite ; côté droit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "洗手间在右边。",
+        "pinyin": "xǐ shǒu jiān zài yòu biān。",
+        "translation": {
+          "fr": "Les toilettes sont à droite."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "右边|yòu biān|282",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 282,
+        "level": 2
+      },
+      "traditionalHanzi": "右邊"
+    },
+    {
+      "id": "vocab-hsk20-285",
+      "canonicalID": "远|yuǎn|285",
+      "hanzi": "远",
+      "pinyin": "yuǎn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "远",
+          "vocabularyID": "vocab-hsk20-285",
+          "pinyin": "yuǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "loin"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学校离这里很远。",
+        "pinyin": "xué xiào lí zhè lǐ hěn yuǎn。",
+        "translation": {
+          "fr": "L’école est très loin d’ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "远|yuǎn|285",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 285,
+        "level": 2
+      },
+      "traditionalHanzi": "遠"
+    },
+    {
+      "id": "vocab-hsk20-287",
+      "canonicalID": "再|zài|287",
+      "hanzi": "再",
+      "pinyin": "zài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "再",
+          "vocabularyID": "vocab-hsk20-287",
+          "pinyin": "zài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "encore ; de nouveau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请再说一遍。",
+        "pinyin": "qǐng zài shuō yí biàn。",
+        "translation": {
+          "fr": "Répète, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "再|zài|287",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 287,
+        "level": 2
+      },
+      "traditionalHanzi": "再"
+    },
+    {
+      "id": "vocab-hsk20-292",
+      "canonicalID": "真|zhēn|292",
+      "hanzi": "真",
+      "pinyin": "zhēn",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "真",
+          "vocabularyID": "vocab-hsk20-292",
+          "pinyin": "zhēn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vraiment ; vrai"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是真的。",
+        "pinyin": "zhè shì zhēn de。",
+        "translation": {
+          "fr": "C’est vrai."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "真|zhēn|292",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 292,
+        "level": 2
+      },
+      "traditionalHanzi": "真"
+    },
+    {
+      "id": "vocab-hsk20-197",
+      "canonicalID": "机场|jī chǎng|197",
+      "hanzi": "机场",
+      "pinyin": "jī chǎng",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "机场",
+          "vocabularyID": "vocab-hsk20-197",
+          "pinyin": "jī chǎng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "aéroport"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我在机场坐飞机。",
+        "pinyin": "wǒ zài jī chǎng zuò fēi jī。",
+        "translation": {
+          "fr": "Je prends l’avion à l’aéroport."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "机场|jī chǎng|197",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 197,
+        "level": 2
+      },
+      "traditionalHanzi": "機場"
+    },
+    {
+      "id": "vocab-hsk20-204",
+      "canonicalID": "进|jìn|204",
+      "hanzi": "进",
+      "pinyin": "jìn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "进",
+          "vocabularyID": "vocab-hsk20-204",
+          "pinyin": "jìn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "entrer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请进教室。",
+        "pinyin": "qǐng jìn jiào shì。",
+        "translation": {
+          "fr": "Entre dans la classe, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "进|jìn|204",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 204,
+        "level": 2
+      },
+      "traditionalHanzi": "進"
+    },
+    {
+      "id": "vocab-hsk20-211",
+      "canonicalID": "可以|kě yǐ|211",
+      "hanzi": "可以",
+      "pinyin": "kě yǐ",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "可以",
+          "vocabularyID": "vocab-hsk20-211",
+          "pinyin": "kě yǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pouvoir ; être permis"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "现在可以进去吗？",
+        "pinyin": "xiàn zài kě yǐ jìn qù ma？",
+        "translation": {
+          "fr": "Peut-on entrer maintenant ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "可以|kě yǐ|211",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 211,
+        "level": 2
+      },
+      "traditionalHanzi": "可以"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-32-grammar-01",
+      "title": {
+        "fr": "Grammaire — 有 + nom"
+      },
+      "body": {
+        "fr": "有 exprime ici la présence d’un objet dans un magasin.\nExemple 1 : 这家商店有新衣服。\nzhè jiā shāng diàn yǒu xīn yī fú。\nCe magasin a de nouveaux vêtements."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-32-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-268",
+        "vocab-hsk20-270",
+        "vocab-hsk20-271",
+        "vocab-hsk20-276",
+        "vocab-hsk20-277",
+        "vocab-hsk20-282",
+        "vocab-hsk20-285",
+        "vocab-hsk20-287",
+        "vocab-hsk20-292",
+        "vocab-hsk20-197",
+        "vocab-hsk20-204",
+        "vocab-hsk20-211"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "id": "block-lesson-32-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "这家商店有新衣服吗？",
+          "pinyin": "zhè jiā shāng diàn yǒu xīn yī fú ma？",
+          "translation": {
+            "fr": "Ce magasin a-t-il de nouveaux vêtements ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "有。你喜欢什么颜色？",
+          "pinyin": "yǒu。 nǐ xǐ huān shén me yán sè？",
+          "translation": {
+            "fr": "Oui. Quelle couleur aimes-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我想买红色的，但是眼睛有点累。",
+          "pinyin": "wǒ xiǎng mǎi hóng sè de， dàn shì yǎn jīng yǒu diǎn lèi。",
+          "translation": {
+            "fr": "Je veux acheter le rouge, mais mes yeux sont un peu fatigués."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我们一起休息一下，再看。",
+          "pinyin": "wǒ men yì qǐ xiū xī yī xià， zài kàn。",
+          "translation": {
+            "fr": "Reposons-nous un peu ensemble, puis regardons."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "那件在右边，已经准备好了吗？",
+          "pinyin": "nà jiàn zài yòu biān， yǐ jīng zhǔn bèi hǎo le ma？",
+          "translation": {
+            "fr": "Celui de droite est-il déjà prêt ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "准备好了。真的很漂亮，商店也不远。",
+          "pinyin": "zhǔn bèi hǎo le。 zhēn de hěn piào liàng， shāng diàn yě bù yuǎn。",
+          "translation": {
+            "fr": "Oui. Il est vraiment joli et le magasin n’est pas loin."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 28
+      }
+    },
+    {
+      "id": "block-lesson-32-reading",
+      "storyID": "story-lesson-32",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Une pause"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-32-p1",
+          "hanzi": "顾客和朋友一起看衣服。红色的衣服在右边，新的衣服已经准备好。",
+          "pinyin": "gù kè hé péng yǒu yì qǐ kàn yī fú。 hóng sè de yī fú zài yòu biān， xīn de yī fú yǐ jīng zhǔn bèi hǎo。",
+          "translation": {
+            "fr": "Le client et son ami regardent des vêtements ensemble. Les vêtements rouges sont à droite et les nouveaux sont déjà prêts."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-32-p2",
+          "hanzi": "顾客眼睛累了，所以他们先休息，再看衣服。她觉得衣服真的很漂亮。",
+          "pinyin": "gù kè yǎn jīng lèi le， suǒ yǐ tā men xiān xiū xī， zài kàn yī fú。 tā jué de yī fú zhēn de hěn piào liàng。",
+          "translation": {
+            "fr": "Le client a les yeux fatigués, alors ils se reposent puis regardent les vêtements. Elle trouve le vêtement vraiment joli."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l32-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l32-meaning",
+          "prompt": {
+            "fr": "Que signifie 颜色 ?"
+          },
+          "instruction": {
+            "fr": "Choisis ce que l’on demande."
+          },
+          "objectiveIDs": [
+            "l32-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "taille"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "couleur"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "prix"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l32-order",
+          "prompt": {
+            "fr": "Construis « Nous regardons ensemble ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l32-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我们一起",
+            "pinyin": "wǒ men yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我们一起看。",
+          "我们一起看"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l32-fill",
+          "prompt": {
+            "fr": "Complète : 我们先___息一下。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l32-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我们先___息一下。",
+        "acceptedAnswers": [
+          "休"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l32-listen",
+          "prompt": {
+            "fr": "Où sont les vêtements rouges ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l32-understand"
+          ],
+          "required": true
+        },
+        "promptText": "红色的衣服在右边。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Au centre."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À gauche."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "À droite."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l32-speak",
+          "prompt": {
+            "fr": "Dis « Les nouveaux vêtements sont déjà prêts ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l32-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "新的衣服已经准备好。",
+        "referencePinyin": "xīn de yī fú yǐ jīng zhǔn bèi hǎo。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "新的衣服已经准备好。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l32-reading",
+          "prompt": {
+            "fr": "Pourquoi se reposent-ils ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l32-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le magasin est fermé."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il neige."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les yeux de la cliente sont fatigués."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "id": "block-lesson-32-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-268",
+        "vocab-hsk20-270",
+        "vocab-hsk20-271",
+        "vocab-hsk20-276",
+        "vocab-hsk20-277",
+        "vocab-hsk20-282"
+      ],
+      "objectiveIDs": [
+        "l32-understand",
+        "l32-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 28
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-268",
+      "vocabularyID": "vocab-hsk20-268",
+      "front": {
+        "hanzi": "休息",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "休息",
+        "pinyin": "xiū xī",
+        "text": {
+          "fr": "se reposer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-270",
+      "vocabularyID": "vocab-hsk20-270",
+      "front": {
+        "hanzi": "颜色",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "颜色",
+        "pinyin": "yán sè",
+        "text": {
+          "fr": "couleur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-271",
+      "vocabularyID": "vocab-hsk20-271",
+      "front": {
+        "hanzi": "眼睛",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "眼睛",
+        "pinyin": "yǎn jīng",
+        "text": {
+          "fr": "yeux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-276",
+      "vocabularyID": "vocab-hsk20-276",
+      "front": {
+        "hanzi": "一起",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "一起",
+        "pinyin": "yì qǐ",
+        "text": {
+          "fr": "ensemble"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-277",
+      "vocabularyID": "vocab-hsk20-277",
+      "front": {
+        "hanzi": "已经",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "已经",
+        "pinyin": "yǐ jīng",
+        "text": {
+          "fr": "déjà"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-282",
+      "vocabularyID": "vocab-hsk20-282",
+      "front": {
+        "hanzi": "右边",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "右边",
+        "pinyin": "yòu biān",
+        "text": {
+          "fr": "droite ; côté droit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-285",
+      "vocabularyID": "vocab-hsk20-285",
+      "front": {
+        "hanzi": "远",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "远",
+        "pinyin": "yuǎn",
+        "text": {
+          "fr": "loin"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-287",
+      "vocabularyID": "vocab-hsk20-287",
+      "front": {
+        "hanzi": "再",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "再",
+        "pinyin": "zài",
+        "text": {
+          "fr": "encore ; de nouveau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-292",
+      "vocabularyID": "vocab-hsk20-292",
+      "front": {
+        "hanzi": "真",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "真",
+        "pinyin": "zhēn",
+        "text": {
+          "fr": "vraiment ; vrai"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-197",
+      "vocabularyID": "vocab-hsk20-197",
+      "front": {
+        "hanzi": "机场",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "机场",
+        "pinyin": "jī chǎng",
+        "text": {
+          "fr": "aéroport"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-204",
+      "vocabularyID": "vocab-hsk20-204",
+      "front": {
+        "hanzi": "进",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "进",
+        "pinyin": "jìn",
+        "text": {
+          "fr": "entrer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-211",
+      "vocabularyID": "vocab-hsk20-211",
+      "front": {
+        "hanzi": "可以",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "可以",
+        "pinyin": "kě yǐ",
+        "text": {
+          "fr": "pouvoir ; être permis"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 28,
+    "allocationRange": "days06-45",
+    "theme": "shopping",
+    "newVocabularyIDs": [
+      "vocab-hsk20-268",
+      "vocab-hsk20-270",
+      "vocab-hsk20-271",
+      "vocab-hsk20-276",
+      "vocab-hsk20-277",
+      "vocab-hsk20-282",
+      "vocab-hsk20-285",
+      "vocab-hsk20-287",
+      "vocab-hsk20-292"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-197",
+      "vocab-hsk20-204",
+      "vocab-hsk20-211"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-268",
+      "hsk20-270",
+      "hsk20-271",
+      "hsk20-276",
+      "hsk20-277",
+      "hsk20-282",
+      "hsk20-285",
+      "hsk20-287",
+      "hsk20-292"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-197",
+      "hsk20-204",
+      "hsk20-211"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-268",
+      "hsk20-270",
+      "hsk20-271",
+      "hsk20-276",
+      "hsk20-277",
+      "hsk20-282",
+      "hsk20-285",
+      "hsk20-287",
+      "hsk20-292"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-197",
+      "hsk20-204",
+      "hsk20-211"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-04",
+    "newVocabularyCount": 9,
+    "extraVocabularyIDs": []
+  }
+}

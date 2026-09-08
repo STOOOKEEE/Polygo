@@ -1,0 +1,2030 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "course": {
+    "id": "mandarin-starter",
+    "slug": "mandarin-starter",
+    "title": {
+      "fr": "Mandarin au quotidien — premières semaines"
+    },
+    "description": {
+      "fr": "Cinq séances d’auteur après l’introduction : vie quotidienne, famille, achat et déplacement. Repère HSK classique 2.0 ; la couverture décrit les lexèmes rencontrés et ne garantit pas l’acquisition."
+    },
+    "alignment": [
+      {
+        "framework": "HSK-classic-2.0",
+        "level": "1–2"
+      },
+      {
+        "framework": "HSK-3.0",
+        "level": "reference-transition"
+      }
+    ]
+  },
+  "catalog": "authoring/hsk-legacy-600.json",
+  "modules": [
+    {
+      "id": "unit-02",
+      "order": 2,
+      "title": {
+        "fr": "Vie quotidienne — bases"
+      },
+      "lessonIDs": [
+        "lesson-05",
+        "lesson-06",
+        "lesson-07",
+        "lesson-08",
+        "lesson-09"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-05",
+      "moduleID": "unit-02",
+      "order": 5,
+      "title": {
+        "fr": "Boire et manger"
+      },
+      "summary": {
+        "fr": "Nommer une boisson et un plat, puis faire une proposition simple."
+      },
+      "estimatedMinutes": 12,
+      "objectives": [
+        {
+          "id": "l5-understand",
+          "text": {
+            "fr": "Comprendre une question simple sur une boisson ou un plat."
+          },
+          "required": true
+        },
+        {
+          "id": "l5-produce",
+          "text": {
+            "fr": "Produire une phrase courte avec un nom et un verbe d’action."
+          },
+          "required": true
+        }
+      ],
+      "vocabularyIDs": [
+        "hsk20-007",
+        "hsk20-009",
+        "hsk20-010",
+        "hsk20-011",
+        "hsk20-021",
+        "hsk20-024",
+        "hsk20-036",
+        "hsk20-037",
+        "hsk20-038",
+        "hsk20-039",
+        "hsk20-062",
+        "hsk20-068",
+        "hsk20-070",
+        "hsk20-086",
+        "hsk20-126",
+        "vocab-ni",
+        "vocab-wo"
+      ],
+      "extraVocabulary": [
+        {
+          "id": "vocab-dan",
+          "hanzi": "但",
+          "traditionalHanzi": "但",
+          "pinyin": "dàn",
+          "toneNumbers": [
+            4
+          ],
+          "segmentation": [
+            {
+              "surface": "但",
+              "vocabularyID": "vocab-dan",
+              "pinyin": "dàn",
+              "partOfSpeech": "conjunction"
+            }
+          ],
+          "partOfSpeech": "conjunction",
+          "grammarNotes": [],
+          "meaning": {
+            "fr": "mais"
+          },
+          "audio": null,
+          "example": null,
+          "memoryStory": null
+        }
+      ],
+      "grammar": [
+        {
+          "vocabularyID": "hsk20-038",
+          "pattern": "A 和 B",
+          "explanation": {
+            "fr": "和 relie deux noms ou deux groupes : 茶和菜 signifie « le thé et le plat »."
+          },
+          "examples": [
+            {
+              "hanzi": "茶和菜都很好。",
+              "pinyin": "chá hé cài dōu hěn hǎo.",
+              "translation": {
+                "fr": "Le thé et le plat sont tous les deux très bons."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-062",
+          "pattern": "phrase + 吗？",
+          "explanation": {
+            "fr": "吗 transforme une phrase déclarative en question oui/non."
+          },
+          "examples": [
+            {
+              "hanzi": "你喝茶吗？",
+              "pinyin": "nǐ hē chá ma?",
+              "translation": {
+                "fr": "Tu bois du thé ?"
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "dialogue": {
+        "id": "block-l5-dialogue",
+        "lines": [
+          {
+            "speaker": "Mina",
+            "hanzi": "你喝茶吗？",
+            "pinyin": "nǐ hē chá ma?",
+            "translation": {
+              "fr": "Tu bois du thé ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "喝。",
+            "pinyin": "hē.",
+            "translation": {
+              "fr": "Oui."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "你吃菜吗？",
+            "pinyin": "nǐ chī cài ma?",
+            "translation": {
+              "fr": "Tu manges le plat ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "吃，但不多。",
+            "pinyin": "chī, dàn bù duō.",
+            "translation": {
+              "fr": "Oui, mais pas beaucoup."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "茶和菜都很好！",
+            "pinyin": "chá hé cài dōu hěn hǎo!",
+            "translation": {
+              "fr": "Le thé et le plat sont très bons !"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "很好！",
+            "pinyin": "hěn hǎo!",
+            "translation": {
+              "fr": "Très bien !"
+            },
+            "audio": null
+          }
+        ]
+      },
+      "reading": {
+        "id": "block-l5-reading",
+        "storyID": "story-l5-tea",
+        "title": {
+          "fr": "Une tasse"
+        },
+        "paragraphs": [
+          {
+            "id": "p1",
+            "hanzi": "我喝茶。",
+            "pinyin": "wǒ hē chá.",
+            "translation": {
+              "fr": "Je bois du thé."
+            },
+            "segmentation": [],
+            "audio": null
+          },
+          {
+            "id": "p2",
+            "hanzi": "我喝茶，吃菜。",
+            "pinyin": "wǒ hē chá, chī cài.",
+            "translation": {
+              "fr": "Je bois du thé et je mange un plat."
+            },
+            "segmentation": [],
+            "audio": null
+          }
+        ],
+        "comprehensionExerciseIDs": [
+          "ex-l5-reading"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-l5-meaning",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que signifie 茶 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot entendu dans le dialogue."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "riz"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "thé"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "tasse"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l5-order",
+          "kind": "wordOrder",
+          "prompt": {
+            "fr": "Construis « Je bois du thé ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true,
+          "tokens": [
+            {
+              "id": "a",
+              "hanzi": "茶",
+              "pinyin": "chá",
+              "audio": null
+            },
+            {
+              "id": "b",
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "audio": null
+            },
+            {
+              "id": "c",
+              "hanzi": "喝",
+              "pinyin": "hē",
+              "audio": null
+            }
+          ],
+          "correctOrder": [
+            "b",
+            "c",
+            "a"
+          ],
+          "acceptedVariants": [
+            "我喝茶。",
+            "我喝茶"
+          ]
+        },
+        {
+          "id": "ex-l5-fill",
+          "kind": "fillBlank",
+          "prompt": {
+            "fr": "Complète la question « Tu bois du thé ? » : 你___茶吗？"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true,
+          "sentence": "你___茶吗？",
+          "acceptedAnswers": [
+            "喝"
+          ],
+          "caseSensitive": false
+        },
+        {
+          "id": "ex-l5-listen",
+          "kind": "listeningChoice",
+          "prompt": {
+            "fr": "Quelle phrase entends-tu ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true,
+          "promptText": "茶和菜都很好！",
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Le thé est froid."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Je n’ai pas de tasse."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Le thé et le plat sont très bons."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        },
+        {
+          "id": "ex-l5-speak",
+          "kind": "speaking",
+          "prompt": {
+            "fr": "Dis « Le thé et le plat sont très bons ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": false,
+          "referenceText": "茶和菜都很好！",
+          "referencePinyin": "chá hé cài dōu hěn hǎo!",
+          "referenceAudio": null,
+          "acceptedTranscripts": [
+            "茶和菜都很好！"
+          ],
+          "allowSelfRating": true
+        },
+        {
+          "id": "ex-l5-reading",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que fait la personne dans le texte ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Elle prend le bus."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Elle lit un journal."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Elle boit du thé et mange un plat."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        }
+      ],
+      "recap": {
+        "id": "block-l5-recap",
+        "vocabularyIDs": [
+          "hsk20-009",
+          "hsk20-010",
+          "hsk20-011",
+          "hsk20-021",
+          "hsk20-037",
+          "hsk20-038"
+        ],
+        "objectiveIDs": [
+          "l5-understand",
+          "l5-produce"
+        ]
+      }
+    },
+    {
+      "id": "lesson-06",
+      "moduleID": "unit-02",
+      "order": 6,
+      "title": {
+        "fr": "À la maison"
+      },
+      "summary": {
+        "fr": "Parler de ce qu’on regarde et de ce qui se trouve à la maison."
+      },
+      "estimatedMinutes": 12,
+      "objectives": [
+        {
+          "id": "l6-understand",
+          "text": {
+            "fr": "Repérer un objet et un lieu dans une phrase courte."
+          },
+          "required": true
+        },
+        {
+          "id": "l6-produce",
+          "text": {
+            "fr": "Dire où se trouve une personne ou un objet."
+          },
+          "required": true
+        }
+      ],
+      "vocabularyIDs": [
+        "hsk20-017",
+        "hsk20-018",
+        "hsk20-019",
+        "hsk20-020",
+        "hsk20-021",
+        "hsk20-034",
+        "hsk20-038",
+        "hsk20-045",
+        "hsk20-050",
+        "hsk20-051",
+        "hsk20-062",
+        "hsk20-120",
+        "hsk20-139",
+        "hsk20-275",
+        "vocab-ni",
+        "vocab-wo"
+      ],
+      "grammar": [
+        {
+          "vocabularyID": "hsk20-139",
+          "pattern": "sujet + 在 + lieu",
+          "explanation": {
+            "fr": "在 se place après le sujet et avant le lieu : 电脑在家里 signifie « l’ordinateur est à la maison »."
+          },
+          "examples": [
+            {
+              "hanzi": "电脑在家里。",
+              "pinyin": "diàn nǎo zài jiā lǐ.",
+              "translation": {
+                "fr": "L’ordinateur est à la maison."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-275",
+          "pattern": "也 + verbe",
+          "explanation": {
+            "fr": "也 ajoute une information équivalente : « aussi » se place avant le verbe."
+          },
+          "examples": [
+            {
+              "hanzi": "我也看电影。",
+              "pinyin": "wǒ yě kàn diàn yǐng.",
+              "translation": {
+                "fr": "Je regarde aussi un film."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-021",
+          "pattern": "都 + verbe",
+          "explanation": {
+            "fr": "都 indique que l’ensemble du groupe est concerné."
+          },
+          "examples": [
+            {
+              "hanzi": "东西都在家。",
+              "pinyin": "dōng xi dōu zài jiā.",
+              "translation": {
+                "fr": "Les affaires sont toutes à la maison."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "dialogue": {
+        "id": "block-l6-dialogue",
+        "lines": [
+          {
+            "speaker": "Mina",
+            "hanzi": "你在家吗？",
+            "pinyin": "nǐ zài jiā ma?",
+            "translation": {
+              "fr": "Tu es à la maison ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "我看电影。",
+            "pinyin": "wǒ kàn diàn yǐng.",
+            "translation": {
+              "fr": "Je regarde un film."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "电脑和电视在家。",
+            "pinyin": "diàn nǎo hé diàn shì zài jiā.",
+            "translation": {
+              "fr": "L’ordinateur et la télévision sont à la maison."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "你的狗也在家吗？",
+            "pinyin": "nǐ de gǒu yě zài jiā ma?",
+            "translation": {
+              "fr": "Ton chien est aussi à la maison ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "在家。现在开电视。",
+            "pinyin": "zài jiā. xiàn zài kāi diàn shì.",
+            "translation": {
+              "fr": "Il est à la maison. J’allume la télévision maintenant."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "好！",
+            "pinyin": "hǎo!",
+            "translation": {
+              "fr": "D’accord !"
+            },
+            "audio": null
+          }
+        ]
+      },
+      "reading": {
+        "id": "block-l6-reading",
+        "storyID": "story-l6-home",
+        "title": {
+          "fr": "Dans le salon"
+        },
+        "paragraphs": [
+          {
+            "id": "p1",
+            "hanzi": "我在家看电影。",
+            "pinyin": "wǒ zài jiā kàn diàn yǐng.",
+            "translation": {
+              "fr": "Je regarde un film à la maison."
+            },
+            "segmentation": [],
+            "audio": null
+          },
+          {
+            "id": "p2",
+            "hanzi": "电脑和电视在家。",
+            "pinyin": "diàn nǎo hé diàn shì zài jiā.",
+            "translation": {
+              "fr": "L’ordinateur et la télévision sont à la maison."
+            },
+            "segmentation": [],
+            "audio": null
+          }
+        ],
+        "comprehensionExerciseIDs": [
+          "ex-l6-reading"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-l6-meaning",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que signifie 电脑 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’objet correct."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "télévision"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "chien"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "ordinateur"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        },
+        {
+          "id": "ex-l6-order",
+          "kind": "wordOrder",
+          "prompt": {
+            "fr": "Construis « L’ordinateur est à la maison ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true,
+          "tokens": [
+            {
+              "id": "a",
+              "hanzi": "家里",
+              "pinyin": "jiā lǐ",
+              "audio": null
+            },
+            {
+              "id": "b",
+              "hanzi": "在",
+              "pinyin": "zài",
+              "audio": null
+            },
+            {
+              "id": "c",
+              "hanzi": "电脑",
+              "pinyin": "diàn nǎo",
+              "audio": null
+            }
+          ],
+          "correctOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "acceptedVariants": [
+            "电脑在家里。",
+            "电脑在家里"
+          ]
+        },
+        {
+          "id": "ex-l6-fill",
+          "kind": "fillBlank",
+          "prompt": {
+            "fr": "Complète : 电脑___家里。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true,
+          "sentence": "电脑___家里。",
+          "acceptedAnswers": [
+            "在"
+          ],
+          "caseSensitive": false
+        },
+        {
+          "id": "ex-l6-listen",
+          "kind": "listeningChoice",
+          "prompt": {
+            "fr": "Où sont les appareils ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true,
+          "promptText": "电脑和电视在家。",
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Ils sont à l’école."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Ils sont à la maison."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Ils sont dans le train."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l6-speak",
+          "kind": "speaking",
+          "prompt": {
+            "fr": "Dis « Je regarde un film ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": false,
+          "referenceText": "我看电影。",
+          "referencePinyin": "wǒ kàn diàn yǐng.",
+          "referenceAudio": null,
+          "acceptedTranscripts": [
+            "我看电影。"
+          ],
+          "allowSelfRating": true
+        },
+        {
+          "id": "ex-l6-reading",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que trouve-t-on à la maison ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Un avion et un bateau."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Un journal et un billet."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Un ordinateur et une télévision."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        }
+      ],
+      "recap": {
+        "id": "block-l6-recap",
+        "vocabularyIDs": [
+          "hsk20-017",
+          "hsk20-019",
+          "hsk20-020",
+          "hsk20-038",
+          "hsk20-051",
+          "hsk20-139"
+        ],
+        "objectiveIDs": [
+          "l6-understand",
+          "l6-produce"
+        ]
+      }
+    },
+    {
+      "id": "lesson-07",
+      "moduleID": "unit-02",
+      "order": 7,
+      "title": {
+        "fr": "La famille et la date"
+      },
+      "summary": {
+        "fr": "Nommer des proches et situer une activité dans le temps."
+      },
+      "estimatedMinutes": 12,
+      "objectives": [
+        {
+          "id": "l7-understand",
+          "text": {
+            "fr": "Comprendre qui est présent et quand une activité a lieu."
+          },
+          "required": true
+        },
+        {
+          "id": "l7-produce",
+          "text": {
+            "fr": "Présenter un membre de la famille avec 的."
+          },
+          "required": true
+        }
+      ],
+      "vocabularyIDs": [
+        "hsk20-003",
+        "hsk20-015",
+        "hsk20-026",
+        "hsk20-038",
+        "hsk20-044",
+        "hsk20-047",
+        "hsk20-048",
+        "hsk20-049",
+        "hsk20-061",
+        "hsk20-076",
+        "hsk20-088",
+        "hsk20-089",
+        "hsk20-137",
+        "hsk20-139",
+        "hsk20-045",
+        "vocab-ni",
+        "vocab-wo",
+        "vocab-ne",
+        "vocab-shi"
+      ],
+      "grammar": [
+        {
+          "vocabularyID": "hsk20-015",
+          "pattern": "nom + 的 + nom",
+          "explanation": {
+            "fr": "的 relie un possesseur et ce qui lui appartient : 我的妈妈 signifie « ma maman »."
+          },
+          "examples": [
+            {
+              "hanzi": "我的妈妈在家。",
+              "pinyin": "wǒ de mā ma zài jiā.",
+              "translation": {
+                "fr": "Ma maman est à la maison."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "dialogue": {
+        "id": "block-l7-dialogue",
+        "lines": [
+          {
+            "speaker": "Mina",
+            "hanzi": "今天是几月几日？",
+            "pinyin": "jīn tiān shì jǐ yuè jǐ rì?",
+            "translation": {
+              "fr": "Quelle date sommes-nous ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "今天是九月三日。",
+            "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
+            "translation": {
+              "fr": "Nous sommes le 3 septembre."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "我妈妈和我爸爸在家。",
+            "pinyin": "wǒ mā ma hé wǒ bà ba zài jiā.",
+            "translation": {
+              "fr": "Ma maman et mon papa sont à la maison."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "她的儿子在家。",
+            "pinyin": "tā de ér zi zài jiā.",
+            "translation": {
+              "fr": "Son fils est à la maison."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "我的女儿在家。",
+            "pinyin": "wǒ de nǚ ér zài jiā.",
+            "translation": {
+              "fr": "Ma fille est à la maison."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "你呢？",
+            "pinyin": "nǐ ne?",
+            "translation": {
+              "fr": "Et toi ?"
+            },
+            "audio": null
+          }
+        ]
+      },
+      "reading": {
+        "id": "block-l7-reading",
+        "storyID": "story-l7-family",
+        "title": {
+          "fr": "Un calendrier familial"
+        },
+        "paragraphs": [
+          {
+            "id": "p1",
+            "hanzi": "今天是九月三日。",
+            "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
+            "translation": {
+              "fr": "Nous sommes le 3 septembre."
+            },
+            "segmentation": [],
+            "audio": null
+          },
+          {
+            "id": "p2",
+            "hanzi": "她的儿子在家，我的女儿在家。",
+            "pinyin": "tā de ér zi zài jiā, wǒ de nǚ ér zài jiā.",
+            "translation": {
+              "fr": "Son fils et ma fille sont à la maison."
+            },
+            "segmentation": [],
+            "audio": null
+          }
+        ],
+        "comprehensionExerciseIDs": [
+          "ex-l7-reading"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-l7-meaning",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que signifie 妈妈 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le membre de la famille."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "petit frère"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "fille"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "maman"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        },
+        {
+          "id": "ex-l7-order",
+          "kind": "wordOrder",
+          "prompt": {
+            "fr": "Construis « Ma maman est à la maison ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true,
+          "tokens": [
+            {
+              "id": "a",
+              "hanzi": "在家",
+              "pinyin": "zài jiā",
+              "audio": null
+            },
+            {
+              "id": "b",
+              "hanzi": "妈妈",
+              "pinyin": "mā ma",
+              "audio": null
+            },
+            {
+              "id": "c",
+              "hanzi": "我的",
+              "pinyin": "wǒ de",
+              "audio": null
+            }
+          ],
+          "correctOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "acceptedVariants": [
+            "我的妈妈在家。",
+            "我的妈妈在家"
+          ]
+        },
+        {
+          "id": "ex-l7-fill",
+          "kind": "fillBlank",
+          "prompt": {
+            "fr": "Complète « Son fils est à la maison » : 她的___在家。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true,
+          "sentence": "她的___在家。",
+          "acceptedAnswers": [
+            "儿子"
+          ],
+          "caseSensitive": false
+        },
+        {
+          "id": "ex-l7-listen",
+          "kind": "listeningChoice",
+          "prompt": {
+            "fr": "Qui est à la maison ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true,
+          "promptText": "她的儿子在家。",
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Sa fille."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Son fils."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Son père."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l7-speak",
+          "kind": "speaking",
+          "prompt": {
+            "fr": "Dis « Ma maman est à la maison ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": false,
+          "referenceText": "我的妈妈在家。",
+          "referencePinyin": "wǒ de mā ma zài jiā.",
+          "referenceAudio": null,
+          "acceptedTranscripts": [
+            "我的妈妈在家。"
+          ],
+          "allowSelfRating": true
+        },
+        {
+          "id": "ex-l7-reading",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Qui est à la maison ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "La fille."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Le fils."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Le père."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        }
+      ],
+      "recap": {
+        "id": "block-l7-recap",
+        "vocabularyIDs": [
+          "hsk20-003",
+          "hsk20-026",
+          "hsk20-047",
+          "hsk20-048",
+          "hsk20-061",
+          "hsk20-076"
+        ],
+        "objectiveIDs": [
+          "l7-understand",
+          "l7-produce"
+        ]
+      }
+    },
+    {
+      "id": "lesson-08",
+      "moduleID": "unit-02",
+      "order": 8,
+      "title": {
+        "fr": "Acheter des pommes"
+      },
+      "summary": {
+        "fr": "Dire l’heure, demander un prix et acheter des pommes."
+      },
+      "estimatedMinutes": 12,
+      "objectives": [
+        {
+          "id": "l8-understand",
+          "text": {
+            "fr": "Comprendre un lieu, une heure et un prix simple."
+          },
+          "required": true
+        },
+        {
+          "id": "l8-produce",
+          "text": {
+            "fr": "Demander un billet ou exprimer un souhait."
+          },
+          "required": true
+        }
+      ],
+      "vocabularyIDs": [
+        "hsk20-016",
+        "hsk20-025",
+        "hsk20-044",
+        "hsk20-053",
+        "hsk20-063",
+        "hsk20-079",
+        "hsk20-082",
+        "hsk20-084",
+        "hsk20-089",
+        "hsk20-090",
+        "hsk20-120",
+        "hsk20-121",
+        "vocab-wo"
+      ],
+      "grammar": [
+        {
+          "vocabularyID": "hsk20-121",
+          "pattern": "想 + verbe",
+          "explanation": {
+            "fr": "想 exprime un souhait et se place avant l’action : 我想买苹果 signifie « je veux acheter des pommes »."
+          },
+          "examples": [
+            {
+              "hanzi": "我想买苹果。",
+              "pinyin": "wǒ xiǎng mǎi píng guǒ.",
+              "translation": {
+                "fr": "Je veux acheter des pommes."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-053",
+          "pattern": "prix + 块",
+          "explanation": {
+            "fr": "块 est l’unité familière du yuan dans un prix courant."
+          },
+          "examples": [
+            {
+              "hanzi": "苹果三块。",
+              "pinyin": "píng guǒ sān kuài.",
+              "translation": {
+                "fr": "Les pommes coûtent trois yuans."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "dialogue": {
+        "id": "block-l8-dialogue",
+        "lines": [
+          {
+            "speaker": "Mina",
+            "hanzi": "现在几点？",
+            "pinyin": "xiàn zài jǐ diǎn?",
+            "translation": {
+              "fr": "Quelle heure est-il ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "现在三点。",
+            "pinyin": "xiàn zài sān diǎn.",
+            "translation": {
+              "fr": "Il est trois heures."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "我想去商店买苹果。",
+            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+            "translation": {
+              "fr": "Je veux aller au magasin acheter des pommes."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "苹果多少钱？",
+            "pinyin": "píng guǒ duō shao qián?",
+            "translation": {
+              "fr": "Combien coûtent les pommes ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "苹果三块。",
+            "pinyin": "píng guǒ sān kuài.",
+            "translation": {
+              "fr": "Les pommes coûtent trois yuans."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "我买。",
+            "pinyin": "wǒ mǎi.",
+            "translation": {
+              "fr": "J’achète."
+            },
+            "audio": null
+          }
+        ]
+      },
+      "reading": {
+        "id": "block-l8-reading",
+        "storyID": "story-l8-shop",
+        "title": {
+          "fr": "Au magasin"
+        },
+        "paragraphs": [
+          {
+            "id": "p1",
+            "hanzi": "现在三点，我想去商店。",
+            "pinyin": "xiàn zài sān diǎn, wǒ xiǎng qù shāng diàn.",
+            "translation": {
+              "fr": "Il est trois heures, je veux aller au magasin."
+            },
+            "segmentation": [],
+            "audio": null
+          },
+          {
+            "id": "p2",
+            "hanzi": "苹果三块。",
+            "pinyin": "píng guǒ sān kuài.",
+            "translation": {
+              "fr": "Les pommes coûtent trois yuans."
+            },
+            "segmentation": [],
+            "audio": null
+          }
+        ],
+        "comprehensionExerciseIDs": [
+          "ex-l8-reading"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-l8-meaning",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que signifie 商店 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le lieu où l’on achète les pommes."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "restaurant"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "magasin"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "hôpital"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l8-order",
+          "kind": "wordOrder",
+          "prompt": {
+            "fr": "Construis « Je veux acheter des pommes ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true,
+          "tokens": [
+            {
+              "id": "a",
+              "hanzi": "苹果",
+              "pinyin": "píng guǒ",
+              "audio": null
+            },
+            {
+              "id": "b",
+              "hanzi": "买",
+              "pinyin": "mǎi",
+              "audio": null
+            },
+            {
+              "id": "c",
+              "hanzi": "我想",
+              "pinyin": "wǒ xiǎng",
+              "audio": null
+            }
+          ],
+          "correctOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "acceptedVariants": [
+            "我想买苹果。",
+            "我想买苹果"
+          ]
+        },
+        {
+          "id": "ex-l8-fill",
+          "kind": "fillBlank",
+          "prompt": {
+            "fr": "Dans le dialogue, quelle unité familière suit le prix ?"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true,
+          "sentence": "苹果三___。",
+          "acceptedAnswers": [
+            "块"
+          ],
+          "caseSensitive": false
+        },
+        {
+          "id": "ex-l8-listen",
+          "kind": "listeningChoice",
+          "prompt": {
+            "fr": "Quel est le prix ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true,
+          "promptText": "苹果三块。",
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "20 yuans"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "3 yuans"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "30 yuans"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l8-speak",
+          "kind": "speaking",
+          "prompt": {
+            "fr": "Dis « Je veux aller au magasin ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": false,
+          "referenceText": "我想去商店。",
+          "referencePinyin": "wǒ xiǎng qù shāng diàn.",
+          "referenceAudio": null,
+          "acceptedTranscripts": [
+            "我想去商店。"
+          ],
+          "allowSelfRating": true
+        },
+        {
+          "id": "ex-l8-reading",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Où la personne veut-elle aller ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "À l’école."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "À la gare."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Au magasin."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        }
+      ],
+      "recap": {
+        "id": "block-l8-recap",
+        "vocabularyIDs": [
+          "hsk20-016",
+          "hsk20-053",
+          "hsk20-063",
+          "hsk20-079",
+          "hsk20-090",
+          "hsk20-121"
+        ],
+        "objectiveIDs": [
+          "l8-understand",
+          "l8-produce"
+        ]
+      }
+    },
+    {
+      "id": "lesson-09",
+      "moduleID": "unit-02",
+      "order": 9,
+      "title": {
+        "fr": "Une journée organisée"
+      },
+      "summary": {
+        "fr": "Parler d’un déplacement, d’une capacité et d’une action terminée."
+      },
+      "estimatedMinutes": 12,
+      "objectives": [
+        {
+          "id": "l9-understand",
+          "text": {
+            "fr": "Comprendre un itinéraire et une action déjà terminée."
+          },
+          "required": true
+        },
+        {
+          "id": "l9-produce",
+          "text": {
+            "fr": "Dire ce qu’on peut faire et où l’on va."
+          },
+          "required": true
+        }
+      ],
+      "vocabularyIDs": [
+        "hsk20-007",
+        "hsk20-016",
+        "hsk20-041",
+        "hsk20-042",
+        "hsk20-043",
+        "hsk20-044",
+        "hsk20-045",
+        "hsk20-058",
+        "hsk20-084",
+        "hsk20-139",
+        "hsk20-148",
+        "hsk20-165",
+        "hsk20-170",
+        "hsk20-297",
+        "hsk20-298",
+        "hsk20-485",
+        "vocab-ni",
+        "vocab-wo"
+      ],
+      "grammar": [
+        {
+          "vocabularyID": "hsk20-058",
+          "pattern": "verbe + 了",
+          "explanation": {
+            "fr": "了 placé après le verbe signale ici une action terminée : 我看了 signifie « j’ai regardé »."
+          },
+          "examples": [
+            {
+              "hanzi": "我看了电影。",
+              "pinyin": "wǒ kàn le diàn yǐng.",
+              "translation": {
+                "fr": "J’ai regardé un film."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-042",
+          "pattern": "会 + verbe",
+          "explanation": {
+            "fr": "会 indique une capacité apprise ou une possibilité future : 我会说汉语 signifie « je sais parler chinois »."
+          },
+          "examples": [
+            {
+              "hanzi": "我会说汉语。",
+              "pinyin": "wǒ huì shuō Hàn yǔ.",
+              "translation": {
+                "fr": "Je sais parler chinois."
+              },
+              "audio": null
+            }
+          ]
+        },
+        {
+          "vocabularyID": "hsk20-165",
+          "pattern": "从 A 到 B",
+          "explanation": {
+            "fr": "从 et 到 encadrent un point de départ et un point d’arrivée."
+          },
+          "examples": [
+            {
+              "hanzi": "从家到火车站很近。",
+              "pinyin": "cóng jiā dào huǒ chē zhàn hěn jìn.",
+              "translation": {
+                "fr": "De la maison à la gare, c’est proche."
+              },
+              "audio": null
+            }
+          ]
+        }
+      ],
+      "dialogue": {
+        "id": "block-l9-dialogue",
+        "lines": [
+          {
+            "speaker": "Mina",
+            "hanzi": "你昨天在家吗？",
+            "pinyin": "nǐ zuó tiān zài jiā ma?",
+            "translation": {
+              "fr": "Tu étais à la maison hier ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "不在，我去了火车站。",
+            "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+            "translation": {
+              "fr": "Non, je suis allé à la gare."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "你会骑自行车吗？你几点回家？",
+            "pinyin": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?",
+            "translation": {
+              "fr": "Tu sais faire du vélo ? À quelle heure rentres-tu ?"
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "会。五点回家。",
+            "pinyin": "huì. wǔ diǎn huí jiā.",
+            "translation": {
+              "fr": "Oui. Je rentre à cinq heures."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Mina",
+            "hanzi": "我从家走到火车站。",
+            "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+            "translation": {
+              "fr": "Je marche de la maison jusqu’à la gare."
+            },
+            "audio": null
+          },
+          {
+            "speaker": "Tao",
+            "hanzi": "好，我回家。",
+            "pinyin": "hǎo, wǒ huí jiā.",
+            "translation": {
+              "fr": "D’accord, je rentre à la maison."
+            },
+            "audio": null
+          }
+        ]
+      },
+      "reading": {
+        "id": "block-l9-reading",
+        "storyID": "story-l9-station",
+        "title": {
+          "fr": "Vers la gare"
+        },
+        "paragraphs": [
+          {
+            "id": "p1",
+            "hanzi": "我昨天去了火车站。",
+            "pinyin": "wǒ zuó tiān qù le huǒ chē zhàn.",
+            "translation": {
+              "fr": "Je suis allé à la gare hier."
+            },
+            "segmentation": [],
+            "audio": null
+          },
+          {
+            "id": "p2",
+            "hanzi": "我从家走到火车站，我回家。",
+            "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn, wǒ huí jiā.",
+            "translation": {
+              "fr": "Je marche de la maison jusqu’à la gare, puis je rentre."
+            },
+            "segmentation": [],
+            "audio": null
+          }
+        ],
+        "comprehensionExerciseIDs": [
+          "ex-l9-reading"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-l9-meaning",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Que signifie 火车站 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le lieu du train."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "hôpital"
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "banque"
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "gare"
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "c"
+        },
+        {
+          "id": "ex-l9-order",
+          "kind": "wordOrder",
+          "prompt": {
+            "fr": "Construis « Je rentre à la maison ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true,
+          "tokens": [
+            {
+              "id": "a",
+              "hanzi": "家",
+              "pinyin": "jiā",
+              "audio": null
+            },
+            {
+              "id": "b",
+              "hanzi": "回",
+              "pinyin": "huí",
+              "audio": null
+            },
+            {
+              "id": "c",
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "audio": null
+            }
+          ],
+          "correctOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "acceptedVariants": [
+            "我回家。",
+            "我回家"
+          ]
+        },
+        {
+          "id": "ex-l9-fill",
+          "kind": "fillBlank",
+          "prompt": {
+            "fr": "Complète avec le mot qui marque l’action terminée dans le dialogue."
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true,
+          "sentence": "我昨天去___火车站。",
+          "acceptedAnswers": [
+            "了"
+          ],
+          "caseSensitive": false
+        },
+        {
+          "id": "ex-l9-listen",
+          "kind": "listeningChoice",
+          "prompt": {
+            "fr": "Que fait Mina ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true,
+          "promptText": "我从家走到火车站。",
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Elle prend l’avion."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Elle marche jusqu’à la gare."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Elle reste à la maison."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "b"
+        },
+        {
+          "id": "ex-l9-speak",
+          "kind": "speaking",
+          "prompt": {
+            "fr": "Dis « Je marche de la maison jusqu’à la gare ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": false,
+          "referenceText": "我从家走到火车站。",
+          "referencePinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+          "referenceAudio": null,
+          "acceptedTranscripts": [
+            "我从家走到火车站。"
+          ],
+          "allowSelfRating": true
+        },
+        {
+          "id": "ex-l9-reading",
+          "kind": "choice",
+          "prompt": {
+            "fr": "Comment la personne se déplace-t-elle ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": {
+                "fr": "Elle marche."
+              },
+              "audio": null
+            },
+            {
+              "id": "b",
+              "label": {
+                "fr": "Elle prend l’avion."
+              },
+              "audio": null
+            },
+            {
+              "id": "c",
+              "label": {
+                "fr": "Elle nage."
+              },
+              "audio": null
+            }
+          ],
+          "correctChoiceID": "a"
+        }
+      ],
+      "recap": {
+        "id": "block-l9-recap",
+        "vocabularyIDs": [
+          "hsk20-041",
+          "hsk20-042",
+          "hsk20-043",
+          "hsk20-058",
+          "hsk20-165",
+          "hsk20-297"
+        ],
+        "objectiveIDs": [
+          "l9-understand",
+          "l9-produce"
+        ]
+      }
+    }
+  ]
+}

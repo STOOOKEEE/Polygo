@@ -103,11 +103,20 @@ public actor JSONContentStore: StoryContentStore {
             let contentIndex = try await index()
             let courseManifest = try await course(id: contentIndex.defaultCourseID)
             var derived: [StoryDocument] = []
-            for lessonID in courseManifest.modules.sorted(by: { $0.order < $1.order }).flatMap(\.lessonIDs) {
-                let document = try await lesson(id: lessonID)
-                for block in document.blocks {
-                    if case .reading(let reading) = block {
-                        derived.append(StoryDocument(id: reading.storyID, title: reading.title, summary: reading.title, level: "HSK 1 · A1", estimatedMinutes: max(1, document.estimatedMinutes / 2), audio: nil, paragraphs: reading.paragraphs))
+            for module in courseManifest.modules.sorted(by: { $0.order < $1.order }) {
+                let moduleLevel = module.level?.trimmingCharacters(in: .whitespacesAndNewlines)
+                let moduleLabel = contentLevelLabel(moduleLevel)
+                    ?? contentLevelLabel(module.displayName?.resolve(preferred: ["fr", "en"]))
+                for lessonID in module.lessonIDs {
+                    let document = try await lesson(id: lessonID)
+                    for block in document.blocks {
+                        if case .reading(let reading) = block {
+                            let level = contentLevelLabel(reading.level)
+                                ?? contentLevelLabel(document.level)
+                                ?? moduleLabel
+                                ?? (module.id.rawValue == "unit-01" ? "HSK classique 1" : "Parcours")
+                            derived.append(StoryDocument(id: reading.storyID, title: reading.title, summary: reading.title, level: level, estimatedMinutes: max(1, document.estimatedMinutes / 2), audio: nil, paragraphs: reading.paragraphs))
+                        }
                     }
                 }
             }
@@ -181,6 +190,18 @@ public actor JSONContentStore: StoryContentStore {
             throw ContentStoreError.invalidJSON("\(relativePath): \(error.localizedDescription)")
         }
     }
+}
+
+private func contentLevelLabel(_ value: String?) -> String? {
+    guard let value else { return nil }
+    let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !trimmed.isEmpty else { return nil }
+    let normalized = trimmed.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+    let looksLikeCurriculum = normalized.contains("hsk")
+        || normalized.contains("cefr")
+        || normalized.contains("cecr")
+        || normalized.range(of: #"\b[a-c][1-2]\b"#, options: .regularExpression) != nil
+    return looksLikeCurriculum ? trimmed : nil
 }
 
 private enum SHA256 {

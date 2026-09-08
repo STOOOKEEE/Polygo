@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-69",
+  "moduleID": "unit-07",
+  "order": 69,
+  "title": {
+    "fr": "Trouver son chemin au parc"
+  },
+  "summary": {
+    "fr": "Demander une indication malgré le vent et rendre un trajet progressivement plus clair."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l69-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l69-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-487",
+      "canonicalID": "清楚|qīng chǔ|487",
+      "hanzi": "清楚",
+      "pinyin": "qīng chǔ",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "清楚",
+          "vocabularyID": "vocab-hsk20-487",
+          "pinyin": "qīng chǔ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "clair ; clairement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请把地址说清楚。",
+        "pinyin": "qǐng bǎ dì zhǐ shuō qīng chu.",
+        "translation": {
+          "fr": "Dis clairement l’adresse, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "清楚|qīng chǔ|487",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 487,
+        "level": 3
+      },
+      "traditionalHanzi": "清楚"
+    },
+    {
+      "id": "vocab-hsk20-494",
+      "canonicalID": "容易|róng yì|494",
+      "hanzi": "容易",
+      "pinyin": "róng yì",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "容易",
+          "vocabularyID": "vocab-hsk20-494",
+          "pinyin": "róng yì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "facile"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个软件用起来很容易。",
+        "pinyin": "zhè ge ruǎn jiàn yòng qǐ lái hěn róng yì.",
+        "translation": {
+          "fr": "Ce logiciel est facile à utiliser."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "容易|róng yì|494",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 494,
+        "level": 3
+      },
+      "traditionalHanzi": "容易"
+    },
+    {
+      "id": "vocab-hsk20-589",
+      "canonicalID": "重要|zhòng yào|589",
+      "hanzi": "重要",
+      "pinyin": "zhòng yào",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "重要",
+          "vocabularyID": "vocab-hsk20-589",
+          "pinyin": "zhòng yào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "important"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "安全是最重要的。",
+        "pinyin": "ān quán shì zuì zhòng yào de.",
+        "translation": {
+          "fr": "La sécurité est la chose la plus importante."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "重要|zhòng yào|589",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 589,
+        "level": 3
+      },
+      "traditionalHanzi": "重要"
+    },
+    {
+      "id": "vocab-hsk20-384",
+      "canonicalID": "公园|gōng yuán|384",
+      "hanzi": "公园",
+      "pinyin": "gōng yuán",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "公园",
+          "vocabularyID": "vocab-hsk20-384",
+          "pinyin": "gōng yuán"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "parc"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "周末我们去公园。",
+        "pinyin": "zhōu mò wǒ men qù gōng yuán。",
+        "translation": {
+          "fr": "Nous allons au parc le week-end."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "公园|gōng yuán|384",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 384,
+        "level": 3
+      },
+      "traditionalHanzi": "公園"
+    },
+    {
+      "id": "vocab-hsk20-386",
+      "canonicalID": "刮风|guā fēng|386",
+      "hanzi": "刮风",
+      "pinyin": "guā fēng",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "刮风",
+          "vocabularyID": "vocab-hsk20-386",
+          "pinyin": "guā fēng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "y avoir du vent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天刮风。",
+        "pinyin": "jīn tiān guā fēng。",
+        "translation": {
+          "fr": "Il y a du vent aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "刮风|guā fēng|386",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 386,
+        "level": 3
+      },
+      "traditionalHanzi": "颳風"
+    },
+    {
+      "id": "vocab-hsk20-398",
+      "canonicalID": "花|huā|398",
+      "hanzi": "花",
+      "pinyin": "huā",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "花",
+          "vocabularyID": "vocab-hsk20-398",
+          "pinyin": "huā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "fleur ; dépenser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "花园里有很多花。",
+        "pinyin": "huā yuán lǐ yǒu hěn duō huā。",
+        "translation": {
+          "fr": "Il y a beaucoup de fleurs dans le jardin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "花|huā|398",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 398,
+        "level": 3
+      },
+      "traditionalHanzi": "花"
+    },
+    {
+      "id": "vocab-hsk20-400",
+      "canonicalID": "画|huà|400",
+      "hanzi": "画",
+      "pinyin": "huà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "画",
+          "vocabularyID": "vocab-hsk20-400",
+          "pinyin": "huà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "dessiner ; peinture"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢画画。",
+        "pinyin": "wǒ xǐ huān huà huà。",
+        "translation": {
+          "fr": "J’aime dessiner."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "画|huà|400",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 400,
+        "level": 3
+      },
+      "traditionalHanzi": "畫"
+    },
+    {
+      "id": "vocab-hsk20-402",
+      "canonicalID": "还|huán|402",
+      "hanzi": "还",
+      "pinyin": "huán",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "还",
+          "vocabularyID": "vocab-hsk20-402",
+          "pinyin": "huán"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "rendre ; rembourser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我下课后还书。",
+        "pinyin": "wǒ xià kè hòu huán shū.",
+        "translation": {
+          "fr": "Je rends le livre après le cours."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "还|huán|402",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 402,
+        "level": 3
+      },
+      "traditionalHanzi": "還"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-69-grammar-01",
+      "title": {
+        "fr": "Grammaire — 越来越 + adjectif"
+      },
+      "body": {
+        "fr": "越来越 montre un changement progressif qui rapproche la situation d’un degré nouveau.\nExemple 1 : 公园越来越近了。\ngōng yuán yuè lái yuè jìn le.\nLe parc est de plus en plus proche."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-69-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-487",
+        "vocab-hsk20-494",
+        "vocab-hsk20-589",
+        "vocab-hsk20-384",
+        "vocab-hsk20-386",
+        "vocab-hsk20-398",
+        "vocab-hsk20-400",
+        "vocab-hsk20-402"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "id": "block-lesson-69-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "请把公园的地址说清楚。",
+          "pinyin": "qǐng bǎ gōng yuán de dì zhǐ shuō qīng chu.",
+          "translation": {
+            "fr": "Dis clairement l’adresse du parc, s’il te plaît."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "从这里往北走，路就容易找了。",
+          "pinyin": "cóng zhè lǐ wǎng běi zǒu, lù jiù róng yì zhǎo le.",
+          "translation": {
+            "fr": "Depuis ici, va vers le nord et la route sera facile à trouver."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "今天刮风，带上地图很重要。",
+          "pinyin": "jīn tiān guā fēng, dài shàng dì tú hěn zhòng yào.",
+          "translation": {
+            "fr": "Il y a du vent aujourd’hui ; il est important de prendre une carte."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "公园越来越近了。",
+          "pinyin": "gōng yuán yuè lái yuè jìn le.",
+          "translation": {
+            "fr": "Le parc est de plus en plus proche."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 65
+      }
+    },
+    {
+      "id": "block-lesson-69-reading",
+      "storyID": "story-lesson-69",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "L’adresse du parc"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-69-p1",
+          "hanzi": "刮风的时候，Tao把公园地址说得很清楚。",
+          "pinyin": "guā fēng de shí hou, Tao bǎ gōng yuán dì zhǐ shuō de hěn qīng chu.",
+          "translation": {
+            "fr": "Quand il y a du vent, Tao énonce clairement l’adresse du parc."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-69-p2",
+          "hanzi": "他们往北走，公园越来越近。",
+          "pinyin": "tā men wǎng běi zǒu, gōng yuán yuè lái yuè jìn.",
+          "translation": {
+            "fr": "Ils marchent vers le nord et le parc se rapproche de plus en plus."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l69-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l69-meaning",
+          "prompt": {
+            "fr": "Que signifie 清楚 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l69-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "clairement"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "important"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "venteux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l69-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « Le parc est de plus en plus proche ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l69-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "近",
+            "pinyin": "jìn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "越来越",
+            "pinyin": "yuè lái yuè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "公园越来越近。",
+          "公园越来越近"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l69-fill",
+          "prompt": {
+            "fr": "Complète : 今天___风。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l69-produce"
+          ],
+          "required": true
+        },
+        "sentence": "今天___风。",
+        "acceptedAnswers": [
+          "刮"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l69-listen",
+          "prompt": {
+            "fr": "Que devient la distance au parc ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l69-understand"
+          ],
+          "required": true
+        },
+        "promptText": "公园越来越近了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le parc s’éloigne."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le parc se rapproche."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le parc ferme."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l69-speak",
+          "prompt": {
+            "fr": "Dis l’adresse clairement."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l69-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "请把公园的地址说清楚。",
+        "referencePinyin": "qǐng bǎ gōng yuán de dì zhǐ shuō qīng chu.",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "请把公园的地址说清楚。",
+          "请把公园的地址说清楚"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l69-reading",
+          "prompt": {
+            "fr": "Dans quelle direction marchent-ils ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l69-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Vers le sud."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Vers le nord."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Vers l’ouest."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "id": "block-lesson-69-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-487",
+        "vocab-hsk20-494",
+        "vocab-hsk20-589",
+        "vocab-hsk20-384",
+        "vocab-hsk20-386",
+        "vocab-hsk20-398",
+        "vocab-hsk20-400",
+        "vocab-hsk20-402"
+      ],
+      "objectiveIDs": [
+        "l69-understand",
+        "l69-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 65
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-487",
+      "vocabularyID": "vocab-hsk20-487",
+      "front": {
+        "hanzi": "清楚",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "清楚",
+        "pinyin": "qīng chǔ",
+        "text": {
+          "fr": "clair ; clairement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-494",
+      "vocabularyID": "vocab-hsk20-494",
+      "front": {
+        "hanzi": "容易",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "容易",
+        "pinyin": "róng yì",
+        "text": {
+          "fr": "facile"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-589",
+      "vocabularyID": "vocab-hsk20-589",
+      "front": {
+        "hanzi": "重要",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "重要",
+        "pinyin": "zhòng yào",
+        "text": {
+          "fr": "important"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-384",
+      "vocabularyID": "vocab-hsk20-384",
+      "front": {
+        "hanzi": "公园",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "公园",
+        "pinyin": "gōng yuán",
+        "text": {
+          "fr": "parc"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-386",
+      "vocabularyID": "vocab-hsk20-386",
+      "front": {
+        "hanzi": "刮风",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "刮风",
+        "pinyin": "guā fēng",
+        "text": {
+          "fr": "y avoir du vent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-398",
+      "vocabularyID": "vocab-hsk20-398",
+      "front": {
+        "hanzi": "花",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "花",
+        "pinyin": "huā",
+        "text": {
+          "fr": "fleur ; dépenser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-400",
+      "vocabularyID": "vocab-hsk20-400",
+      "front": {
+        "hanzi": "画",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "画",
+        "pinyin": "huà",
+        "text": {
+          "fr": "dessiner ; peinture"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-402",
+      "vocabularyID": "vocab-hsk20-402",
+      "front": {
+        "hanzi": "还",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "还",
+        "pinyin": "huán",
+        "text": {
+          "fr": "rendre ; rembourser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 65,
+    "allocationRange": "days46-90",
+    "theme": "Trouver son chemin au parc",
+    "themeLabel": {
+      "fr": "Trouver son chemin au parc"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-487",
+      "vocab-hsk20-494",
+      "vocab-hsk20-589",
+      "vocab-hsk20-384",
+      "vocab-hsk20-386"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-398",
+      "vocab-hsk20-400",
+      "vocab-hsk20-402"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-487",
+      "hsk20-494",
+      "hsk20-589",
+      "hsk20-384",
+      "hsk20-386"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-398",
+      "hsk20-400",
+      "hsk20-402"
+    ],
+    "grammarPattern": "越来越 + adjectif",
+    "grammarAnchor": "hsk20-487",
+    "allocationNewVocabularyIDs": [
+      "hsk20-487",
+      "hsk20-494",
+      "hsk20-589",
+      "hsk20-384",
+      "hsk20-386"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-398",
+      "hsk20-400",
+      "hsk20-402"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-07",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

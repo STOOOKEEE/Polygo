@@ -1,0 +1,1392 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-20",
+  "moduleID": "unit-03",
+  "order": 20,
+  "title": {
+    "fr": "Clarifier une question"
+  },
+  "summary": {
+    "fr": "Demander le sens d’une phrase et comparer deux informations."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l20-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l20-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-259",
+      "canonicalID": "问题|wèn tí|259",
+      "hanzi": "问题",
+      "pinyin": "wèn tí",
+      "toneNumbers": [
+        4,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "问题",
+          "vocabularyID": "vocab-hsk20-259",
+          "pinyin": "wèn tí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "question ; problème"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个问题不难。",
+        "pinyin": "zhè ge wèn tí bù nán。",
+        "translation": {
+          "fr": "Ce problème n’est pas difficile."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "问题|wèn tí|259",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 259,
+        "level": 2
+      },
+      "traditionalHanzi": "問題"
+    },
+    {
+      "id": "vocab-hsk20-278",
+      "canonicalID": "意思|yì si|278",
+      "hanzi": "意思",
+      "pinyin": "yì si",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "意思",
+          "vocabularyID": "vocab-hsk20-278",
+          "pinyin": "yì si"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "sens ; signification"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这句话是什么意思？",
+        "pinyin": "zhè jù huà shì shén me yì si？",
+        "translation": {
+          "fr": "Que signifie cette phrase ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "意思|yì si|278",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 278,
+        "level": 2
+      },
+      "traditionalHanzi": "意思"
+    },
+    {
+      "id": "vocab-hsk20-289",
+      "canonicalID": "张|zhāng|289",
+      "hanzi": "张",
+      "pinyin": "zhāng",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "张",
+          "vocabularyID": "vocab-hsk20-289",
+          "pinyin": "zhāng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "feuille ; classificateur plat"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请给我一张纸。",
+        "pinyin": "qǐng gěi wǒ yī zhāng zhǐ。",
+        "translation": {
+          "fr": "Donne-moi une feuille, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "张|zhāng|289",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 289,
+        "level": 2
+      },
+      "traditionalHanzi": "張"
+    },
+    {
+      "id": "vocab-hsk20-296",
+      "canonicalID": "着|zhe|296",
+      "hanzi": "着",
+      "pinyin": "zhe",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "着",
+          "vocabularyID": "vocab-hsk20-296",
+          "pinyin": "zhe"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule d’état duratif"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "门开着。",
+        "pinyin": "mén kāi zhe。",
+        "translation": {
+          "fr": "La porte est ouverte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "着|zhe|296",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 296,
+        "level": 2
+      },
+      "traditionalHanzi": "着"
+    },
+    {
+      "id": "vocab-hsk20-267",
+      "canonicalID": "姓|xìng|267",
+      "hanzi": "姓",
+      "pinyin": "xìng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "姓",
+          "vocabularyID": "vocab-hsk20-267",
+          "pinyin": "xìng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "nom de famille"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你姓什么？",
+        "pinyin": "nǐ xìng shén me？",
+        "translation": {
+          "fr": "Quel est ton nom de famille ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "姓|xìng|267",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 267,
+        "level": 2
+      },
+      "traditionalHanzi": "姓"
+    },
+    {
+      "id": "vocab-hsk20-290",
+      "canonicalID": "丈夫|zhàng fu|290",
+      "hanzi": "丈夫",
+      "pinyin": "zhàng fu",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "丈夫",
+          "vocabularyID": "vocab-hsk20-290",
+          "pinyin": "zhàng fu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mari"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "她的丈夫是医生。",
+        "pinyin": "tā de zhàng fū shì yī shēng。",
+        "translation": {
+          "fr": "Son mari est médecin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "丈夫|zhàng fu|290",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 290,
+        "level": 2
+      },
+      "traditionalHanzi": "丈夫"
+    },
+    {
+      "id": "vocab-hsk20-083",
+      "canonicalID": "请|qǐng|83",
+      "hanzi": "请",
+      "pinyin": "qǐng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "请",
+          "vocabularyID": "vocab-hsk20-083",
+          "pinyin": "qǐng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "prier de ; inviter"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请坐。",
+        "pinyin": "qǐng zuò。",
+        "translation": {
+          "fr": "Asseyez-vous, s’il vous plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "请|qǐng|83",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 83,
+        "level": 1
+      },
+      "traditionalHanzi": "請"
+    },
+    {
+      "id": "vocab-hsk20-087",
+      "canonicalID": "认识|rèn shí|87",
+      "hanzi": "认识",
+      "pinyin": "rèn shí",
+      "toneNumbers": [
+        4,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "认识",
+          "vocabularyID": "vocab-hsk20-087",
+          "pinyin": "rèn shí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "connaître ; faire connaissance"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我认识他。",
+        "pinyin": "wǒ rèn shí tā。",
+        "translation": {
+          "fr": "Je le connais."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "认识|rèn shí|87",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 87,
+        "level": 1
+      },
+      "traditionalHanzi": "認識"
+    },
+    {
+      "id": "vocab-hsk20-091",
+      "canonicalID": "上|shàng|91",
+      "hanzi": "上",
+      "pinyin": "shàng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "上",
+          "vocabularyID": "vocab-hsk20-091",
+          "pinyin": "shàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "dessus ; monter"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "书在桌子上。",
+        "pinyin": "shū zài zhuō zi shàng。",
+        "translation": {
+          "fr": "Le livre est sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "上|shàng|91",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 91,
+        "level": 1
+      },
+      "traditionalHanzi": "上"
+    },
+    {
+      "id": "vocab-hsk20-093",
+      "canonicalID": "少|shǎo|93",
+      "hanzi": "少",
+      "pinyin": "shǎo",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "少",
+          "vocabularyID": "vocab-hsk20-093",
+          "pinyin": "shǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "peu ; moins"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这里人很少。",
+        "pinyin": "zhè lǐ rén hěn shǎo。",
+        "translation": {
+          "fr": "Il y a peu de monde ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "少|shǎo|93",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 93,
+        "level": 1
+      },
+      "traditionalHanzi": "少"
+    },
+    {
+      "id": "vocab-zhongguo",
+      "hanzi": "中国",
+      "traditionalHanzi": "中國",
+      "pinyin": "Zhōngguó",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "中国",
+          "vocabularyID": "vocab-zhongguo",
+          "pinyin": "Zhōngguó",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "Chine"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "translation": {
+          "fr": "Chinois·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "中 signifie centre ; 中国 est le pays du centre dans son nom."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "中国",
+          "traditional": "中國"
+        }
+      }
+    },
+    {
+      "id": "vocab-hsk20-156",
+      "canonicalID": "比|bǐ|156",
+      "hanzi": "比",
+      "pinyin": "bǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "比",
+          "vocabularyID": "vocab-hsk20-156",
+          "pinyin": "bǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comparer ; que (comparatif)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天比昨天冷。",
+        "pinyin": "jīn tiān bǐ zuó tiān lěng。",
+        "translation": {
+          "fr": "Aujourd’hui il fait plus froid qu’hier."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "比|bǐ|156",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 156,
+        "level": 2
+      },
+      "traditionalHanzi": "比"
+    },
+    {
+      "id": "vocab-hsk20-177",
+      "canonicalID": "房间|fáng jiān|177",
+      "hanzi": "房间",
+      "pinyin": "fáng jiān",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "房间",
+          "vocabularyID": "vocab-hsk20-177",
+          "pinyin": "fáng jiān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chambre ; pièce"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的房间很大。",
+        "pinyin": "wǒ de fáng jiān hěn dà。",
+        "translation": {
+          "fr": "Ma chambre est grande."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "房间|fáng jiān|177",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 177,
+        "level": 2
+      },
+      "traditionalHanzi": "房間"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-20-grammar-01",
+      "title": {
+        "fr": "Grammaire — 比较 + adjectif"
+      },
+      "body": {
+        "fr": "比较 se place avant un adjectif pour atténuer la description : la phrase est assez longue.\nExemple 1 : 这句话比较长。\nzhè jù huà bǐ jiào zhǎng。\nCette phrase est assez longue."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-20-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-259",
+        "vocab-hsk20-278",
+        "vocab-hsk20-289",
+        "vocab-hsk20-296",
+        "vocab-hsk20-267",
+        "vocab-hsk20-290",
+        "vocab-hsk20-083",
+        "vocab-hsk20-087",
+        "vocab-hsk20-091",
+        "vocab-hsk20-093",
+        "vocab-zhongguo",
+        "vocab-hsk20-156",
+        "vocab-hsk20-177"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 16
+      }
+    },
+    {
+      "id": "block-lesson-20-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "请问，这个问题是什么意思？",
+          "pinyin": "qǐng wèn， zhè ge wèn tí shì shén me yì si？",
+          "translation": {
+            "fr": "Excusez-moi, que signifie cette question ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "请你再说一遍，我听不清楚。",
+          "pinyin": "qǐng nǐ zài shuō yī biàn， wǒ tīng bù qīng chǔ。",
+          "translation": {
+            "fr": "Répétez, s’il vous plaît, je n’entends pas clairement."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "这句话比较长，那句话比较短。",
+          "pinyin": "zhè jù huà bǐ jiào zhǎng， nà jù huà bǐ jiào duǎn。",
+          "translation": {
+            "fr": "Cette phrase est plus longue, cette autre est plus courte."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我认识那个姓李的男人。",
+          "pinyin": "wǒ rèn shí nà ge xìng lǐ de nán rén。",
+          "translation": {
+            "fr": "Je connais l’homme qui s’appelle Li."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "他是你的丈夫吗？",
+          "pinyin": "tā shì nǐ de zhàng fū ma？",
+          "translation": {
+            "fr": "Est-ce ton mari ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不是，他是朋友。请坐在我旁边。",
+          "pinyin": "bú shì， tā shì péng yǒu。 qǐng zuò zài wǒ páng biān。",
+          "translation": {
+            "fr": "Non, c’est un ami. Asseyez-vous à côté de moi."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 16
+      }
+    },
+    {
+      "id": "block-lesson-20-reading",
+      "storyID": "story-lesson-20",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Une précision"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-20-p1",
+          "hanzi": "学生请老师解释问题的意思。老师把长句子写在黑板上。",
+          "pinyin": "xué shēng qǐng lǎo shī jiě shì wèn tí de yì si。 lǎo shī bǎ cháng jù zi xiě zài hēi bǎn shàng。",
+          "translation": {
+            "fr": "L’étudiant demande au professeur d’expliquer le sens de la question. Le professeur écrit la longue phrase au tableau."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-20-p2",
+          "hanzi": "短句子在上面，学生在旁边听。后来他认识了那个姓李的人。",
+          "pinyin": "duǎn jù zi zài shàng miàn， xué shēng zài páng biān tīng。 hòu lái tā rèn shí le nà ge xìng lǐ de rén。",
+          "translation": {
+            "fr": "La phrase courte est au-dessus et l’étudiant écoute à côté. Plus tard, il fait connaissance avec la personne appelée Li."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l20-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l20-meaning",
+          "prompt": {
+            "fr": "Que signifie 意思 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot correct."
+          },
+          "objectiveIDs": [
+            "l20-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "mari"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "sens"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "nom"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l20-order",
+          "prompt": {
+            "fr": "Construis « Cette phrase est plus longue ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l20-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "长",
+            "pinyin": "zhǎng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "这句话",
+            "pinyin": "zhè jù huà",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "比较",
+            "pinyin": "bǐ jiào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "c",
+          "a"
+        ],
+        "acceptedVariants": [
+          "这句话比较长。",
+          "这句话比较长"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l20-fill",
+          "prompt": {
+            "fr": "Complète : 请你再说一___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l20-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请你再说一___。",
+        "acceptedAnswers": [
+          "遍"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l20-listen",
+          "prompt": {
+            "fr": "Que demande la personne ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l20-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这个问题是什么意思？",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle demande où est l’hôpital."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle demande le sens de la question."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle demande le prix du billet."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l20-speak",
+          "prompt": {
+            "fr": "Dis « Cette phrase est plus longue ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l20-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "这句话比较长。",
+        "referencePinyin": "zhè jù huà bǐ jiào zhǎng。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "这句话比较长。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l20-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l20-reading",
+          "prompt": {
+            "fr": "Que fait le professeur ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l20-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il prend le train."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il achète un médicament."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il écrit la phrase au tableau."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 16
+      }
+    },
+    {
+      "id": "block-lesson-20-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-259",
+        "vocab-hsk20-278",
+        "vocab-hsk20-289",
+        "vocab-hsk20-296",
+        "vocab-hsk20-267",
+        "vocab-hsk20-290"
+      ],
+      "objectiveIDs": [
+        "l20-understand",
+        "l20-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 16
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-259",
+      "vocabularyID": "vocab-hsk20-259",
+      "front": {
+        "hanzi": "问题",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "问题",
+        "pinyin": "wèn tí",
+        "text": {
+          "fr": "question ; problème"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-278",
+      "vocabularyID": "vocab-hsk20-278",
+      "front": {
+        "hanzi": "意思",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "意思",
+        "pinyin": "yì si",
+        "text": {
+          "fr": "sens ; signification"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-289",
+      "vocabularyID": "vocab-hsk20-289",
+      "front": {
+        "hanzi": "张",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "张",
+        "pinyin": "zhāng",
+        "text": {
+          "fr": "feuille ; classificateur plat"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-296",
+      "vocabularyID": "vocab-hsk20-296",
+      "front": {
+        "hanzi": "着",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "着",
+        "pinyin": "zhe",
+        "text": {
+          "fr": "particule d’état duratif"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-267",
+      "vocabularyID": "vocab-hsk20-267",
+      "front": {
+        "hanzi": "姓",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "姓",
+        "pinyin": "xìng",
+        "text": {
+          "fr": "nom de famille"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-290",
+      "vocabularyID": "vocab-hsk20-290",
+      "front": {
+        "hanzi": "丈夫",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "丈夫",
+        "pinyin": "zhàng fu",
+        "text": {
+          "fr": "mari"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-083",
+      "vocabularyID": "vocab-hsk20-083",
+      "front": {
+        "hanzi": "请",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "请",
+        "pinyin": "qǐng",
+        "text": {
+          "fr": "prier de ; inviter"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-087",
+      "vocabularyID": "vocab-hsk20-087",
+      "front": {
+        "hanzi": "认识",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "认识",
+        "pinyin": "rèn shí",
+        "text": {
+          "fr": "connaître ; faire connaissance"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-091",
+      "vocabularyID": "vocab-hsk20-091",
+      "front": {
+        "hanzi": "上",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "上",
+        "pinyin": "shàng",
+        "text": {
+          "fr": "dessus ; monter"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-093",
+      "vocabularyID": "vocab-hsk20-093",
+      "front": {
+        "hanzi": "少",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "少",
+        "pinyin": "shǎo",
+        "text": {
+          "fr": "peu ; moins"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-zhongguo",
+      "vocabularyID": "vocab-zhongguo",
+      "front": {
+        "hanzi": "中国",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "中国",
+        "pinyin": "Zhōngguó · 1-2",
+        "text": {
+          "fr": "Chine"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "country"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-hsk20-156",
+      "vocabularyID": "vocab-hsk20-156",
+      "front": {
+        "hanzi": "比",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "比",
+        "pinyin": "bǐ",
+        "text": {
+          "fr": "comparer ; que (comparatif)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-177",
+      "vocabularyID": "vocab-hsk20-177",
+      "front": {
+        "hanzi": "房间",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "房间",
+        "pinyin": "fáng jiān",
+        "text": {
+          "fr": "chambre ; pièce"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 16,
+    "allocationRange": "days06-45",
+    "theme": "communication",
+    "newVocabularyIDs": [
+      "vocab-hsk20-259",
+      "vocab-hsk20-278",
+      "vocab-hsk20-289",
+      "vocab-hsk20-296",
+      "vocab-hsk20-267",
+      "vocab-hsk20-290",
+      "vocab-hsk20-083",
+      "vocab-hsk20-087",
+      "vocab-hsk20-091",
+      "vocab-hsk20-093"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-156",
+      "vocab-hsk20-177",
+      "vocab-zhongguo"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-259",
+      "hsk20-278",
+      "hsk20-289",
+      "hsk20-296",
+      "hsk20-267",
+      "hsk20-290",
+      "hsk20-083",
+      "hsk20-087",
+      "hsk20-091",
+      "hsk20-093"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-143",
+      "hsk20-156",
+      "hsk20-177"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-259",
+      "hsk20-278",
+      "hsk20-289",
+      "hsk20-296",
+      "hsk20-267",
+      "hsk20-290",
+      "hsk20-083",
+      "hsk20-087",
+      "hsk20-091",
+      "hsk20-093"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-143",
+      "hsk20-156",
+      "hsk20-177"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

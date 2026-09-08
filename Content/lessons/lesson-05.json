@@ -1,0 +1,2033 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-05",
+  "moduleID": "unit-02",
+  "order": 5,
+  "title": {
+    "fr": "Boire et manger"
+  },
+  "summary": {
+    "fr": "Nommer une boisson et un plat, puis faire une proposition simple."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "l5-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre une question simple sur une boisson ou un plat."
+      }
+    },
+    {
+      "id": "l5-produce",
+      "required": true,
+      "statement": {
+        "fr": "Produire une phrase courte avec un nom et un verbe d’action."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-007",
+      "canonicalID": "不|bù|7",
+      "hanzi": "不",
+      "pinyin": "bù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "不",
+          "vocabularyID": "vocab-hsk20-007",
+          "pinyin": "bù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ne… pas"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我不喝咖啡。",
+        "pinyin": "wǒ bù hē kā fēi。",
+        "translation": {
+          "fr": "Je ne bois pas de café."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "不|bù|7",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 7,
+        "level": 1
+      },
+      "traditionalHanzi": "不"
+    },
+    {
+      "id": "vocab-hsk20-009",
+      "canonicalID": "菜|cài|9",
+      "hanzi": "菜",
+      "pinyin": "cài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "菜",
+          "vocabularyID": "vocab-hsk20-009",
+          "pinyin": "cài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "plat ; légume"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这道菜很好吃。",
+        "pinyin": "zhè dào cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Ce plat est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "菜|cài|9",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 9,
+        "level": 1
+      },
+      "traditionalHanzi": "菜"
+    },
+    {
+      "id": "vocab-hsk20-010",
+      "canonicalID": "茶|chá|10",
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "茶",
+          "vocabularyID": "vocab-hsk20-010",
+          "pinyin": "chá"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "thé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天喝茶。",
+        "pinyin": "wǒ měi tiān hē chá。",
+        "translation": {
+          "fr": "Je bois du thé chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "茶|chá|10",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 10,
+        "level": 1
+      },
+      "traditionalHanzi": "茶"
+    },
+    {
+      "id": "vocab-hsk20-011",
+      "canonicalID": "吃|chī|11",
+      "hanzi": "吃",
+      "pinyin": "chī",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "吃",
+          "vocabularyID": "vocab-hsk20-011",
+          "pinyin": "chī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "manger"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃米饭。",
+        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+        "translation": {
+          "fr": "J’aime manger du riz."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吃|chī|11",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 11,
+        "level": 1
+      },
+      "traditionalHanzi": "喫"
+    },
+    {
+      "id": "vocab-hsk20-021",
+      "canonicalID": "都|dōu|21",
+      "hanzi": "都",
+      "pinyin": "dōu",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "都",
+          "vocabularyID": "vocab-hsk20-021",
+          "pinyin": "dōu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tous ; tout"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们都喜欢茶。",
+        "pinyin": "wǒ men dōu xǐ huān chá。",
+        "translation": {
+          "fr": "Nous aimons tous le thé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "都|dōu|21",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 21,
+        "level": 1
+      },
+      "traditionalHanzi": "都"
+    },
+    {
+      "id": "vocab-hsk20-024",
+      "canonicalID": "多|duō|24",
+      "hanzi": "多",
+      "pinyin": "duō",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "多",
+          "vocabularyID": "vocab-hsk20-024",
+          "pinyin": "duō"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "beaucoup ; nombreux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这里有很多人。",
+        "pinyin": "zhè lǐ yǒu hěn duō rén。",
+        "translation": {
+          "fr": "Il y a beaucoup de personnes ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "多|duō|24",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 24,
+        "level": 1
+      },
+      "traditionalHanzi": "多"
+    },
+    {
+      "id": "vocab-hsk20-036",
+      "canonicalID": "好|hǎo|36",
+      "hanzi": "好",
+      "pinyin": "hǎo",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "好",
+          "vocabularyID": "vocab-hsk20-036",
+          "pinyin": "hǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "bon ; bien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你好，我很好。",
+        "pinyin": "nǐ hǎo， wǒ hěn hǎo。",
+        "translation": {
+          "fr": "Bonjour, je vais bien."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "好|hǎo|36",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 36,
+        "level": 1
+      },
+      "traditionalHanzi": "好"
+    },
+    {
+      "id": "vocab-hsk20-037",
+      "canonicalID": "喝|hē|37",
+      "hanzi": "喝",
+      "pinyin": "hē",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "喝",
+          "vocabularyID": "vocab-hsk20-037",
+          "pinyin": "hē"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "boire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你喝水吗？",
+        "pinyin": "nǐ hē shuǐ ma？",
+        "translation": {
+          "fr": "Bois-tu de l’eau ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "喝|hē|37",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 37,
+        "level": 1
+      },
+      "traditionalHanzi": "喝"
+    },
+    {
+      "id": "vocab-hsk20-038",
+      "canonicalID": "和|hé|38",
+      "hanzi": "和",
+      "pinyin": "hé",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "和",
+          "vocabularyID": "vocab-hsk20-038",
+          "pinyin": "hé"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "et ; avec"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我和朋友一起去。",
+        "pinyin": "wǒ hé péng yǒu yì qǐ qù。",
+        "translation": {
+          "fr": "J’y vais avec un ami."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "和|hé|38",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 38,
+        "level": 1
+      },
+      "traditionalHanzi": "和"
+    },
+    {
+      "id": "vocab-hsk20-039",
+      "canonicalID": "很|hěn|39",
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "很",
+          "vocabularyID": "vocab-hsk20-039",
+          "pinyin": "hěn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "très"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个菜很好吃。",
+        "pinyin": "zhè ge cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Ce plat est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "很|hěn|39",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 39,
+        "level": 1
+      },
+      "traditionalHanzi": "很"
+    },
+    {
+      "id": "vocab-hsk20-062",
+      "canonicalID": "吗|ma|62",
+      "hanzi": "吗",
+      "pinyin": "ma",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "吗",
+          "vocabularyID": "vocab-hsk20-062",
+          "pinyin": "ma"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule interrogative"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你喝茶吗？",
+        "pinyin": "nǐ hē chá ma？",
+        "translation": {
+          "fr": "Bois-tu du thé ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吗|ma|62",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 62,
+        "level": 1
+      },
+      "traditionalHanzi": "嗎"
+    },
+    {
+      "id": "vocab-mingzi",
+      "hanzi": "名字",
+      "traditionalHanzi": "名字",
+      "pinyin": "míngzi",
+      "toneNumbers": [
+        2,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "名字",
+          "vocabularyID": "vocab-mingzi",
+          "pinyin": "míngzi",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [
+        {
+          "pattern": "轻声 dans le nom",
+          "explanation": {
+            "fr": "Dans 名字, zi est généralement une syllabe légère : míngzi, notée 2-0."
+          },
+          "examples": [
+            {
+              "hanzi": "你的名字是什么？",
+              "pinyin": "nǐ de míngzi shì shénme?",
+              "translation": {
+                "fr": "Quel est ton nom ?"
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-mingzi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "nom ; prénom"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的名字是安。",
+        "pinyin": "wǒ de míngzi shì Ān.",
+        "translation": {
+          "fr": "Mon nom est An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "名字 est le nom que l'on écrit sur une étiquette."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "名字",
+          "traditional": "名字"
+        }
+      }
+    },
+    {
+      "id": "vocab-na",
+      "hanzi": "哪",
+      "traditionalHanzi": "哪",
+      "pinyin": "nǎ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "哪",
+          "vocabularyID": "vocab-na",
+          "pinyin": "nǎ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [
+        {
+          "pattern": "哪 + nom",
+          "explanation": {
+            "fr": "哪 signifie « quel / lequel ». Il précède 国 dans 哪国, « quel pays »."
+          },
+          "examples": [
+            {
+              "hanzi": "你是哪国人？",
+              "pinyin": "nǐ shì nǎ guó rén?",
+              "translation": {
+                "fr": "De quel pays es-tu ?"
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-na",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "quel ; lequel"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你是哪国人？",
+        "pinyin": "nǐ shì nǎ guó rén?",
+        "translation": {
+          "fr": "De quel pays es-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "哪 pointe une option parmi plusieurs pays."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "哪",
+          "traditional": "哪"
+        }
+      }
+    },
+    {
+      "id": "vocab-ren",
+      "hanzi": "人",
+      "traditionalHanzi": "人",
+      "pinyin": "rén",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "人",
+          "vocabularyID": "vocab-ren",
+          "pinyin": "rén",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [
+        {
+          "pattern": "pays + 人",
+          "explanation": {
+            "fr": "Après un nom de pays, 人 signifie « personne de ce pays » : 法国人, français·e ; 中国人, chinois·e."
+          },
+          "examples": [
+            {
+              "hanzi": "我是中国人。",
+              "pinyin": "wǒ shì Zhōngguó rén.",
+              "translation": {
+                "fr": "Je suis chinois·e."
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-ren",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "personne ; humain"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "法国人",
+        "pinyin": "Fǎguó rén",
+        "translation": {
+          "fr": "Français·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "人 ressemble à une personne qui marche."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "人",
+          "traditional": "人"
+        }
+      }
+    },
+    {
+      "id": "vocab-xiexie",
+      "hanzi": "谢谢",
+      "traditionalHanzi": "謝謝",
+      "pinyin": "xièxie",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "谢谢",
+          "vocabularyID": "vocab-xiexie",
+          "pinyin": "xièxie",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "réduplication et 轻声",
+          "explanation": {
+            "fr": "Dans 谢谢, la seconde syllabe est généralement légère : xièxie, avec le numéro 0 pour le ton neutre."
+          },
+          "examples": [
+            {
+              "hanzi": "谢谢你！",
+              "pinyin": "xièxie nǐ!",
+              "translation": {
+                "fr": "Merci !"
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-xiexie",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "merci"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "谢谢你！",
+        "pinyin": "xièxie nǐ!",
+        "translation": {
+          "fr": "Merci !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "On remercie deux fois, mais la deuxième syllabe reste légère."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "谢谢",
+          "traditional": "謝謝"
+        }
+      }
+    },
+    {
+      "id": "vocab-ni",
+      "hanzi": "你",
+      "traditionalHanzi": "你",
+      "pinyin": "nǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "你",
+          "vocabularyID": "vocab-ni",
+          "pinyin": "nǐ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tu ; vous"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你好！",
+        "pinyin": "nǐ hǎo!",
+        "translation": {
+          "fr": "Bonjour !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "你 désigne la personne à qui l'on parle."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "你",
+          "traditional": "你"
+        }
+      }
+    },
+    {
+      "id": "vocab-wo",
+      "hanzi": "我",
+      "traditionalHanzi": "我",
+      "pinyin": "wǒ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "我",
+          "vocabularyID": "vocab-wo",
+          "pinyin": "wǒ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "je ; moi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "我 commence la phrase quand je parle de moi."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "我",
+          "traditional": "我"
+        }
+      }
+    },
+    {
+      "id": "vocab-dan",
+      "hanzi": "但",
+      "traditionalHanzi": "但",
+      "pinyin": "dàn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "但",
+          "vocabularyID": "vocab-dan",
+          "pinyin": "dàn",
+          "partOfSpeech": "conjunction"
+        }
+      ],
+      "partOfSpeech": "conjunction",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mais"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-05-grammar-01",
+      "title": {
+        "fr": "Grammaire — A 和 B"
+      },
+      "body": {
+        "fr": "和 relie deux noms ou deux groupes : 茶和菜 signifie « le thé et le plat ».\nExemple 1 : 茶和菜都很好。\nchá hé cài dōu hěn hǎo.\nLe thé et le plat sont tous les deux très bons."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-lesson-05-grammar-02",
+      "title": {
+        "fr": "Grammaire — phrase + 吗？"
+      },
+      "body": {
+        "fr": "吗 transforme une phrase déclarative en question oui/non.\nExemple 1 : 你喝茶吗？\nnǐ hē chá ma?\nTu bois du thé ?"
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-05-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-007",
+        "vocab-hsk20-009",
+        "vocab-hsk20-010",
+        "vocab-hsk20-011",
+        "vocab-hsk20-021",
+        "vocab-hsk20-024",
+        "vocab-hsk20-036",
+        "vocab-hsk20-037",
+        "vocab-hsk20-038",
+        "vocab-hsk20-039",
+        "vocab-hsk20-062",
+        "vocab-mingzi",
+        "vocab-na",
+        "vocab-ren",
+        "vocab-xiexie",
+        "vocab-ni",
+        "vocab-wo",
+        "vocab-dan"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "id": "block-l5-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你喝茶吗？",
+          "pinyin": "nǐ hē chá ma?",
+          "translation": {
+            "fr": "Tu bois du thé ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "喝。",
+          "pinyin": "hē.",
+          "translation": {
+            "fr": "Oui."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你吃菜吗？",
+          "pinyin": "nǐ chī cài ma?",
+          "translation": {
+            "fr": "Tu manges le plat ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "吃，但不多。",
+          "pinyin": "chī, dàn bù duō.",
+          "translation": {
+            "fr": "Oui, mais pas beaucoup."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "茶和菜都很好！",
+          "pinyin": "chá hé cài dōu hěn hǎo!",
+          "translation": {
+            "fr": "Le thé et le plat sont très bons !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "很好！",
+          "pinyin": "hěn hǎo!",
+          "translation": {
+            "fr": "Très bien !"
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 1
+      }
+    },
+    {
+      "id": "block-l5-reading",
+      "storyID": "story-l5-tea",
+      "title": {
+        "fr": "Une tasse"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-05-p1",
+          "hanzi": "我喝茶。",
+          "pinyin": "wǒ hē chá.",
+          "translation": {
+            "fr": "Je bois du thé."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-05-p2",
+          "hanzi": "我喝茶，吃菜。",
+          "pinyin": "wǒ hē chá, chī cài.",
+          "translation": {
+            "fr": "Je bois du thé et je mange un plat."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l5-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l5-meaning",
+          "prompt": {
+            "fr": "Que signifie 茶 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot entendu dans le dialogue."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "tasse"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "riz"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "thé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l5-order",
+          "prompt": {
+            "fr": "Construis « Je bois du thé ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "c",
+          "a"
+        ],
+        "acceptedVariants": [
+          "我喝茶。",
+          "我喝茶"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l5-fill",
+          "prompt": {
+            "fr": "Complète la question « Tu bois du thé ? » : 你___茶吗？"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你___茶吗？",
+        "acceptedAnswers": [
+          "喝"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l5-listen",
+          "prompt": {
+            "fr": "Quelle phrase entends-tu ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "promptText": "茶和菜都很好！",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le thé et le plat sont très bons."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le thé est froid."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je n’ai pas de tasse."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l5-speak",
+          "prompt": {
+            "fr": "Dis « Le thé et le plat sont très bons ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "茶和菜都很好！",
+        "referencePinyin": "chá hé cài dōu hěn hǎo!",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "茶和菜都很好！"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l5-reading",
+          "prompt": {
+            "fr": "Que fait la personne dans le texte ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle lit un journal."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle boit du thé et mange un plat."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle prend le bus."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "id": "block-l5-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-009",
+        "vocab-hsk20-010",
+        "vocab-hsk20-011",
+        "vocab-hsk20-021",
+        "vocab-hsk20-037",
+        "vocab-hsk20-038"
+      ],
+      "objectiveIDs": [
+        "l5-understand",
+        "l5-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 1
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-007",
+      "vocabularyID": "vocab-hsk20-007",
+      "front": {
+        "hanzi": "不",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "不",
+        "pinyin": "bù",
+        "text": {
+          "fr": "ne… pas"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-009",
+      "vocabularyID": "vocab-hsk20-009",
+      "front": {
+        "hanzi": "菜",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "菜",
+        "pinyin": "cài",
+        "text": {
+          "fr": "plat ; légume"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-010",
+      "vocabularyID": "vocab-hsk20-010",
+      "front": {
+        "hanzi": "茶",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "茶",
+        "pinyin": "chá",
+        "text": {
+          "fr": "thé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-011",
+      "vocabularyID": "vocab-hsk20-011",
+      "front": {
+        "hanzi": "吃",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吃",
+        "pinyin": "chī",
+        "text": {
+          "fr": "manger"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-021",
+      "vocabularyID": "vocab-hsk20-021",
+      "front": {
+        "hanzi": "都",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "都",
+        "pinyin": "dōu",
+        "text": {
+          "fr": "tous ; tout"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-024",
+      "vocabularyID": "vocab-hsk20-024",
+      "front": {
+        "hanzi": "多",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "text": {
+          "fr": "beaucoup ; nombreux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-036",
+      "vocabularyID": "vocab-hsk20-036",
+      "front": {
+        "hanzi": "好",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "好",
+        "pinyin": "hǎo",
+        "text": {
+          "fr": "bon ; bien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-037",
+      "vocabularyID": "vocab-hsk20-037",
+      "front": {
+        "hanzi": "喝",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "喝",
+        "pinyin": "hē",
+        "text": {
+          "fr": "boire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-038",
+      "vocabularyID": "vocab-hsk20-038",
+      "front": {
+        "hanzi": "和",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "和",
+        "pinyin": "hé",
+        "text": {
+          "fr": "et ; avec"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-039",
+      "vocabularyID": "vocab-hsk20-039",
+      "front": {
+        "hanzi": "很",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "很",
+        "pinyin": "hěn",
+        "text": {
+          "fr": "très"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-062",
+      "vocabularyID": "vocab-hsk20-062",
+      "front": {
+        "hanzi": "吗",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吗",
+        "pinyin": "ma",
+        "text": {
+          "fr": "particule interrogative"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-mingzi",
+      "vocabularyID": "vocab-mingzi",
+      "front": {
+        "hanzi": "名字",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "名字",
+        "pinyin": "míngzi · 2-0",
+        "text": {
+          "fr": "nom ; prénom"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "self-introduction"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-na",
+      "vocabularyID": "vocab-na",
+      "front": {
+        "hanzi": "哪",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "哪",
+        "pinyin": "nǎ · 3",
+        "text": {
+          "fr": "quel ; lequel"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "question"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-ren",
+      "vocabularyID": "vocab-ren",
+      "front": {
+        "hanzi": "人",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "人",
+        "pinyin": "rén · 2",
+        "text": {
+          "fr": "personne ; humain"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "people"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-xiexie",
+      "vocabularyID": "vocab-xiexie",
+      "front": {
+        "hanzi": "谢谢",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "谢谢",
+        "pinyin": "xièxie · 4-0",
+        "text": {
+          "fr": "merci"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "politeness"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-ni",
+      "vocabularyID": "vocab-ni",
+      "front": {
+        "hanzi": "你",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "你",
+        "pinyin": "nǐ · 3",
+        "text": {
+          "fr": "tu ; vous"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-wo",
+      "vocabularyID": "vocab-wo",
+      "front": {
+        "hanzi": "我",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "我",
+        "pinyin": "wǒ · 3",
+        "text": {
+          "fr": "je ; moi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-dan",
+      "vocabularyID": "vocab-dan",
+      "front": {
+        "hanzi": "但",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "但",
+        "pinyin": "dàn",
+        "text": {
+          "fr": "mais"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
+    }
+  ],
+  "metadata": {
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyIDs": [
+      "vocab-hsk20-007",
+      "vocab-hsk20-009",
+      "vocab-hsk20-010",
+      "vocab-hsk20-011",
+      "vocab-hsk20-021",
+      "vocab-hsk20-024",
+      "vocab-hsk20-036",
+      "vocab-hsk20-037",
+      "vocab-hsk20-038",
+      "vocab-hsk20-039",
+      "vocab-hsk20-062",
+      "vocab-dan"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-mingzi",
+      "vocab-na",
+      "vocab-ni",
+      "vocab-ren",
+      "vocab-wo",
+      "vocab-xiexie"
+    ],
+    "newVocabularyCount": 12,
+    "extraVocabularyIDs": [
+      "vocab-dan"
+    ]
+  }
+}

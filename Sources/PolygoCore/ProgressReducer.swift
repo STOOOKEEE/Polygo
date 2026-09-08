@@ -196,11 +196,16 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
 }
 
 public extension ProgressSnapshot {
-    func dueCards(at date: Date = Date()) -> [ReviewState] {
-        reviewStates.values.filter { $0.dueAt <= date }.sorted {
+    /// Returns due cards in deterministic order. A limit is applied after
+    /// sorting so the Today route can take a stable short-session slice while
+    /// the Cards route still exposes the complete queue.
+    func dueCards(at date: Date = Date(), limit: Int? = nil) -> [ReviewState] {
+        let sorted = reviewStates.values.filter { $0.dueAt <= date }.sorted {
             if $0.dueAt != $1.dueAt { return $0.dueAt < $1.dueAt }
             return $0.cardID.rawValue < $1.cardID.rawValue
         }
+        guard let limit else { return sorted }
+        return Array(sorted.prefix(max(0, limit)))
     }
 
     func difficultCardIDs() -> [CardID] {

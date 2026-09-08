@@ -1,0 +1,1081 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-41",
+  "moduleID": "unit-05",
+  "order": 41,
+  "title": {
+    "fr": "Arriver en ville"
+  },
+  "summary": {
+    "fr": "Lire une carte, trouver l’hôtel et donner son passeport au chauffeur."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l41-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l41-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-325",
+      "canonicalID": "宾馆|bīn guǎn|325",
+      "hanzi": "宾馆",
+      "pinyin": "bīn guǎn",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "宾馆",
+          "vocabularyID": "vocab-hsk20-325",
+          "pinyin": "bīn guǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "hôtel"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "宾馆在车站旁边。",
+        "pinyin": "bīn guǎn zài chē zhàn páng biān。",
+        "translation": {
+          "fr": "L’hôtel est à côté de la gare."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "宾馆|bīn guǎn|325",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 325,
+        "level": 3
+      },
+      "traditionalHanzi": "賓館"
+    },
+    {
+      "id": "vocab-hsk20-355",
+      "canonicalID": "地铁|dì tiě|355",
+      "hanzi": "地铁",
+      "pinyin": "dì tiě",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "地铁",
+          "vocabularyID": "vocab-hsk20-355",
+          "pinyin": "dì tiě"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "métro"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我坐地铁上班。",
+        "pinyin": "wǒ zuò dì tiě shàng bān。",
+        "translation": {
+          "fr": "Je prends le métro pour aller travailler."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "地铁|dì tiě|355",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 355,
+        "level": 3
+      },
+      "traditionalHanzi": "地鐵"
+    },
+    {
+      "id": "vocab-hsk20-356",
+      "canonicalID": "地图|dì tú|356",
+      "hanzi": "地图",
+      "pinyin": "dì tú",
+      "toneNumbers": [
+        4,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "地图",
+          "vocabularyID": "vocab-hsk20-356",
+          "pinyin": "dì tú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "carte"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请看地图。",
+        "pinyin": "qǐng kàn dì tú。",
+        "translation": {
+          "fr": "Regarde la carte, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "地图|dì tú|356",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 356,
+        "level": 3
+      },
+      "traditionalHanzi": "地圖"
+    },
+    {
+      "id": "vocab-hsk20-397",
+      "canonicalID": "护照|hù zhào|397",
+      "hanzi": "护照",
+      "pinyin": "hù zhào",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "护照",
+          "vocabularyID": "vocab-hsk20-397",
+          "pinyin": "hù zhào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "passeport"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请带上护照。",
+        "pinyin": "qǐng dài shàng hù zhào。",
+        "translation": {
+          "fr": "Emporte ton passeport, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "护照|hù zhào|397",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 397,
+        "level": 3
+      },
+      "traditionalHanzi": "護照"
+    },
+    {
+      "id": "vocab-hsk20-423",
+      "canonicalID": "街道|jiē dào|423",
+      "hanzi": "街道",
+      "pinyin": "jiē dào",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "街道",
+          "vocabularyID": "vocab-hsk20-423",
+          "pinyin": "jiē dào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "rue"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这条街道晚上很安静。",
+        "pinyin": "zhè tiáo jiē dào wǎn shang hěn ān jìng.",
+        "translation": {
+          "fr": "Cette rue est très calme le soir."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "街道|jiē dào|423",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 423,
+        "level": 3
+      },
+      "traditionalHanzi": "街道"
+    },
+    {
+      "id": "vocab-hsk20-510",
+      "canonicalID": "司机|sī jī|510",
+      "hanzi": "司机",
+      "pinyin": "sī jī",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "司机",
+          "vocabularyID": "vocab-hsk20-510",
+          "pinyin": "sī jī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chauffeur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "司机正在等客人。",
+        "pinyin": "sī jī zhèng zài děng kè rén.",
+        "translation": {
+          "fr": "Le chauffeur attend les passagers."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "司机|sī jī|510",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 510,
+        "level": 3
+      },
+      "traditionalHanzi": "司機"
+    },
+    {
+      "id": "vocab-hsk20-071",
+      "canonicalID": "那|nà|71",
+      "hanzi": "那",
+      "pinyin": "nà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "那",
+          "vocabularyID": "vocab-hsk20-071",
+          "pinyin": "nà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ce/cette-là ; là-bas"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "那是我的猫。",
+        "pinyin": "nà shì wǒ de māo。",
+        "translation": {
+          "fr": "C’est mon chat, là-bas."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "那|nà|71",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 71,
+        "level": 1
+      },
+      "traditionalHanzi": "那"
+    },
+    {
+      "id": "vocab-hsk20-082",
+      "canonicalID": "钱|qián|82",
+      "hanzi": "钱",
+      "pinyin": "qián",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "钱",
+          "vocabularyID": "vocab-hsk20-082",
+          "pinyin": "qián"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "argent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我没有钱。",
+        "pinyin": "wǒ méi yǒu qián。",
+        "translation": {
+          "fr": "Je n’ai pas d’argent."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "钱|qián|82",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 82,
+        "level": 1
+      },
+      "traditionalHanzi": "錢"
+    },
+    {
+      "id": "vocab-hsk20-093",
+      "canonicalID": "少|shǎo|93",
+      "hanzi": "少",
+      "pinyin": "shǎo",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "少",
+          "vocabularyID": "vocab-hsk20-093",
+          "pinyin": "shǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "peu ; moins"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这里人很少。",
+        "pinyin": "zhè lǐ rén hěn shǎo。",
+        "translation": {
+          "fr": "Il y a peu de monde ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "少|shǎo|93",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 93,
+        "level": 1
+      },
+      "traditionalHanzi": "少"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-41-grammar-01",
+      "title": {
+        "fr": "Grammaire — 因为…所以…"
+      },
+      "body": {
+        "fr": "因为 présente la cause et 所以 la conséquence.\nExemple 1 : 因为有地图，所以我们找到宾馆。\nyīn wèi yǒu dì tú， suǒ yǐ wǒ men zhǎo dào bīn guǎn。\nComme nous avons une carte, nous trouvons l’hôtel."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-41-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-325",
+        "vocab-hsk20-355",
+        "vocab-hsk20-356",
+        "vocab-hsk20-397",
+        "vocab-hsk20-423",
+        "vocab-hsk20-510",
+        "vocab-hsk20-071",
+        "vocab-hsk20-082",
+        "vocab-hsk20-093"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "id": "block-lesson-41-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "宾馆在哪里？",
+          "pinyin": "bīn guǎn zài nǎ lǐ？",
+          "translation": {
+            "fr": "Où est l’hôtel ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "在地铁站旁边。你有地图吗？",
+          "pinyin": "zài dì tiě zhàn páng biān。 nǐ yǒu dì tú ma？",
+          "translation": {
+            "fr": "À côté de la station de métro. As-tu une carte ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "有。我从这条街走过去。",
+          "pinyin": "yǒu。 wǒ cóng zhè tiáo jiē zǒu guò qù。",
+          "translation": {
+            "fr": "Oui. Je vais marcher depuis cette rue."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "请把护照给司机看。",
+          "pinyin": "qǐng bǎ hù zhào gěi sī jī kàn。",
+          "translation": {
+            "fr": "Montre ton passeport au chauffeur, s’il te plaît."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "司机知道去宾馆的路吗？",
+          "pinyin": "sī jī zhī dào qù bīn guǎn de lù ma？",
+          "translation": {
+            "fr": "Le chauffeur connaît-il le chemin de l’hôtel ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "知道，他马上带我们到。",
+          "pinyin": "zhī dào， tā mǎ shàng dài wǒ men dào。",
+          "translation": {
+            "fr": "Oui, il va nous y conduire tout de suite."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 37
+      }
+    },
+    {
+      "id": "block-lesson-41-reading",
+      "storyID": "story-lesson-41",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "La carte"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-41-p1",
+          "hanzi": "游客看地图，发现宾馆在地铁站旁边，从这条街走十分钟就到。",
+          "pinyin": "yóu kè kàn dì tú， fā xiàn bīn guǎn zài dì tiě zhàn páng biān， cóng zhè tiáo jiē zǒu shí fēn zhōng jiù dào。",
+          "translation": {
+            "fr": "Le visiteur regarde la carte et découvre que l’hôtel est à côté du métro, à dix minutes à pied de cette rue."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-41-p2",
+          "hanzi": "司机检查他的护照，然后带他到宾馆。",
+          "pinyin": "sī jī jiǎn chá tā de hù zhào， rán hòu dài tā dào bīn guǎn。",
+          "translation": {
+            "fr": "Le chauffeur vérifie son passeport puis le conduit à l’hôtel."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l41-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-meaning",
+          "prompt": {
+            "fr": "Que signifie 护照 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le document demandé."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "menu"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "passeport"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l41-order",
+          "prompt": {
+            "fr": "Construis « L’hôtel est à côté du métro ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "地铁站旁边",
+            "pinyin": "dì tiě zhàn páng biān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "宾馆在",
+            "pinyin": "bīn guǎn zài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "宾馆在地铁站旁边。",
+          "宾馆在地铁站旁边"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l41-fill",
+          "prompt": {
+            "fr": "Complète : 请把___照给司机看。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请把___照给司机看。",
+        "acceptedAnswers": [
+          "护"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l41-listen",
+          "prompt": {
+            "fr": "Où est l’hôtel ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "promptText": "在地铁站旁边。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Dans la cuisine."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À côté du métro."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Derrière l’aéroport."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l41-speak",
+          "prompt": {
+            "fr": "Dis « Nous trouvons l’hôtel grâce à la carte ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我们根据地图找到宾馆。",
+        "referencePinyin": "wǒ men gēn jù dì tú zhǎo dào bīn guǎn。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我们根据地图找到宾馆。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-reading",
+          "prompt": {
+            "fr": "Comment le visiteur arrive-t-il à l’hôtel ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il prend un bateau."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il nage."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le chauffeur le conduit."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "id": "block-lesson-41-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-325",
+        "vocab-hsk20-355",
+        "vocab-hsk20-356",
+        "vocab-hsk20-397",
+        "vocab-hsk20-423",
+        "vocab-hsk20-510"
+      ],
+      "objectiveIDs": [
+        "l41-understand",
+        "l41-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 37
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-325",
+      "vocabularyID": "vocab-hsk20-325",
+      "front": {
+        "hanzi": "宾馆",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "宾馆",
+        "pinyin": "bīn guǎn",
+        "text": {
+          "fr": "hôtel"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-355",
+      "vocabularyID": "vocab-hsk20-355",
+      "front": {
+        "hanzi": "地铁",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "地铁",
+        "pinyin": "dì tiě",
+        "text": {
+          "fr": "métro"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-356",
+      "vocabularyID": "vocab-hsk20-356",
+      "front": {
+        "hanzi": "地图",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "地图",
+        "pinyin": "dì tú",
+        "text": {
+          "fr": "carte"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-397",
+      "vocabularyID": "vocab-hsk20-397",
+      "front": {
+        "hanzi": "护照",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "护照",
+        "pinyin": "hù zhào",
+        "text": {
+          "fr": "passeport"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-423",
+      "vocabularyID": "vocab-hsk20-423",
+      "front": {
+        "hanzi": "街道",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "街道",
+        "pinyin": "jiē dào",
+        "text": {
+          "fr": "rue"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-510",
+      "vocabularyID": "vocab-hsk20-510",
+      "front": {
+        "hanzi": "司机",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "司机",
+        "pinyin": "sī jī",
+        "text": {
+          "fr": "chauffeur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-071",
+      "vocabularyID": "vocab-hsk20-071",
+      "front": {
+        "hanzi": "那",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "那",
+        "pinyin": "nà",
+        "text": {
+          "fr": "ce/cette-là ; là-bas"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-082",
+      "vocabularyID": "vocab-hsk20-082",
+      "front": {
+        "hanzi": "钱",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "钱",
+        "pinyin": "qián",
+        "text": {
+          "fr": "argent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-093",
+      "vocabularyID": "vocab-hsk20-093",
+      "front": {
+        "hanzi": "少",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "少",
+        "pinyin": "shǎo",
+        "text": {
+          "fr": "peu ; moins"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 37,
+    "allocationRange": "days06-45",
+    "theme": "city",
+    "newVocabularyIDs": [
+      "vocab-hsk20-325",
+      "vocab-hsk20-355",
+      "vocab-hsk20-356",
+      "vocab-hsk20-397",
+      "vocab-hsk20-423",
+      "vocab-hsk20-510"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-071",
+      "vocab-hsk20-082",
+      "vocab-hsk20-093"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-325",
+      "hsk20-355",
+      "hsk20-356",
+      "hsk20-397",
+      "hsk20-423",
+      "hsk20-510"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-071",
+      "hsk20-082",
+      "hsk20-093"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-325",
+      "hsk20-355",
+      "hsk20-356",
+      "hsk20-397",
+      "hsk20-423",
+      "hsk20-510"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-071",
+      "hsk20-082",
+      "hsk20-093"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-05",
+    "newVocabularyCount": 6,
+    "extraVocabularyIDs": []
+  }
+}

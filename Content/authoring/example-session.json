@@ -1,0 +1,39 @@
+{
+  "_exampleOnly": true,
+  "id": "lesson-05",
+  "moduleID": "unit-02",
+  "order": 5,
+  "title": {"fr": "Demander une direction"},
+  "summary": {"fr": "Comprendre une demande simple et répondre brièvement."},
+  "estimatedMinutes": 12,
+  "objectives": [
+    {"id": "l5-understand", "text": {"fr": "Comprendre la question de direction."}, "required": true},
+    {"id": "l5-produce", "text": {"fr": "Répondre avec une formule courte."}, "required": true}
+  ],
+  "vocabularyIDs": ["vocab-example-zai", "vocab-example-lu"],
+  "extraVocabulary": [{"id": "vocab-example-near", "hanzi": "附近", "pinyin": "fùjìn", "toneNumbers": [4, 4], "meaning": {"fr": "à proximité"}, "partOfSpeech": "adverb"}],
+  "grammar": [
+    {"vocabularyID": "vocab-example-zai", "pattern": "在 + lieu", "explanation": {"fr": "在 place le lieu après le sujet dans une phrase simple."}, "examples": [{"hanzi": "我在家。", "pinyin": "wǒ zài jiā.", "translation": {"fr": "Je suis à la maison."}}]}
+  ],
+  "dialogue": {
+    "id": "block-l5-dialogue",
+    "lines": [
+      {"speaker": "Mina", "hanzi": "请问，地铁站在哪里？", "pinyin": "qǐngwèn, dìtiě zhàn zài nǎlǐ?", "translation": {"fr": "Excusez-moi, où est la station de métro ?"}},
+      {"speaker": "Tao", "hanzi": "在那边。", "pinyin": "zài nàbiān.", "translation": {"fr": "Par là."}}
+    ]
+  },
+  "reading": {
+    "id": "block-l5-reading", "storyID": "story-l5-direction", "title": {"fr": "Dans la rue"},
+    "paragraphs": [{"id": "p1", "hanzi": "我问路。", "pinyin": "wǒ wèn lù.", "translation": {"fr": "Je demande mon chemin."}, "segmentation": []}],
+    "comprehensionExerciseIDs": ["ex-l5-reading"]
+  },
+  "exercises": [
+    {"id": "ex-l5-choice", "kind": "choice", "prompt": {"fr": "Que signifie 路 ?"}, "objectiveIDs": ["l5-understand"], "choices": [{"id": "a", "label": {"fr": "route"}}, {"id": "b", "label": {"fr": "eau"}}], "correctChoiceID": "a"},
+    {"id": "ex-l5-order", "kind": "wordOrder", "prompt": {"fr": "Remets la phrase dans l'ordre."}, "objectiveIDs": ["l5-produce"], "tokens": [{"id": "t1", "hanzi": "我"}, {"id": "t2", "hanzi": "在"}, {"id": "t3", "hanzi": "这里"}], "correctOrder": ["t1", "t2", "t3"]},
+    {"id": "ex-l5-fill", "kind": "fillBlank", "prompt": {"fr": "Complète la phrase."}, "sentence": "我 __ 这里。", "acceptedAnswers": ["在"], "objectiveIDs": ["l5-produce"]},
+    {"id": "ex-l5-speaking", "kind": "speaking", "prompt": {"fr": "Dis la réponse."}, "referenceText": "在那边。", "referencePinyin": "zài nàbiān.", "acceptedTranscripts": ["在那边"], "required": false, "objectiveIDs": ["l5-produce"]},
+    {"id": "ex-l5-listen", "kind": "listeningChoice", "prompt": {"fr": "Écoute puis choisis le sens."}, "promptText": "在那边。", "choices": [{"id": "a", "label": {"fr": "par là"}}, {"id": "b", "label": {"fr": "demain"}}], "correctChoiceID": "a", "objectiveIDs": ["l5-understand"]},
+    {"id": "ex-l5-reading", "kind": "choice", "prompt": {"fr": "Que fait la personne ?"}, "choices": [{"id": "a", "label": {"fr": "Elle demande son chemin."}}, {"id": "b", "label": {"fr": "Elle dort."}}], "correctChoiceID": "a", "objectiveIDs": ["l5-understand"]}
+  ],
+  "recap": {"id": "block-l5-recap", "vocabularyIDs": ["vocab-example-zai", "vocab-example-lu"], "objectiveIDs": ["l5-understand", "l5-produce"]}
+}

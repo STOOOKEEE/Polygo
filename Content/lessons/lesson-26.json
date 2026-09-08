@@ -1,0 +1,1343 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-26",
+  "moduleID": "unit-03",
+  "order": 26,
+  "title": {
+    "fr": "Le devoir difficile"
+  },
+  "summary": {
+    "fr": "Demander de l’aide pour un devoir et corriger une erreur."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l26-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l26-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-154",
+      "canonicalID": "帮助|bāng zhù|154",
+      "hanzi": "帮助",
+      "pinyin": "bāng zhù",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "帮助",
+          "vocabularyID": "vocab-hsk20-154",
+          "pinyin": "bāng zhù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "aider ; aide"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我帮助同学。",
+        "pinyin": "wǒ bāng zhù tóng xué。",
+        "translation": {
+          "fr": "J’aide mon camarade de classe."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "帮助|bāng zhù|154",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 154,
+        "level": 2
+      },
+      "traditionalHanzi": "幫助"
+    },
+    {
+      "id": "vocab-hsk20-158",
+      "canonicalID": "别|bié|158",
+      "hanzi": "别",
+      "pinyin": "bié",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "别",
+          "vocabularyID": "vocab-hsk20-158",
+          "pinyin": "bié"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ne… pas (impératif)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "别担心。",
+        "pinyin": "bié dān xīn。",
+        "translation": {
+          "fr": "Ne t’inquiète pas."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "别|bié|158",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 158,
+        "level": 2
+      },
+      "traditionalHanzi": "別"
+    },
+    {
+      "id": "vocab-hsk20-159",
+      "canonicalID": "长|cháng|159",
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "长",
+          "vocabularyID": "vocab-hsk20-159",
+          "pinyin": "cháng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "long"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这条路很长。",
+        "pinyin": "zhè tiáo lù hěn zhǎng。",
+        "translation": {
+          "fr": "Cette route est longue."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "长|cháng|159",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 159,
+        "level": 2
+      },
+      "traditionalHanzi": "長"
+    },
+    {
+      "id": "vocab-hsk20-161",
+      "canonicalID": "出|chū|161",
+      "hanzi": "出",
+      "pinyin": "chū",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "出",
+          "vocabularyID": "vocab-hsk20-161",
+          "pinyin": "chū"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "sortir ; apparaître"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "孩子从房间里出来。",
+        "pinyin": "hái zi cóng fáng jiān lǐ chū lái。",
+        "translation": {
+          "fr": "L’enfant sort de la chambre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "出|chū|161",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 161,
+        "level": 2
+      },
+      "traditionalHanzi": "出"
+    },
+    {
+      "id": "vocab-hsk20-164",
+      "canonicalID": "次|cì|164",
+      "hanzi": "次",
+      "pinyin": "cì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "次",
+          "vocabularyID": "vocab-hsk20-164",
+          "pinyin": "cì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "fois (occurrence)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我去过北京三次。",
+        "pinyin": "wǒ qù guo Běi jīng sān cì。",
+        "translation": {
+          "fr": "Je suis allé trois fois à Pékin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "次|cì|164",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 164,
+        "level": 2
+      },
+      "traditionalHanzi": "次"
+    },
+    {
+      "id": "vocab-hsk20-166",
+      "canonicalID": "错|cuò|166",
+      "hanzi": "错",
+      "pinyin": "cuò",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "错",
+          "vocabularyID": "vocab-hsk20-166",
+          "pinyin": "cuò"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "faux ; erreur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个答案错了。",
+        "pinyin": "zhè ge dá àn cuò le。",
+        "translation": {
+          "fr": "Cette réponse est fausse."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "错|cuò|166",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 166,
+        "level": 2
+      },
+      "traditionalHanzi": "錯"
+    },
+    {
+      "id": "vocab-hsk20-169",
+      "canonicalID": "但是|dàn shì|169",
+      "hanzi": "但是",
+      "pinyin": "dàn shì",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "但是",
+          "vocabularyID": "vocab-hsk20-169",
+          "pinyin": "dàn shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mais"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想去，但是今天下雨。",
+        "pinyin": "wǒ xiǎng qù， dàn shì jīn tiān xià yǔ。",
+        "translation": {
+          "fr": "Je veux y aller, mais il pleut aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "但是|dàn shì|169",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 169,
+        "level": 2
+      },
+      "traditionalHanzi": "但是"
+    },
+    {
+      "id": "vocab-hsk20-172",
+      "canonicalID": "等|děng|172",
+      "hanzi": "等",
+      "pinyin": "děng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "等",
+          "vocabularyID": "vocab-hsk20-172",
+          "pinyin": "děng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "attendre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请等我。",
+        "pinyin": "qǐng děng wǒ。",
+        "translation": {
+          "fr": "Attends-moi, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "等|děng|172",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 172,
+        "level": 2
+      },
+      "traditionalHanzi": "等"
+    },
+    {
+      "id": "vocab-hsk20-174",
+      "canonicalID": "第一|dì yī|174",
+      "hanzi": "第一",
+      "pinyin": "dì yī",
+      "toneNumbers": [
+        4,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "第一",
+          "vocabularyID": "vocab-hsk20-174",
+          "pinyin": "dì yī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "premier"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是第一课。",
+        "pinyin": "zhè shì dì yī kè。",
+        "translation": {
+          "fr": "C’est la première leçon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "第一|dì yī|174",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 174,
+        "level": 2
+      },
+      "traditionalHanzi": "第一"
+    },
+    {
+      "id": "vocab-hsk20-175",
+      "canonicalID": "懂|dǒng|175",
+      "hanzi": "懂",
+      "pinyin": "dǒng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "懂",
+          "vocabularyID": "vocab-hsk20-175",
+          "pinyin": "dǒng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comprendre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我懂你的意思。",
+        "pinyin": "wǒ dǒng nǐ de yì si。",
+        "translation": {
+          "fr": "Je comprends ce que tu veux dire."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "懂|dǒng|175",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 175,
+        "level": 2
+      },
+      "traditionalHanzi": "懂"
+    },
+    {
+      "id": "vocab-hsk20-156",
+      "canonicalID": "比|bǐ|156",
+      "hanzi": "比",
+      "pinyin": "bǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "比",
+          "vocabularyID": "vocab-hsk20-156",
+          "pinyin": "bǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comparer ; que (comparatif)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天比昨天冷。",
+        "pinyin": "jīn tiān bǐ zuó tiān lěng。",
+        "translation": {
+          "fr": "Aujourd’hui il fait plus froid qu’hier."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "比|bǐ|156",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 156,
+        "level": 2
+      },
+      "traditionalHanzi": "比"
+    },
+    {
+      "id": "vocab-hsk20-171",
+      "canonicalID": "得|de|171",
+      "hanzi": "得",
+      "pinyin": "de",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "得",
+          "vocabularyID": "vocab-hsk20-171",
+          "pinyin": "de"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule de complément"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我说得很清楚。",
+        "pinyin": "wǒ shuō de hěn qīng chǔ。",
+        "translation": {
+          "fr": "Je parle très clairement."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "得|de|171",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 171,
+        "level": 2
+      },
+      "traditionalHanzi": "得"
+    },
+    {
+      "id": "vocab-hsk20-186",
+      "canonicalID": "公司|gōng sī|186",
+      "hanzi": "公司",
+      "pinyin": "gōng sī",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "公司",
+          "vocabularyID": "vocab-hsk20-186",
+          "pinyin": "gōng sī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "entreprise"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我在公司上班。",
+        "pinyin": "wǒ zài gōng sī shàng bān。",
+        "translation": {
+          "fr": "Je travaille dans une entreprise."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "公司|gōng sī|186",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 186,
+        "level": 2
+      },
+      "traditionalHanzi": "公司"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-26-grammar-01",
+      "title": {
+        "fr": "Grammaire — 被 + agent"
+      },
+      "body": {
+        "fr": "被 introduit ce qui subit l’action.\nExemple 1 : 这个错误被老师发现了。\nzhè ge cuò wù bèi lǎo shī fā xiàn le。\nCette erreur a été découverte par le professeur."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-26-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-154",
+        "vocab-hsk20-158",
+        "vocab-hsk20-159",
+        "vocab-hsk20-161",
+        "vocab-hsk20-164",
+        "vocab-hsk20-166",
+        "vocab-hsk20-169",
+        "vocab-hsk20-172",
+        "vocab-hsk20-174",
+        "vocab-hsk20-175",
+        "vocab-hsk20-156",
+        "vocab-hsk20-171",
+        "vocab-hsk20-186"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "id": "block-lesson-26-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你需要帮助吗？",
+          "pinyin": "nǐ xū yào bāng zhù ma？",
+          "translation": {
+            "fr": "As-tu besoin d’aide ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "需要。这个题太难，我做错了。",
+          "pinyin": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。",
+          "translation": {
+            "fr": "Oui. Cet exercice est trop difficile, je me suis trompé."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "别着急，先看第一句话。",
+          "pinyin": "bié zháo jí， xiān kàn dì yī jù huà。",
+          "translation": {
+            "fr": "Ne te dépêche pas, regarde d’abord la première phrase."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我不懂，但是我可以再做一次。",
+          "pinyin": "wǒ bù dǒng， dàn shì wǒ kě yǐ zài zuò yī cì。",
+          "translation": {
+            "fr": "Je ne comprends pas, mais je peux le refaire."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你等我，我告诉你办法。",
+          "pinyin": "nǐ děng wǒ， wǒ gào sù nǐ bàn fǎ。",
+          "translation": {
+            "fr": "Attends-moi, je vais te dire comment faire."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "谢谢！我懂了，也能帮助同学。",
+          "pinyin": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。",
+          "translation": {
+            "fr": "Merci ! J’ai compris et je peux aider un camarade."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 22
+      }
+    },
+    {
+      "id": "block-lesson-26-reading",
+      "storyID": "story-lesson-26",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Corriger"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-26-p1",
+          "hanzi": "学生做题的时候发现一个错误。老师让他先读第一句话。",
+          "pinyin": "xué shēng zuò tí de shí hòu fā xiàn yí gè cuò wù。 lǎo shī ràng tā xiān dú dì yī jù huà。",
+          "translation": {
+            "fr": "En faisant l’exercice, l’étudiant découvre une erreur. Le professeur lui demande de lire d’abord la première phrase."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-26-p2",
+          "hanzi": "他等老师解释，然后再做一次。最后他懂了，可以帮助同学。",
+          "pinyin": "tā děng lǎo shī jiě shì， rán hòu zài zuò yī cì。 zuì hòu tā dǒng le， kě yǐ bāng zhù tóng xué。",
+          "translation": {
+            "fr": "Il attend l’explication du professeur puis recommence. Enfin, il comprend et peut aider son camarade."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l26-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-meaning",
+          "prompt": {
+            "fr": "Que signifie 帮助 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’action proposée."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "sortir"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "aider"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "attendre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l26-order",
+          "prompt": {
+            "fr": "Construis « Je peux refaire l’exercice ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "再做一次",
+            "pinyin": "zài zuò yī cì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我可以",
+            "pinyin": "wǒ kě yǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我可以再做一次。",
+          "我可以再做一次"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l26-fill",
+          "prompt": {
+            "fr": "Complète : 这个题太___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这个题太___。",
+        "acceptedAnswers": [
+          "难"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l26-listen",
+          "prompt": {
+            "fr": "Que doit faire Tao en premier ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "先看第一句话。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Téléphoner à un médecin."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Regarder la première phrase."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Aller au restaurant."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l26-speak",
+          "prompt": {
+            "fr": "Dis « Ne te dépêche pas ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "别着急。",
+        "referencePinyin": "bié zháo jí。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "别着急。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-reading",
+          "prompt": {
+            "fr": "Qui explique le problème ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le serveur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le voisin."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le professeur."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "id": "block-lesson-26-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-154",
+        "vocab-hsk20-158",
+        "vocab-hsk20-159",
+        "vocab-hsk20-161",
+        "vocab-hsk20-164",
+        "vocab-hsk20-166"
+      ],
+      "objectiveIDs": [
+        "l26-understand",
+        "l26-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 22
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-154",
+      "vocabularyID": "vocab-hsk20-154",
+      "front": {
+        "hanzi": "帮助",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "帮助",
+        "pinyin": "bāng zhù",
+        "text": {
+          "fr": "aider ; aide"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-158",
+      "vocabularyID": "vocab-hsk20-158",
+      "front": {
+        "hanzi": "别",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "别",
+        "pinyin": "bié",
+        "text": {
+          "fr": "ne… pas (impératif)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-159",
+      "vocabularyID": "vocab-hsk20-159",
+      "front": {
+        "hanzi": "长",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "长",
+        "pinyin": "cháng",
+        "text": {
+          "fr": "long"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-161",
+      "vocabularyID": "vocab-hsk20-161",
+      "front": {
+        "hanzi": "出",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "出",
+        "pinyin": "chū",
+        "text": {
+          "fr": "sortir ; apparaître"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-164",
+      "vocabularyID": "vocab-hsk20-164",
+      "front": {
+        "hanzi": "次",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "次",
+        "pinyin": "cì",
+        "text": {
+          "fr": "fois (occurrence)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-166",
+      "vocabularyID": "vocab-hsk20-166",
+      "front": {
+        "hanzi": "错",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "错",
+        "pinyin": "cuò",
+        "text": {
+          "fr": "faux ; erreur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-169",
+      "vocabularyID": "vocab-hsk20-169",
+      "front": {
+        "hanzi": "但是",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "但是",
+        "pinyin": "dàn shì",
+        "text": {
+          "fr": "mais"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-172",
+      "vocabularyID": "vocab-hsk20-172",
+      "front": {
+        "hanzi": "等",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "等",
+        "pinyin": "děng",
+        "text": {
+          "fr": "attendre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-174",
+      "vocabularyID": "vocab-hsk20-174",
+      "front": {
+        "hanzi": "第一",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "第一",
+        "pinyin": "dì yī",
+        "text": {
+          "fr": "premier"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-175",
+      "vocabularyID": "vocab-hsk20-175",
+      "front": {
+        "hanzi": "懂",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "懂",
+        "pinyin": "dǒng",
+        "text": {
+          "fr": "comprendre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-156",
+      "vocabularyID": "vocab-hsk20-156",
+      "front": {
+        "hanzi": "比",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "比",
+        "pinyin": "bǐ",
+        "text": {
+          "fr": "comparer ; que (comparatif)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-171",
+      "vocabularyID": "vocab-hsk20-171",
+      "front": {
+        "hanzi": "得",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "得",
+        "pinyin": "de",
+        "text": {
+          "fr": "particule de complément"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-186",
+      "vocabularyID": "vocab-hsk20-186",
+      "front": {
+        "hanzi": "公司",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "公司",
+        "pinyin": "gōng sī",
+        "text": {
+          "fr": "entreprise"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 22,
+    "allocationRange": "days06-45",
+    "theme": "study",
+    "newVocabularyIDs": [
+      "vocab-hsk20-154",
+      "vocab-hsk20-158",
+      "vocab-hsk20-159",
+      "vocab-hsk20-161",
+      "vocab-hsk20-164",
+      "vocab-hsk20-166",
+      "vocab-hsk20-169",
+      "vocab-hsk20-172",
+      "vocab-hsk20-174",
+      "vocab-hsk20-175"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-156",
+      "vocab-hsk20-171",
+      "vocab-hsk20-186"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-154",
+      "hsk20-158",
+      "hsk20-159",
+      "hsk20-161",
+      "hsk20-164",
+      "hsk20-166",
+      "hsk20-169",
+      "hsk20-172",
+      "hsk20-174",
+      "hsk20-175"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-156",
+      "hsk20-171",
+      "hsk20-186"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-154",
+      "hsk20-158",
+      "hsk20-159",
+      "hsk20-161",
+      "hsk20-164",
+      "hsk20-166",
+      "hsk20-169",
+      "hsk20-172",
+      "hsk20-174",
+      "hsk20-175"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-156",
+      "hsk20-171",
+      "hsk20-186"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

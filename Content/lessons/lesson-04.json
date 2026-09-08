@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
+  "contentVersion": "2026.10.0",
   "id": "lesson-04",
   "moduleID": "unit-01",
   "order": 4,
@@ -420,12 +420,23 @@
           "audio": null
         }
       ],
-      "comprehensionExerciseIDs": ["ex-l4-reading-ne"],
+      "comprehensionExerciseIDs": [
+        "ex-l4-reading-ne"
+      ],
       "participation": {
-        "prompt": {"fr": "Écoute la réponse, puis écris la réplique qui la précédait."},
+        "prompt": {
+          "fr": "Écoute la réponse, puis écris la réplique qui la précédait."
+        },
         "audioLineIndex": 4,
-        "acceptedResponses": ["我是法国人。你呢？", "我是法国人 你呢", "wo shi Faguo ren ni ne", "wǒ shì Fǎguó rén nǐ ne"],
-        "hint": {"fr": "La réplique indique le pays puis relance avec 你呢？."}
+        "acceptedResponses": [
+          "我是法国人。你呢？",
+          "我是法国人 你呢",
+          "wo shi Faguo ren ni ne",
+          "wǒ shì Fǎguó rén nǐ ne"
+        ],
+        "hint": {
+          "fr": "La réplique indique le pays puis relance avec 你呢？."
+        }
       },
       "metadata": {
         "stage": "observer",
@@ -1207,12 +1218,12 @@
             "你好！你叫什么名字？我叫安。你是哪国人？我是中国人。很高兴认识你！好！我们开始吧！",
             "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān nǐ shì nǎ guó rén wǒ shì Zhōngguó rén hěn gāoxìng rènshi nǐ hǎo wǒmen kāishǐ ba"
           ],
-            "feedback": {
-              "correct": {
-                "fr": "Tu as joué le rôle d'An jusqu'au début de la pratique ; vérifie maintenant les tons en réécoutant."
-              },
-              "incorrect": {
-                "fr": "Reprends une fonction à la fois : saluer, demander le nom, demander le pays, puis répondre."
+          "feedback": {
+            "correct": {
+              "fr": "Tu as joué le rôle d'An jusqu'au début de la pratique ; vérifie maintenant les tons en réécoutant."
+            },
+            "incorrect": {
+              "fr": "Reprends une fonction à la fois : saluer, demander le nom, demander le pays, puis répondre."
             }
           },
           "helpLevels": [

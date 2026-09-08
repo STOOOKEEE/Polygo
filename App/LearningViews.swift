@@ -191,12 +191,34 @@ public struct TodayView: View {
                 .font(.callout)
                 .foregroundStyle(SylluneColor.heroMuted)
                 .fixedSize(horizontal: false, vertical: true)
+            if let session = model.dailyPlanSession,
+               session.lessonID == lessonID,
+               model.dailyPlanTotalDays > 0 {
+                dailyPlanSummary(session)
+                    .padding(.top, 6)
+            }
             if includesBar {
                 SylluneProgressBar(value: progress, tint: SylluneColor.heroAccent)
                     .frame(maxWidth: compact ? 190 : 280)
                     .padding(.top, 4)
             }
         }
+    }
+
+    private func dailyPlanSummary(_ session: CoursePlanSession) -> some View {
+        let day = model.dailyPlanDay ?? session.day
+        return VStack(alignment: .leading, spacing: 3) {
+            Text("JOUR \(day) / \(model.dailyPlanTotalDays)")
+                .font(.caption.weight(.bold))
+                .tracking(0.8)
+                .foregroundStyle(SylluneColor.heroMuted)
+            Text("\(session.courseMinutes) min de cours · \(session.reviewMinutes) min de révision")
+                .font(.caption)
+                .foregroundStyle(SylluneColor.heroMuted)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Jour \(day) sur \(model.dailyPlanTotalDays), \(session.courseMinutes) minutes de cours et \(session.reviewMinutes) minutes de révision")
     }
 
     private var heroHeader: some View {
@@ -253,9 +275,15 @@ public struct TodayView: View {
             SylluneProgressBar(value: value, tint: SylluneColor.pathJade)
                 .frame(height: 8)
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(Array(model.orderedLessonIDs.enumerated()), id: \.element) { index, lessonID in
-                    homeLessonRow(lessonID, index: index)
+                ForEach(previewLessonIndices, id: \.self) { index in
+                    homeLessonRow(model.orderedLessonIDs[index], index: index)
                 }
+            }
+            if previewLessonIndices.count < total {
+                Text("… \(total - previewLessonIndices.count) autres étapes dans le parcours")
+                    .font(.caption)
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .padding(.top, 4)
             }
             NavigationLink(destination: LearningPathView()) {
                 Label("Voir le parcours complet", systemImage: "arrow.right")
@@ -270,8 +298,17 @@ public struct TodayView: View {
         .accessibilityIdentifier("home.path")
     }
 
+    private var previewLessonIndices: [Int] {
+        let ids = model.orderedLessonIDs
+        guard ids.count > 4 else { return Array(ids.indices) }
+        let anchor = model.resumeLessonID.flatMap { ids.firstIndex(of: $0) } ?? 0
+        let start = max(0, min(anchor - 1, ids.count - 4))
+        return Array(start..<min(start + 4, ids.count))
+    }
+
     private var flashcardsCard: some View {
         let dueCount = model.snapshot.dueCards(at: model.dependencies.clock.now()).count
+        let plannedCount = min(dueCount, model.dailyReviewLimit)
         return VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 14) {
                 flashcardMark
@@ -279,7 +316,7 @@ public struct TodayView: View {
                     Text("Flashcards")
                         .font(.title3.weight(.bold))
                         .foregroundStyle(SylluneColor.ink)
-                    Text(dueCount == 0 ? "Aucune carte à revoir maintenant." : "\(dueCount) carte\(dueCount == 1 ? "" : "s") à revoir")
+                    Text(dueCount == 0 ? "Aucune carte à revoir maintenant." : "\(plannedCount) carte\(plannedCount == 1 ? "" : "s") pour cette session · \(dueCount) due\(dueCount == 1 ? "" : "s") au total")
                         .font(.body)
                         .foregroundStyle(SylluneColor.inkMuted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -295,7 +332,7 @@ public struct TodayView: View {
                     .foregroundStyle(SylluneColor.inkMuted)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer(minLength: 4)
-                flashcardsLink(dueCount: dueCount)
+                flashcardsLink(dueCount: dueCount, dailyLimit: model.dailyReviewLimit)
             }
         }
         .padding(20)
@@ -321,8 +358,8 @@ public struct TodayView: View {
         .accessibilityHidden(true)
     }
 
-    private func flashcardsLink(dueCount: Int) -> some View {
-        NavigationLink(destination: ReviewCardsView()) {
+    private func flashcardsLink(dueCount: Int, dailyLimit: Int) -> some View {
+        NavigationLink(destination: ReviewCardsView(maxCards: dailyLimit)) {
             Text(dueCount == 0 ? "Ouvrir" : "Réviser")
         }
         .buttonStyle(.borderedProminent)
@@ -400,13 +437,22 @@ public struct TodayView: View {
 
     private func progressText(for id: LessonID) -> String {
         let progress = model.snapshot.lessonProgress[id]
+        let isPlanLesson = model.dailyPlan?.session(for: id) != nil
         guard let lesson = model.loadedLessons[id] else {
+            if model.dailyPlan != nil && !isPlanLesson {
+                return "Préparation au programme"
+            }
             return progress?.lastOpenedAt == nil ? "Première leçon" : "Reprise de ta leçon"
         }
         let count = lesson.blocks.reduce(into: 0) { result, block in
             if case .exercise = block { result += 1 }
         }
         let index = min(progress?.currentExerciseIndex ?? 0, count)
+        if model.dailyPlan != nil && !isPlanLesson {
+            return progress?.lastOpenedAt == nil
+                ? "Préparation au programme"
+                : "Préparation au programme · exercice \(min(index + 1, max(1, count))) sur \(count)"
+        }
         return progress?.lastOpenedAt == nil ? "Prête à commencer" : "Exercice \(min(index + 1, max(1, count))) sur \(count)"
     }
 
@@ -475,17 +521,52 @@ public struct LearningPathView: View {
                 .foregroundStyle(SylluneColor.inkMuted)
                 .fixedSize(horizontal: false, vertical: true)
             HStack(spacing: 8) {
-                pathMeta("HSK 1", icon: "graduationcap")
-                pathMeta("A1", icon: "globe.europe.africa")
+                ForEach(Array(model.curriculumLabels.enumerated()), id: \.offset) { _, label in
+                    pathMeta(label, icon: label.uppercased().hasPrefix("HSK") ? "graduationcap" : "globe.europe.africa")
+                }
                 Text("\(completedLessonCount) sur \(model.orderedLessonIDs.count) terminées")
                     .font(.callout.weight(.semibold))
                     .foregroundStyle(SylluneColor.inkMuted)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            if let milestone = model.nextDailyPlanMilestone ?? model.dailyPlanMilestone {
+                planMilestoneCard(milestone, reached: model.dailyPlanMilestone?.id == milestone.id)
+            }
         }
         .padding(.horizontal, 4)
         .accessibilityElement(children: .combine)
+    }
+
+    private func planMilestoneCard(_ milestone: CourseMilestone, reached: Bool) -> some View {
+        let title = milestone.title.resolve(preferred: model.preferredLanguageCodes) ?? "Palier"
+        let coverage = (milestone.coverage?.vocabularyTarget)
+            .map { "Vocabulaire visé : \($0) mots" }
+        return VStack(alignment: .leading, spacing: 6) {
+            Label(
+                reached ? "Palier couvert · jour \(milestone.day)" : "Prochain palier · jour \(milestone.day)",
+                systemImage: reached ? "checkmark.seal.fill" : "flag.fill"
+            )
+            .font(.caption.weight(.bold))
+            .foregroundStyle(reached ? SylluneColor.success : SylluneColor.jadeDeep)
+            Text(title)
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(SylluneColor.ink)
+            if let coverage {
+                Text(coverage)
+                    .font(.callout)
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+            Text("Ce repère décrit le contenu rencontré ; il ne valide pas à lui seul un niveau acquis.")
+                .font(.caption)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sylluneCard(style: .quiet, radius: 16)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(reached ? "Palier couvert" : "Prochain palier"), jour \(milestone.day), \(title)\(coverage.map { ", \($0)" } ?? ""). Ce repère ne valide pas à lui seul un niveau acquis.")
     }
 
     private func pathMeta(_ text: String, icon: String) -> some View {
@@ -506,7 +587,9 @@ public struct LearningPathView: View {
     private func roadmapModule(_ module: ModuleSummary) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .firstTextBaseline, spacing: 10) {
-                Text(module.title.resolve(preferred: model.preferredLanguageCodes) ?? "Unité")
+                Text(module.displayName?.resolve(preferred: model.preferredLanguageCodes)
+                    ?? module.title.resolve(preferred: model.preferredLanguageCodes)
+                    ?? "Unité")
                     .font(.title3.weight(.bold))
                     .foregroundStyle(SylluneColor.ink)
                     .fixedSize(horizontal: false, vertical: true)
@@ -823,9 +906,10 @@ public struct ExplorerView: View {
         List {
             Section {
                 Button { showingDictionary = true } label: {
-                    Label("Dictionnaire de l’unité 1", systemImage: "magnifyingglass")
+                    Label(model.dictionaryTitle, systemImage: "magnifyingglass")
                 }
                 .foregroundStyle(SylluneColor.jadeDeep)
+                .accessibilityIdentifier("explorer.dictionary")
             }
             Section("Histoires") {
                 if stories.isEmpty {
@@ -836,7 +920,7 @@ public struct ExplorerView: View {
                         NavigationLink(destination: StoryDetailView(storyID: story.id)) {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(story.title.resolve(preferred: model.preferredLanguageCodes) ?? "Histoire").font(.body.weight(.semibold))
-                                Text("\(story.level) · \(story.estimatedMinutes) min · Disponible hors ligne")
+                                Text("\(story.level) · \(story.estimatedMinutes) min · \(model.offlineContentLabel)")
                                     .font(.caption).foregroundStyle(SylluneColor.inkMuted)
                             }
                         }
@@ -882,7 +966,7 @@ public struct DictionaryView: View {
         applySearchFocus(
             VStack(spacing: 0) {
             if filtered.isEmpty && !query.isEmpty {
-                ContentUnavailableView("Aucun mot pour « \(query) »", systemImage: "character.book.closed", description: Text("Parcours l’unité 1 pour découvrir son vocabulaire."))
+                ContentUnavailableView("Aucun mot pour « \(query) »", systemImage: "character.book.closed", description: Text("Parcours \(model.primaryContentLabel) pour découvrir son vocabulaire."))
             } else {
                 List(filtered) { entry in
                         NavigationLink(destination: WordDetailView(vocabularyID: entry.id)) {
@@ -906,7 +990,7 @@ public struct DictionaryView: View {
             }
             .searchable(text: $query, prompt: "Caractère, pinyin ou sens")
         )
-        .navigationTitle("Dictionnaire")
+        .navigationTitle(model.dictionaryTitle)
         .background(SylluneColor.canvas)
         .task {
             entries = await model.dictionaryEntries()
@@ -981,7 +1065,14 @@ public struct WordDetailView: View {
                     if let example = entry.example {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Exemple").font(.headline).foregroundStyle(SylluneColor.ink)
-                            ChineseSelectableText(hanzi: example.hanzi, font: .title3, vocabulary: model.loadedLessons.values.flatMap(\.vocabulary))
+                            ChineseSelectableText(
+                                hanzi: example.hanzi,
+                                font: .title3,
+                                speechEnabled: true,
+                                vocabulary: model.loadedLessons.values.flatMap(\.vocabulary),
+                                audio: example.audio,
+                                wordInteractionEnabled: false
+                            )
                                 .foregroundStyle(SylluneColor.ink)
                             Text(example.pinyin)
                                 .font(.body)

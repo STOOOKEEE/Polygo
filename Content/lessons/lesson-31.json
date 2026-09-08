@@ -1,0 +1,1354 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-31",
+  "moduleID": "unit-04",
+  "order": 31,
+  "title": {
+    "fr": "Le repas livré"
+  },
+  "summary": {
+    "fr": "Commander un repas, demander une adresse et vérifier la livraison."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l31-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l31-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-247",
+      "canonicalID": "送|sòng|247",
+      "hanzi": "送",
+      "pinyin": "sòng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "送",
+          "vocabularyID": "vocab-hsk20-247",
+          "pinyin": "sòng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "offrir ; accompagner"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我送朋友回家。",
+        "pinyin": "wǒ sòng péng yǒu huí jiā。",
+        "translation": {
+          "fr": "J’accompagne mon ami à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "送|sòng|247",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 247,
+        "level": 2
+      },
+      "traditionalHanzi": "送"
+    },
+    {
+      "id": "vocab-hsk20-253",
+      "canonicalID": "外|wài|253",
+      "hanzi": "外",
+      "pinyin": "wài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "外",
+          "vocabularyID": "vocab-hsk20-253",
+          "pinyin": "wài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "extérieur ; dehors"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "外面很冷。",
+        "pinyin": "wài miàn hěn lěng。",
+        "translation": {
+          "fr": "Il fait froid dehors."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "外|wài|253",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 253,
+        "level": 2
+      },
+      "traditionalHanzi": "外"
+    },
+    {
+      "id": "vocab-hsk20-254",
+      "canonicalID": "完|wán|254",
+      "hanzi": "完",
+      "pinyin": "wán",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "完",
+          "vocabularyID": "vocab-hsk20-254",
+          "pinyin": "wán"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "finir ; complet"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我做完作业了。",
+        "pinyin": "wǒ zuò wán zuò yè le。",
+        "translation": {
+          "fr": "J’ai fini mes devoirs."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "完|wán|254",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 254,
+        "level": 2
+      },
+      "traditionalHanzi": "完"
+    },
+    {
+      "id": "vocab-hsk20-258",
+      "canonicalID": "问|wèn|258",
+      "hanzi": "问",
+      "pinyin": "wèn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "问",
+          "vocabularyID": "vocab-hsk20-258",
+          "pinyin": "wèn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "demander"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想问老师一个问题。",
+        "pinyin": "wǒ xiǎng wèn lǎo shī yí gè wèn tí。",
+        "translation": {
+          "fr": "Je veux poser une question au professeur."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "问|wèn|258",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 258,
+        "level": 2
+      },
+      "traditionalHanzi": "問"
+    },
+    {
+      "id": "vocab-hsk20-261",
+      "canonicalID": "希望|xī wàng|261",
+      "hanzi": "希望",
+      "pinyin": "xī wàng",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "希望",
+          "vocabularyID": "vocab-hsk20-261",
+          "pinyin": "xī wàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "espérer ; espoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我希望你明天来。",
+        "pinyin": "wǒ xī wàng nǐ míng tiān lái。",
+        "translation": {
+          "fr": "J’espère que tu viendras demain."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "希望|xī wàng|261",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 261,
+        "level": 2
+      },
+      "traditionalHanzi": "希望"
+    },
+    {
+      "id": "vocab-hsk20-262",
+      "canonicalID": "洗|xǐ|262",
+      "hanzi": "洗",
+      "pinyin": "xǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "洗",
+          "vocabularyID": "vocab-hsk20-262",
+          "pinyin": "xǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "laver"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请洗手。",
+        "pinyin": "qǐng xǐ shǒu。",
+        "translation": {
+          "fr": "Lave-toi les mains, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "洗|xǐ|262",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 262,
+        "level": 2
+      },
+      "traditionalHanzi": "洗"
+    },
+    {
+      "id": "vocab-hsk20-263",
+      "canonicalID": "向|xiàng|263",
+      "hanzi": "向",
+      "pinyin": "xiàng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "向",
+          "vocabularyID": "vocab-hsk20-263",
+          "pinyin": "xiàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vers ; envers"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请向左走。",
+        "pinyin": "qǐng xiàng zuǒ zǒu。",
+        "translation": {
+          "fr": "Va vers la gauche, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "向|xiàng|263",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 263,
+        "level": 2
+      },
+      "traditionalHanzi": "向"
+    },
+    {
+      "id": "vocab-hsk20-265",
+      "canonicalID": "笑|xiào|265",
+      "hanzi": "笑",
+      "pinyin": "xiào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "笑",
+          "vocabularyID": "vocab-hsk20-265",
+          "pinyin": "xiào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "rire ; sourire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "孩子们都笑了。",
+        "pinyin": "hái zi men dōu xiào le。",
+        "translation": {
+          "fr": "Les enfants ont tous ri."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "笑|xiào|265",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 265,
+        "level": 2
+      },
+      "traditionalHanzi": "笑"
+    },
+    {
+      "id": "vocab-hsk20-266",
+      "canonicalID": "新|xīn|266",
+      "hanzi": "新",
+      "pinyin": "xīn",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "新",
+          "vocabularyID": "vocab-hsk20-266",
+          "pinyin": "xīn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "nouveau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我买了一件新衣服。",
+        "pinyin": "wǒ mǎi le yī jiàn xīn yī fú。",
+        "translation": {
+          "fr": "J’ai acheté un vêtement neuf."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "新|xīn|266",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 266,
+        "level": 2
+      },
+      "traditionalHanzi": "新"
+    },
+    {
+      "id": "vocab-hsk20-024",
+      "canonicalID": "多|duō|24",
+      "hanzi": "多",
+      "pinyin": "duō",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "多",
+          "vocabularyID": "vocab-hsk20-024",
+          "pinyin": "duō"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "beaucoup ; nombreux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这里有很多人。",
+        "pinyin": "zhè lǐ yǒu hěn duō rén。",
+        "translation": {
+          "fr": "Il y a beaucoup de personnes ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "多|duō|24",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 24,
+        "level": 1
+      },
+      "traditionalHanzi": "多"
+    },
+    {
+      "id": "vocab-hsk20-035",
+      "canonicalID": "汉语|Hàn yǔ|35",
+      "hanzi": "汉语",
+      "pinyin": "Hàn yǔ",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "汉语",
+          "vocabularyID": "vocab-hsk20-035",
+          "pinyin": "Hàn yǔ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chinois (langue)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我学习汉语。",
+        "pinyin": "wǒ xué xí hàn yǔ。",
+        "translation": {
+          "fr": "J’étudie le chinois."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "汉语|Hàn yǔ|35",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 35,
+        "level": 1
+      },
+      "traditionalHanzi": "漢語"
+    },
+    {
+      "id": "vocab-jiao",
+      "hanzi": "叫",
+      "traditionalHanzi": "叫",
+      "pinyin": "jiào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "叫",
+          "vocabularyID": "vocab-jiao",
+          "pinyin": "jiào",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "我叫 + nom",
+          "explanation": {
+            "fr": "Pour se présenter, 我叫 est suivi directement du nom : 我叫安 signifie « je m'appelle An »."
+          },
+          "examples": [
+            {
+              "hanzi": "我叫林。",
+              "pinyin": "wǒ jiào Lín.",
+              "translation": {
+                "fr": "Je m'appelle Lin."
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-jiao",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "s'appeler ; appeler"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "叫 est le verbe qui donne son nom à la phrase."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "叫",
+          "traditional": "叫"
+        }
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-31-grammar-01",
+      "title": {
+        "fr": "Grammaire — 也 + verbe"
+      },
+      "body": {
+        "fr": "也 place une information supplémentaire avant le verbe.\nExemple 1 : 我也希望有水果。\nwǒ yě xī wàng yǒu shuǐ guǒ。\nJ’espère aussi qu’il y aura des fruits."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-31-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-247",
+        "vocab-hsk20-253",
+        "vocab-hsk20-254",
+        "vocab-hsk20-258",
+        "vocab-hsk20-261",
+        "vocab-hsk20-262",
+        "vocab-hsk20-263",
+        "vocab-hsk20-265",
+        "vocab-hsk20-266",
+        "vocab-hsk20-024",
+        "vocab-hsk20-035",
+        "vocab-jiao"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 27
+      }
+    },
+    {
+      "id": "block-lesson-31-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你可以送饭到外面吗？",
+          "pinyin": "nǐ kě yǐ sòng fàn dào wài miàn ma？",
+          "translation": {
+            "fr": "Peux-tu livrer le repas dehors ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "可以，请问你要什么？",
+          "pinyin": "kě yǐ， qǐng wèn nǐ yào shén me？",
+          "translation": {
+            "fr": "Oui, que veux-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我要新菜，还希望有水果。",
+          "pinyin": "wǒ yào xīn cài， hái xī wàng yǒu shuǐ guǒ。",
+          "translation": {
+            "fr": "Je veux un nouveau plat et j’espère qu’il y aura des fruits."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "请告诉我地址，我马上送。",
+          "pinyin": "qǐng gào sù wǒ dì zhǐ， wǒ mǎ shàng sòng。",
+          "translation": {
+            "fr": "Dis-moi l’adresse, je livre tout de suite."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "地址在学校左边。洗手间在里面。",
+          "pinyin": "dì zhǐ zài xué xiào zuǒ biān。 xǐ shǒu jiān zài lǐ miàn。",
+          "translation": {
+            "fr": "L’adresse est à gauche de l’école. Les toilettes sont à l’intérieur."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，事情做完以后我们笑一笑。",
+          "pinyin": "hǎo， shì qíng zuò wán yǐ hòu wǒ men xiào yī xiào。",
+          "translation": {
+            "fr": "D’accord, après cette tâche nous sourirons un peu."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 27
+      }
+    },
+    {
+      "id": "block-lesson-31-reading",
+      "storyID": "story-lesson-31",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "La livraison"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-31-p1",
+          "hanzi": "餐馆准备了新菜和水果。服务员问客人的地址，然后把饭送到外面。",
+          "pinyin": "cān guǎn zhǔn bèi le xīn cài hé shuǐ guǒ。 fú wù yuán wèn kè rén de dì zhǐ， rán hòu bǎ fàn sòng dào wài miàn。",
+          "translation": {
+            "fr": "Le restaurant prépare un nouveau plat et des fruits. Le serveur demande l’adresse du client puis livre le repas dehors."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-31-p2",
+          "hanzi": "地址在学校左边。客人洗手以后开始吃饭，大家都笑了。",
+          "pinyin": "dì zhǐ zài xué xiào zuǒ biān。 kè rén xǐ shǒu yǐ hòu kāi shǐ chī fàn， dà jiā dōu xiào le。",
+          "translation": {
+            "fr": "L’adresse est à gauche de l’école. Après s’être lavé les mains, le client commence à manger et tout le monde sourit."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l31-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l31-meaning",
+          "prompt": {
+            "fr": "Que signifie 送 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’action du serveur."
+          },
+          "objectiveIDs": [
+            "l31-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "dormir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comparer"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "livrer"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l31-order",
+          "prompt": {
+            "fr": "Construis « Je veux un nouveau plat ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l31-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "新菜",
+            "pinyin": "xīn cài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我要",
+            "pinyin": "wǒ yào",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我要新菜。",
+          "我要新菜"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l31-fill",
+          "prompt": {
+            "fr": "Complète : 请告诉我___址。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l31-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请告诉我___址。",
+        "acceptedAnswers": [
+          "地"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l31-listen",
+          "prompt": {
+            "fr": "Où se trouve l’adresse ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l31-understand"
+          ],
+          "required": true
+        },
+        "promptText": "地址在学校左边。",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "À gauche de l’école."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Derrière l’hôpital."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À droite de l’école."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l31-speak",
+          "prompt": {
+            "fr": "Dis « Je veux aussi des fruits ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l31-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我也希望有水果。",
+        "referencePinyin": "wǒ yě xī wàng yǒu shuǐ guǒ。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我也希望有水果。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 27
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l31-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l31-reading",
+          "prompt": {
+            "fr": "Que fait le client avant de manger ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l31-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il se lave les mains."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il prend le train."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il téléphone au médecin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 27
+      }
+    },
+    {
+      "id": "block-lesson-31-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-247",
+        "vocab-hsk20-253",
+        "vocab-hsk20-254",
+        "vocab-hsk20-258",
+        "vocab-hsk20-261",
+        "vocab-hsk20-262"
+      ],
+      "objectiveIDs": [
+        "l31-understand",
+        "l31-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 27
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-247",
+      "vocabularyID": "vocab-hsk20-247",
+      "front": {
+        "hanzi": "送",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "送",
+        "pinyin": "sòng",
+        "text": {
+          "fr": "offrir ; accompagner"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-253",
+      "vocabularyID": "vocab-hsk20-253",
+      "front": {
+        "hanzi": "外",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "外",
+        "pinyin": "wài",
+        "text": {
+          "fr": "extérieur ; dehors"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-254",
+      "vocabularyID": "vocab-hsk20-254",
+      "front": {
+        "hanzi": "完",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "完",
+        "pinyin": "wán",
+        "text": {
+          "fr": "finir ; complet"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-258",
+      "vocabularyID": "vocab-hsk20-258",
+      "front": {
+        "hanzi": "问",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "问",
+        "pinyin": "wèn",
+        "text": {
+          "fr": "demander"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-261",
+      "vocabularyID": "vocab-hsk20-261",
+      "front": {
+        "hanzi": "希望",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "希望",
+        "pinyin": "xī wàng",
+        "text": {
+          "fr": "espérer ; espoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-262",
+      "vocabularyID": "vocab-hsk20-262",
+      "front": {
+        "hanzi": "洗",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "洗",
+        "pinyin": "xǐ",
+        "text": {
+          "fr": "laver"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-263",
+      "vocabularyID": "vocab-hsk20-263",
+      "front": {
+        "hanzi": "向",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "向",
+        "pinyin": "xiàng",
+        "text": {
+          "fr": "vers ; envers"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-265",
+      "vocabularyID": "vocab-hsk20-265",
+      "front": {
+        "hanzi": "笑",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "笑",
+        "pinyin": "xiào",
+        "text": {
+          "fr": "rire ; sourire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-266",
+      "vocabularyID": "vocab-hsk20-266",
+      "front": {
+        "hanzi": "新",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "新",
+        "pinyin": "xīn",
+        "text": {
+          "fr": "nouveau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-024",
+      "vocabularyID": "vocab-hsk20-024",
+      "front": {
+        "hanzi": "多",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "text": {
+          "fr": "beaucoup ; nombreux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-035",
+      "vocabularyID": "vocab-hsk20-035",
+      "front": {
+        "hanzi": "汉语",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "汉语",
+        "pinyin": "Hàn yǔ",
+        "text": {
+          "fr": "chinois (langue)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-jiao",
+      "vocabularyID": "vocab-jiao",
+      "front": {
+        "hanzi": "叫",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "叫",
+        "pinyin": "jiào · 4",
+        "text": {
+          "fr": "s'appeler ; appeler"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "self-introduction"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "allocationDay": 27,
+    "allocationRange": "days06-45",
+    "theme": "food",
+    "newVocabularyIDs": [
+      "vocab-hsk20-247",
+      "vocab-hsk20-253",
+      "vocab-hsk20-254",
+      "vocab-hsk20-258",
+      "vocab-hsk20-261",
+      "vocab-hsk20-262",
+      "vocab-hsk20-263",
+      "vocab-hsk20-265",
+      "vocab-hsk20-266"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-024",
+      "vocab-hsk20-035",
+      "vocab-jiao"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-247",
+      "hsk20-253",
+      "hsk20-254",
+      "hsk20-258",
+      "hsk20-261",
+      "hsk20-262",
+      "hsk20-263",
+      "hsk20-265",
+      "hsk20-266"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-024",
+      "hsk20-035",
+      "hsk20-046"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-247",
+      "hsk20-253",
+      "hsk20-254",
+      "hsk20-258",
+      "hsk20-261",
+      "hsk20-262",
+      "hsk20-263",
+      "hsk20-265",
+      "hsk20-266"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-024",
+      "hsk20-035",
+      "hsk20-046"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-04",
+    "newVocabularyCount": 9,
+    "extraVocabularyIDs": []
+  }
+}

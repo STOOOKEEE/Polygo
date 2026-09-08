@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
+  "contentVersion": "2026.10.0",
   "id": "lesson-01",
   "moduleID": "unit-01",
   "order": 1,
@@ -558,12 +558,23 @@
           "audio": null
         }
       ],
-      "comprehensionExerciseIDs": ["ex-l1-reading-last-word"],
+      "comprehensionExerciseIDs": [
+        "ex-l1-reading-last-word"
+      ],
       "participation": {
-        "prompt": {"fr": "Écoute la réponse, puis écris la réplique juste avant."},
+        "prompt": {
+          "fr": "Écoute la réponse, puis écris la réplique juste avant."
+        },
         "audioLineIndex": 3,
-        "acceptedResponses": ["我很好，谢谢！你呢？", "我很好 谢谢 你呢", "wo hen hao xiexie ni ne", "wǒ hěn hǎo xièxie nǐ ne"],
-        "hint": {"fr": "La réplique précédente dit que Mina va très bien et relance la question."}
+        "acceptedResponses": [
+          "我很好，谢谢！你呢？",
+          "我很好 谢谢 你呢",
+          "wo hen hao xiexie ni ne",
+          "wǒ hěn hǎo xièxie nǐ ne"
+        ],
+        "hint": {
+          "fr": "La réplique précédente dit que Mina va très bien et relance la question."
+        }
       },
       "metadata": {
         "standardID": "HSK-3.0",

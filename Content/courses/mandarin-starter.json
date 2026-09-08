@@ -1,50 +1,830 @@
 {
-  "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
   "id": "mandarin-starter",
   "slug": "mandarin-starter",
   "title": {
-    "fr": "Mandarin au quotidien"
+    "fr": "Mandarin au quotidien — parcours de 90 jours"
   },
   "description": {
-    "fr": "Un parcours débutant pour saluer, se présenter, dire son pays et tenir un mini-échange. Repères HSK 3.0 (publication 2025-11) et HSK legacy 2.0 en transition, ainsi que CECR A1 ; aucun score ni examen n'est garanti."
+    "fr": "Un parcours de 90 séances pour comprendre, produire et réemployer le mandarin du quotidien. Repère HSK classique 2.0 / legacy ; la couverture décrit les lexèmes rencontrés et ne garantit ni maîtrise ni score d’examen."
   },
   "alignment": [
     {
       "framework": "HSK",
-      "level": "1",
-      "standardID": "HSK-3.0",
-      "standardVersion": "2025-11",
-      "status": "reference-transition"
-    },
-    {
-      "framework": "HSK",
-      "level": "1",
+      "level": "classic 2.0 / legacy",
       "standardID": "HSK-legacy-2.0",
       "standardVersion": "2.0",
-      "status": "legacy-reference-transition"
-    },
-    {
-      "framework": "CEFR",
-      "level": "A1",
-      "standardID": "CEFR",
-      "standardVersion": "2020",
-      "status": "complementary"
+      "status": "reference-transition"
     }
   ],
   "metadata": {
-    "levelID": "level-01",
-    "sectionID": "section-01",
-    "unitID": "unit-01",
-    "standardID": "HSK-3.0",
-    "standardVersion": "2025-11",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "transitionStatus": "both-references-kept-separate",
+    "comparisonStandardID": "HSK-3.0",
+    "comparisonStandardVersion": "2025-11",
+    "comparisonStandardRole": "design-reference-only",
+    "transitionStatus": "primary-classic-legacy-2.0",
     "examClaim": "none",
-    "scriptPolicy": "simplified-and-traditional"
+    "scriptPolicy": "simplified-and-traditional",
+    "starterLessonCount": 4,
+    "plannedSessionCount": 90,
+    "availableLessonCount": 94,
+    "canonicalVocabularyCount": 600
   },
+  "standardReferences": [
+    {
+      "framework": "HSK",
+      "level": "new HSK 3.0",
+      "standardID": "HSK-3.0",
+      "standardVersion": "2025-11",
+      "status": "design-reference-only"
+    }
+  ],
+  "plan": {
+    "targetMinutes": 15,
+    "catalogID": "hsk-legacy-600",
+    "catalogVersion": "2026.09.0",
+    "sessions": [
+      {
+        "day": 1,
+        "lessonID": "lesson-05",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 2,
+        "lessonID": "lesson-06",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 3,
+        "lessonID": "lesson-07",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 4,
+        "lessonID": "lesson-08",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 5,
+        "lessonID": "lesson-09",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 6,
+        "lessonID": "lesson-10",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 7,
+        "lessonID": "lesson-11",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 8,
+        "lessonID": "lesson-12",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 9,
+        "lessonID": "lesson-13",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 10,
+        "lessonID": "lesson-14",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 11,
+        "lessonID": "lesson-15",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 12,
+        "lessonID": "lesson-16",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 13,
+        "lessonID": "lesson-17",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 14,
+        "lessonID": "lesson-18",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 15,
+        "lessonID": "lesson-19",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 16,
+        "lessonID": "lesson-20",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 17,
+        "lessonID": "lesson-21",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 18,
+        "lessonID": "lesson-22",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 19,
+        "lessonID": "lesson-23",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 20,
+        "lessonID": "lesson-24",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 21,
+        "lessonID": "lesson-25",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 22,
+        "lessonID": "lesson-26",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 23,
+        "lessonID": "lesson-27",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 24,
+        "lessonID": "lesson-28",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 25,
+        "lessonID": "lesson-29",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 26,
+        "lessonID": "lesson-30",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 27,
+        "lessonID": "lesson-31",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 28,
+        "lessonID": "lesson-32",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 29,
+        "lessonID": "lesson-33",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 30,
+        "lessonID": "lesson-34",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 31,
+        "lessonID": "lesson-35",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 32,
+        "lessonID": "lesson-36",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 33,
+        "lessonID": "lesson-37",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 34,
+        "lessonID": "lesson-38",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 35,
+        "lessonID": "lesson-39",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 36,
+        "lessonID": "lesson-40",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 37,
+        "lessonID": "lesson-41",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 38,
+        "lessonID": "lesson-42",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 39,
+        "lessonID": "lesson-43",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 40,
+        "lessonID": "lesson-44",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 41,
+        "lessonID": "lesson-45",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 42,
+        "lessonID": "lesson-46",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 43,
+        "lessonID": "lesson-47",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 44,
+        "lessonID": "lesson-48",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 45,
+        "lessonID": "lesson-49",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 46,
+        "lessonID": "lesson-50",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 47,
+        "lessonID": "lesson-51",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 48,
+        "lessonID": "lesson-52",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 49,
+        "lessonID": "lesson-53",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 50,
+        "lessonID": "lesson-54",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 51,
+        "lessonID": "lesson-55",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 52,
+        "lessonID": "lesson-56",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 53,
+        "lessonID": "lesson-57",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 54,
+        "lessonID": "lesson-58",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 55,
+        "lessonID": "lesson-59",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 56,
+        "lessonID": "lesson-60",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 57,
+        "lessonID": "lesson-61",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 58,
+        "lessonID": "lesson-62",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 59,
+        "lessonID": "lesson-63",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 60,
+        "lessonID": "lesson-64",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 61,
+        "lessonID": "lesson-65",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 62,
+        "lessonID": "lesson-66",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 63,
+        "lessonID": "lesson-67",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 64,
+        "lessonID": "lesson-68",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 65,
+        "lessonID": "lesson-69",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 66,
+        "lessonID": "lesson-70",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 67,
+        "lessonID": "lesson-71",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 68,
+        "lessonID": "lesson-72",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 69,
+        "lessonID": "lesson-73",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 70,
+        "lessonID": "lesson-74",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 71,
+        "lessonID": "lesson-75",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 72,
+        "lessonID": "lesson-76",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 73,
+        "lessonID": "lesson-77",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 74,
+        "lessonID": "lesson-78",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 75,
+        "lessonID": "lesson-79",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 76,
+        "lessonID": "lesson-80",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 77,
+        "lessonID": "lesson-81",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 78,
+        "lessonID": "lesson-82",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 79,
+        "lessonID": "lesson-83",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 80,
+        "lessonID": "lesson-84",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 81,
+        "lessonID": "lesson-85",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 82,
+        "lessonID": "lesson-86",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 83,
+        "lessonID": "lesson-87",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 84,
+        "lessonID": "lesson-88",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 85,
+        "lessonID": "lesson-89",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 86,
+        "lessonID": "lesson-90",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 87,
+        "lessonID": "lesson-91",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 88,
+        "lessonID": "lesson-92",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 89,
+        "lessonID": "lesson-93",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      },
+      {
+        "day": 90,
+        "lessonID": "lesson-94",
+        "courseMinutes": 12,
+        "reviewMinutes": 3
+      }
+    ],
+    "milestones": [
+      {
+        "id": "classic-day-30",
+        "day": 30,
+        "title": {
+          "fr": "Jalon : HSK classique 1–2"
+        },
+        "reference": {
+          "framework": "HSK",
+          "level": "classic 2.0 / legacy",
+          "standardID": "HSK-legacy-2.0",
+          "standardVersion": "2.0"
+        },
+        "coverage": {
+          "catalogID": "hsk-legacy-600",
+          "catalogVersion": "2026.09.0",
+          "canonicalOnly": true,
+          "vocabularyTarget": 300,
+          "requiredRankRange": [
+            1,
+            300
+          ]
+        },
+        "claims": [
+          "Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour 30.",
+          "Un mot rencontré ne constitue pas une preuve de maîtrise."
+        ]
+      },
+      {
+        "id": "classic-day-60",
+        "day": 60,
+        "title": {
+          "fr": "Jalon intermédiaire : consolidation"
+        },
+        "reference": {
+          "framework": "HSK",
+          "level": "classic 2.0 / legacy",
+          "standardID": "HSK-legacy-2.0",
+          "standardVersion": "2.0"
+        },
+        "claims": [
+          "Le jour 60 est un bilan de réemploi ; aucun nouveau seuil de catalogue n’est revendiqué."
+        ]
+      },
+      {
+        "id": "classic-day-90",
+        "day": 90,
+        "title": {
+          "fr": "Jalon : catalogue HSK classique complet"
+        },
+        "reference": {
+          "framework": "HSK",
+          "level": "classic 2.0 / legacy",
+          "standardID": "HSK-legacy-2.0",
+          "standardVersion": "2.0"
+        },
+        "coverage": {
+          "catalogID": "hsk-legacy-600",
+          "catalogVersion": "2026.09.0",
+          "canonicalOnly": true,
+          "vocabularyTarget": 600,
+          "requiredRankRange": [
+            1,
+            600
+          ]
+        },
+        "claims": [
+          "Les 600 lexèmes canoniques du catalogue sont planifiés dans les 90 séances.",
+          "Cette couverture éditoriale ne garantit pas l’acquisition."
+        ]
+      }
+    ]
+  },
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
   "modules": [
+    {
+      "id": "unit-02",
+      "order": 2,
+      "title": {
+        "fr": "Vie pratique"
+      },
+      "lessonIDs": [
+        "lesson-05",
+        "lesson-06",
+        "lesson-07",
+        "lesson-08",
+        "lesson-09",
+        "lesson-10",
+        "lesson-11",
+        "lesson-12",
+        "lesson-13",
+        "lesson-14",
+        "lesson-15",
+        "lesson-16"
+      ]
+    },
+    {
+      "id": "unit-03",
+      "order": 3,
+      "title": {
+        "fr": "Temps, études et santé"
+      },
+      "lessonIDs": [
+        "lesson-17",
+        "lesson-18",
+        "lesson-19",
+        "lesson-20",
+        "lesson-21",
+        "lesson-22",
+        "lesson-23",
+        "lesson-24",
+        "lesson-25",
+        "lesson-26",
+        "lesson-27",
+        "lesson-28"
+      ]
+    },
+    {
+      "id": "unit-04",
+      "order": 4,
+      "title": {
+        "fr": "Achats et déplacements"
+      },
+      "lessonIDs": [
+        "lesson-29",
+        "lesson-30",
+        "lesson-31",
+        "lesson-32",
+        "lesson-33",
+        "lesson-34",
+        "lesson-35",
+        "lesson-36",
+        "lesson-37",
+        "lesson-38",
+        "lesson-39",
+        "lesson-40"
+      ]
+    },
+    {
+      "id": "unit-05",
+      "order": 5,
+      "title": {
+        "fr": "Maison et communauté"
+      },
+      "lessonIDs": [
+        "lesson-41",
+        "lesson-42",
+        "lesson-43",
+        "lesson-44",
+        "lesson-45",
+        "lesson-46",
+        "lesson-47",
+        "lesson-48",
+        "lesson-49",
+        "lesson-50",
+        "lesson-51",
+        "lesson-52"
+      ]
+    },
+    {
+      "id": "unit-06",
+      "order": 6,
+      "title": {
+        "fr": "Études et travail"
+      },
+      "lessonIDs": [
+        "lesson-53",
+        "lesson-54",
+        "lesson-55",
+        "lesson-56",
+        "lesson-57",
+        "lesson-58",
+        "lesson-59",
+        "lesson-60",
+        "lesson-61",
+        "lesson-62",
+        "lesson-63",
+        "lesson-64"
+      ]
+    },
+    {
+      "id": "unit-07",
+      "order": 7,
+      "title": {
+        "fr": "Ville et voyage"
+      },
+      "lessonIDs": [
+        "lesson-65",
+        "lesson-66",
+        "lesson-67",
+        "lesson-68",
+        "lesson-69",
+        "lesson-70",
+        "lesson-71",
+        "lesson-72",
+        "lesson-73",
+        "lesson-74",
+        "lesson-75",
+        "lesson-76"
+      ]
+    },
+    {
+      "id": "unit-08",
+      "order": 8,
+      "title": {
+        "fr": "Météo, nature et loisirs"
+      },
+      "lessonIDs": [
+        "lesson-77",
+        "lesson-78",
+        "lesson-79",
+        "lesson-80",
+        "lesson-81",
+        "lesson-82",
+        "lesson-83",
+        "lesson-84",
+        "lesson-85",
+        "lesson-86"
+      ]
+    },
+    {
+      "id": "unit-09",
+      "order": 9,
+      "title": {
+        "fr": "Récits et opinions"
+      },
+      "lessonIDs": [
+        "lesson-87",
+        "lesson-88",
+        "lesson-89",
+        "lesson-90",
+        "lesson-91",
+        "lesson-92",
+        "lesson-93",
+        "lesson-94"
+      ]
+    },
     {
       "id": "unit-01",
       "order": 1,
@@ -63,7 +843,12 @@
         "unitID": "unit-01",
         "standardID": "HSK-3.0",
         "standardVersion": "2025-11",
-        "cycle": ["observer", "recuperer", "produire", "transferer"],
+        "cycle": [
+          "observer",
+          "recuperer",
+          "produire",
+          "transferer"
+        ],
         "exitCriterion": "four-turn-mini-exchange"
       }
     }

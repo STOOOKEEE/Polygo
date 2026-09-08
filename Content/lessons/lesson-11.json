@@ -1,0 +1,1349 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-11",
+  "moduleID": "unit-02",
+  "order": 11,
+  "title": {
+    "fr": "Déjeuner au restaurant"
+  },
+  "summary": {
+    "fr": "Commander un repas et choisir une boisson selon ses goûts."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l11-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l11-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-028",
+      "canonicalID": "饭馆|fàn guǎn|28",
+      "hanzi": "饭馆",
+      "pinyin": "fàn guǎn",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "饭馆",
+          "vocabularyID": "vocab-hsk20-028",
+          "pinyin": "fàn guǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "restaurant"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这家饭馆很安静。",
+        "pinyin": "zhè jiā fàn guǎn hěn ān jìng。",
+        "translation": {
+          "fr": "Ce restaurant est très calme."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "饭馆|fàn guǎn|28",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 28,
+        "level": 1
+      },
+      "traditionalHanzi": "飯館"
+    },
+    {
+      "id": "vocab-hsk20-067",
+      "canonicalID": "米饭|mǐ fàn|67",
+      "hanzi": "米饭",
+      "pinyin": "mǐ fàn",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "米饭",
+          "vocabularyID": "vocab-hsk20-067",
+          "pinyin": "mǐ fàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "riz cuit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃米饭。",
+        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+        "translation": {
+          "fr": "J’aime manger du riz."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "米饭|mǐ fàn|67",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 67,
+        "level": 1
+      },
+      "traditionalHanzi": "米飯"
+    },
+    {
+      "id": "vocab-hsk20-101",
+      "canonicalID": "水果|shuǐ guǒ|101",
+      "hanzi": "水果",
+      "pinyin": "shuǐ guǒ",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "水果",
+          "vocabularyID": "vocab-hsk20-101",
+          "pinyin": "shuǐ guǒ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "fruit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃水果。",
+        "pinyin": "wǒ xǐ huān chī shuǐ guǒ。",
+        "translation": {
+          "fr": "J’aime manger des fruits."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "水果|shuǐ guǒ|101",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 101,
+        "level": 1
+      },
+      "traditionalHanzi": "水果"
+    },
+    {
+      "id": "vocab-hsk20-198",
+      "canonicalID": "鸡蛋|jī dàn|198",
+      "hanzi": "鸡蛋",
+      "pinyin": "jī dàn",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "鸡蛋",
+          "vocabularyID": "vocab-hsk20-198",
+          "pinyin": "jī dàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "œuf"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "早饭我吃了两个鸡蛋。",
+        "pinyin": "zǎo fàn wǒ chī le liǎng gè jī dàn。",
+        "translation": {
+          "fr": "J’ai mangé deux œufs au petit déjeuner."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "鸡蛋|jī dàn|198",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 198,
+        "level": 2
+      },
+      "traditionalHanzi": "雞蛋"
+    },
+    {
+      "id": "vocab-hsk20-207",
+      "canonicalID": "咖啡|kā fēi|207",
+      "hanzi": "咖啡",
+      "pinyin": "kā fēi",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "咖啡",
+          "vocabularyID": "vocab-hsk20-207",
+          "pinyin": "kā fēi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "café"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我不喝咖啡。",
+        "pinyin": "wǒ bù hē kā fēi。",
+        "translation": {
+          "fr": "Je ne bois pas de café."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "咖啡|kā fēi|207",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 207,
+        "level": 2
+      },
+      "traditionalHanzi": "咖啡"
+    },
+    {
+      "id": "vocab-hsk20-228",
+      "canonicalID": "牛奶|niú nǎi|228",
+      "hanzi": "牛奶",
+      "pinyin": "niú nǎi",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "牛奶",
+          "vocabularyID": "vocab-hsk20-228",
+          "pinyin": "niú nǎi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lait"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢喝牛奶。",
+        "pinyin": "wǒ xǐ huān hē niú nǎi。",
+        "translation": {
+          "fr": "J’aime boire du lait."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "牛奶|niú nǎi|228",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 228,
+        "level": 2
+      },
+      "traditionalHanzi": "牛奶"
+    },
+    {
+      "id": "vocab-hsk20-260",
+      "canonicalID": "西瓜|xī guā|260",
+      "hanzi": "西瓜",
+      "pinyin": "xī guā",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "西瓜",
+          "vocabularyID": "vocab-hsk20-260",
+          "pinyin": "xī guā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pastèque"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "夏天我喜欢吃西瓜。",
+        "pinyin": "xià tiān wǒ xǐ huān chī xī guā。",
+        "translation": {
+          "fr": "En été, j’aime manger de la pastèque."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "西瓜|xī guā|260",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 260,
+        "level": 2
+      },
+      "traditionalHanzi": "西瓜"
+    },
+    {
+      "id": "vocab-hsk20-272",
+      "canonicalID": "羊肉|yáng ròu|272",
+      "hanzi": "羊肉",
+      "pinyin": "yáng ròu",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "羊肉",
+          "vocabularyID": "vocab-hsk20-272",
+          "pinyin": "yáng ròu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "viande de mouton"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃羊肉。",
+        "pinyin": "wǒ xǐ huān chī yáng ròu。",
+        "translation": {
+          "fr": "J’aime manger du mouton."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "羊肉|yáng ròu|272",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 272,
+        "level": 2
+      },
+      "traditionalHanzi": "羊肉"
+    },
+    {
+      "id": "vocab-hsk20-283",
+      "canonicalID": "鱼|yú|283",
+      "hanzi": "鱼",
+      "pinyin": "yú",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "鱼",
+          "vocabularyID": "vocab-hsk20-283",
+          "pinyin": "yú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "poisson"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃鱼。",
+        "pinyin": "wǒ xǐ huān chī yú。",
+        "translation": {
+          "fr": "J’aime manger du poisson."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "鱼|yú|283",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 283,
+        "level": 2
+      },
+      "traditionalHanzi": "魚"
+    },
+    {
+      "id": "vocab-hsk20-132",
+      "canonicalID": "衣服|yī fu|132",
+      "hanzi": "衣服",
+      "pinyin": "yī fu",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "衣服",
+          "vocabularyID": "vocab-hsk20-132",
+          "pinyin": "yī fu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vêtement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这件衣服很漂亮。",
+        "pinyin": "zhè jiàn yī fu hěn piào liàng。",
+        "translation": {
+          "fr": "Ce vêtement est très joli."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "衣服|yī fu|132",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 132,
+        "level": 1
+      },
+      "traditionalHanzi": "衣服"
+    },
+    {
+      "id": "vocab-hsk20-006",
+      "canonicalID": "本|běn|6",
+      "hanzi": "本",
+      "pinyin": "běn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "本",
+          "vocabularyID": "vocab-hsk20-006",
+          "pinyin": "běn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "classificateur des livres"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这本书很好。",
+        "pinyin": "zhè běn shū hěn hǎo。",
+        "translation": {
+          "fr": "Ce livre est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "本|běn|6",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 6,
+        "level": 1
+      },
+      "traditionalHanzi": "本"
+    },
+    {
+      "id": "vocab-hsk20-019",
+      "canonicalID": "电影|diàn yǐng|19",
+      "hanzi": "电影",
+      "pinyin": "diàn yǐng",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "电影",
+          "vocabularyID": "vocab-hsk20-019",
+          "pinyin": "diàn yǐng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "film"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们周末看电影。",
+        "pinyin": "wǒ men zhōu mò kàn diàn yǐng。",
+        "translation": {
+          "fr": "Nous regardons un film le week-end."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "电影|diàn yǐng|19",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 19,
+        "level": 1
+      },
+      "traditionalHanzi": "電影"
+    },
+    {
+      "id": "vocab-hsk20-041",
+      "canonicalID": "回|huí|41",
+      "hanzi": "回",
+      "pinyin": "huí",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "回",
+          "vocabularyID": "vocab-hsk20-041",
+          "pinyin": "huí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "retourner ; revenir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我下午回家。",
+        "pinyin": "wǒ xià wǔ huí jiā。",
+        "translation": {
+          "fr": "Je rentre à la maison l’après-midi."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "回|huí|41",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 41,
+        "level": 1
+      },
+      "traditionalHanzi": "回"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-11-grammar-01",
+      "title": {
+        "fr": "Grammaire — 也 + verbe"
+      },
+      "body": {
+        "fr": "也 ajoute une information équivalente avant le verbe.\nExemple 1 : 我也吃米饭。\nwǒ yě chī mǐ fàn。\nJe mange aussi du riz."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-11-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-028",
+        "vocab-hsk20-067",
+        "vocab-hsk20-101",
+        "vocab-hsk20-198",
+        "vocab-hsk20-207",
+        "vocab-hsk20-228",
+        "vocab-hsk20-260",
+        "vocab-hsk20-272",
+        "vocab-hsk20-283",
+        "vocab-hsk20-132",
+        "vocab-hsk20-006",
+        "vocab-hsk20-019",
+        "vocab-hsk20-041"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "id": "block-lesson-11-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "中午我们去饭馆吗？",
+          "pinyin": "zhōng wǔ wǒ men qù fàn guǎn ma？",
+          "translation": {
+            "fr": "Nous allons au restaurant à midi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，我要米饭和鱼。",
+          "pinyin": "hǎo， wǒ yào mǐ fàn hé yú。",
+          "translation": {
+            "fr": "D’accord, je veux du riz et du poisson."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "这里还有鸡蛋、水果和牛奶。",
+          "pinyin": "zhè lǐ hái yǒu jī dàn、 shuǐ guǒ hé niú nǎi。",
+          "translation": {
+            "fr": "Il y a aussi des œufs, des fruits et du lait."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我不喝咖啡，我喝牛奶。",
+          "pinyin": "wǒ bù hē kā fēi， wǒ hē niú nǎi。",
+          "translation": {
+            "fr": "Je ne bois pas de café, je bois du lait."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "天气很热，吃西瓜吧。",
+          "pinyin": "tiān qì hěn rè， chī xī guā ba。",
+          "translation": {
+            "fr": "Il fait très chaud, mangeons de la pastèque."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，吃完我们去买衣服。",
+          "pinyin": "hǎo， chī wán wǒ men qù mǎi yī fú。",
+          "translation": {
+            "fr": "D’accord, après le repas nous irons acheter des vêtements."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 7
+      }
+    },
+    {
+      "id": "block-lesson-11-reading",
+      "storyID": "story-lesson-11",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Le déjeuner"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-11-p1",
+          "hanzi": "中午我和朋友在饭馆吃米饭、鱼和鸡蛋。",
+          "pinyin": "zhōng wǔ wǒ hé péng yǒu zài fàn guǎn chī mǐ fàn、 yú hé jī dàn。",
+          "translation": {
+            "fr": "À midi, mon ami et moi mangeons du riz, du poisson et des œufs au restaurant."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-11-p2",
+          "hanzi": "我喝牛奶，不喝咖啡。吃完饭，我们买了一件衣服。",
+          "pinyin": "wǒ hē niú nǎi， bù hē kā fēi。 chī wán fàn， wǒ men mǎi le yī jiàn yī fú。",
+          "translation": {
+            "fr": "Je bois du lait, pas de café. Après le repas, nous achetons un vêtement."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l11-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-meaning",
+          "prompt": {
+            "fr": "Que signifie 牛奶 ?"
+          },
+          "instruction": {
+            "fr": "Choisis la boisson du dialogue."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "thé"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "café"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "lait"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l11-order",
+          "prompt": {
+            "fr": "Construis « Je mange du riz ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "米饭",
+            "pinyin": "mǐ fàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "c",
+          "a"
+        ],
+        "acceptedVariants": [
+          "我吃米饭。",
+          "我吃米饭"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l11-fill",
+          "prompt": {
+            "fr": "Complète : 我不喝___，我喝牛奶。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我不喝___，我喝牛奶。",
+        "acceptedAnswers": [
+          "咖啡"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l11-listen",
+          "prompt": {
+            "fr": "Que mange Tao ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "好，我要米饭和鱼。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Du pain et du lait."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Du riz et du poisson."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Des œufs et du café."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l11-speak",
+          "prompt": {
+            "fr": "Dis « Il fait très chaud, mangeons de la pastèque ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "天气很热，吃西瓜吧。",
+        "referencePinyin": "tiān qì hěn rè， chī xī guā ba。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "天气很热，吃西瓜吧。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-reading",
+          "prompt": {
+            "fr": "Que boit la personne ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Du lait."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "De l’eau."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Du café."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "id": "block-lesson-11-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-028",
+        "vocab-hsk20-067",
+        "vocab-hsk20-101",
+        "vocab-hsk20-198",
+        "vocab-hsk20-207",
+        "vocab-hsk20-228"
+      ],
+      "objectiveIDs": [
+        "l11-understand",
+        "l11-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 7
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-028",
+      "vocabularyID": "vocab-hsk20-028",
+      "front": {
+        "hanzi": "饭馆",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "饭馆",
+        "pinyin": "fàn guǎn",
+        "text": {
+          "fr": "restaurant"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-067",
+      "vocabularyID": "vocab-hsk20-067",
+      "front": {
+        "hanzi": "米饭",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "米饭",
+        "pinyin": "mǐ fàn",
+        "text": {
+          "fr": "riz cuit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-101",
+      "vocabularyID": "vocab-hsk20-101",
+      "front": {
+        "hanzi": "水果",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "水果",
+        "pinyin": "shuǐ guǒ",
+        "text": {
+          "fr": "fruit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-198",
+      "vocabularyID": "vocab-hsk20-198",
+      "front": {
+        "hanzi": "鸡蛋",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "鸡蛋",
+        "pinyin": "jī dàn",
+        "text": {
+          "fr": "œuf"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-207",
+      "vocabularyID": "vocab-hsk20-207",
+      "front": {
+        "hanzi": "咖啡",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "咖啡",
+        "pinyin": "kā fēi",
+        "text": {
+          "fr": "café"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-228",
+      "vocabularyID": "vocab-hsk20-228",
+      "front": {
+        "hanzi": "牛奶",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "牛奶",
+        "pinyin": "niú nǎi",
+        "text": {
+          "fr": "lait"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-260",
+      "vocabularyID": "vocab-hsk20-260",
+      "front": {
+        "hanzi": "西瓜",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "西瓜",
+        "pinyin": "xī guā",
+        "text": {
+          "fr": "pastèque"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-272",
+      "vocabularyID": "vocab-hsk20-272",
+      "front": {
+        "hanzi": "羊肉",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "羊肉",
+        "pinyin": "yáng ròu",
+        "text": {
+          "fr": "viande de mouton"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-283",
+      "vocabularyID": "vocab-hsk20-283",
+      "front": {
+        "hanzi": "鱼",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "鱼",
+        "pinyin": "yú",
+        "text": {
+          "fr": "poisson"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-132",
+      "vocabularyID": "vocab-hsk20-132",
+      "front": {
+        "hanzi": "衣服",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "衣服",
+        "pinyin": "yī fu",
+        "text": {
+          "fr": "vêtement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-006",
+      "vocabularyID": "vocab-hsk20-006",
+      "front": {
+        "hanzi": "本",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "本",
+        "pinyin": "běn",
+        "text": {
+          "fr": "classificateur des livres"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-019",
+      "vocabularyID": "vocab-hsk20-019",
+      "front": {
+        "hanzi": "电影",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "电影",
+        "pinyin": "diàn yǐng",
+        "text": {
+          "fr": "film"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-041",
+      "vocabularyID": "vocab-hsk20-041",
+      "front": {
+        "hanzi": "回",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "回",
+        "pinyin": "huí",
+        "text": {
+          "fr": "retourner ; revenir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 7,
+    "allocationRange": "days06-45",
+    "theme": "food",
+    "newVocabularyIDs": [
+      "vocab-hsk20-028",
+      "vocab-hsk20-067",
+      "vocab-hsk20-101",
+      "vocab-hsk20-198",
+      "vocab-hsk20-207",
+      "vocab-hsk20-228",
+      "vocab-hsk20-260",
+      "vocab-hsk20-272",
+      "vocab-hsk20-283",
+      "vocab-hsk20-132"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-006",
+      "vocab-hsk20-019",
+      "vocab-hsk20-041"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-028",
+      "hsk20-067",
+      "hsk20-101",
+      "hsk20-198",
+      "hsk20-207",
+      "hsk20-228",
+      "hsk20-260",
+      "hsk20-272",
+      "hsk20-283",
+      "hsk20-132"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-006",
+      "hsk20-019",
+      "hsk20-041"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-028",
+      "hsk20-067",
+      "hsk20-101",
+      "hsk20-198",
+      "hsk20-207",
+      "hsk20-228",
+      "hsk20-260",
+      "hsk20-272",
+      "hsk20-283",
+      "hsk20-132"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-006",
+      "hsk20-019",
+      "hsk20-041"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

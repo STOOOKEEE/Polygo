@@ -1,0 +1,1349 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-16",
+  "moduleID": "unit-02",
+  "order": 16,
+  "title": {
+    "fr": "Corriger un exercice"
+  },
+  "summary": {
+    "fr": "Demander une explication, comparer des réponses et faire le bilan."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l16-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l16-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-032",
+      "canonicalID": "个|gè|32",
+      "hanzi": "个",
+      "pinyin": "gè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "个",
+          "vocabularyID": "vocab-hsk20-032",
+          "pinyin": "gè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "classificateur général"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我有三个苹果。",
+        "pinyin": "wǒ yǒu sān gè píng guǒ。",
+        "translation": {
+          "fr": "J’ai trois pommes."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "个|gè|32",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 32,
+        "level": 1
+      },
+      "traditionalHanzi": "個"
+    },
+    {
+      "id": "vocab-hsk20-140",
+      "canonicalID": "怎么|zěn me|140",
+      "hanzi": "怎么",
+      "pinyin": "zěn me",
+      "toneNumbers": [
+        3,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "怎么",
+          "vocabularyID": "vocab-hsk20-140",
+          "pinyin": "zěn me"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comment"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你怎么去学校？",
+        "pinyin": "nǐ zěn me qù xué xiào？",
+        "translation": {
+          "fr": "Comment vas-tu à l’école ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "怎么|zěn me|140",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 140,
+        "level": 1
+      },
+      "traditionalHanzi": "怎麼"
+    },
+    {
+      "id": "vocab-hsk20-141",
+      "canonicalID": "怎么样|zěn me yàng|141",
+      "hanzi": "怎么样",
+      "pinyin": "zěn me yàng",
+      "toneNumbers": [
+        3,
+        0,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "怎么样",
+          "vocabularyID": "vocab-hsk20-141",
+          "pinyin": "zěn me yàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comment ; de quelle manière"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你的身体怎么样？",
+        "pinyin": "nǐ de shēn tǐ zěn me yàng？",
+        "translation": {
+          "fr": "Comment vas-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "怎么样|zěn me yàng|141",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 141,
+        "level": 1
+      },
+      "traditionalHanzi": "怎麼樣"
+    },
+    {
+      "id": "vocab-hsk20-151",
+      "canonicalID": "吧|ba|151",
+      "hanzi": "吧",
+      "pinyin": "ba",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "吧",
+          "vocabularyID": "vocab-hsk20-151",
+          "pinyin": "ba"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule de suggestion"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们走吧。",
+        "pinyin": "wǒ men zǒu ba。",
+        "translation": {
+          "fr": "Allons-y."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吧|ba|151",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 151,
+        "level": 2
+      },
+      "traditionalHanzi": "吧"
+    },
+    {
+      "id": "vocab-hsk20-156",
+      "canonicalID": "比|bǐ|156",
+      "hanzi": "比",
+      "pinyin": "bǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "比",
+          "vocabularyID": "vocab-hsk20-156",
+          "pinyin": "bǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comparer ; que (comparatif)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天比昨天冷。",
+        "pinyin": "jīn tiān bǐ zuó tiān lěng。",
+        "translation": {
+          "fr": "Aujourd’hui il fait plus froid qu’hier."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "比|bǐ|156",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 156,
+        "level": 2
+      },
+      "traditionalHanzi": "比"
+    },
+    {
+      "id": "vocab-hsk20-168",
+      "canonicalID": "大家|dà jiā|168",
+      "hanzi": "大家",
+      "pinyin": "dà jiā",
+      "toneNumbers": [
+        4,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "大家",
+          "vocabularyID": "vocab-hsk20-168",
+          "pinyin": "dà jiā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tout le monde"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "大家都来了。",
+        "pinyin": "dà jiā dōu lái le。",
+        "translation": {
+          "fr": "Tout le monde est arrivé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "大家|dà jiā|168",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 168,
+        "level": 2
+      },
+      "traditionalHanzi": "大家"
+    },
+    {
+      "id": "vocab-hsk20-171",
+      "canonicalID": "得|de|171",
+      "hanzi": "得",
+      "pinyin": "de",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "得",
+          "vocabularyID": "vocab-hsk20-171",
+          "pinyin": "de"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule de complément"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我说得很清楚。",
+        "pinyin": "wǒ shuō de hěn qīng chǔ。",
+        "translation": {
+          "fr": "Je parle très clairement."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "得|de|171",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 171,
+        "level": 2
+      },
+      "traditionalHanzi": "得"
+    },
+    {
+      "id": "vocab-hsk20-248",
+      "canonicalID": "所以|suǒ yǐ|248",
+      "hanzi": "所以",
+      "pinyin": "suǒ yǐ",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "所以",
+          "vocabularyID": "vocab-hsk20-248",
+          "pinyin": "suǒ yǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "donc ; c’est pourquoi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "下雨，所以我不出门。",
+        "pinyin": "xià yǔ， suǒ yǐ wǒ bù chū mén。",
+        "translation": {
+          "fr": "Il pleut, c’est pourquoi je ne sors pas."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "所以|suǒ yǐ|248",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 248,
+        "level": 2
+      },
+      "traditionalHanzi": "所以"
+    },
+    {
+      "id": "vocab-hsk20-251",
+      "canonicalID": "题|tí|251",
+      "hanzi": "题",
+      "pinyin": "tí",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "题",
+          "vocabularyID": "vocab-hsk20-251",
+          "pinyin": "tí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "question ; exercice"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这道题很难。",
+        "pinyin": "zhè dào tí hěn nán。",
+        "translation": {
+          "fr": "Cet exercice est difficile."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "题|tí|251",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 251,
+        "level": 2
+      },
+      "traditionalHanzi": "題"
+    },
+    {
+      "id": "vocab-hsk20-257",
+      "canonicalID": "为什么|wèi shén me|257",
+      "hanzi": "为什么",
+      "pinyin": "wèi shén me",
+      "toneNumbers": [
+        4,
+        2,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "为什么",
+          "vocabularyID": "vocab-hsk20-257",
+          "pinyin": "wèi shén me"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pourquoi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你为什么不来？",
+        "pinyin": "nǐ wèi shén me bù lái？",
+        "translation": {
+          "fr": "Pourquoi ne viens-tu pas ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "为什么|wèi shén me|257",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 257,
+        "level": 2
+      },
+      "traditionalHanzi": "爲什麼"
+    },
+    {
+      "id": "vocab-hsk20-132",
+      "canonicalID": "衣服|yī fu|132",
+      "hanzi": "衣服",
+      "pinyin": "yī fu",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "衣服",
+          "vocabularyID": "vocab-hsk20-132",
+          "pinyin": "yī fu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vêtement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这件衣服很漂亮。",
+        "pinyin": "zhè jiàn yī fu hěn piào liàng。",
+        "translation": {
+          "fr": "Ce vêtement est très joli."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "衣服|yī fu|132",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 132,
+        "level": 1
+      },
+      "traditionalHanzi": "衣服"
+    },
+    {
+      "id": "vocab-hsk20-146",
+      "canonicalID": "桌子|zhuō zi|146",
+      "hanzi": "桌子",
+      "pinyin": "zhuō zi",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "桌子",
+          "vocabularyID": "vocab-hsk20-146",
+          "pinyin": "zhuō zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "table"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "书在桌子上。",
+        "pinyin": "shū zài zhuō zi shàng。",
+        "translation": {
+          "fr": "Le livre est sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "桌子|zhuō zi|146",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 146,
+        "level": 1
+      },
+      "traditionalHanzi": "桌子"
+    },
+    {
+      "id": "vocab-hsk20-177",
+      "canonicalID": "房间|fáng jiān|177",
+      "hanzi": "房间",
+      "pinyin": "fáng jiān",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "房间",
+          "vocabularyID": "vocab-hsk20-177",
+          "pinyin": "fáng jiān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chambre ; pièce"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的房间很大。",
+        "pinyin": "wǒ de fáng jiān hěn dà。",
+        "translation": {
+          "fr": "Ma chambre est grande."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "房间|fáng jiān|177",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 177,
+        "level": 2
+      },
+      "traditionalHanzi": "房間"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-16-grammar-01",
+      "title": {
+        "fr": "Grammaire — 会/能 + verbe"
+      },
+      "body": {
+        "fr": "会 ou 能 précède une capacité ou une possibilité.\nExemple 1 : 现在我能回答这道题。\nxiàn zài wǒ néng huí dá zhè dào tí。\nMaintenant je peux répondre à cet exercice."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-16-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-032",
+        "vocab-hsk20-140",
+        "vocab-hsk20-141",
+        "vocab-hsk20-151",
+        "vocab-hsk20-156",
+        "vocab-hsk20-168",
+        "vocab-hsk20-171",
+        "vocab-hsk20-248",
+        "vocab-hsk20-251",
+        "vocab-hsk20-257",
+        "vocab-hsk20-132",
+        "vocab-hsk20-146",
+        "vocab-hsk20-177"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "id": "block-lesson-16-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "大家有几道题？",
+          "pinyin": "dà jiā yǒu jǐ dào tí？",
+          "translation": {
+            "fr": "Combien d’exercices avez-vous tous ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我们有三道题，但是我不懂第二道。",
+          "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+          "translation": {
+            "fr": "Nous en avons trois, mais je ne comprends pas le deuxième."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "为什么不懂？",
+          "pinyin": "wèi shén me bù dǒng？",
+          "translation": {
+            "fr": "Pourquoi ne le comprends-tu pas ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "这道题比第一道难，所以我问你。",
+          "pinyin": "zhè dào tí bǐ dì yī dào nán， suǒ yǐ wǒ wèn nǐ。",
+          "translation": {
+            "fr": "Cet exercice est plus difficile que le premier, alors je te demande."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "答案怎么样？",
+          "pinyin": "dá àn zěn me yàng？",
+          "translation": {
+            "fr": "Comment sont les réponses ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "现在我懂了，做完我们走吧。",
+          "pinyin": "xiàn zài wǒ dǒng le， zuò wán wǒ men zǒu ba。",
+          "translation": {
+            "fr": "Maintenant j’ai compris ; quand nous aurons fini, partons."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 12
+      }
+    },
+    {
+      "id": "block-lesson-16-reading",
+      "storyID": "story-lesson-16",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Le bilan"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-16-p1",
+          "hanzi": "大家一起做题。第一道题比较简单，第二道题比第一道难。",
+          "pinyin": "dà jiā yì qǐ zuò tí。 dì yī dào tí bǐ jiào jiǎn dān， dì èr dào tí bǐ dì yī dào nán。",
+          "translation": {
+            "fr": "Tout le monde fait les exercices ensemble. Le premier est assez simple ; le deuxième est plus difficile que le premier."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-16-p2",
+          "hanzi": "Tao问为什么，Mina告诉他答案。做完三道题以后，大家都懂了。",
+          "pinyin": "Tao wèn wèi shén me， Mina gào sù tā dá àn。 zuò wán sān dào tí yǐ hòu， dà jiā dōu dǒng le。",
+          "translation": {
+            "fr": "Tao demande pourquoi et Mina lui explique les réponses. Après les trois exercices, tout le monde a compris."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l16-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-meaning",
+          "prompt": {
+            "fr": "Que signifie 为什么 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot interrogatif correct."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "combien"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comment"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "pourquoi"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l16-order",
+          "prompt": {
+            "fr": "Construis « Pourquoi ne comprends-tu pas ? ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "不懂",
+            "pinyin": "bù dǒng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "为什么",
+            "pinyin": "wèi shén me",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "c",
+          "b",
+          "a"
+        ],
+        "acceptedVariants": [
+          "为什么你不懂？",
+          "为什么你不懂"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l16-fill",
+          "prompt": {
+            "fr": "Complète : 这道题比第一道___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这道题比第一道___。",
+        "acceptedAnswers": [
+          "难"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l16-listen",
+          "prompt": {
+            "fr": "Combien d’exercices le groupe fait-il ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我们有三道题。",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Trois."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Dix."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Deux."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l16-speak",
+          "prompt": {
+            "fr": "Dis « Maintenant je comprends ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "现在我懂了。",
+        "referencePinyin": "xiàn zài wǒ dǒng le。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "现在我懂了。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-reading",
+          "prompt": {
+            "fr": "Que fait Mina ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle explique les réponses."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle prend un taxi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle dort."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "id": "block-lesson-16-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-032",
+        "vocab-hsk20-140",
+        "vocab-hsk20-141",
+        "vocab-hsk20-151",
+        "vocab-hsk20-156",
+        "vocab-hsk20-168"
+      ],
+      "objectiveIDs": [
+        "l16-understand",
+        "l16-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 12
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-032",
+      "vocabularyID": "vocab-hsk20-032",
+      "front": {
+        "hanzi": "个",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "个",
+        "pinyin": "gè",
+        "text": {
+          "fr": "classificateur général"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-140",
+      "vocabularyID": "vocab-hsk20-140",
+      "front": {
+        "hanzi": "怎么",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "怎么",
+        "pinyin": "zěn me",
+        "text": {
+          "fr": "comment"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-141",
+      "vocabularyID": "vocab-hsk20-141",
+      "front": {
+        "hanzi": "怎么样",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "怎么样",
+        "pinyin": "zěn me yàng",
+        "text": {
+          "fr": "comment ; de quelle manière"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-151",
+      "vocabularyID": "vocab-hsk20-151",
+      "front": {
+        "hanzi": "吧",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吧",
+        "pinyin": "ba",
+        "text": {
+          "fr": "particule de suggestion"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-156",
+      "vocabularyID": "vocab-hsk20-156",
+      "front": {
+        "hanzi": "比",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "比",
+        "pinyin": "bǐ",
+        "text": {
+          "fr": "comparer ; que (comparatif)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-168",
+      "vocabularyID": "vocab-hsk20-168",
+      "front": {
+        "hanzi": "大家",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "大家",
+        "pinyin": "dà jiā",
+        "text": {
+          "fr": "tout le monde"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-171",
+      "vocabularyID": "vocab-hsk20-171",
+      "front": {
+        "hanzi": "得",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "得",
+        "pinyin": "de",
+        "text": {
+          "fr": "particule de complément"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-248",
+      "vocabularyID": "vocab-hsk20-248",
+      "front": {
+        "hanzi": "所以",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "所以",
+        "pinyin": "suǒ yǐ",
+        "text": {
+          "fr": "donc ; c’est pourquoi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-251",
+      "vocabularyID": "vocab-hsk20-251",
+      "front": {
+        "hanzi": "题",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "题",
+        "pinyin": "tí",
+        "text": {
+          "fr": "question ; exercice"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-257",
+      "vocabularyID": "vocab-hsk20-257",
+      "front": {
+        "hanzi": "为什么",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "为什么",
+        "pinyin": "wèi shén me",
+        "text": {
+          "fr": "pourquoi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-132",
+      "vocabularyID": "vocab-hsk20-132",
+      "front": {
+        "hanzi": "衣服",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "衣服",
+        "pinyin": "yī fu",
+        "text": {
+          "fr": "vêtement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-146",
+      "vocabularyID": "vocab-hsk20-146",
+      "front": {
+        "hanzi": "桌子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "桌子",
+        "pinyin": "zhuō zi",
+        "text": {
+          "fr": "table"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-177",
+      "vocabularyID": "vocab-hsk20-177",
+      "front": {
+        "hanzi": "房间",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "房间",
+        "pinyin": "fáng jiān",
+        "text": {
+          "fr": "chambre ; pièce"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 12,
+    "allocationRange": "days06-45",
+    "theme": "daily-review",
+    "newVocabularyIDs": [
+      "vocab-hsk20-032",
+      "vocab-hsk20-140",
+      "vocab-hsk20-141",
+      "vocab-hsk20-151",
+      "vocab-hsk20-156",
+      "vocab-hsk20-168",
+      "vocab-hsk20-171",
+      "vocab-hsk20-248",
+      "vocab-hsk20-251",
+      "vocab-hsk20-257"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-132",
+      "vocab-hsk20-146",
+      "vocab-hsk20-177"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-032",
+      "hsk20-140",
+      "hsk20-141",
+      "hsk20-151",
+      "hsk20-156",
+      "hsk20-168",
+      "hsk20-171",
+      "hsk20-248",
+      "hsk20-251",
+      "hsk20-257"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-132",
+      "hsk20-146",
+      "hsk20-177"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-032",
+      "hsk20-140",
+      "hsk20-141",
+      "hsk20-151",
+      "hsk20-156",
+      "hsk20-168",
+      "hsk20-171",
+      "hsk20-248",
+      "hsk20-251",
+      "hsk20-257"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-132",
+      "hsk20-146",
+      "hsk20-177"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

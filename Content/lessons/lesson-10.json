@@ -1,0 +1,1476 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-10",
+  "moduleID": "unit-02",
+  "order": 10,
+  "title": {
+    "fr": "Ranger la chambre"
+  },
+  "summary": {
+    "fr": "Situer des objets dans une chambre et appeler le professeur."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l10-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l10-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-006",
+      "canonicalID": "本|běn|6",
+      "hanzi": "本",
+      "pinyin": "běn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "本",
+          "vocabularyID": "vocab-hsk20-006",
+          "pinyin": "běn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "classificateur des livres"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这本书很好。",
+        "pinyin": "zhè běn shū hěn hǎo。",
+        "translation": {
+          "fr": "Ce livre est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "本|běn|6",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 6,
+        "level": 1
+      },
+      "traditionalHanzi": "本"
+    },
+    {
+      "id": "vocab-hsk20-013",
+      "canonicalID": "打电话|dǎ diàn huà|13",
+      "hanzi": "打电话",
+      "pinyin": "dǎ diàn huà",
+      "toneNumbers": [
+        3,
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "打电话",
+          "vocabularyID": "vocab-hsk20-013",
+          "pinyin": "dǎ diàn huà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "téléphoner"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我给妈妈打电话。",
+        "pinyin": "wǒ gěi mā mā dǎ diàn huà。",
+        "translation": {
+          "fr": "J’appelle maman."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "打电话|dǎ diàn huà|13",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 13,
+        "level": 1
+      },
+      "traditionalHanzi": "打電話"
+    },
+    {
+      "id": "vocab-hsk20-098",
+      "canonicalID": "书|shū|98",
+      "hanzi": "书",
+      "pinyin": "shū",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "书",
+          "vocabularyID": "vocab-hsk20-098",
+          "pinyin": "shū"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "livre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我正在读这本书。",
+        "pinyin": "wǒ zhèng zài dú zhè běn shū。",
+        "translation": {
+          "fr": "Je lis ce livre en ce moment."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "书|shū|98",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 98,
+        "level": 1
+      },
+      "traditionalHanzi": "書"
+    },
+    {
+      "id": "vocab-hsk20-135",
+      "canonicalID": "椅子|yǐ zi|135",
+      "hanzi": "椅子",
+      "pinyin": "yǐ zi",
+      "toneNumbers": [
+        3,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "椅子",
+          "vocabularyID": "vocab-hsk20-135",
+          "pinyin": "yǐ zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chaise"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "椅子在桌子旁边。",
+        "pinyin": "yǐ zi zài zhuō zi páng biān。",
+        "translation": {
+          "fr": "La chaise est à côté de la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "椅子|yǐ zi|135",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 135,
+        "level": 1
+      },
+      "traditionalHanzi": "椅子"
+    },
+    {
+      "id": "vocab-hsk20-146",
+      "canonicalID": "桌子|zhuō zi|146",
+      "hanzi": "桌子",
+      "pinyin": "zhuō zi",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "桌子",
+          "vocabularyID": "vocab-hsk20-146",
+          "pinyin": "zhuō zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "table"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "书在桌子上。",
+        "pinyin": "shū zài zhuō zi shàng。",
+        "translation": {
+          "fr": "Le livre est sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "桌子|zhuō zi|146",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 146,
+        "level": 1
+      },
+      "traditionalHanzi": "桌子"
+    },
+    {
+      "id": "vocab-hsk20-177",
+      "canonicalID": "房间|fáng jiān|177",
+      "hanzi": "房间",
+      "pinyin": "fáng jiān",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "房间",
+          "vocabularyID": "vocab-hsk20-177",
+          "pinyin": "fáng jiān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chambre ; pièce"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的房间很大。",
+        "pinyin": "wǒ de fáng jiān hěn dà。",
+        "translation": {
+          "fr": "Ma chambre est grande."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "房间|fáng jiān|177",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 177,
+        "level": 2
+      },
+      "traditionalHanzi": "房間"
+    },
+    {
+      "id": "vocab-hsk20-225",
+      "canonicalID": "门|mén|225",
+      "hanzi": "门",
+      "pinyin": "mén",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "门",
+          "vocabularyID": "vocab-hsk20-225",
+          "pinyin": "mén"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "porte ; entrée"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "门在前面。",
+        "pinyin": "mén zài qián miàn。",
+        "translation": {
+          "fr": "La porte est devant."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "门|mén|225",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 225,
+        "level": 2
+      },
+      "traditionalHanzi": "門"
+    },
+    {
+      "id": "vocab-hsk20-246",
+      "canonicalID": "手机|shǒu jī|246",
+      "hanzi": "手机",
+      "pinyin": "shǒu jī",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "手机",
+          "vocabularyID": "vocab-hsk20-246",
+          "pinyin": "shǒu jī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "téléphone portable"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的手机在房间里。",
+        "pinyin": "wǒ de shǒu jī zài fáng jiān lǐ。",
+        "translation": {
+          "fr": "Mon téléphone est dans la chambre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "手机|shǒu jī|246",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 246,
+        "level": 2
+      },
+      "traditionalHanzi": "手機"
+    },
+    {
+      "id": "vocab-hsk20-055",
+      "canonicalID": "老师|lǎo shī|55",
+      "hanzi": "老师",
+      "pinyin": "lǎo shī",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "老师",
+          "vocabularyID": "vocab-hsk20-055",
+          "pinyin": "lǎo shī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "professeur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "老师在教室。",
+        "pinyin": "lǎo shī zài jiào shì。",
+        "translation": {
+          "fr": "Le professeur est dans la classe."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "老师|lǎo shī|55",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 55,
+        "level": 1
+      },
+      "traditionalHanzi": "老師"
+    },
+    {
+      "id": "vocab-hsk20-077",
+      "canonicalID": "朋友|péng yǒu|77",
+      "hanzi": "朋友",
+      "pinyin": "péng yǒu",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "朋友",
+          "vocabularyID": "vocab-hsk20-077",
+          "pinyin": "péng yǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ami"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的朋友来了。",
+        "pinyin": "wǒ de péng yǒu lái le。",
+        "translation": {
+          "fr": "Mon ami est arrivé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "朋友|péng yǒu|77",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 77,
+        "level": 1
+      },
+      "traditionalHanzi": "朋友"
+    },
+    {
+      "id": "vocab-hsk20-079",
+      "canonicalID": "苹果|píng guǒ|79",
+      "hanzi": "苹果",
+      "pinyin": "píng guǒ",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "苹果",
+          "vocabularyID": "vocab-hsk20-079",
+          "pinyin": "píng guǒ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pomme"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我买了一个苹果。",
+        "pinyin": "wǒ mǎi le yí gè píng guǒ。",
+        "translation": {
+          "fr": "J’ai acheté une pomme."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "苹果|píng guǒ|79",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 79,
+        "level": 1
+      },
+      "traditionalHanzi": "蘋果"
+    },
+    {
+      "id": "vocab-shenme",
+      "hanzi": "什么",
+      "traditionalHanzi": "什麼",
+      "pinyin": "shénme",
+      "toneNumbers": [
+        2,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "什么",
+          "vocabularyID": "vocab-shenme",
+          "pinyin": "shénme",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [
+        {
+          "pattern": "什么 + nom",
+          "explanation": {
+            "fr": "什么 signifie « quoi / quel ». Dans 你叫什么名字？, il demande quel nom, sans ajouter de mot pour « est-ce que ». La seconde syllabe est légère."
+          },
+          "examples": [
+            {
+              "hanzi": "你叫什么？",
+              "pinyin": "nǐ jiào shénme?",
+              "translation": {
+                "fr": "Comment t'appelles-tu ?"
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-shenme",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "quoi ; quel"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你叫什么名字？",
+        "pinyin": "nǐ jiào shénme míngzi?",
+        "translation": {
+          "fr": "Comment t'appelles-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "什么 ouvre une petite fenêtre sur l'information que l'on cherche."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "什么",
+          "traditional": "什麼"
+        }
+      }
+    },
+    {
+      "id": "vocab-zaijian",
+      "hanzi": "再见",
+      "traditionalHanzi": "再見",
+      "pinyin": "zàijiàn",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "再见",
+          "vocabularyID": "vocab-zaijian",
+          "pinyin": "zàijiàn",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "au revoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "明天再见！",
+        "pinyin": "míngtiān zàijiàn!",
+        "translation": {
+          "fr": "À demain !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "再 signifie encore et 见 signifie voir : on se reverra."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "再见",
+          "traditional": "再見"
+        }
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-10-grammar-01",
+      "title": {
+        "fr": "Grammaire — 在 + lieu"
+      },
+      "body": {
+        "fr": "在 se place après le sujet et avant le lieu.\nExemple 1 : 手机在桌子上。\nshǒu jī zài zhuō zi shàng。\nLe téléphone est sur la table."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-10-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-006",
+        "vocab-hsk20-013",
+        "vocab-hsk20-098",
+        "vocab-hsk20-135",
+        "vocab-hsk20-146",
+        "vocab-hsk20-177",
+        "vocab-hsk20-225",
+        "vocab-hsk20-246",
+        "vocab-hsk20-055",
+        "vocab-hsk20-077",
+        "vocab-hsk20-079",
+        "vocab-shenme",
+        "vocab-zaijian"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "id": "block-lesson-10-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你的房间有桌子和椅子吗？",
+          "pinyin": "nǐ de fáng jiān yǒu zhuō zi hé yǐ zi ma？",
+          "translation": {
+            "fr": "Ta chambre a une table et des chaises ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "有，桌子上有一本书。",
+          "pinyin": "yǒu， zhuō zi shàng yǒu yī běn shū。",
+          "translation": {
+            "fr": "Oui, il y a un livre sur la table."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "门旁边有手机吗？",
+          "pinyin": "mén páng biān yǒu shǒu jī ma？",
+          "translation": {
+            "fr": "Y a-t-il un téléphone près de la porte ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "手机在桌子上，我给老师打电话。",
+          "pinyin": "shǒu jī zài zhuō zi shàng， wǒ gěi lǎo shī dǎ diàn huà。",
+          "translation": {
+            "fr": "Le téléphone est sur la table ; j’appelle le professeur."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你的朋友也在房间吗？",
+          "pinyin": "nǐ de péng yǒu yě zài fáng jiān ma？",
+          "translation": {
+            "fr": "Ton ami est aussi dans la chambre ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "他不在。老师要这本书，所以我先整理房间。",
+          "pinyin": "tā bù zài。 lǎo shī yào zhè běn shū， suǒ yǐ wǒ xiān zhěng lǐ fáng jiān。",
+          "translation": {
+            "fr": "Il n’est pas là. Le professeur veut ce livre, alors je range d’abord la chambre."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 6
+      }
+    },
+    {
+      "id": "block-lesson-10-reading",
+      "storyID": "story-lesson-10",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "La chambre"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-10-p1",
+          "hanzi": "我在家整理房间。桌子上有一本书，椅子在桌子旁边。",
+          "pinyin": "wǒ zài jiā zhěng lǐ fáng jiān。 zhuō zi shàng yǒu yī běn shū， yǐ zi zài zhuō zi páng biān。",
+          "translation": {
+            "fr": "Je range la chambre à la maison. Il y a un livre sur la table et la chaise est à côté."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-10-p2",
+          "hanzi": "我在家整理房间，因为老师要这本书。",
+          "pinyin": "wǒ zài jiā zhěng lǐ fáng jiān， yīn wèi lǎo shī yào zhè běn shū。",
+          "translation": {
+            "fr": "Je range la chambre à la maison parce que le professeur veut ce livre."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l10-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l10-meaning",
+          "prompt": {
+            "fr": "Que signifie 书 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’objet mentionné sur la table."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "livre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "téléphone"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "porte"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l10-order",
+          "prompt": {
+            "fr": "Construis « Le téléphone est sur la table ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l10-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "桌子上",
+            "pinyin": "zhuō zi shàng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "手机",
+            "pinyin": "shǒu jī",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "c",
+          "a"
+        ],
+        "acceptedVariants": [
+          "手机在桌子上。",
+          "手机在桌子上"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l10-fill",
+          "prompt": {
+            "fr": "Complète : 手机___桌子上。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l10-produce"
+          ],
+          "required": true
+        },
+        "sentence": "手机___桌子上。",
+        "acceptedAnswers": [
+          "在"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l10-listen",
+          "prompt": {
+            "fr": "Où est le téléphone ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "promptText": "手机在桌子上。",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Sur la table."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Près de la porte."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Dans la chambre."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l10-speak",
+          "prompt": {
+            "fr": "Dis « J’appelle le professeur ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l10-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我给老师打电话。",
+        "referencePinyin": "wǒ gěi lǎo shī dǎ diàn huà。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我给老师打电话。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l10-reading",
+          "prompt": {
+            "fr": "Où est le livre dans le texte ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Sur la table."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Près de la porte."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Dans le téléphone."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "id": "block-lesson-10-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-006",
+        "vocab-hsk20-013",
+        "vocab-hsk20-098",
+        "vocab-hsk20-135",
+        "vocab-hsk20-146",
+        "vocab-hsk20-177"
+      ],
+      "objectiveIDs": [
+        "l10-understand",
+        "l10-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 6
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-006",
+      "vocabularyID": "vocab-hsk20-006",
+      "front": {
+        "hanzi": "本",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "本",
+        "pinyin": "běn",
+        "text": {
+          "fr": "classificateur des livres"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-013",
+      "vocabularyID": "vocab-hsk20-013",
+      "front": {
+        "hanzi": "打电话",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "打电话",
+        "pinyin": "dǎ diàn huà",
+        "text": {
+          "fr": "téléphoner"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-098",
+      "vocabularyID": "vocab-hsk20-098",
+      "front": {
+        "hanzi": "书",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "书",
+        "pinyin": "shū",
+        "text": {
+          "fr": "livre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-135",
+      "vocabularyID": "vocab-hsk20-135",
+      "front": {
+        "hanzi": "椅子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "椅子",
+        "pinyin": "yǐ zi",
+        "text": {
+          "fr": "chaise"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-146",
+      "vocabularyID": "vocab-hsk20-146",
+      "front": {
+        "hanzi": "桌子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "桌子",
+        "pinyin": "zhuō zi",
+        "text": {
+          "fr": "table"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-177",
+      "vocabularyID": "vocab-hsk20-177",
+      "front": {
+        "hanzi": "房间",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "房间",
+        "pinyin": "fáng jiān",
+        "text": {
+          "fr": "chambre ; pièce"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-225",
+      "vocabularyID": "vocab-hsk20-225",
+      "front": {
+        "hanzi": "门",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "门",
+        "pinyin": "mén",
+        "text": {
+          "fr": "porte ; entrée"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-246",
+      "vocabularyID": "vocab-hsk20-246",
+      "front": {
+        "hanzi": "手机",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "手机",
+        "pinyin": "shǒu jī",
+        "text": {
+          "fr": "téléphone portable"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-055",
+      "vocabularyID": "vocab-hsk20-055",
+      "front": {
+        "hanzi": "老师",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "老师",
+        "pinyin": "lǎo shī",
+        "text": {
+          "fr": "professeur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-077",
+      "vocabularyID": "vocab-hsk20-077",
+      "front": {
+        "hanzi": "朋友",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "朋友",
+        "pinyin": "péng yǒu",
+        "text": {
+          "fr": "ami"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-079",
+      "vocabularyID": "vocab-hsk20-079",
+      "front": {
+        "hanzi": "苹果",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "苹果",
+        "pinyin": "píng guǒ",
+        "text": {
+          "fr": "pomme"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-shenme",
+      "vocabularyID": "vocab-shenme",
+      "front": {
+        "hanzi": "什么",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "什么",
+        "pinyin": "shénme · 2-0",
+        "text": {
+          "fr": "quoi ; quel"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "question"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-zaijian",
+      "vocabularyID": "vocab-zaijian",
+      "front": {
+        "hanzi": "再见",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "再见",
+        "pinyin": "zàijiàn · 4-4",
+        "text": {
+          "fr": "au revoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "greetings"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "allocationDay": 6,
+    "allocationRange": "days06-45",
+    "theme": "home",
+    "newVocabularyIDs": [
+      "vocab-hsk20-006",
+      "vocab-hsk20-013",
+      "vocab-hsk20-098",
+      "vocab-hsk20-135",
+      "vocab-hsk20-146",
+      "vocab-hsk20-177",
+      "vocab-hsk20-225",
+      "vocab-hsk20-246",
+      "vocab-hsk20-055",
+      "vocab-hsk20-077"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-079",
+      "vocab-shenme",
+      "vocab-zaijian"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-006",
+      "hsk20-013",
+      "hsk20-098",
+      "hsk20-135",
+      "hsk20-146",
+      "hsk20-177",
+      "hsk20-225",
+      "hsk20-246",
+      "hsk20-055",
+      "hsk20-077"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-079",
+      "hsk20-095",
+      "hsk20-138"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-006",
+      "hsk20-013",
+      "hsk20-098",
+      "hsk20-135",
+      "hsk20-146",
+      "hsk20-177",
+      "hsk20-225",
+      "hsk20-246",
+      "hsk20-055",
+      "hsk20-077"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-079",
+      "hsk20-095",
+      "hsk20-138"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

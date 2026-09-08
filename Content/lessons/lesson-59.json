@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-59",
+  "moduleID": "unit-06",
+  "order": 59,
+  "title": {
+    "fr": "Traverser une vieille rue"
+  },
+  "summary": {
+    "fr": "Décrire une peur passée et constater qu’un trajet est simple aujourd’hui."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l59-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l59-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-394",
+      "canonicalID": "害怕|hài pà|394",
+      "hanzi": "害怕",
+      "pinyin": "hài pà",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "害怕",
+          "vocabularyID": "vocab-hsk20-394",
+          "pinyin": "hài pà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "avoir peur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "孩子害怕黑。",
+        "pinyin": "hái zi hài pà hēi。",
+        "translation": {
+          "fr": "L’enfant a peur du noir."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "害怕|hài pà|394",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 394,
+        "level": 3
+      },
+      "traditionalHanzi": "害怕"
+    },
+    {
+      "id": "vocab-hsk20-401",
+      "canonicalID": "坏|huài|401",
+      "hanzi": "坏",
+      "pinyin": "huài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "坏",
+          "vocabularyID": "vocab-hsk20-401",
+          "pinyin": "huài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mauvais ; cassé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个杯子坏了。",
+        "pinyin": "zhè ge bēi zi huài le.",
+        "translation": {
+          "fr": "Ce verre est cassé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "坏|huài|401",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 401,
+        "level": 3
+      },
+      "traditionalHanzi": "壞"
+    },
+    {
+      "id": "vocab-hsk20-415",
+      "canonicalID": "简单|jiǎn dān|415",
+      "hanzi": "简单",
+      "pinyin": "jiǎn dān",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "简单",
+          "vocabularyID": "vocab-hsk20-415",
+          "pinyin": "jiǎn dān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "simple"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个问题很简单。",
+        "pinyin": "zhè ge wèn tí hěn jiǎn dān.",
+        "translation": {
+          "fr": "Ce problème est très simple."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "简单|jiǎn dān|415",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 415,
+        "level": 3
+      },
+      "traditionalHanzi": "簡單"
+    },
+    {
+      "id": "vocab-hsk20-434",
+      "canonicalID": "旧|jiù|434",
+      "hanzi": "旧",
+      "pinyin": "jiù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "旧",
+          "vocabularyID": "vocab-hsk20-434",
+          "pinyin": "jiù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vieux ; usagé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是一张旧照片。",
+        "pinyin": "zhè shì yì zhāng jiù zhào piàn.",
+        "translation": {
+          "fr": "C’est une vieille photo."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "旧|jiù|434",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 434,
+        "level": 3
+      },
+      "traditionalHanzi": "舊"
+    },
+    {
+      "id": "vocab-hsk20-448",
+      "canonicalID": "老|lǎo|448",
+      "hanzi": "老",
+      "pinyin": "lǎo",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "老",
+          "vocabularyID": "vocab-hsk20-448",
+          "pinyin": "lǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vieux ; ancien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我爷爷已经老了。",
+        "pinyin": "wǒ yé ye yǐ jīng lǎo le.",
+        "translation": {
+          "fr": "Mon grand-père est très âgé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "老|lǎo|448",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 448,
+        "level": 3
+      },
+      "traditionalHanzi": "老"
+    },
+    {
+      "id": "vocab-hsk20-540",
+      "canonicalID": "相同|xiāng tóng|540",
+      "hanzi": "相同",
+      "pinyin": "xiāng tóng",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "相同",
+          "vocabularyID": "vocab-hsk20-540",
+          "pinyin": "xiāng tóng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "identique ; pareil"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这两杯水的温度相同。",
+        "pinyin": "zhè liǎng bēi shuǐ de wēn dù xiāng tóng.",
+        "translation": {
+          "fr": "La température de ces deux verres d’eau est identique."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "相同|xiāng tóng|540",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 540,
+        "level": 3
+      },
+      "traditionalHanzi": "相同"
+    },
+    {
+      "id": "vocab-hsk20-544",
+      "canonicalID": "小心|xiǎo xīn|544",
+      "hanzi": "小心",
+      "pinyin": "xiǎo xīn",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "小心",
+          "vocabularyID": "vocab-hsk20-544",
+          "pinyin": "xiǎo xīn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "faire attention ; prudent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "过马路时要小心。",
+        "pinyin": "guò mǎ lù shí yào xiǎo xīn.",
+        "translation": {
+          "fr": "Il faut faire attention en traversant la rue."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "小心|xiǎo xīn|544",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 544,
+        "level": 3
+      },
+      "traditionalHanzi": "小心"
+    },
+    {
+      "id": "vocab-hsk20-349",
+      "canonicalID": "蛋糕|dàn gāo|349",
+      "hanzi": "蛋糕",
+      "pinyin": "dàn gāo",
+      "toneNumbers": [
+        4,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "蛋糕",
+          "vocabularyID": "vocab-hsk20-349",
+          "pinyin": "dàn gāo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "gâteau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "生日蛋糕很好吃。",
+        "pinyin": "shēng rì dàn gāo hěn hǎo chī。",
+        "translation": {
+          "fr": "Le gâteau d’anniversaire est délicieux."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "蛋糕|dàn gāo|349",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 349,
+        "level": 3
+      },
+      "traditionalHanzi": "蛋糕"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-59-grammar-01",
+      "title": {
+        "fr": "Grammaire — 以前…现在…"
+      },
+      "body": {
+        "fr": "以前 situe une situation passée et 现在 introduit la situation actuelle.\nExemple 1 : 以前我很害怕，现在走路很简单。\nyǐ qián wǒ hěn hài pà, xiàn zài zǒu lù hěn jiǎn dān.\nAvant j’avais très peur ; maintenant marcher est simple."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-59-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-394",
+        "vocab-hsk20-401",
+        "vocab-hsk20-415",
+        "vocab-hsk20-434",
+        "vocab-hsk20-448",
+        "vocab-hsk20-540",
+        "vocab-hsk20-544",
+        "vocab-hsk20-349"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "id": "block-lesson-59-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你害怕走这条街吗？",
+          "pinyin": "nǐ hài pà zǒu zhè tiáo jiē ma?",
+          "translation": {
+            "fr": "Tu as peur de marcher dans cette rue ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "以前我很害怕，因为灯很少。",
+          "pinyin": "yǐ qián wǒ hěn hài pà, yīn wèi dēng hěn shǎo.",
+          "translation": {
+            "fr": "Avant, j’avais très peur parce qu’il y avait peu de lampes."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "现在路灯多了，走路很简单。",
+          "pinyin": "xiàn zài lù dēng duō le, zǒu lù hěn jiǎn dān.",
+          "translation": {
+            "fr": "Maintenant il y a plus de lampes et marcher est simple."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "那座老房子虽然旧，但是没有坏。",
+          "pinyin": "nà zuò lǎo fáng zi suī rán jiù, dàn shì méi yǒu huài.",
+          "translation": {
+            "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 55
+      }
+    },
+    {
+      "id": "block-lesson-59-reading",
+      "storyID": "story-lesson-59",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "Une rue éclairée"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-59-p1",
+          "hanzi": "以前这条街很暗，Tao害怕一个人走。",
+          "pinyin": "yǐ qián zhè tiáo jiē hěn àn, Tao hài pà yí ge rén zǒu.",
+          "translation": {
+            "fr": "Avant, cette rue était sombre et Tao avait peur d’y marcher seul."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-59-p2",
+          "hanzi": "现在路灯更多了，旧房子也还在。",
+          "pinyin": "xiàn zài lù dēng gèng duō le, jiù fáng zi yě hái zài.",
+          "translation": {
+            "fr": "Maintenant il y a davantage de lampes et la vieille maison est toujours là."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l59-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-meaning",
+          "prompt": {
+            "fr": "Que signifie 害怕 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "être vieux"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "avoir peur"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "être simple"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l59-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « Marcher est simple ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "简单",
+            "pinyin": "jiǎn dān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "走路",
+            "pinyin": "zǒu lù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "走路很简单。",
+          "走路很简单"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l59-fill",
+          "prompt": {
+            "fr": "Complète : 那座房子虽然___，但是没有坏。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "sentence": "那座房子虽然___，但是没有坏。",
+        "acceptedAnswers": [
+          "旧"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-listen",
+          "prompt": {
+            "fr": "Pourquoi la rue est-elle plus facile maintenant ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "现在路灯多了，走路很简单。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le bus est rapide."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a plus de lampes."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "La maison est neuve."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l59-speak",
+          "prompt": {
+            "fr": "Dis que tu avais peur avant."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "你害怕走这条街吗？",
+        "referencePinyin": "nǐ hài pà zǒu zhè tiáo jiē ma?",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你害怕走这条街吗？",
+          "你害怕走这条街吗"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-reading",
+          "prompt": {
+            "fr": "Quel est l’état de la vieille maison ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle est usée mais pas cassée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle est neuve."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle est cassée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "id": "block-lesson-59-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-394",
+        "vocab-hsk20-401",
+        "vocab-hsk20-415",
+        "vocab-hsk20-434",
+        "vocab-hsk20-448",
+        "vocab-hsk20-540",
+        "vocab-hsk20-544",
+        "vocab-hsk20-349"
+      ],
+      "objectiveIDs": [
+        "l59-understand",
+        "l59-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 55
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-394",
+      "vocabularyID": "vocab-hsk20-394",
+      "front": {
+        "hanzi": "害怕",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "害怕",
+        "pinyin": "hài pà",
+        "text": {
+          "fr": "avoir peur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-401",
+      "vocabularyID": "vocab-hsk20-401",
+      "front": {
+        "hanzi": "坏",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "坏",
+        "pinyin": "huài",
+        "text": {
+          "fr": "mauvais ; cassé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-415",
+      "vocabularyID": "vocab-hsk20-415",
+      "front": {
+        "hanzi": "简单",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "简单",
+        "pinyin": "jiǎn dān",
+        "text": {
+          "fr": "simple"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-434",
+      "vocabularyID": "vocab-hsk20-434",
+      "front": {
+        "hanzi": "旧",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "旧",
+        "pinyin": "jiù",
+        "text": {
+          "fr": "vieux ; usagé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-448",
+      "vocabularyID": "vocab-hsk20-448",
+      "front": {
+        "hanzi": "老",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "老",
+        "pinyin": "lǎo",
+        "text": {
+          "fr": "vieux ; ancien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-540",
+      "vocabularyID": "vocab-hsk20-540",
+      "front": {
+        "hanzi": "相同",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "相同",
+        "pinyin": "xiāng tóng",
+        "text": {
+          "fr": "identique ; pareil"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-544",
+      "vocabularyID": "vocab-hsk20-544",
+      "front": {
+        "hanzi": "小心",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "小心",
+        "pinyin": "xiǎo xīn",
+        "text": {
+          "fr": "faire attention ; prudent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-349",
+      "vocabularyID": "vocab-hsk20-349",
+      "front": {
+        "hanzi": "蛋糕",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "蛋糕",
+        "pinyin": "dàn gāo",
+        "text": {
+          "fr": "gâteau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 55,
+    "allocationRange": "days46-90",
+    "theme": "Traverser une vieille rue",
+    "themeLabel": {
+      "fr": "Traverser une vieille rue"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-394",
+      "vocab-hsk20-401",
+      "vocab-hsk20-415",
+      "vocab-hsk20-434",
+      "vocab-hsk20-448"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-349",
+      "vocab-hsk20-540",
+      "vocab-hsk20-544"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-394",
+      "hsk20-401",
+      "hsk20-415",
+      "hsk20-434",
+      "hsk20-448"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-540",
+      "hsk20-544",
+      "hsk20-349"
+    ],
+    "grammarPattern": "以前…现在…",
+    "grammarAnchor": "hsk20-394",
+    "allocationNewVocabularyIDs": [
+      "hsk20-394",
+      "hsk20-401",
+      "hsk20-415",
+      "hsk20-434",
+      "hsk20-448"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-540",
+      "hsk20-544",
+      "hsk20-349"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-06",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

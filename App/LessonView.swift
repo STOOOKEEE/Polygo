@@ -932,23 +932,46 @@ private struct PedagogicalBlockView: View {
                 Text("Mots utiles").font(.headline).foregroundStyle(SylluneColor.ink)
                 ForEach(value.vocabularyIDs, id: \.self) { id in
                     if let word = vocabulary.first(where: { $0.id == id }) {
-                        // A word is a learning interaction, not a detour to
-                        // another screen. The Chinese control speaks it (and
-                        // may expose a detail action through the shared text
-                        // component) while the compact row keeps the lesson
-                        // moving.
-                        ChineseSelectableText(
-                            hanzi: word.hanzi,
-                            font: .title3,
-                            speechEnabled: true,
-                            vocabulary: [word],
-                            segmentation: word.segmentation,
-                            pinyin: word.pinyin,
-                            translation: word.meaning.resolve(preferred: languageCodes),
-                            audio: word.audio,
-                            wordInteractionEnabled: false
-                        )
-                        .foregroundStyle(SylluneColor.ink)
+                        VStack(alignment: .leading, spacing: 6) {
+                            // A word is a learning interaction, not a detour
+                            // to another screen. The Chinese control speaks
+                            // the lexeme while the compact row keeps the
+                            // lesson moving.
+                            ChineseSelectableText(
+                                hanzi: word.hanzi,
+                                font: .title3,
+                                speechEnabled: true,
+                                vocabulary: [word],
+                                segmentation: word.segmentation,
+                                pinyin: word.pinyin,
+                                translation: word.meaning.resolve(preferred: languageCodes),
+                                audio: word.audio,
+                                wordInteractionEnabled: false
+                            )
+                            .foregroundStyle(SylluneColor.ink)
+
+                            if let example = word.example {
+                                let exampleTranslation = example.translation.resolve(preferred: languageCodes) ?? ""
+                                // The example is a full Mandarin phrase, so
+                                // the shared text control sends the complete
+                                // phrase to the local zh-CN TTS. Its pinyin
+                                // and translation stay attached to the
+                                // example while the row above retains the
+                                // lexeme's own pinyin and meaning.
+                                ChineseSelectableText(
+                                    hanzi: example.hanzi,
+                                    font: .body,
+                                    speechEnabled: true,
+                                    pinyin: example.pinyin,
+                                    translation: exampleTranslation,
+                                    audio: example.audio,
+                                    wordInteractionEnabled: false
+                                )
+                                .foregroundStyle(SylluneColor.inkMuted)
+                                .padding(.leading, 10)
+                                .accessibilityLabel("Exemple : \(example.hanzi), \(example.pinyin), \(exampleTranslation)")
+                            }
+                        }
                     }
                 }
             }
@@ -1083,8 +1106,19 @@ private struct ListeningAnswerView: View {
         VStack(alignment: .leading, spacing: 14) {
             Button {
                 Task {
-                    do { try await model.dependencies.audio.play(asset: exercise.promptAudio); audioMessage = "Lecture terminée." }
-                    catch { audioMessage = "Audio indisponible. Le texte des réponses reste disponible." }
+                    do {
+                        if let promptAudio = exercise.promptAudio {
+                            try await model.dependencies.audio.play(asset: promptAudio)
+                        } else if let promptText = exercise.promptText {
+                            try await model.dependencies.audio.speak(text: promptText, localeIdentifier: "zh-CN", rate: .normal)
+                        } else {
+                            audioMessage = "Aucune source audio n’est fournie. Le texte des réponses reste disponible."
+                            return
+                        }
+                        audioMessage = "Lecture terminée."
+                    } catch {
+                        audioMessage = "Audio indisponible. Le texte des réponses reste disponible."
+                    }
                 }
             } label: { Label("Écouter le mot", systemImage: "speaker.wave.2.fill") }
                 .buttonStyle(.borderedProminent).tint(SylluneColor.sky)

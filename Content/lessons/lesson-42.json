@@ -1,0 +1,1082 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-42",
+  "moduleID": "unit-05",
+  "order": 42,
+  "title": {
+    "fr": "Une valise oubliée"
+  },
+  "summary": {
+    "fr": "Raconter un oubli à la gare et demander quel choix faire."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l42-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l42-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-551",
+      "canonicalID": "行李箱|xíng lǐ xiāng|551",
+      "hanzi": "行李箱",
+      "pinyin": "xíng lǐ xiāng",
+      "toneNumbers": [
+        2,
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "行李箱",
+          "vocabularyID": "vocab-hsk20-551",
+          "pinyin": "xíng lǐ xiāng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "valise"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的行李箱太重了。",
+        "pinyin": "wǒ de xíng lǐ xiāng tài zhòng le.",
+        "translation": {
+          "fr": "Ma valise est trop lourde."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "行李箱|xíng lǐ xiāng|551",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 551,
+        "level": 3
+      },
+      "traditionalHanzi": "行李箱"
+    },
+    {
+      "id": "vocab-hsk20-380",
+      "canonicalID": "刚才|gāng cái|380",
+      "hanzi": "刚才",
+      "pinyin": "gāng cái",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "刚才",
+          "vocabularyID": "vocab-hsk20-380",
+          "pinyin": "gāng cái"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "à l’instant"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "他刚才在这里。",
+        "pinyin": "tā gāng cái zài zhè lǐ。",
+        "translation": {
+          "fr": "Il était ici tout à l’heure."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "刚才|gāng cái|380",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 380,
+        "level": 3
+      },
+      "traditionalHanzi": "剛纔"
+    },
+    {
+      "id": "vocab-hsk20-403",
+      "canonicalID": "还是|hái shì|403",
+      "hanzi": "还是",
+      "pinyin": "hái shì",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "还是",
+          "vocabularyID": "vocab-hsk20-403",
+          "pinyin": "hái shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ou bien ; toujours"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你坐地铁还是坐公交车？",
+        "pinyin": "nǐ zuò dì tiě hái shì zuò gōng jiāo chē?",
+        "translation": {
+          "fr": "Tu prends le métro ou le bus ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "还是|hái shì|403",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 403,
+        "level": 3
+      },
+      "traditionalHanzi": "還是"
+    },
+    {
+      "id": "vocab-hsk20-440",
+      "canonicalID": "刻|kè|440",
+      "hanzi": "刻",
+      "pinyin": "kè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "刻",
+          "vocabularyID": "vocab-hsk20-440",
+          "pinyin": "kè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "quart d’heure"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "现在是八点一刻。",
+        "pinyin": "xiàn zài shì bā diǎn yí kè.",
+        "translation": {
+          "fr": "Il est huit heures et quart."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "刻|kè|440",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 440,
+        "level": 3
+      },
+      "traditionalHanzi": "刻"
+    },
+    {
+      "id": "vocab-hsk20-471",
+      "canonicalID": "难过|nán guò|471",
+      "hanzi": "难过",
+      "pinyin": "nán guò",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "难过",
+          "vocabularyID": "vocab-hsk20-471",
+          "pinyin": "nán guò"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "triste ; malheureux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "听到这个消息，她很难过。",
+        "pinyin": "tīng dào zhè ge xiāo xi, tā hěn nán guò.",
+        "translation": {
+          "fr": "En entendant cette nouvelle, elle est très triste."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "难过|nán guò|471",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 471,
+        "level": 3
+      },
+      "traditionalHanzi": "難過"
+    },
+    {
+      "id": "vocab-hsk20-562",
+      "canonicalID": "一会儿|yí huìr|562",
+      "hanzi": "一会儿",
+      "pinyin": "yí huìr",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "一会儿",
+          "vocabularyID": "vocab-hsk20-562",
+          "pinyin": "yí huìr"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "un moment ; bientôt"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我一会儿给你打电话。",
+        "pinyin": "wǒ yí huìr gěi nǐ dǎ diàn huà.",
+        "translation": {
+          "fr": "Je t’appelle dans un moment."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "一会儿|yí huìr|562",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 562,
+        "level": 3
+      },
+      "traditionalHanzi": "一會兒"
+    },
+    {
+      "id": "vocab-hsk20-267",
+      "canonicalID": "姓|xìng|267",
+      "hanzi": "姓",
+      "pinyin": "xìng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "姓",
+          "vocabularyID": "vocab-hsk20-267",
+          "pinyin": "xìng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "nom de famille"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你姓什么？",
+        "pinyin": "nǐ xìng shén me？",
+        "translation": {
+          "fr": "Quel est ton nom de famille ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "姓|xìng|267",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 267,
+        "level": 2
+      },
+      "traditionalHanzi": "姓"
+    },
+    {
+      "id": "vocab-hsk20-274",
+      "canonicalID": "要|yào|274",
+      "hanzi": "要",
+      "pinyin": "yào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "要",
+          "vocabularyID": "vocab-hsk20-274",
+          "pinyin": "yào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vouloir ; devoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我要回家。",
+        "pinyin": "wǒ yào huí jiā。",
+        "translation": {
+          "fr": "Je veux rentrer à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "要|yào|274",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 274,
+        "level": 2
+      },
+      "traditionalHanzi": "要"
+    },
+    {
+      "id": "vocab-hsk20-281",
+      "canonicalID": "游泳|yóu yǒng|281",
+      "hanzi": "游泳",
+      "pinyin": "yóu yǒng",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "游泳",
+          "vocabularyID": "vocab-hsk20-281",
+          "pinyin": "yóu yǒng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "nager"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "夏天我喜欢游泳。",
+        "pinyin": "xià tiān wǒ xǐ huān yóu yǒng。",
+        "translation": {
+          "fr": "En été, j’aime nager."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "游泳|yóu yǒng|281",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 281,
+        "level": 2
+      },
+      "traditionalHanzi": "游泳"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-42-grammar-01",
+      "title": {
+        "fr": "Grammaire — 从 A 到 B"
+      },
+      "body": {
+        "fr": "从 et 到 encadrent le trajet d’un lieu à l’autre.\nExemple 1 : 从这里到车站很近。\ncóng zhè lǐ dào chē zhàn hěn jìn。\nD’ici à la gare, c’est proche."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-42-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-551",
+        "vocab-hsk20-380",
+        "vocab-hsk20-403",
+        "vocab-hsk20-440",
+        "vocab-hsk20-471",
+        "vocab-hsk20-562",
+        "vocab-hsk20-267",
+        "vocab-hsk20-274",
+        "vocab-hsk20-281"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "id": "block-lesson-42-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你的行李箱在哪里？",
+          "pinyin": "nǐ de xíng lǐ xiāng zài nǎ lǐ？",
+          "translation": {
+            "fr": "Où est ta valise ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "刚才还在这里，现在不见了。",
+          "pinyin": "gāng cái hái zài zhè lǐ， xiàn zài bú jiàn le。",
+          "translation": {
+            "fr": "Elle était encore ici tout à l’heure, maintenant elle a disparu."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你坐火车还是坐飞机？",
+          "pinyin": "nǐ zuò huǒ chē hái shì zuò fēi jī？",
+          "translation": {
+            "fr": "Tu prends le train ou l’avion ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "坐火车。我们回去找，或者问服务员。",
+          "pinyin": "zuò huǒ chē。 wǒ men huí qù zhǎo， huò zhě wèn fú wù yuán。",
+          "translation": {
+            "fr": "Le train. Nous pouvons retourner la chercher ou demander au serveur."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "别难过，一会儿就能找到。",
+          "pinyin": "bié nán guò， yī huì er jiù néng zhǎo dào。",
+          "translation": {
+            "fr": "Ne sois pas triste, nous la trouverons dans un moment."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，现在是三点一刻，我们还有时间。",
+          "pinyin": "hǎo， xiàn zài shì sān diǎn yī kè， wǒ men hái yǒu shí jiān。",
+          "translation": {
+            "fr": "D’accord, il est trois heures et quart, nous avons encore le temps."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 38
+      }
+    },
+    {
+      "id": "block-lesson-42-reading",
+      "storyID": "story-lesson-42",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "À la gare"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-42-p1",
+          "hanzi": "Tao刚才把行李箱放在车站，现在找不到了。他没有坐飞机，要坐火车。",
+          "pinyin": "Tao gāng cái bǎ xíng lǐ xiāng fàng zài chē zhàn， xiàn zài zhǎo bú dào le。 tā méi yǒu zuò fēi jī， yào zuò huǒ chē。",
+          "translation": {
+            "fr": "Tao a posé sa valise à la gare tout à l’heure et ne la trouve plus. Il ne prend pas l’avion, il prend le train."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-42-p2",
+          "hanzi": "他问服务员，决定回去找。三点一刻以后，他终于看见行李箱。",
+          "pinyin": "tā wèn fú wù yuán， jué dìng huí qù zhǎo。 sān diǎn yī kè yǐ hòu， tā zhōng yú kàn jiàn xíng lǐ xiāng。",
+          "translation": {
+            "fr": "Il demande au serveur et décide de retourner la chercher. Après trois heures et quart, il voit enfin la valise."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l42-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-meaning",
+          "prompt": {
+            "fr": "Que signifie 行李箱 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’objet perdu."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "valise"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "carte"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "parapluie"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l42-order",
+          "prompt": {
+            "fr": "Construis « Nous retournons chercher la valise ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "行李箱",
+            "pinyin": "xíng lǐ xiāng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我们回去找",
+            "pinyin": "wǒ men huí qù zhǎo",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我们回去找行李箱。",
+          "我们回去找行李箱"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l42-fill",
+          "prompt": {
+            "fr": "Complète : 三点一___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "sentence": "三点一___。",
+        "acceptedAnswers": [
+          "刻"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l42-listen",
+          "prompt": {
+            "fr": "Quel transport Tao prend-il ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我要坐火车。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le train."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’avion."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le bateau."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l42-speak",
+          "prompt": {
+            "fr": "Dis « Ne sois pas triste ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "别难过。",
+        "referencePinyin": "bié nán guò。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "别难过。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-reading",
+          "prompt": {
+            "fr": "Quand Tao retrouve-t-il la valise ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "À midi."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Après trois heures et quart."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le lendemain matin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "id": "block-lesson-42-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-551",
+        "vocab-hsk20-380",
+        "vocab-hsk20-403",
+        "vocab-hsk20-440",
+        "vocab-hsk20-471",
+        "vocab-hsk20-562"
+      ],
+      "objectiveIDs": [
+        "l42-understand",
+        "l42-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 38
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-551",
+      "vocabularyID": "vocab-hsk20-551",
+      "front": {
+        "hanzi": "行李箱",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "行李箱",
+        "pinyin": "xíng lǐ xiāng",
+        "text": {
+          "fr": "valise"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-380",
+      "vocabularyID": "vocab-hsk20-380",
+      "front": {
+        "hanzi": "刚才",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "刚才",
+        "pinyin": "gāng cái",
+        "text": {
+          "fr": "à l’instant"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-403",
+      "vocabularyID": "vocab-hsk20-403",
+      "front": {
+        "hanzi": "还是",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "还是",
+        "pinyin": "hái shì",
+        "text": {
+          "fr": "ou bien ; toujours"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-440",
+      "vocabularyID": "vocab-hsk20-440",
+      "front": {
+        "hanzi": "刻",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "刻",
+        "pinyin": "kè",
+        "text": {
+          "fr": "quart d’heure"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-471",
+      "vocabularyID": "vocab-hsk20-471",
+      "front": {
+        "hanzi": "难过",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "难过",
+        "pinyin": "nán guò",
+        "text": {
+          "fr": "triste ; malheureux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-562",
+      "vocabularyID": "vocab-hsk20-562",
+      "front": {
+        "hanzi": "一会儿",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "一会儿",
+        "pinyin": "yí huìr",
+        "text": {
+          "fr": "un moment ; bientôt"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-267",
+      "vocabularyID": "vocab-hsk20-267",
+      "front": {
+        "hanzi": "姓",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "姓",
+        "pinyin": "xìng",
+        "text": {
+          "fr": "nom de famille"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-274",
+      "vocabularyID": "vocab-hsk20-274",
+      "front": {
+        "hanzi": "要",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "text": {
+          "fr": "vouloir ; devoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-281",
+      "vocabularyID": "vocab-hsk20-281",
+      "front": {
+        "hanzi": "游泳",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "游泳",
+        "pinyin": "yóu yǒng",
+        "text": {
+          "fr": "nager"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 38,
+    "allocationRange": "days06-45",
+    "theme": "travel",
+    "newVocabularyIDs": [
+      "vocab-hsk20-551",
+      "vocab-hsk20-380",
+      "vocab-hsk20-403",
+      "vocab-hsk20-440",
+      "vocab-hsk20-471",
+      "vocab-hsk20-562"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-267",
+      "vocab-hsk20-274",
+      "vocab-hsk20-281"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-551",
+      "hsk20-380",
+      "hsk20-403",
+      "hsk20-440",
+      "hsk20-471",
+      "hsk20-562"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-267",
+      "hsk20-274",
+      "hsk20-281"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-551",
+      "hsk20-380",
+      "hsk20-403",
+      "hsk20-440",
+      "hsk20-471",
+      "hsk20-562"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-267",
+      "hsk20-274",
+      "hsk20-281"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-05",
+    "newVocabularyCount": 6,
+    "extraVocabularyIDs": []
+  }
+}

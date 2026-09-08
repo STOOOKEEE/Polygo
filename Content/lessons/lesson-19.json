@@ -1,0 +1,1342 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-19",
+  "moduleID": "unit-03",
+  "order": 19,
+  "title": {
+    "fr": "À l’hôpital"
+  },
+  "summary": {
+    "fr": "Décrire un état de santé et distinguer plusieurs degrés de température."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l19-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l19-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-240",
+      "canonicalID": "身体|shēn tǐ|240",
+      "hanzi": "身体",
+      "pinyin": "shēn tǐ",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "身体",
+          "vocabularyID": "vocab-hsk20-240",
+          "pinyin": "shēn tǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "corps ; santé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的身体很好。",
+        "pinyin": "wǒ de shēn tǐ hěn hǎo。",
+        "translation": {
+          "fr": "Je suis en bonne santé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "身体|shēn tǐ|240",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 240,
+        "level": 2
+      },
+      "traditionalHanzi": "身體"
+    },
+    {
+      "id": "vocab-hsk20-241",
+      "canonicalID": "生病|shēng bìng|241",
+      "hanzi": "生病",
+      "pinyin": "shēng bìng",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "生病",
+          "vocabularyID": "vocab-hsk20-241",
+          "pinyin": "shēng bìng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tomber malade"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "他生病了。",
+        "pinyin": "tā shēng bìng le。",
+        "translation": {
+          "fr": "Il est tombé malade."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "生病|shēng bìng|241",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 241,
+        "level": 2
+      },
+      "traditionalHanzi": "生病"
+    },
+    {
+      "id": "vocab-hsk20-273",
+      "canonicalID": "药|yào|273",
+      "hanzi": "药",
+      "pinyin": "yào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "药",
+          "vocabularyID": "vocab-hsk20-273",
+          "pinyin": "yào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "médicament"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "医生给我药。",
+        "pinyin": "yī shēng gěi wǒ yào。",
+        "translation": {
+          "fr": "Le médecin me donne un médicament."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "药|yào|273",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 273,
+        "level": 2
+      },
+      "traditionalHanzi": "藥"
+    },
+    {
+      "id": "vocab-hsk20-014",
+      "canonicalID": "大|dà|14",
+      "hanzi": "大",
+      "pinyin": "dà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "大",
+          "vocabularyID": "vocab-hsk20-014",
+          "pinyin": "dà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "grand ; gros"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这只狗很大。",
+        "pinyin": "zhè zhī gǒu hěn dà。",
+        "translation": {
+          "fr": "Ce chien est très grand."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "大|dà|14",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 14,
+        "level": 1
+      },
+      "traditionalHanzi": "大"
+    },
+    {
+      "id": "vocab-hsk20-056",
+      "canonicalID": "冷|lěng|56",
+      "hanzi": "冷",
+      "pinyin": "lěng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "冷",
+          "vocabularyID": "vocab-hsk20-056",
+          "pinyin": "lěng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "froid"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天很冷。",
+        "pinyin": "jīn tiān hěn lěng。",
+        "translation": {
+          "fr": "Il fait très froid aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "冷|lěng|56",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 56,
+        "level": 1
+      },
+      "traditionalHanzi": "冷"
+    },
+    {
+      "id": "vocab-hsk20-078",
+      "canonicalID": "漂亮|piào liàng|78",
+      "hanzi": "漂亮",
+      "pinyin": "piào liàng",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "漂亮",
+          "vocabularyID": "vocab-hsk20-078",
+          "pinyin": "piào liàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "joli ; beau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这件衣服很漂亮。",
+        "pinyin": "zhè jiàn yī fú hěn piào liàng。",
+        "translation": {
+          "fr": "Ce vêtement est très joli."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "漂亮|piào liàng|78",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 78,
+        "level": 1
+      },
+      "traditionalHanzi": "漂亮"
+    },
+    {
+      "id": "vocab-hsk20-085",
+      "canonicalID": "热|rè|85",
+      "hanzi": "热",
+      "pinyin": "rè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "热",
+          "vocabularyID": "vocab-hsk20-085",
+          "pinyin": "rè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chaud"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "水很热。",
+        "pinyin": "shuǐ hěn rè。",
+        "translation": {
+          "fr": "L’eau est très chaude."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "热|rè|85",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 85,
+        "level": 1
+      },
+      "traditionalHanzi": "熱"
+    },
+    {
+      "id": "vocab-hsk20-122",
+      "canonicalID": "小|xiǎo|122",
+      "hanzi": "小",
+      "pinyin": "xiǎo",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "小",
+          "vocabularyID": "vocab-hsk20-122",
+          "pinyin": "xiǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "petit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这只猫很小。",
+        "pinyin": "zhè zhī māo hěn xiǎo。",
+        "translation": {
+          "fr": "Ce chat est très petit."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "小|xiǎo|122",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 122,
+        "level": 1
+      },
+      "traditionalHanzi": "小"
+    },
+    {
+      "id": "vocab-hsk20-180",
+      "canonicalID": "高|gāo|180",
+      "hanzi": "高",
+      "pinyin": "gāo",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "高",
+          "vocabularyID": "vocab-hsk20-180",
+          "pinyin": "gāo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "haut ; grand"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这座楼很高。",
+        "pinyin": "zhè zuò lóu hěn gāo。",
+        "translation": {
+          "fr": "Cet immeuble est très haut."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "高|gāo|180",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 180,
+        "level": 2
+      },
+      "traditionalHanzi": "高"
+    },
+    {
+      "id": "vocab-hsk20-213",
+      "canonicalID": "快|kuài|213",
+      "hanzi": "快",
+      "pinyin": "kuài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "快",
+          "vocabularyID": "vocab-hsk20-213",
+          "pinyin": "kuài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "rapide ; bientôt"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "快下雨了。",
+        "pinyin": "kuài xià yǔ le。",
+        "translation": {
+          "fr": "Il va bientôt pleuvoir."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "快|kuài|213",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 213,
+        "level": 2
+      },
+      "traditionalHanzi": "快"
+    },
+    {
+      "id": "vocab-hsk20-010",
+      "canonicalID": "茶|chá|10",
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "茶",
+          "vocabularyID": "vocab-hsk20-010",
+          "pinyin": "chá"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "thé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天喝茶。",
+        "pinyin": "wǒ měi tiān hē chá。",
+        "translation": {
+          "fr": "Je bois du thé chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "茶|chá|10",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 10,
+        "level": 1
+      },
+      "traditionalHanzi": "茶"
+    },
+    {
+      "id": "vocab-hsk20-022",
+      "canonicalID": "读|dú|22",
+      "hanzi": "读",
+      "pinyin": "dú",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "读",
+          "vocabularyID": "vocab-hsk20-022",
+          "pinyin": "dú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天读书。",
+        "pinyin": "wǒ měi tiān dú shū。",
+        "translation": {
+          "fr": "Je lis chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "读|dú|22",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 22,
+        "level": 1
+      },
+      "traditionalHanzi": "讀"
+    },
+    {
+      "id": "vocab-hsk20-034",
+      "canonicalID": "狗|gǒu|34",
+      "hanzi": "狗",
+      "pinyin": "gǒu",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "狗",
+          "vocabularyID": "vocab-hsk20-034",
+          "pinyin": "gǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "那只狗在门外。",
+        "pinyin": "nà zhī gǒu zài mén wài。",
+        "translation": {
+          "fr": "Ce chien-là est dehors, devant la porte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "狗|gǒu|34",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 34,
+        "level": 1
+      },
+      "traditionalHanzi": "狗"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-19-grammar-01",
+      "title": {
+        "fr": "Grammaire — verbe + 过"
+      },
+      "body": {
+        "fr": "过 indique une expérience passée.\nExemple 1 : 我去过医院。\nwǒ qù guò yī yuàn。\nJe suis déjà allé à l’hôpital."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-19-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-240",
+        "vocab-hsk20-241",
+        "vocab-hsk20-273",
+        "vocab-hsk20-014",
+        "vocab-hsk20-056",
+        "vocab-hsk20-078",
+        "vocab-hsk20-085",
+        "vocab-hsk20-122",
+        "vocab-hsk20-180",
+        "vocab-hsk20-213",
+        "vocab-hsk20-010",
+        "vocab-hsk20-022",
+        "vocab-hsk20-034"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "id": "block-lesson-19-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你的身体怎么样？",
+          "pinyin": "nǐ de shēn tǐ zěn me yàng？",
+          "translation": {
+            "fr": "Comment vas-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我生病了，今天很冷。",
+          "pinyin": "wǒ shēng bìng le， jīn tiān hěn lěng。",
+          "translation": {
+            "fr": "Je suis malade, il fait très froid aujourd’hui."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "医院里热吗？",
+          "pinyin": "yī yuàn lǐ rè ma？",
+          "translation": {
+            "fr": "Fait-il chaud dans l’hôpital ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "里面很暖，我觉得好多了。",
+          "pinyin": "lǐ miàn hěn nuǎn， wǒ jué de hǎo duō le。",
+          "translation": {
+            "fr": "Il fait bien chaud à l’intérieur, je me sens beaucoup mieux."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "医生给你什么药？",
+          "pinyin": "yī shēng gěi nǐ shén me yào？",
+          "translation": {
+            "fr": "Quel médicament le médecin te donne-t-il ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "给我药。我希望很快好起来。",
+          "pinyin": "gěi wǒ yào。 wǒ xī wàng hěn kuài hǎo qǐ lái。",
+          "translation": {
+            "fr": "Il me donne un médicament. J’espère aller mieux rapidement."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 15
+      }
+    },
+    {
+      "id": "block-lesson-19-reading",
+      "storyID": "story-lesson-19",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Une visite à l’hôpital"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-19-p1",
+          "hanzi": "Tao生病了，身体不舒服，所以去医院看医生。",
+          "pinyin": "Tao shēng bìng le， shēn tǐ bù shū fú， suǒ yǐ qù yī yuàn kàn yī shēng。",
+          "translation": {
+            "fr": "Tao est malade et ne se sent pas bien, alors il va à l’hôpital voir le médecin."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-19-p2",
+          "hanzi": "外面很冷，医院里面很热。医生给他药，他希望明天好起来。",
+          "pinyin": "wài miàn hěn lěng， yī yuàn lǐ miàn hěn rè。 yī shēng gěi tā yào， tā xī wàng míng tiān hǎo qǐ lái。",
+          "translation": {
+            "fr": "Il fait froid dehors et chaud dans l’hôpital. Le médecin lui donne un médicament ; il espère aller mieux demain."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l19-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-meaning",
+          "prompt": {
+            "fr": "Que signifie 生病 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’état de santé."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "être grand"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "être rapide"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "être malade"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l19-order",
+          "prompt": {
+            "fr": "Construis « Je suis allé à l’hôpital ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "医院",
+            "pinyin": "yī yuàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我去过",
+            "pinyin": "wǒ qù guò",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我去过医院。",
+          "我去过医院"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l19-fill",
+          "prompt": {
+            "fr": "Complète : 医生给我___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "sentence": "医生给我___。",
+        "acceptedAnswers": [
+          "药"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l19-listen",
+          "prompt": {
+            "fr": "Comment Tao se sent-il ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我生病了，今天很冷。",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il est très heureux."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il est en retard."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il est malade."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l19-speak",
+          "prompt": {
+            "fr": "Dis « Je suis allé à l’hôpital ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我去过医院。",
+        "referencePinyin": "wǒ qù guò yī yuàn。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我去过医院。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-reading",
+          "prompt": {
+            "fr": "Pourquoi Tao va-t-il à l’hôpital ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Parce qu’il prépare un examen."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Parce qu’il est malade."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Parce qu’il achète un billet."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "id": "block-lesson-19-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-240",
+        "vocab-hsk20-241",
+        "vocab-hsk20-273",
+        "vocab-hsk20-014",
+        "vocab-hsk20-056",
+        "vocab-hsk20-078"
+      ],
+      "objectiveIDs": [
+        "l19-understand",
+        "l19-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 15
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-240",
+      "vocabularyID": "vocab-hsk20-240",
+      "front": {
+        "hanzi": "身体",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "身体",
+        "pinyin": "shēn tǐ",
+        "text": {
+          "fr": "corps ; santé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-241",
+      "vocabularyID": "vocab-hsk20-241",
+      "front": {
+        "hanzi": "生病",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "生病",
+        "pinyin": "shēng bìng",
+        "text": {
+          "fr": "tomber malade"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-273",
+      "vocabularyID": "vocab-hsk20-273",
+      "front": {
+        "hanzi": "药",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "药",
+        "pinyin": "yào",
+        "text": {
+          "fr": "médicament"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-014",
+      "vocabularyID": "vocab-hsk20-014",
+      "front": {
+        "hanzi": "大",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "大",
+        "pinyin": "dà",
+        "text": {
+          "fr": "grand ; gros"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-056",
+      "vocabularyID": "vocab-hsk20-056",
+      "front": {
+        "hanzi": "冷",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "冷",
+        "pinyin": "lěng",
+        "text": {
+          "fr": "froid"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-078",
+      "vocabularyID": "vocab-hsk20-078",
+      "front": {
+        "hanzi": "漂亮",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "漂亮",
+        "pinyin": "piào liàng",
+        "text": {
+          "fr": "joli ; beau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-085",
+      "vocabularyID": "vocab-hsk20-085",
+      "front": {
+        "hanzi": "热",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "热",
+        "pinyin": "rè",
+        "text": {
+          "fr": "chaud"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-122",
+      "vocabularyID": "vocab-hsk20-122",
+      "front": {
+        "hanzi": "小",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "小",
+        "pinyin": "xiǎo",
+        "text": {
+          "fr": "petit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-180",
+      "vocabularyID": "vocab-hsk20-180",
+      "front": {
+        "hanzi": "高",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "高",
+        "pinyin": "gāo",
+        "text": {
+          "fr": "haut ; grand"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-213",
+      "vocabularyID": "vocab-hsk20-213",
+      "front": {
+        "hanzi": "快",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "快",
+        "pinyin": "kuài",
+        "text": {
+          "fr": "rapide ; bientôt"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-010",
+      "vocabularyID": "vocab-hsk20-010",
+      "front": {
+        "hanzi": "茶",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "茶",
+        "pinyin": "chá",
+        "text": {
+          "fr": "thé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-022",
+      "vocabularyID": "vocab-hsk20-022",
+      "front": {
+        "hanzi": "读",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "读",
+        "pinyin": "dú",
+        "text": {
+          "fr": "lire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-034",
+      "vocabularyID": "vocab-hsk20-034",
+      "front": {
+        "hanzi": "狗",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "狗",
+        "pinyin": "gǒu",
+        "text": {
+          "fr": "chien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 15,
+    "allocationRange": "days06-45",
+    "theme": "health",
+    "newVocabularyIDs": [
+      "vocab-hsk20-240",
+      "vocab-hsk20-241",
+      "vocab-hsk20-273",
+      "vocab-hsk20-014",
+      "vocab-hsk20-056",
+      "vocab-hsk20-078",
+      "vocab-hsk20-085",
+      "vocab-hsk20-122",
+      "vocab-hsk20-180",
+      "vocab-hsk20-213"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-010",
+      "vocab-hsk20-022",
+      "vocab-hsk20-034"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-240",
+      "hsk20-241",
+      "hsk20-273",
+      "hsk20-014",
+      "hsk20-056",
+      "hsk20-078",
+      "hsk20-085",
+      "hsk20-122",
+      "hsk20-180",
+      "hsk20-213"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-010",
+      "hsk20-022",
+      "hsk20-034"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-240",
+      "hsk20-241",
+      "hsk20-273",
+      "hsk20-014",
+      "hsk20-056",
+      "hsk20-078",
+      "hsk20-085",
+      "hsk20-122",
+      "hsk20-180",
+      "hsk20-213"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-010",
+      "hsk20-022",
+      "hsk20-034"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

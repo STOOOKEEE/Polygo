@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
+  "contentVersion": "2026.10.0",
   "id": "lesson-02",
   "moduleID": "unit-01",
   "order": 2,
@@ -555,12 +555,23 @@
           "audio": null
         }
       ],
-      "comprehensionExerciseIDs": ["ex-l2-reading-name"],
+      "comprehensionExerciseIDs": [
+        "ex-l2-reading-name"
+      ],
       "participation": {
-        "prompt": {"fr": "Écoute la réponse, puis écris la réplique qui la précédait."},
+        "prompt": {
+          "fr": "Écoute la réponse, puis écris la réplique qui la précédait."
+        },
         "audioLineIndex": 2,
-        "acceptedResponses": ["我叫林。你呢？", "我叫林 你呢", "wo jiao Lin ni ne", "wǒ jiào Lín nǐ ne"],
-        "hint": {"fr": "Lin donne son nom puis relance la question avec 你呢？."}
+        "acceptedResponses": [
+          "我叫林。你呢？",
+          "我叫林 你呢",
+          "wo jiao Lin ni ne",
+          "wǒ jiào Lín nǐ ne"
+        ],
+        "hint": {
+          "fr": "Lin donne son nom puis relance la question avec 你呢？."
+        }
       },
       "metadata": {
         "standardID": "HSK-3.0",

@@ -20,7 +20,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, paragraphs, comprehensionExerciseIDs, participation, spec, objectiveIDs
+        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, level, paragraphs, comprehensionExerciseIDs, participation, spec, objectiveIDs
     }
     private enum Kind: String, Codable { case introduction, vocabulary, dialogue, reading, exercise, recap }
 
@@ -47,7 +47,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         case .dialogue(let value):
             try container.encode(Kind.dialogue, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.lines, forKey: .lines); try container.encodeIfPresent(value.participation, forKey: .participation); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .reading(let value):
-            try container.encode(Kind.reading, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.storyID, forKey: .storyID); try container.encode(value.title, forKey: .title); try container.encode(value.paragraphs, forKey: .paragraphs); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
+            try container.encode(Kind.reading, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.storyID, forKey: .storyID); try container.encodeIfPresent(value.level, forKey: .level); try container.encode(value.title, forKey: .title); try container.encode(value.paragraphs, forKey: .paragraphs); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .exercise(let value):
             try container.encode(Kind.exercise, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.spec, forKey: .spec)
         case .recap(let value):
@@ -146,12 +146,15 @@ public struct DialogueLine: Codable, Hashable, Sendable {
 public struct ReadingBlock: Codable, Hashable, Sendable {
     public let id: BlockID
     public let storyID: StoryID
+    /// Optional lesson or module level used when a reading is surfaced in the
+    /// Explorer. Older reading blocks omit it and use the course fallback.
+    public let level: String?
     public let title: LocalizedText
     public let paragraphs: [ReadingParagraph]
     public let comprehensionExerciseIDs: [ExerciseID]
 
-    public init(id: BlockID, storyID: StoryID, title: LocalizedText, paragraphs: [ReadingParagraph], comprehensionExerciseIDs: [ExerciseID] = []) {
-        self.id = id; self.storyID = storyID; self.title = title; self.paragraphs = paragraphs; self.comprehensionExerciseIDs = comprehensionExerciseIDs
+    public init(id: BlockID, storyID: StoryID, level: String? = nil, title: LocalizedText, paragraphs: [ReadingParagraph], comprehensionExerciseIDs: [ExerciseID] = []) {
+        self.id = id; self.storyID = storyID; self.level = level; self.title = title; self.paragraphs = paragraphs; self.comprehensionExerciseIDs = comprehensionExerciseIDs
     }
 }
 

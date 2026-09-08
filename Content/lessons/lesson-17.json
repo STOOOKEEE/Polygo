@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-17",
+  "moduleID": "unit-03",
+  "order": 17,
+  "title": {
+    "fr": "Préparer l’examen"
+  },
+  "summary": {
+    "fr": "Lire et écrire dans la classe avant un examen."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l17-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l17-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-022",
+      "canonicalID": "读|dú|22",
+      "hanzi": "读",
+      "pinyin": "dú",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "读",
+          "vocabularyID": "vocab-hsk20-022",
+          "pinyin": "dú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天读书。",
+        "pinyin": "wǒ měi tiān dú shū。",
+        "translation": {
+          "fr": "Je lis chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "读|dú|22",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 22,
+        "level": 1
+      },
+      "traditionalHanzi": "讀"
+    },
+    {
+      "id": "vocab-hsk20-110",
+      "canonicalID": "同学|tóng xué|110",
+      "hanzi": "同学",
+      "pinyin": "tóng xué",
+      "toneNumbers": [
+        2,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "同学",
+          "vocabularyID": "vocab-hsk20-110",
+          "pinyin": "tóng xué"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "camarade de classe"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的同学来了。",
+        "pinyin": "wǒ de tóng xué lái le。",
+        "translation": {
+          "fr": "Mon camarade de classe est arrivé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "同学|tóng xué|110",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 110,
+        "level": 1
+      },
+      "traditionalHanzi": "同學"
+    },
+    {
+      "id": "vocab-hsk20-125",
+      "canonicalID": "写|xiě|125",
+      "hanzi": "写",
+      "pinyin": "xiě",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "写",
+          "vocabularyID": "vocab-hsk20-125",
+          "pinyin": "xiě"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "écrire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请写你的名字。",
+        "pinyin": "qǐng xiě nǐ de míng zì。",
+        "translation": {
+          "fr": "Écris ton nom, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "写|xiě|125",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 125,
+        "level": 1
+      },
+      "traditionalHanzi": "寫"
+    },
+    {
+      "id": "vocab-hsk20-129",
+      "canonicalID": "学习|xué xí|129",
+      "hanzi": "学习",
+      "pinyin": "xué xí",
+      "toneNumbers": [
+        2,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "学习",
+          "vocabularyID": "vocab-hsk20-129",
+          "pinyin": "xué xí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "étudier ; apprendre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天学习汉语。",
+        "pinyin": "wǒ měi tiān xué xí hàn yǔ。",
+        "translation": {
+          "fr": "J’étudie le chinois chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "学习|xué xí|129",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 129,
+        "level": 1
+      },
+      "traditionalHanzi": "學習"
+    },
+    {
+      "id": "vocab-hsk20-130",
+      "canonicalID": "学校|xué xiào|130",
+      "hanzi": "学校",
+      "pinyin": "xué xiào",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "学校",
+          "vocabularyID": "vocab-hsk20-130",
+          "pinyin": "xué xiào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "école"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学校在这里。",
+        "pinyin": "xué xiào zài zhè lǐ。",
+        "translation": {
+          "fr": "L’école est ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "学校|xué xiào|130",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 130,
+        "level": 1
+      },
+      "traditionalHanzi": "學校"
+    },
+    {
+      "id": "vocab-hsk20-147",
+      "canonicalID": "字|zì|147",
+      "hanzi": "字",
+      "pinyin": "zì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "字",
+          "vocabularyID": "vocab-hsk20-147",
+          "pinyin": "zì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "caractère ; mot écrit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请写这个字。",
+        "pinyin": "qǐng xiě zhè ge zì。",
+        "translation": {
+          "fr": "Écris ce caractère, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "字|zì|147",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 147,
+        "level": 1
+      },
+      "traditionalHanzi": "字"
+    },
+    {
+      "id": "vocab-hsk20-200",
+      "canonicalID": "教室|jiào shì|200",
+      "hanzi": "教室",
+      "pinyin": "jiào shì",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "教室",
+          "vocabularyID": "vocab-hsk20-200",
+          "pinyin": "jiào shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "salle de classe"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学生在教室读书。",
+        "pinyin": "xué shēng zài jiào shì dú shū。",
+        "translation": {
+          "fr": "Les élèves lisent en classe."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "教室|jiào shì|200",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 200,
+        "level": 2
+      },
+      "traditionalHanzi": "教室"
+    },
+    {
+      "id": "vocab-hsk20-209",
+      "canonicalID": "考试|kǎo shì|209",
+      "hanzi": "考试",
+      "pinyin": "kǎo shì",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "考试",
+          "vocabularyID": "vocab-hsk20-209",
+          "pinyin": "kǎo shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "examen ; passer un examen"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "明天有考试。",
+        "pinyin": "míng tiān yǒu kǎo shì。",
+        "translation": {
+          "fr": "Il y a un examen demain."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "考试|kǎo shì|209",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 209,
+        "level": 2
+      },
+      "traditionalHanzi": "考試"
+    },
+    {
+      "id": "vocab-hsk20-212",
+      "canonicalID": "课|kè|212",
+      "hanzi": "课",
+      "pinyin": "kè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "课",
+          "vocabularyID": "vocab-hsk20-212",
+          "pinyin": "kè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "cours ; leçon"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "下午我有一节课。",
+        "pinyin": "xià wǔ wǒ yǒu yī jié kè。",
+        "translation": {
+          "fr": "J’ai un cours l’après-midi."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "课|kè|212",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 212,
+        "level": 2
+      },
+      "traditionalHanzi": "課"
+    },
+    {
+      "id": "vocab-hsk20-274",
+      "canonicalID": "要|yào|274",
+      "hanzi": "要",
+      "pinyin": "yào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "要",
+          "vocabularyID": "vocab-hsk20-274",
+          "pinyin": "yào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vouloir ; devoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我要回家。",
+        "pinyin": "wǒ yào huí jiā。",
+        "translation": {
+          "fr": "Je veux rentrer à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "要|yào|274",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 274,
+        "level": 2
+      },
+      "traditionalHanzi": "要"
+    },
+    {
+      "id": "vocab-bu-keqi",
+      "hanzi": "不客气",
+      "traditionalHanzi": "不客氣",
+      "pinyin": "bú kèqi",
+      "toneNumbers": [
+        2,
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "不客气",
+          "vocabularyID": "vocab-bu-keqi",
+          "pinyin": "bú kèqi",
+          "partOfSpeech": "interjection"
+        }
+      ],
+      "partOfSpeech": "interjection",
+      "grammarNotes": [
+        {
+          "pattern": "不 + 4e ton",
+          "explanation": {
+            "fr": "Le 不 de 不客气 se réalise souvent bú devant le ton 4 de 客. 客气 se termine par une syllabe légère : kèqi."
+          },
+          "examples": [
+            {
+              "hanzi": "不客气！",
+              "pinyin": "bú kèqi!",
+              "translation": {
+                "fr": "Je vous en prie !"
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-bu-keqi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "de rien ; je vous en prie"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "不客气！",
+        "pinyin": "bú kèqi!",
+        "translation": {
+          "fr": "De rien !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "La politesse ouvre la porte : 客气 signifie être courtois."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "不客气",
+          "traditional": "不客氣"
+        }
+      }
+    },
+    {
+      "id": "vocab-hsk20-020",
+      "canonicalID": "东西|dōng xī|20",
+      "hanzi": "东西",
+      "pinyin": "dōng xī",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "东西",
+          "vocabularyID": "vocab-hsk20-020",
+          "pinyin": "dōng xī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chose ; affaire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这些东西在桌子上。",
+        "pinyin": "zhè xiē dōng xi zài zhuō zi shàng。",
+        "translation": {
+          "fr": "Ces affaires sont sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "东西|dōng xī|20",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 20,
+        "level": 1
+      },
+      "traditionalHanzi": "東西"
+    },
+    {
+      "id": "vocab-hsk20-032",
+      "canonicalID": "个|gè|32",
+      "hanzi": "个",
+      "pinyin": "gè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "个",
+          "vocabularyID": "vocab-hsk20-032",
+          "pinyin": "gè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "classificateur général"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我有三个苹果。",
+        "pinyin": "wǒ yǒu sān gè píng guǒ。",
+        "translation": {
+          "fr": "J’ai trois pommes."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "个|gè|32",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 32,
+        "level": 1
+      },
+      "traditionalHanzi": "個"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-17-grammar-01",
+      "title": {
+        "fr": "Grammaire — 正在 + verbe"
+      },
+      "body": {
+        "fr": "正在 indique une action en cours au moment où l’on parle.\nExemple 1 : 我正在写字。\nwǒ zhèng zài xiě zì。\nJe suis en train d’écrire des caractères."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-17-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-022",
+        "vocab-hsk20-110",
+        "vocab-hsk20-125",
+        "vocab-hsk20-129",
+        "vocab-hsk20-130",
+        "vocab-hsk20-147",
+        "vocab-hsk20-200",
+        "vocab-hsk20-209",
+        "vocab-hsk20-212",
+        "vocab-hsk20-274",
+        "vocab-bu-keqi",
+        "vocab-hsk20-020",
+        "vocab-hsk20-032"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "id": "block-lesson-17-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你正在读什么？",
+          "pinyin": "nǐ zhèng zài dú shén me？",
+          "translation": {
+            "fr": "Qu’es-tu en train de lire ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我正在读课本，准备考试。",
+          "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+          "translation": {
+            "fr": "Je lis le manuel et je prépare l’examen."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "同学们在哪里写字？",
+          "pinyin": "tóng xué men zài nǎ lǐ xiě zì？",
+          "translation": {
+            "fr": "Où les camarades écrivent-ils ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "他们在教室写字，也学习新课。",
+          "pinyin": "tā men zài jiào shì xiě zì， yě xué xí xīn kè。",
+          "translation": {
+            "fr": "Ils écrivent dans la classe et étudient aussi la nouvelle leçon."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "老师要什么？",
+          "pinyin": "lǎo shī yào shén me？",
+          "translation": {
+            "fr": "Que veut le professeur ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "老师要我们读这个字，然后回答问题。",
+          "pinyin": "lǎo shī yào wǒ men dú zhè ge zì， rán hòu huí dá wèn tí。",
+          "translation": {
+            "fr": "Le professeur veut que nous lisions ce caractère puis répondions à la question."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 13
+      }
+    },
+    {
+      "id": "block-lesson-17-reading",
+      "storyID": "story-lesson-17",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Dans la classe"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-17-p1",
+          "hanzi": "同学们在教室读书、写字。老师说今天开始新课。",
+          "pinyin": "tóng xué men zài jiào shì dú shū、 xiě zì。 lǎo shī shuō jīn tiān kāi shǐ xīn kè。",
+          "translation": {
+            "fr": "Les camarades lisent et écrivent dans la classe. Le professeur dit que la nouvelle leçon commence aujourd’hui."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-17-p2",
+          "hanzi": "下午大家学习，明天考试。每个人都要认真回答问题。",
+          "pinyin": "xià wǔ dà jiā xué xí， míng tiān kǎo shì。 měi gè rén dōu yào rèn zhēn huí dá wèn tí。",
+          "translation": {
+            "fr": "L’après-midi, tout le monde étudie ; l’examen a lieu demain. Chacun doit répondre sérieusement aux questions."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l17-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-meaning",
+          "prompt": {
+            "fr": "Que signifie 教室 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le lieu de la scène."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "gare"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "classe"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "hôpital"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l17-order",
+          "prompt": {
+            "fr": "Construis « Je suis en train de lire ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "读书",
+            "pinyin": "dú shū",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我正在",
+            "pinyin": "wǒ zhèng zài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我正在读书。",
+          "我正在读书"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l17-fill",
+          "prompt": {
+            "fr": "Complète : 明天考___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "sentence": "明天考___。",
+        "acceptedAnswers": [
+          "试"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l17-listen",
+          "prompt": {
+            "fr": "Que font les camarades ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "他们在教室写字，也学习新课。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ils voyagent."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ils cuisinent."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ils écrivent et étudient."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l17-speak",
+          "prompt": {
+            "fr": "Dis « Je prépare l’examen ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我准备考试。",
+        "referencePinyin": "wǒ zhǔn bèi kǎo shì。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我准备考试。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-reading",
+          "prompt": {
+            "fr": "Quand a lieu l’examen ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "La semaine prochaine."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "id": "block-lesson-17-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-022",
+        "vocab-hsk20-110",
+        "vocab-hsk20-125",
+        "vocab-hsk20-129",
+        "vocab-hsk20-130",
+        "vocab-hsk20-147"
+      ],
+      "objectiveIDs": [
+        "l17-understand",
+        "l17-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 13
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-022",
+      "vocabularyID": "vocab-hsk20-022",
+      "front": {
+        "hanzi": "读",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "读",
+        "pinyin": "dú",
+        "text": {
+          "fr": "lire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-110",
+      "vocabularyID": "vocab-hsk20-110",
+      "front": {
+        "hanzi": "同学",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "同学",
+        "pinyin": "tóng xué",
+        "text": {
+          "fr": "camarade de classe"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-125",
+      "vocabularyID": "vocab-hsk20-125",
+      "front": {
+        "hanzi": "写",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "写",
+        "pinyin": "xiě",
+        "text": {
+          "fr": "écrire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-129",
+      "vocabularyID": "vocab-hsk20-129",
+      "front": {
+        "hanzi": "学习",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "学习",
+        "pinyin": "xué xí",
+        "text": {
+          "fr": "étudier ; apprendre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-130",
+      "vocabularyID": "vocab-hsk20-130",
+      "front": {
+        "hanzi": "学校",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "学校",
+        "pinyin": "xué xiào",
+        "text": {
+          "fr": "école"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-147",
+      "vocabularyID": "vocab-hsk20-147",
+      "front": {
+        "hanzi": "字",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "字",
+        "pinyin": "zì",
+        "text": {
+          "fr": "caractère ; mot écrit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-200",
+      "vocabularyID": "vocab-hsk20-200",
+      "front": {
+        "hanzi": "教室",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "教室",
+        "pinyin": "jiào shì",
+        "text": {
+          "fr": "salle de classe"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-209",
+      "vocabularyID": "vocab-hsk20-209",
+      "front": {
+        "hanzi": "考试",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "考试",
+        "pinyin": "kǎo shì",
+        "text": {
+          "fr": "examen ; passer un examen"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-212",
+      "vocabularyID": "vocab-hsk20-212",
+      "front": {
+        "hanzi": "课",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "课",
+        "pinyin": "kè",
+        "text": {
+          "fr": "cours ; leçon"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-274",
+      "vocabularyID": "vocab-hsk20-274",
+      "front": {
+        "hanzi": "要",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "text": {
+          "fr": "vouloir ; devoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-bu-keqi",
+      "vocabularyID": "vocab-bu-keqi",
+      "front": {
+        "hanzi": "不客气",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "不客气",
+        "pinyin": "bú kèqi · 2-4-0",
+        "text": {
+          "fr": "de rien ; je vous en prie"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-01",
+        "politeness"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-hsk20-020",
+      "vocabularyID": "vocab-hsk20-020",
+      "front": {
+        "hanzi": "东西",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "东西",
+        "pinyin": "dōng xī",
+        "text": {
+          "fr": "chose ; affaire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-032",
+      "vocabularyID": "vocab-hsk20-032",
+      "front": {
+        "hanzi": "个",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "个",
+        "pinyin": "gè",
+        "text": {
+          "fr": "classificateur général"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 13,
+    "allocationRange": "days06-45",
+    "theme": "study",
+    "newVocabularyIDs": [
+      "vocab-hsk20-022",
+      "vocab-hsk20-110",
+      "vocab-hsk20-125",
+      "vocab-hsk20-129",
+      "vocab-hsk20-130",
+      "vocab-hsk20-147",
+      "vocab-hsk20-200",
+      "vocab-hsk20-209",
+      "vocab-hsk20-212",
+      "vocab-hsk20-274"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-bu-keqi",
+      "vocab-hsk20-020",
+      "vocab-hsk20-032"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-022",
+      "hsk20-110",
+      "hsk20-125",
+      "hsk20-129",
+      "hsk20-130",
+      "hsk20-147",
+      "hsk20-200",
+      "hsk20-209",
+      "hsk20-212",
+      "hsk20-274"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-008",
+      "hsk20-020",
+      "hsk20-032"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-022",
+      "hsk20-110",
+      "hsk20-125",
+      "hsk20-129",
+      "hsk20-130",
+      "hsk20-147",
+      "hsk20-200",
+      "hsk20-209",
+      "hsk20-212",
+      "hsk20-274"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-008",
+      "hsk20-020",
+      "hsk20-032"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

@@ -1,0 +1,1341 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-24",
+  "moduleID": "unit-03",
+  "order": 24,
+  "title": {
+    "fr": "Une matinée chargée"
+  },
+  "summary": {
+    "fr": "Décrire une visite à l’hôpital et deux actions réalisées en même temps."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l24-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l24-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-215",
+      "canonicalID": "累|lèi|215",
+      "hanzi": "累",
+      "pinyin": "lèi",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "累",
+          "vocabularyID": "vocab-hsk20-215",
+          "pinyin": "lèi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "fatigué"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我工作以后很累。",
+        "pinyin": "wǒ gōng zuò yǐ hòu hěn lèi。",
+        "translation": {
+          "fr": "Je suis très fatigué après le travail."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "累|lèi|215",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 215,
+        "level": 2
+      },
+      "traditionalHanzi": "累"
+    },
+    {
+      "id": "vocab-hsk20-221",
+      "canonicalID": "慢|màn|221",
+      "hanzi": "慢",
+      "pinyin": "màn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "慢",
+          "vocabularyID": "vocab-hsk20-221",
+          "pinyin": "màn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请慢一点说。",
+        "pinyin": "qǐng màn yì diǎn shuō。",
+        "translation": {
+          "fr": "Parle un peu plus lentement, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "慢|màn|221",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 221,
+        "level": 2
+      },
+      "traditionalHanzi": "慢"
+    },
+    {
+      "id": "vocab-hsk20-222",
+      "canonicalID": "忙|máng|222",
+      "hanzi": "忙",
+      "pinyin": "máng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "忙",
+          "vocabularyID": "vocab-hsk20-222",
+          "pinyin": "máng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "occupé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我今天很忙。",
+        "pinyin": "wǒ jīn tiān hěn máng。",
+        "translation": {
+          "fr": "Je suis très occupé aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "忙|máng|222",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 222,
+        "level": 2
+      },
+      "traditionalHanzi": "忙"
+    },
+    {
+      "id": "vocab-hsk20-134",
+      "canonicalID": "医院|yī yuàn|134",
+      "hanzi": "医院",
+      "pinyin": "yī yuàn",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "医院",
+          "vocabularyID": "vocab-hsk20-134",
+          "pinyin": "yī yuàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "hôpital"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "医院在学校旁边。",
+        "pinyin": "yī yuàn zài xué xiào páng biān。",
+        "translation": {
+          "fr": "L’hôpital est à côté de l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "医院|yī yuàn|134",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 134,
+        "level": 1
+      },
+      "traditionalHanzi": "醫院"
+    },
+    {
+      "id": "vocab-hsk20-136",
+      "canonicalID": "有|yǒu|136",
+      "hanzi": "有",
+      "pinyin": "yǒu",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "有",
+          "vocabularyID": "vocab-hsk20-136",
+          "pinyin": "yǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "avoir ; il y a"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "桌子上有一本书。",
+        "pinyin": "zhuō zi shàng yǒu yī běn shū。",
+        "translation": {
+          "fr": "Il y a un livre sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "有|yǒu|136",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 136,
+        "level": 1
+      },
+      "traditionalHanzi": "有"
+    },
+    {
+      "id": "vocab-hsk20-142",
+      "canonicalID": "这|zhè|142",
+      "hanzi": "这",
+      "pinyin": "zhè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "这",
+          "vocabularyID": "vocab-hsk20-142",
+          "pinyin": "zhè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ce/cette-ci ; ici"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是我的书。",
+        "pinyin": "zhè shì wǒ de shū。",
+        "translation": {
+          "fr": "C’est mon livre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "这|zhè|142",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 142,
+        "level": 1
+      },
+      "traditionalHanzi": "這"
+    },
+    {
+      "id": "vocab-hsk20-145",
+      "canonicalID": "住|zhù|145",
+      "hanzi": "住",
+      "pinyin": "zhù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "住",
+          "vocabularyID": "vocab-hsk20-145",
+          "pinyin": "zhù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "habiter"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我住在北京。",
+        "pinyin": "wǒ zhù zài běi jīng。",
+        "translation": {
+          "fr": "J’habite à Pékin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "住|zhù|145",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 145,
+        "level": 1
+      },
+      "traditionalHanzi": "住"
+    },
+    {
+      "id": "vocab-hsk20-150",
+      "canonicalID": "做|zuò|150",
+      "hanzi": "做",
+      "pinyin": "zuò",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "做",
+          "vocabularyID": "vocab-hsk20-150",
+          "pinyin": "zuò"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "faire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我做作业。",
+        "pinyin": "wǒ zuò zuò yè。",
+        "translation": {
+          "fr": "Je fais mes devoirs."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "做|zuò|150",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 150,
+        "level": 1
+      },
+      "traditionalHanzi": "做"
+    },
+    {
+      "id": "vocab-hsk20-152",
+      "canonicalID": "白|bái|152",
+      "hanzi": "白",
+      "pinyin": "bái",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "白",
+          "vocabularyID": "vocab-hsk20-152",
+          "pinyin": "bái"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "blanc"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "白色的猫在门口。",
+        "pinyin": "bái sè de māo zài mén kǒu。",
+        "translation": {
+          "fr": "Le chat blanc est à la porte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "白|bái|152",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 152,
+        "level": 2
+      },
+      "traditionalHanzi": "白"
+    },
+    {
+      "id": "vocab-hsk20-153",
+      "canonicalID": "百|bǎi|153",
+      "hanzi": "百",
+      "pinyin": "bǎi",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "百",
+          "vocabularyID": "vocab-hsk20-153",
+          "pinyin": "bǎi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "cent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "一百个人来了。",
+        "pinyin": "yì bǎi gè rén lái le。",
+        "translation": {
+          "fr": "Cent personnes sont venues."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "百|bǎi|153",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 153,
+        "level": 2
+      },
+      "traditionalHanzi": "百"
+    },
+    {
+      "id": "vocab-hsk20-146",
+      "canonicalID": "桌子|zhuō zi|146",
+      "hanzi": "桌子",
+      "pinyin": "zhuō zi",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "桌子",
+          "vocabularyID": "vocab-hsk20-146",
+          "pinyin": "zhuō zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "table"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "书在桌子上。",
+        "pinyin": "shū zài zhuō zi shàng。",
+        "translation": {
+          "fr": "Le livre est sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "桌子|zhuō zi|146",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 146,
+        "level": 1
+      },
+      "traditionalHanzi": "桌子"
+    },
+    {
+      "id": "vocab-hsk20-165",
+      "canonicalID": "从|cóng|165",
+      "hanzi": "从",
+      "pinyin": "cóng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "从",
+          "vocabularyID": "vocab-hsk20-165",
+          "pinyin": "cóng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "depuis ; de"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我从家走到学校。",
+        "pinyin": "wǒ cóng jiā zǒu dào xué xiào。",
+        "translation": {
+          "fr": "Je marche de la maison à l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "从|cóng|165",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 165,
+        "level": 2
+      },
+      "traditionalHanzi": "從"
+    },
+    {
+      "id": "vocab-hsk20-180",
+      "canonicalID": "高|gāo|180",
+      "hanzi": "高",
+      "pinyin": "gāo",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "高",
+          "vocabularyID": "vocab-hsk20-180",
+          "pinyin": "gāo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "haut ; grand"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这座楼很高。",
+        "pinyin": "zhè zuò lóu hěn gāo。",
+        "translation": {
+          "fr": "Cet immeuble est très haut."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "高|gāo|180",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 180,
+        "level": 2
+      },
+      "traditionalHanzi": "高"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-24-grammar-01",
+      "title": {
+        "fr": "Grammaire — 一边…一边…"
+      },
+      "body": {
+        "fr": "一边 relie deux actions simultanées.\nExemple 1 : 我一边走路一边听音乐。\nwǒ yī biān zǒu lù yī biān tīng yīn yuè。\nJ’écoute de la musique tout en marchant."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-24-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-215",
+        "vocab-hsk20-221",
+        "vocab-hsk20-222",
+        "vocab-hsk20-134",
+        "vocab-hsk20-136",
+        "vocab-hsk20-142",
+        "vocab-hsk20-145",
+        "vocab-hsk20-150",
+        "vocab-hsk20-152",
+        "vocab-hsk20-153",
+        "vocab-hsk20-146",
+        "vocab-hsk20-165",
+        "vocab-hsk20-180"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "id": "block-lesson-24-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你今天忙吗？",
+          "pinyin": "nǐ jīn tiān máng ma？",
+          "translation": {
+            "fr": "Es-tu occupé aujourd’hui ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "很忙，也很累。我住在医院附近。",
+          "pinyin": "hěn máng， yě hěn lèi。 wǒ zhù zài yī yuàn fù jìn。",
+          "translation": {
+            "fr": "Très occupé et très fatigué. J’habite près de l’hôpital."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你什么时候去医院？",
+          "pinyin": "nǐ shén me shí hòu qù yī yuàn？",
+          "translation": {
+            "fr": "Quand vas-tu à l’hôpital ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我一边走路一边给医生打电话。",
+          "pinyin": "wǒ yī biān zǒu lù yī biān gěi yī shēng dǎ diàn huà。",
+          "translation": {
+            "fr": "Je marche tout en appelant le médecin."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "医院里有几个房间？",
+          "pinyin": "yī yuàn lǐ yǒu jǐ gè fáng jiān？",
+          "translation": {
+            "fr": "Combien de pièces y a-t-il dans l’hôpital ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "有几个房间，白色的门在前面。",
+          "pinyin": "yǒu jǐ gè fáng jiān， bái sè de mén zài qián miàn。",
+          "translation": {
+            "fr": "Il y a plusieurs pièces ; la porte blanche est devant."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 20
+      }
+    },
+    {
+      "id": "block-lesson-24-reading",
+      "storyID": "story-lesson-24",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Près de l’hôpital"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-24-p1",
+          "hanzi": "我住在医院附近，今天很忙，所以早上就出门。",
+          "pinyin": "wǒ zhù zài yī yuàn fù jìn， jīn tiān hěn máng， suǒ yǐ zǎo shàng jiù chū mén。",
+          "translation": {
+            "fr": "J’habite près de l’hôpital. Comme je suis très occupé aujourd’hui, je sors dès le matin."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-24-p2",
+          "hanzi": "我一边走路一边听医生说话。医院里有几个房间，白色的门在前面。",
+          "pinyin": "wǒ yī biān zǒu lù yī biān tīng yī shēng shuō huà。 yī yuàn lǐ yǒu jǐ gè fáng jiān， bái sè de mén zài qián miàn。",
+          "translation": {
+            "fr": "Je marche tout en écoutant le médecin parler. L’hôpital a plusieurs pièces ; sa porte blanche est devant."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l24-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l24-meaning",
+          "prompt": {
+            "fr": "Que signifie 附近 ?"
+          },
+          "instruction": {
+            "fr": "Choisis la relation de lieu."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "près de"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "derrière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "loin de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l24-order",
+          "prompt": {
+            "fr": "Construis « Je marche tout en téléphonant ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l24-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "打电话",
+            "pinyin": "dǎ diàn huà",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我一边走路一边",
+            "pinyin": "wǒ yī biān zǒu lù yī biān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我一边走路一边打电话。",
+          "我一边走路一边打电话"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l24-fill",
+          "prompt": {
+            "fr": "Complète : 医院里有几个___间。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l24-produce"
+          ],
+          "required": true
+        },
+        "sentence": "医院里有几个___间。",
+        "acceptedAnswers": [
+          "房"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l24-listen",
+          "prompt": {
+            "fr": "Que trouve-t-on dans l’hôpital ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "promptText": "医院里有几个房间。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Plusieurs pièces."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cent étages."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Deux voitures."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l24-speak",
+          "prompt": {
+            "fr": "Dis « J’habite près de l’hôpital ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l24-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我住在医院附近。",
+        "referencePinyin": "wǒ zhù zài yī yuàn fù jìn。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我住在医院附近。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l24-reading",
+          "prompt": {
+            "fr": "De quelle couleur est la porte ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Rouge."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Noire."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Blanche."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "id": "block-lesson-24-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-215",
+        "vocab-hsk20-221",
+        "vocab-hsk20-222",
+        "vocab-hsk20-134",
+        "vocab-hsk20-136",
+        "vocab-hsk20-142"
+      ],
+      "objectiveIDs": [
+        "l24-understand",
+        "l24-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 20
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-215",
+      "vocabularyID": "vocab-hsk20-215",
+      "front": {
+        "hanzi": "累",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "累",
+        "pinyin": "lèi",
+        "text": {
+          "fr": "fatigué"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-221",
+      "vocabularyID": "vocab-hsk20-221",
+      "front": {
+        "hanzi": "慢",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "慢",
+        "pinyin": "màn",
+        "text": {
+          "fr": "lent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-222",
+      "vocabularyID": "vocab-hsk20-222",
+      "front": {
+        "hanzi": "忙",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "忙",
+        "pinyin": "máng",
+        "text": {
+          "fr": "occupé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-134",
+      "vocabularyID": "vocab-hsk20-134",
+      "front": {
+        "hanzi": "医院",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "医院",
+        "pinyin": "yī yuàn",
+        "text": {
+          "fr": "hôpital"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-136",
+      "vocabularyID": "vocab-hsk20-136",
+      "front": {
+        "hanzi": "有",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "有",
+        "pinyin": "yǒu",
+        "text": {
+          "fr": "avoir ; il y a"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-142",
+      "vocabularyID": "vocab-hsk20-142",
+      "front": {
+        "hanzi": "这",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "这",
+        "pinyin": "zhè",
+        "text": {
+          "fr": "ce/cette-ci ; ici"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-145",
+      "vocabularyID": "vocab-hsk20-145",
+      "front": {
+        "hanzi": "住",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "住",
+        "pinyin": "zhù",
+        "text": {
+          "fr": "habiter"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-150",
+      "vocabularyID": "vocab-hsk20-150",
+      "front": {
+        "hanzi": "做",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "做",
+        "pinyin": "zuò",
+        "text": {
+          "fr": "faire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-152",
+      "vocabularyID": "vocab-hsk20-152",
+      "front": {
+        "hanzi": "白",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "白",
+        "pinyin": "bái",
+        "text": {
+          "fr": "blanc"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-153",
+      "vocabularyID": "vocab-hsk20-153",
+      "front": {
+        "hanzi": "百",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "百",
+        "pinyin": "bǎi",
+        "text": {
+          "fr": "cent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-146",
+      "vocabularyID": "vocab-hsk20-146",
+      "front": {
+        "hanzi": "桌子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "桌子",
+        "pinyin": "zhuō zi",
+        "text": {
+          "fr": "table"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-165",
+      "vocabularyID": "vocab-hsk20-165",
+      "front": {
+        "hanzi": "从",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "从",
+        "pinyin": "cóng",
+        "text": {
+          "fr": "depuis ; de"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-180",
+      "vocabularyID": "vocab-hsk20-180",
+      "front": {
+        "hanzi": "高",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "高",
+        "pinyin": "gāo",
+        "text": {
+          "fr": "haut ; grand"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 20,
+    "allocationRange": "days06-45",
+    "theme": "health",
+    "newVocabularyIDs": [
+      "vocab-hsk20-215",
+      "vocab-hsk20-221",
+      "vocab-hsk20-222",
+      "vocab-hsk20-134",
+      "vocab-hsk20-136",
+      "vocab-hsk20-142",
+      "vocab-hsk20-145",
+      "vocab-hsk20-150",
+      "vocab-hsk20-152",
+      "vocab-hsk20-153"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-146",
+      "vocab-hsk20-165",
+      "vocab-hsk20-180"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-215",
+      "hsk20-221",
+      "hsk20-222",
+      "hsk20-134",
+      "hsk20-136",
+      "hsk20-142",
+      "hsk20-145",
+      "hsk20-150",
+      "hsk20-152",
+      "hsk20-153"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-146",
+      "hsk20-165",
+      "hsk20-180"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-215",
+      "hsk20-221",
+      "hsk20-222",
+      "hsk20-134",
+      "hsk20-136",
+      "hsk20-142",
+      "hsk20-145",
+      "hsk20-150",
+      "hsk20-152",
+      "hsk20-153"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-146",
+      "hsk20-165",
+      "hsk20-180"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

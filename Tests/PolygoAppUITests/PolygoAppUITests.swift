@@ -168,7 +168,7 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func openVocabularyDetailFromDictionary() {
-        let dictionary = element(containing: "Dictionnaire de l’unité 1", type: .button)
+        let dictionary = app.buttons["explorer.dictionary"]
         XCTAssertTrue(dictionary.waitForExistence(timeout: timeout), "L’explorateur doit proposer le dictionnaire")
         dictionary.tap()
 

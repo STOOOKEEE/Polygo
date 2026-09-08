@@ -1,0 +1,1278 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-33",
+  "moduleID": "unit-04",
+  "order": 33,
+  "title": {
+    "fr": "Traverser la ville"
+  },
+  "summary": {
+    "fr": "Préparer un trajet selon la météo et choisir la meilleure direction."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l33-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l33-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-236",
+      "canonicalID": "晴|qíng|236",
+      "hanzi": "晴",
+      "pinyin": "qíng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "晴",
+          "vocabularyID": "vocab-hsk20-236",
+          "pinyin": "qíng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ensoleillé ; beau temps"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天天气很晴朗。",
+        "pinyin": "jīn tiān tiān qì hěn qíng lǎng。",
+        "translation": {
+          "fr": "Le temps est très ensoleillé aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "晴|qíng|236",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 236,
+        "level": 2
+      },
+      "traditionalHanzi": "晴"
+    },
+    {
+      "id": "vocab-hsk20-249",
+      "canonicalID": "它|tā|249",
+      "hanzi": "它",
+      "pinyin": "tā",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "它",
+          "vocabularyID": "vocab-hsk20-249",
+          "pinyin": "tā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "il/elle (objet ou animal)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "它在桌子下面。",
+        "pinyin": "tā zài zhuō zi xià miàn。",
+        "translation": {
+          "fr": "Il est sous la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "它|tā|249",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 249,
+        "level": 2
+      },
+      "traditionalHanzi": "它"
+    },
+    {
+      "id": "vocab-hsk20-269",
+      "canonicalID": "雪|xuě|269",
+      "hanzi": "雪",
+      "pinyin": "xuě",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "雪",
+          "vocabularyID": "vocab-hsk20-269",
+          "pinyin": "xuě"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "neige"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "冬天下雪。",
+        "pinyin": "dōng tiān xià xuě。",
+        "translation": {
+          "fr": "Il neige en hiver."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "雪|xuě|269",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 269,
+        "level": 2
+      },
+      "traditionalHanzi": "雪"
+    },
+    {
+      "id": "vocab-hsk20-279",
+      "canonicalID": "因为|yīn wèi|279",
+      "hanzi": "因为",
+      "pinyin": "yīn wèi",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "因为",
+          "vocabularyID": "vocab-hsk20-279",
+          "pinyin": "yīn wèi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "parce que"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "因为下雨，所以我在家。",
+        "pinyin": "yīn wèi xià yǔ， suǒ yǐ wǒ zài jiā。",
+        "translation": {
+          "fr": "Comme il pleut, je suis à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "因为|yīn wèi|279",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 279,
+        "level": 2
+      },
+      "traditionalHanzi": "因爲"
+    },
+    {
+      "id": "vocab-hsk20-280",
+      "canonicalID": "阴|yīn|280",
+      "hanzi": "阴",
+      "pinyin": "yīn",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "阴",
+          "vocabularyID": "vocab-hsk20-280",
+          "pinyin": "yīn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "couvert ; nuageux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天是阴天。",
+        "pinyin": "jīn tiān shì yīn tiān。",
+        "translation": {
+          "fr": "Le ciel est couvert aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "阴|yīn|280",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 280,
+        "level": 2
+      },
+      "traditionalHanzi": "陰"
+    },
+    {
+      "id": "vocab-hsk20-294",
+      "canonicalID": "知道|zhī dào|294",
+      "hanzi": "知道",
+      "pinyin": "zhī dào",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "知道",
+          "vocabularyID": "vocab-hsk20-294",
+          "pinyin": "zhī dào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "savoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我知道答案。",
+        "pinyin": "wǒ zhī dào dá àn。",
+        "translation": {
+          "fr": "Je connais la réponse."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "知道|zhī dào|294",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 294,
+        "level": 2
+      },
+      "traditionalHanzi": "知道"
+    },
+    {
+      "id": "vocab-hsk20-295",
+      "canonicalID": "准备|zhǔn bèi|295",
+      "hanzi": "准备",
+      "pinyin": "zhǔn bèi",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "准备",
+          "vocabularyID": "vocab-hsk20-295",
+          "pinyin": "zhǔn bèi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "préparer ; être prêt"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我准备考试。",
+        "pinyin": "wǒ zhǔn bèi kǎo shì。",
+        "translation": {
+          "fr": "Je prépare l’examen."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "准备|zhǔn bèi|295",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 295,
+        "level": 2
+      },
+      "traditionalHanzi": "準備"
+    },
+    {
+      "id": "vocab-hsk20-299",
+      "canonicalID": "最|zuì|299",
+      "hanzi": "最",
+      "pinyin": "zuì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "最",
+          "vocabularyID": "vocab-hsk20-299",
+          "pinyin": "zuì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "le plus"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是最好的办法。",
+        "pinyin": "zhè shì zuì hǎo de bàn fǎ。",
+        "translation": {
+          "fr": "C’est la meilleure solution."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "最|zuì|299",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 299,
+        "level": 2
+      },
+      "traditionalHanzi": "最"
+    },
+    {
+      "id": "vocab-hsk20-300",
+      "canonicalID": "左边|zuǒ biān|300",
+      "hanzi": "左边",
+      "pinyin": "zuǒ biān",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "左边",
+          "vocabularyID": "vocab-hsk20-300",
+          "pinyin": "zuǒ biān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "gauche ; côté gauche"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学校在左边。",
+        "pinyin": "xué xiào zài zuǒ biān。",
+        "translation": {
+          "fr": "L’école est à gauche."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "左边|zuǒ biān|300",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 300,
+        "level": 2
+      },
+      "traditionalHanzi": "左邊"
+    },
+    {
+      "id": "vocab-hsk20-028",
+      "canonicalID": "饭馆|fàn guǎn|28",
+      "hanzi": "饭馆",
+      "pinyin": "fàn guǎn",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "饭馆",
+          "vocabularyID": "vocab-hsk20-028",
+          "pinyin": "fàn guǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "restaurant"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这家饭馆很安静。",
+        "pinyin": "zhè jiā fàn guǎn hěn ān jìng。",
+        "translation": {
+          "fr": "Ce restaurant est très calme."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "饭馆|fàn guǎn|28",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 28,
+        "level": 1
+      },
+      "traditionalHanzi": "飯館"
+    },
+    {
+      "id": "vocab-hsk20-039",
+      "canonicalID": "很|hěn|39",
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "很",
+          "vocabularyID": "vocab-hsk20-039",
+          "pinyin": "hěn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "très"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个菜很好吃。",
+        "pinyin": "zhè ge cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Ce plat est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "很|hěn|39",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 39,
+        "level": 1
+      },
+      "traditionalHanzi": "很"
+    },
+    {
+      "id": "vocab-hsk20-050",
+      "canonicalID": "开|kāi|50",
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "开",
+          "vocabularyID": "vocab-hsk20-050",
+          "pinyin": "kāi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ouvrir ; mettre en marche"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请开门。",
+        "pinyin": "qǐng kāi mén。",
+        "translation": {
+          "fr": "Ouvre la porte, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "开|kāi|50",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 50,
+        "level": 1
+      },
+      "traditionalHanzi": "開"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-33-grammar-01",
+      "title": {
+        "fr": "Grammaire — 这/那 + nom"
+      },
+      "body": {
+        "fr": "这 désigne un élément proche et 那 un élément plus éloigné.\nExemple 1 : 那只狗在公园里。\nnà zhǐ gǒu zài gōng yuán lǐ。\nCe chien-là est dans le parc."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-33-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-236",
+        "vocab-hsk20-249",
+        "vocab-hsk20-269",
+        "vocab-hsk20-279",
+        "vocab-hsk20-280",
+        "vocab-hsk20-294",
+        "vocab-hsk20-295",
+        "vocab-hsk20-299",
+        "vocab-hsk20-300",
+        "vocab-hsk20-028",
+        "vocab-hsk20-039",
+        "vocab-hsk20-050"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "id": "block-lesson-33-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "今天是晴天还是阴天？",
+          "pinyin": "jīn tiān shì qíng tiān hái shì yīn tiān？",
+          "translation": {
+            "fr": "Aujourd’hui, le ciel est-il dégagé ou couvert ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "早上是晴天，下午可能下雪。",
+          "pinyin": "zǎo shàng shì qíng tiān， xià wǔ kě néng xià xuě。",
+          "translation": {
+            "fr": "Le matin, le ciel est dégagé, mais il pourrait neiger l’après-midi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我准备去城市左边的公园。",
+          "pinyin": "wǒ zhǔn bèi qù chéng shì zuǒ biān de gōng yuán。",
+          "translation": {
+            "fr": "Je me prépare à aller au parc à gauche de la ville."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "因为天气会变，所以我们先回家。",
+          "pinyin": "yīn wèi tiān qì huì biàn， suǒ yǐ wǒ men xiān huí jiā。",
+          "translation": {
+            "fr": "Comme le temps va changer, rentrons d’abord à la maison."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "那只狗是谁的？",
+          "pinyin": "nà zhǐ gǒu shì shéi de？",
+          "translation": {
+            "fr": "À qui est ce chien ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不知道。最重要的是先走左边。",
+          "pinyin": "bù zhī dào。 zuì zhòng yào de shì xiān zǒu zuǒ biān。",
+          "translation": {
+            "fr": "Je ne sais pas. Le plus important est de prendre d’abord à gauche."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 29
+      }
+    },
+    {
+      "id": "block-lesson-33-reading",
+      "storyID": "story-lesson-33",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "La météo en ville"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-33-p1",
+          "hanzi": "早上是晴天，下午的天气可能变成阴天或下雪。",
+          "pinyin": "zǎo shàng shì qíng tiān， xià wǔ de tiān qì kě néng biàn chéng yīn tiān huò xià xuě。",
+          "translation": {
+            "fr": "Le matin, le ciel est dégagé ; l’après-midi, le temps pourrait devenir couvert ou neigeux."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-33-p2",
+          "hanzi": "我们准备去左边的公园。因为天气不好，所以先回家，晚上再出门。",
+          "pinyin": "wǒ men zhǔn bèi qù zuǒ biān de gōng yuán。 yīn wèi tiān qì bù hǎo， suǒ yǐ xiān huí jiā， wǎn shàng zài chū mén。",
+          "translation": {
+            "fr": "Nous nous préparons à aller au parc à gauche. Comme le temps est mauvais, nous rentrons d’abord à la maison et ressortons le soir."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l33-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-meaning",
+          "prompt": {
+            "fr": "Que signifie 晴 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le temps du matin."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "dégagé"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "neigeux"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "venteux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l33-order",
+          "prompt": {
+            "fr": "Construis « Le temps va changer ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "会变化",
+            "pinyin": "huì biàn huà",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "天气会变化。",
+          "天气会变化"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l33-fill",
+          "prompt": {
+            "fr": "Complète : 下午可能下___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "sentence": "下午可能下___。",
+        "acceptedAnswers": [
+          "雪"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l33-listen",
+          "prompt": {
+            "fr": "Pourquoi Tao conseille-t-il de prendre un parapluie ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "因为天气会变，所以带伞。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Parce que le temps va changer."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Parce qu’il fait très chaud."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Parce que le parc est fermé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l33-speak",
+          "prompt": {
+            "fr": "Dis « Je me prépare à aller au parc ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我准备去公园。",
+        "referencePinyin": "wǒ zhǔn bèi qù gōng yuán。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我准备去公园。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-reading",
+          "prompt": {
+            "fr": "Où se trouve le parc ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Derrière l’hôpital."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À droite de la ville."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "À gauche de la ville."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "id": "block-lesson-33-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-236",
+        "vocab-hsk20-249",
+        "vocab-hsk20-269",
+        "vocab-hsk20-279",
+        "vocab-hsk20-280",
+        "vocab-hsk20-294"
+      ],
+      "objectiveIDs": [
+        "l33-understand",
+        "l33-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 29
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-236",
+      "vocabularyID": "vocab-hsk20-236",
+      "front": {
+        "hanzi": "晴",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "晴",
+        "pinyin": "qíng",
+        "text": {
+          "fr": "ensoleillé ; beau temps"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-249",
+      "vocabularyID": "vocab-hsk20-249",
+      "front": {
+        "hanzi": "它",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "它",
+        "pinyin": "tā",
+        "text": {
+          "fr": "il/elle (objet ou animal)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-269",
+      "vocabularyID": "vocab-hsk20-269",
+      "front": {
+        "hanzi": "雪",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "雪",
+        "pinyin": "xuě",
+        "text": {
+          "fr": "neige"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-279",
+      "vocabularyID": "vocab-hsk20-279",
+      "front": {
+        "hanzi": "因为",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "因为",
+        "pinyin": "yīn wèi",
+        "text": {
+          "fr": "parce que"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-280",
+      "vocabularyID": "vocab-hsk20-280",
+      "front": {
+        "hanzi": "阴",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "阴",
+        "pinyin": "yīn",
+        "text": {
+          "fr": "couvert ; nuageux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-294",
+      "vocabularyID": "vocab-hsk20-294",
+      "front": {
+        "hanzi": "知道",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "知道",
+        "pinyin": "zhī dào",
+        "text": {
+          "fr": "savoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-295",
+      "vocabularyID": "vocab-hsk20-295",
+      "front": {
+        "hanzi": "准备",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "准备",
+        "pinyin": "zhǔn bèi",
+        "text": {
+          "fr": "préparer ; être prêt"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-299",
+      "vocabularyID": "vocab-hsk20-299",
+      "front": {
+        "hanzi": "最",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "最",
+        "pinyin": "zuì",
+        "text": {
+          "fr": "le plus"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-300",
+      "vocabularyID": "vocab-hsk20-300",
+      "front": {
+        "hanzi": "左边",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "左边",
+        "pinyin": "zuǒ biān",
+        "text": {
+          "fr": "gauche ; côté gauche"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-028",
+      "vocabularyID": "vocab-hsk20-028",
+      "front": {
+        "hanzi": "饭馆",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "饭馆",
+        "pinyin": "fàn guǎn",
+        "text": {
+          "fr": "restaurant"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-039",
+      "vocabularyID": "vocab-hsk20-039",
+      "front": {
+        "hanzi": "很",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "很",
+        "pinyin": "hěn",
+        "text": {
+          "fr": "très"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-050",
+      "vocabularyID": "vocab-hsk20-050",
+      "front": {
+        "hanzi": "开",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "开",
+        "pinyin": "kāi",
+        "text": {
+          "fr": "ouvrir ; mettre en marche"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 29,
+    "allocationRange": "days06-45",
+    "theme": "city",
+    "newVocabularyIDs": [
+      "vocab-hsk20-236",
+      "vocab-hsk20-249",
+      "vocab-hsk20-269",
+      "vocab-hsk20-279",
+      "vocab-hsk20-280",
+      "vocab-hsk20-294",
+      "vocab-hsk20-295",
+      "vocab-hsk20-299",
+      "vocab-hsk20-300"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-028",
+      "vocab-hsk20-039",
+      "vocab-hsk20-050"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-236",
+      "hsk20-249",
+      "hsk20-269",
+      "hsk20-279",
+      "hsk20-280",
+      "hsk20-294",
+      "hsk20-295",
+      "hsk20-299",
+      "hsk20-300"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-028",
+      "hsk20-039",
+      "hsk20-050"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-236",
+      "hsk20-249",
+      "hsk20-269",
+      "hsk20-279",
+      "hsk20-280",
+      "hsk20-294",
+      "hsk20-295",
+      "hsk20-299",
+      "hsk20-300"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-028",
+      "hsk20-039",
+      "hsk20-050"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-04",
+    "newVocabularyCount": 9,
+    "extraVocabularyIDs": []
+  }
+}

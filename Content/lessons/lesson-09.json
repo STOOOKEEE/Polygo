@@ -1,0 +1,1749 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-09",
+  "moduleID": "unit-02",
+  "order": 9,
+  "title": {
+    "fr": "Une journée organisée"
+  },
+  "summary": {
+    "fr": "Parler d’un déplacement, d’une capacité et d’une action terminée."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "l9-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre un itinéraire et une action déjà terminée."
+      }
+    },
+    {
+      "id": "l9-produce",
+      "required": true,
+      "statement": {
+        "fr": "Dire ce qu’on peut faire et où l’on va."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-007",
+      "canonicalID": "不|bù|7",
+      "hanzi": "不",
+      "pinyin": "bù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "不",
+          "vocabularyID": "vocab-hsk20-007",
+          "pinyin": "bù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ne… pas"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我不喝咖啡。",
+        "pinyin": "wǒ bù hē kā fēi。",
+        "translation": {
+          "fr": "Je ne bois pas de café."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "不|bù|7",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 7,
+        "level": 1
+      },
+      "traditionalHanzi": "不"
+    },
+    {
+      "id": "vocab-hsk20-016",
+      "canonicalID": "点|diǎn|16",
+      "hanzi": "点",
+      "pinyin": "diǎn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "点",
+          "vocabularyID": "vocab-hsk20-016",
+          "pinyin": "diǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "heure ; point"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "现在三点。",
+        "pinyin": "xiàn zài sān diǎn。",
+        "translation": {
+          "fr": "Il est trois heures."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "点|diǎn|16",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 16,
+        "level": 1
+      },
+      "traditionalHanzi": "點"
+    },
+    {
+      "id": "vocab-hsk20-041",
+      "canonicalID": "回|huí|41",
+      "hanzi": "回",
+      "pinyin": "huí",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "回",
+          "vocabularyID": "vocab-hsk20-041",
+          "pinyin": "huí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "retourner ; revenir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我下午回家。",
+        "pinyin": "wǒ xià wǔ huí jiā。",
+        "translation": {
+          "fr": "Je rentre à la maison l’après-midi."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "回|huí|41",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 41,
+        "level": 1
+      },
+      "traditionalHanzi": "回"
+    },
+    {
+      "id": "vocab-hsk20-042",
+      "canonicalID": "会|huì|42",
+      "hanzi": "会",
+      "pinyin": "huì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "会",
+          "vocabularyID": "vocab-hsk20-042",
+          "pinyin": "huì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "savoir faire ; pouvoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我会说汉语。",
+        "pinyin": "wǒ huì shuō hàn yǔ。",
+        "translation": {
+          "fr": "Je sais parler chinois."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "会|huì|42",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 42,
+        "level": 1
+      },
+      "traditionalHanzi": "會"
+    },
+    {
+      "id": "vocab-hsk20-043",
+      "canonicalID": "火车站|huǒ chē zhàn|43",
+      "hanzi": "火车站",
+      "pinyin": "huǒ chē zhàn",
+      "toneNumbers": [
+        3,
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "火车站",
+          "vocabularyID": "vocab-hsk20-043",
+          "pinyin": "huǒ chē zhàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "gare"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "火车站在前面。",
+        "pinyin": "huǒ chē zhàn zài qián miàn。",
+        "translation": {
+          "fr": "La gare est devant."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "火车站|huǒ chē zhàn|43",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 43,
+        "level": 1
+      },
+      "traditionalHanzi": "火車站"
+    },
+    {
+      "id": "vocab-hsk20-044",
+      "canonicalID": "几|jǐ|44",
+      "hanzi": "几",
+      "pinyin": "jǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "几",
+          "vocabularyID": "vocab-hsk20-044",
+          "pinyin": "jǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "combien (petit nombre)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你有几个孩子？",
+        "pinyin": "nǐ yǒu jǐ gè hái zi？",
+        "translation": {
+          "fr": "Combien d’enfants as-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "几|jǐ|44",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 44,
+        "level": 1
+      },
+      "traditionalHanzi": "幾"
+    },
+    {
+      "id": "vocab-hsk20-045",
+      "canonicalID": "家|jiā|45",
+      "hanzi": "家",
+      "pinyin": "jiā",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "家",
+          "vocabularyID": "vocab-hsk20-045",
+          "pinyin": "jiā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "maison ; famille"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我家有五个人。",
+        "pinyin": "wǒ jiā yǒu wǔ gè rén。",
+        "translation": {
+          "fr": "Il y a cinq personnes dans ma famille."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "家|jiā|45",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 45,
+        "level": 1
+      },
+      "traditionalHanzi": "家"
+    },
+    {
+      "id": "vocab-hsk20-058",
+      "canonicalID": "了|le|58",
+      "hanzi": "了",
+      "pinyin": "le",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "了",
+          "vocabularyID": "vocab-hsk20-058",
+          "pinyin": "le"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule d’accompli ou de changement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我看了电影。",
+        "pinyin": "wǒ kàn le diàn yǐng。",
+        "translation": {
+          "fr": "J’ai regardé un film."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "了|le|58",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 58,
+        "level": 1
+      },
+      "traditionalHanzi": "了"
+    },
+    {
+      "id": "vocab-hsk20-084",
+      "canonicalID": "去|qù|84",
+      "hanzi": "去",
+      "pinyin": "qù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "去",
+          "vocabularyID": "vocab-hsk20-084",
+          "pinyin": "qù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "aller"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们去公园。",
+        "pinyin": "wǒ men qù gōng yuán。",
+        "translation": {
+          "fr": "Nous allons au parc."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "去|qù|84",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 84,
+        "level": 1
+      },
+      "traditionalHanzi": "去"
+    },
+    {
+      "id": "vocab-hsk20-139",
+      "canonicalID": "在|zài|139",
+      "hanzi": "在",
+      "pinyin": "zài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "在",
+          "vocabularyID": "vocab-hsk20-139",
+          "pinyin": "zài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "être à ; se trouver"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我在家。",
+        "pinyin": "wǒ zài jiā。",
+        "translation": {
+          "fr": "Je suis à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "在|zài|139",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 139,
+        "level": 1
+      },
+      "traditionalHanzi": "在"
+    },
+    {
+      "id": "vocab-hsk20-148",
+      "canonicalID": "昨天|zuó tiān|148",
+      "hanzi": "昨天",
+      "pinyin": "zuó tiān",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "昨天",
+          "vocabularyID": "vocab-hsk20-148",
+          "pinyin": "zuó tiān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "hier"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我昨天看了电影。",
+        "pinyin": "wǒ zuó tiān kàn le diàn yǐng。",
+        "translation": {
+          "fr": "J’ai regardé un film hier."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "昨天|zuó tiān|148",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 148,
+        "level": 1
+      },
+      "traditionalHanzi": "昨天"
+    },
+    {
+      "id": "vocab-hsk20-165",
+      "canonicalID": "从|cóng|165",
+      "hanzi": "从",
+      "pinyin": "cóng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "从",
+          "vocabularyID": "vocab-hsk20-165",
+          "pinyin": "cóng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "depuis ; de"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我从家走到学校。",
+        "pinyin": "wǒ cóng jiā zǒu dào xué xiào。",
+        "translation": {
+          "fr": "Je marche de la maison à l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "从|cóng|165",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 165,
+        "level": 2
+      },
+      "traditionalHanzi": "從"
+    },
+    {
+      "id": "vocab-hsk20-170",
+      "canonicalID": "到|dào|170",
+      "hanzi": "到",
+      "pinyin": "dào",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "到",
+          "vocabularyID": "vocab-hsk20-170",
+          "pinyin": "dào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "arriver ; jusqu’à"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我到家了。",
+        "pinyin": "wǒ dào jiā le。",
+        "translation": {
+          "fr": "Je suis arrivé à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "到|dào|170",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 170,
+        "level": 2
+      },
+      "traditionalHanzi": "到"
+    },
+    {
+      "id": "vocab-hsk20-297",
+      "canonicalID": "自行车|zì xíng chē|297",
+      "hanzi": "自行车",
+      "pinyin": "zì xíng chē",
+      "toneNumbers": [
+        4,
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "自行车",
+          "vocabularyID": "vocab-hsk20-297",
+          "pinyin": "zì xíng chē"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vélo"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我骑自行车上班。",
+        "pinyin": "wǒ qí zì xíng chē shàng bān。",
+        "translation": {
+          "fr": "Je vais travailler à vélo."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "自行车|zì xíng chē|297",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 297,
+        "level": 2
+      },
+      "traditionalHanzi": "自行車"
+    },
+    {
+      "id": "vocab-hsk20-298",
+      "canonicalID": "走|zǒu|298",
+      "hanzi": "走",
+      "pinyin": "zǒu",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "走",
+          "vocabularyID": "vocab-hsk20-298",
+          "pinyin": "zǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "marcher ; partir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们走回家。",
+        "pinyin": "wǒ men zǒu huí jiā。",
+        "translation": {
+          "fr": "Nous rentrons à pied."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "走|zǒu|298",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 298,
+        "level": 2
+      },
+      "traditionalHanzi": "走"
+    },
+    {
+      "id": "vocab-hsk20-485",
+      "canonicalID": "骑|qí|485",
+      "hanzi": "骑",
+      "pinyin": "qí",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "骑",
+          "vocabularyID": "vocab-hsk20-485",
+          "pinyin": "qí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "monter (à vélo ou à cheval)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天骑自行车上班。",
+        "pinyin": "wǒ měi tiān qí zì xíng chē shàng bān.",
+        "translation": {
+          "fr": "Je vais au travail à vélo tous les jours."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "骑|qí|485",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 485,
+        "level": 3
+      },
+      "traditionalHanzi": "騎"
+    },
+    {
+      "id": "vocab-ni",
+      "hanzi": "你",
+      "traditionalHanzi": "你",
+      "pinyin": "nǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "你",
+          "vocabularyID": "vocab-ni",
+          "pinyin": "nǐ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tu ; vous"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你好！",
+        "pinyin": "nǐ hǎo!",
+        "translation": {
+          "fr": "Bonjour !"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "你 désigne la personne à qui l'on parle."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "你",
+          "traditional": "你"
+        }
+      }
+    },
+    {
+      "id": "vocab-wo",
+      "hanzi": "我",
+      "traditionalHanzi": "我",
+      "pinyin": "wǒ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "我",
+          "vocabularyID": "vocab-wo",
+          "pinyin": "wǒ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "je ; moi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "我 commence la phrase quand je parle de moi."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "我",
+          "traditional": "我"
+        }
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-09-grammar-01",
+      "title": {
+        "fr": "Grammaire — verbe + 了"
+      },
+      "body": {
+        "fr": "了 placé après le verbe signale ici une action terminée : 我看了 signifie « j’ai regardé ».\nExemple 1 : 我看了电影。\nwǒ kàn le diàn yǐng.\nJ’ai regardé un film."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-lesson-09-grammar-02",
+      "title": {
+        "fr": "Grammaire — 会 + verbe"
+      },
+      "body": {
+        "fr": "会 indique une capacité apprise ou une possibilité future : 我会说汉语 signifie « je sais parler chinois ».\nExemple 1 : 我会说汉语。\nwǒ huì shuō Hàn yǔ.\nJe sais parler chinois."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-lesson-09-grammar-03",
+      "title": {
+        "fr": "Grammaire — 从 A 到 B"
+      },
+      "body": {
+        "fr": "从 et 到 encadrent un point de départ et un point d’arrivée.\nExemple 1 : 从家到火车站很近。\ncóng jiā dào huǒ chē zhàn hěn jìn.\nDe la maison à la gare, c’est proche."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-09-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-007",
+        "vocab-hsk20-016",
+        "vocab-hsk20-041",
+        "vocab-hsk20-042",
+        "vocab-hsk20-043",
+        "vocab-hsk20-044",
+        "vocab-hsk20-045",
+        "vocab-hsk20-058",
+        "vocab-hsk20-084",
+        "vocab-hsk20-139",
+        "vocab-hsk20-148",
+        "vocab-hsk20-165",
+        "vocab-hsk20-170",
+        "vocab-hsk20-297",
+        "vocab-hsk20-298",
+        "vocab-hsk20-485",
+        "vocab-ni",
+        "vocab-wo"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "id": "block-l9-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你昨天在家吗？",
+          "pinyin": "nǐ zuó tiān zài jiā ma?",
+          "translation": {
+            "fr": "Tu étais à la maison hier ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不在，我去了火车站。",
+          "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+          "translation": {
+            "fr": "Non, je suis allé à la gare."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你会骑自行车吗？你几点回家？",
+          "pinyin": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?",
+          "translation": {
+            "fr": "Tu sais faire du vélo ? À quelle heure rentres-tu ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "会。五点回家。",
+          "pinyin": "huì. wǔ diǎn huí jiā.",
+          "translation": {
+            "fr": "Oui. Je rentre à cinq heures."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我从家走到火车站。",
+          "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+          "translation": {
+            "fr": "Je marche de la maison jusqu’à la gare."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，我回家。",
+          "pinyin": "hǎo, wǒ huí jiā.",
+          "translation": {
+            "fr": "D’accord, je rentre à la maison."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 5
+      }
+    },
+    {
+      "id": "block-l9-reading",
+      "storyID": "story-l9-station",
+      "title": {
+        "fr": "Vers la gare"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-09-p1",
+          "hanzi": "我昨天去了火车站。",
+          "pinyin": "wǒ zuó tiān qù le huǒ chē zhàn.",
+          "translation": {
+            "fr": "Je suis allé à la gare hier."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-09-p2",
+          "hanzi": "我从家走到火车站，我回家。",
+          "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn, wǒ huí jiā.",
+          "translation": {
+            "fr": "Je marche de la maison jusqu’à la gare, puis je rentre."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l9-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l9-meaning",
+          "prompt": {
+            "fr": "Que signifie 火车站 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le lieu du train."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "hôpital"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "banque"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "gare"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l9-order",
+          "prompt": {
+            "fr": "Construis « Je rentre à la maison ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "回",
+            "pinyin": "huí",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "c",
+          "b",
+          "a"
+        ],
+        "acceptedVariants": [
+          "我回家。",
+          "我回家"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l9-fill",
+          "prompt": {
+            "fr": "Complète avec le mot qui marque l’action terminée dans le dialogue."
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我昨天去___火车站。",
+        "acceptedAnswers": [
+          "了"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l9-listen",
+          "prompt": {
+            "fr": "Que fait Mina ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我从家走到火车站。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle prend l’avion."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle marche jusqu’à la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle reste à la maison."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l9-speak",
+          "prompt": {
+            "fr": "Dis « Je marche de la maison jusqu’à la gare ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我从家走到火车站。",
+        "referencePinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我从家走到火车站。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l9-reading",
+          "prompt": {
+            "fr": "Comment la personne se déplace-t-elle ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l9-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle nage."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle marche."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle prend l’avion."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "id": "block-l9-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-041",
+        "vocab-hsk20-042",
+        "vocab-hsk20-043",
+        "vocab-hsk20-058",
+        "vocab-hsk20-165",
+        "vocab-hsk20-297"
+      ],
+      "objectiveIDs": [
+        "l9-understand",
+        "l9-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 5
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-007",
+      "vocabularyID": "vocab-hsk20-007",
+      "front": {
+        "hanzi": "不",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "不",
+        "pinyin": "bù",
+        "text": {
+          "fr": "ne… pas"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-016",
+      "vocabularyID": "vocab-hsk20-016",
+      "front": {
+        "hanzi": "点",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "点",
+        "pinyin": "diǎn",
+        "text": {
+          "fr": "heure ; point"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-041",
+      "vocabularyID": "vocab-hsk20-041",
+      "front": {
+        "hanzi": "回",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "回",
+        "pinyin": "huí",
+        "text": {
+          "fr": "retourner ; revenir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-042",
+      "vocabularyID": "vocab-hsk20-042",
+      "front": {
+        "hanzi": "会",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "会",
+        "pinyin": "huì",
+        "text": {
+          "fr": "savoir faire ; pouvoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-043",
+      "vocabularyID": "vocab-hsk20-043",
+      "front": {
+        "hanzi": "火车站",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "火车站",
+        "pinyin": "huǒ chē zhàn",
+        "text": {
+          "fr": "gare"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-044",
+      "vocabularyID": "vocab-hsk20-044",
+      "front": {
+        "hanzi": "几",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "几",
+        "pinyin": "jǐ",
+        "text": {
+          "fr": "combien (petit nombre)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-045",
+      "vocabularyID": "vocab-hsk20-045",
+      "front": {
+        "hanzi": "家",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "家",
+        "pinyin": "jiā",
+        "text": {
+          "fr": "maison ; famille"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-058",
+      "vocabularyID": "vocab-hsk20-058",
+      "front": {
+        "hanzi": "了",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "了",
+        "pinyin": "le",
+        "text": {
+          "fr": "particule d’accompli ou de changement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-084",
+      "vocabularyID": "vocab-hsk20-084",
+      "front": {
+        "hanzi": "去",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "去",
+        "pinyin": "qù",
+        "text": {
+          "fr": "aller"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-139",
+      "vocabularyID": "vocab-hsk20-139",
+      "front": {
+        "hanzi": "在",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "在",
+        "pinyin": "zài",
+        "text": {
+          "fr": "être à ; se trouver"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-148",
+      "vocabularyID": "vocab-hsk20-148",
+      "front": {
+        "hanzi": "昨天",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "昨天",
+        "pinyin": "zuó tiān",
+        "text": {
+          "fr": "hier"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-165",
+      "vocabularyID": "vocab-hsk20-165",
+      "front": {
+        "hanzi": "从",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "从",
+        "pinyin": "cóng",
+        "text": {
+          "fr": "depuis ; de"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-170",
+      "vocabularyID": "vocab-hsk20-170",
+      "front": {
+        "hanzi": "到",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "到",
+        "pinyin": "dào",
+        "text": {
+          "fr": "arriver ; jusqu’à"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-297",
+      "vocabularyID": "vocab-hsk20-297",
+      "front": {
+        "hanzi": "自行车",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "自行车",
+        "pinyin": "zì xíng chē",
+        "text": {
+          "fr": "vélo"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-298",
+      "vocabularyID": "vocab-hsk20-298",
+      "front": {
+        "hanzi": "走",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "走",
+        "pinyin": "zǒu",
+        "text": {
+          "fr": "marcher ; partir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-485",
+      "vocabularyID": "vocab-hsk20-485",
+      "front": {
+        "hanzi": "骑",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "骑",
+        "pinyin": "qí",
+        "text": {
+          "fr": "monter (à vélo ou à cheval)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-ni",
+      "vocabularyID": "vocab-ni",
+      "front": {
+        "hanzi": "你",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "你",
+        "pinyin": "nǐ · 3",
+        "text": {
+          "fr": "tu ; vous"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-wo",
+      "vocabularyID": "vocab-wo",
+      "front": {
+        "hanzi": "我",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "我",
+        "pinyin": "wǒ · 3",
+        "text": {
+          "fr": "je ; moi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyIDs": [
+      "vocab-hsk20-041",
+      "vocab-hsk20-042",
+      "vocab-hsk20-043",
+      "vocab-hsk20-058",
+      "vocab-hsk20-148",
+      "vocab-hsk20-165",
+      "vocab-hsk20-170",
+      "vocab-hsk20-297",
+      "vocab-hsk20-298",
+      "vocab-hsk20-485"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-007",
+      "vocab-hsk20-016",
+      "vocab-hsk20-044",
+      "vocab-hsk20-045",
+      "vocab-hsk20-084",
+      "vocab-hsk20-139",
+      "vocab-ni",
+      "vocab-wo"
+    ],
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

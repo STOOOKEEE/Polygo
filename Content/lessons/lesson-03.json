@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
+  "contentVersion": "2026.10.0",
   "id": "lesson-03",
   "moduleID": "unit-01",
   "order": 3,
@@ -599,12 +599,23 @@
           "audio": null
         }
       ],
-      "comprehensionExerciseIDs": ["ex-l3-reading-country"],
+      "comprehensionExerciseIDs": [
+        "ex-l3-reading-country"
+      ],
       "participation": {
-        "prompt": {"fr": "Écoute la réponse, puis écris la question qui la précédait."},
+        "prompt": {
+          "fr": "Écoute la réponse, puis écris la question qui la précédait."
+        },
         "audioLineIndex": 1,
-        "acceptedResponses": ["你好！你是哪国人？", "你好 你是哪国人", "ni hao ni shi na guo ren", "nǐ hǎo nǐ shì nǎ guó rén"],
-        "hint": {"fr": "La question demande de quel pays vient la personne."}
+        "acceptedResponses": [
+          "你好！你是哪国人？",
+          "你好 你是哪国人",
+          "ni hao ni shi na guo ren",
+          "nǐ hǎo nǐ shì nǎ guó rén"
+        ],
+        "hint": {
+          "fr": "La question demande de quel pays vient la personne."
+        }
       },
       "metadata": {
         "standardID": "HSK-3.0",

@@ -1,0 +1,2816 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "catalog": {
+    "id": "hsk-legacy-600",
+    "contentVersion": "2026.09.0",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0"
+  },
+  "range": [
+    1,
+    400
+  ],
+  "examples": {
+    "hsk20-001": {
+      "hanzi": "我爱我的家。",
+      "pinyin": "wǒ ài wǒ de jiā。",
+      "translation": {
+        "fr": "J’aime ma famille."
+      }
+    },
+    "hsk20-002": {
+      "hanzi": "我有八本书。",
+      "pinyin": "wǒ yǒu bā běn shū。",
+      "translation": {
+        "fr": "J’ai huit livres."
+      }
+    },
+    "hsk20-003": {
+      "hanzi": "我爸爸在家。",
+      "pinyin": "wǒ bà ba zài jiā。",
+      "translation": {
+        "fr": "Mon père est à la maison."
+      }
+    },
+    "hsk20-004": {
+      "hanzi": "这个杯子很漂亮。",
+      "pinyin": "zhè ge bēi zi hěn piào liàng。",
+      "translation": {
+        "fr": "Ce verre est très joli."
+      }
+    },
+    "hsk20-005": {
+      "hanzi": "我住在北京。",
+      "pinyin": "wǒ zhù zài běi jīng。",
+      "translation": {
+        "fr": "J’habite à Pékin."
+      }
+    },
+    "hsk20-006": {
+      "hanzi": "这本书很好。",
+      "pinyin": "zhè běn shū hěn hǎo。",
+      "translation": {
+        "fr": "Ce livre est très bon."
+      }
+    },
+    "hsk20-007": {
+      "hanzi": "我不喝咖啡。",
+      "pinyin": "wǒ bù hē kā fēi。",
+      "translation": {
+        "fr": "Je ne bois pas de café."
+      }
+    },
+    "hsk20-008": {
+      "hanzi": "不客气，请坐。",
+      "pinyin": "bú kè qì， qǐng zuò。",
+      "translation": {
+        "fr": "De rien, asseyez-vous."
+      }
+    },
+    "hsk20-009": {
+      "hanzi": "这道菜很好吃。",
+      "pinyin": "zhè dào cài hěn hǎo chī。",
+      "translation": {
+        "fr": "Ce plat est très bon."
+      }
+    },
+    "hsk20-010": {
+      "hanzi": "我每天喝茶。",
+      "pinyin": "wǒ měi tiān hē chá。",
+      "translation": {
+        "fr": "Je bois du thé chaque jour."
+      }
+    },
+    "hsk20-011": {
+      "hanzi": "我喜欢吃米饭。",
+      "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+      "translation": {
+        "fr": "J’aime manger du riz."
+      }
+    },
+    "hsk20-012": {
+      "hanzi": "我坐出租车去学校。",
+      "pinyin": "wǒ zuò chū zū chē qù xué xiào。",
+      "translation": {
+        "fr": "Je prends un taxi pour aller à l’école."
+      }
+    },
+    "hsk20-013": {
+      "hanzi": "我给妈妈打电话。",
+      "pinyin": "wǒ gěi mā mā dǎ diàn huà。",
+      "translation": {
+        "fr": "J’appelle maman."
+      }
+    },
+    "hsk20-014": {
+      "hanzi": "这只狗很大。",
+      "pinyin": "zhè zhī gǒu hěn dà。",
+      "translation": {
+        "fr": "Ce chien est très grand."
+      }
+    },
+    "hsk20-015": {
+      "hanzi": "这是我的书。",
+      "pinyin": "zhè shì wǒ de shū。",
+      "translation": {
+        "fr": "C’est mon livre."
+      }
+    },
+    "hsk20-016": {
+      "hanzi": "现在三点。",
+      "pinyin": "xiàn zài sān diǎn。",
+      "translation": {
+        "fr": "Il est trois heures."
+      }
+    },
+    "hsk20-017": {
+      "hanzi": "我的电脑在桌子上。",
+      "pinyin": "wǒ de diàn nǎo zài zhuō zi shàng。",
+      "translation": {
+        "fr": "Mon ordinateur est sur la table."
+      }
+    },
+    "hsk20-018": {
+      "hanzi": "我晚上看电视。",
+      "pinyin": "wǒ wǎn shàng kàn diàn shì。",
+      "translation": {
+        "fr": "Je regarde la télévision le soir."
+      }
+    },
+    "hsk20-019": {
+      "hanzi": "我们周末看电影。",
+      "pinyin": "wǒ men zhōu mò kàn diàn yǐng。",
+      "translation": {
+        "fr": "Nous regardons un film le week-end."
+      }
+    },
+    "hsk20-020": {
+      "hanzi": "这些东西在桌子上。",
+      "pinyin": "zhè xiē dōng xi zài zhuō zi shàng。",
+      "translation": {
+        "fr": "Ces affaires sont sur la table."
+      }
+    },
+    "hsk20-021": {
+      "hanzi": "我们都喜欢茶。",
+      "pinyin": "wǒ men dōu xǐ huān chá。",
+      "translation": {
+        "fr": "Nous aimons tous le thé."
+      }
+    },
+    "hsk20-022": {
+      "hanzi": "我每天读书。",
+      "pinyin": "wǒ měi tiān dú shū。",
+      "translation": {
+        "fr": "Je lis chaque jour."
+      }
+    },
+    "hsk20-023": {
+      "hanzi": "对不起，我来晚了。",
+      "pinyin": "duì bù qǐ， wǒ lái wǎn le。",
+      "translation": {
+        "fr": "Désolé, je suis arrivé en retard."
+      }
+    },
+    "hsk20-024": {
+      "hanzi": "这里有很多人。",
+      "pinyin": "zhè lǐ yǒu hěn duō rén。",
+      "translation": {
+        "fr": "Il y a beaucoup de personnes ici."
+      }
+    },
+    "hsk20-025": {
+      "hanzi": "你要多少钱？",
+      "pinyin": "nǐ yào duō shǎo qián？",
+      "translation": {
+        "fr": "Combien d’argent veux-tu ?"
+      }
+    },
+    "hsk20-026": {
+      "hanzi": "她的儿子在家。",
+      "pinyin": "tā de ér zi zài jiā。",
+      "translation": {
+        "fr": "Son fils est à la maison."
+      }
+    },
+    "hsk20-027": {
+      "hanzi": "二号房间在楼上。",
+      "pinyin": "èr hào fáng jiān zài lóu shàng。",
+      "translation": {
+        "fr": "La chambre numéro deux est à l’étage."
+      }
+    },
+    "hsk20-028": {
+      "hanzi": "这家饭馆很安静。",
+      "pinyin": "zhè jiā fàn guǎn hěn ān jìng。",
+      "translation": {
+        "fr": "Ce restaurant est très calme."
+      }
+    },
+    "hsk20-029": {
+      "hanzi": "飞机到了。",
+      "pinyin": "fēi jī dào le。",
+      "translation": {
+        "fr": "L’avion est arrivé."
+      }
+    },
+    "hsk20-030": {
+      "hanzi": "十分钟就到了。",
+      "pinyin": "shí fēn zhōng jiù dào le。",
+      "translation": {
+        "fr": "On arrive en dix minutes."
+      }
+    },
+    "hsk20-031": {
+      "hanzi": "我今天很高兴。",
+      "pinyin": "wǒ jīn tiān hěn gāo xìng。",
+      "translation": {
+        "fr": "Je suis très heureux aujourd’hui."
+      }
+    },
+    "hsk20-032": {
+      "hanzi": "我有三个苹果。",
+      "pinyin": "wǒ yǒu sān gè píng guǒ。",
+      "translation": {
+        "fr": "J’ai trois pommes."
+      }
+    },
+    "hsk20-033": {
+      "hanzi": "我在公司工作。",
+      "pinyin": "wǒ zài gōng sī gōng zuò。",
+      "translation": {
+        "fr": "Je travaille dans une entreprise."
+      }
+    },
+    "hsk20-034": {
+      "hanzi": "那只狗在门外。",
+      "pinyin": "nà zhī gǒu zài mén wài。",
+      "translation": {
+        "fr": "Ce chien-là est dehors, devant la porte."
+      }
+    },
+    "hsk20-035": {
+      "hanzi": "我学习汉语。",
+      "pinyin": "wǒ xué xí hàn yǔ。",
+      "translation": {
+        "fr": "J’étudie le chinois."
+      }
+    },
+    "hsk20-036": {
+      "hanzi": "你好，我很好。",
+      "pinyin": "nǐ hǎo， wǒ hěn hǎo。",
+      "translation": {
+        "fr": "Bonjour, je vais bien."
+      }
+    },
+    "hsk20-037": {
+      "hanzi": "你喝水吗？",
+      "pinyin": "nǐ hē shuǐ ma？",
+      "translation": {
+        "fr": "Bois-tu de l’eau ?"
+      }
+    },
+    "hsk20-038": {
+      "hanzi": "我和朋友一起去。",
+      "pinyin": "wǒ hé péng yǒu yì qǐ qù。",
+      "translation": {
+        "fr": "J’y vais avec un ami."
+      }
+    },
+    "hsk20-039": {
+      "hanzi": "这个菜很好吃。",
+      "pinyin": "zhè ge cài hěn hǎo chī。",
+      "translation": {
+        "fr": "Ce plat est très bon."
+      }
+    },
+    "hsk20-040": {
+      "hanzi": "他在我后面。",
+      "pinyin": "tā zài wǒ hòu miàn。",
+      "translation": {
+        "fr": "Il est derrière moi."
+      }
+    },
+    "hsk20-041": {
+      "hanzi": "我下午回家。",
+      "pinyin": "wǒ xià wǔ huí jiā。",
+      "translation": {
+        "fr": "Je rentre à la maison l’après-midi."
+      }
+    },
+    "hsk20-042": {
+      "hanzi": "我会说汉语。",
+      "pinyin": "wǒ huì shuō hàn yǔ。",
+      "translation": {
+        "fr": "Je sais parler chinois."
+      }
+    },
+    "hsk20-043": {
+      "hanzi": "火车站在前面。",
+      "pinyin": "huǒ chē zhàn zài qián miàn。",
+      "translation": {
+        "fr": "La gare est devant."
+      }
+    },
+    "hsk20-044": {
+      "hanzi": "你有几个孩子？",
+      "pinyin": "nǐ yǒu jǐ gè hái zi？",
+      "translation": {
+        "fr": "Combien d’enfants as-tu ?"
+      }
+    },
+    "hsk20-045": {
+      "hanzi": "我家有五个人。",
+      "pinyin": "wǒ jiā yǒu wǔ gè rén。",
+      "translation": {
+        "fr": "Il y a cinq personnes dans ma famille."
+      }
+    },
+    "hsk20-046": {
+      "hanzi": "我叫李明。",
+      "pinyin": "wǒ jiào lǐ míng。",
+      "translation": {
+        "fr": "Je m’appelle Li Ming."
+      }
+    },
+    "hsk20-047": {
+      "hanzi": "她是我的朋友。",
+      "pinyin": "tā shì wǒ de péng yǒu。",
+      "translation": {
+        "fr": "Elle est mon amie."
+      }
+    },
+    "hsk20-048": {
+      "hanzi": "今天是星期一。",
+      "pinyin": "jīn tiān shì xīng qī yī。",
+      "translation": {
+        "fr": "Nous sommes lundi aujourd’hui."
+      }
+    },
+    "hsk20-049": {
+      "hanzi": "九点开始上课。",
+      "pinyin": "jiǔ diǎn kāi shǐ shàng kè。",
+      "translation": {
+        "fr": "Le cours commence à neuf heures."
+      }
+    },
+    "hsk20-050": {
+      "hanzi": "请开门。",
+      "pinyin": "qǐng kāi mén。",
+      "translation": {
+        "fr": "Ouvre la porte, s’il te plaît."
+      }
+    },
+    "hsk20-051": {
+      "hanzi": "请看这本书。",
+      "pinyin": "qǐng kàn zhè běn shū。",
+      "translation": {
+        "fr": "Regarde ce livre, s’il te plaît."
+      }
+    },
+    "hsk20-052": {
+      "hanzi": "我看见老师了。",
+      "pinyin": "wǒ kàn jiàn lǎo shī le。",
+      "translation": {
+        "fr": "J’ai vu le professeur."
+      }
+    },
+    "hsk20-053": {
+      "hanzi": "这块钱给你。",
+      "pinyin": "zhè kuài qián gěi nǐ。",
+      "translation": {
+        "fr": "Voici ce yuan pour toi."
+      }
+    },
+    "hsk20-054": {
+      "hanzi": "朋友来了。",
+      "pinyin": "péng yǒu lái le。",
+      "translation": {
+        "fr": "Mon ami est arrivé."
+      }
+    },
+    "hsk20-055": {
+      "hanzi": "老师在教室。",
+      "pinyin": "lǎo shī zài jiào shì。",
+      "translation": {
+        "fr": "Le professeur est dans la classe."
+      }
+    },
+    "hsk20-056": {
+      "hanzi": "今天很冷。",
+      "pinyin": "jīn tiān hěn lěng。",
+      "translation": {
+        "fr": "Il fait très froid aujourd’hui."
+      }
+    },
+    "hsk20-057": {
+      "hanzi": "书在房间里。",
+      "pinyin": "shū zài fáng jiān lǐ。",
+      "translation": {
+        "fr": "Le livre est dans la chambre."
+      }
+    },
+    "hsk20-058": {
+      "hanzi": "我看了电影。",
+      "pinyin": "wǒ kàn le diàn yǐng。",
+      "translation": {
+        "fr": "J’ai regardé un film."
+      }
+    },
+    "hsk20-059": {
+      "hanzi": "温度是零度。",
+      "pinyin": "wēn dù shì líng dù。",
+      "translation": {
+        "fr": "La température est de zéro degré."
+      }
+    },
+    "hsk20-060": {
+      "hanzi": "我有六个苹果。",
+      "pinyin": "wǒ yǒu liù gè píng guǒ。",
+      "translation": {
+        "fr": "J’ai six pommes."
+      }
+    },
+    "hsk20-061": {
+      "hanzi": "妈妈在厨房。",
+      "pinyin": "mā ma zài chú fáng。",
+      "translation": {
+        "fr": "Maman est dans la cuisine."
+      }
+    },
+    "hsk20-062": {
+      "hanzi": "你喝茶吗？",
+      "pinyin": "nǐ hē chá ma？",
+      "translation": {
+        "fr": "Bois-tu du thé ?"
+      }
+    },
+    "hsk20-063": {
+      "hanzi": "我想买苹果。",
+      "pinyin": "wǒ xiǎng mǎi píng guǒ。",
+      "translation": {
+        "fr": "Je veux acheter des pommes."
+      }
+    },
+    "hsk20-064": {
+      "hanzi": "猫在椅子上。",
+      "pinyin": "māo zài yǐ zi shàng。",
+      "translation": {
+        "fr": "Le chat est sur la chaise."
+      }
+    },
+    "hsk20-065": {
+      "hanzi": "我没钱。",
+      "pinyin": "wǒ méi qián。",
+      "translation": {
+        "fr": "Je n’ai pas d’argent."
+      }
+    },
+    "hsk20-066": {
+      "hanzi": "没关系，我们再试。",
+      "pinyin": "méi guān xì， wǒ men zài shì。",
+      "translation": {
+        "fr": "Ce n’est pas grave, nous réessaierons."
+      }
+    },
+    "hsk20-067": {
+      "hanzi": "我喜欢吃米饭。",
+      "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+      "translation": {
+        "fr": "J’aime manger du riz."
+      }
+    },
+    "hsk20-068": {
+      "hanzi": "我的名字是李明。",
+      "pinyin": "wǒ de míng zi shì lǐ míng。",
+      "translation": {
+        "fr": "Je m’appelle Li Ming."
+      }
+    },
+    "hsk20-069": {
+      "hanzi": "明天去学校。",
+      "pinyin": "míng tiān qù xué xiào。",
+      "translation": {
+        "fr": "Demain, je vais à l’école."
+      }
+    },
+    "hsk20-070": {
+      "hanzi": "你要哪本书？",
+      "pinyin": "nǐ yào nǎ běn shū？",
+      "translation": {
+        "fr": "Quel livre veux-tu ?"
+      }
+    },
+    "hsk20-071": {
+      "hanzi": "那是我的猫。",
+      "pinyin": "nà shì wǒ de māo。",
+      "translation": {
+        "fr": "C’est mon chat, là-bas."
+      }
+    },
+    "hsk20-072": {
+      "hanzi": "你呢？",
+      "pinyin": "nǐ ne？",
+      "translation": {
+        "fr": "Et toi ?"
+      }
+    },
+    "hsk20-073": {
+      "hanzi": "我能帮你。",
+      "pinyin": "wǒ néng bāng nǐ。",
+      "translation": {
+        "fr": "Je peux t’aider."
+      }
+    },
+    "hsk20-074": {
+      "hanzi": "你喜欢茶吗？",
+      "pinyin": "nǐ xǐ huān chá ma？",
+      "translation": {
+        "fr": "Aimes-tu le thé ?"
+      }
+    },
+    "hsk20-075": {
+      "hanzi": "今年是哪一年？",
+      "pinyin": "jīn nián shì nǎ yī nián？",
+      "translation": {
+        "fr": "En quelle année sommes-nous ?"
+      }
+    },
+    "hsk20-076": {
+      "hanzi": "我的女儿在家。",
+      "pinyin": "wǒ de nǚ ér zài jiā。",
+      "translation": {
+        "fr": "Ma fille est à la maison."
+      }
+    },
+    "hsk20-077": {
+      "hanzi": "我的朋友来了。",
+      "pinyin": "wǒ de péng yǒu lái le。",
+      "translation": {
+        "fr": "Mon ami est arrivé."
+      }
+    },
+    "hsk20-078": {
+      "hanzi": "这件衣服很漂亮。",
+      "pinyin": "zhè jiàn yī fú hěn piào liàng。",
+      "translation": {
+        "fr": "Ce vêtement est très joli."
+      }
+    },
+    "hsk20-079": {
+      "hanzi": "我买了一个苹果。",
+      "pinyin": "wǒ mǎi le yí gè píng guǒ。",
+      "translation": {
+        "fr": "J’ai acheté une pomme."
+      }
+    },
+    "hsk20-080": {
+      "hanzi": "一星期有七天。",
+      "pinyin": "yī xīng qī yǒu qī tiān。",
+      "translation": {
+        "fr": "Une semaine compte sept jours."
+      }
+    },
+    "hsk20-081": {
+      "hanzi": "老师在前面。",
+      "pinyin": "lǎo shī zài qián miàn。",
+      "translation": {
+        "fr": "Le professeur est devant."
+      }
+    },
+    "hsk20-082": {
+      "hanzi": "我没有钱。",
+      "pinyin": "wǒ méi yǒu qián。",
+      "translation": {
+        "fr": "Je n’ai pas d’argent."
+      }
+    },
+    "hsk20-083": {
+      "hanzi": "请坐。",
+      "pinyin": "qǐng zuò。",
+      "translation": {
+        "fr": "Asseyez-vous, s’il vous plaît."
+      }
+    },
+    "hsk20-084": {
+      "hanzi": "我们去公园。",
+      "pinyin": "wǒ men qù gōng yuán。",
+      "translation": {
+        "fr": "Nous allons au parc."
+      }
+    },
+    "hsk20-085": {
+      "hanzi": "水很热。",
+      "pinyin": "shuǐ hěn rè。",
+      "translation": {
+        "fr": "L’eau est très chaude."
+      }
+    },
+    "hsk20-086": {
+      "hanzi": "这里的人很多。",
+      "pinyin": "zhè lǐ de rén hěn duō。",
+      "translation": {
+        "fr": "Il y a beaucoup de monde ici."
+      }
+    },
+    "hsk20-087": {
+      "hanzi": "我认识他。",
+      "pinyin": "wǒ rèn shí tā。",
+      "translation": {
+        "fr": "Je le connais."
+      }
+    },
+    "hsk20-088": {
+      "hanzi": "今天是九月三日。",
+      "pinyin": "jīn tiān shì jiǔ yuè sān rì。",
+      "translation": {
+        "fr": "Nous sommes le 3 septembre."
+      }
+    },
+    "hsk20-089": {
+      "hanzi": "我有三个孩子。",
+      "pinyin": "wǒ yǒu sān gè hái zi。",
+      "translation": {
+        "fr": "J’ai trois enfants."
+      }
+    },
+    "hsk20-090": {
+      "hanzi": "这家商店很大。",
+      "pinyin": "zhè jiā shāng diàn hěn dà。",
+      "translation": {
+        "fr": "Ce magasin est très grand."
+      }
+    },
+    "hsk20-091": {
+      "hanzi": "书在桌子上。",
+      "pinyin": "shū zài zhuō zi shàng。",
+      "translation": {
+        "fr": "Le livre est sur la table."
+      }
+    },
+    "hsk20-092": {
+      "hanzi": "上午我去上班。",
+      "pinyin": "shàng wǔ wǒ qù shàng bān。",
+      "translation": {
+        "fr": "Je vais travailler le matin."
+      }
+    },
+    "hsk20-093": {
+      "hanzi": "这里人很少。",
+      "pinyin": "zhè lǐ rén hěn shǎo。",
+      "translation": {
+        "fr": "Il y a peu de monde ici."
+      }
+    },
+    "hsk20-094": {
+      "hanzi": "我有十本书。",
+      "pinyin": "wǒ yǒu shí běn shū。",
+      "translation": {
+        "fr": "J’ai dix livres."
+      }
+    },
+    "hsk20-095": {
+      "hanzi": "你要什么？",
+      "pinyin": "nǐ yào shén me？",
+      "translation": {
+        "fr": "Que veux-tu ?"
+      }
+    },
+    "hsk20-096": {
+      "hanzi": "你什么时候回来？",
+      "pinyin": "nǐ shén me shí hòu huí lái？",
+      "translation": {
+        "fr": "Quand reviens-tu ?"
+      }
+    },
+    "hsk20-097": {
+      "hanzi": "这是我的家。",
+      "pinyin": "zhè shì wǒ de jiā。",
+      "translation": {
+        "fr": "C’est ma maison."
+      }
+    },
+    "hsk20-098": {
+      "hanzi": "我正在读这本书。",
+      "pinyin": "wǒ zhèng zài dú zhè běn shū。",
+      "translation": {
+        "fr": "Je lis ce livre en ce moment."
+      }
+    },
+    "hsk20-099": {
+      "hanzi": "谁在门外？",
+      "pinyin": "shuí zài mén wài？",
+      "translation": {
+        "fr": "Qui est dehors, devant la porte ?"
+      }
+    },
+    "hsk20-100": {
+      "hanzi": "请给我一杯水。",
+      "pinyin": "qǐng gěi wǒ yī bēi shuǐ。",
+      "translation": {
+        "fr": "Donne-moi un verre d’eau, s’il te plaît."
+      }
+    },
+    "hsk20-101": {
+      "hanzi": "我喜欢吃水果。",
+      "pinyin": "wǒ xǐ huān chī shuǐ guǒ。",
+      "translation": {
+        "fr": "J’aime manger des fruits."
+      }
+    },
+    "hsk20-102": {
+      "hanzi": "孩子要睡觉了。",
+      "pinyin": "hái zi yào shuì jiào le。",
+      "translation": {
+        "fr": "L’enfant va dormir."
+      }
+    },
+    "hsk20-103": {
+      "hanzi": "我们坐下说话。",
+      "pinyin": "wǒ men zuò xià shuō huà。",
+      "translation": {
+        "fr": "Nous nous asseyons pour parler."
+      }
+    },
+    "hsk20-104": {
+      "hanzi": "我有四个苹果。",
+      "pinyin": "wǒ yǒu sì gè píng guǒ。",
+      "translation": {
+        "fr": "J’ai quatre pommes."
+      }
+    },
+    "hsk20-105": {
+      "hanzi": "他今年十岁。",
+      "pinyin": "tā jīn nián shí suì。",
+      "translation": {
+        "fr": "Il a dix ans cette année."
+      }
+    },
+    "hsk20-106": {
+      "hanzi": "他是我的哥哥。",
+      "pinyin": "tā shì wǒ de gē ge。",
+      "translation": {
+        "fr": "C’est mon grand frère."
+      }
+    },
+    "hsk20-107": {
+      "hanzi": "今天太冷了。",
+      "pinyin": "jīn tiān tài lěng le。",
+      "translation": {
+        "fr": "Il fait trop froid aujourd’hui."
+      }
+    },
+    "hsk20-108": {
+      "hanzi": "今天的天气很好。",
+      "pinyin": "jīn tiān de tiān qì hěn hǎo。",
+      "translation": {
+        "fr": "Le temps est très beau aujourd’hui."
+      }
+    },
+    "hsk20-109": {
+      "hanzi": "我听见了。",
+      "pinyin": "wǒ tīng jiàn le。",
+      "translation": {
+        "fr": "J’ai entendu."
+      }
+    },
+    "hsk20-110": {
+      "hanzi": "我的同学来了。",
+      "pinyin": "wǒ de tóng xué lái le。",
+      "translation": {
+        "fr": "Mon camarade de classe est arrivé."
+      }
+    },
+    "hsk20-111": {
+      "hanzi": "喂，你好！",
+      "pinyin": "wèi， nǐ hǎo！",
+      "translation": {
+        "fr": "Allô, bonjour !"
+      }
+    },
+    "hsk20-112": {
+      "hanzi": "我是学生。",
+      "pinyin": "wǒ shì xué shēng。",
+      "translation": {
+        "fr": "Je suis étudiant."
+      }
+    },
+    "hsk20-113": {
+      "hanzi": "我们一起学习。",
+      "pinyin": "wǒ men yì qǐ xué xí。",
+      "translation": {
+        "fr": "Nous étudions ensemble."
+      }
+    },
+    "hsk20-114": {
+      "hanzi": "我有五个苹果。",
+      "pinyin": "wǒ yǒu wǔ gè píng guǒ。",
+      "translation": {
+        "fr": "J’ai cinq pommes."
+      }
+    },
+    "hsk20-115": {
+      "hanzi": "我喜欢北京。",
+      "pinyin": "wǒ xǐ huān běi jīng。",
+      "translation": {
+        "fr": "J’aime Pékin."
+      }
+    },
+    "hsk20-116": {
+      "hanzi": "请下楼。",
+      "pinyin": "qǐng xià lóu。",
+      "translation": {
+        "fr": "Descends, s’il te plaît."
+      }
+    },
+    "hsk20-117": {
+      "hanzi": "下午我要上课。",
+      "pinyin": "xià wǔ wǒ yào shàng kè。",
+      "translation": {
+        "fr": "J’ai cours l’après-midi."
+      }
+    },
+    "hsk20-118": {
+      "hanzi": "今天下雨。",
+      "pinyin": "jīn tiān xià yǔ。",
+      "translation": {
+        "fr": "Il pleut aujourd’hui."
+      }
+    },
+    "hsk20-119": {
+      "hanzi": "先生，请进。",
+      "pinyin": "xiān sheng， qǐng jìn。",
+      "translation": {
+        "fr": "Monsieur, entrez, s’il vous plaît."
+      }
+    },
+    "hsk20-120": {
+      "hanzi": "我现在很忙。",
+      "pinyin": "wǒ xiàn zài hěn máng。",
+      "translation": {
+        "fr": "Je suis très occupé maintenant."
+      }
+    },
+    "hsk20-121": {
+      "hanzi": "我想喝茶。",
+      "pinyin": "wǒ xiǎng hē chá。",
+      "translation": {
+        "fr": "Je veux boire du thé."
+      }
+    },
+    "hsk20-122": {
+      "hanzi": "这只猫很小。",
+      "pinyin": "zhè zhī māo hěn xiǎo。",
+      "translation": {
+        "fr": "Ce chat est très petit."
+      }
+    },
+    "hsk20-123": {
+      "hanzi": "小姐，请坐。",
+      "pinyin": "xiǎo jie， qǐng zuò。",
+      "translation": {
+        "fr": "Mademoiselle, asseyez-vous, s’il vous plaît."
+      }
+    },
+    "hsk20-124": {
+      "hanzi": "我买了些水果。",
+      "pinyin": "wǒ mǎi le xiē shuǐ guǒ。",
+      "translation": {
+        "fr": "J’ai acheté quelques fruits."
+      }
+    },
+    "hsk20-125": {
+      "hanzi": "请写你的名字。",
+      "pinyin": "qǐng xiě nǐ de míng zì。",
+      "translation": {
+        "fr": "Écris ton nom, s’il te plaît."
+      }
+    },
+    "hsk20-126": {
+      "hanzi": "谢谢你的帮助。",
+      "pinyin": "xiè xie nǐ de bāng zhù。",
+      "translation": {
+        "fr": "Merci pour ton aide."
+      }
+    },
+    "hsk20-127": {
+      "hanzi": "星期六我们休息。",
+      "pinyin": "xīng qī liù wǒ men xiū xī。",
+      "translation": {
+        "fr": "Nous nous reposons samedi."
+      }
+    },
+    "hsk20-128": {
+      "hanzi": "学生在教室学习。",
+      "pinyin": "xué shēng zài jiào shì xué xí。",
+      "translation": {
+        "fr": "Les élèves étudient en classe."
+      }
+    },
+    "hsk20-129": {
+      "hanzi": "我每天学习汉语。",
+      "pinyin": "wǒ měi tiān xué xí hàn yǔ。",
+      "translation": {
+        "fr": "J’étudie le chinois chaque jour."
+      }
+    },
+    "hsk20-130": {
+      "hanzi": "学校在这里。",
+      "pinyin": "xué xiào zài zhè lǐ。",
+      "translation": {
+        "fr": "L’école est ici."
+      }
+    },
+    "hsk20-131": {
+      "hanzi": "我有一个女儿。",
+      "pinyin": "wǒ yǒu yí gè nǚ ér。",
+      "translation": {
+        "fr": "J’ai une fille."
+      }
+    },
+    "hsk20-132": {
+      "hanzi": "这件衣服很漂亮。",
+      "pinyin": "zhè jiàn yī fu hěn piào liàng。",
+      "translation": {
+        "fr": "Ce vêtement est très joli."
+      }
+    },
+    "hsk20-133": {
+      "hanzi": "医生来了。",
+      "pinyin": "yī shēng lái le。",
+      "translation": {
+        "fr": "Le médecin est arrivé."
+      }
+    },
+    "hsk20-134": {
+      "hanzi": "医院在学校旁边。",
+      "pinyin": "yī yuàn zài xué xiào páng biān。",
+      "translation": {
+        "fr": "L’hôpital est à côté de l’école."
+      }
+    },
+    "hsk20-135": {
+      "hanzi": "椅子在桌子旁边。",
+      "pinyin": "yǐ zi zài zhuō zi páng biān。",
+      "translation": {
+        "fr": "La chaise est à côté de la table."
+      }
+    },
+    "hsk20-136": {
+      "hanzi": "桌子上有一本书。",
+      "pinyin": "zhuō zi shàng yǒu yī běn shū。",
+      "translation": {
+        "fr": "Il y a un livre sur la table."
+      }
+    },
+    "hsk20-137": {
+      "hanzi": "这个月很忙。",
+      "pinyin": "zhè ge yuè hěn máng。",
+      "translation": {
+        "fr": "Ce mois-ci est très chargé."
+      }
+    },
+    "hsk20-138": {
+      "hanzi": "老师，再见！",
+      "pinyin": "lǎo shī， zài jiàn！",
+      "translation": {
+        "fr": "Au revoir, professeur !"
+      }
+    },
+    "hsk20-139": {
+      "hanzi": "我在家。",
+      "pinyin": "wǒ zài jiā。",
+      "translation": {
+        "fr": "Je suis à la maison."
+      }
+    },
+    "hsk20-140": {
+      "hanzi": "你怎么去学校？",
+      "pinyin": "nǐ zěn me qù xué xiào？",
+      "translation": {
+        "fr": "Comment vas-tu à l’école ?"
+      }
+    },
+    "hsk20-141": {
+      "hanzi": "你的身体怎么样？",
+      "pinyin": "nǐ de shēn tǐ zěn me yàng？",
+      "translation": {
+        "fr": "Comment vas-tu ?"
+      }
+    },
+    "hsk20-142": {
+      "hanzi": "这是我的书。",
+      "pinyin": "zhè shì wǒ de shū。",
+      "translation": {
+        "fr": "C’est mon livre."
+      }
+    },
+    "hsk20-143": {
+      "hanzi": "我住在中国。",
+      "pinyin": "wǒ zhù zài zhōng guó。",
+      "translation": {
+        "fr": "J’habite en Chine."
+      }
+    },
+    "hsk20-144": {
+      "hanzi": "中午我们吃饭。",
+      "pinyin": "zhōng wǔ wǒ men chī fàn。",
+      "translation": {
+        "fr": "Nous mangeons à midi."
+      }
+    },
+    "hsk20-145": {
+      "hanzi": "我住在北京。",
+      "pinyin": "wǒ zhù zài běi jīng。",
+      "translation": {
+        "fr": "J’habite à Pékin."
+      }
+    },
+    "hsk20-146": {
+      "hanzi": "书在桌子上。",
+      "pinyin": "shū zài zhuō zi shàng。",
+      "translation": {
+        "fr": "Le livre est sur la table."
+      }
+    },
+    "hsk20-147": {
+      "hanzi": "请写这个字。",
+      "pinyin": "qǐng xiě zhè ge zì。",
+      "translation": {
+        "fr": "Écris ce caractère, s’il te plaît."
+      }
+    },
+    "hsk20-148": {
+      "hanzi": "我昨天看了电影。",
+      "pinyin": "wǒ zuó tiān kàn le diàn yǐng。",
+      "translation": {
+        "fr": "J’ai regardé un film hier."
+      }
+    },
+    "hsk20-149": {
+      "hanzi": "我坐出租车。",
+      "pinyin": "wǒ zuò chū zū chē。",
+      "translation": {
+        "fr": "Je prends un taxi."
+      }
+    },
+    "hsk20-150": {
+      "hanzi": "我做作业。",
+      "pinyin": "wǒ zuò zuò yè。",
+      "translation": {
+        "fr": "Je fais mes devoirs."
+      }
+    },
+    "hsk20-151": {
+      "hanzi": "我们走吧。",
+      "pinyin": "wǒ men zǒu ba。",
+      "translation": {
+        "fr": "Allons-y."
+      }
+    },
+    "hsk20-152": {
+      "hanzi": "白色的猫在门口。",
+      "pinyin": "bái sè de māo zài mén kǒu。",
+      "translation": {
+        "fr": "Le chat blanc est à la porte."
+      }
+    },
+    "hsk20-153": {
+      "hanzi": "一百个人来了。",
+      "pinyin": "yì bǎi gè rén lái le。",
+      "translation": {
+        "fr": "Cent personnes sont venues."
+      }
+    },
+    "hsk20-154": {
+      "hanzi": "我帮助同学。",
+      "pinyin": "wǒ bāng zhù tóng xué。",
+      "translation": {
+        "fr": "J’aide mon camarade de classe."
+      }
+    },
+    "hsk20-155": {
+      "hanzi": "我早上看报纸。",
+      "pinyin": "wǒ zǎo shàng kàn bào zhǐ。",
+      "translation": {
+        "fr": "Je lis le journal le matin."
+      }
+    },
+    "hsk20-156": {
+      "hanzi": "今天比昨天冷。",
+      "pinyin": "jīn tiān bǐ zuó tiān lěng。",
+      "translation": {
+        "fr": "Aujourd’hui il fait plus froid qu’hier."
+      }
+    },
+    "hsk20-157": {
+      "hanzi": "这件衣服很便宜。",
+      "pinyin": "zhè jiàn yī fú hěn pián yi。",
+      "translation": {
+        "fr": "Ce vêtement est bon marché."
+      }
+    },
+    "hsk20-158": {
+      "hanzi": "别担心。",
+      "pinyin": "bié dān xīn。",
+      "translation": {
+        "fr": "Ne t’inquiète pas."
+      }
+    },
+    "hsk20-159": {
+      "hanzi": "这条路很长。",
+      "pinyin": "zhè tiáo lù hěn zhǎng。",
+      "translation": {
+        "fr": "Cette route est longue."
+      }
+    },
+    "hsk20-160": {
+      "hanzi": "我们一起唱歌。",
+      "pinyin": "wǒ men yì qǐ chàng gē。",
+      "translation": {
+        "fr": "Nous chantons ensemble."
+      }
+    },
+    "hsk20-161": {
+      "hanzi": "孩子从房间里出来。",
+      "pinyin": "hái zi cóng fáng jiān lǐ chū lái。",
+      "translation": {
+        "fr": "L’enfant sort de la chambre."
+      }
+    },
+    "hsk20-162": {
+      "hanzi": "她穿红衣服。",
+      "pinyin": "tā chuān hóng yī fú。",
+      "translation": {
+        "fr": "Elle porte des vêtements rouges."
+      }
+    },
+    "hsk20-163": {
+      "hanzi": "船在河上。",
+      "pinyin": "chuán zài hé shàng。",
+      "translation": {
+        "fr": "Le bateau est sur la rivière."
+      }
+    },
+    "hsk20-164": {
+      "hanzi": "我去过北京三次。",
+      "pinyin": "wǒ qù guo Běi jīng sān cì。",
+      "translation": {
+        "fr": "Je suis allé trois fois à Pékin."
+      }
+    },
+    "hsk20-165": {
+      "hanzi": "我从家走到学校。",
+      "pinyin": "wǒ cóng jiā zǒu dào xué xiào。",
+      "translation": {
+        "fr": "Je marche de la maison à l’école."
+      }
+    },
+    "hsk20-166": {
+      "hanzi": "这个答案错了。",
+      "pinyin": "zhè ge dá àn cuò le。",
+      "translation": {
+        "fr": "Cette réponse est fausse."
+      }
+    },
+    "hsk20-167": {
+      "hanzi": "我们周末打篮球。",
+      "pinyin": "wǒ men zhōu mò dǎ lán qiú。",
+      "translation": {
+        "fr": "Nous jouons au basket le week-end."
+      }
+    },
+    "hsk20-168": {
+      "hanzi": "大家都来了。",
+      "pinyin": "dà jiā dōu lái le。",
+      "translation": {
+        "fr": "Tout le monde est arrivé."
+      }
+    },
+    "hsk20-169": {
+      "hanzi": "我想去，但是今天下雨。",
+      "pinyin": "wǒ xiǎng qù， dàn shì jīn tiān xià yǔ。",
+      "translation": {
+        "fr": "Je veux y aller, mais il pleut aujourd’hui."
+      }
+    },
+    "hsk20-170": {
+      "hanzi": "我到家了。",
+      "pinyin": "wǒ dào jiā le。",
+      "translation": {
+        "fr": "Je suis arrivé à la maison."
+      }
+    },
+    "hsk20-171": {
+      "hanzi": "我说得很清楚。",
+      "pinyin": "wǒ shuō de hěn qīng chǔ。",
+      "translation": {
+        "fr": "Je parle très clairement."
+      }
+    },
+    "hsk20-172": {
+      "hanzi": "请等我。",
+      "pinyin": "qǐng děng wǒ。",
+      "translation": {
+        "fr": "Attends-moi, s’il te plaît."
+      }
+    },
+    "hsk20-173": {
+      "hanzi": "我弟弟在家。",
+      "pinyin": "wǒ dì di zài jiā。",
+      "translation": {
+        "fr": "Mon petit frère est à la maison."
+      }
+    },
+    "hsk20-174": {
+      "hanzi": "这是第一课。",
+      "pinyin": "zhè shì dì yī kè。",
+      "translation": {
+        "fr": "C’est la première leçon."
+      }
+    },
+    "hsk20-175": {
+      "hanzi": "我懂你的意思。",
+      "pinyin": "wǒ dǒng nǐ de yì si。",
+      "translation": {
+        "fr": "Je comprends ce que tu veux dire."
+      }
+    },
+    "hsk20-176": {
+      "hanzi": "对不起，我说错了。",
+      "pinyin": "duì bù qǐ， wǒ shuō cuò le。",
+      "translation": {
+        "fr": "Désolé, je me suis trompé."
+      }
+    },
+    "hsk20-177": {
+      "hanzi": "我的房间很大。",
+      "pinyin": "wǒ de fáng jiān hěn dà。",
+      "translation": {
+        "fr": "Ma chambre est grande."
+      }
+    },
+    "hsk20-178": {
+      "hanzi": "这件衣服非常漂亮。",
+      "pinyin": "zhè jiàn yī fú fēi cháng piào liàng。",
+      "translation": {
+        "fr": "Ce vêtement est très joli."
+      }
+    },
+    "hsk20-179": {
+      "hanzi": "服务员给我水。",
+      "pinyin": "fú wù yuán gěi wǒ shuǐ。",
+      "translation": {
+        "fr": "Le serveur me donne de l’eau."
+      }
+    },
+    "hsk20-180": {
+      "hanzi": "这座楼很高。",
+      "pinyin": "zhè zuò lóu hěn gāo。",
+      "translation": {
+        "fr": "Cet immeuble est très haut."
+      }
+    },
+    "hsk20-181": {
+      "hanzi": "请告诉我地址。",
+      "pinyin": "qǐng gào sù wǒ dì zhǐ。",
+      "translation": {
+        "fr": "Dis-moi l’adresse, s’il te plaît."
+      }
+    },
+    "hsk20-182": {
+      "hanzi": "我哥哥在学校。",
+      "pinyin": "wǒ gē ge zài xué xiào。",
+      "translation": {
+        "fr": "Mon grand frère est à l’école."
+      }
+    },
+    "hsk20-183": {
+      "hanzi": "请给我一杯茶。",
+      "pinyin": "qǐng gěi wǒ yī bēi chá。",
+      "translation": {
+        "fr": "Donne-moi une tasse de thé, s’il te plaît."
+      }
+    },
+    "hsk20-184": {
+      "hanzi": "我坐公共汽车上班。",
+      "pinyin": "wǒ zuò gōng gòng qì chē shàng bān。",
+      "translation": {
+        "fr": "Je prends le bus pour aller travailler."
+      }
+    },
+    "hsk20-185": {
+      "hanzi": "我要两公斤苹果。",
+      "pinyin": "wǒ yào liǎng gōng jīn píng guǒ。",
+      "translation": {
+        "fr": "Je veux deux kilos de pommes."
+      }
+    },
+    "hsk20-186": {
+      "hanzi": "我在公司上班。",
+      "pinyin": "wǒ zài gōng sī shàng bān。",
+      "translation": {
+        "fr": "Je travaille dans une entreprise."
+      }
+    },
+    "hsk20-187": {
+      "hanzi": "这件衣服太贵了。",
+      "pinyin": "zhè jiàn yī fú tài guì le。",
+      "translation": {
+        "fr": "Ce vêtement est trop cher."
+      }
+    },
+    "hsk20-188": {
+      "hanzi": "我去过北京。",
+      "pinyin": "wǒ qù guo Běi jīng。",
+      "translation": {
+        "fr": "Je suis déjà allé à Pékin."
+      }
+    },
+    "hsk20-189": {
+      "hanzi": "孩子们在公园玩。",
+      "pinyin": "hái zi men zài gōng yuán wán。",
+      "translation": {
+        "fr": "Les enfants jouent au parc."
+      }
+    },
+    "hsk20-190": {
+      "hanzi": "这个菜很好吃。",
+      "pinyin": "zhè ge cài hěn hǎo chī。",
+      "translation": {
+        "fr": "Ce plat est délicieux."
+      }
+    },
+    "hsk20-191": {
+      "hanzi": "我的票是三号。",
+      "pinyin": "wǒ de piào shì sān hào。",
+      "translation": {
+        "fr": "Mon billet porte le numéro trois."
+      }
+    },
+    "hsk20-192": {
+      "hanzi": "这只猫是黑的。",
+      "pinyin": "zhè zhī māo shì hēi de。",
+      "translation": {
+        "fr": "Ce chat est noir."
+      }
+    },
+    "hsk20-193": {
+      "hanzi": "我喜欢红色。",
+      "pinyin": "wǒ xǐ huān hóng sè。",
+      "translation": {
+        "fr": "J’aime le rouge."
+      }
+    },
+    "hsk20-194": {
+      "hanzi": "欢迎你来我家。",
+      "pinyin": "huān yíng nǐ lái wǒ jiā。",
+      "translation": {
+        "fr": "Bienvenue chez moi."
+      }
+    },
+    "hsk20-195": {
+      "hanzi": "我还要喝茶。",
+      "pinyin": "wǒ hái yào hē chá。",
+      "translation": {
+        "fr": "Je veux encore boire du thé."
+      }
+    },
+    "hsk20-196": {
+      "hanzi": "请回答这个问题。",
+      "pinyin": "qǐng huí dá zhè ge wèn tí。",
+      "translation": {
+        "fr": "Réponds à cette question, s’il te plaît."
+      }
+    },
+    "hsk20-197": {
+      "hanzi": "我在机场坐飞机。",
+      "pinyin": "wǒ zài jī chǎng zuò fēi jī。",
+      "translation": {
+        "fr": "Je prends l’avion à l’aéroport."
+      }
+    },
+    "hsk20-198": {
+      "hanzi": "早饭我吃了两个鸡蛋。",
+      "pinyin": "zǎo fàn wǒ chī le liǎng gè jī dàn。",
+      "translation": {
+        "fr": "J’ai mangé deux œufs au petit déjeuner."
+      }
+    },
+    "hsk20-199": {
+      "hanzi": "我买了一件衣服。",
+      "pinyin": "wǒ mǎi le yī jiàn yī fú。",
+      "translation": {
+        "fr": "J’ai acheté un vêtement."
+      }
+    },
+    "hsk20-200": {
+      "hanzi": "学生在教室读书。",
+      "pinyin": "xué shēng zài jiào shì dú shū。",
+      "translation": {
+        "fr": "Les élèves lisent en classe."
+      }
+    },
+    "hsk20-201": {
+      "hanzi": "我姐姐在家。",
+      "pinyin": "wǒ jiě jie zài jiā。",
+      "translation": {
+        "fr": "Ma grande sœur est à la maison."
+      }
+    },
+    "hsk20-202": {
+      "hanzi": "请介绍你的朋友。",
+      "pinyin": "qǐng jiè shào nǐ de péng yǒu。",
+      "translation": {
+        "fr": "Présente ton ami, s’il te plaît."
+      }
+    },
+    "hsk20-203": {
+      "hanzi": "学校离这里很近。",
+      "pinyin": "xué xiào lí zhè lǐ hěn jìn。",
+      "translation": {
+        "fr": "L’école est très proche d’ici."
+      }
+    },
+    "hsk20-204": {
+      "hanzi": "请进教室。",
+      "pinyin": "qǐng jìn jiào shì。",
+      "translation": {
+        "fr": "Entre dans la classe, s’il te plaît."
+      }
+    },
+    "hsk20-205": {
+      "hanzi": "我马上就回来。",
+      "pinyin": "wǒ mǎ shàng jiù huí lái。",
+      "translation": {
+        "fr": "Je reviens tout de suite."
+      }
+    },
+    "hsk20-206": {
+      "hanzi": "我觉得这个菜很好吃。",
+      "pinyin": "wǒ jué de zhè ge cài hěn hǎo chī。",
+      "translation": {
+        "fr": "Je trouve ce plat très bon."
+      }
+    },
+    "hsk20-207": {
+      "hanzi": "我不喝咖啡。",
+      "pinyin": "wǒ bù hē kā fēi。",
+      "translation": {
+        "fr": "Je ne bois pas de café."
+      }
+    },
+    "hsk20-208": {
+      "hanzi": "电影开始了。",
+      "pinyin": "diàn yǐng kāi shǐ le。",
+      "translation": {
+        "fr": "Le film a commencé."
+      }
+    },
+    "hsk20-209": {
+      "hanzi": "明天有考试。",
+      "pinyin": "míng tiān yǒu kǎo shì。",
+      "translation": {
+        "fr": "Il y a un examen demain."
+      }
+    },
+    "hsk20-210": {
+      "hanzi": "他可能在家。",
+      "pinyin": "tā kě néng zài jiā。",
+      "translation": {
+        "fr": "Il est peut-être à la maison."
+      }
+    },
+    "hsk20-211": {
+      "hanzi": "现在可以进去吗？",
+      "pinyin": "xiàn zài kě yǐ jìn qù ma？",
+      "translation": {
+        "fr": "Peut-on entrer maintenant ?"
+      }
+    },
+    "hsk20-212": {
+      "hanzi": "下午我有一节课。",
+      "pinyin": "xià wǔ wǒ yǒu yī jié kè。",
+      "translation": {
+        "fr": "J’ai un cours l’après-midi."
+      }
+    },
+    "hsk20-213": {
+      "hanzi": "快下雨了。",
+      "pinyin": "kuài xià yǔ le。",
+      "translation": {
+        "fr": "Il va bientôt pleuvoir."
+      }
+    },
+    "hsk20-214": {
+      "hanzi": "我今天很快乐。",
+      "pinyin": "wǒ jīn tiān hěn kuài lè。",
+      "translation": {
+        "fr": "Je suis très heureux aujourd’hui."
+      }
+    },
+    "hsk20-215": {
+      "hanzi": "我工作以后很累。",
+      "pinyin": "wǒ gōng zuò yǐ hòu hěn lèi。",
+      "translation": {
+        "fr": "Je suis très fatigué après le travail."
+      }
+    },
+    "hsk20-216": {
+      "hanzi": "医院离家不远。",
+      "pinyin": "yī yuàn lí jiā bù yuǎn。",
+      "translation": {
+        "fr": "L’hôpital n’est pas loin de chez moi."
+      }
+    },
+    "hsk20-217": {
+      "hanzi": "我买了两件衣服。",
+      "pinyin": "wǒ mǎi le liǎng jiàn yī fú。",
+      "translation": {
+        "fr": "J’ai acheté deux vêtements."
+      }
+    },
+    "hsk20-218": {
+      "hanzi": "这条路通向学校。",
+      "pinyin": "zhè tiáo lù tōng xiàng xué xiào。",
+      "translation": {
+        "fr": "Cette route mène à l’école."
+      }
+    },
+    "hsk20-219": {
+      "hanzi": "我喜欢旅游。",
+      "pinyin": "wǒ xǐ huān lǚ yóu。",
+      "translation": {
+        "fr": "J’aime voyager."
+      }
+    },
+    "hsk20-220": {
+      "hanzi": "这家商店卖衣服。",
+      "pinyin": "zhè jiā shāng diàn mài yī fú。",
+      "translation": {
+        "fr": "Ce magasin vend des vêtements."
+      }
+    },
+    "hsk20-221": {
+      "hanzi": "请慢一点说。",
+      "pinyin": "qǐng màn yì diǎn shuō。",
+      "translation": {
+        "fr": "Parle un peu plus lentement, s’il te plaît."
+      }
+    },
+    "hsk20-222": {
+      "hanzi": "我今天很忙。",
+      "pinyin": "wǒ jīn tiān hěn máng。",
+      "translation": {
+        "fr": "Je suis très occupé aujourd’hui."
+      }
+    },
+    "hsk20-223": {
+      "hanzi": "我每天早上喝茶。",
+      "pinyin": "wǒ měi tiān zǎo shang hē chá。",
+      "translation": {
+        "fr": "Je bois du thé chaque matin."
+      }
+    },
+    "hsk20-224": {
+      "hanzi": "我妹妹在学校。",
+      "pinyin": "wǒ mèi mèi zài xué xiào。",
+      "translation": {
+        "fr": "Ma petite sœur est à l’école."
+      }
+    },
+    "hsk20-225": {
+      "hanzi": "门在前面。",
+      "pinyin": "mén zài qián miàn。",
+      "translation": {
+        "fr": "La porte est devant."
+      }
+    },
+    "hsk20-226": {
+      "hanzi": "那个男人是医生。",
+      "pinyin": "nà ge nán rén shì yī shēng。",
+      "translation": {
+        "fr": "Cet homme est médecin."
+      }
+    },
+    "hsk20-227": {
+      "hanzi": "您好，请进。",
+      "pinyin": "nín hǎo， qǐng jìn。",
+      "translation": {
+        "fr": "Bonjour, entrez, s’il vous plaît."
+      }
+    },
+    "hsk20-228": {
+      "hanzi": "我喜欢喝牛奶。",
+      "pinyin": "wǒ xǐ huān hē niú nǎi。",
+      "translation": {
+        "fr": "J’aime boire du lait."
+      }
+    },
+    "hsk20-229": {
+      "hanzi": "那个女人是老师。",
+      "pinyin": "nà ge nǚ rén shì lǎo shī。",
+      "translation": {
+        "fr": "Cette femme est professeur."
+      }
+    },
+    "hsk20-230": {
+      "hanzi": "椅子在桌子旁边。",
+      "pinyin": "yǐ zi zài zhuō zi páng biān。",
+      "translation": {
+        "fr": "La chaise est à côté de la table."
+      }
+    },
+    "hsk20-231": {
+      "hanzi": "我每天跑步。",
+      "pinyin": "wǒ měi tiān pǎo bù。",
+      "translation": {
+        "fr": "Je cours chaque jour."
+      }
+    },
+    "hsk20-232": {
+      "hanzi": "请给我一张票。",
+      "pinyin": "qǐng gěi wǒ yī zhāng piào。",
+      "translation": {
+        "fr": "Donnez-moi un billet, s’il vous plaît."
+      }
+    },
+    "hsk20-233": {
+      "hanzi": "我的妻子在家。",
+      "pinyin": "wǒ de qī zi zài jiā。",
+      "translation": {
+        "fr": "Ma femme est à la maison."
+      }
+    },
+    "hsk20-234": {
+      "hanzi": "我每天六点起床。",
+      "pinyin": "wǒ měi tiān liù diǎn qǐ chuáng。",
+      "translation": {
+        "fr": "Je me lève à six heures chaque jour."
+      }
+    },
+    "hsk20-235": {
+      "hanzi": "这个城市有一千人。",
+      "pinyin": "zhè ge chéng shì yǒu yì qiān rén。",
+      "translation": {
+        "fr": "Cette ville compte mille habitants."
+      }
+    },
+    "hsk20-236": {
+      "hanzi": "今天天气很晴朗。",
+      "pinyin": "jīn tiān tiān qì hěn qíng lǎng。",
+      "translation": {
+        "fr": "Le temps est très ensoleillé aujourd’hui."
+      }
+    },
+    "hsk20-237": {
+      "hanzi": "去年我去了北京。",
+      "pinyin": "qù nián wǒ qù le běi jīng。",
+      "translation": {
+        "fr": "L’année dernière, je suis allé à Pékin."
+      }
+    },
+    "hsk20-238": {
+      "hanzi": "请让孩子先走。",
+      "pinyin": "qǐng ràng hái zi xiān zǒu。",
+      "translation": {
+        "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+      }
+    },
+    "hsk20-239": {
+      "hanzi": "我八点上班。",
+      "pinyin": "wǒ bā diǎn shàng bān。",
+      "translation": {
+        "fr": "Je vais travailler à huit heures."
+      }
+    },
+    "hsk20-240": {
+      "hanzi": "我的身体很好。",
+      "pinyin": "wǒ de shēn tǐ hěn hǎo。",
+      "translation": {
+        "fr": "Je suis en bonne santé."
+      }
+    },
+    "hsk20-241": {
+      "hanzi": "他生病了。",
+      "pinyin": "tā shēng bìng le。",
+      "translation": {
+        "fr": "Il est tombé malade."
+      }
+    },
+    "hsk20-242": {
+      "hanzi": "今天是我的生日。",
+      "pinyin": "jīn tiān shì wǒ de shēng rì。",
+      "translation": {
+        "fr": "C’est mon anniversaire aujourd’hui."
+      }
+    },
+    "hsk20-243": {
+      "hanzi": "现在没有时间。",
+      "pinyin": "xiàn zài méi yǒu shí jiān。",
+      "translation": {
+        "fr": "Je n’ai pas le temps maintenant."
+      }
+    },
+    "hsk20-244": {
+      "hanzi": "这是一件小事情。",
+      "pinyin": "zhè shì yī jiàn xiǎo shì qíng。",
+      "translation": {
+        "fr": "C’est une petite chose."
+      }
+    },
+    "hsk20-245": {
+      "hanzi": "我的手表在桌上。",
+      "pinyin": "wǒ de shǒu biǎo zài zhuō shàng。",
+      "translation": {
+        "fr": "Ma montre est sur la table."
+      }
+    },
+    "hsk20-246": {
+      "hanzi": "我的手机在房间里。",
+      "pinyin": "wǒ de shǒu jī zài fáng jiān lǐ。",
+      "translation": {
+        "fr": "Mon téléphone est dans la chambre."
+      }
+    },
+    "hsk20-247": {
+      "hanzi": "我送朋友回家。",
+      "pinyin": "wǒ sòng péng yǒu huí jiā。",
+      "translation": {
+        "fr": "J’accompagne mon ami à la maison."
+      }
+    },
+    "hsk20-248": {
+      "hanzi": "下雨，所以我不出门。",
+      "pinyin": "xià yǔ， suǒ yǐ wǒ bù chū mén。",
+      "translation": {
+        "fr": "Il pleut, c’est pourquoi je ne sors pas."
+      }
+    },
+    "hsk20-249": {
+      "hanzi": "它在桌子下面。",
+      "pinyin": "tā zài zhuō zi xià miàn。",
+      "translation": {
+        "fr": "Il est sous la table."
+      }
+    },
+    "hsk20-250": {
+      "hanzi": "孩子们在公园踢足球。",
+      "pinyin": "hái zi men zài gōng yuán tī zú qiú。",
+      "translation": {
+        "fr": "Les enfants jouent au football au parc."
+      }
+    },
+    "hsk20-251": {
+      "hanzi": "这道题很难。",
+      "pinyin": "zhè dào tí hěn nán。",
+      "translation": {
+        "fr": "Cet exercice est difficile."
+      }
+    },
+    "hsk20-252": {
+      "hanzi": "我们晚上跳舞。",
+      "pinyin": "wǒ men wǎn shàng tiào wǔ。",
+      "translation": {
+        "fr": "Nous dansons le soir."
+      }
+    },
+    "hsk20-253": {
+      "hanzi": "外面很冷。",
+      "pinyin": "wài miàn hěn lěng。",
+      "translation": {
+        "fr": "Il fait froid dehors."
+      }
+    },
+    "hsk20-254": {
+      "hanzi": "我做完作业了。",
+      "pinyin": "wǒ zuò wán zuò yè le。",
+      "translation": {
+        "fr": "J’ai fini mes devoirs."
+      }
+    },
+    "hsk20-255": {
+      "hanzi": "孩子们在外面玩。",
+      "pinyin": "hái zi men zài wài miàn wán。",
+      "translation": {
+        "fr": "Les enfants jouent dehors."
+      }
+    },
+    "hsk20-256": {
+      "hanzi": "晚上我看书。",
+      "pinyin": "wǎn shang wǒ kàn shū。",
+      "translation": {
+        "fr": "Je lis le soir."
+      }
+    },
+    "hsk20-257": {
+      "hanzi": "你为什么不来？",
+      "pinyin": "nǐ wèi shén me bù lái？",
+      "translation": {
+        "fr": "Pourquoi ne viens-tu pas ?"
+      }
+    },
+    "hsk20-258": {
+      "hanzi": "我想问老师一个问题。",
+      "pinyin": "wǒ xiǎng wèn lǎo shī yí gè wèn tí。",
+      "translation": {
+        "fr": "Je veux poser une question au professeur."
+      }
+    },
+    "hsk20-259": {
+      "hanzi": "这个问题不难。",
+      "pinyin": "zhè ge wèn tí bù nán。",
+      "translation": {
+        "fr": "Ce problème n’est pas difficile."
+      }
+    },
+    "hsk20-260": {
+      "hanzi": "夏天我喜欢吃西瓜。",
+      "pinyin": "xià tiān wǒ xǐ huān chī xī guā。",
+      "translation": {
+        "fr": "En été, j’aime manger de la pastèque."
+      }
+    },
+    "hsk20-261": {
+      "hanzi": "我希望你明天来。",
+      "pinyin": "wǒ xī wàng nǐ míng tiān lái。",
+      "translation": {
+        "fr": "J’espère que tu viendras demain."
+      }
+    },
+    "hsk20-262": {
+      "hanzi": "请洗手。",
+      "pinyin": "qǐng xǐ shǒu。",
+      "translation": {
+        "fr": "Lave-toi les mains, s’il te plaît."
+      }
+    },
+    "hsk20-263": {
+      "hanzi": "请向左走。",
+      "pinyin": "qǐng xiàng zuǒ zǒu。",
+      "translation": {
+        "fr": "Va vers la gauche, s’il te plaît."
+      }
+    },
+    "hsk20-264": {
+      "hanzi": "我学习了两个小时。",
+      "pinyin": "wǒ xué xí le liǎng gè xiǎo shí。",
+      "translation": {
+        "fr": "J’ai étudié pendant deux heures."
+      }
+    },
+    "hsk20-265": {
+      "hanzi": "孩子们都笑了。",
+      "pinyin": "hái zi men dōu xiào le。",
+      "translation": {
+        "fr": "Les enfants ont tous ri."
+      }
+    },
+    "hsk20-266": {
+      "hanzi": "我买了一件新衣服。",
+      "pinyin": "wǒ mǎi le yī jiàn xīn yī fú。",
+      "translation": {
+        "fr": "J’ai acheté un vêtement neuf."
+      }
+    },
+    "hsk20-267": {
+      "hanzi": "你姓什么？",
+      "pinyin": "nǐ xìng shén me？",
+      "translation": {
+        "fr": "Quel est ton nom de famille ?"
+      }
+    },
+    "hsk20-268": {
+      "hanzi": "累了就休息。",
+      "pinyin": "lèi le jiù xiū xī。",
+      "translation": {
+        "fr": "Quand tu es fatigué, repose-toi."
+      }
+    },
+    "hsk20-269": {
+      "hanzi": "冬天下雪。",
+      "pinyin": "dōng tiān xià xuě。",
+      "translation": {
+        "fr": "Il neige en hiver."
+      }
+    },
+    "hsk20-270": {
+      "hanzi": "你喜欢什么颜色？",
+      "pinyin": "nǐ xǐ huān shén me yán sè？",
+      "translation": {
+        "fr": "Quelle couleur aimes-tu ?"
+      }
+    },
+    "hsk20-271": {
+      "hanzi": "我的眼睛很累。",
+      "pinyin": "wǒ de yǎn jīng hěn lèi。",
+      "translation": {
+        "fr": "Mes yeux sont très fatigués."
+      }
+    },
+    "hsk20-272": {
+      "hanzi": "我喜欢吃羊肉。",
+      "pinyin": "wǒ xǐ huān chī yáng ròu。",
+      "translation": {
+        "fr": "J’aime manger du mouton."
+      }
+    },
+    "hsk20-273": {
+      "hanzi": "医生给我药。",
+      "pinyin": "yī shēng gěi wǒ yào。",
+      "translation": {
+        "fr": "Le médecin me donne un médicament."
+      }
+    },
+    "hsk20-274": {
+      "hanzi": "我要回家。",
+      "pinyin": "wǒ yào huí jiā。",
+      "translation": {
+        "fr": "Je veux rentrer à la maison."
+      }
+    },
+    "hsk20-275": {
+      "hanzi": "我也喜欢茶。",
+      "pinyin": "wǒ yě xǐ huān chá。",
+      "translation": {
+        "fr": "J’aime aussi le thé."
+      }
+    },
+    "hsk20-276": {
+      "hanzi": "我们一起回家。",
+      "pinyin": "wǒ men yì qǐ huí jiā。",
+      "translation": {
+        "fr": "Nous rentrons ensemble."
+      }
+    },
+    "hsk20-277": {
+      "hanzi": "我已经吃饭了。",
+      "pinyin": "wǒ yǐ jīng chī fàn le。",
+      "translation": {
+        "fr": "J’ai déjà mangé."
+      }
+    },
+    "hsk20-278": {
+      "hanzi": "这句话是什么意思？",
+      "pinyin": "zhè jù huà shì shén me yì si？",
+      "translation": {
+        "fr": "Que signifie cette phrase ?"
+      }
+    },
+    "hsk20-279": {
+      "hanzi": "因为下雨，所以我在家。",
+      "pinyin": "yīn wèi xià yǔ， suǒ yǐ wǒ zài jiā。",
+      "translation": {
+        "fr": "Comme il pleut, je suis à la maison."
+      }
+    },
+    "hsk20-280": {
+      "hanzi": "今天是阴天。",
+      "pinyin": "jīn tiān shì yīn tiān。",
+      "translation": {
+        "fr": "Le ciel est couvert aujourd’hui."
+      }
+    },
+    "hsk20-281": {
+      "hanzi": "夏天我喜欢游泳。",
+      "pinyin": "xià tiān wǒ xǐ huān yóu yǒng。",
+      "translation": {
+        "fr": "En été, j’aime nager."
+      }
+    },
+    "hsk20-282": {
+      "hanzi": "洗手间在右边。",
+      "pinyin": "xǐ shǒu jiān zài yòu biān。",
+      "translation": {
+        "fr": "Les toilettes sont à droite."
+      }
+    },
+    "hsk20-283": {
+      "hanzi": "我喜欢吃鱼。",
+      "pinyin": "wǒ xǐ huān chī yú。",
+      "translation": {
+        "fr": "J’aime manger du poisson."
+      }
+    },
+    "hsk20-284": {
+      "hanzi": "这个苹果三元。",
+      "pinyin": "zhè ge píng guǒ sān yuán。",
+      "translation": {
+        "fr": "Cette pomme coûte trois yuans."
+      }
+    },
+    "hsk20-285": {
+      "hanzi": "学校离这里很远。",
+      "pinyin": "xué xiào lí zhè lǐ hěn yuǎn。",
+      "translation": {
+        "fr": "L’école est très loin d’ici."
+      }
+    },
+    "hsk20-286": {
+      "hanzi": "我每天做运动。",
+      "pinyin": "wǒ měi tiān zuò yùn dòng。",
+      "translation": {
+        "fr": "Je fais du sport chaque jour."
+      }
+    },
+    "hsk20-287": {
+      "hanzi": "请再说一遍。",
+      "pinyin": "qǐng zài shuō yí biàn。",
+      "translation": {
+        "fr": "Répète, s’il te plaît."
+      }
+    },
+    "hsk20-288": {
+      "hanzi": "我早上六点起床。",
+      "pinyin": "wǒ zǎo shàng liù diǎn qǐ chuáng。",
+      "translation": {
+        "fr": "Je me lève à six heures du matin."
+      }
+    },
+    "hsk20-289": {
+      "hanzi": "请给我一张纸。",
+      "pinyin": "qǐng gěi wǒ yī zhāng zhǐ。",
+      "translation": {
+        "fr": "Donne-moi une feuille, s’il te plaît."
+      }
+    },
+    "hsk20-290": {
+      "hanzi": "她的丈夫是医生。",
+      "pinyin": "tā de zhàng fū shì yī shēng。",
+      "translation": {
+        "fr": "Son mari est médecin."
+      }
+    },
+    "hsk20-291": {
+      "hanzi": "我在找我的手机。",
+      "pinyin": "wǒ zài zhǎo wǒ de shǒu jī。",
+      "translation": {
+        "fr": "Je cherche mon téléphone."
+      }
+    },
+    "hsk20-292": {
+      "hanzi": "这是真的。",
+      "pinyin": "zhè shì zhēn de。",
+      "translation": {
+        "fr": "C’est vrai."
+      }
+    },
+    "hsk20-293": {
+      "hanzi": "我正在学习。",
+      "pinyin": "wǒ zhèng zài xué xí。",
+      "translation": {
+        "fr": "J’étudie en ce moment."
+      }
+    },
+    "hsk20-294": {
+      "hanzi": "我知道答案。",
+      "pinyin": "wǒ zhī dào dá àn。",
+      "translation": {
+        "fr": "Je connais la réponse."
+      }
+    },
+    "hsk20-295": {
+      "hanzi": "我准备考试。",
+      "pinyin": "wǒ zhǔn bèi kǎo shì。",
+      "translation": {
+        "fr": "Je prépare l’examen."
+      }
+    },
+    "hsk20-296": {
+      "hanzi": "门开着。",
+      "pinyin": "mén kāi zhe。",
+      "translation": {
+        "fr": "La porte est ouverte."
+      }
+    },
+    "hsk20-297": {
+      "hanzi": "我骑自行车上班。",
+      "pinyin": "wǒ qí zì xíng chē shàng bān。",
+      "translation": {
+        "fr": "Je vais travailler à vélo."
+      }
+    },
+    "hsk20-298": {
+      "hanzi": "我们走回家。",
+      "pinyin": "wǒ men zǒu huí jiā。",
+      "translation": {
+        "fr": "Nous rentrons à pied."
+      }
+    },
+    "hsk20-299": {
+      "hanzi": "这是最好的办法。",
+      "pinyin": "zhè shì zuì hǎo de bàn fǎ。",
+      "translation": {
+        "fr": "C’est la meilleure solution."
+      }
+    },
+    "hsk20-300": {
+      "hanzi": "学校在左边。",
+      "pinyin": "xué xiào zài zuǒ biān。",
+      "translation": {
+        "fr": "L’école est à gauche."
+      }
+    },
+    "hsk20-301": {
+      "hanzi": "阿姨在商店。",
+      "pinyin": "ā yí zài shāng diàn。",
+      "translation": {
+        "fr": "La tante est au magasin."
+      }
+    },
+    "hsk20-302": {
+      "hanzi": "啊，真漂亮！",
+      "pinyin": "a， zhēn piào liàng！",
+      "translation": {
+        "fr": "Ah, c’est vraiment joli !"
+      }
+    },
+    "hsk20-303": {
+      "hanzi": "我哥哥不高，我妹妹很矮。",
+      "pinyin": "wǒ gē gē bù gāo， wǒ mèi mèi hěn ǎi。",
+      "translation": {
+        "fr": "Mon frère n’est pas grand, ma sœur est petite."
+      }
+    },
+    "hsk20-304": {
+      "hanzi": "我的爱好是看电影。",
+      "pinyin": "wǒ de ài hào shì kàn diàn yǐng。",
+      "translation": {
+        "fr": "Mon passe-temps est de regarder des films."
+      }
+    },
+    "hsk20-305": {
+      "hanzi": "图书馆很安静。",
+      "pinyin": "tú shū guǎn hěn ān jìng。",
+      "translation": {
+        "fr": "La bibliothèque est très calme."
+      }
+    },
+    "hsk20-306": {
+      "hanzi": "我把书放在桌子上。",
+      "pinyin": "wǒ bǎ shū fàng zài zhuō zi shàng。",
+      "translation": {
+        "fr": "Je pose le livre sur la table."
+      }
+    },
+    "hsk20-307": {
+      "hanzi": "我在三班。",
+      "pinyin": "wǒ zài sān bān。",
+      "translation": {
+        "fr": "Je suis dans la classe trois."
+      }
+    },
+    "hsk20-308": {
+      "hanzi": "我们明天搬家。",
+      "pinyin": "wǒ men míng tiān bān jiā。",
+      "translation": {
+        "fr": "Nous déménageons demain."
+      }
+    },
+    "hsk20-309": {
+      "hanzi": "我有一个办法。",
+      "pinyin": "wǒ yǒu yí gè bàn fǎ。",
+      "translation": {
+        "fr": "J’ai une solution."
+      }
+    },
+    "hsk20-310": {
+      "hanzi": "经理在办公室。",
+      "pinyin": "jīng lǐ zài bàn gōng shì。",
+      "translation": {
+        "fr": "Le manager est au bureau."
+      }
+    },
+    "hsk20-311": {
+      "hanzi": "我等了半个小时。",
+      "pinyin": "wǒ děng le bàn gè xiǎo shí。",
+      "translation": {
+        "fr": "J’ai attendu une demi-heure."
+      }
+    },
+    "hsk20-312": {
+      "hanzi": "谢谢你帮忙。",
+      "pinyin": "xiè xiè nǐ bāng máng。",
+      "translation": {
+        "fr": "Merci de m’aider."
+      }
+    },
+    "hsk20-313": {
+      "hanzi": "包里有一本书。",
+      "pinyin": "bāo lǐ yǒu yī běn shū。",
+      "translation": {
+        "fr": "Il y a un livre dans le sac."
+      }
+    },
+    "hsk20-314": {
+      "hanzi": "我吃饱了。",
+      "pinyin": "wǒ chī bǎo le。",
+      "translation": {
+        "fr": "J’ai assez mangé."
+      }
+    },
+    "hsk20-315": {
+      "hanzi": "北方的冬天很冷。",
+      "pinyin": "běi fāng de dōng tiān hěn lěng。",
+      "translation": {
+        "fr": "L’hiver est très froid dans le Nord."
+      }
+    },
+    "hsk20-316": {
+      "hanzi": "这个问题被老师发现了。",
+      "pinyin": "zhè ge wèn tí bèi lǎo shī fā xiàn le。",
+      "translation": {
+        "fr": "Ce problème a été découvert par le professeur."
+      }
+    },
+    "hsk20-317": {
+      "hanzi": "我的鼻子不舒服。",
+      "pinyin": "wǒ de bí zi bù shū fú。",
+      "translation": {
+        "fr": "J’ai une gêne au nez."
+      }
+    },
+    "hsk20-318": {
+      "hanzi": "这个问题比较简单。",
+      "pinyin": "zhè ge wèn tí bǐ jiào jiǎn dān。",
+      "translation": {
+        "fr": "Ce problème est assez simple."
+      }
+    },
+    "hsk20-319": {
+      "hanzi": "我们周末有比赛。",
+      "pinyin": "wǒ men zhōu mò yǒu bǐ sài。",
+      "translation": {
+        "fr": "Nous avons une compétition ce week-end."
+      }
+    },
+    "hsk20-320": {
+      "hanzi": "你必须认真学习。",
+      "pinyin": "nǐ bì xū rèn zhēn xué xí。",
+      "translation": {
+        "fr": "Tu dois étudier sérieusement."
+      }
+    },
+    "hsk20-321": {
+      "hanzi": "天气变化很大。",
+      "pinyin": "tiān qì biàn huà hěn dà。",
+      "translation": {
+        "fr": "Le temps change beaucoup."
+      }
+    },
+    "hsk20-322": {
+      "hanzi": "这个标志表示出口。",
+      "pinyin": "zhè ge biāo zhì biǎo shì chū kǒu。",
+      "translation": {
+        "fr": "Ce panneau indique la sortie."
+      }
+    },
+    "hsk20-323": {
+      "hanzi": "学校今天有表演。",
+      "pinyin": "xué xiào jīn tiān yǒu biǎo yǎn。",
+      "translation": {
+        "fr": "Il y a un spectacle à l’école aujourd’hui."
+      }
+    },
+    "hsk20-324": {
+      "hanzi": "别人都回家了。",
+      "pinyin": "bié rén dōu huí jiā le。",
+      "translation": {
+        "fr": "Les autres sont tous rentrés."
+      }
+    },
+    "hsk20-325": {
+      "hanzi": "宾馆在车站旁边。",
+      "pinyin": "bīn guǎn zài chē zhàn páng biān。",
+      "translation": {
+        "fr": "L’hôtel est à côté de la gare."
+      }
+    },
+    "hsk20-326": {
+      "hanzi": "牛奶在冰箱里。",
+      "pinyin": "niú nǎi zài bīng xiāng lǐ。",
+      "translation": {
+        "fr": "Le lait est dans le réfrigérateur."
+      }
+    },
+    "hsk20-327": {
+      "hanzi": "他五点才回家。",
+      "pinyin": "tā wǔ diǎn cái huí jiā。",
+      "translation": {
+        "fr": "Il ne rentre qu’à cinq heures."
+      }
+    },
+    "hsk20-328": {
+      "hanzi": "请给我菜单。",
+      "pinyin": "qǐng gěi wǒ cài dān。",
+      "translation": {
+        "fr": "Donnez-moi le menu, s’il vous plaît."
+      }
+    },
+    "hsk20-329": {
+      "hanzi": "我参加了比赛。",
+      "pinyin": "wǒ cān jiā le bǐ sài。",
+      "translation": {
+        "fr": "J’ai participé à la compétition."
+      }
+    },
+    "hsk20-330": {
+      "hanzi": "牛在吃草。",
+      "pinyin": "niú zài chī cǎo。",
+      "translation": {
+        "fr": "La vache mange de l’herbe."
+      }
+    },
+    "hsk20-331": {
+      "hanzi": "教室在三层。",
+      "pinyin": "jiào shì zài sān céng。",
+      "translation": {
+        "fr": "La salle de classe est au troisième étage."
+      }
+    },
+    "hsk20-332": {
+      "hanzi": "今天的天气很差。",
+      "pinyin": "jīn tiān de tiān qì hěn chà。",
+      "translation": {
+        "fr": "Le temps est mauvais aujourd’hui."
+      }
+    },
+    "hsk20-333": {
+      "hanzi": "孩子正在长大。",
+      "pinyin": "hái zi zhèng zài zhǎng dà。",
+      "translation": {
+        "fr": "L’enfant grandit."
+      }
+    },
+    "hsk20-334": {
+      "hanzi": "我去超市买菜。",
+      "pinyin": "wǒ qù chāo shì mǎi cài。",
+      "translation": {
+        "fr": "Je vais au supermarché acheter des légumes."
+      }
+    },
+    "hsk20-335": {
+      "hanzi": "我买了一件衬衫。",
+      "pinyin": "wǒ mǎi le yī jiàn chèn shān。",
+      "translation": {
+        "fr": "J’ai acheté une chemise."
+      }
+    },
+    "hsk20-336": {
+      "hanzi": "我的考试成绩很好。",
+      "pinyin": "wǒ de kǎo shì chéng jì hěn hǎo。",
+      "translation": {
+        "fr": "Mes résultats d’examen sont très bons."
+      }
+    },
+    "hsk20-337": {
+      "hanzi": "这个城市很大。",
+      "pinyin": "zhè ge chéng shì hěn dà。",
+      "translation": {
+        "fr": "Cette ville est très grande."
+      }
+    },
+    "hsk20-338": {
+      "hanzi": "他上班迟到了。",
+      "pinyin": "tā shàng bān chí dào le。",
+      "translation": {
+        "fr": "Il est arrivé en retard au travail."
+      }
+    },
+    "hsk20-339": {
+      "hanzi": "问题终于出现了。",
+      "pinyin": "wèn tí zhōng yú chū xiàn le。",
+      "translation": {
+        "fr": "Le problème est finalement apparu."
+      }
+    },
+    "hsk20-340": {
+      "hanzi": "除了星期天以外，我每天上班。",
+      "pinyin": "chú le xīng qī tiān yǐ wài， wǒ měi tiān shàng bān。",
+      "translation": {
+        "fr": "À part le dimanche, je travaille chaque jour."
+      }
+    },
+    "hsk20-341": {
+      "hanzi": "厨房里有一张桌子。",
+      "pinyin": "chú fáng lǐ yǒu yì zhāng zhuō zi。",
+      "translation": {
+        "fr": "Il y a une table dans la cuisine."
+      }
+    },
+    "hsk20-342": {
+      "hanzi": "春天来了。",
+      "pinyin": "chūn tiān lái le。",
+      "translation": {
+        "fr": "Le printemps est arrivé."
+      }
+    },
+    "hsk20-343": {
+      "hanzi": "请读这些词语。",
+      "pinyin": "qǐng dú zhè xiē cí yǔ。",
+      "translation": {
+        "fr": "Lis ces mots, s’il te plaît."
+      }
+    },
+    "hsk20-344": {
+      "hanzi": "我的老师很聪明。",
+      "pinyin": "wǒ de lǎo shī hěn cōng míng。",
+      "translation": {
+        "fr": "Mon professeur est très intelligent."
+      }
+    },
+    "hsk20-345": {
+      "hanzi": "我每天打扫房间。",
+      "pinyin": "wǒ měi tiān dǎ sǎo fáng jiān。",
+      "translation": {
+        "fr": "Je nettoie la chambre chaque jour."
+      }
+    },
+    "hsk20-346": {
+      "hanzi": "我打算明天去公园。",
+      "pinyin": "wǒ dǎ suàn míng tiān qù gōng yuán。",
+      "translation": {
+        "fr": "J’ai l’intention d’aller au parc demain."
+      }
+    },
+    "hsk20-347": {
+      "hanzi": "请带一本书来。",
+      "pinyin": "qǐng dài yì běn shū lái。",
+      "translation": {
+        "fr": "Apporte un livre, s’il te plaît."
+      }
+    },
+    "hsk20-348": {
+      "hanzi": "妈妈担心孩子。",
+      "pinyin": "mā ma dān xīn hái zi。",
+      "translation": {
+        "fr": "Maman s’inquiète pour l’enfant."
+      }
+    },
+    "hsk20-349": {
+      "hanzi": "生日蛋糕很好吃。",
+      "pinyin": "shēng rì dàn gāo hěn hǎo chī。",
+      "translation": {
+        "fr": "Le gâteau d’anniversaire est délicieux."
+      }
+    },
+    "hsk20-350": {
+      "hanzi": "当然可以。",
+      "pinyin": "dāng rán kě yǐ。",
+      "translation": {
+        "fr": "Bien sûr, c’est possible."
+      }
+    },
+    "hsk20-351": {
+      "hanzi": "请把灯打开。",
+      "pinyin": "qǐng bǎ dēng dǎ kāi。",
+      "translation": {
+        "fr": "Allume la lumière, s’il te plaît."
+      }
+    },
+    "hsk20-352": {
+      "hanzi": "这张桌子太低。",
+      "pinyin": "zhè zhāng zhuō zi tài dī。",
+      "translation": {
+        "fr": "Cette table est trop basse."
+      }
+    },
+    "hsk20-353": {
+      "hanzi": "他认真地学习。",
+      "pinyin": "tā rèn zhēn de xué xí。",
+      "translation": {
+        "fr": "Il étudie sérieusement."
+      }
+    },
+    "hsk20-354": {
+      "hanzi": "这里是一个好地方。",
+      "pinyin": "zhè lǐ shì yí gè hǎo dì fāng。",
+      "translation": {
+        "fr": "C’est un bon endroit."
+      }
+    },
+    "hsk20-355": {
+      "hanzi": "我坐地铁上班。",
+      "pinyin": "wǒ zuò dì tiě shàng bān。",
+      "translation": {
+        "fr": "Je prends le métro pour aller travailler."
+      }
+    },
+    "hsk20-356": {
+      "hanzi": "请看地图。",
+      "pinyin": "qǐng kàn dì tú。",
+      "translation": {
+        "fr": "Regarde la carte, s’il te plaît."
+      }
+    },
+    "hsk20-357": {
+      "hanzi": "电梯在门外。",
+      "pinyin": "diàn tī zài mén wài。",
+      "translation": {
+        "fr": "L’ascenseur est devant la porte."
+      }
+    },
+    "hsk20-358": {
+      "hanzi": "我发了一封电子邮件。",
+      "pinyin": "wǒ fā le yì fēng diàn zǐ yóu jiàn。",
+      "translation": {
+        "fr": "J’ai envoyé un courriel."
+      }
+    },
+    "hsk20-359": {
+      "hanzi": "太阳从东边出来。",
+      "pinyin": "tài yáng cóng dōng biān chū lái。",
+      "translation": {
+        "fr": "Le soleil se lève à l’est."
+      }
+    },
+    "hsk20-360": {
+      "hanzi": "冬天很冷。",
+      "pinyin": "dōng tiān hěn lěng。",
+      "translation": {
+        "fr": "L’hiver est très froid."
+      }
+    },
+    "hsk20-361": {
+      "hanzi": "我喜欢看动物。",
+      "pinyin": "wǒ xǐ huān kàn dòng wù。",
+      "translation": {
+        "fr": "J’aime regarder les animaux."
+      }
+    },
+    "hsk20-362": {
+      "hanzi": "这条路很短。",
+      "pinyin": "zhè tiáo lù hěn duǎn。",
+      "translation": {
+        "fr": "Cette route est très courte."
+      }
+    },
+    "hsk20-363": {
+      "hanzi": "请读这一段。",
+      "pinyin": "qǐng dú zhè yí duàn。",
+      "translation": {
+        "fr": "Lis ce passage, s’il te plaît."
+      }
+    },
+    "hsk20-364": {
+      "hanzi": "每天锻炼身体。",
+      "pinyin": "měi tiān duàn liàn shēn tǐ。",
+      "translation": {
+        "fr": "Fais de l’exercice chaque jour."
+      }
+    },
+    "hsk20-365": {
+      "hanzi": "这里多么漂亮啊！",
+      "pinyin": "zhè lǐ duō me piào liàng a！",
+      "translation": {
+        "fr": "Comme c’est beau ici !"
+      }
+    },
+    "hsk20-366": {
+      "hanzi": "我饿了。",
+      "pinyin": "wǒ è le。",
+      "translation": {
+        "fr": "J’ai faim."
+      }
+    },
+    "hsk20-367": {
+      "hanzi": "他聪明而且认真。",
+      "pinyin": "tā cōng míng ér qiě rèn zhēn。",
+      "translation": {
+        "fr": "Il est intelligent et sérieux."
+      }
+    },
+    "hsk20-368": {
+      "hanzi": "我的耳朵有一点疼。",
+      "pinyin": "wǒ de ěr duo yǒu yì diǎn téng。",
+      "translation": {
+        "fr": "J’ai un peu mal à l’oreille."
+      }
+    },
+    "hsk20-369": {
+      "hanzi": "孩子发烧了。",
+      "pinyin": "hái zi fā shāo le。",
+      "translation": {
+        "fr": "L’enfant a de la fièvre."
+      }
+    },
+    "hsk20-370": {
+      "hanzi": "我发现一个问题。",
+      "pinyin": "wǒ fā xiàn yí gè wèn tí。",
+      "translation": {
+        "fr": "J’ai découvert un problème."
+      }
+    },
+    "hsk20-371": {
+      "hanzi": "坐地铁很方便。",
+      "pinyin": "zuò dì tiě hěn fāng biàn。",
+      "translation": {
+        "fr": "Prendre le métro est pratique."
+      }
+    },
+    "hsk20-372": {
+      "hanzi": "请把书放在桌上。",
+      "pinyin": "qǐng bǎ shū fàng zài zhuō shàng。",
+      "translation": {
+        "fr": "Pose le livre sur la table, s’il te plaît."
+      }
+    },
+    "hsk20-373": {
+      "hanzi": "你放心，我会来的。",
+      "pinyin": "nǐ fàng xīn， wǒ huì lái de。",
+      "translation": {
+        "fr": "Rassure-toi, je viendrai."
+      }
+    },
+    "hsk20-374": {
+      "hanzi": "请给我五分钱。",
+      "pinyin": "qǐng gěi wǒ wǔ fēn qián。",
+      "translation": {
+        "fr": "Donne-moi cinq centimes, s’il te plaît."
+      }
+    },
+    "hsk20-375": {
+      "hanzi": "我家在学校附近。",
+      "pinyin": "wǒ jiā zài xué xiào fù jìn。",
+      "translation": {
+        "fr": "Ma maison est près de l’école."
+      }
+    },
+    "hsk20-376": {
+      "hanzi": "我们晚上复习。",
+      "pinyin": "wǒ men wǎn shang fù xí。",
+      "translation": {
+        "fr": "Nous révisons le soir."
+      }
+    },
+    "hsk20-377": {
+      "hanzi": "房间很干净。",
+      "pinyin": "fáng jiān hěn gān jìng。",
+      "translation": {
+        "fr": "La chambre est très propre."
+      }
+    },
+    "hsk20-378": {
+      "hanzi": "你敢一个人去吗？",
+      "pinyin": "nǐ gǎn yí gè rén qù ma？",
+      "translation": {
+        "fr": "Oses-tu y aller seul ?"
+      }
+    },
+    "hsk20-379": {
+      "hanzi": "我感冒了。",
+      "pinyin": "wǒ gǎn mào le。",
+      "translation": {
+        "fr": "Je suis enrhumé."
+      }
+    },
+    "hsk20-380": {
+      "hanzi": "他刚才在这里。",
+      "pinyin": "tā gāng cái zài zhè lǐ。",
+      "translation": {
+        "fr": "Il était ici tout à l’heure."
+      }
+    },
+    "hsk20-381": {
+      "hanzi": "根据地图，我们走这条路。",
+      "pinyin": "gēn jù dì tú， wǒ men zǒu zhè tiáo lù。",
+      "translation": {
+        "fr": "D’après la carte, nous prenons cette route."
+      }
+    },
+    "hsk20-382": {
+      "hanzi": "我跟朋友一起去。",
+      "pinyin": "wǒ gēn péng yǒu yì qǐ qù。",
+      "translation": {
+        "fr": "J’y vais avec un ami."
+      }
+    },
+    "hsk20-383": {
+      "hanzi": "今天比昨天更冷。",
+      "pinyin": "jīn tiān bǐ zuó tiān gèng lěng。",
+      "translation": {
+        "fr": "Aujourd’hui il fait encore plus froid qu’hier."
+      }
+    },
+    "hsk20-384": {
+      "hanzi": "周末我们去公园。",
+      "pinyin": "zhōu mò wǒ men qù gōng yuán。",
+      "translation": {
+        "fr": "Nous allons au parc le week-end."
+      }
+    },
+    "hsk20-385": {
+      "hanzi": "老师讲了一个故事。",
+      "pinyin": "lǎo shī jiǎng le yí gè gù shi。",
+      "translation": {
+        "fr": "Le professeur a raconté une histoire."
+      }
+    },
+    "hsk20-386": {
+      "hanzi": "今天刮风。",
+      "pinyin": "jīn tiān guā fēng。",
+      "translation": {
+        "fr": "Il y a du vent aujourd’hui."
+      }
+    },
+    "hsk20-387": {
+      "hanzi": "请关门。",
+      "pinyin": "qǐng guān mén。",
+      "translation": {
+        "fr": "Ferme la porte, s’il te plaît."
+      }
+    },
+    "hsk20-388": {
+      "hanzi": "我们的关系很好。",
+      "pinyin": "wǒ men de guān xì hěn hǎo。",
+      "translation": {
+        "fr": "Nos relations sont très bonnes."
+      }
+    },
+    "hsk20-389": {
+      "hanzi": "我很关心你。",
+      "pinyin": "wǒ hěn guān xīn nǐ。",
+      "translation": {
+        "fr": "Je me soucie beaucoup de toi."
+      }
+    },
+    "hsk20-390": {
+      "hanzi": "关于这件事，我们明天再说。",
+      "pinyin": "guān yú zhè jiàn shì， wǒ men míng tiān zài shuō。",
+      "translation": {
+        "fr": "Au sujet de cette affaire, nous en reparlerons demain."
+      }
+    },
+    "hsk20-391": {
+      "hanzi": "中国是一个大国家。",
+      "pinyin": "zhōng guó shì yí gè dà guó jiā。",
+      "translation": {
+        "fr": "La Chine est un grand pays."
+      }
+    },
+    "hsk20-392": {
+      "hanzi": "我喜欢喝果汁。",
+      "pinyin": "wǒ xǐ huān hē guǒ zhī。",
+      "translation": {
+        "fr": "J’aime boire du jus de fruit."
+      }
+    },
+    "hsk20-393": {
+      "hanzi": "过去这里没有地铁。",
+      "pinyin": "guò qù zhè lǐ méi yǒu dì tiě。",
+      "translation": {
+        "fr": "Autrefois, il n’y avait pas de métro ici."
+      }
+    },
+    "hsk20-394": {
+      "hanzi": "孩子害怕黑。",
+      "pinyin": "hái zi hài pà hēi。",
+      "translation": {
+        "fr": "L’enfant a peur du noir."
+      }
+    },
+    "hsk20-395": {
+      "hanzi": "这条河很长。",
+      "pinyin": "zhè tiáo hé hěn cháng。",
+      "translation": {
+        "fr": "Cette rivière est très longue."
+      }
+    },
+    "hsk20-396": {
+      "hanzi": "黑板上有一个字。",
+      "pinyin": "hēi bǎn shàng yǒu yí gè zì。",
+      "translation": {
+        "fr": "Il y a un caractère au tableau."
+      }
+    },
+    "hsk20-397": {
+      "hanzi": "请带上护照。",
+      "pinyin": "qǐng dài shàng hù zhào。",
+      "translation": {
+        "fr": "Emporte ton passeport, s’il te plaît."
+      }
+    },
+    "hsk20-398": {
+      "hanzi": "花园里有很多花。",
+      "pinyin": "huā yuán lǐ yǒu hěn duō huā。",
+      "translation": {
+        "fr": "Il y a beaucoup de fleurs dans le jardin."
+      }
+    },
+    "hsk20-399": {
+      "hanzi": "我家有一个花园。",
+      "pinyin": "wǒ jiā yǒu yí gè huā yuán。",
+      "translation": {
+        "fr": "Ma maison a un jardin."
+      }
+    },
+    "hsk20-400": {
+      "hanzi": "我喜欢画画。",
+      "pinyin": "wǒ xǐ huān huà huà。",
+      "translation": {
+        "fr": "J’aime dessiner."
+      }
+    }
+  }
+}

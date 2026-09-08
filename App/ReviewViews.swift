@@ -3,27 +3,59 @@ import PolygoCore
 
 public struct ReviewCardsView: View {
     @EnvironmentObject private var model: AppModel
+    /// When set, this route is the short review slice linked from Today.
+    /// The Cards tab keeps the full due queue by passing nil.
+    public let maxCards: Int?
     @State private var due: [ReviewState] = []
     @State private var selected: ReviewState?
     @State private var revealed = false
     @State private var message: String?
 
-    public init() {}
+    public init(maxCards: Int? = nil) {
+        self.maxCards = maxCards.map { max(1, $0) }
+    }
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 HStack(alignment: .firstTextBaseline) {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Cartes").font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
-                        Text("\(due.count) carte\(due.count == 1 ? "" : "s") due\(due.count == 1 ? "" : "s")")
+                        Text(reviewCountLabel)
                             .font(.body).foregroundStyle(SylluneColor.inkMuted)
                     }
                     Spacer()
                     if !due.isEmpty { ProgressRing(value: selected == nil ? 0 : 1 / Double(max(1, due.count))).frame(width: 48, height: 48) }
                 }
                 if let message { Text(message).font(.callout).foregroundStyle(SylluneColor.inkMuted).padding(12).sylluneCard(radius: 12) }
+                if let maxCards, !due.isEmpty, totalDueCount > due.count {
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Label("Session courte : \(due.count) cartes", systemImage: "timer")
+                            .font(.callout.weight(.semibold))
+                            .foregroundStyle(SylluneColor.jadeDeep)
+                        Spacer(minLength: 4)
+                        NavigationLink("Poursuivre", destination: ReviewCardsView())
+                            .font(.callout.weight(.semibold))
+                    }
+                    .padding(12)
+                    .sylluneCard(style: .quiet, radius: 12)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Session courte limitée à \(maxCards) cartes. \(totalDueCount - due.count) cartes restent dues.")
+                }
                 if let selected {
                     reviewCard(selected)
+                } else if shortSessionFinished {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Label("Session terminée", systemImage: "checkmark.circle.fill")
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(SylluneColor.success)
+                        Text("Il reste \(totalDueCount) \(totalDueCount == 1 ? "carte" : "cartes") \(totalDueCount == 1 ? "due" : "dues") dans la file complète.")
+                            .font(.body)
+                            .foregroundStyle(SylluneColor.inkMuted)
+                        NavigationLink("Poursuivre", destination: ReviewCardsView())
+                            .buttonStyle(SyllunePrimaryButtonStyle())
+                    }
+                    .padding(20)
+                    .sylluneCard(radius: 24)
                 } else if due.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         Label("Rien à revoir pour le moment", systemImage: "checkmark.circle.fill").font(.title3.weight(.semibold)).foregroundStyle(SylluneColor.success)
@@ -105,8 +137,24 @@ public struct ReviewCardsView: View {
     }
 
     private func refresh() {
-        due = model.snapshot.dueCards(at: model.dependencies.clock.now())
+        due = model.snapshot.dueCards(at: model.dependencies.clock.now(), limit: maxCards)
         if let selected, !due.contains(where: { $0.cardID == selected.cardID }) { self.selected = due.first; revealed = false }
+    }
+
+    private var totalDueCount: Int {
+        model.snapshot.dueCards(at: model.dependencies.clock.now()).count
+    }
+
+    private var shortSessionFinished: Bool {
+        maxCards != nil && due.isEmpty && totalDueCount > 0
+    }
+
+    private var reviewCountLabel: String {
+        let count = due.count
+        if maxCards != nil, totalDueCount > count {
+            return "\(count) carte\(count == 1 ? "" : "s") sur \(totalDueCount) dues"
+        }
+        return "\(count) carte\(count == 1 ? "" : "s") due\(count == 1 ? "" : "s")"
     }
 
     private func dateText(_ date: Date?) -> String {

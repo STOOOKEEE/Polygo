@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-30",
+  "moduleID": "unit-04",
+  "order": 30,
+  "title": {
+    "fr": "Demander son chemin"
+  },
+  "summary": {
+    "fr": "Demander poliment une direction et situer les lieux autour de soi."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l30-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l30-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-218",
+      "canonicalID": "路|lù|218",
+      "hanzi": "路",
+      "pinyin": "lù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "路",
+          "vocabularyID": "vocab-hsk20-218",
+          "pinyin": "lù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "route ; chemin"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这条路通向学校。",
+        "pinyin": "zhè tiáo lù tōng xiàng xué xiào。",
+        "translation": {
+          "fr": "Cette route mène à l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "路|lù|218",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 218,
+        "level": 2
+      },
+      "traditionalHanzi": "路"
+    },
+    {
+      "id": "vocab-hsk20-223",
+      "canonicalID": "每|měi|223",
+      "hanzi": "每",
+      "pinyin": "měi",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "每",
+          "vocabularyID": "vocab-hsk20-223",
+          "pinyin": "měi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chaque"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天早上喝茶。",
+        "pinyin": "wǒ měi tiān zǎo shang hē chá。",
+        "translation": {
+          "fr": "Je bois du thé chaque matin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "每|měi|223",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 223,
+        "level": 2
+      },
+      "traditionalHanzi": "每"
+    },
+    {
+      "id": "vocab-hsk20-227",
+      "canonicalID": "您|nín|227",
+      "hanzi": "您",
+      "pinyin": "nín",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "您",
+          "vocabularyID": "vocab-hsk20-227",
+          "pinyin": "nín"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vous (politesse)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "您好，请进。",
+        "pinyin": "nín hǎo， qǐng jìn。",
+        "translation": {
+          "fr": "Bonjour, entrez, s’il vous plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "您|nín|227",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 227,
+        "level": 2
+      },
+      "traditionalHanzi": "您"
+    },
+    {
+      "id": "vocab-hsk20-230",
+      "canonicalID": "旁边|páng biān|230",
+      "hanzi": "旁边",
+      "pinyin": "páng biān",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "旁边",
+          "vocabularyID": "vocab-hsk20-230",
+          "pinyin": "páng biān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "à côté"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "椅子在桌子旁边。",
+        "pinyin": "yǐ zi zài zhuō zi páng biān。",
+        "translation": {
+          "fr": "La chaise est à côté de la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "旁边|páng biān|230",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 230,
+        "level": 2
+      },
+      "traditionalHanzi": "旁邊"
+    },
+    {
+      "id": "vocab-hsk20-234",
+      "canonicalID": "起床|qǐ chuáng|234",
+      "hanzi": "起床",
+      "pinyin": "qǐ chuáng",
+      "toneNumbers": [
+        3,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "起床",
+          "vocabularyID": "vocab-hsk20-234",
+          "pinyin": "qǐ chuáng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "se lever"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天六点起床。",
+        "pinyin": "wǒ měi tiān liù diǎn qǐ chuáng。",
+        "translation": {
+          "fr": "Je me lève à six heures chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "起床|qǐ chuáng|234",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 234,
+        "level": 2
+      },
+      "traditionalHanzi": "起牀"
+    },
+    {
+      "id": "vocab-hsk20-235",
+      "canonicalID": "千|qiān|235",
+      "hanzi": "千",
+      "pinyin": "qiān",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "千",
+          "vocabularyID": "vocab-hsk20-235",
+          "pinyin": "qiān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mille"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个城市有一千人。",
+        "pinyin": "zhè ge chéng shì yǒu yì qiān rén。",
+        "translation": {
+          "fr": "Cette ville compte mille habitants."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "千|qiān|235",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 235,
+        "level": 2
+      },
+      "traditionalHanzi": "千"
+    },
+    {
+      "id": "vocab-hsk20-238",
+      "canonicalID": "让|ràng|238",
+      "hanzi": "让",
+      "pinyin": "ràng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "让",
+          "vocabularyID": "vocab-hsk20-238",
+          "pinyin": "ràng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "laisser ; faire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请让孩子先走。",
+        "pinyin": "qǐng ràng hái zi xiān zǒu。",
+        "translation": {
+          "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "让|ràng|238",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 238,
+        "level": 2
+      },
+      "traditionalHanzi": "讓"
+    },
+    {
+      "id": "vocab-hsk20-244",
+      "canonicalID": "事情|shì qíng|244",
+      "hanzi": "事情",
+      "pinyin": "shì qíng",
+      "toneNumbers": [
+        4,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "事情",
+          "vocabularyID": "vocab-hsk20-244",
+          "pinyin": "shì qíng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "affaire ; chose"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是一件小事情。",
+        "pinyin": "zhè shì yī jiàn xiǎo shì qíng。",
+        "translation": {
+          "fr": "C’est une petite chose."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "事情|shì qíng|244",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 244,
+        "level": 2
+      },
+      "traditionalHanzi": "事情"
+    },
+    {
+      "id": "vocab-hsk20-245",
+      "canonicalID": "手表|shǒu biǎo|245",
+      "hanzi": "手表",
+      "pinyin": "shǒu biǎo",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "手表",
+          "vocabularyID": "vocab-hsk20-245",
+          "pinyin": "shǒu biǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "montre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的手表在桌上。",
+        "pinyin": "wǒ de shǒu biǎo zài zhuō shàng。",
+        "translation": {
+          "fr": "Ma montre est sur la table."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "手表|shǒu biǎo|245",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 245,
+        "level": 2
+      },
+      "traditionalHanzi": "手錶"
+    },
+    {
+      "id": "vocab-hsk20-183",
+      "canonicalID": "给|gěi|183",
+      "hanzi": "给",
+      "pinyin": "gěi",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "给",
+          "vocabularyID": "vocab-hsk20-183",
+          "pinyin": "gěi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "donner ; à (pour)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请给我一杯茶。",
+        "pinyin": "qǐng gěi wǒ yī bēi chá。",
+        "translation": {
+          "fr": "Donne-moi une tasse de thé, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "给|gěi|183",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 183,
+        "level": 2
+      },
+      "traditionalHanzi": "給"
+    },
+    {
+      "id": "vocab-hsk20-190",
+      "canonicalID": "好吃|hǎo chī|190",
+      "hanzi": "好吃",
+      "pinyin": "hǎo chī",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "好吃",
+          "vocabularyID": "vocab-hsk20-190",
+          "pinyin": "hǎo chī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "délicieux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个菜很好吃。",
+        "pinyin": "zhè ge cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Ce plat est délicieux."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "好吃|hǎo chī|190",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 190,
+        "level": 2
+      },
+      "traditionalHanzi": "好喫"
+    },
+    {
+      "id": "vocab-hsk20-197",
+      "canonicalID": "机场|jī chǎng|197",
+      "hanzi": "机场",
+      "pinyin": "jī chǎng",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "机场",
+          "vocabularyID": "vocab-hsk20-197",
+          "pinyin": "jī chǎng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "aéroport"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我在机场坐飞机。",
+        "pinyin": "wǒ zài jī chǎng zuò fēi jī。",
+        "translation": {
+          "fr": "Je prends l’avion à l’aéroport."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "机场|jī chǎng|197",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 197,
+        "level": 2
+      },
+      "traditionalHanzi": "機場"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-30-grammar-01",
+      "title": {
+        "fr": "Grammaire — 在 + lieu"
+      },
+      "body": {
+        "fr": "在 place le lieu après le sujet ou le lieu recherché.\nExemple 1 : 车站在学校旁边。\nchē zhàn zài xué xiào páng biān。\nLa gare est à côté de l’école."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-30-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-218",
+        "vocab-hsk20-223",
+        "vocab-hsk20-227",
+        "vocab-hsk20-230",
+        "vocab-hsk20-234",
+        "vocab-hsk20-235",
+        "vocab-hsk20-238",
+        "vocab-hsk20-244",
+        "vocab-hsk20-245",
+        "vocab-hsk20-183",
+        "vocab-hsk20-190",
+        "vocab-hsk20-197"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "id": "block-lesson-30-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "您好，请问去车站的路怎么走？",
+          "pinyin": "nín hǎo， qǐng wèn qù chē zhàn de lù zěn me zǒu？",
+          "translation": {
+            "fr": "Bonjour, excusez-moi, comment va-t-on à la gare ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "您先走这条路，每天都有车。",
+          "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
+          "translation": {
+            "fr": "Prenez d’abord cette route ; il y a des véhicules chaque jour."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "车站在商店旁边吗？",
+          "pinyin": "chē zhàn zài shāng diàn páng biān ma？",
+          "translation": {
+            "fr": "La gare est-elle à côté du magasin ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不，在学校旁边，离这里不远。",
+          "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
+          "translation": {
+            "fr": "Non, elle est à côté de l’école, pas loin d’ici."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我什么时候可以到？",
+          "pinyin": "wǒ shén me shí hòu kě yǐ dào？",
+          "translation": {
+            "fr": "Quand puis-je arriver ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "走十分钟就到。请让孩子先过。",
+          "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
+          "translation": {
+            "fr": "Vous y serez en dix minutes. Laissez d’abord passer les enfants."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 26
+      }
+    },
+    {
+      "id": "block-lesson-30-reading",
+      "storyID": "story-lesson-30",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Une direction"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-30-p1",
+          "hanzi": "客人问去车站的路。车站在学校旁边，离商店不远。",
+          "pinyin": "kè rén wèn qù chē zhàn de lù。 chē zhàn zài xué xiào páng biān， lí shāng diàn bù yuǎn。",
+          "translation": {
+            "fr": "Un visiteur demande le chemin de la gare. La gare est à côté de l’école, pas loin du magasin."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-30-p2",
+          "hanzi": "他走十分钟就到。路上有很多孩子，所以他让孩子先过。",
+          "pinyin": "tā zǒu shí fēn zhōng jiù dào。 lù shàng yǒu hěn duō hái zi， suǒ yǐ tā ràng hái zi xiān guò。",
+          "translation": {
+            "fr": "Il y arrive en dix minutes. Il y a beaucoup d’enfants sur la route, alors il les laisse passer d’abord."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l30-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-meaning",
+          "prompt": {
+            "fr": "Que signifie 旁边 ?"
+          },
+          "instruction": {
+            "fr": "Choisis la position indiquée."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "à côté"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "en haut"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "à l’intérieur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l30-order",
+          "prompt": {
+            "fr": "Construis « La gare est à côté de l’école ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "学校旁边",
+            "pinyin": "xué xiào páng biān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "c",
+          "a"
+        ],
+        "acceptedVariants": [
+          "车站在学校旁边。",
+          "车站在学校旁边"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l30-fill",
+          "prompt": {
+            "fr": "Complète : 走十分钟就___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "sentence": "走十分钟就___。",
+        "acceptedAnswers": [
+          "到"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-listen",
+          "prompt": {
+            "fr": "Combien de temps faut-il marcher ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "走十分钟就到。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cinq minutes."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Dix minutes."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Une heure."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l30-speak",
+          "prompt": {
+            "fr": "Dis « La gare n’est pas loin d’ici ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "车站离这里不远。",
+        "referencePinyin": "chē zhàn lí zhè lǐ bù yuǎn。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "车站离这里不远。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-reading",
+          "prompt": {
+            "fr": "Pourquoi le visiteur laisse-t-il passer les enfants ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le magasin est fermé."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a beaucoup d’enfants sur la route."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il est malade."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "id": "block-lesson-30-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-218",
+        "vocab-hsk20-223",
+        "vocab-hsk20-227",
+        "vocab-hsk20-230",
+        "vocab-hsk20-234",
+        "vocab-hsk20-235"
+      ],
+      "objectiveIDs": [
+        "l30-understand",
+        "l30-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 26
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-218",
+      "vocabularyID": "vocab-hsk20-218",
+      "front": {
+        "hanzi": "路",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "路",
+        "pinyin": "lù",
+        "text": {
+          "fr": "route ; chemin"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-223",
+      "vocabularyID": "vocab-hsk20-223",
+      "front": {
+        "hanzi": "每",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "每",
+        "pinyin": "měi",
+        "text": {
+          "fr": "chaque"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-227",
+      "vocabularyID": "vocab-hsk20-227",
+      "front": {
+        "hanzi": "您",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "您",
+        "pinyin": "nín",
+        "text": {
+          "fr": "vous (politesse)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-230",
+      "vocabularyID": "vocab-hsk20-230",
+      "front": {
+        "hanzi": "旁边",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "旁边",
+        "pinyin": "páng biān",
+        "text": {
+          "fr": "à côté"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-234",
+      "vocabularyID": "vocab-hsk20-234",
+      "front": {
+        "hanzi": "起床",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "起床",
+        "pinyin": "qǐ chuáng",
+        "text": {
+          "fr": "se lever"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-235",
+      "vocabularyID": "vocab-hsk20-235",
+      "front": {
+        "hanzi": "千",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "千",
+        "pinyin": "qiān",
+        "text": {
+          "fr": "mille"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-238",
+      "vocabularyID": "vocab-hsk20-238",
+      "front": {
+        "hanzi": "让",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "让",
+        "pinyin": "ràng",
+        "text": {
+          "fr": "laisser ; faire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-244",
+      "vocabularyID": "vocab-hsk20-244",
+      "front": {
+        "hanzi": "事情",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "事情",
+        "pinyin": "shì qíng",
+        "text": {
+          "fr": "affaire ; chose"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-245",
+      "vocabularyID": "vocab-hsk20-245",
+      "front": {
+        "hanzi": "手表",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "手表",
+        "pinyin": "shǒu biǎo",
+        "text": {
+          "fr": "montre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-183",
+      "vocabularyID": "vocab-hsk20-183",
+      "front": {
+        "hanzi": "给",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "给",
+        "pinyin": "gěi",
+        "text": {
+          "fr": "donner ; à (pour)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-190",
+      "vocabularyID": "vocab-hsk20-190",
+      "front": {
+        "hanzi": "好吃",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "好吃",
+        "pinyin": "hǎo chī",
+        "text": {
+          "fr": "délicieux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-197",
+      "vocabularyID": "vocab-hsk20-197",
+      "front": {
+        "hanzi": "机场",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "机场",
+        "pinyin": "jī chǎng",
+        "text": {
+          "fr": "aéroport"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 26,
+    "allocationRange": "days06-45",
+    "theme": "travel",
+    "newVocabularyIDs": [
+      "vocab-hsk20-218",
+      "vocab-hsk20-223",
+      "vocab-hsk20-227",
+      "vocab-hsk20-230",
+      "vocab-hsk20-234",
+      "vocab-hsk20-235",
+      "vocab-hsk20-238",
+      "vocab-hsk20-244",
+      "vocab-hsk20-245"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-183",
+      "vocab-hsk20-190",
+      "vocab-hsk20-197"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-218",
+      "hsk20-223",
+      "hsk20-227",
+      "hsk20-230",
+      "hsk20-234",
+      "hsk20-235",
+      "hsk20-238",
+      "hsk20-244",
+      "hsk20-245"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-183",
+      "hsk20-190",
+      "hsk20-197"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-218",
+      "hsk20-223",
+      "hsk20-227",
+      "hsk20-230",
+      "hsk20-234",
+      "hsk20-235",
+      "hsk20-238",
+      "hsk20-244",
+      "hsk20-245"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-183",
+      "hsk20-190",
+      "hsk20-197"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-04",
+    "newVocabularyCount": 9,
+    "extraVocabularyIDs": []
+  }
+}

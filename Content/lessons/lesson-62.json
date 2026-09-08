@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-62",
+  "moduleID": "unit-06",
+  "order": 62,
+  "title": {
+    "fr": "Une carte difficile à lire"
+  },
+  "summary": {
+    "fr": "Demander son chemin et comparer deux itinéraires en ville."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l62-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l62-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-461",
+      "canonicalID": "满意|mǎn yì|461",
+      "hanzi": "满意",
+      "pinyin": "mǎn yì",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "满意",
+          "vocabularyID": "vocab-hsk20-461",
+          "pinyin": "mǎn yì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "satisfait"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "顾客对这件衣服很满意。",
+        "pinyin": "gù kè duì zhè jiàn yī fu hěn mǎn yì.",
+        "translation": {
+          "fr": "Le client est très satisfait de ce vêtement."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "满意|mǎn yì|461",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 461,
+        "level": 3
+      },
+      "traditionalHanzi": "滿意"
+    },
+    {
+      "id": "vocab-hsk20-466",
+      "canonicalID": "明白|míng bái|466",
+      "hanzi": "明白",
+      "pinyin": "míng bái",
+      "toneNumbers": [
+        2,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "明白",
+          "vocabularyID": "vocab-hsk20-466",
+          "pinyin": "míng bái"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "comprendre ; clair"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你明白我的意思吗？",
+        "pinyin": "nǐ míng bai wǒ de yì si ma?",
+        "translation": {
+          "fr": "Tu comprends ce que je veux dire ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "明白|míng bái|466",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 466,
+        "level": 3
+      },
+      "traditionalHanzi": "明白"
+    },
+    {
+      "id": "vocab-hsk20-470",
+      "canonicalID": "难|nán|470",
+      "hanzi": "难",
+      "pinyin": "nán",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "难",
+          "vocabularyID": "vocab-hsk20-470",
+          "pinyin": "nán"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "difficile"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个练习不难。",
+        "pinyin": "zhè ge liàn xí bù nán.",
+        "translation": {
+          "fr": "Cet exercice n’est pas difficile."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "难|nán|470",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 470,
+        "level": 3
+      },
+      "traditionalHanzi": "難"
+    },
+    {
+      "id": "vocab-hsk20-478",
+      "canonicalID": "胖|pàng|478",
+      "hanzi": "胖",
+      "pinyin": "pàng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "胖",
+          "vocabularyID": "vocab-hsk20-478",
+          "pinyin": "pàng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "gros ; corpulent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这只猫有点胖。",
+        "pinyin": "zhè zhī māo yǒu diǎn pàng.",
+        "translation": {
+          "fr": "Ce chat est un peu gros."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "胖|pàng|478",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 478,
+        "level": 3
+      },
+      "traditionalHanzi": "胖"
+    },
+    {
+      "id": "vocab-hsk20-484",
+      "canonicalID": "奇怪|qí guài|484",
+      "hanzi": "奇怪",
+      "pinyin": "qí guài",
+      "toneNumbers": [
+        2,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "奇怪",
+          "vocabularyID": "vocab-hsk20-484",
+          "pinyin": "qí guài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "étrange"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个问题有点奇怪。",
+        "pinyin": "zhè ge wèn tí yǒu diǎn qí guài.",
+        "translation": {
+          "fr": "Cette question est un peu étrange."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "奇怪|qí guài|484",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 484,
+        "level": 3
+      },
+      "traditionalHanzi": "奇怪"
+    },
+    {
+      "id": "vocab-hsk20-462",
+      "canonicalID": "帽子|mào zi|462",
+      "hanzi": "帽子",
+      "pinyin": "mào zi",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "帽子",
+          "vocabularyID": "vocab-hsk20-462",
+          "pinyin": "mào zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chapeau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这顶帽子不适合我。",
+        "pinyin": "zhè dǐng mào zi bù shì hé wǒ.",
+        "translation": {
+          "fr": "Ce chapeau ne me va pas."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "帽子|mào zi|462",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 462,
+        "level": 3
+      },
+      "traditionalHanzi": "帽子"
+    },
+    {
+      "id": "vocab-hsk20-489",
+      "canonicalID": "裙子|qún zi|489",
+      "hanzi": "裙子",
+      "pinyin": "qún zi",
+      "toneNumbers": [
+        2,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "裙子",
+          "vocabularyID": "vocab-hsk20-489",
+          "pinyin": "qún zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "jupe"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这条裙子是新的。",
+        "pinyin": "zhè tiáo qún zi shì xīn de.",
+        "translation": {
+          "fr": "Cette jupe est neuve."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "裙子|qún zi|489",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 489,
+        "level": 3
+      },
+      "traditionalHanzi": "裙子"
+    },
+    {
+      "id": "vocab-hsk20-546",
+      "canonicalID": "鞋|xié|546",
+      "hanzi": "鞋",
+      "pinyin": "xié",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "鞋",
+          "vocabularyID": "vocab-hsk20-546",
+          "pinyin": "xié"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chaussure"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这双鞋很舒服。",
+        "pinyin": "zhè shuāng xié hěn shū fu.",
+        "translation": {
+          "fr": "Cette paire de chaussures est confortable."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "鞋|xié|546",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 546,
+        "level": 3
+      },
+      "traditionalHanzi": "鞋"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-62-grammar-01",
+      "title": {
+        "fr": "Grammaire — 比较 + adjectif"
+      },
+      "body": {
+        "fr": "比较 atténue ou compare un degré : une chose est relativement plus ou moins ainsi.\nExemple 1 : 这条路比较难，另一条路更容易。\nzhè tiáo lù bǐ jiào nán, lìng yì tiáo lù gèng róng yì.\nCette route est assez difficile, l’autre est plus facile."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-62-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-461",
+        "vocab-hsk20-466",
+        "vocab-hsk20-470",
+        "vocab-hsk20-478",
+        "vocab-hsk20-484",
+        "vocab-hsk20-462",
+        "vocab-hsk20-489",
+        "vocab-hsk20-546"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "id": "block-lesson-62-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你对这张地图满意吗？",
+          "pinyin": "nǐ duì zhè zhāng dì tú mǎn yì ma?",
+          "translation": {
+            "fr": "Es-tu satisfait de cette carte ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我不太满意，但是这条路比较难。",
+          "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
+          "translation": {
+            "fr": "Je ne suis pas très satisfait, mais cette route est assez difficile."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "那个胖叔叔也在找车站。",
+          "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
+          "translation": {
+            "fr": "Cet oncle corpulent cherche aussi la gare."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "走另一边吧，那里更容易。",
+          "pinyin": "zǒu lìng yì biān ba, nà lǐ gèng róng yì.",
+          "translation": {
+            "fr": "Prenons l’autre côté, c’est plus facile par là."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 58
+      }
+    },
+    {
+      "id": "block-lesson-62-reading",
+      "storyID": "story-lesson-62",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "Trouver une route plus facile"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-62-p1",
+          "hanzi": "Tao对地图不太满意，一条路比较难，另一条路更容易。",
+          "pinyin": "Tao duì dì tú bú tài mǎn yì, yì tiáo lù bǐ jiào nán, lìng yì tiáo lù gèng róng yì.",
+          "translation": {
+            "fr": "Tao n’est pas très satisfait de la carte : une route est assez difficile, l’autre est plus facile."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-62-p2",
+          "hanzi": "Mina和Tao跟着另一条路去车站。",
+          "pinyin": "Mina hé Tao gēn zhe lìng yì tiáo lù qù chē zhàn.",
+          "translation": {
+            "fr": "Mina et Tao suivent l’autre route jusqu’à la gare."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l62-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-meaning",
+          "prompt": {
+            "fr": "Que signifie 满意 dans le dialogue ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "étrange"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "satisfait"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "difficile"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l62-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « Cette route est assez difficile ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "比较",
+            "pinyin": "bǐ jiào",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "难",
+            "pinyin": "nán",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这条路",
+            "pinyin": "zhè tiáo lù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "这条路比较难。",
+          "这条路比较难"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l62-fill",
+          "prompt": {
+            "fr": "Complète : 那里更___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "sentence": "那里更___。",
+        "acceptedAnswers": [
+          "容易"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-listen",
+          "prompt": {
+            "fr": "Quelle route choisissent-ils ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "走另一边吧，那里更容易。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ils rentrent chez eux."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "La route difficile."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’autre route, plus facile."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l62-speak",
+          "prompt": {
+            "fr": "Dis que tu comprends la carte."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "你对这张地图满意吗？",
+        "referencePinyin": "nǐ duì zhè zhāng dì tú mǎn yì ma?",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你对这张地图满意吗？",
+          "你对这张地图满意吗"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-reading",
+          "prompt": {
+            "fr": "Où vont Mina et Tao ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "À l’hôpital."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Au supermarché."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À la gare."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "id": "block-lesson-62-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-461",
+        "vocab-hsk20-466",
+        "vocab-hsk20-470",
+        "vocab-hsk20-478",
+        "vocab-hsk20-484",
+        "vocab-hsk20-462",
+        "vocab-hsk20-489",
+        "vocab-hsk20-546"
+      ],
+      "objectiveIDs": [
+        "l62-understand",
+        "l62-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 58
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-461",
+      "vocabularyID": "vocab-hsk20-461",
+      "front": {
+        "hanzi": "满意",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "满意",
+        "pinyin": "mǎn yì",
+        "text": {
+          "fr": "satisfait"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-466",
+      "vocabularyID": "vocab-hsk20-466",
+      "front": {
+        "hanzi": "明白",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "明白",
+        "pinyin": "míng bái",
+        "text": {
+          "fr": "comprendre ; clair"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-470",
+      "vocabularyID": "vocab-hsk20-470",
+      "front": {
+        "hanzi": "难",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "难",
+        "pinyin": "nán",
+        "text": {
+          "fr": "difficile"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-478",
+      "vocabularyID": "vocab-hsk20-478",
+      "front": {
+        "hanzi": "胖",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "胖",
+        "pinyin": "pàng",
+        "text": {
+          "fr": "gros ; corpulent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-484",
+      "vocabularyID": "vocab-hsk20-484",
+      "front": {
+        "hanzi": "奇怪",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "奇怪",
+        "pinyin": "qí guài",
+        "text": {
+          "fr": "étrange"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-462",
+      "vocabularyID": "vocab-hsk20-462",
+      "front": {
+        "hanzi": "帽子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "帽子",
+        "pinyin": "mào zi",
+        "text": {
+          "fr": "chapeau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-489",
+      "vocabularyID": "vocab-hsk20-489",
+      "front": {
+        "hanzi": "裙子",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "裙子",
+        "pinyin": "qún zi",
+        "text": {
+          "fr": "jupe"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-546",
+      "vocabularyID": "vocab-hsk20-546",
+      "front": {
+        "hanzi": "鞋",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "鞋",
+        "pinyin": "xié",
+        "text": {
+          "fr": "chaussure"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 58,
+    "allocationRange": "days46-90",
+    "theme": "Une carte difficile à lire",
+    "themeLabel": {
+      "fr": "Une carte difficile à lire"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-461",
+      "vocab-hsk20-466",
+      "vocab-hsk20-470",
+      "vocab-hsk20-478",
+      "vocab-hsk20-484"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-462",
+      "vocab-hsk20-489",
+      "vocab-hsk20-546"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-461",
+      "hsk20-466",
+      "hsk20-470",
+      "hsk20-478",
+      "hsk20-484"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-462",
+      "hsk20-489",
+      "hsk20-546"
+    ],
+    "grammarPattern": "比较 + adjectif",
+    "grammarAnchor": "hsk20-461",
+    "allocationNewVocabularyIDs": [
+      "hsk20-461",
+      "hsk20-466",
+      "hsk20-470",
+      "hsk20-478",
+      "hsk20-484"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-462",
+      "hsk20-489",
+      "hsk20-546"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-06",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

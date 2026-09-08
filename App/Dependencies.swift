@@ -3,6 +3,9 @@ import PolygoCore
 import PolygoSRS
 import PolygoPersistence
 import PolygoApple
+#if canImport(Darwin)
+import Darwin
+#endif
 
 @MainActor
 public struct AppDependencies {
@@ -41,6 +44,9 @@ public struct AppDependencies {
         let root = applicationSupport.appendingPathComponent("Polygo", isDirectory: true)
         let contentRoot = Bundle.main.resourceURL?.appendingPathComponent("Content", isDirectory: true)
             ?? URL(fileURLWithPath: "/missing-syllune-content", isDirectory: true)
+#if DEBUG
+        installDebugProgressFixtureIfRequested(root: root)
+#endif
         let content = JSONContentStore(rootURL: contentRoot)
         let progress = JSONFileProgressStore(rootURL: root, reducer: DefaultProgressReducer())
         // Handwriting captures are local learning data. Keep the service
@@ -59,6 +65,90 @@ public struct AppDependencies {
             pronunciation: UnconfiguredSpeechPronunciationService()
         )
     }
+
+#if DEBUG
+    /// Imports a JSONL journal from the UI-test launch environment before the
+    /// AppModel starts its first reload. UI-test runners and the application
+    /// have different sandboxes, so a runner-side file cannot seed the AUT.
+    /// This hook is deliberately restricted to `ui-` profiles and never
+    /// replaces an existing journal or snapshot.
+    private static func installDebugProgressFixtureIfRequested(root: URL) {
+        let key = "SYLLUNE_PROGRESS_FIXTURE_JSONL"
+        guard let rawFixture = ProcessInfo.processInfo.environment[key], !rawFixture.isEmpty else { return }
+
+        let profileRaw = UserDefaults.standard.string(forKey: "syllune.profile.id") ?? ""
+        guard profileRaw.hasPrefix("ui-"), let profileID = ProfileID(rawValue: profileRaw) else { return }
+        let fileManager = FileManager.default
+        let profileDirectory = root
+            .appendingPathComponent("profiles", isDirectory: true)
+            .appendingPathComponent(profileID.rawValue, isDirectory: true)
+        let journalURL = profileDirectory.appendingPathComponent("events.jsonl", isDirectory: false)
+        let snapshotURL = profileDirectory.appendingPathComponent("snapshot.json", isDirectory: false)
+        let outboxURL = profileDirectory.appendingPathComponent("outbox.json", isDirectory: false)
+
+        // A relaunch must exercise the persisted journal. A cache or outbox
+        // without its journal is also left untouched so a fixture cannot
+        // overwrite a partial real profile.
+        guard !fileManager.fileExists(atPath: journalURL.path),
+              !fileManager.fileExists(atPath: snapshotURL.path),
+              !fileManager.fileExists(atPath: outboxURL.path) else { return }
+
+        let decoder = JSONDecoder()
+        var events: [ProgressEvent] = []
+        var eventIDs = Set<EventID>()
+        for (lineIndex, line) in rawFixture.components(separatedBy: .newlines).enumerated() {
+            guard !line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
+            guard let data = line.data(using: .utf8),
+                  let event = try? decoder.decode(ProgressEvent.self, from: data),
+                  event.schemaVersion == 1,
+                  event.profileID == profileID,
+                  event.lamport > 0,
+                  eventIDs.insert(event.eventID).inserted else {
+                assertionFailure("Invalid \(key) at JSONL line \(lineIndex + 1) for profile \(profileID.rawValue)")
+                return
+            }
+            events.append(event)
+        }
+        guard !events.isEmpty else {
+            assertionFailure("\(key) must contain at least one event")
+            return
+        }
+        guard events.contains(where: { event in
+            if case .onboardingCompleted(let profile) = event.payload { return profile.id == profileID }
+            return false
+        }) else {
+            assertionFailure("\(key) must contain onboardingCompleted for profile \(profileID.rawValue)")
+            return
+        }
+
+        do {
+            try fileManager.createDirectory(at: profileDirectory, withIntermediateDirectories: true)
+#if canImport(Darwin)
+            let descriptor = open(journalURL.path, O_WRONLY | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR)
+            guard descriptor >= 0 else {
+                // Another process may have installed the fixture or created
+                // the real journal between the guard above and this write.
+                if errno == EEXIST { return }
+                throw POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO)
+            }
+            let handle = FileHandle(fileDescriptor: descriptor, closeOnDealloc: true)
+            do {
+                try handle.write(contentsOf: Data(rawFixture.utf8))
+                try handle.close()
+            } catch {
+                try? handle.close()
+                try? fileManager.removeItem(at: journalURL)
+                throw error
+            }
+#else
+            guard !fileManager.fileExists(atPath: journalURL.path) else { return }
+            try Data(rawFixture.utf8).write(to: journalURL, options: [.atomic])
+#endif
+        } catch {
+            assertionFailure("Could not install \(key): \(error.localizedDescription)")
+        }
+    }
+#endif
 }
 
 public enum SylluneServiceError: Error, LocalizedError, Sendable {

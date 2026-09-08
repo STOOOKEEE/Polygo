@@ -1,14 +1,22 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.09.0",
-  "courseIDs": ["mandarin-starter"],
+  "contentVersion": "2026.10.0",
+  "courseIDs": [
+    "mandarin-starter"
+  ],
   "defaultCourseID": "mandarin-starter",
   "metadata": {
-    "standardID": "HSK-3.0",
-    "standardVersion": "2025-11",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "transitionStatus": "reference-transition",
-    "availableLessonCount": 4
+    "comparisonStandardID": "HSK-3.0",
+    "comparisonStandardVersion": "2025-11",
+    "comparisonStandardRole": "design-reference-only",
+    "transitionStatus": "primary-classic-legacy-2.0",
+    "starterLessonCount": 4,
+    "plannedSessionCount": 90,
+    "availableLessonCount": 94,
+    "canonicalVocabularyCount": 600
   }
 }

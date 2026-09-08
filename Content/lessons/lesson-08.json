@@ -1,0 +1,1366 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-08",
+  "moduleID": "unit-02",
+  "order": 8,
+  "title": {
+    "fr": "Acheter des pommes"
+  },
+  "summary": {
+    "fr": "Dire l’heure, demander un prix et acheter des pommes."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "l8-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre un lieu, une heure et un prix simple."
+      }
+    },
+    {
+      "id": "l8-produce",
+      "required": true,
+      "statement": {
+        "fr": "Demander un billet ou exprimer un souhait."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-016",
+      "canonicalID": "点|diǎn|16",
+      "hanzi": "点",
+      "pinyin": "diǎn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "点",
+          "vocabularyID": "vocab-hsk20-016",
+          "pinyin": "diǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "heure ; point"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "现在三点。",
+        "pinyin": "xiàn zài sān diǎn。",
+        "translation": {
+          "fr": "Il est trois heures."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "点|diǎn|16",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 16,
+        "level": 1
+      },
+      "traditionalHanzi": "點"
+    },
+    {
+      "id": "vocab-hsk20-025",
+      "canonicalID": "多少|duō shǎo|25",
+      "hanzi": "多少",
+      "pinyin": "duō shǎo",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "多少",
+          "vocabularyID": "vocab-hsk20-025",
+          "pinyin": "duō shǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "combien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你要多少钱？",
+        "pinyin": "nǐ yào duō shǎo qián？",
+        "translation": {
+          "fr": "Combien d’argent veux-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "多少|duō shǎo|25",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 25,
+        "level": 1
+      },
+      "traditionalHanzi": "多少"
+    },
+    {
+      "id": "vocab-hsk20-044",
+      "canonicalID": "几|jǐ|44",
+      "hanzi": "几",
+      "pinyin": "jǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "几",
+          "vocabularyID": "vocab-hsk20-044",
+          "pinyin": "jǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "combien (petit nombre)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你有几个孩子？",
+        "pinyin": "nǐ yǒu jǐ gè hái zi？",
+        "translation": {
+          "fr": "Combien d’enfants as-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "几|jǐ|44",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 44,
+        "level": 1
+      },
+      "traditionalHanzi": "幾"
+    },
+    {
+      "id": "vocab-hsk20-053",
+      "canonicalID": "块|kuài|53",
+      "hanzi": "块",
+      "pinyin": "kuài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "块",
+          "vocabularyID": "vocab-hsk20-053",
+          "pinyin": "kuài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "yuan ; morceau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这块钱给你。",
+        "pinyin": "zhè kuài qián gěi nǐ。",
+        "translation": {
+          "fr": "Voici ce yuan pour toi."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "块|kuài|53",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 53,
+        "level": 1
+      },
+      "traditionalHanzi": "塊"
+    },
+    {
+      "id": "vocab-hsk20-063",
+      "canonicalID": "买|mǎi|63",
+      "hanzi": "买",
+      "pinyin": "mǎi",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "买",
+          "vocabularyID": "vocab-hsk20-063",
+          "pinyin": "mǎi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "acheter"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想买苹果。",
+        "pinyin": "wǒ xiǎng mǎi píng guǒ。",
+        "translation": {
+          "fr": "Je veux acheter des pommes."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "买|mǎi|63",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 63,
+        "level": 1
+      },
+      "traditionalHanzi": "買"
+    },
+    {
+      "id": "vocab-hsk20-079",
+      "canonicalID": "苹果|píng guǒ|79",
+      "hanzi": "苹果",
+      "pinyin": "píng guǒ",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "苹果",
+          "vocabularyID": "vocab-hsk20-079",
+          "pinyin": "píng guǒ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pomme"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我买了一个苹果。",
+        "pinyin": "wǒ mǎi le yí gè píng guǒ。",
+        "translation": {
+          "fr": "J’ai acheté une pomme."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "苹果|píng guǒ|79",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 79,
+        "level": 1
+      },
+      "traditionalHanzi": "蘋果"
+    },
+    {
+      "id": "vocab-hsk20-082",
+      "canonicalID": "钱|qián|82",
+      "hanzi": "钱",
+      "pinyin": "qián",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "钱",
+          "vocabularyID": "vocab-hsk20-082",
+          "pinyin": "qián"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "argent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我没有钱。",
+        "pinyin": "wǒ méi yǒu qián。",
+        "translation": {
+          "fr": "Je n’ai pas d’argent."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "钱|qián|82",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 82,
+        "level": 1
+      },
+      "traditionalHanzi": "錢"
+    },
+    {
+      "id": "vocab-hsk20-084",
+      "canonicalID": "去|qù|84",
+      "hanzi": "去",
+      "pinyin": "qù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "去",
+          "vocabularyID": "vocab-hsk20-084",
+          "pinyin": "qù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "aller"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们去公园。",
+        "pinyin": "wǒ men qù gōng yuán。",
+        "translation": {
+          "fr": "Nous allons au parc."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "去|qù|84",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 84,
+        "level": 1
+      },
+      "traditionalHanzi": "去"
+    },
+    {
+      "id": "vocab-hsk20-089",
+      "canonicalID": "三|sān|89",
+      "hanzi": "三",
+      "pinyin": "sān",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "三",
+          "vocabularyID": "vocab-hsk20-089",
+          "pinyin": "sān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "trois"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我有三个孩子。",
+        "pinyin": "wǒ yǒu sān gè hái zi。",
+        "translation": {
+          "fr": "J’ai trois enfants."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "三|sān|89",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 89,
+        "level": 1
+      },
+      "traditionalHanzi": "三"
+    },
+    {
+      "id": "vocab-hsk20-090",
+      "canonicalID": "商店|shāng diàn|90",
+      "hanzi": "商店",
+      "pinyin": "shāng diàn",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "商店",
+          "vocabularyID": "vocab-hsk20-090",
+          "pinyin": "shāng diàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "magasin"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这家商店很大。",
+        "pinyin": "zhè jiā shāng diàn hěn dà。",
+        "translation": {
+          "fr": "Ce magasin est très grand."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "商店|shāng diàn|90",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 90,
+        "level": 1
+      },
+      "traditionalHanzi": "商店"
+    },
+    {
+      "id": "vocab-hsk20-120",
+      "canonicalID": "现在|xiàn zài|120",
+      "hanzi": "现在",
+      "pinyin": "xiàn zài",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "现在",
+          "vocabularyID": "vocab-hsk20-120",
+          "pinyin": "xiàn zài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "maintenant"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我现在很忙。",
+        "pinyin": "wǒ xiàn zài hěn máng。",
+        "translation": {
+          "fr": "Je suis très occupé maintenant."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "现在|xiàn zài|120",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 120,
+        "level": 1
+      },
+      "traditionalHanzi": "現在"
+    },
+    {
+      "id": "vocab-hsk20-121",
+      "canonicalID": "想|xiǎng|121",
+      "hanzi": "想",
+      "pinyin": "xiǎng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "想",
+          "vocabularyID": "vocab-hsk20-121",
+          "pinyin": "xiǎng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "vouloir ; penser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想喝茶。",
+        "pinyin": "wǒ xiǎng hē chá。",
+        "translation": {
+          "fr": "Je veux boire du thé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "想|xiǎng|121",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 121,
+        "level": 1
+      },
+      "traditionalHanzi": "想"
+    },
+    {
+      "id": "vocab-wo",
+      "hanzi": "我",
+      "traditionalHanzi": "我",
+      "pinyin": "wǒ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "我",
+          "vocabularyID": "vocab-wo",
+          "pinyin": "wǒ",
+          "partOfSpeech": "pronoun"
+        }
+      ],
+      "partOfSpeech": "pronoun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "je ; moi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我叫安。",
+        "pinyin": "wǒ jiào Ān.",
+        "translation": {
+          "fr": "Je m'appelle An."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "我 commence la phrase quand je parle de moi."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "我",
+          "traditional": "我"
+        }
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-08-grammar-01",
+      "title": {
+        "fr": "Grammaire — 想 + verbe"
+      },
+      "body": {
+        "fr": "想 exprime un souhait et se place avant l’action : 我想买苹果 signifie « je veux acheter des pommes ».\nExemple 1 : 我想买苹果。\nwǒ xiǎng mǎi píng guǒ.\nJe veux acheter des pommes."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-lesson-08-grammar-02",
+      "title": {
+        "fr": "Grammaire — prix + 块"
+      },
+      "body": {
+        "fr": "块 est l’unité familière du yuan dans un prix courant.\nExemple 1 : 苹果三块。\npíng guǒ sān kuài.\nLes pommes coûtent trois yuans."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-08-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-016",
+        "vocab-hsk20-025",
+        "vocab-hsk20-044",
+        "vocab-hsk20-053",
+        "vocab-hsk20-063",
+        "vocab-hsk20-079",
+        "vocab-hsk20-082",
+        "vocab-hsk20-084",
+        "vocab-hsk20-089",
+        "vocab-hsk20-090",
+        "vocab-hsk20-120",
+        "vocab-hsk20-121",
+        "vocab-wo"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "id": "block-l8-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "现在几点？",
+          "pinyin": "xiàn zài jǐ diǎn?",
+          "translation": {
+            "fr": "Quelle heure est-il ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "现在三点。",
+          "pinyin": "xiàn zài sān diǎn.",
+          "translation": {
+            "fr": "Il est trois heures."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我想去商店买苹果。",
+          "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+          "translation": {
+            "fr": "Je veux aller au magasin acheter des pommes."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "苹果多少钱？",
+          "pinyin": "píng guǒ duō shao qián?",
+          "translation": {
+            "fr": "Combien coûtent les pommes ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "苹果三块。",
+          "pinyin": "píng guǒ sān kuài.",
+          "translation": {
+            "fr": "Les pommes coûtent trois yuans."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我买。",
+          "pinyin": "wǒ mǎi.",
+          "translation": {
+            "fr": "J’achète."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 4
+      }
+    },
+    {
+      "id": "block-l8-reading",
+      "storyID": "story-l8-shop",
+      "title": {
+        "fr": "Au magasin"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-08-p1",
+          "hanzi": "现在三点，我想去商店。",
+          "pinyin": "xiàn zài sān diǎn, wǒ xiǎng qù shāng diàn.",
+          "translation": {
+            "fr": "Il est trois heures, je veux aller au magasin."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-08-p2",
+          "hanzi": "苹果三块。",
+          "pinyin": "píng guǒ sān kuài.",
+          "translation": {
+            "fr": "Les pommes coûtent trois yuans."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l8-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-meaning",
+          "prompt": {
+            "fr": "Que signifie 商店 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le lieu où l’on achète les pommes."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "hôpital"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "restaurant"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "magasin"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l8-order",
+          "prompt": {
+            "fr": "Construis « Je veux acheter des pommes ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "买",
+            "pinyin": "mǎi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "c",
+          "b",
+          "a"
+        ],
+        "acceptedVariants": [
+          "我想买苹果。",
+          "我想买苹果"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l8-fill",
+          "prompt": {
+            "fr": "Dans le dialogue, quelle unité familière suit le prix ?"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "sentence": "苹果三___。",
+        "acceptedAnswers": [
+          "块"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l8-listen",
+          "prompt": {
+            "fr": "Quel est le prix ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "苹果三块。",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "30 yuans"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "20 yuans"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "3 yuans"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l8-speak",
+          "prompt": {
+            "fr": "Dis « Je veux aller au magasin ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "我想去商店。",
+        "referencePinyin": "wǒ xiǎng qù shāng diàn.",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "我想去商店。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-reading",
+          "prompt": {
+            "fr": "Où la personne veut-elle aller ?"
+          },
+          "instruction": {
+            "fr": "Relis le petit texte avant de répondre."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "À la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Au magasin."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "À l’école."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "id": "block-l8-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-016",
+        "vocab-hsk20-053",
+        "vocab-hsk20-063",
+        "vocab-hsk20-079",
+        "vocab-hsk20-090",
+        "vocab-hsk20-121"
+      ],
+      "objectiveIDs": [
+        "l8-understand",
+        "l8-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 4
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-016",
+      "vocabularyID": "vocab-hsk20-016",
+      "front": {
+        "hanzi": "点",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "点",
+        "pinyin": "diǎn",
+        "text": {
+          "fr": "heure ; point"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-025",
+      "vocabularyID": "vocab-hsk20-025",
+      "front": {
+        "hanzi": "多少",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "多少",
+        "pinyin": "duō shǎo",
+        "text": {
+          "fr": "combien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-044",
+      "vocabularyID": "vocab-hsk20-044",
+      "front": {
+        "hanzi": "几",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "几",
+        "pinyin": "jǐ",
+        "text": {
+          "fr": "combien (petit nombre)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-053",
+      "vocabularyID": "vocab-hsk20-053",
+      "front": {
+        "hanzi": "块",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "块",
+        "pinyin": "kuài",
+        "text": {
+          "fr": "yuan ; morceau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-063",
+      "vocabularyID": "vocab-hsk20-063",
+      "front": {
+        "hanzi": "买",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "买",
+        "pinyin": "mǎi",
+        "text": {
+          "fr": "acheter"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-079",
+      "vocabularyID": "vocab-hsk20-079",
+      "front": {
+        "hanzi": "苹果",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "苹果",
+        "pinyin": "píng guǒ",
+        "text": {
+          "fr": "pomme"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-082",
+      "vocabularyID": "vocab-hsk20-082",
+      "front": {
+        "hanzi": "钱",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "钱",
+        "pinyin": "qián",
+        "text": {
+          "fr": "argent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-084",
+      "vocabularyID": "vocab-hsk20-084",
+      "front": {
+        "hanzi": "去",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "去",
+        "pinyin": "qù",
+        "text": {
+          "fr": "aller"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-089",
+      "vocabularyID": "vocab-hsk20-089",
+      "front": {
+        "hanzi": "三",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "三",
+        "pinyin": "sān",
+        "text": {
+          "fr": "trois"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-090",
+      "vocabularyID": "vocab-hsk20-090",
+      "front": {
+        "hanzi": "商店",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "商店",
+        "pinyin": "shāng diàn",
+        "text": {
+          "fr": "magasin"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-120",
+      "vocabularyID": "vocab-hsk20-120",
+      "front": {
+        "hanzi": "现在",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "现在",
+        "pinyin": "xiàn zài",
+        "text": {
+          "fr": "maintenant"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-121",
+      "vocabularyID": "vocab-hsk20-121",
+      "front": {
+        "hanzi": "想",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "想",
+        "pinyin": "xiǎng",
+        "text": {
+          "fr": "vouloir ; penser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-wo",
+      "vocabularyID": "vocab-wo",
+      "front": {
+        "hanzi": "我",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "我",
+        "pinyin": "wǒ · 3",
+        "text": {
+          "fr": "je ; moi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-02",
+        "pronouns"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-02",
+    "newVocabularyIDs": [
+      "vocab-hsk20-016",
+      "vocab-hsk20-025",
+      "vocab-hsk20-053",
+      "vocab-hsk20-063",
+      "vocab-hsk20-079",
+      "vocab-hsk20-082",
+      "vocab-hsk20-084",
+      "vocab-hsk20-090",
+      "vocab-hsk20-121"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-044",
+      "vocab-hsk20-089",
+      "vocab-hsk20-120",
+      "vocab-wo"
+    ],
+    "newVocabularyCount": 9,
+    "extraVocabularyIDs": []
+  }
+}

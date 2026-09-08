@@ -336,6 +336,92 @@ public final class AppModel: ObservableObject {
         course?.modules.sorted { $0.order < $1.order }.flatMap(\.lessonIDs) ?? []
     }
 
+    /// The lesson IDs that have a durable completion event. A plan day is
+    /// derived from this set, never from the wall clock.
+    public var completedLessonIDs: Set<LessonID> {
+        Set(snapshot.lessonProgress.values.compactMap { progress in
+            progress.completedAt == nil ? nil : progress.lessonID
+        })
+    }
+
+    public var dailyPlan: CoursePlan? { course?.plan }
+
+    /// The authored programme session currently due after the completed
+    /// prefix. The first four legacy lessons remain the resume priority until
+    /// they have actually been completed.
+    public var dailyPlanSession: CoursePlanSession? {
+        guard let dailyPlan else { return nil }
+        return dailyPlan.nextSession(completedLessonIDs: completedLessonIDs)
+    }
+
+    public var dailyPlanDay: Int? {
+        dailyPlan?.currentDay(completedLessonIDs: completedLessonIDs)
+    }
+
+    public var completedDailyPlanSessionCount: Int {
+        dailyPlan?.completedSessionCount(completedLessonIDs: completedLessonIDs) ?? 0
+    }
+
+    public var dailyPlanTotalDays: Int {
+        dailyPlan?.orderedSessions.count ?? 0
+    }
+
+    /// The authored allocation for the session shown on Today. The fallback
+    /// keeps the four protected starter lessons usable in older bundles that
+    /// do not carry a plan yet.
+    public var dailyPlanBudgetSession: CoursePlanSession? {
+        guard let dailyPlan else { return nil }
+        return dailyPlanSession ?? dailyPlan.orderedSessions.last
+    }
+
+    /// The review queue is intentionally short enough for the authored daily
+    /// budget. Learners can always open the global Cards route afterwards.
+    public var dailyReviewLimit: Int {
+        let reviewMinutes = dailyPlanBudgetSession?.reviewMinutes ?? 3
+        return min(10, max(1, reviewMinutes * 3))
+    }
+
+    public var dailyPlanMilestone: CourseMilestone? {
+        // A milestone describes completed coverage. Do not label a learner
+        // as having reached it merely because its day is currently visible.
+        guard let dailyPlan else { return nil }
+        return dailyPlan.milestone(onOrBefore: completedDailyPlanSessionCount)
+    }
+
+    public var nextDailyPlanMilestone: CourseMilestone? {
+        guard let dailyPlan else { return nil }
+        let completed = completedDailyPlanSessionCount
+        return dailyPlan.milestones
+            .filter { $0.day > completed }
+            .sorted { lhs, rhs in
+                if lhs.day != rhs.day { return lhs.day < rhs.day }
+                return lhs.id < rhs.id
+            }
+            .first
+    }
+
+    public var curriculumLabels: [String] {
+        var labels: [String] = []
+        for label in course?.alignment.map(\.displayLabel) ?? [] where !labels.contains(label) {
+            labels.append(label)
+        }
+        return labels
+    }
+
+    /// Content owns the short label shown by dictionary and offline surfaces.
+    /// A title fallback keeps old bundles without `displayName` readable.
+    public var primaryContentLabel: String {
+        guard let course else { return "Contenu du parcours" }
+        return course.title.resolve(preferred: preferredLanguageCodes)
+            ?? course.modules.sorted { $0.order < $1.order }.first?.displayName?.resolve(preferred: preferredLanguageCodes)
+            ?? course.modules.sorted { $0.order < $1.order }.first?.title.resolve(preferred: preferredLanguageCodes)
+            ?? "Contenu du parcours"
+    }
+
+    public var dictionaryTitle: String { "Dictionnaire de \(primaryContentLabel)" }
+
+    public var offlineContentLabel: String { "\(primaryContentLabel) · contenu embarqué" }
+
     public var streakDays: Int {
         let days = snapshot.lessonProgress.values.compactMap { $0.completedAt }.map { Calendar.current.startOfDay(for: $0) }
         guard !days.isEmpty else { return 0 }

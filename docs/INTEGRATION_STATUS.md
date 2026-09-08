@@ -1,36 +1,101 @@
 # Statut d’intégration
 
-Mis à jour le 2026-09-08 pour le commit courant
-`906135d` (`906135d99a1bc1ee69d16a28f81963a657a58d65`). Le [run Apple
-34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577) est
-terminé avec succès : le job package a validé 47/47 tests portables, le job
-macOS le build et 2/2 tests UI, et le job iOS 7/7 tests UI. Les trois jobs sont
-verts.
+Mis à jour le 2026-09-08 pour le candidat de contenu `2026.10.0`. Le dépôt
+n’a pas encore reçu le commit de ce candidat ; les résultats Apple mentionnés
+ci-dessous sont donc des références historiques et ne valident pas encore ce
+diff final.
 
-## État
+## Bundle et curriculum
 
-- Le dépôt contient quatre leçons, 27 exercices, quatre histoires et 17 cartes ; les trois guides d’écriture (`你`, `我`, `国`) sont livrés avec leurs références et sommes SHA-256.
-- Le package courant contient 47 tests XCTest, dont 7 tests de contrat de contenu ; les 47/47 tests portables passent avec les fixtures courantes. Les targets UI contiennent neuf méthodes au total (7 iOS et 2 macOS), dont les deux parcours d’écriture iOS et le parcours d’oral sans évaluation.
-- La leçon conserve et restaure le brouillon, le feedback et les réponses de dialogue par identifiant stable. Une fin incomplète reste réinitialisable.
-- L’accueil expose la reprise de leçon, l’état du parcours et l’accès aux flashcards. Le dialogue est compact, propose l’écoute des seules répliques mandarin, des cibles chinoises interactives et une réponse écrite vérifiée à partir de la réplique précédente.
-- Les guides d’écriture vérifient chaque trait dans l’ordre, sa direction et sa forme ; un échec reste visible en rouge et peut être retenté. La roadmap relie les nœuds avec un espacement adapté à Dynamic Type ; les cartes conservent leurs choix SM-2.
-- L’oral extrait uniquement le mandarin pour le TTS, conserve la cible, le modèle et le microphone compacts, puis sépare transcription Apple et rapport du `SpeechPronunciationService`. Dans les quatre leçons, l’exercice oral est facultatif : tant qu’aucun provider ni credential n’est configuré, l’état est non configuré et « Passer sans évaluer » enregistre `skipped` sans note ni réussite. Le bilan expose `skippedCount` ; les exercices requis seuls déterminent la complétion et le déblocage de la leçon suivante, sans faux score.
-- Le protocole, l’UI et les fixtures sont prêts pour un fournisseur externe, mais aucun provider externe, compte, credential ou proxy n’est activé ou disponible dans la composition actuelle.
-- Les `Info.plist` iOS et macOS sont séparés ; iOS déclare `UILaunchScreen` et cible iPhone/iPad. Le canevas capture les gestes dans le `ScrollView` via une surface tactile dédiée et les lignes de leçon comme les liens de vocabulaire sont touchables sur toute leur largeur.
+| Élément | Compte livré |
+| --- | ---: |
+| Leçons disponibles dans le cours | 94 |
+| Leçons d’introduction protégées | 4 (`lesson-01` à `lesson-04`) |
+| Séances du plan quotidien | 90 (`lesson-05` à `lesson-94`) |
+| Unités du cours final | 9 |
+| Exercices | 567 (27 introduction + 540 programme) |
+| Histoires inline | 94 |
+| Paragraphes de lecture | 196 |
+| Cartes distinctes | 605 (600 canoniques + 5 extras) |
+| Associations leçon–carte | 911 |
+| Guides de tracé livrés | 3 (`你`, `我`, `国`) |
 
-## Validation CI
+Le catalogue `hsk-legacy-600` contient 600 entrées canoniques. La couverture
+réelle atteint les 300 premiers rangs au jour 30 et les 600 rangs au jour 90 ;
+le jour 30 contient une entrée canonique de rang supérieur pour une scène
+naturelle. Chaque séance est budgétée à 12 minutes de cours et 3 minutes de
+révision. Le manifeste porte `availableLessonCount: 94`, `starterLessonCount: 4`
+et `plannedSessionCount: 90` afin de distinguer le bundle complet du plan.
 
-- Hôte de développement : Debian 13 x86_64 ; Swift/Xcode Apple absents, donc aucun build Apple local n’est possible.
-- Le contrôle local `git diff --check` des documents modifiés est propre.
-- La suite portable actuelle passe à 47/47 ; les fixtures couvrent un rapport fournisseur terminé, les états non configuré/indisponible/en échec, le résultat incertain et le passage sans évaluation. Aucun appel réseau, compte ou credential n’est utilisé.
-- Dans le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577), exécuté sur `906135d`, le job package a validé 47/47 tests portables, le job macOS a validé le build, le smoke UI et 2/2 tests UI, et le job iOS a validé 7/7 tests UI. Les trois jobs ont réussi.
-- Le run [34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020) du commit `249f6d0` a validé les deux parcours d’écriture iOS ; leurs captures sont archivées dans [`docs/screenshots/handwriting-guided-ios.png`](screenshots/handwriting-guided-ios.png) et [`docs/screenshots/handwriting-retry-ios.png`](screenshots/handwriting-retry-ios.png). Ses autres méthodes UI ayant échoué, ce run ne constitue pas une validation globale.
-- Le run courant a validé visuellement le parcours et le dialogue ; les captures de référence du jalon sont archivées dans [`docs/screenshots/roadmap-macos-dark.png`](screenshots/roadmap-macos-dark.png) (1600 × 900, SHA-256 `98b21d6cab2d9026341fe49e04b3fdd6def2c2fb527046bc9d1fc3168e40f132`) et [`docs/screenshots/dialogue-macos-dark.png`](screenshots/dialogue-macos-dark.png) (1600 × 900, SHA-256 `0f816f4fe790409c88ca8776d714e0362dd6608cfbab8364b8a3632709391859`).
-- Le [run historique 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) reste réussi sur `c30d712` pour son périmètre antérieur ; il ne couvre pas les changements du commit courant.
-- CloudKit reste prévu mais inactif : la progression, les documents, les dessins et les enregistrements temporaires restent locaux. Les conflits réseau ne sont pas testés.
+L’alignement primaire du manifeste et du cours est
+`HSK-legacy-2.0` / `2.0` (HSK classique). HSK 3.0 / `2025-11` est conservé
+uniquement dans `standardReferences` et dans les champs `comparisonStandard*`,
+avec le rôle `design-reference-only`. Il ne modifie ni le plan ni les jalons
+livrés. Les exemples corrigés du sidecar comprennent `我今天很快乐。`, la
+traduction française de `我的鼻子不舒服。` (« J’ai une gêne au nez. ») et celle
+de `这里是一个好地方。` (« C’est un bon endroit. »).
 
-## Suite
+Les quatre fixtures protégées d’introduction ont été comparées au payload HEAD :
+identifiants, ordre, objectifs, vocabulaire, blocs, cartes, paires de scripts et
+réponses sont identiques. Seule leur `contentVersion` passe de `2026.09.0` à
+`2026.10.0`, pour rester compatible avec le manifeste commun.
 
-1. Relire le diff complet, vérifier les secrets/fichiers locaux et conserver les documents synchronisés avec le résultat CI.
-2. Compléter l’audit manuel VoiceOver, Dynamic Type, contraste, rendu sombre, clavier et fenêtres sur iPhone, iPad et Mac ; vérifier Speech avec permission accordée.
-3. Activer et tester le client CloudKit seulement lorsque la synchronisation sera effectivement livrée.
+## Contrôles locaux
+
+- `python3 Tools/assemble_90_day_authoring.py` assemble 90 leçons et 8
+  fragments de module.
+- `python3 Tools/content_tool.py generate --input
+  Content/authoring/90-day-authoring.json --root Content` régénère le bundle et
+  exécute son contrôle de fermeture.
+- `python3 Tools/content_tool.py lint --root Content` passe.
+- La couverture indépendante vérifie 300/300 lexèmes aux rangs 1–300 au jour
+  30 et 600/600 aux rangs 1–600 au jour 90.
+- Les identifiants de paragraphes sont uniques (196/196). Les choix de type
+  choix gardent leurs IDs et leurs bonnes réponses ; les 270 exercices
+  `choice`/`listeningChoice` ont une position correcte répartie 92/90/88 entre
+  les trois options après rotation déterministe.
+- `swift test --parallel` passe à **55/55**, dont 12 contrats de contenu, avec
+  le toolchain Swift 6 disponible dans l’environnement Linux.
+- `git diff --check` passe. `Tools/__pycache__/` et les fichiers `.pyc` sont
+  ignorés ; aucun secret, certificat, profil, base locale ou artefact machine
+  n’est destiné au commit.
+
+## Accès et parcours préparés
+
+`AppModel.dailyPlanSession` appelle `CoursePlan.nextSession` à partir des
+leçons réellement complétées. `TodayView` relie cette séance à
+`home.primaryAction`, de sorte qu’un profil ayant terminé les quatre fixtures
+ouvre directement `lesson-05`; après sa complétion, l’accueil propose la
+séance du jour 2. Le test iOS
+`DailyPlanJourneyTests.testDailyPlanOpensLessonFivePersistsListeningAnswerAndAdvancesToDayTwo`
+et son équivalent macOS injectent le journal JSONL, ouvrent cette route,
+restaurent l’écoute après relance, passent l’oral optionnel, terminent L5 et
+vérifient J2.
+
+Le test macOS
+`MacShortReviewSessionJourneyTests.testTodayLimitsReviewThenLeavesRemainingCardsForContinuation`
+prépare 16 cartes dues, vérifie la limite de dix cartes maximum liée au budget,
+évalue exactement la tranche annoncée et vérifie la file restante. Les tests
+résolvent les libellés via `correctChoiceID`, sans supposer une position de
+réponse.
+
+Les sources natives préparées contiennent 8 méthodes UI iOS et 5 méthodes UI
+macOS. Les captures déjà archivées couvrent le parcours et le dialogue macOS,
+ainsi que l’écriture guidée et la reprise iOS ; les nouveaux parcours
+quotidiens et de session courte attachent leurs captures avec XCTest lors du
+prochain runner Apple.
+
+## Validation Apple et limites
+
+Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
+a validé un état antérieur (`906135d`) : 47/47 tests package, 2/2 tests UI
+macOS et 7/7 tests UI iOS. Le [run 34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020)
+a validé deux parcours d’écriture iOS sur `249f6d0`. Ces runs restent des
+preuves historiques ; une validation Apple du présent commit sera produite par
+le workflow automatique après le push.
+
+Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
+Apple, les 8 méthodes iOS, les 5 méthodes macOS, l’audit VoiceOver/Dynamic Type
+et Speech avec permission accordée restent à exécuter sur runner ou appareil.
+CloudKit est prévu mais inactif ; la progression, les dessins et les
+enregistrements temporaires restent locaux.

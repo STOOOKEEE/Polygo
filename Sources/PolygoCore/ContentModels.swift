@@ -65,6 +65,9 @@ public struct CourseManifest: Codable, Hashable, Sendable {
     public let description: LocalizedText
     public let alignment: [CurriculumTag]
     public let modules: [ModuleSummary]
+    /// An authored day-by-day programme. Older bundles omit this field and
+    /// continue to use the lesson sequence as their learning path.
+    public let plan: CoursePlan?
 
     public init(
         schemaVersion: Int = 1,
@@ -74,7 +77,8 @@ public struct CourseManifest: Codable, Hashable, Sendable {
         title: LocalizedText,
         description: LocalizedText,
         alignment: [CurriculumTag],
-        modules: [ModuleSummary]
+        modules: [ModuleSummary],
+        plan: CoursePlan? = nil
     ) {
         self.schemaVersion = schemaVersion
         self.contentVersion = contentVersion
@@ -84,6 +88,7 @@ public struct CourseManifest: Codable, Hashable, Sendable {
         self.description = description
         self.alignment = alignment
         self.modules = modules
+        self.plan = plan
     }
 }
 
@@ -92,12 +97,19 @@ public struct ModuleSummary: Codable, Hashable, Sendable {
     public let order: Int
     public let title: LocalizedText
     public let lessonIDs: [LessonID]
+    /// Optional content-owned short label used by navigation surfaces.
+    /// Keeping it optional preserves the original module JSON contract.
+    public let displayName: LocalizedText?
+    /// Optional curriculum label for readings surfaced from this module.
+    public let level: String?
 
-    public init(id: ModuleID, order: Int, title: LocalizedText, lessonIDs: [LessonID]) {
+    public init(id: ModuleID, order: Int, title: LocalizedText, lessonIDs: [LessonID], displayName: LocalizedText? = nil, level: String? = nil) {
         self.id = id
         self.order = order
         self.title = title
         self.lessonIDs = lessonIDs
+        self.displayName = displayName
+        self.level = level
     }
 }
 
@@ -107,6 +119,9 @@ public struct LessonDocument: Codable, Hashable, Sendable {
     public let id: LessonID
     public let moduleID: ModuleID
     public let order: Int
+    /// Optional content-owned curriculum label for story and lesson surfaces.
+    /// Older lesson files omit it and inherit the module or starter fallback.
+    public let level: String?
     public let title: LocalizedText
     public let summary: LocalizedText
     public let estimatedMinutes: Int
@@ -121,6 +136,7 @@ public struct LessonDocument: Codable, Hashable, Sendable {
         id: LessonID,
         moduleID: ModuleID,
         order: Int,
+        level: String? = nil,
         title: LocalizedText,
         summary: LocalizedText,
         estimatedMinutes: Int,
@@ -134,6 +150,7 @@ public struct LessonDocument: Codable, Hashable, Sendable {
         self.id = id
         self.moduleID = moduleID
         self.order = order
+        self.level = level
         self.title = title
         self.summary = summary
         self.estimatedMinutes = estimatedMinutes
@@ -159,10 +176,32 @@ public struct LearningObjective: Codable, Hashable, Sendable {
 public struct CurriculumTag: Codable, Hashable, Sendable {
     public let framework: String
     public let level: String
+    public let standardID: String?
+    public let standardVersion: String?
+    public let status: String?
 
-    public init(framework: String, level: String) {
+    public init(framework: String, level: String, standardID: String? = nil, standardVersion: String? = nil, status: String? = nil) {
         self.framework = framework
         self.level = level
+        self.standardID = standardID
+        self.standardVersion = standardVersion
+        self.status = status
+    }
+
+    /// A compact label suitable for badges and derived story metadata.
+    public var displayLabel: String {
+        let normalized = framework.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if normalized == "cefr" || normalized == "cecr" { return level }
+        if standardID == "HSK-legacy-2.0"
+            || normalized.contains("legacy")
+            || normalized.contains("classic")
+            || normalized.contains("classique") {
+            return "HSK classique \(level)"
+        }
+        if normalized == "hsk" || normalized.hasPrefix("hsk-") || normalized.hasPrefix("hsk ") {
+            return "HSK \(level)"
+        }
+        return "\(framework) \(level)"
     }
 }
 

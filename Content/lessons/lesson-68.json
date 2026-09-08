@@ -1,0 +1,1003 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-68",
+  "moduleID": "unit-07",
+  "order": 68,
+  "title": {
+    "fr": "Retourner une peinture"
+  },
+  "summary": {
+    "fr": "Demander un échange et rendre une œuvre empruntée dans une classe d’art."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l68-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l68-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-398",
+      "canonicalID": "花|huā|398",
+      "hanzi": "花",
+      "pinyin": "huā",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "花",
+          "vocabularyID": "vocab-hsk20-398",
+          "pinyin": "huā"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "fleur ; dépenser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "花园里有很多花。",
+        "pinyin": "huā yuán lǐ yǒu hěn duō huā。",
+        "translation": {
+          "fr": "Il y a beaucoup de fleurs dans le jardin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "花|huā|398",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 398,
+        "level": 3
+      },
+      "traditionalHanzi": "花"
+    },
+    {
+      "id": "vocab-hsk20-400",
+      "canonicalID": "画|huà|400",
+      "hanzi": "画",
+      "pinyin": "huà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "画",
+          "vocabularyID": "vocab-hsk20-400",
+          "pinyin": "huà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "dessiner ; peinture"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢画画。",
+        "pinyin": "wǒ xǐ huān huà huà。",
+        "translation": {
+          "fr": "J’aime dessiner."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "画|huà|400",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 400,
+        "level": 3
+      },
+      "traditionalHanzi": "畫"
+    },
+    {
+      "id": "vocab-hsk20-402",
+      "canonicalID": "还|huán|402",
+      "hanzi": "还",
+      "pinyin": "huán",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "还",
+          "vocabularyID": "vocab-hsk20-402",
+          "pinyin": "huán"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "rendre ; rembourser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我下课后还书。",
+        "pinyin": "wǒ xià kè hòu huán shū.",
+        "translation": {
+          "fr": "Je rends le livre après le cours."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "还|huán|402",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 402,
+        "level": 3
+      },
+      "traditionalHanzi": "還"
+    },
+    {
+      "id": "vocab-hsk20-405",
+      "canonicalID": "换|huàn|405",
+      "hanzi": "换",
+      "pinyin": "huàn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "换",
+          "vocabularyID": "vocab-hsk20-405",
+          "pinyin": "huàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "changer ; échanger"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想换一件衬衫。",
+        "pinyin": "wǒ xiǎng huàn yí jiàn chèn shān.",
+        "translation": {
+          "fr": "Je veux changer de chemise."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "换|huàn|405",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 405,
+        "level": 3
+      },
+      "traditionalHanzi": "換"
+    },
+    {
+      "id": "vocab-hsk20-406",
+      "canonicalID": "黄|huáng|406",
+      "hanzi": "黄",
+      "pinyin": "huáng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "黄",
+          "vocabularyID": "vocab-hsk20-406",
+          "pinyin": "huáng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "jaune"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "她穿着一件黄色衣服。",
+        "pinyin": "tā chuān zhe yí jiàn huáng sè yī fu.",
+        "translation": {
+          "fr": "Elle porte un vêtement jaune."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "黄|huáng|406",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 406,
+        "level": 3
+      },
+      "traditionalHanzi": "黃"
+    },
+    {
+      "id": "vocab-hsk20-308",
+      "canonicalID": "搬|bān|308",
+      "hanzi": "搬",
+      "pinyin": "bān",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "搬",
+          "vocabularyID": "vocab-hsk20-308",
+          "pinyin": "bān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "déménager ; déplacer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我们明天搬家。",
+        "pinyin": "wǒ men míng tiān bān jiā。",
+        "translation": {
+          "fr": "Nous déménageons demain."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "搬|bān|308",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 308,
+        "level": 3
+      },
+      "traditionalHanzi": "搬"
+    },
+    {
+      "id": "vocab-hsk20-323",
+      "canonicalID": "表演|biǎo yǎn|323",
+      "hanzi": "表演",
+      "pinyin": "biǎo yǎn",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "表演",
+          "vocabularyID": "vocab-hsk20-323",
+          "pinyin": "biǎo yǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "spectacle ; jouer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学校今天有表演。",
+        "pinyin": "xué xiào jīn tiān yǒu biǎo yǎn。",
+        "translation": {
+          "fr": "Il y a un spectacle à l’école aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "表演|biǎo yǎn|323",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 323,
+        "level": 3
+      },
+      "traditionalHanzi": "表演"
+    },
+    {
+      "id": "vocab-hsk20-473",
+      "canonicalID": "年轻|nián qīng|473",
+      "hanzi": "年轻",
+      "pinyin": "nián qīng",
+      "toneNumbers": [
+        2,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "年轻",
+          "vocabularyID": "vocab-hsk20-473",
+          "pinyin": "nián qīng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "jeune"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "那位年轻老师会说英语。",
+        "pinyin": "nà wèi nián qīng lǎo shī huì shuō Yīng yǔ.",
+        "translation": {
+          "fr": "Ce jeune professeur sait parler anglais."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "年轻|nián qīng|473",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 473,
+        "level": 3
+      },
+      "traditionalHanzi": "年輕"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-68-grammar-01",
+      "title": {
+        "fr": "Grammaire — 还 + objet (huán)"
+      },
+      "body": {
+        "fr": "Dans 还书 ou 还画, 还 se prononce huán et signifie rendre quelque chose.\nExemple 1 : 我会把画还给老师。\nwǒ huì bǎ huà huán gěi lǎo shī.\nJe rendrai la peinture au professeur."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-68-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-398",
+        "vocab-hsk20-400",
+        "vocab-hsk20-402",
+        "vocab-hsk20-405",
+        "vocab-hsk20-406",
+        "vocab-hsk20-308",
+        "vocab-hsk20-323",
+        "vocab-hsk20-473"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "id": "block-lesson-68-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "这幅画是黄色的吗？",
+          "pinyin": "zhè fú huà shì huáng sè de ma?",
+          "translation": {
+            "fr": "Cette peinture est-elle jaune ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "是。我想换一幅，因为颜色太暗了。",
+          "pinyin": "shì. wǒ xiǎng huàn yì fú, yīn wèi yán sè tài àn le.",
+          "translation": {
+            "fr": "Oui. Je voudrais en changer parce que la couleur est trop sombre."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你明天把画还给老师吗？",
+          "pinyin": "nǐ míng tiān bǎ huà huán gěi lǎo shī ma?",
+          "translation": {
+            "fr": "Tu rends la peinture au professeur demain ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "当然，我会把它还给老师。",
+          "pinyin": "dāng rán, wǒ huì bǎ tā huán gěi lǎo shī.",
+          "translation": {
+            "fr": "Bien sûr, je la rendrai au professeur."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 64
+      }
+    },
+    {
+      "id": "block-lesson-68-reading",
+      "storyID": "story-lesson-68",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "Une couleur à remplacer"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-68-p1",
+          "hanzi": "Tao借了一幅画，但是颜色太暗，他想换一幅。",
+          "pinyin": "Tao jiè le yì fú huà, dàn shì yán sè tài àn, tā xiǎng huàn yì fú.",
+          "translation": {
+            "fr": "Tao a emprunté une peinture, mais la couleur est trop sombre et il veut en changer."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-68-p2",
+          "hanzi": "明天他会把第一幅画还给老师。",
+          "pinyin": "míng tiān tā huì bǎ dì yī fú huà huán gěi lǎo shī.",
+          "translation": {
+            "fr": "Demain, il rendra la première peinture au professeur."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l68-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-meaning",
+          "prompt": {
+            "fr": "Que signifie 还 dans la scène ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "dessiner"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "rendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jaune"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l68-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « Je rendrai la peinture ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "把画",
+            "pinyin": "bǎ huà",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "还给老师",
+            "pinyin": "huán gěi lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我会",
+            "pinyin": "wǒ huì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我会把画还给老师。",
+          "我会把画还给老师"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l68-fill",
+          "prompt": {
+            "fr": "Complète : 我想___一幅画。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我想___一幅画。",
+        "acceptedAnswers": [
+          "换"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l68-listen",
+          "prompt": {
+            "fr": "Que fera Tao demain ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你明天把画还给老师吗？",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il fermera la classe."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il rendra la peinture."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il achètera du thé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l68-speak",
+          "prompt": {
+            "fr": "Dis que la peinture est jaune."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "这幅画是黄色的吗？",
+        "referencePinyin": "zhè fú huà shì huáng sè de ma?",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "这幅画是黄色的吗？",
+          "这幅画是黄色的吗"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-reading",
+          "prompt": {
+            "fr": "Pourquoi Tao veut-il changer de peinture ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Sa couleur est trop sombre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle est trop grande."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle est trop claire."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "id": "block-lesson-68-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-398",
+        "vocab-hsk20-400",
+        "vocab-hsk20-402",
+        "vocab-hsk20-405",
+        "vocab-hsk20-406",
+        "vocab-hsk20-308",
+        "vocab-hsk20-323",
+        "vocab-hsk20-473"
+      ],
+      "objectiveIDs": [
+        "l68-understand",
+        "l68-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 64
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-398",
+      "vocabularyID": "vocab-hsk20-398",
+      "front": {
+        "hanzi": "花",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "花",
+        "pinyin": "huā",
+        "text": {
+          "fr": "fleur ; dépenser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-400",
+      "vocabularyID": "vocab-hsk20-400",
+      "front": {
+        "hanzi": "画",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "画",
+        "pinyin": "huà",
+        "text": {
+          "fr": "dessiner ; peinture"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-402",
+      "vocabularyID": "vocab-hsk20-402",
+      "front": {
+        "hanzi": "还",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "还",
+        "pinyin": "huán",
+        "text": {
+          "fr": "rendre ; rembourser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-405",
+      "vocabularyID": "vocab-hsk20-405",
+      "front": {
+        "hanzi": "换",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "换",
+        "pinyin": "huàn",
+        "text": {
+          "fr": "changer ; échanger"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-406",
+      "vocabularyID": "vocab-hsk20-406",
+      "front": {
+        "hanzi": "黄",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "黄",
+        "pinyin": "huáng",
+        "text": {
+          "fr": "jaune"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-308",
+      "vocabularyID": "vocab-hsk20-308",
+      "front": {
+        "hanzi": "搬",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "搬",
+        "pinyin": "bān",
+        "text": {
+          "fr": "déménager ; déplacer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-323",
+      "vocabularyID": "vocab-hsk20-323",
+      "front": {
+        "hanzi": "表演",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "表演",
+        "pinyin": "biǎo yǎn",
+        "text": {
+          "fr": "spectacle ; jouer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-473",
+      "vocabularyID": "vocab-hsk20-473",
+      "front": {
+        "hanzi": "年轻",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "年轻",
+        "pinyin": "nián qīng",
+        "text": {
+          "fr": "jeune"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 64,
+    "allocationRange": "days46-90",
+    "theme": "Retourner une peinture",
+    "themeLabel": {
+      "fr": "Retourner une peinture"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-398",
+      "vocab-hsk20-400",
+      "vocab-hsk20-402",
+      "vocab-hsk20-405",
+      "vocab-hsk20-406"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-308",
+      "vocab-hsk20-323",
+      "vocab-hsk20-473"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-398",
+      "hsk20-400",
+      "hsk20-402",
+      "hsk20-405",
+      "hsk20-406"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-308",
+      "hsk20-323",
+      "hsk20-473"
+    ],
+    "grammarPattern": "还 + objet (huán)",
+    "grammarAnchor": "hsk20-402",
+    "allocationNewVocabularyIDs": [
+      "hsk20-398",
+      "hsk20-400",
+      "hsk20-402",
+      "hsk20-405",
+      "hsk20-406"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-308",
+      "hsk20-323",
+      "hsk20-473"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-07",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

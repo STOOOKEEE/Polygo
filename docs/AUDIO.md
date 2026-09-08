@@ -136,9 +136,10 @@ ne fabriquent ni note de prononciation ni auto-évaluation positive.
 
 Le conteneur Linux ne possède ni SDK Apple ni Xcode. Le [run Apple
 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577), sur le
-commit `906135d`, a toutefois validé les 47/47 tests portables, les 2/2 tests UI
-macOS et les 7/7 tests UI iOS ; il couvre le chemin oral non configuré et le
-passage sans évaluation. Les permissions, la disponibilité des voix,
+commit historique `906135d`, a validé 47/47 tests portables, 2/2 tests UI
+macOS et 7/7 tests UI iOS ; il couvre le chemin oral non configuré et le
+passage sans évaluation, mais ne valide pas le bundle final de 94 leçons. Les
+permissions, la disponibilité des voix,
 l’interruption audio et le parcours enregistrement/réécoute/transcription avec
 un fournisseur configuré restent à vérifier sur appareil. Les fixtures du
 protocole vérifient déjà les états terminé, non configuré et sans résultat ; la

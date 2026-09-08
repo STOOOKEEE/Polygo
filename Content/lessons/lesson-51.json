@@ -1,0 +1,1004 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-51",
+  "moduleID": "unit-05",
+  "order": 51,
+  "title": {
+    "fr": "Une rue bien entretenue"
+  },
+  "summary": {
+    "fr": "Décrire les qualités d’une rue et expliquer un petit problème de hauteur."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l51-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l51-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-303",
+      "canonicalID": "矮|ǎi|303",
+      "hanzi": "矮",
+      "pinyin": "ǎi",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "矮",
+          "vocabularyID": "vocab-hsk20-303",
+          "pinyin": "ǎi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "petit (de taille)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我哥哥不高，我妹妹很矮。",
+        "pinyin": "wǒ gē gē bù gāo， wǒ mèi mèi hěn ǎi。",
+        "translation": {
+          "fr": "Mon frère n’est pas grand, ma sœur est petite."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "矮|ǎi|303",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 303,
+        "level": 3
+      },
+      "traditionalHanzi": "矮"
+    },
+    {
+      "id": "vocab-hsk20-332",
+      "canonicalID": "差|chà|332",
+      "hanzi": "差",
+      "pinyin": "chà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "差",
+          "vocabularyID": "vocab-hsk20-332",
+          "pinyin": "chà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mauvais ; différer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天的天气很差。",
+        "pinyin": "jīn tiān de tiān qì hěn chà。",
+        "translation": {
+          "fr": "Le temps est mauvais aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "差|chà|332",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 332,
+        "level": 3
+      },
+      "traditionalHanzi": "差"
+    },
+    {
+      "id": "vocab-hsk20-333",
+      "canonicalID": "长|zhǎng|333",
+      "hanzi": "长",
+      "pinyin": "zhǎng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "长",
+          "vocabularyID": "vocab-hsk20-333",
+          "pinyin": "zhǎng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "grandir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "孩子正在长大。",
+        "pinyin": "hái zi zhèng zài zhǎng dà。",
+        "translation": {
+          "fr": "L’enfant grandit."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "长|zhǎng|333",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 333,
+        "level": 3
+      },
+      "traditionalHanzi": "長"
+    },
+    {
+      "id": "vocab-hsk20-344",
+      "canonicalID": "聪明|cōng ming|344",
+      "hanzi": "聪明",
+      "pinyin": "cōng ming",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "聪明",
+          "vocabularyID": "vocab-hsk20-344",
+          "pinyin": "cōng ming"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "intelligent"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的老师很聪明。",
+        "pinyin": "wǒ de lǎo shī hěn cōng míng。",
+        "translation": {
+          "fr": "Mon professeur est très intelligent."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "聪明|cōng ming|344",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 344,
+        "level": 3
+      },
+      "traditionalHanzi": "聰明"
+    },
+    {
+      "id": "vocab-hsk20-377",
+      "canonicalID": "干净|gān jìng|377",
+      "hanzi": "干净",
+      "pinyin": "gān jìng",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "干净",
+          "vocabularyID": "vocab-hsk20-377",
+          "pinyin": "gān jìng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "propre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "房间很干净。",
+        "pinyin": "fáng jiān hěn gān jìng。",
+        "translation": {
+          "fr": "La chambre est très propre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "干净|gān jìng|377",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 377,
+        "level": 3
+      },
+      "traditionalHanzi": "乾淨"
+    },
+    {
+      "id": "vocab-hsk20-452",
+      "canonicalID": "脸|liǎn|452",
+      "hanzi": "脸",
+      "pinyin": "liǎn",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "脸",
+          "vocabularyID": "vocab-hsk20-452",
+          "pinyin": "liǎn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "visage"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "洗完脸以后，她戴上眼镜。",
+        "pinyin": "xǐ wán liǎn yǐ hòu, tā dài shàng yǎn jìng.",
+        "translation": {
+          "fr": "Après s’être lavé le visage, elle met ses lunettes."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "脸|liǎn|452",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 452,
+        "level": 3
+      },
+      "traditionalHanzi": "臉"
+    },
+    {
+      "id": "vocab-hsk20-507",
+      "canonicalID": "刷牙|shuā yá|507",
+      "hanzi": "刷牙",
+      "pinyin": "shuā yá",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "刷牙",
+          "vocabularyID": "vocab-hsk20-507",
+          "pinyin": "shuā yá"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "se brosser les dents"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天早上刷牙。",
+        "pinyin": "wǒ měi tiān zǎo shang shuā yá.",
+        "translation": {
+          "fr": "Je me brosse les dents chaque matin."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "刷牙|shuā yá|507",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 507,
+        "level": 3
+      },
+      "traditionalHanzi": "刷牙"
+    },
+    {
+      "id": "vocab-hsk20-515",
+      "canonicalID": "疼|téng|515",
+      "hanzi": "疼",
+      "pinyin": "téng",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "疼",
+          "vocabularyID": "vocab-hsk20-515",
+          "pinyin": "téng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "faire mal ; douloureux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的腿还有一点疼。",
+        "pinyin": "wǒ de tuǐ hái yǒu yì diǎn téng.",
+        "translation": {
+          "fr": "Ma jambe me fait encore un peu mal."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "疼|téng|515",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 515,
+        "level": 3
+      },
+      "traditionalHanzi": "疼"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-51-grammar-01",
+      "title": {
+        "fr": "Grammaire — 被 + agent"
+      },
+      "body": {
+        "fr": "被 présente ce qui subit une action et peut ensuite préciser l’agent.\nExemple 1 : 雨水被风吹进来了。\nyǔ shuǐ bèi fēng chuī jìn lái le.\nL’eau de pluie a été poussée à l’intérieur par le vent."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-51-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-303",
+        "vocab-hsk20-332",
+        "vocab-hsk20-333",
+        "vocab-hsk20-344",
+        "vocab-hsk20-377",
+        "vocab-hsk20-452",
+        "vocab-hsk20-507",
+        "vocab-hsk20-515"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "id": "block-lesson-51-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你看，这条街很干净。",
+          "pinyin": "nǐ kàn, zhè tiáo jiē hěn gān jìng.",
+          "translation": {
+            "fr": "Regarde, cette rue est très propre."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "那栋楼很长，但是入口有点矮。",
+          "pinyin": "nà dòng lóu hěn cháng, dàn shì rù kǒu yǒu diǎn ǎi.",
+          "translation": {
+            "fr": "Cet immeuble est long, mais l’entrée est un peu basse."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "打扫的人很聪明，知道哪里最差。",
+          "pinyin": "dǎ sǎo de rén hěn cōng ming, zhī dào nǎ lǐ zuì chà.",
+          "translation": {
+            "fr": "Les personnes qui nettoient sont astucieuses et savent où c’est le pire."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "雨水被风吹进来了，我们一起看看。",
+          "pinyin": "yǔ shuǐ bèi fēng chuī jìn lái le, wǒ men yì qǐ kàn kan.",
+          "translation": {
+            "fr": "L’eau de pluie a été poussée à l’intérieur par le vent ; regardons ensemble."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 47
+      }
+    },
+    {
+      "id": "block-lesson-51-reading",
+      "storyID": "story-lesson-51",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "Le porche de l’immeuble"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-51-p1",
+          "hanzi": "街道很干净，只有入口还需要打扫。",
+          "pinyin": "jiē dào hěn gān jìng, zhǐ yǒu rù kǒu hái xū yào dǎ sǎo.",
+          "translation": {
+            "fr": "La rue est propre ; seul le porche doit encore être nettoyé."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-51-p2",
+          "hanzi": "入口很矮，雨水被风吹到里面。",
+          "pinyin": "rù kǒu hěn ǎi, yǔ shuǐ bèi fēng chuī dào lǐ miàn.",
+          "translation": {
+            "fr": "L’entrée est basse et l’eau de pluie est poussée à l’intérieur par le vent."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l51-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-meaning",
+          "prompt": {
+            "fr": "Que signifie 矮 à propos de l’entrée ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "basse"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "propre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "longue"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l51-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « La rue est propre ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "干净",
+            "pinyin": "gān jìng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "街道",
+            "pinyin": "jiē dào",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "街道很干净。",
+          "街道很干净"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l51-fill",
+          "prompt": {
+            "fr": "Complète : 入口有点___。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "sentence": "入口有点___。",
+        "acceptedAnswers": [
+          "矮"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l51-listen",
+          "prompt": {
+            "fr": "Que s’est-il passé dans le porche ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "promptText": "雨水被风吹进来了，我们一起看看。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "La pluie a été poussée à l’intérieur par le vent."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le mur est devenu plus long."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "La rue a disparu."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l51-speak",
+          "prompt": {
+            "fr": "Décris la rue en une phrase."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "你看，这条街很干净。",
+        "referencePinyin": "nǐ kàn, zhè tiáo jiē hěn gān jìng.",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "你看，这条街很干净。",
+          "你看，这条街很干净"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-reading",
+          "prompt": {
+            "fr": "Quelle partie doit encore être nettoyée ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le toit de l’école."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "La rue entière."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’entrée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "id": "block-lesson-51-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-303",
+        "vocab-hsk20-332",
+        "vocab-hsk20-333",
+        "vocab-hsk20-344",
+        "vocab-hsk20-377",
+        "vocab-hsk20-452",
+        "vocab-hsk20-507",
+        "vocab-hsk20-515"
+      ],
+      "objectiveIDs": [
+        "l51-understand",
+        "l51-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 47
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-303",
+      "vocabularyID": "vocab-hsk20-303",
+      "front": {
+        "hanzi": "矮",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "矮",
+        "pinyin": "ǎi",
+        "text": {
+          "fr": "petit (de taille)"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-332",
+      "vocabularyID": "vocab-hsk20-332",
+      "front": {
+        "hanzi": "差",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "差",
+        "pinyin": "chà",
+        "text": {
+          "fr": "mauvais ; différer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-333",
+      "vocabularyID": "vocab-hsk20-333",
+      "front": {
+        "hanzi": "长",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "长",
+        "pinyin": "zhǎng",
+        "text": {
+          "fr": "grandir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-344",
+      "vocabularyID": "vocab-hsk20-344",
+      "front": {
+        "hanzi": "聪明",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "聪明",
+        "pinyin": "cōng ming",
+        "text": {
+          "fr": "intelligent"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-377",
+      "vocabularyID": "vocab-hsk20-377",
+      "front": {
+        "hanzi": "干净",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "干净",
+        "pinyin": "gān jìng",
+        "text": {
+          "fr": "propre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-452",
+      "vocabularyID": "vocab-hsk20-452",
+      "front": {
+        "hanzi": "脸",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "脸",
+        "pinyin": "liǎn",
+        "text": {
+          "fr": "visage"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-507",
+      "vocabularyID": "vocab-hsk20-507",
+      "front": {
+        "hanzi": "刷牙",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "刷牙",
+        "pinyin": "shuā yá",
+        "text": {
+          "fr": "se brosser les dents"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-515",
+      "vocabularyID": "vocab-hsk20-515",
+      "front": {
+        "hanzi": "疼",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "疼",
+        "pinyin": "téng",
+        "text": {
+          "fr": "faire mal ; douloureux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 47,
+    "allocationRange": "days46-90",
+    "theme": "Une rue bien entretenue",
+    "themeLabel": {
+      "fr": "Une rue bien entretenue"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-303",
+      "vocab-hsk20-332",
+      "vocab-hsk20-333",
+      "vocab-hsk20-344",
+      "vocab-hsk20-377"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-452",
+      "vocab-hsk20-507",
+      "vocab-hsk20-515"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-303",
+      "hsk20-332",
+      "hsk20-333",
+      "hsk20-344",
+      "hsk20-377"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-452",
+      "hsk20-507",
+      "hsk20-515"
+    ],
+    "grammarPattern": "被 + agent",
+    "grammarAnchor": "hsk20-303",
+    "allocationNewVocabularyIDs": [
+      "hsk20-303",
+      "hsk20-332",
+      "hsk20-333",
+      "hsk20-344",
+      "hsk20-377"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-452",
+      "hsk20-507",
+      "hsk20-515"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-05",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

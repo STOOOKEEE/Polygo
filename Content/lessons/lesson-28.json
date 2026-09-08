@@ -1,0 +1,1347 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-28",
+  "moduleID": "unit-03",
+  "order": 28,
+  "title": {
+    "fr": "Entrer chez le médecin"
+  },
+  "summary": {
+    "fr": "Répondre au médecin et décider quoi faire selon son état."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 2",
+  "objectives": [
+    {
+      "id": "l28-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l28-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-195",
+      "canonicalID": "还|hái|195",
+      "hanzi": "还",
+      "pinyin": "hái",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "还",
+          "vocabularyID": "vocab-hsk20-195",
+          "pinyin": "hái"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "encore ; aussi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我还要喝茶。",
+        "pinyin": "wǒ hái yào hē chá。",
+        "translation": {
+          "fr": "Je veux encore boire du thé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "还|hái|195",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 195,
+        "level": 2
+      },
+      "traditionalHanzi": "還"
+    },
+    {
+      "id": "vocab-hsk20-196",
+      "canonicalID": "回答|huí dá|196",
+      "hanzi": "回答",
+      "pinyin": "huí dá",
+      "toneNumbers": [
+        2,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "回答",
+          "vocabularyID": "vocab-hsk20-196",
+          "pinyin": "huí dá"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "répondre ; réponse"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请回答这个问题。",
+        "pinyin": "qǐng huí dá zhè ge wèn tí。",
+        "translation": {
+          "fr": "Réponds à cette question, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "回答|huí dá|196",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 196,
+        "level": 2
+      },
+      "traditionalHanzi": "回答"
+    },
+    {
+      "id": "vocab-hsk20-202",
+      "canonicalID": "介绍|jiè shào|202",
+      "hanzi": "介绍",
+      "pinyin": "jiè shào",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "介绍",
+          "vocabularyID": "vocab-hsk20-202",
+          "pinyin": "jiè shào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "présenter ; introduction"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请介绍你的朋友。",
+        "pinyin": "qǐng jiè shào nǐ de péng yǒu。",
+        "translation": {
+          "fr": "Présente ton ami, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "介绍|jiè shào|202",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 202,
+        "level": 2
+      },
+      "traditionalHanzi": "介紹"
+    },
+    {
+      "id": "vocab-hsk20-203",
+      "canonicalID": "近|jìn|203",
+      "hanzi": "近",
+      "pinyin": "jìn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "近",
+          "vocabularyID": "vocab-hsk20-203",
+          "pinyin": "jìn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "proche"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "学校离这里很近。",
+        "pinyin": "xué xiào lí zhè lǐ hěn jìn。",
+        "translation": {
+          "fr": "L’école est très proche d’ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "近|jìn|203",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 203,
+        "level": 2
+      },
+      "traditionalHanzi": "近"
+    },
+    {
+      "id": "vocab-hsk20-204",
+      "canonicalID": "进|jìn|204",
+      "hanzi": "进",
+      "pinyin": "jìn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "进",
+          "vocabularyID": "vocab-hsk20-204",
+          "pinyin": "jìn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "entrer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请进教室。",
+        "pinyin": "qǐng jìn jiào shì。",
+        "translation": {
+          "fr": "Entre dans la classe, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "进|jìn|204",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 204,
+        "level": 2
+      },
+      "traditionalHanzi": "進"
+    },
+    {
+      "id": "vocab-hsk20-205",
+      "canonicalID": "就|jiù|205",
+      "hanzi": "就",
+      "pinyin": "jiù",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "就",
+          "vocabularyID": "vocab-hsk20-205",
+          "pinyin": "jiù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "alors ; justement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我马上就回来。",
+        "pinyin": "wǒ mǎ shàng jiù huí lái。",
+        "translation": {
+          "fr": "Je reviens tout de suite."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "就|jiù|205",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 205,
+        "level": 2
+      },
+      "traditionalHanzi": "就"
+    },
+    {
+      "id": "vocab-hsk20-206",
+      "canonicalID": "觉得|jué de|206",
+      "hanzi": "觉得",
+      "pinyin": "jué de",
+      "toneNumbers": [
+        2,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "觉得",
+          "vocabularyID": "vocab-hsk20-206",
+          "pinyin": "jué de"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "trouver ; penser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我觉得这个菜很好吃。",
+        "pinyin": "wǒ jué de zhè ge cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Je trouve ce plat très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "觉得|jué de|206",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 206,
+        "level": 2
+      },
+      "traditionalHanzi": "覺得"
+    },
+    {
+      "id": "vocab-hsk20-208",
+      "canonicalID": "开始|kāi shǐ|208",
+      "hanzi": "开始",
+      "pinyin": "kāi shǐ",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "开始",
+          "vocabularyID": "vocab-hsk20-208",
+          "pinyin": "kāi shǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "commencer ; début"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "电影开始了。",
+        "pinyin": "diàn yǐng kāi shǐ le。",
+        "translation": {
+          "fr": "Le film a commencé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "开始|kāi shǐ|208",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 208,
+        "level": 2
+      },
+      "traditionalHanzi": "開始"
+    },
+    {
+      "id": "vocab-hsk20-210",
+      "canonicalID": "可能|kě néng|210",
+      "hanzi": "可能",
+      "pinyin": "kě néng",
+      "toneNumbers": [
+        3,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "可能",
+          "vocabularyID": "vocab-hsk20-210",
+          "pinyin": "kě néng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "possible ; peut-être"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "他可能在家。",
+        "pinyin": "tā kě néng zài jiā。",
+        "translation": {
+          "fr": "Il est peut-être à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "可能|kě néng|210",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 210,
+        "level": 2
+      },
+      "traditionalHanzi": "可能"
+    },
+    {
+      "id": "vocab-hsk20-211",
+      "canonicalID": "可以|kě yǐ|211",
+      "hanzi": "可以",
+      "pinyin": "kě yǐ",
+      "toneNumbers": [
+        3,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "可以",
+          "vocabularyID": "vocab-hsk20-211",
+          "pinyin": "kě yǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "pouvoir ; être permis"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "现在可以进去吗？",
+        "pinyin": "xiàn zài kě yǐ jìn qù ma？",
+        "translation": {
+          "fr": "Peut-on entrer maintenant ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "可以|kě yǐ|211",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 211,
+        "level": 2
+      },
+      "traditionalHanzi": "可以"
+    },
+    {
+      "id": "vocab-hsk20-171",
+      "canonicalID": "得|de|171",
+      "hanzi": "得",
+      "pinyin": "de",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "得",
+          "vocabularyID": "vocab-hsk20-171",
+          "pinyin": "de"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule de complément"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我说得很清楚。",
+        "pinyin": "wǒ shuō de hěn qīng chǔ。",
+        "translation": {
+          "fr": "Je parle très clairement."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "得|de|171",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 171,
+        "level": 2
+      },
+      "traditionalHanzi": "得"
+    },
+    {
+      "id": "vocab-hsk20-178",
+      "canonicalID": "非常|fēi cháng|178",
+      "hanzi": "非常",
+      "pinyin": "fēi cháng",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "非常",
+          "vocabularyID": "vocab-hsk20-178",
+          "pinyin": "fēi cháng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "très ; extrêmement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这件衣服非常漂亮。",
+        "pinyin": "zhè jiàn yī fú fēi cháng piào liàng。",
+        "translation": {
+          "fr": "Ce vêtement est très joli."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "非常|fēi cháng|178",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 178,
+        "level": 2
+      },
+      "traditionalHanzi": "非常"
+    },
+    {
+      "id": "vocab-hsk20-185",
+      "canonicalID": "公斤|gōng jīn|185",
+      "hanzi": "公斤",
+      "pinyin": "gōng jīn",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "公斤",
+          "vocabularyID": "vocab-hsk20-185",
+          "pinyin": "gōng jīn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "kilogramme"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我要两公斤苹果。",
+        "pinyin": "wǒ yào liǎng gōng jīn píng guǒ。",
+        "translation": {
+          "fr": "Je veux deux kilos de pommes."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "公斤|gōng jīn|185",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 185,
+        "level": 2
+      },
+      "traditionalHanzi": "公斤"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-28-grammar-01",
+      "title": {
+        "fr": "Grammaire — 如果…就…"
+      },
+      "body": {
+        "fr": "如果 pose une condition et 就 présente sa conséquence.\nExemple 1 : 如果可以，就现在进去。\nrú guǒ kě yǐ， jiù xiàn zài jìn qù。\nSi c’est possible, entre maintenant."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-28-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-195",
+        "vocab-hsk20-196",
+        "vocab-hsk20-202",
+        "vocab-hsk20-203",
+        "vocab-hsk20-204",
+        "vocab-hsk20-205",
+        "vocab-hsk20-206",
+        "vocab-hsk20-208",
+        "vocab-hsk20-210",
+        "vocab-hsk20-211",
+        "vocab-hsk20-171",
+        "vocab-hsk20-178",
+        "vocab-hsk20-185"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "id": "block-lesson-28-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你还不舒服吗？",
+          "pinyin": "nǐ hái bù shū fú ma？",
+          "translation": {
+            "fr": "Tu ne te sens toujours pas bien ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "是。我回答医生的问题以后才能进来。",
+          "pinyin": "shì。 wǒ huí dá yī shēng de wèn tí yǐ hòu cái néng jìn lái。",
+          "translation": {
+            "fr": "Oui. Je peux entrer seulement après avoir répondu aux questions du médecin."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "你觉得哪里不舒服？",
+          "pinyin": "nǐ jué de nǎ lǐ bù shū fú？",
+          "translation": {
+            "fr": "Où te sens-tu mal ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我觉得头很热，但是医院很近。",
+          "pinyin": "wǒ jué de tóu hěn rè， dàn shì yī yuàn hěn jìn。",
+          "translation": {
+            "fr": "J’ai la tête très chaude, mais l’hôpital est proche."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "如果你能走，就现在进去。",
+          "pinyin": "rú guǒ nǐ néng zǒu， jiù xiàn zài jìn qù。",
+          "translation": {
+            "fr": "Si tu peux marcher, entre maintenant."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "可以，谢谢你介绍这位医生。",
+          "pinyin": "kě yǐ， xiè xiè nǐ jiè shào zhè wèi yī shēng。",
+          "translation": {
+            "fr": "D’accord, merci de m’avoir présenté ce médecin."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 24
+      }
+    },
+    {
+      "id": "block-lesson-28-reading",
+      "storyID": "story-lesson-28",
+      "level": "HSK classique 2",
+      "title": {
+        "fr": "Le rendez-vous"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-28-p1",
+          "hanzi": "Tao觉得身体不舒服，先回答医生的问题，然后进入医院。",
+          "pinyin": "Tao jué de shēn tǐ bù shū fú， xiān huí dá yī shēng de wèn tí， rán hòu jìn rù yī yuàn。",
+          "translation": {
+            "fr": "Tao ne se sent pas bien ; il répond d’abord aux questions du médecin, puis entre dans l’hôpital."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-28-p2",
+          "hanzi": "医院离家很近。如果他可以走路，就不用坐车。",
+          "pinyin": "yī yuàn lí jiā hěn jìn。 rú guǒ tā kě yǐ zǒu lù， jiù bù yòng zuò chē。",
+          "translation": {
+            "fr": "L’hôpital est très près de chez lui. S’il peut marcher, il n’a pas besoin de prendre une voiture."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l28-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l28-meaning",
+          "prompt": {
+            "fr": "Que signifie 回答 ?"
+          },
+          "instruction": {
+            "fr": "Choisis l’action de Tao."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "préparer"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "vendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "répondre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l28-order",
+          "prompt": {
+            "fr": "Construis « L’hôpital est proche ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "很近",
+            "pinyin": "hěn jìn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "医院",
+            "pinyin": "yī yuàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "。",
+            "pinyin": "。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "b",
+          "a",
+          "c"
+        ],
+        "acceptedVariants": [
+          "医院很近。",
+          "医院很近"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l28-fill",
+          "prompt": {
+            "fr": "Complète : 如果你能走，___现在进去。"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": true
+        },
+        "sentence": "如果你能走，___现在进去。",
+        "acceptedAnswers": [
+          "就"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l28-listen",
+          "prompt": {
+            "fr": "Que doit faire Tao avant d’entrer ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "promptText": "先回答医生的问题。",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Acheter un cadeau."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Lire le journal."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Répondre aux questions du médecin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l28-speak",
+          "prompt": {
+            "fr": "Dis « Si tu peux marcher, entre maintenant ». "
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "如果你能走，就现在进去。",
+        "referencePinyin": "rú guǒ nǐ néng zǒu， jiù xiàn zài jìn qù。",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "如果你能走，就现在进去。"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l28-reading",
+          "prompt": {
+            "fr": "Pourquoi Tao n’a-t-il pas besoin de voiture ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "L’hôpital est proche."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il pleut beaucoup."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il est en retard."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "id": "block-lesson-28-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-195",
+        "vocab-hsk20-196",
+        "vocab-hsk20-202",
+        "vocab-hsk20-203",
+        "vocab-hsk20-204",
+        "vocab-hsk20-205"
+      ],
+      "objectiveIDs": [
+        "l28-understand",
+        "l28-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 24
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-195",
+      "vocabularyID": "vocab-hsk20-195",
+      "front": {
+        "hanzi": "还",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "还",
+        "pinyin": "hái",
+        "text": {
+          "fr": "encore ; aussi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-196",
+      "vocabularyID": "vocab-hsk20-196",
+      "front": {
+        "hanzi": "回答",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "回答",
+        "pinyin": "huí dá",
+        "text": {
+          "fr": "répondre ; réponse"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-202",
+      "vocabularyID": "vocab-hsk20-202",
+      "front": {
+        "hanzi": "介绍",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "介绍",
+        "pinyin": "jiè shào",
+        "text": {
+          "fr": "présenter ; introduction"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-203",
+      "vocabularyID": "vocab-hsk20-203",
+      "front": {
+        "hanzi": "近",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "近",
+        "pinyin": "jìn",
+        "text": {
+          "fr": "proche"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-204",
+      "vocabularyID": "vocab-hsk20-204",
+      "front": {
+        "hanzi": "进",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "进",
+        "pinyin": "jìn",
+        "text": {
+          "fr": "entrer"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-205",
+      "vocabularyID": "vocab-hsk20-205",
+      "front": {
+        "hanzi": "就",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "就",
+        "pinyin": "jiù",
+        "text": {
+          "fr": "alors ; justement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-206",
+      "vocabularyID": "vocab-hsk20-206",
+      "front": {
+        "hanzi": "觉得",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "觉得",
+        "pinyin": "jué de",
+        "text": {
+          "fr": "trouver ; penser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-208",
+      "vocabularyID": "vocab-hsk20-208",
+      "front": {
+        "hanzi": "开始",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "开始",
+        "pinyin": "kāi shǐ",
+        "text": {
+          "fr": "commencer ; début"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-210",
+      "vocabularyID": "vocab-hsk20-210",
+      "front": {
+        "hanzi": "可能",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "可能",
+        "pinyin": "kě néng",
+        "text": {
+          "fr": "possible ; peut-être"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-211",
+      "vocabularyID": "vocab-hsk20-211",
+      "front": {
+        "hanzi": "可以",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "可以",
+        "pinyin": "kě yǐ",
+        "text": {
+          "fr": "pouvoir ; être permis"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-171",
+      "vocabularyID": "vocab-hsk20-171",
+      "front": {
+        "hanzi": "得",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "得",
+        "pinyin": "de",
+        "text": {
+          "fr": "particule de complément"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-178",
+      "vocabularyID": "vocab-hsk20-178",
+      "front": {
+        "hanzi": "非常",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "非常",
+        "pinyin": "fēi cháng",
+        "text": {
+          "fr": "très ; extrêmement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-185",
+      "vocabularyID": "vocab-hsk20-185",
+      "front": {
+        "hanzi": "公斤",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "公斤",
+        "pinyin": "gōng jīn",
+        "text": {
+          "fr": "kilogramme"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 24,
+    "allocationRange": "days06-45",
+    "theme": "health",
+    "newVocabularyIDs": [
+      "vocab-hsk20-195",
+      "vocab-hsk20-196",
+      "vocab-hsk20-202",
+      "vocab-hsk20-203",
+      "vocab-hsk20-204",
+      "vocab-hsk20-205",
+      "vocab-hsk20-206",
+      "vocab-hsk20-208",
+      "vocab-hsk20-210",
+      "vocab-hsk20-211"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-171",
+      "vocab-hsk20-178",
+      "vocab-hsk20-185"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-195",
+      "hsk20-196",
+      "hsk20-202",
+      "hsk20-203",
+      "hsk20-204",
+      "hsk20-205",
+      "hsk20-206",
+      "hsk20-208",
+      "hsk20-210",
+      "hsk20-211"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-171",
+      "hsk20-178",
+      "hsk20-185"
+    ],
+    "allocationNewVocabularyIDs": [
+      "hsk20-195",
+      "hsk20-196",
+      "hsk20-202",
+      "hsk20-203",
+      "hsk20-204",
+      "hsk20-205",
+      "hsk20-206",
+      "hsk20-208",
+      "hsk20-210",
+      "hsk20-211"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-171",
+      "hsk20-178",
+      "hsk20-185"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-02",
+    "sectionID": "section-01",
+    "unitID": "unit-03",
+    "newVocabularyCount": 10,
+    "extraVocabularyIDs": []
+  }
+}

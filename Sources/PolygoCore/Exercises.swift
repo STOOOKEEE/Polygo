@@ -38,7 +38,7 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case header, choices, correctChoiceID
         case tokens, correctOrder
         case sentence, acceptedAnswers, caseSensitive
-        case promptAudio, replayLimit
+        case promptAudio, promptText, replayLimit
         case referenceText, referencePinyin, referenceAudio, acceptedTranscripts, allowSelfRating
         case targetHanzi, guideAsset, expectedStrokeCount
         case cardID
@@ -91,7 +91,7 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case .fillBlank(let value):
             try container.encode(Kind.fillBlank, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.sentence, forKey: .sentence); try container.encode(value.acceptedAnswers, forKey: .acceptedAnswers); try container.encode(value.caseSensitive, forKey: .caseSensitive)
         case .listeningChoice(let value):
-            try container.encode(Kind.listeningChoice, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.promptAudio, forKey: .promptAudio); try container.encode(value.choices, forKey: .choices); try container.encode(value.correctChoiceID, forKey: .correctChoiceID); try container.encodeIfPresent(value.replayLimit, forKey: .replayLimit)
+            try container.encode(Kind.listeningChoice, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encodeIfPresent(value.promptAudio, forKey: .promptAudio); try container.encodeIfPresent(value.promptText, forKey: .promptText); try container.encode(value.choices, forKey: .choices); try container.encode(value.correctChoiceID, forKey: .correctChoiceID); try container.encodeIfPresent(value.replayLimit, forKey: .replayLimit)
         case .speaking(let value):
             try container.encode(Kind.speaking, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.referenceText, forKey: .referenceText); try container.encode(value.referencePinyin, forKey: .referencePinyin); try container.encodeIfPresent(value.referenceAudio, forKey: .referenceAudio); try container.encode(value.acceptedTranscripts, forKey: .acceptedTranscripts); try container.encode(value.allowSelfRating, forKey: .allowSelfRating)
         case .handwriting(let value):
@@ -168,13 +168,22 @@ public struct FillBlankExercise: Codable, Hashable, Sendable {
 
 public struct ListeningChoiceExercise: Codable, Hashable, Sendable {
     public let header: ExerciseHeader
-    public let promptAudio: AssetReference
+    /// A delivered recording, when the content pack includes one.
+    public let promptAudio: AssetReference?
+    /// Mandarin text for local TTS when no recording has been delivered.
+    public let promptText: String?
     public let choices: [Choice]
     public let correctChoiceID: String
     public let replayLimit: Int?
 
-    public init(header: ExerciseHeader, promptAudio: AssetReference, choices: [Choice], correctChoiceID: String, replayLimit: Int? = nil) {
-        self.header = header; self.promptAudio = promptAudio; self.choices = choices; self.correctChoiceID = correctChoiceID; self.replayLimit = replayLimit
+    public init(header: ExerciseHeader, promptAudio: AssetReference? = nil, promptText: String? = nil, choices: [Choice], correctChoiceID: String, replayLimit: Int? = nil) {
+        self.header = header
+        self.promptAudio = promptAudio
+        let normalizedPromptText = promptText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.promptText = normalizedPromptText?.isEmpty == false ? normalizedPromptText : nil
+        self.choices = choices
+        self.correctChoiceID = correctChoiceID
+        self.replayLimit = replayLimit
     }
 }
 

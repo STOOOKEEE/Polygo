@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "lesson-90",
+  "moduleID": "unit-09",
+  "order": 90,
+  "title": {
+    "fr": "Une erreur à la banque"
+  },
+  "summary": {
+    "fr": "Rectifier une supposition et utiliser un service bancaire avec calme."
+  },
+  "estimatedMinutes": 12,
+  "level": "HSK classique 3",
+  "objectives": [
+    {
+      "id": "l90-understand",
+      "required": true,
+      "statement": {
+        "fr": "Comprendre la scène et les informations essentielles."
+      }
+    },
+    {
+      "id": "l90-produce",
+      "required": true,
+      "statement": {
+        "fr": "Réutiliser une structure dans une phrase courte."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-567",
+      "canonicalID": "以为|yǐ wéi|567",
+      "hanzi": "以为",
+      "pinyin": "yǐ wéi",
+      "toneNumbers": [
+        3,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "以为",
+          "vocabularyID": "vocab-hsk20-567",
+          "pinyin": "yǐ wéi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "croire à tort ; penser"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我以为今天是星期日。",
+        "pinyin": "wǒ yǐ wéi jīn tiān shì xīng qī rì.",
+        "translation": {
+          "fr": "Je croyais à tort qu’on était dimanche aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "以为|yǐ wéi|567",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 567,
+        "level": 3
+      },
+      "traditionalHanzi": "以爲"
+    },
+    {
+      "id": "vocab-hsk20-569",
+      "canonicalID": "银行|yín háng|569",
+      "hanzi": "银行",
+      "pinyin": "yín háng",
+      "toneNumbers": [
+        2,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "银行",
+          "vocabularyID": "vocab-hsk20-569",
+          "pinyin": "yín háng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "banque"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "银行下午五点关门。",
+        "pinyin": "yín háng xià wǔ wǔ diǎn guān mén.",
+        "translation": {
+          "fr": "La banque ferme à dix-sept heures."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "银行|yín háng|569",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 569,
+        "level": 3
+      },
+      "traditionalHanzi": "銀行"
+    },
+    {
+      "id": "vocab-hsk20-572",
+      "canonicalID": "用|yòng|572",
+      "hanzi": "用",
+      "pinyin": "yòng",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "用",
+          "vocabularyID": "vocab-hsk20-572",
+          "pinyin": "yòng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "utiliser ; emploi"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我用手机查地图。",
+        "pinyin": "wǒ yòng shǒu jī chá dì tú.",
+        "translation": {
+          "fr": "J’utilise mon téléphone pour consulter une carte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "用|yòng|572",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 572,
+        "level": 3
+      },
+      "traditionalHanzi": "用"
+    },
+    {
+      "id": "vocab-hsk20-574",
+      "canonicalID": "有名|yǒu míng|574",
+      "hanzi": "有名",
+      "pinyin": "yǒu míng",
+      "toneNumbers": [
+        3,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "有名",
+          "vocabularyID": "vocab-hsk20-574",
+          "pinyin": "yǒu míng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "célèbre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个地方因为茶叶有名。",
+        "pinyin": "zhè ge dì fāng yīn wèi chá yè yǒu míng.",
+        "translation": {
+          "fr": "Cet endroit est célèbre pour son thé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "有名|yǒu míng|574",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 574,
+        "level": 3
+      },
+      "traditionalHanzi": "有名"
+    },
+    {
+      "id": "vocab-hsk20-575",
+      "canonicalID": "又|yòu|575",
+      "hanzi": "又",
+      "pinyin": "yòu",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "又",
+          "vocabularyID": "vocab-hsk20-575",
+          "pinyin": "yòu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "encore ; de nouveau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "他又忘记带钥匙了。",
+        "pinyin": "tā yòu wàng jì dài yào shi le.",
+        "translation": {
+          "fr": "Il a encore oublié de prendre les clés."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "又|yòu|575",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 575,
+        "level": 3
+      },
+      "traditionalHanzi": "又"
+    },
+    {
+      "id": "vocab-hsk20-556",
+      "canonicalID": "要求|yāo qiú|556",
+      "hanzi": "要求",
+      "pinyin": "yāo qiú",
+      "toneNumbers": [
+        1,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "要求",
+          "vocabularyID": "vocab-hsk20-556",
+          "pinyin": "yāo qiú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "demander ; exiger"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "老师提出了三个要求。",
+        "pinyin": "lǎo shī tí chū le sān ge yāo qiú.",
+        "translation": {
+          "fr": "Le professeur a formulé trois exigences."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "要求|yāo qiú|556",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 556,
+        "level": 3
+      },
+      "traditionalHanzi": "要求"
+    },
+    {
+      "id": "vocab-hsk20-558",
+      "canonicalID": "一般|yì bān|558",
+      "hanzi": "一般",
+      "pinyin": "yì bān",
+      "toneNumbers": [
+        4,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "一般",
+          "vocabularyID": "vocab-hsk20-558",
+          "pinyin": "yì bān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "général ; ordinaire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我一般七点起床。",
+        "pinyin": "wǒ yì bān qī diǎn qǐ chuáng.",
+        "translation": {
+          "fr": "En général, je me lève à sept heures."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "一般|yì bān|558",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 558,
+        "level": 3
+      },
+      "traditionalHanzi": "一般"
+    },
+    {
+      "id": "vocab-hsk20-559",
+      "canonicalID": "一边|yī biān|559",
+      "hanzi": "一边",
+      "pinyin": "yī biān",
+      "toneNumbers": [
+        1,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "一边",
+          "vocabularyID": "vocab-hsk20-559",
+          "pinyin": "yī biān"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "un côté ; tout en"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "她一边听音乐，一边做饭。",
+        "pinyin": "tā yì biān tīng yīn yuè, yì biān zuò fàn.",
+        "translation": {
+          "fr": "Elle écoute de la musique tout en cuisinant."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "一边|yī biān|559",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 559,
+        "level": 3
+      },
+      "traditionalHanzi": "一邊"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-lesson-90-grammar-01",
+      "title": {
+        "fr": "Grammaire — 以为…，其实…"
+      },
+      "body": {
+        "fr": "以为 présente une croyance erronée ; 其实 la corrige avec le fait réel.\nExemple 1 : 我以为银行关门了，其实它又开了。\nwǒ yǐ wéi yín háng guān mén le, qí shí tā yòu kāi le.\nJe croyais que la banque était fermée ; en fait elle a rouvert."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-lesson-90-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-567",
+        "vocab-hsk20-569",
+        "vocab-hsk20-572",
+        "vocab-hsk20-574",
+        "vocab-hsk20-575",
+        "vocab-hsk20-556",
+        "vocab-hsk20-558",
+        "vocab-hsk20-559"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "id": "block-lesson-90-dialogue",
+      "lines": [
+        {
+          "speaker": "Mina",
+          "hanzi": "你以为银行已经关门了吗？",
+          "pinyin": "nǐ yǐ wéi yín háng yǐ jīng guān mén le ma?",
+          "translation": {
+            "fr": "Tu croyais que la banque était déjà fermée ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "是，但是它又开了。",
+          "pinyin": "shì, dàn shì tā yòu kāi le.",
+          "translation": {
+            "fr": "Oui, mais elle a rouvert."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "可以用手机转钱吗？",
+          "pinyin": "kě yǐ yòng shǒu jī zhuǎn qián ma?",
+          "translation": {
+            "fr": "Peut-on transférer de l’argent avec le téléphone ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "可以。这家银行很有名，办理业务很方便。",
+          "pinyin": "kě yǐ. zhè jiā yín háng hěn yǒu míng, bàn lǐ yè wù hěn fāng biàn.",
+          "translation": {
+            "fr": "Oui. Cette banque est très connue et ses services sont pratiques."
+          },
+          "audio": null
+        }
+      ],
+      "kind": "dialogue",
+      "metadata": {
+        "stage": "understand",
+        "skill": "listening",
+        "lessonDay": 86
+      }
+    },
+    {
+      "id": "block-lesson-90-reading",
+      "storyID": "story-lesson-90",
+      "level": "HSK classique 3",
+      "title": {
+        "fr": "La banque finalement ouverte"
+      },
+      "paragraphs": [
+        {
+          "id": "lesson-90-p1",
+          "hanzi": "Tao以为银行关门了，其实银行又开了。",
+          "pinyin": "Tao yǐ wéi yín háng guān mén le, qí shí yín háng yòu kāi le.",
+          "translation": {
+            "fr": "Tao croyait que la banque était fermée ; en fait elle a rouvert."
+          },
+          "segmentation": [],
+          "audio": null
+        },
+        {
+          "id": "lesson-90-p2",
+          "hanzi": "Mina教他用手机办理事情，他们很快完成了。",
+          "pinyin": "Mina jiāo tā yòng shǒu jī bàn lǐ shì qing, tā men hěn kuài wán chéng le.",
+          "translation": {
+            "fr": "Mina lui apprend à utiliser le téléphone pour faire la démarche et ils terminent rapidement."
+          },
+          "segmentation": [],
+          "audio": null
+        }
+      ],
+      "comprehensionExerciseIDs": [
+        "ex-l90-reading"
+      ],
+      "kind": "reading",
+      "metadata": {
+        "stage": "transfer",
+        "skill": "reading",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-meaning",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-meaning",
+          "prompt": {
+            "fr": "Que signifie 以为 ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens correspondant au dialogue."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "croire à tort"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "utiliser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "célèbre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-order",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l90-order",
+          "prompt": {
+            "fr": "Remets les groupes dans l’ordre : « La banque a rouvert ». "
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "又开了",
+            "pinyin": "yòu kāi le",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "银行",
+            "pinyin": "yín háng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b"
+        ],
+        "acceptedVariants": [
+          "银行又开了。",
+          "银行又开了"
+        ]
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-fill",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l90-fill",
+          "prompt": {
+            "fr": "Complète : 可以___手机转钱吗？"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "sentence": "可以___手机转钱吗？",
+        "acceptedAnswers": [
+          "用"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-listen",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l90-listen",
+          "prompt": {
+            "fr": "Que croyait Tao ?"
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "promptText": "是，但是它又开了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Que la banque était fermée."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Que la banque était au nord."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Que le thé était froid."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-speak",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-l90-speak",
+          "prompt": {
+            "fr": "Dis que tu peux utiliser ton téléphone."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": false
+        },
+        "referenceText": "可以。这家银行很有名，办理业务很方便。",
+        "referencePinyin": "kě yǐ. zhè jiā yín háng hěn yǒu míng, bàn lǐ yè wù hěn fāng biàn.",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "可以。这家银行很有名，办理业务很方便。",
+          "可以。这家银行很有名，办理业务很方便"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "produce",
+        "skill": "speaking",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-reading",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-reading",
+          "prompt": {
+            "fr": "Comment terminent-ils la démarche ?"
+          },
+          "instruction": {
+            "fr": "Relis les deux paragraphes avant de répondre."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Jamais."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Rapidement."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après une semaine."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "recover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "id": "block-lesson-90-recap",
+      "vocabularyIDs": [
+        "vocab-hsk20-567",
+        "vocab-hsk20-569",
+        "vocab-hsk20-572",
+        "vocab-hsk20-574",
+        "vocab-hsk20-575",
+        "vocab-hsk20-556",
+        "vocab-hsk20-558",
+        "vocab-hsk20-559"
+      ],
+      "objectiveIDs": [
+        "l90-understand",
+        "l90-produce"
+      ],
+      "kind": "recap",
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 86
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-567",
+      "vocabularyID": "vocab-hsk20-567",
+      "front": {
+        "hanzi": "以为",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "以为",
+        "pinyin": "yǐ wéi",
+        "text": {
+          "fr": "croire à tort ; penser"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-569",
+      "vocabularyID": "vocab-hsk20-569",
+      "front": {
+        "hanzi": "银行",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "银行",
+        "pinyin": "yín háng",
+        "text": {
+          "fr": "banque"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-572",
+      "vocabularyID": "vocab-hsk20-572",
+      "front": {
+        "hanzi": "用",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "用",
+        "pinyin": "yòng",
+        "text": {
+          "fr": "utiliser ; emploi"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-574",
+      "vocabularyID": "vocab-hsk20-574",
+      "front": {
+        "hanzi": "有名",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "有名",
+        "pinyin": "yǒu míng",
+        "text": {
+          "fr": "célèbre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-575",
+      "vocabularyID": "vocab-hsk20-575",
+      "front": {
+        "hanzi": "又",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "又",
+        "pinyin": "yòu",
+        "text": {
+          "fr": "encore ; de nouveau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-556",
+      "vocabularyID": "vocab-hsk20-556",
+      "front": {
+        "hanzi": "要求",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "要求",
+        "pinyin": "yāo qiú",
+        "text": {
+          "fr": "demander ; exiger"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-558",
+      "vocabularyID": "vocab-hsk20-558",
+      "front": {
+        "hanzi": "一般",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "一般",
+        "pinyin": "yì bān",
+        "text": {
+          "fr": "général ; ordinaire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-559",
+      "vocabularyID": "vocab-hsk20-559",
+      "front": {
+        "hanzi": "一边",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "一边",
+        "pinyin": "yī biān",
+        "text": {
+          "fr": "un côté ; tout en"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "allocationDay": 86,
+    "allocationRange": "days46-90",
+    "theme": "Une erreur à la banque",
+    "themeLabel": {
+      "fr": "Une erreur à la banque"
+    },
+    "phase": "classic-301-600",
+    "checkpoint": false,
+    "newVocabularyIDs": [
+      "vocab-hsk20-567",
+      "vocab-hsk20-569",
+      "vocab-hsk20-572",
+      "vocab-hsk20-574",
+      "vocab-hsk20-575"
+    ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-556",
+      "vocab-hsk20-558",
+      "vocab-hsk20-559"
+    ],
+    "newCanonicalIDs": [
+      "hsk20-567",
+      "hsk20-569",
+      "hsk20-572",
+      "hsk20-574",
+      "hsk20-575"
+    ],
+    "reusedCanonicalIDs": [
+      "hsk20-556",
+      "hsk20-558",
+      "hsk20-559"
+    ],
+    "grammarPattern": "以为…，其实…",
+    "grammarAnchor": "hsk20-567",
+    "allocationNewVocabularyIDs": [
+      "hsk20-567",
+      "hsk20-569",
+      "hsk20-572",
+      "hsk20-574",
+      "hsk20-575"
+    ],
+    "allocationReusedVocabularyIDs": [
+      "hsk20-556",
+      "hsk20-558",
+      "hsk20-559"
+    ],
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-03",
+    "sectionID": "section-01",
+    "unitID": "unit-09",
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": []
+  }
+}

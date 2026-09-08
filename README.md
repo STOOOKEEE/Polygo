@@ -4,16 +4,14 @@ Syllune est l’application Polygo d’apprentissage du mandarin : des leçons
 courtes, du pinyin et des tons, des caractères, de l’oral, de l’écriture, des
 histoires et une révision locale. Le contenu et l’interface sont originaux.
 
-Le dépôt cible iOS/iPadOS 17 et macOS 14. Le package Swift est portable ; les
-cibles SwiftUI et les adaptateurs Apple se construisent sur macOS. Le statut
-actuel est décrit dans [docs/QA_REPORT.md](docs/QA_REPORT.md) et
-[docs/INTEGRATION_STATUS.md](docs/INTEGRATION_STATUS.md). Le code courant est
-le commit `906135d`. Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
-est terminé avec succès : son job package a validé 47/47 tests portables, son
-job macOS le build, le smoke UI et 2/2 tests UI, et son job iOS 7/7 tests UI.
-Les trois jobs sont verts. Le run historique
-[34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) reste
-la référence verte du jalon précédent.
+Le dépôt cible iOS/iPadOS 17 et macOS 14. Le candidat de contenu est en
+version `2026.10.0`. Le manifeste et le cours utilisent comme référence
+principale HSK classique / legacy `HSK-legacy-2.0`, version normative `2.0`.
+HSK 3.0 `2025-11` reste mentionné séparément comme référence de conception pour
+une migration future ; il ne constitue pas l’alignement de ce programme.
+L’état détaillé se trouve dans [docs/QA_REPORT.md](docs/QA_REPORT.md),
+[docs/INTEGRATION_STATUS.md](docs/INTEGRATION_STATUS.md) et
+[docs/RELEASE.md](docs/RELEASE.md).
 
 ## Démarrage local
 
@@ -24,9 +22,16 @@ Depuis la racine du dépôt :
 
 ```sh
 swift test --parallel
-command -v xcodegen >/dev/null 2>&1 || brew install xcodegen
 xcodegen generate --spec project.yml
 open Polygo.xcodeproj
+```
+
+Pour reconstruire le pack et le bundle de contenu :
+
+```sh
+python3 Tools/assemble_90_day_authoring.py
+python3 Tools/content_tool.py generate --input Content/authoring/90-day-authoring.json --root Content
+python3 Tools/content_tool.py lint --root Content
 ```
 
 Dans Xcode, exécuter `PolygoApp` sur un simulateur iOS 17 (le même target sert
@@ -43,70 +48,63 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-`swift test --parallel` est le contrôle portable à lancer avant les builds
-Apple. Le package courant contient 47 tests XCTest, dont 7 tests de contrat de
-contenu ; les 47/47 tests portables passent avec les fixtures courantes. La
-cible UI contient le smoke français, le parcours de reprise et le parcours de
-fin/revue, avec les deux parcours d’écriture guidée et libre. Les quatre
-leçons rendent l’oral facultatif : « Passer sans évaluer » produit `skipped`, le
-bilan expose le nombre d’exercices passés, et les seuls exercices requis
-conditionnent la complétion et le déblocage de la leçon suivante, sans faux
-score.
+La suite portable actuelle compte **55 tests**, dont **12 contrats de contenu** ;
+le dernier contrôle local est passé à **55/55**. Xcode et les SDK Apple ne sont
+pas présents dans l’environnement Linux, donc les tests UI natifs doivent être
+exécutés sur un runner Apple. Les sources préparent 8 méthodes UI iOS et 5
+méthodes UI macOS, avec captures conservées par XCTest.
 
-## Ce qui est livré
+## Contenu livré
 
-La première tranche de contenu est la version `2026.09.0` :
+Le bundle contient 94 leçons dans 9 unités :
 
-- un cours et l’unité `unit-01` ;
-- 4 leçons, 27 exercices, 4 histoires et 17 cartes de révision ;
-- 17 entrées lexicales avec pinyin accentué, tons et formes simplifiée/traditionnelle ;
-- 3 guides de tracé pour `你`, `我` et `国` sous `Content/assets/handwriting/` ;
-- des textes et transcriptions hors ligne en français ; aucun audio de référence n’est embarqué ;
-- une reprise locale des brouillons, du feedback et des réponses de dialogue ;
-- un accueil avec reprise de leçon, parcours visible et accès aux flashcards.
+- 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 90 séances
+  planifiées (`lesson-05` à `lesson-94`) ;
+- 567 exercices au total : 27 dans l’introduction et 540 dans le programme de
+  90 jours ;
+- 94 histoires inline et 196 paragraphes de lecture ;
+- 605 cartes et entrées lexicales distinctes, soit 600 lexèmes canoniques et
+  5 mots supplémentaires de contexte, pour 911 associations leçon–carte ;
+- 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
+  n’est embarqué.
 
-### Accueil adaptatif Mac et iPhone
+Chaque séance du programme vise 15 minutes, réparties en 12 minutes de cours et
+3 minutes de révision. Le plan couvre les 300 lexèmes de rang 1 à 300 au jour
+30 (301 entrées canoniques livrées à ce point, dont un mot de rang supérieur
+pour une scène naturelle), puis les 600 lexèmes au jour 90. Une couverture
+éditoriale ne prouve ni acquisition ni réussite à un examen.
 
-Le commit `c30d712` livre un accueil qui met la prochaine leçon en avant dans
-un hero coloré avec progression et action principale. Sur Mac, deux colonnes
-placent le hero à côté du parcours numéroté et des flashcards ; sur iPhone, ces
-surfaces s’empilent. La barre latérale vise 240 points (plage 210–280), et le
-choix explicite d’« Aujourd’hui » recrée la racine malgré un chargement tardif.
-Une leçon ouverte depuis l’accueil conserve sa route, son brouillon et son
-feedback au redémarrage.
+Les cartes des séances quotidiennes affichent le hanzi seul au recto ; le
+pinyin et le sens français sont révélés au verso. Les choix des 270 exercices de
+type choix sont tournés de manière déterministe pendant la génération selon le
+jour et la position de l’exercice : les identifiants et les bonnes réponses ne
+changent pas, mais la première option n’est pas toujours correcte.
 
-Le [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185)
-est vert : 43/43 tests package, 2 méthodes UI macOS et 4 méthodes UI iOS ont
-réussi. Les captures natives validées sont disponibles ici :
+Les quatre leçons d’introduction conservent exactement leur contenu apprenant,
+leurs identifiants, leurs exercices, leurs cartes et leurs paires simplifié /
+traditionnel. Leur seule mise à jour de payload est la version de contenu
+`2026.10.0` nécessaire au bundle commun.
 
-- [Accueil macOS en mode sombre](docs/screenshots/home-macos-dark.png) — 1600 × 900, SHA-256 `b511d762e3a23fe4e50c47d4e89e3bc9df2c1300fa9bd38e194d38f4c0dc5ece` ;
-- [Accueil iPhone en mode sombre](docs/screenshots/home-ios-dark.png) — 1206 × 2622, SHA-256 `aaeb9113f6fcf4f3205cfc658905faea3df94fae7e68325e8b6a61559e0ca597`.
+## Parcours et reprise
 
-Le run 34225700577 a validé visuellement le parcours et le dialogue du commit
-`906135d` ; les captures de référence de ce jalon sont archivées ici :
+`TodayView` ouvre directement la séance courante via `CoursePlan.nextSession` et
+l’action `home.primaryAction`. Le parcours natif préparé injecte les quatre
+complétions d’introduction, ouvre `lesson-05`, reprend l’écoute après relance,
+passe l’oral facultatif, termine la séance et vérifie que l’accueil affiche le
+jour 2. Le parcours macOS exerce le même chemin. La reprise locale conserve le
+brouillon, le feedback et les réponses de dialogue par identifiant stable.
 
-- [Parcours macOS en mode sombre](docs/screenshots/roadmap-macos-dark.png) — 1600 × 900, SHA-256 `98b21d6cab2d9026341fe49e04b3fdd6def2c2fb527046bc9d1fc3168e40f132` ;
-- [Dialogue macOS en mode sombre](docs/screenshots/dialogue-macos-dark.png) — 1600 × 900, SHA-256 `0f816f4fe790409c88ca8776d714e0362dd6608cfbab8364b8a3632709391859`.
+La carte de révision accessible depuis Aujourd’hui est limitée à dix cartes au
+maximum, selon le budget de la séance ; la route Cartes conserve la file due
+complète. Le parcours macOS de session courte prépare 16 cartes dues, en évalue
+exactement la tranche annoncée et conserve les cartes restantes pour
+« Poursuivre ».
 
-Les deux parcours d’écriture iOS ont également réussi sur le jalon `249f6d0`
-; le run complet a échoué sur d’autres méthodes UI, donc cette preuve reste
-limitée à ces deux parcours. Leurs captures sont archivées dans
-[`docs/screenshots/handwriting-guided-ios.png`](docs/screenshots/handwriting-guided-ios.png)
-et [`docs/screenshots/handwriting-retry-ios.png`](docs/screenshots/handwriting-retry-ios.png).
-
-Le workflow vérifie les `Info.plist` séparés pour iOS et macOS, la déclaration
-de lancement iOS moderne plein écran (`UILaunchScreen`) et les familles iPhone et
-iPad. Le canevas capture les gestes dans le défilement de la leçon grâce à une
-surface tactile dédiée ; les lignes de leçon et les liens de vocabulaire ont une
-zone de toucher sur toute leur largeur. Le dialogue propose une écoute complète
-en mandarin, des mots chinois interactifs et une réponse écrite contrôlée à
-partir de la réplique précédente.
-
-Le pipeline de contenu part de
-[`Content/manifest.json`](Content/manifest.json), charge le catalogue du cours,
-puis les documents de leçon. Les blocs de lecture portent les quatre histoires.
-Le loader vérifie les versions, les identifiants, les références et les hashes
-des assets.
+Les captures natives déjà archivées comprennent [le parcours macOS](docs/screenshots/roadmap-macos-dark.png),
+[le dialogue macOS](docs/screenshots/dialogue-macos-dark.png), [l’écriture guidée iOS](docs/screenshots/handwriting-guided-ios.png)
+et [la reprise iOS](docs/screenshots/handwriting-retry-ios.png). Les nouvelles
+méthodes de séance quotidienne et de session courte ajoutent leurs propres
+captures lors du prochain runner Apple.
 
 ## Organisation du code
 
@@ -126,51 +124,24 @@ Les contrats et décisions sont détaillés dans
 [docs/CONTENT_SCHEMA.md](docs/CONTENT_SCHEMA.md),
 [docs/AUDIO.md](docs/AUDIO.md), [docs/HANDWRITING.md](docs/HANDWRITING.md),
 [docs/SRS.md](docs/SRS.md), [docs/SYNC.md](docs/SYNC.md) et
-[docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md). Les sources de recherche et
-les choix de produit sont dans [RESEARCH_NOTES.md](RESEARCH_NOTES.md) et
-[DECISIONS.md](DECISIONS.md).
+[docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md).
 
 ## Données locales et limites actuelles
 
 La progression est locale et fonctionne sans compte ni réseau. Le journal et
-le snapshot sont stockés dans le dossier `Application Support/Polygo`. Les
-enregistrements vocaux sont temporaires et supprimés par défaut à la sortie de
-l’exercice ; aucun audio n’est conservé par défaut.
+le snapshot sont stockés dans `Application Support/Polygo`. Les enregistrements
+vocaux sont temporaires et supprimés par défaut à la sortie de l’exercice ;
+aucun audio n’est conservé par défaut.
 
-La lecture orale extrait uniquement le mandarin et utilise `AVSpeechSynthesizer`;
-elle nécessite une voix Mandarin installée sur l’appareil. Les labels et
-instructions françaises ne sont jamais envoyés au TTS. Après un enregistrement,
-`SpeechPracticeView` lance la transcription Apple et le protocole injecté
-`SpeechPronunciationService` séparément. La confiance et le texte transcrit
-restent descriptifs : une transcription seule ne produit aucune note de
-prononciation ou de ton. Tant qu’aucun fournisseur et aucune clé ne sont
-configurés, la composition utilise l’état `unconfigured` et propose « Passer
-sans évaluer », enregistré comme `skipped` sans réussite. Un rapport fixture
-terminé peut afficher le verdict, le score et les lignes par mot, son et ton ;
-le rapport doit venir du fournisseur pour que l’exercice soit évalué.
+La lecture orale extrait uniquement le mandarin et utilise
+`AVSpeechSynthesizer`. Tant qu’aucun fournisseur et aucune clé ne sont
+configurés, la composition affiche l’état non configuré et propose « Passer
+sans évaluer », enregistré comme `skipped` sans réussite. La transcription et sa
+confiance restent descriptives : elles ne produisent aucune note de
+prononciation ou de ton sans rapport fournisseur. Les guides d’écriture sont
+validés localement. CloudKit est prévu mais inactif ; l’application affiche
+honnêtement « Sur cet appareil ».
 
-Le protocole, l’interface et les fixtures sont prêts pour des adaptateurs
-iFlytek ou SpeechSuper derrière un serveur proxy, mais aucun fournisseur
-externe n’est activé dans cette composition : aucun compte, credential ou proxy
-n’est disponible dans ce jalon. Les clés et secrets ne sont jamais embarqués
-dans l’app. Les fixtures du protocole couvrent les états terminé, non configuré,
-indisponible et sans conclusion.
-Les marqueurs de ton restent visuels et pédagogiques, sans faux signal audio.
-L’interface orale compacte garde la cible, le modèle et le microphone
-accessibles sur un écran iPhone standard ; la validation sur appareil avec un
-fournisseur configuré reste à effectuer.
-
-Les guides de tracé disponibles couvrent actuellement trois caractères. La
-synchronisation CloudKit privée est prévue mais inactive : l’application
-affiche donc honnêtement « Sur cet appareil » et ne demande pas de compte
-iCloud pour apprendre. Les conflits CloudKit ne sont donc pas testés ; les
-scénarios de fusion et de reprise couverts concernent le modèle local.
-
-Les labels et groupes d’accessibilité sont présents. L’API
-`.accessibilityLanguage`, incompatible avec les cibles actuelles, n’est pas
-utilisée ; le réglage Sombre est exercé par le smoke, mais le rendu visuel,
-la langue et la prononciation effectives de VoiceOver et les parcours de toucher
-manuel restent à compléter par un audit sur iPhone, iPad et Mac.
-
-Pour les étapes de signature, d’archive, de distribution et la validation finale,
-voir [docs/RELEASE.md](docs/RELEASE.md).
+Les labels et groupes d’accessibilité sont présents. Le rendu visuel, VoiceOver,
+Dynamic Type, les fenêtres étroites, le clavier macOS et Speech avec permission
+accordée restent à auditer manuellement sur appareil.
