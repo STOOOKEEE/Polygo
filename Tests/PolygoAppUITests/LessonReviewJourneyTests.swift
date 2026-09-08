@@ -484,7 +484,7 @@ final class LessonReviewJourneyTests: XCTestCase {
                         XCTFail("Le prompt français manque pour \(exercise.header.id)")
                         continue
                     }
-                    let promptElement = text(containing: prompt)
+                    let promptElement = exerciseMarker(for: exercise)
                     guard promptElement.waitForExistence(timeout: 1) else { continue }
 
                     if text(containingAny: ["Correct", "À revoir", "Passé sans évaluation"]).exists,
@@ -674,10 +674,13 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func firstExercisePrompt() -> XCUIElement {
-        // ChineseSelectableText exposes the authored prompt and its Chinese
-        // token as separate accessibility elements. Match the stable authored
-        // prefix so restart assertions follow the visible exercise.
-        text(containing: "Quel ton porte")
+        app.staticTexts.matching(identifier: "lesson.exercise.ex-l1-tone").firstMatch
+    }
+
+    private func exerciseMarker(for exercise: ExerciseFixture) -> XCUIElement {
+        return app.staticTexts
+            .matching(identifier: "lesson.exercise.\(exercise.header.id)")
+            .firstMatch
     }
 
     private func element(containing value: String, type: XCUIElement.ElementType) -> XCUIElement {

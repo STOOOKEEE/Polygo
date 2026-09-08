@@ -154,7 +154,10 @@ public struct LessonView: View {
                     lessonPreamble(lesson, before: block.0)
                 }
                 HStack {
-                    Text("\(currentIndex + 1) / \(exercises.count)").font(.callout.weight(.semibold)).foregroundStyle(SylluneColor.inkMuted)
+                    Text("\(currentIndex + 1) / \(exercises.count)")
+                        .font(.callout.weight(.semibold))
+                        .foregroundStyle(SylluneColor.inkMuted)
+                        .accessibilityIdentifier("lesson.exercise.\(spec.id.rawValue)")
                     Spacer()
                     ProgressView(value: Double(currentIndex), total: Double(max(1, exercises.count))).tint(SylluneColor.jade).frame(maxWidth: 180)
                 }
