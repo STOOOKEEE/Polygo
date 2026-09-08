@@ -77,6 +77,8 @@ public struct LessonView: View {
         .onDisappear {
             automaticEvaluationTask?.cancel()
             automaticEvaluationTask = nil
+            model.dependencies.audio.stopSpeaking()
+            model.dependencies.audio.stopPlayback()
             scheduleCheckpoint()
         }
     }
@@ -242,7 +244,7 @@ public struct LessonView: View {
     }
 
     private func readingReferenceDisclosure(_ reading: ReadingBlock) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 10) {
             Button {
                 readingReferenceExpanded.toggle()
             } label: {
@@ -263,12 +265,15 @@ public struct LessonView: View {
             .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue)")
             .accessibilityValue(readingReferenceExpanded ? "Développé" : "Réduit")
 
+            ReadingPlaybackControl(reading: reading)
+
             if readingReferenceExpanded {
                 PedagogicalBlockView(
                     block: .reading(reading),
                     vocabulary: lesson?.vocabulary ?? [],
                     objectives: lesson?.objectives ?? [],
-                    languageCodes: model.preferredLanguageCodes
+                    languageCodes: model.preferredLanguageCodes,
+                    showsReadingAudioControl: false
                 )
                 .padding(.top, 12)
             }
@@ -642,6 +647,7 @@ private struct DialogueBlockView: View {
     @State private var playingLineIndex: Int?
     @State private var playbackToken = UUID()
     @State private var playbackMessage: String?
+    @State private var playbackTask: Task<Void, Never>?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -710,6 +716,8 @@ private struct DialogueBlockView: View {
         .padding(14)
         .sylluneCard(radius: 16)
         .onDisappear {
+            playbackTask?.cancel()
+            playbackTask = nil
             playbackToken = UUID()
             isPlaying = false
             playingLineIndex = nil
@@ -873,6 +881,8 @@ private struct DialogueBlockView: View {
 
     private func togglePlayback() {
         if isPlaying {
+            playbackTask?.cancel()
+            playbackTask = nil
             playbackToken = UUID()
             model.dependencies.audio.stopSpeaking()
             model.dependencies.audio.stopPlayback()
@@ -887,26 +897,36 @@ private struct DialogueBlockView: View {
         isPlaying = true
         playingLineIndex = nil
         playbackMessage = nil
-        let text = value.lines.map(\.hanzi).joined(separator: " ")
-        Task { @MainActor in
+        let segments = MandarinSpeechText.dialogueSegments(from: value.lines).map {
+            SpeechSynthesisSegment(
+                text: $0.text,
+                localeIdentifier: "zh-CN",
+                rate: .normal,
+                postUtteranceDelay: $0.postUtteranceDelay
+            )
+        }
+        playbackTask?.cancel()
+        model.dependencies.audio.stopSpeaking()
+        model.dependencies.audio.stopPlayback()
+        playbackTask = Task { @MainActor in
             do {
-                // Synthesis receives only the authored Mandarin lines. This
-                // prevents a French label or instruction from being read as
-                // if it were part of the dialogue.
-                try await model.dependencies.audio.speak(
-                    text: text,
-                    localeIdentifier: "zh-CN",
-                    rate: .normal
-                )
+                // Synthesis receives only the authored Mandarin lines. The
+                // audio service queues each sentence so the learner hears a
+                // short breath between phrases and a longer one when the
+                // speaker changes.
+                try await model.dependencies.audio.speakSequence(segments)
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playbackMessage = "Dialogue lu en mandarin."
             } catch is CancellationError {
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playbackMessage = "Lecture arrêtée."
             } catch {
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playbackMessage = "Audio indisponible hors ligne."
             }
@@ -914,12 +934,16 @@ private struct DialogueBlockView: View {
     }
 
     private func playLine(_ line: DialogueLine, index: Int) {
+        playbackTask?.cancel()
+        playbackTask = nil
+        model.dependencies.audio.stopSpeaking()
+        model.dependencies.audio.stopPlayback()
         let token = UUID()
         playbackToken = token
         isPlaying = true
         playingLineIndex = index
         playbackMessage = nil
-        Task { @MainActor in
+        playbackTask = Task { @MainActor in
             do {
                 if let audio = line.audio {
                     try await model.dependencies.audio.play(asset: audio)
@@ -931,21 +955,116 @@ private struct DialogueBlockView: View {
                     )
                 }
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playingLineIndex = nil
                 playbackMessage = "Réplique de \(line.speaker) lue en mandarin."
             } catch is CancellationError {
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playingLineIndex = nil
                 playbackMessage = "Lecture arrêtée."
             } catch {
                 guard playbackToken == token else { return }
+                playbackTask = nil
                 isPlaying = false
                 playingLineIndex = nil
                 playbackMessage = "Audio indisponible hors ligne."
             }
         }
+    }
+}
+
+private struct ReadingPlaybackControl: View {
+    let reading: ReadingBlock
+    @EnvironmentObject private var model: AppModel
+    @State private var isPlaying = false
+    @State private var playbackToken = UUID()
+    @State private var playbackMessage = "Prêt à écouter."
+    @State private var playbackTask: Task<Void, Never>?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Button(action: togglePlayback) {
+                Label(
+                    isPlaying ? "Arrêter" : "Écouter tout le texte",
+                    systemImage: isPlaying ? "stop.fill" : "speaker.wave.2.fill"
+                )
+            }
+            .buttonStyle(.bordered)
+            .tint(SylluneColor.skyButton)
+            .frame(minHeight: 40)
+            .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue).playAll")
+            .accessibilityLabel(isPlaying ? "Arrêter la lecture du texte" : "Écouter tout le texte")
+            .accessibilityValue(isPlaying ? "Lecture en cours" : "Prêt à écouter")
+            .accessibilityHint("Lit toutes les phrases chinoises dans l’ordre avec une courte pause entre elles.")
+
+            Text(playbackMessage)
+                .font(.caption)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue).playbackStatus")
+        }
+        .onDisappear {
+            stopPlayback(message: "Lecture arrêtée.")
+        }
+    }
+
+    private func togglePlayback() {
+        if isPlaying {
+            stopPlayback(message: "Lecture arrêtée.")
+            return
+        }
+
+        let segments = MandarinSpeechText.readingSegments(from: reading).map {
+            SpeechSynthesisSegment(
+                text: $0.text,
+                localeIdentifier: "zh-CN",
+                rate: .normal,
+                postUtteranceDelay: $0.postUtteranceDelay
+            )
+        }
+        guard !segments.isEmpty else {
+            playbackMessage = "Le texte chinois est indisponible."
+            return
+        }
+
+        let token = UUID()
+        playbackToken = token
+        isPlaying = true
+        playbackMessage = "Lecture en cours…"
+        playbackTask?.cancel()
+        model.dependencies.audio.stopSpeaking()
+        model.dependencies.audio.stopPlayback()
+        playbackTask = Task { @MainActor in
+            do {
+                try await model.dependencies.audio.speakSequence(segments)
+                guard playbackToken == token else { return }
+                playbackTask = nil
+                isPlaying = false
+                playbackMessage = "Lecture terminée."
+            } catch is CancellationError {
+                guard playbackToken == token else { return }
+                playbackTask = nil
+                isPlaying = false
+                playbackMessage = "Lecture arrêtée."
+            } catch {
+                guard playbackToken == token else { return }
+                playbackTask = nil
+                isPlaying = false
+                playbackMessage = "Lecture impossible."
+            }
+        }
+    }
+
+    private func stopPlayback(message: String) {
+        playbackTask?.cancel()
+        playbackTask = nil
+        playbackToken = UUID()
+        model.dependencies.audio.stopSpeaking()
+        model.dependencies.audio.stopPlayback()
+        isPlaying = false
+        playbackMessage = message
     }
 }
 
@@ -956,6 +1075,7 @@ private struct PedagogicalBlockView: View {
     let objectives: [LearningObjective]
     let languageCodes: [String]
     let objectiveResults: [String: Bool]
+    let showsReadingAudioControl: Bool
     let dialogueDraft: Binding<String>?
     let dialogueResult: Binding<Bool?>?
     @EnvironmentObject private var model: AppModel
@@ -966,6 +1086,7 @@ private struct PedagogicalBlockView: View {
         objectives: [LearningObjective] = [],
         languageCodes: [String],
         objectiveResults: [String: Bool] = [:],
+        showsReadingAudioControl: Bool = true,
         dialogueDraft: Binding<String>? = nil,
         dialogueResult: Binding<Bool?>? = nil
     ) {
@@ -974,6 +1095,7 @@ private struct PedagogicalBlockView: View {
         self.objectives = objectives
         self.languageCodes = languageCodes
         self.objectiveResults = objectiveResults
+        self.showsReadingAudioControl = showsReadingAudioControl
         self.dialogueDraft = dialogueDraft
         self.dialogueResult = dialogueResult
     }
@@ -1058,6 +1180,9 @@ private struct PedagogicalBlockView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Label(value.title.resolve(preferred: languageCodes) ?? "Lecture", systemImage: "book.pages")
                     .font(.headline).foregroundStyle(SylluneColor.ink)
+                if showsReadingAudioControl {
+                    ReadingPlaybackControl(reading: value)
+                }
                 ForEach(value.paragraphs) { paragraph in
                     VStack(alignment: .leading, spacing: 4) {
                         ChineseSelectableText(

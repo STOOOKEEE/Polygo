@@ -1,5 +1,18 @@
 import Foundation
 
+/// A Mandarin sentence ready for a narrated reading or dialogue. Timing is
+/// carried beside the text so the app can configure an Apple utterance delay
+/// without adding artificial words or punctuation to learner content.
+public struct MandarinSpeechSegment: Codable, Hashable, Sendable {
+    public let text: String
+    public let postUtteranceDelay: TimeInterval
+
+    public init(text: String, postUtteranceDelay: TimeInterval = 0) {
+        self.text = text
+        self.postUtteranceDelay = min(max(0, postUtteranceDelay), 10)
+    }
+}
+
 /// Keeps only the Hanzi and Mandarin-safe connectors from text that may also
 /// contain a learner-facing instruction in another language. Apple speech
 /// surfaces use this value before sending text to a zh-CN voice.
@@ -7,6 +20,8 @@ public enum MandarinSpeechText {
     private static let chinesePunctuation = CharacterSet(
         charactersIn: "，。！？、；：‘’“”（）《》【】…—·!?.,;:"
     )
+    private static let sentenceEndings = CharacterSet(charactersIn: "。！？!?")
+    private static let sentenceClosers = CharacterSet(charactersIn: "’”）〉》」』】〕］\"")
 
     public static func target(from value: String) -> String {
         var result = ""
@@ -47,6 +62,99 @@ public enum MandarinSpeechText {
 
     public static func containsHanzi(_ value: String) -> Bool {
         value.unicodeScalars.contains(where: isHanzi)
+    }
+
+    /// Splits authored Mandarin into complete sentence utterances while
+    /// retaining its punctuation and removing any surrounding Latin labels.
+    public static func sentences(from value: String) -> [String] {
+        let target = target(from: value)
+        let scalars = Array(target.unicodeScalars)
+        guard !scalars.isEmpty else { return [] }
+
+        var sentences: [String] = []
+        var current = String.UnicodeScalarView()
+        var sentenceEndingIsPending = false
+        for index in scalars.indices {
+            let scalar = scalars[index]
+            current.append(scalar)
+
+            if sentenceEndings.contains(scalar) {
+                // Keep the sentence open through runs such as "？！". A
+                // closing quote is handled on its own iteration so it stays
+                // attached to the sentence that it closes.
+                sentenceEndingIsPending = true
+                let nextScalar = scalars.indices.contains(index + 1) ? scalars[index + 1] : nil
+                let continuesEnding = nextScalar.map {
+                    sentenceEndings.contains($0) || sentenceClosers.contains($0)
+                } ?? false
+                if !continuesEnding {
+                    let sentence = String(current).trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !sentence.isEmpty { sentences.append(sentence) }
+                    current.removeAll()
+                    sentenceEndingIsPending = false
+                }
+                continue
+            }
+
+            guard sentenceEndingIsPending, sentenceClosers.contains(scalar) else {
+                continue
+            }
+
+            let nextScalar = scalars.indices.contains(index + 1) ? scalars[index + 1] : nil
+            let continuesEnding = nextScalar.map {
+                sentenceEndings.contains($0) || sentenceClosers.contains($0)
+            } ?? false
+            if !continuesEnding {
+                let sentence = String(current).trimmingCharacters(in: .whitespacesAndNewlines)
+                if !sentence.isEmpty { sentences.append(sentence) }
+                current.removeAll()
+                sentenceEndingIsPending = false
+            }
+        }
+
+        let trailing = String(current).trimmingCharacters(in: .whitespacesAndNewlines)
+        if !trailing.isEmpty { sentences.append(trailing) }
+        return sentences
+    }
+
+    /// Returns the reading paragraphs in authored order, pausing briefly
+    /// between sentences and a little longer between paragraph turns.
+    public static func readingSegments(from reading: ReadingBlock) -> [MandarinSpeechSegment] {
+        var items: [(paragraphIndex: Int, text: String)] = []
+        for (paragraphIndex, paragraph) in reading.paragraphs.enumerated() {
+            for sentence in sentences(from: paragraph.hanzi) {
+                items.append((paragraphIndex, sentence))
+            }
+        }
+
+        return items.enumerated().map { index, item in
+            let isLast = index == items.count - 1
+            let crossesParagraph = !isLast && items[index + 1].paragraphIndex != item.paragraphIndex
+            return MandarinSpeechSegment(
+                text: item.text,
+                postUtteranceDelay: isLast ? 0 : (crossesParagraph ? 0.6 : 0.3)
+            )
+        }
+    }
+
+    /// Returns dialogue lines in authored order, using a longer pause when
+    /// the next sentence belongs to another speaker.
+    public static func dialogueSegments(from lines: [DialogueLine]) -> [MandarinSpeechSegment] {
+        var items: [(speaker: String, text: String)] = []
+        for line in lines {
+            for sentence in sentences(from: line.hanzi) {
+                items.append((line.speaker, sentence))
+            }
+        }
+
+        return items.enumerated().map { index, item in
+            let isLast = index == items.count - 1
+            let changesSpeaker = !isLast && items[index + 1].speaker != item.speaker
+            return MandarinSpeechSegment(
+                text: item.text,
+                postUtteranceDelay: isLast ? 0 : (changesSpeaker ? 0.6 : 0.3)
+            )
+        }
     }
 
     /// Returns true for text that contains only Hanzi, Mandarin-safe

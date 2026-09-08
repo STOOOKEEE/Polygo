@@ -1150,6 +1150,167 @@ final class ContentContractTests: XCTestCase {
         )
     }
 
+    func testNarrationSegmentsStayInAuthoredOrderAndUseNaturalPauses() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        var readingCount = 0
+        var dialogueCount = 0
+        var phrasePauses: [TimeInterval] = []
+        var turnPauses: [TimeInterval] = []
+
+        for lesson in snapshots.flatMap(\.lessons) {
+            for block in lesson.blocks {
+                switch block {
+                case .reading(let reading):
+                    readingCount += 1
+                    let items = reading.paragraphs.enumerated().flatMap { paragraphIndex, paragraph in
+                        MandarinSpeechText.sentences(from: paragraph.hanzi).map {
+                            (owner: paragraphIndex, text: $0)
+                        }
+                    }
+                    let segments = MandarinSpeechText.readingSegments(from: reading)
+                    assertNarrationSegments(
+                        segments,
+                        expected: items.map { $0.text },
+                        source: reading.paragraphs.map(\.hanzi).joined(separator: " "),
+                        context: "lecture \(reading.id.rawValue)"
+                    )
+                    collectNarrationPauses(
+                        segments,
+                        owners: items.map { $0.owner },
+                        phrasePauses: &phrasePauses,
+                        turnPauses: &turnPauses,
+                        context: "lecture \(reading.id.rawValue)"
+                    )
+
+                case .dialogue(let dialogue):
+                    dialogueCount += 1
+                    let items = dialogue.lines.flatMap { line in
+                        MandarinSpeechText.sentences(from: line.hanzi).map {
+                            (owner: line.speaker, text: $0)
+                        }
+                    }
+                    let segments = MandarinSpeechText.dialogueSegments(from: dialogue.lines)
+                    assertNarrationSegments(
+                        segments,
+                        expected: items.map { $0.text },
+                        source: dialogue.lines.map(\.hanzi).joined(separator: " "),
+                        context: "dialogue \(dialogue.id.rawValue)"
+                    )
+                    collectNarrationPauses(
+                        segments,
+                        owners: items.map { $0.owner },
+                        phrasePauses: &phrasePauses,
+                        turnPauses: &turnPauses,
+                        context: "dialogue \(dialogue.id.rawValue)"
+                    )
+
+                default:
+                    continue
+                }
+            }
+        }
+
+        XCTAssertGreaterThan(readingCount, 0, "Le catalogue doit contenir des lectures narrables")
+        XCTAssertGreaterThan(dialogueCount, 0, "Le catalogue doit contenir des dialogues narrables")
+        XCTAssertFalse(phrasePauses.isEmpty, "Le catalogue doit couvrir une pause entre phrases")
+        XCTAssertFalse(turnPauses.isEmpty, "Le catalogue doit couvrir une pause entre tours")
+        XCTAssertGreaterThan(
+            turnPauses.min() ?? 0,
+            phrasePauses.max() ?? 0,
+            "Une pause entre personnages ou paragraphes doit être plus longue qu’une pause entre phrases"
+        )
+    }
+
+    func testLessonTwoReadingSegmentsKeepEveryMandarinPhraseInOrder() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        let lesson = try XCTUnwrap(
+            snapshots.flatMap(\.lessons).first { $0.id.rawValue == "lesson-02" },
+            "La leçon 2 doit être disponible pour la narration"
+        )
+        let reading = try XCTUnwrap(
+            lesson.blocks.compactMap { block -> ReadingBlock? in
+                guard case .reading(let value) = block else { return nil }
+                return value
+            }.first,
+            "La leçon 2 doit fournir un texte de lecture"
+        )
+
+        let segments = MandarinSpeechText.readingSegments(from: reading)
+        XCTAssertEqual(
+            segments.map(\.text),
+            ["我叫安。", "你叫什么名字？", "我叫林。", "谢谢！"],
+            "La lecture L2 doit narrer toutes les phrases dans l’ordre défini"
+        )
+        XCTAssertTrue(
+            segments.allSatisfy { MandarinSpeechText.isTargetOnly($0.text) },
+            "La narration L2 ne doit contenir ni pinyin, ni français, ni nom de personnage"
+        )
+        XCTAssertTrue(
+            segments.dropLast().allSatisfy { $0.postUtteranceDelay > 0 },
+            "Chaque transition de phrase L2 doit avoir une pause"
+        )
+        XCTAssertEqual(
+            segments.last?.postUtteranceDelay ?? -1,
+            0,
+            accuracy: 0.000_001,
+            "La narration L2 ne doit pas ajouter de pause après la dernière phrase"
+        )
+    }
+
+    private func assertNarrationSegments(
+        _ segments: [MandarinSpeechSegment],
+        expected: [String],
+        source: String,
+        context: String
+    ) {
+        XCTAssertEqual(segments.map(\.text), expected, "Les segments doivent conserver l’ordre de \(context)")
+        XCTAssertFalse(segments.isEmpty, "\(context) doit fournir au moins un segment")
+        XCTAssertTrue(
+            segments.allSatisfy { MandarinSpeechText.isTargetOnly($0.text) },
+            "Les segments de \(context) doivent contenir uniquement du mandarin"
+        )
+        XCTAssertTrue(
+            segments.allSatisfy { MandarinSpeechText.containsHanzi($0.text) },
+            "Les segments de \(context) ne doivent pas être des guillemets ou labels isolés"
+        )
+
+        let compact: (String) -> String = { value in
+            String(value.filter { !$0.isWhitespace })
+        }
+        XCTAssertEqual(
+            compact(segments.map(\.text).joined()),
+            compact(MandarinSpeechText.target(from: source)),
+            "Les segments de \(context) doivent couvrir exactement le texte mandarin source"
+        )
+    }
+
+    private func collectNarrationPauses<Owner: Equatable>(
+        _ segments: [MandarinSpeechSegment],
+        owners: [Owner],
+        phrasePauses: inout [TimeInterval],
+        turnPauses: inout [TimeInterval],
+        context: String
+    ) {
+        XCTAssertEqual(segments.count, owners.count, "Chaque segment de \(context) doit conserver son tour source")
+        guard segments.count > 1, owners.count == segments.count else { return }
+
+        for index in 0..<(segments.count - 1) {
+            let pause = segments[index].postUtteranceDelay
+            XCTAssertGreaterThan(pause, 0, "La pause intermédiaire de \(context) doit être positive")
+            if owners[index] == owners[index + 1] {
+                phrasePauses.append(pause)
+            } else {
+                turnPauses.append(pause)
+            }
+        }
+        XCTAssertEqual(
+            segments.last?.postUtteranceDelay ?? -1,
+            0,
+            accuracy: 0.000_001,
+            "Le dernier segment de \(context) ne doit pas ajouter de pause finale"
+        )
+    }
+
     private func assertValidShape(_ spec: ExerciseSpec, cardIDs: Set<CardID>) {
         switch spec {
         case .choice(let exercise):

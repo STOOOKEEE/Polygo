@@ -28,6 +28,13 @@ final class MandarinSpeechTextTests: XCTestCase {
         XCTAssertFalse(MandarinSpeechText.isTargetOnly("Dis 你好！"))
     }
 
+    func testSentenceSplitterKeepsClosingQuoteWithItsMandarinSentence() {
+        XCTAssertEqual(
+            MandarinSpeechText.sentences(from: "“你好！”再见。"),
+            ["“你好！”", "再见。"]
+        )
+    }
+
     func testFillBlankCanonicalSpeechCompletesHanziWhileKeepingTheVisibleBlank() throws {
         let exercise = FillBlankExercise(
             header: ExerciseHeader(

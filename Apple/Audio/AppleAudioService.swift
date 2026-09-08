@@ -27,6 +27,8 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     private var speechContinuation: CheckedContinuation<Void, Error>?
     private var speechRequestID: UUID?
     private var speechUtterance: AVSpeechUtterance?
+    private var speechUtterances: [AVSpeechUtterance] = []
+    private var speechUtteranceIndex = 0
 
     // AVFoundation objects are used on the main queue. The class is marked
     // unchecked Sendable because AudioService is injected through a Sendable
@@ -141,7 +143,18 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     // MARK: Speech synthesis
 
     public func speak(_ request: SpeechSynthesisRequest) async throws {
+        try await speakSequence([
+            SpeechSynthesisSegment(
+                text: request.text,
+                localeIdentifier: request.localeIdentifier,
+                rate: request.rate
+            )
+        ])
+    }
+
+    public func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws {
         try Task.checkCancellation()
+        guard !segments.isEmpty else { return }
         let requestID = UUID()
         speechStateLock.lock()
         // A speech surface is latest-request-wins. Cancel requests that have
@@ -159,7 +172,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                         continuation.resume(throwing: AudioServiceError.unavailable)
                         return
                     }
-                    self.beginSpeech(request, requestID: requestID, continuation: continuation)
+                    self.beginSpeech(segments, requestID: requestID, continuation: continuation)
                 }
             }
         }, onCancel: { [weak self] in
@@ -175,7 +188,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     private func beginSpeech(
-        _ request: SpeechSynthesisRequest,
+        _ segments: [SpeechSynthesisSegment],
         requestID: UUID,
         continuation: CheckedContinuation<Void, Error>
     ) {
@@ -192,23 +205,28 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             return
         }
 
-        let requestedText = request.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        let locale = request.localeIdentifier.lowercased()
-        let text = locale.hasPrefix("zh")
-            ? PolygoCore.MandarinSpeechText.target(from: requestedText)
-            : requestedText
-        guard !text.isEmpty else {
-            endStartingSpeech(requestID)
-            continuation.resume(throwing: AudioServiceError.playbackFailed("Le texte à lire est vide"))
-            return
-        }
-        guard let voice = AVSpeechSynthesisVoice(language: request.localeIdentifier) else {
-            endStartingSpeech(requestID)
-            continuation.resume(throwing: AudioServiceError.voiceUnavailable(request.localeIdentifier))
-            return
-        }
-
         do {
+            let utterances = try segments.map { segment -> AVSpeechUtterance in
+                let requestedText = segment.text.trimmingCharacters(in: .whitespacesAndNewlines)
+                let locale = segment.localeIdentifier.lowercased()
+                let text = locale.hasPrefix("zh")
+                    ? PolygoCore.MandarinSpeechText.target(from: requestedText)
+                    : requestedText
+                guard !text.isEmpty else {
+                    throw AudioServiceError.playbackFailed("Le texte à lire est vide")
+                }
+                guard let voice = AVSpeechSynthesisVoice(language: segment.localeIdentifier) else {
+                    throw AudioServiceError.voiceUnavailable(segment.localeIdentifier)
+                }
+
+                let utterance = AVSpeechUtterance(string: text)
+                utterance.voice = voice
+                utterance.rate = segment.rate.avSpeechRate
+                utterance.preUtteranceDelay = segment.preUtteranceDelay
+                utterance.postUtteranceDelay = segment.postUtteranceDelay
+                return utterance
+            }
+
             if let previousID = speechRequestID {
                 finishSpeech(
                     requestID: previousID,
@@ -231,16 +249,18 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                 return
             }
 
-            let utterance = AVSpeechUtterance(string: text)
-            utterance.voice = voice
-            utterance.rate = request.rate.avSpeechRate
             // Install state before calling `speak`: a delegate callback can
-            // arrive synchronously on some Apple OS versions.
+            // arrive synchronously on some Apple OS versions. Keep the whole
+            // sequence alive until its final utterance finishes.
             speechRequestID = requestID
             speechContinuation = continuation
-            speechUtterance = utterance
+            speechUtterances = utterances
+            speechUtteranceIndex = 0
+            speechUtterance = utterances[0]
             endStartingSpeech(requestID)
-            synthesizer.speak(utterance)
+            for utterance in utterances {
+                synthesizer.speak(utterance)
+            }
         } catch {
             let wasCancelled = consumeSpeechCancellation(requestID)
             endStartingSpeech(requestID)
@@ -316,6 +336,8 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         speechRequestID = nil
         speechContinuation = nil
         speechUtterance = nil
+        speechUtterances.removeAll(keepingCapacity: false)
+        speechUtteranceIndex = 0
         if stopSynthesizer {
             synthesizer.stopSpeaking(at: .immediate)
         }
@@ -332,7 +354,12 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         guard speechUtterance === utterance, let requestID = speechRequestID else { return }
-        finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
+        if speechUtteranceIndex + 1 < speechUtterances.count {
+            speechUtteranceIndex += 1
+            speechUtterance = speechUtterances[speechUtteranceIndex]
+        } else {
+            finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
+        }
     }
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {

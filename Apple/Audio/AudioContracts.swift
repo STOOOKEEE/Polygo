@@ -178,11 +178,38 @@ public struct SpeechSynthesisRequest: Codable, Hashable, Sendable {
     }
 }
 
+/// One Mandarin utterance in a narrated sequence. The delays are attached to
+/// utterances instead of being inserted into the text, so punctuation and
+/// word-level speech remain authored content while the synthesizer controls
+/// the natural space between phrases and turns.
+public struct SpeechSynthesisSegment: Hashable, Sendable {
+    public let text: String
+    public let localeIdentifier: String
+    public let rate: SpeechRate
+    public let preUtteranceDelay: TimeInterval
+    public let postUtteranceDelay: TimeInterval
+
+    public init(
+        text: String,
+        localeIdentifier: String = "zh-CN",
+        rate: SpeechRate = .normal,
+        preUtteranceDelay: TimeInterval = 0,
+        postUtteranceDelay: TimeInterval = 0
+    ) {
+        self.text = text
+        self.localeIdentifier = localeIdentifier
+        self.rate = rate
+        self.preUtteranceDelay = min(max(0, preUtteranceDelay), 10)
+        self.postUtteranceDelay = min(max(0, postUtteranceDelay), 10)
+    }
+}
+
 public protocol AudioService: Sendable {
     func requestMicrophonePermission() async -> PermissionState
     func requestSpeechPermission() async -> PermissionState
 
     func speak(_ request: SpeechSynthesisRequest) async throws
+    func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws
     func stopSpeaking()
 
     func play(asset: AssetReference) async throws
@@ -206,6 +233,19 @@ public extension AudioService {
 
     func stopSpeaking() {}
 
+    func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws {
+        for segment in segments {
+            try Task.checkCancellation()
+            try await waitForSpeechDelay(segment.preUtteranceDelay)
+            try await speak(SpeechSynthesisRequest(
+                text: segment.text,
+                localeIdentifier: segment.localeIdentifier,
+                rate: segment.rate
+            ))
+            try await waitForSpeechDelay(segment.postUtteranceDelay)
+        }
+    }
+
     func stopRecording() {}
 
     func play(recording: Recording) async throws {
@@ -227,6 +267,12 @@ public extension AudioService {
             toneMarkers: toneMarkers
         ))
     }
+}
+
+private func waitForSpeechDelay(_ delay: TimeInterval) async throws {
+    guard delay > 0 else { return }
+    let nanoseconds = UInt64((delay * 1_000_000_000).rounded())
+    try await Task.sleep(nanoseconds: nanoseconds)
 }
 
 /// Adds tone numbers to pinyin for an honest visual cue. Existing diacritics

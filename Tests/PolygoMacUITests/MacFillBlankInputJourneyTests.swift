@@ -6,6 +6,7 @@ import XCTest
 /// Hanzi proposals after using the lesson's Mandarin audio control.
 final class MacFillBlankInputJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
+    private let audioTimeout: TimeInterval = 40
     private var app: XCUIApplication!
     private var profileID = ""
     private var profileDirectory: URL?
@@ -154,6 +155,42 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
         XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du choix doit faire progresser la leçon L2")
         XCTAssertTrue(scrollIntoView(nextExercise), "L’exercice suivant doit devenir visible après la validation")
+
+        // L’exercice de compréhension L2 (5/7) keeps the reading reference
+        // collapsed. Its whole-text control remains available in that compact
+        // state, so the learner can listen without opening the reference.
+        let readingReference = app.buttons.matching(
+            NSPredicate(format: "identifier == %@", "lesson.reading.block-l2-reading")
+        ).firstMatch
+        XCTAssertTrue(readingReference.waitForExistence(timeout: timeout), "Le panneau Relire le texte doit être identifié en L2")
+        XCTAssertTrue(scrollIntoView(readingReference), "Le panneau Relire le texte doit être visible")
+        XCTAssertTrue(waitForValue(readingReference, "Réduit"), "Le panneau Relire le texte doit rester replié")
+        attachScreenshot(named: "mac-l2-reading-collapsed")
+
+        let playAll = app.buttons.matching(
+            NSPredicate(format: "identifier == %@", "lesson.reading.block-l2-reading.playAll")
+        ).firstMatch
+        XCTAssertTrue(playAll.waitForExistence(timeout: timeout), "Le bouton Écouter tout le texte doit être accessible dans le panneau replié")
+        XCTAssertTrue(scrollIntoView(playAll), "Le bouton Écouter tout le texte doit être visible")
+        XCTAssertTrue(waitForLabel(playAll, containing: "Écouter tout le texte"), "Le bouton doit commencer à l’état lecture")
+
+        // Stop a first queue before it completes, then start a fresh queue.
+        // The final status must belong to the second queue rather than a late
+        // completion callback from the cancelled one.
+        playAll.click()
+        XCTAssertTrue(waitForLabel(playAll, containing: "Arrêter"), "Le bouton doit exposer l’arrêt pendant la lecture")
+        playAll.click()
+        XCTAssertTrue(waitForLabel(playAll, containing: "Écouter tout le texte"), "Le bouton doit revenir à la relecture après l’arrêt")
+        XCTAssertTrue(waitForPlaybackStatus(containingAny: ["Lecture arrêtée"]), "L’arrêt doit exposer l’état Lecture arrêtée")
+
+        playAll.click()
+        XCTAssertTrue(waitForLabel(playAll, containing: "Arrêter"), "La relecture doit reprendre une nouvelle file")
+        XCTAssertTrue(
+            waitForPlaybackStatus(containingAny: ["Lecture terminée"]),
+            "La relecture doit atteindre un état final sans ancien callback"
+        )
+        XCTAssertTrue(waitForLabel(playAll, containing: "Écouter tout le texte"), "Le bouton doit redevenir disponible après la fin")
+        attachScreenshot(named: "mac-l2-reading-playback-finished")
         attachScreenshot(named: "mac-fill-blank-advanced")
     }
 
@@ -268,6 +305,28 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
     private func button(containing value: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", value)).firstMatch
+    }
+
+    private func waitForLabel(_ element: XCUIElement, containing value: String) -> Bool {
+        let expectation = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "label CONTAINS[c] %@ OR value CONTAINS[c] %@", value, value),
+            object: element
+        )
+        return XCTWaiter.wait(for: [expectation], timeout: timeout) == .completed
+    }
+
+    private func waitForPlaybackStatus(containingAny values: [String]) -> Bool {
+        let status = app.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@", "lesson.reading.block-l2-reading.playbackStatus")
+        ).firstMatch
+        guard status.waitForExistence(timeout: audioTimeout) else { return false }
+        let deadline = Date().addingTimeInterval(audioTimeout)
+        while Date() < deadline {
+            let observed = ((status.value as? String) ?? status.label).lowercased()
+            if values.contains(where: { observed.contains($0.lowercased()) }) { return true }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+        return false
     }
 
     private func waitForChineseOptionButtons(expectedCount: Int) -> [XCUIElement] {
