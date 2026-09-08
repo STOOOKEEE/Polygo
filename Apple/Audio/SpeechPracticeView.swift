@@ -701,7 +701,9 @@ public struct SpeechPracticeView: View {
             isAnalyzing = false
             analysisTask = nil
 
-            guard case .completed(let report) = result, report.isAutomaticallyEvaluable else {
+            guard result.status == .completed,
+                  let report = result.report,
+                  report.isAutomaticallyEvaluable else {
                 answer = nil
                 statusMessage = result.message ?? analysisStatusMessage(result.status)
                 return
