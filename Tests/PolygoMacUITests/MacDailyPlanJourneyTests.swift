@@ -144,7 +144,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "Le passage oral doit conserver la progression")
         continueAnyway.click()
 
-        let readingDisclosure = app.descendants(matching: .disclosureTriangle).matching(
+        let readingDisclosure = app.buttons.matching(
             NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")
         ).firstMatch
         XCTAssertTrue(readingDisclosure.waitForExistence(timeout: timeout), "Le texte associé doit être relisible dans la question")

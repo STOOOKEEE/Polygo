@@ -222,23 +222,39 @@ public struct LessonView: View {
     }
 
     private func readingReferenceDisclosure(_ reading: ReadingBlock) -> some View {
-        DisclosureGroup(isExpanded: $readingReferenceExpanded) {
-            PedagogicalBlockView(
-                block: .reading(reading),
-                vocabulary: lesson?.vocabulary ?? [],
-                objectives: lesson?.objectives ?? [],
-                languageCodes: model.preferredLanguageCodes
-            )
-            .padding(.top, 12)
-        } label: {
-            Label("Relire le texte", systemImage: "book.pages")
-                .font(.headline)
-                .foregroundStyle(SylluneColor.ink)
+        VStack(alignment: .leading, spacing: 0) {
+            Button {
+                readingReferenceExpanded.toggle()
+            } label: {
+                HStack(spacing: 8) {
+                    Label("Relire le texte", systemImage: "book.pages")
+                        .font(.headline)
+                        .foregroundStyle(SylluneColor.ink)
+                    Spacer(minLength: 8)
+                    Image(systemName: readingReferenceExpanded ? "chevron.up" : "chevron.down")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(SylluneColor.inkMuted)
+                        .accessibilityHidden(true)
+                }
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue)")
+            .accessibilityValue(readingReferenceExpanded ? "Développé" : "Réduit")
+
+            if readingReferenceExpanded {
+                PedagogicalBlockView(
+                    block: .reading(reading),
+                    vocabulary: lesson?.vocabulary ?? [],
+                    objectives: lesson?.objectives ?? [],
+                    languageCodes: model.preferredLanguageCodes
+                )
+                .padding(.top, 12)
+            }
         }
-        .tint(SylluneColor.ink)
         .padding(16)
         .sylluneCard(radius: 14)
-        .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue)")
     }
 
     private func exerciseActionBar(spec: ExerciseSpec, blockID: BlockID) -> some View {
