@@ -651,8 +651,31 @@ final class LessonReviewJourneyTests: XCTestCase {
         return app.buttons.matching(NSPredicate(format: "label == %@", "__missing__")).firstMatch
     }
 
+    private func tapWhenVisible(_ element: XCUIElement) {
+        bringIntoView(element)
+        XCTAssertTrue(element.isHittable, "L’élément doit être touchable après défilement : \(element.label)")
+        element.tap()
+    }
+
     private func text(containing value: String) -> XCUIElement {
         element(containing: value, type: .any)
+    }
+
+    private func text(containingAny values: [String]) -> XCUIElement {
+        for value in values {
+            let candidate = text(containing: value)
+            if candidate.waitForExistence(timeout: 1) { return candidate }
+        }
+        return app.descendants(matching: .any)
+            .matching(NSPredicate(format: "label == %@", "__missing__"))
+            .firstMatch
+    }
+
+    private func firstExercisePrompt() -> XCUIElement {
+        // ChineseSelectableText exposes the authored prompt and its Chinese
+        // token as separate accessibility elements. Match the stable authored
+        // prefix so restart assertions follow the visible exercise.
+        text(containing: "Quel ton porte")
     }
 
     private func element(containing value: String, type: XCUIElement.ElementType) -> XCUIElement {
