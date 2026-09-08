@@ -117,7 +117,8 @@ ne dépend jamais d’un chemin absolu de machine.
 
 Chaque exercice est un `ExerciseSpec` codable et discriminé par `kind`. Le
 moteur reçoit une réponse de valeur (`option`, `tokens`, `text`, `speech`,
-`handwriting`, `selfRating`) et renvoie une `ExerciseEvaluation` déterministe.
+`handwriting`, `selfRating` ou `skipped`) et renvoie une `ExerciseEvaluation`
+déterministe.
 Les contrôles SwiftUI rendent le spec et convertissent leurs interactions vers
 ces valeurs ; ils ne décident pas eux-mêmes si la réponse est juste.
 
@@ -125,8 +126,10 @@ Le speaking et l’écriture ont donc un chemin hors ligne explicite :
 
 - audio de référence et enregistrement sont locaux ;
 - la transcription Speech est facultative et peut échouer sans bloquer la leçon ;
-- la tranche initiale n’annonce pas de score phonétique ; elle compare une
-  transcription normalisée quand elle existe ou permet une auto-évaluation ;
+- la tranche initiale n’annonce pas de score phonétique à partir de la
+  transcription : un `SpeechPronunciationService` distinct doit fournir un
+  verdict et un score ; sans fournisseur configuré, l’UI permet `skipped` sans
+  note ni réussite ;
 - le tracé chinois est conservé dans le format PencilKit sur iOS/iPadOS et dans
   le format de traits Polygo sur macOS natif ; il peut être auto-évalué ; la
   reconnaissance automatique des caractères n’est pas une condition de réussite.

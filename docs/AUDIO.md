@@ -30,6 +30,7 @@ réponse du moteur :
     SpeechPracticeView(
         exercise: exercise,
         audio: model.dependencies.audio,
+        pronunciation: model.dependencies.pronunciation,
         answer: $answer
     )
 
@@ -61,6 +62,35 @@ suppression immédiate ; elle ne conserve donc pas d’audio par défaut. Un app
 onRecordingCreated ne doit pas être interprété comme une conservation
 permanente : l’app peut l’omettre si elle ne journalise pas la référence.
 
+## Évaluation de prononciation
+
+La vue accepte un `SpeechPronunciationService` séparé de `AudioService`. Son
+protocole reçoit l’enregistrement temporaire et l’exercice, puis renvoie un
+`SpeechPronunciationResult`. Un rapport terminé peut fournir un verdict, un
+score global et des lignes par mot, son et ton ; les états `unconfigured`,
+`unavailable` et `failed` ne contiennent aucun score de remplacement.
+
+La composition livrée utilise `UnconfiguredSpeechPronunciationService` tant
+qu’aucun fournisseur n’est choisi et configuré. `OfflineSpeechPronunciationService`
+reste un emplacement explicite, mais ne déduit aucun score sans modèle
+phonétique. `FixedSpeechPronunciationService` sert uniquement aux tests et aux
+prévisualisations : ses rapports fixture vérifient l’affichage des verdicts,
+des scores par composante et la persistance du résultat, sans compte, réseau
+ou appel payant.
+
+La transcription Apple et sa confiance restent des informations descriptives.
+Une transcription seule, même identique à la phrase cible, ne constitue pas
+une note de prononciation dans le parcours actuel. La vue ne crée une réponse
+évaluable qu’avec un rapport terminé qui contient son score de fournisseur ;
+un rapport incertain ou l’absence de fournisseur laisse l’exercice sans note.
+Le bouton « Passer sans évaluer » enregistre alors un état `skipped`, qui ne
+compte pas comme une réussite et permet de poursuivre la leçon.
+
+Les adaptateurs iFlytek ou SpeechSuper pourront implémenter ce protocole
+derrière un serveur proxy. Les clés et secrets ne doivent jamais être
+embarqués dans l’app ; aucun de ces fournisseurs externes n’est activé dans
+la composition actuelle.
+
 ## TTS Mandarin et disponibilité hors ligne
 
 La lecture de mots ou de phrases passe par AVSpeechSynthesizer et demande la
@@ -71,12 +101,13 @@ récupérable. La synthèse Apple ne requiert pas de serveur Polygo, mais les
 voix, leur qualité et leur disponibilité hors ligne dépendent du système et des
 paquets de voix installés par l’utilisateur.
 
-La comparaison orale porte uniquement sur le texte renvoyé par la transcription
-et les variantes acceptedTranscripts du contenu. Une confiance éventuelle est
-la confiance de transcription fournie par Apple ; elle n’est pas convertie en
-score de phonème ou de ton. Quand Speech n’est pas autorisé, quand le modèle
-local n’existe pas ou quand aucune transcription exploitable n’est fournie,
-SpeechPracticeView propose clairement l’auto-évaluation.
+La transcription Apple et sa confiance restent des informations descriptives ;
+elles ne sont pas converties en score de phonème ou de ton. Les variantes
+`acceptedTranscripts` restent décodables pour les réponses historiques, mais
+une transcription seule ne constitue pas une note dans le parcours oral actuel.
+Quand Speech n’est pas autorisé, quand le modèle local n’existe pas ou quand
+aucune transcription exploitable n’est fournie, `SpeechPracticeView` conserve
+l’état non évalué et propose clairement « Passer sans évaluer ».
 
 ## Permissions et traitement local
 
@@ -93,14 +124,15 @@ La transcription utilise exclusivement SFSpeechRecognizer avec
 requiresOnDeviceRecognition = true, après vérification de
 supportsOnDeviceRecognition. Il n’y a pas de repli réseau silencieux. Les
 erreurs transcriptionUnavailable, les permissions refusées et les voix
-manquantes laissent l’exercice utilisable par auto-évaluation.
+manquantes laissent l’exercice utilisable avec « Passer sans évaluer » ; elles
+ne fabriquent ni note de prononciation ni auto-évaluation positive.
 
 ## Validation Apple
 
 Le conteneur Linux ne possède ni SDK Apple ni Xcode : la compilation du target,
 les permissions, la disponibilité des voix, l’interruption audio et le parcours
 enregistrement/réécoute/transcription doivent être vérifiés sur un runner
-iOS 17+ et macOS 14+ avec XcodeGen puis Xcode. Le test manuel doit vérifier que
-le bouton Arrêter termine réellement record, que Réécouter lit le fichier
-temporaire, que quitter l’exercice le supprime et qu’un appareil sans modèle
-Speech local présente l’auto-évaluation sans faux score de ton.
+iOS 17+ et macOS 14+ avec XcodeGen puis Xcode. Les fixtures du protocole
+vérifient déjà les états terminé, non configuré et sans résultat ; la validation
+sur appareil doit confirmer qu’un appareil sans modèle Speech local conserve
+la transcription descriptive et le passage sans évaluation, sans faux score.

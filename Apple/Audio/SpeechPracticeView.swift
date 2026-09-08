@@ -7,6 +7,7 @@ import PolygoCore
 public struct SpeechPracticeView: View {
     public let exercise: SpeakingExercise
     public let audio: any AudioService
+    public let pronunciation: any SpeechPronunciationService
     @Binding public var answer: ExerciseAnswer?
     public let onRecordingCreated: ((RecordingID) -> Void)?
 
@@ -14,25 +15,28 @@ public struct SpeechPracticeView: View {
     @State private var speechPermission: PermissionState = .notDetermined
     @State private var recording: Recording?
     @State private var transcript: SpeechTranscript?
+    @State private var pronunciationResult: SpeechPronunciationResult?
     @State private var isRecording = false
+    @State private var isAnalyzing = false
     @State private var recordingStartedAt: Date?
-    @State private var isSelfEvaluationAvailable = false
-    @State private var selectedSelfRating: SelfRating?
     @State private var selectedRate: SpeechRate = .normal
     @State private var isModelPlaying = false
     @State private var modelTask: Task<Void, Never>?
     @State private var showEvaluationDetails = false
     @State private var statusMessage: String?
     @State private var captureTask: Task<Void, Never>?
+    @State private var analysisTask: Task<Void, Never>?
 
     public init(
         exercise: SpeakingExercise,
         audio: any AudioService,
         answer: Binding<ExerciseAnswer?>,
+        pronunciation: (any SpeechPronunciationService)? = nil,
         onRecordingCreated: ((RecordingID) -> Void)? = nil
     ) {
         self.exercise = exercise
         self.audio = audio
+        self.pronunciation = pronunciation ?? UnconfiguredSpeechPronunciationService()
         self._answer = answer
         self.onRecordingCreated = onRecordingCreated
     }
@@ -43,15 +47,14 @@ public struct SpeechPracticeView: View {
             modelControls
             recordingControls
 
-            if transcript != nil || (isSelfEvaluationAvailable && exercise.allowSelfRating) {
+            if transcript != nil || pronunciationResult != nil {
                 DisclosureGroup("Voir les résultats", isExpanded: $showEvaluationDetails) {
                     VStack(alignment: .leading, spacing: 12) {
                         if let transcript {
                             transcriptCard(transcript)
                         }
-
-                        if isSelfEvaluationAvailable && exercise.allowSelfRating {
-                            selfEvaluationCard
+                        if let pronunciationResult {
+                            pronunciationResultCard(pronunciationResult)
                         }
                     }
                     .padding(.top, 8)
@@ -87,6 +90,8 @@ public struct SpeechPracticeView: View {
             isModelPlaying = false
             captureTask?.cancel()
             captureTask = nil
+            analysisTask?.cancel()
+            analysisTask = nil
             audio.stopSpeaking()
             audio.stopRecording()
             audio.stopPlayback()
@@ -94,8 +99,8 @@ public struct SpeechPracticeView: View {
             let ephemeralRecording = recording
             recording = nil
             transcript = nil
-            selectedSelfRating = nil
-            isSelfEvaluationAvailable = false
+            pronunciationResult = nil
+            isAnalyzing = false
             showEvaluationDetails = false
             if let ephemeralRecording {
                 Task {
@@ -204,6 +209,13 @@ public struct SpeechPracticeView: View {
                 }
             }
 
+            if isAnalyzing {
+                Label("Analyse de prononciation en cours…", systemImage: "waveform")
+                    .font(.callout)
+                    .foregroundStyle(.orange)
+                    .accessibilityIdentifier("speech-analysis-status")
+            }
+
             if let recording {
                 HStack(spacing: 10) {
                     Button {
@@ -255,37 +267,155 @@ public struct SpeechPracticeView: View {
         .accessibilityElement(children: .combine)
     }
 
-    private var selfEvaluationCard: some View {
+    private func pronunciationResultCard(_ result: SpeechPronunciationResult) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Auto-évaluation")
-                .font(.headline)
-            Text("La transcription locale n’est pas disponible ou ne confirme pas la phrase. Choisis ton ressenti ; aucun score de ton n’est déduit.")
-                .font(.callout)
-                .foregroundStyle(.secondary)
-            if let selectedSelfRating {
+            if let report = result.report {
                 Label(
-                    "Sélection actuelle : \(selfRatingLabel(selectedSelfRating))",
-                    systemImage: "checkmark.circle.fill"
+                    pronunciationVerdictTitle(report.verdict),
+                    systemImage: pronunciationVerdictIcon(report.verdict)
                 )
-                .font(.callout.weight(.semibold))
-                .foregroundStyle(.tint)
-                .accessibilityIdentifier("speech-selected-self-rating")
-            }
-            LazyVGrid(
-                columns: [
-                    GridItem(.flexible(minimum: 0), spacing: 8),
-                    GridItem(.flexible(minimum: 0), spacing: 8)
-                ],
-                spacing: 8
-            ) {
-                ForEach(SelfRating.allCases, id: \.self) { rating in
-                    selfRatingButton(rating)
+                .font(.headline)
+                .foregroundStyle(pronunciationVerdictColor(report.verdict))
+                Text("Fournisseur : \(providerTitle(report.provider))")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                if let providerScore = report.providerScore {
+                    Text("Score fourni par le moteur : \(scoreLabel(providerScore))")
+                        .font(.callout.weight(.medium))
+                } else {
+                    Text("Le moteur n’a pas fourni de score global.")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
                 }
+
+                if !report.words.isEmpty {
+                    Text("Mots")
+                        .font(.subheadline.weight(.semibold))
+                    ForEach(report.words) { word in
+                        assessmentRow(
+                            expected: word.expected,
+                            observed: word.observed,
+                            score: word.score
+                        )
+                    }
+                }
+                if !report.sounds.isEmpty {
+                    Text("Sons")
+                        .font(.subheadline.weight(.semibold))
+                    ForEach(report.sounds) { sound in
+                        assessmentRow(
+                            expected: sound.expected,
+                            observed: sound.observed,
+                            score: sound.score
+                        )
+                    }
+                }
+                if !report.tones.isEmpty {
+                    Text("Tons")
+                        .font(.subheadline.weight(.semibold))
+                    ForEach(report.tones) { tone in
+                        HStack {
+                            Text("Attendu \(tone.expected.map(String.init) ?? "non communiqué")")
+                            Spacer()
+                            Text("Observé \(tone.observed.map(String.init) ?? "non communiqué")")
+                            Text(scoreLabel(tone.score))
+                                .foregroundStyle(.secondary)
+                        }
+                        .font(.caption)
+                    }
+                }
+                if report.verdict == .inconclusive {
+                    Text("Le moteur ne permet pas de conclure. Aucun résultat n’est marqué comme correct.")
+                        .font(.callout)
+                        .foregroundStyle(.orange)
+                }
+            } else {
+                Label(
+                    pronunciationStatusTitle(result.status),
+                    systemImage: pronunciationStatusIcon(result.status)
+                )
+                .font(.headline)
+                .foregroundStyle(.orange)
+                Text(result.message ?? "Aucune analyse exploitable n’est disponible. Tu peux passer cet exercice sans le noter.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                Text("Aucun score de prononciation n’est déduit.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.secondary.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .accessibilityIdentifier("speech-pronunciation-result")
+        .accessibilityElement(children: .combine)
+    }
+
+    private func assessmentRow(expected: String, observed: String?, score: Double?) -> some View {
+        HStack {
+            Text(expected)
+            Spacer()
+            Text(observed ?? "non communiqué")
+                .foregroundStyle(.secondary)
+            Text(scoreLabel(score))
+                .foregroundStyle(.secondary)
+        }
+        .font(.caption)
+    }
+
+    private func scoreLabel(_ score: Double?) -> String {
+        guard let score else { return "score non communiqué" }
+        return "\(Int((score * 100).rounded())) %"
+    }
+
+    private func providerTitle(_ provider: SpeechPronunciationProvider) -> String {
+        switch provider {
+        case .iflytek: return "iFlytek"
+        case .speechSuper: return "SpeechSuper"
+        case .offline: return "Hors ligne"
+        }
+    }
+
+    private func pronunciationVerdictTitle(_ verdict: SpeechPronunciationVerdict) -> String {
+        switch verdict {
+        case .pass: return "Prononciation réussie"
+        case .needsPractice: return "Prononciation à corriger"
+        case .inconclusive: return "Résultat incertain"
+        }
+    }
+
+    private func pronunciationVerdictIcon(_ verdict: SpeechPronunciationVerdict) -> String {
+        switch verdict {
+        case .pass: return "checkmark.circle.fill"
+        case .needsPractice: return "arrow.counterclockwise.circle.fill"
+        case .inconclusive: return "questionmark.circle.fill"
+        }
+    }
+
+    private func pronunciationVerdictColor(_ verdict: SpeechPronunciationVerdict) -> Color {
+        switch verdict {
+        case .pass: return .green
+        case .needsPractice: return .orange
+        case .inconclusive: return .orange
+        }
+    }
+
+    private func pronunciationStatusTitle(_ status: SpeechPronunciationStatus) -> String {
+        switch status {
+        case .completed: return "Analyse terminée"
+        case .unconfigured: return "Analyse non configurée"
+        case .unavailable: return "Analyse indisponible"
+        case .failed: return "Analyse impossible"
+        }
+    }
+
+    private func pronunciationStatusIcon(_ status: SpeechPronunciationStatus) -> String {
+        switch status {
+        case .completed: return "questionmark.circle"
+        case .unconfigured: return "gearshape"
+        case .unavailable: return "wifi.slash"
+        case .failed: return "exclamationmark.triangle"
+        }
     }
 
     private var recordButton: some View {
@@ -306,11 +436,11 @@ public struct SpeechPracticeView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(isRecording ? "Arrêter" : "Enregistrer")
-        .accessibilityHint(isRecording ? "Arrête la capture et prépare la transcription" : "Demande l’accès au microphone puis démarre la capture")
+        .accessibilityHint(isRecording ? "Arrête la capture et prépare l’analyse" : "Demande l’accès au microphone puis démarre la capture")
     }
 
     private var recordingDescription: some View {
-        Text(isRecording ? "Parle maintenant…" : "Enregistre puis compare.")
+        Text(isRecording ? "Parle maintenant…" : (isAnalyzing ? "Analyse en cours…" : "Enregistre puis analyse."))
             .font(.callout.weight(.semibold))
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -406,7 +536,7 @@ public struct SpeechPracticeView: View {
     }
 
     private func startRecording() {
-        guard !isRecording else { return }
+        guard !isRecording, !isAnalyzing else { return }
         stopModelPlayback()
         statusMessage = nil
         captureTask?.cancel()
@@ -420,14 +550,11 @@ public struct SpeechPracticeView: View {
             guard !Task.isCancelled else { return }
             microphonePermission = permission
             guard permission == .authorized else {
-                isSelfEvaluationAvailable = true
-                showEvaluationDetails = true
                 statusMessage = microphoneMessage(for: permission)
                 return
             }
             guard !Task.isCancelled else { return }
 
-            isSelfEvaluationAvailable = false
             discardRecording()
             isRecording = true
             recordingStartedAt = Date()
@@ -456,14 +583,13 @@ public struct SpeechPracticeView: View {
                 isRecording = false
                 recordingStartedAt = nil
                 onRecordingCreated?(saved.id)
-                await transcribe(saved)
+                await analyze(saved)
             } catch is CancellationError {
                 isRecording = false
                 recordingStartedAt = nil
             } catch {
                 isRecording = false
                 recordingStartedAt = nil
-                isSelfEvaluationAvailable = true
                 statusMessage = error.localizedDescription
             }
         }
@@ -489,34 +615,19 @@ public struct SpeechPracticeView: View {
     }
 
     private func discardRecording() {
+        analysisTask?.cancel()
+        analysisTask = nil
+        isAnalyzing = false
         let oldRecording = recording
         recording = nil
         transcript = nil
-        selectedSelfRating = nil
+        pronunciationResult = nil
         answer = nil
-        isSelfEvaluationAvailable = false
         showEvaluationDetails = false
         guard let oldRecording else { return }
         Task {
             try? await audio.delete(recording: oldRecording)
         }
-    }
-
-    private func selfRatingButton(_ rating: SelfRating) -> some View {
-        Button {
-            selectedSelfRating = rating
-            answer = .selfRating(rating)
-            showEvaluationDetails = true
-            statusMessage = "Auto-évaluation enregistrée : \(selfRatingLabel(rating))."
-        } label: {
-            Text(selfRatingLabel(rating))
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
-                .frame(maxWidth: .infinity, minHeight: 44)
-        }
-        .buttonStyle(.bordered)
-        .tint(selectedSelfRating == rating ? Color.accentColor : Color.secondary)
-        .accessibilityValue(selectedSelfRating == rating ? "Sélectionnée" : "")
     }
 
     private func synchronizeAnswerState() {
@@ -533,68 +644,111 @@ public struct SpeechPracticeView: View {
             // its temporary recording may no longer exist. Rebuild only the
             // displayable result and leave `recording` untouched.
             transcript = restoredTranscript
-            selectedSelfRating = nil
-            isSelfEvaluationAvailable = exercise.allowSelfRating &&
-                (restoredTranscript.rawText.isEmpty || !transcriptMatches(restoredTranscript))
             showEvaluationDetails = true
-            statusMessage = isSelfEvaluationAvailable
-                ? "Transcription restaurée. Tu peux choisir une auto-évaluation."
-                : "Transcription restaurée."
-
-        case .some(.selfRating(let rating)):
-            transcript = nil
-            selectedSelfRating = rating
-            isSelfEvaluationAvailable = exercise.allowSelfRating
-            showEvaluationDetails = true
-            // A local tap updates the binding and then reaches this observer
-            // on the next SwiftUI pass. Preserve its immediate confirmation;
-            // use the restored wording only when the answer arrived from the
-            // parent checkpoint.
-            if statusMessage?.hasPrefix("Auto-évaluation enregistrée") != true {
-                statusMessage = "Auto-évaluation restaurée : \(selfRatingLabel(rating))."
+            if let assessment = savedAnswer.pronunciationAssessment {
+                if pronunciationResult?.report?.persistedAssessment != assessment {
+                    pronunciationResult = restoredResult(from: assessment)
+                }
+                statusMessage = assessment.verdict == .pass
+                    ? "Résultat de prononciation restauré."
+                    : "Résultat de prononciation restauré : à corriger."
+            } else {
+                pronunciationResult = nil
+                statusMessage = "Transcription restaurée. Elle ne fournit pas de score de prononciation."
             }
 
-        default:
+        case .some(.selfRating):
             transcript = nil
-            selectedSelfRating = nil
-            isSelfEvaluationAvailable = false
-            showEvaluationDetails = false
-            statusMessage = nil
+            pronunciationResult = nil
+            showEvaluationDetails = true
+            statusMessage = "Ancienne auto-évaluation restaurée. Elle ne constitue pas une note de prononciation."
+
+        default:
+            if recording == nil && !isAnalyzing {
+                transcript = nil
+                pronunciationResult = nil
+                showEvaluationDetails = false
+                statusMessage = nil
+            } else {
+                showEvaluationDetails = transcript != nil || pronunciationResult != nil
+            }
         }
     }
 
-    private func transcribe(_ recording: Recording) async {
-        guard !Task.isCancelled else { return }
+    private func restoredResult(from assessment: SpeechPronunciationAssessment) -> SpeechPronunciationResult {
+        guard let provider = SpeechPronunciationProvider(rawValue: assessment.providerID) else {
+            return .unavailable(message: "Le fournisseur de ce résultat n’est plus disponible.")
+        }
+        return .completed(SpeechPronunciationReport(
+            provider: provider,
+            verdict: assessment.verdict,
+            providerScore: assessment.providerScore
+        ))
+    }
+
+    private func analyze(_ recording: Recording) async {
+        analysisTask?.cancel()
+        isAnalyzing = true
+        showEvaluationDetails = true
+        statusMessage = nil
+        analysisTask = Task { @MainActor in
+            async let localTranscript = transcribe(recording)
+            let result = await pronunciation.evaluate(recording: recording, exercise: exercise)
+            let capturedTranscript = await localTranscript
+            guard !Task.isCancelled else { return }
+            transcript = capturedTranscript
+            pronunciationResult = result
+            isAnalyzing = false
+            analysisTask = nil
+
+            guard case .completed(let report) = result, report.isAutomaticallyEvaluable else {
+                answer = nil
+                statusMessage = result.message ?? analysisStatusMessage(result.status)
+                return
+            }
+            answer = .speech(SpeechAnswer(
+                transcript: capturedTranscript?.rawText ?? "",
+                normalizedTranscript: capturedTranscript?.normalizedText ?? "",
+                confidence: capturedTranscript?.confidence,
+                localeIdentifier: capturedTranscript?.localeIdentifier ?? "zh-CN",
+                recordingID: recording.id,
+                pronunciationAssessment: report.persistedAssessment
+            ))
+            statusMessage = report.verdict == .pass
+                ? "Prononciation réussie. Le résultat sera enregistré automatiquement."
+                : "Prononciation à corriger. Le résultat sera enregistré automatiquement."
+        }
+        await analysisTask?.value
+    }
+
+    private func transcribe(_ recording: Recording) async -> SpeechTranscript? {
+        guard !Task.isCancelled else { return nil }
         speechPermission = await audio.requestSpeechPermission()
-        guard !Task.isCancelled else { return }
+        guard !Task.isCancelled else { return nil }
         guard speechPermission == .authorized else {
-            isSelfEvaluationAvailable = true
-            statusMessage = speechMessage(for: speechPermission)
-            return
+            return nil
         }
         do {
             let result = try await audio.transcribe(recording, localeIdentifier: "zh-CN")
-            guard !Task.isCancelled else { return }
-            transcript = result
-            showEvaluationDetails = true
-            answer = .speech(SpeechAnswer(
-                transcript: result.rawText,
-                normalizedTranscript: result.normalizedText,
-                confidence: result.confidence,
-                localeIdentifier: result.localeIdentifier,
-                recordingID: recording.id
-            ))
-            isSelfEvaluationAvailable = result.rawText.isEmpty || !transcriptMatches(result)
-            statusMessage = result.rawText.isEmpty
-                ? "Aucun texte n’a été reconnu. Tu peux choisir une auto-évaluation."
-                : "Transcription prête à comparer."
+            guard !Task.isCancelled else { return nil }
+            return result
         } catch is CancellationError {
-            // The capture task is cancelled when the exercise disappears.
+            return nil
         } catch {
-            guard !Task.isCancelled else { return }
-            isSelfEvaluationAvailable = true
-            showEvaluationDetails = true
-            statusMessage = error.localizedDescription + " Tu peux choisir une auto-évaluation."
+            return nil
+        }
+    }
+
+    private func analysisStatusMessage(_ status: SpeechPronunciationStatus) -> String {
+        switch status {
+        case .completed:
+            return "Le fournisseur n’a pas permis de conclure. Tu peux passer cet exercice sans le noter."
+        case .unconfigured:
+            return "Aucun fournisseur de prononciation n’est configuré. Tu peux passer cet exercice sans le noter."
+        case .unavailable:
+            return "L’analyse de prononciation est indisponible. Tu peux passer cet exercice sans le noter."
+        case .failed:
+            return "L’analyse de prononciation a échoué. Tu peux passer cet exercice sans le noter."
         }
     }
 
@@ -610,35 +764,14 @@ public struct SpeechPracticeView: View {
     private func microphoneMessage(for permission: PermissionState) -> String {
         switch permission {
         case .denied:
-            return "Microphone refusé. Autorise-le dans Réglages, ou utilise l’auto-évaluation."
+            return "Microphone refusé. Autorise-le dans Réglages, ou passe cet exercice sans l’évaluer."
         case .restricted:
-            return "Microphone restreint sur cet appareil. Utilise l’auto-évaluation."
+            return "Microphone restreint sur cet appareil. Passe cet exercice sans l’évaluer."
         case .unavailable:
-            return "Microphone indisponible sur cet appareil. Utilise l’auto-évaluation."
+            return "Microphone indisponible sur cet appareil. Passe cet exercice sans l’évaluer."
         default:
-            return "Microphone non disponible. Utilise l’auto-évaluation."
+            return "Microphone non disponible. Passe cet exercice sans l’évaluer."
         }
     }
 
-    private func speechMessage(for permission: PermissionState) -> String {
-        switch permission {
-        case .denied:
-            return "Reconnaissance vocale refusée. Utilise l’auto-évaluation ; aucun score de ton ne sera inventé."
-        case .restricted:
-            return "Reconnaissance vocale restreinte. Utilise l’auto-évaluation."
-        case .unavailable:
-            return "Transcription locale indisponible. Utilise l’auto-évaluation."
-        default:
-            return "Transcription locale indisponible. Utilise l’auto-évaluation."
-        }
-    }
-
-    private func selfRatingLabel(_ rating: SelfRating) -> String {
-        switch rating {
-        case .again: return "À retravailler"
-        case .hard: return "Difficile"
-        case .good: return "À l’aise"
-        case .easy: return "Très à l’aise"
-        }
-    }
 }

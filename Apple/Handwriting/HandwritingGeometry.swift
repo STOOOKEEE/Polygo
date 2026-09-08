@@ -52,6 +52,40 @@ public struct HandwritingValidation: Codable, Hashable, Sendable {
     }
 }
 
+/// The result of checking one gesture against the next ordered guide stroke.
+///
+/// This is deliberately a teaching gate, not an OCR confidence score. The
+/// start and end distances keep a gesture on the intended guide location,
+/// while direction and sampled shape catch a reversed or unrelated stroke.
+public struct HandwritingStrokeValidation: Codable, Hashable, Sendable {
+    public let expectedStrokeIndex: Int
+    public let startDistance: Double
+    public let endDistance: Double
+    public let directionScore: Double
+    public let shapeScore: Double
+    public let isValid: Bool
+
+    public init(
+        expectedStrokeIndex: Int,
+        startDistance: Double,
+        endDistance: Double,
+        directionScore: Double,
+        shapeScore: Double,
+        isValid: Bool
+    ) {
+        self.expectedStrokeIndex = max(0, expectedStrokeIndex)
+        self.startDistance = Self.clamp(startDistance)
+        self.endDistance = Self.clamp(endDistance)
+        self.directionScore = Self.clamp(directionScore)
+        self.shapeScore = Self.clamp(shapeScore)
+        self.isValid = isValid
+    }
+
+    private static func clamp(_ value: Double) -> Double {
+        min(1, max(0, value))
+    }
+}
+
 /// A small, deterministic geometry check for the original guide corpus.
 ///
 /// The validator compares strokes by index. It tolerates translation and
@@ -63,6 +97,62 @@ public enum HandwritingGeometryValidator {
     private static let shapeTolerance = 0.22
     private static let minimumDirectionScore = 0.55
     private static let minimumShapeScore = 0.50
+    // The gesture is normalized to the canvas. These tolerances leave room for
+    // a finger or trackpad while still rejecting a stroke started on a nearby
+    // guide segment. The endpoint tolerance is a little wider for curved
+    // teaching paths and the two-point drags used by accessibility/UI tests.
+    private static let guidedStartTolerance = 0.16
+    private static let guidedEndTolerance = 0.20
+    private static let guidedDirectionScore = 0.64
+    private static let guidedShapeScore = 0.34
+
+    /// Checks one captured gesture against the expected ordered guide stroke.
+    /// The caller supplies the index so a valid-looking stroke cannot be used
+    /// to skip ahead in the guide.
+    public static func validateStroke(
+        _ stroke: HandwritingStroke,
+        against guideStroke: HandwritingGuideStroke,
+        expectedStrokeIndex: Int = 0
+    ) -> HandwritingStrokeValidation {
+        let userPath = stroke.points
+        let guidePath = guideStroke.points
+        guard let userStart = userPath.first,
+              let userEnd = userPath.last,
+              let guideStart = guidePath.first,
+              let guideEnd = guidePath.last,
+              !guidePath.isEmpty else {
+            return HandwritingStrokeValidation(
+                expectedStrokeIndex: expectedStrokeIndex,
+                startDistance: 1,
+                endDistance: 1,
+                directionScore: 0,
+                shapeScore: 0,
+                isValid: false
+            )
+        }
+
+        let startDistance = distance(userStart, guideStart)
+        let endDistance = distance(userEnd, guideEnd)
+        let direction = directionScore(for: userPath, comparedWith: guidePath)
+        // Fit only the candidate stroke to its guide stroke. This preserves
+        // endpoint placement and direction checks while allowing the learner
+        // to draw at a different scale inside the canvas.
+        let fittedPath = fit(userPath, to: guidePath)
+        let shape = shapeScore(for: fittedPath, comparedWith: guidePath)
+        let valid = startDistance <= guidedStartTolerance
+            && endDistance <= guidedEndTolerance
+            && direction >= guidedDirectionScore
+            && shape >= guidedShapeScore
+
+        return HandwritingStrokeValidation(
+            expectedStrokeIndex: expectedStrokeIndex,
+            startDistance: startDistance,
+            endDistance: endDistance,
+            directionScore: direction,
+            shapeScore: shape,
+            isValid: valid
+        )
+    }
 
     public static func validate(
         strokes: [HandwritingStroke],
@@ -146,13 +236,52 @@ public enum HandwritingGeometryValidator {
         let guideHeight = guideBounds.height
 
         return strokes.map { stroke in
-            let points = stroke.points.map { point in
-                HandwritingPoint(
-                    x: guideBounds.minX + ((point.x - userBounds.minX) / userWidth) * guideWidth,
-                    y: guideBounds.minY + ((point.y - userBounds.minY) / userHeight) * guideHeight
-                )
-            }
+            let points = fit(
+                stroke.points,
+                userBounds: userBounds,
+                userWidth: userWidth,
+                userHeight: userHeight,
+                guideBounds: guideBounds,
+                guideWidth: guideWidth,
+                guideHeight: guideHeight
+            )
             return HandwritingStroke(id: stroke.id, points: points)
+        }
+    }
+
+    private static func fit(
+        _ points: [HandwritingPoint],
+        to reference: [HandwritingPoint]
+    ) -> [HandwritingPoint] {
+        guard let userBounds = bounds(of: points),
+              let guideBounds = bounds(of: reference) else {
+            return points
+        }
+        return fit(
+            points,
+            userBounds: userBounds,
+            userWidth: max(userBounds.width, 0.0001),
+            userHeight: max(userBounds.height, 0.0001),
+            guideBounds: guideBounds,
+            guideWidth: guideBounds.width,
+            guideHeight: guideBounds.height
+        )
+    }
+
+    private static func fit(
+        _ points: [HandwritingPoint],
+        userBounds: Bounds,
+        userWidth: Double,
+        userHeight: Double,
+        guideBounds: Bounds,
+        guideWidth: Double,
+        guideHeight: Double
+    ) -> [HandwritingPoint] {
+        points.map { point in
+            HandwritingPoint(
+                x: guideBounds.minX + ((point.x - userBounds.minX) / userWidth) * guideWidth,
+                y: guideBounds.minY + ((point.y - userBounds.minY) / userHeight) * guideHeight
+            )
         }
     }
 

@@ -14,6 +14,7 @@ public struct LessonView: View {
     @State private var didStart = false
     @State private var didRestore = false
     @State private var isEvaluating = false
+    @State private var automaticEvaluationTask: Task<Void, Never>?
     @State private var isFinalizing = false
     @State private var finished = false
     @State private var preambleExpanded = false
@@ -49,6 +50,7 @@ public struct LessonView: View {
         .task {
             lesson = await model.loadLesson(lessonID)
             restoreSavedStateIfNeeded()
+            autoEvaluateSpeechIfReady(answer)
             if !didStart {
                 didStart = true
                 // NavigationLink destinations already live inside a tab's
@@ -57,11 +59,12 @@ public struct LessonView: View {
                 _ = await model.startLesson(lessonID, persistRouteInNavigation: false)
             }
         }
-        .onChange(of: answer) { _, _ in
+        .onChange(of: answer) { _, newAnswer in
             // Controls are disabled while feedback is visible. Keeping this
             // observer persistence-only also lets restored answer and feedback
             // arrive in either SwiftUI update order without losing the latter.
             scheduleCheckpoint()
+            autoEvaluateSpeechIfReady(newAnswer)
         }
         .onChange(of: evaluation) { _, _ in scheduleCheckpoint() }
         .onChange(of: currentIndex) { _, _ in scheduleCheckpoint() }
@@ -69,7 +72,11 @@ public struct LessonView: View {
             guard phase == .inactive || phase == .background else { return }
             scheduleCheckpoint()
         }
-        .onDisappear { scheduleCheckpoint() }
+        .onDisappear {
+            automaticEvaluationTask?.cancel()
+            automaticEvaluationTask = nil
+            scheduleCheckpoint()
+        }
     }
 
     private func restoreSavedStateIfNeeded() {
@@ -188,22 +195,39 @@ public struct LessonView: View {
                     lessonEpilogue(lesson, after: block.0)
                 }
 
-                HStack(spacing: 12) {
-                    if evaluation != nil {
-                        Button("Réessayer") { self.evaluation = nil; self.answer = nil }
-                            .buttonStyle(.bordered)
-                            .disabled(evaluation?.accepted == true)
-                    }
-                    Spacer()
-                    Button(actionTitle) { submitOrAdvance(spec: spec, blockID: block.0) }
-                        .buttonStyle(SyllunePrimaryButtonStyle())
-                        .disabled(isEvaluating || isFinalizing || !canSubmit(spec))
-                        .frame(maxWidth: 240)
-                }
             }
             .frame(maxWidth: 720, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(20)
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            exerciseActionBar(spec: spec, blockID: block.0)
+        }
+    }
+
+    private func exerciseActionBar(spec: ExerciseSpec, blockID: BlockID) -> some View {
+        HStack(spacing: 12) {
+            if evaluation != nil {
+                Button("Réessayer") {
+                    self.evaluation = nil
+                    self.answer = nil
+                }
+                .buttonStyle(.bordered)
+                .disabled(evaluation?.accepted == true)
+            }
+            Spacer(minLength: 8)
+            Button(actionTitle(for: spec)) { submitOrAdvance(spec: spec, blockID: blockID) }
+                .buttonStyle(SyllunePrimaryButtonStyle())
+                .disabled(isEvaluating || isFinalizing || !canSubmit(spec))
+                .frame(maxWidth: 240)
+        }
+        .frame(maxWidth: 720)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .top) {
+            Divider()
         }
     }
 
@@ -336,6 +360,7 @@ public struct LessonView: View {
             SpeechPracticeView(
                 exercise: exercise,
                 audio: model.dependencies.audio,
+                pronunciation: model.dependencies.pronunciation,
                 answer: $answer,
                 onRecordingCreated: { recordingID in
                     Task { await model.saveRecording(recordingID, exerciseID: exercise.header.id) }
@@ -354,17 +379,20 @@ public struct LessonView: View {
         }
     }
 
-    private var actionTitle: String {
-        if evaluation == nil { return "Vérifier" }
+    private func actionTitle(for spec: ExerciseSpec) -> String {
+        if evaluation == nil {
+            return answer == nil && canSkipWithoutEvaluation(spec)
+                ? "Passer sans évaluer"
+                : "Vérifier"
+        }
         if evaluation?.accepted == true { return currentIndex + 1 < exercises.count ? "Continuer" : "Terminer" }
         return "Continuer malgré tout"
     }
 
     private func canSubmit(_ spec: ExerciseSpec) -> Bool {
         if evaluation != nil { return true }
-        guard answer != nil else { return false }
-        if case .flashcard = spec { return true }
-        return true
+        if answer != nil { return true }
+        return canSkipWithoutEvaluation(spec)
     }
 
     private func submitOrAdvance(spec: ExerciseSpec, blockID: BlockID) {
@@ -373,8 +401,8 @@ public struct LessonView: View {
             else { advance() }
             return
         }
-        guard let answer else { return }
         guard !isEvaluating else { return }
+        let answer = answer ?? .skipped
         isEvaluating = true
         Task { @MainActor in
             if let result = await model.evaluate(spec, answer: answer, lessonID: lessonID, blockID: blockID) {
@@ -382,6 +410,37 @@ public struct LessonView: View {
                 self.answered[spec.id] = result
             }
             self.isEvaluating = false
+        }
+    }
+
+    private func canSkipWithoutEvaluation(_ spec: ExerciseSpec) -> Bool {
+        if case .speaking = spec { return true }
+        return false
+    }
+
+    private func autoEvaluateSpeechIfReady(_ candidate: ExerciseAnswer?) {
+        guard evaluation == nil,
+              !isEvaluating,
+              currentIndex < exercises.count,
+              let candidate,
+              case .speaking = exercises[currentIndex].1,
+              case .speech(let speech) = candidate,
+              speech.pronunciationAssessment?.isEvaluable == true else {
+            return
+        }
+        let spec = exercises[currentIndex].1
+        let blockID = exercises[currentIndex].0
+        automaticEvaluationTask?.cancel()
+        isEvaluating = true
+        automaticEvaluationTask = Task { @MainActor in
+            defer {
+                automaticEvaluationTask = nil
+                isEvaluating = false
+            }
+            guard let result = await model.evaluate(spec, answer: candidate, lessonID: lessonID, blockID: blockID) else { return }
+            guard self.answer == candidate, self.evaluation == nil else { return }
+            self.evaluation = result
+            self.answered[spec.id] = result
         }
     }
 
@@ -477,11 +536,12 @@ public struct LessonView: View {
 private struct FeedbackView: View {
     let evaluation: ExerciseEvaluation
     var body: some View {
+        let isSkipped = evaluation.outcome == .skipped
         HStack(alignment: .top, spacing: 10) {
-            Image(systemName: evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill")
-                .foregroundStyle(evaluation.accepted ? SylluneColor.success : SylluneColor.error)
+            Image(systemName: isSkipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill"))
+                .foregroundStyle(isSkipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
             VStack(alignment: .leading, spacing: 4) {
-                Text(evaluation.accepted ? "Correct" : "À revoir").font(.headline)
+                Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Correct" : "À revoir")).font(.headline)
                 Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body)
             }
         }
@@ -499,47 +559,49 @@ private struct DialogueBlockView: View {
     @Binding var responseResult: Bool?
     @EnvironmentObject private var model: AppModel
     @State private var isPlaying = false
+    @State private var playingLineIndex: Int?
     @State private var playbackToken = UUID()
     @State private var playbackMessage: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 10) {
                 Label("Dialogue", systemImage: "bubble.left.and.bubble.right")
                     .font(.headline)
                     .foregroundStyle(SylluneColor.ink)
-                Spacer(minLength: 8)
+                Spacer(minLength: 6)
                 Button {
                     togglePlayback()
                 } label: {
-                    Label(isPlaying ? "Arrêter" : "Tout écouter", systemImage: isPlaying ? "stop.fill" : "play.fill")
+                    Label(
+                        isPlaying ? "Arrêter" : "Tout écouter",
+                        systemImage: isPlaying ? "stop.fill" : "play.fill"
+                    )
+                    .font(.callout.weight(.semibold))
                 }
-                .buttonStyle(.bordered)
-                .tint(SylluneColor.sky)
-                .accessibilityLabel(isPlaying ? "Arrêter le dialogue" : "Écouter tout le dialogue en chinois")
+                .buttonStyle(.borderless)
+                .foregroundStyle(SylluneColor.sky)
+                .frame(minHeight: 40)
+                .accessibilityLabel(
+                    isPlaying
+                        ? "Arrêter le dialogue"
+                        : "Écouter tout le dialogue en chinois"
+                )
+                .accessibilityHint("Lit chaque réplique dans l’ordre en mandarin.")
             }
 
-            ForEach(Array(value.lines.enumerated()), id: \.offset) { index, line in
-                HStack(alignment: .top, spacing: 10) {
-                    Text(line.speaker)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .frame(minWidth: 52, alignment: .leading)
-                    ChineseSelectableText(
-                        hanzi: line.hanzi,
-                        font: .body,
-                        speechEnabled: true,
-                        vocabulary: vocabulary,
-                            pinyin: line.pinyin,
-                            translation: line.translation.resolve(preferred: languageCodes),
-                            audio: line.audio,
-                            wordInteractionEnabled: false
-                    )
-                    .foregroundStyle(SylluneColor.ink)
-                    .accessibilityLabel("Réplique \(index + 1), \(line.speaker) : \(line.hanzi)")
-                }
-                if index < value.lines.count - 1 {
-                    Divider().padding(.leading, 62)
+            Text(sceneCaption)
+                .font(.caption)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
+
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(Array(value.lines.enumerated()), id: \.offset) { index, line in
+                    dialogueLine(line, index: index)
+                    if index < value.lines.count - 1 {
+                        Divider()
+                            .padding(.leading, 60)
+                    }
                 }
             }
 
@@ -547,6 +609,7 @@ private struct DialogueBlockView: View {
                 Text(playbackMessage)
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             if let participation = value.participation,
@@ -564,36 +627,137 @@ private struct DialogueBlockView: View {
                 .accessibilityHint("Les réponses sont évaluées parmi les exercices de la leçon.")
             }
         }
-        .padding(16)
-        .sylluneCard(radius: 14)
+        .padding(14)
+        .sylluneCard(radius: 16)
         .onDisappear {
             playbackToken = UUID()
             isPlaying = false
+            playingLineIndex = nil
             model.dependencies.audio.stopSpeaking()
             model.dependencies.audio.stopPlayback()
         }
+    }
+
+    private var sceneCaption: String {
+        var speakers: [String] = []
+        for line in value.lines where !speakers.contains(line.speaker) {
+            speakers.append(line.speaker)
+        }
+        guard !speakers.isEmpty else { return "Échange court" }
+        return "\(speakers.joined(separator: " et ")) · échange court"
+    }
+
+    private func dialogueLine(_ line: DialogueLine, index: Int) -> some View {
+        HStack(alignment: .top, spacing: 8) {
+            speakerBadge(line.speaker, index: index)
+
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(alignment: .top, spacing: 8) {
+                    Button {
+                        playLine(line, index: index)
+                    } label: {
+                        Text(line.hanzi)
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(SylluneColor.ink)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(line.hanzi)
+                    .accessibilityHint("Écoute cette réplique en mandarin.")
+
+                    lineAudioButton(line, index: index)
+                }
+
+                if !line.pinyin.isEmpty {
+                    Text(line.pinyin)
+                        .font(.caption)
+                        .foregroundStyle(SylluneColor.jadeDeep)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel("Pinyin : \(line.pinyin)")
+                }
+                if let translation = line.translation.resolve(preferred: languageCodes),
+                   !translation.isEmpty {
+                    Text(translation)
+                        .font(.callout)
+                        .foregroundStyle(SylluneColor.inkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel("Traduction : \(translation)")
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.vertical, 3)
+    }
+
+    private func speakerBadge(_ speaker: String, index: Int) -> some View {
+        let accent = index.isMultiple(of: 2) ? SylluneColor.pathJade : SylluneColor.pathSky
+        return VStack(spacing: 2) {
+            ZStack {
+                Circle()
+                    .fill(accent.opacity(0.16))
+                    .frame(width: 32, height: 32)
+                Text(String(speaker.prefix(1)).uppercased())
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(accent)
+            }
+            Text(speaker)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(SylluneColor.inkMuted)
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(width: 52, alignment: .top)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Locuteur \(speaker)")
+    }
+
+    private func lineAudioButton(_ line: DialogueLine, index: Int) -> some View {
+        Button {
+            playLine(line, index: index)
+        } label: {
+            Image(systemName: playingLineIndex == index ? "stop.fill" : "speaker.wave.2.fill")
+                .font(.callout.weight(.semibold))
+                .foregroundStyle(SylluneColor.sky)
+                .frame(width: 40, height: 40)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.borderless)
+        .accessibilityLabel(
+            playingLineIndex == index
+                ? "Arrêter la réplique de \(line.speaker)"
+                : "Écouter la réplique de \(line.speaker)"
+        )
+        .accessibilityHint("Lit cette réplique en mandarin.")
     }
 
     @ViewBuilder
     private func participationView(_ participation: DialogueParticipation) -> some View {
         let audioIndex = min(max(0, participation.audioLineIndex), value.lines.count - 1)
         let audioLine = value.lines[audioIndex]
-        VStack(alignment: .leading, spacing: 10) {
-            Divider().padding(.vertical, 2)
-            Label("À toi", systemImage: "pencil.and.outline")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(SylluneColor.ink)
-            Text(participation.prompt.resolve(preferred: languageCodes) ?? "Écris la réplique précédente.")
-                .font(.body)
-                .foregroundStyle(SylluneColor.inkMuted)
-            Button {
-                playLine(audioLine)
-            } label: {
-                Label("Écouter la réponse", systemImage: "speaker.wave.2.fill")
+        VStack(alignment: .leading, spacing: 8) {
+            Divider()
+                .padding(.vertical, 2)
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                Label("À toi", systemImage: "pencil.and.outline")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(SylluneColor.ink)
+                Spacer(minLength: 8)
+                Button {
+                    playLine(audioLine, index: audioIndex)
+                } label: {
+                    Label("Écouter la réponse", systemImage: "speaker.wave.2.fill")
+                }
+                .buttonStyle(.borderless)
+                .foregroundStyle(SylluneColor.sky)
+                .frame(minHeight: 40)
+                .accessibilityHint("La réponse est lue en mandarin pour retrouver la réplique précédente.")
             }
-            .buttonStyle(.bordered)
-            .tint(SylluneColor.sky)
-            .accessibilityHint("La réponse est lue en mandarin pour retrouver la réplique précédente.")
+            Text(participation.prompt.resolve(preferred: languageCodes) ?? "Écris la réplique précédente.")
+                .font(.callout)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
             TextField("Réplique en caractères chinois", text: $writtenResponse)
                 .textFieldStyle(.roundedBorder)
 #if os(iOS)
@@ -622,6 +786,7 @@ private struct DialogueBlockView: View {
                 Text(hint)
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
@@ -632,12 +797,15 @@ private struct DialogueBlockView: View {
             model.dependencies.audio.stopSpeaking()
             model.dependencies.audio.stopPlayback()
             isPlaying = false
+            playingLineIndex = nil
             playbackMessage = "Lecture arrêtée."
             return
         }
+
         let token = UUID()
         playbackToken = token
         isPlaying = true
+        playingLineIndex = nil
         playbackMessage = nil
         let text = value.lines.map(\.hanzi).joined(separator: " ")
         Task { @MainActor in
@@ -645,7 +813,11 @@ private struct DialogueBlockView: View {
                 // Synthesis receives only the authored Mandarin lines. This
                 // prevents a French label or instruction from being read as
                 // if it were part of the dialogue.
-                try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: .normal)
+                try await model.dependencies.audio.speak(
+                    text: text,
+                    localeIdentifier: "zh-CN",
+                    rate: .normal
+                )
                 guard playbackToken == token else { return }
                 isPlaying = false
                 playbackMessage = "Dialogue lu en mandarin."
@@ -661,28 +833,36 @@ private struct DialogueBlockView: View {
         }
     }
 
-    private func playLine(_ line: DialogueLine) {
+    private func playLine(_ line: DialogueLine, index: Int) {
         let token = UUID()
         playbackToken = token
         isPlaying = true
+        playingLineIndex = index
         playbackMessage = nil
         Task { @MainActor in
             do {
                 if let audio = line.audio {
                     try await model.dependencies.audio.play(asset: audio)
                 } else {
-                    try await model.dependencies.audio.speak(text: line.hanzi, localeIdentifier: "zh-CN", rate: .normal)
+                    try await model.dependencies.audio.speak(
+                        text: line.hanzi,
+                        localeIdentifier: "zh-CN",
+                        rate: .normal
+                    )
                 }
                 guard playbackToken == token else { return }
                 isPlaying = false
-                playbackMessage = "Réponse lue en mandarin."
+                playingLineIndex = nil
+                playbackMessage = "Réplique de \(line.speaker) lue en mandarin."
             } catch is CancellationError {
                 guard playbackToken == token else { return }
                 isPlaying = false
+                playingLineIndex = nil
                 playbackMessage = "Lecture arrêtée."
             } catch {
                 guard playbackToken == token else { return }
                 isPlaying = false
+                playingLineIndex = nil
                 playbackMessage = "Audio indisponible hors ligne."
             }
         }
@@ -690,6 +870,7 @@ private struct DialogueBlockView: View {
 }
 
 private struct PedagogicalBlockView: View {
+
     let block: LessonBlock
     let vocabulary: [VocabularyEntry]
     let objectives: [LearningObjective]

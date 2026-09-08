@@ -10,8 +10,9 @@ Le contenu local actuel comprend quatre leçons (`lesson-01` à `lesson-04`),
 contrat lisent les JSON réels et vérifient les références fermées entre leçons,
 blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
-Le package courant contient **43 tests XCTest**, dont **6 tests de contrat de
-contenu**. Le contrôle `git diff --check` est propre. Le code validé est le
+Le package courant contient **46 tests XCTest**, dont **6 tests de contrat de
+contenu** ; les **46/46 tests portables** passent avec les fixtures courantes.
+Le contrôle `git diff --check` est propre. Le code validé historiquement est le
 commit `c30d712` ; le [run Apple
 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) est
 terminé avec succès. Il valide les **43/43 tests** package, la génération
@@ -57,12 +58,13 @@ stables natives extraites de ce run sont conservées dans le dépôt :
 
 `ExerciseAndProgressTests.swift` couvre la normalisation du pinyin, de la
 ponctuation et de la casse, les mauvaises formes de réponse, les scores
-invalides, les variantes de transcription, l’auto-évaluation, le parcours
-onboarding → leçon → exercice → fin → cartes, la reprise d’un brouillon et du
-feedback, les checkpoints de dialogue, l’idempotence des événements, la
-conservation d’un état SRS lors d’un ajout répété, la correction d’une tentative
-et le rejet d’un événement d’un autre profil. `MandarinSpeechTextTests.swift`
-vérifie aussi que le TTS ne reçoit que le texte mandarin utile.
+invalides, les variantes de transcription legacy, les rapports fournisseur de
+prononciation, les états incertain et `skipped`, le parcours onboarding → leçon
+→ exercice → fin → cartes, la reprise d’un brouillon et du feedback, les
+checkpoints de dialogue, l’idempotence des événements, la conservation d’un
+état SRS lors d’un ajout répété, la correction d’une tentative et le rejet d’un
+événement d’un autre profil. `MandarinSpeechTextTests.swift` vérifie aussi que
+le TTS ne reçoit que le texte mandarin utile.
 
 ## Vérification statique du parcours
 
@@ -84,11 +86,15 @@ l’onboarding transmet la première leçon au shell.
 L’oral extrait le mandarin avant chaque synthèse et utilise une voix `zh-CN` ;
 les labels et instructions françaises ne sont pas lus. La vue orale compacte
 présente la cible, le modèle et le microphone dans le premier écran, restaure
-les résultats persistés sans fabriquer d’enregistrement et maintient une
-auto-évaluation explicite. La transcription et sa confiance ne produisent
-aucun score de phonème ou de ton. L’annulation d’une tâche orale marque aussi
-une requête encore en attente avant le saut vers la file principale ; elle ne
-peut donc plus créer un enregistreur après la sortie de l’écran.
+les résultats persistés sans fabriquer d’enregistrement et sépare la
+transcription du protocole `SpeechPronunciationService`. Tant qu’aucun provider
+ni credential n’est configuré, elle affiche l’état non configuré et permet
+« Passer sans évaluer » ; l’état `skipped` ne porte ni note ni réussite. La
+transcription et sa confiance ne produisent aucun score de phonème ou de ton.
+Les fixtures vérifient aussi les rapports terminés, les détails par composante
+et les états indisponible, en échec et incertain. L’annulation d’une tâche orale
+marque aussi une requête encore en attente avant le saut vers la file principale
+; elle ne peut donc plus créer un enregistreur après la sortie de l’écran.
 
 La vue d’écriture injecte le service local, persiste le dessin et transmet
 l’identifiant au journal de progression via `onDrawingCreated`. Le statut de
@@ -99,12 +105,17 @@ bouton de réinitialisation n’est exposé dans l’interface utilisateur.
 
 ## Parcours UI validé par le run Apple
 
-La cible `PolygoAppUITests` contient quatre méthodes de test :
+Le run historique ciblait quatre méthodes de la cible `PolygoAppUITests`. Le
+tree courant en contient sept, avec les parcours ajoutés pour l’oral sans
+évaluation et l’écriture guidée :
 
 - le smoke français `PolygoAppUITests.testFrenchOnboardingAndPrimaryOfflineJourneys` pour l’onboarding, le parcours, les cartes, les réglages, une histoire et le dictionnaire ;
 - `LessonReviewJourneyTests.testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch` pour la fin de leçon, les cinq cartes dues, la revue et la relance ;
 - `ZZLessonRegressionJourneyTests.testLessonDraftFeedbackDialogueAndOralJourney` pour le brouillon, le feedback, le dialogue, la réplique précédente interactive, le canevas et l’oral ;
-- `ZZLessonRegressionJourneyTests.testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply` pour la cohérence de la participation dialoguée dans le JSON L1.
+- `ZZLessonRegressionJourneyTests.testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply` pour la cohérence de la participation dialoguée dans le JSON L1 ;
+- `ZZLessonRegressionJourneyTests.testAllLessonDialogueFixturesExposeSupportAndPreviousReplyMapping` pour les quatre mappings de dialogue ;
+- `LessonReviewJourneyTests.testLessonSkipKeepsOralUnevaluatedAndPersistsWritingPathAcrossRelaunch` pour le passage oral sans évaluation ;
+- `LessonReviewJourneyTests.testGuidedWritingRejectsWrongStrokeThenAcceptsRetry` et `LessonReviewJourneyTests.testFreeWritingFailureCanBeSelfReportedAndAdvance` pour les deux chemins d’écriture.
 
 Ces quatre tests ont réussi dans le [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185), exécuté sur le commit `c30d712`. Aucun test UI n’a échoué. Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue orale compacte expose bien la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
 
@@ -112,17 +123,21 @@ Ces quatre tests ont réussi dans le [run Apple 34207957185](https://github.com/
 
 Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
 les tests UI ne peuvent donc pas y être exécutés localement. Le run Apple
-34207957185 a confirmé le parcours de reprise, le dialogue, l’oral compact,
-l’écriture, la persistance locale, la revue et le smoke jusqu’aux fiches
-vocabulaire, cartes, lecture et réglages. Les captures natives du mode sombre
-du Mac et de l’iPhone sont incluses dans ce rapport pour l’examen visuel.
+historique 34207957185 a confirmé le parcours de reprise, le dialogue, l’oral
+compact, l’écriture, la persistance locale, la revue et le smoke jusqu’aux
+fiches vocabulaire, cartes, lecture et réglages. Les nouveaux contrats et
+fixtures de prononciation, le passage oral sans évaluation et les nouveaux
+parcours de traits sont couverts par la suite portable actuelle ; la validation
+Apple de cette composition reste à confirmer. Les captures natives du mode
+sombre du Mac et de l’iPhone sont incluses dans ce rapport pour l’examen visuel.
 
 L’audit VoiceOver, Dynamic Type XXXL, contraste, rendu du mode sombre,
 réduction des animations, clavier macOS et fenêtres étroites reste à compléter
 par un audit manuel sur iPhone, iPad et Mac. Les labels et groupes sont présents,
 mais la langue et la prononciation VoiceOver ainsi que les parcours de toucher
-manuel ne sont pas certifiés. Speech avec permission accordée reste à vérifier
-sur appareil ; le parcours CI a exercé le fallback après refus du microphone.
+manuel ne sont pas certifiés. Speech avec permission accordée et l’analyse avec
+un provider configuré restent à vérifier sur appareil ; le parcours CI a
+exercé le chemin sans évaluation après refus du microphone.
 CloudKit reste prévu mais inactif : ses conflits réseau ne sont pas testés et
 seuls les scénarios du modèle local sont couverts.
 
@@ -130,9 +145,12 @@ seuls les scénarios du modèle local sont couverts.
 
 Le run 34207957185 confirme les états observables de reprise après arrière-plan
 et relance, le feedback sans double validation, les positions de tuiles, les
-cibles audio mandarin, la réplique précédente interactive, le fallback oral et
-la disposition compacte de l’oral. Les quatre méthodes iOS et les deux méthodes
-macOS ont réussi sans échec.
+cibles audio mandarin, la réplique précédente interactive, le chemin oral
+disponible dans ce jalon et la disposition compacte de l’oral. Les quatre
+méthodes iOS et les deux méthodes macOS de ce run historique ont réussi sans
+échec. La composition actuelle ajoute les résultats fournisseur fixture et le
+passage explicite sans évaluation ; elle ne doit pas être présentée comme une
+correction de prononciation active sans credentials.
 
 Le workflow Apple conserve désormais aussi le bundle xcresult quand le run est
 vert. Les captures nommées du parcours sont disponibles avec le résultat de

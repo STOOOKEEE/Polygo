@@ -26,14 +26,15 @@ public struct OralView: View {
                     SpeechPracticeView(
                         exercise: exercise,
                         audio: model.dependencies.audio,
+                        pronunciation: model.dependencies.pronunciation,
                         answer: $answer,
                         onRecordingCreated: { recordingID in
                             Task { await model.saveRecording(recordingID, exerciseID: exerciseID) }
                         }
                     )
                     if let evaluation { FeedbackViewForPractice(evaluation: evaluation) }
-                    Button(evaluation == nil ? "Vérifier" : "Terminer") { submit() }
-                        .buttonStyle(SyllunePrimaryButtonStyle()).disabled(answer == nil || lessonID == nil || blockID == nil)
+                    Button(actionTitle) { submit() }
+                        .buttonStyle(SyllunePrimaryButtonStyle()).disabled(lessonID == nil || blockID == nil)
                 } else if let message { ContentUnavailableView("Exercice oral indisponible", systemImage: "mic.slash", description: Text(message)) }
                 else { ProgressView("Chargement de l’exercice…") }
             }
@@ -56,8 +57,20 @@ public struct OralView: View {
 
     private func submit() {
         if let evaluation { _ = evaluation; return }
-        guard let exercise, let answer, let lessonID, let blockID else { return }
-        Task { evaluation = await model.evaluate(.speaking(exercise), answer: answer, lessonID: lessonID, blockID: blockID) }
+        guard let exercise, let lessonID, let blockID else { return }
+        Task {
+            evaluation = await model.evaluate(
+                .speaking(exercise),
+                answer: answer ?? .skipped,
+                lessonID: lessonID,
+                blockID: blockID
+            )
+        }
+    }
+
+    private var actionTitle: String {
+        if evaluation != nil { return "Terminer" }
+        return answer == nil ? "Passer sans évaluer" : "Vérifier"
     }
 }
 
@@ -116,9 +129,10 @@ public struct WritingView: View {
 private struct FeedbackViewForPractice: View {
     let evaluation: ExerciseEvaluation
     var body: some View {
+        let isSkipped = evaluation.outcome == .skipped
         HStack(alignment: .top, spacing: 10) {
-            Image(systemName: evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill").foregroundStyle(evaluation.accepted ? SylluneColor.success : SylluneColor.error)
-            VStack(alignment: .leading, spacing: 4) { Text(evaluation.accepted ? "Réponse enregistrée" : "À revoir").font(.headline); Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body) }
+            Image(systemName: isSkipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill")).foregroundStyle(isSkipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
+            VStack(alignment: .leading, spacing: 4) { Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Réponse enregistrée" : "À revoir")).font(.headline); Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body) }
         }
         .padding(14).frame(maxWidth: .infinity, alignment: .leading).sylluneCard(radius: 12)
     }

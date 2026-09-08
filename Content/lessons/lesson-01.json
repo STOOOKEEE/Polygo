@@ -456,7 +456,7 @@
         "fr": "Une salutation en trois gestes"
       },
       "body": {
-        "fr": "Situation : tu arrives dans une petite boulangerie et tu salues la personne au comptoir. Commence par écouter, regarde les marques de ton, puis dis la formule. 你好 est une salutation ; 早 est une forme courte pour le matin ; 谢谢 et 不客气 forment une paire de politesse ; 再见 clôt l'échange."
+        "fr": "Situation : Mina retrouve Tao un matin et le salue. Commence par écouter, regarde les marques de ton, puis dis la formule. 你好 est une salutation ; 早 est une forme courte pour le matin ; 谢谢 remercie la personne ; 再见 clôt l'échange."
       },
       "audio": null,
       "metadata": {
@@ -514,33 +514,42 @@
         },
         {
           "speaker": "Tao",
-          "hanzi": "你好！",
-          "pinyin": "nǐ hǎo!",
+          "hanzi": "你好！你好吗？",
+          "pinyin": "nǐ hǎo! nǐ hǎo ma?",
           "translation": {
-            "fr": "Bonjour !"
+            "fr": "Bonjour ! Ça va ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "谢谢！",
-          "pinyin": "xièxie!",
+          "hanzi": "我很好，谢谢！你呢？",
+          "pinyin": "wǒ hěn hǎo, xièxie! nǐ ne?",
           "translation": {
-            "fr": "Merci !"
+            "fr": "Je vais très bien, merci ! Et toi ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "不客气。",
-          "pinyin": "bú kèqi.",
+          "hanzi": "我也很好！",
+          "pinyin": "wǒ yě hěn hǎo!",
           "translation": {
-            "fr": "De rien."
+            "fr": "Moi aussi, je vais très bien !"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
+          "hanzi": "再见！",
+          "pinyin": "zàijiàn!",
+          "translation": {
+            "fr": "Au revoir !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
           "hanzi": "再见！",
           "pinyin": "zàijiàn!",
           "translation": {
@@ -553,8 +562,8 @@
       "participation": {
         "prompt": {"fr": "Écoute la réponse, puis écris la réplique juste avant."},
         "audioLineIndex": 3,
-        "acceptedResponses": ["谢谢！", "谢谢", "xiexie", "xièxie"],
-        "hint": {"fr": "La réplique précédente remercie la personne."}
+        "acceptedResponses": ["我很好，谢谢！你呢？", "我很好 谢谢 你呢", "wo hen hao xiexie ni ne", "wǒ hěn hǎo xièxie nǐ ne"],
+        "hint": {"fr": "La réplique précédente dit que Mina va très bien et relance la question."}
       },
       "metadata": {
         "standardID": "HSK-3.0",

@@ -434,6 +434,8 @@ public struct SpeakingExercise: Codable, Hashable, Sendable {
     public let referencePinyin: String
     public let referenceAudio: AssetReference?
     public let acceptedTranscripts: [String]
+    // Champ conservé pour décoder les anciens packs ; l’UI orale actuelle
+    // n’expose pas d’auto-évaluation de prononciation.
     public let allowSelfRating: Bool
 }
 
@@ -461,6 +463,7 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
     case speech(SpeechAnswer)
     case handwriting(HandwritingAnswer)
     case selfRating(SelfRating)
+    case skipped
 }
 
 public struct SpeechAnswer: Codable, Hashable, Sendable {
@@ -469,6 +472,17 @@ public struct SpeechAnswer: Codable, Hashable, Sendable {
     public let confidence: Double?
     public let localeIdentifier: String
     public let recordingID: RecordingID?
+    public let pronunciationAssessment: SpeechPronunciationAssessment?
+}
+
+public struct SpeechPronunciationAssessment: Codable, Hashable, Sendable {
+    public let providerID: String
+    public let verdict: SpeechPronunciationVerdict
+    public let providerScore: Double?
+}
+
+public enum SpeechPronunciationVerdict: String, Codable, Hashable, Sendable {
+    case pass, needsPractice, inconclusive
 }
 
 public struct HandwritingAnswer: Codable, Hashable, Sendable {
@@ -483,7 +497,7 @@ public enum SelfRating: String, Codable, Hashable, Sendable {
 }
 
 public enum EvaluationOutcome: String, Codable, Hashable, Sendable {
-    case correct, incorrect, partial, selfReported, unavailable
+    case correct, incorrect, partial, selfReported, unavailable, skipped
 }
 
 public struct ExerciseEvaluation: Codable, Hashable, Sendable {
@@ -501,11 +515,16 @@ public protocol ExerciseEngine: Sendable {
 ```
 
 Règles MVP du moteur : choix et ordre de mots exigent l’ID exact ; un texte est
-normalisé par espaces, ponctuation chinoise et casse avant comparaison ; une
-transcription orale est comparée à `acceptedTranscripts` puis accepte
-`selfRating` si le service Speech est indisponible ; l’écriture accepte le
-tracé auto-évalué et conserve la capture. Une implémentation ne doit pas
-inventer un score de prononciation à partir de la seule confiance Speech.
+normalisé par espaces, ponctuation chinoise et casse avant comparaison. Dans le
+parcours oral actuel, la transcription et sa confiance sont descriptives ; une
+réponse orale n’est évaluable qu’avec un `SpeechPronunciationAssessment`
+terminé, portant le verdict du fournisseur et son score. Une absence de
+fournisseur, une erreur ou un résultat incertain conserve l’exercice sans note
+et l’action « Passer sans évaluer » produit `skipped`, qui ne compte pas comme
+une réussite. Le champ `allowSelfRating` reste décodable pour les anciens
+contenus, mais l’UI orale ne propose plus cette action. L’écriture conserve son
+propre chemin d’auto-évaluation et sa capture. Une implémentation ne doit
+jamais inventer un score de prononciation à partir de la seule confiance Speech.
 
 ### État de leçon et progression
 
@@ -824,12 +843,34 @@ route audio et arrêt de l’enregistrement.
 
 Le service Speech commence par demander la permission et vérifie la capacité de
 reconnaissance sur l’appareil. Lorsque la reconnaissance locale est disponible,
-il peut demander un traitement on-device ; sinon il renvoie
-`SpeechUnavailable`/une erreur récupérable et l’UI propose l’auto-évaluation.
-La tranche initiale utilise `SFSpeechRecognizer`, pas `SpeechAnalyzer`/les
-transcripteurs introduits dans les SDK récents : le contrat reste donc
-compatible avec la cible iOS 17/macOS 14. Les textes et scores de transcription
-sont stockés localement avec l’événement, jamais envoyés à un service Polygo.
+il peut demander un traitement on-device ; sinon il renvoie une erreur
+récupérable. La transcription et sa confiance sont descriptives et ne sont pas
+un score de prononciation. La tranche actuelle utilise `SFSpeechRecognizer`,
+pas `SpeechAnalyzer`/les transcripteurs introduits dans les SDK récents : le
+contrat reste donc compatible avec la cible iOS 17/macOS 14. Les textes et
+résultats de transcription sont stockés localement avec l’événement, jamais
+envoyés à un service Polygo.
+
+L’analyse de prononciation est un protocole séparé de la transcription :
+
+```swift
+public protocol SpeechPronunciationService: Sendable {
+    var provider: SpeechPronunciationProvider? { get }
+    func evaluate(
+        recording: Recording,
+        exercise: SpeakingExercise
+    ) async -> SpeechPronunciationResult
+}
+```
+
+`SpeechPronunciationResult` distingue `completed`, `unconfigured`,
+`unavailable` et `failed`. Seul un rapport `completed` avec verdict et score
+fournis par le moteur peut produire une réponse orale évaluée ; un état
+incertain ou sans fournisseur reste sans note et peut être passé explicitement.
+La composition actuelle injecte `UnconfiguredSpeechPronunciationService` ; les
+implémentations iFlytek ou SpeechSuper restent à placer derrière un serveur
+proxy avec des credentials conservés côté serveur. `FixedSpeechPronunciationService`
+est réservé aux fixtures et aux tests de l’interface.
 
 ### Écriture manuscrite
 

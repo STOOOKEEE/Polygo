@@ -219,9 +219,14 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
     case speech(SpeechAnswer)
     case handwriting(HandwritingAnswer)
     case selfRating(SelfRating)
+    /// An explicit learner choice to leave an exercise without claiming a
+    /// result. It is persisted as an answer-shaped event so older progress
+    /// journals remain readable while the reducer can keep the exercise
+    /// outside scored and answered counts.
+    case skipped
 
     private enum CodingKeys: String, CodingKey { case kind, choiceID, tokenIDs, text, speech, handwriting, rating }
-    private enum Kind: String, Codable { case choice, wordOrder, text, speech, handwriting, selfRating }
+    private enum Kind: String, Codable { case choice, wordOrder, text, speech, handwriting, selfRating, skipped }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -232,6 +237,7 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
         case .speech: self = .speech(try container.decode(SpeechAnswer.self, forKey: .speech))
         case .handwriting: self = .handwriting(try container.decode(HandwritingAnswer.self, forKey: .handwriting))
         case .selfRating: self = .selfRating(try container.decode(SelfRating.self, forKey: .rating))
+        case .skipped: self = .skipped
         }
     }
 
@@ -244,6 +250,7 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
         case .speech(let value): try container.encode(Kind.speech, forKey: .kind); try container.encode(value, forKey: .speech)
         case .handwriting(let value): try container.encode(Kind.handwriting, forKey: .kind); try container.encode(value, forKey: .handwriting)
         case .selfRating(let value): try container.encode(Kind.selfRating, forKey: .kind); try container.encode(value, forKey: .rating)
+        case .skipped: try container.encode(Kind.skipped, forKey: .kind)
         }
     }
 }
@@ -254,13 +261,87 @@ public struct SpeechAnswer: Codable, Hashable, Sendable {
     public let confidence: Double?
     public let localeIdentifier: String
     public let recordingID: RecordingID?
+    /// Optional provider output added after the original speech answer
+    /// contract. Its absence preserves the legacy transcript-only behavior.
+    public let pronunciationAssessment: SpeechPronunciationAssessment?
 
-    public init(transcript: String, normalizedTranscript: String? = nil, confidence: Double? = nil, localeIdentifier: String = "zh-CN", recordingID: RecordingID? = nil) {
+    private enum CodingKeys: String, CodingKey {
+        case transcript
+        case normalizedTranscript
+        case confidence
+        case localeIdentifier
+        case recordingID
+        case pronunciationAssessment
+    }
+
+    public init(
+        transcript: String,
+        normalizedTranscript: String? = nil,
+        confidence: Double? = nil,
+        localeIdentifier: String = "zh-CN",
+        recordingID: RecordingID? = nil,
+        pronunciationAssessment: SpeechPronunciationAssessment? = nil
+    ) {
         self.transcript = transcript
         self.normalizedTranscript = normalizedTranscript ?? TextNormalizer.normalize(transcript)
         self.confidence = confidence
         self.localeIdentifier = localeIdentifier
         self.recordingID = recordingID
+        self.pronunciationAssessment = pronunciationAssessment
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let transcript = try container.decode(String.self, forKey: .transcript)
+        let normalizedTranscript = try container.decodeIfPresent(String.self, forKey: .normalizedTranscript)
+        let confidence = try container.decodeIfPresent(Double.self, forKey: .confidence)
+        let localeIdentifier = try container.decodeIfPresent(String.self, forKey: .localeIdentifier) ?? "zh-CN"
+        let recordingID = try container.decodeIfPresent(RecordingID.self, forKey: .recordingID)
+        let pronunciationAssessment = try container.decodeIfPresent(SpeechPronunciationAssessment.self, forKey: .pronunciationAssessment)
+        self.init(
+            transcript: transcript,
+            normalizedTranscript: normalizedTranscript,
+            confidence: confidence,
+            localeIdentifier: localeIdentifier,
+            recordingID: recordingID,
+            pronunciationAssessment: pronunciationAssessment
+        )
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(transcript, forKey: .transcript)
+        try container.encode(normalizedTranscript, forKey: .normalizedTranscript)
+        try container.encodeIfPresent(confidence, forKey: .confidence)
+        try container.encode(localeIdentifier, forKey: .localeIdentifier)
+        try container.encodeIfPresent(recordingID, forKey: .recordingID)
+        try container.encodeIfPresent(pronunciationAssessment, forKey: .pronunciationAssessment)
+    }
+}
+
+/// Provider-neutral, compact speech assessment metadata that can be carried
+/// by a persisted `SpeechAnswer`. Detailed word, sound, and tone rows remain
+/// in the Apple-side report so progress journals stay small and portable.
+public struct SpeechPronunciationAssessment: Codable, Hashable, Sendable {
+    public let providerID: String
+    public let verdict: SpeechPronunciationVerdict
+    public let providerScore: Double?
+
+    public init(
+        providerID: String,
+        verdict: SpeechPronunciationVerdict,
+        providerScore: Double?
+    ) {
+        self.providerID = providerID
+        self.verdict = verdict
+        self.providerScore = providerScore.map { min(1, max(0, $0)) }
+    }
+
+    /// Only a provider-completed pass or retry with its own score can be sent
+    /// to the exercise engine. Inconclusive and malformed reports remain
+    /// outside the answer path.
+    public var isEvaluable: Bool {
+        providerScore != nil && (verdict == .pass || verdict == .needsPractice)
     }
 }
 
@@ -279,8 +360,14 @@ public enum SelfRating: String, Codable, Hashable, Sendable, CaseIterable {
     case again, hard, good, easy
 }
 
+public enum SpeechPronunciationVerdict: String, Codable, Hashable, Sendable {
+    case pass
+    case needsPractice
+    case inconclusive
+}
+
 public enum EvaluationOutcome: String, Codable, Hashable, Sendable {
-    case correct, incorrect, partial, selfReported, unavailable
+    case correct, incorrect, partial, selfReported, unavailable, skipped
 }
 
 public struct ExerciseEvaluation: Codable, Hashable, Sendable {

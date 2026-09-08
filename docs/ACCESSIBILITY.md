@@ -101,13 +101,14 @@ pas été modifiés ici :
 - `App/ReviewViews.swift` doit remplacer ses tailles fixes, empiler les
   évaluations quand la largeur est étroite, appliquer `skyButton`/`jadeButton`
   aux contrôles proéminents et séparer les langues du recto/verso.
-- `App/PracticeViews.swift` doit conserver le chemin d’auto-évaluation
-  textuelle et raccorder les actions clavier/VoiceOver d’écriture sans
+- `App/PracticeViews.swift` doit conserver le chemin oral « Passer sans
+  évaluer » et raccorder les actions clavier/VoiceOver d’écriture sans
   dépendre du seul geste de dessin.
 - `Apple/Audio/SpeechPracticeView.swift` doit empiler ses groupes à XXXL,
-  appliquer les langues au caractère et au pinyin et enregistrer les actions
-  d’arrêt/Échap du composant de capture. La persistance et l’annulation Speech
-  restent à valider par l’intégration Apple.
+  appliquer les langues au caractère et au pinyin, exposer l’état non configuré
+  sans faux score et enregistrer les actions d’arrêt/Échap du composant de
+  capture. La persistance et l’annulation Speech restent à valider par
+  l’intégration Apple.
 
 ## Validation Apple à effectuer
 

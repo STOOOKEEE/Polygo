@@ -35,7 +35,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         app = nil
     }
 
-    func testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch() throws {
+    func testLessonSkipKeepsOralUnevaluatedAndPersistsWritingPathAcrossRelaunch() throws {
         let lesson = try loadLessonFixture()
         let exercises = lesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
 
@@ -56,45 +56,146 @@ final class LessonReviewJourneyTests: XCTestCase {
         }
 
         XCTAssertTrue(
-            text(containing: "Leçon terminée").waitForExistence(timeout: timeout),
-            "La fin de L1 doit être confirmée après six réponses acceptées"
+            text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout),
+            "La fin de L1 doit signaler l’exercice oral passé sans évaluation"
         )
-
-        navigateToTab("Cartes")
-        let fiveDue = text(containing: "5 cartes dues")
-        XCTAssertTrue(fiveDue.waitForExistence(timeout: timeout), "La fin de L1 doit ajouter cinq cartes dues")
-
-        let startReview = button(exactly: "Commencer")
-        XCTAssertTrue(startReview.waitForExistence(timeout: timeout), "Le paquet de cinq cartes doit pouvoir démarrer")
-        startReview.tap()
-        XCTAssertTrue(text(containing: "Carte 1 / 5").waitForExistence(timeout: timeout), "La première carte doit s’ouvrir")
-
-        let reveal = button(exactly: "Révéler")
-        XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "La première carte doit proposer sa révélation")
-        reveal.tap()
-
-        let good = button(containing: "Bien, planifier la prochaine révision")
-        XCTAssertTrue(good.waitForExistence(timeout: timeout), "La carte révélée doit proposer une note SRS")
-        good.tap()
+        XCTAssertFalse(text(containing: "Leçon terminée").exists, "Une leçon avec un exercice oral non évalué ne doit pas être marquée terminée")
         XCTAssertTrue(
-            text(containing: "4 cartes dues").waitForExistence(timeout: timeout),
-            "Une seule carte doit quitter la file après une réponse Bien"
+            text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
+            "Le bilan doit exclure l’exercice oral passé sans évaluation"
         )
 
         app.terminate()
         app.launch()
 
         XCTAssertTrue(
-            text(containing: "4 cartes dues").waitForExistence(timeout: timeout),
-            "Le nombre de cartes dues doit être conservé après relance"
+            text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout),
+            "Le bilan d’une leçon non terminée doit être conservé après relance"
         )
-        navigateToTab("Parcours")
-        let completedLesson = element(containing: "Dire bonjour", type: .any)
-        XCTAssertTrue(completedLesson.waitForExistence(timeout: timeout), "L1 doit rester visible dans le parcours après relance")
         XCTAssertTrue(
-            element(containing: "Terminé", type: .any).waitForExistence(timeout: timeout),
-            "Le parcours doit conserver l’état terminé de L1 après relance"
+            text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
+            "Le bilan non évalué doit conserver ses compteurs après relance"
         )
+    }
+
+    func testGuidedWritingRejectsWrongStrokeThenAcceptsRetry() throws {
+        let exercise = try openWritingExercise()
+        guard let target = exercise.targetHanzi,
+              let guideAsset = exercise.guideAsset else {
+            return XCTFail("L’exercice manuscrit doit déclarer sa cible et son guide")
+        }
+        let guide = try loadGuide(relativePath: guideAsset.relativePath)
+        guard let firstStroke = guide.strokes.first,
+              let guideStart = firstStroke.points.first,
+              let guideEnd = firstStroke.points.last else {
+            return XCTFail("Le guide manuscrit doit déclarer un premier trait")
+        }
+
+        let canvas = element(containing: "Zone de tracé pour \(target)", type: .any)
+        XCTAssertTrue(canvas.waitForExistence(timeout: timeout), "La zone de tracé doit être exposée pour \(target)")
+        bringIntoView(canvas)
+        XCTAssertTrue(isFullyVisible(canvas), "La zone de tracé doit être entièrement visible avant le geste")
+        XCTAssertTrue(waitForValue(canvas, equals: "0 traits tracés"), "Le canevas doit démarrer vide")
+
+        // Reversing the first guide segment exercises the guided gate itself:
+        // the bad gesture is drawn, but it must not consume stroke 1.
+        let reversedStart = canvas.coordinate(withNormalizedOffset: CGVector(dx: guideEnd.x, dy: guideEnd.y))
+        let reversedEnd = canvas.coordinate(withNormalizedOffset: CGVector(dx: guideStart.x, dy: guideStart.y))
+        reversedStart.press(forDuration: 0.05, thenDragTo: reversedEnd)
+        XCTAssertTrue(waitForValue(canvas, equals: "0 traits tracés"), "Un trait inversé ne doit pas augmenter le compteur")
+        XCTAssertTrue(
+            text(containing: "à refaire : commence").waitForExistence(timeout: timeout),
+            "Le geste rejeté doit expliquer que le trait est à refaire"
+        )
+
+        let correctStart = canvas.coordinate(withNormalizedOffset: CGVector(dx: guideStart.x, dy: guideStart.y))
+        let correctEnd = canvas.coordinate(withNormalizedOffset: CGVector(dx: guideEnd.x, dy: guideEnd.y))
+        correctStart.press(forDuration: 0.05, thenDragTo: correctEnd)
+        XCTAssertTrue(waitForValue(canvas, equals: "1 traits tracés"), "Le même trait correctement repris doit être accepté")
+        XCTAssertTrue(
+            text(containing: "Trait 1/\(guide.strokes.count) validé").waitForExistence(timeout: timeout),
+            "Le retour doit confirmer la validation du premier trait"
+        )
+        XCTAssertFalse(
+            text(containing: "Réponse manuscrite prête à être évaluée").exists,
+            "Un seul trait accepté ne doit pas encore créer une réponse complète"
+        )
+    }
+
+    func testFreeWritingFailureCanBeSelfReportedAndAdvance() throws {
+        let exercise = try openWritingExercise()
+        guard let target = exercise.targetHanzi,
+              let guideAsset = exercise.guideAsset else {
+            return XCTFail("L’exercice manuscrit doit déclarer sa cible et son guide")
+        }
+        let guide = try loadGuide(relativePath: guideAsset.relativePath)
+        guard let firstStroke = guide.strokes.first,
+              let start = firstStroke.points.first,
+              let end = firstStroke.points.last else {
+            return XCTFail("Le guide manuscrit doit déclarer un premier trait")
+        }
+
+        let canvas = element(containing: "Zone de tracé pour \(target)", type: .any)
+        XCTAssertTrue(canvas.waitForExistence(timeout: timeout), "La zone de tracé doit être exposée pour \(target)")
+        bringIntoView(canvas)
+        let freeMode = button(exactly: "Libre")
+        XCTAssertTrue(freeMode.waitForExistence(timeout: timeout), "Le mode libre doit être disponible")
+        tapWhenVisible(freeMode)
+        XCTAssertTrue(
+            text(containing: "Mode libre : le guide est masqué").waitForExistence(timeout: timeout),
+            "Le mode libre doit masquer le guide pendant le tracé"
+        )
+
+        // A single free stroke is a real drawing, but it is intentionally
+        // incomplete for the seven-stroke guide.
+        let strokeStart = canvas.coordinate(withNormalizedOffset: CGVector(dx: start.x, dy: start.y))
+        let strokeEnd = canvas.coordinate(withNormalizedOffset: CGVector(dx: end.x, dy: end.y))
+        strokeStart.press(forDuration: 0.05, thenDragTo: strokeEnd)
+        XCTAssertTrue(waitForValue(canvas, equals: "1 traits tracés"), "Le mode libre doit conserver le trait dessiné")
+
+        let validateDrawing = button(exactly: "Vérifier le tracé")
+        XCTAssertTrue(validateDrawing.waitForExistence(timeout: timeout), "Le tracé libre doit pouvoir être vérifié")
+        validateDrawing.tap()
+        XCTAssertTrue(
+            text(containingAny: ["Nombre de traits à revoir", "Tracé à revoir"]).waitForExistence(timeout: timeout),
+            "Un tracé libre incomplet doit afficher une reprise explicite"
+        )
+        // Preserve the failed drawing state for visual review before the
+        // learner chooses the explicit retry self-report.
+        attachScreenshot(named: "writingerror-next")
+
+        let selfReport = button(exactly: "À refaire")
+        XCTAssertTrue(selfReport.waitForExistence(timeout: timeout), "L’échec libre doit proposer une auto-évaluation explicite")
+        selfReport.tap()
+        XCTAssertTrue(
+            text(containing: "Réponse manuscrite prête à être évaluée").waitForExistence(timeout: timeout),
+            "L’auto-évaluation doit préparer la réponse manuscrite"
+        )
+
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse manuscrite doit rejoindre l’action de la leçon")
+        XCTAssertTrue(verify.isEnabled, "Une auto-évaluation manuscrite doit pouvoir être envoyée au moteur")
+        verify.tap()
+        XCTAssertTrue(text(containing: "À revoir").waitForExistence(timeout: timeout), "Le moteur doit conserver l’échec du tracé incomplet")
+        // The post-submission footer is the actionable failure state that
+        // reviewers need to inspect: the learner can continue despite the
+        // failed attempt. Keep the pre-submission capture above as well.
+        attachScreenshot(named: "writingerror-next-footer")
+
+        let continueAnyway = button(exactly: "Continuer malgré tout")
+        XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "La leçon doit permettre de progresser après un échec")
+        continueAnyway.tap()
+        XCTAssertTrue(
+            text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout),
+            "La progression après un échec doit enregistrer la leçon sans la déclarer terminée"
+        )
+
+        // Leave the shared simulator at a clean, resumable lesson state for
+        // the following UI journeys.
+        let restart = button(exactly: "Recommencer cette leçon")
+        XCTAssertTrue(restart.waitForExistence(timeout: timeout), "L’écran terminal doit permettre de recommencer")
+        restart.tap()
+        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir à son premier exercice")
     }
 
     private func answer(_ exercise: ExerciseFixture) throws {
@@ -174,7 +275,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         good.tap()
     }
 
-    private func answerSpeaking(_ exercise: ExerciseFixture) {
+    private func answerSpeaking(_: ExerciseFixture) {
         let disclaimer = element(containing: "ne mesurent pas tes phonèmes ni tes tons", type: .any)
         XCTAssertTrue(disclaimer.waitForExistence(timeout: timeout), "L’oral ne doit pas prétendre noter phonèmes ou tons")
 
@@ -192,46 +293,22 @@ final class LessonReviewJourneyTests: XCTestCase {
             dismissPermissionPrompts()
         }
 
-        let selfRating = button(exactly: "À l’aise")
-        if !selfRating.waitForExistence(timeout: 3) {
-            // The permission result normally opens this disclosure itself.
-            // Expand it explicitly when the simulator keeps the result group
-            // collapsed so the rating assertion tests the real control.
-            let details = button(exactly: "Voir les résultats")
-            if details.waitForExistence(timeout: 2) {
-                bringIntoView(details)
-                XCTAssertTrue(details.isHittable, "Les résultats audio doivent pouvoir être ouverts")
-                details.tap()
-            }
-        }
-        if selfRating.waitForExistence(timeout: 8) {
-            // The fallback is an explicit learner report. It carries no
-            // acoustic, phoneme, or tone score.
+        // The oral surface no longer invents a learner rating when no
+        // pronunciation provider can conclude. The lesson action bar keeps
+        // the exercise explicitly unevaluated and lets the learner continue.
+        let resultDetails = button(exactly: "Voir les résultats")
+        if resultDetails.waitForExistence(timeout: 2) {
+            tapWhenVisible(resultDetails)
             XCTAssertTrue(
-                element(containing: "aucun score de ton", type: .any).waitForExistence(timeout: timeout),
-                "Le mode d’auto-évaluation oral doit expliquer l’absence de score de ton"
-            )
-            bringIntoView(selfRating)
-            XCTAssertTrue(selfRating.isHittable, "L’auto-évaluation À l’aise doit être touchable après défilement")
-            selfRating.tap()
-            XCTAssertTrue(
-                text(containing: "Auto-évaluation enregistrée").waitForExistence(timeout: timeout),
-                "L’auto-évaluation orale doit être enregistrée avant validation"
-            )
-            XCTAssertEqual(
-                selfRating.value as? String,
-                "Sélectionnée",
-                "Le choix À l’aise doit rester sélectionné après son enregistrement"
-            )
-        } else {
-            // If the simulator has an already-authorized recognizer and it
-            // returns a transcript, keep the real transcript path. The same
-            // disclaimer must still be visible in that branch.
-            XCTAssertTrue(
-                element(containing: "Transcription locale", type: .any).waitForExistence(timeout: timeout),
-                "L’oral doit fournir une transcription locale ou son fallback explicite"
+                text(containingAny: ["aucun score de prononciation", "Résultat incertain", "Transcription locale"]).waitForExistence(timeout: timeout),
+                "Un résultat oral doit rester descriptif et sans faux score"
             )
         }
+        XCTAssertFalse(button(exactly: "À l’aise").exists, "L’oral ne doit plus proposer de bouton d’auto-évaluation")
+        XCTAssertFalse(text(containing: "Correct").exists, "Une absence d’analyse ne doit pas produire un faux Correct")
+        let skip = button(exactly: "Passer sans évaluer")
+        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral sans score doit proposer Passer sans évaluer")
+        XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être disponible sans réponse audio")
         attachScreenshot(named: "oral-result")
     }
 
@@ -302,6 +379,22 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func evaluateAndAdvance(isLast: Bool) {
+        let skip = button(exactly: "Passer sans évaluer")
+        if skip.waitForExistence(timeout: 2) {
+            XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être activable pour l’oral")
+            XCTAssertFalse(text(containing: "Correct").exists, "Le passage sans évaluation ne doit pas afficher Correct")
+            tapWhenVisible(skip)
+            XCTAssertTrue(
+                text(containing: "Passé sans évaluation").waitForExistence(timeout: timeout),
+                "Le retour doit indiquer que l’exercice oral n’a pas été évalué"
+            )
+            XCTAssertFalse(text(containing: "Correct").exists, "Un exercice passé sans évaluation ne doit pas être marqué Correct")
+            let continueAnyway = button(exactly: "Continuer malgré tout")
+            XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "La progression doit rester disponible après un exercice non évalué")
+            tapWhenVisible(continueAnyway)
+            return
+        }
+
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Chaque exercice doit proposer Vérifier")
         XCTAssertTrue(verify.isEnabled, "Une réponse doit être sélectionnée avant chaque validation")
@@ -357,6 +450,94 @@ final class LessonReviewJourneyTests: XCTestCase {
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans Parcours")
         lesson.tap()
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La première leçon doit charger son premier exercice")
+    }
+
+    private func openWritingExercise() throws -> ExerciseFixture {
+        let lesson = try loadLessonFixture()
+        let exercises = lesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
+        guard let writingIndex = exercises.firstIndex(where: { $0.kind == "handwriting" }) else {
+            throw FixtureError.missing("lessons/lesson-01.json (handwriting exercise)")
+        }
+
+        completeOnboardingIfNeeded()
+        openFirstLessonIfNeeded()
+
+        // A previous journey may have left the lesson at its terminal
+        // checkpoint. Restart through the same learner-facing control, then
+        // walk the fixture's preceding exercises until writing is current.
+        for _ in 0..<2 {
+            let restart = button(exactly: "Recommencer cette leçon")
+            if restart.waitForExistence(timeout: 3) {
+                restart.tap()
+                XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir au premier exercice")
+            }
+
+            var moved = true
+            var safety = 0
+            while moved && safety < exercises.count + 2 {
+                safety += 1
+                moved = false
+                for (index, exercise) in exercises.enumerated() {
+                    guard let prompt = exercise.header.prompt?["fr"], !prompt.isEmpty else {
+                        XCTFail("Le prompt français manque pour \(exercise.header.id)")
+                        continue
+                    }
+                    let promptElement = text(containing: prompt)
+                    guard promptElement.waitForExistence(timeout: 1) else { continue }
+
+                    if text(containingAny: ["Correct", "À revoir", "Passé sans évaluation"]).exists,
+                       let next = currentFeedbackAdvanceButton() {
+                        tapWhenVisible(next)
+                        moved = true
+                        break
+                    }
+
+                    if index == writingIndex {
+                        let target = exercise.targetHanzi ?? ""
+                        let canvas = element(containing: "Zone de tracé pour \(target)", type: .any)
+                        if canvas.waitForExistence(timeout: timeout) {
+                            // The guided and free tests are intentionally
+                            // repeatable even when XCTest runs them after a
+                            // prior interrupted attempt.
+                            bringIntoView(canvas)
+                            let clear = button(exactly: "Effacer")
+                            if clear.exists && clear.isEnabled {
+                                tapWhenVisible(clear)
+                                XCTAssertTrue(waitForValue(canvas, equals: "0 traits tracés"), "Le canevas manuscrit doit pouvoir être remis à zéro")
+                            }
+                            return exercise
+                        }
+                        XCTFail("La zone de tracé manque pour \(exercise.header.id)")
+                        throw FixtureError.missing("handwriting canvas for \(exercise.header.id)")
+                    }
+
+                    try answer(exercise)
+                    evaluateAndAdvance(isLast: false)
+                    moved = true
+                    break
+                }
+            }
+
+            // If the saved position was after handwriting, finish the
+            // terminal path and restart once so the target can be exercised.
+            let terminal = text(containingAny: ["Leçon terminée", "Leçon enregistrée"])
+            if terminal.waitForExistence(timeout: 3) {
+                let restart = button(exactly: "Recommencer cette leçon")
+                XCTAssertTrue(restart.waitForExistence(timeout: timeout), "La leçon terminale doit pouvoir être redémarrée")
+                restart.tap()
+                XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir au premier exercice")
+            }
+        }
+
+        throw FixtureError.missing("lessons/lesson-01.json (current handwriting exercise)")
+    }
+
+    private func currentFeedbackAdvanceButton() -> XCUIElement? {
+        for label in ["Continuer", "Continuer malgré tout", "Terminer"] {
+            let candidate = button(exactly: label)
+            if candidate.exists { return candidate }
+        }
+        return nil
     }
 
     private func navigateToTab(_ label: String) {
@@ -462,6 +643,14 @@ final class LessonReviewJourneyTests: XCTestCase {
         app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
     }
 
+    private func button(containingAny values: [String]) -> XCUIElement {
+        for value in values {
+            let candidate = button(containing: value)
+            if candidate.waitForExistence(timeout: 1) { return candidate }
+        }
+        return app.buttons.matching(NSPredicate(format: "label == %@", "__missing__")).firstMatch
+    }
+
     private func text(containing value: String) -> XCUIElement {
         element(containing: value, type: .any)
     }
@@ -546,6 +735,7 @@ private struct ExerciseFixture: Decodable {
 
 private struct ExerciseHeaderFixture: Decodable {
     let id: String
+    let prompt: [String: String]?
 }
 
 private struct ChoiceFixture: Decodable {

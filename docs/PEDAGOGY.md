@@ -119,8 +119,11 @@ L’adaptation éditoriale prévoit H0 sans aide ; H1 réécoute, débit 0,75×,
 token ou trace fantôme ; H4 guidage puis rappel reprogrammé. Un échec donne un
 feedback immédiat, une nouvelle tentative après un à trois items, puis une
 carte. Deux réussites indépendantes peuvent diminuer l’aide d’un niveau ;
-l’apprenant peut toujours la choisir. Sans micro, Speech ou guide, le résultat
-est `selfReported` ou `unavailable`, jamais un score fabriqué.
+l’apprenant peut toujours la choisir. Sans micro ou sans fournisseur de
+prononciation, la transcription reste descriptive et l’exercice oral peut être
+`skipped` sans note ni réussite. Un résultat `selfReported` reste réservé aux
+cartes et au chemin d’écriture qui l’autorise ; jamais un score de prononciation
+ne doit être fabriqué.
 Le scheduler `PolygoSRS.SM2Scheduler` applique le SM-2 déterministe. Pour une
 qualité `q`, `EF' = EF + (0.1 - (5-q) × (0.08 + (5-q) × 0.02))`, avec EF initial
 2,5 et plancher 1,3. L’interface expose `again` (q=0), `hard` (q=3), `good`

@@ -40,14 +40,20 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         XCTAssertTrue(dialogueHeading.waitForExistence(timeout: timeout), "Le dialogue doit être affiché")
         bringIntoView(dialogueHeading)
         attachScreenshot(named: "dialogue-discovery")
+        // Alias used by the visual review collector; retain the descriptive
+        // attachment above for the journey report as well.
+        attachScreenshot(named: "dialogue")
 
-        // The preamble must stay compact while still offering the entire
-        // dialogue, a single playback action, and an authored written turn.
-        for line in ["早！", "你好！", "谢谢！", "不客气。", "再见！"] {
-            XCTAssertTrue(text(containing: line).waitForExistence(timeout: timeout), "Réplique absente : \(line)")
+        // The preamble must stay compact while still offering every authored
+        // line. Read the fixture here so a dialogue edit cannot silently
+        // leave the regression journey asserting yesterday's copy.
+        let lessonDialogue = try dialogueFromFixture(lessonID: "lesson-01")
+        for line in lessonDialogue.lines {
+            XCTAssertTrue(text(containing: line.hanzi).waitForExistence(timeout: timeout), "Réplique absente : \(line.hanzi)")
         }
-        XCTAssertTrue(text(containing: "Mina").waitForExistence(timeout: timeout), "La première locutrice doit être annoncée")
-        XCTAssertTrue(text(containing: "Tao").waitForExistence(timeout: timeout), "Le second locuteur doit être annoncé")
+        for speaker in Set(lessonDialogue.lines.map(\.speaker)) {
+            XCTAssertTrue(text(containing: speaker).waitForExistence(timeout: timeout), "Locuteur absent : \(speaker)")
+        }
 
         let playDialogue = button(exactly: "Écouter tout le dialogue en chinois")
         XCTAssertTrue(playDialogue.waitForExistence(timeout: timeout), "Le dialogue doit proposer une lecture complète")
@@ -210,66 +216,87 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             tapWhenVisible(stopRecording)
             dismissPermissionPrompts()
         }
-        let fallback = button(exactly: "À l’aise")
-        if !fallback.waitForExistence(timeout: 3) {
-            // The permission result normally opens this disclosure itself.
-            // Expand it explicitly when the simulator keeps the result group
-            // collapsed so the rating assertion tests the real control.
-            let details = button(exactly: "Voir les résultats")
-            if details.waitForExistence(timeout: 2) {
-                tapWhenVisible(details)
-            }
-        }
-        if fallback.waitForExistence(timeout: 8) {
-            XCTAssertTrue(text(containing: "aucun score de ton").waitForExistence(timeout: timeout), "Le fallback oral doit rester honnête sur l’absence de score")
-            bringIntoView(fallback)
-            XCTAssertTrue(fallback.isHittable, "L’auto-évaluation À l’aise doit être touchable après défilement")
-            fallback.tap()
+
+        // Without a configured provider, the exercise remains explicitly
+        // unevaluated. There is no synthetic learner rating and no false
+        // Correct feedback; the lesson offers a clear skip path instead.
+        let resultDetails = button(exactly: "Voir les résultats")
+        if resultDetails.waitForExistence(timeout: 3) {
+            tapWhenVisible(resultDetails)
             XCTAssertTrue(
-                text(containing: "Auto-évaluation enregistrée").waitForExistence(timeout: timeout),
-                "L’auto-évaluation orale doit être enregistrée avant la suite du parcours"
+                text(containingAny: ["aucun score de prononciation", "Résultat incertain", "Transcription locale", "ne mesurent pas tes phonèmes ni tes tons"]).waitForExistence(timeout: timeout),
+                "Le détail oral doit rester descriptif et sans faux score"
             )
-            XCTAssertEqual(
-                fallback.value as? String,
-                "Sélectionnée",
-                "Le choix À l’aise doit rester sélectionné après son enregistrement"
-            )
-        } else {
-            XCTAssertTrue(text(containing: "Transcription locale").waitForExistence(timeout: timeout), "L’oral doit afficher la transcription ou son fallback")
         }
-        let details = button(containingAny: ["Voir les résultats", "Détails de l’évaluation", "À propos de l’évaluation", "En savoir plus sur l’évaluation"])
-        XCTAssertTrue(details.waitForExistence(timeout: timeout), "Les limites d’évaluation doivent être accessibles dans un détail repliable")
-        tapWhenVisible(details)
-        XCTAssertTrue(
-            text(containingAny: ["aucun score de ton", "aucune note de prononciation", "ne mesurent pas tes phonèmes ni tes tons"]).waitForExistence(timeout: timeout),
-            "Le détail oral doit expliquer ce qui n’est pas mesuré"
-        )
+        XCTAssertFalse(button(exactly: "À l’aise").exists, "L’oral ne doit plus proposer de bouton d’auto-évaluation")
+        XCTAssertFalse(text(containing: "Correct").exists, "Une absence d’analyse ne doit pas produire un faux Correct")
+        let skip = button(exactly: "Passer sans évaluer")
+        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral doit proposer Passer sans évaluer")
+        XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être disponible sans réponse audio")
         attachScreenshot(named: "oral-result")
+        // Capture the unconfigured-provider state under the stable review
+        // name before the explicit skip is submitted.
+        attachScreenshot(named: "oralunconfigured")
+        tapWhenVisible(skip)
+        XCTAssertTrue(text(containing: "Passé sans évaluation").waitForExistence(timeout: timeout), "L’état oral doit rester Non évalué après le passage")
+        XCTAssertFalse(text(containing: "Correct").exists, "Un oral passé sans évaluation ne doit pas être marqué Correct")
+        let continueAnyway = button(exactly: "Continuer malgré tout")
+        XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "La leçon doit permettre d’avancer après l’oral non évalué")
+        tapWhenVisible(continueAnyway)
+        XCTAssertTrue(
+            element(containing: "Zone de tracé pour 你", type: .any).waitForExistence(timeout: timeout),
+            "Le passage sans évaluation doit mener à l’exercice d’écriture"
+        )
+        attachScreenshot(named: "writing-after-oral-skip")
     }
 
     func testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply() throws {
-        let data = try Data(contentsOf: fixtureURL(relativePath: "lessons/lesson-01.json"))
-        let lesson = try JSONDecoder().decode(LessonContract.self, from: data)
-        guard let dialogue = lesson.blocks.first(where: { $0.kind == "dialogue" }) else {
-            return XCTFail("Le contenu L1 doit contenir un dialogue")
-        }
-
-        XCTAssertGreaterThanOrEqual(dialogue.lines?.count ?? 0, 5, "Le dialogue L1 doit conserver toutes ses répliques")
+        let dialogue = try dialogueFromFixture(lessonID: "lesson-01")
+        XCTAssertGreaterThanOrEqual(dialogue.lines.count, 5, "Le dialogue L1 doit conserver toutes ses répliques")
         XCTAssertTrue(
-            dialogue.comprehensionExerciseIDs?.contains("ex-l1-reading-last-word") == true,
+            dialogue.comprehensionExerciseIDs.contains("ex-l1-reading-last-word"),
             "Le dialogue doit référencer une question de compréhension"
         )
-        guard
-            let participation = dialogue.participation,
-            let lines = dialogue.lines,
-            participation.audioLineIndex > 0,
-            participation.audioLineIndex < lines.count
-        else {
-            return XCTFail("La participation doit écouter une réplique qui possède une réplique précédente")
+        assertDialogueContract(dialogue, lessonID: "lesson-01")
+    }
+
+    func testAllLessonDialogueFixturesExposeSupportAndPreviousReplyMapping() throws {
+        for lessonID in ["lesson-01", "lesson-02", "lesson-03", "lesson-04"] {
+            let dialogue = try dialogueFromFixture(lessonID: lessonID)
+            XCTAssertGreaterThanOrEqual(dialogue.lines.count, 5, "Le dialogue \(lessonID) doit conserver ses répliques")
+            for line in dialogue.lines {
+                XCTAssertFalse(line.speaker.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Locuteur absent dans \(lessonID)")
+                XCTAssertFalse(line.hanzi.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Réplique absente dans \(lessonID)")
+                XCTAssertFalse(line.pinyin.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Pinyin absent pour \(line.hanzi) dans \(lessonID)")
+                XCTAssertFalse(line.translation["fr"]?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true, "Traduction française absente pour \(line.hanzi) dans \(lessonID)")
+            }
+            assertDialogueContract(dialogue, lessonID: lessonID)
+        }
+    }
+
+    private func dialogueFromFixture(lessonID: String) throws -> DialogueContract {
+        let data = try Data(contentsOf: fixtureURL(relativePath: "lessons/\(lessonID).json"))
+        let lesson = try JSONDecoder().decode(LessonContract.self, from: data)
+        guard let dialogue = lesson.blocks.first(where: { $0.kind == "dialogue" }),
+              let lines = dialogue.lines else {
+            throw FixtureError.invalidDialogue(lessonID)
+        }
+        return DialogueContract(
+            lines: lines,
+            comprehensionExerciseIDs: dialogue.comprehensionExerciseIDs ?? [],
+            participation: dialogue.participation
+        )
+    }
+
+    private func assertDialogueContract(_ dialogue: DialogueContract, lessonID: String) {
+        guard let participation = dialogue.participation,
+              participation.audioLineIndex > 0,
+              participation.audioLineIndex < dialogue.lines.count else {
+            return XCTFail("La participation \(lessonID) doit écouter une réplique qui possède une réplique précédente")
         }
         XCTAssertTrue(
-            participation.acceptedResponses.contains(lines[participation.audioLineIndex - 1].hanzi),
-            "La participation doit accepter exactement la réplique précédant la réponse audio"
+            participation.acceptedResponses.contains(dialogue.lines[participation.audioLineIndex - 1].hanzi),
+            "La participation \(lessonID) doit accepter exactement la réplique précédant la réponse audio"
         )
     }
 
@@ -307,6 +334,10 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         navigateToTab("Parcours")
         let lesson = button(containing: "Dire bonjour")
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible")
+        // Keep a stable artifact name for the roadmap review. This is taken
+        // before entering the lesson so the screenshot captures the actual
+        // path surface rather than the lesson's navigation stack.
+        attachScreenshot(named: "roadmap")
         tapWhenVisible(lesson)
 
         let restart = button(exactly: "Recommencer cette leçon")
@@ -551,6 +582,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 }
 
 private struct LessonContract: Decodable {
+    let id: String
     let blocks: [BlockContract]
 }
 
@@ -562,7 +594,10 @@ private struct BlockContract: Decodable {
 }
 
 private struct LineContract: Decodable {
+    let speaker: String
     let hanzi: String
+    let pinyin: String
+    let translation: [String: String]
 }
 
 private struct ParticipationContract: Decodable {
@@ -572,11 +607,20 @@ private struct ParticipationContract: Decodable {
 
 private enum FixtureError: LocalizedError {
     case invalidParticipation
+    case invalidDialogue(String)
 
     var errorDescription: String? {
         switch self {
         case .invalidParticipation:
             return "Participation dialogue invalide dans le contenu L1"
+        case .invalidDialogue(let lessonID):
+            return "Dialogue invalide dans le contenu \(lessonID)"
         }
     }
+}
+
+private struct DialogueContract {
+    let lines: [LineContract]
+    let comprehensionExerciseIDs: [String]
+    let participation: ParticipationContract?
 }

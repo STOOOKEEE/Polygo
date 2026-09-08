@@ -427,173 +427,442 @@ public struct LearningPathView: View {
     @State private var lessons: [LessonID: LessonDocument] = [:]
 
     public init() {}
+
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 if let course = model.course {
-                    pathHeader(course)
-                }
-                ForEach(model.course?.modules.sorted(by: { $0.order < $1.order }) ?? [], id: \.id) { module in
-                    VStack(alignment: .leading, spacing: 14) {
-                        HStack(alignment: .firstTextBaseline) {
-                            Label(module.title.resolve(preferred: model.preferredLanguageCodes) ?? "Unité", systemImage: "flag.checkered")
-                                .font(.title2.weight(.bold))
-                                .foregroundStyle(SylluneColor.ink)
-                            Spacer()
-                            Text("\(module.lessonIDs.count) étapes")
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(SylluneColor.inkMuted)
-                        }
-                        VStack(alignment: .leading, spacing: 0) {
-                            ForEach(Array(module.lessonIDs.enumerated()), id: \.element) { index, lessonID in
-                                lessonRow(lessonID, index: index, isLast: index == module.lessonIDs.count - 1)
-                            }
-                        }
+                    pathIntro(course)
+                    ForEach(course.modules.sorted(by: { $0.order < $1.order }), id: \.id) { module in
+                        roadmapModule(module)
                     }
-                    .padding(22)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .sylluneCard(style: .interactive, radius: 24)
-                }
-                if model.course == nil {
-                    ContentUnavailableView("Parcours indisponible", systemImage: "books.vertical", description: Text(model.errorMessage ?? "Le contenu n’est pas encore chargé."))
+                } else {
+                    ContentUnavailableView(
+                        "Parcours indisponible",
+                        systemImage: "books.vertical",
+                        description: Text(model.errorMessage ?? "Le contenu n’est pas encore chargé.")
+                    )
                 }
             }
-            .frame(maxWidth: 1000, alignment: .leading)
+            .frame(maxWidth: 1080, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 28)
-            .padding(.vertical, 28)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 24)
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Parcours")
         .task {
             for lessonID in model.orderedLessonIDs {
-                if let lesson = await model.loadLesson(lessonID) { lessons[lessonID] = lesson }
-            }
-        }
-    }
-
-    private func pathHeader(_ course: CourseManifest) -> some View {
-        ZStack(alignment: .topTrailing) {
-            Text("路")
-                .font(.system(size: 170, weight: .bold, design: .serif))
-                .foregroundStyle(SylluneColor.heroInk.opacity(0.10))
-                .offset(x: 14, y: -34)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 16) {
-                Label("PARCOURS D’APPRENTISSAGE", systemImage: "map.fill")
-                    .font(.caption.weight(.bold))
-                    .tracking(1.1)
-                    .foregroundStyle(SylluneColor.heroMuted)
-                Text(course.title.resolve(preferred: model.preferredLanguageCodes) ?? "Parcours")
-                    .font(.system(size: 34, weight: .bold, design: .rounded))
-                    .foregroundStyle(SylluneColor.heroInk)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text(course.description.resolve(preferred: model.preferredLanguageCodes) ?? "")
-                    .font(.body)
-                    .foregroundStyle(SylluneColor.heroMuted)
-                    .fixedSize(horizontal: false, vertical: true)
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 8) {
-                        pathBadge("HSK 1")
-                        pathBadge("A1")
-                        completedLessonsLabel.foregroundStyle(SylluneColor.heroMuted)
-                    }
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack(spacing: 8) {
-                            pathBadge("HSK 1")
-                            pathBadge("A1")
-                        }
-                        completedLessonsLabel.foregroundStyle(SylluneColor.heroMuted)
-                    }
+                if let lesson = await model.loadLesson(lessonID) {
+                    lessons[lessonID] = lesson
                 }
             }
         }
-        .padding(26)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .sylluneCard(style: .hero, radius: 28)
     }
 
-    private func pathBadge(_ text: String) -> some View {
-        Text(text)
+    private func pathIntro(_ course: CourseManifest) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("TON CHEMIN", systemImage: "point.topleft.down.curvedto.point.bottomright.up")
+                .font(.caption.weight(.bold))
+                .tracking(1.1)
+                .foregroundStyle(SylluneColor.jadeDeep)
+            Text(course.title.resolve(preferred: model.preferredLanguageCodes) ?? "Parcours")
+                .font(.largeTitle.weight(.bold))
+                .foregroundStyle(SylluneColor.ink)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(course.description.resolve(preferred: model.preferredLanguageCodes) ?? "")
+                .font(.body)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
+            HStack(spacing: 8) {
+                pathMeta("HSK 1", icon: "graduationcap")
+                pathMeta("A1", icon: "globe.europe.africa")
+                Text("\(completedLessonCount) sur \(model.orderedLessonIDs.count) terminées")
+                    .font(.callout.weight(.semibold))
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.horizontal, 4)
+        .accessibilityElement(children: .combine)
+    }
+
+    private func pathMeta(_ text: String, icon: String) -> some View {
+        Label(text, systemImage: icon)
             .font(.caption.weight(.bold))
-            .foregroundStyle(SylluneColor.heroEnd)
+            .foregroundStyle(SylluneColor.ink)
             .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(SylluneColor.heroAccent, in: Capsule())
+            .padding(.vertical, 7)
+            .background(SylluneColor.surfaceRaised, in: Capsule())
     }
 
-    private var completedLessonsLabel: some View {
-        Text("\(model.snapshot.lessonProgress.values.filter { $0.completedAt != nil }.count) leçons terminées")
-            .font(.caption)
-            .foregroundStyle(SylluneColor.inkMuted)
-            .fixedSize(horizontal: false, vertical: true)
+    private var completedLessonCount: Int {
+        model.orderedLessonIDs.filter {
+            model.snapshot.lessonProgress[$0]?.completedAt != nil
+        }.count
     }
 
-    @ViewBuilder private func lessonRow(_ lessonID: LessonID, index: Int, isLast: Bool) -> some View {
+    private func roadmapModule(_ module: ModuleSummary) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                Text(module.title.resolve(preferred: model.preferredLanguageCodes) ?? "Unité")
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(SylluneColor.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 8)
+                Text("\(module.lessonIDs.count) étapes")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+            .accessibilityElement(children: .combine)
+
+            RoadmapModuleCanvas(
+                lessonIDs: module.lessonIDs,
+                lessons: lessons,
+                model: model
+            )
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sylluneCard(style: .interactive, radius: 24)
+    }
+}
+
+private struct RoadmapModuleCanvas: View {
+    let lessonIDs: [LessonID]
+    let lessons: [LessonID: LessonDocument]
+    @ObservedObject var model: AppModel
+
+    private let compactBreakpoint: CGFloat = 620
+    // Keep the node cadence tied to the body text size so the card has room
+    // to grow with Dynamic Type. The same scaled value drives the trail,
+    // entries, and canvas height, keeping connectors aligned at every size.
+    @ScaledMetric(relativeTo: .body) private var roadmapRowHeight: CGFloat = 160
+
+    var body: some View {
+        GeometryReader { proxy in
+            let compact = proxy.size.width < compactBreakpoint
+            let rowHeight = roadmapRowHeight
+            let trailPoints = points(width: proxy.size.width, compact: compact, rowHeight: rowHeight)
+
+            ZStack(alignment: .topLeading) {
+                RoadmapTrail(points: trailPoints)
+                    .stroke(
+                        SylluneColor.jade.opacity(0.30),
+                        style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                    )
+                    .padding(.horizontal, compact ? 18 : 4)
+                    .accessibilityHidden(true)
+
+                VStack(spacing: 0) {
+                    ForEach(Array(lessonIDs.enumerated()), id: \.element) { index, lessonID in
+                        roadmapEntry(
+                            lessonID,
+                            index: index,
+                            compact: compact,
+                            rowHeight: rowHeight
+                        )
+                        .frame(height: rowHeight, alignment: .top)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        }
+        .frame(height: CGFloat(max(1, lessonIDs.count)) * roadmapRowHeight)
+        .frame(maxWidth: .infinity)
+    }
+
+    private func points(width: CGFloat, compact: Bool, rowHeight: CGFloat) -> [CGPoint] {
+        lessonIDs.indices.map { index in
+            let y = rowHeight * CGFloat(index) + (compact ? 32 : 36)
+            if compact {
+                return CGPoint(x: min(36, max(24, width * 0.10)), y: y)
+            }
+
+            return CGPoint(
+                x: index.isMultiple(of: 2) ? 24 : max(24, width - 24),
+                y: y
+            )
+        }
+    }
+
+    @ViewBuilder
+    private func roadmapEntry(
+        _ lessonID: LessonID,
+        index: Int,
+        compact: Bool,
+        rowHeight: CGFloat
+    ) -> some View {
         let progress = model.snapshot.lessonProgress[lessonID]
         let unlocked = model.isLessonUnlocked(lessonID)
-        let title = lessons[lessonID]?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon \(lessonID.rawValue)"
         let completed = progress?.completedAt != nil
-        let active = progress?.lastOpenedAt != nil && model.resumeLessonID == lessonID && !completed
+        let active = progress?.lastOpenedAt != nil
+            && model.resumeLessonID == lessonID
+            && !completed
+        let title = lessons[lessonID]?.title.resolve(
+            preferred: model.preferredLanguageCodes
+        ) ?? "Leçon \(index + 1)"
         let accent = SylluneColor.pathAccent(for: index)
-        let status = completed ? "Terminée" : active ? "En cours" : unlocked ? "À commencer" : "À débloquer"
-        let row = HStack(alignment: .top, spacing: 14) {
-            VStack(spacing: 4) {
-                ZStack {
-                    Circle()
-                        .fill(completed ? SylluneColor.success : accent)
-                        .frame(width: 36, height: 36)
-                    Text(completed ? "✓" : "\(index + 1)")
-                        .font(.callout.weight(.bold))
-                        .foregroundStyle(completed ? SylluneColor.inkOnSuccess : Color.white)
-                }
-                if !isLast {
-                    Capsule()
-                        .fill(accent.opacity(0.42))
-                        .frame(width: 3, height: 30)
-                }
+        let status = completed
+            ? "Terminée"
+            : active
+                ? "En cours"
+                : unlocked
+                    ? "À commencer"
+                    : "Verrouillée"
+        let progressValue = lessonProgressValue(lessonID)
+        let progressText = lessonProgressText(lessonID, completed: completed)
+        let card = lessonCard(
+            title: title,
+            status: status,
+            progressText: progressText,
+            progressValue: progressValue,
+            index: index,
+            accent: accent,
+            completed: completed,
+            active: active,
+            unlocked: unlocked,
+            compact: compact
+        )
+
+        Group {
+            if unlocked {
+                NavigationLink(value: AppRoute.lesson(lessonID)) { card }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
+                    .accessibilityLabel("\(title), \(status), \(progressText)")
+                    .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
+            } else {
+                card
+                    .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
+                    .accessibilityLabel("\(title), \(status), \(progressText)")
+                    .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
             }
-            VStack(alignment: .leading, spacing: 4) {
+        }
+        .frame(
+            maxWidth: compact ? .infinity : 360,
+            alignment: index.isMultiple(of: 2) ? .leading : .trailing
+        )
+        .padding(
+            .leading,
+            compact ? 0 : (index.isMultiple(of: 2) ? 0 : 20)
+        )
+        .padding(
+            .trailing,
+            compact ? 0 : (index.isMultiple(of: 2) ? 20 : 0)
+        )
+        .frame(
+            maxWidth: .infinity,
+            alignment: compact
+                ? .leading
+                : (index.isMultiple(of: 2) ? .leading : .trailing)
+        )
+    }
+
+    private func lessonCard(
+        title: String,
+        status: String,
+        progressText: String,
+        progressValue: Double,
+        index: Int,
+        accent: Color,
+        completed: Bool,
+        active: Bool,
+        unlocked: Bool,
+        compact: Bool
+    ) -> some View {
+        let details = VStack(alignment: .leading, spacing: 5) {
                 Text(title)
                     .font(.body.weight(.semibold))
                     .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
                     .fixedSize(horizontal: false, vertical: true)
-                Text(lessons[lessonID].map { "\($0.estimatedMinutes) min · \($0.blocks.filter { if case .exercise = $0 { return true }; return false }.count) exercices" } ?? "Chargement…")
-                    .font(.caption)
-                    .foregroundStyle(SylluneColor.inkMuted)
                 Text(status)
                     .font(.caption.weight(.semibold))
-                    .foregroundStyle(completed ? SylluneColor.success : active ? SylluneColor.jadeDeep : SylluneColor.inkMuted)
-            }
-            Spacer(minLength: 8)
-            if unlocked {
-                Image(systemName: completed ? "checkmark" : "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(completed ? SylluneColor.success : accent)
-                    .frame(minWidth: 34, minHeight: 34)
-            } else {
-                Image(systemName: "lock.fill")
+                    .foregroundStyle(
+                        completed
+                            ? SylluneColor.success
+                            : active
+                                ? SylluneColor.jadeDeep
+                                : SylluneColor.inkMuted
+                    )
+                Text(progressText)
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
-                    .frame(minWidth: 34, minHeight: 34)
+                    .fixedSize(horizontal: false, vertical: true)
+                SylluneProgressBar(
+                    value: progressValue,
+                    tint: completed ? SylluneColor.success : accent
+                )
+                .frame(height: 6)
+                .opacity(unlocked ? 1 : 0.45)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        let action = Image(
+                systemName: unlocked
+                    ? (completed ? "checkmark.circle.fill" : "chevron.right")
+                    : "lock.fill"
+            )
+            .font(.callout.weight(.bold))
+            .foregroundStyle(
+                completed
+                    ? SylluneColor.success
+                    : unlocked
+                        ? accent
+                        : SylluneColor.inkMuted
+            )
+            .frame(minWidth: 32, minHeight: 32)
+            .accessibilityHidden(true)
+        let node = roadmapNode(
+            index: index,
+            accent: accent,
+            completed: completed,
+            active: active,
+            unlocked: unlocked
+        )
+
+        HStack(alignment: .top, spacing: 12) {
+            if !compact && !index.isMultiple(of: 2) {
+                details
+                action
+                node
+            } else {
+                node
+                details
+                action
             }
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 10)
-        .background(active ? accent.opacity(0.12) : Color.clear, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .contentShape(Rectangle())
-        if unlocked {
-            NavigationLink(value: AppRoute.lesson(lessonID)) { row }
-            .buttonStyle(.plain)
-            .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
-        } else {
-            row
-                .accessibilityLabel("\(title), \(status). Termine la leçon précédente pour déverrouiller cette étape.")
+        .padding(.horizontal, compact ? 12 : 14)
+        .padding(.vertical, 12)
+        .background(
+            active ? accent.opacity(0.12) : SylluneColor.surface,
+            in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(
+                    active
+                        ? accent.opacity(0.44)
+                        : SylluneColor.border.opacity(0.18),
+                    lineWidth: active ? 1.5 : 0.75
+                )
         }
+        .contentShape(Rectangle())
+    }
+
+    private func roadmapNode(
+        index: Int,
+        accent: Color,
+        completed: Bool,
+        active: Bool,
+        unlocked: Bool
+    ) -> some View {
+        ZStack {
+            Circle()
+                .fill(
+                    completed
+                        ? SylluneColor.success
+                        : unlocked
+                            ? accent
+                            : SylluneColor.surfaceRaised
+                )
+                .frame(width: 38, height: 38)
+            if completed {
+                Image(systemName: "checkmark")
+                    .font(.callout.weight(.bold))
+                    .foregroundStyle(SylluneColor.inkOnSuccess)
+            } else if unlocked {
+                Text("\(index + 1)")
+                    .font(.callout.weight(.bold))
+                    .foregroundStyle(Color.white)
+            } else {
+                Image(systemName: "lock.fill")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+            if active {
+                Circle()
+                    .stroke(accent.opacity(0.55), lineWidth: 3)
+                    .frame(width: 48, height: 48)
+            }
+        }
+        .frame(width: 48, height: 48)
+        .accessibilityHidden(true)
+    }
+
+    private func lessonProgressValue(_ lessonID: LessonID) -> Double {
+        guard let lesson = lessons[lessonID] else {
+            return model.snapshot.lessonProgress[lessonID]?.completedAt == nil ? 0 : 1
+        }
+        let exerciseCount = lesson.blocks.reduce(into: 0) { count, block in
+            if case .exercise = block {
+                count += 1
+            }
+        }
+        guard exerciseCount > 0 else {
+            return model.snapshot.lessonProgress[lessonID]?.completedAt == nil ? 0 : 1
+        }
+        if model.snapshot.lessonProgress[lessonID]?.completedAt != nil {
+            return 1
+        }
+        return min(
+            1,
+            Double(model.snapshot.lessonProgress[lessonID]?.currentExerciseIndex ?? 0)
+                / Double(exerciseCount)
+        )
+    }
+
+    private func lessonProgressText(_ lessonID: LessonID, completed: Bool) -> String {
+        guard let lesson = lessons[lessonID] else {
+            return completed
+                ? "Leçon terminée"
+                : "Progression en cours de chargement"
+        }
+        let exerciseCount = lesson.blocks.reduce(into: 0) { count, block in
+            if case .exercise = block {
+                count += 1
+            }
+        }
+        guard exerciseCount > 0 else {
+            return completed ? "Leçon terminée" : "Prête à commencer"
+        }
+        guard let progress = model.snapshot.lessonProgress[lessonID],
+              progress.lastOpenedAt != nil else {
+            return "Prête à commencer"
+        }
+        if completed {
+            return "Tous les exercices terminés"
+        }
+        return "Exercice \(min(progress.currentExerciseIndex + 1, exerciseCount)) sur \(exerciseCount)"
+    }
+}
+
+private struct RoadmapTrail: Shape {
+    let points: [CGPoint]
+
+    func path(in rect: CGRect) -> Path {
+        guard let first = points.first else { return Path() }
+        var path = Path()
+        path.move(to: first)
+        guard points.count > 1 else { return path }
+
+        for index in 1..<points.count {
+            let previous = points[index - 1]
+            let current = points[index]
+            let midpoint = (previous.y + current.y) / 2
+            path.addCurve(
+                to: current,
+                control1: CGPoint(x: previous.x, y: midpoint),
+                control2: CGPoint(x: current.x, y: midpoint)
+            )
+        }
+        return path
     }
 }
 
 public struct ExplorerView: View {
+
     @EnvironmentObject private var model: AppModel
     @State private var stories: [StoryDocument] = []
     @State private var showingDictionary = false

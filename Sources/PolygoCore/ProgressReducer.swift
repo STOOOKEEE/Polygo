@@ -109,21 +109,23 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
             var correct = existing.correctExerciseIDs
             var mistakes = existing.mistakeExerciseIDs
             var evaluations = existing.lastEvaluations
-            answered.insert(evaluation.exerciseID)
             evaluations[evaluation.exerciseID] = evaluation
-            if evaluation.accepted && evaluation.score >= 0.8 {
-                correct.insert(evaluation.exerciseID)
-                mistakes.remove(evaluation.exerciseID)
-            } else {
-                mistakes.insert(evaluation.exerciseID)
-                correct.remove(evaluation.exerciseID)
+            if evaluation.outcome != .skipped {
+                answered.insert(evaluation.exerciseID)
+                if evaluation.accepted && evaluation.score >= 0.8 {
+                    correct.insert(evaluation.exerciseID)
+                    mistakes.remove(evaluation.exerciseID)
+                } else {
+                    mistakes.insert(evaluation.exerciseID)
+                    correct.remove(evaluation.exerciseID)
+                }
             }
             let score = answered.isEmpty ? 0 : Double(correct.count) / Double(answered.count)
             lessons[lessonID] = LessonProgress(
                 lessonID: lessonID,
                 completedObjectiveIDs: existing.completedObjectiveIDs,
                 completedAt: existing.completedAt,
-                attemptCount: existing.attemptCount + 1,
+                attemptCount: existing.attemptCount + (evaluation.outcome == .skipped ? 0 : 1),
                 bestScore: max(existing.bestScore, score),
                 lastOpenedAt: existing.lastOpenedAt,
                 answeredExerciseIDs: answered,

@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import PolygoCore
 #if os(iOS)
@@ -40,9 +41,20 @@ public struct HandwritingPracticeView: View {
     @State private var guideTask: Task<Void, Never>?
     @State private var hintLevel = 0
     @State private var validation: HandwritingValidation?
+    @State private var strokeValidation: HandwritingStrokeValidation?
+    @State private var rejectedStroke: [HandwritingPoint] = []
+    @State private var strokeError: String?
     @State private var savedDrawingID: DrawingID?
     @State private var isSaving = false
     @State private var statusMessage: String?
+
+    private var canvasMaximumDimension: CGFloat {
+        #if os(macOS)
+        return 440
+        #else
+        return 520
+        #endif
+    }
 
     /// The two-argument initializer is the integration contract used by
     /// LessonView and the standalone writing page.
@@ -90,11 +102,15 @@ public struct HandwritingPracticeView: View {
             if let statusMessage {
                 Text(statusMessage)
                     .font(.callout)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(strokeError == nil ? .secondary : .red)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .onChange(of: mode) { _, newMode in
+            rejectedStroke.removeAll(keepingCapacity: true)
+            strokeValidation = nil
+            strokeError = nil
+            validation = nil
             if newMode == .guided {
                 playGuide()
             } else {
@@ -189,8 +205,8 @@ public struct HandwritingPracticeView: View {
 #endif
             }
             .aspectRatio(1, contentMode: .fit)
-            .frame(minHeight: 280, maxHeight: 520)
-            .frame(maxWidth: 520)
+            .frame(minHeight: 260, idealHeight: 360, maxHeight: canvasMaximumDimension)
+            .frame(maxWidth: canvasMaximumDimension)
             .frame(maxWidth: .infinity)
             .background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay {
@@ -200,7 +216,7 @@ public struct HandwritingPracticeView: View {
 
             if let guide {
                 Text(mode == .guided
-                     ? "Le trait orange indique la prochaine direction. Répète le geste sur le modèle."
+                     ? guideCaption(for: guide)
                      : "Mode libre : le guide est masqué pendant le tracé, mais reste disponible pour vérifier ensuite.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -208,6 +224,13 @@ public struct HandwritingPracticeView: View {
                 Text("Le caractère cible reste visible comme repère. Il n’y a pas de prétendue correction géométrique sans guide.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+            }
+
+            if let strokeError {
+                Label(strokeError, systemImage: "xmark.circle.fill")
+                    .font(.callout.weight(.medium))
+                    .foregroundStyle(.red)
+                    .accessibilityAddTraits(.isStaticText)
             }
         }
     }
@@ -291,6 +314,7 @@ public struct HandwritingPracticeView: View {
                     HStack(spacing: 10) {
                         Button("À refaire") { submitAnswer(selfChecked: false) }
                             .buttonStyle(.bordered)
+                            .disabled(isSaving)
                         Button("Je suis à l’aise") { submitAnswer(selfChecked: true) }
                             .buttonStyle(.borderedProminent)
                     }
@@ -311,7 +335,7 @@ public struct HandwritingPracticeView: View {
                 Button("Recommencer", action: clearCanvas)
                     .buttonStyle(.bordered)
                 if exercise.allowSelfRating {
-                    Button("Enregistrer comme à refaire") { submitAnswer(selfChecked: false) }
+                    Button("À refaire") { submitAnswer(selfChecked: false) }
                         .buttonStyle(.borderedProminent)
                         .disabled(isSaving)
                 }
@@ -348,7 +372,7 @@ public struct HandwritingPracticeView: View {
     private func appendPoint(_ location: CGPoint, in size: CGSize) {
         canvasSize = size
         if activeStroke.isEmpty {
-            invalidatePreviousAnswer()
+            prepareForStroke()
         }
         let point = HandwritingPoint(clamped: location, in: size)
         if let last = activeStroke.last, distance(last, point) < 0.002 {
@@ -359,16 +383,74 @@ public struct HandwritingPracticeView: View {
 
     private func finishStroke() {
         guard !activeStroke.isEmpty else { return }
-        strokes.append(HandwritingStroke(points: activeStroke))
+        let candidate = HandwritingStroke(points: activeStroke)
         activeStroke.removeAll(keepingCapacity: true)
+
+        guard mode == .guided, let guide else {
+            strokes.append(candidate)
+            rejectedStroke.removeAll(keepingCapacity: true)
+            strokeValidation = nil
+            validation = nil
+            strokeError = nil
+            statusMessage = nil
+            return
+        }
+
+        let expectedIndex = strokes.count
+        guard expectedIndex < guide.strokes.count else {
+            rejectedStroke = candidate.points
+            strokeValidation = nil
+            validation = nil
+            strokeError = "Les \(guide.expectedStrokeCount) traits sont déjà validés. Recommence le dernier trait si besoin."
+            statusMessage = nil
+            return
+        }
+
+        let check = HandwritingGeometryValidator.validateStroke(
+            candidate,
+            against: guide.strokes[expectedIndex],
+            expectedStrokeIndex: expectedIndex
+        )
+        guard check.isValid else {
+            rejectedStroke = candidate.points
+            strokeValidation = check
+            validation = nil
+            let label = guide.strokes[expectedIndex].label.map { " (\($0))" } ?? ""
+            strokeError = "Trait \(expectedIndex + 1)/\(guide.expectedStrokeCount)\(label) à refaire : commence au point orange et suis la flèche jusqu’au bout."
+            statusMessage = nil
+            return
+        }
+
+        strokes.append(candidate)
+        rejectedStroke.removeAll(keepingCapacity: true)
+        strokeValidation = check
         validation = nil
-        statusMessage = nil
+        strokeError = nil
+        guideStep = strokes.count
+        statusMessage = "Trait \(strokes.count)/\(guide.expectedStrokeCount) validé."
+    }
+
+    private func prepareForStroke() {
+        invalidatePreviousAnswer()
+        rejectedStroke.removeAll(keepingCapacity: true)
+        strokeValidation = nil
+        strokeError = nil
+        if isGuidePlaying {
+            guideTask?.cancel()
+            guideTask = nil
+            isGuidePlaying = false
+            guideStep = strokes.count
+        }
     }
 
     private func undo() {
         guard !strokes.isEmpty else { return }
         strokes.removeLast()
         invalidatePreviousAnswer()
+        rejectedStroke.removeAll(keepingCapacity: true)
+        strokeValidation = nil
+        strokeError = nil
+        if mode == .guided { guideStep = strokes.count }
         statusMessage = "Dernier trait annulé."
     }
 
@@ -377,7 +459,14 @@ public struct HandwritingPracticeView: View {
         strokes.removeAll()
         activeStroke.removeAll()
         validation = nil
+        rejectedStroke.removeAll()
+        strokeValidation = nil
+        strokeError = nil
         hintLevel = 0
+        guideStep = 0
+        guideTask?.cancel()
+        guideTask = nil
+        isGuidePlaying = false
         invalidatePreviousAnswer()
         statusMessage = "Tracé effacé."
     }
@@ -387,7 +476,9 @@ public struct HandwritingPracticeView: View {
             statusMessage = "Trace au moins un trait avant de vérifier."
             return
         }
+        let hadActiveStroke = !activeStroke.isEmpty
         finishStroke()
+        if hadActiveStroke, strokeError != nil { return }
         let result = HandwritingGeometryValidator.validate(
             strokes: strokes,
             guide: guide,
@@ -396,7 +487,7 @@ public struct HandwritingPracticeView: View {
         validation = result
         statusMessage = result.outcome == .noGuide
             ? "Aucun guide local : choisis une auto-évaluation après ton tracé."
-            : "Comparaison terminée. Elle porte sur le nombre, la direction et la forme approximative des traits."
+            : "Vérification terminée : \(strokeCountValue(result)) traits, directions \(qualityLabel(result.directionScore)), formes \(qualityLabel(result.shapeScore))."
     }
 
     private func revealHint() {
@@ -491,12 +582,16 @@ public struct HandwritingPracticeView: View {
     private func renderCanvas(context: inout GraphicsContext, size: CGSize) {
         drawGrid(in: &context, size: size)
 
-        if let guide {
-            let shouldShowGuide = mode == .guided
+        if mode == .guided, let guide {
             for (index, stroke) in guide.strokes.enumerated() {
                 let isHint = index < hintLevel
-                let isRevealed = shouldShowGuide && (!isGuidePlaying || index < guideStep)
-                let isActive = shouldShowGuide && isGuidePlaying && index == guideStep
+                let isRevealed = !isGuidePlaying
+                    ? index < strokes.count
+                    : index < guideStep
+                let activeIndex = isGuidePlaying
+                    ? guideStep
+                    : (strokes.count < guide.expectedStrokeCount ? strokes.count : nil)
+                let isActive = activeIndex == index
                 let color: Color
                 let style: StrokeStyle
                 if isActive {
@@ -512,7 +607,13 @@ public struct HandwritingPracticeView: View {
                 context.stroke(path(for: stroke.points, in: size), with: .color(color), style: style)
                 if isActive, let first = stroke.points.first, let last = stroke.points.last {
                     drawMarker(at: first.point(in: size), in: &context, color: .orange, radius: 5)
-                    drawMarker(at: last.point(in: size), in: &context, color: .orange.opacity(0.60), radius: 4)
+                    let previous = stroke.points.dropLast().last ?? first
+                    drawArrow(
+                        from: previous.point(in: size),
+                        to: last.point(in: size),
+                        in: &context,
+                        color: .orange
+                    )
                 }
             }
         }
@@ -521,6 +622,13 @@ public struct HandwritingPracticeView: View {
             context.stroke(
                 path(for: stroke.points, in: size),
                 with: .color(.primary.opacity(0.86)),
+                style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+            )
+        }
+        if !rejectedStroke.isEmpty {
+            context.stroke(
+                path(for: rejectedStroke, in: size),
+                with: .color(.red.opacity(0.92)),
                 style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
             )
         }
@@ -555,6 +663,40 @@ public struct HandwritingPracticeView: View {
         context.fill(Path(ellipseIn: rect), with: .color(color))
     }
 
+    private func drawArrow(
+        from start: CGPoint,
+        to end: CGPoint,
+        in context: inout GraphicsContext,
+        color: Color
+    ) {
+        let dx = end.x - start.x
+        let dy = end.y - start.y
+        let length = (dx * dx + dy * dy).squareRoot()
+        guard length > 1 else {
+            drawMarker(at: end, in: &context, color: color.opacity(0.60), radius: 4)
+            return
+        }
+        let angle = atan2(dy, dx)
+        let headLength = min(18, max(10, length * 0.18))
+        let spread = CGFloat.pi / 7
+        var arrow = Path()
+        arrow.move(to: end)
+        arrow.addLine(to: CGPoint(
+            x: end.x - cos(angle - spread) * headLength,
+            y: end.y - sin(angle - spread) * headLength
+        ))
+        arrow.move(to: end)
+        arrow.addLine(to: CGPoint(
+            x: end.x - cos(angle + spread) * headLength,
+            y: end.y - sin(angle + spread) * headLength
+        ))
+        context.stroke(
+            arrow,
+            with: .color(color),
+            style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round)
+        )
+    }
+
     private func path(for points: [HandwritingPoint], in size: CGSize) -> Path {
         var path = Path()
         guard let first = points.first else { return path }
@@ -576,6 +718,18 @@ public struct HandwritingPracticeView: View {
         return "Indice \(hintLevel + 1)/\(guide.expectedStrokeCount)"
     }
 
+    private func guideCaption(for guide: HandwritingGuide) -> String {
+        guard mode == .guided else {
+            return "Mode libre : le guide est masqué pendant le tracé, mais reste disponible pour vérifier ensuite."
+        }
+        guard strokes.count < guide.expectedStrokeCount else {
+            return "Tous les traits sont validés. Vérifie le tracé pour enregistrer ta réponse."
+        }
+        let next = guide.strokes[strokes.count]
+        let label = next.label.map { " · \($0)" } ?? ""
+        return "Trait \(strokes.count + 1)/\(guide.expectedStrokeCount)\(label) : commence au point orange et suis la flèche."
+    }
+
     private func validationTitle(_ value: HandwritingValidation) -> String {
         switch value.outcome {
         case .empty: return "Aucun tracé"
@@ -591,7 +745,7 @@ public struct HandwritingPracticeView: View {
         case .approximateMatch: return "checkmark.circle"
         case .noGuide: return "questionmark.circle"
         case .empty: return "pencil.slash"
-        case .wrongStrokeCount, .needsPractice: return "arrow.counterclockwise.circle"
+        case .wrongStrokeCount, .needsPractice: return "xmark.circle"
         }
     }
 
@@ -599,7 +753,8 @@ public struct HandwritingPracticeView: View {
         switch value.outcome {
         case .approximateMatch: return .green
         case .noGuide: return .orange
-        case .empty, .wrongStrokeCount, .needsPractice: return .orange
+        case .empty: return .orange
+        case .wrongStrokeCount, .needsPractice: return .red
         }
     }
 
@@ -610,9 +765,10 @@ public struct HandwritingPracticeView: View {
         case .noGuide:
             return "Le corpus local ne contient pas de guide vérifiable ici. Aucun score géométrique ni caractère reconnu n’est déduit."
         case .wrongStrokeCount:
-            return "Le nombre de traits diffère du modèle. La comparaison ne reconnaît pas le caractère et ne mesure pas la qualité calligraphique."
+            let expected = value.expectedStrokeCount.map(String.init) ?? "le bon nombre de"
+            return "Le modèle attend \(expected) traits ; le tracé en compte \(value.observedStrokeCount). Recommence le ou les traits indiqués."
         case .needsPractice:
-            return "Certaines directions ou formes s’écartent du modèle. C’est un repère de pratique approximatif, pas une reconnaissance OCR."
+            return "Le nombre est bon, mais les directions (\(qualityLabel(value.directionScore))) ou les formes (\(qualityLabel(value.shapeScore))) demandent une reprise."
         case .approximateMatch:
             return "Le nombre, la direction et la forme des traits ressemblent au guide. Ce contrôle reste approximatif et ne reconnaît pas un caractère général."
         }

@@ -34,7 +34,7 @@ public enum AudioServiceError: Error, LocalizedError, Sendable {
         case .permissionDenied(.microphone):
             return "L’accès au microphone est refusé. Autorise-le dans Réglages pour enregistrer ta voix."
         case .permissionDenied(.speechRecognition):
-            return "La reconnaissance vocale est refusée. Tu peux continuer avec une auto-évaluation."
+            return "La reconnaissance vocale est refusée. Tu peux passer cet exercice sans l’évaluer."
         case .unavailable:
             return "L’audio est indisponible sur cet appareil."
         case .voiceUnavailable(let locale):

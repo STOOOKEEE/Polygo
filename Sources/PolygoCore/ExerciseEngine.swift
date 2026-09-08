@@ -26,7 +26,23 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
     }
 
     public func evaluate(spec: ExerciseSpec, answer: ExerciseAnswer) -> ExerciseEvaluation {
-        let id = spec.id
+        evaluateSubmitted(spec: spec, answer: answer, id: spec.id)
+    }
+
+    private func evaluateSubmitted(spec: ExerciseSpec, answer: ExerciseAnswer, id: ExerciseID) -> ExerciseEvaluation {
+        switch answer {
+        case .skipped:
+            return evaluation(
+                id,
+                .skipped,
+                0,
+                "Exercice passé sans évaluation. Il ne compte pas comme une réussite.",
+                accepted: false
+            )
+        default:
+            break
+        }
+
         switch spec {
         case .choice(let exercise):
             guard case .choice(let choiceID) = answer else {
@@ -60,6 +76,46 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
         case .speaking(let exercise):
             switch answer {
             case .speech(let speech):
+                if let assessment = speech.pronunciationAssessment {
+                    guard assessment.isEvaluable,
+                          let providerScore = assessment.providerScore else {
+                        return evaluation(
+                            id,
+                            .unavailable,
+                            0,
+                            "L’évaluation de prononciation est incertaine. Tu peux passer cet exercice sans le noter.",
+                            accepted: false
+                        )
+                    }
+                    switch assessment.verdict {
+                    case .pass:
+                        return evaluation(
+                            id,
+                            .correct,
+                            providerScore,
+                            "La prononciation est validée par " + assessment.providerID + ".",
+                            accepted: true,
+                            answer: speech.normalizedTranscript
+                        )
+                    case .needsPractice:
+                        return evaluation(
+                            id,
+                            .incorrect,
+                            providerScore,
+                            "La prononciation demande encore un peu de pratique.",
+                            accepted: false,
+                            answer: speech.normalizedTranscript
+                        )
+                    case .inconclusive:
+                        return evaluation(
+                            id,
+                            .unavailable,
+                            0,
+                            "L’évaluation de prononciation est incertaine. Tu peux passer cet exercice sans le noter.",
+                            accepted: false
+                        )
+                    }
+                }
                 let normalized = TextNormalizer.normalize(speech.normalizedTranscript.isEmpty ? speech.transcript : speech.normalizedTranscript)
                 let matches = exercise.acceptedTranscripts.contains { TextNormalizer.normalize($0) == normalized }
                 if matches {

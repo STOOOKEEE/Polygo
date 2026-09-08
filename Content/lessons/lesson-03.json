@@ -505,7 +505,7 @@
         "fr": "Un pays en quelques mots"
       },
       "body": {
-        "fr": "Situation : lors d'un échange international, tu veux savoir d'où vient une personne. La question 你是哪国人？ suit le modèle tu + être + quel pays + personne. Pour répondre, utilise 我是 + pays + 人. 法国 et 中国 gardent leurs tons propres ; 国 se prononce guó, ton 2."
+        "fr": "Situation : Mina et Tao font connaissance sur un stand international. La question 你是哪国人？ suit le modèle tu + être + quel pays + personne. Pour répondre, utilise 我是 + pays + 人. 法国 et 中国 gardent leurs tons propres ; 国 se prononce guó, ton 2."
       },
       "audio": null,
       "metadata": {
@@ -564,24 +564,33 @@
         },
         {
           "speaker": "Tao",
-          "hanzi": "我是法国人。",
-          "pinyin": "wǒ shì Fǎguó rén.",
+          "hanzi": "我是法国人。你呢？",
+          "pinyin": "wǒ shì Fǎguó rén. nǐ ne?",
           "translation": {
-            "fr": "Je suis français·e."
+            "fr": "Je suis français·e. Et toi ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我是中国人。",
-          "pinyin": "wǒ shì Zhōngguó rén.",
+          "hanzi": "我是中国人。很高兴认识你！",
+          "pinyin": "wǒ shì Zhōngguó rén. hěn gāoxìng rènshi nǐ!",
           "translation": {
-            "fr": "Je suis chinois·e."
+            "fr": "Je suis chinois·e. Ravi·e de te rencontrer !"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
+          "hanzi": "我也是！再见！",
+          "pinyin": "wǒ yě shì! zàijiàn!",
+          "translation": {
+            "fr": "Moi aussi ! Au revoir !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
           "hanzi": "再见！",
           "pinyin": "zàijiàn!",
           "translation": {
@@ -594,7 +603,7 @@
       "participation": {
         "prompt": {"fr": "Écoute la réponse, puis écris la question qui la précédait."},
         "audioLineIndex": 1,
-        "acceptedResponses": ["你好！你是哪国人？", "你好 你是哪国人？"],
+        "acceptedResponses": ["你好！你是哪国人？", "你好 你是哪国人", "ni hao ni shi na guo ren", "nǐ hǎo nǐ shì nǎ guó rén"],
         "hint": {"fr": "La question demande de quel pays vient la personne."}
       },
       "metadata": {

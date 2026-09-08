@@ -71,6 +71,22 @@ final class MacHomeJourneyTests: XCTestCase {
             "Le parcours doit rester lisible dans l’accueil macOS"
         )
 
+        // Keep a native macOS roadmap artifact alongside the home capture.
+        // Wait for the authored lesson row so this is taken after navigation
+        // has settled, then return to Today for the remainder of this
+        // journey's assertions and final state.
+        selectSidebarItem("Parcours")
+        XCTAssertTrue(
+            element(containing: "Dire bonjour").waitForExistence(timeout: timeout),
+            "Le parcours macOS doit afficher la première leçon avant sa capture"
+        )
+        captureScreenshot(named: "roadmap")
+        selectSidebarItem("Aujourd’hui")
+        XCTAssertTrue(
+            text(containing: "Ton parcours").waitForExistence(timeout: timeout),
+            "Le retour à Aujourd’hui doit être visible après la capture du parcours"
+        )
+
         captureScreenshot(named: "mac-home-after-onboarding-dark")
     }
 
@@ -89,6 +105,12 @@ final class MacHomeJourneyTests: XCTestCase {
         captureScreenshot(named: "mac-lesson-before-sidebar-reset")
         let lessonAction = button(exactly: "Vérifier")
         XCTAssertTrue(lessonAction.waitForExistence(timeout: timeout), "La leçon doit remplacer l’accueil dans le détail")
+        let dialogue = text(containing: "Dialogue")
+        XCTAssertTrue(
+            dialogue.waitForExistence(timeout: timeout),
+            "Le détail de la leçon macOS doit conserver le dialogue avant la capture"
+        )
+        captureScreenshot(named: "dialogue")
 
         // Opening a lesson must persist its resume route before the app is
         // terminated, even though the shell still has Today selected.

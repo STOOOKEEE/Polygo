@@ -453,7 +453,7 @@
         "fr": "Faire connaissance"
       },
       "body": {
-        "fr": "Situation : une nouvelle personne s'assoit à côté de toi dans une salle de cours. Après 你好, demande 你叫什么名字？. Pour répondre, place 我 avant 叫 puis ton nom. Une question chinoise peut se terminer par un point d'interrogation comme en français."
+        "fr": "Situation : An et Lin se rencontrent pour la première fois. Après 你好, demande 你叫什么名字？. Pour répondre, place 我 avant 叫 puis ton nom. Une question chinoise peut se terminer par un point d'interrogation comme en français."
       },
       "audio": null,
       "metadata": {
@@ -502,15 +502,6 @@
       "lines": [
         {
           "speaker": "An",
-          "hanzi": "你好！",
-          "pinyin": "nǐ hǎo!",
-          "translation": {
-            "fr": "Bonjour !"
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Lin",
           "hanzi": "你好！你叫什么名字？",
           "pinyin": "nǐ hǎo! nǐ jiào shénme míngzi?",
           "translation": {
@@ -519,30 +510,57 @@
           "audio": null
         },
         {
-          "speaker": "An",
-          "hanzi": "我叫安。你呢？",
-          "pinyin": "wǒ jiào Ān. nǐ ne?",
+          "speaker": "Lin",
+          "hanzi": "我叫林。你呢？",
+          "pinyin": "wǒ jiào Lín. nǐ ne?",
           "translation": {
-            "fr": "Je m'appelle An. Et toi ?"
+            "fr": "Je m'appelle Lin. Et toi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "我叫安。",
+          "pinyin": "wǒ jiào Ān.",
+          "translation": {
+            "fr": "Je m'appelle An."
           },
           "audio": null
         },
         {
           "speaker": "Lin",
-          "hanzi": "我叫林。谢谢！",
-          "pinyin": "wǒ jiào Lín. xièxie!",
+          "hanzi": "很高兴认识你！",
+          "pinyin": "hěn gāoxìng rènshi nǐ!",
           "translation": {
-            "fr": "Je m'appelle Lin. Merci !"
+            "fr": "Ravi·e de te rencontrer !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "我也是！再见！",
+          "pinyin": "wǒ yě shì! zàijiàn!",
+          "translation": {
+            "fr": "Moi aussi ! Au revoir !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "再见！",
+          "pinyin": "zàijiàn!",
+          "translation": {
+            "fr": "Au revoir !"
           },
           "audio": null
         }
       ],
       "comprehensionExerciseIDs": ["ex-l2-reading-name"],
       "participation": {
-        "prompt": {"fr": "Écoute la réponse, puis écris la question qui la précédait."},
+        "prompt": {"fr": "Écoute la réponse, puis écris la réplique qui la précédait."},
         "audioLineIndex": 2,
-        "acceptedResponses": ["你好！你叫什么名字？", "你好 你叫什么名字？"],
-        "hint": {"fr": "La question demande le nom de la personne."}
+        "acceptedResponses": ["我叫林。你呢？", "我叫林 你呢", "wo jiao Lin ni ne", "wǒ jiào Lín nǐ ne"],
+        "hint": {"fr": "Lin donne son nom puis relance la question avec 你呢？."}
       },
       "metadata": {
         "standardID": "HSK-3.0",

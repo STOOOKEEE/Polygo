@@ -168,6 +168,253 @@ final class ExerciseAndProgressTests: XCTestCase {
         XCTAssertEqual(selfReported.normalizedAnswer, "good")
     }
 
+    func testProviderAssessmentUsesItsVerdictAndKeepsLegacySpeechAnswersReadable() throws {
+        let spec = ExerciseSpec.speaking(
+            SpeakingExercise(
+                header: header("exercise-pronunciation"),
+                referenceText: "你好",
+                referencePinyin: "nǐ hǎo",
+                acceptedTranscripts: ["你好"],
+                allowSelfRating: true
+            )
+        )
+        let passingAssessment = SpeechPronunciationAssessment(
+            providerID: "iflytek",
+            verdict: .pass,
+            providerScore: 0.93
+        )
+        let retryAssessment = SpeechPronunciationAssessment(
+            providerID: "iflytek",
+            verdict: .needsPractice,
+            providerScore: 0.61
+        )
+        // A provider score does not make an inconclusive verdict evaluable.
+        let uncertainAssessment = SpeechPronunciationAssessment(
+            providerID: "iflytek",
+            verdict: .inconclusive,
+            providerScore: 0.55
+        )
+        XCTAssertTrue(passingAssessment.isEvaluable)
+        XCTAssertTrue(retryAssessment.isEvaluable)
+        XCTAssertFalse(uncertainAssessment.isEvaluable)
+        for assessment in [passingAssessment, retryAssessment, uncertainAssessment] {
+            let roundTrip = try JSONDecoder().decode(
+                SpeechPronunciationAssessment.self,
+                from: JSONEncoder().encode(assessment)
+            )
+            XCTAssertEqual(roundTrip, assessment)
+        }
+
+        let passing = SpeechAnswer(
+            transcript: "",
+            pronunciationAssessment: passingAssessment
+        )
+        let retry = SpeechAnswer(
+            transcript: "",
+            pronunciationAssessment: retryAssessment
+        )
+        let uncertain = SpeechAnswer(
+            transcript: "",
+            pronunciationAssessment: uncertainAssessment
+        )
+
+        let passingEvaluation = engine.evaluate(spec: spec, answer: .speech(passing))
+        XCTAssertTrue(passingEvaluation.accepted)
+        XCTAssertEqual(passingEvaluation.outcome, .correct)
+        XCTAssertEqual(passingEvaluation.score, 0.93, accuracy: 0.0001)
+
+        let retryEvaluation = engine.evaluate(spec: spec, answer: .speech(retry))
+        XCTAssertFalse(retryEvaluation.accepted)
+        XCTAssertEqual(retryEvaluation.outcome, .incorrect)
+        XCTAssertEqual(retryEvaluation.score, 0.61, accuracy: 0.0001)
+
+        let uncertainEvaluation = engine.evaluate(spec: spec, answer: .speech(uncertain))
+        XCTAssertFalse(uncertainEvaluation.accepted)
+        XCTAssertEqual(uncertainEvaluation.outcome, .unavailable)
+        XCTAssertEqual(uncertainEvaluation.score, 0)
+
+        let legacyJSON = Data(#"{"transcript":"你好","normalizedTranscript":"你好","confidence":null,"localeIdentifier":"zh-CN","recordingID":null}"#.utf8)
+        let legacy = try JSONDecoder().decode(SpeechAnswer.self, from: legacyJSON)
+        XCTAssertEqual(legacy.transcript, "你好")
+        XCTAssertEqual(legacy.normalizedTranscript, "你好")
+        XCTAssertNil(legacy.pronunciationAssessment)
+        let legacyEvaluation = engine.evaluate(spec: spec, answer: .speech(legacy))
+        XCTAssertTrue(legacyEvaluation.accepted)
+        XCTAssertEqual(legacyEvaluation.outcome, .correct)
+
+        let speechRoundTrip = try JSONDecoder().decode(
+            ExerciseAnswer.self,
+            from: JSONEncoder().encode(ExerciseAnswer.speech(.init(
+                transcript: "你好",
+                pronunciationAssessment: passingAssessment
+            )))
+        )
+        XCTAssertEqual(
+            speechRoundTrip,
+            .speech(SpeechAnswer(transcript: "你好", pronunciationAssessment: passingAssessment))
+        )
+    }
+
+    func testSkippingExerciseIsPersistedWithoutScoringOrMarkingItAnswered() throws {
+        let spec = ExerciseSpec.speaking(
+            SpeakingExercise(
+                header: header("exercise-skipped"),
+                referenceText: "你好",
+                referencePinyin: "nǐ hǎo",
+                acceptedTranscripts: ["你好"],
+                allowSelfRating: true
+            )
+        )
+        let skipped = engine.evaluate(spec: spec, answer: .skipped)
+        XCTAssertFalse(skipped.accepted)
+        XCTAssertEqual(skipped.outcome, .skipped)
+        XCTAssertEqual(skipped.score, 0)
+
+        let encoded = try JSONEncoder().encode(ExerciseAnswer.skipped)
+        XCTAssertEqual(try JSONDecoder().decode(ExerciseAnswer.self, from: encoded), .skipped)
+
+        let profileKey = profileID("profile-skipped")
+        let lessonKey = lessonID("lesson-skipped")
+        var snapshot = try reducer.reduce(
+            .empty(now: now),
+            event("skipped-onboarding", profileID: profileKey, lamport: 1, payload: .onboardingCompleted(profile: profileIDValue(profileKey)))
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event("skipped-start", profileID: profileKey, lamport: 2, payload: .lessonStarted(lessonID: lessonKey, at: now))
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event("skipped-evaluation", profileID: profileKey, lamport: 3, payload: .exerciseEvaluated(lessonID: lessonKey, blockID: blockID("block-skipped"), evaluation: skipped, at: now))
+        )
+        let progress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(progress.lastEvaluations[spec.id], skipped)
+        XCTAssertTrue(progress.answeredExerciseIDs.isEmpty)
+        XCTAssertTrue(progress.correctExerciseIDs.isEmpty)
+        XCTAssertTrue(progress.mistakeExerciseIDs.isEmpty)
+        XCTAssertEqual(progress.attemptCount, 0)
+        XCTAssertEqual(progress.bestScore, 0)
+    }
+
+    func testSkippedRoundTripKeepsZeroBilanThenAllowsProgression() throws {
+        let profileKey = profileID("profile-skipped-progression")
+        let lessonKey = lessonID("lesson-skipped-progression")
+        let skippedSpec = ExerciseSpec.speaking(
+            SpeakingExercise(
+                header: header("exercise-skipped-progression"),
+                referenceText: "你好",
+                referencePinyin: "nǐ hǎo",
+                acceptedTranscripts: ["你好"],
+                allowSelfRating: true
+            )
+        )
+        let followUpSpec = choiceSpec(correctChoiceID: "follow-up-right")
+        let skipped = engine.evaluate(spec: skippedSpec, answer: .skipped)
+        let followUp = engine.evaluate(spec: followUpSpec, answer: .choice(choiceID: "follow-up-right"))
+
+        let skippedRoundTrip = try JSONDecoder().decode(
+            ExerciseAnswer.self,
+            from: JSONEncoder().encode(ExerciseAnswer.skipped)
+        )
+        XCTAssertEqual(skippedRoundTrip, .skipped)
+        XCTAssertEqual(
+            try JSONDecoder().decode(
+                ExerciseEvaluation.self,
+                from: JSONEncoder().encode(skipped)
+            ),
+            skipped
+        )
+
+        var snapshot = try reducer.reduce(
+            .empty(now: now),
+            event("skipped-progression-onboarding", profileID: profileKey, lamport: 1, payload: .onboardingCompleted(profile: profileIDValue(profileKey)))
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event("skipped-progression-start", profileID: profileKey, lamport: 2, payload: .lessonStarted(lessonID: lessonKey, at: now))
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "skipped-progression-checkpoint",
+                profileID: profileKey,
+                lamport: 3,
+                payload: .lessonCheckpointSaved(
+                    lessonID: lessonKey,
+                    exerciseIndex: 0,
+                    exerciseID: skippedSpec.id,
+                    answer: .skipped,
+                    evaluation: nil,
+                    dialogueDrafts: [:],
+                    dialogueResults: [:],
+                    at: now
+                )
+            )
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "skipped-progression-evaluation",
+                profileID: profileKey,
+                lamport: 4,
+                payload: .exerciseEvaluated(lessonID: lessonKey, blockID: blockID("block-skipped-progression"), evaluation: skipped, at: now)
+            )
+        )
+
+        let afterSkip = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(afterSkip.lastEvaluations[skippedSpec.id], skipped)
+        XCTAssertEqual(afterSkip.currentExerciseIndex, 0)
+        XCTAssertEqual(afterSkip.currentExerciseID, skippedSpec.id)
+        XCTAssertEqual(afterSkip.answeredCount, 0)
+        XCTAssertEqual(afterSkip.correctCount, 0)
+        XCTAssertEqual(afterSkip.completionRate, 0)
+        XCTAssertEqual(afterSkip.attemptCount, 0)
+        XCTAssertEqual(afterSkip.bestScore, 0)
+        XCTAssertTrue(afterSkip.mistakeExerciseIDs.isEmpty)
+        XCTAssertNil(afterSkip.completedAt)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "skipped-progression-next-checkpoint",
+                profileID: profileKey,
+                lamport: 5,
+                payload: .lessonCheckpointSaved(
+                    lessonID: lessonKey,
+                    exerciseIndex: 1,
+                    exerciseID: followUpSpec.id,
+                    answer: .choice(choiceID: "follow-up-right"),
+                    evaluation: nil,
+                    dialogueDrafts: [:],
+                    dialogueResults: [:],
+                    at: now.addingTimeInterval(1)
+                )
+            )
+        )
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "skipped-progression-follow-up",
+                profileID: profileKey,
+                lamport: 6,
+                payload: .exerciseEvaluated(lessonID: lessonKey, blockID: blockID("block-follow-up"), evaluation: followUp, at: now.addingTimeInterval(2))
+            )
+        )
+
+        let afterFollowUp = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(afterFollowUp.currentExerciseIndex, 1)
+        XCTAssertEqual(afterFollowUp.currentExerciseID, followUpSpec.id)
+        XCTAssertEqual(afterFollowUp.lastEvaluations[skippedSpec.id], skipped)
+        XCTAssertEqual(afterFollowUp.lastEvaluations[followUpSpec.id], followUp)
+        XCTAssertEqual(afterFollowUp.answeredCount, 1, "Le bilan doit exclure l’exercice passé")
+        XCTAssertEqual(afterFollowUp.correctCount, 1)
+        XCTAssertEqual(afterFollowUp.completionRate, 1)
+        XCTAssertEqual(afterFollowUp.attemptCount, 1, "L’exercice passé ne doit pas augmenter les tentatives")
+        XCTAssertEqual(afterFollowUp.bestScore, 1)
+        XCTAssertTrue(afterFollowUp.mistakeExerciseIDs.isEmpty)
+        XCTAssertNil(afterFollowUp.completedAt, "La progression seule ne doit pas enregistrer une fin de leçon")
+    }
+
     func testSelfReportedRatingsAreDeterministicAndFlashcardRequiresAChoice() {
         let spec = ExerciseSpec.flashcard(
             FlashcardExercise(header: header("exercise-card"), cardID: cardID())

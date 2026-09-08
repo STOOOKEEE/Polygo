@@ -309,7 +309,7 @@
         "fr": "Relancer la conversation"
       },
       "body": {
-        "fr": "Situation : tu rencontres une personne à un atelier international. Observe l'échange, récupère les formules connues, puis joue ton rôle. Après une réponse, 你呢？ reprend la même question en version courte. Le ton neutre de 呢 reste léger ; les formes anciennes et nouvelles de la phrase gardent le même sens."
+        "fr": "Situation : An et Lin font connaissance dans un atelier international et décident de commencer à pratiquer. Observe l'échange, récupère les formules connues, puis joue ton rôle. Après une réponse, 你呢？ reprend la même question en version courte. Le ton neutre de 呢 reste léger."
       },
       "audio": null,
       "metadata": {
@@ -349,15 +349,6 @@
       "lines": [
         {
           "speaker": "An",
-          "hanzi": "你好！",
-          "pinyin": "nǐ hǎo!",
-          "translation": {
-            "fr": "Bonjour !"
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Lin",
           "hanzi": "你好！你叫什么名字？",
           "pinyin": "nǐ hǎo! nǐ jiào shénme míngzi?",
           "translation": {
@@ -366,38 +357,65 @@
           "audio": null
         },
         {
-          "speaker": "An",
-          "hanzi": "我叫安。你呢？",
-          "pinyin": "wǒ jiào Ān. nǐ ne?",
-          "translation": {
-            "fr": "Je m'appelle An. Et toi ?"
-          },
-          "audio": null
-        },
-        {
           "speaker": "Lin",
-          "hanzi": "我叫林。我是法国人。",
-          "pinyin": "wǒ jiào Lín. wǒ shì Fǎguó rén.",
+          "hanzi": "我叫林。你呢？",
+          "pinyin": "wǒ jiào Lín. nǐ ne?",
           "translation": {
-            "fr": "Je m'appelle Lin. Je suis français·e."
+            "fr": "Je m'appelle Lin. Et toi ?"
           },
           "audio": null
         },
         {
           "speaker": "An",
-          "hanzi": "我是中国人。你呢？",
-          "pinyin": "wǒ shì Zhōngguó rén. nǐ ne?",
+          "hanzi": "我叫安。你是哪国人？",
+          "pinyin": "wǒ jiào Ān. nǐ shì nǎ guó rén?",
           "translation": {
-            "fr": "Je suis chinois·e. Et toi ?"
+            "fr": "Je m'appelle An. De quel pays es-tu ?"
           },
           "audio": null
         },
         {
           "speaker": "Lin",
-          "hanzi": "不客气，再见！",
-          "pinyin": "bú kèqi, zàijiàn!",
+          "hanzi": "我是法国人。你呢？",
+          "pinyin": "wǒ shì Fǎguó rén. nǐ ne?",
           "translation": {
-            "fr": "De rien, au revoir !"
+            "fr": "Je suis français·e. Et toi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "我是中国人。很高兴认识你！",
+          "pinyin": "wǒ shì Zhōngguó rén. hěn gāoxìng rènshi nǐ!",
+          "translation": {
+            "fr": "Je suis chinois·e. Ravi·e de te rencontrer !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "我也是！一起练习吧！",
+          "pinyin": "wǒ yě shì! yìqǐ liànxí ba!",
+          "translation": {
+            "fr": "Moi aussi ! Pratiquons ensemble !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "好！我们开始吧！",
+          "pinyin": "hǎo! wǒmen kāishǐ ba!",
+          "translation": {
+            "fr": "D'accord ! Commençons !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "好！",
+          "pinyin": "hǎo!",
+          "translation": {
+            "fr": "D'accord !"
           },
           "audio": null
         }
@@ -405,8 +423,8 @@
       "comprehensionExerciseIDs": ["ex-l4-reading-ne"],
       "participation": {
         "prompt": {"fr": "Écoute la réponse, puis écris la réplique qui la précédait."},
-        "audioLineIndex": 5,
-        "acceptedResponses": ["我是中国人。你呢？", "我是中国人 你呢？"],
+        "audioLineIndex": 4,
+        "acceptedResponses": ["我是法国人。你呢？", "我是法国人 你呢", "wo shi Faguo ren ni ne", "wǒ shì Fǎguó rén nǐ ne"],
         "hint": {"fr": "La réplique indique le pays puis relance avec 你呢？."}
       },
       "metadata": {
@@ -1038,10 +1056,10 @@
         "header": {
           "id": "ex-l4-reading-ne",
           "prompt": {
-            "fr": "Après 我叫安。, que signifie 你呢？ dans l'histoire ?"
+            "fr": "Après 我是法国人。你呢？, que répond la personne suivante dans l'histoire ?"
           },
           "instruction": {
-            "fr": "Relis la deuxième phrase et choisis la relance exacte."
+            "fr": "Relis la troisième phrase et choisis la réponse qui fait avancer l'échange."
           },
           "objectiveIDs": [
             "l4-exchange-observe",
@@ -1053,7 +1071,7 @@
           {
             "id": "l4-reading-correct",
             "label": {
-              "fr": "L'autre personne doit dire son nom."
+              "fr": "Elle donne son pays : 我是中国人。"
             },
             "audio": null
           },
@@ -1082,14 +1100,14 @@
         ],
         "feedback": {
           "correct": {
-            "fr": "你呢？ invite Lin à répondre à la même question."
+            "fr": "你呢？ invite An à donner son pays."
           },
           "incorrect": {
             "fr": "La particule 呢 garde l'échange ouvert et renvoie la question."
           }
         },
         "acceptedVariants": [
-          "L'autre personne doit dire son nom."
+          "Elle donne son pays : 我是中国人。"
         ],
         "metadata": {
           "standardID": "HSK-3.0",
@@ -1105,11 +1123,11 @@
             "transfer"
           ],
           "acceptedVariants": [
-            "L'autre personne doit dire son nom."
+            "Elle donne son pays : 我是中国人。"
           ],
           "feedback": {
             "correct": {
-              "fr": "你呢？ invite Lin à répondre à la même question."
+              "fr": "你呢？ invite An à donner son pays."
             },
             "incorrect": {
               "fr": "La particule 呢 garde l'échange ouvert et renvoie la question."
@@ -1133,10 +1151,10 @@
         "header": {
           "id": "ex-l4-speak",
           "prompt": {
-            "fr": "Joue les quatre tours d'un mini-échange."
+            "fr": "Joue le rôle d'An dans le mini-échange."
           },
           "instruction": {
-            "fr": "Salue, demande le nom, dis ton nom et ton pays, puis relance avec 你呢？. Enregistre-toi, réécoute ou auto-évalue-toi."
+            "fr": "Salue, demande le nom et le pays, réponds, puis lance la pratique. Enregistre-toi, réécoute ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l4-exchange-produce",
@@ -1144,13 +1162,13 @@
           ],
           "required": true
         },
-        "referenceText": "你好！你叫什么名字？我叫安。我是中国人。你呢？",
-        "referencePinyin": "nǐ hǎo! nǐ jiào shénme míngzi? wǒ jiào Ān. wǒ shì Zhōngguó rén. nǐ ne?",
+        "referenceText": "你好！你叫什么名字？我叫安。你是哪国人？我是中国人。很高兴认识你！好！我们开始吧！",
+        "referencePinyin": "nǐ hǎo! nǐ jiào shénme míngzi? wǒ jiào Ān. nǐ shì nǎ guó rén? wǒ shì Zhōngguó rén. hěn gāoxìng rènshi nǐ! hǎo! wǒmen kāishǐ ba!",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "你好！你叫什么名字？我叫安。我是中国人。你呢？",
-          "你好 你叫什么名字 我叫安 我是中国人 你呢",
-          "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān wǒ shì Zhōngguó rén nǐ ne"
+          "你好！你叫什么名字？我叫安。你是哪国人？我是中国人。很高兴认识你！好！我们开始吧！",
+          "你好 你叫什么名字 我叫安 你是哪国人 我是中国人 很高兴认识你 好 我们开始吧",
+          "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān nǐ shì nǎ guó rén wǒ shì Zhōngguó rén hěn gāoxìng rènshi nǐ hǎo wǒmen kāishǐ ba"
         ],
         "allowSelfRating": true,
         "stage": "transferer",
@@ -1162,15 +1180,15 @@
         ],
         "feedback": {
           "correct": {
-            "fr": "Tu as enchaîné les fonctions de l'échange ; vérifie maintenant les tons en réécoutant."
+            "fr": "Tu as joué le rôle d'An jusqu'au début de la pratique ; vérifie maintenant les tons en réécoutant."
           },
           "incorrect": {
-            "fr": "Reprends une fonction à la fois : saluer, demander le nom, dire le pays, puis dire 你呢？."
+            "fr": "Reprends une fonction à la fois : saluer, demander le nom, demander le pays, puis répondre."
           }
         },
         "acceptedVariants": [
-          "你好！你叫什么名字？我叫安。我是中国人。你呢？",
-          "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān wǒ shì Zhōngguó rén nǐ ne"
+          "你好！你叫什么名字？我叫安。你是哪国人？我是中国人。很高兴认识你！好！我们开始吧！",
+          "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān nǐ shì nǎ guó rén wǒ shì Zhōngguó rén hěn gāoxìng rènshi nǐ hǎo wǒmen kāishǐ ba"
         ],
         "metadata": {
           "standardID": "HSK-3.0",
@@ -1186,15 +1204,15 @@
             "transfer"
           ],
           "acceptedVariants": [
-            "你好！你叫什么名字？我叫安。我是中国人。你呢？",
-            "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān wǒ shì Zhōngguó rén nǐ ne"
+            "你好！你叫什么名字？我叫安。你是哪国人？我是中国人。很高兴认识你！好！我们开始吧！",
+            "nǐ hǎo nǐ jiào shénme míngzi wǒ jiào Ān nǐ shì nǎ guó rén wǒ shì Zhōngguó rén hěn gāoxìng rènshi nǐ hǎo wǒmen kāishǐ ba"
           ],
-          "feedback": {
-            "correct": {
-              "fr": "Tu as enchaîné les fonctions de l'échange ; vérifie maintenant les tons en réécoutant."
-            },
-            "incorrect": {
-              "fr": "Reprends une fonction à la fois : saluer, demander le nom, dire le pays, puis dire 你呢？."
+            "feedback": {
+              "correct": {
+                "fr": "Tu as joué le rôle d'An jusqu'au début de la pratique ; vérifie maintenant les tons en réécoutant."
+              },
+              "incorrect": {
+                "fr": "Reprends une fonction à la fois : saluer, demander le nom, demander le pays, puis répondre."
             }
           },
           "helpLevels": [

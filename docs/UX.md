@@ -134,7 +134,8 @@ Contrat commun d’un exercice : `id` stable, `kind`, consigne française, conte
 - `meaningChoose` : associer caractère/pinyin et sens français ;
 - `sentenceOrder` : remettre des tuiles dans l’ordre, avec déplacement clavier ;
 - `fillBlank` : choisir le mot manquant dans une phrase courte ;
-- `speakPrompt` : écouter, enregistrer, réécouter puis s’auto-évaluer ;
+- `speakPrompt` : écouter, enregistrer, réécouter puis demander l’analyse du
+  fournisseur ; si aucun fournisseur n’est configuré, passer sans évaluer ;
 - `writeCharacter` : tracer un caractère avec ordre de traits fourni ;
 - `reviewRecall` : révéler le verso, puis choisir `À refaire`, `Difficile`, `Bien` ou `Facile`.
 
@@ -148,7 +149,7 @@ La fiche conserve `wordID`, niveau de maîtrise, date de dernière réponse et p
 
 ### Oral
 
-Écran centré sur une seule phrase : caractère/pinyin, bouton d’écoute, bouton microphone. À la première utilisation, demander `AVAudioSession` avec une raison française claire. Pendant l’enregistrement : chronomètre, amplitude simple, « Arrêter ». Après : « Réécouter », « Refaire », « C’est fait ». Si Speech fournit une transcription locale, elle est comparée aux variantes acceptées ; l’interface ne transforme pas la confiance Speech en score phonétique. Si Speech est indisponible, l’apprenant choisit `À retravailler` ou `Je suis à l’aise`, ce qui planifie la révision. Une permission refusée affiche le chemin Réglages et permet de continuer la leçon avec une alternative d’écoute.
+Écran centré sur une seule phrase : caractère/pinyin, bouton d’écoute, bouton microphone. À la première utilisation, demander `AVAudioSession` avec une raison française claire. Pendant l’enregistrement : chronomètre, amplitude simple, « Arrêter ». Après : « Réécouter », « Refaire » et l’analyse. `SpeechPracticeView` transmet l’enregistrement temporaire à un `SpeechPronunciationService` injecté ; un rapport terminé peut afficher le verdict, le score et les détails par mot, son et ton. La transcription Apple et sa confiance restent descriptives et ne deviennent jamais une note de prononciation. Tant qu’aucun fournisseur et aucune clé ne sont configurés, l’état indique que l’analyse n’est pas configurée et « Passer sans évaluer » permet de poursuivre sans réussite ni score. Une permission refusée affiche le chemin Réglages et permet de continuer la leçon avec le même passage sans évaluation.
 
 ### Écriture
 
@@ -217,7 +218,7 @@ Découpage recommandé : `DesignSystem` (tokens, composants, assets), `Onboardin
 2. La cible pédagogique porte sur les trois leçons L1–L3 de l’unité 1, qui contiennent respectivement 6, 7 et 7 exercices ; le pack livré ajoute la leçon d’extension L4 avec 7 exercices. Chaque tentative est sauvegardée après validation.
 3. Une erreur affiche une correction ; une leçon terminée apparaît dans le parcours et alimente le dashboard.
 4. Un mot peut être ouvert depuis une leçon ou une histoire, lu hors ligne et ajouté aux cartes ; l’état du bouton suit la donnée.
-5. Un oral peut être enregistré, relu et auto-évalué ; permission refusée et absence de réseau ont un chemin utilisable.
+5. Un oral peut être enregistré, relu et soumis à un fournisseur ; sans provider configuré, permission ou analyse exploitable, il peut être passé sans évaluation ni note.
 6. Les cartes dues suivent des intervalles déterministes et disparaissent de la file uniquement après une réponse enregistrée.
 7. Le dictionnaire de l’unité 1 fonctionne hors ligne pour caractère, pinyin et français.
 8. Les mêmes routes sont accessibles sur iPhone, iPad et Mac ; la sidebar, les raccourcis et VoiceOver ne dépendent pas d’un écran tactile.

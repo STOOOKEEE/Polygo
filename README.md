@@ -42,13 +42,15 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
 ```
 
 `swift test --parallel` est le contrôle portable à lancer avant les builds
-Apple. Le package courant contient 43 tests XCTest, dont 6 tests de contrat de
-contenu ; le run Apple indiqué plus haut les valide tous ainsi que les builds,
+Apple. Le package courant contient 46 tests XCTest, dont 6 tests de contrat de
+contenu ; les 46/46 tests portables passent avec les fixtures courantes. Le run
+Apple indiqué plus haut valide le jalon précédent ainsi que ses builds,
 métadonnées et six méthodes UI (2 macOS et 4 iOS). La cible UI
 contient le smoke français, le parcours de reprise et le parcours de fin/revue.
 Ces parcours couvrent notamment la reprise du brouillon et du feedback, le
-dialogue avec réplique précédente interactive, le fallback oral, les gestes du
-canevas, la persistance locale, le parcours et les cartes.
+dialogue avec réplique précédente interactive, l’état oral non évalué et son
+passage sans note, les gestes du canevas, la persistance locale, le parcours et
+les cartes.
 
 ## Ce qui est livré
 
@@ -124,14 +126,24 @@ l’exercice ; aucun audio n’est conservé par défaut.
 
 La lecture orale extrait uniquement le mandarin et utilise `AVSpeechSynthesizer`;
 elle nécessite une voix Mandarin installée sur l’appareil. Les labels et
-instructions françaises ne sont jamais envoyés au TTS. La transcription utilise
-`SFSpeechRecognizer` en mode local lorsque le modèle et les permissions le
-permettent ; il n’y a pas de repli réseau silencieux. Une confiance Speech reste
-une confiance de transcription : elle ne fabrique ni score de phonème ni score
-de ton. Les marqueurs de ton sont visuels et pédagogiques, sans faux signal
-audio. L’interface orale compacte garde la cible, le modèle et le microphone
-accessibles sur un écran iPhone standard ; la reconnaissance Speech avec
-permission accordée reste à compléter.
+instructions françaises ne sont jamais envoyés au TTS. Après un enregistrement,
+`SpeechPracticeView` lance la transcription Apple et le protocole injecté
+`SpeechPronunciationService` séparément. La confiance et le texte transcrit
+restent descriptifs : une transcription seule ne produit aucune note de
+prononciation ou de ton. Tant qu’aucun fournisseur et aucune clé ne sont
+configurés, la composition utilise l’état `unconfigured` et propose « Passer
+sans évaluer », enregistré comme `skipped` sans réussite. Un rapport fixture
+terminé peut afficher le verdict, le score et les lignes par mot, son et ton ;
+le rapport doit venir du fournisseur pour que l’exercice soit évalué.
+
+Le protocole prévoit des adaptateurs iFlytek ou SpeechSuper derrière un serveur
+proxy, mais aucun moteur externe n’est activé dans cette composition. Les clés
+et secrets ne sont jamais embarqués dans l’app. Les fixtures du protocole
+couvrent les états terminé, non configuré, indisponible et sans conclusion.
+Les marqueurs de ton restent visuels et pédagogiques, sans faux signal audio.
+L’interface orale compacte garde la cible, le modèle et le microphone
+accessibles sur un écran iPhone standard ; la validation sur appareil avec un
+fournisseur configuré reste à effectuer.
 
 Les guides de tracé disponibles couvrent actuellement trois caractères. La
 synchronisation CloudKit privée est prévue mais inactive : l’application

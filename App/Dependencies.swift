@@ -11,6 +11,7 @@ public struct AppDependencies {
     public let exerciseEngine: any ExerciseEngine
     public let scheduler: any ReviewScheduler
     public let audio: any AudioService
+    public let pronunciation: any SpeechPronunciationService
     public let handwriting: any HandwritingService
     public let clock: any PolygoClock
 
@@ -21,6 +22,7 @@ public struct AppDependencies {
         scheduler: any ReviewScheduler,
         audio: any AudioService,
         handwriting: any HandwritingService,
+        pronunciation: any SpeechPronunciationService = UnconfiguredSpeechPronunciationService(),
         clock: any PolygoClock = SystemPolygoClock()
     ) {
         self.content = content
@@ -28,6 +30,7 @@ public struct AppDependencies {
         self.exerciseEngine = exerciseEngine
         self.scheduler = scheduler
         self.audio = audio
+        self.pronunciation = pronunciation
         self.handwriting = handwriting
         self.clock = clock
     }
@@ -52,7 +55,8 @@ public struct AppDependencies {
             progress: progress,
             scheduler: SM2Scheduler(),
             audio: AppleAudioService(contentRootURL: contentRoot),
-            handwriting: handwriting
+            handwriting: handwriting,
+            pronunciation: UnconfiguredSpeechPronunciationService()
         )
     }
 }
