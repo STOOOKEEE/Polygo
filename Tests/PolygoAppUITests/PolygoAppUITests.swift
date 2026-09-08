@@ -84,7 +84,10 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func completeOnboardingIfNeeded() {
-        let start = element(containing: "Commencer", type: .button)
+        // A completed lesson can expose an "À commencer" status on its
+        // row. Match the onboarding action exactly so a persisted session
+        // cannot be mistaken for the welcome screen.
+        let start = button(exactly: "Commencer")
         guard start.waitForExistence(timeout: 5) else {
             // A simulator reused between runs may already have a local
             // profile. The rest of the smoke still exercises the live shell.

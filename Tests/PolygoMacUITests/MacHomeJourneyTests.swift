@@ -100,7 +100,13 @@ final class MacHomeJourneyTests: XCTestCase {
         button(exactly: "Je connais le pinyin").click()
         button(exactly: "Continuer").click()
 
-        XCTAssertTrue(text(containing: "Durée quotidienne").waitForExistence(timeout: timeout), "Le rythme doit être accessible")
+        let rhythmHeading = app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", "Durée quotidienne", "Durée quotidienne")
+        ).firstMatch
+        XCTAssertTrue(
+            rhythmHeading.waitForExistence(timeout: timeout),
+            "Le rythme doit être accessible"
+        )
         clickExactHittable(label: "15 min", message: "La durée 15 min doit être proposée")
         button(exactly: "Continuer").click()
 
@@ -141,7 +147,7 @@ final class MacHomeJourneyTests: XCTestCase {
     }
 
     private func clickExactHittable(label: String, message: String) {
-        let candidates = app.descendants(matching: .any)
+        let candidates = app.radioButtons
             .matching(NSPredicate(format: "label == %@", label))
         guard candidates.firstMatch.waitForExistence(timeout: timeout) else {
             XCTFail(message)

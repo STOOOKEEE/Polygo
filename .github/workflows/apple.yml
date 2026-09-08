@@ -125,6 +125,37 @@ jobs:
       - name: Generate Xcode project
         run: xcodegen generate --spec project.yml
 
+      - name: Prepare macOS UI test display
+        run: |
+          set -euo pipefail
+          if ! command -v displayplacer >/dev/null 2>&1; then
+            brew install displayplacer
+          fi
+
+          display_info="$(displayplacer list)"
+          screen_id="$(printf '%s\n' "$display_info" | awk -F ': ' '/Persistent screen id:/ { print $2; exit }')"
+          test -n "$screen_id"
+
+          # The desktop home needs 944 points of content, 56 points of
+          # padding, and the 240 point sidebar. Pick a supported mode that
+          # leaves room for that composition on the hosted runner.
+          mode="$(printf '%s\n' "$display_info" \
+            | sed -nE 's/.*mode [0-9]+: (res:[0-9]+x[0-9]+ hz:[0-9]+ color_depth:[0-9]+ scaling:[^ ]+).*/\1/p' \
+            | awk '
+              {
+                split($1, resolution, ":"); split(resolution[2], dimensions, "x")
+                if (dimensions[1] >= 1440 && dimensions[2] >= 900) { print; exit }
+              }
+            ')
+          if [ -z "$mode" ]; then
+            echo "::error::No supported macOS display mode is at least 1440x900"
+            printf '%s\n' "$display_info"
+            exit 1
+          fi
+
+          displayplacer "id:${screen_id} ${mode} origin:(0,0) degree:0"
+          displayplacer list
+
       - name: Build macOS app
         run: >-
           xcodebuild
