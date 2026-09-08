@@ -146,7 +146,7 @@ jobs:
                 split($1, resolution, ":"); split(resolution[2], dimensions, "x")
                 if (dimensions[1] >= 1440 && dimensions[2] >= 900) { print; exit }
               }
-            ')
+            ')"
           if [ -z "$mode" ]; then
             echo "::error::No supported macOS display mode is at least 1440x900"
             printf '%s\n' "$display_info"
