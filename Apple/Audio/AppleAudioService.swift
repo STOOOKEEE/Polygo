@@ -2,6 +2,13 @@ import Foundation
 import AVFoundation
 import Speech
 import PolygoCore
+#if DEBUG
+import os.log
+#endif
+
+#if DEBUG
+private let speechLogger = Logger(subsystem: "com.syllune.Polygo", category: "speech")
+#endif
 
 /// Apple-only audio adapter used by PolygoApp. All recordings are created in
 /// the process temporary directory; callers must explicitly decide whether to
@@ -10,7 +17,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     public let contentRootURL: URL
 
     private let fileManager: FileManager
-    private let synthesizer: AVSpeechSynthesizer
+    private var synthesizer: AVSpeechSynthesizer
     private let streamLock = NSLock()
     private var streamContinuations: [UUID: AsyncStream<AudioPlaybackState>.Continuation] = [:]
 
@@ -201,6 +208,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         speechStateLock.unlock()
 
         guard !wasCancelled else {
+            debugSpeech("cancelled-before-start", requestID: requestID)
             continuation.resume(throwing: CancellationError())
             return
         }
@@ -241,6 +249,13 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                 synthesizer.stopSpeaking(at: .immediate)
             }
 
+            // Isolate each request in a fresh native owner. The active
+            // synthesizer identity lets callbacks from a stopped request be
+            // discarded during rapid stop/replay.
+            let requestSynthesizer = AVSpeechSynthesizer()
+            requestSynthesizer.delegate = self
+            synthesizer = requestSynthesizer
+
             // Audio session setup can throw. Finish the previous request
             // before this fallible operation so it is never orphaned if the
             // new request cannot be admitted.
@@ -262,9 +277,9 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             speechUtteranceIndex = 0
             speechUtterance = utterances[0]
             endStartingSpeech(requestID)
-            // Feed one utterance at a time. Native queue cancellation can
-            // leave a resumed request behind a stopped queue; advancing from
-            // the delegate keeps the active request and its callback paired.
+            debugSpeech("start", requestID: requestID, index: 0)
+            // Feed one utterance at a time so the active request owns the
+            // native utterance whose delegate callback advances it.
             synthesizer.speak(utterances[0])
         } catch {
             let wasCancelled = consumeSpeechCancellation(requestID)
@@ -295,6 +310,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     }
 
     private func cancelSpeech(requestID: UUID) {
+        debugSpeech("cancel-request", requestID: requestID)
         speechStateLock.lock()
         let wasPending = queuedSpeechRequestIDs.remove(requestID) != nil
         if wasPending || startingSpeechRequestIDs.contains(requestID) {
@@ -321,9 +337,11 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
 
     private func stopSpeechOnMain() {
         guard let requestID = speechRequestID else {
+            debugSpeech("stop-idle")
             synthesizer.stopSpeaking(at: .immediate)
             return
         }
+        debugSpeech("stop", requestID: requestID, index: speechUtteranceIndex)
         finishSpeech(
             requestID: requestID,
             result: .failure(CancellationError()),
@@ -338,6 +356,14 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     ) {
         guard speechRequestID == requestID else { return }
         let continuation = speechContinuation
+        let resultLabel: String
+        switch result {
+        case .success:
+            resultLabel = "continuation-resume-success"
+        case .failure:
+            resultLabel = "continuation-resume-failure"
+        }
+        debugSpeech(resultLabel, requestID: requestID, index: speechUtteranceIndex)
         speechRequestID = nil
         speechContinuation = nil
         speechUtterance = nil
@@ -357,31 +383,62 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
 
     // MARK: AVSpeechSynthesizerDelegate
 
-    public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+    public func speechSynthesizer(_ callbackSynthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         performOnMain { [weak self] in
-            self?.handleSpeechDidFinish(utterance)
+            guard let self else { return }
+            let synthMatches = self.synthesizer === callbackSynthesizer
+            let utteranceMatches = self.speechUtterance === utterance
+            self.debugSpeech(
+                "didFinish-callback",
+                requestID: self.speechRequestID,
+                index: self.speechUtteranceIndex,
+                synthMatches: synthMatches,
+                utteranceMatches: utteranceMatches
+            )
+            guard synthMatches else { return }
+            self.handleSpeechDidFinish(utterance)
         }
     }
 
     private func handleSpeechDidFinish(_ utterance: AVSpeechUtterance) {
-        guard speechUtterance === utterance, let requestID = speechRequestID else { return }
+        guard speechUtterance === utterance, let requestID = speechRequestID else {
+            debugSpeech("ignored-didFinish", requestID: speechRequestID, index: speechUtteranceIndex)
+            return
+        }
+        debugSpeech("utterance-finish", requestID: requestID, index: speechUtteranceIndex)
         if speechUtteranceIndex + 1 < speechUtterances.count {
             speechUtteranceIndex += 1
             speechUtterance = speechUtterances[speechUtteranceIndex]
+            debugSpeech("utterance-start", requestID: requestID, index: speechUtteranceIndex)
             synthesizer.speak(speechUtterances[speechUtteranceIndex])
         } else {
             finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
         }
     }
 
-    public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+    public func speechSynthesizer(_ callbackSynthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         performOnMain { [weak self] in
-            self?.handleSpeechDidCancel(utterance)
+            guard let self else { return }
+            let synthMatches = self.synthesizer === callbackSynthesizer
+            let utteranceMatches = self.speechUtterance === utterance
+            self.debugSpeech(
+                "didCancel-callback",
+                requestID: self.speechRequestID,
+                index: self.speechUtteranceIndex,
+                synthMatches: synthMatches,
+                utteranceMatches: utteranceMatches
+            )
+            guard synthMatches else { return }
+            self.handleSpeechDidCancel(utterance)
         }
     }
 
     private func handleSpeechDidCancel(_ utterance: AVSpeechUtterance) {
-        guard speechUtterance === utterance, let requestID = speechRequestID else { return }
+        guard speechUtterance === utterance, let requestID = speechRequestID else {
+            debugSpeech("ignored-didCancel", requestID: speechRequestID, index: speechUtteranceIndex)
+            return
+        }
+        debugSpeech("utterance-cancel", requestID: requestID, index: speechUtteranceIndex)
         finishSpeech(requestID: requestID, result: .failure(CancellationError()), stopSynthesizer: false)
     }
 
@@ -938,6 +995,31 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         } else {
             DispatchQueue.main.async(execute: work)
         }
+    }
+
+    private func debugSpeech(
+        _ event: String,
+        requestID: UUID? = nil,
+        index: Int? = nil,
+        synthMatches: Bool? = nil,
+        utteranceMatches: Bool? = nil
+    ) {
+#if DEBUG
+        var message = event
+        if let requestID {
+            message += " request=\(requestID.uuidString)"
+        }
+        if let index {
+            message += " utterance=\(index)"
+        }
+        if let synthMatches {
+            message += " synthMatch=\(synthMatches)"
+        }
+        if let utteranceMatches {
+            message += " utteranceMatch=\(utteranceMatches)"
+        }
+        speechLogger.info("\(message, privacy: .public)")
+#endif
     }
 
     // MARK: Platform-specific audio sessions
