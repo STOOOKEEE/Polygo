@@ -51,20 +51,32 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             lesson.exercises.first(where: { $0.header.id == "ex-l5-reading" }),
             "L5 doit conserver la compréhension de lecture stable"
         )
+        let readingBlock = try XCTUnwrap(
+            lesson.blocks.first(where: { block in
+                block.kind == "reading" &&
+                    (block.comprehensionExerciseIDs ?? []).contains(reading.header.id)
+            }),
+            "Le texte de L5 doit référencer la question de compréhension"
+        )
+        let readingParagraphs = try XCTUnwrap(
+            readingBlock.paragraphs,
+            "Le texte de L5 doit conserver ses paragraphes"
+        )
         let readingChoice = try XCTUnwrap(
             reading.choices?.first(where: { $0.id == reading.correctChoiceID }),
             "La réponse de lecture doit exister dans le fixture"
         )
+        XCTAssertEqual(readingParagraphs.count, 2, "Le texte de L5 doit proposer deux paragraphes")
         XCTAssertEqual(
             Array(lesson.exercises.map(\.header.id).prefix(4)),
             ["ex-l5-meaning", "ex-l5-order", "ex-l5-fill", "ex-l5-listen"],
             "L5 doit conserver l’ordre contractuel jusqu’à l’écoute"
         )
 
-        let dayOne = element(containing: "Jour 1 sur 90")
+        let dayOne = label(containing: "Jour 1 sur 90")
         XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J1/90")
-        XCTAssertTrue(element(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
-        XCTAssertTrue(element(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
+        XCTAssertTrue(label(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
+        XCTAssertTrue(label(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
         // Keep relaunches focused on the durable events produced by the app.
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "mac-daily-plan-day-one")
@@ -88,7 +100,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(play.isHittable, "Le contrôle TTS doit être visible")
         play.click()
         XCTAssertTrue(
-            element(containingAny: ["Lecture terminée", "Audio indisponible"]).waitForExistence(timeout: timeout),
+            text(containingAny: ["Lecture terminée", "Audio indisponible"]).waitForExistence(timeout: timeout),
             "Le contrôle TTS doit exposer un état observable"
         )
         attachScreenshot(named: "mac-daily-plan-lesson-five-listening")
@@ -103,7 +115,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse d’écoute doit pouvoir être enregistrée")
         XCTAssertTrue(verify.isEnabled, "Une réponse choisie doit activer l’enregistrement")
         verify.click()
-        XCTAssertTrue(element(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
+        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
         app.buttons.matching(NSPredicate(format: "label == %@", "Continuer")).firstMatch.click()
 
         // The listening evaluation and the following position must survive a
@@ -125,6 +137,18 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "Le passage oral doit conserver la progression")
         continueAnyway.click()
 
+        let readingDisclosure = app.descendants(matching: .disclosureTriangle).matching(
+            NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")
+        ).firstMatch
+        XCTAssertTrue(readingDisclosure.waitForExistence(timeout: timeout), "Le texte associé doit être relisible dans la question")
+        XCTAssertTrue(readingDisclosure.isHittable, "Le contrôle de relecture doit être accessible")
+        readingDisclosure.click()
+        for paragraph in readingParagraphs {
+            assertReadingParagraph(paragraph)
+        }
+        attachScreenshot(named: "mac-daily-plan-lesson-five-reading-open")
+        readingDisclosure.click()
+
         let readingLabel = readingChoice.label["fr"] ?? readingChoice.label.values.first ?? ""
         let readingAnswer = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", readingLabel)).firstMatch
         XCTAssertTrue(readingAnswer.waitForExistence(timeout: timeout), "La compréhension de lecture de L5 doit être disponible")
@@ -136,15 +160,15 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.click()
 
-        XCTAssertTrue(element(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
+        XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "La séance terminée doit être confirmée")
         let path = app.buttons.matching(NSPredicate(format: "label == %@", "Retour au parcours")).firstMatch
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.click()
-        XCTAssertTrue(element(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
+        XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
         attachScreenshot(named: "mac-daily-plan-path-after-day-one")
 
         selectSidebarItem("Aujourd’hui")
-        let dayTwo = element(containing: "Jour 2 sur 90")
+        let dayTwo = label(containing: "Jour 2 sur 90")
         XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J2")
         attachScreenshot(named: "mac-daily-plan-day-two")
     }
@@ -166,22 +190,53 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
     }
 
-    private func element(containing value: String) -> XCUIElement {
+    private func label(containing value: String) -> XCUIElement {
         app.descendants(matching: .any)
-            .matching(NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value))
+            .matching(NSPredicate(format: "label CONTAINS[c] %@", value))
             .firstMatch
     }
 
-    private func element(containingAny values: [String]) -> XCUIElement {
+    private func text(containing value: String) -> XCUIElement {
+        app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value)
+        ).firstMatch
+    }
+
+    private func text(containingAny values: [String]) -> XCUIElement {
         let predicates = values.flatMap { value in
             [
                 NSPredicate(format: "value CONTAINS[c] %@", value),
                 NSPredicate(format: "label CONTAINS[c] %@", value)
             ]
         }
-        return app.descendants(matching: .any)
+        return app.staticTexts
             .matching(NSCompoundPredicate(orPredicateWithSubpredicates: predicates))
             .firstMatch
+    }
+
+    private func assertReadingParagraph(_ paragraph: DailyReadingParagraphFixture) {
+        let hanzi = label(containing: paragraph.hanzi)
+        if !hanzi.waitForExistence(timeout: 2) {
+            // ChineseSelectableText exposes one accessible token per character
+            // when the paragraph is tokenized. The pinyin and translation below
+            // still identify the complete paragraph without depending on that
+            // platform-specific grouping.
+            for character in paragraph.hanzi where !character.isWhitespace && !character.isPunctuation {
+                XCTAssertTrue(
+                    label(containing: String(character)).waitForExistence(timeout: timeout),
+                    "Le caractère \(character) du paragraphe \(paragraph.id) doit être visible"
+                )
+            }
+        }
+        XCTAssertTrue(
+            text(containing: paragraph.pinyin).waitForExistence(timeout: timeout),
+            "Le pinyin du paragraphe \(paragraph.id) doit être visible"
+        )
+        let translation = paragraph.translation["fr"] ?? paragraph.translation.values.first ?? ""
+        XCTAssertTrue(
+            text(containing: translation).waitForExistence(timeout: timeout),
+            "La traduction du paragraphe \(paragraph.id) doit être visible"
+        )
     }
 
     private func makeSeedProgressAfterStarterLessons() throws -> Data {
@@ -345,6 +400,15 @@ private struct DailyBlockFixture: Decodable {
     let id: String
     let kind: String
     let spec: DailyExerciseFixture?
+    let paragraphs: [DailyReadingParagraphFixture]?
+    let comprehensionExerciseIDs: [String]?
+}
+
+private struct DailyReadingParagraphFixture: Decodable {
+    let id: String
+    let hanzi: String
+    let pinyin: String
+    let translation: [String: String]
 }
 
 private struct DailyExerciseFixture: Decodable {

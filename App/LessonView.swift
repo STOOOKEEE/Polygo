@@ -19,6 +19,7 @@ public struct LessonView: View {
     @State private var isFinalizing = false
     @State private var finished = false
     @State private var preambleExpanded = false
+    @State private var readingReferenceExpanded = false
     @State private var dialogueDrafts: [BlockID: String] = [:]
     @State private var dialogueResults: [BlockID: Bool] = [:]
 
@@ -154,6 +155,9 @@ public struct LessonView: View {
                 if currentIndex == 0 {
                     lessonPreamble(lesson, before: block.0)
                 }
+                if let reading = readingReference(in: lesson, for: spec.id) {
+                    readingReferenceDisclosure(reading)
+                }
                 HStack {
                     Text("\(currentIndex + 1) / \(exercises.count)")
                         .font(.callout.weight(.semibold))
@@ -207,6 +211,34 @@ public struct LessonView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             exerciseActionBar(spec: spec, blockID: block.0)
         }
+    }
+
+    private func readingReference(in lesson: LessonDocument, for exerciseID: ExerciseID) -> ReadingBlock? {
+        lesson.blocks.compactMap { block in
+            guard case .reading(let reading) = block,
+                  reading.comprehensionExerciseIDs.contains(exerciseID) else { return nil }
+            return reading
+        }.first
+    }
+
+    private func readingReferenceDisclosure(_ reading: ReadingBlock) -> some View {
+        DisclosureGroup(isExpanded: $readingReferenceExpanded) {
+            PedagogicalBlockView(
+                block: .reading(reading),
+                vocabulary: lesson?.vocabulary ?? [],
+                objectives: lesson?.objectives ?? [],
+                languageCodes: model.preferredLanguageCodes
+            )
+            .padding(.top, 12)
+        } label: {
+            Label("Relire le texte", systemImage: "book.pages")
+                .font(.headline)
+                .foregroundStyle(SylluneColor.ink)
+        }
+        .tint(SylluneColor.ink)
+        .padding(16)
+        .sylluneCard(radius: 14)
+        .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue)")
     }
 
     private func exerciseActionBar(spec: ExerciseSpec, blockID: BlockID) -> some View {

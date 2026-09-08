@@ -49,10 +49,22 @@ final class DailyPlanJourneyTests: XCTestCase {
             lesson.exercises.first(where: { $0.header.id == "ex-l5-reading" }),
             "L5 doit conserver la compréhension de lecture stable"
         )
+        let readingBlock = try XCTUnwrap(
+            lesson.blocks.first(where: { block in
+                block.kind == "reading" &&
+                    (block.comprehensionExerciseIDs ?? []).contains(reading.header.id)
+            }),
+            "Le texte de L5 doit référencer la question de compréhension"
+        )
+        let readingParagraphs = try XCTUnwrap(
+            readingBlock.paragraphs,
+            "Le texte de L5 doit conserver ses paragraphes"
+        )
         let readingChoice = try XCTUnwrap(
             reading.choices?.first(where: { $0.id == reading.correctChoiceID }),
             "La réponse de lecture doit exister dans le fixture"
         )
+        XCTAssertEqual(readingParagraphs.count, 2, "Le texte de L5 doit proposer deux paragraphes")
         XCTAssertEqual(
             Array(lesson.exercises.map(\.header.id).prefix(4)),
             ["ex-l5-meaning", "ex-l5-order", "ex-l5-fill", "ex-l5-listen"],
@@ -125,6 +137,18 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "Le passage oral doit conserver la progression")
         continueAnyway.tap()
 
+        let readingDisclosure = app.buttons.matching(
+            NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")
+        ).firstMatch
+        XCTAssertTrue(readingDisclosure.waitForExistence(timeout: timeout), "Le texte associé doit être relisible dans la question")
+        XCTAssertTrue(readingDisclosure.isHittable, "Le contrôle de relecture doit être accessible")
+        readingDisclosure.tap()
+        for paragraph in readingParagraphs {
+            assertReadingParagraph(paragraph)
+        }
+        attachScreenshot(named: "ios-daily-plan-lesson-five-reading-open")
+        readingDisclosure.tap()
+
         let readingLabel = readingChoice.label["fr"] ?? readingChoice.label.values.first ?? ""
         let readingAnswer = element(containing: readingLabel, type: .button)
         XCTAssertTrue(readingAnswer.waitForExistence(timeout: timeout), "La compréhension de lecture doit être disponible")
@@ -165,6 +189,31 @@ final class DailyPlanJourneyTests: XCTestCase {
 
     private func button(exactly label: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+    }
+
+    private func assertReadingParagraph(_ paragraph: DailyReadingParagraphFixture) {
+        let hanzi = element(containing: paragraph.hanzi)
+        if !hanzi.waitForExistence(timeout: 2) {
+            // ChineseSelectableText exposes one accessible token per character
+            // when the paragraph is tokenized. The pinyin and translation below
+            // still identify the complete paragraph without depending on that
+            // platform-specific grouping.
+            for character in paragraph.hanzi where !character.isWhitespace && !character.isPunctuation {
+                XCTAssertTrue(
+                    element(containing: String(character)).waitForExistence(timeout: timeout),
+                    "Le caractère \(character) du paragraphe \(paragraph.id) doit être visible"
+                )
+            }
+        }
+        XCTAssertTrue(
+            element(containing: paragraph.pinyin).waitForExistence(timeout: timeout),
+            "Le pinyin du paragraphe \(paragraph.id) doit être visible"
+        )
+        let translation = paragraph.translation["fr"] ?? paragraph.translation.values.first ?? ""
+        XCTAssertTrue(
+            element(containing: translation).waitForExistence(timeout: timeout),
+            "La traduction du paragraphe \(paragraph.id) doit être visible"
+        )
     }
 
     private func loadLessonFixture() throws -> DailyLessonFixture {
@@ -327,6 +376,15 @@ private struct DailyBlockFixture: Decodable {
     let id: String
     let kind: String
     let spec: DailyExerciseFixture?
+    let paragraphs: [DailyReadingParagraphFixture]?
+    let comprehensionExerciseIDs: [String]?
+}
+
+private struct DailyReadingParagraphFixture: Decodable {
+    let id: String
+    let hanzi: String
+    let pinyin: String
+    let translation: [String: String]
 }
 
 private struct DailyExerciseFixture: Decodable {
