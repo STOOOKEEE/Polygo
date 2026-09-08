@@ -69,7 +69,7 @@ public struct TodayView: View {
     private func resumeCard(compact: Bool) -> some View {
         if let lessonID = model.resumeLessonID {
             VStack(spacing: 0) {
-                NavigationLink(value: AppRoute.lesson(lessonID)) {
+                NavigationLink(destination: LessonView(lessonID: lessonID)) {
                     heroContent(lessonID: lessonID, compact: compact)
                 }
                 .buttonStyle(.plain)
@@ -257,7 +257,7 @@ public struct TodayView: View {
                     homeLessonRow(lessonID, index: index)
                 }
             }
-            NavigationLink(value: AppRoute.path) {
+            NavigationLink(destination: LearningPathView()) {
                 Label("Voir le parcours complet", systemImage: "arrow.right")
             }
             .buttonStyle(.bordered)
@@ -322,7 +322,7 @@ public struct TodayView: View {
     }
 
     private func flashcardsLink(dueCount: Int) -> some View {
-        NavigationLink(value: AppRoute.cards) {
+        NavigationLink(destination: ReviewCardsView()) {
             Text(dueCount == 0 ? "Ouvrir" : "Réviser")
         }
         .buttonStyle(.borderedProminent)
@@ -384,7 +384,7 @@ public struct TodayView: View {
         .background(active ? accent.opacity(0.12) : Color.clear, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .contentShape(Rectangle())
         if unlocked {
-            NavigationLink(value: AppRoute.lesson(lessonID)) { row }
+            NavigationLink(destination: LessonView(lessonID: lessonID)) { row }
                 .buttonStyle(.plain)
                 .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
         } else {
