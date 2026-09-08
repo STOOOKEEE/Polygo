@@ -80,7 +80,7 @@ final class MacHomeJourneyTests: XCTestCase {
         let start = button(exactly: "Commencer")
         guard start.waitForExistence(timeout: timeout) else {
             XCTAssertTrue(
-                text(containing: "Aujourd’hui").waitForExistence(timeout: timeout),
+                element(containing: "Aujourd’hui").waitForExistence(timeout: timeout),
                 "L’app macOS doit démarrer sur l’espace d’apprentissage"
             )
             return

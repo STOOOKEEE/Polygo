@@ -277,20 +277,23 @@ public struct SplitShell: View {
         NavigationSplitView {
             List(selection: $selection) {
                 Section("Apprendre") {
-                    NavigationLink(value: AppRoute.today) { Label("Aujourd’hui", systemImage: "sun.max") }.keyboardShortcut("1", modifiers: .command)
-                    NavigationLink(value: AppRoute.path) { Label("Parcours", systemImage: "list.bullet.rectangle.portrait") }.keyboardShortcut("2", modifiers: .command)
-                    NavigationLink(value: AppRoute.cards) { Label("Cartes", systemImage: "rectangle.stack") }.keyboardShortcut("4", modifiers: .command)
+                    sidebarItem(.today, label: "Aujourd’hui", systemImage: "sun.max")
+                        .keyboardShortcut("1", modifiers: .command)
+                    sidebarItem(.path, label: "Parcours", systemImage: "list.bullet.rectangle.portrait")
+                        .keyboardShortcut("2", modifiers: .command)
+                    sidebarItem(.cards, label: "Cartes", systemImage: "rectangle.stack")
+                        .keyboardShortcut("4", modifiers: .command)
                 }
                 Section("Découvrir") {
-                    NavigationLink(value: AppRoute.explorer) {
-                        Label("Explorer", systemImage: "book.pages")
-                    }
+                    sidebarItem(.explorer, label: "Explorer", systemImage: "book.pages")
                     .accessibilityLabel("Explorer : histoires et dictionnaire")
                     .keyboardShortcut("3", modifiers: .command)
                 }
                 Section("Compte") {
-                    NavigationLink(value: AppRoute.profile) { Label("Profil", systemImage: "person.crop.circle") }.keyboardShortcut("5", modifiers: .command)
-                    NavigationLink(value: AppRoute.settings) { Label("Réglages", systemImage: "gearshape") }.keyboardShortcut(",", modifiers: .command)
+                    sidebarItem(.profile, label: "Profil", systemImage: "person.crop.circle")
+                        .keyboardShortcut("5", modifiers: .command)
+                    sidebarItem(.settings, label: "Réglages", systemImage: "gearshape")
+                        .keyboardShortcut(",", modifiers: .command)
                 }
             }
             .navigationTitle("Syllune")
@@ -309,6 +312,18 @@ public struct SplitShell: View {
         .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
             model.persistRoute(model.selectedRoute.baseTab)
         }
+    }
+
+    private func sidebarItem(_ route: AppRoute, label: String, systemImage: String) -> some View {
+        Button {
+            selection = route
+            model.persistRoute(route)
+        } label: {
+            Label(label, systemImage: systemImage)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .buttonStyle(.plain)
+        .tag(route)
     }
 
     @ViewBuilder private func routeView(_ route: AppRoute) -> some View {
