@@ -5,6 +5,7 @@ import PolygoApple
 public struct LessonView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dismiss) private var dismiss
     public let lessonID: LessonID
     @State private var lesson: LessonDocument?
     @State private var currentIndex = 0
@@ -520,13 +521,16 @@ public struct LessonView: View {
                 }
             }
             .buttonStyle(.bordered)
-            if let next = model.nextLessonID, successCount == exercises.count {
-                NavigationLink(destination: LessonView(lessonID: next)) { Text("Continuer le parcours") }
-                    .buttonStyle(SyllunePrimaryButtonStyle())
-            } else {
-                NavigationLink(destination: LearningPathView()) { Text("Retour au parcours") }
-                    .buttonStyle(SyllunePrimaryButtonStyle())
+            Button("Retour au parcours") {
+                // The bilan stays visible until the learner chooses where to
+                // go next. Dismiss the lesson destination first, then make
+                // Parcours the durable shell root so both tab and split
+                // navigation land on the updated roadmap instead of opening
+                // the next lesson automatically.
+                dismiss()
+                model.persistRoute(.path)
             }
+            .buttonStyle(SyllunePrimaryButtonStyle())
         }
         .frame(maxWidth: 620, alignment: .leading)
         .padding(24)
@@ -1161,12 +1165,7 @@ private struct FlashcardAnswerView: View {
             VStack(spacing: 8) {
                 Text("Carte \(exercise.cardID.rawValue)").font(.caption).foregroundStyle(SylluneColor.inkMuted)
                 if let card {
-                    ChineseSelectableText(display(card.front), font: .system(size: 44, weight: .semibold, design: .rounded), speechEnabled: true).foregroundStyle(SylluneColor.ink)
-                    if revealed {
-                        Divider()
-                        ChineseSelectableText(display(card.back), font: .title3, speechEnabled: true).foregroundStyle(SylluneColor.jadeDeep)
-                        if let meaning = card.back.text?.resolve(preferred: ["fr", "en"]) { Text(meaning).font(.body).foregroundStyle(SylluneColor.inkMuted) }
-                    }
+                    ReviewCardFaceView(card: card, revealed: revealed)
                 } else {
                     Text("Carte indisponible dans le contenu local.").font(.body).foregroundStyle(SylluneColor.inkMuted)
                 }
@@ -1183,6 +1182,5 @@ private struct FlashcardAnswerView: View {
             else if value == nil { revealed = false }
         }
     }
-    private func display(_ side: CardSide) -> String { side.hanzi ?? side.pinyin ?? side.text?.resolve(preferred: ["fr", "en"]) ?? "—" }
     private func ratingLabel(_ value: SelfRating) -> String { switch value { case .again: return "À refaire"; case .hard: return "Difficile"; case .good: return "Bien"; case .easy: return "Facile" } }
 }

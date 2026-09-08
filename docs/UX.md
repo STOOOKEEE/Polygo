@@ -80,7 +80,7 @@ Utiliser une `NavigationSplitView` persistante avec trois groupes :
 
 La colonne de détail affiche une leçon ou une fiche mot. Sur iPad en largeur réduite, la sidebar devient une pile standard ; aucun contrôle ne doit disparaître, il est seulement déplacé dans la barre de navigation. Sur Mac, les mêmes routes apparaissent dans la sidebar et les actions de leçon restent accessibles à la souris, au clavier et au menu.
 
-Raccourcis Mac proposés : `⌘1` Aujourd’hui, `⌘2` Parcours, `⌘3` Explorer, `⌘4` Cartes, `⌘5` Profil, `⌘,` Réglages, `⌘K` recherche dictionnaire, `Espace` lire/mettre en pause l’audio, `Échap` arrêter un enregistrement ou fermer une fiche. Le focus visible suit `focus` et la sélection de sidebar est annoncée par VoiceOver.
+Raccourcis Mac proposés : `⌘1` Aujourd’hui, `⌘2` Parcours, `⌘3` Explorer, `⌘4` Cartes, `⌘5` Profil, `⌘,` Réglages et `⌘K` recherche dictionnaire. Les commandes audio et la fermeture d’une fiche restent accessibles depuis le menu Syllune, sans réserver les touches `Espace` ou `Échap` pendant la saisie. Le focus visible suit `focus` et la sélection de sidebar est annoncée par VoiceOver.
 
 ## 4. Onboarding
 

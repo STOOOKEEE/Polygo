@@ -95,10 +95,53 @@ final class LessonReviewJourneyTests: XCTestCase {
         // when the oral exercise remains explicitly unevaluated. Verify the
         // learner-facing path and destination rather than inferring unlock
         // state from the local event journal.
-        navigateToTab("Parcours")
+        let returnToPath = button(exactly: "Retour au parcours")
+        XCTAssertTrue(
+            returnToPath.waitForExistence(timeout: timeout),
+            "Le bilan doit proposer une action finale vers le parcours"
+        )
+        returnToPath.tap()
+        XCTAssertTrue(
+            text(containing: "Parcours").waitForExistence(timeout: timeout),
+            "L’action finale du bilan doit ouvrir la carte du parcours"
+        )
+        XCTAssertFalse(
+            app.navigationBars.buttons.firstMatch.exists,
+            "L’action finale doit revenir à la racine du parcours, sans empiler la carte dans la leçon"
+        )
+        let completedLesson = app.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@", "learningPath.lesson.lesson-01")
+        ).firstMatch
+        XCTAssertTrue(
+            completedLesson.waitForExistence(timeout: timeout),
+            "La carte du parcours doit conserver la première leçon"
+        )
+        XCTAssertTrue(
+            completedLesson.label.contains("Terminée"),
+            "La carte du parcours doit afficher L1 comme terminée après le bilan"
+        )
         let nextLesson = button(containing: "Dire son nom")
         XCTAssertTrue(nextLesson.waitForExistence(timeout: timeout), "La leçon suivante doit apparaître dans le parcours")
         XCTAssertTrue(nextLesson.isEnabled, "La leçon suivante doit être activée après la fin de L1")
+
+        // The completed lesson adds its authored cards to the local review
+        // queue. Check the learner-facing front/back contract before opening
+        // L2: Hanzi stays on the front, while revealing exposes the pinyin
+        // and French meaning from the same known fixture card.
+        navigateToTab("Cartes")
+        let startCards = button(exactly: "Commencer")
+        XCTAssertTrue(startCards.waitForExistence(timeout: timeout), "Les cartes de L1 doivent pouvoir démarrer une révision")
+        startCards.tap()
+        let reveal = button(exactly: "Révéler")
+        XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "La première carte doit proposer sa révélation")
+        XCTAssertFalse(text(containing: "nǐ hǎo · 3-3").exists, "Le pinyin doit rester masqué au recto")
+        XCTAssertFalse(text(containing: "bonjour ; salut").exists, "La traduction doit rester masquée au recto")
+        reveal.tap()
+        XCTAssertTrue(text(containing: "nǐ hǎo · 3-3").waitForExistence(timeout: timeout), "La carte révélée doit afficher le pinyin de 你好")
+        XCTAssertTrue(text(containing: "bonjour ; salut").waitForExistence(timeout: timeout), "La carte révélée doit afficher la traduction française de 你好")
+
+        navigateToTab("Parcours")
+        XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour des cartes doit retrouver le parcours")
         tapWhenVisible(nextLesson)
         XCTAssertTrue(text(containing: "Dire son nom").waitForExistence(timeout: timeout), "Le titre de L2 doit être visible après son ouverture")
         let nextFirstExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch

@@ -61,12 +61,12 @@ public struct ReviewCardsView: View {
                     .accessibilityLabel("Actions de la carte")
                 }
                 VStack(spacing: 12) {
-                    ChineseSelectableText(display(card.front), font: .system(size: 52, weight: .semibold, design: .rounded)).foregroundStyle(SylluneColor.ink).frame(maxWidth: .infinity, minHeight: 150)
-                    if revealed {
-                        Divider()
-                        ChineseSelectableText(display(card.back), font: .title3).foregroundStyle(SylluneColor.jadeDeep).frame(maxWidth: .infinity, alignment: .leading)
-                        if let text = card.back.text?.resolve(preferred: ["fr", "en"]) { Text(text).font(.body).foregroundStyle(SylluneColor.inkMuted).frame(maxWidth: .infinity, alignment: .leading) }
-                    } else {
+                    ReviewCardFaceView(
+                        card: card,
+                        revealed: revealed,
+                        frontFont: .system(size: 52, weight: .semibold, design: .rounded)
+                    )
+                    if !revealed {
                         Button("Révéler") { revealed = true }.buttonStyle(.borderedProminent).tint(SylluneColor.jade)
                     }
                 }
@@ -109,12 +109,86 @@ public struct ReviewCardsView: View {
         if let selected, !due.contains(where: { $0.cardID == selected.cardID }) { self.selected = due.first; revealed = false }
     }
 
-    private func display(_ side: CardSide) -> String {
-        side.hanzi ?? side.pinyin ?? side.text?.resolve(preferred: ["fr", "en"]) ?? "—"
-    }
-
     private func dateText(_ date: Date?) -> String {
         guard let date else { return "bientôt" }
         return date.formatted(date: .abbreviated, time: .omitted)
+    }
+}
+
+/// Renders one side of a review card at a time. The front is the authored
+/// Hanzi and its single Mandarin playback control; the revealed side exposes
+/// the authored pinyin and French meaning without repeating the Hanzi or
+/// creating a second audio control.
+struct ReviewCardFaceView: View {
+    let card: ReviewCard
+    let revealed: Bool
+    let frontFont: Font
+
+    init(card: ReviewCard, revealed: Bool, frontFont: Font = .system(size: 44, weight: .semibold, design: .rounded)) {
+        self.card = card
+        self.revealed = revealed
+        self.frontFont = frontFont
+    }
+
+    var body: some View {
+        Group {
+            if revealed {
+                back
+            } else {
+                front
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 150, alignment: revealed ? .leading : .center)
+    }
+
+    private var front: some View {
+        VStack(spacing: 10) {
+            Text("Recto")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(SylluneColor.inkMuted)
+            if let hanzi = card.front.hanzi, !hanzi.isEmpty {
+                ChineseSelectableText(
+                    hanzi: hanzi,
+                    font: frontFont,
+                    speechEnabled: true,
+                    audio: card.front.audio
+                )
+                .foregroundStyle(SylluneColor.ink)
+            } else {
+                Text("Caractère indisponible")
+                    .font(.body)
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    private var back: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Verso")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(SylluneColor.inkMuted)
+
+            if let pinyin = card.back.pinyin, !pinyin.isEmpty {
+                Text(pinyin)
+                    .font(.title3)
+                    .foregroundStyle(SylluneColor.jadeDeep)
+                    .accessibilityLabel("Pinyin : \(pinyin)")
+            }
+
+            if let translation = card.back.text?.resolve(preferred: ["fr"], fallback: "fr") {
+                Text(translation)
+                    .font(.body)
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .accessibilityLabel("Traduction : \(translation)")
+            }
+
+            if card.back.pinyin == nil && card.back.text == nil {
+                Text("Informations indisponibles")
+                    .font(.body)
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

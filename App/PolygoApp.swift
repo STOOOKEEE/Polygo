@@ -37,14 +37,12 @@ public struct PolygoApp: App {
                 Button("Lire ou mettre en pause l’audio") {
                     SylluneAudioCommandCenter.shared.toggle()
                 }
-                .keyboardShortcut(.space, modifiers: [])
 
                 Button("Arrêter l’audio ou fermer") {
                     SylluneAudioCommandCenter.shared.stop()
                     model.dependencies.audio.stopPlayback()
                     NotificationCenter.default.post(name: .sylluneEscape, object: nil)
                 }
-                .keyboardShortcut(.escape, modifiers: [])
             }
         }
         #endif

@@ -310,6 +310,15 @@ public struct SplitShell: View {
         .onChange(of: selection) { _, value in
             if let value { model.persistRoute(value) }
         }
+        .onChange(of: model.selectedRoute) { _, route in
+            // A lesson, word, story, settings, or dictionary route is a
+            // destination inside the selected sidebar section. Only a
+            // persisted section root should move the sidebar selection; this
+            // keeps a lesson resume route from being rewritten as Today.
+            guard route == route.baseTab, selection != route else { return }
+            selection = route
+            detailNavigationRevision += 1
+        }
         .onAppear { selection = model.selectedRoute.baseTab }
         .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
             model.persistRoute(model.selectedRoute.baseTab)

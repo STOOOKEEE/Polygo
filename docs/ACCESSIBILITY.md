@@ -82,10 +82,10 @@ niveau et les statistiques exposent également leur état ou leur valeur.
 ### Clavier Mac
 
 `App/PolygoApp.swift` ajoute les commandes documentées : `⌘K` ouvre le
-dictionnaire et demande le focus de recherche, Espace lit ou arrête la phrase
-chinoise visible, et Échap arrête l’audio puis demande la fermeture de la
-fiche. `DictionaryView` possède un `@FocusState`, et `SplitShell` revient à la
-route racine sur Échap. Les raccourcis de sidebar `⌘1` à `⌘5` et `⌘,` restent
+dictionnaire et demande le focus de recherche. Les commandes audio et de
+fermeture restent disponibles dans le menu Syllune, sans raccourci nu qui
+réserve `Espace` ou `Échap` pendant la saisie. `DictionaryView` possède un
+`@FocusState`. Les raccourcis de sidebar `⌘1` à `⌘5` et `⌘,` restent
 disponibles.
 
 ## Intégration restant hors de ce périmètre
@@ -118,6 +118,6 @@ pas été modifiés ici :
 2. Tester Dynamic Type jusqu’aux tailles d’accessibilité en portrait sur un
    iPhone étroit, sur iPad et dans une fenêtre Mac réduite.
 3. Tester clair/sombre, contraste augmenté, Réduire les animations, focus
-   clavier et `⌘1…⌘5`, `⌘K`, Espace et Échap.
+   clavier et `⌘1…⌘5`, `⌘K`, ainsi que la saisie avec `Espace` et `Échap`.
 4. Tester contenu audio absent, voix mandarin absente, mode hors ligne,
    microphone/transcription refusés et retour depuis chaque sous-route.
