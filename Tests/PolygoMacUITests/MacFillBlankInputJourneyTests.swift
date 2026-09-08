@@ -49,7 +49,10 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             NSPredicate(format: "identifier == %@", "learningPath.lesson.lesson-02")
         ).firstMatch
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "L2 doit être déverrouillée dans le parcours")
-        XCTAssertTrue(lesson.isHittable, "La carte L2 doit être activée")
+        XCTAssertTrue(
+            scrollIntoView(lesson),
+            "La carte L2 doit être visible et activée"
+        )
         lesson.click()
 
         XCTAssertTrue(
@@ -74,6 +77,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             NSPredicate(format: "value == %@ OR label == %@", "___", "___")
         ).firstMatch
         XCTAssertTrue(blank.waitForExistence(timeout: timeout), "La phrase de L2 doit conserver son trou visible")
+        XCTAssertTrue(scrollIntoView(blank), "Le trou de la phrase doit être visible")
 
         let field = app.textFields.matching(
             NSPredicate(
@@ -84,7 +88,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         ).firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: timeout), "Le champ Mot manquant doit être exposé sur macOS")
         XCTAssertTrue(field.isEnabled, "Le champ Mot manquant doit accepter la saisie")
-        XCTAssertTrue(field.isHittable, "Le champ Mot manquant doit être visible et cliquable")
+        XCTAssertTrue(scrollIntoView(field), "Le champ Mot manquant doit être visible et cliquable")
 
         // This is the actual Chinese speech control from FillAnswerView. The
         // exact completed phrase is covered by the PolygoCore content
@@ -94,13 +98,14 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             NSPredicate(format: "label == %@ OR label == %@", "Lire le chinois", "Écouter")
         ).firstMatch
         XCTAssertTrue(listen.waitForExistence(timeout: timeout), "La phrase de L2 doit proposer sa lecture en mandarin")
-        XCTAssertTrue(listen.isHittable, "La commande de lecture de la phrase doit être accessible")
+        XCTAssertTrue(scrollIntoView(listen), "La commande de lecture de la phrase doit être accessible")
         listen.click()
         XCTAssertTrue(
             text(containing: "Lecture terminée").waitForExistence(timeout: timeout),
             "La lecture de la phrase doit aller jusqu’à son état terminé avant la saisie"
         )
 
+        XCTAssertTrue(scrollIntoView(field), "Le champ Mot manquant doit rester visible après la lecture")
         field.click()
         field.typeText(" 叫 ")
 
@@ -121,17 +126,18 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse Hanzi doit pouvoir être vérifiée")
+        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier doit être visible")
         XCTAssertTrue(verify.isEnabled, "Une réponse Hanzi entourée d’espaces doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse Hanzi doit être acceptée")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "Le champ validé doit permettre de poursuivre")
+        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer doit être visible")
         continueButton.click()
-        XCTAssertTrue(
-            app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch.waitForExistence(timeout: timeout),
-            "La validation du champ doit faire progresser la leçon L2"
-        )
+        let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
+        XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du champ doit faire progresser la leçon L2")
+        XCTAssertTrue(scrollIntoView(nextExercise), "L’exercice suivant doit devenir visible après la validation")
         attachScreenshot(named: "mac-fill-blank-advanced")
     }
 
@@ -141,17 +147,19 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         let choice = button(containing: label)
         XCTAssertTrue(choice.waitForExistence(timeout: timeout), "La réponse \(label) doit être proposée")
-        XCTAssertTrue(choice.isHittable, "La réponse \(label) doit être cliquable")
+        XCTAssertTrue(scrollIntoView(choice), "La réponse \(label) doit être visible et cliquable")
         choice.click()
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
+        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier de \(exerciseID) doit être visible")
         XCTAssertTrue(verify.isEnabled, "La réponse de \(exerciseID) doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
+        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer de \(exerciseID) doit être visible")
         continueButton.click()
     }
 
@@ -164,19 +172,47 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
                 NSPredicate(format: "label CONTAINS[c] %@", "\(token), position")
             ).firstMatch
             XCTAssertTrue(tile.waitForExistence(timeout: timeout), "La tuile \(token) doit être proposée")
-            XCTAssertTrue(tile.isHittable, "La tuile \(token) doit être cliquable")
+            XCTAssertTrue(scrollIntoView(tile), "La tuile \(token) doit être visible et cliquable")
             tile.click()
         }
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
+        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier de \(exerciseID) doit être visible")
         XCTAssertTrue(verify.isEnabled, "La bonne séquence doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
+        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer de \(exerciseID) doit être visible")
         continueButton.click()
+    }
+
+    /// SwiftUI keeps the exercise body in one vertical ScrollView. On macOS
+    /// the first exercise can start below a long dialogue preamble, so an AX
+    /// match may exist while its control is still outside the viewport.
+    /// Scroll the real lesson container until the exact control can receive a
+    /// click, while leaving the application layout untouched.
+    @discardableResult
+    private func scrollIntoView(_ element: XCUIElement) -> Bool {
+        guard element.waitForExistence(timeout: timeout) else { return false }
+        if element.isHittable { return true }
+
+        let scrollView = app.scrollViews.firstMatch
+        guard scrollView.waitForExistence(timeout: 2) else { return false }
+
+        for _ in 0..<12 {
+            let elementFrame = element.frame
+            let viewport = scrollView.frame
+            if elementFrame.maxY < viewport.minY {
+                scrollView.scroll(byDeltaX: 0, deltaY: 500)
+            } else {
+                scrollView.scroll(byDeltaX: 0, deltaY: -500)
+            }
+            if element.isHittable { return true }
+        }
+        return element.isHittable
     }
 
     private func button(exactly label: String) -> XCUIElement {
