@@ -27,4 +27,50 @@ final class MandarinSpeechTextTests: XCTestCase {
         XCTAssertTrue(MandarinSpeechText.isTargetOnly("你好！"))
         XCTAssertFalse(MandarinSpeechText.isTargetOnly("Dis 你好！"))
     }
+
+    func testFillBlankCanonicalSpeechCompletesHanziWhileKeepingTheVisibleBlank() throws {
+        let exercise = FillBlankExercise(
+            header: ExerciseHeader(
+                id: ExerciseID(rawValue: "fill-speech-test")!,
+                prompt: .unchecked(["fr": "Complète"])
+            ),
+            sentence: "我___安。",
+            // A pinyin-only variant is not safe as the canonical Mandarin
+            // source. The first Hanzi answer is selected instead.
+            acceptedAnswers: ["jiao", "叫"]
+        )
+
+        XCTAssertEqual(exercise.canonicalSpeechAnswer, "叫")
+        XCTAssertEqual(exercise.canonicalSpeechSentence, "我叫安。")
+        XCTAssertEqual(exercise.sentence, "我___安。")
+        XCTAssertTrue(MandarinSpeechText.isTargetOnly(try XCTUnwrap(exercise.canonicalSpeechSentence)))
+    }
+
+    func testFillBlankCanonicalSpeechRejectsPinyinAndMixedLanguageAnswers() {
+        let header = ExerciseHeader(
+            id: ExerciseID(rawValue: "fill-speech-invalid")!,
+            prompt: .unchecked(["fr": "Complète"])
+        )
+        XCTAssertNil(
+            FillBlankExercise(
+                header: header,
+                sentence: "我___安。",
+                acceptedAnswers: ["jiao"]
+            ).canonicalSpeechSentence
+        )
+        XCTAssertNil(
+            FillBlankExercise(
+                header: header,
+                sentence: "我___安。",
+                acceptedAnswers: ["叫 (jiao)"]
+            ).canonicalSpeechSentence
+        )
+        XCTAssertNil(
+            FillBlankExercise(
+                header: header,
+                sentence: "我安。",
+                acceptedAnswers: ["叫"]
+            ).canonicalSpeechSentence
+        )
+    }
 }

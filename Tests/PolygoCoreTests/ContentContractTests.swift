@@ -978,6 +978,81 @@ final class ContentContractTests: XCTestCase {
         XCTAssertGreaterThan(evaluatedCount, 0)
     }
 
+    func testFillBlankSpeechSentencesKeepTheirBlanksAndCoverNewLessonContent() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        var fillBlankCount = 0
+        var foundStarterFill = false
+        var foundNewLessonFill = false
+        var foundLatinPrefixFill77 = false
+        var foundLatinPrefixFill80 = false
+
+        for lesson in snapshots.flatMap(\.lessons) {
+            for block in exerciseBlocks(in: lesson) {
+                guard case .fillBlank(let exercise) = block.spec else { continue }
+                fillBlankCount += 1
+                let exerciseID = exercise.header.id.rawValue
+
+                XCTAssertNotNil(
+                    exercise.sentence.range(of: "_+", options: .regularExpression),
+                    "Le fill doit conserver un trou visible : \(exerciseID)"
+                )
+                let answer = try XCTUnwrap(
+                    exercise.canonicalSpeechAnswer,
+                    "Le fill \(exerciseID) doit proposer une réponse Hanzi pour le TTS"
+                )
+                let placeholder = try XCTUnwrap(
+                    exercise.sentence.range(of: "_+", options: .regularExpression),
+                    "Le fill \(exerciseID) doit avoir un emplacement de réponse"
+                )
+                let completedSentence = exercise.sentence.replacingCharacters(in: placeholder, with: answer)
+                let expectedSpeechSentence = MandarinSpeechText.target(from: completedSentence)
+                XCTAssertFalse(expectedSpeechSentence.isEmpty, "Le fill \(exerciseID) doit avoir une cible TTS")
+                let speechSentence = try XCTUnwrap(
+                    exercise.canonicalSpeechSentence,
+                    "Le fill \(exerciseID) doit avoir une phrase TTS canonique"
+                )
+                XCTAssertFalse(speechSentence.contains("_"), "La phrase TTS de \(exerciseID) doit compléter le trou")
+                XCTAssertTrue(MandarinSpeechText.isTargetOnly(speechSentence), "La phrase TTS de \(exerciseID) doit rester en mandarin")
+                XCTAssertEqual(
+                    speechSentence,
+                    expectedSpeechSentence,
+                    "La phrase TTS de \(exerciseID) doit retirer seulement le texte non mandarin"
+                )
+
+                switch exerciseID {
+                case "ex-l2-fill":
+                    foundStarterFill = true
+                    XCTAssertEqual(exercise.sentence, "我___安。")
+                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "叫")
+                    XCTAssertEqual(exercise.canonicalSpeechSentence, "我叫安。")
+                case "ex-l5-fill":
+                    foundNewLessonFill = true
+                    XCTAssertEqual(exercise.sentence, "你___茶吗？")
+                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "喝")
+                    XCTAssertEqual(exercise.canonicalSpeechSentence, "你喝茶吗？")
+                case "ex-l77-fill":
+                    foundLatinPrefixFill77 = true
+                    XCTAssertEqual(exercise.sentence, "Tao___今天先准备。")
+                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "决定")
+                    XCTAssertEqual(exercise.canonicalSpeechSentence, "决定今天先准备。")
+                case "ex-l80-fill":
+                    foundLatinPrefixFill80 = true
+                    XCTAssertEqual(exercise.sentence, "Tao___一袋米。")
+                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "拿")
+                    XCTAssertEqual(exercise.canonicalSpeechSentence, "拿一袋米。")
+                default:
+                    break
+                }
+            }
+        }
+
+        XCTAssertGreaterThanOrEqual(fillBlankCount, 2, "Le catalogue doit contenir plusieurs exercices à trou")
+        XCTAssertTrue(foundStarterFill, "Le fill de la leçon 2 doit être couvert")
+        XCTAssertTrue(foundNewLessonFill, "Le fill d’une nouvelle leçon doit être couvert")
+        XCTAssertTrue(foundLatinPrefixFill77, "Le fill latin de la leçon 77 doit être couvert")
+        XCTAssertTrue(foundLatinPrefixFill80, "Le fill latin de la leçon 80 doit être couvert")
+    }
+
     private func assertValidShape(_ spec: ExerciseSpec, cardIDs: Set<CardID>) {
         switch spec {
         case .choice(let exercise):

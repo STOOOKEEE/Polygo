@@ -164,6 +164,44 @@ public struct FillBlankExercise: Codable, Hashable, Sendable {
     public init(header: ExerciseHeader, sentence: String, acceptedAnswers: [String], caseSensitive: Bool = false) {
         self.header = header; self.sentence = sentence; self.acceptedAnswers = acceptedAnswers; self.caseSensitive = caseSensitive
     }
+
+    /// Returns the first accepted answer that is safe to send to a Mandarin
+    /// synthesizer. The learner still sees the blank in `sentence`; this value
+    /// is only used to build the audio target.
+    public var canonicalSpeechAnswer: String? {
+        acceptedAnswers.first { MandarinSpeechText.isTargetOnly($0) }
+    }
+
+    /// Completes the first authored underscore run and returns the Mandarin
+    /// target for speech playback while keeping the exercise's visible
+    /// sentence unchanged. Non-Mandarin text is removed by the speech
+    /// normalizer, but the canonical answer must remain at the placeholder's
+    /// position so an incomplete sentence can never be spoken accidentally.
+    public var canonicalSpeechSentence: String? {
+        guard let answer = canonicalSpeechAnswer,
+              let placeholder = sentence.range(of: "_+", options: .regularExpression) else {
+            return nil
+        }
+        let completed = sentence.replacingCharacters(in: placeholder, with: answer)
+        if MandarinSpeechText.isTargetOnly(completed) {
+            return completed
+        }
+
+        // Some authored examples contain non-Mandarin text around the
+        // sentence (for example a Latin name). Keep that text out of the
+        // Mandarin target, but only after proving that the canonical answer
+        // survives normalization at the placeholder position.
+        let prefix = String(sentence[..<placeholder.lowerBound])
+        let suffix = String(sentence[placeholder.upperBound...])
+        let target = MandarinSpeechText.target(from: completed)
+        let expectedTarget = MandarinSpeechText.target(from: prefix)
+            + answer
+            + MandarinSpeechText.target(from: suffix)
+        guard !target.isEmpty,
+              MandarinSpeechText.isTargetOnly(target),
+              target == expectedTarget else { return nil }
+        return target
+    }
 }
 
 public struct ListeningChoiceExercise: Codable, Hashable, Sendable {

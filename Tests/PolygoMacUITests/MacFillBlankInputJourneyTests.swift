@@ -1,10 +1,10 @@
 import Foundation
 import XCTest
 
-/// Keeps the macOS text input path covered with an ASCII diagnostic value.
-/// The value is intentionally not an answer from the lesson: retaining the
-/// literal space in the field proves that the app-level key commands do not
-/// consume text entered by a focused control.
+/// Covers the macOS fill-blank path from the persisted roadmap through a real
+/// lesson answer. The journey deliberately enters the Hanzi answer with
+/// surrounding spaces so native TextField focus and the exercise normalizer
+/// are both exercised after the lesson's Mandarin audio control is used.
 final class MacFillBlankInputJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -37,14 +37,15 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         }
     }
 
-    func testFillBlankRetainsLiteralSpaceWhileFocused() throws {
+    func testFillBlankSpeaksAndAcceptsHanZiAnswerAfterRoadmapNavigation() throws {
         let pathItem = app.buttons.matching(
             NSPredicate(format: "label == %@", "Parcours")
         ).firstMatch
         XCTAssertTrue(pathItem.waitForExistence(timeout: timeout), "Le parcours macOS doit être visible")
-        if pathItem.isHittable { pathItem.click() }
+        XCTAssertTrue(pathItem.isHittable, "Le parcours macOS doit être cliquable")
+        pathItem.click()
 
-        let lesson = app.descendants(matching: .any).matching(
+        let lesson = app.buttons.matching(
             NSPredicate(format: "identifier == %@", "learningPath.lesson.lesson-02")
         ).firstMatch
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "L2 doit être déverrouillée dans le parcours")
@@ -52,9 +53,28 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         lesson.click()
 
         XCTAssertTrue(
-            app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-fill").firstMatch.waitForExistence(timeout: timeout),
-            "Le test doit ouvrir directement l’exercice à champ de L2"
+            app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch.waitForExistence(timeout: timeout),
+            "L’ouverture de la carte L2 doit commencer par son premier exercice"
         )
+
+        submitChoice(label: "2 — montant", exerciseID: "ex-l2-tone")
+        submitChoice(label: "Quoi ; quel", exerciseID: "ex-l2-meaning")
+        submitWordOrder(
+            tokens: ["你", "叫", "什么", "名字"],
+            exerciseID: "ex-l2-order"
+        )
+
+        let fillExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-fill").firstMatch
+        XCTAssertTrue(fillExercise.waitForExistence(timeout: timeout), "Le parcours L2 doit atteindre le champ à compléter")
+
+        // The answer prompt remains a visible blank while its speech source is
+        // completed internally. An exact underscore token distinguishes the
+        // rendered sentence from the longer French instruction text.
+        let blank = app.staticTexts.matching(
+            NSPredicate(format: "value == %@ OR label == %@", "___", "___")
+        ).firstMatch
+        XCTAssertTrue(blank.waitForExistence(timeout: timeout), "La phrase de L2 doit conserver son trou visible")
+
         let field = app.textFields.matching(
             NSPredicate(
                 format: "placeholderValue CONTAINS[c] %@ OR label CONTAINS[c] %@",
@@ -66,22 +86,118 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         XCTAssertTrue(field.isEnabled, "Le champ Mot manquant doit accepter la saisie")
         XCTAssertTrue(field.isHittable, "Le champ Mot manquant doit être visible et cliquable")
 
+        // This is the actual Chinese speech control from FillAnswerView. The
+        // exact completed phrase is covered by the PolygoCore content
+        // contract; this UI step proves that the lesson reaches and invokes
+        // the control while leaving the blank on screen.
+        let listen = app.buttons.matching(
+            NSPredicate(format: "label == %@ OR label == %@", "Lire le chinois", "Écouter")
+        ).firstMatch
+        XCTAssertTrue(listen.waitForExistence(timeout: timeout), "La phrase de L2 doit proposer sa lecture en mandarin")
+        XCTAssertTrue(listen.isHittable, "La commande de lecture de la phrase doit être accessible")
+        listen.click()
+        XCTAssertTrue(
+            text(containing: "Lecture terminée").waitForExistence(timeout: timeout),
+            "La lecture de la phrase doit aller jusqu’à son état terminé avant la saisie"
+        )
+
         field.click()
-        field.typeText("abc def")
+        field.typeText(" 叫 ")
 
         XCTAssertTrue(
-            waitForValue(field, "abc def"),
-            "La valeur du champ doit conserver l’espace saisi"
+            waitForValue(field, " 叫 "),
+            "La valeur du champ doit conserver les espaces autour du Hanzi saisi"
         )
         XCTAssertEqual(
             field.value as? String,
-            "abc def",
-            "La valeur AX réelle doit conserver l’espace saisi"
+            " 叫 ",
+            "La valeur AX réelle doit conserver les espaces autour du Hanzi saisi"
         )
         XCTAssertTrue(
-            app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-fill").firstMatch.exists,
-            "La saisie dans le champ ne doit pas quitter l’exercice"
+            fillExercise.exists,
+            "La saisie après la lecture ne doit pas quitter l’exercice"
         )
+        attachScreenshot(named: "mac-fill-blank-input")
+
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse Hanzi doit pouvoir être vérifiée")
+        XCTAssertTrue(verify.isEnabled, "Une réponse Hanzi entourée d’espaces doit activer Vérifier")
+        verify.click()
+        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse Hanzi doit être acceptée")
+
+        let continueButton = button(exactly: "Continuer")
+        XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "Le champ validé doit permettre de poursuivre")
+        continueButton.click()
+        XCTAssertTrue(
+            app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch.waitForExistence(timeout: timeout),
+            "La validation du champ doit faire progresser la leçon L2"
+        )
+        attachScreenshot(named: "mac-fill-blank-advanced")
+    }
+
+    private func submitChoice(label: String, exerciseID: String) {
+        let exercise = app.staticTexts.matching(identifier: "lesson.exercise.\(exerciseID)").firstMatch
+        XCTAssertTrue(exercise.waitForExistence(timeout: timeout), "L’exercice \(exerciseID) doit être visible")
+
+        let choice = button(containing: label)
+        XCTAssertTrue(choice.waitForExistence(timeout: timeout), "La réponse \(label) doit être proposée")
+        XCTAssertTrue(choice.isHittable, "La réponse \(label) doit être cliquable")
+        choice.click()
+
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
+        XCTAssertTrue(verify.isEnabled, "La réponse de \(exerciseID) doit activer Vérifier")
+        verify.click()
+        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
+
+        let continueButton = button(exactly: "Continuer")
+        XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
+        continueButton.click()
+    }
+
+    private func submitWordOrder(tokens: [String], exerciseID: String) {
+        let exercise = app.staticTexts.matching(identifier: "lesson.exercise.\(exerciseID)").firstMatch
+        XCTAssertTrue(exercise.waitForExistence(timeout: timeout), "L’exercice \(exerciseID) doit être visible")
+
+        for token in tokens {
+            let tile = app.buttons.matching(
+                NSPredicate(format: "label CONTAINS[c] %@", "\(token), position")
+            ).firstMatch
+            XCTAssertTrue(tile.waitForExistence(timeout: timeout), "La tuile \(token) doit être proposée")
+            XCTAssertTrue(tile.isHittable, "La tuile \(token) doit être cliquable")
+            tile.click()
+        }
+
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
+        XCTAssertTrue(verify.isEnabled, "La bonne séquence doit activer Vérifier")
+        verify.click()
+        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
+
+        let continueButton = button(exactly: "Continuer")
+        XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
+        continueButton.click()
+    }
+
+    private func button(exactly label: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+    }
+
+    private func button(containing value: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", value)).firstMatch
+    }
+
+    private func text(containing value: String) -> XCUIElement {
+        app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value)
+        ).firstMatch
+    }
+
+    private func attachScreenshot(named name: String) {
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = name
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
     }
 
     private func waitForValue(_ field: XCUIElement, _ expected: String) -> Bool {
@@ -92,10 +208,9 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         return XCTWaiter.wait(for: [expectation], timeout: timeout) == .completed
     }
 
-    /// Seeds the same JSONL store used by the app, so this journey starts at
-    /// the real L2 fill exercise without an app-only test bypass or fixture
-    /// provider. A completed L1 event unlocks L2; the checkpoint selects its
-    /// fourth exercise and leaves the answer empty for the UI to edit.
+    /// Seeds the same JSONL store used by the app. A completed L1 event
+    /// unlocks L2; the test then opens L2 from Parcours and advances through
+    /// its authored exercises before editing the fill answer.
     private func seedProgress() throws {
         let fileManager = FileManager.default
         let applicationSupport = fileManager.urls(
@@ -150,19 +265,6 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
                 occurredAt: now + 1,
                 payload: ["kind": "lessonCompleted", "lessonID": "lesson-01", "at": now + 1]
             ),
-            event(
-                id: "mac-input-l2-checkpoint",
-                lamport: 3,
-                profileID: profileID,
-                occurredAt: now + 2,
-                payload: [
-                    "kind": "lessonCheckpointSaved",
-                    "lessonID": "lesson-02",
-                    "exerciseIndex": 3,
-                    "exerciseID": "ex-l2-fill",
-                    "at": now + 2
-                ]
-            )
         ]
 
         var journal = Data()

@@ -1220,20 +1220,45 @@ private struct FillAnswerView: View {
     let exercise: FillBlankExercise
     @Binding var answer: ExerciseAnswer?
     @State private var text = ""
+    @FocusState private var fieldFocused: Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ChineseSelectableText(exercise.sentence, font: .title3, speechEnabled: true).foregroundStyle(SylluneColor.ink).padding(16).sylluneCard(radius: 12)
+            ChineseSelectableText(
+                exercise.sentence,
+                font: .title3,
+                speechEnabled: true,
+                speechText: exercise.canonicalSpeechSentence,
+                onSpeechRequested: focusField
+            )
+            .foregroundStyle(SylluneColor.ink)
+            .padding(16)
+            .sylluneCard(radius: 12)
             TextField("Mot manquant", text: $text)
                 .textFieldStyle(.roundedBorder)
+                .focused($fieldFocused)
                 .onChange(of: text) { _, value in answer = .text(value) }
         }
-        .onAppear { syncFromAnswer() }
+        .onAppear {
+            syncFromAnswer()
+            focusField()
+        }
         .onChange(of: answer) { _, _ in syncFromAnswer() }
     }
 
     private func syncFromAnswer() {
         if case .text(let value) = answer { text = value }
         else { text = "" }
+    }
+
+    private func focusField() {
+#if os(macOS)
+        // Let the audio button finish its mouse event before returning focus
+        // to the editor. No key event is intercepted, so spaces and Return
+        // retain TextField's native macOS behavior.
+        DispatchQueue.main.async {
+            fieldFocused = true
+        }
+#endif
     }
 }
 

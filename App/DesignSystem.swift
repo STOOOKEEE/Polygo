@@ -450,7 +450,12 @@ public struct ChineseSelectableText: View {
     public let pinyin: String?
     public let translation: String?
     public let phraseAudio: AssetReference?
+    /// Optional Mandarin source used only for speech. This lets an exercise
+    /// keep its learner-facing blank while reading a completed canonical
+    /// sentence aloud.
+    public let speechText: String?
     public let wordInteractionEnabled: Bool
+    private let onSpeechRequested: (() -> Void)?
 
     @State private var isSpeaking = false
     @State private var statusMessage: String?
@@ -466,7 +471,9 @@ public struct ChineseSelectableText: View {
         pinyin: String? = nil,
         translation: String? = nil,
         audio: AssetReference? = nil,
-        wordInteractionEnabled: Bool? = nil
+        wordInteractionEnabled: Bool? = nil,
+        speechText: String? = nil,
+        onSpeechRequested: (() -> Void)? = nil
     ) {
         self.text = text
         self.font = font
@@ -476,7 +483,9 @@ public struct ChineseSelectableText: View {
         self.pinyin = pinyin
         self.translation = translation
         self.phraseAudio = audio
+        self.speechText = speechText
         self.wordInteractionEnabled = wordInteractionEnabled ?? speechEnabled
+        self.onSpeechRequested = onSpeechRequested
     }
 
     public init(
@@ -488,7 +497,9 @@ public struct ChineseSelectableText: View {
         pinyin: String? = nil,
         translation: String? = nil,
         audio: AssetReference? = nil,
-        wordInteractionEnabled: Bool? = nil
+        wordInteractionEnabled: Bool? = nil,
+        speechText: String? = nil,
+        onSpeechRequested: (() -> Void)? = nil
     ) {
         self.init(
             hanzi,
@@ -499,7 +510,9 @@ public struct ChineseSelectableText: View {
             pinyin: pinyin,
             translation: translation,
             audio: audio,
-            wordInteractionEnabled: wordInteractionEnabled
+            wordInteractionEnabled: wordInteractionEnabled,
+            speechText: speechText,
+            onSpeechRequested: onSpeechRequested
         )
     }
 
@@ -633,6 +646,14 @@ public struct ChineseSelectableText: View {
         PolygoCore.MandarinSpeechText.containsHanzi(text)
     }
 
+    private var speechSource: String {
+        speechText ?? text
+    }
+
+    private var speechTarget: String {
+        PolygoCore.MandarinSpeechText.target(from: speechSource)
+    }
+
     private var shouldTokenize: Bool {
         (speechEnabled || wordInteractionEnabled) && containsChinese
     }
@@ -709,8 +730,8 @@ public struct ChineseSelectableText: View {
 
     private func registerKeyboardPhrase() {
         guard commandRegistrationID == nil, speechEnabled else { return }
-        guard !PolygoCore.MandarinSpeechText.target(from: text).isEmpty else { return }
-        commandRegistrationID = SylluneAudioCommandCenter.shared.register(text: text, audio: model.dependencies.audio)
+        guard !speechTarget.isEmpty else { return }
+        commandRegistrationID = SylluneAudioCommandCenter.shared.register(text: speechSource, audio: model.dependencies.audio)
     }
 
     private func toggleSpeech() {
@@ -722,16 +743,17 @@ public struct ChineseSelectableText: View {
             return
         }
 
-        let target = PolygoCore.MandarinSpeechText.target(from: text)
+        let target = speechTarget
         guard !target.isEmpty else {
             statusMessage = "Aucun texte mandarin à lire."
             return
         }
+        onSpeechRequested?()
         isSpeaking = true
         statusMessage = nil
         Task { @MainActor in
             do {
-                if let phraseAudio, PolygoCore.MandarinSpeechText.isTargetOnly(text) {
+                if let phraseAudio, PolygoCore.MandarinSpeechText.isTargetOnly(speechSource) {
                     do {
                         try await model.dependencies.audio.play(asset: phraseAudio)
                     } catch {
@@ -759,6 +781,7 @@ public struct ChineseSelectableText: View {
     private func speakToken(_ value: String) {
         let target = PolygoCore.MandarinSpeechText.target(from: value)
         guard !target.isEmpty else { return }
+        onSpeechRequested?()
         Task { @MainActor in
             try? await model.dependencies.audio.speak(
                 text: target,
@@ -769,11 +792,12 @@ public struct ChineseSelectableText: View {
     }
 
     private func speakSlowly() {
-        let target = PolygoCore.MandarinSpeechText.target(from: text)
+        let target = speechTarget
         guard !target.isEmpty else {
             statusMessage = "Aucun texte mandarin à lire."
             return
         }
+        onSpeechRequested?()
         model.dependencies.audio.stopSpeaking()
         model.dependencies.audio.stopPlayback()
         isSpeaking = true
