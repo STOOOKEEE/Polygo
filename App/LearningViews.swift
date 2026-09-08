@@ -536,54 +536,75 @@ private struct RoadmapModuleCanvas: View {
     @ObservedObject var model: AppModel
 
     private let compactBreakpoint: CGFloat = 620
-    // Keep the node cadence tied to the body text size so the card has room
-    // to grow with Dynamic Type. The same scaled value drives the trail,
-    // entries, and canvas height, keeping connectors aligned at every size.
-    @ScaledMetric(relativeTo: .body) private var roadmapRowHeight: CGFloat = 160
+    // The path stays narrow on wide windows and grows with Dynamic Type so
+    // every step keeps room for its title and state beneath the node.
+    @ScaledMetric(relativeTo: .body) private var roadmapRowHeight: CGFloat = 190
+    @ScaledMetric(relativeTo: .body) private var roadmapNodeDiameter: CGFloat = 72
 
     var body: some View {
         GeometryReader { proxy in
             let compact = proxy.size.width < compactBreakpoint
             let rowHeight = roadmapRowHeight
-            let trailPoints = points(width: proxy.size.width, compact: compact, rowHeight: rowHeight)
+            let nodeFrame = roadmapNodeDiameter + 14
+            let nodeCenterY = 8 + nodeFrame / 2
+            let trailPoints = points(
+                width: proxy.size.width,
+                compact: compact,
+                rowHeight: rowHeight,
+                nodeCenterY: nodeCenterY
+            )
+            let entryWidth = min(compact ? 178 : 210, proxy.size.width * 0.44)
 
             ZStack(alignment: .topLeading) {
                 RoadmapTrail(points: trailPoints)
                     .stroke(
-                        SylluneColor.jade.opacity(0.30),
-                        style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                        SylluneColor.jade.opacity(0.34),
+                        style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round)
                     )
-                    .padding(.horizontal, compact ? 18 : 4)
                     .accessibilityHidden(true)
 
                 VStack(spacing: 0) {
                     ForEach(Array(lessonIDs.enumerated()), id: \.element) { index, lessonID in
-                        roadmapEntry(
-                            lessonID,
-                            index: index,
-                            compact: compact,
-                            rowHeight: rowHeight
-                        )
+                        ZStack(alignment: .topLeading) {
+                            roadmapEntry(
+                                lessonID,
+                                index: index,
+                                compact: compact,
+                                entryWidth: entryWidth,
+                                nodeDiameter: roadmapNodeDiameter
+                            )
+                            .frame(width: entryWidth)
+                            .offset(
+                                x: trailPoints[index].x - entryWidth / 2,
+                                y: 8
+                            )
+                        }
+                        .frame(maxWidth: .infinity)
                         .frame(height: rowHeight, alignment: .top)
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+        // A centered 520-point canvas gives the path a readable rhythm on
+        // macOS while allowing it to fill the available width on iPhone.
+        .frame(maxWidth: 520)
         .frame(height: CGFloat(max(1, lessonIDs.count)) * roadmapRowHeight)
         .frame(maxWidth: .infinity)
     }
 
-    private func points(width: CGFloat, compact: Bool, rowHeight: CGFloat) -> [CGPoint] {
+    private func points(
+        width: CGFloat,
+        compact: Bool,
+        rowHeight: CGFloat,
+        nodeCenterY: CGFloat
+    ) -> [CGPoint] {
+        let center = width / 2
+        let spread = min(compact ? 104 : 145, max(76, width * 0.28))
         lessonIDs.indices.map { index in
-            let y = rowHeight * CGFloat(index) + (compact ? 32 : 36)
-            if compact {
-                return CGPoint(x: min(36, max(24, width * 0.10)), y: y)
-            }
-
-            return CGPoint(
-                x: index.isMultiple(of: 2) ? 24 : max(24, width - 24),
-                y: y
+            CGPoint(
+                x: index.isMultiple(of: 2) ? center - spread : center + spread,
+                y: rowHeight * CGFloat(index) + nodeCenterY
             )
         }
     }
@@ -593,7 +614,8 @@ private struct RoadmapModuleCanvas: View {
         _ lessonID: LessonID,
         index: Int,
         compact: Bool,
-        rowHeight: CGFloat
+        entryWidth: CGFloat,
+        nodeDiameter: CGFloat
     ) -> some View {
         let progress = model.snapshot.lessonProgress[lessonID]
         let unlocked = model.isLessonUnlocked(lessonID)
@@ -612,19 +634,18 @@ private struct RoadmapModuleCanvas: View {
                 : unlocked
                     ? "À commencer"
                     : "Verrouillée"
-        let progressValue = lessonProgressValue(lessonID)
         let progressText = lessonProgressText(lessonID, completed: completed)
         let card = lessonCard(
             title: title,
             status: status,
             progressText: progressText,
-            progressValue: progressValue,
             index: index,
             accent: accent,
             completed: completed,
             active: active,
             unlocked: unlocked,
-            compact: compact
+            compact: compact,
+            nodeDiameter: nodeDiameter
         )
 
         Group {
@@ -641,113 +662,64 @@ private struct RoadmapModuleCanvas: View {
                     .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
             }
         }
-        .frame(
-            maxWidth: compact ? .infinity : 360,
-            alignment: index.isMultiple(of: 2) ? .leading : .trailing
-        )
-        .padding(
-            .leading,
-            compact ? 0 : (index.isMultiple(of: 2) ? 0 : 20)
-        )
-        .padding(
-            .trailing,
-            compact ? 0 : (index.isMultiple(of: 2) ? 20 : 0)
-        )
-        .frame(
-            maxWidth: .infinity,
-            alignment: compact
-                ? .leading
-                : (index.isMultiple(of: 2) ? .leading : .trailing)
-        )
+        .frame(width: entryWidth)
     }
 
     private func lessonCard(
         title: String,
         status: String,
         progressText: String,
-        progressValue: Double,
         index: Int,
         accent: Color,
         completed: Bool,
         active: Bool,
         unlocked: Bool,
-        compact: Bool
+        compact: Bool,
+        nodeDiameter: CGFloat
     ) -> some View {
-        let details = VStack(alignment: .leading, spacing: 5) {
-                Text(title)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text(status)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(
-                        completed
-                            ? SylluneColor.success
-                            : active
-                                ? SylluneColor.jadeDeep
-                                : SylluneColor.inkMuted
-                    )
-                Text(progressText)
-                    .font(.caption)
-                    .foregroundStyle(SylluneColor.inkMuted)
-                    .fixedSize(horizontal: false, vertical: true)
-                SylluneProgressBar(
-                    value: progressValue,
-                    tint: completed ? SylluneColor.success : accent
-                )
-                .frame(height: 6)
-                .opacity(unlocked ? 1 : 0.45)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        let action = Image(
-                systemName: unlocked
-                    ? (completed ? "checkmark.circle.fill" : "chevron.right")
-                    : "lock.fill"
+        VStack(spacing: 7) {
+            roadmapNode(
+                index: index,
+                accent: accent,
+                completed: completed,
+                active: active,
+                unlocked: unlocked,
+                diameter: nodeDiameter
             )
-            .font(.callout.weight(.bold))
-            .foregroundStyle(
-                completed
-                    ? SylluneColor.success
-                    : unlocked
-                        ? accent
-                        : SylluneColor.inkMuted
-            )
-            .frame(minWidth: 32, minHeight: 32)
-            .accessibilityHidden(true)
-        let node = roadmapNode(
-            index: index,
-            accent: accent,
-            completed: completed,
-            active: active,
-            unlocked: unlocked
-        )
 
-        return HStack(alignment: .top, spacing: 12) {
-            if !compact && !index.isMultiple(of: 2) {
-                details
-                action
-                node
-            } else {
-                node
-                details
-                action
+            Text(title)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(compact ? 0.82 : 0.86)
+                .fixedSize(horizontal: false, vertical: true)
+                .background(SylluneColor.surface)
+
+            Text(status)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(
+                    completed
+                        ? SylluneColor.success
+                        : active
+                            ? SylluneColor.jadeDeep
+                            : SylluneColor.inkMuted
+                )
+                .fixedSize(horizontal: false, vertical: true)
+                .background(SylluneColor.surface)
+
+            if active {
+                Text(progressText)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(accent)
+                    .lineLimit(1)
+                    .padding(.horizontal, 9)
+                    .padding(.vertical, 5)
+                    .background(accent.opacity(0.14), in: Capsule())
+                    .fixedSize(horizontal: true, vertical: false)
             }
         }
-        .padding(.horizontal, compact ? 12 : 14)
-        .padding(.vertical, 12)
-        .background(
-            active ? accent.opacity(0.12) : SylluneColor.surface,
-            in: RoundedRectangle(cornerRadius: 18, style: .continuous)
-        )
-        .overlay {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(
-                    active
-                        ? accent.opacity(0.44)
-                        : SylluneColor.border.opacity(0.18),
-                    lineWidth: active ? 1.5 : 0.75
-                )
-        }
+        .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
     }
 
@@ -756,7 +728,8 @@ private struct RoadmapModuleCanvas: View {
         accent: Color,
         completed: Bool,
         active: Bool,
-        unlocked: Bool
+        unlocked: Bool,
+        diameter: CGFloat
     ) -> some View {
         ZStack {
             Circle()
@@ -767,50 +740,28 @@ private struct RoadmapModuleCanvas: View {
                             ? accent
                             : SylluneColor.surfaceRaised
                 )
-                .frame(width: 38, height: 38)
+                .frame(width: diameter, height: diameter)
             if completed {
                 Image(systemName: "checkmark")
-                    .font(.callout.weight(.bold))
+                    .font(.title3.weight(.bold))
                     .foregroundStyle(SylluneColor.inkOnSuccess)
             } else if unlocked {
                 Text("\(index + 1)")
-                    .font(.callout.weight(.bold))
+                    .font(.title2.weight(.bold))
                     .foregroundStyle(Color.white)
             } else {
                 Image(systemName: "lock.fill")
-                    .font(.caption.weight(.bold))
+                    .font(.body.weight(.bold))
                     .foregroundStyle(SylluneColor.inkMuted)
             }
             if active {
                 Circle()
                     .stroke(accent.opacity(0.55), lineWidth: 3)
-                    .frame(width: 48, height: 48)
+                    .frame(width: diameter + 14, height: diameter + 14)
             }
         }
-        .frame(width: 48, height: 48)
+        .frame(width: diameter + 14, height: diameter + 14)
         .accessibilityHidden(true)
-    }
-
-    private func lessonProgressValue(_ lessonID: LessonID) -> Double {
-        guard let lesson = lessons[lessonID] else {
-            return model.snapshot.lessonProgress[lessonID]?.completedAt == nil ? 0 : 1
-        }
-        let exerciseCount = lesson.blocks.reduce(into: 0) { count, block in
-            if case .exercise = block {
-                count += 1
-            }
-        }
-        guard exerciseCount > 0 else {
-            return model.snapshot.lessonProgress[lessonID]?.completedAt == nil ? 0 : 1
-        }
-        if model.snapshot.lessonProgress[lessonID]?.completedAt != nil {
-            return 1
-        }
-        return min(
-            1,
-            Double(model.snapshot.lessonProgress[lessonID]?.currentExerciseIndex ?? 0)
-                / Double(exerciseCount)
-        )
     }
 
     private func lessonProgressText(_ lessonID: LessonID, completed: Bool) -> String {
