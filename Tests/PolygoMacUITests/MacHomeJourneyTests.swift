@@ -140,6 +140,16 @@ final class MacHomeJourneyTests: XCTestCase {
     }
 
     private func selectSidebarItem(_ label: String) {
+        let buttons = app.buttons.matching(NSPredicate(format: "label == %@", label))
+        _ = buttons.firstMatch.waitForExistence(timeout: timeout)
+        for index in 0..<buttons.count {
+            let button = buttons.element(boundBy: index)
+            if button.waitForExistence(timeout: 2), button.isHittable {
+                button.click()
+                return
+            }
+        }
+
         let rows = app.outlineRows.matching(NSPredicate(format: "label == %@", label))
         _ = rows.firstMatch.waitForExistence(timeout: timeout)
         for index in 0..<rows.count {

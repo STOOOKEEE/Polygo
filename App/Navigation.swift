@@ -324,6 +324,7 @@ public struct SplitShell: View {
         } label: {
             Label(label, systemImage: systemImage)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .tag(route)
