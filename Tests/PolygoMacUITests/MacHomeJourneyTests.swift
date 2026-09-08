@@ -110,7 +110,13 @@ final class MacHomeJourneyTests: XCTestCase {
         clickExactHittable(label: "15 min", message: "La durée 15 min doit être proposée")
         button(exactly: "Continuer").click()
 
-        XCTAssertTrue(text(containing: "Tout est prêt").waitForExistence(timeout: timeout), "La confirmation doit être accessible")
+        let readyHeading = app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", "Tout est prêt", "Tout est prêt")
+        ).firstMatch
+        XCTAssertTrue(
+            readyHeading.waitForExistence(timeout: timeout),
+            "La confirmation doit être accessible"
+        )
         let openLesson = button(exactly: "Ouvrir ma première leçon")
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "L’ouverture de la première leçon doit être proposée")
         openLesson.click()
