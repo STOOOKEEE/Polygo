@@ -12,10 +12,29 @@ blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
 Le package courant contient **43 tests XCTest**, dont **6 tests de contrat de
 contenu**. Le contrôle `git diff --check` est propre. Le code validé est le
-commit `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1` ; le
-[run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193)
-est terminé avec succès. Il valide les **43/43 tests** package, la génération
-XcodeGen, les métadonnées, les builds iOS/macOS et les quatre méthodes UI.
+commit `c30d712` ; le [run Apple
+34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) est
+terminé avec succès. Il valide les **43/43 tests** package, la génération
+XcodeGen, les métadonnées, les builds iOS/macOS, les **2 méthodes UI macOS** et
+les **4 méthodes UI iOS**.
+
+Le commit `c30d712` apporte la refonte de l’accueil Mac et iPhone
+ainsi que la conservation de la route de reprise lorsqu’une leçon est ouverte
+depuis un lien intégré. Son accueil Mac compose un hero de leçon et sa
+progression dans une colonne principale, avec le parcours et les flashcards
+dans une colonne secondaire ; la version iPhone empile ces trois surfaces.
+Les étapes du parcours sont numérotées et reliées par leur progression, et la
+barre latérale macOS vise 240 points pour laisser les libellés respirer. Le
+clic explicite sur « Aujourd’hui » recrée la racine du détail avant un éventuel
+chargement tardif, tandis que le brouillon, le feedback et la progression
+restent repris après redémarrage.
+
+Le run est vert pour l’ensemble de son périmètre : les 43 tests du package,
+les 2 méthodes UI macOS et les 4 méthodes UI iOS ont réussi. Les captures
+stables natives extraites de ce run sont conservées dans le dépôt :
+
+- [Accueil macOS en mode sombre](screenshots/home-macos-dark.png) — 1600 × 900, SHA-256 `b511d762e3a23fe4e50c47d4e89e3bc9df2c1300fa9bd38e194d38f4c0dc5ece` ;
+- [Accueil iPhone en mode sombre](screenshots/home-ios-dark.png) — 1206 × 2622, SHA-256 `aaeb9113f6fcf4f3205cfc658905faea3df94fae7e68325e8b6a61559e0ca597`.
 
 ## Contrats de contenu
 
@@ -87,16 +106,16 @@ La cible `PolygoAppUITests` contient quatre méthodes de test :
 - `ZZLessonRegressionJourneyTests.testLessonDraftFeedbackDialogueAndOralJourney` pour le brouillon, le feedback, le dialogue, la réplique précédente interactive, le canevas et l’oral ;
 - `ZZLessonRegressionJourneyTests.testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply` pour la cohérence de la participation dialoguée dans le JSON L1.
 
-Ces quatre tests ont réussi dans le [run Apple 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193), exécuté sur le commit `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`. Aucun test UI n’a échoué ; la durée cumulée affichée est de **565,379 s** : 224,033 s pour la fin/revue, 67,947 s pour le smoke français, 5,272 s pour le fixture de dialogue et 268,115 s pour le parcours brouillon/feedback/dialogue/oral. Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue orale compacte expose bien la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
+Ces quatre tests ont réussi dans le [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185), exécuté sur le commit `c30d712`. Aucun test UI n’a échoué. Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue orale compacte expose bien la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
 
 ## Vérifications manuelles restantes
 
 Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
 les tests UI ne peuvent donc pas y être exécutés localement. Le run Apple
-34167951193 a confirmé le nouveau parcours de reprise, le dialogue, l’oral
-compact, l’écriture, la persistance locale, la revue et le smoke jusqu’aux
-fiches vocabulaire, cartes, lecture et réglages. Le rendu visuel du mode sombre
-reste à examiner manuellement.
+34207957185 a confirmé le parcours de reprise, le dialogue, l’oral compact,
+l’écriture, la persistance locale, la revue et le smoke jusqu’aux fiches
+vocabulaire, cartes, lecture et réglages. Les captures natives du mode sombre
+du Mac et de l’iPhone sont incluses dans ce rapport pour l’examen visuel.
 
 L’audit VoiceOver, Dynamic Type XXXL, contraste, rendu du mode sombre,
 réduction des animations, clavier macOS et fenêtres étroites reste à compléter
@@ -109,12 +128,13 @@ seuls les scénarios du modèle local sont couverts.
 
 ## Résultats de la CI
 
-Le run 34167951193 confirme les états observables de reprise après arrière-plan
+Le run 34207957185 confirme les états observables de reprise après arrière-plan
 et relance, le feedback sans double validation, les positions de tuiles, les
 cibles audio mandarin, la réplique précédente interactive, le fallback oral et
-la disposition compacte de l’oral. Les quatre méthodes UI ont réussi sans
-échec.
+la disposition compacte de l’oral. Les quatre méthodes iOS et les deux méthodes
+macOS ont réussi sans échec.
 
 Le workflow Apple conserve désormais aussi le bundle xcresult quand le run est
 vert. Les captures nommées du parcours sont disponibles avec le résultat de
-test pour inspection visuelle.
+test pour inspection visuelle, et les deux captures d’accueil validées sont
+archivées dans `docs/screenshots/`.

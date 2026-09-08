@@ -3,15 +3,15 @@
 Ce document décrit la mise en release de Syllune. Le fichier
 [`project.yml`](../project.yml) est la source du projet Apple ;
 `Polygo.xcodeproj` est généré par XcodeGen. Le code validé est le commit
-`f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`. Sa validation Apple est verte dans
-le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193) ;
+`c30d712`. Sa validation Apple est verte dans
+le [run 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) ;
 voir [docs/QA_REPORT.md](QA_REPORT.md) pour le périmètre et les limites. Ce run
-valide le package, les builds iOS/macOS, les métadonnées et les quatre méthodes
-UI.
+valide le package, les builds iOS/macOS, les métadonnées et les six méthodes UI
+(2 macOS et 4 iOS).
 
 ## État du candidat
 
-- Le package contient 43 tests XCTest, dont 6 tests de contrat de contenu ; les 43/43 tests réussissent dans le run Apple 34167951193.
+- Le package contient 43 tests XCTest, dont 6 tests de contrat de contenu ; les 43/43 tests réussissent dans le run Apple 34207957185.
 - Le contenu livré reste constitué de 4 leçons, 27 exercices, 4 histoires et 17 cartes. Les nouveaux mots par leçon sont 5, 5, 6 et 1 ; les exercices sont au nombre de 6, 7, 7 et 7 ; les cartes sont au nombre de 5, 5, 6 et 1.
 - La reprise locale conserve brouillon, feedback et réponses de dialogue ; l’accueil expose la reprise, le parcours et les flashcards.
 - Le dialogue propose écoute complète en mandarin, caractères chinois interactifs et réponse écrite vérifiée à partir de la réplique précédente.
@@ -22,7 +22,7 @@ UI.
 
 - [x] Lire `git status` et le diff complet après l’intégration ; ne conserver que les fichiers du jalon documentaire.
 - [x] Vérifier qu’aucun secret, certificat, profil de provisioning, base locale ou fichier machine n’entre dans le commit.
-- [x] Obtenir le résultat `43/43` du package et le résultat des 6 tests de contrat dans le run Apple 34167951193.
+- [x] Obtenir le résultat `43/43` du package et le résultat des 6 tests de contrat dans le run Apple 34207957185.
 - [x] Reparser `Content/manifest.json`, le catalogue et les quatre leçons ; confirmer les références fermées, les comptes 4/27/4/17, les quantités par leçon 5/5/6/1 mots, 6/7/7/7 exercices et 5/5/6/1 cartes, ainsi que les hashes des trois guides.
 - [x] Vérifier `git diff --check` sur les documents modifiés.
 
@@ -47,13 +47,13 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-- [x] Générer le projet sans erreur et vérifier les schemes `PolygoApp` et `PolygoMacApp` dans le run Apple 34167951193.
+- [x] Générer le projet sans erreur et vérifier les schemes `PolygoApp` et `PolygoMacApp` dans le run Apple 34207957185.
 - [x] Compiler `PolygoApp` pour un simulateur iOS 17 ; ce target couvre iPhone et iPad.
 - [x] Compiler `PolygoMacApp` pour macOS 14.
 - [x] Vérifier les métadonnées compilées et que `Content` et `Design` sont bien copiés dans les deux applications.
-- [x] Valider les quatre méthodes de test de la cible `PolygoAppUITests` sur un simulateur iOS en français.
+- [x] Valider les quatre méthodes de test de la cible `PolygoAppUITests` sur un simulateur iOS en français et les deux méthodes UI macOS.
 
-Le workflow Apple exécute ces étapes sur `macos-15` ; le run 34167951193 les a
+Le workflow Apple exécute ces étapes sur `macos-15` ; le run 34207957185 les a
 toutes validées. Le parcours couvre la reprise de brouillon et de feedback, le
 dialogue et la réplique précédente interactive, le fallback oral, le tracé local,
 la persistance et la reprise des cartes. La reconnaissance Speech avec
@@ -90,7 +90,7 @@ Avant une archive distribuable, l’intégration doit :
 
 ## Gate finale
 
-- [x] Package (43 tests), métadonnées, génération XcodeGen, build iOS, build macOS et les quatre méthodes UI réussis dans le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193) sur `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1`.
+- [x] Package (43 tests), métadonnées, génération XcodeGen, build iOS, build macOS et les six méthodes UI (2 macOS et 4 iOS) réussis dans le [run 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) sur `c30d712`.
 - [x] `LessonReviewJourneyTests`, `ZZLessonRegressionJourneyTests` et le smoke UI exécutés ; les résultats restent limités aux états observables du simulateur et aux contrôles décrits.
 - [x] Diff final relu, fichiers générés/secrets exclus, `git status` propre après commit.
 - [ ] Version, notes de release et tag publiés ensemble.

@@ -8,10 +8,10 @@ Le dépôt cible iOS/iPadOS 17 et macOS 14. Le package Swift est portable ; les
 cibles SwiftUI et les adaptateurs Apple se construisent sur macOS. Le statut
 actuel est décrit dans [docs/QA_REPORT.md](docs/QA_REPORT.md) et
 [docs/INTEGRATION_STATUS.md](docs/INTEGRATION_STATUS.md). Le code validé est le
-commit `f7e603ec3a59df4a9a157ad122cce04d68c8b0b1` ; sa validation Apple est
-verte dans le [run 34167951193](https://github.com/STOOOKEEE/Polygo/actions/runs/34167951193).
-Ce run valide le package, la génération XcodeGen, les builds iOS/macOS, les
-métadonnées et les quatre méthodes UI.
+commit `c30d712` ; sa validation Apple est verte dans le [run
+34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185). Ce
+run valide les 43 tests du package, la génération XcodeGen, les métadonnées, les
+builds iOS/macOS et les six méthodes UI (2 macOS et 4 iOS).
 
 ## Démarrage local
 
@@ -44,7 +44,7 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
 `swift test --parallel` est le contrôle portable à lancer avant les builds
 Apple. Le package courant contient 43 tests XCTest, dont 6 tests de contrat de
 contenu ; le run Apple indiqué plus haut les valide tous ainsi que les builds,
-métadonnées et quatre méthodes UI. La cible UI
+métadonnées et six méthodes UI (2 macOS et 4 iOS). La cible UI
 contient le smoke français, le parcours de reprise et le parcours de fin/revue.
 Ces parcours couvrent notamment la reprise du brouillon et du feedback, le
 dialogue avec réplique précédente interactive, le fallback oral, les gestes du
@@ -61,6 +61,23 @@ La première tranche de contenu est la version `2026.09.0` :
 - des textes et transcriptions hors ligne en français ; aucun audio de référence n’est embarqué ;
 - une reprise locale des brouillons, du feedback et des réponses de dialogue ;
 - un accueil avec reprise de leçon, parcours visible et accès aux flashcards.
+
+### Accueil adaptatif Mac et iPhone
+
+Le commit `c30d712` livre un accueil qui met la prochaine leçon en avant dans
+un hero coloré avec progression et action principale. Sur Mac, deux colonnes
+placent le hero à côté du parcours numéroté et des flashcards ; sur iPhone, ces
+surfaces s’empilent. La barre latérale vise 240 points (plage 210–280), et le
+choix explicite d’« Aujourd’hui » recrée la racine malgré un chargement tardif.
+Une leçon ouverte depuis l’accueil conserve sa route, son brouillon et son
+feedback au redémarrage.
+
+Le [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185)
+est vert : 43/43 tests package, 2 méthodes UI macOS et 4 méthodes UI iOS ont
+réussi. Les captures natives validées sont disponibles ici :
+
+- [Accueil macOS en mode sombre](docs/screenshots/home-macos-dark.png) — 1600 × 900, SHA-256 `b511d762e3a23fe4e50c47d4e89e3bc9df2c1300fa9bd38e194d38f4c0dc5ece` ;
+- [Accueil iPhone en mode sombre](docs/screenshots/home-ios-dark.png) — 1206 × 2622, SHA-256 `aaeb9113f6fcf4f3205cfc658905faea3df94fae7e68325e8b6a61559e0ca597`.
 
 Le workflow vérifie les `Info.plist` séparés pour iOS et macOS, la déclaration
 de lancement iOS moderne plein écran (`UILaunchScreen`) et les familles iPhone et
