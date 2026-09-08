@@ -100,9 +100,7 @@ final class MacHomeJourneyTests: XCTestCase {
         button(exactly: "Je connais le pinyin").click()
         button(exactly: "Continuer").click()
 
-        let rhythmHeading = app.staticTexts.matching(
-            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", "Durée quotidienne", "Durée quotidienne")
-        ).firstMatch
+        let rhythmHeading = text(containing: "Durée quotidienne")
         XCTAssertTrue(
             rhythmHeading.waitForExistence(timeout: timeout),
             "Le rythme doit être accessible"
@@ -110,9 +108,7 @@ final class MacHomeJourneyTests: XCTestCase {
         clickExactHittable(label: "15 min", message: "La durée 15 min doit être proposée")
         button(exactly: "Continuer").click()
 
-        let readyHeading = app.staticTexts.matching(
-            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", "Tout est prêt", "Tout est prêt")
-        ).firstMatch
+        let readyHeading = text(containing: "Tout est prêt")
         XCTAssertTrue(
             readyHeading.waitForExistence(timeout: timeout),
             "La confirmation doit être accessible"
@@ -182,6 +178,8 @@ final class MacHomeJourneyTests: XCTestCase {
     }
 
     private func text(containing label: String) -> XCUIElement {
-        element(containing: label)
+        app.staticTexts.matching(
+            NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", label, label)
+        ).firstMatch
     }
 }

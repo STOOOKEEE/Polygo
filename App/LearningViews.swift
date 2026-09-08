@@ -176,21 +176,26 @@ public struct TodayView: View {
 
     @ViewBuilder
     private func heroProgressDetails(lessonID: LessonID, progress: Double, compact: Bool, includesBar: Bool) -> some View {
-        Text("PROCHAINE ÉTAPE")
-            .font(.caption.weight(.bold))
-            .tracking(1.1)
-            .foregroundStyle(SylluneColor.heroMuted)
-        Text(lessonTitle(lessonID))
-            .font(.title3.weight(.bold))
-            .foregroundStyle(SylluneColor.heroInk)
-            .lineLimit(2)
-        Text(progressText(for: lessonID))
-            .font(.callout)
-            .foregroundStyle(SylluneColor.heroMuted)
-        if includesBar {
-            SylluneProgressBar(value: progress, tint: SylluneColor.heroAccent)
-                .frame(maxWidth: compact ? 190 : 280)
-                .padding(.top, 4)
+        VStack(alignment: .leading, spacing: 4) {
+            Text("PROCHAINE ÉTAPE")
+                .font(.caption.weight(.bold))
+                .tracking(1.1)
+                .foregroundStyle(SylluneColor.heroMuted)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(lessonTitle(lessonID))
+                .font(.title3.weight(.bold))
+                .foregroundStyle(SylluneColor.heroInk)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(progressText(for: lessonID))
+                .font(.callout)
+                .foregroundStyle(SylluneColor.heroMuted)
+                .fixedSize(horizontal: false, vertical: true)
+            if includesBar {
+                SylluneProgressBar(value: progress, tint: SylluneColor.heroAccent)
+                    .frame(maxWidth: compact ? 190 : 280)
+                    .padding(.top, 4)
+            }
         }
     }
 
