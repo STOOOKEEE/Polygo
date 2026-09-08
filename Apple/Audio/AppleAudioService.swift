@@ -206,7 +206,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         }
 
         do {
-            let utterances = try segments.map { segment -> AVSpeechUtterance in
+            let utterances = try segments.enumerated().map { index, segment -> AVSpeechUtterance in
                 let requestedText = segment.text.trimmingCharacters(in: .whitespacesAndNewlines)
                 let locale = segment.localeIdentifier.lowercased()
                 let text = locale.hasPrefix("zh")
@@ -222,8 +222,12 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                 let utterance = AVSpeechUtterance(string: text)
                 utterance.voice = voice
                 utterance.rate = segment.rate.avSpeechRate
-                utterance.preUtteranceDelay = segment.preUtteranceDelay
-                utterance.postUtteranceDelay = segment.postUtteranceDelay
+                // With one utterance active at a time, AVSpeech ignores the
+                // active utterance's post delay. Carry that transition onto
+                // the next utterance's pre delay instead.
+                let previousPostDelay = index > 0 ? segments[index - 1].postUtteranceDelay : 0
+                utterance.preUtteranceDelay = segment.preUtteranceDelay + previousPostDelay
+                utterance.postUtteranceDelay = 0
                 return utterance
             }
 
