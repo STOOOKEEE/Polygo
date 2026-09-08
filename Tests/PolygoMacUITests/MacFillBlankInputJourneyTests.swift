@@ -126,14 +126,15 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse Hanzi doit pouvoir être vérifiée")
-        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier doit être visible")
+        XCTAssertTrue(verify.isHittable, "Le bouton Vérifier doit être cliquable")
         XCTAssertTrue(verify.isEnabled, "Une réponse Hanzi entourée d’espaces doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse Hanzi doit être acceptée")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "Le champ validé doit permettre de poursuivre")
-        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer doit être visible")
+        XCTAssertTrue(continueButton.isHittable, "Le bouton Continuer doit être cliquable")
+        XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer doit être activé après une réponse correcte")
         continueButton.click()
         let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
         XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du champ doit faire progresser la leçon L2")
@@ -152,14 +153,15 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
-        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier de \(exerciseID) doit être visible")
+        XCTAssertTrue(verify.isHittable, "Le bouton Vérifier de \(exerciseID) doit être cliquable")
         XCTAssertTrue(verify.isEnabled, "La réponse de \(exerciseID) doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
-        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer de \(exerciseID) doit être visible")
+        XCTAssertTrue(continueButton.isHittable, "Le bouton Continuer de \(exerciseID) doit être cliquable")
+        XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer de \(exerciseID) doit être activé après une réponse correcte")
         continueButton.click()
     }
 
@@ -178,14 +180,15 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Vérifier")
-        XCTAssertTrue(scrollIntoView(verify), "Le bouton Vérifier de \(exerciseID) doit être visible")
+        XCTAssertTrue(verify.isHittable, "Le bouton Vérifier de \(exerciseID) doit être cliquable")
         XCTAssertTrue(verify.isEnabled, "La bonne séquence doit activer Vérifier")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "\(exerciseID) doit être évalué correctement")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "\(exerciseID) doit proposer Continuer")
-        XCTAssertTrue(scrollIntoView(continueButton), "Le bouton Continuer de \(exerciseID) doit être visible")
+        XCTAssertTrue(continueButton.isHittable, "Le bouton Continuer de \(exerciseID) doit être cliquable")
+        XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer de \(exerciseID) doit être activé après une réponse correcte")
         continueButton.click()
     }
 
@@ -193,25 +196,31 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
     /// the first exercise can start below a long dialogue preamble, so an AX
     /// match may exist while its control is still outside the viewport.
     /// Scroll the real lesson container until the exact control can receive a
-    /// click, while leaving the application layout untouched.
+    /// click, while leaving the application layout untouched. AX can report a
+    /// partially clipped control as hittable on macOS, so geometry is checked
+    /// against the selected scroll container before returning.
     @discardableResult
     private func scrollIntoView(_ element: XCUIElement) -> Bool {
         guard element.waitForExistence(timeout: timeout) else { return false }
-        if element.isHittable { return true }
 
-        // NavigationSplitView exposes its sidebar List as the first AX
-        // ScrollView. The lesson content is the wider scroll container, so
-        // choose it explicitly instead of relying on query order.
+        // NavigationSplitView exposes both a sidebar List and the lesson
+        // content as AX ScrollViews. Match the element to the container whose
+        // horizontal bounds contain it instead of relying on query order.
         let scrollViews = app.scrollViews
         var scrollView: XCUIElement?
-        var widestWidth: CGFloat = 0
+        var bestHorizontalOverlap: CGFloat = 0
         for index in 0..<scrollViews.count {
             let candidate = scrollViews.element(boundBy: index)
             guard candidate.waitForExistence(timeout: 2) else { continue }
             let frame = candidate.frame
             guard frame.width > 0, frame.height > 0 else { continue }
-            if frame.width > widestWidth {
-                widestWidth = frame.width
+            let elementFrame = element.frame
+            let overlap = max(
+                0,
+                min(elementFrame.maxX, frame.maxX) - max(elementFrame.minX, frame.minX)
+            )
+            if overlap > bestHorizontalOverlap {
+                bestHorizontalOverlap = overlap
                 scrollView = candidate
             }
         }
@@ -220,14 +229,16 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         for _ in 0..<12 {
             let elementFrame = element.frame
             let viewport = scrollView.frame
-            if elementFrame.maxY < viewport.minY {
+            if element.isHittable && viewport.contains(elementFrame) {
+                return true
+            }
+            if elementFrame.minY < viewport.minY {
                 scrollView.scroll(byDeltaX: 0, deltaY: 500)
             } else {
                 scrollView.scroll(byDeltaX: 0, deltaY: -500)
             }
-            if element.isHittable { return true }
         }
-        return element.isHittable
+        return element.isHittable && scrollView.frame.contains(element.frame)
     }
 
     private func button(exactly label: String) -> XCUIElement {
