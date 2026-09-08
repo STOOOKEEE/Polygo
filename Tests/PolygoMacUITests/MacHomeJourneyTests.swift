@@ -30,6 +30,7 @@ final class MacHomeJourneyTests: XCTestCase {
         // next step. Select the real desktop sidebar item to inspect Today,
         // rather than bypassing navigation with an implementation hook.
         selectSidebarItem("Aujourd’hui")
+        captureScreenshot(named: "mac-home-before-layout-assertions")
 
         let window = app.windows.firstMatch
         XCTAssertTrue(window.waitForExistence(timeout: timeout), "La fenêtre macOS doit être visible")
@@ -39,9 +40,9 @@ final class MacHomeJourneyTests: XCTestCase {
             "La fenêtre macOS doit rester assez large pour la composition desktop"
         )
 
-        let hero = element(identifier: "home.hero")
+        let hero = button(identifier: "home.hero")
         XCTAssertTrue(hero.waitForExistence(timeout: timeout), "Le hero de l’accueil doit être identifié")
-        let primaryAction = element(identifier: "home.primaryAction")
+        let primaryAction = hero
         XCTAssertTrue(
             primaryAction.waitForExistence(timeout: timeout),
             "L’accueil doit exposer son action principale"
@@ -70,29 +71,29 @@ final class MacHomeJourneyTests: XCTestCase {
             "Le parcours doit rester lisible dans l’accueil macOS"
         )
 
-        let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "mac-home-after-onboarding-dark"
-        screenshot.lifetime = .keepAlways
-        add(screenshot)
+        captureScreenshot(named: "mac-home-after-onboarding-dark")
     }
 
     func testTodaySidebarReturnsFromLessonToHomeRoot() throws {
         completeOnboardingIfNeeded()
         selectSidebarItem("Aujourd’hui")
 
-        let hero = element(identifier: "home.hero")
+        captureScreenshot(named: "mac-home-before-reset-assertions")
+        let hero = button(identifier: "home.hero")
         XCTAssertTrue(hero.waitForExistence(timeout: timeout), "L’accueil doit être visible avant l’ouverture de la leçon")
-        let primaryAction = element(identifier: "home.primaryAction")
+        let primaryAction = hero
         XCTAssertTrue(primaryAction.waitForExistence(timeout: timeout), "L’accueil doit proposer l’ouverture de la leçon")
         XCTAssertTrue(primaryAction.isHittable, "L’ouverture de la leçon doit être accessible")
         primaryAction.click()
 
+        captureScreenshot(named: "mac-lesson-before-sidebar-reset")
         let lessonAction = button(exactly: "Vérifier")
         XCTAssertTrue(lessonAction.waitForExistence(timeout: timeout), "La leçon doit remplacer l’accueil dans le détail")
 
         // Today is already selected in the sidebar. This click must still
         // activate the route and recreate the detail stack at its root.
         selectSidebarItem("Aujourd’hui")
+        captureScreenshot(named: "mac-home-after-sidebar-reset")
         XCTAssertTrue(hero.waitForExistence(timeout: timeout), "Aujourd’hui doit revenir à la racine après la leçon")
     }
 
@@ -166,6 +167,17 @@ final class MacHomeJourneyTests: XCTestCase {
 
     private func button(exactly label: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+    }
+
+    private func button(identifier: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
+    }
+
+    private func captureScreenshot(named name: String) {
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = name
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
     }
 
     private func clickExactHittable(label: String, message: String) {

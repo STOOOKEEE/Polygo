@@ -150,7 +150,7 @@ public struct TodayView: View {
     @ViewBuilder
     private func heroProgressBlock(lessonID: LessonID, progress: Double, compact: Bool) -> some View {
         ViewThatFits(in: .horizontal) {
-            HStack(alignment: .bottom, spacing: 16) {
+            HStack(alignment: .center, spacing: 16) {
                 heroProgressRing(lessonID: lessonID, progress: progress, compact: compact)
                 heroProgressDetails(lessonID: lessonID, progress: progress, compact: compact, includesBar: true)
                     .frame(maxWidth: .infinity, alignment: .leading)

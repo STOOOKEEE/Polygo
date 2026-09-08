@@ -411,7 +411,10 @@ public struct SylluneProgressBar: View {
                     .frame(width: proxy.size.width * value)
             }
         }
-        .frame(minHeight: 6)
+        // GeometryReader otherwise expands to all available vertical space,
+        // turning the track into a large pill when the bar has no explicit
+        // height from its parent.
+        .frame(height: 8)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Progression")
         .accessibilityValue("\(Int(value * 100)) pour cent")
