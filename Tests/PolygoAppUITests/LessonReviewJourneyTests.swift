@@ -329,10 +329,18 @@ final class LessonReviewJourneyTests: XCTestCase {
             return
         }
 
-        let field = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS[c] %@ OR label CONTAINS[c] %@", "Mot manquant", "Mot manquant")).firstMatch
-        XCTAssertTrue(field.waitForExistence(timeout: timeout), "Le champ de réponse est absent pour \(exercise.header.id)")
-        field.tap()
-        field.typeText(acceptedAnswer)
+        let option = app.buttons.matching(
+            NSPredicate(
+                format: "identifier BEGINSWITH %@ AND label == %@",
+                "lesson.exercise.\(exercise.header.id.rawValue).choice.",
+                acceptedAnswer
+            )
+        ).firstMatch
+        XCTAssertTrue(
+            option.waitForExistence(timeout: timeout),
+            "La proposition de réponse est absente pour \(exercise.header.id): \(acceptedAnswer)"
+        )
+        tapWhenVisible(option)
     }
 
     private func answerFlashcard() {

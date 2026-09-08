@@ -180,13 +180,13 @@ public struct LessonView: View {
                         wordInteractionEnabled: false
                     )
                         .foregroundStyle(SylluneColor.ink)
-                    Text(spec.header.instruction.resolve(preferred: model.preferredLanguageCodes) ?? "")
+                    Text(instructionText(for: spec))
                         .font(.body).foregroundStyle(SylluneColor.inkMuted)
                 }
 
                 answerControl(spec)
-                    // Each exercise owns small control state (typed text,
-                    // selected tiles, card reveal). Recreate that state when
+                    // Each exercise owns small control state (selected
+                    // choices/tiles, card reveal). Recreate that state when
                     // the stable exercise identity changes and keep controls
                     // read-only while its feedback is visible.
                     .id(spec.id)
@@ -211,6 +211,26 @@ public struct LessonView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             exerciseActionBar(spec: spec, blockID: block.0)
         }
+    }
+
+    private func instructionText(for spec: ExerciseSpec) -> String {
+        guard case .fillBlank(let exercise) = spec else {
+            return spec.header.instruction.resolve(preferred: model.preferredLanguageCodes) ?? ""
+        }
+
+        let instruction: LocalizedText
+        if exercise.canonicalSpeechSentence != nil {
+            instruction = .unchecked([
+                "fr": "Écoute et choisis le mot manquant.",
+                "en": "Listen and choose the missing word."
+            ])
+        } else {
+            instruction = .unchecked([
+                "fr": "Choisis le mot manquant.",
+                "en": "Choose the missing word."
+            ])
+        }
+        return instruction.resolve(preferred: model.preferredLanguageCodes) ?? "Choisis le mot manquant."
     }
 
     private func readingReference(in lesson: LessonDocument, for exerciseID: ExerciseID) -> ReadingBlock? {
@@ -1219,46 +1239,78 @@ private struct WordOrderAnswerView: View {
 private struct FillAnswerView: View {
     let exercise: FillBlankExercise
     @Binding var answer: ExerciseAnswer?
-    @State private var text = ""
-    @FocusState private var fieldFocused: Bool
+    @State private var selectedChoiceID: String?
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             ChineseSelectableText(
                 exercise.sentence,
                 font: .title3,
                 speechEnabled: true,
-                speechText: exercise.canonicalSpeechSentence,
-                onSpeechRequested: focusField
+                speechText: exercise.canonicalSpeechSentence
             )
             .foregroundStyle(SylluneColor.ink)
             .padding(16)
             .sylluneCard(radius: 12)
-            TextField("Mot manquant", text: $text)
-                .textFieldStyle(.roundedBorder)
-                .focused($fieldFocused)
-                .onChange(of: text) { _, value in answer = .text(value) }
+
+            LazyVGrid(
+                columns: [GridItem(.adaptive(minimum: 110), spacing: 8)],
+                spacing: 8
+            ) {
+                ForEach(exercise.choiceOptions) { choice in
+                    let value = choice.label.resolve(preferred: ["zh-CN", "zh", "en", "fr"]) ?? ""
+                    let isSelected = selectedChoiceID == choice.id
+                    Button {
+                        selectedChoiceID = choice.id
+                        answer = .text(value)
+                    } label: {
+                        HStack {
+                            ChineseSelectableText(
+                                value,
+                                font: .title3,
+                                speechEnabled: false,
+                                wordInteractionEnabled: false
+                            )
+                            Spacer()
+                            if isSelected {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(SylluneColor.jade)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
+                        .padding(16)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(SylluneColor.ink)
+                    .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(isSelected ? SylluneColor.jade : SylluneColor.border, lineWidth: isSelected ? 2 : 1)
+                    )
+                    .accessibilityLabel(value.isEmpty ? "Réponse" : value)
+                    .accessibilityValue(isSelected ? "Sélectionnée" : "Non sélectionnée")
+                    .accessibilityHint("Choisis cette proposition.")
+                    .accessibilityIdentifier("lesson.exercise.\(exercise.header.id.rawValue).choice.\(choice.id)")
+                }
+            }
         }
         .onAppear {
             syncFromAnswer()
-            focusField()
         }
         .onChange(of: answer) { _, _ in syncFromAnswer() }
     }
 
     private func syncFromAnswer() {
-        if case .text(let value) = answer { text = value }
-        else { text = "" }
-    }
-
-    private func focusField() {
-#if os(macOS)
-        // Let the audio button finish its mouse event before returning focus
-        // to the editor. No key event is intercepted, so spaces and Return
-        // retain TextField's native macOS behavior.
-        DispatchQueue.main.async {
-            fieldFocused = true
+        guard case .text(let value) = answer else {
+            selectedChoiceID = nil
+            return
         }
-#endif
+        let normalized = TextNormalizer.normalize(value)
+        selectedChoiceID = exercise.choiceOptions.first { choice in
+            let candidate = choice.label.resolve(preferred: ["zh-CN", "zh", "en", "fr"]) ?? ""
+            return TextNormalizer.normalize(candidate) == normalized
+        }?.id
     }
 }
 

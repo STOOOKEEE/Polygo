@@ -60,11 +60,11 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
 
         case .fillBlank(let exercise):
             guard case .text(let text) = answer else {
-                return evaluation(id, .incorrect, 0, "Saisis une réponse.", accepted: false)
+                return evaluation(id, .incorrect, 0, "Choisis une réponse proposée.", accepted: false)
             }
             let normalized = TextNormalizer.normalize(text, caseSensitive: exercise.caseSensitive)
             let accepted = exercise.acceptedAnswers.contains { TextNormalizer.normalize($0, caseSensitive: exercise.caseSensitive) == normalized }
-            return evaluation(id, accepted ? .correct : .incorrect, accepted ? 1 : 0, accepted ? "Le mot convient à la phrase." : "Vérifie le mot manquant et réessaie.", accepted: accepted, answer: normalized)
+            return evaluation(id, accepted ? .correct : .incorrect, accepted ? 1 : 0, accepted ? "Le mot convient à la phrase." : "Vérifie le mot choisi et réessaie.", accepted: accepted, answer: normalized)
 
         case .listeningChoice(let exercise):
             guard case .choice(let choiceID) = answer else {

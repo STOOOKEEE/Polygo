@@ -172,6 +172,53 @@ public struct FillBlankExercise: Codable, Hashable, Sendable {
         acceptedAnswers.first { MandarinSpeechText.isTargetOnly($0) }
     }
 
+    /// The five tap targets used by the lesson player for this exercise.
+    /// Content remains encoded as `fillBlank` so old journals, evaluation,
+    /// and resume checkpoints keep their existing `.text` answer shape.
+    ///
+    /// The first Mandarin-safe accepted answer is the canonical target. Other
+    /// accepted variants are deliberately excluded from the distractor pool:
+    /// a learner must see exactly one correct option. The remaining options
+    /// come from a small corpus-backed bank of complete Hanzi characters or
+    /// words with the same shape as the target. Their display position is
+    /// rotated from a stable exercise-ID hash rather than fixed globally.
+    public var choiceOptions: [Choice] {
+        guard let answer = canonicalSpeechAnswer,
+              !answer.isEmpty else { return [] }
+
+        let accepted = Set(acceptedAnswers.map { TextNormalizer.normalize($0, caseSensitive: caseSensitive) })
+        let targetLength = answer.count
+        let bank = targetLength == 1 ? Self.singleCharacterChoiceBank : Self.wordChoiceBank
+        var distractors: [String] = []
+        var seen = accepted
+        seen.insert(TextNormalizer.normalize(answer, caseSensitive: caseSensitive))
+
+        guard !bank.isEmpty else { return [] }
+        let bankOffset = Int(Self.stableHash("\(header.id.rawValue):distractors") % UInt64(bank.count))
+        for step in 0..<bank.count {
+            let candidate = bank[(bankOffset + step) % bank.count]
+            guard candidate.count == targetLength else { continue }
+            let normalized = TextNormalizer.normalize(candidate, caseSensitive: caseSensitive)
+            guard !normalized.isEmpty, !seen.contains(normalized) else { continue }
+            seen.insert(normalized)
+            distractors.append(candidate)
+            if distractors.count == 4 { break }
+        }
+
+        guard distractors.count == 4 else { return [] }
+        let values = [answer] + distractors
+        let offset = Int(Self.stableHash("\(header.id.rawValue):position") % UInt64(values.count))
+        let rotated = Array(values[offset...]) + Array(values[..<offset])
+
+        return rotated.enumerated().map { displayIndex, value in
+            let sourceIndex = (displayIndex + offset) % values.count
+            return Choice(
+                id: "\(header.id.rawValue)-choice-\(sourceIndex)",
+                label: .unchecked(["zh-CN": value])
+            )
+        }
+    }
+
     /// Completes the first authored underscore run and returns the Mandarin
     /// target for speech playback while keeping the exercise's visible
     /// sentence unchanged. Non-Mandarin text is removed by the speech
@@ -201,6 +248,29 @@ public struct FillBlankExercise: Codable, Hashable, Sendable {
               MandarinSpeechText.isTargetOnly(target),
               target == expectedTarget else { return nil }
         return target
+    }
+
+    // These are the Hanzi answers already used by the shipped lesson corpus.
+    // Keeping the bank in Core makes generated options available to every
+    // client without loading a platform-specific content file or inventing a
+    // distractor from a French gloss.
+    private static let singleCharacterChoiceBank = [
+        "不", "个", "了", "休", "伞", "位", "使", "元", "六", "刮", "到", "刻", "叫", "喝", "在", "地", "块", "好", "始", "就", "房", "才", "打", "把", "护", "拿", "换", "旧", "春", "样", "段", "河", "物", "用", "疼", "矮", "票", "箱", "糖", "结", "考", "舒", "药", "试", "课", "辆", "遍", "镜", "难", "雨", "雪"
+    ]
+
+    private static let wordChoiceBank = [
+        "一共", "一样", "中国", "法国", "中间", "了解", "以前", "儿子", "决定", "几乎", "出来", "发现", "咖啡", "太阳", "妹妹", "容易", "影响", "忘记", "愿意", "所以", "放心", "果汁", "根据", "检查", "然后", "特别", "着急", "表演", "这条", "铅笔", "除了", "需要", "马上"
+    ]
+
+    private static func stableHash(_ value: String) -> UInt64 {
+        // FNV-1a is small, deterministic across processes, and independent
+        // of Swift's intentionally randomized Hasher seed.
+        var hash: UInt64 = 14_695_981_039_346_656_037
+        for byte in value.utf8 {
+            hash ^= UInt64(byte)
+            hash &*= 1_099_511_628_211
+        }
+        return hash
     }
 }
 

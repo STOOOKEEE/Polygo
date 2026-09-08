@@ -1053,6 +1053,103 @@ final class ContentContractTests: XCTestCase {
         XCTAssertTrue(foundLatinPrefixFill80, "Le fill latin de la leçon 80 doit être couvert")
     }
 
+    func testFillBlankChoiceOptionsAreFiveChineseAndVaryAcrossCorpus() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        var fills: [FillBlankExercise] = []
+
+        for lesson in snapshots.flatMap(\.lessons) {
+            for block in exerciseBlocks(in: lesson) {
+                if case .fillBlank(let exercise) = block.spec {
+                    fills.append(exercise)
+                }
+            }
+        }
+
+        XCTAssertGreaterThanOrEqual(fills.count, 2, "Le catalogue doit contenir plusieurs exercices à trou")
+
+        var distractorSetsByLength: [Int: Set<String>] = [:]
+        var correctPositions = Set<Int>()
+
+        for exercise in fills {
+            let exerciseID = exercise.header.id.rawValue
+            let options = exercise.choiceOptions
+            XCTAssertEqual(options.count, 5, "Le fill \(exerciseID) doit proposer exactement cinq choix")
+            XCTAssertEqual(
+                options,
+                exercise.choiceOptions,
+                "Les choix du fill \(exerciseID) doivent rester stables entre deux accès"
+            )
+            let roundTripped = try XCTUnwrap(
+                try? JSONDecoder().decode(FillBlankExercise.self, from: JSONEncoder().encode(exercise)),
+                "Le fill \(exerciseID) doit rester décodable"
+            )
+            XCTAssertEqual(
+                options,
+                roundTripped.choiceOptions,
+                "Les choix du fill \(exerciseID) doivent rester stables après encodage"
+            )
+            XCTAssertEqual(
+                Set(options.map(\.id)).count,
+                5,
+                "Les identifiants des choix du fill \(exerciseID) doivent être distincts"
+            )
+
+            let labels = options.compactMap {
+                $0.label.resolve(preferred: ["zh-CN", "zh", "en", "fr"])
+            }
+            XCTAssertEqual(labels.count, 5, "Les cinq choix du fill \(exerciseID) doivent avoir un libellé")
+            XCTAssertEqual(Set(labels).count, 5, "Les choix du fill \(exerciseID) doivent être distincts")
+            XCTAssertTrue(
+                labels.allSatisfy(MandarinSpeechText.isTargetOnly),
+                "Les choix du fill \(exerciseID) doivent rester en caractères chinois"
+            )
+
+            guard let answer = exercise.canonicalSpeechAnswer else {
+                XCTFail("Le fill \(exerciseID) doit avoir une réponse canonique")
+                continue
+            }
+            let normalizedAnswer = TextNormalizer.normalize(answer, caseSensitive: exercise.caseSensitive)
+            let normalizedLabels = labels.map {
+                TextNormalizer.normalize($0, caseSensitive: exercise.caseSensitive)
+            }
+            XCTAssertEqual(
+                normalizedLabels.filter { $0 == normalizedAnswer }.count,
+                1,
+                "Le fill \(exerciseID) doit avoir un seul choix correct"
+            )
+            let normalizedAcceptedAnswers = Set(
+                exercise.acceptedAnswers.map {
+                    TextNormalizer.normalize($0, caseSensitive: exercise.caseSensitive)
+                }
+            )
+            XCTAssertEqual(
+                normalizedLabels.filter { normalizedAcceptedAnswers.contains($0) }.count,
+                1,
+                "Le fill \(exerciseID) doit proposer une seule variante acceptée"
+            )
+
+            guard let correctPosition = normalizedLabels.firstIndex(of: normalizedAnswer) else {
+                continue
+            }
+            correctPositions.insert(correctPosition)
+
+            let distractors = normalizedLabels.filter { $0 != normalizedAnswer }
+            XCTAssertEqual(distractors.count, 4, "Le fill \(exerciseID) doit avoir quatre distracteurs")
+            let setKey = distractors.sorted().joined(separator: "|")
+            distractorSetsByLength[answer.count, default: []].insert(setKey)
+        }
+
+        XCTAssertGreaterThan(
+            correctPositions.count,
+            1,
+            "La position du choix correct doit varier dans le corpus"
+        )
+        XCTAssertTrue(
+            distractorSetsByLength.values.contains { $0.count > 1 },
+            "Les fills de même longueur doivent varier leurs ensembles de distracteurs"
+        )
+    }
+
     private func assertValidShape(_ spec: ExerciseSpec, cardIDs: Set<CardID>) {
         switch spec {
         case .choice(let exercise):

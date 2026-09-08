@@ -2,9 +2,8 @@ import Foundation
 import XCTest
 
 /// Covers the macOS fill-blank path from the persisted roadmap through a real
-/// lesson answer. The journey deliberately enters the Hanzi answer with
-/// surrounding spaces so native TextField focus and the exercise normalizer
-/// are both exercised after the lesson's Mandarin audio control is used.
+/// lesson answer. The journey checks that the learner gets five selectable
+/// Hanzi proposals after using the lesson's Mandarin audio control.
 final class MacFillBlankInputJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -37,7 +36,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         }
     }
 
-    func testFillBlankSpeaksAndAcceptsHanZiAnswerAfterRoadmapNavigation() throws {
+    func testFillBlankSpeaksAndSelectsHanZiProposalAfterRoadmapNavigation() throws {
         let pathItem = app.buttons.matching(
             NSPredicate(format: "label == %@", "Parcours")
         ).firstMatch
@@ -68,7 +67,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         )
 
         let fillExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-fill").firstMatch
-        XCTAssertTrue(fillExercise.waitForExistence(timeout: timeout), "Le parcours L2 doit atteindre le champ à compléter")
+        XCTAssertTrue(fillExercise.waitForExistence(timeout: timeout), "Le parcours L2 doit atteindre l’exercice à trou")
 
         // The answer prompt remains a visible blank while its speech source is
         // completed internally. An exact underscore token distinguishes the
@@ -79,16 +78,17 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         XCTAssertTrue(blank.waitForExistence(timeout: timeout), "La phrase de L2 doit conserver son trou visible")
         XCTAssertTrue(scrollIntoView(blank), "Le trou de la phrase doit être visible")
 
-        let field = app.textFields.matching(
+        let legacyField = app.textFields.matching(
             NSPredicate(
                 format: "placeholderValue CONTAINS[c] %@ OR label CONTAINS[c] %@",
                 "Mot manquant",
                 "Mot manquant"
             )
         ).firstMatch
-        XCTAssertTrue(field.waitForExistence(timeout: timeout), "Le champ Mot manquant doit être exposé sur macOS")
-        XCTAssertTrue(field.isEnabled, "Le champ Mot manquant doit accepter la saisie")
-        XCTAssertTrue(scrollIntoView(field), "Le champ Mot manquant doit être visible et cliquable")
+        XCTAssertFalse(
+            legacyField.exists,
+            "L’exercice à trou ne doit plus exposer de champ clavier Mot manquant"
+        )
 
         // This is the actual Chinese speech control from FillAnswerView. The
         // exact completed phrase is covered by the PolygoCore content
@@ -102,37 +102,49 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         listen.click()
         XCTAssertTrue(
             text(containing: "Lecture terminée").waitForExistence(timeout: timeout),
-            "La lecture de la phrase doit aller jusqu’à son état terminé avant la saisie"
+            "La lecture de la phrase doit aller jusqu’à son état terminé avant le choix"
         )
 
-        XCTAssertTrue(scrollIntoView(field), "Le champ Mot manquant doit rester visible après la lecture")
-        field.click()
-        field.typeText(" 叫 ")
-
+        let options = waitForChineseOptionButtons(expectedCount: 5)
+        XCTAssertEqual(options.count, 5, "L’exercice à trou doit proposer exactement cinq choix Hanzi")
+        let optionLabels = options.map { $0.label.trimmingCharacters(in: .whitespacesAndNewlines) }
+        XCTAssertEqual(Set(optionLabels).count, 5, "Les cinq propositions Hanzi doivent être distinctes")
         XCTAssertTrue(
-            waitForValue(field, " 叫 "),
-            "La valeur du champ doit conserver les espaces autour du Hanzi saisi"
+            options.allSatisfy { isChineseOptionLabel($0.label) },
+            "Chaque proposition doit être un libellé chinois sélectionnable"
         )
-        XCTAssertEqual(
-            field.value as? String,
-            " 叫 ",
-            "La valeur AX réelle doit conserver les espaces autour du Hanzi saisi"
+
+        let correct = options.first {
+            $0.label.trimmingCharacters(in: .whitespacesAndNewlines) == "叫"
+        }
+        XCTAssertNotNil(correct, "La proposition correcte 叫 doit être présente parmi les cinq choix")
+        guard let correct else { return }
+        XCTAssertTrue(scrollIntoView(correct), "La proposition correcte doit être visible et cliquable")
+        correct.click()
+        XCTAssertTrue(
+            waitForValue(correct, "Sélectionnée"),
+            "Le choix 叫 doit exposer son état sélectionné"
         )
+        let selectedLabels = options.compactMap { option in
+            guard (option.value as? String) == "Sélectionnée" else { return nil }
+            return option.label.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        XCTAssertEqual(selectedLabels, ["叫"], "Le choix 叫 doit être l’unique proposition sélectionnée")
         XCTAssertTrue(
             fillExercise.exists,
-            "La saisie après la lecture ne doit pas quitter l’exercice"
+            "La sélection après la lecture ne doit pas quitter l’exercice"
         )
-        attachScreenshot(named: "mac-fill-blank-input")
+        attachScreenshot(named: "mac-fill-blank-choice-selected")
 
         let verify = button(exactly: "Vérifier")
         XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse Hanzi doit pouvoir être vérifiée")
         XCTAssertTrue(verify.isHittable, "Le bouton Vérifier doit être cliquable")
         XCTAssertTrue(
             waitForEnabled(verify),
-            "Une réponse Hanzi entourée d’espaces doit activer Vérifier"
+            "Une proposition Hanzi sélectionnée doit activer Vérifier"
         )
         verify.click()
-        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse Hanzi doit être acceptée")
+        XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La proposition 叫 doit être acceptée")
 
         let continueButton = button(exactly: "Continuer")
         XCTAssertTrue(continueButton.waitForExistence(timeout: timeout), "Le champ validé doit permettre de poursuivre")
@@ -140,7 +152,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer doit être activé après une réponse correcte")
         continueButton.click()
         let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
-        XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du champ doit faire progresser la leçon L2")
+        XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du choix doit faire progresser la leçon L2")
         XCTAssertTrue(scrollIntoView(nextExercise), "L’exercice suivant doit devenir visible après la validation")
         attachScreenshot(named: "mac-fill-blank-advanced")
     }
@@ -256,6 +268,37 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
     private func button(containing value: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", value)).firstMatch
+    }
+
+    private func waitForChineseOptionButtons(expectedCount: Int) -> [XCUIElement] {
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            let options = fillChoiceButtons()
+            if options.count == expectedCount { return options }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+        return fillChoiceButtons()
+    }
+
+    private func fillChoiceButtons() -> [XCUIElement] {
+        let choices = app.buttons.matching(
+            NSPredicate(format: "identifier BEGINSWITH %@", "lesson.exercise.ex-l2-fill.choice.")
+        )
+        return (0..<choices.count).compactMap { index in
+            let candidate = choices.element(boundBy: index)
+            guard candidate.exists, isChineseOptionLabel(candidate.label) else { return nil }
+            return candidate
+        }
+    }
+
+    private func isChineseOptionLabel(_ label: String) -> Bool {
+        let scalars = label.trimmingCharacters(in: .whitespacesAndNewlines).unicodeScalars
+        guard !scalars.isEmpty else { return false }
+        return scalars.allSatisfy { scalar in
+            (0x3400...0x4DBF).contains(scalar.value)
+                || (0x4E00...0x9FFF).contains(scalar.value)
+                || (0xF900...0xFAFF).contains(scalar.value)
+        }
     }
 
     private func text(containing value: String) -> XCUIElement {
