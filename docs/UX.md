@@ -109,19 +109,19 @@ Une action ouvre directement une route identifiée (`lessonID`, `reviewQueueID`,
 
 ### Parcours
 
-Vue en chemin vertical sur iPhone et liste structurée dans la sidebar iPad/Mac. Une unité affiche son thème, le nombre de leçons terminées et le bouton de reprise. Une leçon verrouillée explique sa condition (« Termine la leçon 3 ») et n’est pas interactive.
+Vue en chemin vertical avec cercles reliés sur iPhone, iPad et Mac ; sur iPad et Mac, la sidebar accompagne le parcours. Une unité affiche son thème, le nombre de leçons terminées et le bouton de reprise. Une leçon verrouillée explique sa condition (« Termine la leçon 3 ») et n’est pas interactive.
 
 La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
-| Leçon | Notions et exemples | Exercices requis |
+| Leçon | Notions et exemples | Exercices (dont requis) |
 | --- | --- | ---: |
-| 1. Dire bonjour | 你好 nǐ hǎo, 早 zǎo, 再见 zàijiàn, 谢谢 xièxie | 6 |
-| 2. Dire son nom | 我 wǒ, 叫 jiào, 什么 shénme, 名字 míngzi ; 你叫什么名字？ | 7 |
-| 3. Dire d’où l’on vient | 是 shì, 哪 nǎ, 国 guó, 法国 Fǎguó ; 你是哪国人？ | 7 |
+| 1. Dire bonjour | 你好 nǐ hǎo, 早 zǎo, 再见 zàijiàn, 谢谢 xièxie | 6 (5 requis) |
+| 2. Dire son nom | 我 wǒ, 叫 jiào, 什么 shénme, 名字 míngzi ; 你叫什么名字？ | 7 (6 requis) |
+| 3. Dire d’où l’on vient | 是 shì, 哪 nǎ, 国 guó, 法国 Fǎguó ; 你是哪国人？ | 7 (6 requis) |
 
-Le pack JSON actuellement livré contient ces trois leçons et une extension déjà disponible : **4. Mener un mini-échange**, avec `呢 ne` et **7 exercices**. Cette quatrième leçon porte la sortie « mini-échange » du pack ; elle reste distincte de la cible éditoriale en trois leçons. Les nombres d’exercices du tableau décrivent chaque leçon et ne sont pas un compteur de leçons ; le « 6 cartes » de l’exemple du dashboard désigne la file de rappel du jour.
+Le pack JSON actuellement livré contient ces trois leçons et une extension déjà disponible : **4. Mener un mini-échange**, avec `呢 ne` et **7 exercices (6 requis)**. Cette quatrième leçon porte la sortie « mini-échange » du pack ; elle reste distincte de la cible éditoriale en trois leçons. Les nombres d’exercices du tableau décrivent chaque leçon et ne sont pas un compteur de leçons ; le « 6 cartes » de l’exemple du dashboard désigne la file de rappel du jour.
 
-Chaque leçon montre les mots utiles avant le premier exercice, puis une barre de progression avec `répondu / total`. Une leçon est marquée terminée quand tous les exercices requis ont une réponse et que le taux de correction est au moins de 80 %. Les exercices ratés restent rejouables depuis l’écran de résultat.
+Chaque leçon montre les mots utiles avant le premier exercice, puis une barre de progression avec `répondu / total`. Les exercices requis portent la progression : dans les quatre leçons livrées, l’oral est `required: false` et peut être passé sans évaluation. La composition actuelle enregistre alors la complétion lorsque les exercices requis sont acceptés ; le seuil de 80 % reste le critère éditorial de qualité. Le récapitulatif peut afficher « Leçon enregistrée » et `5 / 6 exercices réussis` avec `skippedCount: 1` : le saut reste exclu des réussites, mais la leçon suivante est déverrouillée. Les exercices ratés restent rejouables depuis l’écran de résultat.
 
 ### Leçon
 
@@ -151,9 +151,15 @@ La fiche conserve `wordID`, niveau de maîtrise, date de dernière réponse et p
 
 Écran centré sur une seule phrase : caractère/pinyin, bouton d’écoute, bouton microphone. À la première utilisation, demander `AVAudioSession` avec une raison française claire. Pendant l’enregistrement : chronomètre, amplitude simple, « Arrêter ». Après : « Réécouter », « Refaire » et l’analyse. `SpeechPracticeView` transmet l’enregistrement temporaire à un `SpeechPronunciationService` injecté ; un rapport terminé peut afficher le verdict, le score et les détails par mot, son et ton. La transcription Apple et sa confiance restent descriptives et ne deviennent jamais une note de prononciation. Tant qu’aucun fournisseur et aucune clé ne sont configurés, l’état indique que l’analyse n’est pas configurée et « Passer sans évaluer » permet de poursuivre sans réussite ni score. Une permission refusée affiche le chemin Réglages et permet de continuer la leçon avec le même passage sans évaluation.
 
+Le protocole, l’UI et les fixtures sont prêts pour un fournisseur externe, mais
+aucun compte, credential ou proxy n’est disponible ou activé dans la
+composition actuelle. Un oral passé est affiché séparément dans le bilan via
+`skippedCount` ; il ne devient jamais une réussite et ne bloque pas la
+complétion fondée sur les exercices requis ni le déblocage de la leçon suivante.
+
 ### Écriture
 
-Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». `Annuler`, `Effacer` et `Vérifier` sont toujours présents et fonctionnels. La vérification MVP conserve le tracé `PKDrawing`, vérifie si possible le nombre de traits attendu et permet une auto-évaluation (`À refaire`, `Bien`) quand la reconnaissance n’est pas disponible. Elle ne prétend pas mesurer une précision de caractère ; la progression est enregistrée après `Continuer`.
+Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». Le mode guidé contrôle chaque trait dans l’ordre, sa direction et sa forme ; le point de départ orange et la flèche indiquent le geste attendu. Un trait refusé reste visible en rouge avec une explication et peut être recommencé. `Annuler`, `Effacer` et `Vérifier le tracé` restent accessibles dans le pied de l’écran ; la vérification libre conserve le tracé `PKDrawing` et permet une auto-évaluation (`À refaire`, `Bien`) quand le guide n’est pas disponible. La progression est enregistrée après `Continuer`.
 
 ### Cartes
 
@@ -215,10 +221,10 @@ Découpage recommandé : `DesignSystem` (tokens, composants, assets), `Onboardin
 ## 8. Checklist d’acceptation MVP
 
 1. Après l’onboarding, un nouvel apprenant ouvre l’unité 1 et commence la leçon 1 sans compte ni réseau.
-2. La cible pédagogique porte sur les trois leçons L1–L3 de l’unité 1, qui contiennent respectivement 6, 7 et 7 exercices ; le pack livré ajoute la leçon d’extension L4 avec 7 exercices. Chaque tentative est sauvegardée après validation.
+2. La cible pédagogique porte sur les trois leçons L1–L3 de l’unité 1, qui contiennent respectivement 6, 7 et 7 exercices (5, 6 et 6 requis) ; le pack livré ajoute la leçon d’extension L4 avec 7 exercices (6 requis). Chaque tentative est sauvegardée après validation.
 3. Une erreur affiche une correction ; une leçon terminée apparaît dans le parcours et alimente le dashboard.
 4. Un mot peut être ouvert depuis une leçon ou une histoire, lu hors ligne et ajouté aux cartes ; l’état du bouton suit la donnée.
-5. Un oral peut être enregistré, relu et soumis à un fournisseur ; sans provider configuré, permission ou analyse exploitable, il peut être passé sans évaluation ni note.
+5. Un oral peut être enregistré, relu et soumis à un fournisseur ; sans provider configuré, permission ou analyse exploitable, il peut être passé sans évaluation ni note. Dans ce cas, le bilan affiche `skippedCount` et les exercices requis seuls déterminent la complétion et le déblocage de la leçon suivante.
 6. Les cartes dues suivent des intervalles déterministes et disparaissent de la file uniquement après une réponse enregistrée.
 7. Le dictionnaire de l’unité 1 fonctionne hors ligne pour caractère, pinyin et français.
 8. Les mêmes routes sont accessibles sur iPhone, iPad et Mac ; la sidebar, les raccourcis et VoiceOver ne dépendent pas d’un écran tactile.

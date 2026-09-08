@@ -10,14 +10,15 @@ Le contenu local actuel comprend quatre leçons (`lesson-01` à `lesson-04`),
 contrat lisent les JSON réels et vérifient les références fermées entre leçons,
 blocs, objectifs, vocabulaire, cartes, histoires et guides d’écriture.
 
-Le package courant contient **46 tests XCTest**, dont **6 tests de contrat de
-contenu** ; les **46/46 tests portables** passent avec les fixtures courantes.
-Le contrôle `git diff --check` est propre. Le code validé historiquement est le
-commit `c30d712` ; le [run Apple
-34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) est
-terminé avec succès. Il valide les **43/43 tests** package, la génération
-XcodeGen, les métadonnées, les builds iOS/macOS, les **2 méthodes UI macOS** et
-les **4 méthodes UI iOS**.
+Le package courant contient **47 tests XCTest**, dont **7 tests de contrat de
+contenu** ; les **47/47 tests portables** passent avec les fixtures courantes.
+Le contrôle `git diff --check` des modifications documentaires est propre. Le
+code courant est le commit `906135d` (`906135d99a1bc1ee69d16a28f81963a657a58d65`).
+Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
+a validé les **47/47 tests portables du package**, les **2/2 tests UI macOS** et
+les **7/7 tests UI iOS** ; ses trois jobs sont terminés avec succès.
+Le [run historique 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185)
+reste terminé avec succès pour le périmètre antérieur du commit `c30d712`.
 
 Le commit `c30d712` apporte la refonte de l’accueil Mac et iPhone
 ainsi que la conservation de la route de reprise lorsqu’une leçon est ouverte
@@ -30,12 +31,20 @@ clic explicite sur « Aujourd’hui » recrée la racine du détail avant un év
 chargement tardif, tandis que le brouillon, le feedback et la progression
 restent repris après redémarrage.
 
-Le run est vert pour l’ensemble de son périmètre : les 43 tests du package,
-les 2 méthodes UI macOS et les 4 méthodes UI iOS ont réussi. Les captures
-stables natives extraites de ce run sont conservées dans le dépôt :
+Le run historique 34207957185 est vert pour son périmètre : les 43 tests du
+package, les 2 méthodes UI macOS et les 4 méthodes UI iOS ont réussi. Les
+captures stables natives extraites de ce run sont conservées dans le dépôt :
 
 - [Accueil macOS en mode sombre](screenshots/home-macos-dark.png) — 1600 × 900, SHA-256 `b511d762e3a23fe4e50c47d4e89e3bc9df2c1300fa9bd38e194d38f4c0dc5ece` ;
 - [Accueil iPhone en mode sombre](screenshots/home-ios-dark.png) — 1206 × 2622, SHA-256 `aaeb9113f6fcf4f3205cfc658905faea3df94fae7e68325e8b6a61559e0ca597`.
+
+Le run courant 34225700577 a validé le build et le smoke UI macOS, ainsi que les
+7/7 tests UI iOS ; les captures de référence du parcours et du dialogue sont
+archivées ici :
+
+- [Parcours macOS en mode sombre](screenshots/roadmap-macos-dark.png) — 1600 × 900, SHA-256 `98b21d6cab2d9026341fe49e04b3fdd6def2c2fb527046bc9d1fc3168e40f132` ;
+- [Dialogue macOS en mode sombre](screenshots/dialogue-macos-dark.png) — 1600 × 900, SHA-256 `0f816f4fe790409c88ca8776d714e0362dd6608cfbab8364b8a3632709391859` ;
+- [Écriture guidée iOS](screenshots/handwriting-guided-ios.png) et [reprise iOS](screenshots/handwriting-retry-ios.png), validées par les deux tests d’écriture du run [34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020) sur le commit `249f6d0`.
 
 ## Contrats de contenu
 
@@ -53,6 +62,8 @@ stables natives extraites de ce run sont conservées dans le dépôt :
   `observer`, `recuperer`, `produire`, `transferer`, le plafond de six
   nouveaux mots par leçon, la réutilisation de mots antérieurs et les preuves
   d’exercices pour les objectifs ;
+- l’activité orale présente dans les quatre leçons avec `required: false`, afin
+  qu’un passage `skipped` n’empêche pas la progression hors ligne ;
 - l’absence honnête d’audio livré et les chemins, sommes SHA-256 et nombre de
   traits des trois guides d’écriture locaux.
 
@@ -75,7 +86,11 @@ conservent la réponse en cours, le feedback visible et les brouillons/résultat
 de dialogue par identifiant stable ; la relance peut donc reprendre le même
 exercice ou réinitialiser proprement une fin incomplète. Une fin réussie appelle
 `completeLesson`, qui ajoute toutes les cartes du document sans remplacer l’état
-SRS d’une carte déjà connue.
+SRS d’une carte déjà connue. Les quatre activités orales sont facultatives :
+`Passer sans évaluer` produit `skipped`, le bilan affiche `skippedCount` et les
+exercices requis seuls permettent d’enregistrer la complétion et de déverrouiller
+la suivante. Le récapitulatif peut donc afficher « Leçon enregistrée » et
+`5 / 6 exercices réussis` ; le saut reste exclu des réussites et du score.
 
 L’accueil propose la reprise de la leçon, l’état du parcours et l’accès aux
 flashcards. Le dialogue expose une écoute de ses seules répliques mandarin, des
@@ -92,9 +107,12 @@ ni credential n’est configuré, elle affiche l’état non configuré et perme
 « Passer sans évaluer » ; l’état `skipped` ne porte ni note ni réussite. La
 transcription et sa confiance ne produisent aucun score de phonème ou de ton.
 Les fixtures vérifient aussi les rapports terminés, les détails par composante
-et les états indisponible, en échec et incertain. L’annulation d’une tâche orale
-marque aussi une requête encore en attente avant le saut vers la file principale
-; elle ne peut donc plus créer un enregistreur après la sortie de l’écran.
+et les états indisponible, en échec et incertain. Le protocole, l’UI et les
+fixtures sont prêts pour un fournisseur externe, mais aucun provider, compte,
+credential ou proxy n’est activé ou disponible dans la composition actuelle.
+L’annulation d’une tâche orale marque aussi une requête encore en attente avant
+le saut vers la file principale ; elle ne peut donc plus créer un enregistreur
+après la sortie de l’écran.
 
 La vue d’écriture injecte le service local, persiste le dessin et transmet
 l’identifiant au journal de progression via `onDrawingCreated`. Le statut de
@@ -103,33 +121,33 @@ CloudSync dans l’assemblage courant. Les documents, la progression, les
 enregistrements temporaires et les dessins sont stockés localement. Aucun
 bouton de réinitialisation n’est exposé dans l’interface utilisateur.
 
-## Parcours UI validé par le run Apple
+## Parcours UI et preuves Apple
 
-Le run historique ciblait quatre méthodes de la cible `PolygoAppUITests`. Le
-tree courant en contient sept, avec les parcours ajoutés pour l’oral sans
-évaluation et l’écriture guidée :
+Le tree courant contient neuf méthodes UI au total (7 iOS et 2 macOS), avec les
+parcours ajoutés pour l’oral sans évaluation et l’écriture guidée :
 
 - le smoke français `PolygoAppUITests.testFrenchOnboardingAndPrimaryOfflineJourneys` pour l’onboarding, le parcours, les cartes, les réglages, une histoire et le dictionnaire ;
-- `LessonReviewJourneyTests.testLessonCompletionAddsFiveCardsAndPersistsFirstReviewAcrossRelaunch` pour la fin de leçon, les cinq cartes dues, la revue et la relance ;
 - `ZZLessonRegressionJourneyTests.testLessonDraftFeedbackDialogueAndOralJourney` pour le brouillon, le feedback, le dialogue, la réplique précédente interactive, le canevas et l’oral ;
 - `ZZLessonRegressionJourneyTests.testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply` pour la cohérence de la participation dialoguée dans le JSON L1 ;
 - `ZZLessonRegressionJourneyTests.testAllLessonDialogueFixturesExposeSupportAndPreviousReplyMapping` pour les quatre mappings de dialogue ;
 - `LessonReviewJourneyTests.testLessonSkipKeepsOralUnevaluatedAndPersistsWritingPathAcrossRelaunch` pour le passage oral sans évaluation ;
-- `LessonReviewJourneyTests.testGuidedWritingRejectsWrongStrokeThenAcceptsRetry` et `LessonReviewJourneyTests.testFreeWritingFailureCanBeSelfReportedAndAdvance` pour les deux chemins d’écriture.
+- `LessonReviewJourneyTests.testGuidedWritingRejectsWrongStrokeThenAcceptsRetry` pour le rejet puis la reprise d’un trait guidé ;
+- `LessonReviewJourneyTests.testFreeWritingFailureCanBeSelfReportedAndAdvance` pour l’échec libre auto-évalué et la reprise.
 
-Ces quatre tests ont réussi dans le [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185), exécuté sur le commit `c30d712`. Aucun test UI n’a échoué. Les captures nommées `oral-controls` et `oral-result` ont été extraites des artefacts UI et inspectées visuellement ; la vue orale compacte expose bien la cible, le pinyin, le modèle, la vitesse, le microphone et le bouton de vérification.
+Le run historique [34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185), exécuté sur `c30d712`, a réussi pour ses quatre méthodes UI d’alors. Le run [34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020), sur `249f6d0`, a validé les deux méthodes d’écriture iOS ; ses autres méthodes UI ont échoué et il ne constitue donc pas une validation globale. Le run courant 34225700577 a validé les 2/2 méthodes UI macOS et les 7/7 méthodes UI iOS. Son scénario de passage oral a confirmé le récapitulatif à `5 / 6 exercices réussis` avec un exercice passé sans évaluation, puis la persistance après relance et l’activation de la leçon 2 avec ouverture de son premier exercice.
 
 ## Vérifications manuelles restantes
 
 Le conteneur de développement ne fournit ni Xcode, ni SwiftUI, ni SDK iOS ;
 les tests UI ne peuvent donc pas y être exécutés localement. Le run Apple
-historique 34207957185 a confirmé le parcours de reprise, le dialogue, l’oral
-compact, l’écriture, la persistance locale, la revue et le smoke jusqu’aux
-fiches vocabulaire, cartes, lecture et réglages. Les nouveaux contrats et
-fixtures de prononciation, le passage oral sans évaluation et les nouveaux
-parcours de traits sont couverts par la suite portable actuelle ; la validation
-Apple de cette composition reste à confirmer. Les captures natives du mode
-sombre du Mac et de l’iPhone sont incluses dans ce rapport pour l’examen visuel.
+historique 34207957185 a confirmé son périmètre de reprise, dialogue, oral
+compact, persistance locale, revue et smoke. Les nouveaux contrats et fixtures
+de prononciation, le passage oral sans évaluation et les parcours de traits
+sont couverts par la suite portable actuelle ; les deux parcours d’écriture iOS
+ont aussi été validés dans le run 34222443020. La validation Apple CI complète
+du commit courant est confirmée par le run 34225700577, qui a réussi ses trois
+jobs. Les captures natives du Mac et de l’iPhone sont incluses dans ce rapport
+pour l’examen visuel.
 
 L’audit VoiceOver, Dynamic Type XXXL, contraste, rendu du mode sombre,
 réduction des animations, clavier macOS et fenêtres étroites reste à compléter
@@ -146,11 +164,17 @@ seuls les scénarios du modèle local sont couverts.
 Le run 34207957185 confirme les états observables de reprise après arrière-plan
 et relance, le feedback sans double validation, les positions de tuiles, les
 cibles audio mandarin, la réplique précédente interactive, le chemin oral
-disponible dans ce jalon et la disposition compacte de l’oral. Les quatre
+disponible dans son jalon et la disposition compacte de l’oral. Les quatre
 méthodes iOS et les deux méthodes macOS de ce run historique ont réussi sans
 échec. La composition actuelle ajoute les résultats fournisseur fixture et le
 passage explicite sans évaluation ; elle ne doit pas être présentée comme une
 correction de prononciation active sans credentials.
+
+Dans le run courant 34225700577, le job package a validé 47/47 tests, le job
+macOS a validé le build, le smoke UI et l’export des captures, et le job UI iOS a
+validé 7/7 tests. Le fournisseur externe n’est toujours pas activé : le
+protocole, l’UI et les fixtures sont prêts, mais aucun compte, credential ou
+proxy n’est disponible dans la composition.
 
 Le workflow Apple conserve désormais aussi le bundle xcresult quand le run est
 vert. Les captures nommées du parcours sont disponibles avec le résultat de

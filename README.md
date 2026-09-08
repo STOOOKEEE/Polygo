@@ -7,11 +7,13 @@ histoires et une révision locale. Le contenu et l’interface sont originaux.
 Le dépôt cible iOS/iPadOS 17 et macOS 14. Le package Swift est portable ; les
 cibles SwiftUI et les adaptateurs Apple se construisent sur macOS. Le statut
 actuel est décrit dans [docs/QA_REPORT.md](docs/QA_REPORT.md) et
-[docs/INTEGRATION_STATUS.md](docs/INTEGRATION_STATUS.md). Le code validé est le
-commit `c30d712` ; sa validation Apple est verte dans le [run
-34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185). Ce
-run valide les 43 tests du package, la génération XcodeGen, les métadonnées, les
-builds iOS/macOS et les six méthodes UI (2 macOS et 4 iOS).
+[docs/INTEGRATION_STATUS.md](docs/INTEGRATION_STATUS.md). Le code courant est
+le commit `906135d`. Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
+est terminé avec succès : son job package a validé 47/47 tests portables, son
+job macOS le build, le smoke UI et 2/2 tests UI, et son job iOS 7/7 tests UI.
+Les trois jobs sont verts. Le run historique
+[34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185) reste
+la référence verte du jalon précédent.
 
 ## Démarrage local
 
@@ -42,15 +44,14 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
 ```
 
 `swift test --parallel` est le contrôle portable à lancer avant les builds
-Apple. Le package courant contient 46 tests XCTest, dont 6 tests de contrat de
-contenu ; les 46/46 tests portables passent avec les fixtures courantes. Le run
-Apple indiqué plus haut valide le jalon précédent ainsi que ses builds,
-métadonnées et six méthodes UI (2 macOS et 4 iOS). La cible UI
-contient le smoke français, le parcours de reprise et le parcours de fin/revue.
-Ces parcours couvrent notamment la reprise du brouillon et du feedback, le
-dialogue avec réplique précédente interactive, l’état oral non évalué et son
-passage sans note, les gestes du canevas, la persistance locale, le parcours et
-les cartes.
+Apple. Le package courant contient 47 tests XCTest, dont 7 tests de contrat de
+contenu ; les 47/47 tests portables passent avec les fixtures courantes. La
+cible UI contient le smoke français, le parcours de reprise et le parcours de
+fin/revue, avec les deux parcours d’écriture guidée et libre. Les quatre
+leçons rendent l’oral facultatif : « Passer sans évaluer » produit `skipped`, le
+bilan expose le nombre d’exercices passés, et les seuls exercices requis
+conditionnent la complétion et le déblocage de la leçon suivante, sans faux
+score.
 
 ## Ce qui est livré
 
@@ -80,6 +81,18 @@ réussi. Les captures natives validées sont disponibles ici :
 
 - [Accueil macOS en mode sombre](docs/screenshots/home-macos-dark.png) — 1600 × 900, SHA-256 `b511d762e3a23fe4e50c47d4e89e3bc9df2c1300fa9bd38e194d38f4c0dc5ece` ;
 - [Accueil iPhone en mode sombre](docs/screenshots/home-ios-dark.png) — 1206 × 2622, SHA-256 `aaeb9113f6fcf4f3205cfc658905faea3df94fae7e68325e8b6a61559e0ca597`.
+
+Le run 34225700577 a validé visuellement le parcours et le dialogue du commit
+`906135d` ; les captures de référence de ce jalon sont archivées ici :
+
+- [Parcours macOS en mode sombre](docs/screenshots/roadmap-macos-dark.png) — 1600 × 900, SHA-256 `98b21d6cab2d9026341fe49e04b3fdd6def2c2fb527046bc9d1fc3168e40f132` ;
+- [Dialogue macOS en mode sombre](docs/screenshots/dialogue-macos-dark.png) — 1600 × 900, SHA-256 `0f816f4fe790409c88ca8776d714e0362dd6608cfbab8364b8a3632709391859`.
+
+Les deux parcours d’écriture iOS ont également réussi sur le jalon `249f6d0`
+; le run complet a échoué sur d’autres méthodes UI, donc cette preuve reste
+limitée à ces deux parcours. Leurs captures sont archivées dans
+[`docs/screenshots/handwriting-guided-ios.png`](docs/screenshots/handwriting-guided-ios.png)
+et [`docs/screenshots/handwriting-retry-ios.png`](docs/screenshots/handwriting-retry-ios.png).
 
 Le workflow vérifie les `Info.plist` séparés pour iOS et macOS, la déclaration
 de lancement iOS moderne plein écran (`UILaunchScreen`) et les familles iPhone et
@@ -136,10 +149,12 @@ sans évaluer », enregistré comme `skipped` sans réussite. Un rapport fixture
 terminé peut afficher le verdict, le score et les lignes par mot, son et ton ;
 le rapport doit venir du fournisseur pour que l’exercice soit évalué.
 
-Le protocole prévoit des adaptateurs iFlytek ou SpeechSuper derrière un serveur
-proxy, mais aucun moteur externe n’est activé dans cette composition. Les clés
-et secrets ne sont jamais embarqués dans l’app. Les fixtures du protocole
-couvrent les états terminé, non configuré, indisponible et sans conclusion.
+Le protocole, l’interface et les fixtures sont prêts pour des adaptateurs
+iFlytek ou SpeechSuper derrière un serveur proxy, mais aucun fournisseur
+externe n’est activé dans cette composition : aucun compte, credential ou proxy
+n’est disponible dans ce jalon. Les clés et secrets ne sont jamais embarqués
+dans l’app. Les fixtures du protocole couvrent les états terminé, non configuré,
+indisponible et sans conclusion.
 Les marqueurs de ton restent visuels et pédagogiques, sans faux signal audio.
 L’interface orale compacte garde la cible, le modèle et le microphone
 accessibles sur un écran iPhone standard ; la validation sur appareil avec un

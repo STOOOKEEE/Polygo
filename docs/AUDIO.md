@@ -85,12 +85,16 @@ une note de prononciation dans le parcours actuel. La vue ne crée une réponse
 évaluable qu’avec un rapport terminé qui contient son score de fournisseur ;
 un rapport incertain ou l’absence de fournisseur laisse l’exercice sans note.
 Le bouton « Passer sans évaluer » enregistre alors un état `skipped`, qui ne
-compte pas comme une réussite et permet de poursuivre la leçon.
+compte pas comme une réussite et permet de poursuivre la leçon. Dans les quatre
+leçons livrées, l’exercice oral est optionnel : `skipped` est compté séparément
+dans le bilan (`skippedCount`) et ne bloque ni la complétion fondée sur les
+exercices requis ni le déblocage de la leçon suivante.
 
 Les adaptateurs iFlytek ou SpeechSuper pourront implémenter ce protocole
-derrière un serveur proxy. Les clés et secrets ne doivent jamais être
-embarqués dans l’app ; aucun de ces fournisseurs externes n’est activé dans
-la composition actuelle.
+derrière un serveur proxy. Le protocole, l’interface et les fixtures sont prêts
+pour cette intégration, mais aucun fournisseur externe n’est activé dans la
+composition actuelle : aucun compte, credential ou proxy n’est disponible.
+Les clés et secrets ne doivent jamais être embarqués dans l’app.
 
 ## TTS Mandarin et disponibilité hors ligne
 
@@ -130,10 +134,12 @@ ne fabriquent ni note de prononciation ni auto-évaluation positive.
 
 ## Validation Apple
 
-Le conteneur Linux ne possède ni SDK Apple ni Xcode : la compilation du target,
-les permissions, la disponibilité des voix, l’interruption audio et le parcours
-enregistrement/réécoute/transcription doivent être vérifiés sur un runner
-iOS 17+ et macOS 14+ avec XcodeGen puis Xcode. Les fixtures du protocole
-vérifient déjà les états terminé, non configuré et sans résultat ; la validation
-sur appareil doit confirmer qu’un appareil sans modèle Speech local conserve
-la transcription descriptive et le passage sans évaluation, sans faux score.
+Le conteneur Linux ne possède ni SDK Apple ni Xcode. Le [run Apple
+34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577), sur le
+commit `906135d`, a toutefois validé les 47/47 tests portables, les 2/2 tests UI
+macOS et les 7/7 tests UI iOS ; il couvre le chemin oral non configuré et le
+passage sans évaluation. Les permissions, la disponibilité des voix,
+l’interruption audio et le parcours enregistrement/réécoute/transcription avec
+un fournisseur configuré restent à vérifier sur appareil. Les fixtures du
+protocole vérifient déjà les états terminé, non configuré et sans résultat ; la
+correction par fournisseur externe reste à brancher, sans score fabriqué.

@@ -121,9 +121,18 @@ feedback immédiat, une nouvelle tentative après un à trois items, puis une
 carte. Deux réussites indépendantes peuvent diminuer l’aide d’un niveau ;
 l’apprenant peut toujours la choisir. Sans micro ou sans fournisseur de
 prononciation, la transcription reste descriptive et l’exercice oral peut être
-`skipped` sans note ni réussite. Un résultat `selfReported` reste réservé aux
-cartes et au chemin d’écriture qui l’autorise ; jamais un score de prononciation
-ne doit être fabriqué.
+`skipped` sans note ni réussite. Dans les quatre leçons livrées, cet exercice
+est facultatif (`required: false`) : le bilan l’expose via `skippedCount`, tandis
+que les exercices requis validés suffisent à enregistrer la complétion de la
+leçon et à déverrouiller la suivante. Le récapitulatif peut donc afficher
+« Leçon enregistrée » et `5 / 6 exercices réussis` avec un oral `skipped` ; ce
+saut reste exclu des réussites et du score. Un résultat `selfReported` reste
+réservé aux cartes et au chemin
+d’écriture qui l’autorise ; jamais un score de prononciation ne doit être
+fabriqué.
+Le protocole `SpeechPronunciationService`, l’UI et les fixtures sont prêts pour
+un fournisseur externe, mais aucun provider, compte, credential ou proxy n’est
+activé dans la composition actuelle.
 Le scheduler `PolygoSRS.SM2Scheduler` applique le SM-2 déterministe. Pour une
 qualité `q`, `EF' = EF + (0.1 - (5-q) × (0.08 + (5-q) × 0.02))`, avec EF initial
 2,5 et plancher 1,3. L’interface expose `again` (q=0), `hard` (q=3), `good`
