@@ -722,7 +722,7 @@ private struct RoadmapModuleCanvas: View {
             unlocked: unlocked
         )
 
-        HStack(alignment: .top, spacing: 12) {
+        return HStack(alignment: .top, spacing: 12) {
             if !compact && !index.isMultiple(of: 2) {
                 details
                 action
