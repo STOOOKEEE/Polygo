@@ -26,8 +26,8 @@ public struct OralView: View {
                     SpeechPracticeView(
                         exercise: exercise,
                         audio: model.dependencies.audio,
-                        pronunciation: model.dependencies.pronunciation,
                         answer: $answer,
+                        pronunciation: model.dependencies.pronunciation,
                         onRecordingCreated: { recordingID in
                             Task { await model.saveRecording(recordingID, exerciseID: exerciseID) }
                         }
