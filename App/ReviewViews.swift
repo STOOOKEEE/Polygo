@@ -10,6 +10,7 @@ public struct ReviewCardsView: View {
     @State private var selected: ReviewState?
     @State private var revealed = false
     @State private var message: String?
+    @State private var isLoading = true
 
     public init(maxCards: Int? = nil) {
         self.maxCards = maxCards.map { max(1, $0) }
@@ -20,52 +21,59 @@ public struct ReviewCardsView: View {
                 HStack(alignment: .firstTextBaseline) {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Cartes").font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
-                        Text(reviewCountLabel)
+                        Text(isLoading ? "Chargement de la file…" : reviewCountLabel)
                             .font(.body).foregroundStyle(SylluneColor.inkMuted)
                     }
                     Spacer()
-                    if !due.isEmpty { ProgressRing(value: selected == nil ? 0 : 1 / Double(max(1, due.count))).frame(width: 48, height: 48) }
-                }
-                if let message { Text(message).font(.callout).foregroundStyle(SylluneColor.inkMuted).padding(12).sylluneCard(radius: 12) }
-                if let maxCards, !due.isEmpty, totalDueCount > due.count {
-                    HStack(alignment: .firstTextBaseline, spacing: 8) {
-                        Label("Session courte : \(due.count) cartes", systemImage: "timer")
-                            .font(.callout.weight(.semibold))
-                            .foregroundStyle(SylluneColor.jadeDeep)
-                        Spacer(minLength: 4)
-                        NavigationLink("Poursuivre", destination: ReviewCardsView())
-                            .font(.callout.weight(.semibold))
+                    if !isLoading, !due.isEmpty {
+                        ProgressRing(value: selected == nil ? 0 : 1 / Double(max(1, due.count))).frame(width: 48, height: 48)
                     }
-                    .padding(12)
-                    .sylluneCard(style: .quiet, radius: 12)
-                    .accessibilityElement(children: .combine)
-                    .accessibilityLabel("Session courte limitée à \(maxCards) cartes. \(totalDueCount - due.count) cartes restent dues.")
                 }
-                if let selected {
-                    reviewCard(selected)
-                } else if shortSessionFinished {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Label("Session terminée", systemImage: "checkmark.circle.fill")
-                            .font(.title3.weight(.semibold))
-                            .foregroundStyle(SylluneColor.success)
-                        Text("Il reste \(totalDueCount) \(totalDueCount == 1 ? "carte" : "cartes") \(totalDueCount == 1 ? "due" : "dues") dans la file complète.")
-                            .font(.body)
-                            .foregroundStyle(SylluneColor.inkMuted)
-                        NavigationLink("Poursuivre", destination: ReviewCardsView())
+                if isLoading {
+                    ProgressView("Préparation de la file de révision…")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    if let message { Text(message).font(.callout).foregroundStyle(SylluneColor.inkMuted).padding(12).sylluneCard(radius: 12) }
+                    if let maxCards, !due.isEmpty, totalDueCount > due.count {
+                        HStack(alignment: .firstTextBaseline, spacing: 8) {
+                            Label("Session courte : \(due.count) cartes", systemImage: "timer")
+                                .font(.callout.weight(.semibold))
+                                .foregroundStyle(SylluneColor.jadeDeep)
+                            Spacer(minLength: 4)
+                            NavigationLink("Poursuivre", destination: ReviewCardsView())
+                                .font(.callout.weight(.semibold))
+                        }
+                        .padding(12)
+                        .sylluneCard(style: .quiet, radius: 12)
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("Session courte limitée à \(maxCards) cartes. \(totalDueCount - due.count) cartes restent dues.")
+                    }
+                    if let selected {
+                        reviewCard(selected)
+                    } else if shortSessionFinished {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("Session terminée", systemImage: "checkmark.circle.fill")
+                                .font(.title3.weight(.semibold))
+                                .foregroundStyle(SylluneColor.success)
+                            Text("Il reste \(totalDueCount) \(totalDueCount == 1 ? "carte" : "cartes") \(totalDueCount == 1 ? "due" : "dues") dans la file complète.")
+                                .font(.body)
+                                .foregroundStyle(SylluneColor.inkMuted)
+                            NavigationLink("Poursuivre", destination: ReviewCardsView())
+                                .buttonStyle(SyllunePrimaryButtonStyle())
+                        }
+                        .padding(20)
+                        .sylluneCard(radius: 24)
+                    } else if due.isEmpty {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("Rien à revoir pour le moment", systemImage: "checkmark.circle.fill").font(.title3.weight(.semibold)).foregroundStyle(SylluneColor.success)
+                            Text("Les cartes ajoutées pendant tes leçons apparaîtront ici à leur échéance.").font(.body).foregroundStyle(SylluneColor.inkMuted)
+                            NavigationLink(destination: LearningPathView()) { Text("Retour au parcours") }.buttonStyle(SyllunePrimaryButtonStyle())
+                        }
+                        .padding(20).sylluneCard(radius: 24)
+                    } else {
+                        Button("Commencer") { selected = due.first; revealed = false }
                             .buttonStyle(SyllunePrimaryButtonStyle())
                     }
-                    .padding(20)
-                    .sylluneCard(radius: 24)
-                } else if due.isEmpty {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Label("Rien à revoir pour le moment", systemImage: "checkmark.circle.fill").font(.title3.weight(.semibold)).foregroundStyle(SylluneColor.success)
-                        Text("Les cartes ajoutées pendant tes leçons apparaîtront ici à leur échéance.").font(.body).foregroundStyle(SylluneColor.inkMuted)
-                        NavigationLink(destination: LearningPathView()) { Text("Retour au parcours") }.buttonStyle(SyllunePrimaryButtonStyle())
-                    }
-                    .padding(20).sylluneCard(radius: 24)
-                } else {
-                    Button("Commencer") { selected = due.first; revealed = false }
-                        .buttonStyle(SyllunePrimaryButtonStyle())
                 }
             }
             .frame(maxWidth: 680, alignment: .leading)
@@ -75,8 +83,10 @@ public struct ReviewCardsView: View {
         .background(SylluneColor.canvas)
         .navigationTitle("Cartes")
         .task {
+            isLoading = true
             for lessonID in model.orderedLessonIDs { _ = await model.loadLesson(lessonID) }
             refresh()
+            isLoading = false
         }
     }
 

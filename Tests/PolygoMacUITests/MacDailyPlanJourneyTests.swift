@@ -117,9 +117,16 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
         app.buttons.matching(NSPredicate(format: "label == %@", "Continuer")).firstMatch.click()
+        let oralExercise = app.staticTexts.matching(
+            identifier: "lesson.exercise.ex-l5-speak"
+        ).firstMatch
+        XCTAssertTrue(oralExercise.waitForExistence(timeout: timeout), "L’avancement doit afficher l’activité orale")
 
         // The listening evaluation and the following position must survive a
         // process restart before the rest of the session is completed.
+        // Remove the bootstrap route override so the relaunch reads the
+        // lesson route persisted by the application.
+        app.launchArguments.removeAll { $0 == "-syllune.last.route" || $0 == "today" }
         app.terminate()
         app.launch()
         XCTAssertTrue(
