@@ -136,9 +136,11 @@ final class LessonReviewJourneyTests: XCTestCase {
         XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "La première carte doit proposer sa révélation")
         XCTAssertFalse(text(containing: "nǐ hǎo · 3-3").exists, "Le pinyin doit rester masqué au recto")
         XCTAssertFalse(text(containing: "bonjour ; salut").exists, "La traduction doit rester masquée au recto")
+        attachScreenshot(named: "ios-review-front")
         reveal.tap()
         XCTAssertTrue(text(containing: "nǐ hǎo · 3-3").waitForExistence(timeout: timeout), "La carte révélée doit afficher le pinyin de 你好")
         XCTAssertTrue(text(containing: "bonjour ; salut").waitForExistence(timeout: timeout), "La carte révélée doit afficher la traduction française de 你好")
+        attachScreenshot(named: "ios-review-revealed")
 
         navigateToTab("Parcours")
         XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour des cartes doit retrouver le parcours")

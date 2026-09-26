@@ -139,6 +139,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         XCTAssertTrue(restoredVerify.isEnabled, "La réponse sélectionnée doit être visible comme réponse en cours après relance")
         tapWhenVisible(restoredVerify)
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La validation doit être enregistrée")
+        attachScreenshot(named: "ios-lesson-correct-feedback")
 
         // Feedback is itself resumable. A second relaunch must show the
         // correction and Continue, rather than evaluating the same answer a

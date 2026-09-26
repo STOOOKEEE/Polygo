@@ -77,9 +77,13 @@ final class PolygoAppUITests: XCTestCase {
         navigateToTab("Explorer")
         let story = element(containing: "Le premier échange", type: .any)
         XCTAssertTrue(story.waitForExistence(timeout: timeout), "Une histoire locale doit être proposée")
+        attachScreenshot(named: "ios-explorer")
         story.tap()
-        XCTAssertTrue(element(containing: "Lecture", type: .any).waitForExistence(timeout: timeout), "La lecture de l’histoire doit s’ouvrir")
-
+        let storyReading = element(containing: "Lecture", type: .any)
+        XCTAssertTrue(storyReading.waitForExistence(timeout: timeout), "La lecture de l’histoire doit s’ouvrir")
+        if storyReading.exists {
+            attachScreenshot(named: "ios-story-reading")
+        }
         // Return to Explorer's root before opening the dictionary sheet. The
         // sheet's list uses an ASCII pinyin query so the test does not depend
         // on the simulator keyboard layout for Chinese input.
@@ -94,12 +98,14 @@ final class PolygoAppUITests: XCTestCase {
         // draft step is currently visible before asserting the shell.
         let welcome = element(containing: "Bienvenue dans Syllune", type: .any)
         if welcome.waitForExistence(timeout: 5) {
+            attachScreenshot(named: "ios-onboarding-welcome")
             button(exactly: "Commencer").tap()
         }
 
         let name = element(containing: "Comment t’appeler", type: .textField)
         if name.waitForExistence(timeout: 3) {
             name.tap()
+            attachScreenshot(named: "ios-onboarding-name-keyboard")
             name.typeText("Armand")
             for option in ["Je commence", "Je connais le pinyin", "Je lis déjà quelques phrases"] {
                 XCTAssertTrue(element(containing: option, type: .button).waitForExistence(timeout: timeout), "Option onboarding absente : \(option)")
@@ -113,11 +119,14 @@ final class PolygoAppUITests: XCTestCase {
                 XCTAssertTrue(element(containing: duration, type: .any).waitForExistence(timeout: timeout), "Durée onboarding absente : \(duration)")
             }
             element(containing: "15 min", type: .any).tap()
+            attachScreenshot(named: "ios-onboarding-rhythm")
             element(containing: "Continuer", type: .button).tap()
+
         }
 
         let ready = button(exactly: "Ouvrir ma première leçon")
         if ready.waitForExistence(timeout: 3) {
+            attachScreenshot(named: "ios-onboarding-ready")
             ready.tap()
         }
         XCTAssertTrue(element(containing: "Aujourd’hui", type: .any).waitForExistence(timeout: timeout), "L’application doit démarrer sur l’espace d’apprentissage")
@@ -205,4 +214,11 @@ final class PolygoAppUITests: XCTestCase {
             .matching(NSPredicate(format: "label CONTAINS[c] %@", text))
             .firstMatch
     }
+    private func attachScreenshot(named name: String) {
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
 }

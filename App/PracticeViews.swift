@@ -19,7 +19,7 @@ public struct OralView: View {
                 if let exercise {
                     ChineseSelectableText(
                         exercise.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Oral",
-                        font: .largeTitle.weight(.semibold),
+                        font: .title2.weight(.semibold),
                         speechEnabled: false
                     )
                         .foregroundStyle(SylluneColor.ink)
@@ -33,12 +33,20 @@ public struct OralView: View {
                         }
                     )
                     if let evaluation { FeedbackViewForPractice(evaluation: evaluation) }
-                    Button(actionTitle) { submit() }
-                        .buttonStyle(SyllunePrimaryButtonStyle()).disabled(lessonID == nil || blockID == nil)
                 } else if let message { ContentUnavailableView("Exercice oral indisponible", systemImage: "mic.slash", description: Text(message)) }
                 else { ProgressView("Chargement de l’exercice…") }
             }
             .frame(maxWidth: 680, alignment: .leading).frame(maxWidth: .infinity, alignment: .leading).padding(20)
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if exercise != nil {
+                PracticeActionBar(
+                    title: actionTitle,
+                    evaluation: evaluation,
+                    isEnabled: lessonID != nil && blockID != nil,
+                    action: { submit() }
+                )
+            }
         }
         .background(SylluneColor.canvas).navigationTitle("Oral")
         .task { await findExercise() }
@@ -98,11 +106,20 @@ public struct WritingView: View {
                         }
                     )
                     if let evaluation { FeedbackViewForPractice(evaluation: evaluation) }
-                    Button(evaluation == nil ? "Vérifier" : "Terminer") { submit() }.buttonStyle(SyllunePrimaryButtonStyle()).disabled(answer == nil || lessonID == nil || blockID == nil)
                 } else if let message { ContentUnavailableView("Exercice d’écriture indisponible", systemImage: "pencil.slash", description: Text(message)) }
                 else { ProgressView("Chargement de l’exercice…") }
             }
             .frame(maxWidth: 680, alignment: .leading).frame(maxWidth: .infinity, alignment: .leading).padding(20)
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if exercise != nil {
+                PracticeActionBar(
+                    title: evaluation == nil ? "Vérifier" : "Terminer",
+                    evaluation: evaluation,
+                    isEnabled: answer != nil && lessonID != nil && blockID != nil,
+                    action: { submit() }
+                )
+            }
         }
         .background(SylluneColor.canvas).navigationTitle("Écriture")
         .task { await findExercise() }
@@ -123,6 +140,37 @@ public struct WritingView: View {
         if evaluation != nil { return }
         guard let exercise, let answer, let lessonID, let blockID else { return }
         Task { evaluation = await model.evaluate(.handwriting(exercise), answer: answer, lessonID: lessonID, blockID: blockID) }
+    }
+}
+
+private struct PracticeActionBar: View {
+    let title: String
+    let evaluation: ExerciseEvaluation?
+    let isEnabled: Bool
+    let action: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if let evaluation {
+                Label(
+                    evaluation.outcome == .skipped ? "Passé sans évaluation" : (evaluation.accepted ? "Réponse enregistrée" : "À revoir"),
+                    systemImage: evaluation.outcome == .skipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill")
+                )
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(evaluation.outcome == .skipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            Button(title) { action() }
+                .buttonStyle(SyllunePrimaryButtonStyle())
+                .disabled(!isEnabled)
+                .frame(maxWidth: .infinity)
+        }
+        .frame(maxWidth: 520)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .top) { Divider() }
     }
 }
 

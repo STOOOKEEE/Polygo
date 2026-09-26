@@ -81,10 +81,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "mac-daily-plan-day-one")
 
-        // AppKit exposes the accessibility identifier applied to the hero
-        // container as the tappable button. The nested NavigationLink keeps
-        // its iOS identifier, but is not a separate macOS accessibility node.
-        let openLesson = button(identifier: "home.hero")
+        let openLesson = button(identifier: "home.primaryAction")
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "Aujourd’hui doit proposer la séance du jour")
         XCTAssertTrue(openLesson.isHittable, "L’action de la séance du jour doit être accessible")
         openLesson.click()

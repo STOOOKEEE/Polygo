@@ -29,8 +29,13 @@ public struct OnboardingView: View {
         VStack(spacing: 0) {
             HStack {
                 if step > 0 {
-                    Button("Retour") { move(to: step - 1) }
-                        .buttonStyle(.borderless)
+                    Button {
+                        move(to: step - 1)
+                    } label: {
+                        Text("Retour")
+                            .frame(minHeight: 44)
+                    }
+                    .buttonStyle(.borderless)
                 }
                 Spacer()
                 Text("\(step + 1) sur 4")
@@ -62,7 +67,61 @@ public struct OnboardingView: View {
             }
         }
         .background(SylluneColor.canvas.ignoresSafeArea())
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            primaryAction
+                .frame(maxWidth: 640)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 24)
+                .padding(.top, 12)
+                .padding(.bottom, 12)
+                .background {
+                    SylluneColor.canvas
+                        .overlay(alignment: .top) {
+                            Rectangle()
+                                .fill(SylluneColor.border.opacity(0.28))
+                                .frame(height: 1)
+                        }
+                        .ignoresSafeArea(edges: .bottom)
+                }
+        }
         .sheet(isPresented: $showingAbout) { AboutOnboardingView() }
+    }
+    @ViewBuilder
+    private var primaryAction: some View {
+        switch step {
+        case 0:
+            primaryButton("Commencer") { move(to: 1) }
+        case 1:
+            primaryButton("Continuer") { move(to: 2) }
+        case 2:
+            primaryButton("Continuer") { move(to: 3) }
+        default:
+            primaryButton("Ouvrir ma première leçon") {
+                Task {
+                    guard await model.completeOnboarding(
+                        displayName: name,
+                        level: level,
+                        minutes: minutes,
+                        reminderDays: days
+                    ) else { return }
+                    guard let first = model.nextLessonID ?? model.orderedLessonIDs.first else { return }
+                    // Keep the destination as an identified lesson route. The
+                    // compact shell can select its tab while the lesson route
+                    // is handed to the navigation layer for the initial push.
+                    if await model.startLesson(first) {
+                        model.persistRoute(.lesson(first))
+                    }
+                }
+            }
+        }
+    }
+
+    private func primaryButton(_ title: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(title)
+                .frame(maxWidth: .infinity)
+        }
+        .buttonStyle(SyllunePrimaryButtonStyle())
     }
 
     private var welcomeStep: some View {
@@ -79,11 +138,15 @@ public struct OnboardingView: View {
                     .font(.body)
                     .foregroundStyle(SylluneColor.inkMuted)
             }
-            Button("Commencer") { move(to: 1) }
-                .buttonStyle(SyllunePrimaryButtonStyle())
-            Button("En savoir plus") { showingAbout = true }
-                .buttonStyle(.borderless)
-                .foregroundStyle(SylluneColor.jadeDeep)
+
+            Button {
+                showingAbout = true
+            } label: {
+                Text("En savoir plus")
+                    .frame(minHeight: 44)
+            }
+            .buttonStyle(.borderless)
+            .foregroundStyle(SylluneColor.jadeDeep)
         }
     }
 
@@ -93,6 +156,7 @@ public struct OnboardingView: View {
             TextField("Comment t’appeler ? (facultatif)", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .textContentType(.name)
+                .frame(minHeight: 44)
                 // Keep the prompt discoverable as the text field's own
                 // accessibility label. SwiftUI can expose a placeholder-only
                 // TextField without its prompt in the UI test/accessibility
@@ -108,8 +172,7 @@ public struct OnboardingView: View {
                 levelButton("Je connais le pinyin", value: "pinyin", detail: "Je lis les sons et les tons")
                 levelButton("Je lis déjà quelques phrases", value: "sentences", detail: "Je veux consolider les bases")
             }
-            Button("Continuer") { move(to: 2) }
-                .buttonStyle(SyllunePrimaryButtonStyle())
+
         }
     }
 
@@ -125,6 +188,7 @@ public struct OnboardingView: View {
                     Text("15 min").tag(15)
                 }
                 .pickerStyle(.segmented)
+                .frame(minHeight: 44)
                 .onChange(of: minutes) { _, _ in saveDraft() }
             }
             VStack(alignment: .leading, spacing: 12) {
@@ -143,8 +207,7 @@ public struct OnboardingView: View {
                     }
                 }
             }
-            Button("Continuer") { move(to: 3) }
-                .buttonStyle(SyllunePrimaryButtonStyle())
+
         }
     }
 
@@ -159,24 +222,6 @@ public struct OnboardingView: View {
             .foregroundStyle(SylluneColor.inkMuted)
             .padding(18)
             .sylluneCard()
-            Button("Ouvrir ma première leçon") {
-                Task {
-                    guard await model.completeOnboarding(
-                        displayName: name,
-                        level: level,
-                        minutes: minutes,
-                        reminderDays: days
-                    ) else { return }
-                    guard let first = model.nextLessonID ?? model.orderedLessonIDs.first else { return }
-                    // Keep the destination as an identified lesson route. The
-                    // compact shell can select its tab while the lesson route
-                    // is handed to the navigation layer for the initial push.
-                    if await model.startLesson(first) {
-                        model.persistRoute(.lesson(first))
-                    }
-                }
-            }
-            .buttonStyle(SyllunePrimaryButtonStyle())
         }
     }
 
@@ -252,15 +297,27 @@ private struct AboutOnboardingView: View {
 
 public struct SyllunePrimaryButtonStyle: ButtonStyle {
     @Environment(\.sylluneReduceMotion) private var reduceMotion
+    @Environment(\.isEnabled) private var isEnabled
 
     public init() {}
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.body.weight(.semibold))
-            .foregroundStyle(Color.white)
-            .frame(maxWidth: .infinity, minHeight: 48)
-            .background(SylluneColor.jadeButton.opacity(configuration.isPressed ? 0.75 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .scaleEffect(reduceMotion ? 1 : (configuration.isPressed ? 0.98 : 1))
+            .foregroundStyle(isEnabled ? Color.white : SylluneColor.inkMuted)
+            .frame(maxWidth: .infinity, minHeight: 52)
+            .background(
+                isEnabled
+                    ? SylluneColor.jadeButton.opacity(configuration.isPressed ? 0.78 : 1)
+                    : SylluneColor.surfaceRaised,
+                in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+            )
+            .overlay {
+                if !isEnabled {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(SylluneColor.border, lineWidth: 1)
+                }
+            }
+            .scaleEffect(reduceMotion || !isEnabled ? 1 : (configuration.isPressed ? 0.98 : 1))
             .animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: configuration.isPressed)
             .transaction { transaction in
                 if reduceMotion {

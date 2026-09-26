@@ -160,14 +160,6 @@ public struct LessonView: View {
                 if let reading = readingReference(in: lesson, for: spec.id) {
                     readingReferenceDisclosure(reading)
                 }
-                HStack {
-                    Text("\(currentIndex + 1) / \(exercises.count)")
-                        .font(.callout.weight(.semibold))
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .accessibilityIdentifier("lesson.exercise.\(spec.id.rawValue)")
-                    Spacer()
-                    ProgressView(value: Double(currentIndex), total: Double(max(1, exercises.count))).tint(SylluneColor.jade).frame(maxWidth: 180)
-                }
                 if case .speaking = spec {
                     // The speaking control already presents the target phrase
                     // and its pinyin. Keep the lesson shell to one short cue
@@ -209,6 +201,24 @@ public struct LessonView: View {
             .frame(maxWidth: 720, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(20)
+        }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            HStack {
+                Text("\(currentIndex + 1) / \(exercises.count)")
+                    .font(.callout.weight(.semibold))
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .accessibilityIdentifier("lesson.exercise.\(spec.id.rawValue)")
+                Spacer()
+                ProgressView(value: Double(currentIndex), total: Double(max(1, exercises.count)))
+                    .tint(SylluneColor.jade)
+                    .frame(maxWidth: 180)
+            }
+            .frame(maxWidth: 720)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .background(.ultraThinMaterial)
+            .overlay(alignment: .bottom) { Divider() }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             exerciseActionBar(spec: spec, blockID: block.0)
@@ -283,22 +293,32 @@ public struct LessonView: View {
     }
 
     private func exerciseActionBar(spec: ExerciseSpec, blockID: BlockID) -> some View {
-        HStack(spacing: 12) {
-            if evaluation != nil {
-                Button("Réessayer") {
-                    self.evaluation = nil
-                    self.answer = nil
-                }
-                .buttonStyle(.bordered)
-                .disabled(evaluation?.accepted == true)
+        VStack(alignment: .leading, spacing: 8) {
+            if let evaluation {
+                Label(
+                    evaluation.outcome == .skipped ? "Passé sans évaluation" : (evaluation.accepted ? "Correct" : "À revoir"),
+                    systemImage: evaluation.outcome == .skipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill")
+                )
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(evaluation.outcome == .skipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            Spacer(minLength: 8)
-            Button(actionTitle(for: spec)) { submitOrAdvance(spec: spec, blockID: blockID) }
-                .buttonStyle(SyllunePrimaryButtonStyle())
-                .disabled(isEvaluating || isFinalizing || !canSubmit(spec))
-                .frame(maxWidth: 240)
+            HStack(spacing: 12) {
+                if evaluation != nil {
+                    Button("Réessayer") {
+                        self.evaluation = nil
+                        self.answer = nil
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(evaluation?.accepted == true)
+                }
+                Button(actionTitle(for: spec)) { submitOrAdvance(spec: spec, blockID: blockID) }
+                    .buttonStyle(SyllunePrimaryButtonStyle())
+                    .disabled(isEvaluating || isFinalizing || !canSubmit(spec))
+                    .frame(maxWidth: .infinity)
+            }
         }
-        .frame(maxWidth: 720)
+        .frame(maxWidth: 520)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
@@ -1268,6 +1288,10 @@ private struct ChoiceAnswerView: View {
     var body: some View {
         VStack(spacing: 10) {
             ForEach(exercise.choices) { choice in
+                let isSelected = answer.map { value in
+                    if case .choice(let selected) = value { return selected == choice.id }
+                    return false
+                } ?? false
                 Button {
                     answer = .choice(choiceID: choice.id)
                     let target = PolygoCore.MandarinSpeechText.target(from: choice.label.resolve(preferred: ["fr", "en"]) ?? "")
@@ -1275,16 +1299,27 @@ private struct ChoiceAnswerView: View {
                     Task { try? await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal) }
                 } label: {
                     HStack {
-                        ChineseSelectableText(choice.label.resolve(preferred: ["fr", "en"]) ?? "", speechEnabled: false)
+                        ChineseSelectableText(choice.label.resolve(preferred: ["fr", "en"]) ?? "", font: .title3, speechEnabled: false)
                         Spacer()
-                        if case .choice(let selected) = answer, selected == choice.id { Image(systemName: "checkmark.circle.fill") }
+                        if isSelected {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(SylluneColor.jade)
+                        }
                     }
-                    .padding(16).contentShape(Rectangle())
+                    .frame(maxWidth: .infinity, minHeight: 60, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                    .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain).foregroundStyle(SylluneColor.ink)
-                .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 12))
-                .overlay(RoundedRectangle(cornerRadius: 12).stroke(SylluneColor.border, lineWidth: 1))
+                .buttonStyle(.plain)
+                .foregroundStyle(SylluneColor.ink)
+                .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(isSelected ? SylluneColor.jade : SylluneColor.border, lineWidth: isSelected ? 2 : 1)
+                )
                 .accessibilityLabel(choice.label.resolve(preferred: ["fr", "en"]) ?? "Réponse")
+                .accessibilityValue(isSelected ? "Sélectionnée" : "Non sélectionnée")
             }
         }
     }
@@ -1332,6 +1367,7 @@ private struct WordOrderAnswerView: View {
                 .foregroundStyle(SylluneColor.ink).frame(maxWidth: .infinity, alignment: .leading).padding(16).sylluneCard(radius: 12)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 8)], spacing: 8) {
                 ForEach(exercise.tokens) { token in
+                    let isSelected = selected.contains(token.id)
                     Button {
                         if let index = selected.firstIndex(of: token.id) { selected.remove(at: index) }
                         else { selected.append(token.id) }
@@ -1340,10 +1376,20 @@ private struct WordOrderAnswerView: View {
                             try? await model.dependencies.audio.speak(text: token.hanzi, localeIdentifier: "zh-CN", rate: .normal)
                         }
                     } label: {
-                        VStack(spacing: 3) { ChineseSelectableText(token.hanzi, font: .title3, speechEnabled: false); if let pinyin = token.pinyin { Text(pinyin).font(.caption) } }
-                            .frame(maxWidth: .infinity, minHeight: 54)
+                        VStack(spacing: 3) {
+                            ChineseSelectableText(token.hanzi, font: .title3, speechEnabled: false)
+                            if let pinyin = token.pinyin { Text(pinyin).font(.callout) }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 64)
+                        .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
-                    .buttonStyle(.bordered).tint(selected.contains(token.id) ? SylluneColor.jade : SylluneColor.inkMuted)
+                    .buttonStyle(.plain)
+                    .foregroundStyle(SylluneColor.ink)
+                    .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(isSelected ? SylluneColor.jade : SylluneColor.border, lineWidth: isSelected ? 2 : 1)
+                    )
                     .accessibilityLabel("\(token.hanzi), position \(selected.firstIndex(of: token.id).map { String($0 + 1) } ?? "non choisie")")
                 }
             }
@@ -1402,15 +1448,16 @@ private struct FillAnswerView: View {
                                     .foregroundStyle(SylluneColor.jade)
                             }
                         }
-                        .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
-                        .padding(16)
+                        .frame(maxWidth: .infinity, minHeight: 60, alignment: .leading)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .foregroundStyle(SylluneColor.ink)
-                    .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 12))
+                    .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                     .overlay(
-                        RoundedRectangle(cornerRadius: 12)
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .stroke(isSelected ? SylluneColor.jade : SylluneColor.border, lineWidth: isSelected ? 2 : 1)
                     )
                     .accessibilityLabel(value.isEmpty ? "Réponse" : value)

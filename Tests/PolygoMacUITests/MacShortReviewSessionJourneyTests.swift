@@ -71,12 +71,18 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
             if finished.waitForExistence(timeout: 0.25) { break }
             let reveal = button(exactly: "Révéler")
             XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "Chaque carte doit pouvoir être révélée")
+            if completedCards == 0 {
+                attachScreenshot(named: "mac-short-review-front")
+            }
             reveal.click()
 
             let easy = app.buttons.matching(
                 NSPredicate(format: "label CONTAINS[c] %@", "Facile")
             ).firstMatch
             XCTAssertTrue(easy.waitForExistence(timeout: timeout), "Une carte révélée doit proposer une évaluation")
+            if completedCards == 0 {
+                attachScreenshot(named: "mac-short-review-revealed")
+            }
             XCTAssertTrue(easy.isHittable, "L’évaluation Facile doit être accessible")
             easy.click()
             completedCards += 1

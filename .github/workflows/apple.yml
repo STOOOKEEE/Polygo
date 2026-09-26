@@ -100,14 +100,105 @@ jobs:
             -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests.xcresult" \
             test
 
-      - name: Upload iOS UI test result bundle
-        # Keep successful UI attachments too: the journey adds named
-        # screenshots for visual review, and a green run is the useful case.
+      - name: Run iPad large-text UI smoke tests
+        run: |
+          set -euo pipefail
+
+          simctl_ui_help="$(xcrun simctl help ui 2>&1 || true)"
+          if ! printf '%s\n' "$simctl_ui_help" | grep -Fq 'content_size'; then
+            echo "::error::This runner does not document simctl ui content_size; the ipad-ax5 large-text smoke cannot be run"
+            printf '%s\n' "$simctl_ui_help"
+            exit 1
+          fi
+
+          ipad_simulator_id="$(xcrun simctl list devices available | awk -F '[()]' '
+            /iPad/ {
+              for (field = 2; field <= NF; field += 2) {
+                if (length($field) == 36 && index($field, "-") > 0) {
+                  print $field
+                  exit
+                }
+              }
+            }
+          ')"
+          if [ -z "$ipad_simulator_id" ]; then
+            echo "::error::No available iPad Simulator found for the ipad-ax5 large-text smoke"
+            exit 1
+          fi
+
+          ipad_device_line="$(xcrun simctl list devices available | awk -v device_id="($ipad_simulator_id)" 'index($0, device_id) { print; exit }')"
+          if [ -z "$ipad_device_line" ]; then
+            echo "::error::The discovered iPad Simulator is no longer available: $ipad_simulator_id"
+            exit 1
+          fi
+          case "$ipad_device_line" in
+            *"(Booted)"*) ;;
+            *) xcrun simctl boot "$ipad_simulator_id" ;;
+          esac
+          xcrun simctl bootstatus "$ipad_simulator_id" -b
+
+          xcrun simctl ui "$ipad_simulator_id" content_size accessibility-extra-extra-extra-large
+          content_size="$(xcrun simctl ui "$ipad_simulator_id" content_size)"
+          printf 'iPad %s content_size: %s\n' "$ipad_simulator_id" "$content_size"
+          case "$content_size" in
+            *accessibility-extra-extra-extra-large*) ;;
+            *)
+              echo "::error::The iPad Simulator did not retain accessibility-extra-extra-extra-large content size"
+              exit 1
+              ;;
+          esac
+
+          xcodebuild \
+            -project Polygo.xcodeproj \
+            -scheme PolygoApp \
+            -destination "platform=iOS Simulator,id=$ipad_simulator_id" \
+            -destination-timeout 120 \
+            -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/PolygoDerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests-ipad-ax5.xcresult" \
+            -only-testing:PolygoAppUITests/PolygoAppUITests \
+            -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testGuidedWritingRejectsWrongStrokeThenAcceptsRetry \
+            -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testFreeWritingFailureCanBeSelfReportedAndAdvance \
+            -only-testing:PolygoAppUITests/ZZLessonRegressionJourneyTests/testLessonDraftFeedbackDialogueAndOralJourney \
+            test
+
+      - name: Export iOS UI screenshots
+        if: ${{ always() }}
+        run: |
+          set -euo pipefail
+          iphone_result_bundle="$RUNNER_TEMP/PolygoAppUITests.xcresult"
+          iphone_export_dir="$RUNNER_TEMP/PolygoAppScreenshots"
+          ipad_result_bundle="$RUNNER_TEMP/PolygoAppUITests-ipad-ax5.xcresult"
+          ipad_export_dir="$iphone_export_dir/ipad-ax5"
+          mkdir -p "$iphone_export_dir" "$ipad_export_dir"
+
+          if [ -d "$iphone_result_bundle" ]; then
+            if ! xcrun xcresulttool export attachments \
+              --path "$iphone_result_bundle" \
+              --output-path "$iphone_export_dir"; then
+              echo "::warning::xcresulttool n’a pas exporté les pièces jointes iPhone; le bundle reste disponible"
+            fi
+          fi
+
+          if [ -d "$ipad_result_bundle" ]; then
+            if ! xcrun xcresulttool export attachments \
+              --path "$ipad_result_bundle" \
+              --output-path "$ipad_export_dir"; then
+              echo "::warning::xcresulttool n’a pas exporté les pièces jointes iPad; le bundle reste disponible"
+            fi
+          fi
+
+      - name: Upload iOS UI test results and screenshots
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: PolygoAppUITests-${{ github.run_id }}
-          path: ${{ runner.temp }}/PolygoAppUITests.xcresult
+          path: |
+            ${{ runner.temp }}/PolygoAppUITests.xcresult
+            ${{ runner.temp }}/PolygoAppUITests-ipad-ax5.xcresult
+            ${{ runner.temp }}/PolygoAppScreenshots
           if-no-files-found: warn
 
   build-macos:

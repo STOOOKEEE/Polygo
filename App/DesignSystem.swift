@@ -46,12 +46,12 @@ private extension Color {
 public enum SylluneColor {
     // Light values keep normal text at or above a readable contrast ratio;
     // dark values are selected independently rather than simply inverted.
-    public static let canvas = Color.sylluneAdaptive(light: SylluneRGB(0.969, 0.973, 0.957), dark: SylluneRGB(0.055, 0.075, 0.075))
+    public static let canvas = Color.sylluneAdaptive(light: SylluneRGB(0.985, 0.976, 0.951), dark: SylluneRGB(0.055, 0.075, 0.075))
     public static let surface = Color.sylluneAdaptive(light: SylluneRGB(1, 1, 1), dark: SylluneRGB(0.09, 0.12, 0.12))
-    public static let surfaceRaised = Color.sylluneAdaptive(light: SylluneRGB(0.91, 0.94, 0.92), dark: SylluneRGB(0.13, 0.18, 0.17))
+    public static let surfaceRaised = Color.sylluneAdaptive(light: SylluneRGB(0.955, 0.953, 0.932), dark: SylluneRGB(0.13, 0.18, 0.17))
     public static let ink = Color.sylluneAdaptive(light: SylluneRGB(0.086, 0.137, 0.173), dark: SylluneRGB(0.94, 0.96, 0.94))
     public static let inkMuted = Color.sylluneAdaptive(light: SylluneRGB(0.235, 0.302, 0.310), dark: SylluneRGB(0.70, 0.76, 0.75))
-    public static let border = Color.sylluneAdaptive(light: SylluneRGB(0.45, 0.52, 0.47), dark: SylluneRGB(0.45, 0.55, 0.50))
+    public static let border = Color.sylluneAdaptive(light: SylluneRGB(0.82, 0.83, 0.78), dark: SylluneRGB(0.32, 0.40, 0.37))
     public static let jade = Color.sylluneAdaptive(light: SylluneRGB(0.055, 0.33, 0.285), dark: SylluneRGB(0.12, 0.46, 0.36))
     public static let jadeDeep = Color.sylluneAdaptive(light: SylluneRGB(0.03, 0.24, 0.21), dark: SylluneRGB(0.40, 0.87, 0.74))
     public static let jadeButton = Color.sylluneAdaptive(light: SylluneRGB(0.055, 0.33, 0.285), dark: SylluneRGB(0.12, 0.46, 0.36))
@@ -69,11 +69,8 @@ public enum SylluneColor {
 
     // Home and path accents are kept separate from the production palette so
     // the refreshed shell can be expressive without changing lesson screens.
-    public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.05, 0.29, 0.25), dark: SylluneRGB(0.07, 0.25, 0.23))
-    public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.03, 0.16, 0.22), dark: SylluneRGB(0.04, 0.12, 0.18))
-    public static let heroInk = Color.sylluneAdaptive(light: SylluneRGB(0.98, 1.0, 0.97), dark: SylluneRGB(0.98, 1.0, 0.97))
-    public static let heroMuted = Color.sylluneAdaptive(light: SylluneRGB(0.78, 0.91, 0.86), dark: SylluneRGB(0.78, 0.90, 0.86))
-    public static let heroAccent = Color.sylluneAdaptive(light: SylluneRGB(0.31, 0.88, 0.70), dark: SylluneRGB(0.34, 0.91, 0.73))
+    public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.06, 0.32, 0.27), dark: SylluneRGB(0.07, 0.25, 0.23))
+    public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.035, 0.23, 0.22), dark: SylluneRGB(0.045, 0.19, 0.20))
     public static let progressTrack = Color.sylluneAdaptive(light: SylluneRGB(0.84, 0.89, 0.86), dark: SylluneRGB(0.22, 0.31, 0.30))
     public static let inkOnSuccess = Color.sylluneAdaptive(light: SylluneRGB(1.0, 1.0, 1.0), dark: SylluneRGB(0.04, 0.14, 0.11))
     public static let pathJade = Color.sylluneAdaptive(light: SylluneRGB(0.04, 0.40, 0.30), dark: SylluneRGB(0.09, 0.40, 0.29))
@@ -215,27 +212,27 @@ public enum SylluneCardStyle {
 
     fileprivate var shadowColor: Color {
         switch self {
-        case .standard, .quiet: return .black.opacity(0.06)
-        case .interactive: return SylluneColor.jade.opacity(0.10)
-        case .hero: return SylluneColor.heroEnd.opacity(0.28)
+        case .standard, .quiet: return .black.opacity(0.035)
+        case .interactive: return SylluneColor.jade.opacity(0.07)
+        case .hero: return SylluneColor.heroEnd.opacity(0.12)
         }
     }
 
     fileprivate var shadowRadius: CGFloat {
         switch self {
         case .standard: return 0
-        case .quiet: return 8
-        case .interactive: return 12
-        case .hero: return 22
+        case .quiet: return 4
+        case .interactive: return 7
+        case .hero: return 14
         }
     }
 
     fileprivate var shadowY: CGFloat {
         switch self {
         case .standard: return 0
-        case .quiet: return 3
-        case .interactive: return 5
-        case .hero: return 10
+        case .quiet: return 2
+        case .interactive: return 3
+        case .hero: return 5
         }
     }
 }

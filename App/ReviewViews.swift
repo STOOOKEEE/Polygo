@@ -109,17 +109,28 @@ public struct ReviewCardsView: View {
                         frontFont: .system(size: 52, weight: .semibold, design: .rounded)
                     )
                     if !revealed {
-                        Button("Révéler") { revealed = true }.buttonStyle(.borderedProminent).tint(SylluneColor.jade)
+                        Button("Révéler") { revealed = true }
+                            .buttonStyle(SyllunePrimaryButtonStyle())
+                            .frame(maxWidth: 320)
                     }
                 }
                 .padding(20).sylluneCard(radius: 18)
                 if revealed {
                     Text("Comment était cette carte ?").font(.headline).foregroundStyle(SylluneColor.ink)
-                    HStack(spacing: 8) {
-                        reviewButton("À refaire", .again, SylluneColor.error)
-                        reviewButton("Difficile", .hard, SylluneColor.coral)
-                        reviewButton("Bien", .good, SylluneColor.success)
-                        reviewButton("Facile", .easy, SylluneColor.jade)
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) {
+                            reviewButton("À refaire", .again, SylluneColor.error, expands: false)
+                            reviewButton("Difficile", .hard, SylluneColor.coral, expands: false)
+                            reviewButton("Bien", .good, SylluneColor.success, expands: false)
+                            reviewButton("Facile", .easy, SylluneColor.jade, expands: false)
+                        }
+                        .fixedSize(horizontal: true, vertical: false)
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                            reviewButton("À refaire", .again, SylluneColor.error)
+                            reviewButton("Difficile", .hard, SylluneColor.coral)
+                            reviewButton("Bien", .good, SylluneColor.success)
+                            reviewButton("Facile", .easy, SylluneColor.jade)
+                        }
                     }
                 }
             }
@@ -128,8 +139,8 @@ public struct ReviewCardsView: View {
         }
     }
 
-    private func reviewButton(_ title: String, _ rating: ReviewRating, _ tint: Color) -> some View {
-        Button(title) {
+    private func reviewButton(_ title: String, _ rating: ReviewRating, _ tint: Color, expands: Bool = true) -> some View {
+        Button {
             guard let current = selected else { return }
             Task {
                 if await model.reviewCard(current.cardID, rating: rating) {
@@ -141,8 +152,13 @@ public struct ReviewCardsView: View {
                     message = "La réponse n’a pas été enregistrée. Réessaie."
                 }
             }
+        } label: {
+            Text(title)
+                .frame(maxWidth: expands ? .infinity : nil, minHeight: 52)
+                .contentShape(Rectangle())
         }
-        .buttonStyle(.borderedProminent).tint(tint)
+        .buttonStyle(.borderedProminent)
+        .tint(tint)
         .accessibilityLabel("\(title), planifier la prochaine révision")
     }
 

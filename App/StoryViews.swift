@@ -32,17 +32,6 @@ public struct StoryDetailView: View {
                             }
                         }
                     }
-                    ViewThatFits(in: .horizontal) {
-                        HStack {
-                            Toggle("Afficher le pinyin", isOn: $showPinyin).toggleStyle(.switch)
-                            Spacer(minLength: 12)
-                            storyAudioControls(story)
-                        }
-                        VStack(alignment: .leading, spacing: 10) {
-                            Toggle("Afficher le pinyin", isOn: $showPinyin).toggleStyle(.switch)
-                            storyAudioControls(story)
-                        }
-                    }
                     if let message { Text(message).font(.caption).foregroundStyle(SylluneColor.inkMuted) }
                     ForEach(Array(story.paragraphs.enumerated()), id: \.element.id) { index, paragraph in
                         paragraphView(paragraph, index: index)
@@ -54,6 +43,11 @@ public struct StoryDetailView: View {
             } else if let message {
                 ContentUnavailableView("Histoire indisponible", systemImage: "book.closed", description: Text(message))
             } else { ProgressView("Chargement de l’histoire…") }
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if let story {
+                storyReadingControls(story)
+            }
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Lecture")
@@ -70,6 +64,28 @@ public struct StoryDetailView: View {
             model.dependencies.audio.stopSpeaking()
             isStoryAudioPlaying = false
             dismiss()
+        }
+    }
+
+    private func storyReadingControls(_ story: StoryDocument) -> some View {
+        ViewThatFits(in: .horizontal) {
+            HStack {
+                Toggle("Afficher le pinyin", isOn: $showPinyin).toggleStyle(.switch)
+                Spacer(minLength: 12)
+                storyAudioControls(story)
+            }
+            VStack(alignment: .leading, spacing: 10) {
+                Toggle("Afficher le pinyin", isOn: $showPinyin).toggleStyle(.switch)
+                storyAudioControls(story)
+            }
+        }
+        .frame(maxWidth: 720, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(SylluneColor.surface.ignoresSafeArea(edges: .bottom))
+        .overlay(alignment: .top) {
+            SylluneColor.border.opacity(0.18).frame(height: 1)
         }
     }
 

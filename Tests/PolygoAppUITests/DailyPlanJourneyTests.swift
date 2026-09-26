@@ -89,8 +89,8 @@ final class DailyPlanJourneyTests: XCTestCase {
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "ios-daily-plan-day-one")
 
-        let openLesson = app.descendants(matching: .any).matching(
-            NSPredicate(format: "identifier == %@", "home.hero")
+        let openLesson = app.buttons.matching(
+            NSPredicate(format: "identifier == %@", "home.primaryAction")
         ).firstMatch
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "Aujourd’hui doit proposer la séance du jour")
         XCTAssertTrue(openLesson.isHittable, "L’action de la séance du jour doit être accessible")
