@@ -66,11 +66,18 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         start.click()
 
         let finished = text(containing: "Session terminée")
+        let nextCardOrFinished = app.descendants(matching: .any).matching(
+            NSPredicate(format: "label == %@ OR value CONTAINS[c] %@", "Révéler", "Session terminée")
+        ).firstMatch
         var completedCards = 0
         for _ in 0..<11 {
-            if finished.waitForExistence(timeout: 0.25) { break }
+            XCTAssertTrue(
+                nextCardOrFinished.waitForExistence(timeout: timeout),
+                "Une carte doit pouvoir être révélée ou la session doit se terminer"
+            )
+            if finished.exists { break }
             let reveal = button(exactly: "Révéler")
-            XCTAssertTrue(reveal.waitForExistence(timeout: timeout), "Chaque carte doit pouvoir être révélée")
+            XCTAssertTrue(reveal.exists, "Chaque carte doit pouvoir être révélée")
             if completedCards == 0 {
                 attachScreenshot(named: "mac-short-review-front")
             }

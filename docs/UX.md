@@ -2,7 +2,7 @@
 
 ## 1. Décision d’identité
 
-**Nom de travail : Syllune** (prononcé « si-lune » en français). Le nom est une création de travail pour le produit Polygo ; cette décision ne constitue pas une recherche d’antériorité ni une validation de disponibilité de marque. Une vérification juridique et une recherche de domaine restent nécessaires avant publication.
+Dans l’application Polygo, **Syllune** est le nom affiché et l’identité pédagogique originale (prononcé « si-lune » en français). Cette appellation ne constitue pas une recherche d’antériorité ni une validation de disponibilité de marque ; une vérification juridique et une recherche de domaine restent nécessaires avant publication.
 
 Signature : **« Le mandarin, une syllabe à la fois. »**
 
@@ -70,7 +70,7 @@ Le titre de l’écran reste visible au défilement. Les sous-écrans sont des `
 
 ### iPad et Mac
 
-Utiliser une `NavigationSplitView` persistante avec trois groupes :
+Sur iPad en largeur régulière et sur Mac, la navigation utilise une `NavigationSplitView` persistante avec trois groupes :
 
 | Groupe | Destinations |
 | --- | --- |
@@ -78,7 +78,7 @@ Utiliser une `NavigationSplitView` persistante avec trois groupes :
 | Explorer | Histoires, Dictionnaire |
 | Compte | Profil, Réglages |
 
-La colonne de détail affiche une leçon ou une fiche mot. Sur iPad en largeur réduite, la sidebar devient une pile standard ; aucun contrôle ne doit disparaître, il est seulement déplacé dans la barre de navigation. Sur Mac, les mêmes routes apparaissent dans la sidebar et les actions de leçon restent accessibles à la souris, au clavier et au menu.
+En classe de taille compacte sur iOS, y compris quand l’iPad bascule dans cette classe, l’application reprend la navigation à cinq onglets de l’iPhone. Dans la présentation scindée, la colonne de détail affiche une leçon ou une fiche mot ; la sidebar native peut être repliée puis rouverte depuis la barre de navigation.
 
 Raccourcis Mac proposés : `⌘1` Aujourd’hui, `⌘2` Parcours, `⌘3` Explorer, `⌘4` Cartes, `⌘5` Profil, `⌘,` Réglages et `⌘K` recherche dictionnaire. Les commandes audio et la fermeture d’une fiche restent accessibles depuis le menu Syllune, sans réserver les touches `Espace` ou `Échap` pendant la saisie. Le focus visible suit `focus` et la sélection de sidebar est annoncée par VoiceOver.
 
@@ -93,23 +93,21 @@ Quatre écrans, avec indicateur `1 sur 4` et reprise après fermeture. Chaque é
 
 État à conserver : `onboardingCompleted`, `displayName` facultatif, niveau de départ, rythme, jours actifs, préférence d’auto-lecture audio et `lastRoute`. Un retour arrière ne perd pas les réponses.
 
+Le bouton principal de chaque étape reste sous la zone défilante dans un pied fixe ; il conserve le même style et l’action propre à l’étape.
+
 ## 5. Écrans et comportements
 
 ### Aujourd’hui / dashboard
 
-Le premier écran répond à « que faire maintenant ? » en moins de deux secondes de lecture :
+`TodayView` choisit une composition compacte ou large selon l’espace disponible. En largeur compacte, le contenu défile en une colonne dans cet ordre : salutation et série, prochaine leçon, révisions, aperçu du parcours. La carte de reprise expose le bouton réel `home.primaryAction`, libellé « Commencer » ou « Continuer » selon l’état, qui ouvre la leçon de reprise ; sans leçon restante, elle affiche un état de fin au lieu d’une action fictive. La composition large place la reprise à côté des révisions et du parcours.
 
-- en-tête `Bonjour, [prénom]` si un prénom a été renseigné, sinon `Bonjour`, et série actuelle avec nombre de jours, si la série existe ;
-- carte principale « Reprendre — Unité 1, leçon 2 », état `4/7 exercices`, bouton « Reprendre » ; pour un nouvel apprenant, « Commencer l’unité 1 » ;
-- carte « Révisions dues — 6 cartes », bouton « Réviser » ; absente si la file est vide, remplacée par « Rien à revoir pour le moment » ;
-- aperçu de l’objectif du jour avec temps effectué/objectif ;
-- lien « Mes erreurs récentes » vers une liste filtrée, affiché seulement si une tentative existe.
+Le résumé du programme du jour apparaît dans la carte de reprise lorsqu’une séance correspond à la leçon affichée. Les textes et cartes s’adaptent à la largeur ; aucune hauteur fixe ne coupe une consigne.
 
-Une action ouvre directement une route identifiée (`lessonID`, `reviewQueueID`, `mistakeFilter`). Une carte de contenu ne fonctionne jamais comme simple décoration cliquable.
+Une action ouvre une route identifiée (`lessonID`, `reviewQueueID`, `mistakeFilter`). Une carte de contenu ne fonctionne jamais comme simple décoration cliquable.
 
 ### Parcours
 
-Vue en chemin vertical avec cercles reliés sur iPhone, iPad et Mac ; sur iPad et Mac, la sidebar accompagne le parcours. Une unité affiche son thème, le nombre de leçons terminées et le bouton de reprise. Une leçon verrouillée explique sa condition (« Termine la leçon 3 ») et n’est pas interactive.
+Le parcours est une colonne verticale à nœuds reliés, construite depuis les leçons disponibles sur iPhone, iPad et Mac ; ses lignes et cartes suivent leur contenu et Dynamic Type. La rangée entière d’une leçon déverrouillée ouvre cette leçon, tandis qu’une leçon verrouillée reste non interactive et expose sa condition. Sur iPad et Mac, la sidebar accompagne le parcours.
 
 La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
@@ -125,7 +123,7 @@ Chaque leçon montre les mots utiles avant le premier exercice, puis une barre d
 
 ### Leçon
 
-Structure : titre et progression en haut, un seul exercice à la fois, explication après réponse, action principale en bas. L’action principale est nommée selon l’état : « Vérifier », « Continuer », « Réécouter » ou « Terminer » ; elle ne garde jamais le même libellé quand son effet change.
+Structure : compteur et progression en haut, un seul exercice à la fois dans une zone défilante, retour après réponse, et barre d’action fixe en bas. Les actions haute et basse restent visibles pendant le défilement. Le libellé principal suit l’état : « Vérifier », « Continuer », « Réécouter » ou « Terminer » ; il change avec son effet.
 
 Contrat commun d’un exercice : `id` stable, `kind`, consigne française, contenu chinois/pinyin, réponses ou chemin attendu, explication, médias optionnels, `required`, tentative et état de correction. Les types utilisés dans l’unité 1 sont :
 
@@ -159,7 +157,7 @@ complétion fondée sur les exercices requis ni le déblocage de la leçon suiva
 
 ### Écriture
 
-Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». Le mode guidé contrôle chaque trait dans l’ordre, sa direction et sa forme ; le point de départ orange et la flèche indiquent le geste attendu. Un trait refusé reste visible en rouge avec une explication et peut être recommencé. `Annuler`, `Effacer` et `Vérifier le tracé` restent accessibles dans le pied de l’écran ; la vérification libre conserve le tracé `PKDrawing` et permet une auto-évaluation (`À refaire`, `Bien`) quand le guide n’est pas disponible. La progression est enregistrée après `Continuer`.
+Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». Le mode guidé contrôle chaque trait dans l’ordre, sa direction et sa forme ; le point de départ orange et la flèche indiquent le geste attendu. Un trait refusé reste visible en rouge avec une explication et peut être recommencé. `Annuler`, `Effacer` et `Vérifier le tracé` restent accessibles dans une barre d’action fixe en bas ; la vérification libre conserve le tracé `PKDrawing` et permet une auto-évaluation (`À refaire`, `Bien`) quand le guide n’est pas disponible. La progression est enregistrée après `Continuer`.
 
 ### Cartes
 
@@ -167,7 +165,7 @@ L’écran d’entrée indique « 6 cartes dues » et propose « Commencer ». C
 
 ### Histoires
 
-Bibliothèque locale filtrée par niveau et durée. La cible éditoriale MVP couvre trois histoires originales : **« Le premier échange »**, **« Un nom, un sourire »** et **« Deux pays sur une carte »**. Le pack livré en contient quatre et ajoute **« Deux présentations »** (`story-mini-exchange`), l’histoire de l’extension L4. La fiche indique le nombre de mots connus et l’état des médias disponibles hors ligne. En lecture : phrase courante, audio phrase lorsqu’un asset est livré, précédent/suivant, barre de progression et bouton d’affichage du pinyin. Chaque mot sélectionnable ouvre sa fiche. Quand aucune histoire ne correspond au filtre, afficher « Effacer le filtre » ; ne pas afficher des vignettes vides.
+Bibliothèque locale filtrée par niveau et durée. La cible éditoriale MVP couvre trois histoires originales : **« Le premier échange »**, **« Un nom, un sourire »** et **« Deux pays sur une carte »**. Le pack livré en contient quatre et ajoute **« Deux présentations »** (`story-mini-exchange`), l’histoire de l’extension L4. La fiche indique le nombre de mots connus et l’état des médias disponibles hors ligne. En lecture, les paragraphes défilent en cartes et chaque mot chinois reste sélectionnable. Un pied fixe regroupe l’affichage du pinyin et la commande d’écoute ; l’état de lecture ou d’indisponibilité audio est annoncé. Il n’y a pas de commandes précédent/suivant ni de barre de progression dans la vue de lecture actuelle.
 
 ### Dictionnaire
 

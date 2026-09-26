@@ -129,11 +129,14 @@ final class PolygoAppUITests: XCTestCase {
             attachScreenshot(named: "ios-onboarding-ready")
             ready.tap()
         }
+        openSidebarIfNeeded()
         XCTAssertTrue(element(containing: "Aujourd’hui", type: .any).waitForExistence(timeout: timeout), "L’application doit démarrer sur l’espace d’apprentissage")
+
     }
 
     private func navigateToTab(_ label: String) {
         leaveLessonBeforeSelectingTab()
+        openSidebarIfNeeded()
         let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
         if tab.waitForExistence(timeout: 5) {
             tab.tap()
@@ -145,6 +148,13 @@ final class PolygoAppUITests: XCTestCase {
         let sidebarItem = element(containing: label, type: .any)
         XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
         sidebarItem.tap()
+    }
+
+    private func openSidebarIfNeeded() {
+        let toggle = app.buttons.matching(identifier: "ToggleSidebar").firstMatch
+        if toggle.exists, toggle.label == "Afficher la barre latérale" {
+            toggle.tap()
+        }
     }
 
     private func leaveLessonBeforeSelectingTab() {

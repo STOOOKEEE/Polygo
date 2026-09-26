@@ -200,7 +200,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
 
     private func label(containing value: String) -> XCUIElement {
         app.descendants(matching: .any)
-            .matching(NSPredicate(format: "label CONTAINS[c] %@", value))
+            .matching(NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value))
             .firstMatch
     }
 

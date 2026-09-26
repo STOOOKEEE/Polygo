@@ -334,6 +334,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if ready.waitForExistence(timeout: 3) {
             ready.tap()
         }
+        openSidebarIfNeeded()
         XCTAssertTrue(text(containing: "Aujourd’hui").waitForExistence(timeout: timeout), "L’espace d’apprentissage doit être ouvert")
     }
 
@@ -469,6 +470,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func navigateToTab(_ label: String) {
         leaveLessonBeforeSelectingTab()
+        openSidebarIfNeeded()
         let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
         if tab.waitForExistence(timeout: 5) {
             tab.tap()
@@ -479,6 +481,12 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         sidebarItem.tap()
     }
 
+    private func openSidebarIfNeeded() {
+        let toggle = app.buttons.matching(identifier: "ToggleSidebar").firstMatch
+        if toggle.exists, toggle.label == "Afficher la barre latérale" {
+            toggle.tap()
+        }
+    }
     private func leaveLessonBeforeSelectingTab() {
         let lessonControl = app.buttons.matching(
             NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")

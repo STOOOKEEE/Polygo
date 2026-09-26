@@ -65,9 +65,6 @@ public struct OnboardingView: View {
                 .padding(.horizontal, 24)
                 .padding(.vertical, 40)
             }
-        }
-        .background(SylluneColor.canvas.ignoresSafeArea())
-        .safeAreaInset(edge: .bottom, spacing: 0) {
             primaryAction
                 .frame(maxWidth: 640)
                 .frame(maxWidth: .infinity)
@@ -84,6 +81,7 @@ public struct OnboardingView: View {
                         .ignoresSafeArea(edges: .bottom)
                 }
         }
+        .background(SylluneColor.canvas.ignoresSafeArea())
         .sheet(isPresented: $showingAbout) { AboutOnboardingView() }
     }
     @ViewBuilder

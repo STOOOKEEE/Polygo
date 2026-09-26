@@ -669,18 +669,7 @@ private struct RoadmapModuleCanvas: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, connectsToNext ? roadmapRowSpacing : 0)
-        .background(alignment: .topLeading) {
-            if connectsToNext {
-                GeometryReader { proxy in
-                    Capsule()
-                        .fill(SylluneColor.jade.opacity(0.34))
-                        .frame(width: 4, height: proxy.size.height)
-                        .offset(x: nodeFrame / 2 - 2, y: nodeFrame / 2)
-                }
-                .accessibilityHidden(true)
-            }
-        }
-
+        .contentShape(Rectangle())
         Group {
             if unlocked {
                 NavigationLink(value: AppRoute.lesson(lessonID)) { row }
@@ -693,6 +682,18 @@ private struct RoadmapModuleCanvas: View {
                     .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
                     .accessibilityLabel("\(title), \(status), \(progressText)")
                     .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
+            }
+        }
+        .background(alignment: .topLeading) {
+            if connectsToNext {
+                GeometryReader { proxy in
+                    Capsule()
+                        .fill(SylluneColor.jade.opacity(0.34))
+                        .frame(width: 4, height: proxy.size.height)
+                        .offset(x: nodeFrame / 2 - 2, y: nodeFrame / 2)
+                }
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
             }
         }
     }
