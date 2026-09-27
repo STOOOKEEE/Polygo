@@ -12,6 +12,8 @@ La voix éditoriale est calme, précise et encourageante. Elle tutoie l’appren
 
 Le logo vectoriel original est [Syllune-Logo.svg](../Design/Syllune-Logo.svg) ; [Syllune-Logo-Dark.svg](../Design/Syllune-Logo-Dark.svg) sert au lockup sur surface sombre. Le symbole peut vivre seul dans la navigation ; le mot « Syllune » est rendu avec la police système dans l’application afin de suivre le thème et la taille d’accessibilité.
 
+**Tavi**, le panda roux original, accompagne l’accueil, l’encouragement et la célébration. Visage, oreilles et ventre crème, queue annelée en virgule : les trois poses SVG et leurs PNG transparents se trouvent dans `Design/tavi-*.{svg,png}`. La pièce `Design/polygo-coin.{svg,png}` appartient à la même identité. Ces illustrations restent décoratives : elles ne remplacent ni une consigne, ni un état accessible.
+
 ## 2. Système visuel
 
 ### Couleurs sémantiques
@@ -20,22 +22,22 @@ Les couleurs sont des rôles, pas des valeurs dispersées dans les vues. Chaque 
 
 | Token | Clair | Sombre | Usage |
 | --- | --- | --- | --- |
-| `canvas` | `#F7F8F4` | `#0F1B1A` | Fond global, papier doux |
-| `surface` | `#FFFFFF` | `#172624` | Cartes et panneaux |
-| `surfaceRaised` | `#F0F3EE` | `#203330` | Champ, tuile secondaire |
-| `ink` | `#16232C` | `#F6F4E9` | Texte principal et caractères chinois |
-| `inkMuted` | `#51656A` | `#B6C9C2` | Texte secondaire, métadonnées |
-| `border` | `#D8E1DA` | `#36504A` | Séparateurs et contours |
-| `jade` | `#196B62` | `#58B1A0` | Action principale, progression, marque |
-| `jadeDeep` | `#0E514D` | `#7ED1BE` | État pressé, texte sur fond clair |
-| `coral` | `#EF7C61` | `#FF9A7D` | Oral, accent actif, point d’attention |
-| `sun` | `#EFCB6A` | `#F4D982` | Rappel, série, repère de ton |
-| `sky` | `#6E97C7` | `#8FB9E6` | Écoute et audio |
-| `success` | `#2F8D6C` | `#67C397` | Réponse correcte, terminé |
-| `error` | `#B94F58` | `#F1878D` | Erreur corrigeable, permission refusée |
-| `focus` | `#2E78E6` | `#79AEFF` | Anneau de focus clavier |
+| `canvas` | `#FFF8E9` | `#10152D` | Fond crème / indigo |
+| `surface` | `#FFFCF5` | `#1A2143` | Cartes et panneaux |
+| `surfaceRaised` | `#F2E8D7` | `#242D56` | Champ, tuile secondaire |
+| `ink` | `#29233F` | `#FFF8E9` | Texte principal et caractères chinois |
+| `inkMuted` | `#6D6681` | `#BFC7E5` | Texte secondaire, métadonnées |
+| `border` | `#E2DACC` | `#394365` | Séparateurs et contours |
+| `jade` | `#148F7A` | `#47D7C2` | Accent jade |
+| `jadeDeep` | `#176F64` | `#74E7D5` | Liens et texte accentué |
+| `coral` | `#BC463B` | `#FF795A` | Accent corail |
+| `sun` | `#F3C55E` | `#F5C75E` | Pièces et repères miel |
+| `sky` | `#276096` | `#8CB7FD` | Écoute et audio |
+| `pathViolet` | `#593B94` | `#C4A1FE` | Accent iris du parcours |
+| `success` | `#166F49` | `#71DEA7` | Réponse correcte, terminé |
+| `error` | `#B53347` | `#FA7A8C` | Erreur corrigeable, permission refusée |
 
-Sur `canvas`, les textes `ink` et `jadeDeep` servent aux informations longues. `coral` et `sun` servent avec du texte `ink`, jamais avec du texte blanc. Les combinaisons de texte et de fond doivent atteindre au moins 4,5:1 pour le corps et 3:1 pour les grands titres ou les éléments graphiques porteurs d’information. Les états « juste » et « à revoir » ajoutent toujours une icône et un libellé.
+Valeurs hexadécimales arrondies depuis `App/DesignSystem.swift`. Les fonds accentués utilisent leurs premiers plans adaptatifs associés (`inkOnJade`, `inkOnCoral`, `inkOnSky`, `inkOnViolet`, `inkOnSun`), pas un blanc imposé dans les deux thèmes. Les combinaisons doivent atteindre au moins 4,5:1 pour le corps et 3:1 pour les grands titres ou les éléments graphiques porteurs d’information. Les états « juste » et « à revoir » ajoutent toujours une icône et un libellé.
 
 ### Typographie
 
@@ -50,43 +52,31 @@ Sur `canvas`, les textes `ink` et `jadeDeep` servent aux informations longues. `
 
 Espacements : `4, 8, 12, 16, 20, 24, 32, 40`. Rayons : `12` pour les champs, `18` pour les cartes, `24` pour les panneaux d’accueil, `999` pour les pastilles. Bordure standard `1 pt`; ombre très légère uniquement sur une surface qui se détache du fond.
 
-Les contrôles interactifs ont une zone minimale de `44×44 pt` sur iPhone/iPad. Sur Mac, la zone visuelle peut être plus compacte, mais la cible clavier/pointeur reste au moins `32×32 pt` et les éléments de la sidebar ont `40 pt` de hauteur. Utiliser SF Symbols avec un poids régulier ou medium et un contour cohérent ; le seul dessin de marque est le SVG fourni.
+Les contrôles interactifs visent au moins `44×44 pt` sur iPhone/iPad. Chaque bouton de navigation basse a un minimum de `64×54 pt`, avant ses marges. Les leçons utilisent des SF Symbols sémantiques associés à leurs identifiants stables ; les illustrations de Tavi et de la pièce sont des ressources originales, sans dépendance réseau.
 
-## 3. Navigation adaptative
+## 3. Navigation basse commune
 
-L’onboarding précède la navigation principale. Une fois terminé, l’apprenant retrouve toujours son dernier emplacement et sa dernière leçon interrompue.
+L’onboarding précède la navigation principale. iPhone, iPad et Mac partagent ensuite **cinq vrais boutons** dans une barre horizontale basse, sans sidebar :
 
-### iPhone
+1. **Aujourd’hui** — activité du jour, reprise et révisions.
+2. **Parcours** — unités et leçons.
+3. **Explorer** — histoires et dictionnaire.
+4. **Cartes** — file de rappel.
+5. **Profil** — objectifs, progression et accès explicite aux Réglages.
 
-`TabView` à cinq destinations, dans cet ordre :
+`RootView` conserve une pile de routes par onglet pendant la session. Passer dans un autre onglet puis revenir conserve le détail ouvert ; retoucher l’onglet actif revient à sa racine. Les fiches ouvertes depuis un mot sélectionné appartiennent à la même pile. La destination principale et les checkpoints de leçon sont persistés localement.
 
-1. **Aujourd’hui** — activité du jour, reprise et révisions (`house` ou `sun.max`).
-2. **Parcours** — unités et leçons (`list.bullet.rectangle.portrait`).
-3. **Explorer** — histoires et dictionnaire (`book.pages`).
-4. **Cartes** — file de rappel (`rectangle.stack`).
-5. **Profil** — objectifs, progression et accès aux réglages (`person.crop.circle`).
+La barre est posée dans la safe area. Si les cinq libellés ne tiennent plus avec Dynamic Type, elle devient défilante horizontalement plutôt que de tronquer les actions. Chaque bouton expose son libellé et son état sélectionné.
 
-Le titre de l’écran reste visible au défilement. Les sous-écrans sont des `NavigationStack`. Les réglages sont atteints depuis Profil, avec un bouton explicite « Réglages » ; il n’y a pas de bouton d’engrenage décoratif sans destination.
+La barre basse et l’unique badge global de pièces disparaissent pendant **toute** la leçon — chargement, exercices, feedback et récapitulatif — ainsi que dans les pratiques autonomes Oral et Écriture. Ils reviennent à la sortie ; les contrôles pédagogiques propres à ces écrans restent disponibles.
 
-### iPad et Mac
-
-Sur iPad en largeur régulière et sur Mac, la navigation utilise une `NavigationSplitView` persistante avec trois groupes :
-
-| Groupe | Destinations |
-| --- | --- |
-| Apprendre | Aujourd’hui, Parcours, Cartes |
-| Explorer | Histoires, Dictionnaire |
-| Compte | Profil, Réglages |
-
-En classe de taille compacte sur iOS, y compris quand l’iPad bascule dans cette classe, l’application reprend la navigation à cinq onglets de l’iPhone. Dans la présentation scindée, la colonne de détail affiche une leçon ou une fiche mot ; la sidebar native peut être repliée puis rouverte depuis la barre de navigation.
-
-Raccourcis Mac proposés : `⌘1` Aujourd’hui, `⌘2` Parcours, `⌘3` Explorer, `⌘4` Cartes, `⌘5` Profil, `⌘,` Réglages et `⌘K` recherche dictionnaire. Les commandes audio et la fermeture d’une fiche restent accessibles depuis le menu Syllune, sans réserver les touches `Espace` ou `Échap` pendant la saisie. Le focus visible suit `focus` et la sélection de sidebar est annoncée par VoiceOver.
+Sur Mac, les commandes de navigation sont attachées à la scène : `⌘1` Aujourd’hui, `⌘2` Parcours, `⌘3` Explorer, `⌘4` Cartes, `⌘5` Profil, `⌘,` Réglages et `⌘K` dictionnaire. Une commande de navigation doit agir sur la fenêtre active, pas réinitialiser les piles des autres fenêtres. Les commandes audio et la fermeture d’une fiche restent accessibles depuis le menu Syllune ; les champs de saisie conservent leurs touches.
 
 ## 4. Onboarding
 
 Quatre écrans, avec indicateur `1 sur 4` et reprise après fermeture. Chaque étape possède une valeur persistée ; aucune action « Ignorer » ne mène à un écran non préparé.
 
-1. **Bienvenue** : symbole Syllune, promesse, bouton « Commencer ». Lien secondaire « En savoir plus » ouvre une fiche courte sur l’audio hors ligne et la confidentialité.
+1. **Bienvenue** : Tavi et identité Syllune, promesse, bouton « Commencer ». Lien secondaire « En savoir plus » ouvre une fiche courte sur l’audio hors ligne et la confidentialité.
 2. **Point de départ** : champ facultatif « Comment t’appeler ? », puis choix unique « Je commence », « Je connais le pinyin », « Je lis déjà quelques phrases ». Le choix initialise l’unité et le niveau de révision ; il est modifiable dans Profil. Sans prénom, l’accueil utilise simplement « Bonjour ».
 3. **Rythme** : durée quotidienne `5`, `10` ou `15 min`, et jours de rappel multiples. Le bouton « Continuer » reste disponible avec une valeur par défaut visible, jamais une validation silencieuse.
 4. **Prêt à apprendre** : récapitulatif du choix, bouton « Ouvrir ma première leçon ». La permission microphone n’est demandée qu’au premier exercice oral, jamais à l’installation. Les textes et le pinyin de l’unité 1 sont embarqués ; un audio apparaît comme disponible hors ligne seulement lorsqu’un asset est livré.
@@ -107,7 +97,9 @@ Une action ouvre une route identifiée (`lessonID`, `reviewQueueID`, `mistakeFil
 
 ### Parcours
 
-Le parcours est une colonne verticale à nœuds reliés, construite depuis les leçons disponibles sur iPhone, iPad et Mac ; ses lignes et cartes suivent leur contenu et Dynamic Type. La rangée entière d’une leçon déverrouillée ouvre cette leçon, tandis qu’une leçon verrouillée reste non interactive et expose sa condition. Sur iPad et Mac, la sidebar accompagne le parcours.
+Le parcours forme un chemin vertical sinueux centré sur les trois plateformes. Un en-tête compact présente le palier et Tavi ; le titre complet, la description et les références du cours restent accessibles dans « À propos de ce parcours ». Les lignes alternent nœuds colorés et libellés, sans grandes cartes grises ; les tailles d’accessibilité reprennent une composition plus verticale.
+
+Chaque nœud porte une icône liée au thème de la leçon. Les connecteurs sont décoratifs et ne recouvrent pas les cibles. La rangée entière d’une leçon déverrouillée ouvre cette leçon ; un nœud verrouillé conserve sa couleur, son cadenas et sa condition textuelle, et reste non interactif.
 
 La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
@@ -120,6 +112,12 @@ La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK
 Le pack JSON actuellement livré contient ces trois leçons et une extension déjà disponible : **4. Mener un mini-échange**, avec `呢 ne` et **7 exercices (6 requis)**. Cette quatrième leçon porte la sortie « mini-échange » du pack ; elle reste distincte de la cible éditoriale en trois leçons. Les nombres d’exercices du tableau décrivent chaque leçon et ne sont pas un compteur de leçons ; le « 6 cartes » de l’exemple du dashboard désigne la file de rappel du jour.
 
 Chaque leçon montre les mots utiles avant le premier exercice, puis une barre de progression avec `répondu / total`. Les exercices requis portent la progression : dans les quatre leçons livrées, l’oral est `required: false` et peut être passé sans évaluation. La composition actuelle enregistre alors la complétion lorsque les exercices requis sont acceptés ; le seuil de 80 % reste le critère éditorial de qualité. Le récapitulatif peut afficher « Leçon enregistrée » et `5 / 6 exercices réussis` avec `skippedCount: 1` : le saut reste exclu des réussites, mais la leçon suivante est déverrouillée. Les exercices ratés restent rejouables depuis l’écran de résultat.
+
+### Pièces de progression
+
+Une première complétion historique de leçon rapporte **10 pièces**, une seule fois par `LessonID`. Le journal existant compte aussi : le solde ne dépend pas uniquement des leçons terminées depuis la refonte. Recommencer une leçon ne retire rien et ne rapporte pas de pièces supplémentaires ; les révisions SRS n’en attribuent pas.
+
+Le récapitulatif affiche `+10` uniquement pour une première complétion confirmée par l’opération courante, jamais au simple rechargement d’un résultat. Une histoire impossible à reconstruire est indiquée comme indisponible, pas présentée comme un solde de zéro. Il n’existe ni portefeuille séparé, ni boutique, ni paiement, ni synchronisation fictive.
 
 ### Leçon
 
@@ -212,7 +210,7 @@ Découpage recommandé : `DesignSystem` (tokens, composants, assets), `Onboardin
 - Chaque contrôle a un nom d’accessibilité orienté action (« Vérifier la réponse »), jamais uniquement une icône. Les tuiles réordonnables exposent un ordre et des actions clavier alternatives.
 - Dynamic Type jusqu’à la taille accessibilité conserve le contenu, avec défilement et retour à la ligne. Les chiffres de progression ont un texte équivalent.
 - Réduire les animations supprime les ondulations de ton, confettis et déplacements ; garder un changement de couleur accompagné d’un libellé et d’une icône.
-- Le focus clavier est visible avec `focus`, l’ordre suit la lecture, et aucune action n’est uniquement dépendante d’un glissement ou d’un son.
+- Le focus clavier reste visible avec les contrôles système, l’ordre suit la lecture, et aucune action n’est uniquement dépendante d’un glissement ou d’un son.
 - Audio : transcript ou pinyin disponible, vitesse réglable, retours d’erreur compréhensibles. Oral : le bouton arrêter est distinct de recommencer.
 - Tester au minimum en clair/sombre, VoiceOver, Dynamic Type XXXL, réduction des animations, hors ligne, permission microphone refusée et fenêtre Mac étroite.
 
@@ -225,5 +223,7 @@ Découpage recommandé : `DesignSystem` (tokens, composants, assets), `Onboardin
 5. Un oral peut être enregistré, relu et soumis à un fournisseur ; sans provider configuré, permission ou analyse exploitable, il peut être passé sans évaluation ni note. Dans ce cas, le bilan affiche `skippedCount` et les exercices requis seuls déterminent la complétion et le déblocage de la leçon suivante.
 6. Les cartes dues suivent des intervalles déterministes et disparaissent de la file uniquement après une réponse enregistrée.
 7. Le dictionnaire de l’unité 1 fonctionne hors ligne pour caractère, pinyin et français.
-8. Les mêmes routes sont accessibles sur iPhone, iPad et Mac ; la sidebar, les raccourcis et VoiceOver ne dépendent pas d’un écran tactile.
+8. Les mêmes routes sont accessibles sur iPhone, iPad et Mac ; les cinq boutons bas, les raccourcis et les libellés accessibles ne dépendent pas d’un écran tactile.
 9. Les états de sync et hors ligne sont vrais, persistés et compréhensibles ; aucun bouton présenté dans cette spécification ne reste fictif.
+10. Une première complétion historique rapporte 10 pièces ; reprise, relance, nouvelle tentative et Recommencer ne créent pas de deuxième gain pour la même leçon.
+11. La barre basse et le badge global restent absents pendant toute leçon et toute pratique autonome Oral/Écriture, puis reviennent à la sortie.

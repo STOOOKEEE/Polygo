@@ -589,6 +589,7 @@ public struct ProgressSnapshot: Codable, Hashable, Sendable {
     public let profile: LearnerProfile?
     public let lessonProgress: [LessonID: LessonProgress]
     public let reviewStates: [CardID: ReviewState]
+    public let firstCompletionEventIDs: [LessonID: EventID]?
     public let lastEventLamport: UInt64
     public let generatedAt: Date
 }
@@ -627,6 +628,26 @@ Un événement déjà vu par `eventID` est ignoré. Les événements de révisio
 rejoués par la clé totale `(lamport, deviceID.rawValue, eventID.rawValue)` avant
 de recalculer l’état SM-2 ; l’ordre d’arrivée réseau ne change donc pas le
 résultat final. `ProgressSnapshot` est un cache, jamais la source d’autorité.
+
+Les pièces sont une projection du même journal, pas un second stockage.
+`firstCompletionEventIDs` conserve l’identité de la première complétion de
+chaque leçon ; `coinBalance` vaut dix fois son nombre d’entrées. Un redémarrage
+de leçon efface sa progression pédagogique courante, pas cette identité
+historique. Les événements anciens participent au calcul.
+
+La valeur optionnelle distingue un historique connu, éventuellement vide,
+d’un ancien cache qui ne contient pas cette projection. Le journal permet de
+reconstruire le cache ; s’il manque alors qu’un ancien cache contient de la
+progression, le solde reste inconnu et une nouvelle écriture ne doit pas
+inventer une première complétion.
+
+`AppModel.completeLesson` renvoie un `LessonCompletionResult?` : `earnedCoins`
+vaut 10 ou 0 après confirmation de la complétion et de l’enregistrement des
+cartes. `nil` ne constitue pas une réussite à annoncer. Les identifiants des
+tentatives sont conservés pendant une reprise après erreur d’écriture ; une
+action explicite Recommencer invalide la tentative courante après
+réconciliation du journal. L’annonce est consommée une fois dans la session,
+sans être rejouée au simple rechargement d’un résultat.
 
 ## SRS (`PolygoSRS`)
 
@@ -964,11 +985,20 @@ Le flux visible est le suivant :
    `Good`, `Easy`) mappés respectivement vers les notes SM-2 0, 3, 4 et 5, puis
    append `flashcardReviewed` après chaque réponse.
 
-Sur iPhone, la navigation est une pile avec une barre d’onglets compacte ; sur
-iPad et Mac, `NavigationSplitView` affiche le catalogue et le détail. Le domaine
-ne connaît aucun de ces choix de layout. Tous les boutons ont un label vocal,
-les retours correct/incorrect ne reposent pas sur la couleur, Dynamic Type et le
-clavier Mac sont pris en charge par les contrôles SwiftUI natifs.
+La navigation est commune à iPhone, iPad et Mac : une `NavigationStack`
+active, cinq piles de routes conservées dans `RootView`, et cinq boutons
+horizontaux bas. Changer d’onglet conserve son détail ; retoucher l’onglet
+actif remet sa pile à la racine. Les fiches de mots ouvertes depuis le contenu
+utilisent cette même pile, sans lecture audio supplémentaire par le shell.
+
+Une préférence de vue signale la présence d’une leçon ou d’une pratique
+autonome Oral/Écriture. Le shell masque alors la barre basse et son unique
+badge de pièces, y compris pendant le chargement et le récapitulatif.
+Les commandes Mac utilisent la scène focalisée ; les changements partagés
+de destination ne doivent pas réinitialiser une fenêtre inactive. Le domaine
+ne connaît aucun de ces choix de présentation. Les thèmes, Dynamic Type et
+Réduire les animations sont des préférences de présentation ; leur couverture
+native et leurs limites sont consignées dans `QA_REPORT.md`.
 
 ## Format JSON normatif
 

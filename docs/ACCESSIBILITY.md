@@ -1,22 +1,32 @@
 # Accessibilité Syllune
 
-Mise à jour statique du 7 septembre 2026. Les corrections ci-dessous sont
-présentes dans le tree, mais le conteneur ne fournit ni Xcode ni SDK Apple :
-aucun parcours VoiceOver, Dynamic Type, contraste, clavier Mac, mode sombre ou
-réduction des animations n’a été exécuté sur un appareil ou un simulateur.
+Ce document décrit les mécanismes de la refonte Tavi. Les parcours natifs
+réellement exécutés, leurs appareils et leurs limites figurent dans
+[QA_REPORT.md](QA_REPORT.md). Une assertion XCUITest sur un libellé accessible
+ne remplace pas un audit VoiceOver manuel.
 
 ## Corrections livrées
 
 ### Couleurs et apparence
 
-`App/DesignSystem.swift` fournit désormais des tokens clair/sombre via les
-couleurs dynamiques UIKit et AppKit. Les valeurs de texte et de contrôle ont
-été assombries ou éclaircies pour conserver un contraste utile dans chaque
-apparence. Les calculs statiques donnent notamment environ 8,9:1 pour
-`inkMuted` sur blanc, 8,8:1 pour `jade` sur blanc, 7,5:1 pour `sky` sur blanc,
-7,5:1 pour `success` sur le canvas clair et 3,9:1 pour la bordure sur blanc.
-Les boutons utilisent les variantes `jadeButton` et `skyButton`, avec un
-premier plan adapté à leur fond sombre ou clair.
+`App/DesignSystem.swift` fournit les tokens crème/indigo et leurs accents
+clair/sombre via les couleurs dynamiques UIKit et AppKit. Calcul WCAG sur les
+valeurs sRGB nominales, hors profil colorimétrique et composition des vues :
+
+| Paire | Clair | Sombre |
+| --- | ---: | ---: |
+| `ink` / `canvas` | 14,13:1 | 17,04:1 |
+| `inkMuted` / `canvas` | 5,14:1 | 10,72:1 |
+| `jadeDeep` / `canvas` | 5,69:1 | 12,12:1 |
+| Premier plan / nœud jade | 5,71:1 | 10,08:1 |
+| Premier plan / nœud corail | 4,78:1 | 6,98:1 |
+| Premier plan / nœud bleu | 6,57:1 | 8,85:1 |
+| Premier plan / nœud iris | 8,04:1 | 8,45:1 |
+
+Les nœuds verrouillés conservent ces couleurs et ajoutent un cadenas, un
+libellé de condition et l’absence d’action. La couleur seule n’exprime donc
+ni le verrouillage ni la réussite. Ces calculs ne certifient pas tous les
+états pressés, transparences ou contrôles système de l’application.
 
 `RootView` applique le choix d’apparence à toute la scène avec
 `.preferredColorScheme`, sur iOS comme sur macOS. `SettingsView` conserve le
@@ -41,10 +51,12 @@ passer en colonne et conservent leur hauteur à grande taille de police. Les
 jours de rappel utilisent des cibles d’au moins 44 points et une grille
 adaptative.
 
-`SylluneFlowLayout` est une `Layout` SwiftUI portable. Il mesure les tokens et
-les place sur plusieurs lignes quand la largeur disponible diminue. L’histoire
-l’utilise directement ; le composant est public pour que le lecteur de leçon
-remplace ses `HStack` de phrase lors de l’intégration.
+`SylluneFlowLayout` mesure les tokens et les place sur plusieurs lignes quand
+la largeur diminue. La barre de navigation basse utilise cinq boutons
+indépendants avec leur état sélectionné ; elle devient défilante si ses
+libellés ne tiennent plus. Les poses de Tavi et les illustrations de pièces
+sont décoratives et masquées à l’accessibilité ; le solde reste annoncé
+textuellement, ou comme indisponible lorsque l’historique est inconnu.
 
 ### Langues VoiceOver et interaction par mot
 
@@ -85,39 +97,21 @@ niveau et les statistiques exposent également leur état ou leur valeur.
 dictionnaire et demande le focus de recherche. Les commandes audio et de
 fermeture restent disponibles dans le menu Syllune, sans raccourci nu qui
 réserve `Espace` ou `Échap` pendant la saisie. `DictionaryView` possède un
-`@FocusState`. Les raccourcis de sidebar `⌘1` à `⌘5` et `⌘,` restent
-disponibles.
+`@FocusState`. Les raccourcis des cinq destinations basses `⌘1` à `⌘5`
+et `⌘,` sont attachés à la scène focalisée, sans dépendre de l’affichage
+de la barre pendant un exercice.
 
-## Intégration restant hors de ce périmètre
-
-Les fichiers suivants appartiennent à l’intégration des autres agents et n’ont
-pas été modifiés ici :
-
-- `App/LessonView.swift` doit utiliser `SylluneFlowLayout` pour les phrases,
-  passer la `vocabulary` et la `segmentation` au composant, puis conserver les
-  actions propres aux réponses (sélection, déplacement et audio contextuel).
-  Ses tailles système et ses groupes de boutons doivent encore être vérifiés
-  à XXXL.
-- `App/ReviewViews.swift` doit remplacer ses tailles fixes, empiler les
-  évaluations quand la largeur est étroite, appliquer `skyButton`/`jadeButton`
-  aux contrôles proéminents et séparer les langues du recto/verso.
-- `App/PracticeViews.swift` doit conserver le chemin oral « Passer sans
-  évaluer » et raccorder les actions clavier/VoiceOver d’écriture sans
-  dépendre du seul geste de dessin.
-- `Apple/Audio/SpeechPracticeView.swift` doit empiler ses groupes à XXXL,
-  appliquer les langues au caractère et au pinyin, exposer l’état non configuré
-  sans faux score et enregistrer les actions d’arrêt/Échap du composant de
-  capture. La persistance et l’annulation Speech restent à valider par
-  l’intégration Apple.
-
-## Validation Apple à effectuer
+## Audit manuel restant
 
 1. Parcourir l’onboarding, une leçon, une fiche mot, une carte, une histoire
    et les réglages avec VoiceOver ; vérifier `zh-CN`, `fr-FR`, les états et les
    actions d’ouverture/audio.
-2. Tester Dynamic Type jusqu’aux tailles d’accessibilité en portrait sur un
-   iPhone étroit, sur iPad et dans une fenêtre Mac réduite.
-3. Tester clair/sombre, contraste augmenté, Réduire les animations, focus
-   clavier et `⌘1…⌘5`, `⌘K`, ainsi que la saisie avec `Espace` et `Échap`.
-4. Tester contenu audio absent, voix mandarin absente, mode hors ligne,
-   microphone/transcription refusés et retour depuis chaque sous-route.
+2. Compléter la couverture Dynamic Type sur un iPhone étroit et dans une
+   fenêtre Mac réduite ; la couverture iPad automatisée est documentée dans
+   le rapport QA, pas extrapolée à tous les appareils.
+3. Vérifier contraste augmenté, focus visible et Réduire les animations avec
+   les réglages système, en complément des interactions automatisées.
+4. Tester sur matériel réel la voix mandarin absente, l’écoute hors ligne,
+   les permissions microphone/transcription accordées et refusées, ainsi
+   que l’audio effectivement entendu. Aucun score oral simulé ne constitue
+   une validation matérielle.

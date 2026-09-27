@@ -87,6 +87,25 @@ leurs identifiants, leurs exercices, leurs cartes et leurs paires simplifié /
 traditionnel. Leur seule mise à jour de payload est la version de contenu
 `2026.10.0` nécessaire au bundle commun.
 
+## Interface et pièces
+
+Tavi, le panda roux original, accompagne l’accueil, les encouragements et les
+célébrations. Le parcours sinueux utilise des nœuds colorés et des icônes
+adaptées aux leçons. Les apparences Système, Clair et Sombre restent disponibles,
+ainsi que Réduire les animations.
+
+La même barre basse dessert **Aujourd’hui, Parcours, Explorer, Cartes et Profil**
+sur iPhone, iPad et Mac ; les Réglages se trouvent sous Profil. Chaque onglet
+conserve sa pile pendant la session, et un second appui sur l’onglet actif
+revient à sa racine. La barre et le badge global de pièces sont masqués dans
+les leçons et les pratiques autonomes Oral/Écriture.
+
+Une première complétion historique de leçon rapporte **10 pièces**, y compris
+pour les événements déjà enregistrés avant cette interface. Recommencer une
+leçon ne retire ni ne réattribue ce gain. Le solde se reconstruit depuis le
+journal local de progression : aucune boutique, aucun paiement et aucun
+portefeuille séparé ne sont ajoutés.
+
 ## Parcours et reprise
 
 `TodayView` ouvre directement la séance courante via `CoursePlan.nextSession` et
