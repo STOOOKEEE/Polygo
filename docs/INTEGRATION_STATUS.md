@@ -1,10 +1,10 @@
 # Statut d’intégration
 
-Mis à jour le 2026-09-08 pour le candidat de contenu `2026.10.0`. Le commit
-`ac1daee` est publié. Le [run Apple canonique
-34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) a
-validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et les **5
-méthodes UI macOS (5/5)**.
+Le bundle de contenu reste en `2026.10.0`. La refonte Tavi est publiée par
+lots sur `feat/mobile-originale` ; son intégration dans `main` attend la
+validation native complète. Le [rapport QA](QA_REPORT.md) centralise les
+commits testés, résultats et limites, sans assimiler une compilation à une
+validation des parcours.
 
 ## Bundle et curriculum
 
@@ -41,7 +41,10 @@ identifiants, ordre, objectifs, vocabulaire, blocs, cartes, paires de scripts et
 réponses sont identiques. Seule leur `contentVersion` passe de `2026.09.0` à
 `2026.10.0`, pour rester compatible avec le manifeste commun.
 
-## Contrôles locaux
+## Contrôles du bundle
+
+Les contrôles de génération ci-dessous appartiennent à la livraison du
+contenu ; la refonte ne régénère ni les leçons ni le catalogue.
 
 - `python3 Tools/assemble_90_day_authoring.py` assemble 90 leçons et 8
   fragments de module.
@@ -55,8 +58,8 @@ réponses sont identiques. Seule leur `contentVersion` passe de `2026.09.0` à
   choix gardent leurs IDs et leurs bonnes réponses ; les 270 exercices
   `choice`/`listeningChoice` ont une position correcte répartie 92/90/88 entre
   les trois options après rotation déterministe.
-- `swift test --parallel` passe à **55/55**, dont 12 contrats de contenu, avec
-  le toolchain Swift 6 disponible dans l’environnement Linux.
+- La suite portable actuelle compte 72 tests ; les résultats de la campagne
+  Apple sont consignés dans le [rapport QA](QA_REPORT.md).
 - `git diff --check` passe. `Tools/__pycache__/` et les fichiers `.pyc` sont
   ignorés ; aucun secret, certificat, profil, base locale ou artefact machine
   n’est destiné au commit.
@@ -80,22 +83,21 @@ prépare 16 cartes dues, vérifie la limite de dix cartes maximum liée au budge
 résolvent les libellés via `correctChoiceID`, sans supposer une position de
 réponse.
 
-Les sources natives contiennent 8 méthodes UI iOS et 5 méthodes UI macOS. Le run
-Apple canonique a attaché les captures macOS des parcours quotidiens et de
-session courte ; son bundle xcresult conserve aussi les captures iOS du parcours.
+La CI exerce le vrai `AppModel` après des erreurs de persistance et les
+parcours natifs Mac, iPhone et iPad AX5. Ses artefacts conservent les bundles
+xcresult, captures et journaux du probe de récompenses.
 
 ## Validation Apple et limites
 
-Le [run Apple canonique 34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153)
-sur `ac1daee` a validé le package (**55/55**), les **8 méthodes UI iOS (8/8)**
-et les **5 méthodes UI macOS (5/5)**. Le [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577)
-a validé un état antérieur (`906135d`) : 47/47 tests package, 2/2 tests UI
-macOS et 7/7 tests UI iOS. Le [run 34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020)
-a validé deux parcours d’écriture iOS sur `249f6d0`. Ces deux runs restent des
-preuves historiques ; le run canonique courant valide le pack Apple complet.
+Le [run 36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987)
+sur `8e4e5f6` a validé le package, le build Mac, tous les parcours Mac et les
+séquences de récupération des pièces. La validation iOS n’est pas complète :
+le runner iPhone n’a pas lancé ses tests et trois scénarios iPad ont échoué.
+Le correctif de navigation UIKit `b95438c` est soumis au [run
+36337484177](https://github.com/STOOOKEEE/Polygo/actions/runs/36337484177).
+Ses résultats ne sont pas encore acquis.
 
-Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
-Apple, les 8 méthodes iOS, les 5 méthodes macOS, l’audit VoiceOver/Dynamic Type
-et Speech avec permission accordée restent à exécuter sur runner ou appareil.
-CloudKit est prévu mais inactif ; la progression, les dessins et les
-enregistrements temporaires restent locaux.
+Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les preuves
+natives proviennent des runners Apple ; les limites d’accessibilité et de
+Speech sur appareil sont explicitées dans le rapport QA. CloudKit reste
+inactif : progression, pièces, dessins et enregistrements restent locaux.

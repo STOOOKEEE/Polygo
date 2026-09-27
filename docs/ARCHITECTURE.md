@@ -986,17 +986,23 @@ Le flux visible est le suivant :
    append `flashcardReviewed` après chaque réponse.
 
 La navigation est commune à iPhone, iPad et Mac : une `NavigationStack`
-active, cinq piles de routes conservées dans `RootView`, et cinq boutons
+active, cinq piles de routes conservées dans `BottomNavigationShell`, et cinq boutons
 horizontaux bas. Changer d’onglet conserve son détail ; retoucher l’onglet
 actif remet sa pile à la racine. Les fiches de mots ouvertes depuis le contenu
 utilisent cette même pile, sans lecture audio supplémentaire par le shell.
+Un retour explicite à une racine termine le détail quitté, contrairement à un
+simple changement d’onglet.
 
 Une préférence de vue signale la présence d’une leçon ou d’une pratique
 autonome Oral/Écriture. Le shell masque alors la barre basse et son unique
 badge de pièces, y compris pendant le chargement et le récapitulatif.
 Les commandes Mac utilisent la scène focalisée ; les changements partagés
-de destination ne doivent pas réinitialiser une fenêtre inactive. Le domaine
-ne connaît aucun de ces choix de présentation. Les thèmes, Dynamic Type et
+de destination ne doivent pas réinitialiser une fenêtre inactive. Sur iOS,
+⌘1–⌘5 et ⌘, passent par les `UIKeyCommand` d’un `UIHostingController` local à
+la fenêtre, même quand le chrome est masqué ou qu’un champ possède le focus.
+Cet hôte transmet l’environnement SwiftUI et conserve les commandes héritées.
+Les deux plateformes appellent les mêmes actions du shell. Le domaine ne
+connaît aucun de ces choix de présentation. Les thèmes, Dynamic Type et
 Réduire les animations sont des préférences de présentation ; leur couverture
 native et leurs limites sont consignées dans `QA_REPORT.md`.
 

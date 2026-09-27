@@ -1,7 +1,7 @@
 # Rapport QA Syllune
 
-Contrôle préparé le 8 septembre 2026. Le périmètre couvre les contrats de
-contenu, les tests portables et les parcours UI associés au programme quotidien.
+Le périmètre couvre le contenu livré, les tests portables, la refonte Tavi,
+la navigation basse et les pièces issues du journal de progression.
 
 ## État de validation
 
@@ -22,12 +22,12 @@ occurrences cibles, les pinyins accentués et les lectures polyphoniques ; les
 corrections éditoriales des entrées 214, 317, 354, 410, 413, 448, 457, 462,
 494 et 517 sont intégrées. Aucun blocage linguistique ne reste ouvert.
 
-La suite portable courante découvre le corpus réel et compte **55 tests
-XCTest**. Le run local `swift test --parallel` avec Swift 6.0.3 a réussi à
-**55/55** ; `git diff --check` est également propre. Le [run Apple canonique
-34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) sur
-`ac1daee` a validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et
-les **5 méthodes UI macOS (5/5)**.
+La suite portable compte **72 tests XCTest**. Le [run Apple
+36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987)
+sur `8e4e5f6` a validé les **72/72** avec Swift 6.1.2 et Xcode 16.4.
+Le même run a validé le build Mac, les **9/9 méthodes UI macOS** et les deux
+séquences de récupération du vrai `AppModel`. La validation mobile de la
+refonte n’est pas encore complète ; le détail figure ci-dessous.
 
 ## Contrats de contenu
 
@@ -58,6 +58,12 @@ des événements, la correction d’une tentative et le rejet d’un autre profi
 `PolygoSRSTests` et `PolygoPersistenceTests` complètent les contrôles de
 catalogue, TTS, planification SRS et journal JSONL.
 
+La projection des pièces conserve les premières complétions historiques
+distinctes : première récompense, rejeu, restart, isolation de profil et
+reconstruction depuis un ancien journal. Les tests de persistance couvrent
+aussi l’échec du cache après écriture durable et distinguent un historique
+inconnu d’un solde nul.
+
 ## Vérification du parcours
 
 Le lecteur conserve l’ordre des blocs et des exercices, restaure les brouillons
@@ -82,36 +88,70 @@ le statut « Sur cet appareil » tant que CloudKit n’est pas assemblé.
 
 ## Parcours UI et preuves Apple
 
-Le tree courant contient huit méthodes UI iOS et cinq méthodes UI macOS. Il
-couvre l’onboarding et les parcours hors ligne, le plan quotidien J1→J2, la
-reprise après validation d’écoute, le passage oral sans évaluation, le dialogue,
-les écritures guidée et libre, le retour au parcours et la session courte de
-révision.
+La CI sélectionne **11 méthodes sur iPhone**, **8 sur iPad AX5** et **9 sur
+Mac**. Les huit méthodes iPad constituent un sous-ensemble avec le raccourci
+clavier propre à iPad ; il ne faut pas additionner ces comptes comme des
+scénarios distincts.
 
-Le run Apple canonique courant (`ac1daee`, [run 34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153))
-a produit les captures macOS de la séance quotidienne — [J2](screenshots/daily-plan-day-two-macos.png)
-et [lecture](screenshots/daily-plan-reading-macos.png) — ainsi que celles de la
-session courte. Son bundle xcresult conserve aussi les captures iOS du parcours.
-Les anciennes captures du parcours, du dialogue et de l’écriture, ainsi que les
-runs suivants, documentent des snapshots antérieurs :
+La couverture comprend :
 
-- [run Apple 34207957185](https://github.com/STOOOKEEE/Polygo/actions/runs/34207957185),
-  vert pour son ancien périmètre (`c30d712`) ;
-- [run Apple 34222443020](https://github.com/STOOOKEEE/Polygo/actions/runs/34222443020),
-  qui a validé les deux méthodes d’écriture iOS de son snapshot, sans constituer
-  une validation globale ;
-- [run Apple 34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577),
-  vert pour le corpus et les parcours UI de son snapshot précédent.
+- onboarding d’un nouveau profil malgré une ancienne route de leçon ;
+- progression J1→J2, reprise des réponses et pièces historiques 40→50 ;
+- première complétion, relance et nouvelle complétion sans second gain ;
+- conservation des piles inactives, remise à zéro par retouche de l’onglet
+  actif, fiche de mot, histoire, recherche et réglages ;
+- raccourcis ⌘1–⌘5, ⌘, et ⌘K sur Mac, fenêtre focalisée et raccourcis
+  iPad depuis une leçon ou un champ de recherche ;
+- absence du chrome pendant leçon, récapitulatif et pratiques autonomes,
+  puis restauration à la sortie ;
+- écritures guidée/libre, brouillons, dialogue, contrôles audio et oral
+  facultatif sans fournisseur d’évaluation ;
+- captures réelles claires/sombres, orientations iOS et gros caractères iPad.
 
-Ces campagnes historiques ne valident pas le pack intégré à 94 leçons. Le run
-canonique courant a validé le package, les huit parcours iOS et les cinq
-parcours macOS.
+Résultats de `8e4e5f6`, [run
+36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987) :
+
+| Surface | Résultat observé |
+| --- | --- |
+| Package | 72/72 |
+| Mac | Build, 9/9 méthodes UI et deux séquences AppModel réussis |
+| iPhone | Build réussi ; runner XCTest échoué avant les tests |
+| iPad AX5 | 5/8 méthodes réussies |
+
+L’échec iPhone vient de l’initialisation du runner
+(`AXDisableAccessibilityOnTermination: kAXErrorCannotComplete`) ; aucun
+parcours iPhone de ce run n’est compté comme exécuté. Sur iPad, ⌘1 n’a pas
+quitté la leçon. Les deux autres échecs concernent une assertion pendant
+l’animation de retour depuis Écriture et la recherche d’un bouton Arrêter
+après la fin du bref clip oral. Les captures montrent les cinq onglets
+lisibles en AX5 ; onboarding, réglages et conservation des piles passent.
+
+Le correctif `b95438c` utilise la chaîne de réponse UIKit pour les raccourcis
+iOS et synchronise ces deux interactions de test sur leur surface réelle,
+sans retirer leurs assertions. Sa [campagne
+36337484177](https://github.com/STOOOKEEE/Polygo/actions/runs/36337484177)
+est en cours ; elle n’est pas encore une preuve de réussite.
+
+Le probe Mac charge le vrai `AppModel` compilé et conserve ses journaux JSONL :
+échec avant append, complétion durable suivie d’un échec de cache, reload,
+retry et reconstruction du modèle sans réannoncer un ancien gain. Il ne
+substitue pas un modèle de test à l’application.
+
+Les images déjà présentes dans `docs/screenshots` sont des snapshots
+antérieurs, pas une preuve de la refonte. Les pièces jointes natives des
+campagnes ci-dessus restent disponibles dans leurs artefacts GitHub.
 
 ## Vérifications hors automatisation
 
-Un audit manuel reste à faire sur iPhone, iPad et Mac pour VoiceOver, Dynamic
-Type XXXL, contraste, rendu sombre, réduction des animations, clavier macOS et
-fenêtres étroites. La permission Speech accordée et l’analyse avec un provider
-configuré restent à exercer sur appareil. Les fixtures couvrent le chemin sans
-évaluation en l’absence de provider. CloudKit n’est pas actif ; ses conflits
-réseau ne sont donc pas couverts.
+Les parcours automatisés et l’inspection des captures ne remplacent pas un
+audit VoiceOver sur appareil, les contrastes mesurés et les fenêtres Mac
+étroites. Dynamic Type AX5 est exercé sur simulateur iPad ; cela ne prouve pas
+toutes les tailles sur tous les appareils. La réduction des animations et
+Speech avec permission accordée restent à exercer manuellement. Aucun
+fournisseur d’évaluation de prononciation n’est configuré.
+
+Le runner Mac signale un doublon Objective-C de `JSONContentStore` entre le
+framework du package et la bibliothèque de l’application. Les scénarios
+ci-dessus réussissent, mais la refonte ne corrige pas ce linkage existant.
+CloudKit reste inactif : aucune synchronisation ni résolution de conflit
+réseau n’est présentée comme validée.

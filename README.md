@@ -48,13 +48,12 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-La suite portable actuelle compte **55 tests**, dont **12 contrats de contenu** ;
-le dernier contrôle local est passé à **55/55**. Le [run Apple canonique
-34261316153](https://github.com/STOOOKEEE/Polygo/actions/runs/34261316153) sur
-`ac1daee` a validé le package à **55/55**, les **8 méthodes UI iOS (8/8)** et
-les **5 méthodes UI macOS (5/5)**. Xcode et les SDK Apple ne sont pas présents
-dans l’environnement Linux, donc les tests UI natifs doivent être exécutés sur
-un runner Apple.
+La suite portable compte **72 tests XCTest**. La CI Apple compile les deux
+applications, exerce les parcours natifs sur Mac, iPhone et iPad et vérifie la
+reprise du vrai `AppModel` après des erreurs de persistance. Les commits testés,
+résultats, captures et limites figurent dans le [rapport QA](docs/QA_REPORT.md).
+Xcode et les SDK Apple ne sont pas présents dans l’environnement Linux :
+les validations natives sont exécutées sur les runners Apple, pas simulées ici.
 
 ## Contenu livré
 
