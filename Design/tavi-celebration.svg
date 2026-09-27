@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="280" viewBox="0 0 256 280" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="taviFur" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#FFAD6D"/><stop offset="0.52" stop-color="#D96A42"/><stop offset="1" stop-color="#A94439"/></linearGradient>
+    <linearGradient id="taviLight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF2D6"/><stop offset="1" stop-color="#EBCBA5"/></linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <g>
+    <ellipse cx="119" cy="252" rx="78" ry="12" fill="#080A17" opacity="0.38" filter="url(#softShadow)"/>
+    <path d="M152 202 C181 219 213 205 221 180 C230 154 209 135 190 144 C174 152 177 173 193 177 C205 180 212 168 206 159" fill="none" stroke="#823E3A" stroke-width="36" stroke-linecap="round"/>
+    <path d="M152 202 C181 219 213 205 221 180 C230 154 209 135 190 144 C174 152 177 173 193 177 C205 180 212 168 206 159" fill="none" stroke="url(#taviFur)" stroke-width="25" stroke-linecap="round"/>
+    <path d="M178 204 Q194 195 201 180 M188 151 Q198 148 205 157 M213 199 Q221 188 220 178" fill="none" stroke="#FFE4BE" stroke-width="8" stroke-linecap="round" opacity="0.92"/>
+    <path d="M178 208 Q195 203 203 194" fill="none" stroke="#9D4B3D" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="115" cy="197" rx="59" ry="63" fill="#9F453B"/>
+    <ellipse cx="115" cy="191" rx="55" ry="59" fill="url(#taviFur)"/>
+    <ellipse cx="120" cy="198" rx="29" ry="36" fill="url(#taviLight)"/>
+    <ellipse cx="87" cy="241" rx="23" ry="13" fill="#A8493B"/>
+    <ellipse cx="143" cy="241" rx="23" ry="13" fill="#A8493B"/>
+    <path d="M72 168 Q55 144 54 116" fill="none" stroke="#9B483D" stroke-width="21" stroke-linecap="round"/>
+    <path d="M72 168 Q55 144 54 116" fill="none" stroke="#E27A4D" stroke-width="15" stroke-linecap="round"/>
+    <ellipse cx="53" cy="111" rx="12" ry="10" fill="#D96A42"/>
+    <path d="M163 169 Q185 146 188 116" fill="none" stroke="#9B483D" stroke-width="21" stroke-linecap="round"/>
+    <path d="M163 169 Q185 146 188 116" fill="none" stroke="#E27A4D" stroke-width="15" stroke-linecap="round"/>
+    <ellipse cx="189" cy="111" rx="12" ry="10" fill="#D96A42"/>
+    <path d="M59 80 Q57 44 69 18 Q93 23 105 51" fill="#9B483D" stroke="#863E39" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M67 66 Q66 45 74 31 Q86 36 93 57" fill="#F3C6A0"/>
+    <path d="M130 51 Q142 23 166 17 Q178 43 174 79" fill="#9B483D" stroke="#863E39" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M141 57 Q151 36 163 30 Q171 47 168 67" fill="#F3C6A0"/>
+    <ellipse cx="116" cy="91" rx="76" ry="66" fill="#9E473B"/>
+    <ellipse cx="116" cy="88" rx="72" ry="63" fill="url(#taviFur)"/>
+    <path d="M55 91 Q67 73 91 78 Q101 84 99 105 Q96 123 76 125 Q58 119 55 91Z" fill="#7E4140"/>
+    <path d="M137 78 Q160 74 176 91 Q173 120 154 125 Q134 122 132 104 Q131 86 137 78Z" fill="#7E4140"/>
+    <path d="M58 102 Q70 91 89 92 Q94 111 80 120 Q66 119 58 102Z" fill="url(#taviLight)"/>
+    <path d="M143 92 Q161 89 173 102 Q165 119 151 120 Q137 111 143 92Z" fill="url(#taviLight)"/>
+    <path d="M83 97 Q91 91 99 96 M131 96 Q139 91 147 97" fill="none" stroke="#63343A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M88 109 Q94 114 100 109 M132 109 Q138 114 144 109" fill="none" stroke="#4E2934" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="116" cy="124" rx="29" ry="22" fill="url(#taviLight)"/>
+    <path d="M108 119 Q116 113 124 119 Q123 126 116 127 Q109 126 108 119Z" fill="#5A3439"/>
+    <ellipse cx="117" cy="130" rx="11" ry="9" fill="#4E2934"/>
+    <path d="M108 131 Q117 137 126 131" fill="none" stroke="#FF9A8B" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="94" cy="132" r="2.2" fill="#CE6F61"/>
+    <circle cx="137" cy="132" r="2.2" fill="#CE6F61"/>
+    <path d="M75 66 Q82 48 99 43" fill="none" stroke="#FFD4A3" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+    <path d="M190 58 Q191 66 199 67 Q191 68 190 76 Q189 68 181 67 Q189 66 190 58Z" fill="#F5C75E"/>
+    <path d="M203 113 Q204 118 209 119 Q204 120 203 125 Q202 120 197 119 Q202 118 203 113Z" fill="#C5A1FF"/>
+  </g>
+</svg>

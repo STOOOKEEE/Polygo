@@ -50,6 +50,7 @@ public struct OralView: View {
         }
         .background(SylluneColor.canvas).navigationTitle("Oral")
         .task { await findExercise() }
+        .sylluneFocusedExercise()
     }
 
     private func findExercise() async {
@@ -123,6 +124,7 @@ public struct WritingView: View {
         }
         .background(SylluneColor.canvas).navigationTitle("Écriture")
         .task { await findExercise() }
+        .sylluneFocusedExercise()
     }
 
     private func findExercise() async {
@@ -181,6 +183,11 @@ private struct FeedbackViewForPractice: View {
         HStack(alignment: .top, spacing: 10) {
             Image(systemName: isSkipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill")).foregroundStyle(isSkipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
             VStack(alignment: .leading, spacing: 4) { Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Réponse enregistrée" : "À revoir")).font(.headline); Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body) }
+            Spacer(minLength: 0)
+            TaviMascot(pose: .encouragement)
+                .frame(width: 56, height: 56)
+                .accessibilityHidden(true)
+                .allowsHitTesting(false)
         }
         .padding(14).frame(maxWidth: .infinity, alignment: .leading).sylluneCard(radius: 12)
     }

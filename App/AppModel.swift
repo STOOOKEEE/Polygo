@@ -5,12 +5,16 @@ import PolygoSRS
 import PolygoPersistence
 import PolygoApple
 
+public struct LessonCompletionResult: Equatable, Sendable {
+    public let earnedCoins: Int
+}
+
 @MainActor
 public final class AppModel: ObservableObject {
     public let dependencies: AppDependencies
     public let profileID: ProfileID
 
-    @Published public private(set) var snapshot: ProgressSnapshot = .empty()
+    @Published public private(set) var snapshot: ProgressSnapshot = ProgressSnapshot(firstCompletionEventIDs: nil)
     @Published public private(set) var index: ContentIndex?
     @Published public private(set) var course: CourseManifest?
     @Published public private(set) var loadedLessons: [LessonID: LessonDocument] = [:]
@@ -34,6 +38,19 @@ public final class AppModel: ObservableObject {
     private var startsInFlight: Set<LessonID> = []
     private var evaluationsInFlight: Set<String> = []
     private var completionsInFlight: Set<LessonID> = []
+    private struct PendingCompletionAttempt {
+        let event: ProgressEvent
+        let possibleReward: Int
+    }
+
+    private struct PendingCompletionAnnouncement {
+        let eventID: EventID
+        let earnedCoins: Int
+    }
+
+    private var pendingCompletionAttempts: [LessonID: PendingCompletionAttempt] = [:]
+    private var pendingCompletionAnnouncements: [LessonID: PendingCompletionAnnouncement] = [:]
+    private var pendingCompletionCardEvents: [LessonID: [CardID: ProgressEvent]] = [:]
 
     public init(dependencies: AppDependencies, defaults: UserDefaults = .standard) {
         self.dependencies = dependencies
@@ -90,6 +107,10 @@ public final class AppModel: ObservableObject {
     }
 
     public var needsOnboarding: Bool { snapshot.profile == nil }
+
+    public var coinBalance: Int? {
+        snapshot.firstCompletionEventIDs.map { $0.count * 10 }
+    }
 
     public var greeting: String {
         guard let name = snapshot.profile?.displayName, !name.isEmpty else { return "Bonjour" }
@@ -185,6 +206,10 @@ public final class AppModel: ObservableObject {
             recordRestorationRoute(.lesson(id))
         }
         guard await append(.lessonRestarted(lessonID: id, at: dependencies.clock.now())) else { return false }
+        // Reconcile a durable first completion before dropping the failed
+        // attempt; the next completion after restart needs a fresh event ID.
+        reconcilePendingLessonCompletion(id)
+        pendingCompletionAttempts.removeValue(forKey: id)
         if persistRouteInNavigation { persistRoute(.lesson(id)) }
         return true
     }
@@ -236,22 +261,36 @@ public final class AppModel: ObservableObject {
     }
 
     @discardableResult
-    public func completeLesson(_ id: LessonID) async -> Bool {
-        guard completionsInFlight.insert(id).inserted else { return false }
+    public func completeLesson(_ id: LessonID) async -> LessonCompletionResult? {
+        guard completionsInFlight.insert(id).inserted else { return nil }
         defer { completionsInFlight.remove(id) }
+        guard !Task.isCancelled else { return nil }
+
+        reconcilePendingLessonCompletion(id)
         if snapshot.lessonProgress[id]?.completedAt == nil {
-            guard await append(.lessonCompleted(lessonID: id, at: dependencies.clock.now()) ) else { return false }
+            guard await appendLessonCompletion(id) else { return nil }
         }
-        if let lesson = await loadLesson(id) {
-            for card in lesson.cards {
-                // Completion can be durable before the process is killed
-                // while cards are being added. Re-entering the completion
-                // path repairs only missing cards and remains idempotent.
-                guard snapshot.reviewStates[card.id] == nil else { continue }
-                guard await append(.flashcardAdded(cardID: card.id, at: dependencies.clock.now()) ) else { return false }
-            }
+        reconcilePendingLessonCompletion(id)
+        guard !Task.isCancelled else { return nil }
+        guard let lesson = await loadLesson(id) else { return nil }
+        guard !Task.isCancelled else { return nil }
+
+        for card in lesson.cards {
+            guard !Task.isCancelled else { return nil }
+            // Retry a card event with its original ID if the journal write
+            // succeeded but updating the snapshot failed.
+            guard snapshot.reviewStates[card.id] == nil else { continue }
+            guard await appendLessonCompletionCard(id, card.id) else { return nil }
         }
-        return true
+        guard !Task.isCancelled else { return nil }
+
+        let pendingAnnouncement = pendingCompletionAnnouncements.removeValue(forKey: id)
+        pendingCompletionAttempts.removeValue(forKey: id)
+        pendingCompletionCardEvents.removeValue(forKey: id)
+        let earnedCoins = pendingAnnouncement.flatMap {
+            snapshot.firstCompletionEventIDs?[id] == $0.eventID ? $0.earnedCoins : nil
+        } ?? 0
+        return LessonCompletionResult(earnedCoins: earnedCoins)
     }
 
     @discardableResult
@@ -302,6 +341,99 @@ public final class AppModel: ObservableObject {
         return await task.value
     }
 
+    private func appendLessonCompletion(_ id: LessonID) async -> Bool {
+        let previous = eventWriteTail
+        let task = Task { @MainActor [weak self] in
+            if let previous { _ = await previous.value }
+            guard let self else { return false }
+            return await self.appendLessonCompletionNow(id)
+        }
+        eventWriteTail = task
+        return await task.value
+    }
+
+    private func appendLessonCompletionNow(_ id: LessonID) async -> Bool {
+        guard let profile = snapshot.profile else { return false }
+        if snapshot.lessonProgress[id]?.completedAt != nil {
+            reconcilePendingLessonCompletion(id)
+            return true
+        }
+
+        let attempt: PendingCompletionAttempt
+        if let pending = pendingCompletionAttempts[id] {
+            attempt = pending
+        } else {
+            let possibleReward = snapshot.firstCompletionEventIDs.map { $0[id] == nil ? 10 : 0 } ?? 0
+            let now = dependencies.clock.now()
+            let event = ProgressEvent(
+                profileID: profile.id,
+                deviceID: deviceID,
+                lamport: snapshot.lastEventLamport + 1,
+                occurredAt: now,
+                payload: .lessonCompleted(lessonID: id, at: now)
+            )
+            attempt = PendingCompletionAttempt(event: event, possibleReward: possibleReward)
+            pendingCompletionAttempts[id] = attempt
+        }
+
+        guard await appendNow(attempt.event) else { return false }
+        reconcilePendingLessonCompletion(id)
+        return true
+    }
+
+    private func appendLessonCompletionCard(_ lessonID: LessonID, _ cardID: CardID) async -> Bool {
+        let previous = eventWriteTail
+        let task = Task { @MainActor [weak self] in
+            if let previous { _ = await previous.value }
+            guard let self else { return false }
+            return await self.appendLessonCompletionCardNow(lessonID, cardID)
+        }
+        eventWriteTail = task
+        return await task.value
+    }
+
+    private func appendLessonCompletionCardNow(_ lessonID: LessonID, _ cardID: CardID) async -> Bool {
+        guard let profile = snapshot.profile else { return false }
+        guard snapshot.reviewStates[cardID] == nil else { return true }
+
+        let event: ProgressEvent
+        if let pending = pendingCompletionCardEvents[lessonID]?[cardID] {
+            event = pending
+        } else {
+            let now = dependencies.clock.now()
+            event = ProgressEvent(
+                profileID: profile.id,
+                deviceID: deviceID,
+                lamport: snapshot.lastEventLamport + 1,
+                occurredAt: now,
+                payload: .flashcardAdded(cardID: cardID, at: now)
+            )
+            pendingCompletionCardEvents[lessonID, default: [:]][cardID] = event
+        }
+
+        guard await appendNow(event) else { return false }
+        pendingCompletionCardEvents[lessonID]?.removeValue(forKey: cardID)
+        if pendingCompletionCardEvents[lessonID]?.isEmpty == true {
+            pendingCompletionCardEvents.removeValue(forKey: lessonID)
+        }
+        return true
+    }
+
+    private func reconcilePendingLessonCompletion(_ id: LessonID) {
+        guard let attempt = pendingCompletionAttempts[id] else { return }
+        if snapshot.firstCompletionEventIDs?[id] == attempt.event.eventID {
+            if attempt.possibleReward == 10, pendingCompletionAnnouncements[id] == nil {
+                pendingCompletionAnnouncements[id] = PendingCompletionAnnouncement(
+                    eventID: attempt.event.eventID,
+                    earnedCoins: 10
+                )
+            }
+            pendingCompletionAttempts.removeValue(forKey: id)
+        } else if snapshot.lessonProgress[id]?.completedAt != nil {
+            pendingCompletionAttempts.removeValue(forKey: id)
+        }
+    }
+
     private func appendNow(_ payload: ProgressEventPayload) async -> Bool {
         guard let profile = snapshot.profile ?? (payload.profileValue) else {
             // Before onboarding there is no valid profile-scoped event. The
@@ -315,6 +447,10 @@ public final class AppModel: ObservableObject {
             occurredAt: dependencies.clock.now(),
             payload: payload
         )
+        return await appendNow(event)
+    }
+
+    private func appendNow(_ event: ProgressEvent) async -> Bool {
         do {
             snapshot = try await dependencies.progress.append(event)
             errorMessage = nil

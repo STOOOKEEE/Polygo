@@ -44,39 +44,37 @@ private extension Color {
 }
 
 public enum SylluneColor {
-    // Light values keep normal text at or above a readable contrast ratio;
-    // dark values are selected independently rather than simply inverted.
-    public static let canvas = Color.sylluneAdaptive(light: SylluneRGB(0.985, 0.976, 0.951), dark: SylluneRGB(0.055, 0.075, 0.075))
-    public static let surface = Color.sylluneAdaptive(light: SylluneRGB(1, 1, 1), dark: SylluneRGB(0.09, 0.12, 0.12))
-    public static let surfaceRaised = Color.sylluneAdaptive(light: SylluneRGB(0.955, 0.953, 0.932), dark: SylluneRGB(0.13, 0.18, 0.17))
-    public static let ink = Color.sylluneAdaptive(light: SylluneRGB(0.086, 0.137, 0.173), dark: SylluneRGB(0.94, 0.96, 0.94))
-    public static let inkMuted = Color.sylluneAdaptive(light: SylluneRGB(0.235, 0.302, 0.310), dark: SylluneRGB(0.70, 0.76, 0.75))
-    public static let border = Color.sylluneAdaptive(light: SylluneRGB(0.82, 0.83, 0.78), dark: SylluneRGB(0.32, 0.40, 0.37))
-    public static let jade = Color.sylluneAdaptive(light: SylluneRGB(0.055, 0.33, 0.285), dark: SylluneRGB(0.12, 0.46, 0.36))
-    public static let jadeDeep = Color.sylluneAdaptive(light: SylluneRGB(0.03, 0.24, 0.21), dark: SylluneRGB(0.40, 0.87, 0.74))
-    public static let jadeButton = Color.sylluneAdaptive(light: SylluneRGB(0.055, 0.33, 0.285), dark: SylluneRGB(0.12, 0.46, 0.36))
-    // Coral is dark enough for the white mark and remains distinguishable as
-    // an icon in both appearances.
-    public static let coral = Color.sylluneAdaptive(light: SylluneRGB(0.65, 0.16, 0.13), dark: SylluneRGB(0.78, 0.24, 0.18))
-    public static let sun = Color.sylluneAdaptive(light: SylluneRGB(0.94, 0.75, 0.22), dark: SylluneRGB(0.42, 0.30, 0.06))
-    // `sky` is used for text and therefore stays light enough on dark canvas.
-    // Buttons use `skyButton`, whose darker value keeps white button labels
-    // readable as well.
-    public static let sky = Color.sylluneAdaptive(light: SylluneRGB(0.12, 0.34, 0.56), dark: SylluneRGB(0.35, 0.60, 0.78))
-    public static let skyButton = Color.sylluneAdaptive(light: SylluneRGB(0.12, 0.34, 0.56), dark: SylluneRGB(0.17, 0.40, 0.61))
-    public static let success = Color.sylluneAdaptive(light: SylluneRGB(0.06, 0.36, 0.24), dark: SylluneRGB(0.36, 0.80, 0.61))
-    public static let error = Color.sylluneAdaptive(light: SylluneRGB(0.62, 0.10, 0.15), dark: SylluneRGB(0.95, 0.37, 0.43))
+    // Cream and indigo surfaces stay distinct in both appearances; accent
+    // foregrounds are paired with their adaptive fills below.
+    public static let canvas = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
+    public static let surface = Color.sylluneAdaptive(light: SylluneRGB(1, 0.988, 0.961), dark: SylluneRGB(0.102, 0.129, 0.263))
+    public static let surfaceRaised = Color.sylluneAdaptive(light: SylluneRGB(0.949, 0.910, 0.843), dark: SylluneRGB(0.141, 0.176, 0.337))
+    public static let ink = Color.sylluneAdaptive(light: SylluneRGB(0.161, 0.137, 0.247), dark: SylluneRGB(1, 0.973, 0.914))
+    public static let inkMuted = Color.sylluneAdaptive(light: SylluneRGB(0.427, 0.400, 0.506), dark: SylluneRGB(0.749, 0.780, 0.898))
+    public static let border = Color.sylluneAdaptive(light: SylluneRGB(0.886, 0.855, 0.800), dark: SylluneRGB(0.224, 0.263, 0.396))
+    public static let jade = Color.sylluneAdaptive(light: SylluneRGB(0.080, 0.560, 0.480), dark: SylluneRGB(0.278, 0.843, 0.761))
+    public static let jadeDeep = Color.sylluneAdaptive(light: SylluneRGB(0.090, 0.435, 0.392), dark: SylluneRGB(0.455, 0.906, 0.835))
+    public static let jadeButton = Color.sylluneAdaptive(light: SylluneRGB(0.090, 0.435, 0.392), dark: SylluneRGB(0.278, 0.843, 0.761))
+    public static let coral = Color.sylluneAdaptive(light: SylluneRGB(0.737, 0.275, 0.231), dark: SylluneRGB(1, 0.475, 0.353))
+    public static let sun = Color.sylluneAdaptive(light: SylluneRGB(0.953, 0.773, 0.369), dark: SylluneRGB(0.961, 0.780, 0.369))
+    public static let sky = Color.sylluneAdaptive(light: SylluneRGB(0.153, 0.376, 0.588), dark: SylluneRGB(0.550, 0.718, 0.992))
+    public static let skyButton = Color.sylluneAdaptive(light: SylluneRGB(0.122, 0.314, 0.482), dark: SylluneRGB(0.240, 0.490, 0.733))
+    public static let success = Color.sylluneAdaptive(light: SylluneRGB(0.086, 0.435, 0.286), dark: SylluneRGB(0.443, 0.871, 0.655))
+    public static let error = Color.sylluneAdaptive(light: SylluneRGB(0.710, 0.200, 0.278), dark: SylluneRGB(0.980, 0.480, 0.550))
 
-    // Home and path accents are kept separate from the production palette so
-    // the refreshed shell can be expressive without changing lesson screens.
-    public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.06, 0.32, 0.27), dark: SylluneRGB(0.07, 0.25, 0.23))
-    public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.035, 0.23, 0.22), dark: SylluneRGB(0.045, 0.19, 0.20))
-    public static let progressTrack = Color.sylluneAdaptive(light: SylluneRGB(0.84, 0.89, 0.86), dark: SylluneRGB(0.22, 0.31, 0.30))
-    public static let inkOnSuccess = Color.sylluneAdaptive(light: SylluneRGB(1.0, 1.0, 1.0), dark: SylluneRGB(0.04, 0.14, 0.11))
-    public static let pathJade = Color.sylluneAdaptive(light: SylluneRGB(0.04, 0.40, 0.30), dark: SylluneRGB(0.09, 0.40, 0.29))
-    public static let pathCoral = Color.sylluneAdaptive(light: SylluneRGB(0.67, 0.20, 0.13), dark: SylluneRGB(0.63, 0.20, 0.15))
-    public static let pathSky = Color.sylluneAdaptive(light: SylluneRGB(0.13, 0.34, 0.60), dark: SylluneRGB(0.18, 0.38, 0.64))
-    public static let pathViolet = Color.sylluneAdaptive(light: SylluneRGB(0.37, 0.24, 0.61), dark: SylluneRGB(0.38, 0.26, 0.58))
+    public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.090, 0.435, 0.392), dark: SylluneRGB(0.235, 0.180, 0.373))
+    public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.031, 0.286, 0.318), dark: SylluneRGB(0.102, 0.129, 0.263))
+    public static let progressTrack = Color.sylluneAdaptive(light: SylluneRGB(0.886, 0.855, 0.800), dark: SylluneRGB(0.224, 0.263, 0.396))
+    public static let inkOnSuccess = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
+    public static let pathJade = Color.sylluneAdaptive(light: SylluneRGB(0.080, 0.435, 0.384), dark: SylluneRGB(0.278, 0.843, 0.761))
+    public static let pathCoral = Color.sylluneAdaptive(light: SylluneRGB(0.750, 0.275, 0.220), dark: SylluneRGB(1, 0.475, 0.353))
+    public static let pathSky = Color.sylluneAdaptive(light: SylluneRGB(0.122, 0.360, 0.588), dark: SylluneRGB(0.550, 0.718, 0.992))
+    public static let pathViolet = Color.sylluneAdaptive(light: SylluneRGB(0.350, 0.230, 0.580), dark: SylluneRGB(0.770, 0.630, 0.996))
+
+    public static let inkOnJade = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
+    public static let inkOnCoral = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
+    public static let inkOnSky = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
+    public static let inkOnViolet = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
 
     public static func pathAccent(for index: Int) -> Color {
         switch index % 4 {
@@ -87,9 +85,16 @@ public enum SylluneColor {
         }
     }
 
-    /// Text placed on the selected-day accent. The accent is intentionally
-    /// dark in dark mode, so its foreground must change with the appearance.
-    public static let inkOnSun = Color.sylluneAdaptive(light: SylluneRGB(0.086, 0.137, 0.173), dark: SylluneRGB(0.94, 0.96, 0.94))
+    public static func pathAccentForeground(for index: Int) -> Color {
+        switch index % 4 {
+        case 0: return inkOnJade
+        case 1: return inkOnCoral
+        case 2: return inkOnSky
+        default: return inkOnViolet
+        }
+    }
+
+    public static let inkOnSun = Color.sylluneAdaptive(light: SylluneRGB(0.161, 0.137, 0.247), dark: SylluneRGB(0.161, 0.137, 0.247))
 }
 
 /// A single environment value combines the system Reduce Motion setting with
@@ -103,6 +108,17 @@ public extension EnvironmentValues {
     var sylluneReduceMotion: Bool {
         get { self[SylluneReduceMotionKey.self] }
         set { self[SylluneReduceMotionKey.self] = newValue }
+    }
+}
+
+private struct SylluneShellWordNavigationKey: EnvironmentKey {
+    static let defaultValue: ((VocabularyID) -> Void)? = nil
+}
+
+extension EnvironmentValues {
+    var sylluneShellWordNavigation: ((VocabularyID) -> Void)? {
+        get { self[SylluneShellWordNavigationKey.self] }
+        set { self[SylluneShellWordNavigationKey.self] = newValue }
     }
 }
 
@@ -196,8 +212,8 @@ public enum SylluneCardStyle {
     fileprivate var border: Color {
         switch self {
         case .standard: return SylluneColor.border
-        case .quiet: return SylluneColor.border.opacity(0.18)
-        case .interactive: return SylluneColor.jade.opacity(0.28)
+        case .quiet: return SylluneColor.border.opacity(0.35)
+        case .interactive: return SylluneColor.jade.opacity(0.62)
         case .hero: return .clear
         }
     }
@@ -205,34 +221,36 @@ public enum SylluneCardStyle {
     fileprivate var borderWidth: CGFloat {
         switch self {
         case .standard: return 1
-        case .quiet, .interactive: return 0.75
+        case .quiet: return 0.75
+        case .interactive: return 1.25
         case .hero: return 0
         }
     }
 
     fileprivate var shadowColor: Color {
         switch self {
-        case .standard, .quiet: return .black.opacity(0.035)
-        case .interactive: return SylluneColor.jade.opacity(0.07)
-        case .hero: return SylluneColor.heroEnd.opacity(0.12)
+        case .standard: return .black.opacity(0.08)
+        case .quiet: return .black.opacity(0.05)
+        case .interactive: return SylluneColor.jade.opacity(0.20)
+        case .hero: return SylluneColor.heroEnd.opacity(0.32)
         }
     }
 
     fileprivate var shadowRadius: CGFloat {
         switch self {
-        case .standard: return 0
-        case .quiet: return 4
-        case .interactive: return 7
-        case .hero: return 14
+        case .standard: return 6
+        case .quiet: return 3
+        case .interactive: return 9
+        case .hero: return 16
         }
     }
 
     fileprivate var shadowY: CGFloat {
         switch self {
-        case .standard: return 0
+        case .standard: return 3
         case .quiet: return 2
-        case .interactive: return 3
-        case .hero: return 5
+        case .interactive: return 4
+        case .hero: return 6
         }
     }
 }
@@ -259,12 +277,32 @@ public struct SylluneCard: ViewModifier {
                     )
                 case .quiet:
                     SylluneColor.surfaceRaised
-                case .standard, .interactive:
-                    SylluneColor.surface
+                case .standard:
+                    LinearGradient(
+                        colors: [SylluneColor.surface, SylluneColor.surfaceRaised.opacity(0.46)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                case .interactive:
+                    LinearGradient(
+                        colors: [SylluneColor.surfaceRaised, SylluneColor.surface],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                 }
             }
             .clipShape(shape)
             .overlay(shape.stroke(style.border, lineWidth: style.borderWidth))
+            .overlay {
+                shape.stroke(
+                    LinearGradient(
+                        colors: [Color.white.opacity(0.26), .clear],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    lineWidth: 1
+                )
+            }
             .shadow(color: style.shadowColor, radius: style.shadowRadius, x: 0, y: style.shadowY)
     }
 }
@@ -439,6 +477,7 @@ public struct Badge: View {
 /// `segmentation`.
 public struct ChineseSelectableText: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.sylluneShellWordNavigation) private var shellWordNavigation
     public let text: String
     public let font: Font
     public let speechEnabled: Bool
@@ -772,7 +811,11 @@ public struct ChineseSelectableText: View {
     }
 
     private func openWord(_ entry: VocabularyEntry) {
-        selectedVocabularyID = entry.id
+        if let shellWordNavigation {
+            shellWordNavigation(entry.id)
+        } else {
+            selectedVocabularyID = entry.id
+        }
     }
 
     private func speakToken(_ value: String) {

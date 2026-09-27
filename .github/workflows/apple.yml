@@ -98,6 +98,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests.xcresult" \
+            -skip-testing:PolygoAppUITests/PolygoAppUITests/testIPadKeyboardShortcutsReachTabsAndSettingsFromFocusedContent \
             test
 
       - name: Run iPad large-text UI smoke tests
@@ -159,6 +160,7 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests-ipad-ax5.xcresult" \
             -only-testing:PolygoAppUITests/PolygoAppUITests \
+            -only-testing:PolygoAppUITests/PolygoAppUITests/testIPadKeyboardShortcutsReachTabsAndSettingsFromFocusedContent \
             -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testGuidedWritingRejectsWrongStrokeThenAcceptsRetry \
             -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testFreeWritingFailureCanBeSelfReportedAndAdvance \
             -only-testing:PolygoAppUITests/ZZLessonRegressionJourneyTests/testLessonDraftFeedbackDialogueAndOralJourney \
@@ -227,9 +229,8 @@ jobs:
           screen_id="$(printf '%s\n' "$display_info" | awk -F ': ' '/Persistent screen id:/ { print $2; exit }')"
           test -n "$screen_id"
 
-          # The desktop home needs 944 points of content, 56 points of
-          # padding, and the 240 point sidebar. Pick a supported mode that
-          # leaves room for that composition on the hosted runner.
+          # The desktop home needs 944 points of content and 56 points of
+          # horizontal padding. Pick a supported mode that leaves room for it.
           mode="$(printf '%s\n' "$display_info" \
             | sed -nE 's/.*mode [0-9]+: (res:[0-9]+x[0-9]+ hz:[0-9]+ color_depth:[0-9]+).*/\1 scaling:off/p' \
             | awk '
@@ -248,6 +249,7 @@ jobs:
           displayplacer list
 
       - name: Build macOS app
+        id: mac-build
         run: >-
           xcodebuild
           -project Polygo.xcodeproj
@@ -259,7 +261,17 @@ jobs:
           CODE_SIGNING_REQUIRED=NO
           build
 
+      - name: Exercise real AppModel reward failure recovery
+        run: >-
+          python3 Tests/PolygoAppModelSmoke/run.py
+          --derived-data "$RUNNER_TEMP/PolygoMacDerivedData"
+          --entry Tests/PolygoAppModelSmoke/RewardProbe.swift
+          --repo "$GITHUB_WORKSPACE"
+          --sha "$GITHUB_SHA"
+          --output-parent "$RUNNER_TEMP"
+
       - name: Run macOS UI smoke tests
+        if: ${{ !cancelled() && steps.mac-build.outcome == 'success' }}
         run: |
           set -euo pipefail
           # Keep this journey deterministic on a fresh runner and ensure the
@@ -302,4 +314,5 @@ jobs:
           path: |
             ${{ runner.temp }}/PolygoMacUITests.xcresult
             ${{ runner.temp }}/PolygoMacScreenshots
+            ${{ runner.temp }}/polygo-model-reward-*
           if-no-files-found: warn

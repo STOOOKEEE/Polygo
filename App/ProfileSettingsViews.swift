@@ -31,7 +31,7 @@ public struct ProfileView: View {
                 .padding(18).sylluneCard()
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Données et réglages").font(.headline).foregroundStyle(SylluneColor.ink)
-                    NavigationLink(destination: SettingsView()) { Label("Réglages", systemImage: "gearshape") }
+                    NavigationLink(value: AppRoute.settings) { Label("Réglages", systemImage: "gearshape") }
                     Text("Progression conservée sur cet appareil").font(.caption).foregroundStyle(SylluneColor.inkMuted)
                 }
                 .padding(18).sylluneCard()

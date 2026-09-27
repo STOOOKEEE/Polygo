@@ -18,6 +18,7 @@ public struct LessonView: View {
     @State private var automaticEvaluationTask: Task<Void, Never>?
     @State private var isFinalizing = false
     @State private var finished = false
+    @State private var earnedCoins: Int?
     @State private var preambleExpanded = false
     @State private var readingReferenceExpanded = false
     @State private var dialogueDrafts: [BlockID: String] = [:]
@@ -47,7 +48,6 @@ public struct LessonView: View {
         .navigationTitle(lesson?.title.resolve(preferred: model.preferredLanguageCodes) ?? "Leçon")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .tabBar)
         #endif
         .task {
             lesson = await model.loadLesson(lessonID)
@@ -81,6 +81,7 @@ public struct LessonView: View {
             model.dependencies.audio.stopPlayback()
             scheduleCheckpoint()
         }
+        .sylluneFocusedExercise()
     }
 
     private func restoreSavedStateIfNeeded() {
@@ -557,6 +558,7 @@ public struct LessonView: View {
             let terminalDrafts = dialogueDrafts
             let terminalResults = dialogueResults
             isFinalizing = true
+            earnedCoins = nil
             Task { @MainActor in
                 let checkpointSaved = await model.saveLessonCheckpoint(
                     lessonID,
@@ -572,10 +574,11 @@ public struct LessonView: View {
                     return
                 }
                 if complete {
-                    guard await model.completeLesson(lessonID) else {
+                    guard let result = await model.completeLesson(lessonID) else {
                         isFinalizing = false
                         return
                     }
+                    earnedCoins = result.earnedCoins
                 }
                 currentIndex = exercises.count
                 answer = nil
@@ -589,44 +592,76 @@ public struct LessonView: View {
     @ViewBuilder private func completionView(_ lesson: LessonDocument) -> some View {
         let successCount = answered.values.filter { evaluationCountsAsComplete($0) }.count
         let skippedCount = answered.values.filter { $0.outcome == .skipped }.count
-        VStack(alignment: .leading, spacing: 16) {
-            Image(systemName: successCount == exercises.count ? "checkmark.circle.fill" : "arrow.counterclockwise.circle")
-                .font(.system(size: 48)).foregroundStyle(successCount == exercises.count ? SylluneColor.success : SylluneColor.coral)
-            Text(successCount == exercises.count ? "Leçon terminée" : "Leçon enregistrée")
-                .font(.largeTitle.weight(.semibold)).foregroundStyle(SylluneColor.ink)
-            Text("\(successCount) / \(exercises.count) exercices réussis. Les erreurs restent disponibles pour une nouvelle tentative.")
-                .font(.body).foregroundStyle(SylluneColor.inkMuted)
-            if skippedCount > 0 {
-                Text(skippedCount == 1 ? "1 exercice passé sans évaluation" : "\(skippedCount) exercices passés sans évaluation")
-                    .font(.body).foregroundStyle(SylluneColor.inkMuted)
-            }
-            Button("Recommencer cette leçon") {
-                Task { @MainActor in
-                    guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
-                    currentIndex = 0
-                    answer = nil
-                    evaluation = nil
-                    answered = [:]
-                    dialogueDrafts = [:]
-                    dialogueResults = [:]
-                    finished = false
-                    preambleExpanded = false
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(alignment: .center, spacing: 14) {
+                    TaviMascot(pose: successCount == exercises.count ? .celebration : .encouragement)
+                        .frame(width: 84, height: 84)
+                        .accessibilityHidden(true)
+                        .allowsHitTesting(false)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(successCount == exercises.count ? "Leçon terminée" : "Leçon enregistrée")
+                            .font(.largeTitle.weight(.semibold))
+                            .foregroundStyle(SylluneColor.ink)
+                        Text("\(successCount) / \(exercises.count) exercices réussis. Les erreurs restent disponibles pour une nouvelle tentative.")
+                            .font(.body)
+                            .foregroundStyle(SylluneColor.inkMuted)
+                    }
                 }
+                .padding(18)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .sylluneCard(style: .quiet, radius: 20)
+
+                if skippedCount > 0 {
+                    Text(skippedCount == 1 ? "1 exercice passé sans évaluation" : "\(skippedCount) exercices passés sans évaluation")
+                        .font(.body)
+                        .foregroundStyle(SylluneColor.inkMuted)
+                }
+
+                if let earnedCoins, earnedCoins > 0 {
+                    HStack(spacing: 10) {
+                        SylluneCoinIcon()
+                            .frame(width: 28, height: 28)
+                            .accessibilityHidden(true)
+                            .allowsHitTesting(false)
+                        Text("+\(earnedCoins) pièces")
+                            .font(.headline)
+                            .foregroundStyle(SylluneColor.ink)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .sylluneCard(style: .interactive, radius: 16)
+                    .accessibilityElement(children: .combine)
+                }
+
+                Button("Recommencer cette leçon") {
+                    Task { @MainActor in
+                        guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
+                        currentIndex = 0
+                        answer = nil
+                        evaluation = nil
+                        answered = [:]
+                        dialogueDrafts = [:]
+                        dialogueResults = [:]
+                        earnedCoins = nil
+                        finished = false
+                        preambleExpanded = false
+                    }
+                }
+                .buttonStyle(.bordered)
+                Button("Retour au parcours") {
+                    // Leave the recap only on request and persist the path root,
+                    // rather than automatically opening the next lesson.
+                    dismiss()
+                    model.persistRoute(.path)
+                }
+                .buttonStyle(SyllunePrimaryButtonStyle())
             }
-            .buttonStyle(.bordered)
-            Button("Retour au parcours") {
-                // The bilan stays visible until the learner chooses where to
-                // go next. Dismiss the lesson destination first, then make
-                // Parcours the durable shell root so both tab and split
-                // navigation land on the updated roadmap instead of opening
-                // the next lesson automatically.
-                dismiss()
-                model.persistRoute(.path)
-            }
-            .buttonStyle(SyllunePrimaryButtonStyle())
+            .frame(maxWidth: 620, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(20)
         }
-        .frame(maxWidth: 620, alignment: .leading)
-        .padding(24)
     }
 
     private func evaluationCountsAsComplete(_ value: ExerciseEvaluation?) -> Bool {
@@ -649,6 +684,11 @@ private struct FeedbackView: View {
                 Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Correct" : "À revoir")).font(.headline)
                 Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body)
             }
+            Spacer(minLength: 0)
+            TaviMascot(pose: .encouragement)
+                .frame(width: 60, height: 60)
+                .accessibilityHidden(true)
+                .allowsHitTesting(false)
         }
         .foregroundStyle(SylluneColor.ink)
         .padding(16).frame(maxWidth: .infinity, alignment: .leading).sylluneCard(radius: 12)

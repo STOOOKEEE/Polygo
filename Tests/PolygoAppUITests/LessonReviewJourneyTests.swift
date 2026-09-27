@@ -41,31 +41,24 @@ final class LessonReviewJourneyTests: XCTestCase {
         app = nil
     }
 
-    func testLessonSkipKeepsOralUnevaluatedAndPersistsWritingPathAcrossRelaunch() throws {
-        let lesson = try loadLessonFixture()
-        let exercises = lesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
+    func testCompletionCoinsPersistWithoutReplayReward() throws {
+        let firstLesson = try loadLessonFixture()
+        let firstExercises = firstLesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
 
-        XCTAssertEqual(lesson.id, "lesson-01")
+        XCTAssertEqual(firstLesson.id, "lesson-01")
         XCTAssertGreaterThanOrEqual(
-            exercises.count,
+            firstExercises.count,
             6,
             "L1 doit conserver ses activités de récupération, production et transfert"
         )
-        XCTAssertEqual(lesson.cards.count, 5, "L1 doit fournir cinq cartes dans le JSON")
+        XCTAssertEqual(firstLesson.cards.count, 5, "L1 doit fournir cinq cartes dans le JSON")
 
         completeOnboardingIfNeeded()
+        navigateToTab("Parcours")
+        assertCoinBalance(0)
         openFirstLessonIfNeeded()
+        try completeExercises(firstExercises)
 
-        for (index, exercise) in exercises.enumerated() {
-            try answer(exercise)
-            evaluateAndAdvance(isLast: index == exercises.count - 1)
-        }
-
-        XCTAssertTrue(
-            text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout),
-            "La fin de L1 doit signaler l’exercice oral passé sans évaluation"
-        )
-        XCTAssertFalse(text(containing: "Leçon terminée").exists, "Une leçon avec un exercice oral non évalué ne doit pas être marquée terminée")
         XCTAssertTrue(
             text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
             "Le bilan doit exclure l’exercice oral passé sans évaluation"
@@ -74,27 +67,23 @@ final class LessonReviewJourneyTests: XCTestCase {
             text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit compter explicitement l’exercice oral sans évaluation"
         )
+        XCTAssertTrue(text(containing: "+10 pièces").waitForExistence(timeout: timeout), "La première complétion doit confirmer ses dix pièces")
+        assertFocusedChromeHidden()
 
         app.terminate()
         app.launch()
 
         XCTAssertTrue(
-            text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout),
-            "Le bilan d’une leçon non terminée doit être conservé après relance"
-        )
-        XCTAssertTrue(
             text(containing: "5 / 6 exercices réussis").waitForExistence(timeout: timeout),
-            "Le bilan non évalué doit conserver ses compteurs après relance"
+            "Le bilan doit conserver ses compteurs après relance"
         )
         XCTAssertTrue(
             text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
-            "Le bilan non évalué doit conserver le compteur des exercices passés"
+            "Le bilan doit conserver l’état oral non évalué après relance"
         )
+        XCTAssertFalse(text(containing: "+10 pièces").exists, "La restauration ne doit pas réannoncer un gain historique")
+        assertFocusedChromeHidden()
 
-        // Completing every required exercise unlocks the next lesson even
-        // when the oral exercise remains explicitly unevaluated. Verify the
-        // learner-facing path and destination rather than inferring unlock
-        // state from the local event journal.
         let returnToPath = button(exactly: "Retour au parcours")
         XCTAssertTrue(
             returnToPath.waitForExistence(timeout: timeout),
@@ -103,31 +92,36 @@ final class LessonReviewJourneyTests: XCTestCase {
         returnToPath.tap()
         XCTAssertTrue(
             text(containing: "Parcours").waitForExistence(timeout: timeout),
-            "L’action finale du bilan doit ouvrir la carte du parcours"
+            "L’action finale doit revenir à la racine du parcours"
         )
-        XCTAssertFalse(
-            app.navigationBars.buttons.firstMatch.exists,
-            "L’action finale doit revenir à la racine du parcours, sans empiler la carte dans la leçon"
-        )
+        let nestedBack = app.navigationBars.buttons.firstMatch
+        XCTAssertFalse(nestedBack.exists, "Le retour doit afficher la racine du parcours sans retour imbriqué")
+        let pathTab = app.buttons["BottomTab.path"]
+        XCTAssertTrue(pathTab.waitForExistence(timeout: timeout), "Le parcours doit rester visible après le retour")
+        XCTAssertTrue(pathTab.isSelected, "Le parcours doit être l’onglet actif après le retour")
+        assertCoinBalance(10)
+
         let completedLesson = app.descendants(matching: .any).matching(
             NSPredicate(format: "identifier == %@", "learningPath.lesson.lesson-01")
         ).firstMatch
-        XCTAssertTrue(
-            completedLesson.waitForExistence(timeout: timeout),
-            "La carte du parcours doit conserver la première leçon"
-        )
-        XCTAssertTrue(
-            completedLesson.label.contains("Terminée"),
-            "La carte du parcours doit afficher L1 comme terminée après le bilan"
-        )
+        XCTAssertTrue(completedLesson.waitForExistence(timeout: timeout), "La première leçon doit rester visible dans le parcours")
+        XCTAssertTrue(completedLesson.label.contains("Terminée"), "La première leçon doit conserver son état de progression")
         let nextLesson = button(containing: "Dire son nom")
         XCTAssertTrue(nextLesson.waitForExistence(timeout: timeout), "La leçon suivante doit apparaître dans le parcours")
         XCTAssertTrue(nextLesson.isEnabled, "La leçon suivante doit être activée après la fin de L1")
 
-        // The completed lesson adds its authored cards to the local review
-        // queue. Check the learner-facing front/back contract before opening
-        // L2: Hanzi stays on the front, while revealing exposes the pinyin
-        // and French meaning from the same known fixture card.
+        tapWhenVisible(completedLesson)
+        let restart = button(exactly: "Recommencer cette leçon")
+        XCTAssertTrue(restart.waitForExistence(timeout: timeout), "La leçon terminée doit proposer son redémarrage")
+        tapWhenVisible(restart)
+        try completeExercises(firstExercises)
+        XCTAssertFalse(text(containing: "+10 pièces").exists, "La recomplétion ne doit pas réannoncer les pièces historiques")
+        assertFocusedChromeHidden()
+        let returnAfterRestart = button(exactly: "Retour au parcours")
+        XCTAssertTrue(returnAfterRestart.waitForExistence(timeout: timeout), "Le bilan rejoué doit permettre de revenir au parcours")
+        returnAfterRestart.tap()
+        assertCoinBalance(10)
+
         navigateToTab("Cartes")
         let startCards = button(exactly: "Commencer")
         XCTAssertTrue(startCards.waitForExistence(timeout: timeout), "Les cartes de L1 doivent pouvoir démarrer une révision")
@@ -146,8 +140,23 @@ final class LessonReviewJourneyTests: XCTestCase {
         XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour des cartes doit retrouver le parcours")
         tapWhenVisible(nextLesson)
         XCTAssertTrue(text(containing: "Dire son nom").waitForExistence(timeout: timeout), "Le titre de L2 doit être visible après son ouverture")
-        let nextFirstExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch
-        XCTAssertTrue(nextFirstExercise.waitForExistence(timeout: timeout), "Le premier exercice de L2 doit être chargé")
+
+        let secondLesson = try loadLessonFixture(relativePath: "lessons/lesson-02.json")
+        let secondExercises = secondLesson.blocks.filter { $0.kind == "exercise" }.compactMap(\.spec)
+        XCTAssertEqual(secondLesson.id, "lesson-02")
+        try completeExercises(secondExercises)
+        XCTAssertTrue(text(containing: "+10 pièces").waitForExistence(timeout: timeout), "Une autre première complétion doit confirmer dix nouvelles pièces")
+        assertFocusedChromeHidden()
+        let returnAfterSecondLesson = button(exactly: "Retour au parcours")
+        XCTAssertTrue(returnAfterSecondLesson.waitForExistence(timeout: timeout), "Le bilan de L2 doit proposer le retour au parcours")
+        returnAfterSecondLesson.tap()
+        assertCoinBalance(20)
+
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(app.buttons["BottomTab.path"].waitForExistence(timeout: timeout), "La destination Parcours doit être restaurée")
+        assertCoinBalance(20)
+        XCTAssertFalse(text(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
     }
 
     func testGuidedWritingRejectsWrongStrokeThenAcceptsRetry() throws {
@@ -167,6 +176,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         XCTAssertTrue(canvas.waitForExistence(timeout: timeout), "La zone de tracé doit être exposée pour \(target)")
         bringIntoView(canvas)
         XCTAssertTrue(isFullyVisible(canvas), "La zone de tracé doit être entièrement visible avant le geste")
+        assertFocusedChromeHidden()
         XCTAssertTrue(waitForValue(canvas, equals: "0 traits tracés"), "Le canevas doit démarrer vide")
 
         // Reversing the first guide segment exercises the guided gate itself:
@@ -210,6 +220,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         let canvas = element(containing: "Zone de tracé pour \(target)", type: .any)
         XCTAssertTrue(canvas.waitForExistence(timeout: timeout), "La zone de tracé doit être exposée pour \(target)")
         bringIntoView(canvas)
+        assertFocusedChromeHidden()
         let freeMode = button(exactly: "Libre")
         XCTAssertTrue(freeMode.waitForExistence(timeout: timeout), "Le mode libre doit être disponible")
         tapWhenVisible(freeMode)
@@ -285,9 +296,16 @@ final class LessonReviewJourneyTests: XCTestCase {
         case "flashcard":
             answerFlashcard()
         default:
-            XCTFail("Type d’exercice L1 inattendu dans le JSON : \(exercise.kind)")
+            XCTFail("Type d’exercice inattendu : \(exercise.header.id) (\(exercise.kind))")
         }
     }
+    private func completeExercises(_ exercises: [ExerciseFixture]) throws {
+        for (index, exercise) in exercises.enumerated() {
+            try answer(exercise)
+            evaluateAndAdvance(isLast: index == exercises.count - 1)
+        }
+    }
+
 
     private func answerChoice(_ exercise: ExerciseFixture) {
         guard
@@ -358,6 +376,7 @@ final class LessonReviewJourneyTests: XCTestCase {
     private func answerSpeaking(_: ExerciseFixture) {
         let disclaimer = element(containing: "ne mesurent pas tes phonèmes ni tes tons", type: .any)
         XCTAssertTrue(disclaimer.waitForExistence(timeout: timeout), "L’oral ne doit pas prétendre noter phonèmes ou tons")
+        assertFocusedChromeHidden()
 
         let record = button(exactly: "Enregistrer")
         XCTAssertTrue(record.waitForExistence(timeout: timeout), "L’exercice oral doit proposer l’enregistrement")
@@ -624,15 +643,21 @@ final class LessonReviewJourneyTests: XCTestCase {
 
     private func navigateToTab(_ label: String) {
         leaveLessonBeforeSelectingTab()
-        let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
-        if tab.waitForExistence(timeout: 5) {
-            tab.tap()
+        let identifier: String
+        switch label {
+        case "Aujourd’hui": identifier = "BottomTab.today"
+        case "Parcours": identifier = "BottomTab.path"
+        case "Explorer": identifier = "BottomTab.explorer"
+        case "Cartes": identifier = "BottomTab.cards"
+        case "Profil": identifier = "BottomTab.profile"
+        default:
+            XCTFail("Destination inconnue : \(label)")
             return
         }
-
-        let sidebarItem = element(containing: label, type: .any)
-        XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
-        sidebarItem.tap()
+        let tab = app.buttons[identifier]
+        XCTAssertTrue(tab.waitForExistence(timeout: timeout), "Le bouton de destination \(label) doit être accessible")
+        XCTAssertTrue(tab.isHittable, "Le bouton de destination \(label) doit être visible")
+        tab.tap()
     }
 
     private func leaveLessonBeforeSelectingTab() {
@@ -642,8 +667,28 @@ final class LessonReviewJourneyTests: XCTestCase {
         guard lessonControl.exists else { return }
 
         let back = app.navigationBars.buttons.firstMatch
-        XCTAssertTrue(back.waitForExistence(timeout: timeout), "Le parcours doit pouvoir quitter la leçon avant un changement d’onglet")
+        XCTAssertTrue(back.waitForExistence(timeout: timeout), "La leçon doit pouvoir être quittée avant de changer de destination")
         back.tap()
+    }
+
+    private func assertCoinBalance(_ expectedBalance: Int) {
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le badge de progression doit être visible sur une destination principale")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        XCTAssertEqual(Int(digits), expectedBalance, "Le badge doit exposer le solde historique exact")
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant la leçon")
+        }
     }
 
     private func bringIntoView(_ element: XCUIElement) {
@@ -781,8 +826,8 @@ final class LessonReviewJourneyTests: XCTestCase {
             .firstMatch
     }
 
-    private func loadLessonFixture() throws -> LessonFixture {
-        let data = try Data(contentsOf: contentURL(relativePath: "lessons/lesson-01.json"))
+    private func loadLessonFixture(relativePath: String = "lessons/lesson-01.json") throws -> LessonFixture {
+        let data = try Data(contentsOf: contentURL(relativePath: relativePath))
         return try JSONDecoder().decode(LessonFixture.self, from: data)
     }
 

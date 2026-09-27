@@ -11,6 +11,7 @@ final class MacHomeJourneyTests: XCTestCase {
         continueAfterFailure = false
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
+            "-syllune.profile.id", "mac-home-\(UUID().uuidString.lowercased())",
             "-AppleLanguages", "(fr)",
             "-AppleLocale", "fr_FR",
             "-syllune.appearance", "dark"
@@ -25,111 +26,164 @@ final class MacHomeJourneyTests: XCTestCase {
 
     func testDarkHomeKeepsPrimaryActionsVisible() throws {
         completeOnboardingIfNeeded()
-
-        // Onboarding opens the first lesson so the learner has an immediate
-        // next step. Select the real desktop sidebar item to inspect Today,
-        // rather than bypassing navigation with an implementation hook.
-        selectSidebarItem("Aujourd’hui")
-        captureScreenshot(named: "mac-home-before-layout-assertions")
+        pressCommand("1")
 
         let window = app.windows.firstMatch
         XCTAssertTrue(window.waitForExistence(timeout: timeout), "La fenêtre macOS doit être visible")
+        XCTAssertTrue(button(identifier: "home.primaryAction").waitForExistence(timeout: timeout), "Aujourd’hui doit proposer son action principale")
+        XCTAssertTrue(button(identifier: "home.primaryAction").isHittable, "L’action principale doit être visible")
+        XCTAssertTrue(element(identifier: "home.path").waitForExistence(timeout: timeout), "Le bloc parcours doit être présent")
+        XCTAssertTrue(element(identifier: "home.review").waitForExistence(timeout: timeout), "Le bloc révisions doit être présent")
+        XCTAssertTrue(text(containing: "Ton parcours").waitForExistence(timeout: timeout), "Le parcours doit rester lisible dans l’accueil macOS")
+        assertBottomNavigation(balance: 0)
+        captureScreenshot(named: "mac-home-before-layout-assertions")
 
-        let primaryAction = button(identifier: "home.primaryAction")
-        XCTAssertTrue(
-            primaryAction.waitForExistence(timeout: timeout),
-            "L’accueil doit exposer son action principale"
-        )
-        XCTAssertTrue(
-            primaryAction.isHittable,
-            "L’action principale doit être visible dans la fenêtre desktop"
-        )
-        let path = element(identifier: "home.path")
-        XCTAssertTrue(
-            path.waitForExistence(timeout: timeout),
-            "Le bloc parcours doit être présent"
-        )
-        let review = element(identifier: "home.review")
-        XCTAssertTrue(
-            review.waitForExistence(timeout: timeout),
-            "Le bloc révisions doit être présent"
-        )
-        XCTAssertTrue(
-            text(containing: "Ton parcours").waitForExistence(timeout: timeout),
-            "Le parcours doit rester lisible dans l’accueil macOS"
-        )
-
-        // Keep a native macOS roadmap artifact alongside the home capture.
-        // Wait for the authored lesson row so this is taken after navigation
-        // has settled, then return to Today for the remainder of this
-        // journey's assertions and final state.
-        selectSidebarItem("Parcours")
-        XCTAssertTrue(
-            element(containing: "Dire bonjour").waitForExistence(timeout: timeout),
-            "Le parcours macOS doit afficher la première leçon avant sa capture"
-        )
+        selectBottomTab("path")
+        XCTAssertTrue(element(containing: "Dire bonjour").waitForExistence(timeout: timeout), "Le parcours macOS doit afficher sa première leçon")
+        assertBottomNavigation(balance: 0)
         captureScreenshot(named: "roadmap")
-        selectSidebarItem("Aujourd’hui")
-        XCTAssertTrue(
-            text(containing: "Ton parcours").waitForExistence(timeout: timeout),
-            "Le retour à Aujourd’hui doit être visible après la capture du parcours"
-        )
+        captureScreenshot(named: "mac-path-dark")
 
+        selectBottomTab("today")
+        XCTAssertTrue(text(containing: "Ton parcours").waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit revenir à son contenu")
         captureScreenshot(named: "mac-home-after-onboarding-dark")
     }
 
-    func testTodaySidebarReturnsFromLessonToHomeRoot() throws {
+    func testLightPathCaptureUsesRealAppearancePreference() throws {
         completeOnboardingIfNeeded()
-        selectSidebarItem("Aujourd’hui")
+        pressCommand("1")
+        restartWithAppearance("light")
+        selectBottomTab("path")
+        XCTAssertTrue(element(containing: "Dire bonjour").waitForExistence(timeout: timeout), "Le parcours doit être visible en thème clair")
+        assertBottomNavigation(balance: 0)
+        captureScreenshot(named: "mac-path-light")
+    }
 
-        captureScreenshot(named: "mac-home-before-reset-assertions")
-        let primaryAction = button(identifier: "home.primaryAction")
-        XCTAssertTrue(primaryAction.waitForExistence(timeout: timeout), "L’accueil doit proposer l’ouverture de la leçon")
-        XCTAssertTrue(primaryAction.isHittable, "L’ouverture de la leçon doit être accessible")
-        primaryAction.click()
+    func testTodayShortcutRestoresFocusedLessonAfterRelaunch() throws {
+        completeOnboardingIfNeeded()
+        let prompt = app.staticTexts["lesson.exercise.ex-l1-tone"]
+        XCTAssertTrue(prompt.waitForExistence(timeout: timeout), "L’onboarding doit ouvrir la première leçon focalisée")
 
-        captureScreenshot(named: "mac-lesson-before-sidebar-reset")
-        let lessonAction = button(exactly: "Vérifier")
-        XCTAssertTrue(lessonAction.waitForExistence(timeout: timeout), "La leçon doit remplacer l’accueil dans le détail")
-        let dialogue = text(containing: "Dialogue")
-        XCTAssertTrue(
-            dialogue.waitForExistence(timeout: timeout),
-            "Le détail de la leçon macOS doit conserver le dialogue avant la capture"
-        )
-        captureScreenshot(named: "dialogue")
+        let correctTone = button(containing: "3 — descend puis remonte")
+        XCTAssertTrue(scrollIntoView(correctTone), "Le bon choix doit être visible dans la leçon")
+        correctTone.click()
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "Le footer de la leçon doit être disponible")
+        XCTAssertTrue(verify.isEnabled, "Le choix doit activer le footer")
+        XCTAssertTrue(verify.isHittable, "Le footer doit être actionnable")
+        assertFocusedChromeHidden()
+        captureScreenshot(named: "mac-focused-exercise-footer")
 
-        // Opening a lesson must persist its resume route before the app is
-        // terminated, even though the shell still has Today selected.
         app.terminate()
         app.launch()
-        XCTAssertTrue(
-            button(exactly: "Vérifier").waitForExistence(timeout: timeout),
-            "La leçon doit reprendre après un redémarrage"
-        )
+        XCTAssertTrue(app.staticTexts["lesson.exercise.ex-l1-tone"].waitForExistence(timeout: timeout), "La leçon focalisée doit être restaurée après relance")
+        let restoredVerify = button(exactly: "Vérifier")
+        XCTAssertTrue(restoredVerify.waitForExistence(timeout: timeout), "Le footer doit être restauré")
+        XCTAssertTrue(restoredVerify.isEnabled, "La réponse choisie doit survivre à la relance")
+        assertFocusedChromeHidden()
+        captureScreenshot(named: "mac-focused-exercise-restored")
 
-        // Today is already selected in the sidebar. This click must still
-        // activate the route and recreate the detail stack at its root.
-        selectSidebarItem("Aujourd’hui")
-        captureScreenshot(named: "mac-home-after-sidebar-reset")
-        XCTAssertTrue(primaryAction.waitForExistence(timeout: timeout), "Aujourd’hui doit revenir à la racine après la leçon")
+        pressCommand("1")
+        XCTAssertTrue(button(identifier: "home.primaryAction").waitForExistence(timeout: timeout), "⌘1 doit revenir à Aujourd’hui depuis la leçon")
+        assertBottomNavigation(balance: 0)
+        captureScreenshot(named: "mac-home-after-lesson-shortcut")
+    }
 
-        // A persisted Today choice must also win when the app is restarted;
-        // an unfinished lesson in the journal must not be restored over it.
-        app.terminate()
-        app.launch()
-        XCTAssertTrue(
-            button(identifier: "home.primaryAction").waitForExistence(timeout: timeout),
-            "Aujourd’hui doit rester la racine après un redémarrage"
+    func testBottomTabShortcutsAndNestedExplorerRetap() throws {
+        completeOnboardingIfNeeded()
+        pressCommand("1")
+        assertSelectedTab("today")
+
+        pressCommand("2")
+        assertSelectedTab("path")
+        XCTAssertTrue(element(containing: "Dire bonjour").waitForExistence(timeout: timeout), "⌘2 doit ouvrir le parcours")
+
+        pressCommand("3")
+        assertSelectedTab("explorer")
+        XCTAssertTrue(text(containing: "Le premier échange").waitForExistence(timeout: timeout), "⌘3 doit ouvrir Explorer")
+
+        pressCommand("4")
+        assertSelectedTab("cards")
+        XCTAssertTrue(text(containing: "Cartes").waitForExistence(timeout: timeout), "⌘4 doit ouvrir les cartes")
+
+        pressCommand("5")
+        assertSelectedTab("profile")
+        XCTAssertTrue(text(containing: "Profil").waitForExistence(timeout: timeout), "⌘5 doit ouvrir le profil")
+
+        app.typeKey(",", modifierFlags: .command)
+        XCTAssertTrue(text(containing: "Thème").waitForExistence(timeout: timeout), "⌘, doit ouvrir les réglages du profil")
+        app.typeKey("k", modifierFlags: .command)
+        XCTAssertTrue(text(containing: "Dictionnaire").waitForExistence(timeout: timeout), "⌘K doit ouvrir le dictionnaire")
+        XCTAssertTrue(app.searchFields.firstMatch.waitForExistence(timeout: timeout), "⌘K doit rendre la recherche disponible")
+
+        let explorer = app.buttons["BottomTab.explorer"]
+        XCTAssertTrue(explorer.waitForExistence(timeout: timeout), "Le vrai bouton Explorer doit rester disponible dans le dictionnaire")
+        XCTAssertTrue(explorer.isHittable, "Explorer doit être cliquable depuis le dictionnaire")
+        explorer.click()
+        XCTAssertTrue(button(identifier: "explorer.dictionary").waitForExistence(timeout: timeout), "Le retap actif doit revenir à la racine d’Explorer")
+        XCTAssertTrue(text(containing: "Le premier échange").waitForExistence(timeout: timeout), "La destination imbriquée doit laisser place à la racine d’Explorer")
+    }
+
+    func testTabShortcutsOnlyNavigateTheFocusedWindow() throws {
+        completeOnboardingIfNeeded()
+        pressCommand("2")
+        assertSelectedTab("path")
+        let originalWindow = try XCTUnwrap(app.windows.allElementsBoundByAccessibilityElement.first)
+
+        pressCommand("n")
+        let secondWindow = expectation(
+            for: NSPredicate(format: "count == 2"),
+            evaluatedWith: app.windows
         )
+        wait(for: [secondWindow], timeout: timeout)
+        defer { pressCommand("w") }
+
+        pressCommand("5")
+        XCTAssertTrue(originalWindow.buttons["BottomTab.path"].isSelected,
+                      "Le raccourci de la nouvelle fenêtre ne doit pas déplacer la première")
+        let selectedProfiles = app.buttons.matching(identifier: "BottomTab.profile")
+            .matching(NSPredicate(format: "selected == true"))
+        XCTAssertEqual(selectedProfiles.count, 1, "Seule la fenêtre focalisée doit afficher Profil")
+    }
+
+    func testInlineWordSurvivesTabSwitchAndActiveRetapClosesIt() throws {
+        completeOnboardingIfNeeded()
+        pressCommand("k")
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: timeout))
+        search.click()
+        search.typeText("nihao")
+        let dictionaryWord = button(containing: "你好")
+        XCTAssertTrue(dictionaryWord.waitForExistence(timeout: timeout))
+        dictionaryWord.click()
+        let add = button(containing: "Ajouter aux cartes")
+        XCTAssertTrue(scrollIntoView(add))
+        add.click()
+        XCTAssertTrue(button(containing: "Déjà dans mes cartes").waitForExistence(timeout: timeout))
+
+        pressCommand("4")
+        let token = button(exactly: "你好")
+        XCTAssertTrue(token.waitForExistence(timeout: timeout))
+        token.click()
+        let detail = text(containing: "Fiche mot")
+        XCTAssertTrue(detail.waitForExistence(timeout: timeout))
+        pressCommand("5")
+        assertSelectedTab("profile")
+        pressCommand("4")
+        XCTAssertTrue(detail.waitForExistence(timeout: timeout),
+                      "Le changement d’onglet doit conserver la fiche ouverte depuis une carte")
+        pressCommand("4")
+        XCTAssertFalse(detail.exists, "Le retap actif doit fermer la fiche et retrouver les cartes")
+        XCTAssertTrue(token.waitForExistence(timeout: timeout))
+        assertBottomNavigation(balance: 0)
     }
 
     private func completeOnboardingIfNeeded() {
         let start = button(exactly: "Commencer")
         guard start.waitForExistence(timeout: timeout) else {
-            XCTAssertTrue(
-                element(containing: "Aujourd’hui").waitForExistence(timeout: timeout),
-                "L’app macOS doit démarrer sur l’espace d’apprentissage"
-            )
+            let resumedLesson = button(exactly: "Vérifier").waitForExistence(timeout: 3)
+            let today = button(identifier: "home.primaryAction").waitForExistence(timeout: 3)
+            XCTAssertTrue(resumedLesson || today, "L’app macOS doit restaurer une leçon ou Aujourd’hui")
             return
         }
         start.click()
@@ -148,57 +202,105 @@ final class MacHomeJourneyTests: XCTestCase {
         button(exactly: "Continuer").click()
 
         let rhythmHeading = text(containing: "Durée quotidienne")
-        XCTAssertTrue(
-            rhythmHeading.waitForExistence(timeout: timeout),
-            "Le rythme doit être accessible"
-        )
+        XCTAssertTrue(rhythmHeading.waitForExistence(timeout: timeout), "Le rythme doit être accessible")
         clickExactHittable(label: "15 min", message: "La durée 15 min doit être proposée")
         button(exactly: "Continuer").click()
 
-        let readyHeading = text(containing: "Tout est prêt")
-        XCTAssertTrue(
-            readyHeading.waitForExistence(timeout: timeout),
-            "La confirmation doit être accessible"
-        )
+        XCTAssertTrue(text(containing: "Tout est prêt").waitForExistence(timeout: timeout), "La confirmation doit être accessible")
         let openLesson = button(exactly: "Ouvrir ma première leçon")
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "L’ouverture de la première leçon doit être proposée")
         openLesson.click()
+        XCTAssertTrue(button(exactly: "Vérifier").waitForExistence(timeout: timeout), "La première leçon doit s’ouvrir dans son exercice focalisé")
     }
 
-    private func selectSidebarItem(_ label: String) {
-        let buttons = app.buttons.matching(NSPredicate(format: "label == %@", label))
-        _ = buttons.firstMatch.waitForExistence(timeout: timeout)
-        for index in 0..<buttons.count {
-            let button = buttons.element(boundBy: index)
-            if button.waitForExistence(timeout: 2), button.isHittable {
-                button.click()
-                return
-            }
+    private func bottomTab(_ name: String) -> XCUIElement? {
+        switch name {
+        case "today": return app.buttons["BottomTab.today"]
+        case "path": return app.buttons["BottomTab.path"]
+        case "explorer": return app.buttons["BottomTab.explorer"]
+        case "cards": return app.buttons["BottomTab.cards"]
+        case "profile": return app.buttons["BottomTab.profile"]
+        default: return nil
         }
+    }
 
-        let rows = app.outlineRows.matching(NSPredicate(format: "label == %@", label))
-        _ = rows.firstMatch.waitForExistence(timeout: timeout)
-        for index in 0..<rows.count {
-            let row = rows.element(boundBy: index)
-            if row.waitForExistence(timeout: 2), row.isHittable {
-                row.click()
-                return
-            }
+    private func selectBottomTab(_ name: String) {
+        guard let tab = bottomTab(name) else {
+            XCTFail("Destination inconnue : \(name)")
+            return
         }
+        XCTAssertTrue(tab.waitForExistence(timeout: timeout), "Le bouton BottomTab.\(name) doit être accessible")
+        XCTAssertTrue(tab.isHittable, "Le bouton BottomTab.\(name) doit être visible")
+        tab.click()
+    }
 
-        // Keep a semantic fallback for a macOS List presentation that exposes
-        // navigation links as buttons or generic accessibility elements.
-        let candidates = app.descendants(matching: .any)
-            .matching(NSPredicate(format: "label == %@", label))
-        _ = candidates.firstMatch.waitForExistence(timeout: timeout)
-        for index in 0..<candidates.count {
-            let candidate = candidates.element(boundBy: index)
-            if candidate.waitForExistence(timeout: 2), candidate.isHittable {
-                candidate.click()
-                return
-            }
+    private func assertSelectedTab(_ name: String) {
+        guard let tab = bottomTab(name) else {
+            XCTFail("Destination inconnue : \(name)")
+            return
         }
-        XCTFail("Navigation absente : \(label)")
+        XCTAssertTrue(tab.waitForExistence(timeout: timeout), "Le bouton BottomTab.\(name) doit être présent")
+        XCTAssertTrue(tab.isSelected, "Le raccourci doit sélectionner BottomTab.\(name)")
+    }
+
+    private func pressCommand(_ key: String) {
+        app.typeKey(key, modifierFlags: .command)
+    }
+
+    private func restartWithAppearance(_ appearance: String) {
+        app.terminate()
+        var arguments = app.launchArguments
+        if let index = arguments.firstIndex(of: "-syllune.appearance"),
+           arguments.indices.contains(index + 1) {
+            arguments.removeSubrange(index...(index + 1))
+        }
+        app.launchArguments = arguments + ["-syllune.appearance", appearance]
+        app.launch()
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: timeout), "L’application doit reprendre après le changement de thème")
+    }
+
+    private func assertBottomNavigation(balance expectedBalance: Int) {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile"
+        ] {
+            let tab = app.buttons[identifier]
+            XCTAssertTrue(tab.exists, "Le bouton \(identifier) doit être présent")
+            XCTAssertTrue(tab.isHittable, "Le bouton \(identifier) doit être accessible")
+        }
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le badge de progression doit être accessible")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        XCTAssertEqual(Int(digits), expectedBalance, "Le badge doit exposer le solde historique exact")
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant la leçon")
+        }
+    }
+
+    private func scrollIntoView(_ element: XCUIElement) -> Bool {
+        guard element.waitForExistence(timeout: timeout) else { return false }
+        let scrollView = app.scrollViews.firstMatch
+        guard scrollView.waitForExistence(timeout: timeout) else { return false }
+        for _ in 0..<12 {
+            let targetFrame = element.frame
+            let viewport = scrollView.frame
+            if element.isHittable && viewport.contains(targetFrame) { return true }
+            scrollView.scroll(byDeltaX: 0, deltaY: targetFrame.minY < viewport.minY ? 500 : -500)
+        }
+        return element.isHittable && scrollView.frame.contains(element.frame)
     }
 
     private func button(exactly label: String) -> XCUIElement {

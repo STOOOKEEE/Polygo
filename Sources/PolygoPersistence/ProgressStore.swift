@@ -80,12 +80,11 @@ public actor JSONFileProgressStore: ProgressStore {
         _ = try readSnapshot(profileID: profileID)
         let current = try rebuild(profileID: profileID)
 
-        // A non-empty snapshot with no journal is an incomplete installation,
-        // not a safe starting point for a new append. Keep the cached data
-        // readable, but refuse to overwrite it with a journal that cannot
-        // represent its history. An empty first-launch snapshot is allowed.
-        if !current.journalExists && !current.snapshot.isEmptyState {
-            throw ProgressStoreError.ioFailure("journal absent alors qu’un snapshot contient déjà une progression")
+        // Without a journal, an otherwise empty legacy cache cannot prove
+        // that completion history is known-empty. Only allow a fresh append
+        // from a snapshot whose empty history is known.
+        if !current.journalExists && (!current.snapshot.isEmptyState || current.snapshot.firstCompletionEventIDs == nil) {
+            throw ProgressStoreError.ioFailure("journal absent alors que le snapshot ne permet pas un ajout sûr")
         }
 
         if let existing = current.events.first(where: { $0.eventID == event.eventID }) {
@@ -487,6 +486,7 @@ private extension ProgressSnapshot {
             && reviewStates.isEmpty
             && lastEventLamport == 0
             && processedEventIDs.isEmpty
+            && (firstCompletionEventIDs == nil || firstCompletionEventIDs?.isEmpty == true)
             && activeRoute == nil
     }
 }

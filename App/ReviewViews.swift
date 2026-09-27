@@ -40,7 +40,7 @@ public struct ReviewCardsView: View {
                                 .font(.callout.weight(.semibold))
                                 .foregroundStyle(SylluneColor.jadeDeep)
                             Spacer(minLength: 4)
-                            NavigationLink("Poursuivre", destination: ReviewCardsView())
+                            NavigationLink("Poursuivre", value: AppRoute.cards)
                                 .font(.callout.weight(.semibold))
                         }
                         .padding(12)
@@ -58,7 +58,7 @@ public struct ReviewCardsView: View {
                             Text("Il reste \(totalDueCount) \(totalDueCount == 1 ? "carte" : "cartes") \(totalDueCount == 1 ? "due" : "dues") dans la file complète.")
                                 .font(.body)
                                 .foregroundStyle(SylluneColor.inkMuted)
-                            NavigationLink("Poursuivre", destination: ReviewCardsView())
+                            NavigationLink("Poursuivre", value: AppRoute.cards)
                                 .buttonStyle(SyllunePrimaryButtonStyle())
                         }
                         .padding(20)
@@ -67,7 +67,7 @@ public struct ReviewCardsView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             Label("Rien à revoir pour le moment", systemImage: "checkmark.circle.fill").font(.title3.weight(.semibold)).foregroundStyle(SylluneColor.success)
                             Text("Les cartes ajoutées pendant tes leçons apparaîtront ici à leur échéance.").font(.body).foregroundStyle(SylluneColor.inkMuted)
-                            NavigationLink(destination: LearningPathView()) { Text("Retour au parcours") }.buttonStyle(SyllunePrimaryButtonStyle())
+                            NavigationLink(value: AppRoute.path) { Text("Retour au parcours") }.buttonStyle(SyllunePrimaryButtonStyle())
                         }
                         .padding(20).sylluneCard(radius: 24)
                     } else {

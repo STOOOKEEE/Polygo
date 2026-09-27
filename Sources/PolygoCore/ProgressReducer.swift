@@ -43,6 +43,7 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
         var lessons = snapshot.lessonProgress
         var reviews = snapshot.reviewStates
         var activeRoute = snapshot.activeRoute
+        var firstCompletionEventIDs = snapshot.firstCompletionEventIDs
 
         switch event.payload {
         case .onboardingCompleted(let newProfile):
@@ -161,6 +162,10 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 dialogueResults: existing.dialogueResults
             )
 
+            if firstCompletionEventIDs != nil, firstCompletionEventIDs?[lessonID] == nil {
+                firstCompletionEventIDs?[lessonID] = event.eventID
+            }
+
         case .flashcardAdded(let cardID, let date):
             if reviews[cardID] == nil {
                 reviews[cardID] = ReviewState(cardID: cardID, dueAt: date)
@@ -190,7 +195,8 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
             lastEventLamport: max(snapshot.lastEventLamport, event.lamport),
             generatedAt: event.occurredAt,
             processedEventIDs: processed,
-            activeRoute: activeRoute
+            activeRoute: activeRoute,
+            firstCompletionEventIDs: firstCompletionEventIDs
         )
     }
 }

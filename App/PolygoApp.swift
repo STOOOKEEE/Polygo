@@ -14,15 +14,14 @@ public struct PolygoApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(model)
-                .tint(SylluneColor.jade)
+                .tint(SylluneColor.jadeDeep)
         }
         #if os(macOS)
         .defaultSize(width: 1280, height: 860)
+        #endif
         .commands {
-            CommandGroup(after: .appSettings) {
-                Button("Réglages") { model.persistRoute(.settings) }
-                    .keyboardShortcut(",", modifiers: .command)
-            }
+            BottomNavigationCommands()
+            #if os(macOS)
             CommandMenu("Syllune") {
                 Button("Rechercher dans le dictionnaire") {
                     model.persistRoute(.dictionary(""))
@@ -44,7 +43,7 @@ public struct PolygoApp: App {
                     NotificationCenter.default.post(name: .sylluneEscape, object: nil)
                 }
             }
+            #endif
         }
-        #endif
     }
 }

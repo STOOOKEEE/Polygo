@@ -38,6 +38,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         completeOnboardingIfNeeded()
         navigateToTab("Aujourd’hui")
         XCTAssertTrue(text(containing: "Ton parcours").waitForExistence(timeout: timeout), "La capture d’accueil doit montrer le tableau de bord")
+        assertBottomNavigation(balance: 0)
         attachScreenshot(named: "home-after-onboarding")
         openFirstLesson()
         expandDiscoveryIfNeeded()
@@ -129,6 +130,8 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         backgroundAndReactivate()
         XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "Le même exercice doit survivre au changement d’application")
         XCTAssertTrue(button(exactly: "Vérifier").isEnabled, "La réponse choisie doit rester validable après le retour au premier plan")
+        assertFocusedChromeHidden()
+        attachScreenshot(named: "ios-focused-exercise-footer")
 
         app.terminate()
         app.launch()
@@ -192,6 +195,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         // tone score is being inferred.
         XCTAssertTrue(text(containing: "你好").waitForExistence(timeout: timeout), "La cible orale doit être visible")
         XCTAssertTrue(text(containing: "nǐ hǎo").waitForExistence(timeout: timeout), "Le pinyin oral doit être visible")
+        assertFocusedChromeHidden()
         let modelPlay = modelToggleButton()
         XCTAssertTrue(modelPlay.waitForExistence(timeout: timeout), "L’oral doit proposer le modèle")
         XCTAssertTrue(button(exactly: "Normale").waitForExistence(timeout: timeout), "La vitesse normale doit être disponible")
@@ -258,7 +262,12 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             element(containing: "Zone de tracé pour 你", type: .any).waitForExistence(timeout: timeout),
             "Le passage sans évaluation doit mener à l’exercice d’écriture"
         )
+        assertFocusedChromeHidden()
         attachScreenshot(named: "writing-after-oral-skip")
+        let backToPath = app.navigationBars.buttons.firstMatch
+        XCTAssertTrue(backToPath.waitForExistence(timeout: timeout), "L’exercice d’écriture doit pouvoir revenir au parcours")
+        tapWhenVisible(backToPath)
+        assertBottomNavigation(balance: 0)
     }
 
     func testLessonDialogueFixtureDeclaresComprehensionAndPreviousReply() throws {
@@ -334,7 +343,6 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if ready.waitForExistence(timeout: 3) {
             ready.tap()
         }
-        openSidebarIfNeeded()
         XCTAssertTrue(text(containing: "Aujourd’hui").waitForExistence(timeout: timeout), "L’espace d’apprentissage doit être ouvert")
     }
 
@@ -469,49 +477,24 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func navigateToTab(_ label: String) {
-        openSidebarIfNeeded()
-        let sidebar = app.collectionViews.matching(
-            NSPredicate(format: "label == %@", "Barre latérale")
-        ).firstMatch
-        if sidebar.exists {
-            let sidebarItem = sidebar.buttons.matching(
-                NSPredicate(format: "label CONTAINS[c] %@", label)
-            ).firstMatch
-            for _ in 0..<6 {
-                if sidebarItem.exists && sidebarItem.isHittable { break }
-                sidebar.swipeUp()
-            }
-            XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
-            XCTAssertTrue(sidebarItem.isHittable, "Navigation inaccessible : \(label)")
-            sidebarItem.tap()
-            let dismissRegion = app.otherElements.matching(identifier: "PopoverDismissRegion").firstMatch
-            if dismissRegion.exists {
-                dismissRegion.tap()
-                let dismissed = XCTNSPredicateExpectation(
-                    predicate: NSPredicate(format: "exists == false"),
-                    object: dismissRegion
-                )
-                XCTAssertEqual(
-                    XCTWaiter.wait(for: [dismissed], timeout: timeout),
-                    .completed,
-                    "La barre latérale doit se fermer après la sélection"
-                )
-            }
+        leaveLessonBeforeSelectingTab()
+        let identifier: String
+        switch label {
+        case "Aujourd’hui": identifier = "BottomTab.today"
+        case "Parcours": identifier = "BottomTab.path"
+        case "Explorer": identifier = "BottomTab.explorer"
+        case "Cartes": identifier = "BottomTab.cards"
+        case "Profil": identifier = "BottomTab.profile"
+        default:
+            XCTFail("Destination inconnue : \(label)")
             return
         }
-
-        leaveLessonBeforeSelectingTab()
-        let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
-        XCTAssertTrue(tab.waitForExistence(timeout: 5), "Navigation absente : \(label)")
+        let tab = app.buttons[identifier]
+        XCTAssertTrue(tab.waitForExistence(timeout: timeout), "Le bouton de destination \(label) doit être accessible")
+        XCTAssertTrue(tab.isHittable, "Le bouton de destination \(label) doit être visible")
         tab.tap()
     }
 
-    private func openSidebarIfNeeded() {
-        let toggle = app.buttons.matching(identifier: "ToggleSidebar").firstMatch
-        if toggle.exists, toggle.label == "Afficher la barre latérale" {
-            toggle.tap()
-        }
-    }
     private func leaveLessonBeforeSelectingTab() {
         let lessonControl = app.buttons.matching(
             NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
@@ -519,9 +502,41 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         guard lessonControl.exists else { return }
 
         let back = app.navigationBars.buttons.firstMatch
-        XCTAssertTrue(back.waitForExistence(timeout: timeout), "Le parcours doit pouvoir quitter la leçon avant un changement d’onglet")
+        XCTAssertTrue(back.waitForExistence(timeout: timeout), "La leçon doit pouvoir être quittée avant de changer de destination")
         back.tap()
     }
+
+    private func assertBottomNavigation(balance expectedBalance: Int) {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile"
+        ] {
+            let tab = app.buttons[identifier]
+            XCTAssertTrue(tab.waitForExistence(timeout: timeout), "Le bouton \(identifier) doit être présent après le retour")
+            XCTAssertTrue(tab.isHittable, "Le bouton \(identifier) doit être accessible après le retour")
+        }
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le solde doit réapparaître après le retour au parcours")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        XCTAssertEqual(Int(digits), expectedBalance, "Le solde doit rester inchangé après les exercices")
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant l’exercice")
+        }
+    }
+
 
     private func dismissPermissionPrompts() {
         let alert = app.alerts.firstMatch

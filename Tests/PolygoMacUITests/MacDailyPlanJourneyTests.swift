@@ -77,6 +77,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J1/90")
         XCTAssertTrue(text(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
         XCTAssertTrue(text(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
+        assertCoinBalance(40)
         // Keep relaunches focused on the durable events produced by the app.
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "mac-daily-plan-day-one")
@@ -118,6 +119,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             identifier: "lesson.exercise.ex-l5-speak"
         ).firstMatch
         XCTAssertTrue(oralExercise.waitForExistence(timeout: timeout), "L’avancement doit afficher l’activité orale")
+        assertFocusedChromeHidden()
 
         // The listening evaluation and the following position must survive a
         // process restart before the rest of the session is completed.
@@ -130,6 +132,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l5-speak").firstMatch.waitForExistence(timeout: timeout),
             "La reprise doit retrouver l’activité orale après l’écoute validée"
         )
+        assertFocusedChromeHidden()
 
         // The next authored activity is optional oral practice. Passing it
         // preserves the valid offline progression path while keeping the
@@ -164,7 +167,8 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.click()
 
-        XCTAssertTrue(text(containing: "Leçon enregistrée").waitForExistence(timeout: timeout), "La séance enregistrée doit être confirmée")
+        XCTAssertTrue(text(containing: "+10 pièces").waitForExistence(timeout: timeout), "La complétion L5 doit confirmer dix nouvelles pièces")
+        assertFocusedChromeHidden()
         XCTAssertTrue(
             text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit signaler l’oral passé sans évaluation"
@@ -173,26 +177,24 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.click()
         XCTAssertTrue(text(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
+        assertCoinBalance(50)
         attachScreenshot(named: "mac-daily-plan-path-after-day-one")
 
-        selectSidebarItem("Aujourd’hui")
+        let today = app.buttons["BottomTab.today"]
+        XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit rester accessible")
+        XCTAssertTrue(today.isHittable, "Le bouton Aujourd’hui doit être visible")
+        today.click()
         let dayTwo = text(containing: "Jour 2 sur 90")
         XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J2")
+        assertCoinBalance(50)
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(text(containing: "Jour 2 sur 90").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
+        assertCoinBalance(50)
+        XCTAssertFalse(text(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
         attachScreenshot(named: "mac-daily-plan-day-two")
     }
 
-    private func selectSidebarItem(_ label: String) {
-        let buttons = app.buttons.matching(NSPredicate(format: "label == %@", label))
-        _ = buttons.firstMatch.waitForExistence(timeout: timeout)
-        for index in 0..<buttons.count {
-            let candidate = buttons.element(boundBy: index)
-            if candidate.waitForExistence(timeout: 2), candidate.isHittable {
-                candidate.click()
-                return
-            }
-        }
-        XCTFail("Navigation absente : \(label)")
-    }
 
     private func button(identifier: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
@@ -391,6 +393,26 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    private func assertCoinBalance(_ expectedBalance: Int) {
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le solde global doit être accessible")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        XCTAssertEqual(Int(digits), expectedBalance, "Le badge doit exposer le solde historique exact")
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant la leçon")
+        }
+    }
+
 }
 
 private struct DailyLessonFixture: Decodable {

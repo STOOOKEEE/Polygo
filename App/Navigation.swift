@@ -12,6 +12,7 @@ public enum AppRoute: Hashable {
     case path
     case explorer
     case cards
+    case shortReview(Int)
     case profile
     case settings
     case lesson(LessonID)
@@ -27,6 +28,7 @@ public enum AppRoute: Hashable {
         case .path: return "path"
         case .explorer: return "explorer"
         case .cards: return "cards"
+        case .shortReview(let maxCards): return "shortReview/\(maxCards)"
         case .profile: return "profile"
         case .settings: return "settings"
         case .lesson(let id): return "lesson/\(id.rawValue)"
@@ -54,6 +56,9 @@ public enum AppRoute: Hashable {
             case "word": guard let id = VocabularyID(rawValue: pieces[1]) else { return nil }; self = .word(id)
             case "story": guard let id = StoryID(rawValue: pieces[1]) else { return nil }; self = .story(id)
             case "dictionary": self = .dictionary(pieces[1])
+            case "shortReview":
+                guard let maxCards = Int(pieces[1]), maxCards > 0 else { return nil }
+                self = .shortReview(maxCards)
             case "oral": guard let id = ExerciseID(rawValue: pieces[1]) else { return nil }; self = .oral(id)
             case "writing": guard let id = ExerciseID(rawValue: pieces[1]) else { return nil }; self = .writing(id)
             default: return nil
@@ -61,6 +66,20 @@ public enum AppRoute: Hashable {
         }
     }
 }
+private struct SylluneFocusedExercisePreferenceKey: PreferenceKey {
+    static let defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+public extension View {
+    func sylluneFocusedExercise(_ focused: Bool = true) -> some View {
+        preference(key: SylluneFocusedExercisePreferenceKey.self, value: focused)
+    }
+}
+
 
 public struct RootView: View {
     @EnvironmentObject private var model: AppModel
@@ -77,7 +96,7 @@ public struct RootView: View {
             } else if model.needsOnboarding {
                 OnboardingView()
             } else {
-                AdaptiveShellView()
+                BottomNavigationShell()
             }
         }
         .background(SylluneColor.canvas)
@@ -112,121 +131,324 @@ public struct RootView: View {
     }
 }
 
-public struct AdaptiveShellView: View {
-    @EnvironmentObject private var model: AppModel
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+private enum BottomTab: String, CaseIterable, Identifiable {
+    case today
+    case path
+    case explorer
+    case cards
+    case profile
 
-    public init() {}
-    public var body: some View {
-        #if os(iOS)
-        if horizontalSizeClass == .compact {
-            PhoneTabShell()
-        } else {
-            SplitShell()
+    var id: String { rawValue }
+
+    var route: AppRoute {
+        switch self {
+        case .today: return .today
+        case .path: return .path
+        case .explorer: return .explorer
+        case .cards: return .cards
+        case .profile: return .profile
         }
-        #else
-        SplitShell()
-        #endif
+    }
+
+    var title: String {
+        switch self {
+        case .today: return "Aujourd’hui"
+        case .path: return "Parcours"
+        case .explorer: return "Explorer"
+        case .cards: return "Cartes"
+        case .profile: return "Profil"
+        }
+    }
+
+    var symbolName: String {
+        switch self {
+        case .today: return "sun.max"
+        case .path: return "list.bullet.rectangle.portrait"
+        case .explorer: return "book.pages"
+        case .cards: return "rectangle.stack"
+        case .profile: return "person.crop.circle"
+        }
+    }
+
+    var accent: Color {
+        switch self {
+        case .today: return SylluneColor.sun
+        case .path: return SylluneColor.pathCoral
+        case .explorer: return SylluneColor.pathSky
+        case .cards: return SylluneColor.pathViolet
+        case .profile: return SylluneColor.pathJade
+        }
+    }
+
+    var shortcut: KeyEquivalent {
+        switch self {
+        case .today: return "1"
+        case .path: return "2"
+        case .explorer: return "3"
+        case .cards: return "4"
+        case .profile: return "5"
+        }
+    }
+}
+private struct SylluneNavigationTabCommandKey: FocusedValueKey {
+    typealias Value = (BottomTab) -> Void
+}
+
+private extension FocusedValues {
+    var sylluneNavigationTabCommand: ((BottomTab) -> Void)? {
+        get { self[SylluneNavigationTabCommandKey.self] }
+        set { self[SylluneNavigationTabCommandKey.self] = newValue }
     }
 }
 
-public struct PhoneTabShell: View {
+private struct SylluneNavigationSettingsCommandKey: FocusedValueKey {
+    typealias Value = () -> Void
+}
+
+private extension FocusedValues {
+    var sylluneNavigationSettingsCommand: (() -> Void)? {
+        get { self[SylluneNavigationSettingsCommandKey.self] }
+        set { self[SylluneNavigationSettingsCommandKey.self] = newValue }
+    }
+}
+
+struct BottomNavigationCommands: Commands {
+    @FocusedValue(\.sylluneNavigationTabCommand) private var selectTab
+    @FocusedValue(\.sylluneNavigationSettingsCommand) private var openSettings
+
+    var body: some Commands {
+        CommandMenu("Navigation") {
+            tabCommand(.today)
+            tabCommand(.path)
+            tabCommand(.explorer)
+            tabCommand(.cards)
+            tabCommand(.profile)
+            #if os(iOS)
+            Divider()
+            Button("Réglages") { openSettings?() }
+                .keyboardShortcut(",", modifiers: .command)
+                .disabled(openSettings == nil)
+            #endif
+        }
+        #if os(macOS)
+        CommandGroup(after: .appSettings) {
+            Button("Réglages") { openSettings?() }
+                .keyboardShortcut(",", modifiers: .command)
+                .disabled(openSettings == nil)
+        }
+        #endif
+    }
+
+    private var hasNavigationShell: Bool {
+        if case .some = selectTab { return true }
+        return false
+    }
+
+    private func tabCommand(_ tab: BottomTab) -> some View {
+        Button(tab.title) { selectTab?(tab) }
+            .keyboardShortcut(tab.shortcut, modifiers: .command)
+            .disabled(!hasNavigationShell)
+    }
+}
+
+
+struct BottomNavigationShell: View {
     @EnvironmentObject private var model: AppModel
-    @State private var selectedTab: AppRoute = .today
+    #if os(macOS)
+    @Environment(\.controlActiveState) private var controlActiveState
+    #endif
+    @State private var selectedTab: BottomTab = .today
     @State private var todayPath: [AppRoute] = []
     @State private var pathPath: [AppRoute] = []
     @State private var explorerPath: [AppRoute] = []
     @State private var cardsPath: [AppRoute] = []
     @State private var profilePath: [AppRoute] = []
+    @State private var stackRevision = 0
+    @State private var pendingTabRootRoute: AppRoute?
+    @State private var exerciseChromeHidden = false
 
-    public init() {}
-
-    public var body: some View {
-        TabView(selection: tabSelection) {
-            NavigationStack(path: $todayPath) {
-                TodayView()
+    var body: some View {
+        VStack(spacing: 0) {
+            NavigationStack(path: pathBinding(for: selectedTab)) {
+                routeView(selectedTab.route)
                     .navigationDestination(for: AppRoute.self) { routeView($0) }
             }
-            .tabItem { Label("Aujourd’hui", systemImage: "sun.max") }
-            .tag(AppRoute.today)
-
-            NavigationStack(path: $pathPath) {
-                LearningPathView()
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            .id("\(selectedTab.rawValue)-\(stackRevision)")
+            .environment(\.sylluneShellWordNavigation, { id in
+                pushWord(id)
+            })
+            .toolbar {
+                if !exerciseChromeHidden {
+                    ToolbarItem(placement: .automatic) {
+                        SylluneCoinBadge(balance: model.coinBalance)
+                            .accessibilityIdentifier("ProgressCoinBalance")
+                    }
+                }
             }
-            .tabItem { Label("Parcours", systemImage: "list.bullet.rectangle.portrait") }
-            .tag(AppRoute.path)
-
-            NavigationStack(path: $explorerPath) {
-                ExplorerView()
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if !exerciseChromeHidden {
+                    bottomNavigation
+                }
             }
-            .tabItem { Label("Explorer", systemImage: "book.pages") }
-            .tag(AppRoute.explorer)
-
-            NavigationStack(path: $cardsPath) {
-                ReviewCardsView()
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
-            }
-            .tabItem { Label("Cartes", systemImage: "rectangle.stack") }
-            .tag(AppRoute.cards)
-
-            NavigationStack(path: $profilePath) {
-                ProfileView()
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
-            }
-            .tabItem { Label("Profil", systemImage: "person.crop.circle") }
-            .tag(AppRoute.profile)
         }
-        .tint(SylluneColor.jade)
+        .focusedSceneValue(\.sylluneNavigationTabCommand, { tab in
+            select(tab)
+        })
+        .focusedSceneValue(\.sylluneNavigationSettingsCommand, {
+            openSettings()
+        })
         .onAppear { apply(route: model.selectedRoute) }
         .onChange(of: model.selectedRoute) { _, route in
+            if pendingTabRootRoute == route {
+                pendingTabRootRoute = nil
+                return
+            }
+            pendingTabRootRoute = nil
+            #if os(macOS)
+            // Progress is shared, but another window's navigation is not.
+            guard controlActiveState == .key else { return }
+            #endif
             apply(route: route)
         }
         .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
+            #if os(macOS)
+            guard controlActiveState == .key else { return }
+            #endif
             popToRoot()
+        }
+        .onPreferenceChange(SylluneFocusedExercisePreferenceKey.self) {
+            exerciseChromeHidden = $0
         }
     }
 
-    private var tabSelection: Binding<AppRoute> {
-        Binding(
-            get: { selectedTab },
-            set: { newTab in
-                // A second tap on the active tab is a familiar way to return
-                // to that tab's root. It also clears a pending lesson route.
-                if newTab == selectedTab, model.selectedRoute != newTab {
-                    popToRoot()
-                    model.persistRoute(newTab)
-                    return
-                }
-                selectedTab = newTab
-                if model.selectedRoute != newTab {
-                    model.persistRoute(newTab)
+    private var bottomNavigation: some View {
+        ScrollViewReader { proxy in
+            ViewThatFits(in: .horizontal) {
+                tabBar(fillsWidth: true)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    tabBar(fillsWidth: false)
                 }
             }
+            .padding(.horizontal, 8)
+            .padding(.top, 6)
+            .padding(.bottom, 4)
+            .background {
+                SylluneColor.surface
+                    .overlay(alignment: .top) {
+                        SylluneColor.border.opacity(0.35).frame(height: 1)
+                    }
+                    .ignoresSafeArea(edges: .bottom)
+            }
+            .onAppear { proxy.scrollTo(selectedTab.id, anchor: .center) }
+            .onChange(of: selectedTab) { _, tab in
+                proxy.scrollTo(tab.id, anchor: .center)
+            }
+        }
+    }
+
+    private func tabBar(fillsWidth: Bool) -> some View {
+        HStack(spacing: 4) {
+            ForEach(BottomTab.allCases) { tab in
+                tabButton(tab, fillsWidth: fillsWidth)
+            }
+        }
+        .frame(maxWidth: fillsWidth ? .infinity : nil)
+    }
+
+    private func tabButton(_ tab: BottomTab, fillsWidth: Bool) -> some View {
+        let isSelected = tab == selectedTab
+        return Button {
+            select(tab)
+        } label: {
+            VStack(spacing: 3) {
+                Image(systemName: tab.symbolName)
+                    .font(.body.weight(isSelected ? .semibold : .regular))
+                    .foregroundStyle(isSelected ? tab.accent : SylluneColor.inkMuted)
+                    .accessibilityHidden(true)
+                Text(tab.title)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(isSelected ? SylluneColor.ink : SylluneColor.inkMuted)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: true, vertical: true)
+            }
+            .frame(minWidth: 64, maxWidth: fillsWidth ? .infinity : nil, minHeight: 54)
+            .padding(.horizontal, 4)
+            .padding(.vertical, 4)
+            .background {
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .fill(tab.accent.opacity(0.14))
+                }
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(tab.title)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier("BottomTab.\(tab.rawValue)")
+        .id(tab.id)
+    }
+
+    private func select(_ tab: BottomTab) {
+        guard tab != selectedTab else {
+            popToRoot()
+            return
+        }
+        selectedTab = tab
+        guard model.selectedRoute != tab.route else {
+            pendingTabRootRoute = nil
+            return
+        }
+        pendingTabRootRoute = tab.route
+        model.persistRoute(tab.route)
+    }
+
+    private func openSettings() {
+        apply(route: .settings)
+        guard model.selectedRoute != .settings else { return }
+        pendingTabRootRoute = .settings
+        model.persistRoute(.settings)
+    }
+
+    private func pathBinding(for tab: BottomTab) -> Binding<[AppRoute]> {
+        Binding(
+            get: { path(for: tab) },
+            set: { setPath($0, for: tab) }
         )
     }
 
-    private func apply(route: AppRoute) {
-        let baseTab = route.baseTab
-        if selectedTab != baseTab {
-            selectedTab = baseTab
+    private func path(for tab: BottomTab) -> [AppRoute] {
+        switch tab {
+        case .today: return todayPath
+        case .path: return pathPath
+        case .explorer: return explorerPath
+        case .cards: return cardsPath
+        case .profile: return profilePath
         }
+    }
 
-        switch baseTab {
-        case .today:
-            todayPath = routePath(route, root: .today, existing: todayPath)
-        case .path:
-            pathPath = routePath(route, root: .path, existing: pathPath)
-        case .explorer:
-            explorerPath = routePath(route, root: .explorer, existing: explorerPath)
-        case .cards:
-            cardsPath = routePath(route, root: .cards, existing: cardsPath)
-        case .profile:
-            profilePath = routePath(route, root: .profile, existing: profilePath)
-        default:
-            break
+    private func setPath(_ path: [AppRoute], for tab: BottomTab) {
+        switch tab {
+        case .today: todayPath = path
+        case .path: pathPath = path
+        case .explorer: explorerPath = path
+        case .cards: cardsPath = path
+        case .profile: profilePath = path
         }
+    }
+
+    private func pushWord(_ id: VocabularyID) {
+        let route = AppRoute.word(id)
+        var path = path(for: selectedTab)
+        guard path.last != route else { return }
+        path.append(route)
+        setPath(path, for: selectedTab)
+    }
+
+    private func apply(route: AppRoute) {
+        let tab = route.baseTab
+        selectedTab = tab
+        setPath(routePath(route, root: tab.route, existing: path(for: tab)), for: tab)
     }
 
     private func routePath(_ route: AppRoute, root: AppRoute, existing: [AppRoute]) -> [AppRoute] {
@@ -237,16 +459,11 @@ public struct PhoneTabShell: View {
     }
 
     private func popToRoot() {
-        switch selectedTab {
-        case .today: todayPath.removeAll()
-        case .path: pathPath.removeAll()
-        case .explorer: explorerPath.removeAll()
-        case .cards: cardsPath.removeAll()
-        case .profile: profilePath.removeAll()
-        default: break
-        }
-        if model.selectedRoute != selectedTab {
-            model.persistRoute(selectedTab)
+        setPath([], for: selectedTab)
+        // Rebuilding the active stack also resets its transient view state.
+        stackRevision += 1
+        if model.selectedRoute != selectedTab.route {
+            model.persistRoute(selectedTab.route)
         }
     }
 
@@ -257,100 +474,13 @@ public struct PhoneTabShell: View {
         case .path: LearningPathView()
         case .explorer: ExplorerView()
         case .cards: ReviewCardsView()
+        case .shortReview(let maxCards): ReviewCardsView(maxCards: maxCards)
         case .profile: ProfileView()
         case .settings: SettingsView()
         case .lesson(let id): LessonView(lessonID: id)
         case .word(let id): WordDetailView(vocabularyID: id)
         case .story(let id): StoryDetailView(storyID: id)
-        case .dictionary(let query): DictionaryView(initialQuery: query)
-        case .oral(let id): OralView(exerciseID: id)
-        case .writing(let id): WritingView(exerciseID: id)
-        }
-    }
-}
-
-public struct SplitShell: View {
-    @EnvironmentObject private var model: AppModel
-    @State private var selection: AppRoute? = .today
-    @State private var detailNavigationRevision = 0
-    public init() {}
-    public var body: some View {
-        NavigationSplitView {
-            List(selection: $selection) {
-                Section("Apprendre") {
-                    sidebarItem(.today, label: "Aujourd’hui", systemImage: "sun.max")
-                        .keyboardShortcut("1", modifiers: .command)
-                    sidebarItem(.path, label: "Parcours", systemImage: "list.bullet.rectangle.portrait")
-                        .keyboardShortcut("2", modifiers: .command)
-                    sidebarItem(.cards, label: "Cartes", systemImage: "rectangle.stack")
-                        .keyboardShortcut("4", modifiers: .command)
-                }
-                Section("Découvrir") {
-                    sidebarItem(.explorer, label: "Explorer", systemImage: "book.pages")
-                    .accessibilityLabel("Explorer : histoires et dictionnaire")
-                    .keyboardShortcut("3", modifiers: .command)
-                }
-                Section("Compte") {
-                    sidebarItem(.profile, label: "Profil", systemImage: "person.crop.circle")
-                        .keyboardShortcut("5", modifiers: .command)
-                    sidebarItem(.settings, label: "Réglages", systemImage: "gearshape")
-                        .keyboardShortcut(",", modifiers: .command)
-                }
-            }
-            .navigationTitle("Syllune")
-            .listStyle(.sidebar)
-            .navigationSplitViewColumnWidth(min: 210, ideal: 240, max: 280)
-        } detail: {
-            NavigationStack {
-                routeView(model.selectedRoute)
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
-            }
-            .id(detailNavigationRevision)
-        }
-        .onChange(of: selection) { _, value in
-            if let value { model.persistRoute(value) }
-        }
-        .onChange(of: model.selectedRoute) { _, route in
-            // A lesson, word, story, settings, or dictionary route is a
-            // destination inside the selected sidebar section. Only a
-            // persisted section root should move the sidebar selection; this
-            // keeps a lesson resume route from being rewritten as Today.
-            guard route == route.baseTab, selection != route else { return }
-            selection = route
-            detailNavigationRevision += 1
-        }
-        .onAppear { selection = model.selectedRoute.baseTab }
-        .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in
-            model.persistRoute(model.selectedRoute.baseTab)
-        }
-    }
-
-    private func sidebarItem(_ route: AppRoute, label: String, systemImage: String) -> some View {
-        Button {
-            selection = route
-            detailNavigationRevision += 1
-            model.persistRoute(route)
-        } label: {
-            Label(label, systemImage: systemImage)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .tag(route)
-    }
-
-    @ViewBuilder private func routeView(_ route: AppRoute) -> some View {
-        switch route {
-        case .today: TodayView()
-        case .path: LearningPathView()
-        case .explorer: ExplorerView()
-        case .cards: ReviewCardsView()
-        case .profile: ProfileView()
-        case .settings: SettingsView()
-        case .lesson(let id): LessonView(lessonID: id)
-        case .word(let id): WordDetailView(vocabularyID: id)
-        case .story(let id): StoryDetailView(storyID: id)
-        case .dictionary(let query): DictionaryView(initialQuery: query)
+        case .dictionary(let query): DictionaryView(initialQuery: query, usesShellNavigation: true)
         case .oral(let id): OralView(exerciseID: id)
         case .writing(let id): WritingView(exerciseID: id)
         }
@@ -358,11 +488,11 @@ public struct SplitShell: View {
 }
 
 private extension AppRoute {
-    var baseTab: AppRoute {
+    var baseTab: BottomTab {
         switch self {
         case .path: return .path
         case .explorer, .story, .dictionary, .word: return .explorer
-        case .cards: return .cards
+        case .cards, .shortReview: return .cards
         case .profile, .settings: return .profile
         default: return .today
         }

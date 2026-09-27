@@ -12,12 +12,20 @@ xcuserdata/
 *.p12
 *.cer
 *.entitlements.local
+.env
+.env.*
+*.key
+*.pem
 
 # Syllune local-first data and media captures
 Application\ Support/
 PolygoData/
 *.m4a
 *.pkdrawing
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db
 
 # Editor and OS files
 .DS_Store

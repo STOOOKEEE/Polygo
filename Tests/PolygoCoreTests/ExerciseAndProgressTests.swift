@@ -488,6 +488,81 @@ final class ExerciseAndProgressTests: XCTestCase {
         XCTAssertEqual(snapshot.dueCards(at: now).map(\.cardID), [cardKey])
     }
 
+    func testFirstCompletionIdentitySurvivesRestartsAndLaterCompletions() throws {
+        let profileKey = profileID("profile-first-completion")
+        let retiredLesson = lessonID("lesson-retired")
+        let anotherLesson = lessonID("lesson-another")
+        let firstCompletion = event(
+            "completion-first",
+            profileID: profileKey,
+            lamport: 1,
+            payload: .lessonCompleted(lessonID: retiredLesson, at: now)
+        )
+        var snapshot = try reducer.reduce(.empty(now: now), firstCompletion)
+        XCTAssertEqual(snapshot.firstCompletionEventIDs, [retiredLesson: firstCompletion.eventID])
+        XCTAssertEqual(try reducer.reduce(snapshot, firstCompletion), snapshot)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "completion-restart",
+                profileID: profileKey,
+                lamport: 2,
+                payload: .lessonRestarted(lessonID: retiredLesson, at: now.addingTimeInterval(10))
+            )
+        )
+        XCTAssertNil(snapshot.lessonProgress[retiredLesson]?.completedAt)
+        XCTAssertEqual(snapshot.firstCompletionEventIDs?[retiredLesson], firstCompletion.eventID)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event(
+                "completion-replay",
+                profileID: profileKey,
+                lamport: 3,
+                payload: .lessonCompleted(lessonID: retiredLesson, at: now.addingTimeInterval(20))
+            )
+        )
+        XCTAssertEqual(snapshot.lessonProgress[retiredLesson]?.completedAt, now.addingTimeInterval(20))
+        XCTAssertEqual(snapshot.firstCompletionEventIDs?[retiredLesson], firstCompletion.eventID)
+
+        let anotherCompletion = event(
+            "completion-another",
+            profileID: profileKey,
+            lamport: 4,
+            payload: .lessonCompleted(lessonID: anotherLesson, at: now.addingTimeInterval(30))
+        )
+        snapshot = try reducer.reduce(snapshot, anotherCompletion)
+        XCTAssertEqual(snapshot.firstCompletionEventIDs, [
+            retiredLesson: firstCompletion.eventID,
+            anotherLesson: anotherCompletion.eventID
+        ])
+
+        let roundTrip = try JSONDecoder().decode(ProgressSnapshot.self, from: JSONEncoder().encode(snapshot))
+        XCTAssertEqual(roundTrip.firstCompletionEventIDs, snapshot.firstCompletionEventIDs)
+    }
+
+    func testLegacySnapshotKeepsHistoricalBalanceUnknownAfterNewEvents() throws {
+        let legacyJSON = Data(#"{"schemaVersion":1,"profile":null,"lessonProgress":[],"reviewStates":[],"lastEventLamport":0,"generatedAt":0,"processedEventIDs":[],"activeRoute":null}"#.utf8)
+        let legacy = try JSONDecoder().decode(ProgressSnapshot.self, from: legacyJSON)
+        XCTAssertNil(legacy.firstCompletionEventIDs)
+        XCTAssertEqual(ProgressSnapshot.empty(now: now).firstCompletionEventIDs, [:])
+
+        let updated = try reducer.reduce(
+            legacy,
+            event(
+                "completion-with-unknown-history",
+                profileID: profileID("profile-unknown-history"),
+                lamport: 1,
+                payload: .lessonCompleted(lessonID: lessonID("lesson-new"), at: now)
+            )
+        )
+        XCTAssertNil(updated.firstCompletionEventIDs)
+
+        let roundTrip = try JSONDecoder().decode(ProgressSnapshot.self, from: JSONEncoder().encode(updated))
+        XCTAssertNil(roundTrip.firstCompletionEventIDs)
+    }
+
     func testLessonCheckpointRestoresDraftAndVisibleEvaluationAcrossCodableRoundTrip() throws {
         let profileKey = profileID("profile-checkpoint")
         let lessonKey = lessonID("lesson-checkpoint")

@@ -255,6 +255,19 @@ public struct ProgressSnapshot: Codable, Hashable, Sendable {
     public let generatedAt: Date
     public let processedEventIDs: Set<EventID>
     public let activeRoute: String?
+    public let firstCompletionEventIDs: [LessonID: EventID]?
+
+    private enum CodingKeys: String, CodingKey {
+        case schemaVersion
+        case profile
+        case lessonProgress
+        case reviewStates
+        case lastEventLamport
+        case generatedAt
+        case processedEventIDs
+        case activeRoute
+        case firstCompletionEventIDs
+    }
 
     public init(
         schemaVersion: Int = ProgressSnapshot.currentSchemaVersion,
@@ -264,9 +277,44 @@ public struct ProgressSnapshot: Codable, Hashable, Sendable {
         lastEventLamport: UInt64 = 0,
         generatedAt: Date = Date(),
         processedEventIDs: Set<EventID> = [],
-        activeRoute: String? = nil
+        activeRoute: String? = nil,
+        firstCompletionEventIDs: [LessonID: EventID]? = [:]
     ) {
-        self.schemaVersion = schemaVersion; self.profile = profile; self.lessonProgress = lessonProgress; self.reviewStates = reviewStates; self.lastEventLamport = lastEventLamport; self.generatedAt = generatedAt; self.processedEventIDs = processedEventIDs; self.activeRoute = activeRoute
+        self.schemaVersion = schemaVersion
+        self.profile = profile
+        self.lessonProgress = lessonProgress
+        self.reviewStates = reviewStates
+        self.lastEventLamport = lastEventLamport
+        self.generatedAt = generatedAt
+        self.processedEventIDs = processedEventIDs
+        self.activeRoute = activeRoute
+        self.firstCompletionEventIDs = firstCompletionEventIDs
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        schemaVersion = try container.decode(Int.self, forKey: .schemaVersion)
+        profile = try container.decodeIfPresent(LearnerProfile.self, forKey: .profile)
+        lessonProgress = try container.decode([LessonID: LessonProgress].self, forKey: .lessonProgress)
+        reviewStates = try container.decode([CardID: ReviewState].self, forKey: .reviewStates)
+        lastEventLamport = try container.decode(UInt64.self, forKey: .lastEventLamport)
+        generatedAt = try container.decode(Date.self, forKey: .generatedAt)
+        processedEventIDs = try container.decode(Set<EventID>.self, forKey: .processedEventIDs)
+        activeRoute = try container.decodeIfPresent(String.self, forKey: .activeRoute)
+        firstCompletionEventIDs = try container.decodeIfPresent([LessonID: EventID].self, forKey: .firstCompletionEventIDs)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(schemaVersion, forKey: .schemaVersion)
+        try container.encodeIfPresent(profile, forKey: .profile)
+        try container.encode(lessonProgress, forKey: .lessonProgress)
+        try container.encode(reviewStates, forKey: .reviewStates)
+        try container.encode(lastEventLamport, forKey: .lastEventLamport)
+        try container.encode(generatedAt, forKey: .generatedAt)
+        try container.encode(processedEventIDs, forKey: .processedEventIDs)
+        try container.encodeIfPresent(activeRoute, forKey: .activeRoute)
+        try container.encodeIfPresent(firstCompletionEventIDs, forKey: .firstCompletionEventIDs)
     }
 
     public static func empty(now: Date = Date()) -> ProgressSnapshot { ProgressSnapshot(generatedAt: now) }

@@ -1,8 +1,50 @@
 import SwiftUI
 import PolygoCore
 
+/// Explicit symbols follow bundled lesson themes; unknown IDs keep a generic book.
+private func lessonPathSymbol(for lessonID: LessonID) -> String {
+    switch lessonID.rawValue {
+    case "lesson-01": return "hand.wave.fill"
+    case "lesson-02": return "person.fill"
+    case "lesson-03": return "mappin.and.ellipse"
+    case "lesson-04", "lesson-20", "lesson-82": return "bubble.left.and.bubble.right.fill"
+    case "lesson-05", "lesson-11", "lesson-56", "lesson-58", "lesson-74": return "fork.knife"
+    case "lesson-06", "lesson-44": return "house.fill"
+    case "lesson-07", "lesson-13", "lesson-23", "lesson-45", "lesson-60", "lesson-86": return "calendar"
+    case "lesson-08", "lesson-35", "lesson-43", "lesson-75", "lesson-88": return "basket.fill"
+    case "lesson-09", "lesson-59": return "figure.walk"
+    case "lesson-10": return "bed.double.fill"
+    case "lesson-12", "lesson-27", "lesson-36", "lesson-78": return "person.2.fill"
+    case "lesson-14", "lesson-65", "lesson-70": return "airplane"
+    case "lesson-15", "lesson-21", "lesson-55", "lesson-83": return "phone.fill"
+    case "lesson-16", "lesson-34", "lesson-40", "lesson-64", "lesson-93", "lesson-94": return "checkmark.circle.fill"
+    case "lesson-17", "lesson-38", "lesson-81": return "graduationcap.fill"
+    case "lesson-18", "lesson-73": return "pawprint.fill"
+    case "lesson-19", "lesson-28", "lesson-37": return "cross.case.fill"
+    case "lesson-22", "lesson-72": return "cloud.rain.fill"
+    case "lesson-24": return "clock.fill"
+    case "lesson-25": return "figure.run"
+    case "lesson-26", "lesson-47", "lesson-54", "lesson-63", "lesson-79": return "book.closed.fill"
+    case "lesson-29", "lesson-32", "lesson-61": return "tshirt.fill"
+    case "lesson-30", "lesson-33", "lesson-41", "lesson-49", "lesson-62", "lesson-69": return "map.fill"
+    case "lesson-31", "lesson-42", "lesson-77": return "shippingbox.fill"
+    case "lesson-39", "lesson-46", "lesson-48", "lesson-52", "lesson-53", "lesson-85", "lesson-89": return "person.3.fill"
+    case "lesson-50": return "heart.fill"
+    case "lesson-51": return "building.2.fill"
+    case "lesson-57": return "briefcase.fill"
+    case "lesson-66", "lesson-71", "lesson-80", "lesson-92": return "leaf.fill"
+    case "lesson-67", "lesson-76": return "music.note"
+    case "lesson-68", "lesson-84": return "paintpalette.fill"
+    case "lesson-87": return "newspaper.fill"
+    case "lesson-90": return "creditcard.fill"
+    case "lesson-91": return "moon.fill"
+    default: return "book.closed.fill"
+    }
+}
+
 public struct TodayView: View {
     @EnvironmentObject private var model: AppModel
+    @ScaledMetric(relativeTo: .title) private var homeMascotSize: CGFloat = 96
 
     public init() {}
     public var body: some View {
@@ -18,8 +60,8 @@ public struct TodayView: View {
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Aujourd’hui")
-        .task(id: model.orderedLessonIDs) {
-            for lessonID in model.orderedLessonIDs {
+        .task(id: previewLessonIDs) {
+            for lessonID in previewLessonIDs {
                 _ = await model.loadLesson(lessonID)
             }
         }
@@ -79,7 +121,7 @@ public struct TodayView: View {
                     Label("PROCHAINE ÉTAPE", systemImage: "play.circle")
                         .font(.caption.weight(.bold))
                         .tracking(0.8)
-                        .foregroundStyle(SylluneColor.jadeDeep)
+                        .foregroundStyle(SylluneColor.pathJade)
                     Text(lessonTitle(lessonID))
                         .font(.title2.weight(.bold))
                         .foregroundStyle(SylluneColor.ink)
@@ -89,7 +131,7 @@ public struct TodayView: View {
                         .foregroundStyle(SylluneColor.inkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                SylluneProgressBar(value: progress, tint: SylluneColor.jade)
+                SylluneProgressBar(value: progress, tint: SylluneColor.pathJade)
                     .accessibilityLabel("Progression de la leçon")
                     .accessibilityValue(progressText(for: lessonID))
                 if let session = model.dailyPlanSession,
@@ -97,7 +139,7 @@ public struct TodayView: View {
                    model.dailyPlanTotalDays > 0 {
                     dailyPlanSummary(session)
                 }
-                NavigationLink(destination: LessonView(lessonID: lessonID)) {
+                NavigationLink(value: AppRoute.lesson(lessonID)) {
                     Label(actionTitle, systemImage: "arrow.right")
                         .frame(maxWidth: .infinity)
                 }
@@ -106,7 +148,7 @@ public struct TodayView: View {
                 .accessibilityHint("Ouvre la leçon suivante")
             }
             .padding(compact ? 18 : 22)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(SylluneColor.pathJade.opacity(0.12), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .sylluneCard(style: .interactive, radius: 20)
         } else {
             VStack(alignment: .leading, spacing: 12) {
@@ -141,18 +183,45 @@ public struct TodayView: View {
     }
 
     private var homeHeader: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 14) {
             todayHeader
-            VStack(alignment: .leading, spacing: 4) {
-                Text(model.greeting)
-                    .font(.title.weight(.bold))
-                    .foregroundStyle(SylluneColor.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text("Une syllabe à la fois.")
-                    .font(.body)
-                    .foregroundStyle(SylluneColor.inkMuted)
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .center, spacing: 14) {
+                    homeGreeting
+                    Spacer(minLength: 4)
+                    homeMascot
+                }
+                VStack(alignment: .leading, spacing: 8) {
+                    homeGreeting
+                    HStack {
+                        Spacer(minLength: 0)
+                        homeMascot
+                    }
+                }
             }
         }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sylluneCard(style: .hero, radius: 24)
+    }
+
+    private var homeGreeting: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(model.greeting)
+                .font(.title.weight(.bold))
+                .foregroundStyle(Color.white)
+                .fixedSize(horizontal: false, vertical: true)
+            Text("Une syllabe à la fois.")
+                .font(.body)
+                .foregroundStyle(Color.white.opacity(0.9))
+        }
+    }
+
+    private var homeMascot: some View {
+        TaviMascot(pose: .welcome)
+            .frame(width: homeMascotSize, height: homeMascotSize)
+            .accessibilityHidden(true)
+            .allowsHitTesting(false)
     }
 
     private var todayHeader: some View {
@@ -161,7 +230,7 @@ public struct TodayView: View {
                 Label("AUJOURD’HUI", systemImage: "sparkles")
                     .font(.caption.weight(.bold))
                     .tracking(1.1)
-                    .foregroundStyle(SylluneColor.inkMuted)
+                    .foregroundStyle(Color.white.opacity(0.9))
                 Spacer(minLength: 10)
                 streakBadge
             }
@@ -169,7 +238,7 @@ public struct TodayView: View {
                 Label("AUJOURD’HUI", systemImage: "sparkles")
                     .font(.caption.weight(.bold))
                     .tracking(1.1)
-                    .foregroundStyle(SylluneColor.inkMuted)
+                    .foregroundStyle(Color.white.opacity(0.9))
                 streakBadge
             }
         }
@@ -235,7 +304,7 @@ public struct TodayView: View {
                     .foregroundStyle(SylluneColor.inkMuted)
                     .padding(.top, 4)
             }
-            NavigationLink(destination: LearningPathView()) {
+            NavigationLink(value: AppRoute.path) {
                 Label("Voir le parcours complet", systemImage: "arrow.right")
             }
             .buttonStyle(.bordered)
@@ -243,9 +312,13 @@ public struct TodayView: View {
             .frame(minHeight: 44)
         }
         .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(SylluneColor.pathJade.opacity(0.13), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .sylluneCard(style: .interactive, radius: 24)
         .accessibilityIdentifier("home.path")
+    }
+
+    private var previewLessonIDs: [LessonID] {
+        previewLessonIndices.map { model.orderedLessonIDs[$0] }
     }
 
     private var previewLessonIndices: [Int] {
@@ -295,8 +368,8 @@ public struct TodayView: View {
             }
         }
         .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .sylluneCard(style: .quiet, radius: 24)
+        .background(SylluneColor.pathCoral.opacity(0.13), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .sylluneCard(style: .interactive, radius: 24)
         .accessibilityIdentifier("home.review")
     }
 
@@ -318,7 +391,7 @@ public struct TodayView: View {
     }
 
     private func flashcardsLink(dueCount: Int, dailyLimit: Int) -> some View {
-        NavigationLink(destination: ReviewCardsView(maxCards: dailyLimit)) {
+        NavigationLink(value: AppRoute.shortReview(dailyLimit)) {
             Text(dueCount == 0 ? "Ouvrir" : "Réviser")
         }
         .buttonStyle(.borderedProminent)
@@ -338,21 +411,25 @@ public struct TodayView: View {
         let accent = SylluneColor.pathAccent(for: index)
         let status = completed ? "Terminée" : active ? "En cours" : unlocked ? "À commencer" : "À débloquer"
         let row = HStack(alignment: .top, spacing: 12) {
-            VStack(spacing: 4) {
-                ZStack {
-                    Circle()
-                        .fill(completed ? SylluneColor.success : accent)
-                        .frame(width: 30, height: 30)
-                    Text(completed ? "✓" : "\(index + 1)")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(completed ? SylluneColor.inkOnSuccess : Color.white)
-                }
-                if index < model.orderedLessonIDs.count - 1 {
-                    Capsule()
-                        .fill(accent.opacity(0.42))
-                        .frame(width: 3, height: 22)
+            ZStack {
+                Circle()
+                    .fill(completed ? SylluneColor.success : unlocked ? accent : accent.opacity(0.18))
+                    .frame(width: 34, height: 34)
+                Image(systemName: lessonPathSymbol(for: lessonID))
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(completed ? SylluneColor.inkOnSuccess : unlocked ? SylluneColor.pathAccentForeground(for: index) : accent)
+                if completed || !unlocked {
+                    Image(systemName: completed ? "checkmark" : "lock.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(completed ? SylluneColor.success : SylluneColor.inkMuted)
+                        .padding(3)
+                        .background(SylluneColor.surface, in: Circle())
+                        .offset(x: 3, y: 3)
                 }
             }
+            .frame(width: 34, height: 34)
+            .accessibilityHidden(true)
+            .allowsHitTesting(false)
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
                     .font(.callout.weight(active || completed ? .semibold : .medium))
@@ -368,25 +445,38 @@ public struct TodayView: View {
                     .font(.caption.weight(.bold))
                     .foregroundStyle(completed ? SylluneColor.success : accent)
                     .frame(minWidth: 30, minHeight: 30)
+                    .accessibilityHidden(true)
             } else {
                 Image(systemName: "lock.fill")
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
                     .frame(minWidth: 30, minHeight: 30)
+                    .accessibilityHidden(true)
             }
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 8)
         .background(active ? accent.opacity(0.12) : Color.clear, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .contentShape(Rectangle())
-        if unlocked {
-            NavigationLink(destination: LessonView(lessonID: lessonID)) { row }
-                .buttonStyle(.plain)
-                .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
-        } else {
-            row
-            .accessibilityLabel("\(title), \(status)")
-            .accessibilityHint("Cette étape est verrouillée")
+        VStack(alignment: .leading, spacing: 0) {
+            if unlocked {
+                NavigationLink(value: AppRoute.lesson(lessonID)) { row }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("\(title), \(status)")
+                    .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
+            } else {
+                row
+                    .accessibilityLabel("\(title), \(status)")
+                    .accessibilityHint("Cette étape est verrouillée")
+            }
+            if index < model.orderedLessonIDs.count - 1 {
+                Capsule()
+                    .fill(accent.opacity(0.42))
+                    .frame(width: 3, height: 22)
+                    .padding(.leading, 23.5)
+                    .accessibilityHidden(true)
+                    .allowsHitTesting(false)
+            }
         }
     }
 
@@ -429,13 +519,12 @@ public struct TodayView: View {
 
 public struct LearningPathView: View {
     @EnvironmentObject private var model: AppModel
-    @State private var lessons: [LessonID: LessonDocument] = [:]
+    @ScaledMetric(relativeTo: .title) private var pathMascotSize: CGFloat = 80
 
     public init() {}
-
     public var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            LazyVStack(alignment: .leading, spacing: 20) {
                 if let course = model.course {
                     pathIntro(course)
                     ForEach(course.modules.sorted(by: { $0.order < $1.order }), id: \.id) { module in
@@ -450,35 +539,30 @@ public struct LearningPathView: View {
                 }
             }
             .frame(maxWidth: 1080, alignment: .leading)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .center)
             .padding(.horizontal, 20)
             .padding(.vertical, 24)
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Parcours")
-        .task {
-            for lessonID in model.orderedLessonIDs {
-                if let lesson = await model.loadLesson(lessonID) {
-                    lessons[lessonID] = lesson
-                }
-            }
-        }
     }
 
     private func pathIntro(_ course: CourseManifest) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Label("TON CHEMIN", systemImage: "point.topleft.down.curvedto.point.bottomright.up")
-                .font(.caption.weight(.bold))
-                .tracking(1.1)
-                .foregroundStyle(SylluneColor.jadeDeep)
-            Text(course.title.resolve(preferred: model.preferredLanguageCodes) ?? "Parcours")
-                .font(.largeTitle.weight(.bold))
-                .foregroundStyle(SylluneColor.ink)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(course.description.resolve(preferred: model.preferredLanguageCodes) ?? "")
-                .font(.body)
-                .foregroundStyle(SylluneColor.inkMuted)
-                .fixedSize(horizontal: false, vertical: true)
+        VStack(alignment: .leading, spacing: 14) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .top, spacing: 16) {
+                    pathIntroHeading(course)
+                    Spacer(minLength: 8)
+                    pathMascot
+                }
+                VStack(alignment: .leading, spacing: 8) {
+                    pathIntroHeading(course)
+                    HStack {
+                        Spacer(minLength: 0)
+                        pathMascot
+                    }
+                }
+            }
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 8) {
                     ForEach(Array(model.curriculumLabels.enumerated()), id: \.offset) { _, label in
@@ -504,8 +588,36 @@ public struct LearningPathView: View {
                 planMilestoneCard(milestone, reached: model.dailyPlanMilestone?.id == milestone.id)
             }
         }
-        .padding(.horizontal, 4)
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(SylluneColor.pathViolet.opacity(0.14), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .sylluneCard(style: .interactive, radius: 24)
         .accessibilityElement(children: .combine)
+    }
+
+    private func pathIntroHeading(_ course: CourseManifest) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("TON CHEMIN", systemImage: "point.topleft.down.curvedto.point.bottomright.up")
+                .font(.caption.weight(.bold))
+                .tracking(1.1)
+                .foregroundStyle(SylluneColor.pathViolet)
+            Text(course.title.resolve(preferred: model.preferredLanguageCodes) ?? "Parcours")
+                .font(.largeTitle.weight(.bold))
+                .foregroundStyle(SylluneColor.ink)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(course.description.resolve(preferred: model.preferredLanguageCodes) ?? "")
+                .font(.body)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var pathMascot: some View {
+        TaviMascot(pose: .encouragement)
+            .frame(width: pathMascotSize, height: pathMascotSize)
+            .accessibilityHidden(true)
+            .allowsHitTesting(false)
     }
 
     private func planMilestoneCard(_ milestone: CourseMilestone, reached: Bool) -> some View {
@@ -559,6 +671,7 @@ public struct LearningPathView: View {
             ?? module.title.resolve(preferred: model.preferredLanguageCodes)
             ?? "Unité"
         let lessonCount = "\(module.lessonIDs.count) étapes"
+        let accent = SylluneColor.pathAccent(for: module.order)
         return VStack(alignment: .leading, spacing: 12) {
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -585,28 +698,29 @@ public struct LearningPathView: View {
 
             RoadmapModuleCanvas(
                 lessonIDs: module.lessonIDs,
-                lessons: lessons,
                 model: model
             )
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .background(accent.opacity(0.11), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .sylluneCard(style: .interactive, radius: 24)
     }
 }
 
 private struct RoadmapModuleCanvas: View {
     let lessonIDs: [LessonID]
-    let lessons: [LessonID: LessonDocument]
     @ObservedObject var model: AppModel
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    @ScaledMetric(relativeTo: .body) private var roadmapRowSpacing: CGFloat = 12
+    @ScaledMetric(relativeTo: .body) private var roadmapRowSpacing: CGFloat = 26
     @ScaledMetric(relativeTo: .body) private var roadmapNodeDiameter: CGFloat = 64
 
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach(Array(lessonIDs.enumerated()), id: \.element) { index, lessonID in
+        LazyVStack(spacing: 0) {
+            ForEach(lessonIDs.indices, id: \.self) { index in
+                let lessonID = lessonIDs[index]
                 roadmapEntry(
                     lessonID,
                     index: index,
@@ -616,7 +730,7 @@ private struct RoadmapModuleCanvas: View {
             }
         }
         .frame(maxWidth: 760)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     @ViewBuilder
@@ -632,10 +746,12 @@ private struct RoadmapModuleCanvas: View {
         let active = progress?.lastOpenedAt != nil
             && model.resumeLessonID == lessonID
             && !completed
-        let title = lessons[lessonID]?.title.resolve(
+        let title = model.loadedLessons[lessonID]?.title.resolve(
             preferred: model.preferredLanguageCodes
         ) ?? "Leçon \(index + 1)"
-        let accent = SylluneColor.pathAccent(for: index)
+        let courseIndex = model.orderedLessonIDs.firstIndex(of: lessonID) ?? index
+        let accent = SylluneColor.pathAccent(for: courseIndex)
+        let nextAccent = SylluneColor.pathAccent(for: courseIndex + 1)
         let status = completed
             ? "Terminée"
             : active
@@ -645,9 +761,12 @@ private struct RoadmapModuleCanvas: View {
                     : "Verrouillée"
         let progressText = lessonProgressText(lessonID, completed: completed)
         let nodeFrame = nodeDiameter + 14
+        let nodeOffset = min(nodeDiameter * 0.36, 30)
+        let leftIsLabel = index.isMultiple(of: 2)
         let node = roadmapNode(
-            index: index,
+            lessonID: lessonID,
             accent: accent,
+            accentForeground: SylluneColor.pathAccentForeground(for: courseIndex),
             completed: completed,
             active: active,
             unlocked: unlocked,
@@ -660,16 +779,42 @@ private struct RoadmapModuleCanvas: View {
             accent: accent,
             completed: completed,
             active: active,
-            unlocked: unlocked
+            unlocked: unlocked,
+            trailing: leftIsLabel && !dynamicTypeSize.isAccessibilitySize
         )
-        let row = HStack(alignment: .top, spacing: 14) {
-            node
-                .frame(width: nodeFrame, height: nodeFrame)
-            card
+        let row = Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack(alignment: .center, spacing: 8) {
+                    HStack(spacing: 0) {
+                        Spacer(minLength: 0)
+                        node
+                            .frame(width: nodeFrame, height: nodeFrame)
+                            .offset(x: leftIsLabel ? nodeOffset : -nodeOffset)
+                        Spacer(minLength: 0)
+                    }
+                    card.frame(maxWidth: .infinity, alignment: .leading)
+                }
+            } else {
+                HStack(alignment: .top, spacing: 14) {
+                    if leftIsLabel {
+                        card.frame(maxWidth: .infinity, alignment: .trailing)
+                        node
+                            .frame(width: nodeFrame, height: nodeFrame)
+                            .offset(x: nodeOffset)
+                        Color.clear.frame(maxWidth: .infinity)
+                    } else {
+                        Color.clear.frame(maxWidth: .infinity)
+                        node
+                            .frame(width: nodeFrame, height: nodeFrame)
+                            .offset(x: -nodeOffset)
+                        card.frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
+            }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, connectsToNext ? roadmapRowSpacing : 0)
+        .frame(maxWidth: .infinity, minHeight: nodeFrame, alignment: .top)
         .contentShape(Rectangle())
+
         Group {
             if unlocked {
                 NavigationLink(value: AppRoute.lesson(lessonID)) { row }
@@ -684,17 +829,40 @@ private struct RoadmapModuleCanvas: View {
                     .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
             }
         }
+        .frame(maxWidth: .infinity)
+        .padding(.bottom, connectsToNext ? roadmapRowSpacing : 0)
         .background(alignment: .topLeading) {
             if connectsToNext {
                 GeometryReader { proxy in
-                    Capsule()
-                        .fill(SylluneColor.jade.opacity(0.34))
-                        .frame(width: 4, height: proxy.size.height)
-                        .offset(x: nodeFrame / 2 - 2, y: nodeFrame / 2)
+                    Path { path in
+                        let center = proxy.size.width / 2
+                        let startX = center + (leftIsLabel ? nodeOffset : -nodeOffset)
+                        let endX = center - (leftIsLabel ? nodeOffset : -nodeOffset)
+                        let startY = nodeFrame
+                        let endY = proxy.size.height
+                        let curveHeight = max(0, endY - startY)
+                        path.move(to: CGPoint(x: startX, y: startY))
+                        path.addCurve(
+                            to: CGPoint(x: endX, y: endY),
+                            control1: CGPoint(x: startX, y: startY + curveHeight * 0.4),
+                            control2: CGPoint(x: endX, y: startY + curveHeight * 0.6)
+                        )
+                    }
+                    .stroke(
+                        LinearGradient(
+                            colors: [accent, nextAccent],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ),
+                        style: StrokeStyle(lineWidth: 4, lineCap: .round, dash: [3, 7])
+                    )
                 }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
             }
+        }
+        .task(id: lessonID) {
+            _ = await model.loadLesson(lessonID)
         }
     }
 
@@ -705,9 +873,10 @@ private struct RoadmapModuleCanvas: View {
         accent: Color,
         completed: Bool,
         active: Bool,
-        unlocked: Bool
+        unlocked: Bool,
+        trailing: Bool
     ) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: trailing ? .trailing : .leading, spacing: 6) {
             Text(title)
                 .font(.body.weight(.semibold))
                 .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
@@ -734,55 +903,60 @@ private struct RoadmapModuleCanvas: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .sylluneCard(style: .quiet, radius: 16)
-        .contentShape(Rectangle())
+        .padding(12)
+        .frame(maxWidth: 250, alignment: trailing ? .trailing : .leading)
+        .background(
+            accent.opacity(completed ? 0.14 : active ? 0.18 : unlocked ? 0.14 : 0.11),
+            in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(accent.opacity(active ? 0.58 : 0.25), lineWidth: 1)
+        }
     }
 
     private func roadmapNode(
-        index: Int,
+        lessonID: LessonID,
         accent: Color,
+        accentForeground: Color,
         completed: Bool,
         active: Bool,
         unlocked: Bool,
         diameter: CGFloat
     ) -> some View {
         ZStack {
-            Circle()
-                .fill(
-                    completed
-                        ? SylluneColor.success
-                        : unlocked
-                            ? accent
-                            : SylluneColor.surfaceRaised
-                )
-                .frame(width: diameter, height: diameter)
-            if completed {
-                Image(systemName: "checkmark")
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(SylluneColor.inkOnSuccess)
-            } else if unlocked {
-                Text("\(index + 1)")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(Color.white)
-            } else {
-                Image(systemName: "lock.fill")
-                    .font(.body.weight(.bold))
-                    .foregroundStyle(SylluneColor.inkMuted)
-            }
             if active {
                 Circle()
-                    .stroke(accent.opacity(0.55), lineWidth: 3)
+                    .stroke(accent.opacity(0.62), lineWidth: 3)
                     .frame(width: diameter + 14, height: diameter + 14)
             }
+            Circle()
+                .fill(completed ? SylluneColor.success : accent.opacity(unlocked ? 1 : 0.2))
+                .frame(width: diameter, height: diameter)
+            Circle()
+                .stroke(Color.white.opacity(unlocked ? 0.72 : 0.4), lineWidth: 3)
+                .frame(width: diameter - 4, height: diameter - 4)
+            Image(systemName: lessonPathSymbol(for: lessonID))
+                .font(.title3.weight(.bold))
+                .foregroundStyle(completed ? SylluneColor.inkOnSuccess : unlocked ? accentForeground : accent)
         }
         .frame(width: diameter + 14, height: diameter + 14)
+        .overlay(alignment: .bottomTrailing) {
+            if completed || !unlocked {
+                Image(systemName: completed ? "checkmark" : "lock.fill")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(completed ? SylluneColor.success : SylluneColor.inkMuted)
+                    .frame(width: 22, height: 22)
+                    .background(SylluneColor.surface, in: Circle())
+            }
+        }
+        .shadow(color: accent.opacity(unlocked ? 0.2 : 0.08), radius: active ? 10 : 5, x: 0, y: 3)
         .accessibilityHidden(true)
+        .allowsHitTesting(false)
     }
 
     private func lessonProgressText(_ lessonID: LessonID, completed: Bool) -> String {
-        guard let lesson = lessons[lessonID] else {
+        guard let lesson = model.loadedLessons[lessonID] else {
             return completed
                 ? "Leçon terminée"
                 : "Progression en cours de chargement"
@@ -808,84 +982,131 @@ private struct RoadmapModuleCanvas: View {
 
 
 public struct ExplorerView: View {
-
     @EnvironmentObject private var model: AppModel
     @State private var stories: [StoryDocument] = []
     @State private var showingDictionary = false
 
     public init() {}
+
     public var body: some View {
-        List {
-            Section {
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 18) {
+                explorerHeader
+
                 Button { showingDictionary = true } label: {
                     HStack(spacing: 14) {
-                        explorerMark(systemImage: "magnifyingglass", tint: SylluneColor.jade)
+                        Image(systemName: "magnifyingglass")
+                            .font(.title3.weight(.semibold))
+                            .accessibilityHidden(true)
                         Text(model.dictionaryTitle)
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(SylluneColor.ink)
+                            .font(.title3.weight(.bold))
                         Spacer(minLength: 0)
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(SylluneColor.inkMuted)
+                        Image(systemName: "arrow.right")
+                            .font(.callout.weight(.bold))
                             .accessibilityHidden(true)
                     }
-                    .padding(14)
+                    .padding(16)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                 }
-                .buttonStyle(.plain)
-                .listRowInsets(EdgeInsets(top: 6, leading: 20, bottom: 6, trailing: 20))
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
+                .buttonStyle(SyllunePrimaryButtonStyle())
                 .accessibilityIdentifier("explorer.dictionary")
-            }
-            Section("Histoires") {
-                if stories.isEmpty {
-                    Text("Les histoires locales apparaîtront ici dès que leur contenu est installé.")
-                        .font(.body)
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding(16)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .listRowInsets(EdgeInsets(top: 6, leading: 20, bottom: 6, trailing: 20))
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                } else {
-                    ForEach(stories) { story in
-                        NavigationLink(destination: StoryDetailView(storyID: story.id)) {
-                            HStack(alignment: .center, spacing: 14) {
-                                explorerMark(systemImage: "book.closed.fill", tint: SylluneColor.pathSky)
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(story.title.resolve(preferred: model.preferredLanguageCodes) ?? "Histoire")
-                                        .font(.body.weight(.semibold))
-                                        .foregroundStyle(SylluneColor.ink)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                    Text("\(story.level) · \(story.estimatedMinutes) min · \(model.offlineContentLabel)")
-                                        .font(.caption)
-                                        .foregroundStyle(SylluneColor.inkMuted)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                }
-                            }
-                            .padding(14)
+
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Histoires")
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(SylluneColor.ink)
+                    if stories.isEmpty {
+                        Text("Les histoires locales apparaîtront ici dès que leur contenu est installé.")
+                            .font(.body)
+                            .foregroundStyle(SylluneColor.inkMuted)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(16)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(SylluneColor.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                            .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                            .background(SylluneColor.pathViolet.opacity(0.13), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    } else {
+                        LazyVStack(spacing: 10) {
+                            ForEach(stories.indices, id: \.self) { index in
+                                let story = stories[index]
+                                NavigationLink(value: AppRoute.story(story.id)) {
+                                    HStack(alignment: .center, spacing: 14) {
+                                        explorerMark(systemImage: "book.closed.fill", tint: SylluneColor.pathAccent(for: index))
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text(story.title.resolve(preferred: model.preferredLanguageCodes) ?? "Histoire")
+                                                .font(.body.weight(.semibold))
+                                                .foregroundStyle(SylluneColor.ink)
+                                                .fixedSize(horizontal: false, vertical: true)
+                                            Text("\(story.level) · \(story.estimatedMinutes) min · \(model.offlineContentLabel)")
+                                                .font(.caption)
+                                                .foregroundStyle(SylluneColor.inkMuted)
+                                                .fixedSize(horizontal: false, vertical: true)
+                                        }
+                                    }
+                                    .padding(14)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(SylluneColor.pathSky.opacity(0.12), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                                    .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
-                        .listRowInsets(EdgeInsets(top: 6, leading: 20, bottom: 6, trailing: 20))
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
                     }
+                }
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .sylluneCard(style: .interactive, radius: 24)
+            }
+            .frame(maxWidth: 900, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 24)
+        }
+        .background(SylluneColor.canvas)
+        .navigationTitle("Explorer")
+        .sheet(isPresented: $showingDictionary) {
+            NavigationStack { DictionaryView() }
+                .environment(\.sylluneShellWordNavigation, nil)
+        }
+        .task {
+            if let store = model.dependencies.content as? any StoryContentStore { stories = (try? await store.stories()) ?? [] }
+        }
+    }
+
+    private var explorerHeader: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(alignment: .center, spacing: 16) {
+                explorerHeaderText
+                Spacer(minLength: 0)
+                explorerMark(systemImage: "sparkles", tint: SylluneColor.pathViolet)
+                    .frame(width: 64, height: 64)
+                    .accessibilityHidden(true)
+                    .allowsHitTesting(false)
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                explorerHeaderText
+                HStack {
+                    Spacer(minLength: 0)
+                    explorerMark(systemImage: "sparkles", tint: SylluneColor.pathViolet)
+                        .frame(width: 64, height: 64)
+                        .accessibilityHidden(true)
+                        .allowsHitTesting(false)
                 }
             }
         }
-        .scrollContentBackground(.hidden)
-        .background(SylluneColor.canvas)
-        .navigationTitle("Explorer")
-        .sheet(isPresented: $showingDictionary) { NavigationStack { DictionaryView() } }
-        .task {
-            if let store = model.dependencies.content as? any StoryContentStore { stories = (try? await store.stories()) ?? [] }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(SylluneColor.pathViolet.opacity(0.14), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .sylluneCard(style: .interactive, radius: 24)
+    }
+
+    private var explorerHeaderText: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("À découvrir")
+                .font(.title.weight(.bold))
+                .foregroundStyle(SylluneColor.ink)
+            Text("Un mot ou une histoire, à ton rythme.")
+                .font(.body)
+                .foregroundStyle(SylluneColor.inkMuted)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
@@ -910,12 +1131,18 @@ public struct DictionaryView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.dismiss) private var dismiss
     public var initialQuery: String?
+    private let usesShellNavigation: Bool
     @State private var query: String
     @State private var entries: [VocabularyEntry] = []
     @FocusState private var searchFocused: Bool
 
     public init(initialQuery: String? = nil) {
+        self.init(initialQuery: initialQuery, usesShellNavigation: false)
+    }
+
+    init(initialQuery: String?, usesShellNavigation: Bool) {
         self.initialQuery = initialQuery
+        self.usesShellNavigation = usesShellNavigation
         _query = State(initialValue: initialQuery ?? "")
     }
 
@@ -937,20 +1164,23 @@ public struct DictionaryView: View {
                 ContentUnavailableView("Aucun mot pour « \(query) »", systemImage: "character.book.closed", description: Text("Parcours \(model.primaryContentLabel) pour découvrir son vocabulaire."))
             } else {
                 List(filtered) { entry in
-                        NavigationLink(destination: WordDetailView(vocabularyID: entry.id)) {
-                            HStack(spacing: 14) {
-                            Text(entry.hanzi)
-                                .font(.title2)
-                                .foregroundStyle(SylluneColor.ink)
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(entry.pinyin)
-                                    .font(.body)
-                                    .foregroundStyle(SylluneColor.jadeDeep)
-                                Text(entry.meaning.resolve(preferred: ["fr", "en"]) ?? "—")
-                                    .font(.callout)
-                                    .foregroundStyle(SylluneColor.inkMuted)
-                            }
+                    let label = HStack(spacing: 14) {
+                        Text(entry.hanzi)
+                            .font(.title2)
+                            .foregroundStyle(SylluneColor.ink)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(entry.pinyin)
+                                .font(.body)
+                                .foregroundStyle(SylluneColor.jadeDeep)
+                            Text(entry.meaning.resolve(preferred: ["fr", "en"]) ?? "—")
+                                .font(.callout)
+                                .foregroundStyle(SylluneColor.inkMuted)
                         }
+                    }
+                    if usesShellNavigation {
+                        NavigationLink(value: AppRoute.word(entry.id)) { label }
+                    } else {
+                        NavigationLink(destination: WordDetailView(vocabularyID: entry.id)) { label }
                     }
                 }
                 .listStyle(.plain)

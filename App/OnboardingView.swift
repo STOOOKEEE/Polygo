@@ -125,6 +125,10 @@ public struct OnboardingView: View {
     private var welcomeStep: some View {
         VStack(alignment: .leading, spacing: 24) {
             SylluneLogoMark(size: 72)
+
+            TaviMascot(pose: .welcome)
+                .frame(width: 176, height: 176)
+                .frame(maxWidth: .infinity)
             VStack(alignment: .leading, spacing: 12) {
                 Text("Bienvenue dans Syllune")
                     .font(.largeTitle.weight(.semibold))
@@ -301,11 +305,11 @@ public struct SyllunePrimaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.body.weight(.semibold))
-            .foregroundStyle(isEnabled ? Color.white : SylluneColor.inkMuted)
+            .foregroundStyle(isEnabled ? SylluneColor.inkOnJade : SylluneColor.inkMuted)
             .frame(maxWidth: .infinity, minHeight: 52)
             .background(
                 isEnabled
-                    ? SylluneColor.jadeButton.opacity(configuration.isPressed ? 0.78 : 1)
+                    ? SylluneColor.jadeButton.opacity(configuration.isPressed ? 0.94 : 1)
                     : SylluneColor.surfaceRaised,
                 in: RoundedRectangle(cornerRadius: 14, style: .continuous)
             )

@@ -156,6 +156,356 @@ final class JSONFileProgressStoreTests: XCTestCase {
             if case .ioFailure(_) = error { } else { XCTFail("Unexpected persistence error: \(error)") }
         }
     }
+
+    func testFirstCompletionProjectionReplaysInOrderAndIsProfileScoped() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let firstProfile = id("profile-reward-first")
+        let secondProfile = id("profile-reward-second")
+        let retiredLesson = LessonID(rawValue: "lesson-retired-from-catalog")!
+        let anotherLesson = LessonID(rawValue: "lesson-another-reward")!
+        let store = makeStore(directory)
+        _ = try await store.append(event(
+            "reward-first-onboarding",
+            profile: firstProfile,
+            device: device("phone"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(firstProfile))
+        ))
+
+        let earlier = event(
+            "reward-earlier",
+            profile: firstProfile,
+            device: device("phone"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: retiredLesson, at: now)
+        )
+        let later = event(
+            "reward-later",
+            profile: firstProfile,
+            device: device("phone"),
+            lamport: 3,
+            payload: .lessonCompleted(lessonID: retiredLesson, at: now.addingTimeInterval(10))
+        )
+        _ = try await store.append(later)
+        let reordered = try await store.append(earlier)
+        XCTAssertEqual(reordered.firstCompletionEventIDs?[retiredLesson], earlier.eventID)
+        _ = try await store.append(later)
+
+        let anotherCompletion = event(
+            "reward-another",
+            profile: firstProfile,
+            device: device("phone"),
+            lamport: 4,
+            payload: .lessonCompleted(lessonID: anotherLesson, at: now.addingTimeInterval(20))
+        )
+        _ = try await store.append(anotherCompletion)
+        _ = try await store.append(event(
+            "reward-second-onboarding",
+            profile: secondProfile,
+            device: device("tablet"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(secondProfile))
+        ))
+        let otherLesson = LessonID(rawValue: "lesson-other-profile")!
+        let otherCompletion = event(
+            "reward-other-profile",
+            profile: secondProfile,
+            device: device("tablet"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: otherLesson, at: now)
+        )
+        _ = try await store.append(otherCompletion)
+
+        let firstReload = try await makeStore(directory).load(profileID: firstProfile)
+        XCTAssertEqual(firstReload.firstCompletionEventIDs, [
+            retiredLesson: earlier.eventID,
+            anotherLesson: anotherCompletion.eventID
+        ])
+        let secondReload = try await makeStore(directory).load(profileID: secondProfile)
+        XCTAssertEqual(secondReload.firstCompletionEventIDs, [otherLesson: otherCompletion.eventID])
+        let journal = try await makeStore(directory).events(profileID: firstProfile)
+        let retiredCompletions = journal.compactMap { value -> EventID? in
+            guard case .lessonCompleted(let lessonID, _) = value.payload, lessonID == retiredLesson else { return nil }
+            return value.eventID
+        }
+        XCTAssertEqual(retiredCompletions, [earlier.eventID, later.eventID])
+    }
+
+    func testLegacyCacheWithCompleteJournalRebuildsFirstCompletionProjection() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-legacy-cache-journal")
+        let lessonID = LessonID(rawValue: "lesson-legacy-cache")!
+        let store = makeStore(directory)
+        _ = try await store.append(event(
+            "legacy-journal-onboarding",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(profileID))
+        ))
+        let completion = event(
+            "legacy-journal-completion",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: lessonID, at: now)
+        )
+        _ = try await store.append(completion)
+
+        let cacheURL = directory.appendingPathComponent("profiles/\(profileID.rawValue)/snapshot.json")
+        var legacyCache = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: Data(contentsOf: cacheURL)) as? [String: Any]
+        )
+        legacyCache.removeValue(forKey: "firstCompletionEventIDs")
+        try JSONSerialization.data(withJSONObject: legacyCache).write(to: cacheURL, options: [.atomic])
+
+        let reloaded = try await makeStore(directory).load(profileID: profileID)
+        XCTAssertEqual(reloaded.firstCompletionEventIDs, [lessonID: completion.eventID])
+    }
+
+    func testLegacyEmptyCacheWithEmptyJournalRebuildsKnownEmptyHistory() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-empty-legacy-cache-journal")
+        let profileDirectory = directory.appendingPathComponent("profiles/\(profileID.rawValue)")
+        try FileManager.default.createDirectory(at: profileDirectory, withIntermediateDirectories: true)
+        let cacheURL = profileDirectory.appendingPathComponent("snapshot.json")
+        var legacyCache = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: JSONEncoder().encode(ProgressSnapshot.empty(now: now))) as? [String: Any]
+        )
+        legacyCache.removeValue(forKey: "firstCompletionEventIDs")
+        try JSONSerialization.data(withJSONObject: legacyCache).write(to: cacheURL)
+        try Data().write(to: profileDirectory.appendingPathComponent("events.jsonl"))
+
+        let reloaded = try await makeStore(directory).load(profileID: profileID)
+        XCTAssertEqual(reloaded.firstCompletionEventIDs, [:])
+    }
+
+    func testLegacyEmptyCacheWithInterruptedFirstLineRebuildsKnownEmptyHistory() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-empty-legacy-cache-partial-journal")
+        let profileDirectory = directory.appendingPathComponent("profiles/\(profileID.rawValue)")
+        try FileManager.default.createDirectory(at: profileDirectory, withIntermediateDirectories: true)
+        let cacheURL = profileDirectory.appendingPathComponent("snapshot.json")
+        var legacyCache = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: JSONEncoder().encode(ProgressSnapshot.empty(now: now))) as? [String: Any]
+        )
+        legacyCache.removeValue(forKey: "firstCompletionEventIDs")
+        try JSONSerialization.data(withJSONObject: legacyCache).write(to: cacheURL)
+        let journalURL = profileDirectory.appendingPathComponent("events.jsonl")
+        try Data(#"{"eventID":"interrupted"#.utf8).write(to: journalURL)
+
+        let reloaded = try await makeStore(directory).load(profileID: profileID)
+        XCTAssertEqual(reloaded.firstCompletionEventIDs, [:])
+        let recoveries = try FileManager.default.contentsOfDirectory(at: profileDirectory, includingPropertiesForKeys: nil)
+            .filter { $0.lastPathComponent.hasPrefix("events.jsonl.partial.") }
+        XCTAssertEqual(recoveries.count, 1)
+        XCTAssertEqual(try Data(contentsOf: journalURL), Data())
+    }
+
+    func testEmptyLegacyCacheWithoutJournalDoesNotBecomeKnownZeroHistory() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-empty-legacy-cache")
+        let profileDirectory = directory.appendingPathComponent("profiles/\(profileID.rawValue)")
+        try FileManager.default.createDirectory(at: profileDirectory, withIntermediateDirectories: true)
+        var legacyCache = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: JSONEncoder().encode(ProgressSnapshot.empty(now: now))) as? [String: Any]
+        )
+        legacyCache.removeValue(forKey: "firstCompletionEventIDs")
+        try JSONSerialization.data(withJSONObject: legacyCache).write(
+            to: profileDirectory.appendingPathComponent("snapshot.json")
+        )
+
+        let reloaded = try await makeStore(directory).load(profileID: profileID)
+        XCTAssertNil(reloaded.firstCompletionEventIDs)
+        do {
+            _ = try await makeStore(directory).append(event(
+                "append-to-empty-legacy-cache",
+                profile: profileID,
+                device: device("phone"),
+                lamport: 1,
+                payload: .onboardingCompleted(profile: profile(profileID))
+            ))
+            XCTFail("An empty old snapshot without its journal must not imply known zero history")
+        } catch let error as ProgressStoreError {
+            if case .ioFailure(_) = error { } else { XCTFail("Unexpected error: \(error)") }
+        }
+    }
+
+    func testLegacyCacheWithoutJournalKeepsUnknownHistoryAndRejectsAppend() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-legacy-without-journal")
+        let lessonID = LessonID(rawValue: "lesson-cached-only")!
+        let store = makeStore(directory)
+        _ = try await store.append(event(
+            "legacy-cache-onboarding",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(profileID))
+        ))
+        _ = try await store.append(event(
+            "legacy-cache-completion",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: lessonID, at: now)
+        ))
+        let profileDirectory = directory.appendingPathComponent("profiles/\(profileID.rawValue)")
+        try FileManager.default.removeItem(at: profileDirectory.appendingPathComponent("events.jsonl"))
+        let cacheURL = profileDirectory.appendingPathComponent("snapshot.json")
+        var legacyCache = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: Data(contentsOf: cacheURL)) as? [String: Any]
+        )
+        legacyCache.removeValue(forKey: "firstCompletionEventIDs")
+        try JSONSerialization.data(withJSONObject: legacyCache).write(to: cacheURL, options: [.atomic])
+
+        let reloaded = try await makeStore(directory).load(profileID: profileID)
+        XCTAssertNil(reloaded.firstCompletionEventIDs)
+        XCTAssertEqual(reloaded.lessonProgress[lessonID]?.completedAt, now)
+
+        do {
+            _ = try await makeStore(directory).append(event(
+                "append-after-legacy-journal-loss",
+                profile: profileID,
+                device: device("phone"),
+                lamport: 3,
+                payload: .lessonCompleted(lessonID: lessonID, at: now.addingTimeInterval(10))
+            ))
+            XCTFail("A non-empty snapshot without its journal must remain append-protected")
+        } catch let error as ProgressStoreError {
+            if case .ioFailure(_) = error { } else { XCTFail("Unexpected error: \(error)") }
+        }
+    }
+
+    func testJournalCompletionSurvivesSnapshotWriteFailureAndExactRetry() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-cache-write-failure")
+        let lessonID = LessonID(rawValue: "lesson-cache-write-failure")!
+        _ = try await makeStore(directory).append(event(
+            "cache-failure-onboarding",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(profileID))
+        ))
+        let completion = event(
+            "cache-failure-completion",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: lessonID, at: now)
+        )
+        let failingStore = JSONFileProgressStore(
+            rootURL: directory,
+            reducer: DefaultProgressReducer(),
+            fileManager: FailSecondProfileDirectoryCreationFileManager(profileDirectoryName: profileID.rawValue)
+        )
+
+        do {
+            _ = try await failingStore.append(completion)
+            XCTFail("The injected snapshot write failure must be reported")
+        } catch let error as ProgressStoreError {
+            if case .ioFailure(_) = error { } else { XCTFail("Unexpected error: \(error)") }
+        }
+        let durableEvents = try await makeStore(directory).events(profileID: profileID)
+        XCTAssertTrue(durableEvents.contains(completion))
+
+        let repaired = try await failingStore.append(completion)
+        XCTAssertEqual(repaired.firstCompletionEventIDs?[lessonID], completion.eventID)
+        let persistedEvents = try await makeStore(directory).events(profileID: profileID)
+        let completionEvents = persistedEvents.filter {
+            if case .lessonCompleted(let id, _) = $0.payload { return id == lessonID }
+            return false
+        }
+        XCTAssertEqual(completionEvents.map(\.eventID), [completion.eventID])
+    }
+
+    func testJournalCardAdditionSurvivesSnapshotWriteFailureAndExactRetry() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let profileID = id("profile-card-cache-failure")
+        let lessonID = LessonID(rawValue: "lesson-card-cache-failure")!
+        let cardID = CardID(rawValue: "card-cache-failure")!
+        let store = makeStore(directory)
+        _ = try await store.append(event(
+            "card-cache-onboarding",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 1,
+            payload: .onboardingCompleted(profile: profile(profileID))
+        ))
+        _ = try await store.append(event(
+            "card-cache-completion",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 2,
+            payload: .lessonCompleted(lessonID: lessonID, at: now)
+        ))
+        let cardAddition = event(
+            "card-cache-addition",
+            profile: profileID,
+            device: device("phone"),
+            lamport: 3,
+            payload: .flashcardAdded(cardID: cardID, at: now)
+        )
+        let failingStore = JSONFileProgressStore(
+            rootURL: directory,
+            reducer: DefaultProgressReducer(),
+            fileManager: FailSecondProfileDirectoryCreationFileManager(profileDirectoryName: profileID.rawValue)
+        )
+
+        do {
+            _ = try await failingStore.append(cardAddition)
+            XCTFail("The injected card snapshot write failure must be reported")
+        } catch let error as ProgressStoreError {
+            if case .ioFailure(_) = error { } else { XCTFail("Unexpected error: \(error)") }
+        }
+        let durableEvents = try await makeStore(directory).events(profileID: profileID)
+        XCTAssertTrue(durableEvents.contains(cardAddition))
+
+        let repaired = try await failingStore.append(cardAddition)
+        XCTAssertEqual(repaired.reviewStates[cardID]?.dueAt, now)
+        let persistedEvents = try await makeStore(directory).events(profileID: profileID)
+        let cardEvents = persistedEvents.filter {
+            if case .flashcardAdded(let id, _) = $0.payload { return id == cardID }
+            return false
+        }
+        XCTAssertEqual(cardEvents.map(\.eventID), [cardAddition.eventID])
+    }
+}
+
+private final class FailSecondProfileDirectoryCreationFileManager: FileManager {
+    private let profileDirectoryName: String
+    private let lock = NSLock()
+    private var profileDirectoryCreations = 0
+
+    init(profileDirectoryName: String) {
+        self.profileDirectoryName = profileDirectoryName
+        super.init()
+    }
+
+    override func createDirectory(
+        at url: URL,
+        withIntermediateDirectories createIntermediates: Bool,
+        attributes: [FileAttributeKey: Any]? = nil
+    ) throws {
+        let shouldFail: Bool
+        if url.lastPathComponent == profileDirectoryName {
+            lock.lock()
+            profileDirectoryCreations += 1
+            shouldFail = profileDirectoryCreations == 2
+            lock.unlock()
+        } else {
+            shouldFail = false
+        }
+        if shouldFail {
+            throw NSError(domain: NSCocoaErrorDomain, code: CocoaError.Code.fileWriteNoPermission.rawValue)
+        }
+        try super.createDirectory(
+            at: url,
+            withIntermediateDirectories: createIntermediates,
+            attributes: attributes
+        )
+    }
 }
 
 private actor InMemorySyncClient: CloudSyncClient {

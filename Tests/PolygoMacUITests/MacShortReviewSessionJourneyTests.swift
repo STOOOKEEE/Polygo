@@ -38,6 +38,7 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
             NSPredicate(format: "identifier == %@", "home.review")
         ).firstMatch
         XCTAssertTrue(home.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher la carte de révision")
+        let coinBalanceBeforeReview = try currentCoinBalance()
         XCTAssertTrue(
             text(containing: "cartes pour cette session").waitForExistence(timeout: timeout),
             "Aujourd’hui doit annoncer la limite de la session courte"
@@ -94,10 +95,24 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
             XCTAssertTrue(easy.isHittable, "L’évaluation Facile doit être accessible")
             easy.click()
             completedCards += 1
+            if completedCards == 1 {
+                let balanceAfterFirstEvaluation = try currentCoinBalance()
+                XCTAssertEqual(
+                    balanceAfterFirstEvaluation,
+                    coinBalanceBeforeReview,
+                    "Une évaluation SRS réelle ne doit pas modifier le solde de pièces"
+                )
+            }
         }
 
         XCTAssertTrue(finished.waitForExistence(timeout: timeout), "La session courte doit se terminer après sa limite")
         XCTAssertEqual(completedCards, expectedLimit, "La session doit évaluer exactement la limite annoncée")
+        let balanceAfterSession = try currentCoinBalance()
+        XCTAssertEqual(
+            balanceAfterSession,
+            coinBalanceBeforeReview,
+            "La session SRS terminée doit conserver le solde initial"
+        )
         XCTAssertTrue(
             text(containing: "Il reste").waitForExistence(timeout: timeout),
             "La fin de session doit indiquer les cartes encore dues"
@@ -126,6 +141,12 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
             return value
         }
         return element.label
+    }
+    private func currentCoinBalance() throws -> Int {
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le badge de progression doit rester accessible pendant la révision")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        return try XCTUnwrap(Int(digits), "Le badge doit exposer un solde numérique réel")
     }
 
     private func firstInteger(in value: String) throws -> Int {

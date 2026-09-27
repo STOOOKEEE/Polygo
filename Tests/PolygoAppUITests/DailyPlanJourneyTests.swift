@@ -83,6 +83,7 @@ final class DailyPlanJourneyTests: XCTestCase {
             element(containing: "minutes de révision").waitForExistence(timeout: timeout),
             "Aujourd’hui doit afficher le budget de révision"
         )
+        assertCoinBalance(40)
         // The fixture has been consumed before the Today content becomes
         // visible. Remove it so every later launch in this journey reads only
         // the journal that the application has persisted.
@@ -124,6 +125,7 @@ final class DailyPlanJourneyTests: XCTestCase {
             identifier: "lesson.exercise.ex-l5-speak"
         ).firstMatch
         XCTAssertTrue(oralExercise.waitForExistence(timeout: timeout), "L’avancement doit afficher l’activité orale")
+        assertFocusedChromeHidden()
 
         // The listening evaluation and the following position must survive a
         // process restart before the rest of the session is completed.
@@ -136,6 +138,7 @@ final class DailyPlanJourneyTests: XCTestCase {
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l5-speak").firstMatch.waitForExistence(timeout: timeout),
             "La reprise doit retrouver l’activité orale après l’écoute validée"
         )
+        assertFocusedChromeHidden()
 
         let skipOral = button(exactly: "Passer sans évaluer")
         XCTAssertTrue(skipOral.waitForExistence(timeout: timeout), "L’oral optionnel doit rester franchissable hors ligne")
@@ -167,7 +170,8 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
         finish.tap()
 
-        XCTAssertTrue(element(containing: "Leçon enregistrée").waitForExistence(timeout: timeout), "La séance enregistrée doit être confirmée")
+        XCTAssertTrue(element(containing: "+10 pièces", type: .any).waitForExistence(timeout: timeout), "La complétion L5 doit confirmer dix nouvelles pièces")
+        assertFocusedChromeHidden()
         XCTAssertTrue(
             element(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit signaler l’oral passé sans évaluation"
@@ -176,13 +180,21 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.tap()
         XCTAssertTrue(element(containing: "Parcours").waitForExistence(timeout: timeout), "Le retour doit afficher le parcours")
+        assertCoinBalance(50)
         attachScreenshot(named: "ios-daily-plan-path-after-day-one")
 
-        let today = app.tabBars.buttons["Aujourd’hui"]
-        XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le tab Aujourd’hui doit rester accessible")
+        let today = app.buttons["BottomTab.today"]
+        XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit rester accessible")
+        XCTAssertTrue(today.isHittable, "Le bouton Aujourd’hui doit être visible")
         today.tap()
         XCTAssertTrue(element(containing: "Jour 2 sur 90").waitForExistence(timeout: timeout), "La séance suivante doit être J2")
+        assertCoinBalance(50)
         attachScreenshot(named: "ios-daily-plan-day-two")
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(element(containing: "Jour 2 sur 90").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
+        assertCoinBalance(50)
+        XCTAssertFalse(element(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
     }
 
     private func element(containing value: String, type: XCUIElement.ElementType = .any) -> XCUIElement {
@@ -370,6 +382,26 @@ final class DailyPlanJourneyTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    private func assertCoinBalance(_ expectedBalance: Int) {
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le solde global doit être accessible")
+        let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
+        XCTAssertEqual(Int(digits), expectedBalance, "Le badge doit exposer le solde historique exact")
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant la leçon")
+        }
+    }
+
 }
 
 private struct DailyLessonFixture: Decodable {

@@ -38,9 +38,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
     }
 
     func testFillBlankSpeaksAndSelectsHanZiProposalAfterRoadmapNavigation() throws {
-        let pathItem = app.buttons.matching(
-            NSPredicate(format: "label == %@", "Parcours")
-        ).firstMatch
+        let pathItem = app.buttons["BottomTab.path"]
         XCTAssertTrue(pathItem.waitForExistence(timeout: timeout), "Le parcours macOS doit être visible")
         XCTAssertTrue(pathItem.isHittable, "Le parcours macOS doit être cliquable")
         pathItem.click()
@@ -144,6 +142,8 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             waitForEnabled(verify),
             "Une proposition Hanzi sélectionnée doit activer Vérifier"
         )
+        assertFocusedChromeHidden()
+        attachScreenshot(named: "mac-focused-exercise-footer")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La proposition 叫 doit être acceptée")
 
@@ -249,39 +249,14 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         continueButton.click()
     }
 
-    /// SwiftUI keeps the exercise body in one vertical ScrollView. On macOS
-    /// the first exercise can start below a long dialogue preamble, so an AX
-    /// match may exist while its control is still outside the viewport.
-    /// Scroll the real lesson container until the exact control can receive a
-    /// click, while leaving the application layout untouched. AX can report a
-    /// partially clipped control as hittable on macOS, so geometry is checked
-    /// against the selected scroll container before returning.
+    /// The active Path or lesson destination owns one vertical scroll view.
+    /// Scroll its visible content until the target fits; macOS can report a
+    /// partially clipped control as hittable.
     @discardableResult
     private func scrollIntoView(_ element: XCUIElement) -> Bool {
         guard element.waitForExistence(timeout: timeout) else { return false }
-
-        // NavigationSplitView exposes both a sidebar List and the lesson
-        // content as AX ScrollViews. Match the element to the container whose
-        // horizontal bounds contain it instead of relying on query order.
-        let scrollViews = app.scrollViews
-        var scrollView: XCUIElement?
-        var bestHorizontalOverlap: CGFloat = 0
-        for index in 0..<scrollViews.count {
-            let candidate = scrollViews.element(boundBy: index)
-            guard candidate.waitForExistence(timeout: 2) else { continue }
-            let frame = candidate.frame
-            guard frame.width > 0, frame.height > 0 else { continue }
-            let elementFrame = element.frame
-            let overlap = max(
-                0,
-                min(elementFrame.maxX, frame.maxX) - max(elementFrame.minX, frame.minX)
-            )
-            if overlap > bestHorizontalOverlap {
-                bestHorizontalOverlap = overlap
-                scrollView = candidate
-            }
-        }
-        guard let scrollView else { return false }
+        let scrollView = app.scrollViews.firstMatch
+        guard scrollView.waitForExistence(timeout: timeout) else { return false }
 
         for _ in 0..<12 {
             let elementFrame = element.frame
@@ -304,6 +279,19 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
     private func button(containing value: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", value)).firstMatch
+    }
+
+    private func assertFocusedChromeHidden() {
+        for identifier in [
+            "BottomTab.today",
+            "BottomTab.path",
+            "BottomTab.explorer",
+            "BottomTab.cards",
+            "BottomTab.profile",
+            "ProgressCoinBalance"
+        ] {
+            XCTAssertFalse(app.descendants(matching: .any).matching(identifier: identifier).firstMatch.exists, "Le chrome global \(identifier) doit être masqué pendant l’exercice")
+        }
     }
 
     private func waitForLabel(_ element: XCUIElement, containing value: String) -> Bool {
