@@ -209,14 +209,16 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             // The target itself uses the same local voice path. Stop that
             // utterance first so the following action tests the model toggle
             // from its idle state.
-            tapWhenVisible(modelStopButton())
+            modelStopButton().tap()
         }
         bringIntoView(modelPlay)
         attachScreenshot(named: "oral-controls")
         tapWhenVisible(modelPlay)
         let stopModel = modelStopButton()
         if stopModel.waitForExistence(timeout: 3) {
-            tapWhenVisible(stopModel)
+            // This control is already visible; the short clip can finish
+            // while the scrolling helper collects accessibility geometry.
+            stopModel.tap()
         } else {
             XCTAssertTrue(
                 text(containingAny: ["Modèle lancé", "Modèle lu", "Audio indisponible"]).waitForExistence(timeout: timeout),

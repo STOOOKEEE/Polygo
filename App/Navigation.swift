@@ -1,6 +1,9 @@
 import SwiftUI
 import Foundation
 import PolygoCore
+#if os(iOS)
+import UIKit
+#endif
 
 public extension Notification.Name {
     static let sylluneFocusDictionarySearch = Notification.Name("syllune.focusDictionarySearch")
@@ -190,6 +193,8 @@ private enum BottomTab: String, CaseIterable, Identifiable {
         }
     }
 }
+
+#if os(macOS)
 private struct SylluneNavigationTabCommandKey: FocusedValueKey {
     typealias Value = (BottomTab) -> Void
 }
@@ -224,20 +229,12 @@ struct BottomNavigationCommands: Commands {
             tabCommand(.explorer)
             tabCommand(.cards)
             tabCommand(.profile)
-            #if os(iOS)
-            Divider()
-            Button("Réglages") { settingsAction?() }
-                .keyboardShortcut(",", modifiers: .command)
-                .disabled(settingsAction == nil)
-            #endif
         }
-        #if os(macOS)
         CommandGroup(after: .appSettings) {
             Button("Réglages") { settingsAction?() }
                 .keyboardShortcut(",", modifiers: .command)
                 .disabled(settingsAction == nil)
         }
-        #endif
     }
 
     private func tabCommand(_ tab: BottomTab) -> some View {
@@ -249,6 +246,96 @@ struct BottomNavigationCommands: Commands {
             .disabled(action == nil)
     }
 }
+#endif
+
+#if os(iOS)
+private struct SylluneKeyboardContent<Content: View>: View {
+    let content: Content
+    let values: EnvironmentValues
+
+    var body: some View {
+        content.environment(\.self, values)
+    }
+}
+
+private struct SylluneKeyboardHost<Content: View>: UIViewControllerRepresentable {
+    let content: Content
+    let selectTab: (BottomTab) -> Void
+    let openSettings: () -> Void
+
+    func makeUIViewController(context: Context) -> SylluneKeyboardController<SylluneKeyboardContent<Content>> {
+        let controller = SylluneKeyboardController(
+            rootView: SylluneKeyboardContent(content: content, values: context.environment)
+        )
+        controller.selectTab = selectTab
+        controller.openSettings = openSettings
+        controller.view.backgroundColor = .clear
+        return controller
+    }
+
+    func updateUIViewController(
+        _ controller: SylluneKeyboardController<SylluneKeyboardContent<Content>>,
+        context: Context
+    ) {
+        controller.rootView = SylluneKeyboardContent(content: content, values: context.environment)
+        controller.selectTab = selectTab
+        controller.openSettings = openSettings
+    }
+}
+
+// The controller stays in the responder chain when the bottom bar is absent
+// and when a descendant text field owns keyboard focus.
+private final class SylluneKeyboardController<Content: View>: UIHostingController<Content> {
+    var selectTab: ((BottomTab) -> Void)?
+    var openSettings: (() -> Void)?
+
+    private lazy var navigationCommands: [UIKeyCommand] = {
+        let tabs = BottomTab.allCases
+        var commands: [UIKeyCommand] = []
+        commands.reserveCapacity(tabs.count + 1)
+        for tab in tabs {
+            commands.append(UIKeyCommand(
+                title: tab.title,
+                action: #selector(selectNavigationTab(_:)),
+                input: String(tab.shortcut.character),
+                modifierFlags: .command,
+                propertyList: tab.rawValue
+            ))
+        }
+        commands.append(UIKeyCommand(
+            title: "Réglages",
+            action: #selector(openNavigationSettings),
+            input: ",",
+            modifierFlags: .command
+        ))
+        for command in commands {
+            command.wantsPriorityOverSystemBehavior = true
+        }
+        return commands
+    }()
+
+    override var keyCommands: [UIKeyCommand]? {
+        guard let inherited = super.keyCommands, !inherited.isEmpty else { return navigationCommands }
+        return inherited + navigationCommands
+    }
+    override var canBecomeFirstResponder: Bool { true }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        becomeFirstResponder()
+    }
+
+    @objc private func selectNavigationTab(_ command: UIKeyCommand) {
+        guard let rawValue = command.propertyList as? String,
+              let tab = BottomTab(rawValue: rawValue) else { return }
+        selectTab?(tab)
+    }
+
+    @objc private func openNavigationSettings() {
+        openSettings?()
+    }
+}
+#endif
 
 
 struct BottomNavigationShell: View {
@@ -267,6 +354,15 @@ struct BottomNavigationShell: View {
     @State private var exerciseChromeHidden = false
 
     var body: some View {
+        #if os(iOS)
+        SylluneKeyboardHost(content: shellContent, selectTab: select, openSettings: openSettings)
+            .ignoresSafeArea()
+        #else
+        shellContent
+        #endif
+    }
+
+    private var shellContent: some View {
         VStack(spacing: 0) {
             NavigationStack(path: pathBinding(for: selectedTab)) {
                 routeView(selectedTab.route)
@@ -282,12 +378,14 @@ struct BottomNavigationShell: View {
                 }
             }
         }
+        #if os(macOS)
         .focusedSceneValue(\.sylluneNavigationTabCommand, { tab in
             select(tab)
         })
         .focusedSceneValue(\.sylluneNavigationSettingsCommand, {
             openSettings()
         })
+        #endif
         .onAppear { apply(route: model.selectedRoute) }
         .onChange(of: model.selectedRoute) { _, route in
             if pendingTabRootRoute == route {

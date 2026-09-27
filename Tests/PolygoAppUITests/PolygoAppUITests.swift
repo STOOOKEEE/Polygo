@@ -318,6 +318,8 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func assertBottomNavigation(balance expectedBalance: Int) {
+        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le solde global doit être accessible")
         for identifier in [
             "BottomTab.today",
             "BottomTab.path",
@@ -327,8 +329,6 @@ final class PolygoAppUITests: XCTestCase {
         ] {
             XCTAssertTrue(app.buttons[identifier].exists, "Le contrôle \(identifier) doit être présent sur une destination principale")
         }
-        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
-        XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le solde global doit être accessible")
         let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
         XCTAssertEqual(Int(digits), expectedBalance, "La valeur accessible du solde doit correspondre à l’historique réel")
     }

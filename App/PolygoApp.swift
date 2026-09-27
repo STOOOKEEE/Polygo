@@ -18,10 +18,8 @@ public struct PolygoApp: App {
         }
         #if os(macOS)
         .defaultSize(width: 1280, height: 860)
-        #endif
         .commands {
             BottomNavigationCommands()
-            #if os(macOS)
             CommandMenu("Syllune") {
                 Button("Rechercher dans le dictionnaire") {
                     model.persistRoute(.dictionary(""))
@@ -43,7 +41,7 @@ public struct PolygoApp: App {
                     NotificationCenter.default.post(name: .sylluneEscape, object: nil)
                 }
             }
-            #endif
         }
+        #endif
     }
 }
