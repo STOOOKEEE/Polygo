@@ -451,7 +451,10 @@ final class PolygoAppUITests: XCTestCase {
 
         let word = element(containing: "你好", type: .button)
         XCTAssertTrue(word.waitForExistence(timeout: timeout), "La recherche pinyin doit trouver 你好")
-        tapWhenVisible(word)
+        // Search results belong to the presented sheet, not the root tab's
+        // navigation bar and footer used by the scrolling helper.
+        XCTAssertTrue(word.isHittable, "Le résultat doit être touchable dans la feuille de recherche")
+        word.tap()
         XCTAssertTrue(element(containing: "Fiche mot", type: .any).waitForExistence(timeout: timeout), "La fiche mot doit s’ouvrir depuis le dictionnaire")
         let audio = element(containing: "Écouter", type: .button)
         XCTAssertTrue(audio.waitForExistence(timeout: timeout), "La fiche mot doit proposer l’action audio")
@@ -469,7 +472,11 @@ final class PolygoAppUITests: XCTestCase {
             let navigationBar = app.navigationBars.firstMatch
             let footer = app.buttons["BottomTab.today"]
             let top = navigationBar.exists ? navigationBar.frame.maxY : app.frame.minY
-            let bottom = footer.exists ? footer.frame.minY : app.frame.maxY
+            var bottom = footer.exists ? footer.frame.minY : app.frame.maxY
+            let exerciseFooter = button(exactly: "Vérifier")
+            if exerciseFooter.exists {
+                bottom = min(bottom, exerciseFooter.frame.minY - 8)
+            }
             fullyVisible = element.isHittable && frame.minY >= top && frame.maxY <= bottom
             if fullyVisible { break }
             if frame.minY < top {
