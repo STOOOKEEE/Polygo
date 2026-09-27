@@ -217,6 +217,7 @@ struct BottomNavigationCommands: Commands {
     @FocusedValue(\.sylluneNavigationSettingsCommand) private var openSettings
 
     var body: some Commands {
+        let settingsAction = openSettings
         CommandMenu("Navigation") {
             tabCommand(.today)
             tabCommand(.path)
@@ -225,29 +226,27 @@ struct BottomNavigationCommands: Commands {
             tabCommand(.profile)
             #if os(iOS)
             Divider()
-            Button("Réglages") { openSettings?() }
+            Button("Réglages") { settingsAction?() }
                 .keyboardShortcut(",", modifiers: .command)
-                .disabled(openSettings == nil)
+                .disabled(settingsAction == nil)
             #endif
         }
         #if os(macOS)
         CommandGroup(after: .appSettings) {
-            Button("Réglages") { openSettings?() }
+            Button("Réglages") { settingsAction?() }
                 .keyboardShortcut(",", modifiers: .command)
-                .disabled(openSettings == nil)
+                .disabled(settingsAction == nil)
         }
         #endif
     }
 
-    private var hasNavigationShell: Bool {
-        if case .some = selectTab { return true }
-        return false
-    }
-
     private func tabCommand(_ tab: BottomTab) -> some View {
-        Button(tab.title) { selectTab?(tab) }
+        // Capture the scene action while constructing the command, not when
+        // keyboard dispatch temporarily changes the focused responder.
+        let action = selectTab
+        return Button(tab.title) { action?(tab) }
             .keyboardShortcut(tab.shortcut, modifiers: .command)
-            .disabled(!hasNavigationShell)
+            .disabled(action == nil)
     }
 }
 
@@ -348,14 +347,16 @@ struct BottomNavigationShell: View {
 
     private func tabBar(fillsWidth: Bool) -> some View {
         HStack(spacing: 4) {
+            if fillsWidth { Spacer(minLength: 0) }
             ForEach(BottomTab.allCases) { tab in
-                tabButton(tab, fillsWidth: fillsWidth)
+                tabButton(tab)
+                if fillsWidth { Spacer(minLength: 0) }
             }
         }
         .frame(maxWidth: fillsWidth ? .infinity : nil)
     }
 
-    private func tabButton(_ tab: BottomTab, fillsWidth: Bool) -> some View {
+    private func tabButton(_ tab: BottomTab) -> some View {
         let isSelected = tab == selectedTab
         return Button {
             select(tab)
@@ -371,7 +372,7 @@ struct BottomNavigationShell: View {
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: true, vertical: true)
             }
-            .frame(minWidth: 64, maxWidth: fillsWidth ? .infinity : nil, minHeight: 54)
+            .frame(minWidth: 64, minHeight: 54)
             .padding(.horizontal, 4)
             .padding(.vertical, 4)
             .background {
@@ -447,6 +448,11 @@ struct BottomNavigationShell: View {
 
     private func apply(route: AppRoute) {
         let tab = route.baseTab
+        if route == tab.route, tab != selectedTab {
+            // An explicit return leaves the current detail; an ordinary tab
+            // switch uses select(_:) and preserves its independent stack.
+            setPath([], for: selectedTab)
+        }
         selectedTab = tab
         setPath(routePath(route, root: tab.route, existing: path(for: tab)), for: tab)
     }

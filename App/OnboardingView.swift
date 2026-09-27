@@ -96,6 +96,9 @@ public struct OnboardingView: View {
         default:
             primaryButton("Ouvrir ma première leçon") {
                 Task {
+                    // Publishing the new profile mounts the shell. Do not let
+                    // it restore a route left by a previous profile.
+                    model.persistRoute(.today)
                     guard await model.completeOnboarding(
                         displayName: name,
                         level: level,

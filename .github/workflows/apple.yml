@@ -162,7 +162,6 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             -resultBundlePath "$RUNNER_TEMP/PolygoAppUITests-ipad-ax5.xcresult" \
             -only-testing:PolygoAppUITests/PolygoAppUITests \
-            -only-testing:PolygoAppUITests/PolygoAppUITests/testIPadKeyboardShortcutsReachTabsAndSettingsFromFocusedContent \
             -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testGuidedWritingRejectsWrongStrokeThenAcceptsRetry \
             -only-testing:PolygoAppUITests/LessonReviewJourneyTests/testFreeWritingFailureCanBeSelfReportedAndAdvance \
             -only-testing:PolygoAppUITests/ZZLessonRegressionJourneyTests/testLessonDraftFeedbackDialogueAndOralJourney \

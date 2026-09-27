@@ -19,7 +19,15 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     func testFrenchOnboardingAndPrimaryOfflineJourneys() throws {
+        // A new profile must not reopen a previous profile's saved lesson.
+        app.launchArguments += ["-syllune.last.route", "lesson/lesson-05"]
+        app.launch()
+        app.launchArguments.removeLast(2)
         completeOnboardingIfNeeded()
+        XCTAssertTrue(
+            app.staticTexts["lesson.exercise.ex-l1-tone"].waitForExistence(timeout: timeout),
+            "Le nouvel onboarding doit ouvrir la première leçon, pas la route du profil précédent"
+        )
 
         navigateToTab("Parcours")
         let lesson = app.buttons["learningPath.lesson.lesson-01"]
@@ -64,7 +72,7 @@ final class PolygoAppUITests: XCTestCase {
         let settingsLink = element(containing: "Réglages", type: .button)
         XCTAssertTrue(settingsLink.waitForExistence(timeout: timeout), "Le profil doit proposer les réglages")
         settingsLink.tap()
-        let theme = element(containing: "Thème", type: .any)
+        let theme = element(containing: "Thème", type: .button)
         XCTAssertTrue(findAfterScrolling(theme), "Les réglages doivent exposer le thème")
         let priorThemeValue = "\(theme.label) \(String(describing: theme.value ?? ""))"
         let priorTheme = ["Système", "Clair", "Sombre"].first {
@@ -74,7 +82,7 @@ final class PolygoAppUITests: XCTestCase {
             XCTFail("Le réglage doit exposer sa préférence actuelle")
             return
         }
-        theme.tap()
+        tapWhenVisible(theme)
         let darkTheme = element(containing: "Sombre", type: .any)
         XCTAssertTrue(darkTheme.waitForExistence(timeout: timeout), "Le sélecteur de thème doit proposer le mode sombre")
         darkTheme.tap()
@@ -82,7 +90,7 @@ final class PolygoAppUITests: XCTestCase {
         XCTAssertTrue(findAfterScrolling(element(containing: "Hors ligne", type: .any)), "Les réglages doivent exposer le statut hors ligne")
         XCTAssertTrue(findAfterScrolling(element(containing: "Sur cet appareil", type: .any)), "Le statut de synchronisation doit être honnête")
         if priorTheme != "Sombre" {
-            element(containing: "Thème", type: .any).tap()
+            tapWhenVisible(element(containing: "Thème", type: .button))
             let originalTheme = element(containing: priorTheme, type: .any)
             XCTAssertTrue(originalTheme.waitForExistence(timeout: timeout), "Le thème initial doit pouvoir être restauré")
             originalTheme.tap()
