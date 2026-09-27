@@ -16,7 +16,7 @@ settings:
     CODE_SIGNING_ALLOWED: NO
 targets:
   PolygoApple:
-    type: framework
+    type: framework.static
     platform: [iOS, macOS]
     deploymentTarget:
       iOS: "17.0"

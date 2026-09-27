@@ -263,13 +263,18 @@ jobs:
           build
 
       - name: Exercise real AppModel reward failure recovery
-        run: >-
-          python3 Tests/PolygoAppModelSmoke/run.py
-          --derived-data "$RUNNER_TEMP/PolygoMacDerivedData"
-          --entry Tests/PolygoAppModelSmoke/RewardProbe.swift
-          --repo "$GITHUB_WORKSPACE"
-          --sha "$GITHUB_SHA"
-          --output-parent "$RUNNER_TEMP"
+        run: |
+          set -euo pipefail
+          python3 Tests/PolygoAppModelSmoke/run.py \
+            --derived-data "$RUNNER_TEMP/PolygoMacDerivedData" \
+            --entry Tests/PolygoAppModelSmoke/RewardProbe.swift \
+            --repo "$GITHUB_WORKSPACE" \
+            --sha "$GITHUB_SHA" \
+            --output-parent "$RUNNER_TEMP" | tee "$RUNNER_TEMP/reward-probe.log"
+          if grep -q 'is implemented in both' "$RUNNER_TEMP/reward-probe.log"; then
+            echo "::error::Duplicate Objective-C classes loaded (PolygoCore linked twice)"
+            exit 1
+          fi
 
       - name: Run macOS UI smoke tests
         if: ${{ !cancelled() && steps.mac-build.outcome == 'success' }}

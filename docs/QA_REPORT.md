@@ -148,8 +148,8 @@ exercé que sur simulateur iPad, hors périmètre. La réduction des animations 
 Speech avec permission accordée restent à exercer manuellement. Aucun
 fournisseur d’évaluation de prononciation n’est configuré.
 
-Le runner Mac signale un doublon Objective-C de `JSONContentStore` entre le
-framework du package et la bibliothèque de l’application. Les scénarios
-ci-dessus réussissent, mais la refonte ne corrige pas ce linkage existant.
+`PolygoApple` est désormais un framework statique : `PolygoCore` n’est lié
+qu’une fois et la CI Mac échoue si le doublon Objective-C `JSONContentStore`
+réapparaît dans la sortie de la sonde de récompense.
 CloudKit reste inactif : aucune synchronisation ni résolution de conflit
 réseau n’est présentée comme validée.
