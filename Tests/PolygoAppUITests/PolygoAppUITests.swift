@@ -145,6 +145,19 @@ final class PolygoAppUITests: XCTestCase {
             ).firstMatch
             XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
             sidebarItem.tap()
+            let dismissRegion = app.otherElements.matching(identifier: "PopoverDismissRegion").firstMatch
+            if dismissRegion.exists {
+                dismissRegion.tap()
+                let dismissed = XCTNSPredicateExpectation(
+                    predicate: NSPredicate(format: "exists == false"),
+                    object: dismissRegion
+                )
+                XCTAssertEqual(
+                    XCTWaiter.wait(for: [dismissed], timeout: timeout),
+                    .completed,
+                    "La barre latérale doit se fermer après la sélection"
+                )
+            }
             return
         }
 
