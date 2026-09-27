@@ -22,6 +22,14 @@ public enum MandarinSpeechText {
     )
     private static let sentenceEndings = CharacterSet(charactersIn: "。！？!?")
     private static let sentenceClosers = CharacterSet(charactersIn: "’”）〉》」』】〕］\"")
+    private static let clauseEndings = CharacterSet(charactersIn: "，、；：,;:")
+
+    /// Narration pauses, in seconds, after a clause inside a sentence, after
+    /// a sentence of the same speaker or paragraph, and after a speaker or
+    /// paragraph change.
+    static let clausePause: TimeInterval = 0.35
+    static let sentencePause: TimeInterval = 0.6
+    static let turnPause: TimeInterval = 1.0
 
     public static func target(from value: String) -> String {
         var result = ""
@@ -117,43 +125,98 @@ public enum MandarinSpeechText {
         return sentences
     }
 
-    /// Returns the reading paragraphs in authored order, pausing briefly
-    /// between sentences and a little longer between paragraph turns.
-    public static func readingSegments(from reading: ReadingBlock) -> [MandarinSpeechSegment] {
-        var items: [(paragraphIndex: Int, text: String)] = []
-        for (paragraphIndex, paragraph) in reading.paragraphs.enumerated() {
-            for sentence in sentences(from: paragraph.hanzi) {
-                items.append((paragraphIndex, sentence))
+    /// Splits one sentence into spoken clauses at `，、；：` and ASCII `,;:`,
+    /// keeping the punctuation and any closing quote attached to the clause.
+    /// A fragment without Hanzi is merged into its neighbour so no segment
+    /// is only punctuation or digits.
+    static func clauses(from sentence: String) -> [String] {
+        let scalars = Array(sentence.unicodeScalars)
+        var pieces: [String] = []
+        var current = String.UnicodeScalarView()
+        var clauseEndingIsPending = false
+        for index in scalars.indices {
+            let scalar = scalars[index]
+            current.append(scalar)
+            if clauseEndings.contains(scalar) {
+                clauseEndingIsPending = true
+            } else if !(clauseEndingIsPending && sentenceClosers.contains(scalar)) {
+                continue
+            }
+
+            let nextScalar = scalars.indices.contains(index + 1) ? scalars[index + 1] : nil
+            let continuesEnding = nextScalar.map {
+                clauseEndings.contains($0) || sentenceClosers.contains($0)
+            } ?? false
+            // Keep digit groups such as "1,000" in one clause.
+            let isDigit = { (scalar: UnicodeScalar?) in
+                scalar.map { CharacterSet.decimalDigits.contains($0) } ?? false
+            }
+            let separatesDigits = isDigit(nextScalar) && index > 0 && isDigit(scalars[index - 1])
+            if !continuesEnding && !separatesDigits {
+                pieces.append(String(current))
+                current.removeAll()
+                clauseEndingIsPending = false
             }
         }
+        pieces.append(String(current))
 
-        return items.enumerated().map { index, item in
-            let isLast = index == items.count - 1
-            let crossesParagraph = !isLast && items[index + 1].paragraphIndex != item.paragraphIndex
-            return MandarinSpeechSegment(
-                text: item.text,
-                postUtteranceDelay: isLast ? 0 : (crossesParagraph ? 0.6 : 0.3)
-            )
+        var clauses: [String] = []
+        var carried = ""
+        for piece in pieces {
+            let text = carried + piece
+            if containsHanzi(text) {
+                clauses.append(text)
+                carried = ""
+            } else {
+                carried = text
+            }
         }
+        if let last = clauses.indices.last {
+            clauses[last] += carried
+        }
+        return clauses
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
     }
 
-    /// Returns dialogue lines in authored order, using a longer pause when
-    /// the next sentence belongs to another speaker.
+    /// Returns the reading paragraphs in authored order as clause segments,
+    /// pausing after each clause, longer after each sentence, and longest
+    /// between paragraphs.
+    public static func readingSegments(from reading: ReadingBlock) -> [MandarinSpeechSegment] {
+        narrationSegments(reading.paragraphs.enumerated().map { (owner: $0.offset, text: $0.element.hanzi) })
+    }
+
+    /// Returns dialogue lines in authored order as clause segments, pausing
+    /// after each clause, longer after each sentence, and longest when the
+    /// next sentence belongs to another speaker. A single line yields only
+    /// its own clause and sentence pauses, ending with no pause.
     public static func dialogueSegments(from lines: [DialogueLine]) -> [MandarinSpeechSegment] {
-        var items: [(speaker: String, text: String)] = []
-        for line in lines {
-            for sentence in sentences(from: line.hanzi) {
-                items.append((line.speaker, sentence))
+        narrationSegments(lines.map { (owner: $0.speaker, text: $0.hanzi) })
+    }
+
+    private static func narrationSegments<Owner: Equatable>(
+        _ turns: [(owner: Owner, text: String)]
+    ) -> [MandarinSpeechSegment] {
+        var items: [(owner: Owner, sentence: Int, text: String)] = []
+        var sentenceIndex = 0
+        for turn in turns {
+            for sentence in sentences(from: turn.text) {
+                for clause in clauses(from: sentence) {
+                    items.append((turn.owner, sentenceIndex, clause))
+                }
+                sentenceIndex += 1
             }
         }
 
         return items.enumerated().map { index, item in
-            let isLast = index == items.count - 1
-            let changesSpeaker = !isLast && items[index + 1].speaker != item.speaker
-            return MandarinSpeechSegment(
-                text: item.text,
-                postUtteranceDelay: isLast ? 0 : (changesSpeaker ? 0.6 : 0.3)
-            )
+            guard index + 1 < items.count else {
+                return MandarinSpeechSegment(text: item.text)
+            }
+            let next = items[index + 1]
+            let pause = next.owner != item.owner
+                ? turnPause
+                : (next.sentence != item.sentence ? sentencePause : clausePause)
+            return MandarinSpeechSegment(text: item.text, postUtteranceDelay: pause)
         }
     }
 

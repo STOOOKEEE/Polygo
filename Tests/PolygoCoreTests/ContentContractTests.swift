@@ -1163,7 +1163,7 @@ final class ContentContractTests: XCTestCase {
                 case .reading(let reading):
                     readingCount += 1
                     let items = reading.paragraphs.enumerated().flatMap { paragraphIndex, paragraph in
-                        MandarinSpeechText.sentences(from: paragraph.hanzi).map {
+                        MandarinSpeechText.sentences(from: paragraph.hanzi).flatMap(MandarinSpeechText.clauses).map {
                             (owner: paragraphIndex, text: $0)
                         }
                     }
@@ -1185,7 +1185,7 @@ final class ContentContractTests: XCTestCase {
                 case .dialogue(let dialogue):
                     dialogueCount += 1
                     let items = dialogue.lines.flatMap { line in
-                        MandarinSpeechText.sentences(from: line.hanzi).map {
+                        MandarinSpeechText.sentences(from: line.hanzi).flatMap(MandarinSpeechText.clauses).map {
                             (owner: line.speaker, text: $0)
                         }
                     }
@@ -1217,7 +1217,7 @@ final class ContentContractTests: XCTestCase {
         XCTAssertGreaterThan(
             turnPauses.min() ?? 0,
             phrasePauses.max() ?? 0,
-            "Une pause entre personnages ou paragraphes doit être plus longue qu’une pause entre phrases"
+            "Une pause entre personnages ou paragraphes doit être plus longue qu’une pause entre phrases ou propositions"
         )
     }
 

@@ -36,6 +36,9 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     private var speechUtterance: AVSpeechUtterance?
     private var speechUtterances: [AVSpeechUtterance] = []
     private var speechUtteranceIndex = 0
+    // Gap after each utterance, applied by `handleSpeechDidFinish` because
+    // native pre/post utterance delays are not reliably audible on macOS.
+    private var speechPostDelays: [TimeInterval] = []
 
     // AVFoundation objects are used on the main queue. The class is marked
     // unchecked Sendable because AudioService is injected through a Sendable
@@ -214,7 +217,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         }
 
         do {
-            let utterances = try segments.enumerated().map { index, segment -> AVSpeechUtterance in
+            let utterances = try segments.map { segment -> AVSpeechUtterance in
                 let requestedText = segment.text.trimmingCharacters(in: .whitespacesAndNewlines)
                 let locale = segment.localeIdentifier.lowercased()
                 let text = locale.hasPrefix("zh")
@@ -230,11 +233,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                 let utterance = AVSpeechUtterance(string: text)
                 utterance.voice = voice
                 utterance.rate = segment.rate.avSpeechRate
-                // With one utterance active at a time, AVSpeech ignores the
-                // active utterance's post delay. Carry that transition onto
-                // the next utterance's pre delay instead.
-                let previousPostDelay = index > 0 ? segments[index - 1].postUtteranceDelay : 0
-                utterance.preUtteranceDelay = segment.preUtteranceDelay + previousPostDelay
+                utterance.preUtteranceDelay = segment.preUtteranceDelay
                 utterance.postUtteranceDelay = 0
                 return utterance
             }
@@ -274,6 +273,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             speechRequestID = requestID
             speechContinuation = continuation
             speechUtterances = utterances
+            speechPostDelays = segments.map(\.postUtteranceDelay)
             speechUtteranceIndex = 0
             speechUtterance = utterances[0]
             endStartingSpeech(requestID)
@@ -368,6 +368,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         speechContinuation = nil
         speechUtterance = nil
         speechUtterances.removeAll(keepingCapacity: false)
+        speechPostDelays.removeAll(keepingCapacity: false)
         speechUtteranceIndex = 0
         if stopSynthesizer {
             synthesizer.stopSpeaking(at: .immediate)
@@ -407,10 +408,20 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         }
         debugSpeech("utterance-finish", requestID: requestID, index: speechUtteranceIndex)
         if speechUtteranceIndex + 1 < speechUtterances.count {
+            let delay = speechPostDelays[speechUtteranceIndex]
             speechUtteranceIndex += 1
-            speechUtterance = speechUtterances[speechUtteranceIndex]
-            debugSpeech("utterance-start", requestID: requestID, index: speechUtteranceIndex)
-            synthesizer.speak(speechUtterances[speechUtteranceIndex])
+            // No utterance is active during the gap, so a duplicate finish
+            // callback is ignored. Stop, cancel, or a replacing request
+            // clears `speechRequestID` and the scheduled start is dropped.
+            speechUtterance = nil
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+                guard let self,
+                      self.speechRequestID == requestID,
+                      self.speechUtterance == nil else { return }
+                self.speechUtterance = self.speechUtterances[self.speechUtteranceIndex]
+                self.debugSpeech("utterance-start", requestID: requestID, index: self.speechUtteranceIndex)
+                self.synthesizer.speak(self.speechUtterances[self.speechUtteranceIndex])
+            }
         } else {
             finishSpeech(requestID: requestID, result: .success(()), stopSynthesizer: false)
         }

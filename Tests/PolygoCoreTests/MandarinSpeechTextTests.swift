@@ -35,6 +35,41 @@ final class MandarinSpeechTextTests: XCTestCase {
         )
     }
 
+    func testClauseSplitterPausesAtCommasAndKeepsPunctuation() {
+        XCTAssertEqual(
+            MandarinSpeechText.clauses(from: "你好，我叫安、林；他说：再见。"),
+            ["你好，", "我叫安、", "林；", "他说：", "再见。"]
+        )
+        XCTAssertEqual(
+            MandarinSpeechText.clauses(from: "“你好，”他说。"),
+            ["“你好，”", "他说。"]
+        )
+        XCTAssertEqual(MandarinSpeechText.clauses(from: "我有1,000块。"), ["我有1,000块。"])
+    }
+
+    func testDialogueSegmentsPauseLongerForSentencesAndSpeakerChanges() {
+        let segments = MandarinSpeechText.dialogueSegments(from: [
+            line("A", "你好，我叫安。你呢？"),
+            line("B", "我叫林。"),
+            line("B", "Bonjour ，，"),
+            line("A", "再见！")
+        ])
+
+        XCTAssertEqual(segments.map(\.text), ["你好，", "我叫安。", "你呢？", "我叫林。", "再见！"])
+        XCTAssertEqual(segments.map(\.postUtteranceDelay), [0.35, 0.6, 1.0, 1.0, 0])
+    }
+
+    func testSingleDialogueLineKeepsItsInternalPausesOnly() {
+        let segments = MandarinSpeechText.dialogueSegments(from: [line("A", "我叫安，你呢？")])
+
+        XCTAssertEqual(segments.map(\.text), ["我叫安，", "你呢？"])
+        XCTAssertEqual(segments.map(\.postUtteranceDelay), [0.35, 0])
+    }
+
+    func testDialogueSegmentsSkipLinesWithoutMandarin() {
+        XCTAssertEqual(MandarinSpeechText.dialogueSegments(from: [line("A", "…，")]), [])
+    }
+
     func testFillBlankCanonicalSpeechCompletesHanziWhileKeepingTheVisibleBlank() throws {
         let exercise = FillBlankExercise(
             header: ExerciseHeader(
@@ -79,5 +114,9 @@ final class MandarinSpeechTextTests: XCTestCase {
                 acceptedAnswers: ["叫"]
             ).canonicalSpeechSentence
         )
+    }
+
+    private func line(_ speaker: String, _ hanzi: String) -> DialogueLine {
+        DialogueLine(speaker: speaker, hanzi: hanzi, pinyin: "", translation: .unchecked(["fr": "Réplique"]))
     }
 }
