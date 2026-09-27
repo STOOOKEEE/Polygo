@@ -1,10 +1,10 @@
 # Statut d’intégration
 
 Le bundle de contenu reste en `2026.10.0`. La refonte Tavi est publiée par
-lots sur `feat/mobile-originale` ; son intégration dans `main` attend la
-validation native complète. Le [rapport QA](QA_REPORT.md) centralise les
-commits testés, résultats et limites, sans assimiler une compilation à une
-validation des parcours.
+lots sur `feat/mobile-originale` ; sa validation native Mac et iPhone est
+consolidée et son intégration dans `main` reste à faire. Le [rapport
+QA](QA_REPORT.md) centralise les commits testés, résultats et limites, sans
+assimiler une compilation à une validation des parcours.
 
 ## Roadmap — refonte Tavi
 
@@ -24,21 +24,16 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 - [x] Ajustement des gestes de test aux pieds fixes et à la feuille du
   dictionnaire (`b0d065f`).
 
-### Validation et livraison restantes
+### Validation et livraison
 
-- [ ] Consolider les résultats de la [campagne du dernier lot
-  b0d065f](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346),
-  notamment les raccourcis iPad et les deux parcours iPhone corrigés.
-- [ ] Mettre à jour le rapport QA et remplacer les captures historiques du
+- [x] Consolider les résultats de la [campagne du dernier lot
+  b0d065f](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346) :
+  package 72/72, Mac 9/9, iPhone 11/11. iPad AX5 hors périmètre, non
+  bloquant (7/8 ; correctif `1981952` non validé).
+- [x] Mettre à jour le rapport QA et remplacer les captures historiques du
   dépôt par les preuves natives de la refonte validée.
 - [ ] Intégrer et pousser la refonte sur `main` après validation complète,
   sans écraser le travail existant.
-
-La [campagne e966cb8](https://github.com/STOOOKEEE/Polygo/actions/runs/36334347168)
-déjà examinée a validé le package et le job Mac complet ; les parcours UI
-atteignent 9/9 sur Mac, 9/11 sur iPhone et 7/8 sur iPad. Les scénarios iPhone
-de pièces, relance et rejeu passent. Ces résultats précèdent les derniers
-correctifs et ne constituent pas leur validation finale.
 
 ## Bundle et curriculum
 

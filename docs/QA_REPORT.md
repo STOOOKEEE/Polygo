@@ -22,12 +22,11 @@ occurrences cibles, les pinyins accentués et les lectures polyphoniques ; les
 corrections éditoriales des entrées 214, 317, 354, 410, 413, 448, 457, 462,
 494 et 517 sont intégrées. Aucun blocage linguistique ne reste ouvert.
 
-La suite portable compte **72 tests XCTest**. Le [run Apple
-36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987)
-sur `8e4e5f6` a validé les **72/72** avec Swift 6.1.2 et Xcode 16.4.
-Le même run a validé le build Mac, les **9/9 méthodes UI macOS** et les deux
-séquences de récupération du vrai `AppModel`. La validation mobile de la
-refonte n’est pas encore complète ; le détail figure ci-dessous.
+La suite portable compte **72 tests XCTest**. La campagne de référence est le
+[run Apple 36339541346](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346)
+sur `b0d065f` (Swift 6.1.2, Xcode 16.4) : package **72/72**, Mac **9/9**,
+iPhone **11/11**. L’iPad est hors périmètre de validation ; son résultat
+(7/8) est consigné ci-dessous à titre non bloquant.
 
 ## Contrats de contenu
 
@@ -108,45 +107,41 @@ La couverture comprend :
   facultatif sans fournisseur d’évaluation ;
 - captures réelles claires/sombres, orientations iOS et gros caractères iPad.
 
-Résultats de `8e4e5f6`, [run
-36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987) :
+Résultats de `b0d065f`, [run
+36339541346](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346),
+relevés dans les journaux du run :
 
 | Surface | Résultat observé |
 | --- | --- |
-| Package | 72/72 |
-| Mac | Build, 9/9 méthodes UI et deux séquences AppModel réussis |
-| iPhone | Build réussi ; runner XCTest échoué avant les tests |
-| iPad AX5 | 5/8 méthodes réussies |
+| Package | 72/72 (`[72/72] Testing …`, étape « Run portable package tests » réussie) |
+| Mac | Build, « Executed 9 tests, with 0 failures » et probe `AppModel` réussis |
+| iPhone 16 Pro | Build, « Executed 11 tests, with 0 failures » |
+| iPad Pro 11 pouces AX5 | Hors périmètre, non bloquant : « Executed 8 tests, with 1 failure » |
 
-L’échec iPhone vient de l’initialisation du runner
-(`AXDisableAccessibilityOnTermination: kAXErrorCannotComplete`) ; aucun
-parcours iPhone de ce run n’est compté comme exécuté. Sur iPad, ⌘1 n’a pas
-quitté la leçon. Les deux autres échecs concernent une assertion pendant
-l’animation de retour depuis Écriture et la recherche d’un bouton Arrêter
-après la fin du bref clip oral. Les captures montrent les cinq onglets
-lisibles en AX5 ; onboarding, réglages et conservation des piles passent.
-
-Le correctif `b95438c` utilise la chaîne de réponse UIKit pour les raccourcis
-iOS et synchronise ces deux interactions de test sur leur surface réelle,
-sans retirer leurs assertions. Sa [campagne
-36337484177](https://github.com/STOOOKEEE/Polygo/actions/runs/36337484177)
-est en cours ; elle n’est pas encore une preuve de réussite.
+Le job `build-ios` est marqué en échec uniquement par l’étape iPad. Le seul
+échec est `testIPadKeyboardShortcutsReachTabsAndSettingsFromFocusedContent` :
+⌘1 n’a pas quitté une leçon. Le correctif `1981952` (résolution des raccourcis
+dans la scène SwiftUI active) est poussé mais n’est pas validé. L’iPad ne fait
+pas partie du périmètre de validation de la refonte.
 
 Le probe Mac charge le vrai `AppModel` compilé et conserve ses journaux JSONL :
 échec avant append, complétion durable suivie d’un échec de cache, reload,
 retry et reconstruction du modèle sans réannoncer un ancien gain. Il ne
 substitue pas un modèle de test à l’application.
 
-Les images déjà présentes dans `docs/screenshots` sont des snapshots
-antérieurs, pas une preuve de la refonte. Les pièces jointes natives des
-campagnes ci-dessus restent disponibles dans leurs artefacts GitHub.
+Les images de `docs/screenshots` proviennent des artefacts
+`PolygoAppUITests-36339541346` (iPhone 16 Pro, réduites à 603 × 1311) et
+`PolygoMacUITests-36339541346` (Mac, 1600 × 900) de ce run : accueil,
+parcours clair/sombre, dialogue, pièces après complétion, écriture guidée et
+séance quotidienne J1/J2/lecture. Les autres pièces jointes restent dans les
+artefacts GitHub.
 
 ## Vérifications hors automatisation
 
-Les parcours automatisés et l’inspection des captures ne remplacent pas un
-audit VoiceOver sur appareil, les contrastes mesurés et les fenêtres Mac
-étroites. Dynamic Type AX5 est exercé sur simulateur iPad ; cela ne prouve pas
-toutes les tailles sur tous les appareils. La réduction des animations et
+Aucun audit manuel sur appareil n’a été réalisé. Les parcours automatisés et
+l’inspection des captures ne remplacent pas un audit VoiceOver sur appareil,
+les contrastes mesurés et les fenêtres Mac étroites. Dynamic Type AX5 n’est
+exercé que sur simulateur iPad, hors périmètre. La réduction des animations et
 Speech avec permission accordée restent à exercer manuellement. Aucun
 fournisseur d’évaluation de prononciation n’est configuré.
 

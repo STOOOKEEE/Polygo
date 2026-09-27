@@ -69,23 +69,30 @@ de dix cartes, évalue exactement la tranche annoncée et laisse la file
 complète accessible par « Poursuivre ». Les réponses de test sont cherchées par
 ID correct ; elles ne dépendent pas de leur position dans la liste.
 
-Les sources contiennent 8 méthodes UI iOS et 5 méthodes UI macOS. Elles attachent
-les captures de la séance quotidienne et de la session courte avec XCTest. Les
-captures déjà archivées sont :
+Le [run 36339541346](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346)
+sur `b0d065f` a validé le package (72/72), 9/9 méthodes UI Mac et 11/11
+méthodes UI iPhone ; l’iPad (7/8) est hors périmètre et non bloquant. Les
+captures du dépôt en proviennent (iPhone 16 Pro réduit à 603 × 1311, Mac
+1600 × 900) :
 
-- [parcours macOS](screenshots/roadmap-macos-dark.png) — 1600 × 900,
-  SHA-256 `98b21d6cab2d9026341fe49e04b3fdd6def2c2fb527046bc9d1fc3168e40f132` ;
-- [dialogue macOS](screenshots/dialogue-macos-dark.png) — 1600 × 900,
-  SHA-256 `0f816f4fe790409c88ca8776d714e0362dd6608cfbab8364b8a3632709391859` ;
-- [écriture guidée iOS](screenshots/handwriting-guided-ios.png) et
-  [reprise iOS](screenshots/handwriting-retry-ios.png).
+| Capture | Dimensions | SHA-256 |
+| --- | --- | --- |
+| [accueil iPhone](screenshots/home-ios.png) | 603 × 1311 | `7f987f2227d4d998167fe2f02a50ab217c521ef15a2d17f488241f8b4dc03bdf` |
+| [parcours iPhone sombre](screenshots/roadmap-ios-dark.png) | 603 × 1311 | `9a3d0502c680bcf7cbabecf0c05a8d92032c1c7b57b7ecd8fbe4615589b2371f` |
+| [dialogue iPhone](screenshots/dialogue-ios.png) | 603 × 1311 | `50c37021801b80556971f170658735e002009431dca91b6c63089beee01a8c17` |
+| [pièces après complétion](screenshots/coins-roadmap-ios.png) | 603 × 1311 | `21026287c38b580406287a56666bfab24d3d796983499d15df23f485ee6d6287` |
+| [écriture guidée iPhone](screenshots/handwriting-guided-ios.png) | 603 × 1311 | `fd3b30a7cb7a9fadad35ed8ca93376a9c9f0965c1356020136a8f592e63fa184` |
+| [accueil Mac](screenshots/home-macos-dark.png) | 1600 × 900 | `d263f2c133fc7dce38595014a40074fa1f3955e3516ac67c645e221f31240881` |
+| [parcours Mac](screenshots/roadmap-macos-dark.png) | 1600 × 900 | `f6c9e2c96987dd6ed378aadf2d51feef8374fe549432c51bbc9d58e6b6d6407e` |
+| [dialogue Mac](screenshots/dialogue-macos-dark.png) | 1600 × 900 | `7c1ad1d28cb04ad13e86f3ef4f18396cdcd36e182368d9592799b4b4b8ac4770` |
+| [séance J1 Mac](screenshots/daily-plan-day-one-macos.png) | 1600 × 900 | `67bd9b0ce8df676e8faf30d8b9191ef4bba4e3cfec78297cce7d0ca897bcfbe0` |
+| [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `9f4349e4a0144d2540ae09884d7d5b75e04ce9e1b070c0be64d349eb2194be20` |
+| [séance J2 Mac](screenshots/daily-plan-day-two-macos.png) | 1600 × 900 | `18a7d16bf79231ce34eea900b00b5fbc262461ca9cd91b7eba7f0e3692422784` |
 
-Le run Apple canonique a produit les captures macOS de la séance quotidienne
-(J1, écoute, lecture, retour au parcours et J2) et de la session courte. Le
-bundle xcresult iOS du même run conserve les captures du parcours. Le conteneur
-Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds Apple,
-les méthodes UI, l’audit VoiceOver/Dynamic Type, les permissions Speech et les
-fenêtres étroites restent des contrôles du runner ou de l’appareil.
+Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
+Apple, les méthodes UI, l’audit VoiceOver/Dynamic Type sur appareil, les
+permissions Speech et les fenêtres étroites restent des contrôles du runner ou
+de l’appareil ; aucun audit manuel sur appareil n’a été réalisé.
 
 ## Génération et builds Apple
 

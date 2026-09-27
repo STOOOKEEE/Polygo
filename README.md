@@ -48,10 +48,12 @@ xcodebuild -project Polygo.xcodeproj -scheme PolygoMacApp \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-La suite portable compte **72 tests XCTest**. La CI Apple compile les deux
-applications, exerce les parcours natifs sur Mac, iPhone et iPad et vérifie la
-reprise du vrai `AppModel` après des erreurs de persistance. Les commits testés,
-résultats, captures et limites figurent dans le [rapport QA](docs/QA_REPORT.md).
+La suite portable compte **72 tests XCTest** (72/72 dans le journal du [run
+36339541346](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346)).
+La CI Apple compile les deux applications, exerce les parcours natifs sur Mac
+(9/9) et iPhone (11/11) et vérifie la reprise du vrai `AppModel` après des
+erreurs de persistance ; l’iPad est hors périmètre de validation. Les commits
+testés, résultats, captures et limites figurent dans le [rapport QA](docs/QA_REPORT.md).
 Xcode et les SDK Apple ne sont pas présents dans l’environnement Linux :
 les validations natives sont exécutées sur les runners Apple, pas simulées ici.
 
@@ -120,12 +122,18 @@ complète. Le parcours macOS de session courte prépare 16 cartes dues, en éval
 exactement la tranche annoncée et conserve les cartes restantes pour
 « Poursuivre ».
 
-Les captures natives déjà archivées comprennent [le parcours macOS](docs/screenshots/roadmap-macos-dark.png),
-[le dialogue macOS](docs/screenshots/dialogue-macos-dark.png), [l’écriture guidée iOS](docs/screenshots/handwriting-guided-ios.png)
-et [la reprise iOS](docs/screenshots/handwriting-retry-ios.png). Le run Apple
-canonique a produit [l’aperçu macOS de la séance quotidienne J1](docs/screenshots/daily-plan-day-one-macos.png),
-ainsi que les captures macOS de la session courte ; les captures iOS de ce
-parcours sont conservées dans le bundle xcresult du run.
+Les captures natives de la refonte proviennent du run 36339541346 :
+[accueil iPhone](docs/screenshots/home-ios.png),
+[parcours iPhone sombre](docs/screenshots/roadmap-ios-dark.png),
+[dialogue iPhone](docs/screenshots/dialogue-ios.png),
+[pièces après complétion](docs/screenshots/coins-roadmap-ios.png),
+[écriture guidée iPhone](docs/screenshots/handwriting-guided-ios.png),
+[accueil Mac](docs/screenshots/home-macos-dark.png),
+[parcours Mac](docs/screenshots/roadmap-macos-dark.png),
+[dialogue Mac](docs/screenshots/dialogue-macos-dark.png) et la séance
+quotidienne Mac ([J1](docs/screenshots/daily-plan-day-one-macos.png),
+[lecture](docs/screenshots/daily-plan-reading-macos.png),
+[J2](docs/screenshots/daily-plan-day-two-macos.png)).
 
 ## Organisation du code
 
