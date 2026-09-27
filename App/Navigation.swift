@@ -272,19 +272,19 @@ struct BottomNavigationShell: View {
             NavigationStack(path: pathBinding(for: selectedTab)) {
                 routeView(selectedTab.route)
                     .navigationDestination(for: AppRoute.self) { routeView($0) }
+                    .toolbar {
+                        if !exerciseChromeHidden {
+                            ToolbarItem(placement: .automatic) {
+                                SylluneCoinBadge(balance: model.coinBalance)
+                                    .accessibilityIdentifier("ProgressCoinBalance")
+                            }
+                        }
+                    }
             }
             .id("\(selectedTab.rawValue)-\(stackRevision)")
             .environment(\.sylluneShellWordNavigation, { id in
                 pushWord(id)
             })
-            .toolbar {
-                if !exerciseChromeHidden {
-                    ToolbarItem(placement: .automatic) {
-                        SylluneCoinBadge(balance: model.coinBalance)
-                            .accessibilityIdentifier("ProgressCoinBalance")
-                    }
-                }
-            }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 if !exerciseChromeHidden {
                     bottomNavigation

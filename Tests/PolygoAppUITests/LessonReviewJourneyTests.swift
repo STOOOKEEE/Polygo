@@ -537,6 +537,8 @@ final class LessonReviewJourneyTests: XCTestCase {
         let ready = button(exactly: "Ouvrir ma première leçon")
         if ready.waitForExistence(timeout: 3) {
             ready.tap()
+            XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout),
+                          "La première leçon doit être chargée avant de poursuivre la navigation")
         }
     }
 

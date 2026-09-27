@@ -39,6 +39,7 @@ jobs:
         run: xcodegen generate --spec project.yml
 
       - name: Build iOS app
+        id: ios-build
         run: >-
           xcodebuild
           -project Polygo.xcodeproj
@@ -102,6 +103,7 @@ jobs:
             test
 
       - name: Run iPad large-text UI smoke tests
+        if: ${{ !cancelled() && steps.ios-build.outcome == 'success' }}
         run: |
           set -euo pipefail
 

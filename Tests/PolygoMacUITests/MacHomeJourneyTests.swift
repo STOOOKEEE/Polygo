@@ -307,6 +307,10 @@ final class MacHomeJourneyTests: XCTestCase {
         app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
     }
 
+    private func button(containing label: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
+    }
+
     private func button(identifier: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
     }

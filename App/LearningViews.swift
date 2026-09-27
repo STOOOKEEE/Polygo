@@ -519,6 +519,7 @@ public struct TodayView: View {
 
 public struct LearningPathView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @ScaledMetric(relativeTo: .title) private var pathMascotSize: CGFloat = 80
 
     public init() {}
@@ -548,51 +549,35 @@ public struct LearningPathView: View {
     }
 
     private func pathIntro(_ course: CourseManifest) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
-            ViewThatFits(in: .horizontal) {
-                HStack(alignment: .top, spacing: 16) {
-                    pathIntroHeading(course)
-                    Spacer(minLength: 8)
+        VStack(alignment: .leading, spacing: 12) {
+            if dynamicTypeSize.isAccessibilitySize {
+                pathMascot
+                if let milestone = model.nextDailyPlanMilestone ?? model.dailyPlanMilestone {
+                    planMilestoneCard(milestone, reached: model.dailyPlanMilestone?.id == milestone.id)
+                }
+            } else {
+                HStack(alignment: .center, spacing: 12) {
+                    if let milestone = model.nextDailyPlanMilestone ?? model.dailyPlanMilestone {
+                        planMilestoneCard(milestone, reached: model.dailyPlanMilestone?.id == milestone.id)
+                    }
                     pathMascot
                 }
-                VStack(alignment: .leading, spacing: 8) {
+            }
+            Text("\(completedLessonCount) sur \(model.orderedLessonIDs.count) terminées")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(SylluneColor.inkMuted)
+            DisclosureGroup("À propos de ce parcours") {
+                VStack(alignment: .leading, spacing: 12) {
                     pathIntroHeading(course)
-                    HStack {
-                        Spacer(minLength: 0)
-                        pathMascot
-                    }
-                }
-            }
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: 8) {
                     ForEach(Array(model.curriculumLabels.enumerated()), id: \.offset) { _, label in
                         pathMeta(label, icon: label.uppercased().hasPrefix("HSK") ? "graduationcap" : "globe.europe.africa")
                     }
-                    Text("\(completedLessonCount) sur \(model.orderedLessonIDs.count) terminées")
-                        .font(.callout.weight(.semibold))
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(Array(model.curriculumLabels.enumerated()), id: \.offset) { _, label in
-                        pathMeta(label, icon: label.uppercased().hasPrefix("HSK") ? "graduationcap" : "globe.europe.africa")
-                    }
-                    Text("\(completedLessonCount) sur \(model.orderedLessonIDs.count) terminées")
-                        .font(.callout.weight(.semibold))
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
+                .padding(.top, 12)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            if let milestone = model.nextDailyPlanMilestone ?? model.dailyPlanMilestone {
-                planMilestoneCard(milestone, reached: model.dailyPlanMilestone?.id == milestone.id)
-            }
+            .font(.callout)
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(SylluneColor.pathViolet.opacity(0.14), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .sylluneCard(style: .interactive, radius: 24)
-        .accessibilityElement(children: .combine)
+        .padding(.horizontal, 4)
     }
 
     private func pathIntroHeading(_ course: CourseManifest) -> some View {
@@ -646,7 +631,6 @@ public struct LearningPathView: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .sylluneCard(style: .quiet, radius: 16)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(reached ? "Palier couvert" : "Prochain palier"), jour \(milestone.day), \(title)\(coverage.map { ", \($0)" } ?? ""). Ce repère ne valide pas à lui seul un niveau acquis.")
     }
@@ -671,7 +655,6 @@ public struct LearningPathView: View {
             ?? module.title.resolve(preferred: model.preferredLanguageCodes)
             ?? "Unité"
         let lessonCount = "\(module.lessonIDs.count) étapes"
-        let accent = SylluneColor.pathAccent(for: module.order)
         return VStack(alignment: .leading, spacing: 12) {
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -704,8 +687,6 @@ public struct LearningPathView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(accent.opacity(0.11), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .sylluneCard(style: .interactive, radius: 24)
     }
 }
 
@@ -762,7 +743,7 @@ private struct RoadmapModuleCanvas: View {
         let progressText = lessonProgressText(lessonID, completed: completed)
         let nodeFrame = nodeDiameter + 14
         let nodeOffset = min(nodeDiameter * 0.36, 30)
-        let leftIsLabel = index.isMultiple(of: 2)
+        let leftIsLabel = !index.isMultiple(of: 2)
         let node = roadmapNode(
             lessonID: lessonID,
             accent: accent,
@@ -800,13 +781,9 @@ private struct RoadmapModuleCanvas: View {
                         card.frame(maxWidth: .infinity, alignment: .trailing)
                         node
                             .frame(width: nodeFrame, height: nodeFrame)
-                            .offset(x: nodeOffset)
-                        Color.clear.frame(maxWidth: .infinity)
                     } else {
-                        Color.clear.frame(maxWidth: .infinity)
                         node
                             .frame(width: nodeFrame, height: nodeFrame)
-                            .offset(x: -nodeOffset)
                         card.frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
@@ -836,8 +813,11 @@ private struct RoadmapModuleCanvas: View {
                 GeometryReader { proxy in
                     Path { path in
                         let center = proxy.size.width / 2
-                        let startX = center + (leftIsLabel ? nodeOffset : -nodeOffset)
-                        let endX = center - (leftIsLabel ? nodeOffset : -nodeOffset)
+                        let offset = dynamicTypeSize.isAccessibilitySize
+                            ? nodeOffset
+                            : max(0, center - nodeFrame / 2)
+                        let startX = center + (leftIsLabel ? offset : -offset)
+                        let endX = center - (leftIsLabel ? offset : -offset)
                         let startY = nodeFrame
                         let endY = proxy.size.height
                         let curveHeight = max(0, endY - startY)
@@ -905,14 +885,6 @@ private struct RoadmapModuleCanvas: View {
         }
         .padding(12)
         .frame(maxWidth: 250, alignment: trailing ? .trailing : .leading)
-        .background(
-            accent.opacity(completed ? 0.14 : active ? 0.18 : unlocked ? 0.14 : 0.11),
-            in: RoundedRectangle(cornerRadius: 18, style: .continuous)
-        )
-        .overlay {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(accent.opacity(active ? 0.58 : 0.25), lineWidth: 1)
-        }
     }
 
     private func roadmapNode(
@@ -931,14 +903,14 @@ private struct RoadmapModuleCanvas: View {
                     .frame(width: diameter + 14, height: diameter + 14)
             }
             Circle()
-                .fill(completed ? SylluneColor.success : accent.opacity(unlocked ? 1 : 0.2))
+                .fill(completed ? SylluneColor.success : accent)
                 .frame(width: diameter, height: diameter)
             Circle()
                 .stroke(Color.white.opacity(unlocked ? 0.72 : 0.4), lineWidth: 3)
                 .frame(width: diameter - 4, height: diameter - 4)
             Image(systemName: lessonPathSymbol(for: lessonID))
                 .font(.title3.weight(.bold))
-                .foregroundStyle(completed ? SylluneColor.inkOnSuccess : unlocked ? accentForeground : accent)
+                .foregroundStyle(completed ? SylluneColor.inkOnSuccess : accentForeground)
         }
         .frame(width: diameter + 14, height: diameter + 14)
         .overlay(alignment: .bottomTrailing) {

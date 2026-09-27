@@ -22,9 +22,9 @@ final class PolygoAppUITests: XCTestCase {
         completeOnboardingIfNeeded()
 
         navigateToTab("Parcours")
-        let lesson = element(containing: "Dire bonjour", type: .button)
+        let lesson = app.buttons["learningPath.lesson.lesson-01"]
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans le parcours")
-        lesson.tap()
+        tapWhenVisible(lesson)
 
         // The suite may run after the lesson completion journey on the same
         // simulator. Reopen the completed lesson through its explicit reset
@@ -455,11 +455,22 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func tapWhenVisible(_ element: XCUIElement) {
+        var fullyVisible = false
         for _ in 0..<8 {
-            if element.isHittable { break }
-            app.swipeUp()
+            let frame = element.frame
+            let navigationBar = app.navigationBars.firstMatch
+            let footer = app.buttons["BottomTab.today"]
+            let top = navigationBar.exists ? navigationBar.frame.maxY : app.frame.minY
+            let bottom = footer.exists ? footer.frame.minY : app.frame.maxY
+            fullyVisible = element.isHittable && frame.minY >= top && frame.maxY <= bottom
+            if fullyVisible { break }
+            if frame.minY < top {
+                app.swipeDown()
+            } else {
+                app.swipeUp()
+            }
         }
-        XCTAssertTrue(element.isHittable, "L’élément doit être touchable : \(element.label)")
+        XCTAssertTrue(fullyVisible, "L’élément doit être visible hors des barres de navigation : \(element.label)")
         element.tap()
     }
 
