@@ -12,6 +12,7 @@ final class MacHomeJourneyTests: XCTestCase {
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
             "-syllune.profile.id", "mac-home-\(UUID().uuidString.lowercased())",
+            "-syllune.onboarding.step", "0",
             "-AppleLanguages", "(fr)",
             "-AppleLocale", "fr_FR",
             "-syllune.appearance", "dark"
@@ -100,7 +101,7 @@ final class MacHomeJourneyTests: XCTestCase {
 
         pressCommand("3")
         assertSelectedTab("explorer")
-        XCTAssertTrue(text(containing: "Le premier échange").waitForExistence(timeout: timeout), "⌘3 doit ouvrir Explorer")
+        XCTAssertTrue(button(containing: "Le premier échange").waitForExistence(timeout: timeout), "⌘3 doit ouvrir Explorer")
 
         pressCommand("4")
         assertSelectedTab("cards")
@@ -121,7 +122,7 @@ final class MacHomeJourneyTests: XCTestCase {
         XCTAssertTrue(explorer.isHittable, "Explorer doit être cliquable depuis le dictionnaire")
         explorer.click()
         XCTAssertTrue(button(identifier: "explorer.dictionary").waitForExistence(timeout: timeout), "Le retap actif doit revenir à la racine d’Explorer")
-        XCTAssertTrue(text(containing: "Le premier échange").waitForExistence(timeout: timeout), "La destination imbriquée doit laisser place à la racine d’Explorer")
+        XCTAssertTrue(button(containing: "Le premier échange").waitForExistence(timeout: timeout), "La destination imbriquée doit laisser place à la racine d’Explorer")
     }
 
     func testTabShortcutsOnlyNavigateTheFocusedWindow() throws {

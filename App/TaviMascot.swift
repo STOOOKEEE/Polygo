@@ -69,6 +69,7 @@ public struct SylluneCoinBadge: View {
         .background(SylluneColor.surface, in: Capsule())
         .overlay(Capsule().stroke(SylluneColor.border, lineWidth: 1))
         .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(.isStaticText)
         .accessibilityLabel(balance == nil ? "Solde de pièces indisponible" : "Solde de pièces")
         .accessibilityValue(balance.map { String($0) } ?? "Historique indisponible")
     }
