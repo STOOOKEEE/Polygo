@@ -73,10 +73,10 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             "L5 doit conserver l’ordre contractuel jusqu’à l’écoute"
         )
 
-        let dayOne = label(containing: "Jour 1 sur 90")
+        let dayOne = text(containing: "Jour 1 sur 90")
         XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J1/90")
-        XCTAssertTrue(label(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
-        XCTAssertTrue(label(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
+        XCTAssertTrue(text(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
+        XCTAssertTrue(text(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
         // Keep relaunches focused on the durable events produced by the app.
         app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
         attachScreenshot(named: "mac-daily-plan-day-one")
@@ -176,7 +176,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         attachScreenshot(named: "mac-daily-plan-path-after-day-one")
 
         selectSidebarItem("Aujourd’hui")
-        let dayTwo = label(containing: "Jour 2 sur 90")
+        let dayTwo = text(containing: "Jour 2 sur 90")
         XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J2")
         attachScreenshot(named: "mac-daily-plan-day-two")
     }
@@ -200,7 +200,7 @@ final class MacDailyPlanJourneyTests: XCTestCase {
 
     private func label(containing value: String) -> XCUIElement {
         app.descendants(matching: .any)
-            .matching(NSPredicate(format: "value CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value))
+            .matching(NSPredicate(format: "label CONTAINS[c] %@", value))
             .firstMatch
     }
 

@@ -157,7 +157,7 @@ complétion fondée sur les exercices requis ni le déblocage de la leçon suiva
 
 ### Écriture
 
-Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». Le mode guidé contrôle chaque trait dans l’ordre, sa direction et sa forme ; le point de départ orange et la flèche indiquent le geste attendu. Un trait refusé reste visible en rouge avec une explication et peut être recommencé. `Annuler`, `Effacer` et `Vérifier le tracé` restent accessibles dans une barre d’action fixe en bas ; la vérification libre conserve le tracé `PKDrawing` et permet une auto-évaluation (`À refaire`, `Bien`) quand le guide n’est pas disponible. La progression est enregistrée après `Continuer`.
+Le caractère est affiché en fantôme léger dans une grille carrée, avec l’ordre de traits en aperçu « Voir le modèle ». Le mode guidé contrôle chaque trait dans l’ordre, sa direction et sa forme ; le point de départ orange et la flèche indiquent le geste attendu. Un trait refusé reste visible en rouge avec une explication et peut être recommencé. `Annuler`, `Effacer` et `Vérifier le tracé` restent sous le canevas, dans le contenu défilant ; le pied fixe est réservé à la validation pédagogique. La vérification libre conserve le tracé `PKDrawing` et permet une auto-évaluation (`À refaire`, `Bien`) quand le guide n’est pas disponible. La progression est enregistrée après `Continuer`.
 
 ### Cartes
 

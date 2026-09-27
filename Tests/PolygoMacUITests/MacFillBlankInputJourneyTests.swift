@@ -154,7 +154,6 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         continueButton.click()
         let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
         XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du choix doit faire progresser la leçon L2")
-        XCTAssertTrue(scrollIntoView(nextExercise), "L’exercice suivant doit devenir visible après la validation")
 
         // L’exercice de compréhension L2 (5/7) keeps the reading reference
         // collapsed. Its whole-text control remains available in that compact

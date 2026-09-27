@@ -469,16 +469,23 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func navigateToTab(_ label: String) {
-        leaveLessonBeforeSelectingTab()
         openSidebarIfNeeded()
-        let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
-        if tab.waitForExistence(timeout: 5) {
-            tab.tap()
+        let sidebar = app.collectionViews.matching(
+            NSPredicate(format: "label == %@", "Barre latérale")
+        ).firstMatch
+        if sidebar.exists {
+            let sidebarItem = sidebar.buttons.matching(
+                NSPredicate(format: "label CONTAINS[c] %@", label)
+            ).firstMatch
+            XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
+            sidebarItem.tap()
             return
         }
-        let sidebarItem = element(containing: label, type: .any)
-        XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
-        sidebarItem.tap()
+
+        leaveLessonBeforeSelectingTab()
+        let tab = app.tabBars.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", label)).firstMatch
+        XCTAssertTrue(tab.waitForExistence(timeout: 5), "Navigation absente : \(label)")
+        tab.tap()
     }
 
     private func openSidebarIfNeeded() {
