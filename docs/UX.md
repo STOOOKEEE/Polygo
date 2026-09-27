@@ -123,6 +123,10 @@ Le récapitulatif affiche `+10` uniquement pour une première complétion confir
 
 Structure : compteur et progression en haut, un seul exercice à la fois dans une zone défilante, retour après réponse, et barre d’action fixe en bas. Les actions haute et basse restent visibles pendant le défilement. Le libellé principal suit l’état : « Vérifier », « Continuer », « Réécouter » ou « Terminer » ; il change avec son effet.
 
+La colonne de contenu, la barre haute et la barre d’action partagent une largeur maximale d’environ 720 pt, centrée sur les grandes fenêtres. Une leçon ouverte à son premier exercice commence par un écran d’intro (compteur « Intro ») qui ne contient que le préambule : le dialogue, puis « Découvrir avant de répondre » (mots et lecture, facultatif). Le bouton bas « Commencer les exercices » (`lesson.intro.start`) affiche l’exercice 1 seul. L’intro est sautée à la reprise d’un checkpoint qui a déjà une réponse ou une position au-delà du premier exercice, et revient après « Recommencer cette leçon ».
+
+Le dialogue s’affiche en bulles de conversation : premier locuteur à gauche, l’autre à droite, avec nom, caractères (touchables pour écouter), pinyin, traduction et petit bouton audio ; la réplique en cours de lecture est surlignée. « Écouter le dialogue » (`dialogue.play`) lit tout l’échange avec ses pauses. La participation facultative « À toi » masque une réplique (« Réplique manquante ») et propose d’écouter la réponse puis de choisir parmi trois répliques du même dialogue (`dialogue.choice.<n>`) : un bon choix dévoile la bulle, un mauvais permet de réessayer et affiche l’indice. Aucune saisie n’est demandée et la participation ne bloque pas les exercices.
+
 Contrat commun d’un exercice : `id` stable, `kind`, consigne française, contenu chinois/pinyin, réponses ou chemin attendu, explication, médias optionnels, `required`, tentative et état de correction. Les types utilisés dans l’unité 1 sont :
 
 - `listenChoose` : écouter un mot puis choisir parmi trois réponses ; audio rejouable et transcript accessible ;

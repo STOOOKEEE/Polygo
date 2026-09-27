@@ -5,7 +5,7 @@ import XCTest
 /// Regression coverage for the learner-facing lesson flow. The test keeps a
 /// draft answer, moves the app through the inactive state, then relaunches it
 /// before and after validation. The same journey also exercises the compact
-/// dialogue, written participation, token audio targets, and oral controls.
+/// dialogue intro, missing-line participation, token audio targets, and oral controls.
 final class ZZLessonRegressionJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -54,7 +54,8 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         // line. Read the fixture here so a dialogue edit cannot silently
         // leave the regression journey asserting yesterday's copy.
         let lessonDialogue = try dialogueFromFixture(lessonID: "lesson-01")
-        for line in lessonDialogue.lines {
+        let missingLine = try participationAnswerFromFixture(lessonDialogue)
+        for line in lessonDialogue.lines where line.hanzi != missingLine.hanzi {
             XCTAssertTrue(text(containing: line.hanzi).waitForExistence(timeout: timeout), "Réplique absente : \(line.hanzi)")
         }
         for speaker in Set(lessonDialogue.lines.map(\.speaker)) {
@@ -89,26 +90,23 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             "Le dialogue doit annoncer sa question de compréhension"
         )
         XCTAssertTrue(
-            text(containing: "Écoute la réponse, puis écris la réplique juste avant").waitForExistence(timeout: timeout),
-            "La participation doit demander la réplique précédente"
+            text(containing: "Quelle réplique de \(missingLine.speaker) manque").waitForExistence(timeout: timeout),
+            "La participation doit demander la réplique manquante"
         )
-        let participationReply = try participationReplyFromFixture()
+        XCTAssertTrue(text(containing: "Réplique manquante").exists, "La réplique à trouver doit être masquée avant la réponse")
         let responseAudio = button(exactly: "Écouter la réponse")
         XCTAssertTrue(responseAudio.waitForExistence(timeout: timeout), "La participation doit permettre d’écouter la réponse")
         tapWhenVisible(responseAudio)
 
-        let participationField = firstTextField(containingAny: ["réplique en caractères chinois", "réplique précédente", "réponse"])
-        XCTAssertTrue(participationField.waitForExistence(timeout: timeout), "La participation doit accepter une réponse écrite")
-        tapWhenVisible(participationField)
-        participationField.typeText(participationReply)
-        dismissKeyboardIfNeeded()
-        let checkParticipation = button(containingAny: ["Vérifier ma réplique", "Vérifier la réplique", "Vérifier cette réponse"])
-        XCTAssertTrue(checkParticipation.waitForExistence(timeout: timeout), "La réponse écrite doit pouvoir être vérifiée")
-        tapWhenVisible(checkParticipation)
+        let correctChoice = button(containing: "Choisir \(missingLine.hanzi)")
+        XCTAssertTrue(correctChoice.waitForExistence(timeout: timeout), "La bonne réplique doit figurer parmi les choix")
+        tapWhenVisible(correctChoice)
         XCTAssertTrue(
-            text(containingAny: ["Bonne réplique", "Réponse correcte", "Participation réussie"]).waitForExistence(timeout: timeout),
-            "La bonne réplique précédente doit produire un retour"
+            text(containing: "Bonne réplique").waitForExistence(timeout: timeout),
+            "La bonne réplique doit produire un retour"
         )
+        XCTAssertFalse(text(containing: "Réplique manquante").exists, "La réplique trouvée doit être dévoilée")
+        startExercisesFromIntro()
 
         // First exercise: preserve a selected choice while the app is
         // backgrounded and again after the process is relaunched.
@@ -366,7 +364,13 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if restart.waitForExistence(timeout: 4) {
             tapWhenVisible(restart)
         }
-        XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La première activité doit être visible")
+        XCTAssertTrue(button(identifier: "lesson.intro.start").waitForExistence(timeout: timeout), "L’intro de la leçon doit être visible")
+    }
+
+    private func startExercisesFromIntro() {
+        let start = button(identifier: "lesson.intro.start")
+        XCTAssertTrue(start.waitForExistence(timeout: timeout), "L’intro doit proposer Commencer les exercices")
+        tapWhenVisible(start)
     }
 
     private func reopenCurrentLessonIfNeeded() {
@@ -459,7 +463,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon"] {
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon", "Commencer les exercices"] {
             let candidate = button(exactly: label)
             guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
             viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
@@ -499,7 +503,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func leaveLessonBeforeSelectingTab() {
         let lessonControl = app.buttons.matching(
-            NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
+            NSPredicate(format: "label IN %@", ["Vérifier", "Recommencer cette leçon", "Commencer les exercices"])
         ).firstMatch
         guard lessonControl.exists else { return }
 
@@ -557,26 +561,6 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         }
     }
 
-    private func dismissKeyboardIfNeeded() {
-        let keyboard = app.keyboards.firstMatch
-        guard keyboard.exists else { return }
-
-        // The return key is localized by the simulator. Tapping it keeps the
-        // authored response intact while releasing the controls hidden behind
-        // the keyboard.
-        for label in ["Retour", "Return", "Done", "Terminé"] {
-            let key = keyboard.buttons[label]
-            if key.exists && key.isHittable {
-                key.tap()
-                return
-            }
-        }
-
-        // A single-line field can also dismiss its keyboard by tapping the
-        // unobstructed content above it when no localized return key exists.
-        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.12)).tap()
-    }
-
     @discardableResult
     private static func denyPermission(in alert: XCUIElement) -> Bool {
         for label in ["Ne pas autoriser", "Don't Allow", "Don’t Allow"] {
@@ -591,6 +575,10 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func button(exactly label: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+    }
+
+    private func button(identifier: String) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "identifier == %@", identifier)).firstMatch
     }
 
     private func button(containing value: String) -> XCUIElement {
@@ -615,14 +603,6 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         app.buttons.matching(
             NSPredicate(format: "identifier == %@ AND label CONTAINS[c] %@", "model-audio-toggle", "Arrêter")
         ).firstMatch
-    }
-
-    private func firstTextField(containingAny values: [String]) -> XCUIElement {
-        for value in values {
-            let candidate = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS[c] %@ OR label CONTAINS[c] %@", value, value)).firstMatch
-            if candidate.waitForExistence(timeout: 1) { return candidate }
-        }
-        return app.textFields.matching(NSPredicate(format: "label == %@", "__missing__")).firstMatch
     }
 
     private func text(containing value: String) -> XCUIElement {
@@ -661,29 +641,16 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             .appendingPathComponent(relativePath, isDirectory: false)
     }
 
-    private func participationReplyFromFixture() throws -> String {
-        let data = try Data(contentsOf: fixtureURL(relativePath: "lessons/lesson-01.json"))
-        let lesson = try JSONDecoder().decode(LessonContract.self, from: data)
-        guard
-            let dialogue = lesson.blocks.first(where: { $0.kind == "dialogue" }),
-            let participation = dialogue.participation,
-            let lines = dialogue.lines,
-            participation.audioLineIndex > 0,
-            participation.audioLineIndex < lines.count
-        else {
+    /// The masked line the app asks for: the first line listed among the
+    /// accepted responses, otherwise the line before the audio cue.
+    private func participationAnswerFromFixture(_ dialogue: DialogueContract) throws -> LineContract {
+        guard let participation = dialogue.participation,
+              participation.audioLineIndex > 0,
+              participation.audioLineIndex < dialogue.lines.count else {
             throw FixtureError.invalidParticipation
         }
-        // XCTest types through the simulator's active keyboard layout. Use
-        // the authored ASCII pinyin variant when available; the app's
-        // normalizer deliberately accepts it alongside the Chinese answer.
-        if let asciiAnswer = participation.acceptedResponses.first(where: { answer in
-            !answer.isEmpty && answer.unicodeScalars.allSatisfy {
-                $0.value < 128 && CharacterSet.alphanumerics.contains($0)
-            }
-        }) {
-            return asciiAnswer
-        }
-        return lines[participation.audioLineIndex - 1].hanzi
+        return dialogue.lines.first { participation.acceptedResponses.contains($0.hanzi) }
+            ?? dialogue.lines[participation.audioLineIndex - 1]
     }
 }
 

@@ -186,6 +186,7 @@ final class MacHomeJourneyTests: XCTestCase {
     private func completeOnboardingIfNeeded() {
         let start = button(exactly: "Commencer")
         guard start.waitForExistence(timeout: timeout) else {
+            startExercisesIfIntroShown()
             let resumedLesson = button(exactly: "Vérifier").waitForExistence(timeout: 3)
             let today = button(identifier: "home.primaryAction").waitForExistence(timeout: 3)
             XCTAssertTrue(resumedLesson || today, "L’app macOS doit restaurer une leçon ou Aujourd’hui")
@@ -215,7 +216,17 @@ final class MacHomeJourneyTests: XCTestCase {
         let openLesson = button(exactly: "Ouvrir ma première leçon")
         XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "L’ouverture de la première leçon doit être proposée")
         openLesson.click()
+        let introStart = button(identifier: "lesson.intro.start")
+        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "La première leçon doit s’ouvrir sur son dialogue")
+        captureScreenshot(named: "dialogue")
+        introStart.click()
         XCTAssertTrue(button(exactly: "Vérifier").waitForExistence(timeout: timeout), "La première leçon doit s’ouvrir dans son exercice focalisé")
+    }
+
+    /// Lessons open on their dialogue intro before the first exercise.
+    private func startExercisesIfIntroShown() {
+        let introStart = button(identifier: "lesson.intro.start")
+        if introStart.waitForExistence(timeout: 3) { introStart.click() }
     }
 
     private func bottomTab(_ name: String) -> XCUIElement? {

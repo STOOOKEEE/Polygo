@@ -53,6 +53,12 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         )
         lesson.click()
 
+        let introStart = app.buttons.matching(identifier: "lesson.intro.start").firstMatch
+        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "L2 doit s’ouvrir sur son dialogue avant les exercices")
+        XCTAssertFalse(button(exactly: "Vérifier").exists, "L’intro ne doit pas proposer Vérifier")
+        attachScreenshot(named: "mac-lesson-dialogue-intro")
+        introStart.click()
+
         XCTAssertTrue(
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch.waitForExistence(timeout: timeout),
             "L’ouverture de la carte L2 doit commencer par son premier exercice"

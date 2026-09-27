@@ -278,6 +278,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         let restart = button(exactly: "Recommencer cette leçon")
         XCTAssertTrue(restart.waitForExistence(timeout: timeout), "L’écran terminal doit permettre de recommencer")
         restart.tap()
+        startExercisesIfIntroShown()
         XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir à son premier exercice")
     }
 
@@ -300,6 +301,7 @@ final class LessonReviewJourneyTests: XCTestCase {
         }
     }
     private func completeExercises(_ exercises: [ExerciseFixture]) throws {
+        startExercisesIfIntroShown()
         for (index, exercise) in exercises.enumerated() {
             try answer(exercise)
             evaluateAndAdvance(isLast: index == exercises.count - 1)
@@ -537,22 +539,30 @@ final class LessonReviewJourneyTests: XCTestCase {
         let ready = button(exactly: "Ouvrir ma première leçon")
         if ready.waitForExistence(timeout: 3) {
             ready.tap()
+            startExercisesIfIntroShown()
             XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout),
                           "La première leçon doit être chargée avant de poursuivre la navigation")
         }
     }
 
     private func openFirstLessonIfNeeded() {
-        // The lesson preamble's participation field also exposes a generic
-        // “Vérifier” button. Use the authored first-exercise prompt as the
-        // route marker so writing journeys do not stop in the dialogue.
+        // A lesson opened at its first exercise shows the dialogue intro
+        // first. Use the authored first-exercise prompt as the route marker.
+        startExercisesIfIntroShown()
         if firstExercisePrompt().waitForExistence(timeout: 4) { return }
 
         navigateToTab("Parcours")
         let lesson = button(containing: "Dire bonjour")
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La première leçon doit être visible dans Parcours")
         lesson.tap()
+        startExercisesIfIntroShown()
         XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La première leçon doit charger son premier exercice")
+    }
+
+    /// Lessons open on their dialogue intro before the first exercise.
+    private func startExercisesIfIntroShown() {
+        let start = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.intro.start")).firstMatch
+        if start.waitForExistence(timeout: 3) { tapWhenVisible(start) }
     }
 
     private func openWritingExercise() throws -> ExerciseFixture {
@@ -572,6 +582,7 @@ final class LessonReviewJourneyTests: XCTestCase {
             let restart = button(exactly: "Recommencer cette leçon")
             if restart.waitForExistence(timeout: 3) {
                 restart.tap()
+                startExercisesIfIntroShown()
                 XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir au premier exercice")
             }
 
@@ -628,6 +639,7 @@ final class LessonReviewJourneyTests: XCTestCase {
                 let restart = button(exactly: "Recommencer cette leçon")
                 XCTAssertTrue(restart.waitForExistence(timeout: timeout), "La leçon terminale doit pouvoir être redémarrée")
                 restart.tap()
+                startExercisesIfIntroShown()
                 XCTAssertTrue(firstExercisePrompt().waitForExistence(timeout: timeout), "La leçon doit revenir au premier exercice")
             }
         }
@@ -664,7 +676,7 @@ final class LessonReviewJourneyTests: XCTestCase {
 
     private func leaveLessonBeforeSelectingTab() {
         let lessonControl = app.buttons.matching(
-            NSPredicate(format: "label == %@ OR label == %@", "Vérifier", "Recommencer cette leçon")
+            NSPredicate(format: "label IN %@", ["Vérifier", "Recommencer cette leçon", "Commencer les exercices"])
         ).firstMatch
         guard lessonControl.exists else { return }
 
@@ -724,7 +736,7 @@ final class LessonReviewJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon"] {
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon", "Commencer les exercices"] {
             let candidate = button(exactly: label)
             guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
             viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
