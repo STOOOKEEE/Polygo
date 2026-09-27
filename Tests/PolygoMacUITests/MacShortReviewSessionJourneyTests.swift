@@ -143,8 +143,10 @@ final class MacShortReviewSessionJourneyTests: XCTestCase {
         return element.label
     }
     private func currentCoinBalance() throws -> Int {
-        let balance = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance").firstMatch
+        let balances = app.descendants(matching: .any).matching(identifier: "ProgressCoinBalance")
+        let balance = balances.firstMatch
         XCTAssertTrue(balance.waitForExistence(timeout: timeout), "Le badge de progression doit rester accessible pendant la révision")
+        XCTAssertEqual(balances.count, 1, "La navigation imbriquée doit conserver un seul badge global")
         let digits = String(describing: balance.value ?? "").filter { $0.isNumber }
         return try XCTUnwrap(Int(digits), "Le badge doit exposer un solde numérique réel")
     }

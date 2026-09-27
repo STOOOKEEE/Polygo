@@ -163,6 +163,9 @@ final class MacHomeJourneyTests: XCTestCase {
         XCTAssertTrue(button(containing: "Déjà dans mes cartes").waitForExistence(timeout: timeout))
 
         pressCommand("4")
+        let start = button(exactly: "Commencer")
+        XCTAssertTrue(start.waitForExistence(timeout: timeout))
+        start.click()
         let token = button(exactly: "你好")
         XCTAssertTrue(token.waitForExistence(timeout: timeout))
         token.click()
@@ -175,7 +178,8 @@ final class MacHomeJourneyTests: XCTestCase {
                       "Le changement d’onglet doit conserver la fiche ouverte depuis une carte")
         pressCommand("4")
         XCTAssertFalse(detail.exists, "Le retap actif doit fermer la fiche et retrouver les cartes")
-        XCTAssertTrue(token.waitForExistence(timeout: timeout))
+        XCTAssertTrue(start.waitForExistence(timeout: timeout),
+                      "Le retap actif doit revenir à l’entrée de la session de cartes")
         assertBottomNavigation(balance: 0)
     }
 

@@ -271,14 +271,6 @@ struct BottomNavigationShell: View {
             NavigationStack(path: pathBinding(for: selectedTab)) {
                 routeView(selectedTab.route)
                     .navigationDestination(for: AppRoute.self) { routeView($0) }
-                    .toolbar {
-                        if !exerciseChromeHidden {
-                            ToolbarItem(placement: .automatic) {
-                                SylluneCoinBadge(balance: model.coinBalance)
-                                    .accessibilityIdentifier("ProgressCoinBalance")
-                            }
-                        }
-                    }
             }
             .id("\(selectedTab.rawValue)-\(stackRevision)")
             .environment(\.sylluneShellWordNavigation, { id in
@@ -475,20 +467,30 @@ struct BottomNavigationShell: View {
 
     @ViewBuilder
     private func routeView(_ route: AppRoute) -> some View {
-        switch route {
-        case .today: TodayView()
-        case .path: LearningPathView()
-        case .explorer: ExplorerView()
-        case .cards: ReviewCardsView()
-        case .shortReview(let maxCards): ReviewCardsView(maxCards: maxCards)
-        case .profile: ProfileView()
-        case .settings: SettingsView()
-        case .lesson(let id): LessonView(lessonID: id)
-        case .word(let id): WordDetailView(vocabularyID: id)
-        case .story(let id): StoryDetailView(storyID: id)
-        case .dictionary(let query): DictionaryView(initialQuery: query, usesShellNavigation: true)
-        case .oral(let id): OralView(exerciseID: id)
-        case .writing(let id): WritingView(exerciseID: id)
+        Group {
+            switch route {
+            case .today: TodayView()
+            case .path: LearningPathView()
+            case .explorer: ExplorerView()
+            case .cards: ReviewCardsView()
+            case .shortReview(let maxCards): ReviewCardsView(maxCards: maxCards)
+            case .profile: ProfileView()
+            case .settings: SettingsView()
+            case .lesson(let id): LessonView(lessonID: id)
+            case .word(let id): WordDetailView(vocabularyID: id)
+            case .story(let id): StoryDetailView(storyID: id)
+            case .dictionary(let query): DictionaryView(initialQuery: query, usesShellNavigation: true)
+            case .oral(let id): OralView(exerciseID: id)
+            case .writing(let id): WritingView(exerciseID: id)
+            }
+        }
+        .toolbar {
+            if !exerciseChromeHidden {
+                ToolbarItem(placement: .automatic) {
+                    SylluneCoinBadge(balance: model.coinBalance)
+                        .accessibilityIdentifier("ProgressCoinBalance")
+                }
+            }
         }
     }
 }
