@@ -998,11 +998,11 @@ autonome Oral/Écriture. Le shell masque alors la barre basse et son unique
 badge de pièces, y compris pendant le chargement et le récapitulatif.
 Les commandes Mac utilisent la scène focalisée ; les changements partagés
 de destination ne doivent pas réinitialiser une fenêtre inactive. Sur iOS,
-⌘1–⌘5 et ⌘, passent par les `UIKeyCommand` d’un `UIHostingController` local à
-la fenêtre, même quand le chrome est masqué ou qu’un champ possède le focus.
-Cet hôte transmet l’environnement SwiftUI et conserve les commandes héritées.
-Les deux plateformes appellent les mêmes actions du shell. Le domaine ne
-connaît aucun de ces choix de présentation. Les thèmes, Dynamic Type et
+⌘1–⌘5 et ⌘, sont des `keyboardShortcut` SwiftUI portés par des boutons
+invisibles et masqués à l’accessibilité, toujours montés dans le shell : SwiftUI
+les résout dans la scène active, même quand le chrome est masqué ou qu’un champ
+possède le focus. Les deux plateformes appellent les mêmes actions du shell.
+Le domaine ne connaît aucun de ces choix de présentation. Les thèmes, Dynamic Type et
 Réduire les animations sont des préférences de présentation ; leur couverture
 native et leurs limites sont consignées dans `QA_REPORT.md`.
 

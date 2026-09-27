@@ -1,9 +1,6 @@
 import SwiftUI
 import Foundation
 import PolygoCore
-#if os(iOS)
-import UIKit
-#endif
 
 public extension Notification.Name {
     static let sylluneFocusDictionarySearch = Notification.Name("syllune.focusDictionarySearch")
@@ -248,95 +245,6 @@ struct BottomNavigationCommands: Commands {
 }
 #endif
 
-#if os(iOS)
-private struct SylluneKeyboardContent<Content: View>: View {
-    let content: Content
-    let values: EnvironmentValues
-
-    var body: some View {
-        content.environment(\.self, values)
-    }
-}
-
-private struct SylluneKeyboardHost<Content: View>: UIViewControllerRepresentable {
-    let content: Content
-    let selectTab: (BottomTab) -> Void
-    let openSettings: () -> Void
-
-    func makeUIViewController(context: Context) -> SylluneKeyboardController<SylluneKeyboardContent<Content>> {
-        let controller = SylluneKeyboardController(
-            rootView: SylluneKeyboardContent(content: content, values: context.environment)
-        )
-        controller.selectTab = selectTab
-        controller.openSettings = openSettings
-        controller.view.backgroundColor = .clear
-        return controller
-    }
-
-    func updateUIViewController(
-        _ controller: SylluneKeyboardController<SylluneKeyboardContent<Content>>,
-        context: Context
-    ) {
-        controller.rootView = SylluneKeyboardContent(content: content, values: context.environment)
-        controller.selectTab = selectTab
-        controller.openSettings = openSettings
-    }
-}
-
-// The controller stays in the responder chain when the bottom bar is absent
-// and when a descendant text field owns keyboard focus.
-private final class SylluneKeyboardController<Content: View>: UIHostingController<Content> {
-    var selectTab: ((BottomTab) -> Void)?
-    var openSettings: (() -> Void)?
-
-    private lazy var navigationCommands: [UIKeyCommand] = {
-        let tabs = BottomTab.allCases
-        var commands: [UIKeyCommand] = []
-        commands.reserveCapacity(tabs.count + 1)
-        for tab in tabs {
-            commands.append(UIKeyCommand(
-                title: tab.title,
-                action: #selector(selectNavigationTab(_:)),
-                input: String(tab.shortcut.character),
-                modifierFlags: .command,
-                propertyList: tab.rawValue
-            ))
-        }
-        commands.append(UIKeyCommand(
-            title: "Réglages",
-            action: #selector(openNavigationSettings),
-            input: ",",
-            modifierFlags: .command
-        ))
-        for command in commands {
-            command.wantsPriorityOverSystemBehavior = true
-        }
-        return commands
-    }()
-
-    override var keyCommands: [UIKeyCommand]? {
-        guard let inherited = super.keyCommands, !inherited.isEmpty else { return navigationCommands }
-        return inherited + navigationCommands
-    }
-    override var canBecomeFirstResponder: Bool { true }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        becomeFirstResponder()
-    }
-
-    @objc private func selectNavigationTab(_ command: UIKeyCommand) {
-        guard let rawValue = command.propertyList as? String,
-              let tab = BottomTab(rawValue: rawValue) else { return }
-        selectTab?(tab)
-    }
-
-    @objc private func openNavigationSettings() {
-        openSettings?()
-    }
-}
-#endif
-
 
 struct BottomNavigationShell: View {
     @EnvironmentObject private var model: AppModel
@@ -354,15 +262,6 @@ struct BottomNavigationShell: View {
     @State private var exerciseChromeHidden = false
 
     var body: some View {
-        #if os(iOS)
-        SylluneKeyboardHost(content: shellContent, selectTab: select, openSettings: openSettings)
-            .ignoresSafeArea()
-        #else
-        shellContent
-        #endif
-    }
-
-    private var shellContent: some View {
         VStack(spacing: 0) {
             NavigationStack(path: pathBinding(for: selectedTab)) {
                 routeView(selectedTab.route)
@@ -378,6 +277,9 @@ struct BottomNavigationShell: View {
                 }
             }
         }
+        #if os(iOS)
+        .background { keyboardShortcuts }
+        #endif
         #if os(macOS)
         .focusedSceneValue(\.sylluneNavigationTabCommand, { tab in
             select(tab)
@@ -434,6 +336,24 @@ struct BottomNavigationShell: View {
             }
         }
     }
+
+    #if os(iOS)
+    // SwiftUI resolves in-view shortcuts across the active scene, so these
+    // stay reachable while a focused exercise hides the bottom bar or a field
+    // owns the keyboard. They are invisible and hidden from accessibility.
+    private var keyboardShortcuts: some View {
+        ZStack {
+            ForEach(BottomTab.allCases) { tab in
+                Button(tab.title) { select(tab) }
+                    .keyboardShortcut(tab.shortcut, modifiers: .command)
+            }
+            Button("Réglages") { openSettings() }
+                .keyboardShortcut(",", modifiers: .command)
+        }
+        .opacity(0)
+        .accessibilityHidden(true)
+    }
+    #endif
 
     private func tabBar(fillsWidth: Bool) -> some View {
         HStack(spacing: 4) {
