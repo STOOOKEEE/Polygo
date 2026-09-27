@@ -2,14 +2,14 @@
 
 Le bundle de contenu reste en `2026.10.0`. La refonte Tavi est publiée par
 lots sur `feat/mobile-originale` ; sa validation native Mac et iPhone est
-consolidée et son intégration dans `main` reste à faire. Le [rapport
+consolidée et la refonte est intégrée dans `main`. Le [rapport
 QA](QA_REPORT.md) centralise les commits testés, résultats et limites, sans
 assimiler une compilation à une validation des parcours.
 
 ## Roadmap — refonte Tavi
 
 Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
-`feat/mobile-originale`, pas une version déjà publiée sur `main`.
+`feat/mobile-originale` puis intégré dans `main`, pas une version publiée.
 
 ### Implémentation poussée
 
@@ -29,10 +29,12 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 - [x] Consolider les résultats de la [campagne du dernier lot
   b0d065f](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346) :
   package 72/72, Mac 9/9, iPhone 11/11. iPad AX5 hors périmètre, non
-  bloquant (7/8 ; correctif `1981952` non validé).
+  bloquant (7/8). Le correctif `1981952` a cassé deux tests iPhone (run
+  36344610436, bouton « Réglages » invisible) et a été annulé ; le raccourci
+  iPad depuis une leçon reste une limite connue, hors périmètre.
 - [x] Mettre à jour le rapport QA et remplacer les captures historiques du
   dépôt par les preuves natives de la refonte validée.
-- [ ] Intégrer et pousser la refonte sur `main` après validation complète,
+- [x] Intégrer et pousser la refonte sur `main` après validation complète,
   sans écraser le travail existant.
 
 ## Bundle et curriculum
@@ -121,8 +123,8 @@ xcresult, captures et journaux du probe de récompenses.
 Les campagnes examinées et les correctifs restant à valider sont distingués
 dans la roadmap ci-dessus et dans le [rapport QA](QA_REPORT.md). Une
 modification poussée, une compilation réussie et un parcours UI validé sont
-trois états distincts ; la publication sur `main` reste conditionnée à la
-validation native complète.
+trois états distincts ; l’intégration dans `main` reprend le code de
+`b0d065f` validé sur Mac et iPhone.
 
 Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les preuves
 natives proviennent des runners Apple ; les limites d’accessibilité et de

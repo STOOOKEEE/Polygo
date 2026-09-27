@@ -120,9 +120,12 @@ relevés dans les journaux du run :
 
 Le job `build-ios` est marqué en échec uniquement par l’étape iPad. Le seul
 échec est `testIPadKeyboardShortcutsReachTabsAndSettingsFromFocusedContent` :
-⌘1 n’a pas quitté une leçon. Le correctif `1981952` (résolution des raccourcis
-dans la scène SwiftUI active) est poussé mais n’est pas validé. L’iPad ne fait
-pas partie du périmètre de validation de la refonte.
+⌘1 n’a pas quitté une leçon. Le correctif `1981952` (boutons de raccourci
+invisibles dans la scène SwiftUI active) a été essayé : dans le [run
+36344610436](https://github.com/STOOOKEEE/Polygo/actions/runs/36344610436), il a
+cassé deux tests iPhone (9/11), XCUITest ciblant le bouton invisible
+« Réglages ». Il a été annulé ; le code livré est celui de `b0d065f`. Le
+raccourci iPad depuis une leçon reste une limite connue, hors périmètre.
 
 Le probe Mac charge le vrai `AppModel` compilé et conserve ses journaux JSONL :
 échec avant append, complétion durable suivie d’un échec de cache, reload,
