@@ -6,6 +6,40 @@ validation native complète. Le [rapport QA](QA_REPORT.md) centralise les
 commits testés, résultats et limites, sans assimiler une compilation à une
 validation des parcours.
 
+## Roadmap — refonte Tavi
+
+Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
+`feat/mobile-originale`, pas une version déjà publiée sur `main`.
+
+### Implémentation poussée
+
+- [x] Mascotte originale Tavi : accueil, encouragement et réussite.
+- [x] Palette colorée claire/sombre, parcours sinueux et icônes de leçons.
+- [x] Cinq destinations en barre basse sur Mac, iPhone et iPad, sans sidebar.
+- [x] Masquage de la barre et du compteur pendant les exercices focalisés.
+- [x] Dix pièces par première complétion historique, sans perte au
+  recommencement ni second gain au rejeu.
+- [x] Conservation des piles de navigation et accès aux réglages depuis Profil.
+- [x] Correctif des raccourcis iPad par la chaîne UIKit (`b95438c`).
+- [x] Ajustement des gestes de test aux pieds fixes et à la feuille du
+  dictionnaire (`b0d065f`).
+
+### Validation et livraison restantes
+
+- [ ] Consolider les résultats de la [campagne du dernier lot
+  b0d065f](https://github.com/STOOOKEEE/Polygo/actions/runs/36339541346),
+  notamment les raccourcis iPad et les deux parcours iPhone corrigés.
+- [ ] Mettre à jour le rapport QA et remplacer les captures historiques du
+  dépôt par les preuves natives de la refonte validée.
+- [ ] Intégrer et pousser la refonte sur `main` après validation complète,
+  sans écraser le travail existant.
+
+La [campagne e966cb8](https://github.com/STOOOKEEE/Polygo/actions/runs/36334347168)
+déjà examinée a validé le package et le job Mac complet ; les parcours UI
+atteignent 9/9 sur Mac, 9/11 sur iPhone et 7/8 sur iPad. Les scénarios iPhone
+de pièces, relance et rejeu passent. Ces résultats précèdent les derniers
+correctifs et ne constituent pas leur validation finale.
+
 ## Bundle et curriculum
 
 | Élément | Compte livré |
@@ -89,13 +123,11 @@ xcresult, captures et journaux du probe de récompenses.
 
 ## Validation Apple et limites
 
-Le [run 36334024987](https://github.com/STOOOKEEE/Polygo/actions/runs/36334024987)
-sur `8e4e5f6` a validé le package, le build Mac, tous les parcours Mac et les
-séquences de récupération des pièces. La validation iOS n’est pas complète :
-le runner iPhone n’a pas lancé ses tests et trois scénarios iPad ont échoué.
-Le correctif de navigation UIKit `b95438c` est soumis au [run
-36337484177](https://github.com/STOOOKEEE/Polygo/actions/runs/36337484177).
-Ses résultats ne sont pas encore acquis.
+Les campagnes examinées et les correctifs restant à valider sont distingués
+dans la roadmap ci-dessus et dans le [rapport QA](QA_REPORT.md). Une
+modification poussée, une compilation réussie et un parcours UI validé sont
+trois états distincts ; la publication sur `main` reste conditionnée à la
+validation native complète.
 
 Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les preuves
 natives proviennent des runners Apple ; les limites d’accessibilité et de
