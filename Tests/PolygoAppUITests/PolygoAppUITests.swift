@@ -143,7 +143,12 @@ final class PolygoAppUITests: XCTestCase {
             let sidebarItem = sidebar.buttons.matching(
                 NSPredicate(format: "label CONTAINS[c] %@", label)
             ).firstMatch
+            for _ in 0..<6 {
+                if sidebarItem.exists && sidebarItem.isHittable { break }
+                sidebar.swipeUp()
+            }
             XCTAssertTrue(sidebarItem.waitForExistence(timeout: timeout), "Navigation absente : \(label)")
+            XCTAssertTrue(sidebarItem.isHittable, "Navigation inaccessible : \(label)")
             sidebarItem.tap()
             let dismissRegion = app.otherElements.matching(identifier: "PopoverDismissRegion").firstMatch
             if dismissRegion.exists {
