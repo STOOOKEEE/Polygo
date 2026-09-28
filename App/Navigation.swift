@@ -366,7 +366,11 @@ struct BottomNavigationShell: View {
         VStack(spacing: 0) {
             NavigationStack(path: pathBinding(for: selectedTab)) {
                 routeView(selectedTab.route)
-                    .navigationDestination(for: AppRoute.self) { routeView($0) }
+                    // Each destination value owns its view state. Without an
+                    // explicit identity, a destination pushed after a pop can
+                    // inherit the previous value's @State (for example a
+                    // finished lesson recap opening under the next lesson).
+                    .navigationDestination(for: AppRoute.self) { routeView($0).id($0) }
             }
             .id("\(selectedTab.rawValue)-\(stackRevision)")
             .environment(\.sylluneShellWordNavigation, { id in

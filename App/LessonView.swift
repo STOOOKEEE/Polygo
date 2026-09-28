@@ -102,6 +102,14 @@ public struct LessonView: View {
             // if the saved exercise no longer exists at that position.
             currentIndex = min(max(0, savedIndex), exercises.count)
         }
+        // A lesson only reaches its terminal position by advancing past an
+        // evaluated last exercise, so an unfinished lesson saved there without
+        // any evaluation was never worked through (older builds could write
+        // one from another lesson's leaked view state). Start it again rather
+        // than presenting an empty recap.
+        if currentIndex >= exercises.count, progress.completedAt == nil, progress.lastEvaluations.isEmpty {
+            currentIndex = 0
+        }
         showsIntro = currentIndex == 0
 
         answered = progress.lastEvaluations
