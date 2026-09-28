@@ -401,15 +401,15 @@ final class LessonReviewJourneyTests: XCTestCase {
         if resultDetails.waitForExistence(timeout: 2) {
             tapWhenVisible(resultDetails)
             XCTAssertTrue(
-                text(containingAny: ["aucun score de prononciation", "Résultat incertain", "Transcription locale"]).waitForExistence(timeout: timeout),
+                text(containingAny: ["Auto-écoute", "Analyse indisponible", "Analyse impossible", "Résultat incertain", "Transcription locale"]).waitForExistence(timeout: timeout),
                 "Un résultat oral doit rester descriptif et sans faux score"
             )
         }
         XCTAssertFalse(button(exactly: "À l’aise").exists, "L’oral ne doit plus proposer de bouton d’auto-évaluation")
         XCTAssertFalse(text(containing: "Correct").exists, "Une absence d’analyse ne doit pas produire un faux Correct")
-        let skip = button(exactly: "Passer sans évaluer")
-        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral sans score doit proposer Passer sans évaluer")
-        XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être disponible sans réponse audio")
+        let skip = button(exactly: "Continuer")
+        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral sans score doit proposer Continuer")
+        XCTAssertTrue(skip.isEnabled, "Continuer doit être disponible sans analyse de prononciation")
         attachScreenshot(named: "oral-result")
     }
 
@@ -480,19 +480,15 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func evaluateAndAdvance(isLast: Bool) {
-        let skip = button(exactly: "Passer sans évaluer")
-        if skip.waitForExistence(timeout: 2) {
-            XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être activable pour l’oral")
-            XCTAssertFalse(text(containing: "Correct").exists, "Le passage sans évaluation ne doit pas afficher Correct")
+        // Speaking exercises without a pronunciation score are recorded as
+        // skipped by "Continuer" and left in one tap; the recap then counts
+        // them as passed without evaluation.
+        if text(containing: "À toi de parler").exists {
+            let skip = button(exactly: "Continuer")
+            XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral doit proposer Continuer")
+            XCTAssertTrue(skip.isEnabled, "Continuer doit être activable pour l’oral")
             tapWhenVisible(skip)
-            XCTAssertTrue(
-                text(containing: "Passé sans évaluation").waitForExistence(timeout: timeout),
-                "Le retour doit indiquer que l’exercice oral n’a pas été évalué"
-            )
-            XCTAssertFalse(text(containing: "Correct").exists, "Un exercice passé sans évaluation ne doit pas être marqué Correct")
-            let continueAnyway = button(exactly: "Continuer malgré tout")
-            XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "La progression doit rester disponible après un exercice non évalué")
-            tapWhenVisible(continueAnyway)
+            XCTAssertFalse(button(exactly: "Continuer malgré tout").waitForExistence(timeout: 2), "Passer l’oral ne doit pas demander de seconde confirmation")
             return
         }
 
@@ -736,7 +732,7 @@ final class LessonReviewJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon", "Commencer les exercices"] {
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Recommencer cette leçon", "Commencer les exercices"] {
             let candidate = button(exactly: label)
             guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
             viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)

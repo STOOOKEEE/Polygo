@@ -164,8 +164,8 @@ aucun audio n’est conservé par défaut.
 
 La lecture orale extrait uniquement le mandarin et utilise
 `AVSpeechSynthesizer`. Tant qu’aucun fournisseur et aucune clé ne sont
-configurés, la composition affiche l’état non configuré et propose « Passer
-sans évaluer », enregistré comme `skipped` sans réussite. La transcription et sa
+configurés, la composition affiche une note d’auto-écoute et propose
+« Continuer », enregistré comme `skipped` sans réussite. La transcription et sa
 confiance restent descriptives : elles ne produisent aucune note de
 prononciation ou de ton sans rapport fournisseur. Les guides d’écriture sont
 validés localement. CloudKit est prévu mais inactif ; l’application affiche

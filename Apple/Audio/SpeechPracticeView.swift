@@ -336,11 +336,8 @@ public struct SpeechPracticeView: View {
                 )
                 .font(.headline)
                 .foregroundStyle(.orange)
-                Text(result.message ?? "Aucune analyse exploitable n’est disponible. Tu peux passer cet exercice sans le noter.")
+                Text(result.message ?? analysisStatusMessage(result.status))
                     .font(.callout)
-                    .foregroundStyle(.secondary)
-                Text("Aucun score de prononciation n’est déduit.")
-                    .font(.caption)
                     .foregroundStyle(.secondary)
             }
         }
@@ -403,7 +400,7 @@ public struct SpeechPracticeView: View {
     private func pronunciationStatusTitle(_ status: SpeechPronunciationStatus) -> String {
         switch status {
         case .completed: return "Analyse terminée"
-        case .unconfigured: return "Analyse non configurée"
+        case .unconfigured: return "Auto-écoute"
         case .unavailable: return "Analyse indisponible"
         case .failed: return "Analyse impossible"
         }
@@ -412,7 +409,7 @@ public struct SpeechPracticeView: View {
     private func pronunciationStatusIcon(_ status: SpeechPronunciationStatus) -> String {
         switch status {
         case .completed: return "questionmark.circle"
-        case .unconfigured: return "gearshape"
+        case .unconfigured: return "ear"
         case .unavailable: return "wifi.slash"
         case .failed: return "exclamationmark.triangle"
         }
@@ -705,7 +702,8 @@ public struct SpeechPracticeView: View {
                   let report = result.report,
                   report.isAutomaticallyEvaluable else {
                 answer = nil
-                statusMessage = result.message ?? analysisStatusMessage(result.status)
+                // Without a report the result card already shows this message.
+                statusMessage = result.report == nil ? nil : (result.message ?? analysisStatusMessage(result.status))
                 return
             }
             answer = .speech(SpeechAnswer(
@@ -744,13 +742,13 @@ public struct SpeechPracticeView: View {
     private func analysisStatusMessage(_ status: SpeechPronunciationStatus) -> String {
         switch status {
         case .completed:
-            return "Le fournisseur n’a pas permis de conclure. Tu peux passer cet exercice sans le noter."
+            return "Le fournisseur n’a pas permis de conclure. Tu peux continuer sans note."
         case .unconfigured:
-            return "Aucun fournisseur de prononciation n’est configuré. Tu peux passer cet exercice sans le noter."
+            return "L’évaluation automatique de la prononciation n’est pas encore disponible. Réécoute le modèle puis ta voix pour comparer, et continue quand tu es prêt·e."
         case .unavailable:
-            return "L’analyse de prononciation est indisponible. Tu peux passer cet exercice sans le noter."
+            return "L’analyse de prononciation est indisponible. Réécoute le modèle puis ta voix pour comparer, et continue quand tu es prêt·e."
         case .failed:
-            return "L’analyse de prononciation a échoué. Tu peux passer cet exercice sans le noter."
+            return "L’analyse de prononciation a échoué. Réécoute le modèle puis ta voix pour comparer, et continue quand tu es prêt·e."
         }
     }
 
@@ -766,13 +764,13 @@ public struct SpeechPracticeView: View {
     private func microphoneMessage(for permission: PermissionState) -> String {
         switch permission {
         case .denied:
-            return "Microphone refusé. Autorise-le dans Réglages, ou passe cet exercice sans l’évaluer."
+            return "Microphone refusé. Autorise-le dans Réglages, ou continue sans t’enregistrer."
         case .restricted:
-            return "Microphone restreint sur cet appareil. Passe cet exercice sans l’évaluer."
+            return "Microphone restreint sur cet appareil. Tu peux continuer sans t’enregistrer."
         case .unavailable:
-            return "Microphone indisponible sur cet appareil. Passe cet exercice sans l’évaluer."
+            return "Microphone indisponible sur cet appareil. Tu peux continuer sans t’enregistrer."
         default:
-            return "Microphone non disponible. Passe cet exercice sans l’évaluer."
+            return "Microphone non disponible. Tu peux continuer sans t’enregistrer."
         }
     }
 

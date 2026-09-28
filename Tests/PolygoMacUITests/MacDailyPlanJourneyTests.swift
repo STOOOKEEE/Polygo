@@ -134,15 +134,12 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         )
         assertFocusedChromeHidden()
 
-        // The next authored activity is optional oral practice. Passing it
-        // preserves the valid offline progression path while keeping the
-        // listening answer above a real scored interaction.
-        let skipOral = app.buttons.matching(NSPredicate(format: "label == %@", "Passer sans évaluer")).firstMatch
+        // The next authored activity is optional oral practice. Without a
+        // pronunciation provider, "Continuer" records it as skipped and moves
+        // on in one click, keeping the listening answer as the scored step.
+        let skipOral = app.buttons.matching(NSPredicate(format: "label == %@", "Continuer")).firstMatch
         XCTAssertTrue(skipOral.waitForExistence(timeout: timeout), "L’oral optionnel doit rester franchissable hors ligne")
         skipOral.click()
-        let continueAnyway = app.buttons.matching(NSPredicate(format: "label == %@", "Continuer malgré tout")).firstMatch
-        XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "Le passage oral doit conserver la progression")
-        continueAnyway.click()
 
         let readingDisclosure = app.buttons.matching(
             NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")

@@ -67,19 +67,27 @@ public struct OralView: View {
     private func submit() {
         if let evaluation { _ = evaluation; return }
         guard let exercise, let lessonID, let blockID else { return }
+        let submitted: ExerciseAnswer = hasEvaluableAnswer ? (answer ?? .skipped) : .skipped
         Task {
             evaluation = await model.evaluate(
                 .speaking(exercise),
-                answer: answer ?? .skipped,
+                answer: submitted,
                 lessonID: lessonID,
                 blockID: blockID
             )
         }
     }
 
+    /// Without an evaluable pronunciation assessment the exercise is recorded
+    /// as skipped, matching the lesson footer.
+    private var hasEvaluableAnswer: Bool {
+        if case .speech(let speech) = answer { return speech.pronunciationAssessment?.isEvaluable == true }
+        return false
+    }
+
     private var actionTitle: String {
         if evaluation != nil { return "Terminer" }
-        return answer == nil ? "Passer sans évaluer" : "Vérifier"
+        return hasEvaluableAnswer ? "Vérifier" : "Continuer"
     }
 }
 

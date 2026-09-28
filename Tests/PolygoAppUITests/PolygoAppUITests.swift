@@ -284,7 +284,7 @@ final class PolygoAppUITests: XCTestCase {
             if route.hasPrefix("oral/") {
                 XCTAssertTrue(app.buttons["model-audio-toggle"].waitForExistence(timeout: timeout),
                               "La route restaurée doit charger le vrai exercice oral")
-                XCTAssertTrue(button(exactly: "Passer sans évaluer").exists)
+                XCTAssertTrue(button(exactly: "Continuer").exists)
             } else {
                 XCTAssertTrue(element(containing: "Zone de tracé pour 你", type: .any)
                     .waitForExistence(timeout: timeout),

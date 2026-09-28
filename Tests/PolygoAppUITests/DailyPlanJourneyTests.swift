@@ -140,12 +140,11 @@ final class DailyPlanJourneyTests: XCTestCase {
         )
         assertFocusedChromeHidden()
 
-        let skipOral = button(exactly: "Passer sans évaluer")
+        // Without a pronunciation provider the optional oral step is recorded
+        // as skipped and left in a single tap.
+        let skipOral = button(exactly: "Continuer")
         XCTAssertTrue(skipOral.waitForExistence(timeout: timeout), "L’oral optionnel doit rester franchissable hors ligne")
         skipOral.tap()
-        let continueAnyway = button(exactly: "Continuer malgré tout")
-        XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "Le passage oral doit conserver la progression")
-        continueAnyway.tap()
 
         let readingDisclosure = app.buttons.matching(
             NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")

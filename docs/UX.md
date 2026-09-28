@@ -139,7 +139,7 @@ Contrat commun d’un exercice : `id` stable, `kind`, consigne française, conte
 - `sentenceOrder` : remettre des tuiles dans l’ordre, avec déplacement clavier ;
 - `fillBlank` : choisir le mot manquant dans une phrase courte ;
 - `speakPrompt` : écouter, enregistrer, réécouter puis demander l’analyse du
-  fournisseur ; si aucun fournisseur n’est configuré, passer sans évaluer ;
+  fournisseur ; si aucun fournisseur n’est configuré, « Continuer » passe sans évaluer ;
 - `writeCharacter` : tracer un caractère avec ordre de traits fourni ;
 - `reviewRecall` : révéler le verso, puis choisir `À refaire`, `Difficile`, `Bien` ou `Facile`.
 
@@ -153,7 +153,7 @@ La fiche conserve `wordID`, niveau de maîtrise, date de dernière réponse et p
 
 ### Oral
 
-Écran centré sur une seule phrase : caractère/pinyin, bouton d’écoute, bouton microphone. À la première utilisation, demander `AVAudioSession` avec une raison française claire. Pendant l’enregistrement : chronomètre, amplitude simple, « Arrêter ». Après : « Réécouter », « Refaire » et l’analyse. `SpeechPracticeView` transmet l’enregistrement temporaire à un `SpeechPronunciationService` injecté ; un rapport terminé peut afficher le verdict, le score et les détails par mot, son et ton. La transcription Apple et sa confiance restent descriptives et ne deviennent jamais une note de prononciation. Tant qu’aucun fournisseur et aucune clé ne sont configurés, l’état indique que l’analyse n’est pas configurée et « Passer sans évaluer » permet de poursuivre sans réussite ni score. Une permission refusée affiche le chemin Réglages et permet de continuer la leçon avec le même passage sans évaluation.
+Écran centré sur une seule phrase : caractère/pinyin, bouton d’écoute, bouton microphone. À la première utilisation, demander `AVAudioSession` avec une raison française claire. Pendant l’enregistrement : chronomètre, amplitude simple, « Arrêter ». Après : « Réécouter », « Refaire » et l’analyse. `SpeechPracticeView` transmet l’enregistrement temporaire à un `SpeechPronunciationService` injecté ; un rapport terminé peut afficher le verdict, le score et les détails par mot, son et ton. La transcription Apple et sa confiance restent descriptives et ne deviennent jamais une note de prononciation. Tant qu’aucun fournisseur et aucune clé ne sont configurés, une note « Auto-écoute » invite à comparer le modèle et sa voix, et « Continuer » enregistre l’exercice comme `skipped` et passe à la suite en un seul geste, sans réussite ni score. Une permission refusée affiche le chemin Réglages et permet de continuer la leçon avec le même passage sans évaluation.
 
 Le protocole, l’UI et les fixtures sont prêts pour un fournisseur externe, mais
 aucun compte, credential ou proxy n’est disponible ou activé dans la

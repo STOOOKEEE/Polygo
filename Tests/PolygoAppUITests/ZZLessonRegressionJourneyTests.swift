@@ -234,30 +234,25 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
         // Without a configured provider, the exercise remains explicitly
         // unevaluated. There is no synthetic learner rating and no false
-        // Correct feedback; the lesson offers a clear skip path instead.
+        // Correct feedback; "Continuer" records it as skipped in one tap.
         let resultDetails = button(exactly: "Voir les résultats")
         if resultDetails.waitForExistence(timeout: 3) {
             tapWhenVisible(resultDetails)
             XCTAssertTrue(
-                text(containingAny: ["aucun score de prononciation", "Résultat incertain", "Transcription locale", "ne mesurent pas tes phonèmes ni tes tons"]).waitForExistence(timeout: timeout),
+                text(containingAny: ["Auto-écoute", "Résultat incertain", "Transcription locale", "ne mesurent pas tes phonèmes ni tes tons"]).waitForExistence(timeout: timeout),
                 "Le détail oral doit rester descriptif et sans faux score"
             )
         }
         XCTAssertFalse(button(exactly: "À l’aise").exists, "L’oral ne doit plus proposer de bouton d’auto-évaluation")
         XCTAssertFalse(text(containing: "Correct").exists, "Une absence d’analyse ne doit pas produire un faux Correct")
-        let skip = button(exactly: "Passer sans évaluer")
-        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral doit proposer Passer sans évaluer")
-        XCTAssertTrue(skip.isEnabled, "Passer sans évaluer doit être disponible sans réponse audio")
+        let skip = button(exactly: "Continuer")
+        XCTAssertTrue(skip.waitForExistence(timeout: timeout), "L’oral doit proposer Continuer")
+        XCTAssertTrue(skip.isEnabled, "Continuer doit être disponible sans analyse de prononciation")
         attachScreenshot(named: "oral-result")
         // Capture the unconfigured-provider state under the stable review
-        // name before the explicit skip is submitted.
+        // name before the skip is submitted.
         attachScreenshot(named: "oralunconfigured")
         tapWhenVisible(skip)
-        XCTAssertTrue(text(containing: "Passé sans évaluation").waitForExistence(timeout: timeout), "L’état oral doit rester Non évalué après le passage")
-        XCTAssertFalse(text(containing: "Correct").exists, "Un oral passé sans évaluation ne doit pas être marqué Correct")
-        let continueAnyway = button(exactly: "Continuer malgré tout")
-        XCTAssertTrue(continueAnyway.waitForExistence(timeout: timeout), "La leçon doit permettre d’avancer après l’oral non évalué")
-        tapWhenVisible(continueAnyway)
         XCTAssertTrue(
             element(containing: "Zone de tracé pour 你", type: .any).waitForExistence(timeout: timeout),
             "Le passage sans évaluation doit mener à l’exercice d’écriture"
@@ -463,7 +458,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Passer sans évaluer", "Recommencer cette leçon", "Commencer les exercices"] {
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Recommencer cette leçon", "Commencer les exercices"] {
             let candidate = button(exactly: label)
             guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
             viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)

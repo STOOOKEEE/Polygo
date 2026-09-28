@@ -520,7 +520,7 @@ parcours oral actuel, la transcription et sa confiance sont descriptives ; une
 réponse orale n’est évaluable qu’avec un `SpeechPronunciationAssessment`
 terminé, portant le verdict du fournisseur et son score. Une absence de
 fournisseur, une erreur ou un résultat incertain conserve l’exercice sans note
-et l’action « Passer sans évaluer » produit `skipped`, qui ne compte pas comme
+et l’action « Continuer » produit `skipped`, qui ne compte pas comme
 une réussite. Le champ `allowSelfRating` reste décodable pour les anciens
 contenus, mais l’UI orale ne propose plus cette action. L’écriture conserve son
 propre chemin d’auto-évaluation et sa capture. Une implémentation ne doit

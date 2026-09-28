@@ -132,7 +132,7 @@ comme la validation de ce candidat.
 - [ ] Tester une voix Mandarin installée puis absente ; l’absence doit rester
   récupérable.
 - [ ] Tester microphone et Speech autorisés, refusés et indisponibles ;
-  `skipped` et « Passer sans évaluer » doivent rester disponibles.
+  `skipped` et « Continuer » doivent rester disponibles.
 - [ ] Vérifier VoiceOver, Dynamic Type, contraste, mode sombre et toucher manuel
   sur iPhone, iPad et Mac.
 - [x] Vérifier que l’état des réglages reste « Sur cet appareil » : CloudKit est

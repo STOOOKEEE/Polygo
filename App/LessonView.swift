@@ -549,9 +549,7 @@ public struct LessonView: View {
 
     private func actionTitle(for spec: ExerciseSpec) -> String {
         if evaluation == nil {
-            return answer == nil && canSkipWithoutEvaluation(spec)
-                ? "Passer sans évaluer"
-                : "Vérifier"
+            return continuesWithoutEvaluation(spec) ? "Continuer" : "Vérifier"
         }
         if evaluation?.accepted == true { return currentIndex + 1 < exercises.count ? "Continuer" : "Terminer" }
         return "Continuer malgré tout"
@@ -560,7 +558,7 @@ public struct LessonView: View {
     private func canSubmit(_ spec: ExerciseSpec) -> Bool {
         if evaluation != nil { return true }
         if answer != nil { return true }
-        return canSkipWithoutEvaluation(spec)
+        return continuesWithoutEvaluation(spec)
     }
 
     private func submitOrAdvance(spec: ExerciseSpec, blockID: BlockID) {
@@ -570,20 +568,28 @@ public struct LessonView: View {
             return
         }
         guard !isEvaluating else { return }
-        let answer = answer ?? .skipped
+        let skips = continuesWithoutEvaluation(spec)
+        let answer: ExerciseAnswer = skips ? .skipped : (self.answer ?? .skipped)
         isEvaluating = true
         Task { @MainActor in
             if let result = await model.evaluate(spec, answer: answer, lessonID: lessonID, blockID: blockID) {
-                self.evaluation = result
                 self.answered[spec.id] = result
+                // A speaking answer without an evaluable pronunciation
+                // assessment is recorded as skipped and leaves in one tap:
+                // there is no feedback to read.
+                if skips { advance() } else { self.evaluation = result }
             }
             self.isEvaluating = false
         }
     }
 
-    private func canSkipWithoutEvaluation(_ spec: ExerciseSpec) -> Bool {
-        if case .speaking = spec { return true }
-        return false
+    /// Speaking exercises have no scoring provider unless an evaluable
+    /// pronunciation assessment exists; without one they are recorded as
+    /// skipped instead of verified.
+    private func continuesWithoutEvaluation(_ spec: ExerciseSpec) -> Bool {
+        guard case .speaking = spec else { return false }
+        if case .speech(let speech) = answer, speech.pronunciationAssessment?.isEvaluable == true { return false }
+        return true
     }
 
     private func autoEvaluateSpeechIfReady(_ candidate: ExerciseAnswer?) {

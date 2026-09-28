@@ -84,8 +84,8 @@ Une transcription seule, même identique à la phrase cible, ne constitue pas
 une note de prononciation dans le parcours actuel. La vue ne crée une réponse
 évaluable qu’avec un rapport terminé qui contient son score de fournisseur ;
 un rapport incertain ou l’absence de fournisseur laisse l’exercice sans note.
-Le bouton « Passer sans évaluer » enregistre alors un état `skipped`, qui ne
-compte pas comme une réussite et permet de poursuivre la leçon. Dans les quatre
+Le bouton « Continuer » enregistre alors un état `skipped`, qui ne compte pas
+comme une réussite, et passe directement à l’exercice suivant. Dans les quatre
 leçons livrées, l’exercice oral est optionnel : `skipped` est compté séparément
 dans le bilan (`skippedCount`) et ne bloque ni la complétion fondée sur les
 exercices requis ni le déblocage de la leçon suivante.
@@ -112,7 +112,7 @@ elles ne sont pas converties en score de phonème ou de ton. Les variantes
 une transcription seule ne constitue pas une note dans le parcours oral actuel.
 Quand Speech n’est pas autorisé, quand le modèle local n’existe pas ou quand
 aucune transcription exploitable n’est fournie, `SpeechPracticeView` conserve
-l’état non évalué et propose clairement « Passer sans évaluer ».
+l’état non évalué et propose clairement « Continuer ».
 
 ## Permissions et traitement local
 
@@ -129,7 +129,7 @@ La transcription utilise exclusivement SFSpeechRecognizer avec
 requiresOnDeviceRecognition = true, après vérification de
 supportsOnDeviceRecognition. Il n’y a pas de repli réseau silencieux. Les
 erreurs transcriptionUnavailable, les permissions refusées et les voix
-manquantes laissent l’exercice utilisable avec « Passer sans évaluer » ; elles
+manquantes laissent l’exercice utilisable avec « Continuer » ; elles
 ne fabriquent ni note de prononciation ni auto-évaluation positive.
 
 ## Validation Apple
