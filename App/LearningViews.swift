@@ -761,7 +761,11 @@ private extension EnvironmentValues {
 /// depth, like a physical key.
 private struct PathNodeButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label.environment(\.pathNodePressed, configuration.isPressed)
+        // The whole row, including the gap between node and bubble, is the
+        // tap target; a custom style otherwise only hits drawn pixels.
+        configuration.label
+            .contentShape(Rectangle())
+            .environment(\.pathNodePressed, configuration.isPressed)
     }
 }
 
@@ -1074,7 +1078,6 @@ private struct LearningPathUnit: View {
             }
         }
         .frame(width: columnWidth)
-        .contentShape(Rectangle())
 
         Group {
             if unlocked {
