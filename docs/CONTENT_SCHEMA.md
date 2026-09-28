@@ -41,6 +41,7 @@ Content/
     hsk-legacy-examples-401-600.json   # exemples 401 à 600
   assets/
     handwriting/
+      ARPHICPL.TXT                     # licence des médianes Make Me a Hanzi
       guide-hanzi-ni.json
       guide-hanzi-wo.json
       guide-hanzi-guo.json
@@ -572,9 +573,9 @@ Les trois guides livrés sont :
 
 | ID | Chemin | SHA-256 |
 | --- | --- | --- |
-| guide-hanzi-ni | assets/handwriting/guide-hanzi-ni.json | 98b4465294f36f88570a3e89ca10dd1924f773b6448a32f910cc838f46aa42a9 |
-| guide-hanzi-wo | assets/handwriting/guide-hanzi-wo.json | 3c8c827dae6b75a1cf21ae6f2d0131034a0e0b8a532a68087b162f6600aed4d7 |
-| guide-hanzi-guo | assets/handwriting/guide-hanzi-guo.json | 09615063ef8928bf0c07de2c31965be525f4487b7bcc97c3483a57093f34a782 |
+| guide-hanzi-ni | assets/handwriting/guide-hanzi-ni.json | a4f80a7c3afae3f7bf666686bf8df6b42856ae4d9d6b7ce3a81487071cc1eeeb |
+| guide-hanzi-wo | assets/handwriting/guide-hanzi-wo.json | f5ef08d920b4dc9d394fd8c9a4fbbbbf2309d0092c1ee0976b711055114d9a64 |
+| guide-hanzi-guo | assets/handwriting/guide-hanzi-guo.json | b1273af6e93c964c2ef1ba0a4735e4d0a32552c2957f43b300e43f59ddbb196e |
 
 Le lot quotidien n'invente pas de fichiers audio. Ses champs audio sont null
 tant qu'un enregistrement et son hash ne sont pas livrés. promptText reste la

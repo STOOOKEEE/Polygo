@@ -75,15 +75,15 @@ locale reste géométrique et ciblée par guide.
 
 ## Guides livrés et raccord contenu
 
-Le contenu actuel utilise réellement `你`, `我` et `国`. Les fichiers sont
-originaux et décrivent des chemins de traits dans le même format Codable que
-`HandwritingGuide` :
+Le contenu actuel utilise réellement `你`, `我` et `国`. Les fichiers décrivent
+des chemins de traits dans le même format Codable que `HandwritingGuide` (le
+champ `notice`, ignoré par le décodeur, porte la mention de provenance) :
 
 | ID | Caractère | Traits | Chemin à mettre dans `AssetReference.relativePath` | SHA-256 |
 | --- | ---: | ---: | --- | --- |
-| `guide-hanzi-ni` | 你 | 7 | `assets/handwriting/guide-hanzi-ni.json` | `98b4465294f36f88570a3e89ca10dd1924f773b6448a32f910cc838f46aa42a9` |
-| `guide-hanzi-wo` | 我 | 7 | `assets/handwriting/guide-hanzi-wo.json` | `3c8c827dae6b75a1cf21ae6f2d0131034a0e0b8a532a68087b162f6600aed4d7` |
-| `guide-hanzi-guo` | 国 | 8 | `assets/handwriting/guide-hanzi-guo.json` | `09615063ef8928bf0c07de2c31965be525f4487b7bcc97c3483a57093f34a782` |
+| `guide-hanzi-ni` | 你 | 7 | `assets/handwriting/guide-hanzi-ni.json` | `a4f80a7c3afae3f7bf666686bf8df6b42856ae4d9d6b7ce3a81487071cc1eeeb` |
+| `guide-hanzi-wo` | 我 | 7 | `assets/handwriting/guide-hanzi-wo.json` | `f5ef08d920b4dc9d394fd8c9a4fbbbbf2309d0092c1ee0976b711055114d9a64` |
+| `guide-hanzi-guo` | 国 | 8 | `assets/handwriting/guide-hanzi-guo.json` | `b1273af6e93c964c2ef1ba0a4735e4d0a32552c2957f43b300e43f59ddbb196e` |
 
 Le chemin est relatif à la racine `Content/`. Pour activer les guides dans
 les trois leçons, remplacer seulement les chemins et les valeurs
@@ -92,10 +92,32 @@ tableau. Les compteurs `expectedStrokeCount` des leçons sont déjà 7, 7 et 8.
 Le loader de contenu vérifiera alors le fichier et son SHA-256 avant qu’une
 intégration puisse décoder le guide.
 
+### Provenance et licence
+
+Les chemins sont les médianes de traits de
+[Make Me a Hanzi](https://github.com/skishore/makemeahanzi) (`graphics.txt`,
+commit `bddc96d`, dérivé des polices Arphic PL KaitiM GB et Arphic PL UKai),
+distribuées sous l’Arphic Public License. Le texte de la licence est livré sans
+modification dans `Content/assets/handwriting/ARPHICPL.TXT`, et chaque fichier
+modifié (les trois JSON et le catalogue `HandwritingGuides.swift`) indique
+comment et quand il a été transformé, comme l’exige la licence.
+
+`python3 Tools/build_handwriting_guides.py` régénère les trois JSON et le
+catalogue embarqué : il télécharge `graphics.txt` au commit épinglé (ou lit
+`--graphics <fichier>`), vérifie son SHA-256, projette les coordonnées
+(boîte de 1024, y vers le haut, ligne de base 900) dans le carré unitaire avec
+une marge fixe de 0,1, conserve l’ordre et le sens des traits, simplifie les
+points par Ramer-Douglas-Peucker (crochets et angles conservés) et applique
+les noms de traits (横, 竖, 撇, 点, 提, 横钩, 竖钩, 斜钩, 横折) déclarés dans
+l’outil. Il affiche les nouveaux SHA-256 à reporter dans les leçons 1 à 3 et
+dans les tableaux de cette page et de `CONTENT_SCHEMA.md`.
+
 ## Vérification et limites
 
-Les trois fichiers JSON ont été validés avec le parseur JSON local et leurs
-hashes sont ceux du tableau. La compilation SwiftUI et les tests de gestes
+Les trois fichiers JSON ont été validés par `content_tool.py lint` et leurs
+hashes sont ceux du tableau. Une simulation Python du validateur confirme que
+les gestes rectilignes des tests UI (premier → dernier point de chaque trait)
+passent la porte guidée pour 你 et 我. La compilation SwiftUI et les tests de gestes
 doivent être exécutés sur la CI Apple, puisque l’environnement Linux ne
 fournit ni SwiftUI ni les SDK iOS/macOS. Le corpus volontairement réduit
 retourne « guide indisponible » pour tout autre caractère ; il n’y a pas de
