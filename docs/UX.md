@@ -97,9 +97,13 @@ Une action ouvre une route identifiée (`lessonID`, `reviewQueueID`, `mistakeFil
 
 ### Parcours
 
-Le parcours forme un chemin vertical sinueux centré sur les trois plateformes. Un en-tête compact présente le palier et Tavi ; le titre complet, la description et les références du cours restent accessibles dans « À propos de ce parcours ». Les lignes alternent nœuds colorés et libellés, sans grandes cartes grises ; les tailles d’accessibilité reprennent une composition plus verticale.
+Le parcours est une carte de progression dans une colonne centrée (520 pt max) sur les trois plateformes. Une carte d’en-tête compacte affiche « TON CHEMIN », le compte « N sur M terminées » et une barre de progression ; le palier du programme, le titre complet, la description et les références du cours restent dans « À propos de ce parcours ».
 
-Chaque nœud porte une icône liée au thème de la leçon. Les connecteurs sont décoratifs et ne recouvrent pas les cibles. La rangée entière d’une leçon déverrouillée ouvre cette leçon ; un nœud verrouillé conserve sa couleur, son cadenas et sa condition textuelle, et reste non interactif.
+Chaque unité s’ouvre sur une bannière pleine couleur (accent tournant de la palette) avec la pastille de son numéro, son titre, son nombre d’étapes et d’étapes terminées. Tavi est posé sur la bannière de la première unité et de celle qui contient l’étape actuelle. Un grand Hanzi de l’unité apparaît en filigrane (≈ 5 %), masqué pour l’accessibilité.
+
+Les nœuds suivent une sinusoïde douce reliée par une piste épaisse et courbe : couleur de l’unité jusqu’à la dernière étape terminée, gris ensuite. Chaque nœud est un bouton rond en relief (face en dégradé, socle plus sombre qui s’enfonce à l’appui) avec l’icône du thème de la leçon ; terminé : badge coche ; verrouillé : gris et cadenas. Les titres ne sont pas affichés à côté de chaque nœud : l’étape actuelle porte un anneau de progression des exercices et une bulle « titre + Commencer / Continuer · Exercice n sur m ». Un tap sur un nœud déverrouillé ouvre directement la leçon ; un tap sur un nœud verrouillé affiche une bulle « Termine l’étape précédente pour la déverrouiller » sans action. Un coffre décoratif clôt chaque unité, doré quand toutes ses leçons sont terminées (« Fin de l’unité · terminée / à compléter »), sans récompense associée.
+
+À l’ouverture, le parcours défile jusqu’à l’étape actuelle ; quand elle sort de l’écran, un bouton flottant « Revenir à l’étape actuelle » (flèche vers elle) y ramène. Chaque nœud reste un seul élément d’accessibilité « titre, statut, progression » (identifiant `learningPath.lesson.<id>`) ; Réduire les animations supprime les transitions de défilement et d’appui, et les tailles de nœuds et de bulles suivent Dynamic Type.
 
 La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
