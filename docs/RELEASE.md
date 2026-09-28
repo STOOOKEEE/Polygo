@@ -89,9 +89,10 @@ captures du dépôt en proviennent (iPhone 16 Pro réduit à 603 × 1311, Mac
 | [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `9f4349e4a0144d2540ae09884d7d5b75e04ce9e1b070c0be64d349eb2194be20` |
 | [séance J2 Mac](screenshots/daily-plan-day-two-macos.png) | 1600 × 900 | `18a7d16bf79231ce34eea900b00b5fbc262461ca9cd91b7eba7f0e3692422784` |
 
-Les deux captures de dialogue (écran d’intro) proviennent du
-[run 36356598582](https://github.com/STOOOKEEE/Polygo/actions/runs/36356598582)
-sur `b6f9e9c`.
+Les deux captures de dialogue (écran d’intro, pinyin et traduction masqués par
+défaut) proviennent du
+[run 36446200223](https://github.com/STOOOKEEE/Polygo/actions/runs/36446200223)
+sur `cc01093`.
 
 Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
 Apple, les méthodes UI, l’audit VoiceOver/Dynamic Type sur appareil, les
