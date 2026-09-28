@@ -781,6 +781,8 @@ private struct DialogueBlockView: View {
     @State private var playbackToken = UUID()
     @State private var playbackMessage: String?
     @State private var playbackTask: Task<Void, Never>?
+    /// Lines whose pinyin and translation are shown; Hanzi only by default.
+    @State private var revealedLines: Set<Int> = []
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -816,6 +818,26 @@ private struct DialogueBlockView: View {
                 .accessibilityHint("Lit chaque réplique dans l’ordre en mandarin.")
             }
 
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                Text("Touche une réplique pour voir le pinyin et la traduction.")
+                    .font(.caption)
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 6)
+                Button(allRevealed ? "Tout masquer" : "Tout afficher") {
+                    revealedLines = allRevealed ? [] : Set(revealableLines)
+                }
+                .font(.caption.weight(.semibold))
+                .buttonStyle(.borderless)
+                .tint(SylluneColor.sky)
+                .accessibilityIdentifier("dialogue.revealAll")
+                .accessibilityHint(
+                    allRevealed
+                        ? "Masque le pinyin et la traduction de toutes les répliques."
+                        : "Affiche le pinyin et la traduction de toutes les répliques."
+                )
+            }
+
             VStack(spacing: 10) {
                 ForEach(Array(value.lines.enumerated()), id: \.offset) { index, line in
                     dialogueBubble(line, index: index)
@@ -846,6 +868,7 @@ private struct DialogueBlockView: View {
         }
         .padding(14)
         .sylluneCard(radius: 16)
+        .onChange(of: value.id) { _, _ in revealedLines = [] }
         .onDisappear {
             playbackTask?.cancel()
             playbackTask = nil
@@ -883,12 +906,24 @@ private struct DialogueBlockView: View {
 
     private var isSolved: Bool { responseResult == true }
 
+    /// Lines the learner can reveal: every line except the missing one
+    /// until the participation is solved.
+    private var revealableLines: [Int] {
+        value.lines.indices.filter { isSolved || $0 != answerLineIndex }
+    }
+
+    private var allRevealed: Bool {
+        let lines = revealableLines
+        return !lines.isEmpty && lines.allSatisfy { revealedLines.contains($0) }
+    }
+
     private func dialogueBubble(_ line: DialogueLine, index: Int) -> some View {
         let isLeading = line.speaker == speakers.first
         let isMasked = !isSolved && index == answerLineIndex
         let isCurrent = playingLineIndex == index
         let accent = isLeading ? SylluneColor.pathJade : SylluneColor.pathSky
         let alignment: HorizontalAlignment = isLeading ? .leading : .trailing
+        let textAlignment: TextAlignment = isLeading ? .leading : .trailing
         return HStack(spacing: 0) {
             if !isLeading { Spacer(minLength: 40) }
             VStack(alignment: alignment, spacing: 4) {
@@ -897,46 +932,54 @@ private struct DialogueBlockView: View {
                     .foregroundStyle(SylluneColor.inkMuted)
                     .accessibilityLabel("Locuteur \(line.speaker)")
                 if isMasked {
-                    Text("？？？")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(SylluneColor.inkMuted)
-                        .accessibilityHidden(true)
-                    Text("Réplique manquante")
-                        .font(.caption)
-                        .foregroundStyle(SylluneColor.inkMuted)
+                    VStack(alignment: alignment, spacing: 4) {
+                        Text("？？？")
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(SylluneColor.inkMuted)
+                            .accessibilityHidden(true)
+                        Text("Réplique manquante")
+                            .font(.caption)
+                            .foregroundStyle(SylluneColor.inkMuted)
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityIdentifier("dialogue.line.\(index)")
                 } else {
+                    let isRevealed = revealedLines.contains(index)
+                    let translation = line.translation.resolve(preferred: languageCodes) ?? ""
                     HStack(alignment: .top, spacing: 6) {
                         Button {
-                            playLine(line, index: index)
+                            if isRevealed { revealedLines.remove(index) } else { revealedLines.insert(index) }
                         } label: {
-                            Text(line.hanzi)
-                                .font(.title3.weight(.semibold))
-                                .foregroundStyle(SylluneColor.ink)
-                                .multilineTextAlignment(isLeading ? .leading : .trailing)
-                                .fixedSize(horizontal: false, vertical: true)
+                            VStack(alignment: alignment, spacing: 4) {
+                                Text(line.hanzi)
+                                    .font(.title3.weight(.semibold))
+                                    .foregroundStyle(SylluneColor.ink)
+                                if isRevealed && !line.pinyin.isEmpty {
+                                    Text(line.pinyin)
+                                        .font(.caption)
+                                        .foregroundStyle(SylluneColor.jadeDeep)
+                                }
+                                if isRevealed && !translation.isEmpty {
+                                    Text(translation)
+                                        .font(.callout)
+                                        .foregroundStyle(SylluneColor.inkMuted)
+                                }
+                            }
+                            .multilineTextAlignment(textAlignment)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(line.hanzi)
-                        .accessibilityHint("Écoute cette réplique en mandarin.")
+                        .accessibilityIdentifier("dialogue.line.\(index)")
+                        .accessibilityLabel(
+                            isRevealed
+                                ? [line.hanzi, "Pinyin : \(line.pinyin)", "Traduction : \(translation)"].joined(separator: ". ")
+                                : line.hanzi
+                        )
+                        .accessibilityHint("Affiche le pinyin et la traduction")
+                        .accessibilityValue(isRevealed ? "Pinyin et traduction affichés" : "Pinyin et traduction masqués")
 
                         lineAudioButton(line, index: index)
-                    }
-                    if !line.pinyin.isEmpty {
-                        Text(line.pinyin)
-                            .font(.caption)
-                            .foregroundStyle(SylluneColor.jadeDeep)
-                            .multilineTextAlignment(isLeading ? .leading : .trailing)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .accessibilityLabel("Pinyin : \(line.pinyin)")
-                    }
-                    if let translation = line.translation.resolve(preferred: languageCodes),
-                       !translation.isEmpty {
-                        Text(translation)
-                            .font(.callout)
-                            .foregroundStyle(SylluneColor.inkMuted)
-                            .multilineTextAlignment(isLeading ? .leading : .trailing)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .accessibilityLabel("Traduction : \(translation)")
                     }
                 }
             }
@@ -949,9 +992,6 @@ private struct DialogueBlockView: View {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(isCurrent ? accent : Color.clear, lineWidth: 2)
             )
-            .accessibilityElement(children: .contain)
-            .accessibilityIdentifier("dialogue.line.\(index)")
-            .accessibilityValue(isMasked ? "Réplique manquante" : (isCurrent ? "En lecture" : ""))
             if isLeading { Spacer(minLength: 40) }
         }
     }
