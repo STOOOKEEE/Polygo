@@ -522,6 +522,7 @@ public struct LearningPathView: View {
     @Environment(\.sylluneReduceMotion) private var reduceMotion
     @State private var revealedLockedLessonID: LessonID?
     @State private var currentNodeRealized = false
+    @State private var currentNodeFitsWithBubble = false
     @State private var currentNodeVisible = true
     @State private var currentNodeIsAbove = false
 
@@ -574,7 +575,7 @@ public struct LearningPathView: View {
                 }
                 .task(id: currentLessonID) {
                     guard let currentLessonID else { return }
-                    await scrollToLesson(currentLessonID, proxy: proxy, animated: false)
+                    await revealLesson(currentLessonID, proxy: proxy)
                 }
             }
         }
@@ -692,6 +693,8 @@ public struct LearningPathView: View {
     /// frame means its lazy unit is not realized, hence off-screen.
     private func updateCurrentNode(_ frame: CGRect?, viewportHeight: CGFloat) {
         currentNodeRealized = frame != nil
+        // Room below the node for its bubble (~140 pt).
+        currentNodeFitsWithBubble = frame.map { $0.minY >= 0 && $0.maxY + 140 <= viewportHeight } ?? false
         let visible = frame.map { $0.maxY > 0 && $0.minY < viewportHeight } ?? false
         if let frame, !visible {
             currentNodeIsAbove = frame.midY < 0
@@ -700,6 +703,16 @@ public struct LearningPathView: View {
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             currentNodeVisible = visible
         }
+    }
+
+    /// Opening the path keeps the header in view when the current step and
+    /// its bubble already fit; otherwise it centers the current step.
+    @MainActor
+    private func revealLesson(_ lessonID: LessonID, proxy: ScrollViewProxy) async {
+        // Give the lazy stack a layout pass to report the current node.
+        try? await Task.sleep(for: .milliseconds(50))
+        guard !Task.isCancelled, !currentNodeFitsWithBubble else { return }
+        await scrollToLesson(lessonID, proxy: proxy, animated: false)
     }
 
     @MainActor
@@ -865,7 +878,7 @@ private struct LearningPathUnit: View {
     private var nodeDiameter: CGFloat { min(scaledNodeDiameter, 116) }
     private var nodeFrame: CGFloat { nodeDiameter + 22 }
     private var amplitude: CGFloat { max(0, min(100, (columnWidth - nodeFrame) / 2 - 8)) }
-    private var bubbleWidth: CGFloat { max(0, min(270, columnWidth - 16)) }
+    private var bubbleWidth: CGFloat { max(0, min(300, columnWidth - 16)) }
 
     var body: some View {
         let completedCount = module.lessonIDs.filter {
