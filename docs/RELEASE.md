@@ -78,12 +78,12 @@ captures du dépôt en proviennent (iPhone 16 Pro réduit à 603 × 1311, Mac
 | Capture | Dimensions | SHA-256 |
 | --- | --- | --- |
 | [accueil iPhone](screenshots/home-ios.png) | 603 × 1311 | `7f987f2227d4d998167fe2f02a50ab217c521ef15a2d17f488241f8b4dc03bdf` |
-| [parcours iPhone sombre](screenshots/roadmap-ios-dark.png) | 603 × 1311 | `9a3d0502c680bcf7cbabecf0c05a8d92032c1c7b57b7ecd8fbe4615589b2371f` |
+| [parcours iPhone sombre](screenshots/roadmap-ios-dark.png) | 603 × 1311 | `bb913f675648e30b93ac998e9d10b1662dbb0b86cef47e4acae31ca22ffe3b70` |
 | [dialogue iPhone](screenshots/dialogue-ios.png) | 603 × 1311 | `08c52cd8fb72b7e2bea4d44176695758d0f937c8464318aa66f28d3e22ab50d7` |
 | [pièces après complétion](screenshots/coins-roadmap-ios.png) | 603 × 1311 | `21026287c38b580406287a56666bfab24d3d796983499d15df23f485ee6d6287` |
 | [écriture guidée iPhone](screenshots/handwriting-guided-ios.png) | 603 × 1311 | `fd3b30a7cb7a9fadad35ed8ca93376a9c9f0965c1356020136a8f592e63fa184` |
 | [accueil Mac](screenshots/home-macos-dark.png) | 1600 × 900 | `d263f2c133fc7dce38595014a40074fa1f3955e3516ac67c645e221f31240881` |
-| [parcours Mac](screenshots/roadmap-macos-dark.png) | 1600 × 900 | `f6c9e2c96987dd6ed378aadf2d51feef8374fe549432c51bbc9d58e6b6d6407e` |
+| [parcours Mac](screenshots/roadmap-macos-dark.png) | 1600 × 900 | `e51f63782e920de68bc98a06a2287dcddde40cdab4af6dd62ebd1197f57eaf99` |
 | [dialogue Mac](screenshots/dialogue-macos-dark.png) | 1600 × 900 | `69d4203a46768de3ab9a19fcef5e62f0b5356b00db05ef05a30f294f61aa6868` |
 | [séance J1 Mac](screenshots/daily-plan-day-one-macos.png) | 1600 × 900 | `67bd9b0ce8df676e8faf30d8b9191ef4bba4e3cfec78297cce7d0ca897bcfbe0` |
 | [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `9f4349e4a0144d2540ae09884d7d5b75e04ce9e1b070c0be64d349eb2194be20` |
