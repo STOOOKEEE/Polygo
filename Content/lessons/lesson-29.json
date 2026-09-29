@@ -712,7 +712,289 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l29-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "promptText": "穿",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "vendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "porter (un vêtement)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "être éloigné de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bon marché"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l29-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 贵 (guì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "cher"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "être éloigné de"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "content ; heureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bon marché"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l29-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « classificateur des vêtements ou affaires » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "贵 (guì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "会 (huì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "两 (liǎng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "件 (jiàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l29-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "promptText": "卖",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "être éloigné de"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "content ; heureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "vendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "deux (quantité)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l29-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 元 (yuán) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "cher"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "yuan"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "bon marché"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "être éloigné de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 25
       }
@@ -766,8 +1048,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l29-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这件衣服多少钱？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Combien coûte ce vêtement ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ces affaires sont sur la table."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Trois cents yuans, mais celui-là est moins cher."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 25
       }
     },
@@ -796,8 +1128,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l29-order-2",
+          "prompt": {
+            "fr": "Construis « Ce vêtement est bon marché »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "便宜",
+            "pinyin": "pián yi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这件衣服很便宜。",
+          "这件衣服很便宜"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l29-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "promptText": "三百元，但是那件比较便宜。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce vêtement est trop cher."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ce vêtement est bon marché."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Trois cents yuans, mais celui-là est moins cher."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l29-fill-2",
+          "prompt": {
+            "fr": "Complète : 她___红衣服。 (« Elle porte des vêtements rouges »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "sentence": "她___红衣服。",
+        "acceptedAnswers": [
+          "穿"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l29-order-3",
+          "prompt": {
+            "fr": "Construis « Quelle couleur portes-tu ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "颜色",
+            "pinyin": "yán sè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "穿",
+            "pinyin": "chuān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "你穿什么颜色？",
+          "你穿什么颜色"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l29-fill-3",
+          "prompt": {
+            "fr": "Complète : 商店里有___件衣服：红的很贵，白的比较便宜。 (« Dans le magasin, il y a deux vêtements : le rouge est cher et le blanc est moins cher »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "sentence": "商店里有___件衣服：红的很贵，白的比较便宜。",
+        "acceptedAnswers": [
+          "两"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l29-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Au magasin », que signifie : 顾客找小的衣服，最后买了两件，一共三百元。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Dans le magasin, il y a deux vêtements : le rouge est cher et le blanc est moins cher."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le client cherche de petits vêtements et en achète finalement deux, pour trois cents yuans au total."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "D’accord, les vêtements près de la porte sont tous ici."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 25
       }
     },
@@ -846,7 +1466,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 25
       }
@@ -878,7 +1498,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 25
       }
@@ -927,7 +1547,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 25
       }

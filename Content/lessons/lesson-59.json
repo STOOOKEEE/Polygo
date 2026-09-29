@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "坏",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "vieux ; ancien"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "identique ; pareil"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "simple"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mauvais ; cassé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 简单 (jiǎn dān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "mauvais ; cassé"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "avoir peur"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "simple"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "identique ; pareil"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « vieux ; usagé » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "坏 (huài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "旧 (jiù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "害怕 (hài pà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "简单 (jiǎn dān)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "老",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "vieux ; ancien"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mauvais ; cassé"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avoir peur"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "gâteau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 相同 (xiāng tóng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "simple"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vieux ; ancien"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "gâteau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "identique ; pareil"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 55
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "以前我很害怕，因为灯很少。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Avant, j’avais très peur parce qu’il y avait peu de lampes."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Maintenant il y a davantage de lampes et la vieille maison est toujours là."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 55
       }
     },
@@ -612,8 +944,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l59-order-2",
+          "prompt": {
+            "fr": "Construis « L’enfant a peur du noir »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "黑",
+            "pinyin": "hēi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "害怕",
+            "pinyin": "hài pà",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "孩子害怕黑。",
+          "孩子害怕黑"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "那座老房子虽然旧，但是没有坏。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le gâteau d’anniversaire est délicieux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il faut faire attention en traversant la rue."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l59-fill-2",
+          "prompt": {
+            "fr": "Complète : 这个杯子___了。 (« Ce verre est cassé »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这个杯子___了。",
+        "acceptedAnswers": [
+          "坏"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l59-order-3",
+          "prompt": {
+            "fr": "Construis « Ce problème est très simple »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "简单",
+            "pinyin": "jiǎn dān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "问题",
+            "pinyin": "wèn tí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这个问题很简单。",
+          "这个问题很简单"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l59-fill-3",
+          "prompt": {
+            "fr": "Complète : 现在路灯更多了，___房子也还在。 (« Maintenant il y a davantage de lampes et la vieille maison est toujours là »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "sentence": "现在路灯更多了，___房子也还在。",
+        "acceptedAnswers": [
+          "旧"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这是一张旧照片。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu as peur de marcher dans cette rue ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "C’est une vieille photo."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce verre est cassé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 55
       }
     },
@@ -662,7 +1275,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 55
       }
@@ -695,7 +1308,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 55
       }
@@ -744,7 +1357,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 55
       }

@@ -1117,7 +1117,289 @@
         "correctChoiceID": "c"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l7-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "promptText": "爸爸",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "maman"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "être à ; se trouver"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "papa"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l7-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 的 (de) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tu ; vous"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mois ; lune"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "particule de détermination"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "maison ; famille"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l7-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « fils » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "今天 (jīn tiān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "儿子 (ér zi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "妈妈 (mā ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "女儿 (nǚ ér)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l7-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "promptText": "几",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "combien (petit nombre)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "neuf"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "être ; c'est"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l7-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 她 (tā) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jour ; date"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "tu ; vous"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fille"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "elle"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 3
       }
@@ -1171,8 +1453,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l7-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天是几月几日？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Son fils est à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous sommes le 3 septembre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Quelle date sommes-nous ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 3
       }
     },
@@ -1201,8 +1533,275 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l7-order-2",
+          "prompt": {
+            "fr": "Construis « Mon père est à la maison »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "爸爸",
+            "pinyin": "bà ba",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我爸爸在家。",
+          "我爸爸在家"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l7-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天是九月三日。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ma fille est à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous sommes le 3 septembre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous sommes lundi aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l7-fill-2",
+          "prompt": {
+            "fr": "Complète : 这___我的书。 (« C’est mon livre »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这___我的书。",
+        "acceptedAnswers": [
+          "是"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l7-order-3",
+          "prompt": {
+            "fr": "Construis « Ma fille est à la maison »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "女儿",
+            "pinyin": "nǚ ér",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我的女儿在家。",
+          "我的女儿在家"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l7-fill-3",
+          "prompt": {
+            "fr": "Complète : 她的___在家，我的女儿在家。 (« Son fils et ma fille sont à la maison »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "sentence": "她的___在家，我的女儿在家。",
+        "acceptedAnswers": [
+          "儿子"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l7-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 我妈妈和我爸爸在家。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l7-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ma maman et mon papa sont à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ma fille est à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce mois-ci est très chargé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 3
       }
     },
@@ -1251,7 +1850,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 3
       }
@@ -1283,7 +1882,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 3
       }
@@ -1332,7 +1931,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 3
       }

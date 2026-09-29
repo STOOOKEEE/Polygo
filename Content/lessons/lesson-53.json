@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l53-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "promptText": "担心",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bien sûr"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "s’inquiéter"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "endroit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "apparaître"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l53-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 当然 (dāng rán) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bien sûr"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bas"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ville"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "endroit"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l53-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « bas » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "打算 (dǎ suàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "地方 (dì fāng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "当然 (dāng rán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "低 (dī)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l53-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "promptText": "地方",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bas"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bien sûr"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "endroit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "être en retard"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l53-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 城市 (chéng shì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "être en retard"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "ville"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "apparaître"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "s’inquiéter"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 49
       }
@@ -577,8 +859,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l53-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你打算在哪里开会？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Où comptes-tu tenir la réunion ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "C’est un bon endroit."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comme la réunion est tôt, il est arrivé en avance."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 49
       }
     },
@@ -607,8 +939,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l53-order-2",
+          "prompt": {
+            "fr": "Construis « J’ai l’intention d’aller au parc demain »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "打算",
+            "pinyin": "dǎ suàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我打算明天去公园。",
+          "我打算明天去公园"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l53-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你担心桌子太低吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Où comptes-tu tenir la réunion ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai l’intention d’aller au parc demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tu crains que la table soit trop basse ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l53-fill-2",
+          "prompt": {
+            "fr": "Complète : 妈妈___孩子。 (« Maman s’inquiète pour l’enfant »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "sentence": "妈妈___孩子。",
+        "acceptedAnswers": [
+          "担心"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l53-order-3",
+          "prompt": {
+            "fr": "Construis « Cette table est trop basse »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "低",
+            "pinyin": "dī",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "张",
+            "pinyin": "zhāng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "太",
+            "pinyin": "tài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这张桌子太低。",
+          "这张桌子太低"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l53-fill-3",
+          "prompt": {
+            "fr": "Complète : 桌子虽然有点___，但是地方很方便。 (« Même si la table est un peu basse, l’endroit est pratique »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "sentence": "桌子虽然有点___，但是地方很方便。",
+        "acceptedAnswers": [
+          "低"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l53-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une salle prête à temps », que signifie : 因为会议很早，所以他提前到了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Même si la table est un peu basse, l’endroit est pratique."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Comme la réunion est tôt, il est arrivé en avance."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Où comptes-tu tenir la réunion ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 49
       }
     },
@@ -657,7 +1284,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 49
       }
@@ -690,7 +1317,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 49
       }
@@ -739,7 +1366,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 49
       }

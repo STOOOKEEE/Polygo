@@ -587,7 +587,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l35-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "promptText": "包",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "lampe ; lumière"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "voir ; apercevoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "retourner ; revenir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sac ; paquet"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l35-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 厨房 (chú fáng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "sac ; paquet"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "apporter ; emmener"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "cuisine"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "réfrigérateur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l35-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « apporter ; emmener » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "灯 (dēng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "带 (dài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "买 (mǎi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "回 (huí)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l35-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "promptText": "灯",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "lampe ; lumière"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "apporter ; emmener"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ascenseur"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "réfrigérateur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l35-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 电梯 (diàn tī) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "sac ; paquet"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "lampe ; lumière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "réfrigérateur"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "ascenseur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 31
       }
@@ -641,8 +923,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l35-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你带什么回家？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Qu’as-tu rapporté à la maison ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je rentre à la maison l’après-midi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je veux acheter des pommes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 31
       }
     },
@@ -671,8 +1003,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l35-order-2",
+          "prompt": {
+            "fr": "Construis « Il y a un livre dans le sac »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l35-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "本",
+            "pinyin": "běn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "包",
+            "pinyin": "bāo",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "包里有一本书。",
+          "包里有一本书"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l35-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我带一个包，里面有菜。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai vu le professeur."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je rentre à la maison l’après-midi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’ai rapporté un sac qui contient des légumes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l35-fill-2",
+          "prompt": {
+            "fr": "Complète : 牛奶在___里。 (« Le lait est dans le réfrigérateur »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l35-produce"
+          ],
+          "required": true
+        },
+        "sentence": "牛奶在___里。",
+        "acceptedAnswers": [
+          "冰箱"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l35-order-3",
+          "prompt": {
+            "fr": "Construis « La lampe de la cuisine éclaire bien »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l35-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "亮",
+            "pinyin": "liàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "灯",
+            "pinyin": "dēng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "厨房",
+            "pinyin": "chú fáng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "厨房的灯很亮。",
+          "厨房的灯很亮"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l35-fill-3",
+          "prompt": {
+            "fr": "Complète : ___在门外，他下楼再拿一个包。 (« L’ascenseur est devant la porte ; il redescend chercher un autre sac »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l35-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___在门外，他下楼再拿一个包。",
+        "acceptedAnswers": [
+          "电梯"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 31
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l35-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l35-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 冰箱在厨房吗？"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l35-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a un livre dans le sac."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le réfrigérateur est-il dans la cuisine ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Allume la lumière, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 31
       }
     },
@@ -721,7 +1355,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 31
       }
@@ -753,7 +1387,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 31
       }
@@ -802,7 +1436,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 31
       }

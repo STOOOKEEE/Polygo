@@ -486,7 +486,11 @@ Une note de grammaire d'authoring a la forme :
 Un blueprint utilise vocabularyIDs pour le catalogue et extraVocabulary pour
 les mots de contexte. Le tableau exercises conserve les champs de la famille
 choisie ; le générateur ajoute ensuite le header, le kind et l'ExerciseBlock au
-document runtime.
+document runtime. Il complète aussi les six exercices écrits par douze exercices
+dérivés du matériel de la leçon (`Tools/exercise_expansion.py`), pour un total de
+15 à 20 exercices par leçon quotidienne. Le `metadata.stage` de chaque bloc
+d'exercice vaut `discover`, `guided` ou `reuse` et les phases se suivent dans
+cet ordre ; voir CONTENT_AUTHORING.md, « Budget d'exercices ».
 
 La chaîne de release est :
 

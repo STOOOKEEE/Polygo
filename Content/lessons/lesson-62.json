@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "明白",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jupe"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chaussure"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comprendre ; clair"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "étrange"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 难 (nán) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chapeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "difficile"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chaussure"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "satisfait"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « gros ; corpulent » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "胖 (pàng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "难 (nán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "鞋 (xié)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "明白 (míng bái)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "奇怪",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "satisfait"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jupe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "difficile"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "étrange"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 帽子 (mào zi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "satisfait"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chaussure"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chapeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jupe"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 58
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我不太满意，但是这条路比较难。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je ne suis pas très satisfait, mais cette route est assez difficile."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le client est très satisfait de ce vêtement."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Prenons l’autre côté, c’est plus facile par là."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 58
       }
     },
@@ -612,8 +944,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l62-order-2",
+          "prompt": {
+            "fr": "Construis « Tu comprends ce que je veux dire ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "意思",
+            "pinyin": "yì si",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "明白",
+            "pinyin": "míng bai",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "你明白我的意思吗？",
+          "你明白我的意思吗"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "那个胖叔叔也在找车站。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cet exercice n’est pas difficile."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ce chapeau ne me va pas."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cet oncle corpulent cherche aussi la gare."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l62-fill-2",
+          "prompt": {
+            "fr": "Complète : 顾客对这件衣服很___。 (« Le client est très satisfait de ce vêtement »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "sentence": "顾客对这件衣服很___。",
+        "acceptedAnswers": [
+          "满意"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l62-order-3",
+          "prompt": {
+            "fr": "Construis « Cet exercice n’est pas difficile »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "难",
+            "pinyin": "nán",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "练习",
+            "pinyin": "liàn xí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这个练习不难。",
+          "这个练习不难"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l62-fill-3",
+          "prompt": {
+            "fr": "Complète : 这只猫有点___。 (« Ce chat est un peu gros »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这只猫有点___。",
+        "acceptedAnswers": [
+          "胖"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l62-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这个问题有点奇怪。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cet exercice n’est pas difficile."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette question est un peu étrange."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce chat est un peu gros."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 58
       }
     },
@@ -662,7 +1289,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 58
       }
@@ -695,7 +1322,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 58
       }
@@ -744,7 +1371,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 58
       }

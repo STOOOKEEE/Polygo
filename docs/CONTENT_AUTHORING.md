@@ -4,6 +4,8 @@ Le contenu linguistique est écrit dans un pack d'authoring puis transformé en
 JSON embarqué par `Tools/content_tool.py`. Le générateur ne produit aucun
 hanzi, pinyin, exemple ou scénario : chaque entrée doit venir du pack fourni
 par l'équipe contenu. Il ne remplace pas non plus la validation linguistique.
+Les exercices supplémentaires d'une séance (voir « Budget d'exercices ») sont
+seulement recombinés à partir de ce matériel.
 
 Le pack contient quatre clés racines, plus un lexique partagé :
 
@@ -82,6 +84,46 @@ Les champs linguistiques sont les suivants :
   `promptText` permet l'écoute Mandarin TTS quand aucun asset réel n'est livré.
   Un exercice oral reste facultatif (`required: false`) tant qu'aucun service
   de prononciation n'est configuré.
+
+## Budget d'exercices d'une séance quotidienne
+
+Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 dans
+le contenu actuel) répartis en trois phases ordonnées. La phase est portée par
+le `metadata.stage` de chaque bloc `exercise` ; les blocs d'introduction,
+vocabulaire, dialogue, lecture et bilan gardent leur étape éditoriale.
+
+| Phase (`stage`) | Exercices | Contenu |
+| --- | --- | --- |
+| `discover` | 6 | reconnaissance du sens (mot → français, français → mot) et écoute de mots |
+| `guided` | 6 | remise en ordre, phrase à trous, écoute de répliques de dialogue |
+| `reuse` | 6 | remise en ordre et trou sur les phrases du texte ou du dialogue, sens d'une phrase lue, écoute, oral, compréhension de lecture |
+
+Les six exercices écrits dans le pack (`meaning`, `order`, `fill`, `listen`,
+`speak`, `reading`) sont conservés tels quels avec leurs IDs. Les douze autres
+sont dérivés par `Tools/exercise_expansion.py` lors de `content_tool.py
+generate`, à partir des seules données de la leçon : sens et exemples du
+vocabulaire, répliques du dialogue et phrases du texte. Le générateur n'écrit
+donc aucun hanzi, pinyin ou traduction. Il applique ces règles :
+
+* les distracteurs de sens viennent du vocabulaire de la leçon puis des deux
+  leçons précédentes, sans recouvrement de sens avec la bonne réponse ; les
+  distracteurs de phrase viennent des phrases de la leçon ;
+* les tuiles d'un `wordOrder` segmentent la phrase par plus long mot connu du
+  catalogue et du vocabulaire ; le pinyin de chaque tuile est repris du pinyin
+  de la phrase (une syllabe par hanzi, sinon la phrase est écartée) ;
+* un `fillBlank` masque un mot de la leçon de un ou deux caractères, car la UI
+  propose cinq choix tirés d'une banque de mots de même longueur ; la
+  traduction française est rappelée dans l'énoncé pour lever l'ambiguïté ;
+* la bonne réponse d'un choix suit une marche déterministe (numéro de leçon et
+  rang), donc sa position varie sans hasard non reproductible ;
+* `speaking` reste facultatif ; les écoutes et lectures de phrase demandent au
+  moins quatre hanzi.
+
+`content_tool.py` refuse la génération, et `lint` refuse le bundle, si une
+leçon quotidienne sort du budget de 15 à 20 exercices, si un exercice n'a pas de
+phase, si les phases ne se suivent pas dans l'ordre, si deux exercices posent la
+même question ou si un choix a deux libellés identiques. Les quatre leçons
+protégées gardent leurs six exercices d'origine.
 
 Voici une séance complète illustrative, marquée « non livrable » et non utilisée
 comme contenu du cours. Elle montre vocabulaire, grammaire, dialogue, choix,

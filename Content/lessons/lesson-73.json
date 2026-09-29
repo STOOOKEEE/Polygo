@@ -527,7 +527,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l73-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "promptText": "音乐",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "longtemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "musique"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "automne"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "soleil"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l73-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 游戏 (yóu xì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jeu"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "oiseau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "longtemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "panda"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l73-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « soleil » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "音乐 (yīn yuè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "熊猫 (xióng māo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "游戏 (yóu xì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "太阳 (tài yáng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l73-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "promptText": "夏",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oiseau"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "automne"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "été"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jeu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l73-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 久 (jiǔ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oiseau"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "longtemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "musique"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "automne"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 69
       }
@@ -581,8 +863,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l73-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "promptText": "夏天的太阳很强，你想去哪里？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les enfants jouent à un jeu dans le parc."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le soleil est sorti et il fait plus doux."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le soleil est fort en été ; où veux-tu aller ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 69
       }
     },
@@ -611,8 +943,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l73-order-2",
+          "prompt": {
+            "fr": "Construis « J’aime écouter de la musique chinoise »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l73-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "音乐",
+            "pinyin": "yīn yuè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "中国",
+            "pinyin": "Zhōng guó",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "听",
+            "pinyin": "tīng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huan",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我喜欢听中国音乐。",
+          "我喜欢听中国音乐"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l73-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "promptText": "不，先看熊猫，晚上再玩游戏。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Au zoo pour voir les pandas, puis écouter de la musique."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Non, je regarde d’abord les pandas et je jouerai le soir."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le soleil est sorti et il fait plus doux."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l73-fill-2",
+          "prompt": {
+            "fr": "Complète : 孩子们在公园里玩___。 (« Les enfants jouent à un jeu dans le parc »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l73-produce"
+          ],
+          "required": true
+        },
+        "sentence": "孩子们在公园里玩___。",
+        "acceptedAnswers": [
+          "游戏"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l73-order-3",
+          "prompt": {
+            "fr": "Construis « En été, j’aime aller au bord de la mer »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l73-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "海",
+            "pinyin": "hǎi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huan",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "边",
+            "pinyin": "biān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "夏",
+            "pinyin": "xià",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "夏天我喜欢去海边。",
+          "夏天我喜欢去海边"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l73-fill-3",
+          "prompt": {
+            "fr": "Complète : 他们看了___，晚上回家听音乐、玩游戏。 (« Ils regardent les pandas puis rentrent le soir écouter de la musique et jouer »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l73-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他们看了___，晚上回家听音乐、玩游戏。",
+        "acceptedAnswers": [
+          "熊猫"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 69
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l73-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l73-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 太阳出来了，天气暖和了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l73-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le soleil est sorti et il fait plus doux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le temps est très agréable en automne."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a deux pandas au zoo."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 69
       }
     },
@@ -661,7 +1302,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 69
       }
@@ -694,7 +1335,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 69
       }
@@ -743,7 +1384,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 69
       }

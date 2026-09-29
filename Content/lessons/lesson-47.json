@@ -592,7 +592,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l47-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "promptText": "数学",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bibliothèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aimer ; apprécier"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "certainement ; devoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mathématiques"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l47-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 校长 (xiào zhǎng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aimer ; apprécier"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mathématiques"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "directeur d’école"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "certainement ; devoir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l47-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « certainement ; devoir » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "喜欢 (xǐ huān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "一定 (yí dìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "数学 (shù xué)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "校长 (xiào zhǎng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l47-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "promptText": "应该",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "devoir ; être censé"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "quatre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "bibliothèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "merci"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l47-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 四 (sì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "devoir ; être censé"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "merci"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mathématiques"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "quatre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 43
       }
@@ -646,8 +928,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l47-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你在图书馆学习什么？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Qu’étudies-tu à la bibliothèque ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’aime Pékin."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’ai quatre pommes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 43
       }
     },
@@ -676,8 +1008,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l47-order-2",
+          "prompt": {
+            "fr": "Construis « Le directeur prend la parole à la réunion de classe »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "话",
+            "pinyin": "huà",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "班",
+            "pinyin": "bān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "会",
+            "pinyin": "huì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "讲",
+            "pinyin": "jiǎng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "校长",
+            "pinyin": "xiào zhǎng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "校长在班会上讲话。",
+          "校长在班会上讲话"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l47-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我学习数学，准备考试。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu réussiras certainement."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai trouvé ce livre à la bibliothèque."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’étudie les mathématiques et je prépare l’examen."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l47-fill-2",
+          "prompt": {
+            "fr": "Complète : 我最喜欢的科目是___。 (« Ma matière préférée est les mathématiques »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我最喜欢的科目是___。",
+        "acceptedAnswers": [
+          "数学"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l47-order-3",
+          "prompt": {
+            "fr": "Construis « Les étudiants étudient les mathématiques à la bibliothèque »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "数学",
+            "pinyin": "shù xué",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "学生",
+            "pinyin": "xué shēng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "图书馆",
+            "pinyin": "tú shū guǎn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "学习",
+            "pinyin": "xué xí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "学生在图书馆学习数学。",
+          "学生在图书馆学习数学"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l47-fill-3",
+          "prompt": {
+            "fr": "Complète : ___告诉大家明天考试。 (« Le directeur leur dit que l’examen est demain »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___告诉大家明天考试。",
+        "acceptedAnswers": [
+          "校长"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l47-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « La préparation », que signifie : 他们一定要努力。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l47-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai trouvé ce livre à la bibliothèque."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ils doivent absolument travailler dur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Les étudiants étudient les mathématiques à la bibliothèque."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 43
       }
     },
@@ -726,7 +1367,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 43
       }
@@ -758,7 +1399,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 43
       }
@@ -807,7 +1448,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 43
       }

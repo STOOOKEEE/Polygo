@@ -790,6 +790,39 @@ final class ContentContractTests: XCTestCase {
         return references
     }
 
+    /// Daily lessons run 15–20 exercises through three ordered phases. The
+    /// four protected starter lessons keep their original six activities.
+    func testDailyLessonsDeliverTheThreePhaseExerciseBudget() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        let starterIDs: Set<String> = ["lesson-01", "lesson-02", "lesson-03", "lesson-04"]
+        let phases = ["discover", "guided", "reuse"]
+        var checkedLessons = 0
+
+        for lesson in snapshots.flatMap(\.lessons) where !starterIDs.contains(lesson.id.rawValue) {
+            let raw = try rawLesson(lesson.id)
+            let blocks = try XCTUnwrap(raw["blocks"] as? [[String: Any]])
+            let stages = try blocks
+                .filter { $0["kind"] as? String == "exercise" }
+                .map { block in
+                    try XCTUnwrap(
+                        editorialMetadata(in: block)?["stage"] as? String,
+                        "\(lesson.id.rawValue) exercise needs a phase stage"
+                    )
+                }
+            XCTAssertTrue(
+                (15...20).contains(stages.count),
+                "\(lesson.id.rawValue) must deliver 15–20 exercises, found \(stages.count)"
+            )
+            let ranks = stages.compactMap { phases.firstIndex(of: $0) }
+            XCTAssertEqual(ranks.count, stages.count, "\(lesson.id.rawValue) uses an unknown exercise phase")
+            XCTAssertEqual(ranks, ranks.sorted(), "\(lesson.id.rawValue) exercises must follow the phase order")
+            XCTAssertEqual(Set(ranks).count, phases.count, "\(lesson.id.rawValue) must contain all three phases")
+            checkedLessons += 1
+        }
+
+        XCTAssertGreaterThan(checkedLessons, 0)
+    }
+
     // MARK: Linguistic completeness
 
     func testEveryVocabularyEntryHasPinyinTonesScriptsMeaningAndAlignedSegments() async throws {

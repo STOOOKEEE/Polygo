@@ -548,7 +548,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l44-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "promptText": "楼",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "étage ; immeuble"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "tableau noir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "lunettes"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "confortable ; se sentir bien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l44-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 舒服 (shū fú) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "préparer ; être prêt"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "matin tôt"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tableau noir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "confortable ; se sentir bien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l44-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « lunettes » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "黑板 (hēi bǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "游泳 (yóu yǒng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "眼镜 (yǎn jìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "早上 (zǎo shàng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l44-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "promptText": "照片",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nager"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "photo"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "étage ; immeuble"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "tableau noir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l44-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 游泳 (yóu yǒng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nager"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "préparer ; être prêt"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "confortable ; se sentir bien"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "photo"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 40
       }
@@ -602,8 +884,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l44-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "promptText": "在三层，黑板在前面。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Au troisième étage ; le tableau est devant."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il y a un caractère au tableau."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Avec mes lunettes, je vois clairement."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 40
       }
     },
@@ -632,8 +964,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l44-order-2",
+          "prompt": {
+            "fr": "Construis « Il y a un caractère au tableau »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l44-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "黑板",
+            "pinyin": "hēi bǎn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "字",
+            "pinyin": "zì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "黑板上有一个字。",
+          "黑板上有一个字"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l44-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我戴眼镜就看得清楚。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je me lève à six heures du matin."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette chaise est confortable."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Avec mes lunettes, je vois clairement."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l44-fill-2",
+          "prompt": {
+            "fr": "Complète : 这把椅子坐着很___。 (« Cette chaise est confortable »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l44-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这把椅子坐着很___。",
+        "acceptedAnswers": [
+          "舒服"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l44-order-3",
+          "prompt": {
+            "fr": "Construis « Il prend une photo »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l44-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "张",
+            "pinyin": "zhāng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "拍",
+            "pinyin": "pāi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "照片",
+            "pinyin": "zhào piān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "他拍了一张照片。",
+          "他拍了一张照片"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l44-fill-3",
+          "prompt": {
+            "fr": "Complète : 新教室在___的三层，黑板在前面，桌子很干净。 (« La nouvelle classe est au troisième étage de l’immeuble ; le tableau est devant et les tables sont propres »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l44-produce"
+          ],
+          "required": true
+        },
+        "sentence": "新教室在___的三层，黑板在前面，桌子很干净。",
+        "acceptedAnswers": [
+          "楼"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 40
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l44-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l44-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 这里舒服吗？"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l44-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Vois-tu clairement ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Est-ce confortable ici ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "À quel étage est la nouvelle classe ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 40
       }
     },
@@ -682,7 +1323,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 40
       }
@@ -714,7 +1355,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 40
       }
@@ -763,7 +1404,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 40
       }

@@ -759,7 +759,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l27-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "promptText": "对",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "avoir déjà fait (expérience)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "très ; extrêmement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "derrière ; arrière"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "correct ; envers"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l27-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 非常 (fēi cháng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rouge"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "noir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "très ; extrêmement"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "derrière ; arrière"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l27-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « dire ; informer » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "欢迎 (huān yíng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "告诉 (gào sù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "飞机 (fēi jī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "非常 (fēi cháng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l27-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "promptText": "给",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "donner ; à (pour)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "derrière ; arrière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "correct ; envers"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "avoir déjà fait (expérience)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l27-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 公斤 (gōng jīn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "correct ; envers"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "très ; extrêmement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "télévision"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "kilogramme"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 23
       }
@@ -813,8 +1095,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l27-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "promptText": "欢迎你来我家！",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il est derrière moi."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Bienvenue chez moi !"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il boit le thé dans une tasse noire."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 23
       }
     },
@@ -843,8 +1175,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l27-order-2",
+          "prompt": {
+            "fr": "Construis « Ce vêtement est très joli »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l27-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "非常",
+            "pinyin": "fēi cháng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这件衣服非常漂亮。",
+          "这件衣服非常漂亮"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l27-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "promptText": "谢谢。这个菜好吃吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Merci. Ce plat est-il bon ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’aime le rouge."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce plat est délicieux."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l27-fill-2",
+          "prompt": {
+            "fr": "Complète : 请___我地址。 (« Dis-moi l’adresse, s’il te plaît »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l27-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请___我地址。",
+        "acceptedAnswers": [
+          "告诉"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l27-order-3",
+          "prompt": {
+            "fr": "Construis « J’en ai mangé deux kilos ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l27-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "两",
+            "pinyin": "liǎng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "公斤",
+            "pinyin": "gōng jīn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我吃了两公斤？",
+          "我吃了两公斤"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l27-fill-3",
+          "prompt": {
+            "fr": "Complète : 朋友___客人到家里，桌子上有好吃的菜和红茶。 (« Un ami accueille un invité chez lui ; il y a de bons plats et du thé rouge sur la table »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l27-produce"
+          ],
+          "required": true
+        },
+        "sentence": "朋友___客人到家里，桌子上有好吃的菜和红茶。",
+        "acceptedAnswers": [
+          "欢迎"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 23
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l27-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l27-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Chez un ami », que signifie : 菜非常好吃，但是客人只吃了一点。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l27-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Non, seulement un peu. Donne plutôt du thé rouge à l’invité."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Donne-moi une tasse de thé, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Les plats sont très bons, mais l’invité n’en mange qu’un peu."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 23
       }
     },
@@ -893,7 +1520,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 23
       }
@@ -925,7 +1552,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 23
       }
@@ -974,7 +1601,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 23
       }

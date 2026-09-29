@@ -758,7 +758,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l21-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "promptText": "十",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "parler"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "dix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "quatre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "écouter ; entendre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l21-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 谁 (shéi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "qui"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "trop ; tellement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "eau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "taxi"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l21-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « eau » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "太 (tài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "四 (sì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "岁 (suì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "水 (shuǐ)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l21-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "promptText": "说话",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "qui"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "ans (âge)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "parler"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "eau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l21-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 四 (sì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ans (âge)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "quatre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "il"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "qui"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 17
       }
@@ -812,8 +1094,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l21-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "promptText": "喂，谁在说话？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Son enfant écoute aussi l’appel."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Allô, qui parle ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous nous asseyons pour parler."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 17
       }
     },
@@ -842,8 +1174,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l21-order-2",
+          "prompt": {
+            "fr": "Construis « J’ai dix livres »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l21-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "十",
+            "pinyin": "shí",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "本",
+            "pinyin": "běn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我有十本书。",
+          "我有十本书"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l21-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "promptText": "是我。你今天喝水了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "C’est moi. As-tu bu de l’eau aujourd’hui ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui, il est là. Il a quatre ans et nous écoute parler."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Elle a bu dix verres d’eau mais se sent toujours fatiguée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l21-fill-2",
+          "prompt": {
+            "fr": "Complète : ___在门外？ (« Qui est dehors, devant la porte ? »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l21-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___在门外？",
+        "acceptedAnswers": [
+          "谁"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l21-order-3",
+          "prompt": {
+            "fr": "Construis « Le soir, j’appelle une amie »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l21-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "朋友",
+            "pinyin": "péng yǒu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "晚上",
+            "pinyin": "wǎn shàng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "打电话",
+            "pinyin": "dǎ diàn huà",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "晚上我给朋友打电话。",
+          "晚上我给朋友打电话"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l21-fill-3",
+          "prompt": {
+            "fr": "Complète : 她喝了___杯水，还是觉得累。 (« Elle a bu dix verres d’eau mais se sent toujours fatiguée »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l21-produce"
+          ],
+          "required": true
+        },
+        "sentence": "她喝了___杯水，还是觉得累。",
+        "acceptedAnswers": [
+          "十"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l21-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le coup de fil », que signifie : 因为她今天工作太多，所以她要睡觉。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "C’est moi. As-tu bu de l’eau aujourd’hui ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui, il est là. Il a quatre ans et nous écoute parler."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comme elle a beaucoup travaillé aujourd’hui, elle doit dormir."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 17
       }
     },
@@ -892,7 +1519,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 17
       }
@@ -924,7 +1551,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 17
       }
@@ -973,7 +1600,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 17
       }

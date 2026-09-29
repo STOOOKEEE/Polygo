@@ -761,7 +761,289 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l11-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "饭馆",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "fruit"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vêtement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "œuf"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "restaurant"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 米饭 (mǐ fàn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "pastèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "œuf"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "riz cuit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "viande de mouton"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « fruit » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "西瓜 (xī guā)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "水果 (shuǐ guǒ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "羊肉 (yáng ròu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "米饭 (mǐ fàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l11-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "鸡蛋",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "œuf"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "restaurant"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "poisson"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "riz cuit"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 咖啡 (kā fēi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "classificateur des livres"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vêtement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fruit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "café"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 7
       }
@@ -815,8 +1097,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l11-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "中午我们去饭馆吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous allons au restaurant à midi ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En été, j’aime manger de la pastèque."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’aime manger des fruits."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 7
       }
     },
@@ -845,8 +1177,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l11-order-2",
+          "prompt": {
+            "fr": "Construis « Ce restaurant est très calme »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "安静",
+            "pinyin": "ān jìng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "饭馆",
+            "pinyin": "fàn guǎn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这家饭馆很安静。",
+          "这家饭馆很安静"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l11-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这里还有鸡蛋、水果和牛奶。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’aime manger des fruits."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ce livre est très bon."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a aussi des œufs, des fruits et du lait."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l11-fill-2",
+          "prompt": {
+            "fr": "Complète : 我喜欢吃___。 (« J’aime manger du riz »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我喜欢吃___。",
+        "acceptedAnswers": [
+          "米饭"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l11-order-3",
+          "prompt": {
+            "fr": "Construis « J’aime manger des fruits »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "水果",
+            "pinyin": "shuǐ guǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我喜欢吃水果。",
+          "我喜欢吃水果"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l11-fill-3",
+          "prompt": {
+            "fr": "Complète : 中午我和朋友在___吃米饭、鱼和鸡蛋。 (« À midi, mon ami et moi mangeons du riz, du poisson et des œufs au restaurant »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "sentence": "中午我和朋友在___吃米饭、鱼和鸡蛋。",
+        "acceptedAnswers": [
+          "饭馆"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le déjeuner », que signifie : 我喝牛奶，不喝咖啡。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "D’accord, je veux du riz et du poisson."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je bois du lait, pas de café."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce livre est très bon."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 7
       }
     },
@@ -895,7 +1515,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 7
       }
@@ -927,7 +1547,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 7
       }
@@ -976,7 +1596,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 7
       }

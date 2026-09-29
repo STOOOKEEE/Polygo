@@ -714,7 +714,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l33-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "它",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "très"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "il/elle (objet ou animal)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ouvrir ; mettre en marche"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "parce que"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 雪 (xuě) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "neige"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "gauche ; côté gauche"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "très"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "couvert ; nuageux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « parce que » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "饭馆 (fàn guǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "左边 (zuǒ biān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "知道 (zhī dào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "因为 (yīn wèi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l33-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "阴",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "savoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "gauche ; côté gauche"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "couvert ; nuageux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "parce que"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 知道 (zhī dào) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "gauche ; côté gauche"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "savoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "il/elle (objet ou animal)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "le plus"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 29
       }
@@ -768,8 +1050,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l33-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天是晴天还是阴天？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "C’est la meilleure solution."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Aujourd’hui, le ciel est-il dégagé ou couvert ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous nous préparons à aller au parc à gauche."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 29
       }
     },
@@ -798,8 +1130,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l33-order-2",
+          "prompt": {
+            "fr": "Construis « Le temps est très ensoleillé aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "晴",
+            "pinyin": "qíng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "朗",
+            "pinyin": "lǎng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "今天天气很晴朗。",
+          "今天天气很晴朗"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l33-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "早上是晴天，下午可能下雪。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le matin, le ciel est dégagé, mais il pourrait neiger l’après-midi."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous nous préparons à aller au parc à gauche."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le matin, le ciel est dégagé ; l’après-midi, le temps pourrait devenir couvert ou neigeux."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l33-fill-2",
+          "prompt": {
+            "fr": "Complète : ___在桌子下面。 (« Il est sous la table »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___在桌子下面。",
+        "acceptedAnswers": [
+          "它"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l33-order-3",
+          "prompt": {
+            "fr": "Construis « Nous nous préparons à aller au parc à gauche »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "准备",
+            "pinyin": "zhǔn bèi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "左边",
+            "pinyin": "zuǒ biān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我们准备去左边的公园。",
+          "我们准备去左边的公园"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l33-fill-3",
+          "prompt": {
+            "fr": "Complète : 早上是___天，下午的天气可能变成阴天或下雪。 (« Le matin, le ciel est dégagé ; l’après-midi, le temps pourrait devenir couvert ou neigeux »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l33-produce"
+          ],
+          "required": true
+        },
+        "sentence": "早上是___天，下午的天气可能变成阴天或下雪。",
+        "acceptedAnswers": [
+          "晴"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « La météo en ville », que signifie : 因为天气不好，所以先回家，晚上再出门。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le matin, le ciel est dégagé ; l’après-midi, le temps pourrait devenir couvert ou neigeux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je ne sais pas. Le plus important est de prendre d’abord à gauche."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comme le temps est mauvais, nous rentrons d’abord à la maison et ressortons le soir."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 29
       }
     },
@@ -848,7 +1482,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 29
       }
@@ -880,7 +1514,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 29
       }
@@ -929,7 +1563,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 29
       }

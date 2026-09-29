@@ -760,7 +760,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l23-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "promptText": "去年",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "un ; une"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "médecin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "grand ; gros"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "l’année dernière"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l23-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 时间 (shí jiān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "soir ; nuit"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "médecin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "temps ; durée"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "matin tôt"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l23-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « soir ; nuit » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "小姐 (xiǎo jiě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "晚上 (wǎn shang)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "早上 (zǎo shàng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "去年 (qù nián)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l23-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "promptText": "小时",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "heure (durée)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bon ; bien"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "l’année dernière"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "soir ; nuit"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l23-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 早上 (zǎo shàng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "grand ; gros"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bon ; bien"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "quelques ; certains"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "matin tôt"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 19
       }
@@ -814,8 +1096,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l23-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "promptText": "去年你的生日怎么样？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Comment était ton anniversaire l’an dernier ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Que fais-tu d’abord le matin ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Très bien. Cette année, mon anniversaire est samedi."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 19
       }
     },
@@ -844,8 +1176,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l23-order-2",
+          "prompt": {
+            "fr": "Construis « L’année dernière, je suis allé à Pékin »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l23-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "北京",
+            "pinyin": "běi jīng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "去年",
+            "pinyin": "qù nián",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "去年我去了北京。",
+          "去年我去了北京"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l23-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "promptText": "很好。今年我的生日在星期六。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai étudié pendant deux heures."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’année dernière, je suis allé à Pékin."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Très bien. Cette année, mon anniversaire est samedi."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l23-fill-2",
+          "prompt": {
+            "fr": "Complète : 今天是我的___。 (« C’est mon anniversaire aujourd’hui »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l23-produce"
+          ],
+          "required": true
+        },
+        "sentence": "今天是我的___。",
+        "acceptedAnswers": [
+          "生日"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l23-order-3",
+          "prompt": {
+            "fr": "Construis « Que fais-tu d’abord le matin ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l23-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "早上",
+            "pinyin": "zǎo shàng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "先",
+            "pinyin": "xiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "做",
+            "pinyin": "zuò",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "早上你先做什么？",
+          "早上你先做什么"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l23-fill-3",
+          "prompt": {
+            "fr": "Complète : ___生日的时候，我先和家人吃饭，然后看电影。 (« Lors de mon anniversaire l’an dernier, j’ai d’abord mangé avec ma famille, puis j’ai regardé un film »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l23-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___生日的时候，我先和家人吃饭，然后看电影。",
+        "acceptedAnswers": [
+          "去年"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l23-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le jour spécial », que signifie : 今年早上我要去医院看爷爷，晚上有三个小时和朋友在一起。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Lors de mon anniversaire l’an dernier, j’ai d’abord mangé avec ma famille, puis j’ai regardé un film."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette année, je vais voir mon grand-père à l’hôpital le matin et j’aurai trois heures avec mes amis le soir."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je vais d’abord à l’hôpital voir mon grand-père, puis je rentre."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 19
       }
     },
@@ -894,7 +1521,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 19
       }
@@ -926,7 +1553,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 19
       }
@@ -975,7 +1602,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 19
       }

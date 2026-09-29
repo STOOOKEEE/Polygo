@@ -802,7 +802,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l17-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "读",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "examen ; passer un examen"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "lire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "vouloir ; devoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "camarade de classe"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 同学 (tóng xué) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "camarade de classe"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vouloir ; devoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "écrire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "examen ; passer un examen"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « écrire » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "读 (dú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "要 (yào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "字 (zì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "写 (xiě)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l17-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "学习",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "écrire"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "de rien ; je vous en prie"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "étudier ; apprendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "vouloir ; devoir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 学校 (xué xiào) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "de rien ; je vous en prie"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "école"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "camarade de classe"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "écrire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 13
       }
@@ -856,8 +1138,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l17-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你正在读什么？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Qu’es-tu en train de lire ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ces affaires sont sur la table."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’ai un cours l’après-midi."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 13
       }
     },
@@ -886,8 +1218,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l17-order-2",
+          "prompt": {
+            "fr": "Construis « Je lis chaque jour »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "读书",
+            "pinyin": "dú shū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我每天读书。",
+          "我每天读书"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l17-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我正在读课本，准备考试。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le professeur dit que la nouvelle leçon commence aujourd’hui."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je veux rentrer à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je lis le manuel et je prépare l’examen."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l17-fill-2",
+          "prompt": {
+            "fr": "Complète : 我的___来了。 (« Mon camarade de classe est arrivé »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我的___来了。",
+        "acceptedAnswers": [
+          "同学"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l17-order-3",
+          "prompt": {
+            "fr": "Construis « Le professeur dit que la nouvelle leçon commence aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "说",
+            "pinyin": "shuō",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "开始",
+            "pinyin": "kāi shǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "新",
+            "pinyin": "xīn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "老师",
+            "pinyin": "lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "课",
+            "pinyin": "kè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "老师说今天开始新课。",
+          "老师说今天开始新课"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l17-fill-3",
+          "prompt": {
+            "fr": "Complète : ___们在教室读书、写字。 (« Les camarades lisent et écrivent dans la classe »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___们在教室读书、写字。",
+        "acceptedAnswers": [
+          "同学"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l17-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Dans la classe », que signifie : 下午大家学习，明天考试。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les camarades lisent et écrivent dans la classe."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’après-midi, tout le monde étudie ; l’examen a lieu demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le professeur veut que nous lisions ce caractère puis répondions à la question."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 13
       }
     },
@@ -936,7 +1563,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 13
       }
@@ -968,7 +1595,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 13
       }
@@ -1017,7 +1644,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 13
       }

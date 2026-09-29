@@ -527,7 +527,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l80-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "promptText": "马上",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tout de suite"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "s’exercer ; exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "prendre ; tenir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "histoire ; passé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l80-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 米 (mǐ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tout de suite"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "prendre ; tenir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "s’exercer ; exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "riz ; mètre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l80-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « prendre ; tenir » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "米 (mǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "南 (nán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "拿 (ná)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "马 (mǎ)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l80-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "promptText": "南",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "riz ; mètre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "sud"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tout de suite"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "cheval"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l80-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 离开 (lí kāi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "partir ; quitter"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "sud"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "riz ; mètre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "tout de suite"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 76
       }
@@ -581,8 +863,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l80-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你去过南方的农场吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Es-tu déjà allé dans une ferme du sud ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un mètre équivaut à cent centimètres."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous quittons cet endroit demain."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 76
       }
     },
@@ -611,8 +943,331 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l80-order-2",
+          "prompt": {
+            "fr": "Construis « Il y a un cheval à la ferme »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l80-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "场",
+            "pinyin": "chǎng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "农",
+            "pinyin": "nóng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "匹",
+            "pinyin": "pǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "马",
+            "pinyin": "mǎ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "农场里有一匹马。",
+          "农场里有一匹马"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l80-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你拿什么去农场？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Canton se trouve dans le sud de la Chine."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un sac de riz. Je pars tout de suite."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Qu’emportes-tu pour aller à la ferme ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l80-fill-2",
+          "prompt": {
+            "fr": "Complète : 我___回来。 (« Je reviens tout de suite »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l80-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我___回来。",
+        "acceptedAnswers": [
+          "马上"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l80-order-3",
+          "prompt": {
+            "fr": "Construis « Apporte une chaise, s’il te plaît »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l80-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "椅子",
+            "pinyin": "yǐ zi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "把",
+            "pinyin": "bǎ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "过",
+            "pinyin": "guò",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "拿",
+            "pinyin": "ná",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "请拿一把椅子过来。",
+          "请拿一把椅子过来"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l80-fill-3",
+          "prompt": {
+            "fr": "Complète : 农场在___方，离车站不远。 (« La ferme est au sud, non loin de la gare »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l80-produce"
+          ],
+          "required": true
+        },
+        "sentence": "农场在___方，离车站不远。",
+        "acceptedAnswers": [
+          "南"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l80-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 一米等于一百厘米。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Es-tu déjà allé dans une ferme du sud ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un mètre équivaut à cent centimètres."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Un sac de riz. Je pars tout de suite."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 76
       }
     },
@@ -661,7 +1316,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 76
       }
@@ -694,7 +1349,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 76
       }
@@ -743,7 +1398,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 76
       }

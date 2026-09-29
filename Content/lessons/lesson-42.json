@@ -590,7 +590,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l42-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "promptText": "刚才",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ou bien ; toujours"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "nager"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "à l’instant"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "triste ; malheureux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 还是 (hái shì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "un moment ; bientôt"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "ou bien ; toujours"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "triste ; malheureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "nom de famille"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « quart d’heure » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "刻 (kè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "要 (yào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "姓 (xìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "刚才 (gāng cái)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l42-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "promptText": "难过",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nom de famille"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vouloir ; devoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "à l’instant"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "triste ; malheureux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 一会儿 (yí huìr) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nager"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "valise"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "un moment ; bientôt"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "à l’instant"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 38
       }
@@ -644,8 +926,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l42-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你的行李箱在哪里？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu prends le train ou l’avion ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Où est ta valise ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je veux rentrer à la maison."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 38
       }
     },
@@ -674,8 +1006,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l42-order-2",
+          "prompt": {
+            "fr": "Construis « Ma valise est trop lourde »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "重",
+            "pinyin": "zhòng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "太",
+            "pinyin": "tài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "行李箱",
+            "pinyin": "xíng lǐ xiāng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我的行李箱太重了。",
+          "我的行李箱太重了"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l42-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "promptText": "刚才还在这里，现在不见了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle était encore ici tout à l’heure, maintenant elle a disparu."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le train. Nous pouvons retourner la chercher ou demander au serveur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il ne prend pas l’avion, il prend le train."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l42-fill-2",
+          "prompt": {
+            "fr": "Complète : 他___在这里。 (« Il était ici tout à l’heure »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他___在这里。",
+        "acceptedAnswers": [
+          "刚才"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l42-order-3",
+          "prompt": {
+            "fr": "Construis « Il est huit heures et quart »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "现在",
+            "pinyin": "xiàn zài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "八",
+            "pinyin": "bā",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "刻",
+            "pinyin": "kè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "现在是八点一刻。",
+          "现在是八点一刻"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l42-fill-3",
+          "prompt": {
+            "fr": "Complète : 他没有坐飞机，___坐火车。 (« Il ne prend pas l’avion, il prend le train »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他没有坐飞机，___坐火车。",
+        "acceptedAnswers": [
+          "要"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « À la gare », que signifie : 他问服务员，决定回去找。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il ne prend pas l’avion, il prend le train."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le train. Nous pouvons retourner la chercher ou demander au serveur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il demande au serveur et décide de retourner la chercher."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 38
       }
     },
@@ -724,7 +1358,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 38
       }
@@ -756,7 +1390,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 38
       }
@@ -805,7 +1439,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 38
       }

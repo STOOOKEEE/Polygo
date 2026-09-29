@@ -528,7 +528,289 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l50-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "promptText": "脸",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jambe"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aider ; rendre service"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "visage"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "cheveux"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l50-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 刷牙 (shuā yá) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "supermarché"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se brosser les dents"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire mal ; douloureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "aider ; rendre service"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l50-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « cheveux » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "头发 (tóu fa)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "比赛 (bǐ sài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "帮忙 (bāng máng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "刷牙 (shuā yá)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l50-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "promptText": "腿",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "supermarché"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aider ; rendre service"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "compétition ; match"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jambe"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l50-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 帮忙 (bāng máng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "compétition ; match"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jambe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "aider ; rendre service"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "visage"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 46
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l50-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你跑步以后，腿还疼吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Après ta course, ta jambe te fait encore mal ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après avoir couru, mes jambes sont très fatiguées."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Merci de m’aider, je vais bien prendre soin de moi."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },
@@ -612,8 +944,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l50-order-2",
+          "prompt": {
+            "fr": "Construis « Je me brosse les dents chaque matin »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l50-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "刷牙",
+            "pinyin": "shuā yá",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "早上",
+            "pinyin": "zǎo shang",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我每天早上刷牙。",
+          "我每天早上刷牙"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l50-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你的头发也湿了，先休息吧。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous avons une compétition ce week-end."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je vais au supermarché acheter des légumes."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tes cheveux sont aussi mouillés, repose-toi d’abord."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l50-fill-2",
+          "prompt": {
+            "fr": "Complète : 洗完___以后，她戴上眼镜。 (« Après s’être lavé le visage, elle met ses lunettes »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l50-produce"
+          ],
+          "required": true
+        },
+        "sentence": "洗完___以后，她戴上眼镜。",
+        "acceptedAnswers": [
+          "脸"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l50-order-3",
+          "prompt": {
+            "fr": "Construis « Ma jambe me fait encore un peu mal »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l50-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "疼",
+            "pinyin": "téng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "还",
+            "pinyin": "hái",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "腿",
+            "pinyin": "tuǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "我的腿还有一点疼。",
+          "我的腿还有一点疼"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l50-fill-3",
+          "prompt": {
+            "fr": "Complète : 他把水放在桌上，___、洗脸，然后休息。 (« Il pose l’eau sur la table, se brosse les dents, se lave le visage, puis se repose »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l50-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他把水放在桌上，___、洗脸，然后休息。",
+        "acceptedAnswers": [
+          "刷牙"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l50-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 她的头发很长。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je vais au supermarché acheter des légumes."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ses cheveux sont longs."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Après ta course, ta jambe te fait encore mal ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },
@@ -662,7 +1303,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 46
       }
@@ -695,7 +1336,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 46
       }
@@ -744,7 +1385,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 46
       }

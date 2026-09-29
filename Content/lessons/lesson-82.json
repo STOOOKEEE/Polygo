@@ -532,7 +532,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l82-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "promptText": "然后",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "si"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "niveau scolaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ensuite"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mandarin standard"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l82-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 热情 (rè qíng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ensuite"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chaleureux ; enthousiasme"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "sérieux ; attentif"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "niveau scolaire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l82-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « sérieux ; attentif » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "认真 (rèn zhēn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "然后 (rán hòu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "其实 (qí shí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "如果 (rú guǒ)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l82-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "promptText": "如果",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "sérieux ; attentif"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "niveau scolaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chaleureux ; enthousiasme"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "si"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l82-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 年级 (nián jí) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chaleureux ; enthousiasme"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "ensuite"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "niveau scolaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sérieux ; attentif"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 78
       }
@@ -579,8 +861,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l82-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你认为这个活动怎么样？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je pense que cette solution est très bonne."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En fait, j’ai déjà vu ce film."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Que penses-tu de cette activité ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 78
       }
     },
@@ -609,8 +941,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l82-order-2",
+          "prompt": {
+            "fr": "Construis « Je pense que cette solution est très bonne »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "认为",
+            "pinyin": "rèn wéi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "办法",
+            "pinyin": "bàn fǎ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我认为这个办法很好。",
+          "我认为这个办法很好"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l82-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这家店的服务很热情。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle fait ses devoirs avec sérieux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le service de ce magasin est très chaleureux."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "En classe, parle en mandarin standard, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l82-fill-2",
+          "prompt": {
+            "fr": "Complète : 先吃饭，___去上课。 (« Mange d’abord, puis va en cours »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "sentence": "先吃饭，___去上课。",
+        "acceptedAnswers": [
+          "然后"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l82-order-3",
+          "prompt": {
+            "fr": "Construis « Elle fait ses devoirs avec sérieux »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "作业",
+            "pinyin": "zuò yè",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "她",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "做",
+            "pinyin": "zuò",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "地",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "认真",
+            "pinyin": "rèn zhēn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "她认真地做作业。",
+          "她认真地做作业"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l82-fill-3",
+          "prompt": {
+            "fr": "Complète : ___时间够，他们就一起去公园。 (« S’ils ont assez de temps, ils iront ensemble au parc »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___时间够，他们就一起去公园。",
+        "acceptedAnswers": [
+          "如果"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l82-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 如果下雨，我们就坐车。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "S’il pleut, nous prendrons la voiture."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En fait, j’ai déjà vu ce film."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Si nous avons assez de temps, nous irons au parc."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 78
       }
     },
@@ -659,7 +1293,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 78
       }
@@ -692,7 +1326,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 78
       }
@@ -741,7 +1375,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 78
       }

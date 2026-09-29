@@ -589,7 +589,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l41-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "promptText": "宾馆",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "peu ; moins"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "hôtel"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "passeport"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "chauffeur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 地铁 (dì tiě) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "métro"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "ce/cette-là ; là-bas"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "argent"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "peu ; moins"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « carte » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "地铁 (dì tiě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "护照 (hù zhào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "街道 (jiē dào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "地图 (dì tú)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l41-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "promptText": "街道",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "hôtel"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "argent"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "rue"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "chauffeur"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 司机 (sī jī) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "peu ; moins"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chauffeur"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "passeport"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "argent"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 37
       }
@@ -643,8 +925,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l41-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "promptText": "宾馆在哪里？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Où est l’hôtel ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’hôtel est à côté de la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "C’est mon chat, là-bas."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 37
       }
     },
@@ -673,8 +1005,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l41-order-2",
+          "prompt": {
+            "fr": "Construis « L’hôtel est à côté de la gare »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "宾馆",
+            "pinyin": "bīn guǎn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "宾馆在车站旁边。",
+          "宾馆在车站旁边"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l41-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "promptText": "在地铁站旁边。你有地图吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a peu de monde ici."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette rue est très calme le soir."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "À côté de la station de métro. As-tu une carte ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l41-fill-2",
+          "prompt": {
+            "fr": "Complète : 我坐___上班。 (« Je prends le métro pour aller travailler »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我坐___上班。",
+        "acceptedAnswers": [
+          "地铁"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l41-order-3",
+          "prompt": {
+            "fr": "Construis « Le chauffeur connaît-il le chemin de l’hôtel ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "宾馆",
+            "pinyin": "bīn guǎn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "知道",
+            "pinyin": "zhī dào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "司机",
+            "pinyin": "sī jī",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "司机知道去宾馆的路吗？",
+          "司机知道去宾馆的路吗"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l41-fill-3",
+          "prompt": {
+            "fr": "Complète : 游客看___，发现宾馆在地铁站旁边，从这条街走十分钟就到。 (« Le visiteur regarde la carte et découvre que l’hôtel est à côté du métro, à dix minutes à pied de cette rue »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l41-produce"
+          ],
+          "required": true
+        },
+        "sentence": "游客看___，发现宾馆在地铁站旁边，从这条街走十分钟就到。",
+        "acceptedAnswers": [
+          "地图"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 37
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l41-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l41-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « La carte », que signifie : 司机检查他的护照，然后带他到宾馆。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l41-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le chauffeur connaît-il le chemin de l’hôtel ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le chauffeur vérifie son passeport puis le conduit à l’hôtel."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je prends le métro pour aller travailler."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 37
       }
     },
@@ -723,7 +1357,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 37
       }
@@ -755,7 +1389,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 37
       }
@@ -804,7 +1438,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 37
       }

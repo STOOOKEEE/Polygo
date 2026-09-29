@@ -529,7 +529,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l90-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "promptText": "银行",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "utiliser ; emploi"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "général ; ordinaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "banque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "encore ; de nouveau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 用 (yòng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "banque"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "utiliser ; emploi"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "général ; ordinaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "célèbre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « célèbre » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "有名 (yǒu míng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "一边 (yī biān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "银行 (yín háng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "以为 (yǐ wéi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l90-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "promptText": "又",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "utiliser ; emploi"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "général ; ordinaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "banque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "encore ; de nouveau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 要求 (yāo qiú) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "célèbre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "croire à tort ; penser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "demander ; exiger"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "général ; ordinaire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 86
       }
@@ -576,8 +858,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l90-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你以为银行已经关门了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui, mais elle a rouvert."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Tu croyais que la banque était déjà fermée ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il a encore oublié de prendre les clés."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 86
       }
     },
@@ -606,8 +938,324 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l90-order-2",
+          "prompt": {
+            "fr": "Construis « Je croyais à tort qu’on était dimanche aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "日",
+            "pinyin": "rì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "以为",
+            "pinyin": "yǐ wéi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我以为今天是星期日。",
+          "我以为今天是星期日"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l90-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我用手机查地图。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’utilise mon téléphone pour consulter une carte."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En général, je me lève à sept heures."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je croyais à tort qu’on était dimanche aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l90-fill-2",
+          "prompt": {
+            "fr": "Complète : ___下午五点关门。 (« La banque ferme à dix-sept heures »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___下午五点关门。",
+        "acceptedAnswers": [
+          "银行"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l90-order-3",
+          "prompt": {
+            "fr": "Construis « Cet endroit est célèbre pour son thé »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "地方",
+            "pinyin": "dì fāng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "叶",
+            "pinyin": "yè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "有名",
+            "pinyin": "yǒu míng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "因为",
+            "pinyin": "yīn wèi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "这个地方因为茶叶有名。",
+          "这个地方因为茶叶有名"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l90-fill-3",
+          "prompt": {
+            "fr": "Complète : 他___忘记带钥匙了。 (« Il a encore oublié de prendre les clés »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l90-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他___忘记带钥匙了。",
+        "acceptedAnswers": [
+          "又"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l90-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 老师提出了三个要求。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il a encore oublié de prendre les clés."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "La banque ferme à dix-sept heures."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le professeur a formulé trois exigences."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 86
       }
     },
@@ -656,7 +1304,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 86
       }
@@ -689,7 +1337,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 86
       }
@@ -738,7 +1386,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 86
       }

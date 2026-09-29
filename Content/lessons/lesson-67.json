@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l67-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "promptText": "搬",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "spectacle ; jouer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "faire de la randonnée en montagne"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jeune"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "déménager ; déplacer"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l67-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 年轻 (nián qīng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "déménager ; déplacer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "printemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jeune"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "herbe"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l67-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « faire de la randonnée en montagne » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "爱好 (ài hào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "爬山 (pá shān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "体育 (tǐ yù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "表演 (biǎo yǎn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l67-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "promptText": "体育",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "sport ; éducation physique"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "loisir ; passe-temps"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "spectacle ; jouer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jeune"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l67-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 爱好 (ài hào) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire de la randonnée en montagne"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "herbe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "sport ; éducation physique"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "loisir ; passe-temps"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 63
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l67-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你搬到这里多久了？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce jeune professeur sait parler anglais."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous déménageons demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Depuis combien de temps as-tu déménagé ici ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 63
       }
     },
@@ -612,8 +944,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l67-order-2",
+          "prompt": {
+            "fr": "Construis « Nous déménageons demain »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l67-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "搬",
+            "pinyin": "bān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我们明天搬家。",
+          "我们明天搬家"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l67-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "promptText": "他们一边练习体育动作，一边听音乐吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ils répètent tout en préparant le spectacle du week-end."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ils répètent des mouvements sportifs tout en écoutant de la musique ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Pas longtemps. Les jeunes préparent un spectacle."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l67-fill-2",
+          "prompt": {
+            "fr": "Complète : 学校今天有___。 (« Il y a un spectacle à l’école aujourd’hui »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l67-produce"
+          ],
+          "required": true
+        },
+        "sentence": "学校今天有___。",
+        "acceptedAnswers": [
+          "表演"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l67-order-3",
+          "prompt": {
+            "fr": "Construis « Le week-end, nous faisons une randonnée en montagne »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l67-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "爬山",
+            "pinyin": "pá shān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "周末",
+            "pinyin": "zhōu mò",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "周末我们一起爬山。",
+          "周末我们一起爬山"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l67-fill-3",
+          "prompt": {
+            "fr": "Complète : 那位___老师会说英语。 (« Ce jeune professeur sait parler anglais »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l67-produce"
+          ],
+          "required": true
+        },
+        "sentence": "那位___老师会说英语。",
+        "acceptedAnswers": [
+          "年轻"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l67-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我最喜欢的体育项目是游泳。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon sport préféré est la natation."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mon passe-temps est de regarder des films."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a un spectacle à l’école aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 63
       }
     },
@@ -662,7 +1275,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 63
       }
@@ -695,7 +1308,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 63
       }
@@ -744,7 +1357,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 63
       }

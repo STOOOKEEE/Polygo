@@ -591,7 +591,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l43-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "promptText": "菜单",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "matin"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "devant ; avant"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "cadeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "menu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l43-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 超市 (chāo shì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chemise"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pantalon"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "supermarché"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "devant ; avant"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l43-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « chemise » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "上午 (shàng wǔ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "衬衫 (chèn shān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "礼物 (lǐ wù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "菜单 (cài dān)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l43-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "promptText": "接",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "recevoir ; aller chercher"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "cadeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "pantalon"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "devant ; avant"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l43-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 裤子 (kù zi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chemise"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "supermarché"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "devant ; avant"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "pantalon"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 39
       }
@@ -645,8 +927,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l43-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "promptText": "超市旁边有商店吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Donnez-moi le menu, s’il vous plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Merci pour ton cadeau."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Y a-t-il un magasin à côté du supermarché ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 39
       }
     },
@@ -675,8 +1007,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l43-order-2",
+          "prompt": {
+            "fr": "Construis « Donnez-moi le menu, s’il vous plaît »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l43-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "菜单",
+            "pinyin": "cài dān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "请给我菜单。",
+          "请给我菜单"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l43-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "promptText": "有，我先看菜单，再买礼物。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Y a-t-il un magasin à côté du supermarché ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui ; je regarde d’abord le menu, puis j’achète un cadeau."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Son ami vient recevoir le cadeau, puis ils rentrent ensemble."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l43-fill-2",
+          "prompt": {
+            "fr": "Complète : 我去___买菜。 (« Je vais au supermarché acheter des légumes »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l43-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我去___买菜。",
+        "acceptedAnswers": [
+          "超市"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l43-order-3",
+          "prompt": {
+            "fr": "Construis « Qui vient recevoir le cadeau ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l43-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "接",
+            "pinyin": "jiē",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "谁",
+            "pinyin": "shuí",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "礼物",
+            "pinyin": "lǐ wù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "谁来接礼物？",
+          "谁来接礼物"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l43-fill-3",
+          "prompt": {
+            "fr": "Complète : ___便宜，裤子比较贵。 (« La chemise est bon marché, le pantalon est assez cher »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l43-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___便宜，裤子比较贵。",
+        "acceptedAnswers": [
+          "衬衫"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l43-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le cadeau », que signifie : 他先看菜单，再选择一件衬衫。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il regarde d’abord le menu puis choisit une chemise."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un ami vient le recevoir. Après l’achat, nous rentrons à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je vais travailler le matin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 39
       }
     },
@@ -725,7 +1338,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 39
       }
@@ -757,7 +1370,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 39
       }
@@ -806,7 +1419,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 39
       }

@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l75-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "promptText": "香蕉",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nouilles"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "parler ; expliquer"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "coin ; jiao (monnaie)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "banane"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l75-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 见面 (jiàn miàn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nouilles"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "assiette"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "se rencontrer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bol"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l75-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « parler ; expliquer » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "角 (jiǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "讲 (jiǎng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "碗 (wǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "面条 (miàn tiáo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l75-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "promptText": "角",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "coin ; jiao (monnaie)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "banane"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "parler ; expliquer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bière"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l75-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 面条 (miàn tiáo) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "banane"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "se rencontrer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "nouilles"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 71
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l75-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我们几点见面？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous nous retrouvons au café samedi."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "À quelle heure nous retrouvons-nous ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il ne boit pas de bière le soir."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 71
       }
     },
@@ -612,8 +944,331 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l75-order-2",
+          "prompt": {
+            "fr": "Construis « Mets la soupe dans le bol, s’il te plaît »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l75-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "放",
+            "pinyin": "fàng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "汤",
+            "pinyin": "tāng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "碗",
+            "pinyin": "wǎn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "把",
+            "pinyin": "bǎ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "进",
+            "pinyin": "jìn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "请把汤放进碗里。",
+          "请把汤放进碗里"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l75-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你会讲价吗？这个一共多少钱？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Sais-tu marchander ? Combien cela coûte-t-il au total ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mets la soupe dans le bol, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le professeur raconte une histoire."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l75-fill-2",
+          "prompt": {
+            "fr": "Complète : 我早餐吃了一根___。 (« J’ai mangé une banane au petit déjeuner »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l75-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我早餐吃了一根___。",
+        "acceptedAnswers": [
+          "香蕉"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l75-order-3",
+          "prompt": {
+            "fr": "Construis « Nous nous retrouvons au café samedi »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l75-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "见面",
+            "pinyin": "jiàn miàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "馆",
+            "pinyin": "guǎn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "咖啡",
+            "pinyin": "kā fēi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "六",
+            "pinyin": "liù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "我们星期六在咖啡馆见面。",
+          "我们星期六在咖啡馆见面"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l75-fill-3",
+          "prompt": {
+            "fr": "Complète : 老师正在___一个故事。 (« Le professeur raconte une histoire »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l75-produce"
+          ],
+          "required": true
+        },
+        "sentence": "老师正在___一个故事。",
+        "acceptedAnswers": [
+          "讲"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 71
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l75-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l75-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这支铅笔要五角钱。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l75-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Sais-tu marchander ? Combien cela coûte-t-il au total ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mets la soupe dans le bol, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce crayon coûte cinquante centimes de yuan."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 71
       }
     },
@@ -662,7 +1317,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 71
       }
@@ -695,7 +1350,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 71
       }
@@ -744,7 +1399,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 71
       }

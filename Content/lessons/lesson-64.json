@@ -614,7 +614,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l64-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "promptText": "关",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "fermer ; éteindre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mauvais ; cassé"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "selon ; d’après"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l64-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 关心 (guān xīn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "passé ; passer"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "histoire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "se soucier de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l64-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « au sujet de » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "害怕 (hài pà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "关心 (guān xīn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "关于 (guān yú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "故事 (gù shi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l64-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "promptText": "国家",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "fermer ; éteindre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pays ; État"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "au sujet de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "selon ; d’après"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l64-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 过去 (guò qù) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "passé ; passer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "selon ; d’après"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "se soucier de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "pays ; État"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 60
       }
@@ -668,8 +950,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l64-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "promptText": "昨天我们因为下雨改变了计划。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "D’après la carte, nous prenons cette route."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Maintenant, écoute la question puis réponds avec une phrase complète."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Hier, nous avons changé nos plans parce qu’il pleuvait."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 60
       }
     },
@@ -698,8 +1030,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l64-order-2",
+          "prompt": {
+            "fr": "Construis « Ferme la porte, s’il te plaît »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "门",
+            "pinyin": "mén",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "关",
+            "pinyin": "guān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "请关门。",
+          "请关门"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l64-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我把地图放在桌上，大家就明白了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Maintenant, écoute la question puis réponds avec une phrase complète."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai posé la carte sur la table et tout le monde a compris."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Au sujet de cette affaire, nous en reparlerons demain."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l64-fill-2",
+          "prompt": {
+            "fr": "Complète : 我很___你。 (« Je me soucie beaucoup de toi »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我很___你。",
+        "acceptedAnswers": [
+          "关心"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l64-order-3",
+          "prompt": {
+            "fr": "Construis « La Chine est un grand pays »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "国家",
+            "pinyin": "guó jiā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "中国",
+            "pinyin": "zhōng guó",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "中国是一个大国家。",
+          "中国是一个大国家"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l64-fill-3",
+          "prompt": {
+            "fr": "Complète : 下雨以后，大家___地图改变了路线。 (« Après la pluie, tout le monde a changé d’itinéraire en fonction de la carte »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "sentence": "下雨以后，大家___地图改变了路线。",
+        "acceptedAnswers": [
+          "根据"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l64-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une journée de révision », que signifie : 路虽然很长，但是大家互相帮忙，终于到了目的地。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Même si la route était longue, tout le monde s’est aidé et a finalement atteint sa destination."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après la pluie, tout le monde a changé d’itinéraire en fonction de la carte."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Maintenant, écoute la question puis réponds avec une phrase complète."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 60
       }
     },
@@ -748,7 +1368,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 60
       }
@@ -781,7 +1401,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 60
       }
@@ -830,7 +1450,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 60
       }

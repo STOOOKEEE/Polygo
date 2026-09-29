@@ -761,7 +761,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l16-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "个",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "classificateur général"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chambre ; pièce"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comparer ; que (comparatif)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "particule de complément"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 怎么 (zěn me) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chambre ; pièce"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "table"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tout le monde"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "comment"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « comment ; de quelle manière » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "为什么 (wèi shén me)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "房间 (fáng jiān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "怎么样 (zěn me yàng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "衣服 (yī fu)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l16-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "吧",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "comparer ; que (comparatif)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "particule de suggestion"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chambre ; pièce"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "classificateur général"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 比 (bǐ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "comparer ; que (comparatif)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "particule de complément"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "classificateur général"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "pourquoi"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 12
       }
@@ -815,8 +1097,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l16-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "大家有几道题？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce vêtement est très joli."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il pleut, c’est pourquoi je ne sors pas."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Combien d’exercices avez-vous tous ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 12
       }
     },
@@ -845,8 +1177,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l16-order-2",
+          "prompt": {
+            "fr": "Construis « J’ai trois pommes »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "三",
+            "pinyin": "sān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我有三个苹果。",
+          "我有三个苹果"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l16-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我们有三道题，但是我不懂第二道。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il pleut, c’est pourquoi je ne sors pas."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous en avons trois, mais je ne comprends pas le deuxième."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tout le monde fait les exercices ensemble."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l16-fill-2",
+          "prompt": {
+            "fr": "Complète : 你___去学校？ (« Comment vas-tu à l’école ? »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你___去学校？",
+        "acceptedAnswers": [
+          "怎么"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l16-order-3",
+          "prompt": {
+            "fr": "Construis « Tout le monde fait les exercices ensemble »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "题",
+            "pinyin": "tí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "大家",
+            "pinyin": "dà jiā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "做",
+            "pinyin": "zuò",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "大家一起做题。",
+          "大家一起做题"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l16-fill-3",
+          "prompt": {
+            "fr": "Complète : 做完三道___以后，大家都懂了。 (« Après les trois exercices, tout le monde a compris »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "sentence": "做完三道___以后，大家都懂了。",
+        "acceptedAnswers": [
+          "题"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le bilan », que signifie : 第一道题比较简单，第二道题比第一道难。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le premier est assez simple ; le deuxième est plus difficile que le premier."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cet exercice est plus difficile que le premier, alors je te demande."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Maintenant j’ai compris ; quand nous aurons fini, partons."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 12
       }
     },
@@ -895,7 +1515,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 12
       }
@@ -927,7 +1547,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 12
       }
@@ -976,7 +1596,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 12
       }

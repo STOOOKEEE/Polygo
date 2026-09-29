@@ -527,7 +527,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l63-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "promptText": "根据",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "davantage ; plus"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "difficile"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "selon ; d’après"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l63-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 跟 (gēn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "selon ; d’après"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avec ; suivre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "davantage ; plus"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l63-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « davantage ; plus » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "难 (nán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "更 (gèng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "敢 (gǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "跟 (gēn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l63-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "promptText": "故事",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "histoire"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "avec ; suivre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "davantage ; plus"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l63-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 满意 (mǎn yì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "histoire"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "comprendre ; clair"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "oser"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "satisfait"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 59
       }
@@ -581,8 +863,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l63-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这条路更容易吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu comprends ce que je veux dire ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette route était-elle plus facile ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui, alors ils sont finalement arrivés au parc."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 59
       }
     },
@@ -611,8 +943,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l63-order-2",
+          "prompt": {
+            "fr": "Construis « Oses-tu y aller seul ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l63-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "敢",
+            "pinyin": "gǎn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "人",
+            "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "你敢一个人去吗？",
+          "你敢一个人去吗"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l63-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "promptText": "是，所以他们终于到了公园。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui, alors ils sont finalement arrivés au parc."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oseras-tu raconter cette histoire ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "D’après la carte, nous prenons cette route."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l63-fill-2",
+          "prompt": {
+            "fr": "Complète : ___地图，我们走这条路。 (« D’après la carte, nous prenons cette route »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l63-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___地图，我们走这条路。",
+        "acceptedAnswers": [
+          "根据"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l63-order-3",
+          "prompt": {
+            "fr": "Construis « J’y vais avec un ami »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l63-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "跟",
+            "pinyin": "gēn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "朋友",
+            "pinyin": "péng yǒu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我跟朋友一起去。",
+          "我跟朋友一起去"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l63-fill-3",
+          "prompt": {
+            "fr": "Complète : 邻居讲了一个___：他跟朋友一起走路。 (« Le voisin raconte une histoire : il a marché avec un ami »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l63-produce"
+          ],
+          "required": true
+        },
+        "sentence": "邻居讲了一个___：他跟朋友一起走路。",
+        "acceptedAnswers": [
+          "故事"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l63-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une route racontée par le voisin », que signifie : 根据他的说明，另一条路更容易，他们终于到了公园。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. D’après les paroles du voisin, il a pris une autre route avec un ami."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le voisin raconte une histoire : il a marché avec un ami."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "D’après ses explications, l’autre route était plus facile et ils sont finalement arrivés au parc."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 59
       }
     },
@@ -661,7 +1302,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 59
       }
@@ -694,7 +1335,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 59
       }
@@ -743,7 +1384,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 59
       }

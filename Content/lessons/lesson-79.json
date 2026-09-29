@@ -529,7 +529,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l79-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "promptText": "离开",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "comprendre ; connaître"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "avoir soif"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "histoire ; passé"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "partir ; quitter"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l79-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 练习 (liàn xí) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "mignon ; adorable"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "climatisation"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "s’exercer ; exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "histoire ; passé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l79-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « comprendre ; connaître » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "练习 (liàn xí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "了解 (liǎo jiě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "历史 (lì shǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "可爱 (kě ài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l79-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "promptText": "绿",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "vert"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "avoir soif"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "histoire ; passé"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "partir ; quitter"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l79-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 可爱 (kě ài) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "s’exercer ; exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "avoir soif"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "partir ; quitter"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mignon ; adorable"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 75
       }
@@ -583,8 +865,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l79-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你要离开图书馆了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "En été, la climatisation est allumée dans la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "De quoi parle cette lettre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tu vas quitter la bibliothèque ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 75
       }
     },
@@ -613,8 +945,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l79-order-2",
+          "prompt": {
+            "fr": "Construis « Nous quittons cet endroit demain »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l79-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "离开",
+            "pinyin": "lí kāi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我们明天离开这里。",
+          "我们明天离开这里"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l79-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "promptText": "还没有。为了了解历史，我每天练习阅读。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les feuilles des arbres sont vertes au printemps."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Pas encore. Pour comprendre l’histoire, je m’exerce à lire chaque jour."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "En été, la climatisation est allumée dans la chambre."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l79-fill-2",
+          "prompt": {
+            "fr": "Complète : 我喜欢读中国___。 (« J’aime lire l’histoire de la Chine »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l79-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我喜欢读中国___。",
+        "acceptedAnswers": [
+          "历史"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l79-order-3",
+          "prompt": {
+            "fr": "Construis « C’est en pratiquant chaque jour qu’on peut progresser »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l79-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "才",
+            "pinyin": "cái",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "能",
+            "pinyin": "néng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "步",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "进",
+            "pinyin": "jìn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "练习",
+            "pinyin": "liàn xí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "每天练习才能进步。",
+          "每天练习才能进步"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l79-fill-3",
+          "prompt": {
+            "fr": "Complète : 我想___这个城市。 (« Je veux mieux connaître cette ville »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l79-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我想___这个城市。",
+        "acceptedAnswers": [
+          "了解"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l79-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 春天的树叶是绿色的。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les feuilles des arbres sont vertes au printemps."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "De quoi parle cette lettre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Pas encore. Pour comprendre l’histoire, je m’exerce à lire chaque jour."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 75
       }
     },
@@ -663,7 +1304,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 75
       }
@@ -696,7 +1337,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 75
       }
@@ -745,7 +1386,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 75
       }

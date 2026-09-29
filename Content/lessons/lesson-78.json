@@ -527,7 +527,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l78-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "promptText": "渴",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "passer par ; traverser"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "emprunter ; prêter"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avoir soif"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bleu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l78-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 空调 (kōng tiáo) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "pleurer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "climatisation"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "bleu"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mignon ; adorable"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l78-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « pleurer » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "哭 (kū)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "渴 (kě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "借 (jiè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "蓝 (lán)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l78-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "promptText": "蓝",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "résoudre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mignon ; adorable"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "passer par ; traverser"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bleu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l78-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 解决 (jiě jué) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "avoir soif"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "emprunter ; prêter"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "résoudre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "passer par ; traverser"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 74
       }
@@ -574,8 +856,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l78-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "promptText": "虽然天气很热，但是空调马上就开了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "En été, la climatisation est allumée dans la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Même s’il fait chaud, la climatisation sera allumée tout de suite."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "D’accord, il sourit dès qu’il voit le ballon bleu."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 74
       }
     },
@@ -604,8 +936,324 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l78-order-2",
+          "prompt": {
+            "fr": "Construis « Ce petit chien est adorable »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l78-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "小",
+            "pinyin": "xiǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "可爱",
+            "pinyin": "kě ài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "只",
+            "pinyin": "zhī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "狗",
+            "pinyin": "gǒu",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "这只小狗很可爱。",
+          "这只小狗很可爱"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l78-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "promptText": "他渴了，给他一点水吧。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il a soif, donne-lui un peu d’eau."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "D’accord, il sourit dès qu’il voit le ballon bleu."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce petit chien est adorable."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l78-fill-2",
+          "prompt": {
+            "fr": "Complète : 运动以后我很___。 (« Après le sport, j’ai très soif »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l78-produce"
+          ],
+          "required": true
+        },
+        "sentence": "运动以后我很___。",
+        "acceptedAnswers": [
+          "渴"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l78-order-3",
+          "prompt": {
+            "fr": "Construis « En été, la climatisation est allumée dans la chambre »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l78-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "开",
+            "pinyin": "kāi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "空调",
+            "pinyin": "kōng tiáo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "着",
+            "pinyin": "zhe",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "夏",
+            "pinyin": "xià",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "夏天房间里开着空调。",
+          "夏天房间里开着空调"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l78-fill-3",
+          "prompt": {
+            "fr": "Complète : 他们打开___，给他水；看到蓝色气球后，孩子不哭了。 (« Ils allument la climatisation et lui donnent de l’eau ; après avoir vu un ballon bleu, l’enfant ne pleure plus »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l78-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他们打开___，给他水；看到蓝色气球后，孩子不哭了。",
+        "acceptedAnswers": [
+          "空调"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l78-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 孩子找不到妈妈就哭了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Même s’il fait chaud, la climatisation sera allumée tout de suite."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "D’accord, il sourit dès qu’il voit le ballon bleu."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’enfant s’est mis à pleurer quand il n’a pas trouvé sa mère."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 74
       }
     },
@@ -654,7 +1302,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 74
       }
@@ -687,7 +1335,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 74
       }
@@ -736,7 +1384,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 74
       }

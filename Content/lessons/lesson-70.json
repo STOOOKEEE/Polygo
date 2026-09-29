@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l70-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "或者",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "facile"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se souvenir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ou bien"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "clair ; clairement"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l70-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 极 (jí) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "se souvenir"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "extrêmement ; au plus haut degré"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "clair ; clairement"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "presque"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l70-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « presque » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "几乎 (jī hū)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "重要 (zhòng yào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "记得 (jì de)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "机会 (jī huì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l70-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "记得",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "facile"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "clair ; clairement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "important"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "se souvenir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l70-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 清楚 (qīng chǔ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "extrêmement ; au plus haut degré"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "important"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "clair ; clairement"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "presque"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 66
       }
@@ -584,8 +866,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l70-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这是一次极好的机会，我几乎每天都在计划。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les plats de ce restaurant sont extrêmement bons."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je vais presque tous les jours au travail à pied."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "C’est une très bonne occasion ; je planifie presque tous les jours."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 66
       }
     },
@@ -614,8 +946,324 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l70-order-2",
+          "prompt": {
+            "fr": "Construis « Le week-end, nous allons au parc ou nous regardons un film »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l70-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "周末",
+            "pinyin": "zhōu mò",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "或者",
+            "pinyin": "huò zhě",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "周末我们去公园或者看电影。",
+          "周末我们去公园或者看电影"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l70-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我记得，明天就出发。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les plats de ce restaurant sont extrêmement bons."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je m’en souviens, je pars demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "N’oublie pas d’emporter ton passeport."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l70-fill-2",
+          "prompt": {
+            "fr": "Complète : 这是一次学习汉语的___。 (« C’est une occasion d’étudier le chinois »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l70-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这是一次学习汉语的___。",
+        "acceptedAnswers": [
+          "机会"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l70-order-3",
+          "prompt": {
+            "fr": "Construis « Je vais presque tous les jours au travail à pied »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l70-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "走路",
+            "pinyin": "zǒu lù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "上班",
+            "pinyin": "shàng bān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "几乎",
+            "pinyin": "jī hū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我几乎每天走路上班。",
+          "我几乎每天走路上班"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l70-fill-3",
+          "prompt": {
+            "fr": "Complète : 他___准备好了，只要记得带护照就可以出发。 (« Il est presque prêt ; il lui suffit de se souvenir de prendre son passeport pour partir »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l70-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他___准备好了，只要记得带护照就可以出发。",
+        "acceptedAnswers": [
+          "几乎"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l70-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这家饭馆的菜好吃极了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les plats de ce restaurant sont extrêmement bons."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "C’est une très bonne occasion ; je planifie presque tous les jours."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "N’oublie pas ton passeport."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 66
       }
     },
@@ -664,7 +1312,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 66
       }
@@ -697,7 +1345,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 66
       }
@@ -746,7 +1394,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 66
       }

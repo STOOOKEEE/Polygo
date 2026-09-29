@@ -590,7 +590,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l38-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "promptText": "班",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "téléphone portable"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vérifier ; examen"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "classe ; groupe"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mot ; expression"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 必须 (bì xū) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "vérifier ; examen"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "devoir ; falloir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mot ; expression"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "téléphone portable"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « réviser » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "复习 (fù xí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "词语 (cí yǔ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "检查 (jiǎn chá)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "上班 (shàng bān)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l38-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "promptText": "检查",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "réviser"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "devoir ; falloir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "phrase"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "vérifier ; examen"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 句子 (jù zi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "mot ; expression"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "réviser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "phrase"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "devoir ; falloir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 34
       }
@@ -644,8 +926,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l38-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你在哪个班？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Dans quelle classe es-tu ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "As-tu fini de réviser ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il fait froid dehors."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 34
       }
     },
@@ -674,8 +1006,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l38-order-2",
+          "prompt": {
+            "fr": "Construis « Je suis dans la classe trois »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "三",
+            "pinyin": "sān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "班",
+            "pinyin": "bān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我在三班。",
+          "我在三班"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l38-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我在二班，必须复习词语。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. Il a dit que la première phrase était très claire."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je vais travailler à huit heures."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je suis dans la classe deux et je dois réviser les mots."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l38-fill-2",
+          "prompt": {
+            "fr": "Complète : 你___认真学习。 (« Tu dois étudier sérieusement »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你___认真学习。",
+        "acceptedAnswers": [
+          "必须"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l38-order-3",
+          "prompt": {
+            "fr": "Construis « Le professeur a-t-il vérifié les phrases ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "老师",
+            "pinyin": "lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "检查",
+            "pinyin": "jiǎn chá",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "句子",
+            "pinyin": "jù zi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "老师检查句子了吗？",
+          "老师检查句子了吗"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l38-fill-3",
+          "prompt": {
+            "fr": "Complète : 二___的学生复习词语，老师检查每个人写的句子。 (« Les élèves de la classe deux révisent les mots ; le professeur vérifie les phrases écrites par chacun »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "sentence": "二___的学生复习词语，老师检查每个人写的句子。",
+        "acceptedAnswers": [
+          "班"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le travail de classe », que signifie : 有一个句子不清楚，学生改了以后再读。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le professeur a-t-il vérifié les phrases ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Une phrase n’est pas claire ; l’élève la corrige puis la relit."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui. Il a dit que la première phrase était très claire."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 34
       }
     },
@@ -724,7 +1344,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 34
       }
@@ -756,7 +1376,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 34
       }
@@ -805,7 +1425,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 34
       }

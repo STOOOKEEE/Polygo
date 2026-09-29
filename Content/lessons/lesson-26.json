@@ -755,7 +755,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l26-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "别",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "long"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "sortir ; apparaître"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ne… pas (impératif)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mais"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 长 (cháng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "premier"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "long"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "entreprise"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sortir ; apparaître"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « sortir ; apparaître » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "出 (chū)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "等 (děng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "长 (cháng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "比 (bǐ)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l26-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "次",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "particule de complément"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "faux ; erreur"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comprendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "fois (occurrence)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 错 (cuò) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "long"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aider ; aide"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faux ; erreur"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sortir ; apparaître"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 22
       }
@@ -809,8 +1091,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l26-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你需要帮助吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "As-tu besoin d’aide ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je travaille dans une entreprise."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’enfant sort de la chambre."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 22
       }
     },
@@ -839,8 +1171,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l26-order-2",
+          "prompt": {
+            "fr": "Construis « J’aide mon camarade de classe »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "帮助",
+            "pinyin": "bāng zhù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "同学",
+            "pinyin": "tóng xué",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我帮助同学。",
+          "我帮助同学"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l26-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "需要。这个题太难，我做错了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Merci ! J’ai compris et je peux aider un camarade."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En faisant l’exercice, l’étudiant découvre une erreur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui. Cet exercice est trop difficile, je me suis trompé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l26-fill-2",
+          "prompt": {
+            "fr": "Complète : 这条路很___。 (« Cette route est longue »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这条路很___。",
+        "acceptedAnswers": [
+          "长"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l26-order-3",
+          "prompt": {
+            "fr": "Construis « L’enfant sort de la chambre »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "出",
+            "pinyin": "chū",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "从",
+            "pinyin": "cóng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "孩子从房间里出来。",
+          "孩子从房间里出来"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l26-fill-3",
+          "prompt": {
+            "fr": "Complète : 学生做题的时候发现一个___误。 (« En faisant l’exercice, l’étudiant découvre une erreur »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "sentence": "学生做题的时候发现一个___误。",
+        "acceptedAnswers": [
+          "错"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Corriger », que signifie : 老师让他先读第一句话。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je veux y aller, mais il pleut aujourd’hui."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le professeur lui demande de lire d’abord la première phrase."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Enfin, il comprend et peut aider son camarade."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 22
       }
     },
@@ -889,7 +1509,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 22
       }
@@ -921,7 +1541,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 22
       }
@@ -970,7 +1590,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 22
       }

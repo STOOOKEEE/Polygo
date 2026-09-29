@@ -556,7 +556,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l49-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "promptText": "口",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "semaine"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bouche ; classificateur"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "monde"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dessous ; descendre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l49-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 辆 (liàng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "classificateur des véhicules"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "semaine"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "dessous ; descendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "relation ; rapport"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l49-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « monde » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "关系 (guān xì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "再见 (zàijiàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "星期 (xīng qī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "世界 (shì jiè)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l49-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "promptText": "条",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "monde"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "semaine"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "classificateur allongé"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "au revoir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l49-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 下 (xià) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "relation ; rapport"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "dessous ; descendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "classificateur des véhicules"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "au revoir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 45
       }
@@ -610,8 +892,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l49-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你和邻居的关系怎么样？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Donne-moi une gorgée d’eau, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Descends, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comment sont tes relations avec les voisins ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 45
       }
     },
@@ -640,8 +972,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l49-order-2",
+          "prompt": {
+            "fr": "Construis « Nos relations sont très bonnes »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "关系",
+            "pinyin": "guān xì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我们的关系很好。",
+          "我们的关系很好"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l49-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "promptText": "街上有几辆车？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Donne-moi une gorgée d’eau, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Combien de véhicules y a-t-il dans la rue ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette route est assez proche et l’autre assez éloignée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l49-fill-2",
+          "prompt": {
+            "fr": "Complète : 请给我一___水。 (« Donne-moi une gorgée d’eau, s’il te plaît »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请给我一___水。",
+        "acceptedAnswers": [
+          "口"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l49-order-3",
+          "prompt": {
+            "fr": "Construis « Deux véhicules sont garés devant la porte »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "门",
+            "pinyin": "mén",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "两",
+            "pinyin": "liǎng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "车",
+            "pinyin": "chē",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "停",
+            "pinyin": "tíng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "着",
+            "pinyin": "zhe",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "口",
+            "pinyin": "kǒu",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "辆",
+            "pinyin": "liàng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "门口停着两辆车。",
+          "门口停着两辆车"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l49-fill-3",
+          "prompt": {
+            "fr": "Complète : 邻居___很好，大家一起看看街道上的车辆和道路。 (« Les relations entre voisins sont très bonnes ; tout le monde regarde ensemble les véhicules et les routes de la rue »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "sentence": "邻居___很好，大家一起看看街道上的车辆和道路。",
+        "acceptedAnswers": [
+          "关系"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l49-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Dans le quartier », que signifie : 这条路比较近，另一条路比较远。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l49-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cette route est assez proche et l’autre assez éloignée."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette route est-elle plus éloignée que l’autre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nos relations sont très bonnes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 45
       }
     },
@@ -690,7 +1324,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 45
       }
@@ -722,7 +1356,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 45
       }
@@ -771,7 +1405,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 45
       }

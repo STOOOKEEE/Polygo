@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l92-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "promptText": "中间",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "milieu ; entre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vouloir bien ; être disposé à"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "s’occuper de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "lune"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l92-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 终于 (zhōng yú) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rencontrer ; tomber sur"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "lune"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "sorte ; espèce"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "enfin"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l92-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « sorte ; espèce » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "愿意 (yuàn yì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "照顾 (zhào gù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "种 (zhǒng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "终于 (zhōng yú)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l92-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "promptText": "主要",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "enfin"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "principal ; surtout"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "milieu ; entre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "s’occuper de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l92-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 遇到 (yù dào) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rencontrer ; tomber sur"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "milieu ; entre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "enfin"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "vouloir bien ; être disposé à"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 88
       }
@@ -584,8 +866,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l92-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "promptText": "谁照顾学校中间的花园？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Qui s’occupe du jardin au milieu de l’école ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai rencontré un vieil ami à la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’infirmière s’occupe de l’enfant malade."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 88
       }
     },
@@ -614,8 +946,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l92-order-2",
+          "prompt": {
+            "fr": "Construis « L’infirmière s’occupe de l’enfant malade »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l92-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "护",
+            "pinyin": "hù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "照顾",
+            "pinyin": "zhào gù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "生病",
+            "pinyin": "shēng bìng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "士",
+            "pinyin": "shi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "护士照顾生病的孩子。",
+          "护士照顾生病的孩子"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l92-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "promptText": "主要的问题解决了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai envie d’essayer cette sorte de thé."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "La table est au milieu de la pièce."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le problème principal est-il résolu ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l92-fill-2",
+          "prompt": {
+            "fr": "Complète : 桌子在房间的___。 (« La table est au milieu de la pièce »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l92-produce"
+          ],
+          "required": true
+        },
+        "sentence": "桌子在房间的___。",
+        "acceptedAnswers": [
+          "中间"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l92-order-3",
+          "prompt": {
+            "fr": "Construis « Nous avons enfin trouvé la gare »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l92-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "终于",
+            "pinyin": "zhōng yú",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我们终于找到了车站。",
+          "我们终于找到了车站"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l92-fill-3",
+          "prompt": {
+            "fr": "Complète : 学生在学校___种了两种花，老师和同学一起照顾。 (« Les élèves ont planté deux sortes de fleurs au milieu de l’école ; le professeur et les camarades s’en occupent ensemble »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l92-produce"
+          ],
+          "required": true
+        },
+        "sentence": "学生在学校___种了两种花，老师和同学一起照顾。",
+        "acceptedAnswers": [
+          "中间"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l92-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le jardin au centre de l’école », que signifie : 主要问题是没有水，后来他们找到办法，花终于长大了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les élèves ont planté deux sortes de fleurs au milieu de l’école ; le professeur et les camarades s’en occupent ensemble."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le problème principal était le manque d’eau ; ils ont trouvé une solution et les fleurs ont enfin grandi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "La table est au milieu de la pièce."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 88
       }
     },
@@ -664,7 +1305,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 88
       }
@@ -697,7 +1338,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 88
       }
@@ -746,7 +1387,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 88
       }

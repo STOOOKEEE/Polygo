@@ -18,6 +18,8 @@ import tempfile
 from pathlib import Path
 from typing import Any, Iterable
 
+from exercise_expansion import EXERCISE_BUDGET, PHASES, ExpansionError, expand_lesson_exercises
+
 
 SCHEMA_VERSION = 1
 HSK_LEGACY_STANDARD_ID = "HSK-legacy-2.0"
@@ -735,13 +737,16 @@ def editorial_block_metadata(block: dict[str, Any]) -> dict[str, Any]:
     if kind == "exercise":
         spec = block.get("spec") if isinstance(block.get("spec"), dict) else {}
         exercise_kind = spec.get("kind")
+        # Daily lessons carry their session phase (discover, guided, reuse)
+        # in the stage; keep it and only derive the skill from the family.
+        preset = block.get("metadata", {}).get("stage") if isinstance(block.get("metadata"), dict) else None
         if exercise_kind in {"choice", "listeningChoice", "flashcard"}:
-            return {"stage": "recover", "skill": "recognition"}
+            return {"stage": preset or "recover", "skill": "recognition"}
         if exercise_kind == "speaking":
-            return {"stage": "produce", "skill": "speaking"}
+            return {"stage": preset or "produce", "skill": "speaking"}
         if exercise_kind in {"wordOrder", "fillBlank", "handwriting"}:
-            return {"stage": "produce", "skill": "production"}
-        return {"stage": "practice", "skill": "production"}
+            return {"stage": preset or "produce", "skill": "production"}
+        return {"stage": preset or "practice", "skill": "production"}
     return {"stage": "practice", "skill": "recognition"}
 
 
@@ -889,11 +894,43 @@ def apply_editorial_metadata(
             if isinstance(entry, dict) and isinstance(entry.get("id"), str)
         )
 
+    # Sentence tiles are segmented against every known word: the release
+    # catalogue plus each lesson's own vocabulary.
+    lexicon = {
+        entry["hanzi"]
+        for lesson in ordered_lessons
+        for entry in lesson.get("vocabulary", [])
+        if isinstance(entry, dict) and isinstance(entry.get("hanzi"), str)
+    }
+    if catalog_info is not None:
+        lexicon.update(entry["hanzi"] for entry in catalog_info["byID"].values())
+    # Authored two-character tiles are real words that the catalogue may omit.
+    lexicon.update(
+        token["hanzi"]
+        for lesson in ordered_lessons
+        for spec in exercise_specs(lesson)
+        if spec.get("kind") == "wordOrder"
+        for token in spec.get("tokens", [])
+        if len(token.get("hanzi", "")) == 2
+    )
+
     for lesson in generated_lessons:
         vocabulary = [entry for entry in lesson.get("vocabulary", []) if isinstance(entry, dict)]
         vocabulary_ids = [entry.get("id") for entry in vocabulary]
         new_ids = [vocab_id for vocab_id in vocabulary_ids if vocab_id not in introduced]
         reused_ids = [vocab_id for vocab_id in vocabulary_ids if vocab_id in introduced]
+        # Extend the six authored exercises to the three-phase session before
+        # reuse is measured, so new exercises count as practice evidence.
+        earlier_vocabulary = [
+            entry
+            for earlier in [item for item in ordered_lessons if item.get("order", 0) < lesson.get("order", 0)][-2:]
+            for entry in earlier.get("vocabulary", [])
+            if isinstance(entry, dict)
+        ]
+        try:
+            expand_lesson_exercises(lesson, set(new_ids), earlier_vocabulary, lexicon)
+        except ExpansionError as exc:
+            raise ContentError(str(exc)) from exc
         extra_ids = [
             vocab_id for entry, vocab_id in zip(vocabulary, vocabulary_ids)
             if vocab_id is not None and canonical_catalog_entry_id(entry, catalog_info) is None
@@ -1092,6 +1129,40 @@ def lint_plan(course: dict[str, Any], lesson_ids: list[str], lessons: dict[str, 
     unique(milestone_ids, context + ".plan.milestones.id")
 
 
+def lint_exercise_session(lesson: dict[str, Any], location: str) -> None:
+    """Check a generated daily lesson's three-phase exercise session."""
+    blocks = [
+        block for block in lesson.get("blocks", [])
+        if isinstance(block, dict) and block.get("kind") == "exercise" and isinstance(block.get("spec"), dict)
+    ]
+    if not EXERCISE_BUDGET[0] <= len(blocks) <= EXERCISE_BUDGET[1]:
+        raise ContentError(f"{location}: {len(blocks)} exercises, expected {EXERCISE_BUDGET[0]}–{EXERCISE_BUDGET[1]}")
+    phases: list[str] = []
+    identities: set[tuple[str, str]] = set()
+    for block in blocks:
+        spec = block["spec"]
+        exercise_id = spec["header"]["id"]
+        stage = block.get("metadata", {}).get("stage") if isinstance(block.get("metadata"), dict) else None
+        if stage not in PHASES:
+            raise ContentError(f"{location}: exercise '{exercise_id}' needs a stage in {', '.join(PHASES)}")
+        phases.append(stage)
+        identity = (spec["header"]["prompt"].get("fr", ""), spec.get("promptText") or "")
+        if identity in identities:
+            raise ContentError(f"{location}: exercise '{exercise_id}' repeats an earlier prompt")
+        identities.add(identity)
+        if spec["kind"] in {"choice", "listeningChoice"}:
+            labels = [json.dumps(choice.get("label"), sort_keys=True) for choice in spec["choices"]]
+            if len(set(labels)) != len(labels):
+                raise ContentError(f"{location}: exercise '{exercise_id}' has duplicate choice labels")
+        if spec["kind"] == "wordOrder":
+            hanzi = [token["hanzi"] for token in spec["tokens"]]
+            if len(set(hanzi)) != len(hanzi) or sorted(spec["correctOrder"]) != sorted(token["id"] for token in spec["tokens"]):
+                raise ContentError(f"{location}: exercise '{exercise_id}' has ambiguous or inconsistent tiles")
+    rank = [PHASES.index(phase) for phase in phases]
+    if rank != sorted(rank) or set(rank) != set(range(len(PHASES))):
+        raise ContentError(f"{location}: exercises must run through {', '.join(PHASES)} in order")
+
+
 def lint_bundle(root: Path) -> None:
     manifest = load_json(root / "manifest.json")
     if not isinstance(manifest, dict):
@@ -1203,6 +1274,8 @@ def lint_bundle(root: Path) -> None:
                 if block_id in global_block_ids:
                     raise ContentError(f"duplicate global block ID '{block_id}'")
                 global_block_ids.add(block_id)
+            if lesson_id not in PROTECTED_LEGACY_LESSONS:
+                lint_exercise_session(lesson, location)
             specs = exercise_specs(lesson)
             spec_ids = [string(require(spec.get("header", {}), "id", location + ".exercise.header"), location + ".exercise.header.id") for spec in specs]
             unique(spec_ids, location + ".exercise.id")

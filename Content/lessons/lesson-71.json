@@ -529,7 +529,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l71-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "promptText": "河",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "occasion ; chance"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "saison"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "souvent"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "rivière"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l71-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 花园 (huā yuán) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "souvent"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "occasion ; chance"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "extrêmement ; au plus haut degré"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l71-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « saison » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "经常 (jīng cháng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "季节 (jì jié)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "环境 (huán jìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "机会 (jī huì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l71-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "promptText": "经常",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "souvent"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "rivière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "ou bien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l71-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 或者 (huò zhě) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "saison"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "extrêmement ; au plus haut degré"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "ou bien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 67
       }
@@ -583,8 +865,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l71-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你经常来这个花园吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Viens-tu souvent dans ce jardin ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le printemps est ma saison préférée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette rivière est très longue."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 67
       }
     },
@@ -613,8 +945,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l71-order-2",
+          "prompt": {
+            "fr": "Construis « Cette rivière est très longue »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "长",
+            "pinyin": "cháng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "条",
+            "pinyin": "tiáo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "河",
+            "pinyin": "hé",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这条河很长。",
+          "这条河很长"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l71-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这个公园的环境很安静。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Chaque saison apporte des changements."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le printemps est ma saison préférée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’environnement de ce parc est très calme."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l71-fill-2",
+          "prompt": {
+            "fr": "Complète : 我家有一个___。 (« Ma maison a un jardin »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我家有一个___。",
+        "acceptedAnswers": [
+          "花园"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l71-order-3",
+          "prompt": {
+            "fr": "Construis « Je lis souvent à la bibliothèque »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "经常",
+            "pinyin": "jīng cháng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "图书馆",
+            "pinyin": "tú shū guǎn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "读书",
+            "pinyin": "dú shū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我经常在图书馆读书。",
+          "我经常在图书馆读书"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l71-fill-3",
+          "prompt": {
+            "fr": "Complète : 他发现不同___的环境都有变化，雨后的花特别好看。 (« Il constate que l’environnement change selon les saisons et que les fleurs après la pluie sont particulièrement belles »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他发现不同___的环境都有变化，雨后的花特别好看。",
+        "acceptedAnswers": [
+          "季节"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l71-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 春天是我最喜欢的季节。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Chaque saison apporte des changements."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le printemps est ma saison préférée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui, après la pluie les fleurs sont aussi plus éclatantes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 67
       }
     },
@@ -663,7 +1290,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 67
       }
@@ -696,7 +1323,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 67
       }
@@ -745,7 +1372,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 67
       }

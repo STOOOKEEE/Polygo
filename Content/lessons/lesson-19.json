@@ -754,7 +754,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l19-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "promptText": "身体",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chaud"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "joli ; beau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "petit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "corps ; santé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 药 (yào) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chien"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "joli ; beau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "médicament"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "corps ; santé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « grand ; gros » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "热 (rè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "大 (dà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "狗 (gǒu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "快 (kuài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l19-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "promptText": "冷",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "froid"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "haut ; grand"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "médicament"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "corps ; santé"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 漂亮 (piào liàng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "froid"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "haut ; grand"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chaud"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "joli ; beau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 15
       }
@@ -808,8 +1090,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l19-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你的身体怎么样？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce chat est très petit."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’eau est très chaude."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comment vas-tu ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 15
       }
     },
@@ -838,8 +1170,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l19-order-2",
+          "prompt": {
+            "fr": "Construis « Je suis en bonne santé »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "身体",
+            "pinyin": "shēn tǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "我的身体很好。",
+          "我的身体很好"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l19-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "promptText": "医院里热吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je bois du thé chaque jour."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Fait-il chaud dans l’hôpital ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce chien-là est dehors, devant la porte."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l19-fill-2",
+          "prompt": {
+            "fr": "Complète : 他___了。 (« Il est tombé malade »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他___了。",
+        "acceptedAnswers": [
+          "生病"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l19-order-3",
+          "prompt": {
+            "fr": "Construis « Quel médicament le médecin te donne-t-il ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "药",
+            "pinyin": "yào",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "医生",
+            "pinyin": "yī shēng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "医生给你什么药？",
+          "医生给你什么药"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l19-fill-3",
+          "prompt": {
+            "fr": "Complète : 外面很___，医院里面很热。 (« Il fait froid dehors et chaud dans l’hôpital »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "sentence": "外面很___，医院里面很热。",
+        "acceptedAnswers": [
+          "冷"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l19-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une visite à l’hôpital », que signifie : 医生给他药，他希望明天好起来。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l19-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le médecin lui donne un médicament ; il espère aller mieux demain."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il fait froid dehors et chaud dans l’hôpital."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je suis malade, il fait très froid aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 15
       }
     },
@@ -888,7 +1501,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 15
       }
@@ -920,7 +1533,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 15
       }
@@ -969,7 +1582,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 15
       }

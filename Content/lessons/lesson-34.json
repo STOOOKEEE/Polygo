@@ -659,7 +659,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l34-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "promptText": "可以",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aller au travail"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "pouvoir ; être permis"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "extérieur ; dehors"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l34-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 路 (lù) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aller au travail"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "route ; chemin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "porte ; entrée"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l34-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « porte ; entrée » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "门 (mén)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "要 (yào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "外 (wài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "姓 (xìng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l34-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "promptText": "票",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "route ; chemin"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "vouloir ; devoir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "porte ; entrée"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l34-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 上班 (shàng bān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "pouvoir ; être permis"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "aller au travail"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "porte ; entrée"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 30
       }
@@ -713,8 +995,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l34-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天我们复习什么？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon téléphone est dans la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Pourquoi es-tu rentré tard ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Que révisons-nous aujourd’hui ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 30
       }
     },
@@ -743,8 +1075,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l34-order-2",
+          "prompt": {
+            "fr": "Construis « Peut-on entrer maintenant ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "现在",
+            "pinyin": "xiàn zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "可以",
+            "pinyin": "kě yǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "进",
+            "pinyin": "jìn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "现在可以进去吗？",
+          "现在可以进去吗"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l34-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你能说说昨天的安排吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon téléphone est dans la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Peux-tu parler du programme d’hier ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "En été, j’aime manger de la pastèque."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l34-fill-2",
+          "prompt": {
+            "fr": "Complète : 这条___通向学校。 (« Cette route mène à l’école »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这条___通向学校。",
+        "acceptedAnswers": [
+          "路"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l34-order-3",
+          "prompt": {
+            "fr": "Construis « Pourquoi es-tu rentré tard ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "晚",
+            "pinyin": "wǎn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "为什么",
+            "pinyin": "wèi shén me",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "回家",
+            "pinyin": "huí jiā",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "为什么你回家很晚？",
+          "为什么你回家很晚"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l34-fill-3",
+          "prompt": {
+            "fr": "Complète : ___在前面。 (« La porte est devant »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___在前面。",
+        "acceptedAnswers": [
+          "门"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l34-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le parcours », que signifie : 前三十天，我们在家、学校和商店练习说话。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l34-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Pendant les trente premiers jours, nous avons pratiqué la conversation à la maison, à l’école et au magasin."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Comme il pleuvait, je suis rentré tard, mais je suis content."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Comme il pleuvait, j’ai pris un taxi. Maintenant j’ai compris."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 30
       }
     },
@@ -793,7 +1420,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 30
       }
@@ -825,7 +1452,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 30
       }
@@ -874,7 +1501,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 30
       }

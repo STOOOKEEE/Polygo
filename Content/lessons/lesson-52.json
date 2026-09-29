@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l52-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "promptText": "城市",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ville"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "apparaître"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "être en retard"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "grandir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l52-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 出现 (chū xiàn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ville"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "grandir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mauvais ; différer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "apparaître"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l52-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « sauf ; en plus de » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "迟到 (chí dào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "出现 (chū xiàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "除了 (chú le)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "打扫 (dǎ sǎo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l52-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "promptText": "打扫",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ville"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "nettoyer"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "grandir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "petit (de taille)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l52-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 矮 (ǎi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "petit (de taille)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "grandir"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "apparaître"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sauf ; en plus de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 48
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l52-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天公共汽车迟到了，街上突然出现很多人。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "En plus des voisins, des élèves ont aussi participé au nettoyage."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le bus est arrivé en retard ; les bénévoles se sont d’abord retrouvés au parc."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Aujourd’hui le bus est en retard et beaucoup de gens sont soudain apparus dans la rue."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 48
       }
     },
@@ -612,8 +944,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l52-order-2",
+          "prompt": {
+            "fr": "Construis « Cette ville est très grande »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "城市",
+            "pinyin": "chéng shì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这个城市很大。",
+          "这个城市很大"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l52-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "promptText": "等公共汽车的时候，我们先把树叶扫好。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "À part le dimanche, je travaille chaque jour."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "En attendant le bus, nous ramassons d’abord bien les feuilles."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Aujourd’hui le bus est en retard et beaucoup de gens sont soudain apparus dans la rue."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l52-fill-2",
+          "prompt": {
+            "fr": "Complète : 他上班___了。 (« Il est arrivé en retard au travail »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他上班___了。",
+        "acceptedAnswers": [
+          "迟到"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l52-order-3",
+          "prompt": {
+            "fr": "Construis « Le problème est finalement apparu »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "终于",
+            "pinyin": "zhōng yú",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "问题",
+            "pinyin": "wèn tí",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "出现",
+            "pinyin": "chū xiàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "问题终于出现了。",
+          "问题终于出现了"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l52-fill-3",
+          "prompt": {
+            "fr": "Complète : 公共汽车___了，志愿者们先在公园见面。 (« Le bus est arrivé en retard ; les bénévoles se sont d’abord retrouvés au parc »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "sentence": "公共汽车___了，志愿者们先在公园见面。",
+        "acceptedAnswers": [
+          "迟到"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l52-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une matinée de bénévolat », que signifie : 除了邻居以外，学生也参加了打扫。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "En plus des voisins, des élèves ont aussi participé au nettoyage."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mon frère n’est pas grand, ma sœur est petite."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "En attendant le bus, nous ramassons d’abord bien les feuilles."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 48
       }
     },
@@ -662,7 +1282,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 48
       }
@@ -695,7 +1315,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 48
       }
@@ -744,7 +1364,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 48
       }

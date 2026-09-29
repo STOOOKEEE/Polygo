@@ -586,7 +586,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l40-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "promptText": "啊",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "particule exclamative"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pastèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "comparer ; relativement"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "marque du passif ; être recouvert par"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l40-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 把 (bǎ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "extérieur ; dehors"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "comparer ; relativement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "pastèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "classificateur de poignée ; construction 把"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l40-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « marque du passif ; être recouvert par » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "啊 (a)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "外 (wài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "被 (bèi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "姓 (xìng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l40-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "promptText": "比较",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "extérieur ; dehors"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "comparer ; relativement"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "particule exclamative"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "classificateur de poignée ; construction 把"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l40-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 地 (de) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "particule adverbiale"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "extérieur ; dehors"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "pastèque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "marque du passif ; être recouvert par"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 36
       }
@@ -640,8 +922,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l40-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "promptText": "啊，电脑怎么了？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je donne l’ordinateur au manager ; il nous aidera."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai une solution."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ah, qu’est-ce qui arrive à l’ordinateur ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 36
       }
     },
@@ -670,8 +1002,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l40-order-2",
+          "prompt": {
+            "fr": "Construis « Je pose le livre sur la table »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "放",
+            "pinyin": "fàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我把",
+            "pinyin": "wǒ bǎ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我把书放在桌子上。",
+          "我把书放在桌子上"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l40-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "promptText": "它不能打开，问题比较大。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "En été, j’aime manger de la pastèque."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il ne peut pas s’ouvrir ; le problème est assez important."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ah, qu’est-ce qui arrive à l’ordinateur ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l40-fill-2",
+          "prompt": {
+            "fr": "Complète : ___，真漂亮！ (« Ah, c’est vraiment joli ! »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___，真漂亮！",
+        "acceptedAnswers": [
+          "啊"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l40-order-3",
+          "prompt": {
+            "fr": "Construis « Quelle solution avons-nous ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "办法",
+            "pinyin": "bàn fǎ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我们有什么办法？",
+          "我们有什么办法"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l40-fill-3",
+          "prompt": {
+            "fr": "Complète : 员工___电脑给经理，经理认真地检查。 (« L’employé donne l’ordinateur au manager, qui l’examine attentivement »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "sentence": "员工___电脑给经理，经理认真地检查。",
+        "acceptedAnswers": [
+          "把"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l40-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Un ordinateur bloqué », que signifie : 电脑被他打开以后，大家都笑了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Après que l’ordinateur est ouvert, tout le monde sourit."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ah, qu’est-ce qui arrive à l’ordinateur ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je donne l’ordinateur au manager ; il nous aidera."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 36
       }
     },
@@ -720,7 +1347,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 36
       }
@@ -752,7 +1379,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 36
       }
@@ -801,7 +1428,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 36
       }

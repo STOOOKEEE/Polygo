@@ -525,7 +525,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l68-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "promptText": "花",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "fleur ; dépenser"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jaune"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "spectacle ; jouer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dessiner ; peinture"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 画 (huà) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jeune"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "changer ; échanger"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "spectacle ; jouer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dessiner ; peinture"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « changer ; échanger » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "画 (huà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "还 (huán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "换 (huàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "花 (huā)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l68-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "promptText": "黄",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "déménager ; déplacer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jaune"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fleur ; dépenser"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "rendre ; rembourser"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 搬 (bān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "déménager ; déplacer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "rendre ; rembourser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jeune"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "changer ; échanger"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 64
       }
@@ -579,8 +861,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l68-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "promptText": "是。我想换一幅，因为颜色太暗了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. Je voudrais en changer parce que la couleur est trop sombre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il y a beaucoup de fleurs dans le jardin."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a un spectacle à l’école aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 64
       }
     },
@@ -609,8 +941,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l68-order-2",
+          "prompt": {
+            "fr": "Construis « Il y a beaucoup de fleurs dans le jardin »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "多",
+            "pinyin": "duō",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "花园",
+            "pinyin": "huā yuán",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "花",
+            "pinyin": "huā",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "花园里有很多花。",
+          "花园里有很多花"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l68-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "promptText": "当然，我会把它还给老师。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Demain, il rendra la première peinture au professeur."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je rends le livre après le cours."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Bien sûr, je la rendrai au professeur."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l68-fill-2",
+          "prompt": {
+            "fr": "Complète : 我下课后___书。 (« Je rends le livre après le cours »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我下课后___书。",
+        "acceptedAnswers": [
+          "还"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l68-order-3",
+          "prompt": {
+            "fr": "Construis « Je veux changer de chemise »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "衬衫",
+            "pinyin": "chèn shān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "换",
+            "pinyin": "huàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我想换一件衬衫。",
+          "我想换一件衬衫"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l68-fill-3",
+          "prompt": {
+            "fr": "Complète : 明天他会把第一幅___还给老师。 (« Demain, il rendra la première peinture au professeur »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "sentence": "明天他会把第一幅___还给老师。",
+        "acceptedAnswers": [
+          "画"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我喜欢画画。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l68-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cette peinture est-elle jaune ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’aime dessiner."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ce jeune professeur sait parler anglais."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 64
       }
     },
@@ -659,7 +1293,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 64
       }
@@ -692,7 +1326,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 64
       }
@@ -741,7 +1375,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 64
       }

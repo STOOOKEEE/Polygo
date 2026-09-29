@@ -251,7 +251,8 @@ sa fonction, les contraintes, les compétences, les erreurs et les
 `acceptedVariants` sans remplacer `GrammarNote`.
 
 Les activités peuvent ajouter `stage` (`observer`, `recuperer`, `produire`,
-`transferer`), `skill`, `errorTags`, `feedback`, `acceptedVariants` et une
+`transferer` ; les exercices des leçons quotidiennes portent leur phase de
+séance : `discover`, `guided`, `reuse`), `skill`, `errorTags`, `feedback`, `acceptedVariants` et une
 description des niveaux d'aide. Les réponses évaluées continuent d'utiliser
 `acceptedAnswers` ou `acceptedTranscripts`, et le moteur garde la décision
 déterministe décrite plus bas. Les cartes peuvent ajouter

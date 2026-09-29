@@ -68,9 +68,9 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         )
         XCTAssertEqual(readingParagraphs.count, 2, "Le texte de L5 doit proposer deux paragraphes")
         XCTAssertEqual(
-            Array(lesson.exercises.map(\.header.id).prefix(4)),
-            ["ex-l5-meaning", "ex-l5-order", "ex-l5-fill", "ex-l5-listen"],
-            "L5 doit conserver l’ordre contractuel jusqu’à l’écoute"
+            Array(lesson.exercises.map(\.header.id).suffix(3)),
+            ["ex-l5-listen", "ex-l5-speak", "ex-l5-reading"],
+            "L5 doit conserver l’écoute, l’oral puis la lecture en fin de séance"
         )
 
         let dayOne = text(containing: "Jour 1 sur 90")
@@ -291,11 +291,13 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             occurredAt: now + 5,
             payload: ["kind": "lessonStarted", "lessonID": "lesson-05", "at": now + 5]
         ))
-        for (offset, exerciseID) in [
-            (0, "ex-l5-meaning"),
-            (1, "ex-l5-order"),
-            (2, "ex-l5-fill")
-        ] {
+        // Every exercise before the final listening, oral and reading trio
+        // is already accepted, so the session resumes on the listening step.
+        let listeningIndex = try XCTUnwrap(
+            lessonFixture.exercises.firstIndex(where: { $0.header.id == "ex-l5-listen" }),
+            "L5 doit conserver l’activité d’écoute stable"
+        )
+        for (offset, exerciseID) in lessonFixture.exercises.prefix(listeningIndex).map(\.header.id).enumerated() {
             let blockID = try XCTUnwrap(
                 lessonFixture.blocks.first(where: { $0.kind == "exercise" && $0.spec?.header.id == exerciseID })?.id,
                 "Le blockID de \(exerciseID) doit exister dans le pack"
@@ -322,14 +324,14 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         }
         events.append(event(
             id: "mac-daily-l5-listening-checkpoint",
-            lamport: 10,
-            occurredAt: now + 9,
+            lamport: listeningIndex + 7,
+            occurredAt: now + Double(listeningIndex + 6),
             payload: [
                 "kind": "lessonCheckpointSaved",
                 "lessonID": "lesson-05",
-                "exerciseIndex": 3,
+                "exerciseIndex": listeningIndex,
                 "exerciseID": "ex-l5-listen",
-                "at": now + 9
+                "at": now + Double(listeningIndex + 6)
             ]
         ))
 

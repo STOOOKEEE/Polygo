@@ -525,7 +525,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l72-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "promptText": "久",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "longtemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "rivière"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "arbre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l72-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 秋 (qiū) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oiseau"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "arbre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "automne"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l72-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « parapluie » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "树 (shù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "久 (jiǔ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "伞 (sǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "秋 (qiū)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l72-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "promptText": "树",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "jardin"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "arbre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "environnement"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "parapluie"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l72-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 河 (hé) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rivière"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "oiseau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "longtemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "arbre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 68
       }
@@ -579,8 +861,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l72-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "promptText": "一只鸟。秋天这里很安静。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a un grand arbre devant la porte."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un oiseau. Ici, c’est très calme en automne."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’environnement de ce parc est très calme."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 68
       }
     },
@@ -609,8 +941,324 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l72-order-2",
+          "prompt": {
+            "fr": "Construis « Il y a un petit oiseau dans l’arbre »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l72-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "树",
+            "pinyin": "shù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "小",
+            "pinyin": "xiǎo",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "鸟",
+            "pinyin": "niǎo",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "只",
+            "pinyin": "zhī",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "树上有一只小鸟。",
+          "树上有一只小鸟"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l72-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "promptText": "如果下雨，你有伞吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "S’il pleut, as-tu un parapluie ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette rivière est très longue."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a un petit oiseau dans l’arbre."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l72-fill-2",
+          "prompt": {
+            "fr": "Complète : 好___没有见到你了。 (« Cela fait longtemps que je ne t’ai pas vu »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l72-produce"
+          ],
+          "required": true
+        },
+        "sentence": "好___没有见到你了。",
+        "acceptedAnswers": [
+          "久"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l72-order-3",
+          "prompt": {
+            "fr": "Construis « Le temps est très agréable en automne »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l72-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "舒服",
+            "pinyin": "shū fu",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "秋",
+            "pinyin": "qiū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "秋天的天气很舒服。",
+          "秋天的天气很舒服"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l72-fill-3",
+          "prompt": {
+            "fr": "Complète : 下雨的时候别忘了带___。 (« Quand il pleut, n’oublie pas de prendre un parapluie »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l72-produce"
+          ],
+          "required": true
+        },
+        "sentence": "下雨的时候别忘了带___。",
+        "acceptedAnswers": [
+          "伞"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 68
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l72-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l72-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 门前有一棵大树。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l72-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le temps est très agréable en automne."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Un oiseau. Ici, c’est très calme en automne."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y a un grand arbre devant la porte."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 68
       }
     },
@@ -659,7 +1307,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 68
       }
@@ -692,7 +1340,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 68
       }
@@ -741,7 +1389,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 68
       }

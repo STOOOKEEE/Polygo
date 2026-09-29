@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l61-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "promptText": "裙子",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "pain"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jupe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "sans cesse ; toujours"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "après ; à l’avenir"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l61-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 生气 (shēng qì) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "se fâcher ; en colère"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jupe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chapeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "pain"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l61-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « chaussure » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "面包 (miàn bāo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "帽子 (mào zi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "一直 (yì zhí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "鞋 (xié)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l61-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "promptText": "面包",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "sans cesse ; toujours"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chapeau"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "pain"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "avant ; auparavant"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l61-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 一直 (yì zhí) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chaussure"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "sans cesse ; toujours"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avant ; auparavant"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "chapeau"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 57
       }
@@ -584,8 +866,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l61-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这条裙子好看吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Autrefois, il y avait un magasin ici."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il étudie sans relâche."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette jupe est-elle jolie ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 57
       }
     },
@@ -614,8 +946,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l61-order-2",
+          "prompt": {
+            "fr": "Construis « Ce chapeau ne me va pas »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l61-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "适",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "顶",
+            "pinyin": "dǐng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "帽子",
+            "pinyin": "mào zi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "合",
+            "pinyin": "hé",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "这顶帽子不适合我。",
+          "这顶帽子不适合我"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l61-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "promptText": "别生气，我们再看看。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce chapeau ne me va pas."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ne te fâche pas, regardons encore."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette paire de chaussures est confortable."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l61-fill-2",
+          "prompt": {
+            "fr": "Complète : 这条___是新的。 (« Cette jupe est neuve »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l61-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这条___是新的。",
+        "acceptedAnswers": [
+          "裙子"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l61-order-3",
+          "prompt": {
+            "fr": "Construis « Cette paire de chaussures est confortable »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l61-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "舒服",
+            "pinyin": "shū fu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "鞋",
+            "pinyin": "xié",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "双",
+            "pinyin": "shuāng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这双鞋很舒服。",
+          "这双鞋很舒服"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l61-fill-3",
+          "prompt": {
+            "fr": "Complète : 听到这个结果，他很___。 (« En entendant ce résultat, il s’est mis en colère »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l61-produce"
+          ],
+          "required": true
+        },
+        "sentence": "听到这个结果，他很___。",
+        "acceptedAnswers": [
+          "生气"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l61-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 早饭我吃了两片面包。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai mangé deux tranches de pain au petit déjeuner."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ne te fâche pas, regardons encore."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "À l’avenir, j’aimerais habiter à Pékin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 57
       }
     },
@@ -664,7 +1305,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 57
       }
@@ -697,7 +1338,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 57
       }
@@ -746,7 +1387,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 57
       }

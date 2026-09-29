@@ -527,7 +527,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l66-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "promptText": "草",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "printemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "hiver"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "herbe"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "animal"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l66-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 春 (chūn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "loisir ; passe-temps"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "printemps"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "animal"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "au sujet de"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l66-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « hiver » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "冬 (dōng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "关 (guān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "草 (cǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "春 (chūn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l66-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "promptText": "动物",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "fermer ; éteindre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "herbe"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "loisir ; passe-temps"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "animal"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l66-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 关 (guān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "herbe"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se soucier de"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fermer ; éteindre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "loisir ; passe-temps"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 62
       }
@@ -581,8 +863,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l66-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我喜欢在春天看草和动物。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Même si l’hiver est froid, le parc est aussi très calme."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’aime regarder l’herbe et les animaux au printemps."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Au sujet de cette affaire, nous en reparlerons demain."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 62
       }
     },
@@ -611,8 +943,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l66-order-2",
+          "prompt": {
+            "fr": "Construis « Mon passe-temps est de regarder des films »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "爱好",
+            "pinyin": "ài hào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我的爱好是看电影。",
+          "我的爱好是看电影"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l66-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "promptText": "那我们冬天再来，带一杯热茶。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Alors revenons en hiver avec une tasse de thé chaud."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je me soucie beaucoup de toi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ferme la porte, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l66-fill-2",
+          "prompt": {
+            "fr": "Complète : 牛在吃___。 (« La vache mange de l’herbe »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "sentence": "牛在吃___。",
+        "acceptedAnswers": [
+          "草"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l66-order-3",
+          "prompt": {
+            "fr": "Construis « Le printemps est arrivé »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "春",
+            "pinyin": "chūn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "春天来了。",
+          "春天来了"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l66-fill-3",
+          "prompt": {
+            "fr": "Complète : ___天，草变绿了，公园里出现很多小动物。 (« Au printemps, l’herbe verdit et beaucoup de petits animaux apparaissent dans le parc »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___天，草变绿了，公园里出现很多小动物。",
+        "acceptedAnswers": [
+          "春"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l66-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 冬天很冷。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’aime regarder les animaux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Quels sont tes loisirs ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’hiver est très froid."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 62
       }
     },
@@ -661,7 +1281,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 62
       }
@@ -694,7 +1314,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 62
       }
@@ -743,7 +1363,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 62
       }

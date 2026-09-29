@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l55-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "promptText": "东",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "court"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "segment ; tranche"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire de l’exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "est"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l55-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 短 (duǎn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "dictionnaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "est"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "court"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "devoirs scolaires"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l55-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « segment ; tranche » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "短 (duǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "段 (duàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "东 (dōng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "文化 (wén huà)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l55-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "promptText": "锻炼",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire de l’exercice"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "courriel"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "dictionnaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "court"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l55-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 字典 (zì diǎn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "segment ; tranche"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "est"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "culture"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dictionnaire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 51
       }
@@ -584,8 +866,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l55-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你看电子邮件了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Fais de l’exercice chaque jour."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette route est très courte."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "As-tu vu le courriel ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 51
       }
     },
@@ -614,8 +946,310 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l55-order-2",
+          "prompt": {
+            "fr": "Construis « J’ai envoyé un courriel »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l55-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "发",
+            "pinyin": "fā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "封",
+            "pinyin": "fēng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "电子邮件",
+            "pinyin": "diàn zǐ yóu jiàn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我发了一封电子邮件。",
+          "我发了一封电子邮件"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l55-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你早上从东边走来吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. Le courriel est court, il n’a qu’un paragraphe."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Es-tu venu de l’est ce matin ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Lis ce passage, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l55-fill-2",
+          "prompt": {
+            "fr": "Complète : 太阳从___边出来。 (« Le soleil se lève à l’est »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l55-produce"
+          ],
+          "required": true
+        },
+        "sentence": "太阳从___边出来。",
+        "acceptedAnswers": [
+          "东"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l55-order-3",
+          "prompt": {
+            "fr": "Construis « Cette route est très courte »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l55-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "条",
+            "pinyin": "tiáo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "短",
+            "pinyin": "duǎn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这条路很短。",
+          "这条路很短"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l55-fill-3",
+          "prompt": {
+            "fr": "Complète : 邮件只有一___，他从东边走来时就读完了。 (« Le courriel ne contient qu’un paragraphe ; il le termine en venant de l’est »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l55-produce"
+          ],
+          "required": true
+        },
+        "sentence": "邮件只有一___，他从东边走来时就读完了。",
+        "acceptedAnswers": [
+          "段"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l55-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 请读这一段。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Lis ce passage, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Les devoirs d’aujourd’hui ne sont pas nombreux."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le soleil se lève à l’est."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 51
       }
     },
@@ -664,7 +1298,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 51
       }
@@ -697,7 +1331,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 51
       }
@@ -746,7 +1380,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 51
       }

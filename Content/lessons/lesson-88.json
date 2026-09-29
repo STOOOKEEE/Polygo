@@ -529,7 +529,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l88-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "信",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "lettre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "frais"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avoir besoin de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "intérêt"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l88-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 兴趣 (xìng qù) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "avoir besoin de"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "lettre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "prendre une douche ; se baigner"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "intérêt"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l88-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « avoir besoin de » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "相信 (xiāng xìn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "洗澡 (xǐ zǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "需要 (xū yào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "新鲜 (xīn xiān)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l88-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "选择",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "prendre une douche ; se baigner"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "choisir ; choix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "avoir besoin de"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "croire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l88-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 洗澡 (xǐ zǎo) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "prendre une douche ; se baigner"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "choisir ; choix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "d’abord"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "croire"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 84
       }
@@ -583,8 +865,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l88-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你对什么有兴趣？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Elle s’intéresse beaucoup à la musique chinoise."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Tu peux choisir le rouge ou le bleu."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Qu’est-ce qui t’intéresse ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 84
       }
     },
@@ -613,8 +945,331 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l88-order-2",
+          "prompt": {
+            "fr": "Construis « Les fruits du marché sont très frais »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l88-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "新鲜",
+            "pinyin": "xīn xiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "水果",
+            "pinyin": "shuǐ guǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "市",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "场",
+            "pinyin": "chǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "市场上的水果很新鲜。",
+          "市场上的水果很新鲜"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l88-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你需要写信的纸吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai besoin d’une carte."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "As-tu besoin de papier pour écrire une lettre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je prends une douche à vingt-deux heures."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l88-fill-2",
+          "prompt": {
+            "fr": "Complète : 我昨天收到一封___。 (« J’ai reçu une lettre hier »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l88-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我昨天收到一封___。",
+        "acceptedAnswers": [
+          "信"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l88-order-3",
+          "prompt": {
+            "fr": "Construis « Elle s’intéresse beaucoup à la musique chinoise »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l88-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "音乐",
+            "pinyin": "yīn yuè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "她",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "对",
+            "pinyin": "duì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "中国",
+            "pinyin": "Zhōng guó",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "兴趣",
+            "pinyin": "xìng qù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "她对中国音乐很有兴趣。",
+          "她对中国音乐很有兴趣"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l88-fill-3",
+          "prompt": {
+            "fr": "Complète : 他有___了解不同种水果，最后选择了最好的一种。 (« Il s’intéresse aux différentes sortes de fruits et choisit finalement la meilleure »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l88-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他有___了解不同种水果，最后选择了最好的一种。",
+        "acceptedAnswers": [
+          "兴趣"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l88-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我需要一张地图。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai besoin d’une carte."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "As-tu besoin de papier pour écrire une lettre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Les fruits du marché sont très frais."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 84
       }
     },
@@ -663,7 +1318,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 84
       }
@@ -696,7 +1351,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 84
       }
@@ -745,7 +1400,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 84
       }

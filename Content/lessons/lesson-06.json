@@ -932,7 +932,289 @@
         "correctChoiceID": "c"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l6-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "promptText": "电视",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "particule interrogative"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "maintenant"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "télévision"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l6-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 电影 (diàn yǐng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ordinateur"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "film"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "être à ; se trouver"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l6-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « chose ; affaire » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "东西 (dōng xī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "电脑 (diàn nǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "电视 (diàn shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "电影 (diàn yǐng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l6-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "promptText": "狗",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tous ; tout"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chose ; affaire"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "chien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l6-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 家 (jiā) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "et ; avec"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chien"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "maison ; famille"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "tu ; vous"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 2
       }
@@ -986,8 +1268,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l6-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你在家吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je suis à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Tu es à la maison ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’aime aussi le thé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 2
       }
     },
@@ -1016,8 +1348,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l6-order-2",
+          "prompt": {
+            "fr": "Construis « Mon ordinateur est sur la table »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "电脑",
+            "pinyin": "diàn nǎo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我的电脑在桌子上。",
+          "我的电脑在桌子上"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l6-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你的狗也在家吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ton chien est aussi à la maison ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je suis à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous regardons un film le week-end."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l6-fill-2",
+          "prompt": {
+            "fr": "Complète : 我晚上___电视。 (« Je regarde la télévision le soir »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我晚上___电视。",
+        "acceptedAnswers": [
+          "看"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l6-order-3",
+          "prompt": {
+            "fr": "Construis « Je regarde un film à la maison »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我在家看电影。",
+          "我在家看电影"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l6-fill-3",
+          "prompt": {
+            "fr": "Complète : 在家。___开电视。 (« Il est à la maison. J’allume la télévision maintenant »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l6-produce"
+          ],
+          "required": true
+        },
+        "sentence": "在家。___开电视。",
+        "acceptedAnswers": [
+          "现在"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l6-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我们周末看电影。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon ordinateur est sur la table."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il est à la maison. J’allume la télévision maintenant."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Nous regardons un film le week-end."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 2
       }
     },
@@ -1066,7 +1686,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 2
       }
@@ -1098,7 +1718,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 2
       }
@@ -1147,7 +1767,7 @@
         "correctChoiceID": "c"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 2
       }

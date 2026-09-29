@@ -526,7 +526,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l51-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "promptText": "差",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "se brosser les dents"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "propre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire mal ; douloureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mauvais ; différer"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 长 (zhǎng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire mal ; douloureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "propre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "grandir"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "petit (de taille)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « intelligent » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "干净 (gān jìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "聪明 (cōng ming)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "刷牙 (shuā yá)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "疼 (téng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l51-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "promptText": "干净",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "propre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se brosser les dents"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire mal ; douloureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "intelligent"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 脸 (liǎn) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire mal ; douloureux"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "intelligent"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "propre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "visage"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 47
       }
@@ -580,8 +862,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l51-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "promptText": "那栋楼很长，但是入口有点矮。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Après s’être lavé le visage, elle met ses lunettes."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cet immeuble est long, mais l’entrée est un peu basse."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’entrée est basse et l’eau de pluie est poussée à l’intérieur par le vent."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 47
       }
     },
@@ -610,8 +942,296 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l51-order-2",
+          "prompt": {
+            "fr": "Construis « Le temps est mauvais aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "差",
+            "pinyin": "chà",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "今天的天气很差。",
+          "今天的天气很差"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l51-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "promptText": "打扫的人很聪明，知道哪里最差。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les personnes qui nettoient sont astucieuses et savent où c’est le pire."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’eau de pluie a été poussée à l’intérieur par le vent ; regardons ensemble."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Après s’être lavé le visage, elle met ses lunettes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l51-fill-2",
+          "prompt": {
+            "fr": "Complète : 我哥哥不高，我妹妹很___。 (« Mon frère n’est pas grand, ma sœur est petite »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我哥哥不高，我妹妹很___。",
+        "acceptedAnswers": [
+          "矮"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l51-order-3",
+          "prompt": {
+            "fr": "Construis « L’enfant grandit »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "长",
+            "pinyin": "zhǎng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "正在",
+            "pinyin": "zhèng zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "孩子正在长大。",
+          "孩子正在长大"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l51-fill-3",
+          "prompt": {
+            "fr": "Complète : 街道很___，只有入口还需要打扫。 (« La rue est propre ; seul le porche doit encore être nettoyé »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "sentence": "街道很___，只有入口还需要打扫。",
+        "acceptedAnswers": [
+          "干净"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Le porche de l’immeuble », que signifie : 入口很矮，雨水被风吹到里面。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l51-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les personnes qui nettoient sont astucieuses et savent où c’est le pire."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après s’être lavé le visage, elle met ses lunettes."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’entrée est basse et l’eau de pluie est poussée à l’intérieur par le vent."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 47
       }
     },
@@ -660,7 +1280,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 47
       }
@@ -693,7 +1313,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 47
       }
@@ -742,7 +1362,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 47
       }

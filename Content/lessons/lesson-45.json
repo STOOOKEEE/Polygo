@@ -547,7 +547,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l45-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "promptText": "帮忙",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "changement ; changer"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "aider ; rendre service"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "parler"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "matin"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 北方 (běi fāng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nord ; région du nord"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "changement ; changer"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "cinq"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "compétition ; match"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « compétition ; match » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "变化 (biàn huà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "说话 (shuō huà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "北方 (běi fāng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "比赛 (bǐ sài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l45-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "promptText": "变化",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rassasié"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "matin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "changement ; changer"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "parler"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 上午 (shàng wǔ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "rassasié"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "matin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "compétition ; match"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "nord ; région du nord"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 41
       }
@@ -601,8 +883,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l45-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你吃饱了吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "L’hiver est très froid dans le Nord."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "As-tu assez mangé ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’ai cinq pommes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 41
       }
     },
@@ -631,8 +963,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l45-order-2",
+          "prompt": {
+            "fr": "Construis « Merci de m’aider »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "谢谢",
+            "pinyin": "xiè xiè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "帮忙",
+            "pinyin": "bāng máng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "谢谢你帮忙。",
+          "谢谢你帮忙"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l45-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "promptText": "吃饱了，谢谢你帮忙。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui, merci de m’aider."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le temps change beaucoup."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Vas-tu participer à la compétition ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l45-fill-2",
+          "prompt": {
+            "fr": "Complète : 我吃___了。 (« J’ai assez mangé »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我吃___了。",
+        "acceptedAnswers": [
+          "饱"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l45-order-3",
+          "prompt": {
+            "fr": "Construis « Vas-tu participer à la compétition ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "参加",
+            "pinyin": "cān jiā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "比赛",
+            "pinyin": "bǐ sài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "要",
+            "pinyin": "yào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "你要参加比赛吗？",
+          "你要参加比赛吗"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l45-fill-3",
+          "prompt": {
+            "fr": "Complète : 他发现___和这里的天气不一样。 (« Il découvre que le temps du Nord est différent d’ici »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他发现___和这里的天气不一样。",
+        "acceptedAnswers": [
+          "北方"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Un nouvel horaire », que signifie : 天气变化以后，他把时间改好，准备参加比赛。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il découvre que le temps du Nord est différent d’ici."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui. Je change un peu l’horaire et je pourrai participer."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Après le changement de temps, il ajuste l’horaire et se prépare à participer à la compétition."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 41
       }
     },
@@ -681,7 +1294,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 41
       }
@@ -713,7 +1326,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 41
       }
@@ -762,7 +1375,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 41
       }

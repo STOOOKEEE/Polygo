@@ -530,7 +530,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l74-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "promptText": "盘子",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bière"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "jeu"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "assiette"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "nouilles"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l74-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 啤酒 (pí jiǔ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "raisin"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "musique"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "soleil"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l74-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « raisin » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "葡萄 (pú táo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "盘子 (pán zi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "音乐 (yīn yuè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "太阳 (tài yáng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l74-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "promptText": "糖",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "soleil"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "raisin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "musique"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sucre ; bonbon"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l74-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 音乐 (yīn yuè) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "assiette"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "bière"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "musique"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sucre ; bonbon"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 70
       }
@@ -584,8 +866,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l74-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你要吃面条吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu veux manger des nouilles ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ces raisins sont très frais."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’aime écouter de la musique chinoise."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 70
       }
     },
@@ -614,8 +946,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l74-order-2",
+          "prompt": {
+            "fr": "Construis « Les nouilles de ce restaurant sont très bonnes »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l74-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "饭馆",
+            "pinyin": "fàn guǎn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "面条",
+            "pinyin": "miàn tiáo",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "这家饭馆的面条很好吃。",
+          "这家饭馆的面条很好吃"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l74-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "promptText": "啤酒也要少喝。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’aime écouter de la musique chinoise."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ces raisins sont très frais."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il faut aussi boire peu de bière."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l74-fill-2",
+          "prompt": {
+            "fr": "Complète : 请把菜放在___里。 (« Mets le plat dans l’assiette, s’il te plaît »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l74-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请把菜放在___里。",
+        "acceptedAnswers": [
+          "盘子"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l74-order-3",
+          "prompt": {
+            "fr": "Construis « Il ne boit pas de bière le soir »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l74-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "啤酒",
+            "pinyin": "pí jiǔ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "晚上",
+            "pinyin": "wǎn shang",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "他晚上不喝啤酒。",
+          "他晚上不喝啤酒"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l74-fill-3",
+          "prompt": {
+            "fr": "Complète : ___要少吃，啤酒也喝得很少。 (« Il mange peu de sucre et boit aussi très peu de bière »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l74-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___要少吃，啤酒也喝得很少。",
+        "acceptedAnswers": [
+          "糖"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l74-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这些葡萄很新鲜。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Le soleil est sorti et il fait plus doux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ces raisins sont très frais."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il faut aussi boire peu de bière."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 70
       }
     },
@@ -664,7 +1305,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 70
       }
@@ -697,7 +1338,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 70
       }
@@ -746,7 +1387,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 70
       }

@@ -779,7 +779,289 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l8-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "点",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "heure ; point"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "combien (petit nombre)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "yuan ; morceau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "magasin"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 多少 (duō shǎo) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "acheter"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "trois"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "magasin"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "combien"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « yuan ; morceau » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "想 (xiǎng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "钱 (qián)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "块 (kuài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "几 (jǐ)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l8-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "买",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "yuan ; morceau"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "acheter"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "combien (petit nombre)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "aller"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 苹果 (píng guǒ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "pomme"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "acheter"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "je ; moi"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "magasin"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 4
       }
@@ -833,8 +1115,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l8-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "现在几点？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Quelle heure est-il ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Voici ce yuan pour toi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il est trois heures."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 4
       }
     },
@@ -863,8 +1195,275 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l8-order-2",
+          "prompt": {
+            "fr": "Construis « Il est trois heures »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "三",
+            "pinyin": "sān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "现在",
+            "pinyin": "xiàn zài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "现在三点。",
+          "现在三点"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l8-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我想去商店买苹果。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Combien coûtent les pommes ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Combien d’enfants as-tu ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je veux aller au magasin acheter des pommes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l8-fill-2",
+          "prompt": {
+            "fr": "Complète : 你要___钱？ (« Combien d’argent veux-tu ? »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你要___钱？",
+        "acceptedAnswers": [
+          "多少"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l8-order-3",
+          "prompt": {
+            "fr": "Construis « Combien coûtent les pommes ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "钱",
+            "pinyin": "qián",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "多少",
+            "pinyin": "duō shao",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "苹果多少钱？",
+          "苹果多少钱"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l8-fill-3",
+          "prompt": {
+            "fr": "Complète : 现在三___，我想去商店。 (« Il est trois heures, je veux aller au magasin »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "sentence": "现在三___，我想去商店。",
+        "acceptedAnswers": [
+          "点"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l8-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这块钱给你。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’achète."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Voici ce yuan pour toi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Combien coûtent les pommes ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 4
       }
     },
@@ -913,7 +1512,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 4
       }
@@ -945,7 +1544,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 4
       }
@@ -994,7 +1593,7 @@
         "correctChoiceID": "c"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 4
       }

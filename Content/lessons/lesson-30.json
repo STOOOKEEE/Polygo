@@ -715,7 +715,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "路",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "affaire ; chose"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se lever"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "route ; chemin"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "à côté"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 每 (měi) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aéroport"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chaque"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "délicieux"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mille"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « vous (politesse) » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "您 (nín)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "千 (qiān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "让 (ràng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "给 (gěi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "起床",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "à côté"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "montre"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chaque"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "se lever"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 千 (qiān) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "montre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "laisser ; faire"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mille"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "donner ; à (pour)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 26
       }
@@ -769,8 +1051,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "您好，请问去车站的路怎么走？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Vous y serez en dix minutes. Laissez d’abord passer les enfants."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Bonjour, excusez-moi, comment va-t-on à la gare ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Donne-moi une tasse de thé, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 26
       }
     },
@@ -799,8 +1131,317 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l30-order-2",
+          "prompt": {
+            "fr": "Construis « Cette route mène à l’école »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "通",
+            "pinyin": "tōng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "条",
+            "pinyin": "tiáo",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "向",
+            "pinyin": "xiàng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "这条路通向学校。",
+          "这条路通向学校"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "您先走这条路，每天都有车。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Prenez d’abord cette route ; il y a des véhicules chaque jour."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Bonjour, excusez-moi, comment va-t-on à la gare ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l30-fill-2",
+          "prompt": {
+            "fr": "Complète : 我___天早上喝茶。 (« Je bois du thé chaque matin »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我___天早上喝茶。",
+        "acceptedAnswers": [
+          "每"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l30-order-3",
+          "prompt": {
+            "fr": "Construis « Un visiteur demande le chemin de la gare »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "问",
+            "pinyin": "wèn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "客人",
+            "pinyin": "kè rén",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "客人问去车站的路。",
+          "客人问去车站的路"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l30-fill-3",
+          "prompt": {
+            "fr": "Complète : 车站在学校___，离商店不远。 (« La gare est à côté de l’école, pas loin du magasin »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "sentence": "车站在学校___，离商店不远。",
+        "acceptedAnswers": [
+          "旁边"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une direction », que signifie : 他走十分钟就到。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je prends l’avion à l’aéroport."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Il y arrive en dix minutes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 26
       }
     },
@@ -849,7 +1490,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 26
       }
@@ -881,7 +1522,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 26
       }
@@ -930,7 +1571,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 26
       }

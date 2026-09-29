@@ -529,7 +529,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l84-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "promptText": "虽然",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bien que"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "son ; voix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "aller sur Internet"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "améliorer ; augmenter"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l84-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 特别 (tè bié) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire ; rendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "son ; voix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "aller sur Internet"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "particulièrement ; spécial"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l84-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « améliorer ; augmenter » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "水平 (shuǐ píng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "特别 (tè bié)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "提高 (tí gāo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "虽然 (suī rán)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l84-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "promptText": "甜",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aller sur Internet"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "sucré"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "particulièrement ; spécial"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bien que"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l84-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 上网 (shàng wǎng) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aller sur Internet"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "particulièrement ; spécial"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "niveau"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sucré"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 80
       }
@@ -583,8 +865,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l84-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你最喜欢哪一段？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Baisse un peu le volume, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Quel passage préfères-tu ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette pomme est à la fois grosse et sucrée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 80
       }
     },
@@ -613,8 +945,331 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l84-order-2",
+          "prompt": {
+            "fr": "Construis « Son niveau de chinois s’est amélioré »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l84-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "提高",
+            "pinyin": "tí gāo",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "水平",
+            "pinyin": "shuǐ píng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "文",
+            "pinyin": "wén",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "中",
+            "pinyin": "Zhōng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "他的中文水平提高了。",
+          "他的中文水平提高了"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l84-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天有一个特别的客人。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il y a un invité spécial aujourd’hui."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Cette pomme est à la fois grosse et sucrée."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Mon niveau de chinois s’est amélioré."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l84-fill-2",
+          "prompt": {
+            "fr": "Complète : ___下雨，但是我们还是出发了。 (« Même s’il pleuvait, nous sommes quand même partis »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l84-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___下雨，但是我们还是出发了。",
+        "acceptedAnswers": [
+          "虽然"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l84-order-3",
+          "prompt": {
+            "fr": "Construis « Lire chaque jour peut améliorer le niveau de chinois »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l84-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "阅读",
+            "pinyin": "yuè dú",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "可以",
+            "pinyin": "kě yǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "提高",
+            "pinyin": "tí gāo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "汉语",
+            "pinyin": "Hàn yǔ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "水平",
+            "pinyin": "shuǐ píng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "每天阅读可以提高汉语水平。",
+          "每天阅读可以提高汉语水平"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l84-fill-3",
+          "prompt": {
+            "fr": "Complète : 他最喜欢最后一段，因为故事___有意思。 (« Il préfère le dernier passage parce que l’histoire est particulièrement intéressante »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l84-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他最喜欢最后一段，因为故事___有意思。",
+        "acceptedAnswers": [
+          "特别"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 80
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l84-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l84-read-sentence-1",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这个苹果又大又甜。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l84-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon niveau de chinois s’est amélioré."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Baisse un peu le volume, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette pomme est à la fois grosse et sucrée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 80
       }
     },
@@ -663,7 +1318,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 80
       }
@@ -696,7 +1351,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 80
       }
@@ -745,7 +1400,7 @@
         "correctChoiceID": "b"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 80
       }

@@ -590,7 +590,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l36-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "promptText": "阿姨",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tante ; madame"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "voisin"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "billet"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "grand-mère paternelle"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 客人 (kè rén) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tante ; madame"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "se marier"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "grand-mère paternelle"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "invité ; client"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « voisin » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "叔叔 (shū shu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "结婚 (jié hūn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "邻居 (lín jū)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "阿姨 (ā yí)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l36-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "promptText": "奶奶",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "aller au travail"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "grand-mère paternelle"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tante ; madame"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "invité ; client"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 叔叔 (shū shu) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "oncle"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "invité ; client"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tante ; madame"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "grand-mère paternelle"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 32
       }
@@ -644,8 +926,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l36-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你知道邻居要结婚吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. La tante et l’oncle vont venir aussi."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Sais-tu que le voisin va se marier ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Mon nouveau voisin s’appelle Wang."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 32
       }
     },
@@ -674,8 +1006,289 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l36-order-2",
+          "prompt": {
+            "fr": "Construis « La tante est au magasin »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "阿姨",
+            "pinyin": "ā yí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "阿姨在商店。",
+          "阿姨在商店"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l36-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "promptText": "知道。阿姨和叔叔也要来。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Oui. La tante et l’oncle vont venir aussi."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Donnez-moi un billet, s’il vous plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Sais-tu que le voisin va se marier ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l36-fill-2",
+          "prompt": {
+            "fr": "Complète : 他们明年___。 (« Ils se marient l’année prochaine »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他们明年___。",
+        "acceptedAnswers": [
+          "结婚"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l36-order-3",
+          "prompt": {
+            "fr": "Construis « Les invités s’assoient ensemble »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "坐",
+            "pinyin": "zuò",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "们",
+            "pinyin": "men",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "客人",
+            "pinyin": "kè rén",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "客人们坐在一起。",
+          "客人们坐在一起"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l36-fill-3",
+          "prompt": {
+            "fr": "Complète : ___结婚，阿姨、叔叔和奶奶都来参加。 (« Le voisin se marie ; la tante, l’oncle et la grand-mère participent tous à la fête »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___结婚，阿姨、叔叔和奶奶都来参加。",
+        "acceptedAnswers": [
+          "邻居"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Une fête », que signifie : 婚礼以后，新人住在附近的楼里。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "La grand-mère est-elle l’invitée d’aujourd’hui ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Le voisin se marie ; la tante, l’oncle et la grand-mère participent tous à la fête."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Après le mariage, les jeunes mariés habitent dans un immeuble voisin."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 32
       }
     },
@@ -724,7 +1337,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 32
       }
@@ -756,7 +1369,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 32
       }
@@ -805,7 +1418,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 32
       }

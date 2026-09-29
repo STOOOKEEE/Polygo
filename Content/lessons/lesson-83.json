@@ -528,7 +528,289 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-listen-word-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l83-listen-word-1",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "promptText": "上网",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "ensuite"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "estimer ; penser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mince"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "aller sur Internet"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-meaning-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l83-meaning-2",
+          "prompt": {
+            "fr": "Que signifie 使 (shǐ) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "son ; voix"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chaleureux ; enthousiasme"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire ; rendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "paire ; double"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-reverse-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l83-reverse-1",
+          "prompt": {
+            "fr": "Comment dit-on « mince » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "使 (shǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "瘦 (shòu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "双 (shuāng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "认为 (rèn wéi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-listen-word-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l83-listen-word-2",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "promptText": "双",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "paire ; double"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "estimer ; penser"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chaleureux ; enthousiasme"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "faire ; rendre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-meaning-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l83-meaning-3",
+          "prompt": {
+            "fr": "Que signifie 然后 (rán hòu) ?"
+          },
+          "instruction": {
+            "fr": "Choisis le sens du mot."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "paire ; double"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "son ; voix"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "faire ; rendre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "ensuite"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
         "skill": "recognition",
         "lessonDay": 79
       }
@@ -582,8 +864,58 @@
         ]
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-listen-dialogue-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l83-listen-dialogue-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "promptText": "你听得见我的声音吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Entends-tu ma voix ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mange d’abord, puis va en cours."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je pense que cette solution est très bonne."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 79
       }
     },
@@ -612,8 +944,303 @@
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "guided",
         "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-order-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l83-order-2",
+          "prompt": {
+            "fr": "Construis « Je vais sur Internet à la maison le soir »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l83-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "晚上",
+            "pinyin": "wǎn shang",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "上网",
+            "pinyin": "shàng wǎng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我晚上在家上网。",
+          "我晚上在家上网"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-listen-dialogue-2",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l83-listen-dialogue-2",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "promptText": "这次调整会使通话更清楚。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai acheté une paire de chaussures noires."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "La musique me met de bonne humeur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cet ajustement rendra l’appel plus clair."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-fill-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l83-fill-2",
+          "prompt": {
+            "fr": "Complète : 请把___放小一点。 (« Baisse un peu le volume, s’il te plaît »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l83-produce"
+          ],
+          "required": true
+        },
+        "sentence": "请把___放小一点。",
+        "acceptedAnswers": [
+          "声音"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-order-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l83-order-3",
+          "prompt": {
+            "fr": "Construis « La musique me met de bonne humeur »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l83-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "情",
+            "pinyin": "qíng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "音乐",
+            "pinyin": "yīn yuè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "使",
+            "pinyin": "shǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "心",
+            "pinyin": "xīn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "音乐使我心情很好。",
+          "音乐使我心情很好"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-fill-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l83-fill-3",
+          "prompt": {
+            "fr": "Complète : 他很___，但是身体很健康。 (« Il est mince, mais en bonne santé »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l83-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他很___，但是身体很健康。",
+        "acceptedAnswers": [
+          "瘦"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-read-sentence-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l83-read-sentence-1",
+          "prompt": {
+            "fr": "Dans le texte « Un son trop faible », que signifie : 调整以后，通话更清楚，两个人可以继续说话。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je pense que cette solution est très bonne."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après l’ajustement, l’appel est plus clair et les deux personnes peuvent continuer à parler."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "J’ai acheté une paire de chaussures noires."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 79
       }
     },
@@ -662,7 +1289,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 79
       }
@@ -695,7 +1322,7 @@
         "allowSelfRating": true
       },
       "metadata": {
-        "stage": "produce",
+        "stage": "reuse",
         "skill": "speaking",
         "lessonDay": 79
       }
@@ -744,7 +1371,7 @@
         "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "recover",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 79
       }
