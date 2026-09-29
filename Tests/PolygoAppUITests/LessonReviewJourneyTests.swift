@@ -711,15 +711,17 @@ final class LessonReviewJourneyTests: XCTestCase {
     private func bringIntoView(_ element: XCUIElement) {
         for _ in 0..<8 {
             if element.isHittable && isFullyVisible(element) { return }
-            // Start the scroll from the far edge of the app so this helper
-            // cannot become a handwriting stroke when the target is the
-            // drawing surface itself.
+            // Drag near the far edge of the app so this helper cannot become
+            // a handwriting stroke when the target is the drawing surface
+            // itself, and inside the scrolling content: a drag that starts on
+            // a fixed action bar does not scroll.
             let viewport = viewportFrame()
             let moveDown = element.frame.minY < viewport.minY
-            let startY = moveDown ? 0.16 : 0.86
-            let endY = moveDown ? 0.86 : 0.16
-            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: startY))
-            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.02, dy: endY))
+            let origin = app.coordinate(withNormalizedOffset: .zero)
+            let x = app.frame.width * 0.02
+            let upper = origin.withOffset(CGVector(dx: x, dy: viewport.minY + viewport.height * 0.12))
+            let lower = origin.withOffset(CGVector(dx: x, dy: viewport.minY + viewport.height * 0.88))
+            let (start, end) = moveDown ? (upper, lower) : (lower, upper)
             start.press(forDuration: 0.01, thenDragTo: end)
         }
     }
@@ -739,11 +741,12 @@ final class LessonReviewJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Recommencer cette leçon"] {
-            let candidate = button(exactly: label)
-            guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
-            viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
-            break
+        // Fixed action bars cover the bottom of the scrolling content.
+        let bottomActions = ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Retour au parcours", "Continuer vers la leçon suivante"]
+            .map { button(exactly: $0) }
+            .filter { $0.exists && !$0.frame.isEmpty && $0.frame.minY > viewport.midY }
+        if let barTop = bottomActions.map(\.frame.minY).min() {
+            viewport.size.height = max(0, min(viewport.maxY, barTop - 8) - viewport.minY)
         }
         return viewport
     }
