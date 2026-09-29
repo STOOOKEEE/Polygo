@@ -622,49 +622,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-pick-393",
+      "id": "block-ex-l61-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l61-pick-393",
+          "id": "ex-l61-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l61-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "过去",
+            "pinyin": "guò qù",
+            "right": {
+              "fr": "passé ; passer"
+            }
+          },
+          {
+            "id": "b",
+            "left": "明白",
+            "pinyin": "míng bái",
+            "right": {
+              "fr": "comprendre ; clair"
+            }
+          },
+          {
+            "id": "c",
+            "left": "胖",
+            "pinyin": "pàng",
+            "right": {
+              "fr": "gros ; corpulent"
+            }
+          },
+          {
+            "id": "d",
+            "left": "裙子",
+            "pinyin": "qún zi",
+            "right": {
+              "fr": "jupe"
+            }
+          },
+          {
+            "id": "e",
+            "left": "生气",
+            "pinyin": "shēng qì",
+            "right": {
+              "fr": "se fâcher ; en colère"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-dict-py-393",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l61-dict-py-393",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "过去",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "生气 (shēng qì)"
+              "fr": "qún zi"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "过去 (guò qù)"
+              "fr": "guò qù"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "终于 (zhōng yú)"
+              "fr": "míng bái"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "明白 (míng bái)"
+              "fr": "zhōng yú"
             },
             "audio": null
           }
@@ -679,48 +747,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-reverse-393",
+      "id": "block-ex-l61-tone-466",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l61-reverse-393",
+          "id": "ex-l61-tone-466",
           "prompt": {
-            "fr": "Comment dit-on « passé ; passer » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l61-understand"
           ],
           "required": true
         },
+        "promptText": "明白",
+        "choices": [
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t22"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-pick-478",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l61-pick-478",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "promptText": "胖",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "过去 (guò qù)"
+              "fr": "胖 (pàng)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "生气 (shēng qì)"
+              "fr": "双 (shuāng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "明白 (míng bái)"
+              "fr": "过去 (guò qù)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "裙子 (qún zi)"
+              "fr": "明白 (míng bái)"
             },
             "audio": null
           }
@@ -735,166 +861,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-pick-508",
+      "id": "block-ex-l61-dict-zh-587",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l61-pick-508",
+          "id": "ex-l61-dict-zh-587",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l61-understand"
           ],
           "required": true
         },
-        "promptText": "双",
+        "script": "hanzi",
+        "promptText": "终于",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "胖 (pàng)"
+              "fr": "明白"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "裙子 (qún zi)"
+              "fr": "过去"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "生气 (shēng qì)"
+              "fr": "裙子"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "双 (shuāng)"
+              "fr": "终于"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 57
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l61-reverse-466",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l61-reverse-466",
-          "prompt": {
-            "fr": "Comment dit-on « comprendre ; clair » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l61-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "终于 (zhōng yú)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "裙子 (qún zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "明白 (míng bái)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "生气 (shēng qì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 57
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l61-reverse-478",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l61-reverse-478",
-          "prompt": {
-            "fr": "Comment dit-on « gros ; corpulent » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l61-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "双 (shuāng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "胖 (pàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "生气 (shēng qì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "过去 (guò qù)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -988,16 +1003,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-order-exa-3",
+      "id": "block-ex-l61-translate-dia-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l61-order-exa-3",
+          "id": "ex-l61-translate-dia-1",
           "prompt": {
-            "fr": "Construis « Ce chat est un peu gros »."
+            "fr": "Traduis en chinois : « Cette jupe est-elle jolie ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l61-produce"
@@ -1005,127 +1020,10 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "e",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
           {
             "id": "c",
-            "hanzi": "猫",
-            "pinyin": "māo",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "只",
-            "pinyin": "zhī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "胖",
-            "pinyin": "pàng",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "这只猫有点胖。",
-          "这只猫有点胖"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 57
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l61-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l61-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 我们___找到了车站。 (« Nous avons enfin trouvé la gare »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l61-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我们___找到了车站。",
-        "acceptedAnswers": [
-          "终于"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 57
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l61-order-dia-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l61-order-dia-1",
-          "prompt": {
-            "fr": "Construis « Cette jupe est-elle jolie ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l61-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "看",
-            "pinyin": "kàn",
+            "hanzi": "裙子",
+            "pinyin": "qún zi",
             "audio": null
           },
           {
@@ -1135,9 +1033,33 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "裙子",
-            "pinyin": "qún zi",
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "双",
+            "pinyin": "shuāng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "生气",
+            "pinyin": "shēng qì",
             "audio": null
           },
           {
@@ -1155,10 +1077,139 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "这条裙子好看吗？",
-          "这条裙子好看吗"
-        ]
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l61-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l61-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这条裙子好看吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "别生气，我们再看看。",
+            "pinyin": "bié shēng qì, wǒ men zài kàn kan.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "如果你不满意，就换一条。",
+            "pinyin": "rú guǒ nǐ bù mǎn yì, jiù huàn yì tiáo.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我喜欢这顶帽子，但是鞋有点小。",
+            "pinyin": "wǒ xǐ huan zhè dǐng mào zi, dàn shì xié yǒu diǎn xiǎo.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 57
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l61-translate-exa-7",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l61-translate-exa-7",
+          "prompt": {
+            "fr": "Traduis en chinois : « Nous avons enfin trouvé la gare »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l61-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "h",
+            "hanzi": "生气",
+            "pinyin": "shēng qì",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "胖",
+            "pinyin": "pàng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "终于",
+            "pinyin": "zhōng yú",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1198,57 +1249,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-order-exa-1",
+      "id": "block-ex-l61-dialogue-1-4",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l61-order-exa-1",
+          "id": "ex-l61-dialogue-1-4",
           "prompt": {
-            "fr": "Construis « Autrefois, il n’y avait pas de métro ici »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l61-produce"
+            "l61-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "如果你不满意，就换一条。",
+            "pinyin": "rú guǒ nǐ bù mǎn yì, jiù huàn yì tiáo.",
+            "audio": null
+          },
           {
             "id": "a",
-            "hanzi": "过去",
-            "pinyin": "guò qù",
+            "speaker": "Mina",
+            "hanzi": "这条裙子好看吗？",
+            "pinyin": "zhè tiáo qún zi hǎo kàn ma?",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "没",
-            "pinyin": "méi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "地铁",
-            "pinyin": "dì tiě",
+            "speaker": "Tao",
+            "hanzi": "别生气，我们再看看。",
+            "pinyin": "bié shēng qì, wǒ men zài kàn kan.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "里",
-            "pinyin": "lǐ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "speaker": "Mina",
+            "hanzi": "我喜欢这顶帽子，但是鞋有点小。",
+            "pinyin": "wǒ xǐ huan zhè dǐng mào zi, dàn shì xié yǒu diǎn xiǎo.",
             "audio": null
           }
         ],
@@ -1256,50 +1299,61 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "过去这里没有地铁。",
-          "过去这里没有地铁"
+          "d"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 57
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l61-speak-exa-2",
+      "id": "block-ex-l61-read-exa-7",
       "spec": {
-        "kind": "speaking",
+        "kind": "choice",
         "header": {
-          "id": "ex-l61-speak-exa-2",
+          "id": "ex-l61-read-exa-7",
           "prompt": {
-            "fr": "Dis « Tu comprends ce que je veux dire ? »."
+            "fr": "Que signifie la phrase : 我们终于找到了车站。"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l61-produce"
+            "l61-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "你明白我的意思吗？",
-        "referencePinyin": "nǐ míng bai wǒ de yì si ma?",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "你明白我的意思吗？"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous avons enfin trouvé la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ce chat est un peu gros."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cette jupe est neuve."
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 57
       }
     },

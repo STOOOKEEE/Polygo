@@ -63,8 +63,8 @@ Le bundle contient 94 leçons dans 9 unités :
 
 - 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 90 séances
   planifiées (`lesson-05` à `lesson-94`) ;
-- 1 655 exercices au total : 27 dans l’introduction et 1 628 dans le programme de
-  90 jours ;
+- 1 647 exercices au total : 27 dans l’introduction et 1 620 dans le programme de
+  90 jours (18 par séance) ;
 - 94 histoires inline et 196 paragraphes de lecture ;
 - 605 cartes et entrées lexicales distinctes, soit 600 lexèmes canoniques et
   5 mots supplémentaires de contexte, pour 897 associations leçon–carte ;

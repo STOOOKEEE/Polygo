@@ -861,7 +861,7 @@ final class ContentContractTests: XCTestCase {
     }
 
     /// The Mandarin an exercise presents: prompt, sentence with its answer,
-    /// tiles in order, and every choice.
+    /// tiles or dialogue lines in order, every choice, pair and reply.
     private func presentedText(in spec: [String: Any]) -> String {
         var parts: [String] = []
         if let header = spec["header"] as? [String: Any],
@@ -872,16 +872,22 @@ final class ContentContractTests: XCTestCase {
         parts.append(spec["referenceText"] as? String ?? "")
         let answers = spec["acceptedAnswers"] as? [String] ?? []
         parts.append((spec["sentence"] as? String ?? "").replacingOccurrences(of: "___", with: answers.first ?? ""))
-        let tokens = spec["tokens"] as? [[String: Any]] ?? []
-        let tokenText = Dictionary(uniqueKeysWithValues: tokens.compactMap { token -> (String, String)? in
-            guard let id = token["id"] as? String, let hanzi = token["hanzi"] as? String else { return nil }
+        let pieces = (spec["tokens"] as? [[String: Any]] ?? []) + (spec["lines"] as? [[String: Any]] ?? [])
+        let pieceText = Dictionary(uniqueKeysWithValues: pieces.compactMap { piece -> (String, String)? in
+            guard let id = piece["id"] as? String, let hanzi = piece["hanzi"] as? String else { return nil }
             return (id, hanzi)
         })
-        parts.append((spec["correctOrder"] as? [String] ?? []).compactMap { tokenText[$0] }.joined())
+        parts.append((spec["correctOrder"] as? [String] ?? []).compactMap { pieceText[$0] }.joined())
         for choice in spec["choices"] as? [[String: Any]] ?? [] {
             parts.append((choice["label"] as? [String: String])?["fr"] ?? "")
         }
-        parts.append(contentsOf: tokenText.values)
+        parts.append(contentsOf: pieceText.values)
+        for reply in spec["replies"] as? [[String: Any]] ?? [] {
+            parts.append(reply["hanzi"] as? String ?? "")
+        }
+        for pair in spec["pairs"] as? [[String: Any]] ?? [] {
+            parts.append(pair["left"] as? String ?? "")
+        }
         return parts.joined(separator: "\n")
     }
 
@@ -1041,8 +1047,21 @@ final class ContentContractTests: XCTestCase {
                     if let audio = exercise.referenceAudio { references.append(audio) }
                 case .handwriting(let exercise):
                     references.append(exercise.guideAsset)
-                case .fillBlank, .flashcard:
+                case .fillBlank, .flashcard, .matching:
                     break
+                case .dictation(let exercise):
+                    if let audio = exercise.promptAudio { references.append(audio) }
+                    references.append(contentsOf: exercise.choices.compactMap(\.audio))
+                case .toneDiscrimination(let exercise):
+                    if let audio = exercise.promptAudio { references.append(audio) }
+                    references.append(contentsOf: exercise.choices.compactMap(\.audio))
+                case .translation(let exercise):
+                    references.append(contentsOf: exercise.tokens.compactMap(\.audio))
+                case .dialogueOrder(let exercise):
+                    references.append(contentsOf: exercise.lines.compactMap(\.audio))
+                case .conversationChoice(let exercise):
+                    if let audio = exercise.promptAudio { references.append(audio) }
+                    references.append(contentsOf: exercise.replies.compactMap(\.audio))
                 }
             case .vocabulary, .recap:
                 break
@@ -1449,6 +1468,43 @@ final class ContentContractTests: XCTestCase {
             XCTAssertEqual(exercise.guideAsset.kind, .handwritingGuide)
         case .flashcard(let exercise):
             XCTAssertTrue(cardIDs.contains(exercise.cardID))
+        case .matching(let exercise):
+            XCTAssertTrue((2...5).contains(exercise.pairs.count))
+            XCTAssertEqual(Set(exercise.pairs.map(\.id)).count, exercise.pairs.count)
+            XCTAssertEqual(Set(exercise.pairs.map(\.left)).count, exercise.pairs.count)
+            XCTAssertEqual(Set(exercise.pairs.map(\.right)).count, exercise.pairs.count)
+            XCTAssertEqual(Set(exercise.rightColumn.map(\.id)), Set(exercise.pairs.map(\.id)))
+            XCTAssertNotEqual(exercise.rightColumn.map(\.id), exercise.pairs.map(\.id))
+        case .dictation(let exercise):
+            XCTAssertTrue(exercise.promptAudio != nil || !(exercise.promptText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true))
+            XCTAssertEqual(Set(exercise.choices.map(\.id)).count, exercise.choices.count)
+            XCTAssertTrue(exercise.choices.contains { $0.id == exercise.correctChoiceID })
+        case .toneDiscrimination(let exercise):
+            XCTAssertTrue(exercise.promptAudio != nil || !(exercise.promptText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true))
+            XCTAssertEqual(Set(exercise.choices.map(\.id)).count, exercise.choices.count)
+            XCTAssertTrue(exercise.choices.contains { $0.id == exercise.correctChoiceID })
+        case .translation(let exercise):
+            let tokenIDs = Set(exercise.tokens.map(\.id))
+            XCTAssertEqual(tokenIDs.count, exercise.tokens.count)
+            XCTAssertEqual(Set(exercise.tokens.map(\.hanzi)).count, exercise.tokens.count)
+            XCTAssertFalse(exercise.correctOrder.isEmpty)
+            XCTAssertEqual(Set(exercise.correctOrder).count, exercise.correctOrder.count)
+            XCTAssertTrue(Set(exercise.correctOrder).isSubset(of: tokenIDs))
+            XCTAssertLessThan(exercise.correctOrder.count, exercise.tokens.count, "A translation needs at least one distractor tile")
+            XCTAssertTrue(exercise.acceptedOrders.allSatisfy { Set($0).isSubset(of: tokenIDs) })
+        case .dialogueOrder(let exercise):
+            let lineIDs = exercise.lines.map(\.id)
+            XCTAssertTrue((2...4).contains(lineIDs.count))
+            XCTAssertEqual(Set(lineIDs).count, lineIDs.count)
+            XCTAssertEqual(Set(lineIDs), Set(exercise.correctOrder))
+            XCTAssertEqual(lineIDs.count, exercise.correctOrder.count)
+            XCTAssertNotEqual(lineIDs, exercise.correctOrder)
+        case .conversationChoice(let exercise):
+            XCTAssertTrue(exercise.promptAudio != nil || !(exercise.promptText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true))
+            XCTAssertEqual(exercise.replies.count, 3)
+            XCTAssertEqual(Set(exercise.replies.map(\.id)).count, exercise.replies.count)
+            XCTAssertEqual(Set(exercise.replies.map(\.hanzi)).count, exercise.replies.count)
+            XCTAssertTrue(exercise.replies.contains { $0.id == exercise.correctReplyID })
         }
     }
 
@@ -1474,6 +1530,18 @@ final class ContentContractTests: XCTestCase {
             return .handwriting(HandwritingAnswer(strokeCount: exercise.expectedStrokeCount ?? 0, selfChecked: true))
         case .flashcard:
             return .selfRating(.easy)
+        case .matching(let exercise):
+            return .matching(pairs: Dictionary(uniqueKeysWithValues: exercise.pairs.map { ($0.id, $0.id) }))
+        case .dictation(let exercise):
+            return .choice(choiceID: exercise.correctChoiceID)
+        case .toneDiscrimination(let exercise):
+            return .choice(choiceID: exercise.correctChoiceID)
+        case .translation(let exercise):
+            return .wordOrder(tokenIDs: exercise.correctOrder)
+        case .dialogueOrder(let exercise):
+            return .wordOrder(tokenIDs: exercise.correctOrder)
+        case .conversationChoice(let exercise):
+            return .choice(choiceID: exercise.correctReplyID)
         }
     }
 
@@ -1517,6 +1585,12 @@ final class ContentContractTests: XCTestCase {
         case .speaking: return "speaking"
         case .handwriting: return "handwriting"
         case .flashcard: return "flashcard"
+        case .matching: return "matching"
+        case .dictation: return "dictation"
+        case .toneDiscrimination: return "toneDiscrimination"
+        case .translation: return "translation"
+        case .dialogueOrder: return "dialogueOrder"
+        case .conversationChoice: return "conversationChoice"
         }
     }
 
@@ -1573,6 +1647,27 @@ final class ContentContractTests: XCTestCase {
                 case .flashcard(let exercise):
                     if let card = lesson.cards.first(where: { $0.id == exercise.cardID }) {
                         used.insert(card.vocabularyID)
+                    }
+                case .matching(let exercise):
+                    for pair in exercise.pairs {
+                        used.formUnion(entriesByHanzi[pair.left] ?? [])
+                    }
+                case .translation(let exercise):
+                    for token in exercise.tokens {
+                        used.formUnion(entriesByHanzi[token.hanzi] ?? [])
+                    }
+                case .dialogueOrder(let exercise):
+                    for line in exercise.lines {
+                        for entry in entries where line.hanzi.contains(entry.hanzi) {
+                            used.insert(entry.id)
+                        }
+                    }
+                case .conversationChoice(let exercise):
+                    let texts = [exercise.promptText ?? ""] + exercise.replies.map(\.hanzi)
+                    for text in texts {
+                        for entry in entries where text.contains(entry.hanzi) {
+                            used.insert(entry.id)
+                        }
                     }
                 default:
                     break

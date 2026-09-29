@@ -620,49 +620,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-pick-470",
+      "id": "block-ex-l62-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l62-pick-470",
+          "id": "ex-l62-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l62-understand"
           ],
           "required": true
         },
-        "promptText": "难",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "帮忙",
+            "pinyin": "bāng máng",
+            "right": {
+              "fr": "aider ; rendre service"
+            }
+          },
+          {
+            "id": "b",
+            "left": "关于",
+            "pinyin": "guān yú",
+            "right": {
+              "fr": "au sujet de"
+            }
+          },
+          {
+            "id": "c",
+            "left": "难",
+            "pinyin": "nán",
+            "right": {
+              "fr": "difficile"
+            }
+          },
+          {
+            "id": "d",
+            "left": "清楚",
+            "pinyin": "qīng chǔ",
+            "right": {
+              "fr": "clair ; clairement"
+            }
+          },
+          {
+            "id": "e",
+            "left": "容易",
+            "pinyin": "róng yì",
+            "right": {
+              "fr": "facile"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-dict-sent-dia-3",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l62-dict-sent-dia-3",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "那个胖叔叔也在找车站。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "站 (zhàn)"
+              "fr": "zǒu lìng yì biān ba, nà lǐ gèng róng yì."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "关于 (guān yú)"
+              "fr": "gù kè duì zhè jiàn yī fu hěn mǎn yì."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "难 (nán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "清楚 (qīng chǔ)"
+              "fr": "nà ge pàng shū shu yě zài zhǎo chē zhàn."
             },
             "audio": null
           }
@@ -677,41 +738,99 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-reverse-312",
+      "id": "block-ex-l62-tone-312",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l62-reverse-312",
+          "id": "ex-l62-tone-312",
           "prompt": {
-            "fr": "Comment dit-on « aider ; rendre service » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l62-understand"
           ],
           "required": true
         },
+        "promptText": "帮忙",
         "choices": [
           {
-            "id": "a",
+            "id": "t12",
             "label": {
-              "fr": "容易 (róng yì)"
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t12"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-pick-390",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l62-pick-390",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "promptText": "关于",
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "帮忙 (bāng máng)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "关于 (guān yú)"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "叔叔 (shū shu)"
+              "fr": "容易 (róng yì)"
             },
             "audio": null
           },
@@ -733,167 +852,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-pick-487",
+      "id": "block-ex-l62-dict-zh-503",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l62-pick-487",
+          "id": "ex-l62-dict-zh-503",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l62-understand"
           ],
           "required": true
         },
-        "promptText": "清楚",
+        "script": "hanzi",
+        "promptText": "叔叔",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "清楚 (qīng chǔ)"
+              "fr": "叔叔"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "关于 (guān yú)"
+              "fr": "清楚"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "帮忙 (bāng máng)"
+              "fr": "关于"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "叔叔 (shū shu)"
+              "fr": "容易"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-reverse-581",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l62-reverse-581",
-          "prompt": {
-            "fr": "Comment dit-on « station ; être debout » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l62-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "难 (nán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "叔叔 (shū shu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "帮忙 (bāng máng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "站 (zhàn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-pick-312",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l62-pick-312",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l62-understand"
-          ],
-          "required": true
-        },
-        "promptText": "帮忙",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "关于 (guān yú)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "叔叔 (shū shu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "帮忙 (bāng máng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "容易 (róng yì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -987,16 +994,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-order-exa-1",
+      "id": "block-ex-l62-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l62-order-exa-1",
+          "id": "ex-l62-translate-exa-6",
           "prompt": {
-            "fr": "Construis « Merci de m’aider »."
+            "fr": "Traduis en chinois : « Mon oncle habite à Shanghai »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l62-produce"
@@ -1005,123 +1012,51 @@
         },
         "tokens": [
           {
+            "id": "f",
+            "hanzi": "海",
+            "pinyin": "hǎi",
+            "audio": null
+          },
+          {
             "id": "c",
+            "hanzi": "住",
+            "pinyin": "zhù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "g",
             "hanzi": "帮忙",
             "pinyin": "bāng máng",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "谢谢",
-            "pinyin": "xiè xiè",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "谢谢你帮忙。",
-          "谢谢你帮忙"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-fill-dia-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l62-fill-dia-3",
-          "prompt": {
-            "fr": "Complète : 那个胖___也在找车站。 (« Cet oncle corpulent cherche aussi la gare »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l62-produce"
-          ],
-          "required": true
-        },
-        "sentence": "那个胖___也在找车站。",
-        "acceptedAnswers": [
-          "叔叔"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l62-order-exa-4",
-          "prompt": {
-            "fr": "Construis « Dis clairement l’adresse, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l62-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "址",
-            "pinyin": "zhǐ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "地",
-            "pinyin": "dì",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "清楚",
-            "pinyin": "qīng chu",
+            "hanzi": "叔叔",
+            "pinyin": "shū shu",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "说",
-            "pinyin": "shuō",
+            "hanzi": "上",
+            "pinyin": "Shàng",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "把",
-            "pinyin": "bǎ",
+            "id": "h",
+            "hanzi": "站",
+            "pinyin": "zhàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
             "audio": null
           }
         ],
@@ -1133,10 +1068,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "请把地址说清楚。",
-          "请把地址说清楚"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1146,13 +1078,138 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-fill-exa-2",
+      "id": "block-ex-l62-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l62-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你对这张地图满意吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "走另一边吧，那里更容易。",
+            "pinyin": "zǒu lìng yì biān ba, nà lǐ gèng róng yì.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "那个胖叔叔也在找车站。",
+            "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我不太满意，但是这条路比较难。",
+            "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l62-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Cet exercice n’est pas difficile »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "练习",
+            "pinyin": "liàn xí",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "容易",
+            "pinyin": "róng yì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "难",
+            "pinyin": "nán",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "帮忙",
+            "pinyin": "bāng máng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-fill-dia-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l62-fill-exa-2",
+          "id": "ex-l62-fill-dia-2",
           "prompt": {
-            "fr": "Complète : ___这件事，我们明天再说。 (« Au sujet de cette affaire, nous en reparlerons demain »)"
+            "fr": "Complète : 我不太满意，但是这条路比较___。 (« Je ne suis pas très satisfait, mais cette route est assez difficile »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1162,9 +1219,9 @@
           ],
           "required": true
         },
-        "sentence": "___这件事，我们明天再说。",
+        "sentence": "我不太满意，但是这条路比较___。",
         "acceptedAnswers": [
-          "关于"
+          "难"
         ],
         "caseSensitive": false
       },
@@ -1176,46 +1233,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-read-exa-2",
+      "id": "block-ex-l62-dialogue-2-3",
       "spec": {
-        "kind": "choice",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l62-read-exa-2",
+          "id": "ex-l62-dialogue-2-3",
           "prompt": {
-            "fr": "Que signifie la phrase : 关于这件事，我们明天再说。"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l62-understand"
           ],
           "required": true
         },
-        "choices": [
+        "lines": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Au sujet de cette affaire, nous en reparlerons demain."
-            },
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "那个胖叔叔也在找车站。",
+            "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
             "audio": null
           },
           {
-            "id": "b",
-            "label": {
-              "fr": "Le client est très satisfait de ce vêtement."
-            },
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我不太满意，但是这条路比较难。",
+            "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "Prenons l’autre côté, c’est plus facile par là."
-            },
+            "speaker": "Tao",
+            "hanzi": "走另一边吧，那里更容易。",
+            "pinyin": "zǒu lìng yì biān ba, nà lǐ gèng róng yì.",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1252,19 +1313,19 @@
           {
             "id": "b",
             "label": {
-              "fr": "Cet exercice n’est pas difficile."
+              "fr": "Cet oncle corpulent cherche aussi la gare."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Cet oncle corpulent cherche aussi la gare."
+              "fr": "Cet exercice n’est pas difficile."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1294,14 +1355,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Le client est très satisfait de ce vêtement."
+              "fr": "Je ne suis pas très satisfait, mais cette route est assez difficile."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Je ne suis pas très satisfait, mais cette route est assez difficile."
+              "fr": "Le client est très satisfait de ce vêtement."
             },
             "audio": null
           },
@@ -1313,7 +1374,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",

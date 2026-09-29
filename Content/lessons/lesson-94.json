@@ -618,49 +618,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-listen-word-175",
+      "id": "block-ex-l94-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l94-listen-word-175",
+          "id": "ex-l94-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l94-understand"
           ],
           "required": true
         },
-        "promptText": "懂",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "注意",
+            "pinyin": "zhù yì",
+            "right": {
+              "fr": "faire attention ; remarquer"
+            }
+          },
+          {
+            "id": "b",
+            "left": "懂",
+            "pinyin": "dǒng",
+            "right": {
+              "fr": "comprendre"
+            }
+          },
+          {
+            "id": "c",
+            "left": "对",
+            "pinyin": "duì",
+            "right": {
+              "fr": "correct ; envers"
+            }
+          },
+          {
+            "id": "d",
+            "left": "回答",
+            "pinyin": "huí dá",
+            "right": {
+              "fr": "répondre ; réponse"
+            }
+          },
+          {
+            "id": "e",
+            "left": "问题",
+            "pinyin": "wèn tí",
+            "right": {
+              "fr": "question ; problème"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 90
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l94-dict-py-592",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l94-dict-py-592",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l94-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "注意",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "le plus"
+              "fr": "wèn tí"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "répondre ; réponse"
+              "fr": "bàn fǎ"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "comprendre"
+              "fr": "zhù yì"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "question ; problème"
+              "fr": "huí dá"
             },
             "audio": null
           }
@@ -675,53 +743,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-meaning-175",
+      "id": "block-ex-l94-tone-175",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l94-meaning-175",
+          "id": "ex-l94-tone-175",
           "prompt": {
-            "fr": "Que signifie 懂 (dǒng) ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le sens du mot."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l94-understand"
           ],
           "required": true
         },
+        "promptText": "懂",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "correct ; envers"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "comprendre"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "répondre ; réponse"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "moyen ; solution"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -731,49 +800,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-listen-word-176",
+      "id": "block-ex-l94-dict-sent-dia-3",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l94-listen-word-176",
+          "id": "ex-l94-dict-sent-dia-3",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l94-understand"
           ],
           "required": true
         },
-        "promptText": "对",
+        "script": "pinyin",
+        "promptText": "遇到问题时，你会怎么做？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "correct ; envers"
+              "fr": "yù dào wèn tí shí, nǐ huì zěn me zuò?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "aussi"
+              "fr": "zhè jiǔ shí tiān nǐ xué huì le shén me?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "moyen ; solution"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "le plus"
+              "fr": "guò mǎ lù shí qǐng zhù yì chē liàng."
             },
             "audio": null
           }
@@ -788,111 +851,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-listen-word-196",
+      "id": "block-ex-l94-match-pinyin",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l94-listen-word-196",
+          "id": "ex-l94-match-pinyin",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l94-understand"
           ],
           "required": true
         },
-        "promptText": "回答",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "comprendre"
-            },
-            "audio": null
+            "left": "也",
+            "pinyin": null,
+            "right": {
+              "fr": "yě"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "faire attention ; remarquer"
-            },
-            "audio": null
+            "left": "再",
+            "pinyin": null,
+            "right": {
+              "fr": "zài"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "aussi"
-            },
-            "audio": null
+            "left": "张",
+            "pinyin": null,
+            "right": {
+              "fr": "zhāng"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "répondre ; réponse"
-            },
-            "audio": null
+            "left": "最",
+            "pinyin": null,
+            "right": {
+              "fr": "zuì"
+            }
+          },
+          {
+            "id": "e",
+            "left": "办法",
+            "pinyin": null,
+            "right": {
+              "fr": "bàn fǎ"
+            }
           }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 90
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l94-listen-word-259",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l94-listen-word-259",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
-          },
-          "objectiveIDs": [
-            "l94-understand"
-          ],
-          "required": true
-        },
-        "promptText": "问题",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "feuille ; classificateur plat"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "moyen ; solution"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "question ; problème"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "le plus"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -986,6 +1002,161 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l94-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l94-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je comprends ce que tu veux dire »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l94-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "最近",
+            "pinyin": "zuì jìn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "意思",
+            "pinyin": "yì si",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "懂",
+            "pinyin": "dǒng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "祝",
+            "pinyin": "zhù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 90
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l94-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l94-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l94-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这九十天你学会了什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我会注意信息：先听清楚，再说明办法，最后自己完成。",
+            "pinyin": "wǒ huì zhù yì xìn xī: xiān tīng qīng chu, zài shuō míng bàn fǎ, zuì hòu zì jǐ wán chéng.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "遇到问题时，你会怎么做？",
+            "pinyin": "yù dào wèn tí shí, nǐ huì zěn me zuò?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我能听懂短对话，也能用地图安排旅行。",
+            "pinyin": "wǒ néng tīng dǒng duǎn duì huà, yě néng yòng dì tú ān pái lǚ xíng.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 90
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l94-fill-exa-1",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l94-fill-exa-1",
+          "prompt": {
+            "fr": "Complète : 过马路时请___车辆。 (« Fais attention aux véhicules en traversant la rue »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l94-produce"
+          ],
+          "required": true
+        },
+        "sentence": "过马路时请___车辆。",
+        "acceptedAnswers": [
+          "注意"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 90
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l94-order-exa-10",
       "spec": {
         "kind": "wordOrder",
@@ -1054,159 +1225,104 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-fill-dia-3",
+      "id": "block-ex-l94-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l94-fill-dia-3",
+          "id": "ex-l94-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 遇到___时，你会怎么做？ (« Que fais-tu quand tu rencontres un problème ? »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l94-produce"
+            "l94-understand"
           ],
           "required": true
         },
-        "sentence": "遇到___时，你会怎么做？",
-        "acceptedAnswers": [
-          "问题"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 90
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l94-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l94-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Je comprends ce que tu veux dire »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l94-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "c",
-            "hanzi": "你",
-            "pinyin": "nǐ",
+            "speaker": "Mina",
+            "hanzi": "遇到问题时，你会怎么做？",
+            "pinyin": "yù dào wèn tí shí, nǐ huì zěn me zuò?",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "意思",
-            "pinyin": "yì si",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "的",
-            "pinyin": "de",
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "这九十天你学会了什么？",
+            "pinyin": "zhè jiǔ shí tiān nǐ xué huì le shén me?",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "懂",
-            "pinyin": "dǒng",
+            "speaker": "Tao",
+            "hanzi": "我能听懂短对话，也能用地图安排旅行。",
+            "pinyin": "wǒ néng tīng dǒng duǎn duì huà, yě néng yòng dì tú ān pái lǚ xíng.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我懂你的意思。",
-          "我懂你的意思"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 90
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l94-fill-exa-1",
+      "id": "block-ex-l94-listen-rea-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l94-fill-exa-1",
+          "id": "ex-l94-listen-rea-1",
           "prompt": {
-            "fr": "Complète : 过马路时请___车辆。 (« Fais attention aux véhicules en traversant la rue »)"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l94-produce"
+            "l94-understand"
           ],
           "required": true
         },
-        "sentence": "过马路时请___车辆。",
-        "acceptedAnswers": [
-          "注意"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 90
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l94-fill-rea-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l94-fill-rea-1",
-          "prompt": {
-            "fr": "Complète : 他遇到困难时先检查信息，___说明办法，最后自己完成任务。 (« Quand il rencontre une difficulté, il vérifie d’abord les informations, explique ensuite la solution et termine la tâche lui-même »)"
+        "promptText": "他遇到困难时先检查信息，再说明办法，最后自己完成任务。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je fais attention aux informations : j’écoute d’abord clairement, j’explique ensuite la solution et je termine moi-même."
+            },
+            "audio": null
           },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
+          {
+            "id": "b",
+            "label": {
+              "fr": "Quand il rencontre une difficulté, il vérifie d’abord les informations, explique ensuite la solution et termine la tâche lui-même."
+            },
+            "audio": null
           },
-          "objectiveIDs": [
-            "l94-produce"
-          ],
-          "required": true
-        },
-        "sentence": "他遇到困难时先检查信息，___说明办法，最后自己完成任务。",
-        "acceptedAnswers": [
-          "再"
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je peux comprendre de courts dialogues et organiser un voyage avec une carte."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 90
       }
     },
@@ -1232,75 +1348,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "Je comprends ce que tu veux dire."
+              "fr": "Qu’as-tu appris pendant ces quatre-vingt-dix jours ?"
             },
             "audio": null
           },
           {
             "id": "b",
+            "label": {
+              "fr": "Je comprends ce que tu veux dire."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
             "label": {
               "fr": "Donne-moi une feuille, s’il te plaît."
             },
             "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Qu’as-tu appris pendant ces quatre-vingt-dix jours ?"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 90
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l94-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l94-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 我能听懂短对话，也能用地图安排旅行。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l94-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "C’est la meilleure solution."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je peux comprendre de courts dialogues et organiser un voyage avec une carte."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Je comprends ce que tu veux dire."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",

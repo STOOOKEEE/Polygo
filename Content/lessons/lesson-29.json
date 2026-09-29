@@ -639,6 +639,181 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l29-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l29-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "冷",
+            "pinyin": "lěng",
+            "right": {
+              "fr": "froid"
+            }
+          },
+          {
+            "id": "b",
+            "left": "学校",
+            "pinyin": "xué xiào",
+            "right": {
+              "fr": "école"
+            }
+          },
+          {
+            "id": "c",
+            "left": "衣服",
+            "pinyin": "yī fu",
+            "right": {
+              "fr": "vêtement"
+            }
+          },
+          {
+            "id": "d",
+            "left": "便宜",
+            "pinyin": "pián yi",
+            "right": {
+              "fr": "bon marché"
+            }
+          },
+          {
+            "id": "e",
+            "left": "服务员",
+            "pinyin": "fú wù yuán",
+            "right": {
+              "fr": "serveur ; employé de service"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-dict-sent-exa-6",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l29-dict-sent-exa-6",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "这件衣服太贵了。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "zhè jiàn hěn guì， wǒ bù mǎi。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "zhè jiàn yī fú duō shǎo qián？"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "zhè jiàn yī fú tài guì le。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-tone-056",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l29-tone-056",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "promptText": "冷",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l29-pick-179",
       "spec": {
         "kind": "listeningChoice",
@@ -660,14 +835,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "旁边 (páng biān)"
+              "fr": "服务员 (fú wù yuán)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "服务员 (fú wù yuán)"
+              "fr": "旁边 (páng biān)"
             },
             "audio": null
           },
@@ -686,120 +861,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-reverse-056",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l29-reverse-056",
-          "prompt": {
-            "fr": "Comment dit-on « froid » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l29-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "冷 (lěng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "贵 (guì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "衣服 (yī fu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "便宜 (pián yi)"
-            },
-            "audio": null
-          }
-        ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-pick-187",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l29-pick-187",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l29-understand"
-          ],
-          "required": true
-        },
-        "promptText": "贵",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "冷 (lěng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "便宜 (pián yi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "旁边 (páng biān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "贵 (guì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -843,76 +905,19 @@
           {
             "id": "c",
             "label": {
+              "fr": "便宜 (pián yi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
               "fr": "服务员 (fú wù yuán)"
             },
             "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "便宜 (pián yi)"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-pick-056",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l29-pick-056",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l29-understand"
-          ],
-          "required": true
-        },
-        "promptText": "冷",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "贵 (guì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "冷 (lěng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "便宜 (pián yi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "衣服 (yī fu)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -1006,16 +1011,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l29-order-exa-1",
+      "id": "block-ex-l29-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l29-order-exa-1",
+          "id": "ex-l29-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Il fait très froid aujourd’hui »."
+            "fr": "Traduis en chinois : « L’école est ici »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l29-produce"
@@ -1024,160 +1029,21 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "很",
-            "pinyin": "hěn",
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "冷",
-            "pinyin": "lěng",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "今天很冷。",
-          "今天很冷"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-fill-exa-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l29-fill-exa-2",
-          "prompt": {
-            "fr": "Complète : ___在这里。 (« L’école est ici »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l29-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___在这里。",
-        "acceptedAnswers": [
-          "学校"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l29-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Le serveur me donne de l’eau »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l29-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "给",
-            "pinyin": "gěi",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "水",
-            "pinyin": "shuǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "服务员",
-            "pinyin": "fú wù yuán",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "服务员给我水。",
-          "服务员给我水"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-order-exa-7",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l29-order-exa-7",
-          "prompt": {
-            "fr": "Construis « La chaise est à côté de la table »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l29-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
+            "hanzi": "里",
+            "pinyin": "lǐ",
             "audio": null
           },
           {
@@ -1187,9 +1053,15 @@
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "椅子",
-            "pinyin": "yǐ zi",
+            "id": "f",
+            "hanzi": "衣服",
+            "pinyin": "yī fu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "冷",
+            "pinyin": "lěng",
             "audio": null
           }
         ],
@@ -1199,14 +1071,237 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "椅子在桌子旁边。",
-          "椅子在桌子旁边"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l29-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这件衣服多少钱？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "你穿什么颜色？",
+            "pinyin": "nǐ chuān shén me yán sè？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "好，离门近的衣服都在这里。",
+            "pinyin": "hǎo， lí mén jìn de yī fú dōu zài zhè lǐ。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "三百元，但是那件比较便宜。",
+            "pinyin": "sān bǎi yuán， dàn shì nà jiàn bǐ jiào pián yi。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l29-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Ce vêtement est bon marché »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "贵",
+            "pinyin": "guì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "便宜",
+            "pinyin": "pián yi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-talk-4",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l29-talk-4",
+          "prompt": {
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Tao",
+        "promptText": "你穿什么颜色？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "这件很贵，我不买。",
+            "pinyin": "zhè jiàn hěn guì， wǒ bù mǎi。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我穿红衣服。请找两件小的。",
+            "pinyin": "wǒ chuān hóng yī fú。 qǐng zhǎo liǎng jiàn xiǎo de。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这件衣服多少钱？",
+            "pinyin": "zhè jiàn yī fú duō shǎo qián？",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l29-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l29-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "这件很贵，我不买。",
+            "pinyin": "zhè jiàn hěn guì， wǒ bù mǎi。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "三百元，但是那件比较便宜。",
+            "pinyin": "sān bǎi yuán， dàn shì nà jiàn bǐ jiào pián yi。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "这件衣服多少钱？",
+            "pinyin": "zhè jiàn yī fú duō shǎo qián？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 25
       }
     },
@@ -1237,55 +1332,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-read-rea-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l29-read-rea-1",
-          "prompt": {
-            "fr": "Dans le texte « Au magasin », que signifie : 商店里有两件衣服：红的很贵，白的比较便宜。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l29-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Dans le magasin, il y a deux vêtements : le rouge est cher et le blanc est moins cher."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Le client cherche de petits vêtements et en achète finalement deux, pour trois cents yuans au total."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Je porte des vêtements rouges. Cherche deux petites tailles, s’il te plaît."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 25
       }
     },

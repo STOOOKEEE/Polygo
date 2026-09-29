@@ -674,49 +674,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-pick-351",
+      "id": "block-ex-l55-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l55-pick-351",
+          "id": "ex-l55-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l55-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "灯",
+            "pinyin": "dēng",
+            "right": {
+              "fr": "lampe ; lumière"
+            }
+          },
+          {
+            "id": "b",
+            "left": "地",
+            "pinyin": "de",
+            "right": {
+              "fr": "particule adverbiale"
+            }
+          },
+          {
+            "id": "c",
+            "left": "电子邮件",
+            "pinyin": "diàn zǐ yóu jiàn",
+            "right": {
+              "fr": "courriel"
+            }
+          },
+          {
+            "id": "d",
+            "left": "条",
+            "pinyin": "tiáo",
+            "right": {
+              "fr": "classificateur allongé"
+            }
+          },
+          {
+            "id": "e",
+            "left": "相同",
+            "pinyin": "xiāng tóng",
+            "right": {
+              "fr": "identique ; pareil"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-dict-py-351",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l55-dict-py-351",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "灯",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "地 (de)"
+              "fr": "tiáo"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "条 (tiáo)"
+              "fr": "de"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "以前 (yǐ qián)"
+              "fr": "shì"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "灯 (dēng)"
+              "fr": "dēng"
             },
             "audio": null
           }
@@ -731,48 +799,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-reverse-351",
+      "id": "block-ex-l55-tone-519",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l55-reverse-351",
+          "id": "ex-l55-tone-519",
           "prompt": {
-            "fr": "Comment dit-on « lampe ; lumière » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l55-understand"
           ],
           "required": true
         },
+        "promptText": "条",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "地 (de)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-pick-353",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l55-pick-353",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "promptText": "地",
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "条 (tiáo)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "b",
             "label": {
               "fr": "灯 (dēng)"
             },
             "audio": null
           },
           {
+            "id": "c",
+            "label": {
+              "fr": "地 (de)"
+            },
+            "audio": null
+          },
+          {
             "id": "d",
             "label": {
-              "fr": "相同 (xiāng tóng)"
+              "fr": "以前 (yǐ qián)"
             },
             "audio": null
           }
@@ -787,54 +913,48 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-pick-358",
+      "id": "block-ex-l55-dict-zh-540",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l55-pick-358",
+          "id": "ex-l55-dict-zh-540",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l55-understand"
           ],
           "required": true
         },
-        "promptText": "电子邮件",
+        "script": "hanzi",
+        "promptText": "相同",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "音乐 (yīn yuè)"
+              "fr": "以前"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "电子邮件 (diàn zǐ yóu jiàn)"
+              "fr": "音乐"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "以前 (yǐ qián)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "相同 (xiāng tóng)"
+              "fr": "相同"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -891,63 +1011,6 @@
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 51
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l55-pick-353",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l55-pick-353",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l55-understand"
-          ],
-          "required": true
-        },
-        "promptText": "地",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "条 (tiáo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "灯 (dēng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "以前 (yǐ qián)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "地 (de)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -1041,16 +1104,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-order-dia-1",
+      "id": "block-ex-l55-translate-dia-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l55-order-dia-1",
+          "id": "ex-l55-translate-dia-1",
           "prompt": {
-            "fr": "Construis « As-tu vu le courriel ? »."
+            "fr": "Traduis en chinois : « As-tu vu le courriel ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l55-produce"
@@ -1062,6 +1125,24 @@
             "id": "e",
             "hanzi": "吗",
             "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "灯",
+            "pinyin": "dēng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "地",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "电子邮件",
+            "pinyin": "diàn zǐ yóu jiàn",
             "audio": null
           },
           {
@@ -1081,11 +1162,130 @@
             "hanzi": "你",
             "pinyin": "nǐ",
             "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l55-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l55-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你早上从东边走来吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是。我一边走路，一边听音乐。",
+            "pinyin": "shì. wǒ yì biān zǒu lù, yì biān tīng yīn yuè.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "看了。邮件很短，只有一段。",
+            "pinyin": "kàn le. yóu jiàn hěn duǎn, zhǐ yǒu yí duàn.",
+            "audio": null
           },
           {
             "id": "c",
-            "hanzi": "电子邮件",
-            "pinyin": "diàn zǐ yóu jiàn",
+            "hanzi": "你看电子邮件了吗？",
+            "pinyin": "nǐ kàn diàn zǐ yóu jiàn le ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 51
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l55-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l55-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Allume la lumière, s’il te plaît »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l55-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "地",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "条",
+            "pinyin": "tiáo",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "把",
+            "pinyin": "bǎ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "灯",
+            "pinyin": "dēng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "打",
+            "pinyin": "dǎ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "开",
+            "pinyin": "kāi",
             "audio": null
           }
         ],
@@ -1096,10 +1296,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "你看电子邮件了吗？",
-          "你看电子邮件了吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1109,13 +1306,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-fill-exa-1",
+      "id": "block-ex-l55-fill-exa-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l55-fill-exa-1",
+          "id": "ex-l55-fill-exa-2",
           "prompt": {
-            "fr": "Complète : 请把___打开。 (« Allume la lumière, s’il te plaît »)"
+            "fr": "Complète : 他认真___学习。 (« Il étudie sérieusement »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1125,9 +1322,9 @@
           ],
           "required": true
         },
-        "sentence": "请把___打开。",
+        "sentence": "他认真___学习。",
         "acceptedAnswers": [
-          "灯"
+          "地"
         ],
         "caseSensitive": false
       },
@@ -1139,45 +1336,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-order-exa-2",
+      "id": "block-ex-l55-dialogue-1-4",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l55-order-exa-2",
+          "id": "ex-l55-dialogue-1-4",
           "prompt": {
-            "fr": "Construis « Il étudie sérieusement »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l55-produce"
+            "l55-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
           {
             "id": "d",
-            "hanzi": "学习",
-            "pinyin": "xué xí",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "认真",
-            "pinyin": "rèn zhēn",
+            "speaker": "Tao",
+            "hanzi": "是。我一边走路，一边听音乐。",
+            "pinyin": "shì. wǒ yì biān zǒu lù, yì biān tīng yīn yuè.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "地",
-            "pinyin": "de",
+            "speaker": "Mina",
+            "hanzi": "你早上从东边走来吗？",
+            "pinyin": "nǐ zǎo shang cóng dōng biān zǒu lái ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "看了。邮件很短，只有一段。",
+            "pinyin": "kàn le. yóu jiàn hěn duǎn, zhǐ yǒu yí duàn.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你看电子邮件了吗？",
+            "pinyin": "nǐ kàn diàn zǐ yóu jiàn le ma?",
             "audio": null
           }
         ],
@@ -1186,147 +1387,52 @@
           "b",
           "c",
           "d"
-        ],
-        "acceptedVariants": [
-          "他认真地学习。",
-          "他认真地学习"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 51
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l55-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l55-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 请给我一___毛巾。 (« Donne-moi une serviette, s’il te plaît »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l55-produce"
-          ],
-          "required": true
-        },
-        "sentence": "请给我一___毛巾。",
-        "acceptedAnswers": [
-          "条"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 51
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l55-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l55-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : 这两杯水的温度___。 (« La température de ces deux verres d’eau est identique »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l55-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这两杯水的温度___。",
-        "acceptedAnswers": [
-          "相同"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 51
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l55-speak-exa-6",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l55-speak-exa-6",
-          "prompt": {
-            "fr": "Dis « Autrefois, il y avait un magasin ici »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l55-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "以前这里是一家商店。",
-        "referencePinyin": "yǐ qián zhè lǐ shì yì jiā shāng diàn.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "以前这里是一家商店。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 51
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l55-read-dia-1",
+      "id": "block-ex-l55-listen-rea-1",
       "spec": {
-        "kind": "choice",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l55-read-dia-1",
+          "id": "ex-l55-listen-rea-1",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你看电子邮件了吗？"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
             "l55-understand"
           ],
           "required": true
         },
+        "promptText": "邮件只有一段，他从东边走来时就读完了。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Es-tu venu de l’est ce matin ?"
+              "fr": "Oui. Le courriel est court, il n’a qu’un paragraphe."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Allume la lumière, s’il te plaît."
+              "fr": "La température de ces deux verres d’eau est identique."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "As-tu vu le courriel ?"
+              "fr": "Le courriel ne contient qu’un paragraphe ; il le termine en venant de l’est."
             },
             "audio": null
           }

@@ -594,49 +594,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l37-pick-003",
+      "id": "block-ex-l37-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l37-pick-003",
+          "id": "ex-l37-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l37-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "爸爸",
+            "pinyin": "bà ba",
+            "right": {
+              "fr": "papa"
+            }
+          },
+          {
+            "id": "b",
+            "left": "九",
+            "pinyin": "jiǔ",
+            "right": {
+              "fr": "neuf"
+            }
+          },
+          {
+            "id": "c",
+            "left": "热",
+            "pinyin": "rè",
+            "right": {
+              "fr": "chaud"
+            }
+          },
+          {
+            "id": "d",
+            "left": "报纸",
+            "pinyin": "bào zhǐ",
+            "right": {
+              "fr": "journal"
+            }
+          },
+          {
+            "id": "e",
+            "left": "次",
+            "pinyin": "cì",
+            "right": {
+              "fr": "fois (occurrence)"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-dict-py-003",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l37-dict-py-003",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l37-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "爸爸",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "报纸 (bào zhǐ)"
+              "fr": "bào zhǐ"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "爸爸 (bà ba)"
+              "fr": "bà ba"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "黑板 (hēi bǎn)"
+              "fr": "hēi bǎn"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "次 (cì)"
+              "fr": "fā shāo"
             },
             "audio": null
           }
@@ -651,72 +719,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l37-reverse-003",
+      "id": "block-ex-l37-tone-049",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l37-reverse-003",
+          "id": "ex-l37-tone-049",
           "prompt": {
-            "fr": "Comment dit-on « papa » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l37-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "爸爸 (bà ba)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "报纸 (bào zhǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "黑板 (hēi bǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "九 (jiǔ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-pick-049",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l37-pick-049",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l37-understand"
@@ -726,91 +738,35 @@
         "promptText": "九",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "热 (rè)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "次 (cì)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "黑板 (hēi bǎn)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "九 (jiǔ)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-reverse-049",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l37-reverse-049",
-          "prompt": {
-            "fr": "Comment dit-on « neuf » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l37-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "次 (cì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "热 (rè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "九 (jiǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "爸爸 (bà ba)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -841,14 +797,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "九 (jiǔ)"
+              "fr": "热 (rè)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "热 (rè)"
+              "fr": "九 (jiǔ)"
             },
             "audio": null
           },
@@ -867,7 +823,63 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-reverse-085",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l37-reverse-085",
+          "prompt": {
+            "fr": "Comment dit-on « chaud » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l37-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "九 (jiǔ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "次 (cì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "黑板 (hēi bǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "热 (rè)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -961,184 +973,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l37-order-exa-3",
+      "id": "block-ex-l37-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l37-order-exa-3",
+          "id": "ex-l37-translate-exa-2",
           "prompt": {
-            "fr": "Construis « L’eau est très chaude »."
+            "fr": "Traduis en chinois : « Le cours commence à neuf heures »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l37-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "热",
-            "pinyin": "rè",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "水",
-            "pinyin": "shuǐ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "水很热。",
-          "水很热"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l37-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 我早上看___。 (« Je lis le journal le matin »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l37-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我早上看___。",
-        "acceptedAnswers": [
-          "报纸"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l37-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Mon père est à la maison »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l37-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "爸爸",
-            "pinyin": "bà ba",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "我爸爸在家。",
-          "我爸爸在家"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l37-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : 我去过北京三___。 (« Je suis allé trois fois à Pékin »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l37-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我去过北京三___。",
-        "acceptedAnswers": [
-          "次"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 33
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l37-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l37-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Le cours commence à neuf heures »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l37-produce"
@@ -1153,21 +997,33 @@
             "audio": null
           },
           {
+            "id": "f",
+            "hanzi": "爸爸",
+            "pinyin": "bà ba",
+            "audio": null
+          },
+          {
             "id": "c",
             "hanzi": "上",
             "pinyin": "shàng",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "开始",
-            "pinyin": "kāi shǐ",
-            "audio": null
-          },
-          {
             "id": "a",
             "hanzi": "九点",
             "pinyin": "jiǔ diǎn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "黑板",
+            "pinyin": "hēi bǎn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "开始",
+            "pinyin": "kāi shǐ",
             "audio": null
           }
         ],
@@ -1177,10 +1033,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "九点开始上课。",
-          "九点开始上课"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1190,45 +1043,131 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l37-speak-exa-6",
+      "id": "block-ex-l37-talk-1",
       "spec": {
-        "kind": "speaking",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l37-speak-exa-6",
+          "id": "ex-l37-talk-1",
           "prompt": {
-            "fr": "Dis « Il y a un caractère au tableau »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l37-produce"
+            "l37-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "黑板上有一个字。",
-        "referencePinyin": "hēi bǎn shàng yǒu yí gè zì。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "黑板上有一个字。"
+        "speaker": "Mina",
+        "promptText": "你的鼻子和耳朵怎么样？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "发烧了，还感冒。",
+            "pinyin": "fā shāo le， hái gǎn mào。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "鼻子不舒服，耳朵也有一点疼。",
+            "pinyin": "bí zi bù shū fú， ěr duǒ yě yǒu yì diǎn téng。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "他说休息以后会好，我的脚也不疼了。",
+            "pinyin": "tā shuō xiū xī yǐ hòu huì hǎo， wǒ de jiǎo yě bù téng le。",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctReplyID": "b"
       },
       "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 33
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l37-fill-rea-1",
+      "id": "block-ex-l37-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l37-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je lis le journal le matin »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l37-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "报纸",
+            "pinyin": "bào zhǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "黑板",
+            "pinyin": "hēi bǎn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "次",
+            "pinyin": "cì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "早上",
+            "pinyin": "zǎo shàng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-fill-exa-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l37-fill-rea-1",
+          "id": "ex-l37-fill-exa-1",
           "prompt": {
-            "fr": "Complète : 医生检查他的身体___脚，让他回家休息。 (« Le médecin examine son corps et son pied et lui demande de rentrer se reposer »)"
+            "fr": "Complète : 我___在家。 (« Mon père est à la maison »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1238,11 +1177,181 @@
           ],
           "required": true
         },
-        "sentence": "医生检查他的身体___脚，让他回家休息。",
+        "sentence": "我___在家。",
         "acceptedAnswers": [
-          "和"
+          "爸爸"
         ],
         "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l37-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l37-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你发烧了吗？",
+            "pinyin": "nǐ fā shāo le ma？",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你的鼻子和耳朵怎么样？",
+            "pinyin": "nǐ de bí zi hé ěr duǒ zěn me yàng？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "鼻子不舒服，耳朵也有一点疼。",
+            "pinyin": "bí zi bù shū fú， ěr duǒ yě yǒu yì diǎn téng。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-read-exa-4",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l37-read-exa-4",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我早上看报纸。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l37-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je lis le journal le matin."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je suis allé trois fois à Pékin."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui, et je suis enrhumé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 33
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l37-order-rea-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l37-order-rea-2",
+          "prompt": {
+            "fr": "Construis « Demain, il devrait être en meilleure santé »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l37-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "健康",
+            "pinyin": "jiàn kāng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "应该",
+            "pinyin": "yīng gāi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "更",
+            "pinyin": "gèng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "明天他应该更健康。",
+          "明天他应该更健康"
+        ]
       },
       "metadata": {
         "stage": "reuse",

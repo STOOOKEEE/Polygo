@@ -578,49 +578,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-pick-367",
+      "id": "block-ex-l80-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l80-pick-367",
+          "id": "ex-l80-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l80-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "而且",
+            "pinyin": "ér qiě",
+            "right": {
+              "fr": "en plus ; et"
+            }
+          },
+          {
+            "id": "b",
+            "left": "马",
+            "pinyin": "mǎ",
+            "right": {
+              "fr": "cheval"
+            }
+          },
+          {
+            "id": "c",
+            "left": "年级",
+            "pinyin": "nián jí",
+            "right": {
+              "fr": "niveau scolaire"
+            }
+          },
+          {
+            "id": "d",
+            "left": "其实",
+            "pinyin": "qí shí",
+            "right": {
+              "fr": "en fait"
+            }
+          },
+          {
+            "id": "e",
+            "left": "热情",
+            "pinyin": "rè qíng",
+            "right": {
+              "fr": "chaleureux ; enthousiasme"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-dict-py-367",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l80-dict-py-367",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "而且",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "而且 (ér qiě)"
+              "fr": "ér qiě"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "年级 (nián jí)"
+              "fr": "wán chéng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "其实 (qí shí)"
+              "fr": "qí shí"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "完成 (wán chéng)"
+              "fr": "rè qíng"
             },
             "audio": null
           }
@@ -635,22 +703,80 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-reverse-367",
+      "id": "block-ex-l80-tone-472",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l80-reverse-367",
+          "id": "ex-l80-tone-472",
           "prompt": {
-            "fr": "Comment dit-on « en plus ; et » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l80-understand"
           ],
           "required": true
         },
+        "promptText": "年级",
+        "choices": [
+          {
+            "id": "t20",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t22"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-pick-526",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l80-pick-526",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "promptText": "完成",
         "choices": [
           {
             "id": "a",
@@ -662,21 +788,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "完成 (wán chéng)"
+              "fr": "热情 (rè qíng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "热情 (rè qíng)"
+              "fr": "其实 (qí shí)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "而且 (ér qiě)"
+              "fr": "完成 (wán chéng)"
             },
             "audio": null
           }
@@ -691,167 +817,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-pick-472",
+      "id": "block-ex-l80-dict-zh-491",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l80-pick-472",
+          "id": "ex-l80-dict-zh-491",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l80-understand"
           ],
           "required": true
         },
-        "promptText": "年级",
+        "script": "hanzi",
+        "promptText": "热情",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "完成 (wán chéng)"
+              "fr": "年级"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "而且 (ér qiě)"
+              "fr": "完成"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "年级 (nián jí)"
+              "fr": "热情"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "热情 (rè qíng)"
+              "fr": "而且"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 76
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l80-reverse-482",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l80-reverse-482",
-          "prompt": {
-            "fr": "Comment dit-on « en fait » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l80-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "热情 (rè qíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "其实 (qí shí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "年级 (nián jí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "而且 (ér qiě)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 76
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l80-pick-459",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l80-pick-459",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l80-understand"
-          ],
-          "required": true
-        },
-        "promptText": "马",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "马 (mǎ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "而且 (ér qiě)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "热情 (rè qíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "年级 (nián jí)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -945,16 +959,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-order-exa-1",
+      "id": "block-ex-l80-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l80-order-exa-1",
+          "id": "ex-l80-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Il est intelligent et sérieux »."
+            "fr": "Traduis en chinois : « Il est intelligent et sérieux »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l80-produce"
@@ -963,27 +977,39 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "认真",
             "pinyin": "rèn zhēn",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "聪明",
-            "pinyin": "cōng míng",
+            "id": "f",
+            "hanzi": "完成",
+            "pinyin": "wán chéng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
             "audio": null
           },
           {
             "id": "c",
             "hanzi": "而且",
             "pinyin": "ér qiě",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "其实",
+            "pinyin": "qí shí",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "聪明",
+            "pinyin": "cōng míng",
             "audio": null
           }
         ],
@@ -993,10 +1019,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "他聪明而且认真。",
-          "他聪明而且认真"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1006,158 +1029,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-fill-exa-4",
+      "id": "block-ex-l80-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l80-fill-exa-4",
+          "id": "ex-l80-talk-1",
           "prompt": {
-            "fr": "Complète : ___我已经看过这部电影。 (« En fait, j’ai déjà vu ce film »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l80-produce"
+            "l80-understand"
           ],
           "required": true
         },
-        "sentence": "___我已经看过这部电影。",
-        "acceptedAnswers": [
-          "其实"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 76
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l80-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l80-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Ma petite sœur est en troisième année cette année »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l80-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "g",
-            "hanzi": "年级",
-            "pinyin": "nián jí",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "三",
-            "pinyin": "sān",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "年",
-            "pinyin": "nián",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "今",
-            "pinyin": "jīn",
-            "audio": null
-          },
+        "speaker": "Mina",
+        "promptText": "你去过南方的农场吗？",
+        "replies": [
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "拿一袋米。马上出发。",
+            "pinyin": "ná yí dài mǐ. mǎ shàng chū fā.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "妹妹",
-            "pinyin": "mèi mei",
+            "hanzi": "你拿什么去农场？",
+            "pinyin": "nǐ ná shén me qù nóng chǎng?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去过。那里有一匹马，离车站三米远。",
+            "pinyin": "qù guo. nà lǐ yǒu yì pǐ mǎ, lí chē zhàn sān mǐ yuǎn.",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "我妹妹今年上三年级。",
-          "我妹妹今年上三年级"
-        ]
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 76
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l80-fill-exa-5",
+      "id": "block-ex-l80-translate-exa-6",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "translation",
         "header": {
-          "id": "ex-l80-fill-exa-5",
+          "id": "ex-l80-translate-exa-6",
           "prompt": {
-            "fr": "Complète : 这家店的服务很___。 (« Le service de ce magasin est très chaleureux »)"
+            "fr": "Traduis en chinois : « J’ai déjà terminé mes devoirs »"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l80-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这家店的服务很___。",
-        "acceptedAnswers": [
-          "热情"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 76
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l80-order-exa-6",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l80-order-exa-6",
-          "prompt": {
-            "fr": "Construis « J’ai déjà terminé mes devoirs »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l80-produce"
@@ -1165,12 +1094,6 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "d",
-            "hanzi": "作业",
-            "pinyin": "zuò yè",
-            "audio": null
-          },
           {
             "id": "e",
             "hanzi": "了",
@@ -1178,9 +1101,9 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "已经",
-            "pinyin": "yǐ jīng",
+            "id": "f",
+            "hanzi": "马",
+            "pinyin": "mǎ",
             "audio": null
           },
           {
@@ -1190,9 +1113,27 @@
             "audio": null
           },
           {
+            "id": "d",
+            "hanzi": "作业",
+            "pinyin": "zuò yè",
+            "audio": null
+          },
+          {
             "id": "a",
             "hanzi": "我",
             "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "已经",
+            "pinyin": "yǐ jīng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "其实",
+            "pinyin": "qí shí",
             "audio": null
           }
         ],
@@ -1203,14 +1144,143 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我已经完成作业了。",
-          "我已经完成作业了"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-fill-exa-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l80-fill-exa-2",
+          "prompt": {
+            "fr": "Complète : 农场里有一匹___。 (« Il y a un cheval à la ferme »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l80-produce"
+          ],
+          "required": true
+        },
+        "sentence": "农场里有一匹___。",
+        "acceptedAnswers": [
+          "马"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l80-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "去过。那里有一匹马，离车站三米远。",
+            "pinyin": "qù guo. nà lǐ yǒu yì pǐ mǎ, lí chē zhàn sān mǐ yuǎn.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你去过南方的农场吗？",
+            "pinyin": "nǐ qù guo nán fāng de nóng chǎng ma?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你拿什么去农场？",
+            "pinyin": "nǐ ná shén me qù nóng chǎng?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 76
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l80-read-dia-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l80-read-dia-2",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 去过。那里有一匹马，离车站三米远。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l80-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "La ferme est au sud, non loin de la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui. Il y a un cheval là-bas, à trois mètres de la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le service de ce magasin est très chaleureux."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 76
       }
     },
@@ -1257,55 +1327,6 @@
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 76
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l80-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l80-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 去过。那里有一匹马，离车站三米远。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l80-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "La ferme est au sud, non loin de la gare."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Le service de ce magasin est très chaleureux."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Oui. Il y a un cheval là-bas, à trois mètres de la gare."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",

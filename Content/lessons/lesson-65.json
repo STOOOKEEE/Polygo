@@ -632,49 +632,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-pick-304",
+      "id": "block-ex-l65-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l65-pick-304",
+          "id": "ex-l65-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l65-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "爱好",
+            "pinyin": "ài hào",
+            "right": {
+              "fr": "loisir ; passe-temps"
+            }
+          },
+          {
+            "id": "b",
+            "left": "春",
+            "pinyin": "chūn",
+            "right": {
+              "fr": "printemps"
+            }
+          },
+          {
+            "id": "c",
+            "left": "关",
+            "pinyin": "guān",
+            "right": {
+              "fr": "fermer ; éteindre"
+            }
+          },
+          {
+            "id": "d",
+            "left": "还是",
+            "pinyin": "hái shì",
+            "right": {
+              "fr": "ou bien ; toujours"
+            }
+          },
+          {
+            "id": "e",
+            "left": "记得",
+            "pinyin": "jì de",
+            "right": {
+              "fr": "se souvenir"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 61
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l65-dict-py-304",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l65-dict-py-304",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l65-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "爱好",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "还是 (hái shì)"
+              "fr": "lí kāi"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "爱好 (ài hào)"
+              "fr": "ài hào"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "离开 (lí kāi)"
+              "fr": "hái shì"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "记得 (jì de)"
+              "fr": "jiě jué"
             },
             "audio": null
           }
@@ -689,48 +757,107 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-reverse-304",
+      "id": "block-ex-l65-tone-342",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l65-reverse-304",
+          "id": "ex-l65-tone-342",
           "prompt": {
-            "fr": "Comment dit-on « loisir ; passe-temps » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l65-understand"
           ],
           "required": true
         },
+        "promptText": "春",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t1"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 61
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l65-dict-zh-428",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l65-dict-zh-428",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l65-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "解决",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "爱好 (ài hào)"
+              "fr": "解决"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "解决 (jiě jué)"
+              "fr": "记得"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "记得 (jì de)"
+              "fr": "离开"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "离开 (lí kāi)"
+              "fr": "还是"
             },
             "audio": null
           }
@@ -745,28 +872,27 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-pick-412",
+      "id": "block-ex-l65-reverse-412",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l65-pick-412",
+          "id": "ex-l65-reverse-412",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Comment dit-on « se souvenir » en chinois ?"
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Choisis le mot chinois qui convient."
           },
           "objectiveIDs": [
             "l65-understand"
           ],
           "required": true
         },
-        "promptText": "记得",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "爱好 (ài hào)"
+              "fr": "离开 (lí kāi)"
             },
             "audio": null
           },
@@ -802,110 +928,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-reverse-342",
+      "id": "block-ex-l65-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l65-reverse-342",
+          "id": "ex-l65-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « printemps » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l65-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "关 (guān)"
-            },
-            "audio": null
+            "left": "解决",
+            "pinyin": null,
+            "right": {
+              "fr": "jiě jué"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "离开 (lí kāi)"
-            },
-            "audio": null
+            "left": "离开",
+            "pinyin": null,
+            "right": {
+              "fr": "lí kāi"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "春 (chūn)"
-            },
-            "audio": null
+            "left": "关于",
+            "pinyin": null,
+            "right": {
+              "fr": "guān yú"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "解决 (jiě jué)"
-            },
-            "audio": null
+            "left": "天气",
+            "pinyin": null,
+            "right": {
+              "fr": "tiān qì"
+            }
+          },
+          {
+            "id": "e",
+            "left": "我",
+            "pinyin": null,
+            "right": {
+              "fr": "wǒ"
+            }
           }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 61
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l65-pick-342",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l65-pick-342",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l65-understand"
-          ],
-          "required": true
-        },
-        "promptText": "春",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "关 (guān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "春 (chūn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "记得 (jì de)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "还是 (hái shì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -999,16 +1079,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-order-exa-2",
+      "id": "block-ex-l65-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l65-order-exa-2",
+          "id": "ex-l65-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Le printemps est arrivé »."
+            "fr": "Traduis en chinois : « Mon passe-temps est de regarder des films »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l65-produce"
@@ -1017,100 +1097,33 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "g",
+            "hanzi": "春",
+            "pinyin": "chūn",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "id": "f",
+            "hanzi": "记得",
+            "pinyin": "jì de",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "春",
-            "pinyin": "chūn",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
             "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "春天来了。",
-          "春天来了"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 61
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l65-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l65-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 你坐地铁___坐公交车？ (« Tu prends le métro ou le bus ? »)"
           },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l65-produce"
-          ],
-          "required": true
-        },
-        "sentence": "你坐地铁___坐公交车？",
-        "acceptedAnswers": [
-          "还是"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 61
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l65-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l65-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Mon passe-temps est de regarder des films »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l65-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "d",
             "hanzi": "看",
             "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
             "audio": null
           },
           {
@@ -1124,18 +1137,6 @@
             "hanzi": "爱好",
             "pinyin": "ài hào",
             "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "电影",
-            "pinyin": "diàn yǐng",
-            "audio": null
           }
         ],
         "correctOrder": [
@@ -1145,10 +1146,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我的爱好是看电影。",
-          "我的爱好是看电影"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1158,16 +1156,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l65-order-exa-6",
+      "id": "block-ex-l65-talk-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l65-order-exa-6",
+          "id": "ex-l65-talk-1",
           "prompt": {
-            "fr": "Construis « Nous résolvons ce problème ensemble »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l65-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你想去哪个国家？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我记得。过去的旅行经验会帮助我。",
+            "pinyin": "wǒ jì de. guò qù de lǚ xíng jīng yàn huì bāng zhù wǒ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "别忘记关窗，也要关心天气。",
+            "pinyin": "bié wàng jì guān chuāng, yě yào guān xīn tiān qì.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我想去法国。关于这个国家，我还想了解更多。",
+            "pinyin": "wǒ xiǎng qù Fǎ guó. guān yú zhè ge guó jiā, wǒ hái xiǎng liǎo jiě gèng duō.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 61
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l65-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l65-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le printemps est arrivé »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l65-produce"
@@ -1177,38 +1223,38 @@
         "tokens": [
           {
             "id": "b",
-            "hanzi": "一起",
-            "pinyin": "yì qǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "问题",
-            "pinyin": "wèn tí",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "解决",
-            "pinyin": "jiě jué",
+            "hanzi": "天",
+            "pinyin": "tiān",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "关",
+            "pinyin": "guān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "春",
+            "pinyin": "chūn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "记得",
+            "pinyin": "jì de",
             "audio": null
           }
         ],
@@ -1216,18 +1262,116 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
+          "d"
         ],
-        "acceptedVariants": [
-          "我们一起解决这个问题。",
-          "我们一起解决这个问题"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 61
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l65-listen-dia-4",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l65-listen-dia-4",
+          "prompt": {
+            "fr": "Écoute la réplique de Tao, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l65-understand"
+          ],
+          "required": true
+        },
+        "promptText": "我记得。过去的旅行经验会帮助我。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon passe-temps est de regarder des films."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je m’en souviens. Mon expérience passée du voyage m’aidera."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le temps est très beau aujourd’hui."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 61
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l65-dialogue-2-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l65-dialogue-2-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l65-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我想去法国。关于这个国家，我还想了解更多。",
+            "pinyin": "wǒ xiǎng qù Fǎ guó. guān yú zhè ge guó jiā, wǒ hái xiǎng liǎo jiě gèng duō.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "我记得。过去的旅行经验会帮助我。",
+            "pinyin": "wǒ jì de. guò qù de lǚ xíng jīng yàn huì bāng zhù wǒ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "别忘记关窗，也要关心天气。",
+            "pinyin": "bié wàng jì guān chuāng, yě yào guān xīn tiān qì.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 61
       }
     },
@@ -1258,104 +1402,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 61
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l65-read-exa-4",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l65-read-exa-4",
-          "prompt": {
-            "fr": "Que signifie la phrase : 你坐地铁还是坐公交车？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l65-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Tu prends le métro ou le bus ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Le printemps est arrivé."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Nous résolvons ce problème ensemble."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 61
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l65-read-rea-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l65-read-rea-1",
-          "prompt": {
-            "fr": "Dans le texte « Une destination à découvrir », que signifie : 他关心天气，也记得离开以前关好窗。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l65-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Au sujet de cette affaire, nous en reparlerons demain."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je veux aller en France. Je veux encore mieux connaître ce pays."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Il pense à la météo et se souvient de bien fermer la fenêtre avant de partir."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 61
       }
     },

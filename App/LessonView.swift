@@ -544,6 +544,32 @@ public struct LessonView: View {
                 }
             )
         case .flashcard(let exercise): FlashcardAnswerView(exercise: exercise, card: model.reviewCard(for: exercise.cardID), answer: $answer)
+        case .matching(let exercise): MatchingAnswerView(exercise: exercise, answer: $answer)
+        case .dictation(let exercise):
+            ListeningAnswerView(
+                exercise: ListeningChoiceExercise(
+                    header: exercise.header, promptAudio: exercise.promptAudio, promptText: exercise.promptText,
+                    choices: exercise.choices, correctChoiceID: exercise.correctChoiceID, replayLimit: exercise.replayLimit
+                ),
+                listenTitle: "Écouter l’audio",
+                answer: $answer
+            )
+        case .toneDiscrimination(let exercise):
+            ListeningAnswerView(
+                exercise: ListeningChoiceExercise(
+                    header: exercise.header, promptAudio: exercise.promptAudio, promptText: exercise.promptText,
+                    choices: exercise.choices, correctChoiceID: exercise.correctChoiceID, replayLimit: exercise.replayLimit
+                ),
+                listenTitle: "Écouter l’audio",
+                answer: $answer
+            )
+        case .translation(let exercise):
+            WordOrderAnswerView(
+                exercise: WordOrderExercise(header: exercise.header, tokens: exercise.tokens, correctOrder: exercise.correctOrder),
+                answer: $answer
+            )
+        case .dialogueOrder(let exercise): DialogueOrderAnswerView(exercise: exercise, answer: $answer)
+        case .conversationChoice(let exercise): ConversationAnswerView(exercise: exercise, answer: $answer)
         }
     }
 
@@ -557,6 +583,11 @@ public struct LessonView: View {
 
     private func canSubmit(_ spec: ExerciseSpec) -> Bool {
         if evaluation != nil { return true }
+        // A matching is only submitted once every item is tied to another.
+        if case .matching(let exercise) = spec {
+            guard case .matching(let pairs) = answer else { return false }
+            return pairs.count == exercise.pairs.count
+        }
         if answer != nil { return true }
         return continuesWithoutEvaluation(spec)
     }
@@ -1563,8 +1594,8 @@ private struct ChoiceAnswerView: View {
 
 private struct ListeningAnswerView: View {
     let exercise: ListeningChoiceExercise
+    var listenTitle = "Écouter le mot"
     @Binding var answer: ExerciseAnswer?
-    @EnvironmentObject private var model: AppModel
     @State private var audioMessage: String?
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -1584,7 +1615,8 @@ private struct ListeningAnswerView: View {
                         audioMessage = "Audio indisponible. Le texte des réponses reste disponible."
                     }
                 }
-            } label: { Label("Écouter le mot", systemImage: "speaker.wave.2.fill") }
+            } label: { Label(listenTitle, systemImage: "speaker.wave.2.fill") }
+                .accessibilityIdentifier("lesson.exercise.\(exercise.header.id.rawValue).listen")
                 .buttonStyle(.borderedProminent).tint(SylluneColor.sky)
             if let audioMessage { Text(audioMessage).font(.caption).foregroundStyle(SylluneColor.inkMuted) }
             ChoiceAnswerView(exercise: ChoiceExercise(header: exercise.header, choices: exercise.choices, correctChoiceID: exercise.correctChoiceID), answer: $answer)

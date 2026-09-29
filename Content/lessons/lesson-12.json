@@ -690,6 +690,181 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l12-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l12-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l12-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "个",
+            "pinyin": "gè",
+            "right": {
+              "fr": "classificateur général"
+            }
+          },
+          {
+            "id": "b",
+            "left": "那",
+            "pinyin": "nà",
+            "right": {
+              "fr": "ce/cette-là ; là-bas"
+            }
+          },
+          {
+            "id": "c",
+            "left": "能",
+            "pinyin": "néng",
+            "right": {
+              "fr": "pouvoir ; être capable"
+            }
+          },
+          {
+            "id": "d",
+            "left": "学生",
+            "pinyin": "xué shēng",
+            "right": {
+              "fr": "élève ; étudiant"
+            }
+          },
+          {
+            "id": "e",
+            "left": "回答",
+            "pinyin": "huí dá",
+            "right": {
+              "fr": "répondre ; réponse"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l12-dict-sent-exa-5",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l12-dict-sent-exa-5",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l12-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "请回答这个问题。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "qǐng huí dá zhè ge wèn tí。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "xué shēng zài jiào shì xué xí。"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "shì， tā hé jiě jiě zài xué xiào。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l12-tone-071",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l12-tone-071",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l12-understand"
+          ],
+          "required": true
+        },
+        "promptText": "那",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t4"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l12-pick-032",
       "spec": {
         "kind": "listeningChoice",
@@ -711,202 +886,33 @@
           {
             "id": "a",
             "label": {
-              "fr": "个 (gè)"
+              "fr": "能 (néng)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "能 (néng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
               "fr": "那 (nà)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "c",
             "label": {
               "fr": "回答 (huí dá)"
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 8
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l12-reverse-071",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l12-reverse-071",
-          "prompt": {
-            "fr": "Comment dit-on « ce/cette-là ; là-bas » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l12-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "能 (néng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "个 (gè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "学生 (xué shēng)"
-            },
-            "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "那 (nà)"
+              "fr": "个 (gè)"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 8
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l12-pick-128",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l12-pick-128",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l12-understand"
-          ],
-          "required": true
-        },
-        "promptText": "学生",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "妹妹 (mèi mei)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "回答 (huí dá)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "学生 (xué shēng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "晚上 (wǎn shang)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 8
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l12-reverse-128",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l12-reverse-128",
-          "prompt": {
-            "fr": "Comment dit-on « élève ; étudiant » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l12-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "回答 (huí dá)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "学生 (xué shēng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "妹妹 (mèi mei)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "晚上 (wǎn shang)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -937,21 +943,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "能 (néng)"
+              "fr": "那 (nà)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "那 (nà)"
+              "fr": "个 (gè)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "个 (gè)"
+              "fr": "能 (néng)"
             },
             "audio": null
           },
@@ -963,7 +969,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1057,16 +1063,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l12-order-exa-5",
+      "id": "block-ex-l12-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l12-order-exa-5",
+          "id": "ex-l12-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Réponds à cette question, s’il te plaît »."
+            "fr": "Traduis en chinois : « C’est mon chat, là-bas »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l12-produce"
@@ -1075,143 +1081,39 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "回答",
-            "pinyin": "huí dá",
+            "id": "c",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "id": "a",
+            "hanzi": "那",
+            "pinyin": "nà",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "问题",
-            "pinyin": "wèn tí",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "请回答这个问题。",
-          "请回答这个问题"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 8
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l12-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l12-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 我___帮你。 (« Je peux t’aider »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l12-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我___帮你。",
-        "acceptedAnswers": [
-          "能"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 8
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l12-order-dia-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l12-order-dia-3",
-          "prompt": {
-            "fr": "Construis « Ton grand frère est aussi étudiant ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l12-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "f",
             "hanzi": "学生",
             "pinyin": "xué shēng",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "是",
-            "pinyin": "shì",
+            "id": "d",
+            "hanzi": "猫",
+            "pinyin": "māo",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "也",
-            "pinyin": "yě",
+            "id": "f",
+            "hanzi": "晚上",
+            "pinyin": "wǎn shang",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "的",
-            "pinyin": "dī",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "哥哥",
-            "pinyin": "gē gē",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
+            "hanzi": "是",
+            "pinyin": "shì",
             "audio": null
           }
         ],
@@ -1219,19 +1121,61 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f",
-          "g"
+          "d"
         ],
-        "acceptedVariants": [
-          "你的哥哥也是学生吗？",
-          "你的哥哥也是学生吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l12-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l12-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l12-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你的哥哥也是学生吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，他和姐姐在学校。",
+            "pinyin": "shì， tā hé jiě jiě zài xué xiào。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我有五个兄弟姐妹：一个弟弟、两个妹妹，还有哥哥和姐姐。",
+            "pinyin": "wǒ yǒu wǔ gè xiōng dì jiě mèi： yí gè dì di、 liǎng gè mèi mèi， hái yǒu gē gē hé jiě jiě。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "他是我丈夫；那位女人是服务员。",
+            "pinyin": "tā shì wǒ zhàng fū； nà wèi nǚ rén shì fú wù yuán。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 8
       }
     },
@@ -1298,43 +1242,122 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l12-fill-rea-2",
+      "id": "block-ex-l12-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l12-fill-rea-2",
+          "id": "ex-l12-talk-1",
           "prompt": {
-            "fr": "Complète : 他们回来以后，___个男人和女人在饭馆工作，服务员给他们水。 (« Après leur retour, l’homme et la femme travaillent au restaurant ; la serveuse leur donne de l’eau »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l12-produce"
+            "l12-understand"
           ],
           "required": true
         },
-        "sentence": "他们回来以后，___个男人和女人在饭馆工作，服务员给他们水。",
-        "acceptedAnswers": [
-          "那"
+        "speaker": "Mina",
+        "promptText": "你有几个兄弟姐妹？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "他是我丈夫；那位女人是服务员。",
+            "pinyin": "tā shì wǒ zhàng fū； nà wèi nǚ rén shì fú wù yuán。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是，他和姐姐在学校。",
+            "pinyin": "shì， tā hé jiě jiě zài xué xiào。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我有五个兄弟姐妹：一个弟弟、两个妹妹，还有哥哥和姐姐。",
+            "pinyin": "wǒ yǒu wǔ gè xiōng dì jiě mèi： yí gè dì di、 liǎng gè mèi mèi， hái yǒu gē gē hé jiě jiě。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "c"
       },
       "metadata": {
-        "stage": "reuse",
-        "skill": "production",
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 8
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l12-read-dia-2",
+      "id": "block-ex-l12-dialogue-2-4",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l12-dialogue-2-4",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l12-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "是，他和姐姐在学校。",
+            "pinyin": "shì， tā hé jiě jiě zài xué xiào。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我有五个兄弟姐妹：一个弟弟、两个妹妹，还有哥哥和姐姐。",
+            "pinyin": "wǒ yǒu wǔ gè xiōng dì jiě mèi： yí gè dì di、 liǎng gè mèi mèi， hái yǒu gē gē hé jiě jiě。",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Mina",
+            "hanzi": "那位男人是谁？",
+            "pinyin": "nà wèi nán rén shì shuí？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "你的哥哥也是学生吗？",
+            "pinyin": "nǐ dī gē gē yě shì xué shēng ma？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l12-read-exa-3",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l12-read-dia-2",
+          "id": "ex-l12-read-exa-3",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 我有五个兄弟姐妹：一个弟弟、两个妹妹，还有哥哥和姐姐。"
+            "fr": "Que signifie la phrase : 我能帮你。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1348,21 +1371,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "Après leur retour, l’homme et la femme travaillent au restaurant ; la serveuse leur donne de l’eau."
+              "fr": "C’est mon grand frère."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "J’ai cinq frères et sœurs : un petit frère, deux petites sœurs, un grand frère et une grande sœur."
+              "fr": "Je peux t’aider."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Ton grand frère est aussi étudiant ?"
+              "fr": "Je suis français·e."
             },
             "audio": null
           }

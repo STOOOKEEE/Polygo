@@ -45,7 +45,7 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 | Leçons d’introduction protégées | 4 (`lesson-01` à `lesson-04`) |
 | Séances du plan quotidien | 90 (`lesson-05` à `lesson-94`) |
 | Unités du cours final | 9 |
-| Exercices | 1 655 (27 introduction + 1 628 programme) |
+| Exercices | 1 647 (27 introduction + 1 620 programme) |
 | Histoires inline | 94 |
 | Paragraphes de lecture | 196 |
 | Cartes distinctes | 605 (600 canoniques + 5 extras) |
@@ -89,7 +89,7 @@ contenu ; la refonte ne régénère ni les leçons ni le catalogue.
   choix gardent leurs IDs et leurs bonnes réponses ; les 270 exercices
   `choice`/`listeningChoice` ont une position correcte répartie 92/90/88 entre
   les trois options après rotation déterministe.
-- La suite portable actuelle compte 72 tests ; les résultats de la campagne
+- La suite portable actuelle compte 91 tests ; les résultats de la campagne
   Apple sont consignés dans le [rapport QA](QA_REPORT.md).
 - `git diff --check` passe. `Tools/__pycache__/` et les fichiers `.pyc` sont
   ignorés ; aucun secret, certificat, profil, base locale ou artefact machine

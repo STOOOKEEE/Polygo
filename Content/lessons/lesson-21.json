@@ -637,11 +637,186 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l21-pick-033",
+      "id": "block-ex-l21-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l21-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "工作",
+            "pinyin": "gōng zuò",
+            "right": {
+              "fr": "travailler ; travail"
+            }
+          },
+          {
+            "id": "b",
+            "left": "喝",
+            "pinyin": "hē",
+            "right": {
+              "fr": "boire"
+            }
+          },
+          {
+            "id": "c",
+            "left": "下雨",
+            "pinyin": "xià yǔ",
+            "right": {
+              "fr": "pleuvoir"
+            }
+          },
+          {
+            "id": "d",
+            "left": "累",
+            "pinyin": "lèi",
+            "right": {
+              "fr": "fatigué"
+            }
+          },
+          {
+            "id": "e",
+            "left": "路",
+            "pinyin": "lù",
+            "right": {
+              "fr": "route ; chemin"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-dict-sent-exa-4",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l21-dict-sent-exa-4",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "我工作以后很累。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "wǒ gōng zuò yǐ hòu hěn lèi。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "zhè tiáo lù tōng xiàng xué xiào。"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "xià tiān wǒ xǐ huān yóu yǒng。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-tone-033",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l21-tone-033",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "promptText": "工作",
+        "choices": [
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-pick-118",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l21-pick-033",
+          "id": "ex-l21-pick-118",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -653,26 +828,26 @@
           ],
           "required": true
         },
-        "promptText": "工作",
+        "promptText": "下雨",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "运动 (yùn dòng)"
+              "fr": "下雨 (xià yǔ)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "工作 (gōng zuò)"
+              "fr": "运动 (yùn dòng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "下雨 (xià yǔ)"
+              "fr": "工作 (gōng zuò)"
             },
             "audio": null
           },
@@ -684,7 +859,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -694,53 +869,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l21-reverse-033",
+      "id": "block-ex-l21-dict-zh-281",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l21-reverse-033",
+          "id": "ex-l21-dict-zh-281",
           "prompt": {
-            "fr": "Comment dit-on « travailler ; travail » en chinois ?"
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l21-understand"
           ],
           "required": true
         },
+        "script": "hanzi",
+        "promptText": "游泳",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "工作 (gōng zuò)"
+              "fr": "下雨"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "下雨 (xià yǔ)"
+              "fr": "运动"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "游泳 (yóu yǒng)"
+              "fr": "工作"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "运动 (yùn dòng)"
+              "fr": "游泳"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -785,132 +962,19 @@
           {
             "id": "c",
             "label": {
+              "fr": "喝 (hē)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
               "fr": "游泳 (yóu yǒng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "喝 (hē)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-reverse-037",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l21-reverse-037",
-          "prompt": {
-            "fr": "Comment dit-on « boire » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l21-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "路 (lù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "累 (lèi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "喝 (hē)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "工作 (gōng zuò)"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-pick-118",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l21-pick-118",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l21-understand"
-          ],
-          "required": true
-        },
-        "promptText": "下雨",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "运动 (yùn dòng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "下雨 (xià yǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "工作 (gōng zuò)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "游泳 (yóu yǒng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1004,16 +1068,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l21-order-exa-5",
+      "id": "block-ex-l21-translate-exa-7",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l21-order-exa-5",
+          "id": "ex-l21-translate-exa-7",
           "prompt": {
-            "fr": "Construis « Cette route mène à l’école »."
+            "fr": "Traduis en chinois : « Je fais du sport chaque jour »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l21-produce"
@@ -1021,123 +1085,6 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "c",
-            "hanzi": "路",
-            "pinyin": "lù",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "向",
-            "pinyin": "xiàng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "通",
-            "pinyin": "tōng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "条",
-            "pinyin": "tiáo",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "这条路通向学校。",
-          "这条路通向学校"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l21-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 今天___。 (« Il pleut aujourd’hui »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l21-produce"
-          ],
-          "required": true
-        },
-        "sentence": "今天___。",
-        "acceptedAnswers": [
-          "下雨"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-order-exa-7",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l21-order-exa-7",
-          "prompt": {
-            "fr": "Construis « Je fais du sport chaque jour »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l21-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
           {
             "id": "d",
             "hanzi": "做",
@@ -1145,15 +1092,39 @@
             "audio": null
           },
           {
+            "id": "g",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
             "id": "a",
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
           },
           {
+            "id": "f",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          },
+          {
             "id": "e",
             "hanzi": "运动",
             "pinyin": "yùn dòng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
             "audio": null
           }
         ],
@@ -1164,10 +1135,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我每天做运动。",
-          "我每天做运动"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1177,16 +1145,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l21-order-exa-6",
+      "id": "block-ex-l21-talk-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l21-order-exa-6",
+          "id": "ex-l21-talk-1",
           "prompt": {
-            "fr": "Construis « En été, j’aime nager »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "喂，谁在说话？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "因为你太累，所以想睡觉。",
+            "pinyin": "yīn wèi nǐ tài lèi， suǒ yǐ xiǎng shuì jiào。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他在。他四岁，正在听我们说话。",
+            "pinyin": "tā zài。 tā sì suì， zhèng zài tīng wǒ men shuō huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "是我。你今天喝水了吗？",
+            "pinyin": "shì wǒ。 nǐ jīn tiān hē shuǐ le ma？",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l21-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je travaille dans une entreprise »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l21-produce"
@@ -1195,33 +1211,39 @@
         },
         "tokens": [
           {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "公司",
+            "pinyin": "gōng sī",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "工作",
+            "pinyin": "gōng zuò",
+            "audio": null
+          },
+          {
             "id": "e",
             "hanzi": "游泳",
             "pinyin": "yóu yǒng",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "夏",
-            "pinyin": "xià",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "f",
+            "hanzi": "喝",
+            "pinyin": "hē",
             "audio": null
           }
         ],
@@ -1229,17 +1251,114 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
-        "acceptedVariants": [
-          "夏天我喜欢游泳。",
-          "夏天我喜欢游泳"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-talk-5",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l21-talk-5",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "他也在听吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "因为你太累，所以想睡觉。",
+            "pinyin": "yīn wèi nǐ tài lèi， suǒ yǐ xiǎng shuì jiào。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他在。他四岁，正在听我们说话。",
+            "pinyin": "tā zài。 tā sì suì， zhèng zài tīng wǒ men shuō huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "是我。你今天喝水了吗？",
+            "pinyin": "shì wǒ。 nǐ jīn tiān hē shuǐ le ma？",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 17
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l21-dialogue-2-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l21-dialogue-2-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l21-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "是我。你今天喝水了吗？",
+            "pinyin": "shì wǒ。 nǐ jīn tiān hē shuǐ le ma？",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "因为你太累，所以想睡觉。",
+            "pinyin": "yīn wèi nǐ tài lèi， suǒ yǐ xiǎng shuì jiào。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "我喝了十杯水，但是现在想睡觉。",
+            "pinyin": "wǒ hē le shí bēi shuǐ， dàn shì xiàn zài xiǎng shuì jiào。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 17
       }
     },
@@ -1264,85 +1383,6 @@
         "sentence": "她___了十杯水，还是觉得累。",
         "acceptedAnswers": [
           "喝"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-read-exa-4",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l21-read-exa-4",
-          "prompt": {
-            "fr": "Que signifie la phrase : 我工作以后很累。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l21-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Bois-tu de l’eau ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je suis très fatigué après le travail."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Cette route mène à l’école."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 17
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l21-fill-rea-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l21-fill-rea-3",
-          "prompt": {
-            "fr": "Complète : 因为她今天___太多，所以她要睡觉。 (« Comme elle a beaucoup travaillé aujourd’hui, elle doit dormir »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l21-produce"
-          ],
-          "required": true
-        },
-        "sentence": "因为她今天___太多，所以她要睡觉。",
-        "acceptedAnswers": [
-          "工作"
         ],
         "caseSensitive": false
       },

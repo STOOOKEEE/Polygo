@@ -143,6 +143,15 @@ Contrat commun d’un exercice : `id` stable, `kind`, consigne française, conte
 - `writeCharacter` : tracer un caractère avec ordre de traits fourni ;
 - `reviewRecall` : révéler le verso, puis choisir `À refaire`, `Difficile`, `Bien` ou `Facile`.
 
+Les séances quotidiennes ajoutent six familles, rendues par `App/ExerciseKindViews.swift` et `LessonView` :
+
+- `matching` : deux colonnes, mots chinois à gauche numérotés, sens ou pinyin mélangés à droite (`lesson.exercise.<id>.left.<pair>` / `.right.<pair>`). Toucher un mot puis son correspondant crée la paire (le numéro du mot s’affiche à droite) ; toucher une paire la défait. « Vérifier » s’active quand tout est associé ; le retour colore chaque paire ;
+- `dictation` : bouton « Écouter l’audio » (`lesson.exercise.<id>.listen`), puis choix du pinyin ou des caractères ;
+- `toneDiscrimination` : même écoute, puis choix du ton (ou de deux tons) avec libellé textuel et contour (¯ ˊ ˇ ˋ) ;
+- `translation` : la phrase française en consigne, tuiles chinoises avec pinyin dont certaines sont en trop, même interaction que l’ordre de mots ;
+- `dialogueOrder` : répliques (locuteur, caractères, pinyin) touchées dans l’ordre de la conversation, pastille de position, toucher pour retirer (`lesson.exercise.<id>.line.<id>`) ;
+- `conversationChoice` : réplique de l’interlocuteur avec son bouton audio (`.prompt.play`), puis trois réponses écoutables une à une avant d’être choisies (`.reply.<id>` et `.reply.<id>.play`).
+
 Après une erreur, afficher la réponse et une explication courte (« 你 est le pronom tu ; le ton 3 descend puis remonte »), puis `Réessayer` ou `Continuer`. Une réponse correcte est confirmée par texte, icône et couleur. Un exercice sans audio local affiche une erreur de chargement avec `Réessayer` et `Continuer sans audio` seulement si le texte suffit réellement à le faire.
 
 ### Fiche mot

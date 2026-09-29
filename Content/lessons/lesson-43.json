@@ -640,54 +640,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-pick-013",
+      "id": "block-ex-l43-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l43-pick-013",
+          "id": "ex-l43-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l43-understand"
           ],
           "required": true
         },
-        "promptText": "打电话",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "菜单 (cài dān)"
-            },
-            "audio": null
+            "left": "打电话",
+            "pinyin": "dǎ diàn huà",
+            "right": {
+              "fr": "téléphoner"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "礼物 (lǐ wù)"
-            },
-            "audio": null
+            "left": "岁",
+            "pinyin": "suì",
+            "right": {
+              "fr": "ans (âge)"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "公司 (gōng sī)"
-            },
-            "audio": null
+            "left": "公司",
+            "pinyin": "gōng sī",
+            "right": {
+              "fr": "entreprise"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "打电话 (dǎ diàn huà)"
-            },
-            "audio": null
+            "left": "去年",
+            "pinyin": "qù nián",
+            "right": {
+              "fr": "l’année dernière"
+            }
+          },
+          {
+            "id": "e",
+            "left": "菜单",
+            "pinyin": "cài dān",
+            "right": {
+              "fr": "menu"
+            }
           }
-        ],
-        "correctChoiceID": "d"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -697,105 +707,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-reverse-105",
+      "id": "block-ex-l43-dict-sent-dia-2",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l43-reverse-105",
+          "id": "ex-l43-dict-sent-dia-2",
           "prompt": {
-            "fr": "Comment dit-on « ans (âge) » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l43-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "有，我先看菜单，再买礼物。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "公司 (gōng sī)"
+              "fr": "chèn shān bù guì， kù zi bǐ jiào guì。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "菜单 (cài dān)"
+              "fr": "yǒu， wǒ xiān kàn cài dān， zài mǎi lǐ wù。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "岁 (suì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "去年 (qù nián)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 39
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l43-pick-105",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l43-pick-105",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l43-understand"
-          ],
-          "required": true
-        },
-        "promptText": "岁",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "迟到 (chí dào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "岁 (suì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "菜单 (cài dān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "公司 (gōng sī)"
+              "fr": "chāo shì páng biān yǒu shāng diàn ma？"
             },
             "audio": null
           }
@@ -810,53 +758,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-reverse-186",
+      "id": "block-ex-l43-tone-105",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l43-reverse-186",
+          "id": "ex-l43-tone-105",
           "prompt": {
-            "fr": "Comment dit-on « entreprise » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l43-understand"
           ],
           "required": true
         },
+        "promptText": "岁",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "公司 (gōng sī)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "迟到 (chí dào)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "去年 (qù nián)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "菜单 (cài dān)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -901,19 +850,75 @@
           {
             "id": "c",
             "label": {
-              "fr": "菜单 (cài dān)"
+              "fr": "公司 (gōng sī)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "公司 (gōng sī)"
+              "fr": "菜单 (cài dān)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-reverse-186",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l43-reverse-186",
+          "prompt": {
+            "fr": "Comment dit-on « entreprise » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "迟到 (chí dào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "公司 (gōng sī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "去年 (qù nián)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "菜单 (cài dān)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1007,16 +1012,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-order-exa-1",
+      "id": "block-ex-l43-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l43-order-exa-1",
+          "id": "ex-l43-translate-exa-1",
           "prompt": {
-            "fr": "Construis « J’appelle maman »."
+            "fr": "Traduis en chinois : « J’appelle maman »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l43-produce"
@@ -1031,15 +1036,9 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "打电话",
-            "pinyin": "dǎ diàn huà",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "e",
+            "hanzi": "迟到",
+            "pinyin": "chí dào",
             "audio": null
           },
           {
@@ -1047,74 +1046,7 @@
             "hanzi": "妈妈",
             "pinyin": "mā mā",
             "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我给妈妈打电话。",
-          "我给妈妈打电话"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 39
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l43-fill-exa-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l43-fill-exa-2",
-          "prompt": {
-            "fr": "Complète : 他今年十___。 (« Il a dix ans cette année »)"
           },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l43-produce"
-          ],
-          "required": true
-        },
-        "sentence": "他今年十___。",
-        "acceptedAnswers": [
-          "岁"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 39
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l43-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l43-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Je travaille dans une entreprise »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l43-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "a",
             "hanzi": "我",
@@ -1123,20 +1055,14 @@
           },
           {
             "id": "d",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
+            "hanzi": "打电话",
+            "pinyin": "dǎ diàn huà",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "公司",
-            "pinyin": "gōng sī",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "f",
+            "hanzi": "岁",
+            "pinyin": "suì",
             "audio": null
           }
         ],
@@ -1146,10 +1072,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "我在公司上班。",
-          "我在公司上班"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1159,46 +1082,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-fill-exa-4",
+      "id": "block-ex-l43-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l43-fill-exa-4",
+          "id": "ex-l43-talk-1",
           "prompt": {
-            "fr": "Complète : ___我去了北京。 (« L’année dernière, je suis allé à Pékin »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l43-produce"
+            "l43-understand"
           ],
           "required": true
         },
-        "sentence": "___我去了北京。",
-        "acceptedAnswers": [
-          "去年"
+        "speaker": "Mina",
+        "promptText": "超市旁边有商店吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "衬衫不贵，裤子比较贵。",
+            "pinyin": "chèn shān bù guì， kù zi bǐ jiào guì。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有，我先看菜单，再买礼物。",
+            "pinyin": "yǒu， wǒ xiān kàn cài dān， zài mǎi lǐ wù。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "朋友来接。买完以后我们回家。",
+            "pinyin": "péng yǒu lái jiē。 mǎi wán yǐ hòu wǒ men huí jiā。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 39
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l43-order-exa-6",
+      "id": "block-ex-l43-translate-dia-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l43-order-exa-6",
+          "id": "ex-l43-translate-dia-5",
           "prompt": {
-            "fr": "Construis « Il est arrivé en retard au travail »."
+            "fr": "Traduis en chinois : « Qui vient recevoir le cadeau ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l43-produce"
@@ -1207,27 +1148,39 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
+            "id": "d",
+            "hanzi": "礼物",
+            "pinyin": "lǐ wù",
             "audio": null
           },
           {
-            "id": "c",
+            "id": "e",
             "hanzi": "迟到",
             "pinyin": "chí dào",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
+            "hanzi": "谁",
+            "pinyin": "shuí",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "c",
+            "hanzi": "接",
+            "pinyin": "jiē",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "菜单",
+            "pinyin": "cài dān",
             "audio": null
           }
         ],
@@ -1237,14 +1190,112 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "他上班迟到了。",
-          "他上班迟到了"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l43-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这件衬衫和那条裤子多少钱？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "衬衫不贵，裤子比较贵。",
+            "pinyin": "chèn shān bù guì， kù zi bǐ jiào guì。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "朋友来接。买完以后我们回家。",
+            "pinyin": "péng yǒu lái jiē。 mǎi wán yǐ hòu wǒ men huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有，我先看菜单，再买礼物。",
+            "pinyin": "yǒu， wǒ xiān kàn cài dān， zài mǎi lǐ wù。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 39
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l43-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l43-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l43-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "这件衬衫和那条裤子多少钱？",
+            "pinyin": "zhè jiàn chèn shān hé nà tiáo kù zi duō shǎo qián？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "有，我先看菜单，再买礼物。",
+            "pinyin": "yǒu， wǒ xiān kàn cài dān， zài mǎi lǐ wù。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "超市旁边有商店吗？",
+            "pinyin": "chāo shì páng biān yǒu shāng diàn ma？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 39
       }
     },

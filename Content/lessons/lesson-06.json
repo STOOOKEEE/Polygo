@@ -675,6 +675,181 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l6-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l6-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "的",
+            "pinyin": "de",
+            "right": {
+              "fr": "particule de détermination"
+            }
+          },
+          {
+            "id": "b",
+            "left": "电影",
+            "pinyin": "diàn yǐng",
+            "right": {
+              "fr": "film"
+            }
+          },
+          {
+            "id": "c",
+            "left": "家",
+            "pinyin": "jiā",
+            "right": {
+              "fr": "maison ; famille"
+            }
+          },
+          {
+            "id": "d",
+            "left": "妈妈",
+            "pinyin": "mā ma",
+            "right": {
+              "fr": "maman"
+            }
+          },
+          {
+            "id": "e",
+            "left": "商店",
+            "pinyin": "shāng diàn",
+            "right": {
+              "fr": "magasin"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-dict-sent-dia-4",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l6-dict-sent-dia-4",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "你的狗也在家吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nǐ de gǒu yě zài jiā ma?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "diàn nǎo hé diàn shì zài jiā."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "zài jiā. xiàn zài kāi diàn shì."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-tone-019",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l6-tone-019",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "promptText": "电影",
+        "choices": [
+          {
+            "id": "t23",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t43",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 3 ˇ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t43"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l6-pick-061",
       "spec": {
         "kind": "listeningChoice",
@@ -703,62 +878,6 @@
           {
             "id": "b",
             "label": {
-              "fr": "商店 (shāng diàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "妈妈 (mā ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "也 (yě)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 2
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l6-reverse-061",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l6-reverse-061",
-          "prompt": {
-            "fr": "Comment dit-on « maman » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l6-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "商店 (shāng diàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "妈妈 (mā ma)"
             },
             "audio": null
@@ -766,7 +885,7 @@
           {
             "id": "c",
             "label": {
-              "fr": "电影 (diàn yǐng)"
+              "fr": "商店 (shāng diàn)"
             },
             "audio": null
           },
@@ -788,168 +907,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l6-pick-090",
+      "id": "block-ex-l6-dict-zh-015",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l6-pick-090",
+          "id": "ex-l6-dict-zh-015",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l6-understand"
           ],
           "required": true
         },
-        "promptText": "商店",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "商店 (shāng diàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "妈妈 (mā ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "电影 (diàn yǐng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "的 (de)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 2
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l6-pick-015",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l6-pick-015",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l6-understand"
-          ],
-          "required": true
-        },
+        "script": "hanzi",
         "promptText": "的",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "在 (zài)"
+              "fr": "的"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "家 (jiā)"
+              "fr": "家"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "也 (yě)"
+              "fr": "也"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "的 (de)"
+              "fr": "在"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 2
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l6-pick-019",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l6-pick-019",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l6-understand"
-          ],
-          "required": true
-        },
-        "promptText": "电影",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "妈妈 (mā ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "商店 (shāng diàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "电影 (diàn yǐng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "在 (zài)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1043,16 +1049,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l6-order-dia-4",
+      "id": "block-ex-l6-translate-dia-4",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l6-order-dia-4",
+          "id": "ex-l6-translate-dia-4",
           "prompt": {
-            "fr": "Construis « Ton chien est aussi à la maison ? »."
+            "fr": "Traduis en chinois : « Ton chien est aussi à la maison ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l6-produce"
@@ -1061,9 +1067,21 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
+            "id": "f",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "妈妈",
+            "pinyin": "mā ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "也",
+            "pinyin": "yě",
             "audio": null
           },
           {
@@ -1073,15 +1091,9 @@
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
+            "id": "e",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
             "audio": null
           },
           {
@@ -1091,9 +1103,15 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "也",
-            "pinyin": "yě",
+            "id": "h",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
             "audio": null
           }
         ],
@@ -1105,10 +1123,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "你的狗也在家吗？",
-          "你的狗也在家吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1118,46 +1133,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l6-fill-exa-8",
+      "id": "block-ex-l6-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l6-fill-exa-8",
+          "id": "ex-l6-talk-1",
           "prompt": {
-            "fr": "Complète : 我的电脑___桌子上。 (« Mon ordinateur est sur la table »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l6-produce"
+            "l6-understand"
           ],
           "required": true
         },
-        "sentence": "我的电脑___桌子上。",
-        "acceptedAnswers": [
-          "在"
+        "speaker": "Mina",
+        "promptText": "你在家吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我看电影。",
+            "pinyin": "wǒ kàn diàn yǐng.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "好！",
+            "pinyin": "hǎo!",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你的狗也在家吗？",
+            "pinyin": "nǐ de gǒu yě zài jiā ma?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 2
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l6-order-exa-4",
+      "id": "block-ex-l6-translate-rea-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l6-order-exa-4",
+          "id": "ex-l6-translate-rea-1",
           "prompt": {
-            "fr": "Construis « Maman est dans la cuisine »."
+            "fr": "Traduis en chinois : « Je regarde un film à la maison »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l6-produce"
@@ -1166,33 +1199,49 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "e",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "厨房",
-            "pinyin": "chú fáng",
+            "hanzi": "看",
+            "pinyin": "kàn",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "妈妈",
-            "pinyin": "mā ma",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ],
-        "acceptedVariants": [
-          "妈妈在厨房。",
-          "妈妈在厨房"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1202,13 +1251,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l6-fill-exa-5",
+      "id": "block-ex-l6-fill-exa-4",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l6-fill-exa-5",
+          "id": "ex-l6-fill-exa-4",
           "prompt": {
-            "fr": "Complète : 这___商店很大。 (« Ce magasin est très grand »)"
+            "fr": "Complète : ___在厨房。 (« Maman est dans la cuisine »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1218,15 +1267,68 @@
           ],
           "required": true
         },
-        "sentence": "这___商店很大。",
+        "sentence": "___在厨房。",
         "acceptedAnswers": [
-          "家"
+          "妈妈"
         ],
         "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l6-dialogue-2-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l6-dialogue-2-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l6-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "你的狗也在家吗？",
+            "pinyin": "nǐ de gǒu yě zài jiā ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "电脑和电视在家。",
+            "pinyin": "diàn nǎo hé diàn shì zài jiā.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我看电影。",
+            "pinyin": "wǒ kàn diàn yǐng.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 2
       }
     },
@@ -1259,53 +1361,23 @@
           {
             "id": "b",
             "label": {
-              "fr": "Ton chien est aussi à la maison ?"
+              "fr": "D’accord !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "D’accord !"
+              "fr": "Ton chien est aussi à la maison ?"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 2
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l6-fill-rea-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l6-fill-rea-1",
-          "prompt": {
-            "fr": "Complète : 我在家看___。 (« Je regarde un film à la maison »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l6-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我在家看___。",
-        "acceptedAnswers": [
-          "电影"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 2
       }
     },
@@ -1331,14 +1403,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Je regarde un film à la maison."
+              "fr": "Il est à la maison. J’allume la télévision maintenant."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il est à la maison. J’allume la télévision maintenant."
+              "fr": "Je regarde un film à la maison."
             },
             "audio": null
           },
@@ -1350,7 +1422,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",

@@ -575,54 +575,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-pick-434",
+      "id": "block-ex-l90-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l90-pick-434",
+          "id": "ex-l90-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l90-understand"
           ],
           "required": true
         },
-        "promptText": "旧",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "辆 (liàng)"
-            },
-            "audio": null
+            "left": "旧",
+            "pinyin": "jiù",
+            "right": {
+              "fr": "vieux ; usagé"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "奶奶 (nǎi nai)"
-            },
-            "audio": null
+            "left": "口",
+            "pinyin": "kǒu",
+            "right": {
+              "fr": "bouche ; classificateur"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "旧 (jiù)"
-            },
-            "audio": null
+            "left": "筷子",
+            "pinyin": "kuài zi",
+            "right": {
+              "fr": "baguettes"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "筷子 (kuài zi)"
-            },
-            "audio": null
+            "left": "奶奶",
+            "pinyin": "nǎi nai",
+            "right": {
+              "fr": "grand-mère paternelle"
+            }
+          },
+          {
+            "id": "e",
+            "left": "以为",
+            "pinyin": "yǐ wéi",
+            "right": {
+              "fr": "croire à tort ; penser"
+            }
           }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -632,105 +642,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-reverse-434",
+      "id": "block-ex-l90-dict-sent-exa-4",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l90-reverse-434",
+          "id": "ex-l90-dict-sent-exa-4",
           "prompt": {
-            "fr": "Comment dit-on « vieux ; usagé » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l90-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "门口停着两辆车。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "口 (kǒu)"
+              "fr": "mén kǒu tíng zhe liǎng liàng chē."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "旧 (jiù)"
+              "fr": "zhè shì yì zhāng jiù zhào piàn."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "奶奶 (nǎi nai)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "以为 (yǐ wéi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 86
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l90-pick-446",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l90-pick-446",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l90-understand"
-          ],
-          "required": true
-        },
-        "promptText": "筷子",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "筷子 (kuài zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "奶奶 (nǎi nai)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "以为 (yǐ wéi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "口 (kǒu)"
+              "fr": "qǐng yòng kuài zi chī miàn tiáo."
             },
             "audio": null
           }
@@ -745,53 +693,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-reverse-446",
+      "id": "block-ex-l90-tone-434",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l90-reverse-446",
+          "id": "ex-l90-tone-434",
           "prompt": {
-            "fr": "Comment dit-on « baguettes » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l90-understand"
           ],
           "required": true
         },
+        "promptText": "旧",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "以为 (yǐ wéi)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "奶奶 (nǎi nai)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "辆 (liàng)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "筷子 (kuài zi)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -801,11 +750,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-pick-443",
+      "id": "block-ex-l90-pick-454",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l90-pick-443",
+          "id": "ex-l90-pick-454",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -817,7 +766,7 @@
           ],
           "required": true
         },
-        "promptText": "口",
+        "promptText": "辆",
         "choices": [
           {
             "id": "a",
@@ -829,14 +778,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "奶奶 (nǎi nai)"
+              "fr": "辆 (liàng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "口 (kǒu)"
+              "fr": "奶奶 (nǎi nai)"
             },
             "audio": null
           },
@@ -848,7 +797,65 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 86
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l90-dict-zh-446",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l90-dict-zh-446",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l90-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "筷子",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "筷子"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "奶奶"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "以为"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "放心"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -935,16 +942,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-order-exa-4",
+      "id": "block-ex-l90-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l90-order-exa-4",
+          "id": "ex-l90-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Deux véhicules sont garés devant la porte »."
+            "fr": "Traduis en chinois : « C’est une vieille photo »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l90-produce"
@@ -953,45 +960,51 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "两",
-            "pinyin": "liǎng",
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yì",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "辆",
-            "pinyin": "liàng",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "车",
-            "pinyin": "chē",
-            "audio": null
-          },
-          {
-            "id": "b",
+            "id": "h",
             "hanzi": "口",
             "pinyin": "kǒu",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "门",
-            "pinyin": "mén",
+            "id": "f",
+            "hanzi": "照片",
+            "pinyin": "zhào piàn",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "停",
-            "pinyin": "tíng",
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "以为",
+            "pinyin": "yǐ wéi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "着",
-            "pinyin": "zhe",
+            "hanzi": "张",
+            "pinyin": "zhāng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "旧",
+            "pinyin": "jiù",
             "audio": null
           }
         ],
@@ -1001,13 +1014,9 @@
           "c",
           "d",
           "e",
-          "f",
-          "g"
+          "f"
         ],
-        "acceptedVariants": [
-          "门口停着两辆车。",
-          "门口停着两辆车"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1017,46 +1026,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-fill-exa-1",
+      "id": "block-ex-l90-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l90-fill-exa-1",
+          "id": "ex-l90-talk-1",
           "prompt": {
-            "fr": "Complète : 这是一张___照片。 (« C’est une vieille photo »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l90-produce"
+            "l90-understand"
           ],
           "required": true
         },
-        "sentence": "这是一张___照片。",
-        "acceptedAnswers": [
-          "旧"
+        "speaker": "Mina",
+        "promptText": "你以为银行已经关门了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，但是它又开了。",
+            "pinyin": "shì, dàn shì tā yòu kāi le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "可以。这家银行很有名，办理业务很方便。",
+            "pinyin": "kě yǐ. zhè jiā yín háng hěn yǒu míng, bàn lǐ yè wù hěn fāng biàn.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "可以用手机转钱吗？",
+            "pinyin": "kě yǐ yòng shǒu jī zhuǎn qián ma?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 86
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-order-exa-3",
+      "id": "block-ex-l90-translate-exa-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l90-order-exa-3",
+          "id": "ex-l90-translate-exa-3",
           "prompt": {
-            "fr": "Construis « Mange les nouilles avec des baguettes, s’il te plaît »."
+            "fr": "Traduis en chinois : « Mange les nouilles avec des baguettes, s’il te plaît »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l90-produce"
@@ -1065,9 +1092,9 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "筷子",
-            "pinyin": "kuài zi",
+            "id": "d",
+            "hanzi": "吃",
+            "pinyin": "chī",
             "audio": null
           },
           {
@@ -1077,15 +1104,27 @@
             "audio": null
           },
           {
+            "id": "c",
+            "hanzi": "筷子",
+            "pinyin": "kuài zi",
+            "audio": null
+          },
+          {
             "id": "b",
             "hanzi": "用",
             "pinyin": "yòng",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "吃",
-            "pinyin": "chī",
+            "id": "f",
+            "hanzi": "奶奶",
+            "pinyin": "nǎi nai",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "辆",
+            "pinyin": "liàng",
             "audio": null
           },
           {
@@ -1102,10 +1141,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "请用筷子吃面条。",
-          "请用筷子吃面条"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1115,13 +1151,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-fill-dia-1",
+      "id": "block-ex-l90-fill-exa-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l90-fill-dia-1",
+          "id": "ex-l90-fill-exa-2",
           "prompt": {
-            "fr": "Complète : 你___银行已经关门了吗？ (« Tu croyais que la banque était déjà fermée ? »)"
+            "fr": "Complète : 请给我一___水。 (« Donne-moi une gorgée d’eau, s’il te plaît »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1131,9 +1167,9 @@
           ],
           "required": true
         },
-        "sentence": "你___银行已经关门了吗？",
+        "sentence": "请给我一___水。",
         "acceptedAnswers": [
-          "以为"
+          "口"
         ],
         "caseSensitive": false
       },
@@ -1145,76 +1181,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l90-order-exa-5",
+      "id": "block-ex-l90-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l90-order-exa-5",
+          "id": "ex-l90-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Ma grand-mère boit du thé chaque matin »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l90-produce"
+            "l90-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "奶奶",
-            "pinyin": "nǎi nai",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
+            "speaker": "Tao",
+            "hanzi": "是，但是它又开了。",
+            "pinyin": "shì, dàn shì tā yòu kāi le.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "speaker": "Mina",
+            "hanzi": "可以用手机转钱吗？",
+            "pinyin": "kě yǐ yòng shǒu jī zhuǎn qián ma?",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "茶",
-            "pinyin": "chá",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "早上",
-            "pinyin": "zǎo shang",
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你以为银行已经关门了吗？",
+            "pinyin": "nǐ yǐ wéi yín háng yǐ jīng guān mén le ma?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "奶奶每天早上喝茶。",
-          "奶奶每天早上喝茶"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 86
       }
     },
@@ -1247,19 +1261,19 @@
           {
             "id": "b",
             "label": {
-              "fr": "Deux véhicules sont garés devant la porte."
+              "fr": "Ma grand-mère boit du thé chaque matin."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Ma grand-mère boit du thé chaque matin."
+              "fr": "Deux véhicules sont garés devant la porte."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1289,14 +1303,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Tu croyais que la banque était déjà fermée ?"
+              "fr": "Peut-on transférer de l’argent avec le téléphone ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Peut-on transférer de l’argent avec le téléphone ?"
+              "fr": "Tu croyais que la banque était déjà fermée ?"
             },
             "audio": null
           },
@@ -1308,7 +1322,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",

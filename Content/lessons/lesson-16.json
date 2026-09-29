@@ -641,54 +641,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l16-pick-055",
+      "id": "block-ex-l16-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l16-pick-055",
+          "id": "ex-l16-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l16-understand"
           ],
           "required": true
         },
-        "promptText": "老师",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "老师 (lǎo shī)"
-            },
-            "audio": null
+            "left": "老师",
+            "pinyin": "lǎo shī",
+            "right": {
+              "fr": "professeur"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "但是 (dàn shì)"
-            },
-            "audio": null
+            "left": "没关系",
+            "pinyin": "méi guān xì",
+            "right": {
+              "fr": "ce n’est pas grave"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "大家 (dà jiā)"
-            },
-            "audio": null
+            "left": "前面",
+            "pinyin": "qián miàn",
+            "right": {
+              "fr": "devant ; avant"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "前面 (qián miàn)"
-            },
-            "audio": null
+            "left": "请",
+            "pinyin": "qǐng",
+            "right": {
+              "fr": "prier de ; inviter"
+            }
+          },
+          {
+            "id": "e",
+            "left": "大家",
+            "pinyin": "dà jiā",
+            "right": {
+              "fr": "tout le monde"
+            }
           }
-        ],
-        "correctChoiceID": "a"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -698,53 +708,105 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l16-reverse-055",
+      "id": "block-ex-l16-dict-sent-exa-3",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l16-reverse-055",
+          "id": "ex-l16-dict-sent-exa-3",
           "prompt": {
-            "fr": "Comment dit-on « professeur » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l16-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "老师在前面。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "但是 (dàn shì)"
+              "fr": "dá àn zěn me yàng？"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "第一 (dì yī)"
+              "fr": "lǎo shī zài qián miàn。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "前面 (qián miàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "老师 (lǎo shī)"
+              "fr": "zhè shì dì yī kè。"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-tone-055",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l16-tone-055",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "promptText": "老师",
+        "choices": [
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t31"
       },
       "metadata": {
         "stage": "discover",
@@ -789,75 +851,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "没关系 (méi guān xì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
               "fr": "但是 (dàn shì)"
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-reverse-066",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l16-reverse-066",
-          "prompt": {
-            "fr": "Comment dit-on « ce n’est pas grave » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l16-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "大家 (dà jiā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "没关系 (méi guān xì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "老师 (lǎo shī)"
-            },
-            "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "第一 (dì yī)"
+              "fr": "没关系 (méi guān xì)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -867,16 +873,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l16-pick-083",
+      "id": "block-ex-l16-tone-083",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l16-pick-083",
+          "id": "ex-l16-tone-083",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l16-understand"
@@ -886,91 +892,35 @@
         "promptText": "请",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "请 (qǐng)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "老师 (lǎo shī)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "前面 (qián miàn)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "但是 (dàn shì)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-reverse-156",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l16-reverse-156",
-          "prompt": {
-            "fr": "Comment dit-on « comparer ; que (comparatif) » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l16-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "请 (qǐng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "老师 (lǎo shī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "大家 (dà jiā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "比 (bǐ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -1064,16 +1014,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l16-order-exa-3",
+      "id": "block-ex-l16-translate-rea-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l16-order-exa-3",
+          "id": "ex-l16-translate-rea-1",
           "prompt": {
-            "fr": "Construis « Le professeur est devant »."
+            "fr": "Traduis en chinois : « Tout le monde fait les exercices ensemble »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l16-produce"
@@ -1082,33 +1032,49 @@
         },
         "tokens": [
           {
-            "id": "c",
+            "id": "f",
             "hanzi": "前面",
             "pinyin": "qián miàn",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "老师",
-            "pinyin": "lǎo shī",
+            "id": "b",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "e",
+            "hanzi": "第一",
+            "pinyin": "dì yī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "大家",
+            "pinyin": "dà jiā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "题",
+            "pinyin": "tí",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "做",
+            "pinyin": "zuò",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ],
-        "acceptedVariants": [
-          "老师在前面。",
-          "老师在前面"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1118,13 +1084,289 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l16-fill-dia-1",
+      "id": "block-ex-l16-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l16-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "大家有几道题？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "这道题比第一道难，所以我问你。",
+            "pinyin": "zhè dào tí bǐ dì yī dào nán， suǒ yǐ wǒ wèn nǐ。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "现在我懂了，做完我们走吧。",
+            "pinyin": "xiàn zài wǒ dǒng le， zuò wán wǒ men zǒu ba。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我们有三道题，但是我不懂第二道。",
+            "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-translate-exa-5",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l16-translate-exa-5",
+          "prompt": {
+            "fr": "Traduis en chinois : « Tout le monde est arrivé »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l16-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "第一",
+            "pinyin": "dì yī",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "大家",
+            "pinyin": "dà jiā",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l16-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "为什么不懂？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "现在我懂了，做完我们走吧。",
+            "pinyin": "xiàn zài wǒ dǒng le， zuò wán wǒ men zǒu ba。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "这道题比第一道难，所以我问你。",
+            "pinyin": "zhè dào tí bǐ dì yī dào nán， suǒ yǐ wǒ wèn nǐ。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我们有三道题，但是我不懂第二道。",
+            "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-dialogue-1-4",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l16-dialogue-1-4",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我们有三道题，但是我不懂第二道。",
+            "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "大家有几道题？",
+            "pinyin": "dà jiā yǒu jǐ dào tí？",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "这道题比第一道难，所以我问你。",
+            "pinyin": "zhè dào tí bǐ dì yī dào nán， suǒ yǐ wǒ wèn nǐ。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "为什么不懂？",
+            "pinyin": "wèi shén me bù dǒng？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-read-exa-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l16-read-exa-2",
+          "prompt": {
+            "fr": "Que signifie la phrase : 没关系，我们再试。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l16-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce n’est pas grave, nous réessaierons."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "C’est la première leçon."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tout le monde est arrivé."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 12
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l16-fill-rea-3",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l16-fill-dia-1",
+          "id": "ex-l16-fill-rea-3",
           "prompt": {
-            "fr": "Complète : ___有几道题？ (« Combien d’exercices avez-vous tous ? »)"
+            "fr": "Complète : 做完三道题以后，___都懂了。 (« Après les trois exercices, tout le monde a compris »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1134,163 +1376,15 @@
           ],
           "required": true
         },
-        "sentence": "___有几道题？",
+        "sentence": "做完三道题以后，___都懂了。",
         "acceptedAnswers": [
           "大家"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l16-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Le professeur est dans la classe »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l16-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "老师",
-            "pinyin": "lǎo shī",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "教室",
-            "pinyin": "jiào shì",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "老师在教室。",
-          "老师在教室"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-fill-dia-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l16-fill-dia-2",
-          "prompt": {
-            "fr": "Complète : 我们有三道题，___我不懂第二道。 (« Nous en avons trois, mais je ne comprends pas le deuxième »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l16-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我们有三道题，___我不懂第二道。",
-        "acceptedAnswers": [
-          "但是"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-speak-exa-2",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l16-speak-exa-2",
-          "prompt": {
-            "fr": "Dis « Ce n’est pas grave, nous réessaierons »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l16-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "没关系，我们再试。",
-        "referencePinyin": "méi guān xì， wǒ men zài shì。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "没关系，我们再试。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 12
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l16-speak-exa-4",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l16-speak-exa-4",
-          "prompt": {
-            "fr": "Dis « Asseyez-vous, s’il vous plaît »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l16-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "请坐。",
-        "referencePinyin": "qǐng zuò。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "请坐。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 12
       }
     },

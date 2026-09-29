@@ -588,49 +588,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l77-pick-431",
+      "id": "block-ex-l77-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l77-pick-431",
+          "id": "ex-l77-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l77-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "经过",
+            "pinyin": "jīng guò",
+            "right": {
+              "fr": "passer par ; traverser"
+            }
+          },
+          {
+            "id": "b",
+            "left": "举行",
+            "pinyin": "jǔ xíng",
+            "right": {
+              "fr": "organiser ; tenir (un événement)"
+            }
+          },
+          {
+            "id": "c",
+            "left": "渴",
+            "pinyin": "kě",
+            "right": {
+              "fr": "avoir soif"
+            }
+          },
+          {
+            "id": "d",
+            "left": "一般",
+            "pinyin": "yì bān",
+            "right": {
+              "fr": "général ; ordinaire"
+            }
+          },
+          {
+            "id": "e",
+            "left": "有名",
+            "pinyin": "yǒu míng",
+            "right": {
+              "fr": "célèbre"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-dict-py-431",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l77-dict-py-431",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "经过",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "一般 (yì bān)"
+              "fr": "yì bān"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "经过 (jīng guò)"
+              "fr": "jīng guò"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "举行 (jǔ xíng)"
+              "fr": "jǔ xíng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "有名 (yǒu míng)"
+              "fr": "yǒu míng"
             },
             "audio": null
           }
@@ -645,48 +713,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l77-reverse-431",
+      "id": "block-ex-l77-tone-439",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l77-reverse-431",
+          "id": "ex-l77-tone-439",
           "prompt": {
-            "fr": "Comment dit-on « passer par ; traverser » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l77-understand"
           ],
           "required": true
         },
+        "promptText": "渴",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-pick-588",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l77-pick-588",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "promptText": "种",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "经过 (jīng guò)"
+              "fr": "种 (zhǒng)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "举行 (jǔ xíng)"
+              "fr": "渴 (kě)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "有名 (yǒu míng)"
+              "fr": "一般 (yì bān)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "一般 (yì bān)"
+              "fr": "有名 (yǒu míng)"
             },
             "audio": null
           }
@@ -701,167 +827,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l77-pick-439",
+      "id": "block-ex-l77-dict-zh-435",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l77-pick-439",
+          "id": "ex-l77-dict-zh-435",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l77-understand"
           ],
           "required": true
         },
-        "promptText": "渴",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "种 (zhǒng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "有名 (yǒu míng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "一般 (yì bān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "渴 (kě)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-reverse-439",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l77-reverse-439",
-          "prompt": {
-            "fr": "Comment dit-on « avoir soif » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l77-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "种 (zhǒng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "举行 (jǔ xíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "渴 (kě)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "有名 (yǒu míng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-pick-435",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l77-pick-435",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l77-understand"
-          ],
-          "required": true
-        },
+        "script": "hanzi",
         "promptText": "举行",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "经过 (jīng guò)"
+              "fr": "经过"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "举行 (jǔ xíng)"
+              "fr": "有名"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "一般 (yì bān)"
+              "fr": "一般"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "有名 (yǒu míng)"
+              "fr": "举行"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -955,16 +969,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l77-order-exa-3",
+      "id": "block-ex-l77-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l77-order-exa-3",
+          "id": "ex-l77-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Après le sport, j’ai très soif »."
+            "fr": "Traduis en chinois : « L’école a organisé une rencontre sportive »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l77-produce"
@@ -973,241 +987,45 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "以后",
-            "pinyin": "yǐ hòu",
+            "id": "a",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "渴",
-            "pinyin": "kě",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "运动",
-            "pinyin": "yùn dòng",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "运动以后我很渴。",
-          "运动以后我很渴"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l77-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 我想试试这___茶。 (« J’ai envie d’essayer cette sorte de thé »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l77-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我想试试这___茶。",
-        "acceptedAnswers": [
-          "种"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l77-order-exa-4",
-          "prompt": {
-            "fr": "Construis « En général, je me lève à sept heures »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l77-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "一般",
-            "pinyin": "yì bān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "起床",
-            "pinyin": "qǐ chuáng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "七",
-            "pinyin": "qī",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我一般七点起床。",
-          "我一般七点起床"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-fill-dia-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l77-fill-dia-1",
-          "prompt": {
-            "fr": "Complète : 明天的活动在哪里___？ (« Où l’activité de demain a-t-elle lieu ? »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l77-produce"
-          ],
-          "required": true
-        },
-        "sentence": "明天的活动在哪里___？",
-        "acceptedAnswers": [
-          "举行"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l77-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Cet endroit est célèbre pour son thé »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l77-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
+            "hanzi": "会",
+            "pinyin": "huì",
             "audio": null
           },
           {
             "id": "g",
+            "hanzi": "种",
+            "pinyin": "zhǒng",
+            "audio": null
+          },
+          {
+            "id": "f",
             "hanzi": "有名",
             "pinyin": "yǒu míng",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "因为",
-            "pinyin": "yīn wèi",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "茶",
-            "pinyin": "chá",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "叶",
-            "pinyin": "yè",
-            "audio": null
-          },
-          {
             "id": "c",
-            "hanzi": "地方",
-            "pinyin": "dì fāng",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "运动",
+            "pinyin": "yùn dòng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "举行",
+            "pinyin": "jǔ xíng",
             "audio": null
           }
         ],
@@ -1216,18 +1034,281 @@
           "b",
           "c",
           "d",
-          "e",
-          "f",
-          "g"
+          "e"
         ],
-        "acceptedVariants": [
-          "这个地方因为茶叶有名。",
-          "这个地方因为茶叶有名"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l77-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "明天的活动在哪里举行？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我去借一张。这样就解决了。",
+            "pinyin": "wǒ qù jiè yì zhāng. zhè yàng jiù jiě jué le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "还缺一张桌子，怎么办？",
+            "pinyin": "hái quē yì zhāng zhuō zi, zěn me bàn?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在学校。我们经过车站以后就到了。",
+            "pinyin": "zài xué xiào. wǒ men jīng guò chē zhàn yǐ hòu jiù dào le.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-translate-exa-8",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l77-translate-exa-8",
+          "prompt": {
+            "fr": "Traduis en chinois : « C’est mon grand frère »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l77-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "种",
+            "pinyin": "zhǒng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一般",
+            "pinyin": "yì bān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "哥哥",
+            "pinyin": "gē ge",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l77-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "还缺一张桌子，怎么办？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "在学校。我们经过车站以后就到了。",
+            "pinyin": "zài xué xiào. wǒ men jīng guò chē zhàn yǐ hòu jiù dào le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我去借一张。这样就解决了。",
+            "pinyin": "wǒ qù jiè yì zhāng. zhè yàng jiù jiě jué le.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "明天的活动在哪里举行？",
+            "pinyin": "míng tiān de huó dòng zài nǎ lǐ jǔ xíng?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l77-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "明天的活动在哪里举行？",
+            "pinyin": "míng tiān de huó dòng zài nǎ lǐ jǔ xíng?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "还缺一张桌子，怎么办？",
+            "pinyin": "hái quē yì zhāng zhuō zi, zěn me bàn?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "在学校。我们经过车站以后就到了。",
+            "pinyin": "zài xué xiào. wǒ men jīng guò chē zhàn yǐ hòu jiù dào le.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 73
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l77-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l77-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我想试试这种茶。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l77-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "J’ai envie d’essayer cette sorte de thé."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Après le sport, j’ai très soif."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je m'appelle An."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 73
       }
     },
@@ -1258,55 +1339,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 73
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l77-read-dia-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l77-read-dia-1",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 明天的活动在哪里举行？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l77-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Où l’activité de demain a-t-elle lieu ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Il manque encore une table, que fait-on ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "J’ai envie d’essayer cette sorte de thé."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 73
       }
     },

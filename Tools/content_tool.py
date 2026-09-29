@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import re
 import shutil
 import sys
 import tempfile
@@ -28,6 +29,16 @@ from exercise_expansion import (
     expand_lesson_exercises,
     exposure_shortfalls,
     word_exposures,
+)
+from exercise_kinds import (
+    CONVERSATION_REPLIES,
+    DIALOGUE_ORDER_LINES,
+    DICTATION_SCRIPTS,
+    MATCHING_PAIRS,
+    MIN_NEW_KINDS,
+    NEW_KINDS,
+    entry_tones,
+    tone_choice_id,
 )
 
 
@@ -430,7 +441,7 @@ def normalize_header(exercise: dict[str, Any], context: str) -> dict[str, Any]:
 
 def normalize_exercise(exercise: dict[str, Any], context: str) -> dict[str, Any]:
     kind = string(require(exercise, "kind", context), context + ".kind")
-    allowed = {"choice", "wordOrder", "fillBlank", "listeningChoice", "speaking", "handwriting", "flashcard"}
+    allowed = {"choice", "wordOrder", "fillBlank", "listeningChoice", "speaking", "handwriting", "flashcard", *NEW_KINDS}
     if kind not in allowed:
         raise ContentError(f"{context}.kind: unsupported '{kind}'")
     result: dict[str, Any] = {"kind": kind, "header": normalize_header(exercise, context)}
@@ -438,8 +449,8 @@ def normalize_exercise(exercise: dict[str, Any], context: str) -> dict[str, Any]
     for key, value in exercise.items():
         if key not in common:
             result[key] = copy.deepcopy(value)
-    if kind == "listeningChoice" and not result.get("promptAudio") and not result.get("promptText"):
-        raise ContentError(f"{context}: listeningChoice requires promptAudio or promptText")
+    if kind in {"listeningChoice", "dictation", "toneDiscrimination", "conversationChoice"} and not result.get("promptAudio") and not result.get("promptText"):
+        raise ContentError(f"{context}: {kind} requires promptAudio or promptText")
     if kind == "speaking":
         result.setdefault("acceptedTranscripts", [])
         result.setdefault("allowSelfRating", True)
@@ -750,11 +761,11 @@ def editorial_block_metadata(block: dict[str, Any]) -> dict[str, Any]:
         # Daily lessons carry their session phase (discover, guided, reuse)
         # in the stage; keep it and only derive the skill from the family.
         preset = block.get("metadata", {}).get("stage") if isinstance(block.get("metadata"), dict) else None
-        if exercise_kind in {"choice", "listeningChoice", "flashcard"}:
+        if exercise_kind in {"choice", "listeningChoice", "flashcard", "matching", "dictation", "toneDiscrimination", "conversationChoice", "dialogueOrder"}:
             return {"stage": preset or "recover", "skill": "recognition"}
         if exercise_kind == "speaking":
             return {"stage": preset or "produce", "skill": "speaking"}
-        if exercise_kind in {"wordOrder", "fillBlank", "handwriting"}:
+        if exercise_kind in {"wordOrder", "fillBlank", "handwriting", "translation"}:
             return {"stage": preset or "produce", "skill": "production"}
         return {"stage": preset or "practice", "skill": "production"}
     return {"stage": "practice", "skill": "recognition"}
@@ -827,6 +838,27 @@ def effective_material_vocabulary_ids(lesson: dict[str, Any]) -> set[str]:
             for token in spec.get("tokens", []):
                 if isinstance(token, dict):
                     used.update(by_hanzi.get(token.get("hanzi"), set()))
+        elif exercise_kind == "matching":
+            for pair in spec.get("pairs", []):
+                if isinstance(pair, dict):
+                    used.update(by_hanzi.get(pair.get("left"), set()))
+        elif exercise_kind == "translation":
+            for token in spec.get("tokens", []):
+                if isinstance(token, dict):
+                    used.update(by_hanzi.get(token.get("hanzi"), set()))
+        elif exercise_kind == "dialogueOrder":
+            for item in spec.get("lines", []):
+                if isinstance(item, dict) and isinstance(item.get("hanzi"), str):
+                    for surface, vocabulary_ids in by_hanzi.items():
+                        if surface in item["hanzi"]:
+                            used.update(vocabulary_ids)
+        elif exercise_kind == "conversationChoice":
+            texts = [spec.get("promptText")] + [reply.get("hanzi") for reply in spec.get("replies", []) if isinstance(reply, dict)]
+            for text in texts:
+                if isinstance(text, str):
+                    for surface, vocabulary_ids in by_hanzi.items():
+                        if surface in text:
+                            used.update(vocabulary_ids)
         elif exercise_kind == "speaking":
             text = spec.get("referenceText")
             if isinstance(text, str):
@@ -1139,6 +1171,146 @@ def lint_plan(course: dict[str, Any], lesson_ids: list[str], lessons: dict[str, 
     unique(milestone_ids, context + ".plan.milestones.id")
 
 
+def _hanzi_only(text: Any) -> str:
+    return "".join(char for char in text if "\u3400" <= char <= "\u9fff") if isinstance(text, str) else ""
+
+
+def _label(choice: Any) -> str:
+    label = choice.get("label") if isinstance(choice, dict) else None
+    return label.get("fr", "") if isinstance(label, dict) else ""
+
+
+def lint_new_kind(spec: dict[str, Any], lesson: dict[str, Any], where: str) -> None:
+    """Check one `matching`, `dictation`, `toneDiscrimination`, `translation`,
+    `conversationChoice` or `dialogueOrder` exercise against its own lesson:
+    identifiers resolve, answers exist, and every Mandarin text, pinyin and
+    meaning is the lesson's, not a new invention."""
+    kind = spec["kind"]
+    entries = [entry for entry in lesson.get("vocabulary", []) if isinstance(entry, dict) and isinstance(entry.get("hanzi"), str)]
+    by_hanzi: dict[str, list[dict[str, Any]]] = {}
+    for entry in entries:
+        by_hanzi.setdefault(entry["hanzi"], []).append(entry)
+
+    def word(hanzi: Any) -> dict[str, Any] | None:
+        """The lesson's row for a word, unless two rows share its Hanzi."""
+        rows = by_hanzi.get(hanzi, [])
+        return rows[0] if len(rows) == 1 else None
+    dialogue = next((block for block in lesson.get("blocks", []) if isinstance(block, dict) and block.get("kind") == "dialogue"), {})
+    lines = [line for line in dialogue.get("lines", []) if isinstance(line, dict)]
+    line_hanzi = [_hanzi_only(line.get("hanzi")) for line in lines]
+    # Everything Mandarin the lesson itself shows, without punctuation.
+    material = list(line_hanzi) + [
+        _hanzi_only(entry.get("example", {}).get("hanzi")) for entry in entries if isinstance(entry.get("example"), dict)
+    ]
+    for block in lesson.get("blocks", []):
+        if isinstance(block, dict) and block.get("kind") == "reading":
+            material.extend(_hanzi_only(paragraph.get("hanzi")) for paragraph in block.get("paragraphs", []) if isinstance(paragraph, dict))
+
+    def check(condition: bool, message: str) -> None:
+        if not condition:
+            raise ContentError(f"{where} {message}")
+
+    def choice_ids(choices: Any, correct: Any) -> None:
+        check(isinstance(choices, list) and len(choices) >= 2, "needs at least two choices")
+        ids = [choice.get("id") for choice in choices]
+        labels = [json.dumps(choice.get("label"), sort_keys=True) for choice in choices]
+        check(len(set(ids)) == len(ids) and correct in ids, "has duplicate choice IDs or a missing correct choice")
+        check(len(set(labels)) == len(labels), "has duplicate choice labels")
+
+    def sourced_pinyin(hanzi: str) -> set[str]:
+        """The pinyin the lesson gives for exactly this Mandarin text."""
+        result = {entry["pinyin"] for entry in by_hanzi.get(hanzi, []) if isinstance(entry.get("pinyin"), str)}
+        for entry in entries:
+            example = entry.get("example")
+            if isinstance(example, dict) and _hanzi_only(example.get("hanzi")) == hanzi:
+                result.add(example.get("pinyin"))
+        result.update(line.get("pinyin") for line in lines if _hanzi_only(line.get("hanzi")) == hanzi)
+        return result
+
+    if kind in {"dictation", "toneDiscrimination", "conversationChoice"}:
+        check(bool(spec.get("promptAudio") or spec.get("promptText")), f"{kind} requires promptAudio or promptText")
+    if kind == "matching":
+        pairs = spec.get("pairs")
+        check(isinstance(pairs, list) and MATCHING_PAIRS[0] <= len(pairs) <= MATCHING_PAIRS[1], f"needs {MATCHING_PAIRS[0]} to {MATCHING_PAIRS[1]} pairs")
+        for key in ("id", "left"):
+            values = [pair.get(key) for pair in pairs]
+            check(len(set(values)) == len(values), f"has duplicate pair {key} values")
+        rights = [_label({"label": pair.get("right")}) for pair in pairs]
+        check(all(rights) and len(set(rights)) == len(rights), "has empty or duplicate right-hand items")
+        for pair, right in zip(pairs, rights):
+            entry = word(pair.get("left"))
+            check(entry is not None, f"pairs '{pair.get('left')}', which is not a single word of the lesson's vocabulary")
+            expected = entry["meaning"].get("fr") if pair.get("pinyin") is not None else entry["pinyin"]
+            check(pair.get("pinyin") in {None, entry["pinyin"]} and right == expected, f"pairs '{pair['left']}' with something else than its meaning or pinyin")
+    elif kind == "dictation":
+        check(spec.get("script") in DICTATION_SCRIPTS, f"needs a script in {', '.join(DICTATION_SCRIPTS)}")
+        choice_ids(spec.get("choices"), spec.get("correctChoiceID"))
+        spoken = _hanzi_only(spec.get("promptText"))
+        correct = next(_label(choice) for choice in spec["choices"] if choice["id"] == spec["correctChoiceID"])
+        if spec["script"] == "hanzi":
+            check(_hanzi_only(correct) == spoken and _hanzi_only(correct) == correct, "has a correct choice that is not the spoken text")
+        else:
+            check(correct in sourced_pinyin(spoken), "has a correct pinyin that the lesson does not give for the spoken text")
+    elif kind == "toneDiscrimination":
+        choice_ids(spec.get("choices"), spec.get("correctChoiceID"))
+        entry = word(spec.get("promptText"))
+        tones = entry_tones(entry) if entry is not None else None
+        check(tones is not None, "asks the tones of a word that is not in the lesson or whose tones cannot be heard reliably")
+        check(spec["correctChoiceID"] == tone_choice_id(tones), "has a correct choice that differs from the word's tone numbers")
+        check(all(choice["id"].startswith("t") and len(choice["id"]) == len(tones) + 1 for choice in spec["choices"]), "mixes tone patterns of different lengths")
+    elif kind == "translation":
+        tokens = spec.get("tokens")
+        check(isinstance(tokens, list), "needs tiles")
+        ids = [token.get("id") for token in tokens]
+        hanzi = [token.get("hanzi") for token in tokens]
+        check(len(set(ids)) == len(ids) and len(set(hanzi)) == len(hanzi), "has duplicate tile IDs or Hanzi")
+        order = spec.get("correctOrder")
+        check(isinstance(order, list) and order and len(set(order)) == len(order) and set(order) <= set(ids), "has a correct order that does not use its tiles once")
+        check(len(order) < len(ids), "needs at least one distractor tile")
+        by_id = dict(zip(ids, hanzi))
+        for sequence in [order] + list(spec.get("acceptedOrders", [])):
+            check(set(sequence) <= set(ids) and len(set(sequence)) == len(sequence), "has an accepted order that does not use its tiles once")
+            sentence = "".join(by_id[tile] for tile in sequence)
+            check(any(sentence in text for text in material), f"assembles '{sentence}', which the lesson never shows")
+    elif kind == "dialogueOrder":
+        items = spec.get("lines")
+        check(isinstance(items, list) and DIALOGUE_ORDER_LINES[0] <= len(items) <= DIALOGUE_ORDER_LINES[1], f"needs {DIALOGUE_ORDER_LINES[0]} to {DIALOGUE_ORDER_LINES[1]} lines")
+        ids = [item.get("id") for item in items]
+        order = spec.get("correctOrder")
+        check(len(set(ids)) == len(ids) and isinstance(order, list) and sorted(order) == sorted(ids), "has a correct order that is not a permutation of its lines")
+        check(order != ids, "shows its lines already in order")
+        by_id = {item["id"]: item for item in items}
+        ordered = [_hanzi_only(by_id[line_id].get("hanzi")) for line_id in order]
+        check(len(set(ordered)) == len(ordered), "repeats a line")
+        check(any(line_hanzi[start:start + len(ordered)] == ordered for start in range(len(line_hanzi))), "does not follow the lesson's dialogue")
+        for line_id in order:
+            source = next(line for line in lines if _hanzi_only(line.get("hanzi")) == _hanzi_only(by_id[line_id].get("hanzi")))
+            check(by_id[line_id].get("hanzi") == source.get("hanzi") and by_id[line_id].get("pinyin") == source.get("pinyin") and by_id[line_id].get("speaker") == source.get("speaker"), "changes a dialogue line")
+    elif kind == "conversationChoice":
+        replies = spec.get("replies")
+        check(isinstance(replies, list) and len(replies) == CONVERSATION_REPLIES, f"needs exactly {CONVERSATION_REPLIES} replies")
+        ids = [reply.get("id") for reply in replies]
+        hanzi = [_hanzi_only(reply.get("hanzi")) for reply in replies]
+        check(len(set(ids)) == len(ids) and len(set(hanzi)) == len(hanzi) and spec.get("correctReplyID") in ids, "has duplicate replies or a missing correct reply")
+        correct = next(reply for reply in replies if reply["id"] == spec["correctReplyID"])
+        prompt = _hanzi_only(spec.get("promptText"))
+        check(prompt not in hanzi, "offers the spoken line as a reply")
+        check(any(line_hanzi[index] == prompt and line_hanzi[index + 1] == _hanzi_only(correct["hanzi"]) for index in range(len(line_hanzi) - 1)), "has a correct reply that does not follow the spoken line in the dialogue")
+        for reply in replies:
+            source = next((line for line in lines if line.get("hanzi") == reply.get("hanzi")), None)
+            check(source is not None and source.get("pinyin") == reply.get("pinyin"), "has a reply that is not a dialogue line")
+
+
+def exercise_subject(spec: dict[str, Any]) -> str:
+    """What an exercise is about, beyond its prompt: the text it plays, the words it pairs or the lines it orders."""
+    if spec.get("promptText"):
+        return spec["promptText"]
+    if spec.get("pairs"):
+        return " ".join(pair["left"] for pair in spec["pairs"])
+    lines = {line["id"]: line["hanzi"] for line in spec.get("lines", [])}
+    return "".join(lines[line_id] for line_id in spec.get("correctOrder", [])) if lines else ""
+
+
 def lint_exercise_session(lesson: dict[str, Any], location: str) -> None:
     """Check a generated daily lesson's three-phase exercise session."""
     blocks = [
@@ -1156,7 +1328,7 @@ def lint_exercise_session(lesson: dict[str, Any], location: str) -> None:
         if stage not in PHASES:
             raise ContentError(f"{location}: exercise '{exercise_id}' needs a stage in {', '.join(PHASES)}")
         phases.append(stage)
-        identity = (spec["header"]["prompt"].get("fr", ""), spec.get("promptText") or "")
+        identity = (spec["header"]["prompt"].get("fr", ""), exercise_subject(spec))
         if identity in identities:
             raise ContentError(f"{location}: exercise '{exercise_id}' repeats an earlier prompt")
         identities.add(identity)
@@ -1168,6 +1340,11 @@ def lint_exercise_session(lesson: dict[str, Any], location: str) -> None:
             hanzi = [token["hanzi"] for token in spec["tokens"]]
             if len(set(hanzi)) != len(hanzi) or sorted(spec["correctOrder"]) != sorted(token["id"] for token in spec["tokens"]):
                 raise ContentError(f"{location}: exercise '{exercise_id}' has ambiguous or inconsistent tiles")
+        if spec["kind"] in NEW_KINDS:
+            lint_new_kind(spec, lesson, f"{location}: exercise '{exercise_id}'")
+    kinds = {block["spec"]["kind"] for block in blocks}.intersection(NEW_KINDS)
+    if len(kinds) < MIN_NEW_KINDS:
+        raise ContentError(f"{location}: only {len(kinds)} of the newer exercise kinds ({', '.join(sorted(kinds)) or 'none'}), expected {MIN_NEW_KINDS}")
     rank = [PHASES.index(phase) for phase in phases]
     if rank != sorted(rank) or set(rank) != set(range(len(PHASES))):
         raise ContentError(f"{location}: exercises must run through {', '.join(PHASES)} in order")

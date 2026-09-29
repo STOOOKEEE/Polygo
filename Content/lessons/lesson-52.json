@@ -621,11 +621,186 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-pick-220",
+      "id": "block-ex-l52-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l52-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "卖",
+            "pinyin": "mài",
+            "right": {
+              "fr": "vendre"
+            }
+          },
+          {
+            "id": "b",
+            "left": "妻子",
+            "pinyin": "qī zi",
+            "right": {
+              "fr": "épouse"
+            }
+          },
+          {
+            "id": "c",
+            "left": "起床",
+            "pinyin": "qǐ chuáng",
+            "right": {
+              "fr": "se lever"
+            }
+          },
+          {
+            "id": "d",
+            "left": "千",
+            "pinyin": "qiān",
+            "right": {
+              "fr": "mille"
+            }
+          },
+          {
+            "id": "e",
+            "left": "手表",
+            "pinyin": "shǒu biǎo",
+            "right": {
+              "fr": "montre"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-dict-py-220",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l52-dict-py-220",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "卖",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "qiān"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mài"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "xiàng"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-tone-233",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l52-tone-233",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "promptText": "妻子",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t20",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t10"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-pick-234",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l52-pick-220",
+          "id": "ex-l52-pick-234",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -637,89 +812,33 @@
           ],
           "required": true
         },
-        "promptText": "卖",
+        "promptText": "起床",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "卖 (mài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "千 (qiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "向 (xiàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "手表 (shǒu biǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-reverse-220",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l52-reverse-220",
-          "prompt": {
-            "fr": "Comment dit-on « vendre » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l52-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "千 (qiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "向 (xiàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
             "label": {
               "fr": "妻子 (qī zi)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "羊肉 (yáng ròu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "手表 (shǒu biǎo)"
+            },
+            "audio": null
+          },
+          {
             "id": "d",
             "label": {
-              "fr": "卖 (mài)"
+              "fr": "起床 (qǐ chuáng)"
             },
             "audio": null
           }
@@ -734,70 +853,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-pick-233",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l52-pick-233",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l52-understand"
-          ],
-          "required": true
-        },
-        "promptText": "妻子",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "手表 (shǒu biǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "起床 (qǐ chuáng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "妻子 (qī zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "羊肉 (yáng ròu)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-reverse-233",
+      "id": "block-ex-l52-reverse-235",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l52-reverse-233",
+          "id": "ex-l52-reverse-235",
           "prompt": {
-            "fr": "Comment dit-on « épouse » en chinois ?"
+            "fr": "Comment dit-on « mille » en chinois ?"
           },
           "instruction": {
             "fr": "Choisis le mot chinois qui convient."
@@ -811,33 +873,33 @@
           {
             "id": "a",
             "label": {
-              "fr": "起床 (qǐ chuáng)"
+              "fr": "卖 (mài)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "妻子 (qī zi)"
+              "fr": "向 (xiàng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "羊肉 (yáng ròu)"
+              "fr": "千 (qiān)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "手表 (shǒu biǎo)"
+              "fr": "羊肉 (yáng ròu)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -868,14 +930,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "向 (xiàng)"
+              "fr": "千 (qiān)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "千 (qiān)"
+              "fr": "向 (xiàng)"
             },
             "audio": null
           },
@@ -894,7 +956,74 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l52-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l52-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "向",
+            "pinyin": null,
+            "right": {
+              "fr": "xiàng"
+            }
+          },
+          {
+            "id": "b",
+            "left": "羊肉",
+            "pinyin": null,
+            "right": {
+              "fr": "yáng ròu"
+            }
+          },
+          {
+            "id": "c",
+            "left": "城市",
+            "pinyin": null,
+            "right": {
+              "fr": "chéng shì"
+            }
+          },
+          {
+            "id": "d",
+            "left": "迟到",
+            "pinyin": null,
+            "right": {
+              "fr": "chí dào"
+            }
+          },
+          {
+            "id": "e",
+            "left": "我们",
+            "pinyin": null,
+            "right": {
+              "fr": "wǒ men"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -988,16 +1117,123 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-order-exa-3",
+      "id": "block-ex-l52-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l52-order-exa-3",
+          "id": "ex-l52-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Je me lève à six heures chaque jour »."
+            "fr": "Traduis en chinois : « Ce magasin vend des vêtements »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "手表",
+            "pinyin": "shǒu biǎo",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "起床",
+            "pinyin": "qǐ chuáng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "卖",
+            "pinyin": "mài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-fill-exa-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l52-fill-exa-2",
+          "prompt": {
+            "fr": "Complète : 我的___在家。 (« Ma femme est à la maison »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l52-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我的___在家。",
+        "acceptedAnswers": [
+          "妻子"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 48
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l52-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l52-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je me lève à six heures chaque jour »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l52-produce"
@@ -1012,15 +1248,9 @@
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "起床",
-            "pinyin": "qǐ chuáng",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "点",
-            "pinyin": "diǎn",
+            "id": "d",
+            "hanzi": "六",
+            "pinyin": "liù",
             "audio": null
           },
           {
@@ -1030,15 +1260,33 @@
             "audio": null
           },
           {
+            "id": "h",
+            "hanzi": "卖",
+            "pinyin": "mài",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "妻子",
+            "pinyin": "qī zi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "起床",
+            "pinyin": "qǐ chuáng",
+            "audio": null
+          },
+          {
             "id": "c",
             "hanzi": "天",
             "pinyin": "tiān",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "六",
-            "pinyin": "liù",
+            "id": "e",
+            "hanzi": "点",
+            "pinyin": "diǎn",
             "audio": null
           }
         ],
@@ -1050,10 +1298,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "我每天六点起床。",
-          "我每天六点起床"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1063,69 +1308,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-fill-exa-1",
+      "id": "block-ex-l52-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l52-fill-exa-1",
+          "id": "ex-l52-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 这家商店___衣服。 (« Ce magasin vend des vêtements »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l52-produce"
+            "l52-understand"
           ],
           "required": true
         },
-        "sentence": "这家商店___衣服。",
-        "acceptedAnswers": [
-          "卖"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l52-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Ma femme est à la maison »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l52-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "lines": [
           {
             "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "妻子",
-            "pinyin": "qī zi",
+            "speaker": "Mina",
+            "hanzi": "城市变得更干净了。",
+            "pinyin": "chéng shì biàn de gèng gān jìng le.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
+            "speaker": "Mina",
+            "hanzi": "今天公共汽车迟到了，街上突然出现很多人。",
+            "pinyin": "jīn tiān gōng gòng qì chē chí dào le, jiē shàng tū rán chū xiàn hěn duō rén.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我们约好打扫公园，除了邻居以外，学生也来了。",
+            "pinyin": "wǒ men yuē hǎo dǎ sǎo gōng yuán, chú le lín jū yǐ wài, xué shēng yě lái le.",
             "audio": null
           }
         ],
@@ -1133,27 +1351,23 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "我的妻子在家。",
-          "我的妻子在家"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 48
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-fill-exa-4",
+      "id": "block-ex-l52-fill-rea-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l52-fill-exa-4",
+          "id": "ex-l52-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 这个城市有一___人。 (« Cette ville compte mille habitants »)"
+            "fr": "Complète : 公共汽车___了，志愿者们先在公园见面。 (« Le bus est arrivé en retard ; les bénévoles se sont d’abord retrouvés au parc »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1163,147 +1377,15 @@
           ],
           "required": true
         },
-        "sentence": "这个城市有一___人。",
+        "sentence": "公共汽车___了，志愿者们先在公园见面。",
         "acceptedAnswers": [
-          "千"
+          "迟到"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l52-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Ma montre est sur la table »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l52-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "桌",
-            "pinyin": "zhuō",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "手表",
-            "pinyin": "shǒu biǎo",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我的手表在桌上。",
-          "我的手表在桌上"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-speak-exa-6",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l52-speak-exa-6",
-          "prompt": {
-            "fr": "Dis « Va vers la gauche, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l52-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "请向左走。",
-        "referencePinyin": "qǐng xiàng zuǒ zǒu。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "请向左走。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 48
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l52-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l52-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « J’aime manger du mouton »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l52-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我喜欢吃羊肉。",
-        "referencePinyin": "wǒ xǐ huān chī yáng ròu。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我喜欢吃羊肉。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 48
       }
     },

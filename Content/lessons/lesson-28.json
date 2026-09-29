@@ -636,49 +636,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-pick-189",
+      "id": "block-ex-l28-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l28-pick-189",
+          "id": "ex-l28-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l28-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "孩子",
+            "pinyin": "hái zi",
+            "right": {
+              "fr": "enfant"
+            }
+          },
+          {
+            "id": "b",
+            "left": "件",
+            "pinyin": "jiàn",
+            "right": {
+              "fr": "classificateur des vêtements ou affaires"
+            }
+          },
+          {
+            "id": "c",
+            "left": "介绍",
+            "pinyin": "jiè shào",
+            "right": {
+              "fr": "présenter ; introduction"
+            }
+          },
+          {
+            "id": "d",
+            "left": "每",
+            "pinyin": "měi",
+            "right": {
+              "fr": "chaque"
+            }
+          },
+          {
+            "id": "e",
+            "left": "您",
+            "pinyin": "nín",
+            "right": {
+              "fr": "vous (politesse)"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-dict-py-189",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l28-dict-py-189",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "孩子",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "孩子 (hái zi)"
+              "fr": "hái zi"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "介绍 (jiè shào)"
+              "fr": "jiè shào"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "远 (yuǎn)"
+              "fr": "huí dá"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "每 (měi)"
+              "fr": "kě néng"
             },
             "audio": null
           }
@@ -693,27 +761,85 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-reverse-189",
+      "id": "block-ex-l28-tone-199",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l28-reverse-189",
+          "id": "ex-l28-tone-199",
           "prompt": {
-            "fr": "Comment dit-on « enfant » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l28-understand"
           ],
           "required": true
         },
+        "promptText": "件",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t4"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-pick-223",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l28-pick-223",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "promptText": "每",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "介绍 (jiè shào)"
+              "fr": "完 (wán)"
             },
             "audio": null
           },
@@ -727,14 +853,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "远 (yuǎn)"
+              "fr": "您 (nín)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "孩子 (hái zi)"
+              "fr": "每 (měi)"
             },
             "audio": null
           }
@@ -749,167 +875,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-pick-199",
+      "id": "block-ex-l28-dict-zh-227",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l28-pick-199",
+          "id": "ex-l28-dict-zh-227",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l28-understand"
           ],
           "required": true
         },
-        "promptText": "件",
+        "script": "hanzi",
+        "promptText": "您",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "您 (nín)"
+              "fr": "远"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "远 (yuǎn)"
+              "fr": "每"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "件 (jiàn)"
+              "fr": "您"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "完 (wán)"
+              "fr": "完"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-reverse-199",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l28-reverse-199",
-          "prompt": {
-            "fr": "Comment dit-on « classificateur des vêtements ou affaires » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l28-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "完 (wán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "件 (jiàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "每 (měi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "您 (nín)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-pick-202",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l28-pick-202",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l28-understand"
-          ],
-          "required": true
-        },
-        "promptText": "介绍",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "介绍 (jiè shào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "孩子 (hái zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "远 (yuǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "您 (nín)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1003,16 +1017,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-order-exa-4",
+      "id": "block-ex-l28-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l28-order-exa-4",
+          "id": "ex-l28-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Je bois du thé chaque matin »."
+            "fr": "Traduis en chinois : « Les enfants jouent au parc »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l28-produce"
@@ -1021,39 +1035,176 @@
         },
         "tokens": [
           {
+            "id": "f",
+            "hanzi": "完",
+            "pinyin": "wán",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "介绍",
+            "pinyin": "jiè shào",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "玩",
+            "pinyin": "wán",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "们",
+            "pinyin": "men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l28-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你还不舒服吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "可以，谢谢你介绍这位医生。",
+            "pinyin": "kě yǐ， xiè xiè nǐ jiè shào zhè wèi yī shēng。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是。我回答医生的问题以后才能进来。",
+            "pinyin": "shì。 wǒ huí dá yī shēng de wèn tí yǐ hòu cái néng jìn lái。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我觉得头很热，但是医院很近。",
+            "pinyin": "wǒ jué de tóu hěn rè， dàn shì yī yuàn hěn jìn。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l28-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’ai acheté un vêtement »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "买",
+            "pinyin": "mǎi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "远",
+            "pinyin": "yuǎn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
             "id": "a",
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "茶",
-            "pinyin": "chá",
-            "audio": null
-          },
-          {
             "id": "d",
-            "hanzi": "早上",
-            "pinyin": "zǎo shang",
+            "hanzi": "一",
+            "pinyin": "yī",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           }
         ],
@@ -1065,108 +1216,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "我每天早上喝茶。",
-          "我每天早上喝茶"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l28-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 我做___作业了。 (« J’ai fini mes devoirs »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l28-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我做___作业了。",
-        "acceptedAnswers": [
-          "完"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l28-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Les enfants jouent au parc »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l28-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "们",
-            "pinyin": "men",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "玩",
-            "pinyin": "wán",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "孩子们在公园玩。",
-          "孩子们在公园玩"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1206,13 +1256,115 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-order-exa-2",
+      "id": "block-ex-l28-dialogue-4-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l28-dialogue-4-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "可以，谢谢你介绍这位医生。",
+            "pinyin": "kě yǐ， xiè xiè nǐ jiè shào zhè wèi yī shēng。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "如果你能走，就现在进去。",
+            "pinyin": "rú guǒ nǐ néng zǒu， jiù xiàn zài jìn qù。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我觉得头很热，但是医院很近。",
+            "pinyin": "wǒ jué de tóu hěn rè， dàn shì yī yuàn hěn jìn。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-read-exa-7",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l28-read-exa-7",
+          "prompt": {
+            "fr": "Que signifie la phrase : 学校离这里很远。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l28-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "L’école est très loin d’ici."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Tu ne te sens toujours pas bien ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Où te sens-tu mal ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-order-rea-1",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l28-order-exa-2",
+          "id": "ex-l28-order-rea-1",
           "prompt": {
-            "fr": "Construis « J’ai acheté un vêtement »."
+            "fr": "Construis « L’hôpital est très près de chez lui »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1225,38 +1377,26 @@
         "tokens": [
           {
             "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "一",
-            "pinyin": "yī",
+            "hanzi": "家",
+            "pinyin": "jiā",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "医院",
+            "pinyin": "yī yuàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很近",
+            "pinyin": "hěn jìn",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "买",
-            "pinyin": "mǎi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "件",
-            "pinyin": "jiàn",
+            "hanzi": "离",
+            "pinyin": "lí",
             "audio": null
           }
         ],
@@ -1264,82 +1404,16 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
+          "d"
         ],
         "acceptedVariants": [
-          "我买了一件衣服。",
-          "我买了一件衣服"
+          "医院离家很近。",
+          "医院离家很近"
         ]
       },
       "metadata": {
-        "stage": "guided",
+        "stage": "reuse",
         "skill": "production",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l28-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Bonjour, entrez, s’il vous plaît »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l28-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "您好，请进。",
-        "referencePinyin": "nín hǎo， qǐng jìn。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "您好，请进。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l28-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « L’école est très loin d’ici »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l28-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "学校离这里很远。",
-        "referencePinyin": "xué xiào lí zhè lǐ hěn yuǎn。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "学校离这里很远。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 24
       }
     },

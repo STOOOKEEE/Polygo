@@ -640,49 +640,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-pick-030",
+      "id": "block-ex-l39-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l39-pick-030",
+          "id": "ex-l39-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l39-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "分钟",
+            "pinyin": "fēn zhōng",
+            "right": {
+              "fr": "minute"
+            }
+          },
+          {
+            "id": "b",
+            "left": "开",
+            "pinyin": "kāi",
+            "right": {
+              "fr": "ouvrir ; mettre en marche"
+            }
+          },
+          {
+            "id": "c",
+            "left": "看见",
+            "pinyin": "kàn jiàn",
+            "right": {
+              "fr": "voir ; apercevoir"
+            }
+          },
+          {
+            "id": "d",
+            "left": "字",
+            "pinyin": "zì",
+            "right": {
+              "fr": "caractère ; mot écrit"
+            }
+          },
+          {
+            "id": "e",
+            "left": "护照",
+            "pinyin": "hù zhào",
+            "right": {
+              "fr": "passeport"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 35
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l39-dict-py-030",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l39-dict-py-030",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l39-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "分钟",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "看见 (kàn jiàn)"
+              "fr": "hù zhào"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "护照 (hù zhào)"
+              "fr": "huì yì"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "会议 (huì yì)"
+              "fr": "kàn jiàn"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "分钟 (fēn zhōng)"
+              "fr": "fēn zhōng"
             },
             "audio": null
           }
@@ -697,53 +765,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-reverse-030",
+      "id": "block-ex-l39-tone-052",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l39-reverse-030",
+          "id": "ex-l39-tone-052",
           "prompt": {
-            "fr": "Comment dit-on « minute » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l39-understand"
           ],
           "required": true
         },
+        "promptText": "看见",
         "choices": [
           {
-            "id": "a",
+            "id": "t24",
             "label": {
-              "fr": "会议 (huì yì)"
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t41",
             "label": {
-              "fr": "护照 (hù zhào)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t42",
             "label": {
-              "fr": "分钟 (fēn zhōng)"
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t44",
             "label": {
-              "fr": "看见 (kàn jiàn)"
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t44"
       },
       "metadata": {
         "stage": "discover",
@@ -781,14 +850,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "开 (kāi)"
+              "fr": "护照 (hù zhào)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "护照 (hù zhào)"
+              "fr": "开 (kāi)"
             },
             "audio": null
           },
@@ -800,7 +869,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -810,54 +879,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-pick-310",
+      "id": "block-ex-l39-match-pinyin",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l39-pick-310",
+          "id": "ex-l39-match-pinyin",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l39-understand"
           ],
           "required": true
         },
-        "promptText": "办公室",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "办公室 (bàn gōng shì)"
-            },
-            "audio": null
+            "left": "会议",
+            "pinyin": null,
+            "right": {
+              "fr": "huì yì"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "行李箱 (xíng lǐ xiāng)"
-            },
-            "audio": null
+            "left": "行李箱",
+            "pinyin": null,
+            "right": {
+              "fr": "xíng lǐ xiāng"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "会议 (huì yì)"
-            },
-            "audio": null
+            "left": "办公室",
+            "pinyin": null,
+            "right": {
+              "fr": "bàn gōng shì"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "看见 (kàn jiàn)"
-            },
-            "audio": null
+            "left": "的",
+            "pinyin": null,
+            "right": {
+              "fr": "de"
+            }
+          },
+          {
+            "id": "e",
+            "left": "点",
+            "pinyin": null,
+            "right": {
+              "fr": "diǎn"
+            }
           }
-        ],
-        "correctChoiceID": "a"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -951,16 +1030,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-order-exa-4",
+      "id": "block-ex-l39-translate-exa-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l39-order-exa-4",
+          "id": "ex-l39-translate-exa-5",
           "prompt": {
-            "fr": "Construis « Écris ce caractère, s’il te plaît »."
+            "fr": "Traduis en chinois : « Emporte ton passeport, s’il te plaît »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l39-produce"
@@ -969,9 +1048,33 @@
         },
         "tokens": [
           {
+            "id": "e",
+            "hanzi": "分钟",
+            "pinyin": "fēn zhōng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "带",
+            "pinyin": "dài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "看见",
+            "pinyin": "kàn jiàn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "护照",
+            "pinyin": "hù zhào",
+            "audio": null
+          },
+          {
             "id": "c",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "hanzi": "上",
+            "pinyin": "shàng",
             "audio": null
           },
           {
@@ -979,11 +1082,93 @@
             "hanzi": "请",
             "pinyin": "qǐng",
             "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 35
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l39-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l39-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l39-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你几点到办公室？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "在。他让大家安静地听。",
+            "pinyin": "zài。 tā ràng dà jiā ān jìng dì tīng。",
+            "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "字",
-            "pinyin": "zì",
+            "id": "b",
+            "hanzi": "我八点半到，会议九点开始。",
+            "pinyin": "wǒ bā diǎn bàn dào， huì yì jiǔ diǎn kāi shǐ。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "做完了，下午还要开会。",
+            "pinyin": "zuò wán le， xià wǔ hái yào kāi huì。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 35
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l39-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l39-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Écris ce caractère, s’il te plaît »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l39-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "护照",
+            "pinyin": "hù zhào",
             "audio": null
           },
           {
@@ -993,9 +1178,33 @@
             "audio": null
           },
           {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
             "id": "d",
             "hanzi": "个",
             "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "字",
+            "pinyin": "zì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "开",
+            "pinyin": "kāi",
             "audio": null
           }
         ],
@@ -1006,40 +1215,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "请写这个字。",
-          "请写这个字"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 35
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l39-fill-exa-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l39-fill-exa-1",
-          "prompt": {
-            "fr": "Complète : 十___就到了。 (« On arrive en dix minutes »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l39-produce"
-          ],
-          "required": true
-        },
-        "sentence": "十___就到了。",
-        "acceptedAnswers": [
-          "分钟"
-        ],
-        "caseSensitive": false
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1117,104 +1293,66 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-fill-exa-3",
+      "id": "block-ex-l39-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l39-fill-exa-3",
+          "id": "ex-l39-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 我___老师了。 (« J’ai vu le professeur »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l39-produce"
+            "l39-understand"
           ],
           "required": true
         },
-        "sentence": "我___老师了。",
-        "acceptedAnswers": [
-          "看见"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 35
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l39-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l39-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Emporte ton passeport, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l39-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "护照",
-            "pinyin": "hù zhào",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "b",
-            "hanzi": "带",
-            "pinyin": "dài",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "上",
-            "pinyin": "shàng",
+            "speaker": "Tao",
+            "hanzi": "我八点半到，会议九点开始。",
+            "pinyin": "wǒ bā diǎn bàn dào， huì yì jiǔ diǎn kāi shǐ。",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "speaker": "Mina",
+            "hanzi": "你几点到办公室？",
+            "pinyin": "nǐ jǐ diǎn dào bàn gōng shì？",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "经理在办公室吗？",
+            "pinyin": "jīng lǐ zài bàn gōng shì ma？",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "请带上护照。",
-          "请带上护照"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 35
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l39-read-exa-4",
+      "id": "block-ex-l39-read-exa-7",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l39-read-exa-4",
+          "id": "ex-l39-read-exa-7",
           "prompt": {
-            "fr": "Que signifie la phrase : 请写这个字。"
+            "fr": "Que signifie la phrase : 我的行李箱太重了。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1228,26 +1366,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "As-tu fini sérieusement le travail d’aujourd’hui ?"
+              "fr": "Ma valise est trop lourde."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Ma valise est trop lourde."
+              "fr": "Le manager est au bureau."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Écris ce caractère, s’il te plaît."
+              "fr": "Emporte ton passeport, s’il te plaît."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1282,55 +1420,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 35
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l39-read-exa-7",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l39-read-exa-7",
-          "prompt": {
-            "fr": "Que signifie la phrase : 我的行李箱太重了。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l39-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Le manager est au bureau."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Ma valise est trop lourde."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Emporte ton passeport, s’il te plaît."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 35
       }
     },

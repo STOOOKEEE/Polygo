@@ -621,49 +621,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-pick-471",
+      "id": "block-ex-l91-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l91-pick-471",
+          "id": "ex-l91-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l91-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "难过",
+            "pinyin": "nán guò",
+            "right": {
+              "fr": "triste ; malheureux"
+            }
+          },
+          {
+            "id": "b",
+            "left": "努力",
+            "pinyin": "nǔ lì",
+            "right": {
+              "fr": "travailler dur ; effort"
+            }
+          },
+          {
+            "id": "c",
+            "left": "数学",
+            "pinyin": "shù xué",
+            "right": {
+              "fr": "mathématiques"
+            }
+          },
+          {
+            "id": "d",
+            "left": "刷牙",
+            "pinyin": "shuā yá",
+            "right": {
+              "fr": "se brosser les dents"
+            }
+          },
+          {
+            "id": "e",
+            "left": "司机",
+            "pinyin": "sī jī",
+            "right": {
+              "fr": "chauffeur"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 87
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l91-dict-py-471",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l91-dict-py-471",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l91-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "难过",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "努力 (nǔ lì)"
+              "fr": "sī jī"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "数学 (shù xué)"
+              "fr": "nǔ lì"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "头发 (tóu fa)"
+              "fr": "shù xué"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "难过 (nán guò)"
+              "fr": "nán guò"
             },
             "audio": null
           }
@@ -678,48 +746,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-reverse-471",
+      "id": "block-ex-l91-tone-475",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l91-reverse-471",
+          "id": "ex-l91-tone-475",
           "prompt": {
-            "fr": "Comment dit-on « triste ; malheureux » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l91-understand"
           ],
           "required": true
         },
+        "promptText": "努力",
+        "choices": [
+          {
+            "id": "t30",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t34"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 87
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l91-pick-510",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l91-pick-510",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l91-understand"
+          ],
+          "required": true
+        },
+        "promptText": "司机",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "数学 (shù xué)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "头发 (tóu fa)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
             "label": {
               "fr": "难过 (nán guò)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "刷牙 (shuā yá)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "司机 (sī jī)"
+            },
+            "audio": null
+          },
+          {
             "id": "d",
             "label": {
-              "fr": "努力 (nǔ lì)"
+              "fr": "数学 (shù xué)"
             },
             "audio": null
           }
@@ -734,49 +860,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-pick-475",
+      "id": "block-ex-l91-dict-zh-507",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l91-pick-475",
+          "id": "ex-l91-dict-zh-507",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l91-understand"
           ],
           "required": true
         },
-        "promptText": "努力",
+        "script": "hanzi",
+        "promptText": "刷牙",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "刷牙 (shuā yá)"
+              "fr": "头发"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "努力 (nǔ lì)"
+              "fr": "刷牙"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "司机 (sī jī)"
+              "fr": "难过"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "难过 (nán guò)"
+              "fr": "司机"
             },
             "audio": null
           }
@@ -791,13 +918,80 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-reverse-475",
+      "id": "block-ex-l91-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l91-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l91-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "甜",
+            "pinyin": null,
+            "right": {
+              "fr": "tián"
+            }
+          },
+          {
+            "id": "b",
+            "left": "头发",
+            "pinyin": null,
+            "right": {
+              "fr": "tóu fa"
+            }
+          },
+          {
+            "id": "c",
+            "left": "遇到",
+            "pinyin": null,
+            "right": {
+              "fr": "yù dào"
+            }
+          },
+          {
+            "id": "d",
+            "left": "越",
+            "pinyin": null,
+            "right": {
+              "fr": "yuè"
+            }
+          },
+          {
+            "id": "e",
+            "left": "位",
+            "pinyin": null,
+            "right": {
+              "fr": "wèi"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 87
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l91-reverse-579",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l91-reverse-475",
+          "id": "ex-l91-reverse-579",
           "prompt": {
-            "fr": "Comment dit-on « travailler dur ; effort » en chinois ?"
+            "fr": "Comment dit-on « de plus en plus ; davantage » en chinois ?"
           },
           "instruction": {
             "fr": "Choisis le mot chinois qui convient."
@@ -811,146 +1005,33 @@
           {
             "id": "a",
             "label": {
-              "fr": "努力 (nǔ lì)"
+              "fr": "越 (yuè)"
             },
             "audio": null
           },
           {
             "id": "b",
+            "label": {
+              "fr": "甜 (tián)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
             "label": {
               "fr": "数学 (shù xué)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "司机 (sī jī)"
-            },
-            "audio": null
-          },
-          {
             "id": "d",
             "label": {
-              "fr": "刷牙 (shuā yá)"
+              "fr": "努力 (nǔ lì)"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 87
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l91-pick-532",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l91-pick-532",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l91-understand"
-          ],
-          "required": true
-        },
-        "promptText": "位",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "甜 (tián)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "努力 (nǔ lì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "刷牙 (shuā yá)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "位 (wèi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 87
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l91-reverse-532",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l91-reverse-532",
-          "prompt": {
-            "fr": "Comment dit-on « classificateur honorifique des personnes » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l91-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "甜 (tián)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "司机 (sī jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "位 (wèi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "头发 (tóu fa)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1044,16 +1125,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-order-exa-2",
+      "id": "block-ex-l91-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l91-order-exa-2",
+          "id": "ex-l91-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Elle étudie sérieusement pour l’examen »."
+            "fr": "Traduis en chinois : « Elle étudie sérieusement pour l’examen »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l91-produce"
@@ -1062,15 +1143,15 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "学习",
-            "pinyin": "xué xí",
-            "audio": null
-          },
-          {
             "id": "b",
             "hanzi": "为了",
             "pinyin": "wèi le",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "甜",
+            "pinyin": "tián",
             "audio": null
           },
           {
@@ -1080,15 +1161,27 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "考试",
-            "pinyin": "kǎo shì",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "努力",
             "pinyin": "nǔ lì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "学习",
+            "pinyin": "xué xí",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "头发",
+            "pinyin": "tóu fa",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "考试",
+            "pinyin": "kǎo shì",
             "audio": null
           }
         ],
@@ -1099,10 +1192,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "她为了考试努力学习。",
-          "她为了考试努力学习"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1112,46 +1202,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-fill-exa-6",
+      "id": "block-ex-l91-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l91-fill-exa-6",
+          "id": "ex-l91-talk-1",
           "prompt": {
-            "fr": "Complète : 这个苹果又大又___。 (« Cette pomme est à la fois grosse et sucrée »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l91-produce"
+            "l91-understand"
           ],
           "required": true
         },
-        "sentence": "这个苹果又大又___。",
-        "acceptedAnswers": [
-          "甜"
+        "speaker": "Mina",
+        "promptText": "你在车站遇到谁了？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "遇到一位老朋友。他愿意一起看月亮。",
+            "pinyin": "yù dào yí wèi lǎo péng you. tā yuàn yì yì qǐ kàn yuè liang.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是。我们在下一站下车。",
+            "pinyin": "shì. wǒ men zài xià yí zhàn xià chē.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "月亮越来越亮了吗？",
+            "pinyin": "yuè liang yuè lái yuè liàng le ma?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 87
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-order-exa-4",
+      "id": "block-ex-l91-translate-exa-4",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l91-order-exa-4",
+          "id": "ex-l91-translate-exa-4",
           "prompt": {
-            "fr": "Construis « Je me brosse les dents chaque matin »."
+            "fr": "Traduis en chinois : « Je me brosse les dents chaque matin »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l91-produce"
@@ -1160,9 +1268,15 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "id": "d",
+            "hanzi": "早上",
+            "pinyin": "zǎo shang",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "头发",
+            "pinyin": "tóu fa",
             "audio": null
           },
           {
@@ -1172,9 +1286,15 @@
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "刷牙",
-            "pinyin": "shuā yá",
+            "id": "g",
+            "hanzi": "甜",
+            "pinyin": "tián",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
             "audio": null
           },
           {
@@ -1184,9 +1304,9 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "早上",
-            "pinyin": "zǎo shang",
+            "id": "e",
+            "hanzi": "刷牙",
+            "pinyin": "shuā yá",
             "audio": null
           }
         ],
@@ -1197,138 +1317,114 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我每天早上刷牙。",
-          "我每天早上刷牙"
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 87
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l91-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l91-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l91-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "遇到一位老朋友。他愿意一起看月亮。",
+            "pinyin": "yù dào yí wèi lǎo péng you. tā yuàn yì yì qǐ kàn yuè liang.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "月亮越来越亮了吗？",
+            "pinyin": "yuè liang yuè lái yuè liàng le ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你在车站遇到谁了？",
+            "pinyin": "nǐ zài chē zhàn yù dào shuí le?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 87
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l91-fill-exa-1",
+      "id": "block-ex-l91-listen-rea-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l91-fill-exa-1",
+          "id": "ex-l91-listen-rea-1",
           "prompt": {
-            "fr": "Complète : 听到这个消息，她很___。 (« En entendant cette nouvelle, elle est très triste »)"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l91-produce"
+            "l91-understand"
           ],
           "required": true
         },
-        "sentence": "听到这个消息，她很___。",
-        "acceptedAnswers": [
-          "难过"
+        "promptText": "月亮越来越亮，他们在下一站下车看了一会儿。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ma matière préférée est les mathématiques."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai rencontré un vieil ami à la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "La lune devient de plus en plus brillante ; ils descendent à la prochaine station pour la regarder un moment."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 87
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l91-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l91-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 我最喜欢的科目是___。 (« Ma matière préférée est les mathématiques »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l91-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我最喜欢的科目是___。",
-        "acceptedAnswers": [
-          "数学"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 87
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l91-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l91-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Le chauffeur attend les passagers »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l91-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "司机正在等客人。",
-        "referencePinyin": "sī jī zhèng zài děng kè rén.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "司机正在等客人。"
-        ],
-        "allowSelfRating": true
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 87
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l91-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l91-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Ses cheveux sont longs »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l91-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "她的头发很长。",
-        "referencePinyin": "tā de tóu fa hěn cháng.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "她的头发很长。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 87
       }
     },

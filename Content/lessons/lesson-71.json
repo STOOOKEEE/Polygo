@@ -619,6 +619,188 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l71-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l71-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "河",
+            "pinyin": "hé",
+            "right": {
+              "fr": "rivière"
+            }
+          },
+          {
+            "id": "b",
+            "left": "经常",
+            "pinyin": "jīng cháng",
+            "right": {
+              "fr": "souvent"
+            }
+          },
+          {
+            "id": "c",
+            "left": "啤酒",
+            "pinyin": "pí jiǔ",
+            "right": {
+              "fr": "bière"
+            }
+          },
+          {
+            "id": "d",
+            "left": "树",
+            "pinyin": "shù",
+            "right": {
+              "fr": "arbre"
+            }
+          },
+          {
+            "id": "e",
+            "left": "糖",
+            "pinyin": "táng",
+            "right": {
+              "fr": "sucre ; bonbon"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-dict-py-430",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l71-dict-py-430",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "经常",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "tè bié"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pí jiǔ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "huán jìng"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jīng cháng"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-tone-479",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l71-tone-479",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "promptText": "啤酒",
+        "choices": [
+          {
+            "id": "t20",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t21",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t23",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t43",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 3 ˇ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t23"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l71-pick-395",
       "spec": {
         "kind": "listeningChoice",
@@ -654,62 +836,6 @@
           {
             "id": "c",
             "label": {
-              "fr": "树 (shù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "河 (hé)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-reverse-395",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l71-reverse-395",
-          "prompt": {
-            "fr": "Comment dit-on « rivière » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l71-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "糖 (táng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "树 (shù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
               "fr": "河 (hé)"
             },
             "audio": null
@@ -717,7 +843,7 @@
           {
             "id": "d",
             "label": {
-              "fr": "像 (xiàng)"
+              "fr": "树 (shù)"
             },
             "audio": null
           }
@@ -732,167 +858,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l71-pick-430",
+      "id": "block-ex-l71-dict-zh-505",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l71-pick-430",
+          "id": "ex-l71-dict-zh-505",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l71-understand"
           ],
           "required": true
         },
-        "promptText": "经常",
+        "script": "hanzi",
+        "promptText": "树",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "特别 (tè bié)"
+              "fr": "糖"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "经常 (jīng cháng)"
+              "fr": "树"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "啤酒 (pí jiǔ)"
+              "fr": "河"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "树 (shù)"
+              "fr": "像"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-reverse-430",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l71-reverse-430",
-          "prompt": {
-            "fr": "Comment dit-on « souvent » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l71-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "经常 (jīng cháng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "特别 (tè bié)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "啤酒 (pí jiǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "像 (xiàng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-pick-479",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l71-pick-479",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l71-understand"
-          ],
-          "required": true
-        },
-        "promptText": "啤酒",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "经常 (jīng cháng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "特别 (tè bié)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "像 (xiàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "啤酒 (pí jiǔ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -986,16 +1000,134 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l71-order-exa-3",
+      "id": "block-ex-l71-translate-exa-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l71-order-exa-3",
+          "id": "ex-l71-translate-exa-5",
           "prompt": {
-            "fr": "Construis « Il ne boit pas de bière le soir »."
+            "fr": "Traduis en chinois : « L’enfant aime manger des bonbons »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "糖",
+            "pinyin": "táng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huan",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "特别",
+            "pinyin": "tè bié",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "啤酒",
+            "pinyin": "pí jiǔ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l71-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l71-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你经常来这个花园吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，雨后花也更鲜艳了。",
+            "pinyin": "shì, yǔ hòu huā yě gèng xiān yàn le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "每个季节都有变化。",
+            "pinyin": "měi ge jì jié dōu yǒu biàn huà.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "经常。河边的环境在春天特别好。",
+            "pinyin": "jīng cháng. hé biān de huán jìng zài chūn tiān tè bié hǎo.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l71-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Cette rivière est très longue »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l71-produce"
@@ -1005,32 +1137,44 @@
         "tokens": [
           {
             "id": "b",
-            "hanzi": "晚上",
-            "pinyin": "wǎn shang",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "啤酒",
-            "pinyin": "pí jiǔ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
+            "hanzi": "条",
+            "pinyin": "tiáo",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "不",
-            "pinyin": "bù",
+            "hanzi": "河",
+            "pinyin": "hé",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "像",
+            "pinyin": "xiàng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "树",
+            "pinyin": "shù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "长",
+            "pinyin": "cháng",
             "audio": null
           }
         ],
@@ -1041,10 +1185,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "他晚上不喝啤酒。",
-          "他晚上不喝啤酒"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1054,13 +1195,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l71-fill-exa-5",
+      "id": "block-ex-l71-fill-exa-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l71-fill-exa-5",
+          "id": "ex-l71-fill-exa-2",
           "prompt": {
-            "fr": "Complète : 孩子喜欢吃___。 (« L’enfant aime manger des bonbons »)"
+            "fr": "Complète : 我___在图书馆读书。 (« Je lis souvent à la bibliothèque »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1070,9 +1211,9 @@
           ],
           "required": true
         },
-        "sentence": "孩子喜欢吃___。",
+        "sentence": "我___在图书馆读书。",
         "acceptedAnswers": [
-          "糖"
+          "经常"
         ],
         "caseSensitive": false
       },
@@ -1084,189 +1225,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l71-order-dia-1",
+      "id": "block-ex-l71-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l71-order-dia-1",
+          "id": "ex-l71-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Viens-tu souvent dans ce jardin ? »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l71-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "经常",
-            "pinyin": "jīng cháng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "花园",
-            "pinyin": "huā yuán",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "你经常来这个花园吗？",
-          "你经常来这个花园吗"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l71-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 门前有一棵大___。 (« Il y a un grand arbre devant la porte »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l71-produce"
-          ],
-          "required": true
-        },
-        "sentence": "门前有一棵大___。",
-        "acceptedAnswers": [
-          "树"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l71-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 这只猫很___一只小老虎。 (« Ce chat ressemble beaucoup à un petit tigre »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l71-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这只猫很___一只小老虎。",
-        "acceptedAnswers": [
-          "像"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 67
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l71-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l71-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l71-understand"
           ],
           "required": true
         },
-        "promptText": "他发现不同季节的环境都有变化，雨后的花特别好看。",
-        "choices": [
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "每个季节都有变化。",
+            "pinyin": "měi ge jì jié dōu yǒu biàn huà.",
+            "audio": null
+          },
           {
             "id": "a",
-            "label": {
-              "fr": "Il constate que l’environnement change selon les saisons et que les fleurs après la pluie sont particulièrement belles."
-            },
+            "speaker": "Mina",
+            "hanzi": "你经常来这个花园吗？",
+            "pinyin": "nǐ jīng cháng lái zhè ge huā yuán ma?",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Souvent. L’environnement près de la rivière est particulièrement beau au printemps."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Oui, après la pluie les fleurs sont aussi plus éclatantes."
-            },
+            "speaker": "Tao",
+            "hanzi": "经常。河边的环境在春天特别好。",
+            "pinyin": "jīng cháng. hé biān de huán jìng zài chūn tiān tè bié hǎo.",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1276,13 +1278,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l71-read-dia-2",
+      "id": "block-ex-l71-read-exa-7",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l71-read-dia-2",
+          "id": "ex-l71-read-exa-7",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 经常。河边的环境在春天特别好。"
+            "fr": "Que signifie la phrase : 这只猫很像一只小老虎。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1296,30 +1298,60 @@
           {
             "id": "a",
             "label": {
-              "fr": "Chaque saison apporte des changements."
+              "fr": "L’environnement de ce parc est très calme."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il y a un invité spécial aujourd’hui."
+              "fr": "Ce chat ressemble beaucoup à un petit tigre."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Souvent. L’environnement près de la rivière est particulièrement beau au printemps."
+              "fr": "Le temps change beaucoup."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
+        "lessonDay": 67
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l71-fill-rea-1",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l71-fill-rea-1",
+          "prompt": {
+            "fr": "Complète : 他发现不同季节的环境都有变化，雨后的花___好看。 (« Il constate que l’environnement change selon les saisons et que les fleurs après la pluie sont particulièrement belles »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l71-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他发现不同季节的环境都有变化，雨后的花___好看。",
+        "acceptedAnswers": [
+          "特别"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
         "lessonDay": 67
       }
     },

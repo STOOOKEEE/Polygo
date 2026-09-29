@@ -639,49 +639,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-pick-078",
+      "id": "block-ex-l30-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l30-pick-078",
+          "id": "ex-l30-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l30-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "漂亮",
+            "pinyin": "piào liàng",
+            "right": {
+              "fr": "joli ; beau"
+            }
+          },
+          {
+            "id": "b",
+            "left": "水果",
+            "pinyin": "shuǐ guǒ",
+            "right": {
+              "fr": "fruit"
+            }
+          },
+          {
+            "id": "c",
+            "left": "事情",
+            "pinyin": "shì qíng",
+            "right": {
+              "fr": "affaire ; chose"
+            }
+          },
+          {
+            "id": "d",
+            "left": "笑",
+            "pinyin": "xiào",
+            "right": {
+              "fr": "rire ; sourire"
+            }
+          },
+          {
+            "id": "e",
+            "left": "准备",
+            "pinyin": "zhǔn bèi",
+            "right": {
+              "fr": "préparer ; être prêt"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-dict-py-078",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l30-dict-py-078",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "漂亮",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "左边 (zuǒ biān)"
+              "fr": "zuǒ biān"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "水果 (shuǐ guǒ)"
+              "fr": "shì qíng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "漂亮 (piào liàng)"
+              "fr": "piào liàng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "事情 (shì qíng)"
+              "fr": "shuǐ guǒ"
             },
             "audio": null
           }
@@ -696,34 +764,92 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-reverse-078",
+      "id": "block-ex-l30-tone-236",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l30-reverse-078",
+          "id": "ex-l30-tone-236",
           "prompt": {
-            "fr": "Comment dit-on « joli ; beau » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l30-understand"
           ],
           "required": true
         },
+        "promptText": "晴",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-pick-101",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l30-pick-101",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "promptText": "水果",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "水果 (shuǐ guǒ)"
+              "fr": "左边 (zuǒ biān)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "漂亮 (piào liàng)"
+              "fr": "水果 (shuǐ guǒ)"
             },
             "audio": null
           },
@@ -752,49 +878,48 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-pick-265",
+      "id": "block-ex-l30-reverse-101",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l30-pick-265",
+          "id": "ex-l30-reverse-101",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Comment dit-on « fruit » en chinois ?"
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Choisis le mot chinois qui convient."
           },
           "objectiveIDs": [
             "l30-understand"
           ],
           "required": true
         },
-        "promptText": "笑",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "笑 (xiào)"
+              "fr": "水果 (shuǐ guǒ)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "晴 (qíng)"
+              "fr": "准备 (zhǔn bèi)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "准备 (zhǔn bèi)"
+              "fr": "事情 (shì qíng)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "事情 (shì qíng)"
+              "fr": "左边 (zuǒ biān)"
             },
             "audio": null
           }
@@ -809,110 +934,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-reverse-236",
+      "id": "block-ex-l30-dict-zh-265",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l30-reverse-236",
+          "id": "ex-l30-dict-zh-265",
           "prompt": {
-            "fr": "Comment dit-on « ensoleillé ; beau temps » en chinois ?"
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l30-understand"
           ],
           "required": true
         },
+        "script": "hanzi",
+        "promptText": "笑",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "笑 (xiào)"
+              "fr": "晴"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "水果 (shuǐ guǒ)"
+              "fr": "路"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "左边 (zuǒ biān)"
+              "fr": "就"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "晴 (qíng)"
+              "fr": "笑"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-pick-236",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l30-pick-236",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l30-understand"
-          ],
-          "required": true
-        },
-        "promptText": "晴",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "笑 (xiào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "左边 (zuǒ biān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "晴 (qíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "事情 (shì qíng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1006,16 +1076,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-order-exa-1",
+      "id": "block-ex-l30-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l30-order-exa-1",
+          "id": "ex-l30-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Ce vêtement est très joli »."
+            "fr": "Traduis en chinois : « Ce vêtement est très joli »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l30-produce"
@@ -1023,24 +1093,6 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "b",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
           {
             "id": "c",
             "hanzi": "衣服",
@@ -1052,6 +1104,219 @@
             "hanzi": "很",
             "pinyin": "hěn",
             "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "笑",
+            "pinyin": "xiào",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "左边",
+            "pinyin": "zuǒ biān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l30-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "您好，请问去车站的路怎么走？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "不，在学校旁边，离这里不远。",
+            "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "走十分钟就到。请让孩子先过。",
+            "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "您先走这条路，每天都有车。",
+            "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l30-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’aime manger des fruits »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "水果",
+            "pinyin": "shuǐ guǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "晴",
+            "pinyin": "qíng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "左边",
+            "pinyin": "zuǒ biān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-order-exa-3",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l30-order-exa-3",
+          "prompt": {
+            "fr": "Construis « Le temps est très ensoleillé aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "朗",
+            "pinyin": "lǎng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "晴",
+            "pinyin": "qíng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
+            "audio": null
           }
         ],
         "correctOrder": [
@@ -1062,8 +1327,8 @@
           "e"
         ],
         "acceptedVariants": [
-          "这件衣服很漂亮。",
-          "这件衣服很漂亮"
+          "今天天气很晴朗。",
+          "今天天气很晴朗"
         ]
       },
       "metadata": {
@@ -1074,13 +1339,66 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-fill-exa-6",
+      "id": "block-ex-l30-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l30-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l30-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "您先走这条路，每天都有车。",
+            "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "车站在商店旁边吗？",
+            "pinyin": "chē zhàn zài shāng diàn páng biān ma？",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "您好，请问去车站的路怎么走？",
+            "pinyin": "nín hǎo， qǐng wèn qù chē zhàn de lù zěn me zǒu？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-fill-rea-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l30-fill-exa-6",
+          "id": "ex-l30-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 我___考试。 (« Je prépare l’examen »)"
+            "fr": "Complète : 客人问去车站的___。 (« Un visiteur demande le chemin de la gare »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1090,245 +1408,15 @@
           ],
           "required": true
         },
-        "sentence": "我___考试。",
+        "sentence": "客人问去车站的___。",
         "acceptedAnswers": [
-          "准备"
+          "路"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l30-order-exa-2",
-          "prompt": {
-            "fr": "Construis « J’aime manger des fruits »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "水果",
-            "pinyin": "shuǐ guǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "吃",
-            "pinyin": "chī",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我喜欢吃水果。",
-          "我喜欢吃水果"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l30-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 今天天气很___朗。 (« Le temps est très ensoleillé aujourd’hui »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": true
-        },
-        "sentence": "今天天气很___朗。",
-        "acceptedAnswers": [
-          "晴"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l30-order-exa-4",
-          "prompt": {
-            "fr": "Construis « C’est une petite chose »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "事情",
-            "pinyin": "shì qíng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "一",
-            "pinyin": "yī",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "小",
-            "pinyin": "xiǎo",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "这是一件小事情。",
-          "这是一件小事情"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l30-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Les enfants ont tous ri »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "孩子们都笑了。",
-        "referencePinyin": "hái zi men dōu xiào le。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "孩子们都笑了。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l30-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « L’école est à gauche »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "学校在左边。",
-        "referencePinyin": "xué xiào zài zuǒ biān。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "学校在左边。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 26
       }
     },

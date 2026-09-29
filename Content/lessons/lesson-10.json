@@ -602,54 +602,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-pick-077",
+      "id": "block-ex-l10-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l10-pick-077",
+          "id": "ex-l10-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l10-understand"
           ],
           "required": true
         },
-        "promptText": "朋友",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "上 (shàng)"
-            },
-            "audio": null
+            "left": "朋友",
+            "pinyin": "péng yǒu",
+            "right": {
+              "fr": "ami"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "他 (tā)"
-            },
-            "audio": null
+            "left": "上",
+            "pinyin": "shàng",
+            "right": {
+              "fr": "dessus ; monter"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "朋友 (péng yǒu)"
-            },
-            "audio": null
+            "left": "书",
+            "pinyin": "shū",
+            "right": {
+              "fr": "livre"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "书 (shū)"
-            },
-            "audio": null
+            "left": "他",
+            "pinyin": "tā",
+            "right": {
+              "fr": "il"
+            }
+          },
+          {
+            "id": "e",
+            "left": "一",
+            "pinyin": "yī",
+            "right": {
+              "fr": "un ; une"
+            }
           }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -659,48 +669,158 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-reverse-077",
+      "id": "block-ex-l10-dict-sent-dia-2",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l10-reverse-077",
+          "id": "ex-l10-dict-sent-dia-2",
           "prompt": {
-            "fr": "Comment dit-on « ami » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l10-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "有，桌子上有一本书。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "他 (tā)"
+              "fr": "zhuō zi shàng yǒu yī běn shū。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "朋友 (péng yǒu)"
+              "fr": "yǒu， zhuō zi shàng yǒu yī běn shū。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "书 (shū)"
+              "fr": "wǒ zhèng zài dú zhè běn shū。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-tone-077",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l10-tone-077",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "promptText": "朋友",
+        "choices": [
+          {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t23",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t43",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 3 ˇ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t23"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-dict-zh-091",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l10-dict-zh-091",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "上",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "他"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "上"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "一"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "上 (shàng)"
+              "fr": "书"
             },
             "audio": null
           }
@@ -763,120 +883,6 @@
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l10-pick-091",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l10-pick-091",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l10-understand"
-          ],
-          "required": true
-        },
-        "promptText": "上",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "他 (tā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "书 (shū)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "一 (yī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "上 (shàng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l10-pick-106",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l10-pick-106",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l10-understand"
-          ],
-          "required": true
-        },
-        "promptText": "他",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "书 (shū)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "一 (yī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "他 (tā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "上 (shàng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -970,16 +976,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-order-exa-6",
+      "id": "block-ex-l10-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l10-order-exa-6",
+          "id": "ex-l10-translate-exa-6",
           "prompt": {
-            "fr": "Construis « Il y a un livre sur la table »."
+            "fr": "Traduis en chinois : « Il y a un livre sur la table »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l10-produce"
@@ -994,24 +1000,6 @@
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "书",
-            "pinyin": "shū",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "一",
-            "pinyin": "yī",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
-            "audio": null
-          },
-          {
             "id": "b",
             "hanzi": "上",
             "pinyin": "shàng",
@@ -1021,6 +1009,36 @@
             "id": "c",
             "hanzi": "有",
             "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "朋友",
+            "pinyin": "péng yǒu",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
             "audio": null
           }
         ],
@@ -1032,10 +1050,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "桌子上有一本书。",
-          "桌子上有一本书"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1045,46 +1060,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-fill-dia-2",
+      "id": "block-ex-l10-talk-5",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l10-fill-dia-2",
+          "id": "ex-l10-talk-5",
           "prompt": {
-            "fr": "Complète : 有，桌子___有一本书。 (« Oui, il y a un livre sur la table »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l10-produce"
+            "l10-understand"
           ],
           "required": true
         },
-        "sentence": "有，桌子___有一本书。",
-        "acceptedAnswers": [
-          "上"
+        "speaker": "Mina",
+        "promptText": "你的朋友也在房间吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "有，桌子上有一本书。",
+            "pinyin": "yǒu， zhuō zi shàng yǒu yī běn shū。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他不在。老师要这本书，所以我先整理房间。",
+            "pinyin": "tā bù zài。 lǎo shī yào zhè běn shū， suǒ yǐ wǒ xiān zhěng lǐ fáng jiān。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "手机在桌子上，我给老师打电话。",
+            "pinyin": "shǒu jī zài zhuō zi shàng， wǒ gěi lǎo shī dǎ diàn huà。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 6
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-order-dia-5",
+      "id": "block-ex-l10-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l10-order-dia-5",
+          "id": "ex-l10-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Ton ami est aussi dans la chambre ? »."
+            "fr": "Traduis en chinois : « Le livre est sur la table »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l10-produce"
@@ -1093,45 +1126,39 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "的",
-            "pinyin": "de",
+            "id": "d",
+            "hanzi": "上",
+            "pinyin": "shàng",
             "audio": null
           },
           {
             "id": "e",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "在",
             "pinyin": "zài",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "房间",
-            "pinyin": "fáng jiān",
+            "hanzi": "有",
+            "pinyin": "yǒu",
             "audio": null
           },
           {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "也",
-            "pinyin": "yě",
+            "id": "c",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
             "audio": null
           }
         ],
@@ -1139,15 +1166,9 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f",
-          "g"
+          "d"
         ],
-        "acceptedVariants": [
-          "你的朋友也在房间吗？",
-          "你的朋友也在房间吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1157,31 +1178,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l10-fill-dia-6",
+      "id": "block-ex-l10-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l10-fill-dia-6",
+          "id": "ex-l10-talk-1",
           "prompt": {
-            "fr": "Complète : 他不在。老师要这本___，所以我先整理房间。 (« Il n’est pas là. Le professeur veut ce livre, alors je range d’abord la chambre »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l10-produce"
+            "l10-understand"
           ],
           "required": true
         },
-        "sentence": "他不在。老师要这本___，所以我先整理房间。",
-        "acceptedAnswers": [
-          "书"
+        "speaker": "Mina",
+        "promptText": "你的房间有桌子和椅子吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "有，桌子上有一本书。",
+            "pinyin": "yǒu， zhuō zi shàng yǒu yī běn shū。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "手机在桌子上，我给老师打电话。",
+            "pinyin": "shǒu jī zài zhuō zi shàng， wǒ gěi lǎo shī dǎ diàn huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "他不在。老师要这本书，所以我先整理房间。",
+            "pinyin": "tā bù zài。 lǎo shī yào zhè běn shū， suǒ yǐ wǒ xiān zhěng lǐ fáng jiān。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l10-dialogue-3-4",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l10-dialogue-3-4",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l10-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "门旁边有手机吗？",
+            "pinyin": "mén páng biān yǒu shǒu jī ma？",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "他不在。老师要这本书，所以我先整理房间。",
+            "pinyin": "tā bù zài。 lǎo shī yào zhè běn shū， suǒ yǐ wǒ xiān zhěng lǐ fáng jiān。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "手机在桌子上，我给老师打电话。",
+            "pinyin": "shǒu jī zài zhuō zi shàng， wǒ gěi lǎo shī dǎ diàn huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你的朋友也在房间吗？",
+            "pinyin": "nǐ de péng yǒu yě zài fáng jiān ma？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 6
       }
     },
@@ -1212,55 +1312,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l10-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l10-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 有，桌子上有一本书。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l10-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Ta chambre a une table et des chaises ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je lis ce livre en ce moment."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Oui, il y a un livre sur la table."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 6
       }
     },

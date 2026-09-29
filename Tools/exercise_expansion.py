@@ -7,9 +7,13 @@ recombination of vocabulary rows, example sentences, dialogue lines and reading
 sentences that already belong to the lesson. Distractors come from other
 vocabulary or sentences of the same lesson and of the two preceding lessons.
 
-Only exercise families already decoded by PolygoCore are emitted (`choice`,
-`wordOrder`, `fillBlank`, `listeningChoice`, `speaking`). Every exercise block
-carries its phase in `metadata.stage`.
+Every exercise family PolygoCore decodes may be emitted: `choice`, `wordOrder`,
+`fillBlank`, `listeningChoice`, `speaking`, and the kinds of `exercise_kinds`
+(`matching`, `dictation`, `toneDiscrimination`, `translation`,
+`conversationChoice`, `dialogueOrder`). Every exercise block carries its phase
+in `metadata.stage`: the newer kinds open the discovery phase (matching,
+dictation, tones), guided practice (translation, conversation) and re-use
+(dialogue ordering), and each lesson gets at least `MIN_NEW_KINDS` of them.
 
 The session is planned as a cover: the lesson introduces at most
 `MAX_NEW_WORDS` words, and each of them must be presented by at least
@@ -20,8 +24,20 @@ from __future__ import annotations
 
 import random
 import re
+from collections import Counter
 from dataclasses import dataclass
 from typing import Any
+
+from exercise_kinds import (
+    CONVERSATION_REPLIES,
+    MATCHING_PAIRS,
+    MIN_NEW_KINDS,
+    NEW_KINDS,
+    entry_tones,
+    tone_choice_id,
+    tone_label,
+    tone_options,
+)
 
 PHASES = ("discover", "guided", "reuse")
 EXERCISE_BUDGET = (15, 20)
@@ -32,7 +48,13 @@ MIN_EXPOSURE_KINDS = 3
 _PHASE_CAPS = {"discover": 8, "guided": 7, "reuse": 7}
 _PHASE_MINIMUM = 5
 # Speaking is self-rated and quick to build, so it must not crowd out the rest.
-_MAX_SPEAKING = 3
+# Each newer kind appears twice at most, so that no lesson is a single drill;
+# two orderings of one short dialogue would only repeat each other.
+_MAX_PER_KIND = {"speaking": 3, **{kind: 2 for kind in NEW_KINDS}, "dialogueOrder": 1}
+# The two matchings and the two dictations of a lesson differ in what they ask.
+_VARIED_KINDS = {"matching", "dictation"}
+_MAX_TRANSLATION_TILES = 6
+_MAX_DICTATION_CHARS = 12
 
 _PUNCTUATION = "，。！？、；：“”‘’（）…—·"
 _SENTENCE_END = "。！？"
@@ -167,19 +189,25 @@ class Candidate:
         return self.exercise.spec["kind"]
 
 
+def _pieces(spec: dict[str, Any]) -> dict[str, str]:
+    """The Hanzi of each tile or dialogue line, by identifier."""
+    return {item["id"]: item["hanzi"] for key in ("tokens", "lines") for item in spec.get(key, [])}
+
+
 def exercise_text(spec: dict[str, Any]) -> str:
-    """The Mandarin an exercise presents: prompt, sentence, tiles, choices and expected answer."""
+    """The Mandarin an exercise presents: prompt, sentence, tiles, lines, choices, pairs and expected answer."""
     answers = spec.get("acceptedAnswers") or [""]
-    tokens = {token["id"]: token["hanzi"] for token in spec.get("tokens", [])}
+    pieces = _pieces(spec)
     parts = [
         spec["header"]["prompt"].get("fr", ""),
         spec.get("promptText") or "",
         spec.get("referenceText") or "",
         spec.get("sentence", "").replace("___", answers[0]),
-        "".join(tokens[token_id] for token_id in spec.get("correctOrder", [])),
+        "".join(pieces[piece_id] for piece_id in spec.get("correctOrder", [])),
     ]
     parts.extend(_fr(choice.get("label")) for choice in spec.get("choices", []))
-    parts.extend(token["hanzi"] for token in spec.get("tokens", []))
+    parts.extend(item["hanzi"] for key in ("tokens", "lines", "replies") for item in spec.get(key, []))
+    parts.extend(pair["left"] for pair in spec.get("pairs", []))
     return "\n".join(parts)
 
 
@@ -228,6 +256,9 @@ class _Builder:
         self.vocabulary = [entry for entry in lesson["vocabulary"] if _fr(entry.get("meaning"))]
         self.hanzi = {entry["id"]: entry["hanzi"] for entry in self.vocabulary if entry["id"] in new_ids}
         self.earlier = [entry for entry in earlier_vocabulary if _fr(entry.get("meaning"))]
+        # Two rows with one Hanzi (还 hái, 还 huán) cannot be told apart by the
+        # exercises that name a word by its Hanzi alone.
+        self.homographs = {hanzi for hanzi, count in Counter(entry["hanzi"] for entry in self.vocabulary).items() if count > 1}
         self.serial = 0
         self.used_prompts: set[tuple[str, str]] = set()
         self.asked: set[str] = set()
@@ -235,7 +266,8 @@ class _Builder:
             "understand": self._objective("understand", 0),
             "produce": self._objective("produce", -1),
         }
-        self.dialogue = self._dialogue_sentences()
+        self.turns = self._dialogue_turns()
+        self.dialogue = [turn for turn in self.turns if turn is not None]
         self.reading, self.reading_title = self._reading_sentences()
         self.examples = self._example_sentences()
         self._reserve_authored()
@@ -250,18 +282,18 @@ class _Builder:
     def _block(self, kind: str) -> dict[str, Any] | None:
         return next((block for block in self.lesson["blocks"] if block.get("kind") == kind), None)
 
-    def _dialogue_sentences(self) -> list[Sentence]:
+    def _dialogue_turns(self) -> list[Sentence | None]:
+        """Each dialogue line in order, None where it is not clean Mandarin."""
         block = self._block("dialogue")
         lines = block.get("lines", []) if block else []
-        result = []
+        turns: list[Sentence | None] = []
         for line in lines:
             sentence = Sentence(
                 line.get("hanzi", ""), line.get("pinyin", ""), _fr(line.get("translation")),
                 "dialogue", label=line.get("speaker"),
             )
-            if sentence.is_clean:
-                result.append(sentence)
-        return result
+            turns.append(sentence if sentence.is_clean else None)
+        return turns
 
     def _reading_sentences(self) -> tuple[list[Sentence], str]:
         block = self._block("reading")
@@ -586,17 +618,260 @@ class _Builder:
             "referenceAudio": None, "acceptedTranscripts": [sentence.hanzi], "allowSelfRating": True,
         })
 
+    # -- newer exercise kinds ----------------------------------------------
+
+    def _matching_group(self, pool: list[dict[str, Any]], mode: str) -> list[dict[str, Any]]:
+        """Up to five words whose meanings (or pinyin) cannot be mistaken for one another."""
+        group: list[dict[str, Any]] = []
+        for entry in pool:
+            if len(group) == MATCHING_PAIRS[1]:
+                break
+            if entry["hanzi"] in self.homographs or any(entry["hanzi"] == other["hanzi"] for other in group):
+                continue
+            if mode == "meaning":
+                clash = any(_meanings_overlap(_fr(entry["meaning"]), _fr(other["meaning"])) for other in group)
+            else:
+                clash = any(entry["pinyin"] == other["pinyin"] for other in group)
+            if not clash:
+                group.append(entry)
+        return group
+
+    def matching(self, phase: str, name: str, entries: list[dict[str, Any]], mode: str) -> Exercise | None:
+        if len(entries) < MATCHING_PAIRS[0]:
+            return None
+        pairs = [
+            {
+                "id": _LETTERS[index], "left": entry["hanzi"],
+                "pinyin": entry["pinyin"] if mode == "meaning" else None,
+                "right": {"fr": _fr(entry["meaning"]) if mode == "meaning" else entry["pinyin"]},
+            }
+            for index, entry in enumerate(entries)
+        ]
+        header = self._header(
+            name, "Associe chaque mot à son sens." if mode == "meaning" else "Associe chaque mot à son pinyin.",
+            "Touche un mot, puis touche ce qui lui correspond.", "understand", " ".join(entry["hanzi"] for entry in entries),
+        )
+        if header is None:
+            return None
+        return Exercise(phase, {"kind": "matching", "header": header, "pairs": pairs})
+
+    def _dictation(
+        self, phase: str, name: str, script: str, spoken: str, correct: str, distractors: list[str], prompt: str,
+    ) -> Exercise | None:
+        if len({correct, *distractors}) != len(distractors) + 1:
+            return None
+        choices, correct_id = self._choices(correct, distractors)
+        header = self._header(name, prompt, "Appuie sur l’écoute, puis choisis ce que tu as entendu.", "understand", spoken)
+        if header is None:
+            return None
+        return Exercise(phase, {
+            "kind": "dictation", "header": header, "script": script, "promptText": spoken,
+            "choices": choices, "correctChoiceID": correct_id,
+        })
+
+    def _dictation_words(self, entry: dict[str, Any], name: str) -> list[dict[str, Any]]:
+        """Wrong words of the same length that sound different, so the audio decides."""
+        others = [
+            item for item in self._word_distractors(entry, 8, name)
+            if item["pinyin"] != entry["pinyin"] and len(item["hanzi"]) == len(entry["hanzi"])
+        ]
+        return others[:3]
+
+    def dictation_pinyin(self, phase: str, name: str, entry: dict[str, Any]) -> Exercise | None:
+        others = self._dictation_words(entry, name)
+        if len(others) < 2 or entry["hanzi"] in self.homographs:
+            return None
+        return self._dictation(
+            phase, name, "pinyin", entry["hanzi"], entry["pinyin"], [item["pinyin"] for item in others],
+            "Écoute le mot, puis choisis son pinyin.",
+        )
+
+    def dictation_hanzi(self, phase: str, name: str, entry: dict[str, Any]) -> Exercise | None:
+        others = self._dictation_words(entry, name)
+        if len(others) < 2 or entry["hanzi"] in self.homographs:
+            return None
+        return self._dictation(
+            phase, name, "hanzi", entry["hanzi"], entry["hanzi"], [item["hanzi"] for item in others],
+            "Écoute le mot, puis choisis les caractères.",
+        )
+
+    def dictation_sentence(self, phase: str, name: str, sentence: Sentence) -> Exercise | None:
+        # Only dialogue and example lines: their pinyin is checkable against the lesson.
+        if sentence.source == "reading" or not _MIN_LISTENING_CHARS <= len(sentence.chars) <= _MAX_DICTATION_CHARS:
+            return None
+        if not sentence.pinyin.strip():
+            return None
+        candidates = [
+            other for other in self.dialogue + self.examples
+            if other.hanzi != sentence.hanzi and other.pinyin.strip() and other.pinyin != sentence.pinyin
+        ]
+        self._rng(name).shuffle(candidates)
+        candidates.sort(key=lambda other: abs(len(other.syllables) - len(sentence.syllables)))
+        distractors: list[str] = []
+        for other in candidates:
+            if other.pinyin not in distractors:
+                distractors.append(other.pinyin)
+            if len(distractors) == 2:
+                break
+        if len(distractors) < 2:
+            return None
+        return self._dictation(
+            phase, name, "pinyin", sentence.hanzi, sentence.pinyin, distractors,
+            "Écoute la phrase, puis choisis son pinyin.",
+        )
+
+    def tone_discrimination(self, phase: str, name: str, entry: dict[str, Any]) -> Exercise | None:
+        tones = entry_tones(entry)
+        if tones is None or entry["hanzi"] in self.homographs:
+            return None
+        choices = [
+            {"id": tone_choice_id(option), "label": {"fr": tone_label(option)}, "audio": None}
+            for option in tone_options(tones, self._rng(name))
+        ]
+        header = self._header(
+            name, "Écoute la syllabe, puis choisis son ton." if len(tones) == 1 else "Écoute le mot, puis choisis ses deux tons.",
+            "Appuie sur l’écoute, puis choisis la mélodie que tu entends.", "understand", entry["hanzi"],
+        )
+        if header is None:
+            return None
+        return Exercise(phase, {
+            "kind": "toneDiscrimination", "header": header, "promptText": entry["hanzi"],
+            "choices": choices, "correctChoiceID": tone_choice_id(tones),
+        })
+
+    def translation(self, phase: str, name: str, sentence: Sentence) -> Exercise | None:
+        if sentence.has_inner_punctuation or not sentence.is_aligned:
+            return None
+        spans = _tokenize(sentence.hanzi, self.lexicon)
+        if not 3 <= len(spans) <= _MAX_TRANSLATION_TILES or len({word for _, word in spans}) != len(spans):
+            return None
+        syllables = sentence.syllables
+        tokens: list[dict[str, Any]] = []
+        cursor = 0
+        for index, (_, word) in enumerate(spans):
+            tokens.append({
+                "id": _LETTERS[index], "hanzi": word,
+                "pinyin": " ".join(syllables[cursor:cursor + len(word)]), "audio": None,
+            })
+            cursor += len(word)
+        if "".join(sentence.chars) != "".join(token["hanzi"] for token in tokens):
+            return None
+        distractors = self._tile_distractors(sentence, tokens, 1 if len(tokens) == 3 else 2, name)
+        if not distractors:
+            return None
+        correct_order = [token["id"] for token in tokens]
+        tiles = tokens + [
+            {"id": _LETTERS[len(tokens) + index], "hanzi": entry["hanzi"], "pinyin": entry["pinyin"], "audio": None}
+            for index, entry in enumerate(distractors)
+        ]
+        shuffled = list(tiles)
+        rng = self._rng(name)
+        while [token["id"] for token in shuffled if token["id"] in correct_order] == correct_order:
+            rng.shuffle(shuffled)
+        header = self._header(
+            name, f"Traduis en chinois : « {sentence.fr.rstrip('. ')} »",
+            "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop.", "produce",
+        )
+        if header is None:
+            return None
+        return Exercise(phase, {
+            "kind": "translation", "header": header, "tokens": shuffled,
+            "correctOrder": correct_order, "acceptedOrders": [],
+        })
+
+    def _tile_distractors(self, sentence: Sentence, tokens: list[dict[str, Any]], count: int, name: str) -> list[dict[str, Any]]:
+        """Known words the sentence does not contain and whose meaning it does not mention."""
+        french = _meaning_tokens(sentence.fr)
+        lengths = {len(token["hanzi"]) for token in tokens}
+        seen: set[str] = set()
+        candidates: list[dict[str, Any]] = []
+        for entry in self.vocabulary + self.earlier:
+            hanzi = entry["hanzi"]
+            if (
+                hanzi in seen or hanzi in sentence.hanzi or len(hanzi) > 2
+                or len(entry["pinyin"].split()) != len(hanzi) or _meaning_tokens(_fr(entry["meaning"])) & french
+            ):
+                continue
+            seen.add(hanzi)
+            candidates.append(entry)
+        self._rng(name + "-tiles").shuffle(candidates)
+        candidates.sort(key=lambda entry: (entry["id"] not in self.new_ids, len(entry["hanzi"]) not in lengths))
+        return candidates[:count]
+
+    def dialogue_order(self, phase: str, name: str, start: int, size: int) -> Exercise | None:
+        turns = self.turns[start:start + size]
+        if len(turns) < size or any(turn is None for turn in turns) or len({turn.hanzi for turn in turns}) != size:
+            return None
+        lines = [
+            {"id": _LETTERS[index], "speaker": turn.label, "hanzi": turn.hanzi, "pinyin": turn.pinyin, "audio": None}
+            for index, turn in enumerate(turns)
+        ]
+        correct_order = [line["id"] for line in lines]
+        shuffled = list(lines)
+        rng = self._rng(name)
+        while [line["id"] for line in shuffled] == correct_order:
+            rng.shuffle(shuffled)
+        header = self._header(
+            name, "Remets le dialogue dans l’ordre.",
+            "Touche les répliques dans l’ordre de la conversation, de la première à la dernière.", "understand",
+            "".join(turn.hanzi for turn in turns),
+        )
+        if header is None:
+            return None
+        return Exercise(phase, {"kind": "dialogueOrder", "header": header, "lines": shuffled, "correctOrder": correct_order})
+
+    def conversation_choice(self, phase: str, name: str, index: int) -> Exercise | None:
+        """Answer the line at `index` with the line the dialogue gives next."""
+        if index + 1 >= len(self.turns):
+            return None
+        line, reply = self.turns[index], self.turns[index + 1]
+        # Only a question leaves one clearly best reply.
+        if line is None or reply is None or line.hanzi == reply.hanzi or not line.hanzi.rstrip().endswith("？"):
+            return None
+        others = [
+            turn for position, turn in enumerate(self.turns)
+            if turn is not None and position not in (index, index + 1) and turn.hanzi not in (line.hanzi, reply.hanzi)
+        ]
+        self._rng(name).shuffle(others)
+        # Lines of the replying speaker make the more tempting wrong answers.
+        others.sort(key=lambda turn: turn.label != reply.label)
+        wrong: list[Sentence] = []
+        for turn in others:
+            if all(turn.hanzi != chosen.hanzi for chosen in wrong):
+                wrong.append(turn)
+            if len(wrong) == CONVERSATION_REPLIES - 1:
+                break
+        if len(wrong) < CONVERSATION_REPLIES - 1:
+            return None
+        position = self._choice_position(CONVERSATION_REPLIES)
+        wrong.insert(position, reply)
+        header = self._header(
+            name,
+            f"Écoute {line.label}, puis choisis la meilleure réponse." if line.label else "Écoute la réplique, puis choisis la meilleure réponse.",
+            "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient.", "understand", line.hanzi,
+        )
+        if header is None:
+            return None
+        return Exercise(phase, {
+            "kind": "conversationChoice", "header": header, "speaker": line.label, "promptText": line.hanzi,
+            "replies": [
+                {"id": _LETTERS[order], "hanzi": turn.hanzi, "pinyin": turn.pinyin, "audio": None}
+                for order, turn in enumerate(wrong)
+            ],
+            "correctReplyID": _LETTERS[position],
+        })
+
     # -- candidate pool --------------------------------------------------
 
     def candidate(self, exercise: Exercise, family: str) -> Candidate:
         spec = exercise.spec
         text_shown = exercise_text(spec)
         answers = spec.get("acceptedAnswers") or [""]
-        tokens = {token["id"]: token["hanzi"] for token in spec.get("tokens", [])}
+        pieces = _pieces(spec)
         text = next((
             value for value in (
                 spec.get("promptText"), spec.get("referenceText"), spec.get("sentence", "").replace("___", answers[0]),
-                "".join(tokens[token_id] for token_id in spec.get("correctOrder", [])),
+                "".join(pieces[piece_id] for piece_id in spec.get("correctOrder", [])),
             ) if value
         ), None)
         return Candidate(
@@ -610,9 +885,19 @@ class _Builder:
         """Every exercise this lesson's material can produce, new words first."""
         result: list[Candidate] = []
         ordered = sorted(self.vocabulary, key=lambda entry: entry["id"] not in self.new_ids)
+        first = self._matching_group(ordered, "meaning")
+        first_ids = {entry["id"] for entry in first}
+        second = self._matching_group([entry for entry in ordered if entry["id"] not in first_ids] + first, "pinyin")
+        for mode, group in (("meaning", first), ("pinyin", second)):
+            exercise = self.matching("discover", f"match-{mode}", group, mode)
+            if exercise is not None:
+                result.append(self.candidate(exercise, f"match-{mode}"))
         for entry in ordered:
             slug = entry["id"].removeprefix("vocab-").removeprefix("hsk20-")
-            builds = [("reverse", self.word_reverse), ("listen-word", self.word_listening), ("pick", self.word_pick)]
+            builds = [
+                ("reverse", self.word_reverse), ("listen-word", self.word_listening), ("pick", self.word_pick),
+                ("tone", self.tone_discrimination), ("dict-py", self.dictation_pinyin), ("dict-zh", self.dictation_hanzi),
+            ]
             if entry["id"] not in self.asked:
                 builds.insert(0, ("meaning", self.word_meaning))
             for family, build in builds:
@@ -631,19 +916,38 @@ class _Builder:
                 for family, build, phase in (
                     ("listen", self.sentence_listening, practice), ("order", self.word_order, practice),
                     ("fill", self.fill_blank, practice), ("read", self.sentence_meaning, "reuse"),
-                    ("speak", self.speaking, "reuse"),
+                    ("speak", self.speaking, "reuse"), ("translate", self.translation, "guided"),
+                    ("dict-sent", self.dictation_sentence, "discover"),
                 ):
                     exercise = build(phase, f"{family}-{source[:3]}-{index}", sentence)
                     if exercise is not None:
                         result.append(self.candidate(exercise, family))
+        for index in range(len(self.turns) - 1):
+            exercise = self.conversation_choice("guided", f"talk-{index + 1}", index)
+            if exercise is not None:
+                result.append(self.candidate(exercise, "talk"))
+        for size in (3, 4):
+            for start in range(len(self.turns) - size + 1):
+                exercise = self.dialogue_order("reuse", f"dialogue-{start + 1}-{size}", start, size)
+                if exercise is not None:
+                    result.append(self.candidate(exercise, "dialogue"))
         return result
 
     def reposition(self, exercises: list[Exercise]) -> None:
-        """Place each correct choice by the walk of `_choice_position`, in session order."""
+        """Place each correct answer by the walk of `_choice_position`, in session order."""
         self.serial = 0
         for exercise in exercises:
             spec = exercise.spec
-            if spec["kind"] not in {"choice", "listeningChoice"}:
+            if spec["kind"] == "conversationChoice":
+                correct = next(reply for reply in spec["replies"] if reply["id"] == spec["correctReplyID"])
+                replies = [reply for reply in spec["replies"] if reply is not correct]
+                position = self._choice_position(len(replies) + 1)
+                replies.insert(position, correct)
+                spec["replies"] = [{**reply, "id": _LETTERS[index]} for index, reply in enumerate(replies)]
+                spec["correctReplyID"] = _LETTERS[position]
+                continue
+            # Tone choices keep their natural order (tone 1 to 4).
+            if spec["kind"] not in {"choice", "listeningChoice", "dictation"}:
                 continue
             labels = {choice["id"]: _fr(choice["label"]) for choice in spec["choices"]}
             correct = labels.pop(spec["correctChoiceID"])
@@ -680,7 +984,10 @@ class _Planner:
     def _allowed(self, candidate: Candidate) -> bool:
         if len(self.chosen) >= EXERCISE_BUDGET[1] or self._load(candidate.exercise.phase) >= _PHASE_CAPS[candidate.exercise.phase]:
             return False
-        if candidate.kind == "speaking" and sum(1 for item in self.chosen if item.kind == "speaking") >= _MAX_SPEAKING:
+        cap = _MAX_PER_KIND.get(candidate.kind)
+        if cap is not None and sum(1 for item in self.chosen if item.kind == candidate.kind) >= cap:
+            return False
+        if candidate.kind in _VARIED_KINDS and any(item.kind == candidate.kind and item.family == candidate.family for item in self.chosen):
             return False
         # One sentence never carries two exercises of the same kind.
         return not any(
@@ -705,6 +1012,16 @@ class _Planner:
             if not options:
                 return
             self._take(max(options, key=lambda candidate: (self._gain(candidate), tuple(-int(value) for value in self._priority(candidate)))))
+
+    def require_new_kinds(self) -> None:
+        """Give the session one exercise of each newer kind the lesson's material can build."""
+        for kind in NEW_KINDS:
+            options = [candidate for candidate in self.pool if candidate.kind == kind and self._allowed(candidate)]
+            if kind == "dictation":
+                # The first dictation asks for the pinyin; a second one asks for the Hanzi.
+                options = [candidate for candidate in options if candidate.exercise.spec["script"] == "pinyin"] or options
+            if options:
+                self._take(max(options, key=lambda candidate: (self._gain(candidate), tuple(-int(value) for value in self._priority(candidate)))))
 
     def fill(self) -> None:
         """Bring every phase to its minimum, then the session to its target length."""
@@ -759,6 +1076,7 @@ def expand_lesson_exercises(
         [builder.candidate(Exercise(phase, block["spec"]), "authored") for phase, block in fixed],
         builder.candidates(),
     )
+    planner.require_new_kinds()
     planner.cover()
     planner.fill()
     shortfalls = planner.shortfalls()
@@ -767,6 +1085,9 @@ def expand_lesson_exercises(
         raise ExpansionError(f"{lesson['id']}: new words are under-practised: {detail}")
     if not EXERCISE_BUDGET[0] <= len(planner.chosen) <= EXERCISE_BUDGET[1]:
         raise ExpansionError(f"{lesson['id']}: {len(planner.chosen)} exercises, expected {EXERCISE_BUDGET[0]}–{EXERCISE_BUDGET[1]}")
+    present = {item.kind for item in planner.chosen}.intersection(NEW_KINDS)
+    if len(present) < MIN_NEW_KINDS:
+        raise ExpansionError(f"{lesson['id']}: only {len(present)} of the newer exercise kinds ({', '.join(sorted(present)) or 'none'}), expected {MIN_NEW_KINDS}")
 
     # The authored listening, oral and reading exercises close every session.
     closing_specs = [authored_block("listen")["spec"], authored_block("speak")["spec"], reading_authored["spec"]]

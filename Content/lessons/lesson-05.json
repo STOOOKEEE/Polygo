@@ -622,49 +622,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-pick-010",
+      "id": "block-ex-l5-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l5-pick-010",
+          "id": "ex-l5-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l5-understand"
           ],
           "required": true
         },
-        "promptText": "茶",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "茶",
+            "pinyin": "chá",
+            "right": {
+              "fr": "thé"
+            }
+          },
+          {
+            "id": "b",
+            "left": "电脑",
+            "pinyin": "diàn nǎo",
+            "right": {
+              "fr": "ordinateur"
+            }
+          },
+          {
+            "id": "c",
+            "left": "都",
+            "pinyin": "dōu",
+            "right": {
+              "fr": "tous ; tout"
+            }
+          },
+          {
+            "id": "d",
+            "left": "和",
+            "pinyin": "hé",
+            "right": {
+              "fr": "et ; avec"
+            }
+          },
+          {
+            "id": "e",
+            "left": "吗",
+            "pinyin": "ma",
+            "right": {
+              "fr": "particule interrogative"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-dict-py-062",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l5-dict-py-062",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "吗",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "吗 (ma)"
+              "fr": "hé"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "茶 (chá)"
+              "fr": "ma"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "都 (dōu)"
+              "fr": "chá"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "但 (dàn)"
+              "fr": "dōu"
             },
             "audio": null
           }
@@ -679,72 +747,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-reverse-017",
+      "id": "block-ex-l5-tone-017",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l5-reverse-017",
+          "id": "ex-l5-tone-017",
           "prompt": {
-            "fr": "Comment dit-on « ordinateur » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l5-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "电脑 (diàn nǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "但 (dàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "吗 (ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "和 (hé)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-pick-017",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l5-pick-017",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l5-understand"
@@ -754,35 +766,93 @@
         "promptText": "电脑",
         "choices": [
           {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t43",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t43"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-dict-zh-010",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l5-dict-zh-010",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "茶",
+        "choices": [
+          {
             "id": "a",
             "label": {
-              "fr": "但 (dàn)"
+              "fr": "茶"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "和 (hé)"
+              "fr": "和"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "茶 (chá)"
+              "fr": "吗"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "电脑 (diàn nǎo)"
+              "fr": "但"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -827,76 +897,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "都 (dōu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
               "fr": "但 (dàn)"
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-pick-038",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l5-pick-038",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l5-understand"
-          ],
-          "required": true
-        },
-        "promptText": "和",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "吗 (ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "和 (hé)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "都 (dōu)"
-            },
-            "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "茶 (chá)"
+              "fr": "都 (dōu)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -990,13 +1003,208 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-order-exa-2",
+      "id": "block-ex-l5-translate-dia-5",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l5-translate-dia-5",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le thé et le plat sont très bons ! »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "菜",
+            "pinyin": "cài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "但",
+            "pinyin": "dàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "和",
+            "pinyin": "hé",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "电脑",
+            "pinyin": "diàn nǎo",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l5-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你吃菜吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "很好！",
+            "pinyin": "hěn hǎo!",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喝。",
+            "pinyin": "hē.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃，但不多。",
+            "pinyin": "chī, dàn bù duō.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l5-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Nous aimons tous le thé »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "但",
+            "pinyin": "dàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "和",
+            "pinyin": "hé",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-order-exa-1",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l5-order-exa-2",
+          "id": "ex-l5-order-exa-1",
           "prompt": {
-            "fr": "Construis « Mon ordinateur est sur la table »."
+            "fr": "Construis « Je bois du thé chaque jour »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1008,33 +1216,33 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "电脑",
-            "pinyin": "diàn nǎo",
-            "audio": null
-          },
-          {
             "id": "d",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
+            "hanzi": "喝",
+            "pinyin": "hē",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
             "audio": null
           }
         ],
@@ -1046,8 +1254,8 @@
           "e"
         ],
         "acceptedVariants": [
-          "我的电脑在桌子上。",
-          "我的电脑在桌子上"
+          "我每天喝茶。",
+          "我每天喝茶"
         ]
       },
       "metadata": {
@@ -1058,167 +1266,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-fill-exa-3",
+      "id": "block-ex-l5-dialogue-3-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l5-fill-exa-3",
+          "id": "ex-l5-dialogue-3-3",
           "prompt": {
-            "fr": "Complète : 我们都喜欢___。 (« Nous aimons tous le thé »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l5-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我们都喜欢___。",
-        "acceptedAnswers": [
-          "茶"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-order-dia-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l5-order-dia-3",
-          "prompt": {
-            "fr": "Construis « Tu manges le plat ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l5-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "菜",
-            "pinyin": "cài",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "吃",
-            "pinyin": "chī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "你吃菜吗？",
-          "你吃菜吗"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-fill-dia-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l5-fill-dia-4",
-          "prompt": {
-            "fr": "Complète : 吃，___不多。 (« Oui, mais pas beaucoup »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l5-produce"
-          ],
-          "required": true
-        },
-        "sentence": "吃，___不多。",
-        "acceptedAnswers": [
-          "但"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-read-dia-5",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l5-read-dia-5",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 茶和菜都很好！"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l5-understand"
           ],
           "required": true
         },
-        "choices": [
+        "lines": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Le thé et le plat sont très bons !"
-            },
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "吃，但不多。",
+            "pinyin": "chī, dàn bù duō.",
             "audio": null
           },
           {
-            "id": "b",
-            "label": {
-              "fr": "Tu bois du thé ?"
-            },
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你吃菜吗？",
+            "pinyin": "nǐ chī cài ma?",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "Très bien !"
-            },
+            "speaker": "Mina",
+            "hanzi": "茶和菜都很好！",
+            "pinyin": "chá hé cài dōu hěn hǎo!",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1258,13 +1349,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-read-dia-1",
+      "id": "block-ex-l5-read-dia-5",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l5-read-dia-1",
+          "id": "ex-l5-read-dia-5",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你喝茶吗？"
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 茶和菜都很好！"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1278,26 +1369,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "Oui, mais pas beaucoup."
+              "fr": "Tu bois du thé ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Oui."
+              "fr": "Le thé et le plat sont très bons !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Tu bois du thé ?"
+              "fr": "Très bien !"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",

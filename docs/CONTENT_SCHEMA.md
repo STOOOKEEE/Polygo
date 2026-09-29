@@ -307,11 +307,50 @@ sont :
 | speaking | referenceText, referencePinyin, referenceAudio?, acceptedTranscripts, allowSelfRating |
 | handwriting | targetHanzi, guideAsset, expectedStrokeCount?, allowSelfRating |
 | flashcard | cardID |
+| matching | pairs (id, left, pinyin?, right) |
+| dictation | script (`pinyin` ou `hanzi`), promptAudio? ou promptText?, choices, correctChoiceID, replayLimit? |
+| toneDiscrimination | promptAudio? ou promptText?, choices (id `t<tons>`), correctChoiceID, replayLimit? |
+| translation | tokens (id, hanzi, pinyin?, audio?), correctOrder, acceptedOrders? |
+| dialogueOrder | lines (id, speaker?, hanzi, pinyin?, audio?), correctOrder |
+| conversationChoice | speaker?, promptAudio? ou promptText?, replies (id, hanzi, pinyin?, audio?), correctReplyID, replayLimit? |
 
-Une activité quotidienne complète contient deux choix (dont la compréhension de
+Une activité quotidienne de départ contient deux choix (dont la compréhension de
 lecture), un ordre de mots, un texte à trous, une écoute et une production
-orale. Les leçons d'introduction ajoutent selon le besoin les activités
-handwriting et flashcard.
+orale ; le générateur y ajoute les familles ci-dessous. Les leçons
+d'introduction ajoutent selon le besoin les activités handwriting et flashcard.
+
+Les six familles `matching`, `dictation`, `toneDiscrimination`, `translation`,
+`dialogueOrder` et `conversationChoice` se décodent comme les autres, à plat
+(`kind` + `header` + champs propres) :
+
+* `matching` : 4 ou 5 paires. `left` est un mot chinois, `right` son sens
+  français ou son pinyin ; `pinyin` accompagne `left` quand la paire ne le
+  demande pas. La colonne de droite est mélangée de façon stable (rang dérivé de
+  l'ID de l'exercice et de la paire) et n'est jamais dans l'ordre d'écriture. La
+  réponse `ExerciseAnswer.matching(pairs:)` associe l'ID de chaque `left` à l'ID
+  de la paire choisie à droite ; elle est correcte si toutes les paires sont
+  bonnes, `partial` (score proportionnel, refusée) si certaines le sont, et
+  `incorrect` sinon ;
+* `dictation` : on écoute `promptText` (TTS local), puis on choisit comment il
+  s'écrit : `script: "pinyin"` propose des pinyin, `script: "hanzi"` des
+  caractères. La réponse est un `choice` ;
+* `toneDiscrimination` : on écoute un mot d'une ou deux syllabes, puis on choisit
+  son ton (1 à 4) ou son motif de deux tons. L'ID d'un choix épelle le motif
+  (`t4`, `t42`, `t40` pour un ton neutre final) et doit être celui des
+  `toneNumbers` du mot lu. Les mots dont la voix pourrait varier sont exclus :
+  suite 3-3 (sandhi), 不, 一, syllabe neutre isolée, caractères polyphones ;
+* `translation` : le `header.prompt` donne la phrase française ; `tokens`
+  contient les tuiles de la phrase et au moins une tuile en trop ;
+  `correctOrder` ne cite que les tuiles de la phrase et `acceptedOrders` d'autres
+  suites complètes acceptées. La réponse est un `wordOrder` (mêmes tuiles et
+  même évaluation que `wordOrder`, qui reste l'ordre sans distracteur) ;
+* `dialogueOrder` : 2 à 4 `lines` consécutives du dialogue de la leçon,
+  présentées mélangées ; `correctOrder` donne l'ordre du dialogue. Réponse
+  `wordOrder` ;
+* `conversationChoice` : on écoute la réplique `promptText` de `speaker`, puis
+  on choisit parmi trois `replies` celle que le dialogue donne ensuite. Chaque
+  réponse peut être écoutée avant d'être choisie (`audio`, sinon TTS). Réponse
+  `choice` sur l'ID de la réponse.
 
 Les noms historiques toneChoose, meaningChoose, sentenceOrder, listenChoose,
 speakPrompt, writeCharacter et reviewRecall sont acceptés au décodage comme
@@ -491,7 +530,9 @@ choisie ; le générateur ajoute ensuite le header, le kind et l'ExerciseBlock a
 document runtime. Il complète aussi les six exercices écrits par des exercices
 dérivés du matériel de la leçon (`Tools/exercise_expansion.py`), pour un total de
 15 à 20 exercices par leçon quotidienne, choisis pour que chaque mot nouveau
-(huit au plus par leçon) soit présenté par trois exercices de trois familles. Le `metadata.stage` de chaque bloc
+(huit au plus par leçon) soit présenté par trois exercices de trois familles, et
+que chaque leçon utilise au moins quatre des six familles ci-dessus (six dans
+le contenu actuel, cinq quand le dialogue n'a pas de question). Le `metadata.stage` de chaque bloc
 d'exercice vaut `discover`, `guided` ou `reuse` et les phases se suivent dans
 cet ordre ; voir CONTENT_AUTHORING.md, « Budget d'exercices » et « Mots
 nouveaux par séance ».

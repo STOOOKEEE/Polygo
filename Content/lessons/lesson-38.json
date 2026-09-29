@@ -638,49 +638,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l38-pick-014",
+      "id": "block-ex-l38-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l38-pick-014",
+          "id": "ex-l38-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l38-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "大",
+            "pinyin": "dà",
+            "right": {
+              "fr": "grand ; gros"
+            }
+          },
+          {
+            "id": "b",
+            "left": "飞机",
+            "pinyin": "fēi jī",
+            "right": {
+              "fr": "avion"
+            }
+          },
+          {
+            "id": "c",
+            "left": "水",
+            "pinyin": "shuǐ",
+            "right": {
+              "fr": "eau"
+            }
+          },
+          {
+            "id": "d",
+            "left": "题",
+            "pinyin": "tí",
+            "right": {
+              "fr": "question ; exercice"
+            }
+          },
+          {
+            "id": "e",
+            "left": "西瓜",
+            "pinyin": "xī guā",
+            "right": {
+              "fr": "pastèque"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-dict-py-014",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l38-dict-py-014",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "大",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "位 (wèi)"
+              "fr": "shuǐ"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "题 (tí)"
+              "fr": "wèi"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "大 (dà)"
+              "fr": "dà"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "水 (shuǐ)"
+              "fr": "tí"
             },
             "audio": null
           }
@@ -695,166 +763,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l38-reverse-014",
+      "id": "block-ex-l38-tone-029",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l38-reverse-014",
+          "id": "ex-l38-tone-029",
           "prompt": {
-            "fr": "Comment dit-on « grand ; gros » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l38-understand"
           ],
           "required": true
         },
+        "promptText": "飞机",
         "choices": [
           {
-            "id": "a",
+            "id": "t11",
             "label": {
-              "fr": "题 (tí)"
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t14",
             "label": {
-              "fr": "大 (dà)"
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t31",
             "label": {
-              "fr": "水 (shuǐ)"
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t41",
             "label": {
-              "fr": "位 (wèi)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-pick-310",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l38-pick-310",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l38-understand"
-          ],
-          "required": true
-        },
-        "promptText": "办公室",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "办公室 (bàn gōng shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "飞机 (fēi jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "西瓜 (xī guā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "大 (dà)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-reverse-260",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l38-reverse-260",
-          "prompt": {
-            "fr": "Comment dit-on « pastèque » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l38-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "飞机 (fēi jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "办公室 (bàn gōng shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "位 (wèi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "西瓜 (xī guā)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t11"
       },
       "metadata": {
         "stage": "discover",
@@ -892,14 +848,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "题 (tí)"
+              "fr": "西瓜 (xī guā)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "西瓜 (xī guā)"
+              "fr": "题 (tí)"
             },
             "audio": null
           },
@@ -911,7 +867,130 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-reverse-260",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-reverse-260",
+          "prompt": {
+            "fr": "Comment dit-on « pastèque » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "西瓜 (xī guā)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "飞机 (fēi jī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "办公室 (bàn gōng shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "位 (wèi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l38-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "办公室",
+            "pinyin": null,
+            "right": {
+              "fr": "bàn gōng shì"
+            }
+          },
+          {
+            "id": "b",
+            "left": "位",
+            "pinyin": null,
+            "right": {
+              "fr": "wèi"
+            }
+          },
+          {
+            "id": "c",
+            "left": "词语",
+            "pinyin": null,
+            "right": {
+              "fr": "cí yǔ"
+            }
+          },
+          {
+            "id": "d",
+            "left": "句子",
+            "pinyin": null,
+            "right": {
+              "fr": "jù zi"
+            }
+          },
+          {
+            "id": "e",
+            "left": "二",
+            "pinyin": null,
+            "right": {
+              "fr": "èr"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1005,6 +1084,215 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l38-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l38-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Ce chien est très grand »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "狗",
+            "pinyin": "gǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "题",
+            "pinyin": "tí",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "只",
+            "pinyin": "zhī",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "水",
+            "pinyin": "shuǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l38-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l38-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你在哪个班？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "检查了。他说第一句很清楚。",
+            "pinyin": "jiǎn chá le。 tā shuō dì yī jù hěn qīng chǔ。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "还没有，明天考试，我要再读一遍。",
+            "pinyin": "hái méi yǒu， míng tiān kǎo shì， wǒ yào zài dú yī biàn。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我在二班，必须复习词语。",
+            "pinyin": "wǒ zài èr bān， bì xū fù xí cí yǔ。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l38-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Donne-moi un verre d’eau, s’il te plaît »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "位",
+            "pinyin": "wèi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "杯",
+            "pinyin": "bēi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "水",
+            "pinyin": "shuǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l38-order-exa-6",
       "spec": {
         "kind": "wordOrder",
@@ -1059,69 +1347,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l38-fill-exa-1",
+      "id": "block-ex-l38-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l38-fill-exa-1",
+          "id": "ex-l38-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 这只狗很___。 (« Ce chien est très grand »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l38-produce"
+            "l38-understand"
           ],
           "required": true
         },
-        "sentence": "这只狗很___。",
-        "acceptedAnswers": [
-          "大"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l38-order-exa-2",
-          "prompt": {
-            "fr": "Construis « L’avion est arrivé »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l38-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "lines": [
           {
             "id": "b",
-            "hanzi": "到",
-            "pinyin": "dào",
+            "speaker": "Tao",
+            "hanzi": "我在二班，必须复习词语。",
+            "pinyin": "wǒ zài èr bān， bì xū fù xí cí yǔ。",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
+            "speaker": "Mina",
+            "hanzi": "老师检查句子了吗？",
+            "pinyin": "lǎo shī jiǎn chá jù zi le ma？",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "飞机",
-            "pinyin": "fēi jī",
+            "speaker": "Mina",
+            "hanzi": "你在哪个班？",
+            "pinyin": "nǐ zài nǎ ge bān？",
             "audio": null
           }
         ],
@@ -1129,27 +1390,23 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "飞机到了。",
-          "飞机到了"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 34
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l38-fill-exa-3",
+      "id": "block-ex-l38-fill-rea-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l38-fill-exa-3",
+          "id": "ex-l38-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 请给我一杯___。 (« Donne-moi un verre d’eau, s’il te plaît »)"
+            "fr": "Complète : ___班的学生复习词语，老师检查每个人写的句子。 (« Les élèves de la classe deux révisent les mots ; le professeur vérifie les phrases écrites par chacun »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1159,147 +1416,15 @@
           ],
           "required": true
         },
-        "sentence": "请给我一杯___。",
+        "sentence": "___班的学生复习词语，老师检查每个人写的句子。",
         "acceptedAnswers": [
-          "水"
+          "二"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l38-order-exa-4",
-          "prompt": {
-            "fr": "Construis « Cet exercice est difficile »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l38-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "难",
-            "pinyin": "nán",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "道",
-            "pinyin": "dào",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "题",
-            "pinyin": "tí",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "这道题很难。",
-          "这道题很难"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l38-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « En été, j’aime manger de la pastèque »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l38-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "夏天我喜欢吃西瓜。",
-        "referencePinyin": "xià tiān wǒ xǐ huān chī xī guā。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "夏天我喜欢吃西瓜。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l38-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Trois invités sont arrivés »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l38-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "来了三位客人。",
-        "referencePinyin": "lái le sān wèi kè rén.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "来了三位客人。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 34
       }
     },

@@ -645,49 +645,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-pick-024",
+      "id": "block-ex-l18-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l18-pick-024",
+          "id": "ex-l18-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l18-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "多",
+            "pinyin": "duō",
+            "right": {
+              "fr": "beaucoup ; nombreux"
+            }
+          },
+          {
+            "id": "b",
+            "left": "没",
+            "pinyin": "méi",
+            "right": {
+              "fr": "ne pas avoir ; ne pas"
+            }
+          },
+          {
+            "id": "c",
+            "left": "太",
+            "pinyin": "tài",
+            "right": {
+              "fr": "trop ; tellement"
+            }
+          },
+          {
+            "id": "d",
+            "left": "门",
+            "pinyin": "mén",
+            "right": {
+              "fr": "porte ; entrée"
+            }
+          },
+          {
+            "id": "e",
+            "left": "小时",
+            "pinyin": "xiǎo shí",
+            "right": {
+              "fr": "heure (durée)"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 14
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l18-dict-py-024",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l18-dict-py-024",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l18-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "多",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "门 (mén)"
+              "fr": "zài"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "太 (tài)"
+              "fr": "mén"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "多 (duō)"
+              "fr": "duō"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "再 (zài)"
+              "fr": "tài"
             },
             "audio": null
           }
@@ -702,53 +770,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-reverse-024",
+      "id": "block-ex-l18-tone-107",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l18-reverse-024",
+          "id": "ex-l18-tone-107",
           "prompt": {
-            "fr": "Comment dit-on « beaucoup ; nombreux » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l18-understand"
           ],
           "required": true
         },
+        "promptText": "太",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "再 (zài)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "多 (duō)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "太 (tài)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "没 (méi)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -758,11 +827,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-pick-279",
+      "id": "block-ex-l18-pick-264",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l18-pick-279",
+          "id": "ex-l18-pick-264",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -774,7 +843,7 @@
           ],
           "required": true
         },
-        "promptText": "因为",
+        "promptText": "小时",
         "choices": [
           {
             "id": "a",
@@ -793,7 +862,63 @@
           {
             "id": "c",
             "label": {
-              "fr": "没 (méi)"
+              "fr": "多 (duō)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "太 (tài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 14
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l18-reverse-264",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l18-reverse-264",
+          "prompt": {
+            "fr": "Comment dit-on « heure (durée) » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l18-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "小时 (xiǎo shí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "因为 (yīn wèi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "多 (duō)"
             },
             "audio": null
           },
@@ -815,110 +940,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-reverse-279",
+      "id": "block-ex-l18-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l18-reverse-279",
+          "id": "ex-l18-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « parce que » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l18-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "小时 (xiǎo shí)"
-            },
-            "audio": null
+            "left": "因为",
+            "pinyin": null,
+            "right": {
+              "fr": "yīn wèi"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "门 (mén)"
-            },
-            "audio": null
+            "left": "再",
+            "pinyin": null,
+            "right": {
+              "fr": "zài"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "多 (duō)"
-            },
-            "audio": null
+            "left": "里",
+            "pinyin": null,
+            "right": {
+              "fr": "lǐ"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "因为 (yīn wèi)"
-            },
-            "audio": null
+            "left": "请",
+            "pinyin": null,
+            "right": {
+              "fr": "qǐng"
+            }
+          },
+          {
+            "id": "e",
+            "left": "我",
+            "pinyin": null,
+            "right": {
+              "fr": "wǒ"
+            }
           }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 14
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l18-pick-225",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l18-pick-225",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l18-understand"
-          ],
-          "required": true
-        },
-        "promptText": "门",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "太 (tài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "再 (zài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "门 (mén)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "没 (méi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1012,16 +1091,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-order-exa-5",
+      "id": "block-ex-l18-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l18-order-exa-5",
+          "id": "ex-l18-translate-exa-1",
           "prompt": {
-            "fr": "Construis « J’ai étudié pendant deux heures »."
+            "fr": "Traduis en chinois : « Il y a beaucoup de personnes ici »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l18-produce"
@@ -1029,121 +1108,22 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "小时",
-            "pinyin": "xiǎo shí",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "两",
-            "pinyin": "liǎng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "学习",
-            "pinyin": "xué xí",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "我学习了两个小时。",
-          "我学习了两个小时"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 14
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l18-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l18-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : ___下雨，所以我在家。 (« Comme il pleut, je suis à la maison »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l18-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___下雨，所以我在家。",
-        "acceptedAnswers": [
-          "因为"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 14
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l18-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l18-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Il y a beaucoup de personnes ici »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l18-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
           {
             "id": "f",
             "hanzi": "人",
             "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "再",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
             "audio": null
           },
           {
@@ -1153,21 +1133,27 @@
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
             "id": "e",
             "hanzi": "多",
             "pinyin": "duō",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "门",
+            "pinyin": "mén",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           }
         ],
@@ -1179,10 +1165,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "这里有很多人。",
-          "这里有很多人"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1192,16 +1175,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-order-exa-3",
+      "id": "block-ex-l18-talk-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l18-order-exa-3",
+          "id": "ex-l18-talk-1",
           "prompt": {
-            "fr": "Construis « Il fait trop froid aujourd’hui »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l18-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你的猫在哪里？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "它在房间里，不在门前面。",
+            "pinyin": "tā zài fáng jiān lǐ， bù zài mén qián miàn。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "能。没关系，我马上把它带回家。",
+            "pinyin": "néng。 méi guān xì， wǒ mǎ shàng bǎ tā dài huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "它出来了，现在在桌子后面。",
+            "pinyin": "tā chū lái le， xiàn zài zài zhuō zi hòu miàn。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 14
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l18-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l18-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il fait trop froid aujourd’hui »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l18-produce"
@@ -1210,15 +1241,9 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "冷",
-            "pinyin": "lěng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
@@ -1228,9 +1253,27 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "c",
+            "hanzi": "冷",
+            "pinyin": "lěng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "小时",
+            "pinyin": "xiǎo shí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "多",
+            "pinyin": "duō",
             "audio": null
           }
         ],
@@ -1240,10 +1283,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "今天太冷了。",
-          "今天太冷了"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1253,69 +1293,102 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l18-order-exa-7",
+      "id": "block-ex-l18-talk-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l18-order-exa-7",
+          "id": "ex-l18-talk-3",
           "prompt": {
-            "fr": "Construis « Répète, s’il te plaît »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l18-produce"
+            "l18-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "speaker": "Mina",
+        "promptText": "那只猫刚才出来了吗？",
+        "replies": [
           {
-            "id": "c",
-            "hanzi": "说",
-            "pinyin": "shuō",
+            "id": "a",
+            "hanzi": "能。没关系，我马上把它带回家。",
+            "pinyin": "néng。 méi guān xì， wǒ mǎ shàng bǎ tā dài huí jiā。",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "再",
-            "pinyin": "zài",
+            "hanzi": "它在房间里，不在门前面。",
+            "pinyin": "tā zài fáng jiān lǐ， bù zài mén qián miàn。",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "遍",
-            "pinyin": "biàn",
+            "id": "c",
+            "hanzi": "它出来了，现在在桌子后面。",
+            "pinyin": "tā chū lái le， xiàn zài zài zhuō zi hòu miàn。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 14
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l18-dialogue-4-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l18-dialogue-4-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l18-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "你能找到它吗？",
+            "pinyin": "nǐ néng zhǎo dào tā ma？",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "一",
-            "pinyin": "yí",
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "能。没关系，我马上把它带回家。",
+            "pinyin": "néng。 méi guān xì， wǒ mǎ shàng bǎ tā dài huí jiā。",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "speaker": "Tao",
+            "hanzi": "它出来了，现在在桌子后面。",
+            "pinyin": "tā chū lái le， xiàn zài zài zhuō zi hòu miàn。",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "请再说一遍。",
-          "请再说一遍"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 14
       }
     },
@@ -1340,36 +1413,6 @@
         "sentence": "它刚才在___前面，现在到了桌子后面。",
         "acceptedAnswers": [
           "门"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 14
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l18-fill-rea-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l18-fill-rea-3",
-          "prompt": {
-            "fr": "Complète : 我没有找到它，所以___朋友帮忙。 (« Je ne l’ai pas trouvé, alors je demande de l’aide à un ami »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l18-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我没有找到它，所以___朋友帮忙。",
-        "acceptedAnswers": [
-          "请"
         ],
         "caseSensitive": false
       },

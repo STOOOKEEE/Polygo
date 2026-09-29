@@ -8,6 +8,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
     case speaking(SpeakingExercise)
     case handwriting(HandwritingExercise)
     case flashcard(FlashcardExercise)
+    case matching(MatchingExercise)
+    case dictation(DictationExercise)
+    case toneDiscrimination(ToneDiscriminationExercise)
+    case translation(TranslationExercise)
+    case dialogueOrder(DialogueOrderExercise)
+    case conversationChoice(ConversationChoiceExercise)
 
     public var id: ExerciseID {
         switch self {
@@ -18,6 +24,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case .speaking(let value): return value.header.id
         case .handwriting(let value): return value.header.id
         case .flashcard(let value): return value.header.id
+        case .matching(let value): return value.header.id
+        case .dictation(let value): return value.header.id
+        case .toneDiscrimination(let value): return value.header.id
+        case .translation(let value): return value.header.id
+        case .dialogueOrder(let value): return value.header.id
+        case .conversationChoice(let value): return value.header.id
         }
     }
 
@@ -30,6 +42,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case .speaking(let value): return value.header
         case .handwriting(let value): return value.header
         case .flashcard(let value): return value.header
+        case .matching(let value): return value.header
+        case .dictation(let value): return value.header
+        case .toneDiscrimination(let value): return value.header
+        case .translation(let value): return value.header
+        case .dialogueOrder(let value): return value.header
+        case .conversationChoice(let value): return value.header
         }
     }
 
@@ -42,6 +60,7 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case referenceText, referencePinyin, referenceAudio, acceptedTranscripts, allowSelfRating
         case targetHanzi, guideAsset, expectedStrokeCount
         case cardID
+        case pairs, script, acceptedOrders, lines, speaker, replies, correctReplyID
     }
     private enum Kind: String, Codable {
         case choice
@@ -51,6 +70,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case speaking
         case handwriting
         case flashcard
+        case matching
+        case dictation
+        case toneDiscrimination
+        case translation
+        case dialogueOrder
+        case conversationChoice
 
         init(from decoder: Decoder) throws {
             let value = try decoder.singleValueContainer().decode(String.self)
@@ -62,6 +87,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
             case "speaking", "speakPrompt": self = .speaking
             case "handwriting", "writeCharacter": self = .handwriting
             case "flashcard", "reviewRecall": self = .flashcard
+            case "matching": self = .matching
+            case "dictation": self = .dictation
+            case "toneDiscrimination": self = .toneDiscrimination
+            case "translation": self = .translation
+            case "dialogueOrder": self = .dialogueOrder
+            case "conversationChoice": self = .conversationChoice
             default: throw DecodingError.dataCorruptedError(in: try decoder.singleValueContainer(), debugDescription: "Unknown exercise kind: \(value)")
             }
         }
@@ -78,6 +109,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
         case .speaking: self = .speaking(container.contains(.value) ? try container.decode(SpeakingExercise.self, forKey: .value) : try SpeakingExercise(from: decoder))
         case .handwriting: self = .handwriting(container.contains(.value) ? try container.decode(HandwritingExercise.self, forKey: .value) : try HandwritingExercise(from: decoder))
         case .flashcard: self = .flashcard(container.contains(.value) ? try container.decode(FlashcardExercise.self, forKey: .value) : try FlashcardExercise(from: decoder))
+        case .matching: self = .matching(container.contains(.value) ? try container.decode(MatchingExercise.self, forKey: .value) : try MatchingExercise(from: decoder))
+        case .dictation: self = .dictation(container.contains(.value) ? try container.decode(DictationExercise.self, forKey: .value) : try DictationExercise(from: decoder))
+        case .toneDiscrimination: self = .toneDiscrimination(container.contains(.value) ? try container.decode(ToneDiscriminationExercise.self, forKey: .value) : try ToneDiscriminationExercise(from: decoder))
+        case .translation: self = .translation(container.contains(.value) ? try container.decode(TranslationExercise.self, forKey: .value) : try TranslationExercise(from: decoder))
+        case .dialogueOrder: self = .dialogueOrder(container.contains(.value) ? try container.decode(DialogueOrderExercise.self, forKey: .value) : try DialogueOrderExercise(from: decoder))
+        case .conversationChoice: self = .conversationChoice(container.contains(.value) ? try container.decode(ConversationChoiceExercise.self, forKey: .value) : try ConversationChoiceExercise(from: decoder))
         }
     }
 
@@ -98,6 +135,18 @@ public enum ExerciseSpec: Codable, Hashable, Sendable, Identifiable {
             try container.encode(Kind.handwriting, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.targetHanzi, forKey: .targetHanzi); try container.encode(value.guideAsset, forKey: .guideAsset); try container.encodeIfPresent(value.expectedStrokeCount, forKey: .expectedStrokeCount); try container.encode(value.allowSelfRating, forKey: .allowSelfRating)
         case .flashcard(let value):
             try container.encode(Kind.flashcard, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.cardID, forKey: .cardID)
+        case .matching(let value):
+            try container.encode(Kind.matching, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.pairs, forKey: .pairs)
+        case .dictation(let value):
+            try container.encode(Kind.dictation, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.script, forKey: .script); try container.encodeIfPresent(value.promptAudio, forKey: .promptAudio); try container.encodeIfPresent(value.promptText, forKey: .promptText); try container.encode(value.choices, forKey: .choices); try container.encode(value.correctChoiceID, forKey: .correctChoiceID); try container.encodeIfPresent(value.replayLimit, forKey: .replayLimit)
+        case .toneDiscrimination(let value):
+            try container.encode(Kind.toneDiscrimination, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encodeIfPresent(value.promptAudio, forKey: .promptAudio); try container.encodeIfPresent(value.promptText, forKey: .promptText); try container.encode(value.choices, forKey: .choices); try container.encode(value.correctChoiceID, forKey: .correctChoiceID); try container.encodeIfPresent(value.replayLimit, forKey: .replayLimit)
+        case .translation(let value):
+            try container.encode(Kind.translation, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.tokens, forKey: .tokens); try container.encode(value.correctOrder, forKey: .correctOrder); try container.encode(value.acceptedOrders, forKey: .acceptedOrders)
+        case .dialogueOrder(let value):
+            try container.encode(Kind.dialogueOrder, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encode(value.lines, forKey: .lines); try container.encode(value.correctOrder, forKey: .correctOrder)
+        case .conversationChoice(let value):
+            try container.encode(Kind.conversationChoice, forKey: .kind); try container.encode(value.header, forKey: .header); try container.encodeIfPresent(value.speaker, forKey: .speaker); try container.encodeIfPresent(value.promptAudio, forKey: .promptAudio); try container.encodeIfPresent(value.promptText, forKey: .promptText); try container.encode(value.replies, forKey: .replies); try container.encode(value.correctReplyID, forKey: .correctReplyID); try container.encodeIfPresent(value.replayLimit, forKey: .replayLimit)
         }
     }
 }
@@ -332,6 +381,9 @@ public struct FlashcardExercise: Codable, Hashable, Sendable {
 public enum ExerciseAnswer: Codable, Hashable, Sendable {
     case choice(choiceID: String)
     case wordOrder(tokenIDs: [String])
+    /// Each left item's identifier mapped to the pair identifier of the right
+    /// item the learner tied it to.
+    case matching(pairs: [String: String])
     case text(String)
     case speech(SpeechAnswer)
     case handwriting(HandwritingAnswer)
@@ -342,14 +394,15 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
     /// outside scored and answered counts.
     case skipped
 
-    private enum CodingKeys: String, CodingKey { case kind, choiceID, tokenIDs, text, speech, handwriting, rating }
-    private enum Kind: String, Codable { case choice, wordOrder, text, speech, handwriting, selfRating, skipped }
+    private enum CodingKeys: String, CodingKey { case kind, choiceID, tokenIDs, text, speech, handwriting, rating, pairs }
+    private enum Kind: String, Codable { case choice, wordOrder, matching, text, speech, handwriting, selfRating, skipped }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         switch try container.decode(Kind.self, forKey: .kind) {
         case .choice: self = .choice(choiceID: try container.decode(String.self, forKey: .choiceID))
         case .wordOrder: self = .wordOrder(tokenIDs: try container.decode([String].self, forKey: .tokenIDs))
+        case .matching: self = .matching(pairs: try container.decode([String: String].self, forKey: .pairs))
         case .text: self = .text(try container.decode(String.self, forKey: .text))
         case .speech: self = .speech(try container.decode(SpeechAnswer.self, forKey: .speech))
         case .handwriting: self = .handwriting(try container.decode(HandwritingAnswer.self, forKey: .handwriting))
@@ -363,6 +416,7 @@ public enum ExerciseAnswer: Codable, Hashable, Sendable {
         switch self {
         case .choice(let value): try container.encode(Kind.choice, forKey: .kind); try container.encode(value, forKey: .choiceID)
         case .wordOrder(let value): try container.encode(Kind.wordOrder, forKey: .kind); try container.encode(value, forKey: .tokenIDs)
+        case .matching(let value): try container.encode(Kind.matching, forKey: .kind); try container.encode(value, forKey: .pairs)
         case .text(let value): try container.encode(Kind.text, forKey: .kind); try container.encode(value, forKey: .text)
         case .speech(let value): try container.encode(Kind.speech, forKey: .kind); try container.encode(value, forKey: .speech)
         case .handwriting(let value): try container.encode(Kind.handwriting, forKey: .kind); try container.encode(value, forKey: .handwriting)

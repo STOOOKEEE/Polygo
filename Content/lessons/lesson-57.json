@@ -620,54 +620,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-pick-385",
+      "id": "block-ex-l57-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l57-pick-385",
+          "id": "ex-l57-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l57-understand"
           ],
           "required": true
         },
-        "promptText": "故事",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "同事 (tóng shì)"
-            },
-            "audio": null
+            "left": "故事",
+            "pinyin": "gù shi",
+            "right": {
+              "fr": "histoire"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "故事 (gù shi)"
-            },
-            "audio": null
+            "left": "讲",
+            "pinyin": "jiǎng",
+            "right": {
+              "fr": "parler ; expliquer"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "帽子 (mào zi)"
-            },
-            "audio": null
+            "left": "老",
+            "pinyin": "lǎo",
+            "right": {
+              "fr": "vieux ; ancien"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "周末 (zhōu mò)"
-            },
-            "audio": null
+            "left": "邻居",
+            "pinyin": "lín jū",
+            "right": {
+              "fr": "voisin"
+            }
+          },
+          {
+            "id": "e",
+            "left": "帽子",
+            "pinyin": "mào zi",
+            "right": {
+              "fr": "chapeau"
+            }
           }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -677,48 +687,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-reverse-385",
+      "id": "block-ex-l57-dict-sent-exa-1",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l57-reverse-385",
+          "id": "ex-l57-dict-sent-exa-1",
           "prompt": {
-            "fr": "Comment dit-on « histoire » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l57-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "老师讲了一个故事。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "故事 (gù shi)"
+              "fr": "lǎo shī jiǎng le yí gè gù shi。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "周末 (zhōu mò)"
+              "fr": "wǒ de tóng shì zhù zài fù jìn."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "帽子 (mào zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "同事 (tóng shì)"
+              "fr": "zhè dǐng mào zi bù shì hé wǒ."
             },
             "audio": null
           }
@@ -733,110 +738,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-pick-418",
+      "id": "block-ex-l57-tone-385",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l57-pick-418",
+          "id": "ex-l57-tone-385",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l57-understand"
           ],
           "required": true
         },
-        "promptText": "讲",
+        "promptText": "故事",
         "choices": [
           {
-            "id": "a",
+            "id": "t10",
             "label": {
-              "fr": "老 (lǎo)"
+              "fr": "Ton 1 ¯ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t40",
             "label": {
-              "fr": "周末 (zhōu mò)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t41",
             "label": {
-              "fr": "邻居 (lín jū)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t44",
             "label": {
-              "fr": "讲 (jiǎng)"
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 53
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l57-reverse-418",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l57-reverse-418",
-          "prompt": {
-            "fr": "Comment dit-on « parler ; expliquer » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l57-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "老 (lǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "邻居 (lín jū)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "讲 (jiǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "故事 (gù shi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t40"
       },
       "metadata": {
         "stage": "discover",
@@ -867,14 +816,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "周末 (zhōu mò)"
+              "fr": "帽子 (mào zi)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "帽子 (mào zi)"
+              "fr": "周末 (zhōu mò)"
             },
             "audio": null
           },
@@ -893,7 +842,65 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 53
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l57-dict-zh-520",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l57-dict-zh-520",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l57-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "同事",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "邻居"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "帽子"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "周末"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "同事"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -987,16 +994,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-order-exa-1",
+      "id": "block-ex-l57-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l57-order-exa-1",
+          "id": "ex-l57-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Le professeur a raconté une histoire »."
+            "fr": "Traduis en chinois : « Le professeur raconte une histoire »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l57-produce"
@@ -1005,39 +1012,51 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "讲",
-            "pinyin": "jiǎng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "故事",
-            "pinyin": "gù shi",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "一",
             "pinyin": "yí",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
             "id": "a",
             "hanzi": "老师",
             "pinyin": "lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "讲",
+            "pinyin": "jiǎng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "帽子",
+            "pinyin": "mào zi",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "邻居",
+            "pinyin": "lín jū",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "正在",
+            "pinyin": "zhèng zài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "故事",
+            "pinyin": "gù shi",
             "audio": null
           }
         ],
@@ -1049,10 +1068,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "老师讲了一个故事。",
-          "老师讲了一个故事"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1062,46 +1078,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-fill-exa-5",
+      "id": "block-ex-l57-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l57-fill-exa-5",
+          "id": "ex-l57-talk-1",
           "prompt": {
-            "fr": "Complète : 这顶___不适合我。 (« Ce chapeau ne me va pas »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l57-produce"
+            "l57-understand"
           ],
           "required": true
         },
-        "sentence": "这顶___不适合我。",
-        "acceptedAnswers": [
-          "帽子"
+        "speaker": "Mina",
+        "promptText": "文件放在哪里？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我把文件放在这个盒子里。",
+            "pinyin": "wǒ bǎ wén jiàn fàng zài zhè ge hé zi lǐ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "很方便，你放心吧。五分钟就能完成。",
+            "pinyin": "hěn fāng biàn, nǐ fàng xīn ba. wǔ fēn zhōng jiù néng wán chéng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这里方便吗？附近有打印机吗？",
+            "pinyin": "zhè lǐ fāng biàn ma? fù jìn yǒu dǎ yìn jī ma?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 53
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-order-exa-4",
+      "id": "block-ex-l57-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l57-order-exa-4",
+          "id": "ex-l57-translate-exa-6",
           "prompt": {
-            "fr": "Construis « Mon nouveau voisin s’appelle Wang »."
+            "fr": "Traduis en chinois : « Mon collègue habite à proximité »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l57-produce"
@@ -1110,21 +1144,9 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "新",
-            "pinyin": "xīn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "王",
-            "pinyin": "Wáng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "姓",
-            "pinyin": "xìng",
+            "id": "g",
+            "hanzi": "帽子",
+            "pinyin": "mào zi",
             "audio": null
           },
           {
@@ -1134,9 +1156,33 @@
             "audio": null
           },
           {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "周末",
+            "pinyin": "zhōu mò",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "同事",
+            "pinyin": "tóng shì",
+            "audio": null
+          },
+          {
             "id": "c",
-            "hanzi": "邻居",
-            "pinyin": "lín jū",
+            "hanzi": "住",
+            "pinyin": "zhù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "附近",
+            "pinyin": "fù jìn",
             "audio": null
           }
         ],
@@ -1147,10 +1193,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我的新邻居姓王。",
-          "我的新邻居姓王"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1160,13 +1203,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-order-exa-7",
+      "id": "block-ex-l57-order-exa-3",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l57-order-exa-7",
+          "id": "ex-l57-order-exa-3",
           "prompt": {
-            "fr": "Construis « Le week-end, j’aime me reposer à la maison »."
+            "fr": "Construis « Mon grand-père est très âgé »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1178,33 +1221,33 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huan",
+            "id": "e",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "周末",
-            "pinyin": "zhōu mò",
-            "audio": null
-          },
-          {
-            "id": "b",
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "休息",
-            "pinyin": "xiū xi",
+            "id": "b",
+            "hanzi": "爷爷",
+            "pinyin": "yé ye",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "已经",
+            "pinyin": "yǐ jīng",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
+            "hanzi": "老",
+            "pinyin": "lǎo",
             "audio": null
           }
         ],
@@ -1216,13 +1259,66 @@
           "e"
         ],
         "acceptedVariants": [
-          "周末我喜欢在家休息。",
-          "周末我喜欢在家休息"
+          "我爷爷已经老了。",
+          "我爷爷已经老了"
         ]
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 53
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l57-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l57-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l57-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "这里方便吗？附近有打印机吗？",
+            "pinyin": "zhè lǐ fāng biàn ma? fù jìn yǒu dǎ yìn jī ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我把文件放在这个盒子里。",
+            "pinyin": "wǒ bǎ wén jiàn fàng zài zhè ge hé zi lǐ.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "文件放在哪里？",
+            "pinyin": "wén jiàn fàng zài nǎ lǐ?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 53
       }
     },
@@ -1285,68 +1381,19 @@
           {
             "id": "b",
             "label": {
-              "fr": "Le professeur a raconté une histoire."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
               "fr": "Je mets les documents dans cette boîte."
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 53
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l57-read-exa-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l57-read-exa-2",
-          "prompt": {
-            "fr": "Que signifie la phrase : 老师正在讲一个故事。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l57-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Le professeur raconte une histoire."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Mon nouveau voisin s’appelle Wang."
-            },
-            "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Le week-end, j’aime me reposer à la maison."
+              "fr": "Le professeur a raconté une histoire."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",

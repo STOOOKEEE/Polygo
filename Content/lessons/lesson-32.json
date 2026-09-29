@@ -638,49 +638,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-pick-002",
+      "id": "block-ex-l32-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l32-pick-002",
+          "id": "ex-l32-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l32-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "八",
+            "pinyin": "bā",
+            "right": {
+              "fr": "huit"
+            }
+          },
+          {
+            "id": "b",
+            "left": "她",
+            "pinyin": "tā",
+            "right": {
+              "fr": "elle"
+            }
+          },
+          {
+            "id": "c",
+            "left": "谁",
+            "pinyin": "shéi",
+            "right": {
+              "fr": "qui"
+            }
+          },
+          {
+            "id": "d",
+            "left": "昨天",
+            "pinyin": "zuó tiān",
+            "right": {
+              "fr": "hier"
+            }
+          },
+          {
+            "id": "e",
+            "left": "休息",
+            "pinyin": "xiū xī",
+            "right": {
+              "fr": "se reposer"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-dict-py-002",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l32-dict-py-002",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l32-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "八",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "八 (bā)"
+              "fr": "bā"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "她 (tā)"
+              "fr": "shéi"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "雪 (xuě)"
+              "fr": "xuě"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "谁 (shéi)"
+              "fr": "tā"
             },
             "audio": null
           }
@@ -695,53 +763,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-reverse-002",
+      "id": "block-ex-l32-tone-047",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l32-reverse-002",
+          "id": "ex-l32-tone-047",
           "prompt": {
-            "fr": "Comment dit-on « huit » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l32-understand"
           ],
           "required": true
         },
+        "promptText": "她",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "她 (tā)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "谁 (shéi)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "雪 (xuě)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "八 (bā)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t1"
       },
       "metadata": {
         "stage": "discover",
@@ -786,19 +855,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "昨天 (zuó tiān)"
+              "fr": "雪 (xuě)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "雪 (xuě)"
+              "fr": "昨天 (zuó tiān)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -808,13 +877,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-reverse-148",
+      "id": "block-ex-l32-reverse-321",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l32-reverse-148",
+          "id": "ex-l32-reverse-321",
           "prompt": {
-            "fr": "Comment dit-on « hier » en chinois ?"
+            "fr": "Comment dit-on « changement ; changer » en chinois ?"
           },
           "instruction": {
             "fr": "Choisis le mot chinois qui convient."
@@ -849,12 +918,12 @@
           {
             "id": "d",
             "label": {
-              "fr": "她 (tā)"
+              "fr": "雪 (xuě)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -885,14 +954,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "休息 (xiū xī)"
+              "fr": "昨天 (zuó tiān)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "昨天 (zuó tiān)"
+              "fr": "休息 (xiū xī)"
             },
             "audio": null
           },
@@ -911,7 +980,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1005,16 +1074,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-order-exa-1",
+      "id": "block-ex-l32-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l32-order-exa-1",
+          "id": "ex-l32-translate-exa-1",
           "prompt": {
-            "fr": "Construis « J’ai huit livres »."
+            "fr": "Traduis en chinois : « J’ai huit livres »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l32-produce"
@@ -1023,15 +1092,9 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "八",
-            "pinyin": "bā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "有",
-            "pinyin": "yǒu",
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
@@ -1041,15 +1104,33 @@
             "audio": null
           },
           {
+            "id": "g",
+            "hanzi": "雪",
+            "pinyin": "xuě",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "八",
+            "pinyin": "bā",
+            "audio": null
+          },
+          {
             "id": "e",
             "hanzi": "书",
             "pinyin": "shū",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "她",
+            "pinyin": "tā",
             "audio": null
           }
         ],
@@ -1060,10 +1141,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我有八本书。",
-          "我有八本书"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1073,46 +1151,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-fill-exa-4",
+      "id": "block-ex-l32-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l32-fill-exa-4",
+          "id": "ex-l32-talk-1",
           "prompt": {
-            "fr": "Complète : 我___看了电影。 (« J’ai regardé un film hier »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l32-produce"
+            "l32-understand"
           ],
           "required": true
         },
-        "sentence": "我___看了电影。",
-        "acceptedAnswers": [
-          "昨天"
+        "speaker": "Mina",
+        "promptText": "这家商店有新衣服吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "准备好了。真的很漂亮，商店也不远。",
+            "pinyin": "zhǔn bèi hǎo le。 zhēn de hěn piào liàng， shāng diàn yě bù yuǎn。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有。你喜欢什么颜色？",
+            "pinyin": "yǒu。 nǐ xǐ huān shén me yán sè？",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我们一起休息一下，再看。",
+            "pinyin": "wǒ men yì qǐ xiū xī yī xià， zài kàn。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 28
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-order-exa-3",
+      "id": "block-ex-l32-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l32-order-exa-3",
+          "id": "ex-l32-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Qui est dehors, devant la porte ? »."
+            "fr": "Traduis en chinois : « Elle est mon amie »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l32-produce"
@@ -1122,26 +1218,38 @@
         "tokens": [
           {
             "id": "c",
-            "hanzi": "门",
-            "pinyin": "mén",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "e",
+            "hanzi": "八",
+            "pinyin": "bā",
             "audio": null
           },
           {
             "id": "a",
+            "hanzi": "她",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "朋友",
+            "pinyin": "péng yǒu",
+            "audio": null
+          },
+          {
+            "id": "f",
             "hanzi": "谁",
-            "pinyin": "shuí",
+            "pinyin": "shéi",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "外",
-            "pinyin": "wài",
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
             "audio": null
           }
         ],
@@ -1151,10 +1259,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "谁在门外？",
-          "谁在门外"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1164,43 +1269,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l32-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 天气___很大。 (« Le temps change beaucoup »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l32-produce"
-          ],
-          "required": true
-        },
-        "sentence": "天气___很大。",
-        "acceptedAnswers": [
-          "变化"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 28
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l32-order-exa-6",
+      "id": "block-ex-l32-order-exa-7",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l32-order-exa-6",
+          "id": "ex-l32-order-exa-7",
           "prompt": {
-            "fr": "Construis « Il neige en hiver »."
+            "fr": "Construis « Le temps change beaucoup »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1212,27 +1287,27 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "下",
-            "pinyin": "xià",
+            "id": "d",
+            "hanzi": "大",
+            "pinyin": "dà",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "冬",
-            "pinyin": "dōng",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "雪",
-            "pinyin": "xuě",
+            "id": "c",
+            "hanzi": "很",
+            "pinyin": "hěn",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "hanzi": "变化",
+            "pinyin": "biàn huà",
             "audio": null
           }
         ],
@@ -1243,8 +1318,8 @@
           "d"
         ],
         "acceptedVariants": [
-          "冬天下雪。",
-          "冬天下雪"
+          "天气变化很大。",
+          "天气变化很大"
         ]
       },
       "metadata": {
@@ -1255,31 +1330,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-fill-rea-4",
+      "id": "block-ex-l32-dialogue-2-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l32-fill-rea-4",
+          "id": "ex-l32-dialogue-2-3",
           "prompt": {
-            "fr": "Complète : ___觉得衣服真的很漂亮。 (« Elle trouve le vêtement vraiment joli »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l32-produce"
+            "l32-understand"
           ],
           "required": true
         },
-        "sentence": "___觉得衣服真的很漂亮。",
-        "acceptedAnswers": [
-          "她"
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "我想买红色的，但是眼睛有点累。",
+            "pinyin": "wǒ xiǎng mǎi hóng sè de， dàn shì yǎn jīng yǒu diǎn lèi。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "有。你喜欢什么颜色？",
+            "pinyin": "yǒu。 nǐ xǐ huān shén me yán sè？",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "我们一起休息一下，再看。",
+            "pinyin": "wǒ men yì qǐ xiū xī yī xià， zài kàn。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 28
       }
     },

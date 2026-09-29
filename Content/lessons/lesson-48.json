@@ -638,49 +638,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-pick-127",
+      "id": "block-ex-l48-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l48-pick-127",
+          "id": "ex-l48-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l48-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "星期",
+            "pinyin": "xīng qī",
+            "right": {
+              "fr": "semaine"
+            }
+          },
+          {
+            "id": "b",
+            "left": "姐姐",
+            "pinyin": "jiě jie",
+            "right": {
+              "fr": "grande sœur"
+            }
+          },
+          {
+            "id": "c",
+            "left": "咖啡",
+            "pinyin": "kā fēi",
+            "right": {
+              "fr": "café"
+            }
+          },
+          {
+            "id": "d",
+            "left": "课",
+            "pinyin": "kè",
+            "right": {
+              "fr": "cours ; leçon"
+            }
+          },
+          {
+            "id": "e",
+            "left": "洗",
+            "pinyin": "xǐ",
+            "right": {
+              "fr": "laver"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 44
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l48-dict-py-127",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l48-dict-py-127",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l48-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "星期",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "星期 (xīng qī)"
+              "fr": "xīng qī"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "成绩 (chéng jì)"
+              "fr": "kā fēi"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "丈夫 (zhàng fu)"
+              "fr": "zhàng fu"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "咖啡 (kā fēi)"
+              "fr": "chéng jì"
             },
             "audio": null
           }
@@ -695,27 +763,85 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-reverse-127",
+      "id": "block-ex-l48-tone-201",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l48-reverse-127",
+          "id": "ex-l48-tone-201",
           "prompt": {
-            "fr": "Comment dit-on « semaine » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l48-understand"
           ],
           "required": true
         },
+        "promptText": "姐姐",
+        "choices": [
+          {
+            "id": "t20",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t30",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t30"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 44
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l48-pick-336",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l48-pick-336",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l48-understand"
+          ],
+          "required": true
+        },
+        "promptText": "成绩",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "咖啡 (kā fēi)"
+              "fr": "姐姐 (jiě jie)"
             },
             "audio": null
           },
@@ -729,14 +855,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "成绩 (chéng jì)"
+              "fr": "咖啡 (kā fēi)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "星期 (xīng qī)"
+              "fr": "成绩 (chéng jì)"
             },
             "audio": null
           }
@@ -751,23 +877,22 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-pick-212",
+      "id": "block-ex-l48-reverse-212",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l48-pick-212",
+          "id": "ex-l48-reverse-212",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Comment dit-on « cours ; leçon » en chinois ?"
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Choisis le mot chinois qui convient."
           },
           "objectiveIDs": [
             "l48-understand"
           ],
           "required": true
         },
-        "promptText": "课",
         "choices": [
           {
             "id": "a",
@@ -779,7 +904,7 @@
           {
             "id": "b",
             "label": {
-              "fr": "星期 (xīng qī)"
+              "fr": "成绩 (chéng jì)"
             },
             "audio": null
           },
@@ -793,7 +918,7 @@
           {
             "id": "d",
             "label": {
-              "fr": "姐姐 (jiě jie)"
+              "fr": "星期 (xīng qī)"
             },
             "audio": null
           }
@@ -808,67 +933,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-reverse-262",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l48-reverse-262",
-          "prompt": {
-            "fr": "Comment dit-on « laver » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l48-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "课 (kè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "洗 (xǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "成绩 (chéng jì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "咖啡 (kā fēi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 44
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l48-pick-062",
+      "id": "block-ex-l48-pick-065",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l48-pick-062",
+          "id": "ex-l48-pick-065",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -880,19 +949,19 @@
           ],
           "required": true
         },
-        "promptText": "吗",
+        "promptText": "没",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "吗 (ma)"
+              "fr": "洗 (xǐ)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "洗 (xǐ)"
+              "fr": "没 (méi)"
             },
             "audio": null
           },
@@ -906,68 +975,12 @@
           {
             "id": "d",
             "label": {
-              "fr": "姐姐 (jiě jie)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 44
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l48-reverse-201",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l48-reverse-201",
-          "prompt": {
-            "fr": "Comment dit-on « grande sœur » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l48-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
               "fr": "丈夫 (zhàng fu)"
             },
             "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "星期 (xīng qī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "成绩 (chéng jì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "姐姐 (jiě jie)"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1061,16 +1074,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-order-exa-1",
+      "id": "block-ex-l48-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l48-order-exa-1",
+          "id": "ex-l48-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Nous nous reposons samedi »."
+            "fr": "Traduis en chinois : « Nous nous reposons samedi »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l48-produce"
@@ -1078,18 +1091,6 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "a",
-            "hanzi": "星期",
-            "pinyin": "xīng qī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "休息",
-            "pinyin": "xiū xī",
-            "audio": null
-          },
           {
             "id": "c",
             "hanzi": "我们",
@@ -1101,6 +1102,30 @@
             "hanzi": "六",
             "pinyin": "liù",
             "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "咖啡",
+            "pinyin": "kā fēi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "成绩",
+            "pinyin": "chéng jì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "休息",
+            "pinyin": "xiū xī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
           }
         ],
         "correctOrder": [
@@ -1109,10 +1134,132 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "星期六我们休息。",
-          "星期六我们休息"
-        ]
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 44
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l48-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l48-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l48-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "别人都参加会议了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "很好。如果大家同意，就开始工作。",
+            "pinyin": "hěn hǎo。 rú guǒ dà jiā tóng yì， jiù kāi shǐ gōng zuò。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他五点才来。我们在二层等。",
+            "pinyin": "tā wǔ diǎn cái lái。 wǒ men zài èr céng děng。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "大部分参加了，但是小王还没到。",
+            "pinyin": "dà bù fèn cān jiā le， dàn shì xiǎo wáng hái méi dào。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 44
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l48-translate-exa-6",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l48-translate-exa-6",
+          "prompt": {
+            "fr": "Traduis en chinois : « Son mari est médecin »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l48-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "她",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "洗",
+            "pinyin": "xǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "丈夫",
+            "pinyin": "zhàng fū",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "医生",
+            "pinyin": "yī shēng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1152,130 +1299,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-order-exa-3",
+      "id": "block-ex-l48-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l48-order-exa-3",
+          "id": "ex-l48-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Je ne bois pas de café »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l48-produce"
+            "l48-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "咖啡",
-            "pinyin": "kā fēi",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "b",
-            "hanzi": "不",
-            "pinyin": "bù",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我不喝咖啡。",
-          "我不喝咖啡"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 44
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l48-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l48-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 下午我有一节___。 (« J’ai un cours l’après-midi »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l48-produce"
-          ],
-          "required": true
-        },
-        "sentence": "下午我有一节___。",
-        "acceptedAnswers": [
-          "课"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 44
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l48-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l48-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Lave-toi les mains, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l48-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "洗",
-            "pinyin": "xǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "speaker": "Tao",
+            "hanzi": "大部分参加了，但是小王还没到。",
+            "pinyin": "dà bù fèn cān jiā le， dàn shì xiǎo wáng hái méi dào。",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "手",
-            "pinyin": "shǒu",
+            "speaker": "Mina",
+            "hanzi": "经理什么时候来？",
+            "pinyin": "jīng lǐ shén me shí hòu lái？",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "别人都参加会议了吗？",
+            "pinyin": "bié rén dōu cān jiā huì yì le ma？",
             "audio": null
           }
         ],
@@ -1283,79 +1342,60 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "请洗手。",
-          "请洗手"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 44
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l48-speak-exa-6",
+      "id": "block-ex-l48-read-exa-6",
       "spec": {
-        "kind": "speaking",
+        "kind": "choice",
         "header": {
-          "id": "ex-l48-speak-exa-6",
+          "id": "ex-l48-read-exa-6",
           "prompt": {
-            "fr": "Dis « Son mari est médecin »."
+            "fr": "Que signifie la phrase : 她的丈夫是医生。"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l48-produce"
+            "l48-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "她的丈夫是医生。",
-        "referencePinyin": "tā de zhàng fū shì yī shēng。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "她的丈夫是医生。"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tout le monde l’attend au deuxième étage."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Son mari est médecin."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Quel est le résultat de cette réunion ?"
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 44
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l48-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l48-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Mes résultats d’examen sont très bons »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l48-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我的考试成绩很好。",
-        "referencePinyin": "wǒ de kǎo shì chéng jì hěn hǎo。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我的考试成绩很好。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 44
       }
     },

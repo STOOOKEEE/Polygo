@@ -600,162 +600,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l42-pick-023",
+      "id": "block-ex-l42-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l42-pick-023",
+          "id": "ex-l42-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l42-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "对不起",
+            "pinyin": "duì bù qǐ",
+            "right": {
+              "fr": "désolé ; pardon"
+            }
+          },
+          {
+            "id": "b",
+            "left": "女儿",
+            "pinyin": "nǚ ér",
+            "right": {
+              "fr": "fille"
+            }
+          },
+          {
+            "id": "c",
+            "left": "日",
+            "pinyin": "rì",
+            "right": {
+              "fr": "jour ; date"
+            }
+          },
+          {
+            "id": "d",
+            "left": "公共汽车",
+            "pinyin": "gōng gòng qì chē",
+            "right": {
+              "fr": "bus"
+            }
+          },
+          {
+            "id": "e",
+            "left": "手机",
+            "pinyin": "shǒu jī",
+            "right": {
+              "fr": "téléphone portable"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-dict-py-023",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l42-dict-py-023",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "对不起",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "公共汽车 (gōng gòng qì chē)"
+              "fr": "duì bù qǐ"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "女儿 (nǚ ér)"
+              "fr": "xíng lǐ xiāng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "对不起 (duì bù qǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "手机 (shǒu jī)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 38
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l42-reverse-023",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l42-reverse-023",
-          "prompt": {
-            "fr": "Comment dit-on « désolé ; pardon » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l42-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "手机 (shǒu jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "对不起 (duì bù qǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "公共汽车 (gōng gòng qì chē)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "女儿 (nǚ ér)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 38
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l42-pick-076",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l42-pick-076",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l42-understand"
-          ],
-          "required": true
-        },
-        "promptText": "女儿",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "女儿 (nǚ ér)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "手机 (shǒu jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "脸 (liǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "日 (rì)"
+              "fr": "yí huìr"
             },
             "audio": null
           }
@@ -770,53 +718,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l42-reverse-088",
+      "id": "block-ex-l42-tone-076",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l42-reverse-088",
+          "id": "ex-l42-tone-076",
           "prompt": {
-            "fr": "Comment dit-on « jour ; date » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l42-understand"
           ],
           "required": true
         },
+        "promptText": "女儿",
         "choices": [
           {
-            "id": "a",
+            "id": "t22",
             "label": {
-              "fr": "脸 (liǎn)"
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t32",
             "label": {
-              "fr": "手机 (shǒu jī)"
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t34",
             "label": {
-              "fr": "女儿 (nǚ ér)"
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t42",
             "label": {
-              "fr": "日 (rì)"
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t32"
       },
       "metadata": {
         "stage": "discover",
@@ -854,14 +803,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "女儿 (nǚ ér)"
+              "fr": "日 (rì)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "日 (rì)"
+              "fr": "女儿 (nǚ ér)"
             },
             "audio": null
           },
@@ -873,7 +822,63 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-reverse-023",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-reverse-023",
+          "prompt": {
+            "fr": "Comment dit-on « désolé ; pardon » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "对不起 (duì bù qǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "手机 (shǒu jī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "公共汽车 (gōng gòng qì chē)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "女儿 (nǚ ér)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -967,16 +972,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l42-order-exa-3",
+      "id": "block-ex-l42-translate-exa-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l42-order-exa-3",
+          "id": "ex-l42-translate-exa-3",
           "prompt": {
-            "fr": "Construis « Nous sommes le 3 septembre »."
+            "fr": "Traduis en chinois : « Nous sommes le 3 septembre »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l42-produce"
@@ -985,15 +990,9 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "九",
-            "pinyin": "jiǔ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
+            "id": "d",
+            "hanzi": "月",
+            "pinyin": "yuè",
             "audio": null
           },
           {
@@ -1003,9 +1002,27 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "月",
-            "pinyin": "yuè",
+            "id": "e",
+            "hanzi": "三",
+            "pinyin": "sān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "手机",
+            "pinyin": "shǒu jī",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "女儿",
+            "pinyin": "nǚ ér",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
             "audio": null
           },
           {
@@ -1015,9 +1032,9 @@
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "三",
-            "pinyin": "sān",
+            "id": "c",
+            "hanzi": "九",
+            "pinyin": "jiǔ",
             "audio": null
           }
         ],
@@ -1029,10 +1046,125 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "今天是九月三日。",
-          "今天是九月三日"
-        ]
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l42-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你的行李箱在哪里？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "刚才还在这里，现在不见了。",
+            "pinyin": "gāng cái hái zài zhè lǐ， xiàn zài bú jiàn le。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "好，现在是三点一刻，我们还有时间。",
+            "pinyin": "hǎo， xiàn zài shì sān diǎn yī kè， wǒ men hái yǒu shí jiān。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "坐火车。我们回去找，或者问服务员。",
+            "pinyin": "zuò huǒ chē。 wǒ men huí qù zhǎo， huò zhě wèn fú wù yuán。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l42-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je prends le bus pour aller travailler »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l42-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "手机",
+            "pinyin": "shǒu jī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "上班",
+            "pinyin": "shàng bān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "坐",
+            "pinyin": "zuò",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "公共汽车",
+            "pinyin": "gōng gòng qì chē",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "日",
+            "pinyin": "rì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1072,192 +1204,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l42-order-exa-4",
+      "id": "block-ex-l42-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l42-order-exa-4",
+          "id": "ex-l42-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Je prends le bus pour aller travailler »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l42-produce"
+            "l42-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
           {
             "id": "c",
-            "hanzi": "公共汽车",
-            "pinyin": "gōng gòng qì chē",
+            "speaker": "Mina",
+            "hanzi": "你坐火车还是坐飞机？",
+            "pinyin": "nǐ zuò huǒ chē hái shì zuò fēi jī？",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "坐",
-            "pinyin": "zuò",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
+            "speaker": "Tao",
+            "hanzi": "刚才还在这里，现在不见了。",
+            "pinyin": "gāng cái hái zài zhè lǐ， xiàn zài bú jiàn le。",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "speaker": "Mina",
+            "hanzi": "你的行李箱在哪里？",
+            "pinyin": "nǐ de xíng lǐ xiāng zài nǎ lǐ？",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我坐公共汽车上班。",
-          "我坐公共汽车上班"
+          "c"
         ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 38
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l42-fill-exa-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l42-fill-exa-2",
-          "prompt": {
-            "fr": "Complète : 我的___在家。 (« Ma fille est à la maison »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l42-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我的___在家。",
-        "acceptedAnswers": [
-          "女儿"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 38
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l42-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l42-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Mon téléphone est dans la chambre »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l42-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "手机",
-            "pinyin": "shǒu jī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "房间",
-            "pinyin": "fáng jiān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "里",
-            "pinyin": "lǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我的手机在房间里。",
-          "我的手机在房间里"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 38
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l42-speak-exa-1",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l42-speak-exa-1",
-          "prompt": {
-            "fr": "Dis « Désolé, je suis arrivé en retard »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l42-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "对不起，我来晚了。",
-        "referencePinyin": "duì bù qǐ， wǒ lái wǎn le。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "对不起，我来晚了。"
-        ],
-        "allowSelfRating": true
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
+        "lessonDay": 38
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l42-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l42-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 洗完脸以后，她戴上眼镜。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l42-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous sommes le 3 septembre."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Mon téléphone est dans la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Après s’être lavé le visage, elle met ses lunettes."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 38
       }
     },

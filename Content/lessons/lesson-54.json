@@ -630,49 +630,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-pick-306",
+      "id": "block-ex-l54-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l54-pick-306",
+          "id": "ex-l54-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l54-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "把",
+            "pinyin": "bǎ",
+            "right": {
+              "fr": "classificateur de poignée ; construction 把"
+            }
+          },
+          {
+            "id": "b",
+            "left": "比较",
+            "pinyin": "bǐ jiào",
+            "right": {
+              "fr": "comparer ; relativement"
+            }
+          },
+          {
+            "id": "c",
+            "left": "发现",
+            "pinyin": "fā xiàn",
+            "right": {
+              "fr": "découvrir ; constater"
+            }
+          },
+          {
+            "id": "d",
+            "left": "还",
+            "pinyin": "huán",
+            "right": {
+              "fr": "rendre ; rembourser"
+            }
+          },
+          {
+            "id": "e",
+            "left": "一边",
+            "pinyin": "yī biān",
+            "right": {
+              "fr": "un côté ; tout en"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-dict-py-306",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l54-dict-py-306",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l54-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "把",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "还 (huán)"
+              "fr": "huán"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "一边 (yī biān)"
+              "fr": "nǐ"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "把 (bǎ)"
+              "fr": "bǎ"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "比较 (bǐ jiào)"
+              "fr": "ma"
             },
             "audio": null
           }
@@ -687,72 +755,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-reverse-306",
+      "id": "block-ex-l54-tone-318",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l54-reverse-306",
+          "id": "ex-l54-tone-318",
           "prompt": {
-            "fr": "Comment dit-on « classificateur de poignée ; construction 把 » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l54-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "还 (huán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "把 (bǎ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "比较 (bǐ jiào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "一边 (yī biān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-pick-318",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l54-pick-318",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l54-understand"
@@ -762,35 +774,35 @@
         "promptText": "比较",
         "choices": [
           {
-            "id": "a",
+            "id": "t14",
             "label": {
-              "fr": "比较 (bǐ jiào)"
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t24",
             "label": {
-              "fr": "发现 (fā xiàn)"
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t30",
             "label": {
-              "fr": "以后 (yǐ hòu)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t34",
             "label": {
-              "fr": "一边 (yī biān)"
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "t34"
       },
       "metadata": {
         "stage": "discover",
@@ -800,67 +812,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-reverse-318",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l54-reverse-318",
-          "prompt": {
-            "fr": "Comment dit-on « comparer ; relativement » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l54-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "发现 (fā xiàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "一边 (yī biān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "以后 (yǐ hòu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "比较 (bǐ jiào)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-pick-402",
+      "id": "block-ex-l54-pick-370",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l54-pick-402",
+          "id": "ex-l54-pick-370",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -872,82 +828,26 @@
           ],
           "required": true
         },
-        "promptText": "还",
+        "promptText": "发现",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "只 (zhǐ)"
+              "fr": "一边 (yī biān)"
             },
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "比较 (bǐ jiào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "还 (huán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
             "label": {
               "fr": "发现 (fā xiàn)"
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-reverse-062",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l54-reverse-062",
-          "prompt": {
-            "fr": "Comment dit-on « particule interrogative » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l54-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "只 (zhǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "吗 (ma)"
-            },
-            "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "还 (huán)"
+              "fr": "比较 (bǐ jiào)"
             },
             "audio": null
           },
@@ -960,6 +860,73 @@
           }
         ],
         "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l54-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l54-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "以后",
+            "pinyin": null,
+            "right": {
+              "fr": "yǐ hòu"
+            }
+          },
+          {
+            "id": "b",
+            "left": "只",
+            "pinyin": null,
+            "right": {
+              "fr": "zhǐ"
+            }
+          },
+          {
+            "id": "c",
+            "left": "字典",
+            "pinyin": null,
+            "right": {
+              "fr": "zì diǎn"
+            }
+          },
+          {
+            "id": "d",
+            "left": "吗",
+            "pinyin": null,
+            "right": {
+              "fr": "ma"
+            }
+          },
+          {
+            "id": "e",
+            "left": "你",
+            "pinyin": null,
+            "right": {
+              "fr": "nǐ"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1053,16 +1020,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-order-exa-1",
+      "id": "block-ex-l54-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l54-order-exa-1",
+          "id": "ex-l54-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Je pose le livre sur la table »."
+            "fr": "Traduis en chinois : « Je pose le livre sur la table »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l54-produce"
@@ -1070,6 +1037,36 @@
           "required": true
         },
         "tokens": [
+          {
+            "id": "h",
+            "hanzi": "只",
+            "pinyin": "zhǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "放",
+            "pinyin": "fàng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "一边",
+            "pinyin": "yī biān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
           {
             "id": "e",
             "hanzi": "桌子",
@@ -1083,27 +1080,9 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "放",
-            "pinyin": "fàng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
             "id": "a",
             "hanzi": "我把",
             "pinyin": "wǒ bǎ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "书",
-            "pinyin": "shū",
             "audio": null
           }
         ],
@@ -1115,10 +1094,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "我把书放在桌子上。",
-          "我把书放在桌子上"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1128,13 +1104,138 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-fill-exa-7",
+      "id": "block-ex-l54-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l54-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l54-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你的作业写完了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是。这个词会影响整句话的意思。",
+            "pinyin": "shì. zhè ge cí huì yǐng xiǎng zhěng jù huà de yì si.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "还差一点。我用字典查词语。",
+            "pinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这是关于中国文化的作业吗？",
+            "pinyin": "zhè shì guān yú Zhōng guó wén huà de zuò yè ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l54-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’ai découvert un problème »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l54-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "问题",
+            "pinyin": "wèn tí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "以后",
+            "pinyin": "yǐ hòu",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "发现",
+            "pinyin": "fā xiàn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "一边",
+            "pinyin": "yī biān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-fill-exa-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l54-fill-exa-7",
+          "id": "ex-l54-fill-exa-2",
           "prompt": {
-            "fr": "Complète : 我___喝一杯咖啡。 (« Je ne bois qu’une tasse de café »)"
+            "fr": "Complète : 这个问题___简单。 (« Ce problème est assez simple »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1144,9 +1245,9 @@
           ],
           "required": true
         },
-        "sentence": "我___喝一杯咖啡。",
+        "sentence": "这个问题___简单。",
         "acceptedAnswers": [
-          "只"
+          "比较"
         ],
         "caseSensitive": false
       },
@@ -1158,137 +1259,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-order-exa-2",
+      "id": "block-ex-l54-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l54-order-exa-2",
+          "id": "ex-l54-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Ce problème est assez simple »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l54-produce"
+            "l54-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
           {
-            "id": "c",
-            "hanzi": "问题",
-            "pinyin": "wèn tí",
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "还差一点。我用字典查词语。",
+            "pinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "speaker": "Mina",
+            "hanzi": "你的作业写完了吗？",
+            "pinyin": "nǐ de zuò yè xiě wán le ma?",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "简单",
-            "pinyin": "jiǎn dān",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "比较",
-            "pinyin": "bǐ jiào",
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "这是关于中国文化的作业吗？",
+            "pinyin": "zhè shì guān yú Zhōng guó wén huà de zuò yè ma?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "这个问题比较简单。",
-          "这个问题比较简单"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 50
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-order-exa-6",
+      "id": "block-ex-l54-read-exa-7",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "choice",
         "header": {
-          "id": "ex-l54-order-exa-6",
+          "id": "ex-l54-read-exa-7",
           "prompt": {
-            "fr": "Construis « À l’avenir, j’aimerais habiter à Pékin »."
+            "fr": "Que signifie la phrase : 我只喝一杯咖啡。"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l54-produce"
+            "l54-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "choices": [
           {
-            "id": "d",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "a",
+            "label": {
+              "fr": "Je ne bois qu’une tasse de café."
+            },
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "我想",
-            "pinyin": "wǒ xiǎng",
+            "label": {
+              "fr": "C’est un devoir sur la culture chinoise ?"
+            },
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "住",
-            "pinyin": "zhù",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "北京",
-            "pinyin": "Běi jīng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "以后",
-            "pinyin": "yǐ hòu",
+            "label": {
+              "fr": "Je rends le livre après le cours."
+            },
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "以后我想住在北京。",
-          "以后我想住在北京"
-        ]
+        "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 50
       }
     },
@@ -1319,38 +1386,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l54-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Elle écoute de la musique tout en cuisinant »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l54-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "她一边听音乐，一边做饭。",
-        "referencePinyin": "tā yì biān tīng yīn yuè, yì biān zuò fàn.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "她一边听音乐，一边做饭。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 50
       }
     },

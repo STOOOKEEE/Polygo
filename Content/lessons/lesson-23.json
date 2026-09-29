@@ -637,6 +637,181 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l23-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l23-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "吃",
+            "pinyin": "chī",
+            "right": {
+              "fr": "manger"
+            }
+          },
+          {
+            "id": "b",
+            "left": "天气",
+            "pinyin": "tiān qì",
+            "right": {
+              "fr": "temps (météo)"
+            }
+          },
+          {
+            "id": "c",
+            "left": "小",
+            "pinyin": "xiǎo",
+            "right": {
+              "fr": "petit"
+            }
+          },
+          {
+            "id": "d",
+            "left": "医生",
+            "pinyin": "yī shēng",
+            "right": {
+              "fr": "médecin"
+            }
+          },
+          {
+            "id": "e",
+            "left": "白",
+            "pinyin": "bái",
+            "right": {
+              "fr": "blanc"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-dict-sent-dia-6",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l23-dict-sent-dia-6",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "有三个小时，我们一起吃饭。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "wǎn shàng yǒu jǐ gè xiǎo shí de shí jiān？"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-tone-108",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l23-tone-108",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "promptText": "天气",
+        "choices": [
+          {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l23-pick-011",
       "spec": {
         "kind": "listeningChoice",
@@ -654,62 +829,6 @@
           "required": true
         },
         "promptText": "吃",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "小 (xiǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "白 (bái)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "让 (ràng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "吃 (chī)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 19
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l23-reverse-011",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l23-reverse-011",
-          "prompt": {
-            "fr": "Comment dit-on « manger » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l23-understand"
-          ],
-          "required": true
-        },
         "choices": [
           {
             "id": "a",
@@ -750,166 +869,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-pick-133",
+      "id": "block-ex-l23-dict-zh-122",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l23-pick-133",
+          "id": "ex-l23-dict-zh-122",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l23-understand"
           ],
           "required": true
         },
-        "promptText": "医生",
+        "script": "hanzi",
+        "promptText": "小",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "天气 (tiān qì)"
+              "fr": "吃"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "医生 (yī shēng)"
+              "fr": "小"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "生日 (shēng rì)"
+              "fr": "白"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "白 (bái)"
+              "fr": "让"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 19
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l23-reverse-108",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l23-reverse-108",
-          "prompt": {
-            "fr": "Comment dit-on « temps (météo) » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l23-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "天气 (tiān qì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "生日 (shēng rì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "医生 (yī shēng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "让 (ràng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 19
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l23-reverse-133",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l23-reverse-133",
-          "prompt": {
-            "fr": "Comment dit-on « médecin » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l23-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "天气 (tiān qì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "生日 (shēng rì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "小 (xiǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "医生 (yī shēng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -1003,16 +1011,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-order-exa-2",
+      "id": "block-ex-l23-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l23-order-exa-2",
+          "id": "ex-l23-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Le temps est très beau aujourd’hui »."
+            "fr": "Traduis en chinois : « Le temps est très beau aujourd’hui »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l23-produce"
@@ -1020,6 +1028,18 @@
           "required": true
         },
         "tokens": [
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "医生",
+            "pinyin": "yī shēng",
+            "audio": null
+          },
           {
             "id": "d",
             "hanzi": "很好",
@@ -1039,9 +1059,9 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "的",
-            "pinyin": "de",
+            "id": "e",
+            "hanzi": "让",
+            "pinyin": "ràng",
             "audio": null
           }
         ],
@@ -1051,10 +1071,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "今天的天气很好。",
-          "今天的天气很好"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1064,31 +1081,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-fill-dia-6",
+      "id": "block-ex-l23-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l23-fill-dia-6",
+          "id": "ex-l23-talk-1",
           "prompt": {
-            "fr": "Complète : 有三个小时，我们一起___饭。 (« Nous avons trois heures ; nous dînerons ensemble »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l23-produce"
+            "l23-understand"
           ],
           "required": true
         },
-        "sentence": "有三个小时，我们一起___饭。",
-        "acceptedAnswers": [
-          "吃"
+        "speaker": "Mina",
+        "promptText": "去年你的生日怎么样？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我先去医院看爷爷，然后回家。",
+            "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有三个小时，我们一起吃饭。",
+            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很好。今年我的生日在星期六。",
+            "pinyin": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 19
       }
     },
@@ -1148,99 +1183,102 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-fill-exa-5",
+      "id": "block-ex-l23-talk-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l23-fill-exa-5",
+          "id": "ex-l23-talk-3",
           "prompt": {
-            "fr": "Complète : ___色的猫在门口。 (« Le chat blanc est à la porte »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l23-produce"
+            "l23-understand"
           ],
           "required": true
         },
-        "sentence": "___色的猫在门口。",
-        "acceptedAnswers": [
-          "白"
+        "speaker": "Mina",
+        "promptText": "早上你先做什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "有三个小时，我们一起吃饭。",
+            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我先去医院看爷爷，然后回家。",
+            "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很好。今年我的生日在星期六。",
+            "pinyin": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 19
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-order-exa-6",
+      "id": "block-ex-l23-dialogue-4-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l23-order-exa-6",
+          "id": "ex-l23-dialogue-4-3",
           "prompt": {
-            "fr": "Construis « Laisse d’abord passer l’enfant, s’il te plaît »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l23-produce"
+            "l23-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
           {
-            "id": "e",
-            "hanzi": "走",
-            "pinyin": "zǒu",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "先",
-            "pinyin": "xiān",
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "有三个小时，我们一起吃饭。",
+            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "让",
-            "pinyin": "ràng",
+            "speaker": "Mina",
+            "hanzi": "晚上有几个小时的时间？",
+            "pinyin": "wǎn shàng yǒu jǐ gè xiǎo shí de shí jiān？",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我先去医院看爷爷，然后回家。",
+            "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "请让孩子先走。",
-          "请让孩子先走"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 19
       }
     },
@@ -1276,42 +1314,41 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-listen-rea-2",
+      "id": "block-ex-l23-read-dia-6",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l23-listen-rea-2",
+          "id": "ex-l23-read-dia-6",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 有三个小时，我们一起吃饭。"
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
             "l23-understand"
           ],
           "required": true
         },
-        "promptText": "今年早上我要去医院看爷爷，晚上有三个小时和朋友在一起。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Cette année, je vais voir mon grand-père à l’hôpital le matin et j’aurai trois heures avec mes amis le soir."
+              "fr": "Nous avons trois heures ; nous dînerons ensemble."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Lors de mon anniversaire l’an dernier, j’ai d’abord mangé avec ma famille, puis j’ai regardé un film."
+              "fr": "Il y a un livre sur la table."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Je vais d’abord à l’hôpital voir mon grand-père, puis je rentre."
+              "fr": "Que fais-tu d’abord le matin ?"
             },
             "audio": null
           }

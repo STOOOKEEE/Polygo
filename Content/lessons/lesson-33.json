@@ -639,6 +639,188 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l33-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l33-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "出租车",
+            "pinyin": "chū zū chē",
+            "right": {
+              "fr": "taxi"
+            }
+          },
+          {
+            "id": "b",
+            "left": "阴",
+            "pinyin": "yīn",
+            "right": {
+              "fr": "couvert ; nuageux"
+            }
+          },
+          {
+            "id": "c",
+            "left": "冰箱",
+            "pinyin": "bīng xiāng",
+            "right": {
+              "fr": "réfrigérateur"
+            }
+          },
+          {
+            "id": "d",
+            "left": "参加",
+            "pinyin": "cān jiā",
+            "right": {
+              "fr": "participer"
+            }
+          },
+          {
+            "id": "e",
+            "left": "城市",
+            "pinyin": "chéng shì",
+            "right": {
+              "fr": "ville"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-dict-py-280",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l33-dict-py-280",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "阴",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "téng"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "yīn"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "qíng"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "zǒu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-tone-326",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l33-tone-326",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "promptText": "冰箱",
+        "choices": [
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t11"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l33-pick-012",
       "spec": {
         "kind": "listeningChoice",
@@ -660,14 +842,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "城市 (chéng shì)"
+              "fr": "出租车 (chū zū chē)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "出租车 (chū zū chē)"
+              "fr": "城市 (chéng shì)"
             },
             "audio": null
           },
@@ -682,62 +864,6 @@
             "id": "d",
             "label": {
               "fr": "句子 (jù zi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 29
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l33-reverse-012",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l33-reverse-012",
-          "prompt": {
-            "fr": "Comment dit-on « taxi » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l33-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "出租车 (chū zū chē)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "冰箱 (bīng xiāng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "句子 (jù zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "城市 (chéng shì)"
             },
             "audio": null
           }
@@ -752,167 +878,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l33-pick-515",
+      "id": "block-ex-l33-dict-zh-329",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l33-pick-515",
+          "id": "ex-l33-dict-zh-329",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l33-understand"
           ],
           "required": true
         },
-        "promptText": "疼",
+        "script": "hanzi",
+        "promptText": "参加",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "阴 (yīn)"
+              "fr": "句子"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "城市 (chéng shì)"
+              "fr": "冰箱"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "冰箱 (bīng xiāng)"
+              "fr": "城市"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "疼 (téng)"
+              "fr": "参加"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 29
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l33-reverse-280",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l33-reverse-280",
-          "prompt": {
-            "fr": "Comment dit-on « couvert ; nuageux » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l33-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "疼 (téng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "参加 (cān jiā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "阴 (yīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "冰箱 (bīng xiāng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 29
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l33-pick-280",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l33-pick-280",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l33-understand"
-          ],
-          "required": true
-        },
-        "promptText": "阴",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "疼 (téng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "阴 (yīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "句子 (jù zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "城市 (chéng shì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1006,16 +1020,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l33-order-exa-1",
+      "id": "block-ex-l33-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l33-order-exa-1",
+          "id": "ex-l33-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Je prends un taxi pour aller à l’école »."
+            "fr": "Traduis en chinois : « Je prends un taxi pour aller à l’école »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l33-produce"
@@ -1030,9 +1044,9 @@
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "e",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
             "audio": null
           },
           {
@@ -1042,15 +1056,27 @@
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "句子",
+            "pinyin": "jù zi",
             "audio": null
           },
           {
             "id": "d",
             "hanzi": "去",
             "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "阴",
+            "pinyin": "yīn",
             "audio": null
           }
         ],
@@ -1061,10 +1087,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我坐出租车去学校。",
-          "我坐出租车去学校"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1074,27 +1097,115 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l33-fill-exa-4",
+      "id": "block-ex-l33-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l33-fill-exa-4",
+          "id": "ex-l33-talk-1",
           "prompt": {
-            "fr": "Complète : 我___了比赛。 (« J’ai participé à la compétition »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "今天是晴天还是阴天？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "早上是晴天，下午可能下雪。",
+            "pinyin": "zǎo shàng shì qíng tiān， xià wǔ kě néng xià xuě。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "不知道。最重要的是先走左边。",
+            "pinyin": "bù zhī dào。 zuì zhòng yào de shì xiān zǒu zuǒ biān。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "因为天气会变，所以我们先回家。",
+            "pinyin": "yīn wèi tiān qì huì biàn， suǒ yǐ wǒ men xiān huí jiā。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l33-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le ciel est couvert aujourd’hui »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l33-produce"
           ],
           "required": true
         },
-        "sentence": "我___了比赛。",
-        "acceptedAnswers": [
-          "参加"
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "城市",
+            "pinyin": "chéng shì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "疼",
+            "pinyin": "téng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "阴",
+            "pinyin": "yīn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1104,13 +1215,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l33-order-dia-3",
+      "id": "block-ex-l33-order-exa-7",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l33-order-dia-3",
+          "id": "ex-l33-order-exa-7",
           "prompt": {
-            "fr": "Construis « Je me prépare à aller au parc à gauche de la ville »."
+            "fr": "Construis « Ma jambe me fait encore un peu mal »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1122,45 +1233,45 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "左边",
-            "pinyin": "zuǒ biān",
-            "audio": null
-          },
-          {
             "id": "f",
-            "hanzi": "的",
-            "pinyin": "de",
+            "hanzi": "点",
+            "pinyin": "diǎn",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "城市",
-            "pinyin": "chéng shì",
+            "hanzi": "有",
+            "pinyin": "yǒu",
             "audio": null
           },
           {
             "id": "g",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
+            "hanzi": "疼",
+            "pinyin": "téng",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "去",
-            "pinyin": "qù",
+            "hanzi": "还",
+            "pinyin": "hái",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "准备",
-            "pinyin": "zhǔn bèi",
+            "hanzi": "腿",
+            "pinyin": "tuǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yì",
             "audio": null
           }
         ],
@@ -1174,8 +1285,8 @@
           "g"
         ],
         "acceptedVariants": [
-          "我准备去城市左边的公园。",
-          "我准备去城市左边的公园"
+          "我的腿还有一点疼。",
+          "我的腿还有一点疼"
         ]
       },
       "metadata": {
@@ -1186,92 +1297,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l33-fill-exa-6",
+      "id": "block-ex-l33-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l33-fill-exa-6",
+          "id": "ex-l33-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 请读这个___。 (« Lis cette phrase, s’il te plaît »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l33-produce"
+            "l33-understand"
           ],
           "required": true
         },
-        "sentence": "请读这个___。",
-        "acceptedAnswers": [
-          "句子"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 29
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l33-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l33-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Le lait est dans le réfrigérateur »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l33-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "lines": [
           {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "我准备去城市左边的公园。",
+            "pinyin": "wǒ zhǔn bèi qù chéng shì zuǒ biān de gōng yuán。",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "里",
-            "pinyin": "lǐ",
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "早上是晴天，下午可能下雪。",
+            "pinyin": "zǎo shàng shì qíng tiān， xià wǔ kě néng xià xuě。",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "牛奶",
-            "pinyin": "niú nǎi",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "冰箱",
-            "pinyin": "bīng xiāng",
+            "speaker": "Mina",
+            "hanzi": "今天是晴天还是阴天？",
+            "pinyin": "jīn tiān shì qíng tiān hái shì yīn tiān？",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "牛奶在冰箱里。",
-          "牛奶在冰箱里"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 29
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l33-read-exa-7",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l33-read-exa-7",
+          "prompt": {
+            "fr": "Que signifie la phrase : 我的腿还有一点疼。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l33-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Aujourd’hui, le ciel est-il dégagé ou couvert ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je prépare l’examen."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ma jambe me fait encore un peu mal."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 29
       }
     },
@@ -1302,38 +1424,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 29
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l33-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l33-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Ma jambe me fait encore un peu mal »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l33-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我的腿还有一点疼。",
-        "referencePinyin": "wǒ de tuǐ hái yǒu yì diǎn téng.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我的腿还有一点疼。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 29
       }
     },

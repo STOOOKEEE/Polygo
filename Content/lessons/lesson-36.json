@@ -638,49 +638,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-pick-064",
+      "id": "block-ex-l36-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l36-pick-064",
+          "id": "ex-l36-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l36-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "猫",
+            "pinyin": "māo",
+            "right": {
+              "fr": "chat"
+            }
+          },
+          {
+            "id": "b",
+            "left": "米饭",
+            "pinyin": "mǐ fàn",
+            "right": {
+              "fr": "riz cuit"
+            }
+          },
+          {
+            "id": "c",
+            "left": "考试",
+            "pinyin": "kǎo shì",
+            "right": {
+              "fr": "examen ; passer un examen"
+            }
+          },
+          {
+            "id": "d",
+            "left": "词语",
+            "pinyin": "cí yǔ",
+            "right": {
+              "fr": "mot ; expression"
+            }
+          },
+          {
+            "id": "e",
+            "left": "发烧",
+            "pinyin": "fā shāo",
+            "right": {
+              "fr": "avoir de la fièvre"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-dict-py-064",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l36-dict-py-064",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "猫",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "猫 (māo)"
+              "fr": "māo"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "米饭 (mǐ fàn)"
+              "fr": "tā"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "考试 (kǎo shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "词语 (cí yǔ)"
+              "fr": "hěn"
             },
             "audio": null
           }
@@ -695,48 +756,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-reverse-064",
+      "id": "block-ex-l36-tone-067",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l36-reverse-064",
+          "id": "ex-l36-tone-067",
           "prompt": {
-            "fr": "Comment dit-on « chat » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l36-understand"
           ],
           "required": true
         },
+        "promptText": "米饭",
         "choices": [
           {
-            "id": "a",
+            "id": "t30",
             "label": {
-              "fr": "米饭 (mǐ fàn)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t34"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-pick-209",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l36-pick-209",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "promptText": "考试",
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "发烧 (fā shāo)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "应该 (yīng gāi)"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "考试 (kǎo shì)"
+              "fr": "米饭 (mǐ fàn)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "猫 (māo)"
+              "fr": "考试 (kǎo shì)"
             },
             "audio": null
           }
@@ -751,167 +870,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-pick-426",
+      "id": "block-ex-l36-dict-zh-570",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l36-pick-426",
+          "id": "ex-l36-dict-zh-570",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l36-understand"
           ],
           "required": true
         },
-        "promptText": "结婚",
+        "script": "hanzi",
+        "promptText": "应该",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "应该 (yīng gāi)"
+              "fr": "发烧"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "发烧 (fā shāo)"
+              "fr": "米饭"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "结婚 (jié hūn)"
+              "fr": "应该"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "米饭 (mǐ fàn)"
+              "fr": "词语"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-reverse-343",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l36-reverse-343",
-          "prompt": {
-            "fr": "Comment dit-on « mot ; expression » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l36-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "应该 (yīng gāi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "词语 (cí yǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "考试 (kǎo shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "发烧 (fā shāo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-pick-067",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l36-pick-067",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l36-understand"
-          ],
-          "required": true
-        },
-        "promptText": "米饭",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "米饭 (mǐ fàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "结婚 (jié hūn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "考试 (kǎo shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "发烧 (fā shāo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1005,16 +1012,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-order-exa-1",
+      "id": "block-ex-l36-translate-dia-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l36-order-exa-1",
+          "id": "ex-l36-translate-dia-1",
           "prompt": {
-            "fr": "Construis « Le chat est sur la chaise »."
+            "fr": "Traduis en chinois : « Sais-tu que le voisin va se marier ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l36-produce"
@@ -1022,6 +1029,150 @@
           "required": true
         },
         "tokens": [
+          {
+            "id": "e",
+            "hanzi": "结婚",
+            "pinyin": "jié hūn",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "考试",
+            "pinyin": "kǎo shì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "邻居",
+            "pinyin": "lín jū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "词语",
+            "pinyin": "cí yǔ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "要",
+            "pinyin": "yào",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "知道",
+            "pinyin": "zhī dào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l36-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "奶奶是今天的客人吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，她和很多客人一起坐。",
+            "pinyin": "shì， tā hé hěn duō kè rén yì qǐ zuò。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "会。结婚以后，他们住在这座楼里。",
+            "pinyin": "huì。 jié hūn yǐ hòu， tā men zhù zài zhè zuò lóu lǐ。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "知道。阿姨和叔叔也要来。",
+            "pinyin": "zhī dào。 ā yí hé shū shū yě yào lái。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l36-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le chat est sur la chaise »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "上",
+            "pinyin": "shàng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "猫",
+            "pinyin": "māo",
+            "audio": null
+          },
           {
             "id": "b",
             "hanzi": "在",
@@ -1035,15 +1186,73 @@
             "audio": null
           },
           {
+            "id": "f",
+            "hanzi": "词语",
+            "pinyin": "cí yǔ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "应该",
+            "pinyin": "yīng gāi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-order-exa-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l36-order-exa-2",
+          "prompt": {
+            "fr": "Construis « J’aime manger du riz »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
             "id": "a",
-            "hanzi": "猫",
-            "pinyin": "māo",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huān",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "上",
-            "pinyin": "shàng",
+            "hanzi": "米饭",
+            "pinyin": "mǐ fàn",
             "audio": null
           }
         ],
@@ -1054,8 +1263,8 @@
           "d"
         ],
         "acceptedVariants": [
-          "猫在椅子上。",
-          "猫在椅子上"
+          "我喜欢吃米饭。",
+          "我喜欢吃米饭"
         ]
       },
       "metadata": {
@@ -1066,167 +1275,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-fill-exa-4",
+      "id": "block-ex-l36-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l36-fill-exa-4",
+          "id": "ex-l36-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 请读这些___。 (« Lis ces mots, s’il te plaît »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l36-produce"
+            "l36-understand"
           ],
           "required": true
         },
-        "sentence": "请读这些___。",
-        "acceptedAnswers": [
-          "词语"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-order-exa-7",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l36-order-exa-7",
-          "prompt": {
-            "fr": "Construis « Tu devrais te reposer plus tôt »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "lines": [
           {
             "id": "c",
-            "hanzi": "早",
-            "pinyin": "zǎo",
+            "speaker": "Mina",
+            "hanzi": "奶奶是今天的客人吗？",
+            "pinyin": "nǎi nǎi shì jīn tiān de kè rén ma？",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "应该",
-            "pinyin": "yīng gāi",
+            "speaker": "Tao",
+            "hanzi": "知道。阿姨和叔叔也要来。",
+            "pinyin": "zhī dào。 ā yí hé shū shū yě yào lái。",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "休息",
-            "pinyin": "xiū xi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "你应该早点休息。",
-          "你应该早点休息"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-fill-exa-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l36-fill-exa-2",
-          "prompt": {
-            "fr": "Complète : 我喜欢吃___。 (« J’aime manger du riz »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我喜欢吃___。",
-        "acceptedAnswers": [
-          "米饭"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l36-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Il y a un examen demain »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "明天",
-            "pinyin": "míng tiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "考试",
-            "pinyin": "kǎo shì",
+            "speaker": "Mina",
+            "hanzi": "你知道邻居要结婚吗？",
+            "pinyin": "nǐ zhī dào lín jū yào jié hūn ma？",
             "audio": null
           }
         ],
@@ -1234,47 +1318,11 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "明天有考试。",
-          "明天有考试"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l36-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « L’enfant a de la fièvre »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "孩子发烧了。",
-        "referencePinyin": "hái zi fā shāo le。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "孩子发烧了。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 32
       }
     },
@@ -1305,6 +1353,55 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-read-dia-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-read-dia-1",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你知道邻居要结婚吗？"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l36-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Vas-tu aider le voisin ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Lis ces mots, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Sais-tu que le voisin va se marier ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 32
       }
     },

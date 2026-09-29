@@ -578,49 +578,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l63-pick-361",
+      "id": "block-ex-l63-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l63-pick-361",
+          "id": "ex-l63-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l63-understand"
           ],
           "required": true
         },
-        "promptText": "动物",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "表演",
+            "pinyin": "biǎo yǎn",
+            "right": {
+              "fr": "spectacle ; jouer"
+            }
+          },
+          {
+            "id": "b",
+            "left": "动物",
+            "pinyin": "dòng wù",
+            "right": {
+              "fr": "animal"
+            }
+          },
+          {
+            "id": "c",
+            "left": "敢",
+            "pinyin": "gǎn",
+            "right": {
+              "fr": "oser"
+            }
+          },
+          {
+            "id": "d",
+            "left": "根据",
+            "pinyin": "gēn jù",
+            "right": {
+              "fr": "selon ; d’après"
+            }
+          },
+          {
+            "id": "e",
+            "left": "公园",
+            "pinyin": "gōng yuán",
+            "right": {
+              "fr": "parc"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-dict-py-323",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l63-dict-py-323",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "表演",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "认真 (rèn zhēn)"
+              "fr": "rèn zhēn"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "公园 (gōng yuán)"
+              "fr": "dòng wù"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "表演 (biǎo yǎn)"
+              "fr": "gōng yuán"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "动物 (dòng wù)"
+              "fr": "biǎo yǎn"
             },
             "audio": null
           }
@@ -635,22 +703,80 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l63-reverse-323",
+      "id": "block-ex-l63-tone-361",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l63-reverse-323",
+          "id": "ex-l63-tone-361",
           "prompt": {
-            "fr": "Comment dit-on « spectacle ; jouer » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l63-understand"
           ],
           "required": true
         },
+        "promptText": "动物",
+        "choices": [
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t44"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-pick-381",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l63-pick-381",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "promptText": "根据",
         "choices": [
           {
             "id": "a",
@@ -662,21 +788,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "根据 (gēn jù)"
+              "fr": "公园 (gōng yuán)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "表演 (biǎo yǎn)"
+              "fr": "根据 (gēn jù)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "公园 (gōng yuán)"
+              "fr": "认真 (rèn zhēn)"
             },
             "audio": null
           }
@@ -691,167 +817,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l63-pick-323",
+      "id": "block-ex-l63-dict-zh-384",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l63-pick-323",
+          "id": "ex-l63-dict-zh-384",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l63-understand"
           ],
           "required": true
         },
-        "promptText": "表演",
+        "script": "hanzi",
+        "promptText": "公园",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "根据 (gēn jù)"
+              "fr": "动物"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "表演 (biǎo yǎn)"
+              "fr": "公园"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "公园 (gōng yuán)"
+              "fr": "认真"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "认真 (rèn zhēn)"
+              "fr": "表演"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 59
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l63-reverse-361",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l63-reverse-361",
-          "prompt": {
-            "fr": "Comment dit-on « animal » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l63-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "动物 (dòng wù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "根据 (gēn jù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "认真 (rèn zhēn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "表演 (biǎo yǎn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 59
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l63-pick-378",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l63-pick-378",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l63-understand"
-          ],
-          "required": true
-        },
-        "promptText": "敢",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "动物 (dòng wù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "根据 (gēn jù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "公园 (gōng yuán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "敢 (gǎn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -945,6 +959,124 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l63-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l63-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il y a un spectacle à l’école aujourd’hui »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l63-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "认真",
+            "pinyin": "rèn zhēn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "根据",
+            "pinyin": "gēn jù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "表演",
+            "pinyin": "biǎo yǎn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l63-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l63-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l63-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这条路更容易吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，所以他们终于到了公园。",
+            "pinyin": "shì, suǒ yǐ tā men zhōng yú dào le gōng yuán.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "敢。根据邻居的话，他跟朋友走了另一条路。",
+            "pinyin": "gǎn. gēn jù lín jū de huà, tā gēn péng you zǒu le lìng yì tiáo lù.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你敢讲这个故事吗？",
+            "pinyin": "nǐ gǎn jiǎng zhè ge gù shi ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 59
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l63-order-exa-6",
       "spec": {
         "kind": "wordOrder",
@@ -1013,46 +1145,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l63-fill-exa-1",
+      "id": "block-ex-l63-translate-exa-2",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "translation",
         "header": {
-          "id": "ex-l63-fill-exa-1",
+          "id": "ex-l63-translate-exa-2",
           "prompt": {
-            "fr": "Complète : 学校今天有___。 (« Il y a un spectacle à l’école aujourd’hui »)"
+            "fr": "Traduis en chinois : « J’aime regarder les animaux »"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l63-produce"
-          ],
-          "required": true
-        },
-        "sentence": "学校今天有___。",
-        "acceptedAnswers": [
-          "表演"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 59
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l63-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l63-order-exa-2",
-          "prompt": {
-            "fr": "Construis « J’aime regarder les animaux »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l63-produce"
@@ -1067,21 +1169,33 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "动物",
             "pinyin": "dòng wù",
             "audio": null
           },
           {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huān",
+            "audio": null
+          },
+          {
             "id": "a",
             "hanzi": "我",
             "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "认真",
+            "pinyin": "rèn zhēn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "敢",
+            "pinyin": "gǎn",
             "audio": null
           }
         ],
@@ -1091,10 +1205,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "我喜欢看动物。",
-          "我喜欢看动物"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1104,83 +1215,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l63-order-exa-3",
+      "id": "block-ex-l63-dialogue-2-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l63-order-exa-3",
+          "id": "ex-l63-dialogue-2-3",
           "prompt": {
-            "fr": "Construis « Oses-tu y aller seul ? »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l63-produce"
+            "l63-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "c",
-            "hanzi": "一",
-            "pinyin": "yí",
+            "speaker": "Tao",
+            "hanzi": "是，所以他们终于到了公园。",
+            "pinyin": "shì, suǒ yǐ tā men zhōng yú dào le gōng yuán.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
+            "speaker": "Tao",
+            "hanzi": "敢。根据邻居的话，他跟朋友走了另一条路。",
+            "pinyin": "gǎn. gēn jù lín jū de huà, tā gēn péng you zǒu le lìng yì tiáo lù.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "敢",
-            "pinyin": "gǎn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "人",
-            "pinyin": "rén",
+            "speaker": "Mina",
+            "hanzi": "这条路更容易吗？",
+            "pinyin": "zhè tiáo lù gèng róng yì ma?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "你敢一个人去吗？",
-          "你敢一个人去吗"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 59
       }
     },
@@ -1243,53 +1325,23 @@
           {
             "id": "b",
             "label": {
-              "fr": "Oui. D’après les paroles du voisin, il a pris une autre route avec un ami."
+              "fr": "Le voisin raconte une histoire : il a marché avec un ami."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Le voisin raconte une histoire : il a marché avec un ami."
+              "fr": "Oui. D’après les paroles du voisin, il a pris une autre route avec un ami."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 59
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l63-fill-rea-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l63-fill-rea-1",
-          "prompt": {
-            "fr": "Complète : 邻居讲了一个故事：他___朋友一起走路。 (« Le voisin raconte une histoire : il a marché avec un ami »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l63-produce"
-          ],
-          "required": true
-        },
-        "sentence": "邻居讲了一个故事：他___朋友一起走路。",
-        "acceptedAnswers": [
-          "跟"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 59
       }
     },

@@ -589,54 +589,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l70-pick-410",
+      "id": "block-ex-l70-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l70-pick-410",
+          "id": "ex-l70-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l70-understand"
           ],
           "required": true
         },
-        "promptText": "极",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "拿 (ná)"
-            },
-            "audio": null
+            "left": "极",
+            "pinyin": "jí",
+            "right": {
+              "fr": "extrêmement ; au plus haut degré"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "检查 (jiǎn chá)"
-            },
-            "audio": null
+            "left": "几乎",
+            "pinyin": "jī hū",
+            "right": {
+              "fr": "presque"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "极 (jí)"
-            },
-            "audio": null
+            "left": "检查",
+            "pinyin": "jiǎn chá",
+            "right": {
+              "fr": "vérifier ; examen"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "选择 (xuǎn zé)"
-            },
-            "audio": null
+            "left": "马上",
+            "pinyin": "mǎ shàng",
+            "right": {
+              "fr": "tout de suite"
+            }
+          },
+          {
+            "id": "e",
+            "left": "拿",
+            "pinyin": "ná",
+            "right": {
+              "fr": "prendre ; tenir"
+            }
           }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -646,53 +656,105 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l70-reverse-410",
+      "id": "block-ex-l70-dict-py-410",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l70-reverse-410",
+          "id": "ex-l70-dict-py-410",
           "prompt": {
-            "fr": "Comment dit-on « extrêmement ; au plus haut degré » en chinois ?"
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l70-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "极",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "拿 (ná)"
+              "fr": "ná"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "极 (jí)"
+              "fr": "jí"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "选择 (xuǎn zé)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "几乎 (jī hū)"
+              "fr": "wǒ"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-tone-414",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l70-tone-414",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "检查",
+        "choices": [
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t30",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t32"
       },
       "metadata": {
         "stage": "discover",
@@ -723,14 +785,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "几乎 (jī hū)"
+              "fr": "选择 (xuǎn zé)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "选择 (xuǎn zé)"
+              "fr": "几乎 (jī hū)"
             },
             "audio": null
           },
@@ -749,7 +811,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -759,13 +821,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l70-reverse-411",
+      "id": "block-ex-l70-reverse-410",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l70-reverse-411",
+          "id": "ex-l70-reverse-410",
           "prompt": {
-            "fr": "Comment dit-on « presque » en chinois ?"
+            "fr": "Comment dit-on « extrêmement ; au plus haut degré » en chinois ?"
           },
           "instruction": {
             "fr": "Choisis le mot chinois qui convient."
@@ -775,63 +837,6 @@
           ],
           "required": true
         },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "马上 (mǎ shàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "选择 (xuǎn zé)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "检查 (jiǎn chá)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "几乎 (jī hū)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 66
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l70-pick-wo",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l70-pick-wo",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l70-understand"
-          ],
-          "required": true
-        },
-        "promptText": "我",
         "choices": [
           {
             "id": "a",
@@ -850,19 +855,76 @@
           {
             "id": "c",
             "label": {
-              "fr": "我 (wǒ)"
+              "fr": "选择 (xuǎn zé)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "马上 (mǎ shàng)"
+              "fr": "几乎 (jī hū)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-pick-467",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l70-pick-467",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "promptText": "拿",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "极 (jí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "选择 (xuǎn zé)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "几乎 (jī hū)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "拿 (ná)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -956,16 +1018,148 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l70-order-exa-3",
+      "id": "block-ex-l70-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l70-order-exa-3",
+          "id": "ex-l70-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Le médecin a examiné mon nez »."
+            "fr": "Traduis en chinois : « Je vais presque tous les jours au travail à pied »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l70-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "h",
+            "hanzi": "极",
+            "pinyin": "jí",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "上班",
+            "pinyin": "shàng bān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "马上",
+            "pinyin": "mǎ shàng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "走路",
+            "pinyin": "zǒu lù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "几乎",
+            "pinyin": "jī hū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l70-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l70-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你想坐火车或者坐飞机？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "这是一次极好的机会，我几乎每天都在计划。",
+            "pinyin": "zhè shì yí cì jí hǎo de jī huì, wǒ jī hū měi tiān dōu zài jì huà.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我记得，明天就出发。",
+            "pinyin": "wǒ jì de, míng tiān jiù chū fā.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "记得带护照。",
+            "pinyin": "jì de dài hù zhào.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 66
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l70-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l70-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le médecin a examiné mon nez »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l70-produce"
@@ -986,15 +1180,27 @@
             "audio": null
           },
           {
+            "id": "d",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
             "id": "b",
             "hanzi": "检查",
             "pinyin": "jiǎn chá",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
+            "id": "f",
+            "hanzi": "选择",
+            "pinyin": "xuǎn zé",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "极",
+            "pinyin": "jí",
             "audio": null
           },
           {
@@ -1011,40 +1217,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "医生检查了我的鼻子。",
-          "医生检查了我的鼻子"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 66
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l70-fill-dia-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l70-fill-dia-2",
-          "prompt": {
-            "fr": "Complète : 这是一次___好的机会，我几乎每天都在计划。 (« C’est une très bonne occasion ; je planifie presque tous les jours »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l70-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这是一次___好的机会，我几乎每天都在计划。",
-        "acceptedAnswers": [
-          "极"
-        ],
-        "caseSensitive": false
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1115,106 +1288,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l70-fill-exa-5",
+      "id": "block-ex-l70-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l70-fill-exa-5",
+          "id": "ex-l70-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 请___一把椅子过来。 (« Apporte une chaise, s’il te plaît »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l70-produce"
-          ],
-          "required": true
-        },
-        "sentence": "请___一把椅子过来。",
-        "acceptedAnswers": [
-          "拿"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 66
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l70-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l70-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 你可以___红色或者蓝色。 (« Tu peux choisir le rouge ou le bleu »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l70-produce"
-          ],
-          "required": true
-        },
-        "sentence": "你可以___红色或者蓝色。",
-        "acceptedAnswers": [
-          "选择"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 66
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l70-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l70-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 这是一次极好的机会，我几乎每天都在计划。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l70-understand"
           ],
           "required": true
         },
-        "choices": [
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "记得带护照。",
+            "pinyin": "jì de dài hù zhào.",
+            "audio": null
+          },
           {
             "id": "a",
-            "label": {
-              "fr": "Je vais presque tous les jours au travail à pied."
-            },
+            "speaker": "Mina",
+            "hanzi": "你想坐火车或者坐飞机？",
+            "pinyin": "nǐ xiǎng zuò huǒ chē huò zhě zuò fēi jī?",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Les plats de ce restaurant sont extrêmement bons."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "C’est une très bonne occasion ; je planifie presque tous les jours."
-            },
+            "speaker": "Tao",
+            "hanzi": "这是一次极好的机会，我几乎每天都在计划。",
+            "pinyin": "zhè shì yí cì jí hǎo de jī huì, wǒ jī hū měi tiān dōu zài jì huà.",
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",

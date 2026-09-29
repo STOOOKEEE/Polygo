@@ -622,49 +622,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-pick-339",
+      "id": "block-ex-l66-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l66-pick-339",
+          "id": "ex-l66-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l66-understand"
           ],
           "required": true
         },
-        "promptText": "出现",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "安静",
+            "pinyin": "ān jìng",
+            "right": {
+              "fr": "calme ; silencieux"
+            }
+          },
+          {
+            "id": "b",
+            "left": "出现",
+            "pinyin": "chū xiàn",
+            "right": {
+              "fr": "apparaître"
+            }
+          },
+          {
+            "id": "c",
+            "left": "带",
+            "pinyin": "dài",
+            "right": {
+              "fr": "apporter ; emmener"
+            }
+          },
+          {
+            "id": "d",
+            "left": "体育",
+            "pinyin": "tǐ yù",
+            "right": {
+              "fr": "sport ; éducation physique"
+            }
+          },
+          {
+            "id": "e",
+            "left": "需要",
+            "pinyin": "xū yào",
+            "right": {
+              "fr": "avoir besoin de"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-dict-py-305",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l66-dict-py-305",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "安静",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "体育 (tǐ yù)"
+              "fr": "xū yào"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "需要 (xū yào)"
+              "fr": "zháo jí"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "出现 (chū xiàn)"
+              "fr": "ān jìng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "着急 (zháo jí)"
+              "fr": "tǐ yù"
             },
             "audio": null
           }
@@ -679,48 +747,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-reverse-305",
+      "id": "block-ex-l66-tone-339",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l66-reverse-305",
+          "id": "ex-l66-tone-339",
           "prompt": {
-            "fr": "Comment dit-on « calme ; silencieux » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l66-understand"
           ],
           "required": true
         },
+        "promptText": "出现",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-pick-557",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l66-pick-557",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "promptText": "爷爷",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "体育 (tǐ yù)"
+              "fr": "需要 (xū yào)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "安静 (ān jìng)"
+              "fr": "爷爷 (yé ye)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "出现 (chū xiàn)"
+              "fr": "着急 (zháo jí)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "爷爷 (yé ye)"
+              "fr": "体育 (tǐ yù)"
             },
             "audio": null
           }
@@ -735,49 +861,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-pick-553",
+      "id": "block-ex-l66-dict-zh-517",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l66-pick-553",
+          "id": "ex-l66-dict-zh-517",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l66-understand"
           ],
           "required": true
         },
-        "promptText": "需要",
+        "script": "hanzi",
+        "promptText": "体育",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "需要 (xū yào)"
+              "fr": "体育"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "出现 (chū xiàn)"
+              "fr": "爷爷"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "体育 (tǐ yù)"
+              "fr": "需要"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "爷爷 (yé ye)"
+              "fr": "出现"
             },
             "audio": null
           }
@@ -792,110 +919,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-reverse-347",
+      "id": "block-ex-l66-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l66-reverse-347",
+          "id": "ex-l66-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « apporter ; emmener » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l66-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "爷爷 (yé ye)"
-            },
-            "audio": null
+            "left": "爷爷",
+            "pinyin": null,
+            "right": {
+              "fr": "yé ye"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "安静 (ān jìng)"
-            },
-            "audio": null
+            "left": "着急",
+            "pinyin": null,
+            "right": {
+              "fr": "zháo jí"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "着急 (zháo jí)"
-            },
-            "audio": null
+            "left": "爱好",
+            "pinyin": null,
+            "right": {
+              "fr": "ài hào"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "带 (dài)"
-            },
-            "audio": null
+            "left": "绿",
+            "pinyin": null,
+            "right": {
+              "fr": "lǜ"
+            }
+          },
+          {
+            "id": "e",
+            "left": "虽然",
+            "pinyin": null,
+            "right": {
+              "fr": "suī rán"
+            }
           }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l66-pick-347",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l66-pick-347",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l66-understand"
-          ],
-          "required": true
-        },
-        "promptText": "带",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "着急 (zháo jí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "出现 (chū xiàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "带 (dài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "安静 (ān jìng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -989,16 +1070,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-order-exa-5",
+      "id": "block-ex-l66-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l66-order-exa-5",
+          "id": "ex-l66-translate-exa-2",
           "prompt": {
-            "fr": "Construis « J’ai besoin d’une carte »."
+            "fr": "Traduis en chinois : « Le problème est finalement apparu »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l66-produce"
@@ -1007,33 +1088,39 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "张",
-            "pinyin": "zhāng",
+            "id": "c",
+            "hanzi": "出现",
+            "pinyin": "chū xiàn",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "地图",
-            "pinyin": "dì tú",
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "需要",
-            "pinyin": "xū yào",
+            "hanzi": "终于",
+            "pinyin": "zhōng yú",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "一",
-            "pinyin": "yì",
+            "id": "e",
+            "hanzi": "着急",
+            "pinyin": "zháo jí",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "体育",
+            "pinyin": "tǐ yù",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "问题",
+            "pinyin": "wèn tí",
             "audio": null
           }
         ],
@@ -1041,13 +1128,9 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
-        "acceptedVariants": [
-          "我需要一张地图。",
-          "我需要一张地图"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1057,27 +1140,129 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-fill-dia-4",
+      "id": "block-ex-l66-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l66-fill-dia-4",
+          "id": "ex-l66-talk-1",
           "prompt": {
-            "fr": "Complète : 那我们冬天再来，___一杯热茶。 (« Alors revenons en hiver avec une tasse de thé chaud »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l66-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你有什么爱好？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我喜欢在春天看草和动物。",
+            "pinyin": "wǒ xǐ huan zài chūn tiān kàn cǎo hé dòng wù.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "那我们冬天再来，带一杯热茶。",
+            "pinyin": "nà wǒ men dōng tiān zài lái, dài yì bēi rè chá.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "虽然冬天很冷，但是公园也很安静。",
+            "pinyin": "suī rán dōng tiān hěn lěng, dàn shì gōng yuán yě hěn ān jìng.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l66-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Apporte un livre, s’il te plaît »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l66-produce"
           ],
           "required": true
         },
-        "sentence": "那我们冬天再来，___一杯热茶。",
-        "acceptedAnswers": [
-          "带"
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "爷爷",
+            "pinyin": "yé ye",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "本",
+            "pinyin": "běn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "带",
+            "pinyin": "dài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "着急",
+            "pinyin": "zháo jí",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1141,61 +1326,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-fill-exa-4",
+      "id": "block-ex-l66-dialogue-2-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l66-fill-exa-4",
+          "id": "ex-l66-dialogue-2-3",
           "prompt": {
-            "fr": "Complète : 我最喜欢的___项目是游泳。 (« Mon sport préféré est la natation »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l66-produce"
+            "l66-understand"
           ],
           "required": true
         },
-        "sentence": "我最喜欢的___项目是游泳。",
-        "acceptedAnswers": [
-          "体育"
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "虽然冬天很冷，但是公园也很安静。",
+            "pinyin": "suī rán dōng tiān hěn lěng, dàn shì gōng yuán yě hěn ān jìng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "那我们冬天再来，带一杯热茶。",
+            "pinyin": "nà wǒ men dōng tiān zài lái, dài yì bēi rè chá.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我喜欢在春天看草和动物。",
+            "pinyin": "wǒ xǐ huan zài chūn tiān kàn cǎo hé dòng wù.",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l66-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l66-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 我___和奶奶住在乡下。 (« Mon grand-père et ma grand-mère habitent à la campagne »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l66-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我___和奶奶住在乡下。",
-        "acceptedAnswers": [
-          "爷爷"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 62
       }
     },
@@ -1226,87 +1404,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l66-read-exa-5",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l66-read-exa-5",
-          "prompt": {
-            "fr": "Que signifie la phrase : 我需要一张地图。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l66-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Le problème est finalement apparu."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "J’ai besoin d’une carte."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Ne te presse pas, nous avons encore le temps."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l66-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l66-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Ne te presse pas, nous avons encore le temps »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l66-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "别着急，我们还有时间。",
-        "referencePinyin": "bié zháo jí, wǒ men hái yǒu shí jiān.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "别着急，我们还有时间。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 62
       }
     },

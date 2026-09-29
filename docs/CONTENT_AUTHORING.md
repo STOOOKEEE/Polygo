@@ -89,17 +89,17 @@ Les champs linguistiques sont les suivants :
 
 ## Budget d'exercices d'une séance quotidienne
 
-Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 pour
-83 leçons sur 90 dans le contenu actuel, 20 au plus) répartis en trois phases
+Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 dans le
+contenu actuel) répartis en trois phases
 ordonnées. La phase est portée par le `metadata.stage` de chaque bloc
 `exercise` ; les blocs d'introduction, vocabulaire, dialogue, lecture et bilan
 gardent leur étape éditoriale.
 
 | Phase (`stage`) | Exercices | Contenu |
 | --- | --- | --- |
-| `discover` | 5 à 7 | reconnaissance du sens (mot → français, français → mot) et écoute de mots, à choisir parmi des mots écrits |
-| `guided` | 6 à 7 | remise en ordre, phrase à trous, écoute de répliques de dialogue et de phrases d'exemple |
-| `reuse` | 5 à 6 | phrases du texte ou du dialogue (ordre, trou, sens), oral, puis l'écoute, l'oral et la lecture écrits dans le pack |
+| `discover` | 5 à 7 | association mot/sens ou mot/pinyin (`matching`), dictée (`dictation`), discrimination des tons (`toneDiscrimination`), reconnaissance du sens et écoute de mots |
+| `guided` | 6 à 7 | traduction par tuiles (`translation`), mini-conversation (`conversationChoice`), remise en ordre, phrase à trous, écoute de répliques |
+| `reuse` | 5 à 6 | remise en ordre du dialogue (`dialogueOrder`), phrases du texte ou du dialogue (trou, sens), oral, puis l'écoute, l'oral et la lecture écrits dans le pack |
 
 Les six exercices écrits dans le pack (`meaning`, `order`, `fill`, `listen`,
 `speak`, `reading`) sont conservés tels quels avec leurs IDs ; `listen`,
@@ -108,7 +108,8 @@ Les six exercices écrits dans le pack (`meaning`, `order`, `fill`, `listen`,
 seules données de la leçon : sens et exemples du vocabulaire, répliques du
 dialogue et phrases du texte. Le générateur n'écrit donc aucun hanzi, pinyin ou
 traduction. Il produit d'abord tous les exercices possibles (`choice`,
-`listeningChoice`, `wordOrder`, `fillBlank`, `speaking`), puis en retient assez
+`listeningChoice`, `wordOrder`, `fillBlank`, `speaking`, `matching`, `dictation`,
+`toneDiscrimination`, `translation`, `conversationChoice`, `dialogueOrder`), puis en retient assez
 pour couvrir les mots nouveaux (voir ci-dessous) et compléter chaque phase. Il
 applique ces règles :
 
@@ -127,7 +128,28 @@ applique ces règles :
   de la séance (numéro de leçon et rang), donc sa position varie sans hasard
   non reproductible ;
 * `speaking` reste facultatif et ne dépasse pas trois exercices par séance ;
-  les écoutes et lectures de phrase demandent au moins quatre hanzi.
+  les écoutes et lectures de phrase demandent au moins quatre hanzi ;
+* chaque séance reçoit d'abord un exemplaire de chaque famille récente que sa
+  matière permet (`matching`, `dictation`, `toneDiscrimination`, `translation`,
+  `conversationChoice`, `dialogueOrder`), puis le reste est choisi comme
+  ci-dessus ; chaque famille récente apparaît deux fois au plus, le
+  `dialogueOrder` une fois, et les deux `matching` (sens, pinyin) comme les deux
+  `dictation` (pinyin, hanzi) diffèrent par ce qu'ils demandent ;
+* `matching` groupe quatre ou cinq mots aux sens (ou pinyin) distincts, mots
+  nouveaux d'abord ; les mots dont le hanzi apparaît deux fois dans la leçon
+  (还 hái / huán) sont écartés de `matching`, `dictation` et
+  `toneDiscrimination` ;
+* `dictation` demande le pinyin (mot ou phrase du dialogue ou d'un exemple) ou
+  les hanzi d'un mot ; les mauvaises réponses ont la même longueur que le mot ;
+* `toneDiscrimination` lit `toneNumbers` après l'avoir confronté aux diacritiques
+  du pinyin ; un mot dont le ton peut varier à l'oral (3-3, 不, 一, polyphones)
+  n'est jamais posé ;
+* `translation` réutilise la segmentation de `wordOrder` (3 à 6 tuiles) et
+  ajoute une ou deux tuiles en trop prises au vocabulaire, dont le sens n'est
+  pas dans la phrase française ;
+* `dialogueOrder` prend trois ou quatre répliques consécutives et distinctes du
+  dialogue ; `conversationChoice` ne part que d'une question du dialogue, dont
+  la bonne réponse est la réplique suivante et les mauvaises d'autres répliques.
 
 ## Mots nouveaux par séance
 
@@ -161,9 +183,10 @@ fragment des jours 6 à 90 dont le vocabulaire diffère de l'allocation.
 
 Chaque mot nouveau est présenté par au moins trois exercices de la séance, d'au
 moins trois familles différentes (`choice`, `listeningChoice`, `wordOrder`,
-`fillBlank`, `speaking`). Un exercice présente un mot quand son hanzi figure
+`fillBlank`, `speaking`, `matching`, `dictation`, `toneDiscrimination`,
+`translation`, `conversationChoice`, `dialogueOrder`). Un exercice présente un mot quand son hanzi figure
 dans l'énoncé, dans une phrase (le trou rempli par la réponse), dans les
-tuiles, dans une phrase à écouter ou à dire, ou dans un choix. Un exercice de
+tuiles, dans les répliques ou les paires, dans une phrase à écouter ou à dire, ou dans un choix. Un exercice de
 phrase compte pour chaque mot nouveau qu'il contient, et un choix de mots écrits
 compte pour chacun de ses libellés.
 
@@ -173,7 +196,14 @@ phase, si les phases ne se suivent pas dans l'ordre, si deux exercices posent la
 même question, si un choix a deux libellés identiques, si elle présente plus de
 huit mots nouveaux, si `metadata.newVocabularyIDs` diffère des mots qu'aucune
 leçon précédente ne liste, ou si un mot nouveau n'a pas ses trois exercices de
-trois familles. Les quatre leçons protégées gardent leurs six exercices
+trois familles. `lint` vérifie aussi chaque exercice récent contre sa leçon :
+paires de `matching` prises au vocabulaire de la leçon (sens ou pinyin exact),
+correcte réponse de `dictation` égale au texte lu ou à son pinyin attesté, choix
+de `toneDiscrimination` dont l'ID suit les `toneNumbers` du mot, tuiles de
+`translation` uniques avec une tuile en trop et une phrase que la leçon montre,
+`dialogueOrder` qui suit le dialogue sans le modifier, `conversationChoice` à
+trois réponses dont la bonne suit la réplique lue. Une séance doit utiliser au
+moins quatre de ces six familles. Les quatre leçons protégées gardent leurs six exercices
 d'origine.
 
 Voici une séance complète illustrative, marquée « non livrable » et non utilisée

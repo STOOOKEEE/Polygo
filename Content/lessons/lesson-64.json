@@ -621,110 +621,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-listen-word-356",
+      "id": "block-ex-l64-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l64-listen-word-356",
+          "id": "ex-l64-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l64-understand"
           ],
           "required": true
         },
-        "promptText": "地图",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "carte"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
+            "left": "敢",
+            "pinyin": "gǎn",
+            "right": {
               "fr": "oser"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "poser ; mettre"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "utiliser ; emploi"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 60
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l64-meaning-356",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l64-meaning-356",
-          "prompt": {
-            "fr": "Que signifie 地图 (dì tú) ?"
-          },
-          "instruction": {
-            "fr": "Choisis le sens du mot."
-          },
-          "objectiveIDs": [
-            "l64-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "utiliser ; emploi"
-            },
-            "audio": null
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "comprendre ; clair"
-            },
-            "audio": null
+            "left": "根据",
+            "pinyin": "gēn jù",
+            "right": {
+              "fr": "selon ; d’après"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "après ; à l’avenir"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
+            "left": "地图",
+            "pinyin": "dì tú",
+            "right": {
               "fr": "carte"
-            },
-            "audio": null
+            }
+          },
+          {
+            "id": "d",
+            "left": "放",
+            "pinyin": "fàng",
+            "right": {
+              "fr": "poser ; mettre"
+            }
+          },
+          {
+            "id": "e",
+            "left": "句子",
+            "pinyin": "jù zi",
+            "right": {
+              "fr": "phrase"
+            }
           }
-        ],
-        "correctChoiceID": "d"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -734,105 +688,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-listen-word-372",
+      "id": "block-ex-l64-dict-py-378",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l64-listen-word-372",
+          "id": "ex-l64-dict-py-378",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l64-understand"
           ],
           "required": true
         },
-        "promptText": "放",
+        "script": "pinyin",
+        "promptText": "敢",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "utiliser ; emploi"
+              "fr": "fàng"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "selon ; d’après"
+              "fr": "gǎn"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "poser ; mettre"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "enfin"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 60
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l64-meaning-372",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l64-meaning-372",
-          "prompt": {
-            "fr": "Que signifie 放 (fàng) ?"
-          },
-          "instruction": {
-            "fr": "Choisis le sens du mot."
-          },
-          "objectiveIDs": [
-            "l64-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "comprendre ; clair"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "poser ; mettre"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "selon ; d’après"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "oser"
+              "fr": "yòng"
             },
             "audio": null
           }
@@ -847,54 +739,172 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-listen-word-378",
+      "id": "block-ex-l64-tone-381",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l64-listen-word-378",
+          "id": "ex-l64-tone-381",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son sens."
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le sens du mot."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l64-understand"
           ],
           "required": true
         },
-        "promptText": "敢",
+        "promptText": "根据",
+        "choices": [
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-dict-sent-exa-1",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l64-dict-sent-exa-1",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "你敢一个人去吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "oser"
+              "fr": "nǐ gǎn yí gè rén qù ma？"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "comprendre ; clair"
+              "fr": "qǐng bǎ shū fàng zài zhuō shàng。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "poser ; mettre"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "après ; à l’avenir"
+              "fr": "wǒ yòng shǒu jī chá dì tú."
             },
             "audio": null
           }
         ],
         "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l64-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "明白",
+            "pinyin": null,
+            "right": {
+              "fr": "míng bái"
+            }
+          },
+          {
+            "id": "b",
+            "left": "虽然",
+            "pinyin": null,
+            "right": {
+              "fr": "suī rán"
+            }
+          },
+          {
+            "id": "c",
+            "left": "以后",
+            "pinyin": null,
+            "right": {
+              "fr": "yǐ hòu"
+            }
+          },
+          {
+            "id": "d",
+            "left": "用",
+            "pinyin": null,
+            "right": {
+              "fr": "yòng"
+            }
+          },
+          {
+            "id": "e",
+            "left": "终于",
+            "pinyin": null,
+            "right": {
+              "fr": "zhōng yú"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -988,16 +998,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-order-exa-1",
+      "id": "block-ex-l64-translate-exa-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l64-order-exa-1",
+          "id": "ex-l64-translate-exa-3",
           "prompt": {
-            "fr": "Construis « Oses-tu y aller seul ? »."
+            "fr": "Traduis en chinois : « Regarde la carte, s’il te plaît »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l64-produce"
@@ -1006,61 +1016,36 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "人",
-            "pinyin": "rén",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "个",
             "pinyin": "gè",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
             "id": "b",
-            "hanzi": "敢",
-            "pinyin": "gǎn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
+            "hanzi": "看",
+            "pinyin": "kàn",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "一",
-            "pinyin": "yí",
+            "hanzi": "地图",
+            "pinyin": "dì tú",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
+          "c"
         ],
-        "acceptedVariants": [
-          "你敢一个人去吗？",
-          "你敢一个人去吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1095,6 +1080,56 @@
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-listen-dia-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l64-listen-dia-1",
+          "prompt": {
+            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l64-understand"
+          ],
+          "required": true
+        },
+        "promptText": "昨天我们因为下雨改变了计划。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Après la pluie, tout le monde a changé d’itinéraire en fonction de la carte."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai posé la carte sur la table et tout le monde a compris."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Hier, nous avons changé nos plans parce qu’il pleuvait."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 60
       }
     },
@@ -1175,39 +1210,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-order-exa-3",
+      "id": "block-ex-l64-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l64-order-exa-3",
+          "id": "ex-l64-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Regarde la carte, s’il te plaît »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l64-produce"
+            "l64-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
           {
-            "id": "c",
-            "hanzi": "地图",
-            "pinyin": "dì tú",
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我把地图放在桌上，大家就明白了。",
+            "pinyin": "wǒ bǎ dì tú fàng zài zhuō shàng, dà jiā jiù míng bai le.",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "看",
-            "pinyin": "kàn",
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "虽然路很长，但是我们终于到了。",
+            "pinyin": "suī rán lù hěn cháng, dàn shì wǒ men zhōng yú dào le.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "speaker": "Mina",
+            "hanzi": "昨天我们因为下雨改变了计划。",
+            "pinyin": "zuó tiān wǒ men yīn wèi xià yǔ gǎi biàn le jì huà.",
             "audio": null
           }
         ],
@@ -1215,15 +1253,11 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "请看地图。",
-          "请看地图"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 60
       }
     },
@@ -1259,80 +1293,51 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-read-dia-1",
+      "id": "block-ex-l64-listen-rea-2",
       "spec": {
-        "kind": "choice",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l64-read-dia-1",
+          "id": "ex-l64-listen-rea-2",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 昨天我们因为下雨改变了计划。"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
             "l64-understand"
           ],
           "required": true
         },
+        "promptText": "路虽然很长，但是大家互相帮忙，终于到了目的地。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Nous avons enfin trouvé la gare."
+              "fr": "Après la pluie, tout le monde a changé d’itinéraire en fonction de la carte."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "D’après la carte, nous prenons cette route."
+              "fr": "Même si la route était longue, tout le monde s’est aidé et a finalement atteint sa destination."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Hier, nous avons changé nos plans parce qu’il pleuvait."
+              "fr": "Même si la route était longue, nous sommes finalement arrivés."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 60
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l64-fill-rea-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l64-fill-rea-2",
-          "prompt": {
-            "fr": "Complète : 路___很长，但是大家互相帮忙，终于到了目的地。 (« Même si la route était longue, tout le monde s’est aidé et a finalement atteint sa destination »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l64-produce"
-          ],
-          "required": true
-        },
-        "sentence": "路___很长，但是大家互相帮忙，终于到了目的地。",
-        "acceptedAnswers": [
-          "虽然"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 60
       }
     },

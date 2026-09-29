@@ -620,6 +620,188 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l76-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l76-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l76-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "节日",
+            "pinyin": "jié rì",
+            "right": {
+              "fr": "fête"
+            }
+          },
+          {
+            "id": "b",
+            "left": "结束",
+            "pinyin": "jié shù",
+            "right": {
+              "fr": "terminer ; fin"
+            }
+          },
+          {
+            "id": "c",
+            "left": "铅笔",
+            "pinyin": "qiān bǐ",
+            "right": {
+              "fr": "crayon"
+            }
+          },
+          {
+            "id": "d",
+            "left": "然后",
+            "pinyin": "rán hòu",
+            "right": {
+              "fr": "ensuite"
+            }
+          },
+          {
+            "id": "e",
+            "left": "提高",
+            "pinyin": "tí gāo",
+            "right": {
+              "fr": "améliorer ; augmenter"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 72
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l76-dict-py-486",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l76-dict-py-486",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l76-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "铅笔",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "qiān bǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "rán hòu"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jié shù"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "jié rì"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 72
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l76-tone-516",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l76-tone-516",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l76-understand"
+          ],
+          "required": true
+        },
+        "promptText": "提高",
+        "choices": [
+          {
+            "id": "t21",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t21"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 72
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l76-pick-580",
       "spec": {
         "kind": "listeningChoice",
@@ -641,67 +823,11 @@
           {
             "id": "a",
             "label": {
-              "fr": "云 (yún)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "又 (yòu)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "提高 (tí gāo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "节日 (jié rì)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 72
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l76-reverse-425",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l76-reverse-425",
-          "prompt": {
-            "fr": "Comment dit-on « fête » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l76-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "结束 (jié shù)"
-            },
-            "audio": null
-          },
-          {
             "id": "b",
             "label": {
               "fr": "提高 (tí gāo)"
@@ -711,14 +837,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "铅笔 (qiān bǐ)"
+              "fr": "节日 (jié rì)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "节日 (jié rì)"
+              "fr": "云 (yún)"
             },
             "audio": null
           }
@@ -733,166 +859,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l76-pick-425",
+      "id": "block-ex-l76-dict-zh-425",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l76-pick-425",
+          "id": "ex-l76-dict-zh-425",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l76-understand"
           ],
           "required": true
         },
+        "script": "hanzi",
         "promptText": "节日",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "提高 (tí gāo)"
+              "fr": "然后"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "然后 (rán hòu)"
+              "fr": "结束"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "节日 (jié rì)"
+              "fr": "节日"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "铅笔 (qiān bǐ)"
+              "fr": "提高"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 72
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l76-reverse-575",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l76-reverse-575",
-          "prompt": {
-            "fr": "Comment dit-on « encore ; de nouveau » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l76-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "云 (yún)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "又 (yòu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "然后 (rán hòu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "结束 (jié shù)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 72
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l76-reverse-580",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l76-reverse-580",
-          "prompt": {
-            "fr": "Comment dit-on « nuage » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l76-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "云 (yún)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "又 (yòu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "提高 (tí gāo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "铅笔 (qiān bǐ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -986,16 +1001,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l76-order-exa-3",
+      "id": "block-ex-l76-translate-dia-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l76-order-exa-3",
+          "id": "ex-l76-translate-dia-3",
           "prompt": {
-            "fr": "Construis « Écris ton nom au crayon, s’il te plaît »."
+            "fr": "Traduis en chinois : « Les nuages dans le ciel sont très beaux »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l76-produce"
@@ -1004,33 +1019,51 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "用",
-            "pinyin": "yòng",
+            "id": "d",
+            "hanzi": "云",
+            "pinyin": "yún",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "写",
-            "pinyin": "xiě",
+            "id": "b",
+            "hanzi": "上",
+            "pinyin": "shàng",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "节日",
+            "pinyin": "jié rì",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "铅笔",
+            "pinyin": "qiān bǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "看",
+            "pinyin": "kàn",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "名字",
-            "pinyin": "míng zi",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "铅笔",
-            "pinyin": "qiān bǐ",
+            "hanzi": "的",
+            "pinyin": "de",
             "audio": null
           }
         ],
@@ -1039,12 +1072,10 @@
           "b",
           "c",
           "d",
-          "e"
+          "e",
+          "f"
         ],
-        "acceptedVariants": [
-          "请用铅笔写名字。",
-          "请用铅笔写名字"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1054,27 +1085,115 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l76-fill-exa-6",
+      "id": "block-ex-l76-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l76-fill-exa-6",
+          "id": "ex-l76-talk-1",
           "prompt": {
-            "fr": "Complète : 他___忘记带钥匙了。 (« Il a encore oublié de prendre les clés »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l76-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你看今天的节目吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "节目结束以后，我们一起回家。",
+            "pinyin": "jié mù jié shù yǐ hòu, wǒ men yì qǐ huí jiā.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "看。先看表演，然后听老师讲节日。",
+            "pinyin": "kàn. xiān kàn biǎo yǎn, rán hòu tīng lǎo shī jiǎng jié rì.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天上的云很好看。",
+            "pinyin": "tiān shàng de yún hěn hǎo kàn.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 72
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l76-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l76-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « La réunion se termine à cinq heures »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l76-produce"
           ],
           "required": true
         },
-        "sentence": "他___忘记带钥匙了。",
-        "acceptedAnswers": [
-          "又"
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "云",
+            "pinyin": "yún",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "会议",
+            "pinyin": "huì yì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "五",
+            "pinyin": "wǔ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "结束",
+            "pinyin": "jié shù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "又",
+            "pinyin": "yòu",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1084,13 +1203,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l76-order-exa-5",
+      "id": "block-ex-l76-order-exa-1",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l76-order-exa-5",
+          "id": "ex-l76-order-exa-1",
           "prompt": {
-            "fr": "Construis « Lire chaque jour peut améliorer le niveau de chinois »."
+            "fr": "Construis « La fête du Printemps est une fête importante en Chine »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1102,45 +1221,45 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "提高",
-            "pinyin": "tí gāo",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "汉语",
-            "pinyin": "Hàn yǔ",
+            "id": "c",
+            "hanzi": "是",
+            "pinyin": "shì",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "可以",
-            "pinyin": "kě yǐ",
+            "hanzi": "春",
+            "pinyin": "Chūn",
             "audio": null
           },
           {
             "id": "g",
-            "hanzi": "水平",
-            "pinyin": "shuǐ píng",
+            "hanzi": "节日",
+            "pinyin": "jié rì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "重要",
+            "pinyin": "zhòng yào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "hanzi": "节",
+            "pinyin": "jié",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "阅读",
-            "pinyin": "yuè dú",
+            "id": "d",
+            "hanzi": "中国",
+            "pinyin": "Zhōng guó",
             "audio": null
           }
         ],
@@ -1154,8 +1273,8 @@
           "g"
         ],
         "acceptedVariants": [
-          "每天阅读可以提高汉语水平。",
-          "每天阅读可以提高汉语水平"
+          "春节是中国的重要节日。",
+          "春节是中国的重要节日"
         ]
       },
       "metadata": {
@@ -1166,50 +1285,102 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l76-listen-dia-3",
+      "id": "block-ex-l76-dialogue-2-3",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l76-listen-dia-3",
+          "id": "ex-l76-dialogue-2-3",
           "prompt": {
-            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l76-understand"
           ],
           "required": true
         },
-        "promptText": "天上的云很好看。",
-        "choices": [
+        "lines": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Cette émission présente la culture chinoise."
-            },
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "节目结束以后，我们一起回家。",
+            "pinyin": "jié mù jié shù yǐ hòu, wǒ men yì qǐ huí jiā.",
             "audio": null
           },
           {
             "id": "b",
+            "speaker": "Mina",
+            "hanzi": "天上的云很好看。",
+            "pinyin": "tiān shàng de yún hěn hǎo kàn.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "看。先看表演，然后听老师讲节日。",
+            "pinyin": "kàn. xiān kàn biǎo yǎn, rán hòu tīng lǎo shī jiǎng jié rì.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 72
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l76-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l76-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 他又忘记带钥匙了。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l76-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "Il a encore oublié de prendre les clés."
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "Écris ton nom au crayon, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "Les nuages dans le ciel sont très beaux."
+              "fr": "Le professeur nous apprend à écrire les caractères chinois."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "guided",
+        "stage": "reuse",
         "skill": "recognition",
         "lessonDay": 72
       }
@@ -1235,85 +1406,6 @@
         "sentence": "___在天上慢慢移动，节目结束时大家一起回家。",
         "acceptedAnswers": [
           "云"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 72
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l76-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l76-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 看。先看表演，然后听老师讲节日。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l76-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Les nuages se déplacent lentement dans le ciel ; à la fin de l’émission, tout le monde rentre ensemble."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Oui. Je regarde d’abord le spectacle, puis j’écoute le professeur parler de la fête."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "L’émission présente d’abord la fête, puis diffuse un spectacle."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 72
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l76-fill-rea-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l76-fill-rea-1",
-          "prompt": {
-            "fr": "Complète : 节目先介绍___，再播放一个表演。 (« L’émission présente d’abord la fête, puis diffuse un spectacle »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l76-produce"
-          ],
-          "required": true
-        },
-        "sentence": "节目先介绍___，再播放一个表演。",
-        "acceptedAnswers": [
-          "节日"
         ],
         "caseSensitive": false
       },

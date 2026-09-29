@@ -379,6 +379,12 @@ public enum ExerciseSpec: Codable, Hashable, Sendable {
     case speaking(SpeakingExercise)
     case handwriting(HandwritingExercise)
     case flashcard(FlashcardExercise)
+    case matching(MatchingExercise)            // paires à toucher
+    case dictation(DictationExercise)          // écouter, choisir pinyin ou hanzi
+    case toneDiscrimination(ToneDiscriminationExercise)
+    case translation(TranslationExercise)      // tuiles avec distracteurs
+    case dialogueOrder(DialogueOrderExercise)  // répliques à remettre en ordre
+    case conversationChoice(ConversationChoiceExercise)
 }
 
 public struct ExerciseHeader: Codable, Hashable, Sendable {
@@ -459,7 +465,8 @@ Les réponses ne contiennent aucune classe Apple :
 ```swift
 public enum ExerciseAnswer: Codable, Hashable, Sendable {
     case choice(choiceID: String)
-    case wordOrder(tokenIDs: [String])
+    case wordOrder(tokenIDs: [String])   // aussi translation et dialogueOrder
+    case matching(pairs: [String: String])
     case text(String)
     case speech(SpeechAnswer)
     case handwriting(HandwritingAnswer)

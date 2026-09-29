@@ -648,49 +648,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-pick-018",
+      "id": "block-ex-l46-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l46-pick-018",
+          "id": "ex-l46-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l46-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "电视",
+            "pinyin": "diàn shì",
+            "right": {
+              "fr": "télévision"
+            }
+          },
+          {
+            "id": "b",
+            "left": "中午",
+            "pinyin": "zhōng wǔ",
+            "right": {
+              "fr": "midi"
+            }
+          },
+          {
+            "id": "c",
+            "left": "弟弟",
+            "pinyin": "dì di",
+            "right": {
+              "fr": "petit frère"
+            }
+          },
+          {
+            "id": "d",
+            "left": "公斤",
+            "pinyin": "gōng jīn",
+            "right": {
+              "fr": "kilogramme"
+            }
+          },
+          {
+            "id": "e",
+            "left": "好吃",
+            "pinyin": "hǎo chī",
+            "right": {
+              "fr": "délicieux"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 42
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l46-dict-py-018",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l46-dict-py-018",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l46-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "电视",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "好吃 (hǎo chī)"
+              "fr": "gōng jīn"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "中午 (zhōng wǔ)"
+              "fr": "zhōng wǔ"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "电视 (diàn shì)"
+              "fr": "diàn shì"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "弟弟 (dì di)"
+              "fr": "dì di"
             },
             "audio": null
           }
@@ -705,53 +773,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-reverse-018",
+      "id": "block-ex-l46-tone-144",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l46-reverse-018",
+          "id": "ex-l46-tone-144",
           "prompt": {
-            "fr": "Comment dit-on « télévision » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l46-understand"
           ],
           "required": true
         },
+        "promptText": "中午",
         "choices": [
           {
-            "id": "a",
+            "id": "t11",
             "label": {
-              "fr": "弟弟 (dì di)"
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t13",
             "label": {
-              "fr": "电视 (diàn shì)"
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t14",
             "label": {
-              "fr": "好吃 (hǎo chī)"
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t23",
             "label": {
-              "fr": "公斤 (gōng jīn)"
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "t13"
       },
       "metadata": {
         "stage": "discover",
@@ -782,14 +851,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "黑 (hēi)"
+              "fr": "号 (hào)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "号 (hào)"
+              "fr": "黑 (hēi)"
             },
             "audio": null
           },
@@ -808,7 +877,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -818,13 +887,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-reverse-192",
+      "id": "block-ex-l46-reverse-191",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l46-reverse-192",
+          "id": "ex-l46-reverse-191",
           "prompt": {
-            "fr": "Comment dit-on « noir » en chinois ?"
+            "fr": "Comment dit-on « numéro ; jour du mois » en chinois ?"
           },
           "instruction": {
             "fr": "Choisis le mot chinois qui convient."
@@ -845,83 +914,26 @@
           {
             "id": "b",
             "label": {
-              "fr": "弟弟 (dì di)"
+              "fr": "黑 (hēi)"
             },
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "中午 (zhōng wǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "黑 (hēi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 42
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l46-pick-144",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l46-pick-144",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l46-understand"
-          ],
-          "required": true
-        },
-        "promptText": "中午",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "电视 (diàn shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "公斤 (gōng jīn)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "中午 (zhōng wǔ)"
-            },
-            "audio": null
-          },
-          {
             "id": "d",
             "label": {
-              "fr": "好吃 (hǎo chī)"
+              "fr": "弟弟 (dì di)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1015,16 +1027,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-order-exa-6",
+      "id": "block-ex-l46-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l46-order-exa-6",
+          "id": "ex-l46-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Mon billet porte le numéro trois »."
+            "fr": "Traduis en chinois : « Je regarde la télévision le soir »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l46-produce"
@@ -1033,103 +1045,23 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "是",
-            "pinyin": "shì",
+            "id": "d",
+            "hanzi": "电视",
+            "pinyin": "diàn shì",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "号",
-            "pinyin": "hào",
+            "hanzi": "中午",
+            "pinyin": "zhōng wǔ",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "三",
-            "pinyin": "sān",
+            "id": "c",
+            "hanzi": "看",
+            "pinyin": "kàn",
             "audio": null
           },
-          {
-            "id": "b",
-            "hanzi": "票",
-            "pinyin": "piào",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我的票是三号。",
-          "我的票是三号"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 42
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l46-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l46-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 这只猫是___的。 (« Ce chat est noir »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l46-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这只猫是___的。",
-        "acceptedAnswers": [
-          "黑"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 42
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l46-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l46-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Je regarde la télévision le soir »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l46-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "b",
             "hanzi": "晚上",
@@ -1143,15 +1075,9 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "看",
-            "pinyin": "kàn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "电视",
-            "pinyin": "diàn shì",
+            "id": "f",
+            "hanzi": "弟弟",
+            "pinyin": "dì di",
             "audio": null
           }
         ],
@@ -1161,10 +1087,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "我晚上看电视。",
-          "我晚上看电视"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1174,27 +1097,129 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-fill-exa-2",
+      "id": "block-ex-l46-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l46-fill-exa-2",
+          "id": "ex-l46-talk-1",
           "prompt": {
-            "fr": "Complète : ___我们吃饭。 (« Nous mangeons à midi »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l46-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "这几位是你的同事吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "表示欢迎。请大家一起看照片。",
+            "pinyin": "biǎo shì huān yíng。 qǐng dà jiā yì qǐ kàn zhào piān。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是，一共五位。",
+            "pinyin": "shì， yī gòng wǔ wèi。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "是。他来看我们的工作。",
+            "pinyin": "shì。 tā lái kàn wǒ men de gōng zuò。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 42
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l46-translate-exa-7",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l46-translate-exa-7",
+          "prompt": {
+            "fr": "Traduis en chinois : « Ce chat est noir »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l46-produce"
           ],
           "required": true
         },
-        "sentence": "___我们吃饭。",
-        "acceptedAnswers": [
-          "中午"
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "猫",
+            "pinyin": "māo",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "号",
+            "pinyin": "hào",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "只",
+            "pinyin": "zhī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "黑",
+            "pinyin": "hēi",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "电视",
+            "pinyin": "diàn shì",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1204,13 +1229,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-order-exa-3",
+      "id": "block-ex-l46-order-exa-5",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l46-order-exa-3",
+          "id": "ex-l46-order-exa-5",
           "prompt": {
-            "fr": "Construis « Mon petit frère est à la maison »."
+            "fr": "Construis « Ce plat est délicieux »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1222,32 +1247,46 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "弟弟",
-            "pinyin": "dì di",
+            "id": "e",
+            "hanzi": "吃",
+            "pinyin": "chī",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "菜",
+            "pinyin": "cài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d",
+          "e"
         ],
         "acceptedVariants": [
-          "我弟弟在家。",
-          "我弟弟在家"
+          "这个菜很好吃。",
+          "这个菜很好吃"
         ]
       },
       "metadata": {
@@ -1258,65 +1297,153 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-speak-exa-4",
+      "id": "block-ex-l46-dialogue-1-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l46-speak-exa-4",
+          "id": "ex-l46-dialogue-1-3",
           "prompt": {
-            "fr": "Dis « Je veux deux kilos de pommes »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l46-produce"
+            "l46-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "我要两公斤苹果。",
-        "referencePinyin": "wǒ yào liǎng gōng jīn píng guǒ。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我要两公斤苹果。"
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "那位老人是你爷爷吗？",
+            "pinyin": "nà wèi lǎo rén shì nǐ yé yé ma？",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "这几位是你的同事吗？",
+            "pinyin": "zhè jǐ wèi shì nǐ de tóng shì ma？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "是，一共五位。",
+            "pinyin": "shì， yī gòng wǔ wèi。",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 42
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l46-speak-exa-5",
+      "id": "block-ex-l46-read-exa-5",
       "spec": {
-        "kind": "speaking",
+        "kind": "choice",
         "header": {
-          "id": "ex-l46-speak-exa-5",
+          "id": "ex-l46-read-exa-5",
           "prompt": {
-            "fr": "Dis « Ce plat est délicieux »."
+            "fr": "Que signifie la phrase : 这个菜很好吃。"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l46-produce"
+            "l46-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "这个菜很好吃。",
-        "referencePinyin": "zhè ge cài hěn hǎo chī。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "这个菜很好吃。"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ce plat est délicieux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Trois invités sont arrivés."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Oui. Il vient voir notre travail."
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
+        "lessonDay": 42
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l46-listen-rea-1",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l46-listen-rea-1",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l46-understand"
+          ],
+          "required": true
+        },
+        "promptText": "五位同事在办公室见面，爷爷也来看他们的工作。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cette photo exprime la bienvenue et tout le monde est heureux."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "La personne âgée est-elle ton grand-père ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Cinq collègues se retrouvent au bureau ; le grand-père vient aussi voir leur travail."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 42
       }
     },

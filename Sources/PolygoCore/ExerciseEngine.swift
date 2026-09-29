@@ -52,11 +52,67 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
             return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? "Bonne réponse." : "Ce n’est pas la bonne réponse. Relis l’explication puis réessaie.", accepted: correct, answer: choiceID)
 
         case .wordOrder(let exercise):
-            guard case .wordOrder(let tokenIDs) = answer else {
-                return evaluation(id, .incorrect, 0, "Remets les mots dans l’ordre proposé.", accepted: false)
+            return evaluateTiles(
+                id, answer,
+                acceptedOrders: [exercise.correctOrder],
+                missing: "Remets les mots dans l’ordre proposé.",
+                success: "La phrase est dans le bon ordre.",
+                failure: "L’ordre de la phrase doit être corrigé."
+            )
+
+        case .translation(let exercise):
+            return evaluateTiles(
+                id, answer,
+                acceptedOrders: [exercise.correctOrder] + exercise.acceptedOrders,
+                missing: "Assemble la phrase avec les tuiles proposées.",
+                success: "La traduction est correcte.",
+                failure: "La phrase n’est pas encore la bonne. Vérifie les mots choisis et leur ordre."
+            )
+
+        case .dialogueOrder(let exercise):
+            return evaluateTiles(
+                id, answer,
+                acceptedOrders: [exercise.correctOrder],
+                missing: "Remets les répliques dans l’ordre du dialogue.",
+                success: "Le dialogue est dans le bon ordre.",
+                failure: "L’ordre du dialogue doit être corrigé. Cherche la réplique qui ouvre l’échange."
+            )
+
+        case .matching(let exercise):
+            guard case .matching(let pairs) = answer else {
+                return evaluation(id, .incorrect, 0, "Associe chaque mot à sa correspondance.", accepted: false)
             }
-            let correct = tokenIDs == exercise.correctOrder
-            return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? "La phrase est dans le bon ordre." : "L’ordre de la phrase doit être corrigé.", accepted: correct, answer: tokenIDs.joined(separator: " "))
+            let correctCount = exercise.pairs.filter { pairs[$0.id] == $0.id }.count
+            let total = exercise.pairs.count
+            let summary = exercise.pairs.map { "\($0.id)=\(pairs[$0.id] ?? "-")" }.joined(separator: " ")
+            if correctCount == total && pairs.count == total {
+                return evaluation(id, .correct, 1, "Toutes les paires sont bonnes.", accepted: true, answer: summary)
+            }
+            if correctCount > 0 {
+                return evaluation(id, .partial, Double(correctCount) / Double(max(1, total)), "\(correctCount) paire\(correctCount > 1 ? "s" : "") sur \(total) \(correctCount > 1 ? "sont bonnes" : "est bonne"). Corrige les autres et réessaie.", accepted: false, answer: summary)
+            }
+            return evaluation(id, .incorrect, 0, "Aucune paire n’est bonne. Relis les mots et réessaie.", accepted: false, answer: summary)
+
+        case .dictation(let exercise):
+            guard case .choice(let choiceID) = answer else {
+                return evaluation(id, .incorrect, 0, "Écoute puis choisis comment cela s’écrit.", accepted: false)
+            }
+            let correct = choiceID == exercise.correctChoiceID
+            return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? "Tu as bien reconnu ce que tu as entendu." : "Réécoute et compare les propositions syllabe par syllabe.", accepted: correct, answer: choiceID)
+
+        case .toneDiscrimination(let exercise):
+            guard case .choice(let choiceID) = answer else {
+                return evaluation(id, .incorrect, 0, "Écoute puis choisis le ton.", accepted: false)
+            }
+            let correct = choiceID == exercise.correctChoiceID
+            return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? "Tu as reconnu le ton." : "Réécoute en suivant la mélodie de la voix : monte-t-elle, descend-elle, reste-t-elle plate ?", accepted: correct, answer: choiceID)
+
+        case .conversationChoice(let exercise):
+            guard case .choice(let choiceID) = answer else {
+                return evaluation(id, .incorrect, 0, "Écoute la réplique puis choisis la bonne réponse.", accepted: false)
+            }
+            let correct = choiceID == exercise.correctReplyID
+            return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? "Cette réponse convient à la réplique." : "Cette réponse ne convient pas. Réécoute la réplique et cherche ce qu’elle demande.", accepted: correct, answer: choiceID)
 
         case .fillBlank(let exercise):
             guard case .text(let text) = answer else {
@@ -156,6 +212,16 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
             }
             return selfReported(id: id, rating: rating)
         }
+    }
+
+    /// Shared by every tile-based kind: the answer must equal one of the
+    /// accepted tile sequences, so a missing tile, an extra tile or a swap fails.
+    private func evaluateTiles(_ id: ExerciseID, _ answer: ExerciseAnswer, acceptedOrders: [[String]], missing: String, success: String, failure: String) -> ExerciseEvaluation {
+        guard case .wordOrder(let tokenIDs) = answer else {
+            return evaluation(id, .incorrect, 0, missing, accepted: false)
+        }
+        let correct = acceptedOrders.contains(tokenIDs)
+        return evaluation(id, correct ? .correct : .incorrect, correct ? 1 : 0, correct ? success : failure, accepted: correct, answer: tokenIDs.joined(separator: " "))
     }
 
     private func selfReported(id: ExerciseID, rating: SelfRating) -> ExerciseEvaluation {

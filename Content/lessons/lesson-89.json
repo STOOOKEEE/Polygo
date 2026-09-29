@@ -619,49 +619,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-pick-302",
+      "id": "block-ex-l89-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l89-pick-302",
+          "id": "ex-l89-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l89-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "啊",
+            "pinyin": "a",
+            "right": {
+              "fr": "particule exclamative"
+            }
+          },
+          {
+            "id": "b",
+            "left": "北方",
+            "pinyin": "běi fāng",
+            "right": {
+              "fr": "nord ; région du nord"
+            }
+          },
+          {
+            "id": "c",
+            "left": "低",
+            "pinyin": "dī",
+            "right": {
+              "fr": "bas"
+            }
+          },
+          {
+            "id": "d",
+            "left": "地方",
+            "pinyin": "dì fāng",
+            "right": {
+              "fr": "endroit"
+            }
+          },
+          {
+            "id": "e",
+            "left": "东",
+            "pinyin": "dōng",
+            "right": {
+              "fr": "est"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 85
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l89-dict-py-302",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l89-dict-py-302",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l89-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "啊",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "东 (dōng)"
+              "fr": "è"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "啊 (a)"
+              "fr": "a"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "饿 (è)"
+              "fr": "dōng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "低 (dī)"
+              "fr": "dī"
             },
             "audio": null
           }
@@ -676,48 +744,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-reverse-302",
+      "id": "block-ex-l89-tone-315",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l89-reverse-302",
+          "id": "ex-l89-tone-315",
           "prompt": {
-            "fr": "Comment dit-on « particule exclamative » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l89-understand"
           ],
           "required": true
         },
+        "promptText": "北方",
+        "choices": [
+          {
+            "id": "t21",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t31"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 85
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l89-pick-352",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l89-pick-352",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l89-understand"
+          ],
+          "required": true
+        },
+        "promptText": "低",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "啊 (a)"
+              "fr": "低 (dī)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "饿 (è)"
+              "fr": "东 (dōng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "东 (dōng)"
+              "fr": "啊 (a)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "低 (dī)"
+              "fr": "饿 (è)"
             },
             "audio": null
           }
@@ -732,49 +858,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-pick-315",
+      "id": "block-ex-l89-dict-zh-354",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l89-pick-315",
+          "id": "ex-l89-dict-zh-354",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l89-understand"
           ],
           "required": true
         },
-        "promptText": "北方",
+        "script": "hanzi",
+        "promptText": "地方",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "放心 (fàng xīn)"
+              "fr": "放心"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "地方 (dì fāng)"
+              "fr": "北方"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "低 (dī)"
+              "fr": "一边"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "北方 (běi fāng)"
+              "fr": "地方"
             },
             "audio": null
           }
@@ -789,110 +916,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-reverse-373",
+      "id": "block-ex-l89-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l89-reverse-373",
+          "id": "ex-l89-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « être rassuré » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l89-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "北方 (běi fāng)"
-            },
-            "audio": null
+            "left": "饿",
+            "pinyin": null,
+            "right": {
+              "fr": "è"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "地方 (dì fāng)"
-            },
-            "audio": null
+            "left": "放心",
+            "pinyin": null,
+            "right": {
+              "fr": "fàng xīn"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "放心 (fàng xīn)"
-            },
-            "audio": null
+            "left": "要求",
+            "pinyin": null,
+            "right": {
+              "fr": "yāo qiú"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "啊 (a)"
-            },
-            "audio": null
+            "left": "一边",
+            "pinyin": null,
+            "right": {
+              "fr": "yī biān"
+            }
+          },
+          {
+            "id": "e",
+            "left": "不",
+            "pinyin": null,
+            "right": {
+              "fr": "bù"
+            }
           }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 85
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l89-pick-354",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l89-pick-354",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l89-understand"
-          ],
-          "required": true
-        },
-        "promptText": "地方",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "放心 (fàng xīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "地方 (dì fāng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "北方 (běi fāng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "啊 (a)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -986,16 +1067,148 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-order-exa-5",
+      "id": "block-ex-l89-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l89-order-exa-5",
+          "id": "ex-l89-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Le soleil se lève à l’est »."
+            "fr": "Traduis en chinois : « L’hiver est très froid dans le Nord »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l89-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "饿",
+            "pinyin": "è",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "冷",
+            "pinyin": "lěng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "冬",
+            "pinyin": "dōng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "北方",
+            "pinyin": "běi fāng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "低",
+            "pinyin": "dī",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 85
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l89-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l89-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l89-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "一共几个小组？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "一般要两个人一组，一边读，一边记录。",
+            "pinyin": "yì bān yào liǎng ge rén yì zǔ, yì biān dú, yì biān jì lù.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "活动有什么要求？",
+            "pinyin": "huó dòng yǒu shén me yāo qiú?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "四个。每组的任务不一样。",
+            "pinyin": "sì ge. měi zǔ de rèn wù bù yí yàng.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 85
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l89-translate-exa-5",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l89-translate-exa-5",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le soleil se lève à l’est »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l89-produce"
@@ -1010,15 +1223,21 @@
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "太阳",
-            "pinyin": "tài yáng",
-            "audio": null
-          },
-          {
             "id": "f",
             "hanzi": "来",
             "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "出",
+            "pinyin": "chū",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "地方",
+            "pinyin": "dì fāng",
             "audio": null
           },
           {
@@ -1028,15 +1247,21 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "边",
-            "pinyin": "biān",
+            "id": "a",
+            "hanzi": "太阳",
+            "pinyin": "tài yáng",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "出",
-            "pinyin": "chū",
+            "id": "h",
+            "hanzi": "放心",
+            "pinyin": "fàng xīn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "边",
+            "pinyin": "biān",
             "audio": null
           }
         ],
@@ -1048,124 +1273,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "太阳从东边出来。",
-          "太阳从东边出来"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 85
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l89-fill-exa-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l89-fill-exa-1",
-          "prompt": {
-            "fr": "Complète : ___，真漂亮！ (« Ah, c’est vraiment joli ! »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l89-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___，真漂亮！",
-        "acceptedAnswers": [
-          "啊"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 85
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l89-order-exa-6",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l89-order-exa-6",
-          "prompt": {
-            "fr": "Construis « J’ai faim »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l89-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "饿",
-            "pinyin": "è",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "我饿了。",
-          "我饿了"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 85
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l89-fill-exa-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l89-fill-exa-2",
-          "prompt": {
-            "fr": "Complète : ___的冬天很冷。 (« L’hiver est très froid dans le Nord »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l89-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___的冬天很冷。",
-        "acceptedAnswers": [
-          "北方"
-        ],
-        "caseSensitive": false
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1243,65 +1351,84 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-speak-exa-4",
+      "id": "block-ex-l89-dialogue-1-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l89-speak-exa-4",
+          "id": "ex-l89-dialogue-1-3",
           "prompt": {
-            "fr": "Dis « C’est un bon endroit »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l89-produce"
+            "l89-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "这里是一个好地方。",
-        "referencePinyin": "zhè lǐ shì yí gè hǎo dì fāng。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "这里是一个好地方。"
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "一共几个小组？",
+            "pinyin": "yí gòng jǐ ge xiǎo zǔ?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "一般要两个人一组，一边读，一边记录。",
+            "pinyin": "yì bān yào liǎng ge rén yì zǔ, yì biān dú, yì biān jì lù.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "活动有什么要求？",
+            "pinyin": "huó dòng yǒu shén me yāo qiú?",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 85
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l89-speak-exa-7",
+      "id": "block-ex-l89-fill-rea-1",
       "spec": {
-        "kind": "speaking",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l89-speak-exa-7",
+          "id": "ex-l89-fill-rea-1",
           "prompt": {
-            "fr": "Dis « Rassure-toi, je viendrai »."
+            "fr": "Complète : 活动一般___两个人一组，一边读一边记录。 (« L’activité demande en général deux personnes par groupe, qui lisent tout en prenant des notes »)"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l89-produce"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "你放心，我会来的。",
-        "referencePinyin": "nǐ fàng xīn， wǒ huì lái de。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "你放心，我会来的。"
+        "sentence": "活动一般___两个人一组，一边读一边记录。",
+        "acceptedAnswers": [
+          "要求"
         ],
-        "allowSelfRating": true
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 85
       }
     },

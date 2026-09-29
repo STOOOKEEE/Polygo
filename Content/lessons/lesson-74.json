@@ -578,49 +578,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l74-pick-340",
+      "id": "block-ex-l74-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l74-pick-340",
+          "id": "ex-l74-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l74-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "除了",
+            "pinyin": "chú le",
+            "right": {
+              "fr": "sauf ; en plus de"
+            }
+          },
+          {
+            "id": "b",
+            "left": "角",
+            "pinyin": "jiǎo",
+            "right": {
+              "fr": "coin ; jiao (monnaie)"
+            }
+          },
+          {
+            "id": "c",
+            "left": "为了",
+            "pinyin": "wèi le",
+            "right": {
+              "fr": "afin de"
+            }
+          },
+          {
+            "id": "d",
+            "left": "信",
+            "pinyin": "xìn",
+            "right": {
+              "fr": "lettre"
+            }
+          },
+          {
+            "id": "e",
+            "left": "眼镜",
+            "pinyin": "yǎn jìng",
+            "right": {
+              "fr": "lunettes"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-dict-py-340",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l74-dict-py-340",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "除了",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "眼镜 (yǎn jìng)"
+              "fr": "zhào piān"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "为了 (wèi le)"
+              "fr": "wèi le"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "除了 (chú le)"
+              "fr": "chú le"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "照片 (zhào piān)"
+              "fr": "yǎn jìng"
             },
             "audio": null
           }
@@ -635,72 +703,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l74-reverse-340",
+      "id": "block-ex-l74-tone-419",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l74-reverse-340",
+          "id": "ex-l74-tone-419",
           "prompt": {
-            "fr": "Comment dit-on « sauf ; en plus de » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l74-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "眼镜 (yǎn jìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "除了 (chú le)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "为了 (wèi le)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "照片 (zhào piān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 70
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l74-pick-419",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l74-pick-419",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l74-understand"
@@ -710,91 +722,35 @@
         "promptText": "角",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "角 (jiǎo)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "信 (xìn)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "照片 (zhào piān)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "除了 (chú le)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 70
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l74-reverse-419",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l74-reverse-419",
-          "prompt": {
-            "fr": "Comment dit-on « coin ; jiao (monnaie) » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l74-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "信 (xìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "为了 (wèi le)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "眼镜 (yǎn jìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "角 (jiǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -832,14 +788,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "照片 (zhào piān)"
+              "fr": "为了 (wèi le)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "为了 (wèi le)"
+              "fr": "照片 (zhào piān)"
             },
             "audio": null
           },
@@ -851,7 +807,65 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-dict-zh-555",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l74-dict-zh-555",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "眼镜",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "眼镜"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "除了"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "为了"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "照片"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -945,13 +959,145 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l74-order-exa-2",
+      "id": "block-ex-l74-translate-exa-6",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l74-translate-exa-6",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’ai envoyé la photo à maman »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l74-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我把",
+            "pinyin": "wǒ bǎ",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "信",
+            "pinyin": "xìn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "妈妈",
+            "pinyin": "mā ma",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "发",
+            "pinyin": "fā",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "照片",
+            "pinyin": "zhào piàn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "角",
+            "pinyin": "jiǎo",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l74-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你要吃面条吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我把面条放在盘子里，慢慢吃。",
+            "pinyin": "wǒ bǎ miàn tiáo fàng zài pán zi lǐ, màn màn chī.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "啤酒也要少喝。",
+            "pinyin": "pí jiǔ yě yào shǎo hē.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "要，但是除了葡萄以外，糖要少吃。",
+            "pinyin": "yào, dàn shì chú le pú tao yǐ wài, táng yào shǎo chī.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-order-exa-4",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l74-order-exa-2",
+          "id": "ex-l74-order-exa-4",
           "prompt": {
-            "fr": "Construis « Ce crayon coûte cinquante centimes de yuan »."
+            "fr": "Construis « J’ai reçu une lettre hier »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -963,45 +1109,45 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "要",
-            "pinyin": "yào",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "角",
-            "pinyin": "jiǎo",
-            "audio": null
-          },
-          {
             "id": "c",
-            "hanzi": "铅笔",
-            "pinyin": "qiān bǐ",
+            "hanzi": "收",
+            "pinyin": "shōu",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
-            "id": "g",
-            "hanzi": "钱",
-            "pinyin": "qián",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "五",
-            "pinyin": "wǔ",
+            "id": "f",
+            "hanzi": "封",
+            "pinyin": "fēng",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "支",
-            "pinyin": "zhī",
+            "hanzi": "昨天",
+            "pinyin": "zuó tiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "信",
+            "pinyin": "xìn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yì",
             "audio": null
           }
         ],
@@ -1015,8 +1161,8 @@
           "g"
         ],
         "acceptedVariants": [
-          "这支铅笔要五角钱。",
-          "这支铅笔要五角钱"
+          "我昨天收到一封信。",
+          "我昨天收到一封信"
         ]
       },
       "metadata": {
@@ -1027,46 +1173,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l74-fill-exa-4",
+      "id": "block-ex-l74-translate-exa-5",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "translation",
         "header": {
-          "id": "ex-l74-fill-exa-4",
+          "id": "ex-l74-translate-exa-5",
           "prompt": {
-            "fr": "Complète : 我昨天收到一封___。 (« J’ai reçu une lettre hier »)"
+            "fr": "Traduis en chinois : « J’ai oublié de prendre mes lunettes »"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l74-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我昨天收到一封___。",
-        "acceptedAnswers": [
-          "信"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 70
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l74-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l74-order-exa-5",
-          "prompt": {
-            "fr": "Construis « J’ai oublié de prendre mes lunettes »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l74-produce"
@@ -1074,24 +1190,6 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "e",
-            "hanzi": "眼镜",
-            "pinyin": "yǎn jìng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
           {
             "id": "b",
             "hanzi": "忘",
@@ -1103,6 +1201,36 @@
             "hanzi": "带",
             "pinyin": "dài",
             "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "眼镜",
+            "pinyin": "yǎn jìng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "除了",
+            "pinyin": "chú le",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "角",
+            "pinyin": "jiǎo",
+            "audio": null
           }
         ],
         "correctOrder": [
@@ -1112,106 +1240,113 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我忘了带眼镜。",
-          "我忘了带眼镜"
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 70
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l74-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l74-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l74-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你要吃面条吗？",
+            "pinyin": "nǐ yào chī miàn tiáo ma?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "啤酒也要少喝。",
+            "pinyin": "pí jiǔ yě yào shǎo hē.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "要，但是除了葡萄以外，糖要少吃。",
+            "pinyin": "yào, dàn shì chú le pú tao yǐ wài, táng yào shǎo chī.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 70
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l74-fill-exa-1",
+      "id": "block-ex-l74-read-dia-2",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "choice",
         "header": {
-          "id": "ex-l74-fill-exa-1",
+          "id": "ex-l74-read-dia-2",
           "prompt": {
-            "fr": "Complète : ___星期天以外，我每天上班。 (« À part le dimanche, je travaille chaque jour »)"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 要，但是除了葡萄以外，糖要少吃。"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l74-produce"
+            "l74-understand"
           ],
           "required": true
         },
-        "sentence": "___星期天以外，我每天上班。",
-        "acceptedAnswers": [
-          "除了"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il mange peu de sucre et boit aussi très peu de bière."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Oui, mais à part les raisins, il faut manger peu de sucre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je mets les nouilles dans l’assiette et je mange lentement."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 70
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l74-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l74-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : ___身体健康，我每天锻炼。 (« Pour rester en bonne santé, je fais de l’exercice chaque jour »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l74-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___身体健康，我每天锻炼。",
-        "acceptedAnswers": [
-          "为了"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 70
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l74-speak-exa-6",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l74-speak-exa-6",
-          "prompt": {
-            "fr": "Dis « J’ai envoyé la photo à maman »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l74-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我把照片发给了妈妈。",
-        "referencePinyin": "wǒ bǎ zhào piàn fā gěi le mā ma.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我把照片发给了妈妈。"
-        ],
-        "allowSelfRating": true
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 70
       }
     },

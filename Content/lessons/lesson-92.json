@@ -621,162 +621,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-pick-525",
+      "id": "block-ex-l92-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l92-pick-525",
+          "id": "ex-l92-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l92-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "腿",
+            "pinyin": "tuǐ",
+            "right": {
+              "fr": "jambe"
+            }
+          },
+          {
+            "id": "b",
+            "left": "小心",
+            "pinyin": "xiǎo xīn",
+            "right": {
+              "fr": "faire attention ; prudent"
+            }
+          },
+          {
+            "id": "c",
+            "left": "校长",
+            "pinyin": "xiào zhǎng",
+            "right": {
+              "fr": "directeur d’école"
+            }
+          },
+          {
+            "id": "d",
+            "left": "中间",
+            "pinyin": "zhōng jiān",
+            "right": {
+              "fr": "milieu ; entre"
+            }
+          },
+          {
+            "id": "e",
+            "left": "主要",
+            "pinyin": "zhǔ yào",
+            "right": {
+              "fr": "principal ; surtout"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-dict-py-525",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l92-dict-py-525",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "腿",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "腿 (tuǐ)"
+              "fr": "zhù"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "祝 (zhù)"
+              "fr": "zhǎng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "最近 (zuì jìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "校长 (xiào zhǎng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 88
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l92-reverse-525",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l92-reverse-525",
-          "prompt": {
-            "fr": "Comment dit-on « jambe » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l92-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "祝 (zhù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "最近 (zuì jìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "主要 (zhǔ yào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "腿 (tuǐ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 88
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l92-pick-544",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l92-pick-544",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l92-understand"
-          ],
-          "required": true
-        },
-        "promptText": "小心",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "校长 (xiào zhǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "主要 (zhǔ yào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "小心 (xiǎo xīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "中间 (zhōng jiān)"
+              "fr": "tuǐ"
             },
             "audio": null
           }
@@ -791,53 +739,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-reverse-545",
+      "id": "block-ex-l92-tone-544",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l92-reverse-545",
+          "id": "ex-l92-tone-544",
           "prompt": {
-            "fr": "Comment dit-on « directeur d’école » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l92-understand"
           ],
           "required": true
         },
+        "promptText": "小心",
         "choices": [
           {
-            "id": "a",
+            "id": "t21",
             "label": {
-              "fr": "中间 (zhōng jiān)"
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t30",
             "label": {
-              "fr": "校长 (xiào zhǎng)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t31",
             "label": {
-              "fr": "主要 (zhǔ yào)"
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t34",
             "label": {
-              "fr": "小心 (xiǎo xīn)"
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "t31"
       },
       "metadata": {
         "stage": "discover",
@@ -847,11 +796,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-pick-593",
+      "id": "block-ex-l92-pick-545",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l92-pick-593",
+          "id": "ex-l92-pick-545",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -863,19 +812,19 @@
           ],
           "required": true
         },
-        "promptText": "祝",
+        "promptText": "校长",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "祝 (zhù)"
+              "fr": "主要 (zhǔ yào)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "腿 (tuǐ)"
+              "fr": "小心 (xiǎo xīn)"
             },
             "audio": null
           },
@@ -889,12 +838,79 @@
           {
             "id": "d",
             "label": {
-              "fr": "主要 (zhǔ yào)"
+              "fr": "校长 (xiào zhǎng)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l92-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "祝",
+            "pinyin": null,
+            "right": {
+              "fr": "zhù"
+            }
+          },
+          {
+            "id": "b",
+            "left": "最近",
+            "pinyin": null,
+            "right": {
+              "fr": "zuì jìn"
+            }
+          },
+          {
+            "id": "c",
+            "left": "照顾",
+            "pinyin": null,
+            "right": {
+              "fr": "zhào gù"
+            }
+          },
+          {
+            "id": "d",
+            "left": "终于",
+            "pinyin": null,
+            "right": {
+              "fr": "zhōng yú"
+            }
+          },
+          {
+            "id": "e",
+            "left": "长",
+            "pinyin": null,
+            "right": {
+              "fr": "zhǎng"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -988,16 +1004,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-order-exa-2",
+      "id": "block-ex-l92-translate-dia-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l92-order-exa-2",
+          "id": "ex-l92-translate-dia-1",
           "prompt": {
-            "fr": "Construis « Il faut faire attention en traversant la rue »."
+            "fr": "Traduis en chinois : « Qui s’occupe du jardin au milieu de l’école ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l92-produce"
@@ -1006,39 +1022,51 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "马",
-            "pinyin": "mǎ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "时",
-            "pinyin": "shí",
-            "audio": null
-          },
-          {
             "id": "c",
-            "hanzi": "路",
-            "pinyin": "lù",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "要",
-            "pinyin": "yào",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "过",
-            "pinyin": "guò",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "小心",
-            "pinyin": "xiǎo xīn",
+            "hanzi": "花园",
+            "pinyin": "huā yuán",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "主要",
+            "pinyin": "zhǔ yào",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "照顾",
+            "pinyin": "zhào gù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "谁",
+            "pinyin": "shuí",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "腿",
+            "pinyin": "tuǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "中间",
+            "pinyin": "zhōng jiān",
             "audio": null
           }
         ],
@@ -1050,10 +1078,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "过马路时要小心。",
-          "过马路时要小心"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1063,46 +1088,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-fill-dia-3",
+      "id": "block-ex-l92-talk-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l92-fill-dia-3",
+          "id": "ex-l92-talk-3",
           "prompt": {
-            "fr": "Complète : ___的问题解决了吗？ (« Le problème principal est-il résolu ? »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l92-produce"
+            "l92-understand"
           ],
           "required": true
         },
-        "sentence": "___的问题解决了吗？",
-        "acceptedAnswers": [
-          "主要"
+        "speaker": "Mina",
+        "promptText": "主要的问题解决了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "终于解决了，花也长大了。",
+            "pinyin": "zhōng yú jiě jué le, huā yě zhǎng dà le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "学生们。我们种了两种花。",
+            "pinyin": "xué shēng men. wǒ men zhòng le liǎng zhǒng huā.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "谁照顾学校中间的花园？",
+            "pinyin": "shuí zhào gù xué xiào zhōng jiān de huā yuán?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 88
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-order-exa-1",
+      "id": "block-ex-l92-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l92-order-exa-1",
+          "id": "ex-l92-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Après avoir couru, mes jambes sont très fatiguées »."
+            "fr": "Traduis en chinois : « Après avoir couru, mes jambes sont très fatiguées »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l92-produce"
@@ -1111,27 +1154,9 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "以后",
-            "pinyin": "yǐ hòu",
-            "audio": null
-          },
-          {
             "id": "d",
             "hanzi": "腿",
             "pinyin": "tuǐ",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "累",
-            "pinyin": "lèi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "很",
-            "pinyin": "hěn",
             "audio": null
           },
           {
@@ -1141,9 +1166,39 @@
             "audio": null
           },
           {
+            "id": "g",
+            "hanzi": "校长",
+            "pinyin": "xiào zhǎng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "以后",
+            "pinyin": "yǐ hòu",
+            "audio": null
+          },
+          {
             "id": "a",
             "hanzi": "跑步",
             "pinyin": "pǎo bù",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "累",
+            "pinyin": "lèi",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "最近",
+            "pinyin": "zuì jìn",
             "audio": null
           }
         ],
@@ -1155,40 +1210,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "跑步以后我的腿很累。",
-          "跑步以后我的腿很累"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 88
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l92-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l92-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : ___在班会上讲话。 (« Le directeur prend la parole à la réunion de classe »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l92-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___在班会上讲话。",
-        "acceptedAnswers": [
-          "校长"
-        ],
-        "caseSensitive": false
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1259,33 +1281,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l92-speak-exa-7",
+      "id": "block-ex-l92-dialogue-1-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l92-speak-exa-7",
+          "id": "ex-l92-dialogue-1-3",
           "prompt": {
-            "fr": "Dis « J’ai commencé à étudier le chinois récemment »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l92-produce"
+            "l92-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "我最近开始学习汉语。",
-        "referencePinyin": "wǒ zuì jìn kāi shǐ xué xí Hàn yǔ.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我最近开始学习汉语。"
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "学生们。我们种了两种花。",
+            "pinyin": "xué shēng men. wǒ men zhòng le liǎng zhǒng huā.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "谁照顾学校中间的花园？",
+            "pinyin": "shuí zhào gù xué xiào zhōng jiān de huā yuán?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "主要的问题解决了吗？",
+            "pinyin": "zhǔ yào de wèn tí jiě jué le ma?",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
+        "lessonDay": 88
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l92-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l92-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 祝你生日快乐！"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l92-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous avons enfin trouvé la gare."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "J’ai commencé à étudier le chinois récemment."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je te souhaite un joyeux anniversaire !"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 88
       }
     },

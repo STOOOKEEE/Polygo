@@ -648,54 +648,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-pick-016",
+      "id": "block-ex-l8-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l8-pick-016",
+          "id": "ex-l8-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l8-understand"
           ],
           "required": true
         },
-        "promptText": "点",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "点 (diǎn)"
-            },
-            "audio": null
+            "left": "点",
+            "pinyin": "diǎn",
+            "right": {
+              "fr": "heure ; point"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "要 (yào)"
-            },
-            "audio": null
+            "left": "回",
+            "pinyin": "huí",
+            "right": {
+              "fr": "retourner ; revenir"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "去 (qù)"
-            },
-            "audio": null
+            "left": "去",
+            "pinyin": "qù",
+            "right": {
+              "fr": "aller"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "从 (cóng)"
-            },
-            "audio": null
+            "left": "从",
+            "pinyin": "cóng",
+            "right": {
+              "fr": "depuis ; de"
+            }
+          },
+          {
+            "id": "e",
+            "left": "牛奶",
+            "pinyin": "niú nǎi",
+            "right": {
+              "fr": "lait"
+            }
           }
-        ],
-        "correctChoiceID": "a"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -705,53 +715,105 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-reverse-016",
+      "id": "block-ex-l8-dict-sent-exa-7",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l8-reverse-016",
+          "id": "ex-l8-dict-sent-exa-7",
           "prompt": {
-            "fr": "Comment dit-on « heure ; point » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l8-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "我要回家。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "回 (huí)"
+              "fr": "píng guǒ sān kuài."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "从 (cóng)"
+              "fr": "xiàn zài sān diǎn."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "去 (qù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "点 (diǎn)"
+              "fr": "wǒ yào huí jiā。"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-tone-016",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l8-tone-016",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "promptText": "点",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -796,19 +858,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "所以 (suǒ yǐ)"
+              "fr": "回 (huí)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "回 (huí)"
+              "fr": "所以 (suǒ yǐ)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -818,97 +880,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-reverse-228",
+      "id": "block-ex-l8-pick-090",
       "spec": {
-        "kind": "choice",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l8-reverse-228",
+          "id": "ex-l8-pick-090",
           "prompt": {
-            "fr": "Comment dit-on « lait » en chinois ?"
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
           },
           "objectiveIDs": [
             "l8-understand"
           ],
           "required": true
         },
+        "promptText": "商店",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "所以 (suǒ yǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "牛奶 (niú nǎi)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "点 (diǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "去 (qù)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 4
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l8-reverse-274",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l8-reverse-274",
-          "prompt": {
-            "fr": "Comment dit-on « vouloir ; devoir » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l8-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "要 (yào)"
-            },
-            "audio": null
-          },
-          {
             "id": "b",
             "label": {
-              "fr": "点 (diǎn)"
+              "fr": "所以 (suǒ yǐ)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "回 (huí)"
+              "fr": "商店 (shāng diàn)"
             },
             "audio": null
           },
@@ -920,7 +927,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1014,16 +1021,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-order-exa-5",
+      "id": "block-ex-l8-translate-dia-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l8-order-exa-5",
+          "id": "ex-l8-translate-dia-3",
           "prompt": {
-            "fr": "Construis « J’aime boire du lait »."
+            "fr": "Traduis en chinois : « Je veux aller au magasin acheter des pommes »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l8-produce"
@@ -1033,26 +1040,44 @@
         "tokens": [
           {
             "id": "d",
-            "hanzi": "牛奶",
-            "pinyin": "niú nǎi",
+            "hanzi": "买",
+            "pinyin": "mǎi",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "喝",
-            "pinyin": "hē",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
+            "hanzi": "去",
+            "pinyin": "qù",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "回",
+            "pinyin": "huí",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "牛奶",
+            "pinyin": "niú nǎi",
             "audio": null
           }
         ],
@@ -1060,12 +1085,135 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
-        "acceptedVariants": [
-          "我喜欢喝牛奶。",
-          "我喜欢喝牛奶"
-        ]
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-talk-4",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l8-talk-4",
+          "prompt": {
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l8-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Tao",
+        "promptText": "苹果多少钱？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我想去商店买苹果。",
+            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "现在几点？",
+            "pinyin": "xiàn zài jǐ diǎn?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "苹果三块。",
+            "pinyin": "píng guǒ sān kuài.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l8-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l8-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je marche de la maison à l’école »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l8-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "从家",
+            "pinyin": "cóng jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "要",
+            "pinyin": "yào",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "走",
+            "pinyin": "zǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "牛奶",
+            "pinyin": "niú nǎi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1105,131 +1253,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-order-exa-4",
+      "id": "block-ex-l8-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l8-order-exa-4",
+          "id": "ex-l8-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Je marche de la maison à l’école »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l8-produce"
+            "l8-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "从家",
-            "pinyin": "cóng jiā",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "c",
-            "hanzi": "走",
-            "pinyin": "zǒu",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "到",
-            "pinyin": "dào",
+            "speaker": "Mina",
+            "hanzi": "我想去商店买苹果。",
+            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "speaker": "Mina",
+            "hanzi": "现在几点？",
+            "pinyin": "xiàn zài jǐ diǎn?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "现在三点。",
+            "pinyin": "xiàn zài sān diǎn.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我从家走到学校。",
-          "我从家走到学校"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 4
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-fill-dia-1",
+      "id": "block-ex-l8-read-exa-6",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "choice",
         "header": {
-          "id": "ex-l8-fill-dia-1",
+          "id": "ex-l8-read-exa-6",
           "prompt": {
-            "fr": "Complète : 现在几___？ (« Quelle heure est-il ? »)"
+            "fr": "Que signifie la phrase : 下雨，所以我不出门。"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l8-produce"
+            "l8-understand"
           ],
           "required": true
         },
-        "sentence": "现在几___？",
-        "acceptedAnswers": [
-          "点"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 4
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l8-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l8-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Je veux rentrer à la maison »."
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Combien coûtent les pommes ?"
+            },
+            "audio": null
           },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il pleut, c’est pourquoi je ne sors pas."
+            },
+            "audio": null
           },
-          "objectiveIDs": [
-            "l8-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我要回家。",
-        "referencePinyin": "wǒ yào huí jiā。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我要回家。"
+          {
+            "id": "c",
+            "label": {
+              "fr": "Quelle heure est-il ?"
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 4
       }
     },
@@ -1260,55 +1380,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 4
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l8-read-exa-7",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l8-read-exa-7",
-          "prompt": {
-            "fr": "Que signifie la phrase : 我要回家。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l8-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Je veux rentrer à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Nous allons au parc."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Il est trois heures."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 4
       }
     },

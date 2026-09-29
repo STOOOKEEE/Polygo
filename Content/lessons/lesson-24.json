@@ -637,49 +637,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-pick-211",
+      "id": "block-ex-l24-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l24-pick-211",
+          "id": "ex-l24-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l24-understand"
           ],
           "required": true
         },
-        "promptText": "可以",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "菜",
+            "pinyin": "cài",
+            "right": {
+              "fr": "plat ; légume"
+            }
+          },
+          {
+            "id": "b",
+            "left": "买",
+            "pinyin": "mǎi",
+            "right": {
+              "fr": "acheter"
+            }
+          },
+          {
+            "id": "c",
+            "left": "近",
+            "pinyin": "jìn",
+            "right": {
+              "fr": "proche"
+            }
+          },
+          {
+            "id": "d",
+            "left": "进",
+            "pinyin": "jìn",
+            "right": {
+              "fr": "entrer"
+            }
+          },
+          {
+            "id": "e",
+            "left": "可以",
+            "pinyin": "kě yǐ",
+            "right": {
+              "fr": "pouvoir ; être permis"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-dict-sent-exa-5",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l24-dict-sent-exa-5",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "现在可以进去吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "可以 (kě yǐ)"
+              "fr": "xiàn zài kě yǐ jìn qù ma？"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "附近 (fù jìn)"
+              "fr": "xué xiào lí zhè lǐ hěn jìn。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "颜色 (yán sè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "买 (mǎi)"
+              "fr": "wǒ jiā zài xué xiào fù jìn。"
             },
             "audio": null
           }
@@ -694,53 +755,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-reverse-211",
+      "id": "block-ex-l24-tone-375",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l24-reverse-211",
+          "id": "ex-l24-tone-375",
           "prompt": {
-            "fr": "Comment dit-on « pouvoir ; être permis » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l24-understand"
           ],
           "required": true
         },
+        "promptText": "附近",
         "choices": [
           {
-            "id": "a",
+            "id": "t14",
             "label": {
-              "fr": "附近 (fù jìn)"
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t40",
             "label": {
-              "fr": "颜色 (yán sè)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t41",
             "label": {
-              "fr": "买 (mǎi)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t44",
             "label": {
-              "fr": "可以 (kě yǐ)"
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t44"
       },
       "metadata": {
         "stage": "discover",
@@ -785,132 +847,77 @@
           {
             "id": "c",
             "label": {
-              "fr": "菜 (cài)"
+              "fr": "近 (jìn)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "近 (jìn)"
+              "fr": "菜 (cài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-dict-zh-211",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l24-dict-zh-211",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "可以",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "颜色"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "附近"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "可以"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "房间"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l24-reverse-009",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l24-reverse-009",
-          "prompt": {
-            "fr": "Comment dit-on « plat ; légume » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "近 (jìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "菜 (cài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "进 (jìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "买 (mǎi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l24-pick-270",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l24-pick-270",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "promptText": "颜色",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "颜色 (yán sè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "可以 (kě yǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "附近 (fù jìn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "买 (mǎi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1004,16 +1011,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-order-exa-5",
+      "id": "block-ex-l24-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l24-order-exa-5",
+          "id": "ex-l24-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Peut-on entrer maintenant ? »."
+            "fr": "Traduis en chinois : « Ce plat est très bon »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l24-produce"
@@ -1022,33 +1029,45 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "进",
-            "pinyin": "jìn",
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           },
           {
             "id": "b",
+            "hanzi": "道",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吃",
+            "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "买",
+            "pinyin": "mǎi",
+            "audio": null
+          },
+          {
+            "id": "g",
             "hanzi": "可以",
             "pinyin": "kě yǐ",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "去",
-            "pinyin": "qù",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "现在",
-            "pinyin": "xiàn zài",
+            "id": "c",
+            "hanzi": "菜",
+            "pinyin": "cài",
             "audio": null
           }
         ],
@@ -1059,10 +1078,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "现在可以进去吗？",
-          "现在可以进去吗"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1072,46 +1088,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-fill-exa-1",
+      "id": "block-ex-l24-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l24-fill-exa-1",
+          "id": "ex-l24-talk-1",
           "prompt": {
-            "fr": "Complète : 这道___很好吃。 (« Ce plat est très bon »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l24-produce"
+            "l24-understand"
           ],
           "required": true
         },
-        "sentence": "这道___很好吃。",
-        "acceptedAnswers": [
-          "菜"
+        "speaker": "Mina",
+        "promptText": "你今天忙吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "很忙，也很累。我住在医院附近。",
+            "pinyin": "hěn máng， yě hěn lèi。 wǒ zhù zài yī yuàn fù jìn。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我一边走路一边给医生打电话。",
+            "pinyin": "wǒ yī biān zǒu lù yī biān gěi yī shēng dǎ diàn huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有几个房间，白色的门在前面。",
+            "pinyin": "yǒu jǐ gè fáng jiān， bái sè de mén zài qián miàn。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 20
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-order-exa-6",
+      "id": "block-ex-l24-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l24-order-exa-6",
+          "id": "ex-l24-translate-exa-6",
           "prompt": {
-            "fr": "Construis « Quelle couleur aimes-tu ? »."
+            "fr": "Traduis en chinois : « Quelle couleur aimes-tu ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l24-produce"
@@ -1120,21 +1154,33 @@
         },
         "tokens": [
           {
+            "id": "f",
+            "hanzi": "进",
+            "pinyin": "jìn",
+            "audio": null
+          },
+          {
             "id": "c",
             "hanzi": "什么",
             "pinyin": "shén me",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "颜色",
-            "pinyin": "yán sè",
-            "audio": null
-          },
-          {
             "id": "a",
             "hanzi": "你",
             "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "可以",
+            "pinyin": "kě yǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "颜色",
+            "pinyin": "yán sè",
             "audio": null
           },
           {
@@ -1150,10 +1196,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "你喜欢什么颜色？",
-          "你喜欢什么颜色"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1163,13 +1206,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-fill-exa-2",
+      "id": "block-ex-l24-fill-dia-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l24-fill-exa-2",
+          "id": "ex-l24-fill-dia-2",
           "prompt": {
-            "fr": "Complète : 我想___苹果。 (« Je veux acheter des pommes »)"
+            "fr": "Complète : 很忙，也很累。我住在医院___。 (« Très occupé et très fatigué. J’habite près de l’hôpital »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1179,15 +1222,117 @@
           ],
           "required": true
         },
-        "sentence": "我想___苹果。",
+        "sentence": "很忙，也很累。我住在医院___。",
         "acceptedAnswers": [
-          "买"
+          "附近"
         ],
         "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l24-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "很忙，也很累。我住在医院附近。",
+            "pinyin": "hěn máng， yě hěn lèi。 wǒ zhù zài yī yuàn fù jìn。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你今天忙吗？",
+            "pinyin": "nǐ jīn tiān máng ma？",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你什么时候去医院？",
+            "pinyin": "nǐ shén me shí hòu qù yī yuàn？",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l24-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 你喜欢什么颜色？"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l24-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Je marche tout en appelant le médecin."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "L’enfant sort de la chambre."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Quelle couleur aimes-tu ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 20
       }
     },
@@ -1218,105 +1363,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l24-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l24-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "promptText": "我一边走路一边听医生说话。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Es-tu occupé aujourd’hui ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je marche tout en écoutant le médecin parler."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Je veux acheter des pommes."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l24-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l24-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 很忙，也很累。我住在医院附近。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Très occupé et très fatigué. J’habite près de l’hôpital."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Combien de pièces y a-t-il dans l’hôpital ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "L’hôpital a plusieurs pièces ; sa porte blanche est devant."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 20
       }
     },

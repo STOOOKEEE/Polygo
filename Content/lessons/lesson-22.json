@@ -640,49 +640,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-pick-119",
+      "id": "block-ex-l22-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l22-pick-119",
+          "id": "ex-l22-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l22-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "先生",
+            "pinyin": "xiān sheng",
+            "right": {
+              "fr": "monsieur"
+            }
+          },
+          {
+            "id": "b",
+            "left": "就",
+            "pinyin": "jiù",
+            "right": {
+              "fr": "alors ; justement"
+            }
+          },
+          {
+            "id": "c",
+            "left": "可能",
+            "pinyin": "kě néng",
+            "right": {
+              "fr": "possible ; peut-être"
+            }
+          },
+          {
+            "id": "d",
+            "left": "上班",
+            "pinyin": "shàng bān",
+            "right": {
+              "fr": "aller au travail"
+            }
+          },
+          {
+            "id": "e",
+            "left": "时间",
+            "pinyin": "shí jiān",
+            "right": {
+              "fr": "temps ; durée"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-dict-py-119",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l22-dict-py-119",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l22-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "先生",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "可能 (kě néng)"
+              "fr": "yì qǐ"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "一起 (yì qǐ)"
+              "fr": "shàng bān"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "先生 (xiān sheng)"
+              "fr": "xiān sheng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "上班 (shàng bān)"
+              "fr": "zǎo shàng"
             },
             "audio": null
           }
@@ -697,72 +765,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-reverse-210",
+      "id": "block-ex-l22-tone-205",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l22-reverse-210",
+          "id": "ex-l22-tone-205",
           "prompt": {
-            "fr": "Comment dit-on « possible ; peut-être » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l22-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "一起 (yì qǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "可能 (kě néng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "早上 (zǎo shàng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "时间 (shí jiān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l22-pick-205",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l22-pick-205",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l22-understand"
@@ -772,91 +784,35 @@
         "promptText": "就",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "就 (jiù)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "上班 (shàng bān)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "先生 (xiān sheng)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "时间 (shí jiān)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l22-reverse-205",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l22-reverse-205",
-          "prompt": {
-            "fr": "Comment dit-on « alors ; justement » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l22-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "时间 (shí jiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "先生 (xiān sheng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "上班 (shàng bān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "就 (jiù)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -894,14 +850,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "时间 (shí jiān)"
+              "fr": "可能 (kě néng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "可能 (kě néng)"
+              "fr": "时间 (shí jiān)"
             },
             "audio": null
           },
@@ -913,7 +869,65 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-dict-zh-239",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l22-dict-zh-239",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l22-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "上班",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "上班"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "可能"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "早上"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "时间"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1007,16 +1021,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-order-exa-2",
+      "id": "block-ex-l22-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l22-order-exa-2",
+          "id": "ex-l22-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Je reviens tout de suite »."
+            "fr": "Traduis en chinois : « Je reviens tout de suite »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l22-produce"
@@ -1031,9 +1045,27 @@
             "audio": null
           },
           {
+            "id": "g",
+            "hanzi": "可能",
+            "pinyin": "kě néng",
+            "audio": null
+          },
+          {
             "id": "d",
             "hanzi": "回",
             "pinyin": "huí",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "先生",
+            "pinyin": "xiān sheng",
             "audio": null
           },
           {
@@ -1047,12 +1079,6 @@
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
           }
         ],
         "correctOrder": [
@@ -1062,10 +1088,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我马上就回来。",
-          "我马上就回来"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1075,46 +1098,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-fill-exa-7",
+      "id": "block-ex-l22-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l22-fill-exa-7",
+          "id": "ex-l22-talk-1",
           "prompt": {
-            "fr": "Complète : 我___六点起床。 (« Je me lève à six heures du matin »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l22-produce"
+            "l22-understand"
           ],
           "required": true
         },
-        "sentence": "我___六点起床。",
-        "acceptedAnswers": [
-          "早上"
+        "speaker": "Mina",
+        "promptText": "喂，你在公司吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我坐车来的。先生，你喜欢下雨吗？",
+            "pinyin": "wǒ zuò chē lái de。 xiān shēng， nǐ xǐ huān xià yǔ ma？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我在上班，从家到公司要半小时。",
+            "pinyin": "wǒ zài shàng bān， cóng jiā dào gōng sī yào bàn xiǎo shí。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "没关系，我们五点一起回家。",
+            "pinyin": "méi guān xì， wǒ men wǔ diǎn yì qǐ huí jiā。",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 18
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-order-exa-3",
+      "id": "block-ex-l22-translate-exa-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l22-order-exa-3",
+          "id": "ex-l22-translate-exa-5",
           "prompt": {
-            "fr": "Construis « Il est peut-être à la maison »."
+            "fr": "Traduis en chinois : « Je n’ai pas le temps maintenant »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l22-produce"
@@ -1123,21 +1164,142 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "可能",
-            "pinyin": "kě néng",
+            "id": "d",
+            "hanzi": "时间",
+            "pinyin": "shí jiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "就",
+            "pinyin": "jiù",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "早上",
+            "pinyin": "zǎo shàng",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "没",
+            "pinyin": "méi",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
+            "hanzi": "现在",
+            "pinyin": "xiàn zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l22-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l22-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "外面下雨，你怎么来？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我坐车来的。先生，你喜欢下雨吗？",
+            "pinyin": "wǒ zuò chē lái de。 xiān shēng， nǐ xǐ huān xià yǔ ma？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "没关系，我们五点一起回家。",
+            "pinyin": "méi guān xì， wǒ men wǔ diǎn yì qǐ huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我在上班，从家到公司要半小时。",
+            "pinyin": "wǒ zài shàng bān， cóng jiā dào gōng sī yào bàn xiǎo shí。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-dialogue-4-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l22-dialogue-4-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l22-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "我不喜欢，但是我们有工作。",
+            "pinyin": "wǒ bù xǐ huān， dàn shì wǒ men yǒu gōng zuò。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "没关系，我们五点一起回家。",
+            "pinyin": "méi guān xì， wǒ men wǔ diǎn yì qǐ huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我坐车来的。先生，你喜欢下雨吗？",
+            "pinyin": "wǒ zuò chē lái de。 xiān shēng， nǐ xǐ huān xià yǔ ma？",
             "audio": null
           }
         ],
@@ -1145,107 +1307,60 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "他可能在家。",
-          "他可能在家"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 18
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-fill-dia-2",
+      "id": "block-ex-l22-read-exa-7",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "choice",
         "header": {
-          "id": "ex-l22-fill-dia-2",
+          "id": "ex-l22-read-exa-7",
           "prompt": {
-            "fr": "Complète : 我在___，从家到公司要半小时。 (« Je suis au travail ; de la maison à l’entreprise, il faut une demi-heure »)"
+            "fr": "Que signifie la phrase : 我早上六点起床。"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l22-produce"
+            "l22-understand"
           ],
           "required": true
         },
-        "sentence": "我在___，从家到公司要半小时。",
-        "acceptedAnswers": [
-          "上班"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Nous rentrons ensemble."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il est peut-être à la maison."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je me lève à six heures du matin."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l22-fill-dia-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l22-fill-dia-4",
-          "prompt": {
-            "fr": "Complète : 我坐车来的。___，你喜欢下雨吗？ (« Je suis venu en voiture. Monsieur, aimez-vous la pluie ? »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l22-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我坐车来的。___，你喜欢下雨吗？",
-        "acceptedAnswers": [
-          "先生"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l22-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l22-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Je n’ai pas le temps maintenant »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l22-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "现在没有时间。",
-        "referencePinyin": "xiàn zài méi yǒu shí jiān。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "现在没有时间。"
-        ],
-        "allowSelfRating": true
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 18
       }
     },

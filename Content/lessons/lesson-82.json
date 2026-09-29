@@ -624,11 +624,193 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l82-pick-341",
+      "id": "block-ex-l82-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l82-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "厨房",
+            "pinyin": "chú fáng",
+            "right": {
+              "fr": "cuisine"
+            }
+          },
+          {
+            "id": "b",
+            "left": "认为",
+            "pinyin": "rèn wéi",
+            "right": {
+              "fr": "estimer ; penser"
+            }
+          },
+          {
+            "id": "c",
+            "left": "鞋",
+            "pinyin": "xié",
+            "right": {
+              "fr": "chaussure"
+            }
+          },
+          {
+            "id": "d",
+            "left": "遇到",
+            "pinyin": "yù dào",
+            "right": {
+              "fr": "rencontrer ; tomber sur"
+            }
+          },
+          {
+            "id": "e",
+            "left": "照顾",
+            "pinyin": "zhào gù",
+            "right": {
+              "fr": "s’occuper de"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-dict-py-341",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l82-dict-py-341",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "厨房",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "zì jǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "zhù yì"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chú fáng"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "zhào gù"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-tone-546",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l82-tone-546",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "promptText": "鞋",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-pick-576",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l82-pick-341",
+          "id": "ex-l82-pick-576",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -640,7 +822,7 @@
           ],
           "required": true
         },
-        "promptText": "厨房",
+        "promptText": "遇到",
         "choices": [
           {
             "id": "a",
@@ -652,26 +834,26 @@
           {
             "id": "b",
             "label": {
-              "fr": "自己 (zì jǐ)"
+              "fr": "遇到 (yù dào)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "厨房 (chú fáng)"
+              "fr": "注意 (zhù yì)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "注意 (zhù yì)"
+              "fr": "认为 (rèn wéi)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -701,14 +883,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "厨房 (chú fáng)"
+              "fr": "遇到 (yù dào)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "遇到 (yù dào)"
+              "fr": "厨房 (chú fáng)"
             },
             "audio": null
           },
@@ -727,7 +909,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -758,77 +940,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "鞋 (xié)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "照顾 (zhào gù)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "b",
             "label": {
               "fr": "厨房 (chú fáng)"
             },
             "audio": null
           },
           {
-            "id": "d",
-            "label": {
-              "fr": "自己 (zì jǐ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-reverse-546",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l82-reverse-546",
-          "prompt": {
-            "fr": "Comment dit-on « chaussure » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l82-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "照顾 (zhào gù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "认为 (rèn wéi)"
-            },
-            "audio": null
-          },
-          {
             "id": "c",
             "label": {
-              "fr": "注意 (zhù yì)"
+              "fr": "自己 (zì jǐ)"
             },
             "audio": null
           },
@@ -841,63 +967,6 @@
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-pick-492",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l82-pick-492",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l82-understand"
-          ],
-          "required": true
-        },
-        "promptText": "认为",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "自己 (zì jǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "厨房 (chú fáng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "认为 (rèn wéi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "遇到 (yù dào)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -984,16 +1053,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l82-order-exa-3",
+      "id": "block-ex-l82-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l82-order-exa-3",
+          "id": "ex-l82-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Cette paire de chaussures est confortable »."
+            "fr": "Traduis en chinois : « Il y a une table dans la cuisine »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l82-produce"
@@ -1001,120 +1070,10 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "c",
-            "hanzi": "鞋",
-            "pinyin": "xié",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "双",
-            "pinyin": "shuāng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "舒服",
-            "pinyin": "shū fu",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "这双鞋很舒服。",
-          "这双鞋很舒服"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l82-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 我在车站___一位老朋友。 (« J’ai rencontré un vieil ami à la gare »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l82-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我在车站___一位老朋友。",
-        "acceptedAnswers": [
-          "遇到"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l82-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Il y a une table dans la cuisine »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l82-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
           {
             "id": "e",
             "hanzi": "张",
             "pinyin": "zhāng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
             "audio": null
           },
           {
@@ -1124,15 +1083,39 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "里",
-            "pinyin": "lǐ",
+            "id": "f",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "照顾",
+            "pinyin": "zhào gù",
             "audio": null
           },
           {
             "id": "a",
             "hanzi": "厨房",
             "pinyin": "chú fáng",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "注意",
+            "pinyin": "zhù yì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
             "audio": null
           }
         ],
@@ -1144,106 +1127,226 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "厨房里有一张桌子。",
-          "厨房里有一张桌子"
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l82-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你认为这个活动怎么样？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我认为很好，大家都很热情。",
+            "pinyin": "wǒ rèn wéi hěn hǎo, dà jiā dōu hěn rè qíng.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "可以。我会认真安排路线。",
+            "pinyin": "kě yǐ. wǒ huì rèn zhēn ān pái lù xiàn.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "如果时间够，我们就去公园。",
+            "pinyin": "rú guǒ shí jiān gòu, wǒ men jiù qù gōng yuán.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l82-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je pense que cette solution est très bonne »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "认为",
+            "pinyin": "rèn wéi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "办法",
+            "pinyin": "bàn fǎ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "自己",
+            "pinyin": "zì jǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "注意",
+            "pinyin": "zhù yì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-fill-exa-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l82-fill-exa-3",
+          "prompt": {
+            "fr": "Complète : 这双___很舒服。 (« Cette paire de chaussures est confortable »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l82-produce"
+          ],
+          "required": true
+        },
+        "sentence": "这双___很舒服。",
+        "acceptedAnswers": [
+          "鞋"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 78
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l82-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l82-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l82-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我认为很好，大家都很热情。",
+            "pinyin": "wǒ rèn wéi hěn hǎo, dà jiā dōu hěn rè qíng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "如果时间够，我们就去公园。",
+            "pinyin": "rú guǒ shí jiān gòu, wǒ men jiù qù gōng yuán.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你认为这个活动怎么样？",
+            "pinyin": "nǐ rèn wéi zhè ge huó dòng zěn me yàng?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l82-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : 护士___生病的孩子。 (« L’infirmière s’occupe de l’enfant malade »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l82-produce"
-          ],
-          "required": true
-        },
-        "sentence": "护士___生病的孩子。",
-        "acceptedAnswers": [
-          "照顾"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l82-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 过马路时请___车辆。 (« Fais attention aux véhicules en traversant la rue »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l82-produce"
-          ],
-          "required": true
-        },
-        "sentence": "过马路时请___车辆。",
-        "acceptedAnswers": [
-          "注意"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 78
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l82-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l82-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Termine ce travail toi-même, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l82-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "请你自己完成这项工作。",
-        "referencePinyin": "qǐng nǐ zì jǐ wán chéng zhè xiàng gōng zuò.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "请你自己完成这项工作。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 78
       }
     },

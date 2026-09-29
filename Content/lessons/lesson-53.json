@@ -578,6 +578,188 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l53-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l53-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "打算",
+            "pinyin": "dǎ suàn",
+            "right": {
+              "fr": "avoir l’intention de"
+            }
+          },
+          {
+            "id": "b",
+            "left": "方便",
+            "pinyin": "fāng biàn",
+            "right": {
+              "fr": "pratique ; commode"
+            }
+          },
+          {
+            "id": "c",
+            "left": "虽然",
+            "pinyin": "suī rán",
+            "right": {
+              "fr": "bien que"
+            }
+          },
+          {
+            "id": "d",
+            "left": "用",
+            "pinyin": "yòng",
+            "right": {
+              "fr": "utiliser ; emploi"
+            }
+          },
+          {
+            "id": "e",
+            "left": "字典",
+            "pinyin": "zì diǎn",
+            "right": {
+              "fr": "dictionnaire"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-dict-py-600",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l53-dict-py-600",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "作用",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "zì diǎn"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "zuò yòng"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fāng biàn"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "suī rán"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-tone-346",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l53-tone-346",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "promptText": "打算",
+        "choices": [
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t34"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l53-pick-511",
       "spec": {
         "kind": "listeningChoice",
@@ -599,84 +781,28 @@
           {
             "id": "a",
             "label": {
-              "fr": "方便 (fāng biàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "虽然 (suī rán)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "作用 (zuò yòng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "字典 (zì diǎn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-reverse-346",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l53-reverse-346",
-          "prompt": {
-            "fr": "Comment dit-on « avoir l’intention de » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l53-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "打算 (dǎ suàn)"
-            },
-            "audio": null
-          },
-          {
             "id": "b",
             "label": {
-              "fr": "作用 (zuò yòng)"
+              "fr": "方便 (fāng biàn)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "字典 (zì diǎn)"
+              "fr": "作用 (zuò yòng)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "方便 (fāng biàn)"
+              "fr": "字典 (zì diǎn)"
             },
             "audio": null
           }
@@ -691,167 +817,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l53-pick-600",
+      "id": "block-ex-l53-dict-zh-595",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l53-pick-600",
+          "id": "ex-l53-dict-zh-595",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l53-understand"
           ],
           "required": true
         },
-        "promptText": "作用",
+        "script": "hanzi",
+        "promptText": "字典",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "打算 (dǎ suàn)"
+              "fr": "打算"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "方便 (fāng biàn)"
+              "fr": "作用"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "字典 (zì diǎn)"
+              "fr": "方便"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "作用 (zuò yòng)"
+              "fr": "字典"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-reverse-371",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l53-reverse-371",
-          "prompt": {
-            "fr": "Comment dit-on « pratique ; commode » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l53-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "虽然 (suī rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "打算 (dǎ suàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "方便 (fāng biàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "作用 (zuò yòng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-pick-346",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l53-pick-346",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l53-understand"
-          ],
-          "required": true
-        },
-        "promptText": "打算",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "字典 (zì diǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "打算 (dǎ suàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "虽然 (suī rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "方便 (fāng biàn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -929,6 +943,215 @@
           "所以"
         ],
         "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-translate-exa-6",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l53-translate-exa-6",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le sport joue un rôle important pour le corps »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "运动",
+            "pinyin": "yùn dòng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "打算",
+            "pinyin": "dǎ suàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "重要",
+            "pinyin": "zhòng yào",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "作用",
+            "pinyin": "zuò yòng",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "虽然",
+            "pinyin": "suī rán",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "身体",
+            "pinyin": "shēn tǐ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "对",
+            "pinyin": "duì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l53-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l53-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你打算在哪里开会？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "不用担心，这个地方当然可以。",
+            "pinyin": "bú yòng dān xīn, zhè ge dì fāng dāng rán kě yǐ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "你担心桌子太低吗？",
+            "pinyin": "nǐ dān xīn zhuō zi tài dī ma?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在办公室。因为会议很早，所以我提前到了。",
+            "pinyin": "zài bàn gōng shì. yīn wèi huì yì hěn zǎo, suǒ yǐ wǒ tí qián dào le.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 49
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l53-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l53-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’ai l’intention d’aller au parc demain »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l53-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "打算",
+            "pinyin": "dǎ suàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "作用",
+            "pinyin": "zuò yòng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "用",
+            "pinyin": "yòng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1020,87 +1243,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l53-fill-dia-1",
+      "id": "block-ex-l53-dialogue-1-4",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l53-fill-dia-1",
+          "id": "ex-l53-dialogue-1-4",
           "prompt": {
-            "fr": "Complète : 你___在哪里开会？ (« Où comptes-tu tenir la réunion ? »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l53-produce"
+            "l53-understand"
           ],
           "required": true
         },
-        "sentence": "你___在哪里开会？",
-        "acceptedAnswers": [
-          "打算"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-order-exa-6",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l53-order-exa-6",
-          "prompt": {
-            "fr": "Construis « Le sport joue un rôle important pour le corps »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l53-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "对",
-            "pinyin": "duì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "重要",
-            "pinyin": "zhòng yào",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "作用",
-            "pinyin": "zuò yòng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "c",
-            "hanzi": "身体",
-            "pinyin": "shēn tǐ",
+            "speaker": "Mina",
+            "hanzi": "你担心桌子太低吗？",
+            "pinyin": "nǐ dān xīn zhuō zi tài dī ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "在办公室。因为会议很早，所以我提前到了。",
+            "pinyin": "zài bàn gōng shì. yīn wèi huì yì hěn zǎo, suǒ yǐ wǒ tí qián dào le.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "运动",
-            "pinyin": "yùn dòng",
+            "speaker": "Mina",
+            "hanzi": "你打算在哪里开会？",
+            "pinyin": "nǐ dǎ suàn zài nǎ lǐ kāi huì?",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "不用担心，这个地方当然可以。",
+            "pinyin": "bú yòng dān xīn, zhè ge dì fāng dāng rán kě yǐ.",
             "audio": null
           }
         ],
@@ -1108,86 +1293,12 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "运动对身体有重要作用。",
-          "运动对身体有重要作用"
+          "d"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l53-order-exa-1",
-          "prompt": {
-            "fr": "Construis « J’ai l’intention d’aller au parc demain »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l53-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "打算",
-            "pinyin": "dǎ suàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "明天",
-            "pinyin": "míng tiān",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我打算明天去公园。",
-          "我打算明天去公园"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 49
       }
     },
@@ -1243,14 +1354,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Je cherche ce mot dans le dictionnaire."
+              "fr": "Le sport joue un rôle important pour le corps."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Le sport joue un rôle important pour le corps."
+              "fr": "Je cherche ce mot dans le dictionnaire."
             },
             "audio": null
           },
@@ -1262,41 +1373,11 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 49
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l53-fill-rea-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l53-fill-rea-1",
-          "prompt": {
-            "fr": "Complète : 因为___很早，所以他提前到了。 (« Comme la réunion est tôt, il est arrivé en avance »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l53-produce"
-          ],
-          "required": true
-        },
-        "sentence": "因为___很早，所以他提前到了。",
-        "acceptedAnswers": [
-          "会议"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 49
       }
     },

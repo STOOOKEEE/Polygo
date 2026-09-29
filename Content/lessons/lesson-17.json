@@ -650,54 +650,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l17-pick-206",
+      "id": "block-ex-l17-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l17-pick-206",
+          "id": "ex-l17-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l17-understand"
           ],
           "required": true
         },
-        "promptText": "觉得",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "说话 (shuō huà)"
-            },
-            "audio": null
+            "left": "说话",
+            "pinyin": "shuō huà",
+            "right": {
+              "fr": "parler"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "觉得 (jué de)"
-            },
-            "audio": null
+            "left": "下",
+            "pinyin": "xià",
+            "right": {
+              "fr": "dessous ; descendre"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "房间 (fáng jiān)"
-            },
-            "audio": null
+            "left": "写",
+            "pinyin": "xiě",
+            "right": {
+              "fr": "écrire"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "开始 (kāi shǐ)"
-            },
-            "audio": null
+            "left": "学习",
+            "pinyin": "xué xí",
+            "right": {
+              "fr": "étudier ; apprendre"
+            }
+          },
+          {
+            "id": "e",
+            "left": "房间",
+            "pinyin": "fáng jiān",
+            "right": {
+              "fr": "chambre ; pièce"
+            }
           }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -707,161 +717,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l17-reverse-103",
+      "id": "block-ex-l17-dict-sent-exa-1",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l17-reverse-103",
+          "id": "ex-l17-dict-sent-exa-1",
           "prompt": {
-            "fr": "Comment dit-on « parler » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l17-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "我们坐下说话。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "说话 (shuō huà)"
+              "fr": "wǒ de tóng xué lái le。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "学习 (xué xí)"
+              "fr": "wǒ de fáng jiān hěn dà。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "房间 (fáng jiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "觉得 (jué de)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-pick-116",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l17-pick-116",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l17-understand"
-          ],
-          "required": true
-        },
-        "promptText": "下",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "写 (xiě)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "觉得 (jué de)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "说话 (shuō huà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "下 (xià)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-reverse-125",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l17-reverse-125",
-          "prompt": {
-            "fr": "Comment dit-on « écrire » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l17-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "下 (xià)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "房间 (fáng jiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "写 (xiě)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "开始 (kāi shǐ)"
+              "fr": "wǒ men zuò xià shuō huà。"
             },
             "audio": null
           }
@@ -876,11 +768,68 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l17-pick-103",
+      "id": "block-ex-l17-tone-103",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l17-tone-103",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "promptText": "说话",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-pick-129",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l17-pick-103",
+          "id": "ex-l17-pick-129",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -892,38 +841,163 @@
           ],
           "required": true
         },
-        "promptText": "说话",
+        "promptText": "学习",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "开始 (kāi shǐ)"
+              "fr": "学习 (xué xí)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "说话 (shuō huà)"
+              "fr": "房间 (fáng jiān)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "房间 (fáng jiān)"
+              "fr": "觉得 (jué de)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "学习 (xué xí)"
+              "fr": "开始 (kāi shǐ)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-dict-zh-206",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l17-dict-zh-206",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "觉得",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "学习"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "房间"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "开始"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "觉得"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l17-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "觉得",
+            "pinyin": null,
+            "right": {
+              "fr": "jué de"
+            }
+          },
+          {
+            "id": "b",
+            "left": "开始",
+            "pinyin": null,
+            "right": {
+              "fr": "kāi shǐ"
+            }
+          },
+          {
+            "id": "c",
+            "left": "教室",
+            "pinyin": null,
+            "right": {
+              "fr": "jiào shì"
+            }
+          },
+          {
+            "id": "d",
+            "left": "同学",
+            "pinyin": null,
+            "right": {
+              "fr": "tóng xué"
+            }
+          },
+          {
+            "id": "e",
+            "left": "我",
+            "pinyin": null,
+            "right": {
+              "fr": "wǒ"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1017,16 +1091,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l17-order-exa-7",
+      "id": "block-ex-l17-translate-exa-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l17-order-exa-7",
+          "id": "ex-l17-translate-exa-3",
           "prompt": {
-            "fr": "Construis « Le film a commencé »."
+            "fr": "Traduis en chinois : « Écris ton nom, s’il te plaît »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l17-produce"
@@ -1036,20 +1110,273 @@
         "tokens": [
           {
             "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "电影",
-            "pinyin": "diàn yǐng",
+            "hanzi": "你",
+            "pinyin": "nǐ",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "开始",
-            "pinyin": "kāi shǐ",
+            "hanzi": "写",
+            "pinyin": "xiě",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "下",
+            "pinyin": "xià",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "名字",
+            "pinyin": "míng zì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l17-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你正在读什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "他们在教室写字，也学习新课。",
+            "pinyin": "tā men zài jiào shì xiě zì， yě xué xí xīn kè。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "老师要我们读这个字，然后回答问题。",
+            "pinyin": "lǎo shī yào wǒ men dú zhè ge zì， rán hòu huí dá wèn tí。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我正在读课本，准备考试。",
+            "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-translate-exa-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l17-translate-exa-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’étudie le chinois chaque jour »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l17-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "学习",
+            "pinyin": "xué xí",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "汉语",
+            "pinyin": "hàn yǔ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "觉得",
+            "pinyin": "jué de",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l17-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "同学们在哪里写字？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "老师要我们读这个字，然后回答问题。",
+            "pinyin": "lǎo shī yào wǒ men dú zhè ge zì， rán hòu huí dá wèn tí。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "他们在教室写字，也学习新课。",
+            "pinyin": "tā men zài jiào shì xiě zì， yě xué xí xīn kè。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我正在读课本，准备考试。",
+            "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 13
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l17-dialogue-2-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l17-dialogue-2-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l17-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我正在读课本，准备考试。",
+            "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "他们在教室写字，也学习新课。",
+            "pinyin": "tā men zài jiào shì xiě zì， yě xué xí xīn kè。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "同学们在哪里写字？",
+            "pinyin": "tóng xué men zài nǎ lǐ xiě zì？",
             "audio": null
           }
         ],
@@ -1057,197 +1384,11 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "电影开始了。",
-          "电影开始了"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-fill-dia-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l17-fill-dia-3",
-          "prompt": {
-            "fr": "Complète : 同学们在哪里___字？ (« Où les camarades écrivent-ils ? »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l17-produce"
-          ],
-          "required": true
-        },
-        "sentence": "同学们在哪里___字？",
-        "acceptedAnswers": [
-          "写"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l17-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Nous nous asseyons pour parler »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l17-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "下",
-            "pinyin": "xià",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "说话",
-            "pinyin": "shuō huà",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "坐",
-            "pinyin": "zuò",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我们坐下说话。",
-          "我们坐下说话"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l17-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 我___这个菜很好吃。 (« Je trouve ce plat très bon »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l17-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我___这个菜很好吃。",
-        "acceptedAnswers": [
-          "觉得"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l17-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Ma chambre est grande »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l17-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "大",
-            "pinyin": "dà",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "房间",
-            "pinyin": "fáng jiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我的房间很大。",
-          "我的房间很大"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 13
       }
     },
@@ -1278,56 +1419,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 13
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l17-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l17-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l17-understand"
-          ],
-          "required": true
-        },
-        "promptText": "同学们在教室读书、写字。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Les camarades lisent et écrivent dans la classe."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Écris ton nom, s’il te plaît."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Ils écrivent dans la classe et étudient aussi la nouvelle leçon."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 13
       }
     },

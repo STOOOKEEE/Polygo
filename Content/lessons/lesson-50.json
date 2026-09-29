@@ -617,49 +617,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-pick-004",
+      "id": "block-ex-l50-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l50-pick-004",
+          "id": "ex-l50-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l50-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "杯子",
+            "pinyin": "bēi zi",
+            "right": {
+              "fr": "tasse ; verre"
+            }
+          },
+          {
+            "id": "b",
+            "left": "北京",
+            "pinyin": "běi jīng",
+            "right": {
+              "fr": "Pékin"
+            }
+          },
+          {
+            "id": "c",
+            "left": "少",
+            "pinyin": "shǎo",
+            "right": {
+              "fr": "peu ; moins"
+            }
+          },
+          {
+            "id": "d",
+            "left": "唱歌",
+            "pinyin": "chàng gē",
+            "right": {
+              "fr": "chanter"
+            }
+          },
+          {
+            "id": "e",
+            "left": "对",
+            "pinyin": "duì",
+            "right": {
+              "fr": "correct ; envers"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-dict-py-004",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l50-dict-py-004",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "杯子",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "北京 (běi jīng)"
+              "fr": "chàng gē"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "唱歌 (chàng gē)"
+              "fr": "běi jīng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "杯子 (bēi zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "玩 (wán)"
+              "fr": "bēi zi"
             },
             "audio": null
           }
@@ -674,53 +735,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-reverse-004",
+      "id": "block-ex-l50-tone-005",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l50-reverse-004",
+          "id": "ex-l50-tone-005",
           "prompt": {
-            "fr": "Comment dit-on « tasse ; verre » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l50-understand"
           ],
           "required": true
         },
+        "promptText": "北京",
         "choices": [
           {
-            "id": "a",
+            "id": "t11",
             "label": {
-              "fr": "北京 (běi jīng)"
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t21",
             "label": {
-              "fr": "杯子 (bēi zi)"
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t30",
             "label": {
-              "fr": "唱歌 (chàng gē)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t31",
             "label": {
-              "fr": "对 (duì)"
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "t31"
       },
       "metadata": {
         "stage": "discover",
@@ -751,14 +813,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "少 (shǎo)"
+              "fr": "矮 (ǎi)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "矮 (ǎi)"
+              "fr": "少 (shǎo)"
             },
             "audio": null
           },
@@ -773,124 +835,69 @@
             "id": "d",
             "label": {
               "fr": "玩 (wán)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 46
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l50-dict-zh-176",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l50-dict-zh-176",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l50-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "对",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "对"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "玩"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "矮"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "少"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 46
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l50-reverse-093",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l50-reverse-093",
-          "prompt": {
-            "fr": "Comment dit-on « peu ; moins » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l50-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "对 (duì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "矮 (ǎi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "玩 (wán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "少 (shǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 46
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l50-pick-160",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l50-pick-160",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l50-understand"
-          ],
-          "required": true
-        },
-        "promptText": "唱歌",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "杯子 (bēi zi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "北京 (běi jīng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "唱歌 (chàng gē)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "少 (shǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -984,16 +991,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-order-exa-1",
+      "id": "block-ex-l50-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l50-order-exa-1",
+          "id": "ex-l50-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Ce verre est très joli »."
+            "fr": "Traduis en chinois : « Ce verre est très joli »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l50-produce"
@@ -1002,21 +1009,15 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "杯子",
-            "pinyin": "bēi zi",
+            "id": "g",
+            "hanzi": "唱歌",
+            "pinyin": "chàng gē",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
+            "id": "f",
+            "hanzi": "北京",
+            "pinyin": "běi jīng",
             "audio": null
           },
           {
@@ -1026,9 +1027,27 @@
             "audio": null
           },
           {
+            "id": "e",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "杯子",
+            "pinyin": "bēi zi",
+            "audio": null
+          },
+          {
             "id": "d",
             "hanzi": "很",
             "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
             "audio": null
           }
         ],
@@ -1039,10 +1058,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "这个杯子很漂亮。",
-          "这个杯子很漂亮"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1052,46 +1068,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-fill-exa-7",
+      "id": "block-ex-l50-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l50-fill-exa-7",
+          "id": "ex-l50-talk-1",
           "prompt": {
-            "fr": "Complète : 我哥哥不高，我妹妹很___。 (« Mon frère n’est pas grand, ma sœur est petite »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l50-produce"
+            "l50-understand"
           ],
           "required": true
         },
-        "sentence": "我哥哥不高，我妹妹很___。",
-        "acceptedAnswers": [
-          "矮"
+        "speaker": "Mina",
+        "promptText": "你跑步以后，腿还疼吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "谢谢你帮忙，我会照顾好自己。",
+            "pinyin": "xiè xie nǐ bāng máng, wǒ huì zhào gù hǎo zì jǐ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "你的头发也湿了，先休息吧。",
+            "pinyin": "nǐ de tóu fa yě shī le, xiān xiū xi ba.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "好多了。我先刷牙，再洗脸。",
+            "pinyin": "hǎo duō le. wǒ xiān shuā yá, zài xǐ liǎn.",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-order-exa-2",
+      "id": "block-ex-l50-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l50-order-exa-2",
+          "id": "ex-l50-translate-exa-2",
           "prompt": {
-            "fr": "Construis « J’habite à Pékin »."
+            "fr": "Traduis en chinois : « J’habite à Pékin »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l50-produce"
@@ -1100,15 +1134,15 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "f",
+            "hanzi": "矮",
+            "pinyin": "ǎi",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "d",
+            "hanzi": "北京",
+            "pinyin": "běi jīng",
             "audio": null
           },
           {
@@ -1118,9 +1152,21 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "北京",
-            "pinyin": "běi jīng",
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "玩",
+            "pinyin": "wán",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           }
         ],
@@ -1130,10 +1176,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "我住在北京。",
-          "我住在北京"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1173,39 +1216,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-order-exa-4",
+      "id": "block-ex-l50-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l50-order-exa-4",
+          "id": "ex-l50-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « Nous chantons ensemble »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l50-produce"
+            "l50-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你的头发也湿了，先休息吧。",
+            "pinyin": "nǐ de tóu fa yě shī le, xiān xiū xi ba.",
+            "audio": null
+          },
           {
             "id": "b",
-            "hanzi": "一起",
-            "pinyin": "yì qǐ",
+            "speaker": "Tao",
+            "hanzi": "好多了。我先刷牙，再洗脸。",
+            "pinyin": "hǎo duō le. wǒ xiān shuā yá, zài xǐ liǎn.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "唱歌",
-            "pinyin": "chàng gē",
+            "speaker": "Mina",
+            "hanzi": "你跑步以后，腿还疼吗？",
+            "pinyin": "nǐ pǎo bù yǐ hòu, tuǐ hái téng ma?",
             "audio": null
           }
         ],
@@ -1213,79 +1259,110 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "我们一起唱歌。",
-          "我们一起唱歌"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-speak-exa-5",
+      "id": "block-ex-l50-read-exa-4",
       "spec": {
-        "kind": "speaking",
+        "kind": "choice",
         "header": {
-          "id": "ex-l50-speak-exa-5",
+          "id": "ex-l50-read-exa-4",
           "prompt": {
-            "fr": "Dis « Désolé, je me suis trompé »."
+            "fr": "Que signifie la phrase : 我们一起唱歌。"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l50-produce"
+            "l50-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "对不起，我说错了。",
-        "referencePinyin": "duì bù qǐ， wǒ shuō cuò le。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "对不起，我说错了。"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mon frère n’est pas grand, ma sœur est petite."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous chantons ensemble."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Ma jambe me fait encore un peu mal."
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l50-speak-exa-6",
+      "id": "block-ex-l50-listen-rea-1",
       "spec": {
-        "kind": "speaking",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l50-speak-exa-6",
+          "id": "ex-l50-listen-rea-1",
           "prompt": {
-            "fr": "Dis « Les enfants jouent dehors »."
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l50-produce"
+            "l50-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "孩子们在外面玩。",
-        "referencePinyin": "hái zi men zài wài miàn wán。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "孩子们在外面玩。"
+        "promptText": "他把水放在桌上，刷牙、洗脸，然后休息。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Il pose l’eau sur la table, se brosse les dents, se lave le visage, puis se repose."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ça va beaucoup mieux. Je me brosse d’abord les dents, puis je me lave le visage."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Tes cheveux sont aussi mouillés, repose-toi d’abord."
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 46
       }
     },

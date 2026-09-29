@@ -638,54 +638,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-pick-048",
+      "id": "block-ex-l11-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l11-pick-048",
+          "id": "ex-l11-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l11-understand"
           ],
           "required": true
         },
-        "promptText": "今天",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "机场 (jī chǎng)"
-            },
-            "audio": null
+            "left": "今天",
+            "pinyin": "jīn tiān",
+            "right": {
+              "fr": "aujourd’hui"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "我们 (wǒ men)"
-            },
-            "audio": null
+            "left": "来",
+            "pinyin": "lái",
+            "right": {
+              "fr": "venir"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "教室 (jiào shì)"
-            },
-            "audio": null
+            "left": "我们",
+            "pinyin": "wǒ men",
+            "right": {
+              "fr": "nous"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "今天 (jīn tiān)"
-            },
-            "audio": null
+            "left": "吧",
+            "pinyin": "ba",
+            "right": {
+              "fr": "particule de suggestion"
+            }
+          },
+          {
+            "id": "e",
+            "left": "比",
+            "pinyin": "bǐ",
+            "right": {
+              "fr": "comparer ; que (comparatif)"
+            }
           }
-        ],
-        "correctChoiceID": "d"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -695,53 +705,105 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-reverse-048",
+      "id": "block-ex-l11-dict-sent-exa-4",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l11-reverse-048",
+          "id": "ex-l11-dict-sent-exa-4",
           "prompt": {
-            "fr": "Comment dit-on « aujourd’hui » en chinois ?"
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l11-understand"
           ],
           "required": true
         },
+        "script": "pinyin",
+        "promptText": "我们走吧。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "教室 (jiào shì)"
+              "fr": "péng yǒu lái le。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "机场 (jī chǎng)"
+              "fr": "wǒ men qù gōng yuán。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "今天 (jīn tiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "我们 (wǒ men)"
+              "fr": "wǒ men zǒu ba。"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-tone-048",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l11-tone-048",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "promptText": "今天",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t11"
       },
       "metadata": {
         "stage": "discover",
@@ -779,14 +841,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "来 (lái)"
+              "fr": "吧 (ba)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "吧 (ba)"
+              "fr": "来 (lái)"
             },
             "audio": null
           },
@@ -794,6 +856,64 @@
             "id": "d",
             "label": {
               "fr": "教室 (jiào shì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-dict-zh-113",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l11-dict-zh-113",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "我们",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "机场"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "我们"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "教室"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "今天"
             },
             "audio": null
           }
@@ -808,110 +928,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-reverse-054",
+      "id": "block-ex-l11-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l11-reverse-054",
+          "id": "ex-l11-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « venir » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l11-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "来 (lái)"
-            },
-            "audio": null
+            "left": "机场",
+            "pinyin": null,
+            "right": {
+              "fr": "jī chǎng"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "比 (bǐ)"
-            },
-            "audio": null
+            "left": "教室",
+            "pinyin": null,
+            "right": {
+              "fr": "jiào shì"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "吧 (ba)"
-            },
-            "audio": null
+            "left": "电影",
+            "pinyin": null,
+            "right": {
+              "fr": "diàn yǐng"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "机场 (jī chǎng)"
-            },
-            "audio": null
+            "left": "牛奶",
+            "pinyin": null,
+            "right": {
+              "fr": "niú nǎi"
+            }
+          },
+          {
+            "id": "e",
+            "left": "去",
+            "pinyin": null,
+            "right": {
+              "fr": "qù"
+            }
           }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l11-pick-113",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l11-pick-113",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l11-understand"
-          ],
-          "required": true
-        },
-        "promptText": "我们",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "今天 (jīn tiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "教室 (jiào shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "机场 (jī chǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "我们 (wǒ men)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1005,16 +1079,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-order-exa-5",
+      "id": "block-ex-l11-translate-exa-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l11-order-exa-5",
+          "id": "ex-l11-translate-exa-5",
           "prompt": {
-            "fr": "Construis « Aujourd’hui il fait plus froid qu’hier »."
+            "fr": "Traduis en chinois : « Aujourd’hui il fait plus froid qu’hier »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l11-produce"
@@ -1023,15 +1097,21 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "昨天",
-            "pinyin": "zuó tiān",
+            "id": "f",
+            "hanzi": "来",
+            "pinyin": "lái",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "冷",
-            "pinyin": "lěng",
+            "id": "b",
+            "hanzi": "比",
+            "pinyin": "bǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吧",
+            "pinyin": "ba",
             "audio": null
           },
           {
@@ -1041,9 +1121,15 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "比",
-            "pinyin": "bǐ",
+            "id": "d",
+            "hanzi": "冷",
+            "pinyin": "lěng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "昨天",
+            "pinyin": "zuó tiān",
             "audio": null
           }
         ],
@@ -1053,10 +1139,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "今天比昨天冷。",
-          "今天比昨天冷"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1066,130 +1149,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-fill-exa-4",
+      "id": "block-ex-l11-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l11-fill-exa-4",
+          "id": "ex-l11-talk-1",
           "prompt": {
-            "fr": "Complète : ___走吧。 (« Allons-y »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l11-produce"
+            "l11-understand"
           ],
           "required": true
         },
-        "sentence": "___走吧。",
-        "acceptedAnswers": [
-          "我们"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l11-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l11-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Mon ami est arrivé »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l11-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "speaker": "Mina",
+        "promptText": "中午我们去饭馆吗？",
+        "replies": [
           {
-            "id": "b",
-            "hanzi": "来",
-            "pinyin": "lái",
+            "id": "a",
+            "hanzi": "好，吃完我们去买衣服。",
+            "pinyin": "hǎo， chī wán wǒ men qù mǎi yī fú。",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
+            "id": "b",
+            "hanzi": "我不喝咖啡，我喝牛奶。",
+            "pinyin": "wǒ bù hē kā fēi， wǒ hē niú nǎi。",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
+            "hanzi": "好，我要米饭和鱼。",
+            "pinyin": "hǎo， wǒ yào mǐ fàn hé yú。",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "朋友来了。",
-          "朋友来了"
-        ]
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 7
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-fill-exa-6",
+      "id": "block-ex-l11-translate-exa-6",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "translation",
         "header": {
-          "id": "ex-l11-fill-exa-6",
+          "id": "ex-l11-translate-exa-6",
           "prompt": {
-            "fr": "Complète : 我在___坐飞机。 (« Je prends l’avion à l’aéroport »)"
+            "fr": "Traduis en chinois : « Je prends l’avion à l’aéroport »"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l11-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我在___坐飞机。",
-        "acceptedAnswers": [
-          "机场"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l11-order-exa-7",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l11-order-exa-7",
-          "prompt": {
-            "fr": "Construis « Les élèves lisent en classe »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l11-produce"
@@ -1198,21 +1215,15 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "教室",
-            "pinyin": "jiào shì",
+            "id": "d",
+            "hanzi": "坐",
+            "pinyin": "zuò",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "学生",
-            "pinyin": "xué shēng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "读书",
-            "pinyin": "dú shū",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
@@ -1220,6 +1231,89 @@
             "hanzi": "在",
             "pinyin": "zài",
             "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "飞机",
+            "pinyin": "fēi jī",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "吧",
+            "pinyin": "ba",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "机场",
+            "pinyin": "jī chǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-order-exa-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l11-order-exa-1",
+          "prompt": {
+            "fr": "Construis « Nous sommes lundi aujourd’hui »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
           }
         ],
         "correctOrder": [
@@ -1229,13 +1323,66 @@
           "d"
         ],
         "acceptedVariants": [
-          "学生在教室读书。",
-          "学生在教室读书"
+          "今天是星期一。",
+          "今天是星期一"
         ]
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-dialogue-4-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l11-dialogue-4-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l11-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "好，吃完我们去买衣服。",
+            "pinyin": "hǎo， chī wán wǒ men qù mǎi yī fú。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "天气很热，吃西瓜吧。",
+            "pinyin": "tiān qì hěn rè， chī xī guā ba。",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我不喝咖啡，我喝牛奶。",
+            "pinyin": "wǒ bù hē kā fēi， wǒ hē niú nǎi。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 7
       }
     },
@@ -1266,56 +1413,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l11-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l11-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l11-understand"
-          ],
-          "required": true
-        },
-        "promptText": "中午我和朋友在饭馆吃米饭、鱼和鸡蛋。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "À midi, mon ami et moi mangeons du riz, du poisson et des œufs au restaurant."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "D’accord, après le repas nous irons acheter des vêtements."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Il fait très chaud, mangeons de la pastèque."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 7
       }
     },

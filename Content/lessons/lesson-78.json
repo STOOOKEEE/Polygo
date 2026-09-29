@@ -620,49 +620,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l78-pick-319",
+      "id": "block-ex-l78-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l78-pick-319",
+          "id": "ex-l78-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l78-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "比赛",
+            "pinyin": "bǐ sài",
+            "right": {
+              "fr": "compétition ; match"
+            }
+          },
+          {
+            "id": "b",
+            "left": "必须",
+            "pinyin": "bì xū",
+            "right": {
+              "fr": "devoir ; falloir"
+            }
+          },
+          {
+            "id": "c",
+            "left": "可爱",
+            "pinyin": "kě ài",
+            "right": {
+              "fr": "mignon ; adorable"
+            }
+          },
+          {
+            "id": "d",
+            "left": "空调",
+            "pinyin": "kōng tiáo",
+            "right": {
+              "fr": "climatisation"
+            }
+          },
+          {
+            "id": "e",
+            "left": "哭",
+            "pinyin": "kū",
+            "right": {
+              "fr": "pleurer"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-dict-py-319",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l78-dict-py-319",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "比赛",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "必须 (bì xū)"
+              "fr": "kě ài"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "可爱 (kě ài)"
+              "fr": "lì shǐ"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "比赛 (bǐ sài)"
+              "fr": "bǐ sài"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "历史 (lì shǐ)"
+              "fr": "kōng tiáo"
             },
             "audio": null
           }
@@ -677,41 +745,99 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l78-reverse-320",
+      "id": "block-ex-l78-tone-320",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l78-reverse-320",
+          "id": "ex-l78-tone-320",
           "prompt": {
-            "fr": "Comment dit-on « devoir ; falloir » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l78-understand"
           ],
           "required": true
         },
+        "promptText": "必须",
+        "choices": [
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t41"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-pick-444",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l78-pick-444",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "promptText": "哭",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "空调 (kōng tiáo)"
+              "fr": "蓝 (lán)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "必须 (bì xū)"
+              "fr": "哭 (kū)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "比赛 (bǐ sài)"
+              "fr": "必须 (bì xū)"
             },
             "audio": null
           },
@@ -733,167 +859,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l78-pick-447",
+      "id": "block-ex-l78-match-pinyin",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l78-pick-447",
+          "id": "ex-l78-match-pinyin",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l78-understand"
           ],
           "required": true
         },
-        "promptText": "蓝",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "蓝 (lán)"
-            },
-            "audio": null
+            "left": "蓝",
+            "pinyin": null,
+            "right": {
+              "fr": "lán"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "哭 (kū)"
-            },
-            "audio": null
+            "left": "历史",
+            "pinyin": null,
+            "right": {
+              "fr": "lì shǐ"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "空调 (kōng tiáo)"
-            },
-            "audio": null
+            "left": "但是",
+            "pinyin": null,
+            "right": {
+              "fr": "dàn shì"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "必须 (bì xū)"
-            },
-            "audio": null
+            "left": "到",
+            "pinyin": null,
+            "right": {
+              "fr": "dào"
+            }
+          },
+          {
+            "id": "e",
+            "left": "给",
+            "pinyin": null,
+            "right": {
+              "fr": "gěi"
+            }
           }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 74
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l78-reverse-447",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l78-reverse-447",
-          "prompt": {
-            "fr": "Comment dit-on « bleu » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l78-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "哭 (kū)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "历史 (lì shǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "可爱 (kě ài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "蓝 (lán)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 74
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l78-pick-320",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l78-pick-320",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l78-understand"
-          ],
-          "required": true
-        },
-        "promptText": "必须",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "历史 (lì shǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "比赛 (bǐ sài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "必须 (bì xū)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "可爱 (kě ài)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -980,16 +1003,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l78-order-exa-1",
+      "id": "block-ex-l78-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l78-order-exa-1",
+          "id": "ex-l78-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Nous avons une compétition ce week-end »."
+            "fr": "Traduis en chinois : « Nous avons une compétition ce week-end »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l78-produce"
@@ -998,9 +1021,9 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "id": "f",
+            "hanzi": "哭",
+            "pinyin": "kū",
             "audio": null
           },
           {
@@ -1010,15 +1033,27 @@
             "audio": null
           },
           {
+            "id": "d",
+            "hanzi": "比赛",
+            "pinyin": "bǐ sài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "空调",
+            "pinyin": "kōng tiáo",
+            "audio": null
+          },
+          {
             "id": "b",
             "hanzi": "周末",
             "pinyin": "zhōu mò",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "比赛",
-            "pinyin": "bǐ sài",
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
             "audio": null
           }
         ],
@@ -1028,40 +1063,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "我们周末有比赛。",
-          "我们周末有比赛"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 74
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l78-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l78-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 我喜欢读中国___。 (« J’aime lire l’histoire de la Chine »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l78-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我喜欢读中国___。",
-        "acceptedAnswers": [
-          "历史"
-        ],
-        "caseSensitive": false
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1132,6 +1134,83 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l78-translate-exa-7",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l78-translate-exa-7",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’aime lire l’histoire de la Chine »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l78-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "读",
+            "pinyin": "dú",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "历史",
+            "pinyin": "lì shǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "中国",
+            "pinyin": "Zhōng guó",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "喜欢",
+            "pinyin": "xǐ huan",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "空调",
+            "pinyin": "kōng tiáo",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "哭",
+            "pinyin": "kū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l78-fill-dia-2",
       "spec": {
         "kind": "fillBlank",
@@ -1157,6 +1236,67 @@
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 74
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l78-dialogue-1-4",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l78-dialogue-1-4",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l78-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "这个孩子很可爱，但是走了一会儿就哭了。",
+            "pinyin": "zhè ge hái zi hěn kě ài, dàn shì zǒu le yí huìr jiù kū le.",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "好，他看到蓝色的气球就笑了。",
+            "pinyin": "hǎo, tā kàn dào lán sè de qì qiú jiù xiào le.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "他渴了，给他一点水吧。",
+            "pinyin": "tā kě le, gěi tā yì diǎn shuǐ ba.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "虽然天气很热，但是空调马上就开了。",
+            "pinyin": "suī rán tiān qì hěn rè, dàn shì kōng tiáo mǎ shàng jiù kāi le.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 74
       }
     },
@@ -1192,56 +1332,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l78-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l78-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l78-understand"
-          ],
-          "required": true
-        },
-        "promptText": "孩子走了一会儿觉得渴，因为天气很热。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Cet enfant est adorable, mais il s’est mis à pleurer après avoir marché un moment."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Après avoir marché un moment, l’enfant a soif parce qu’il fait chaud."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "En été, la climatisation est allumée dans la chambre."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 74
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l78-read-rea-2",
       "spec": {
         "kind": "choice",
@@ -1262,14 +1352,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Ils allument la climatisation et lui donnent de l’eau ; après avoir vu un ballon bleu, l’enfant ne pleure plus."
+              "fr": "Même s’il fait chaud, la climatisation sera allumée tout de suite."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Même s’il fait chaud, la climatisation sera allumée tout de suite."
+              "fr": "Ils allument la climatisation et lui donnent de l’eau ; après avoir vu un ballon bleu, l’enfant ne pleure plus."
             },
             "audio": null
           },
@@ -1281,7 +1371,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",

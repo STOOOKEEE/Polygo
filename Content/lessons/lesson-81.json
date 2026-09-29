@@ -622,49 +622,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-pick-325",
+      "id": "block-ex-l81-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l81-pick-325",
+          "id": "ex-l81-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l81-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "宾馆",
+            "pinyin": "bīn guǎn",
+            "right": {
+              "fr": "hôtel"
+            }
+          },
+          {
+            "id": "b",
+            "left": "其他",
+            "pinyin": "qí tā",
+            "right": {
+              "fr": "autre ; autres"
+            }
+          },
+          {
+            "id": "c",
+            "left": "骑",
+            "pinyin": "qí",
+            "right": {
+              "fr": "monter (à vélo ou à cheval)"
+            }
+          },
+          {
+            "id": "d",
+            "left": "声音",
+            "pinyin": "shēng yīn",
+            "right": {
+              "fr": "son ; voix"
+            }
+          },
+          {
+            "id": "e",
+            "left": "新闻",
+            "pinyin": "xīn wén",
+            "right": {
+              "fr": "nouvelles ; actualités"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 77
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l81-dict-py-325",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l81-dict-py-325",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l81-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "宾馆",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "总是 (zǒng shì)"
+              "fr": "xīn wén"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "宾馆 (bīn guǎn)"
+              "fr": "bīn guǎn"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "月亮 (yuè liang)"
+              "fr": "shēng yīn"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "新闻 (xīn wén)"
+              "fr": "qí tā"
             },
             "audio": null
           }
@@ -679,53 +747,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-reverse-325",
+      "id": "block-ex-l81-tone-483",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l81-reverse-325",
+          "id": "ex-l81-tone-483",
           "prompt": {
-            "fr": "Comment dit-on « hôtel » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l81-understand"
           ],
           "required": true
         },
+        "promptText": "其他",
         "choices": [
           {
-            "id": "a",
+            "id": "t21",
             "label": {
-              "fr": "宾馆 (bīn guǎn)"
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t22",
             "label": {
-              "fr": "新闻 (xīn wén)"
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t23",
             "label": {
-              "fr": "总是 (zǒng shì)"
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t24",
             "label": {
-              "fr": "其他 (qí tā)"
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "t21"
       },
       "metadata": {
         "stage": "discover",
@@ -735,11 +804,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-pick-485",
+      "id": "block-ex-l81-pick-499",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l81-pick-485",
+          "id": "ex-l81-pick-499",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -751,38 +820,38 @@
           ],
           "required": true
         },
-        "promptText": "骑",
+        "promptText": "声音",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "其他 (qí tā)"
+              "fr": "声音 (shēng yīn)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "新闻 (xīn wén)"
+              "fr": "月亮 (yuè liang)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "宾馆 (bīn guǎn)"
+              "fr": "新闻 (xīn wén)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "骑 (qí)"
+              "fr": "宾馆 (bīn guǎn)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -826,132 +895,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "骑 (qí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "月亮 (yuè liang)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 77
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l81-pick-499",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l81-pick-499",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l81-understand"
-          ],
-          "required": true
-        },
-        "promptText": "声音",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
               "fr": "月亮 (yuè liang)"
             },
             "audio": null
           },
           {
-            "id": "b",
-            "label": {
-              "fr": "声音 (shēng yīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "新闻 (xīn wén)"
-            },
-            "audio": null
-          },
-          {
             "id": "d",
-            "label": {
-              "fr": "宾馆 (bīn guǎn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 77
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l81-reverse-044",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l81-reverse-044",
-          "prompt": {
-            "fr": "Comment dit-on « combien (petit nombre) » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l81-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "几 (jǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "骑 (qí)"
             },
             "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "宾馆 (bīn guǎn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "声音 (shēng yīn)"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -1038,16 +994,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-order-exa-4",
+      "id": "block-ex-l81-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l81-order-exa-4",
+          "id": "ex-l81-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Baisse un peu le volume, s’il te plaît »."
+            "fr": "Traduis en chinois : « L’hôtel est à côté de la gare »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l81-produce"
@@ -1057,165 +1013,48 @@
         "tokens": [
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "一",
-            "pinyin": "yì",
+            "hanzi": "宾馆",
+            "pinyin": "bīn guǎn",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "把",
-            "pinyin": "bǎ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "声音",
-            "pinyin": "shēng yīn",
+            "hanzi": "在",
+            "pinyin": "zài",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "放",
-            "pinyin": "fàng",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "小",
-            "pinyin": "xiǎo",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "请把声音放小一点。",
-          "请把声音放小一点"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 77
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l81-fill-exa-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l81-fill-exa-1",
-          "prompt": {
-            "fr": "Complète : ___在车站旁边。 (« L’hôtel est à côté de la gare »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l81-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___在车站旁边。",
-        "acceptedAnswers": [
-          "宾馆"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 77
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l81-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l81-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Je vais au travail à vélo tous les jours »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l81-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "c",
+            "hanzi": "车站",
+            "pinyin": "chē zhàn",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "自行车",
-            "pinyin": "zì xíng chē",
-            "audio": null
-          },
-          {
-            "id": "d",
             "hanzi": "骑",
             "pinyin": "qí",
             "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "声音",
+            "pinyin": "shēng yīn",
+            "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
+          "d"
         ],
-        "acceptedVariants": [
-          "我每天骑自行车上班。",
-          "我每天骑自行车上班"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1225,46 +1064,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-fill-exa-5",
+      "id": "block-ex-l81-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l81-fill-exa-5",
+          "id": "ex-l81-talk-1",
           "prompt": {
-            "fr": "Complète : 我早上看了___。 (« J’ai regardé les informations ce matin »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l81-produce"
+            "l81-understand"
           ],
           "required": true
         },
-        "sentence": "我早上看了___。",
-        "acceptedAnswers": [
-          "新闻"
+        "speaker": "Mina",
+        "promptText": "你是几年级的学生？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我上三年级。其实我喜欢说普通话。",
+            "pinyin": "wǒ shàng sān nián jí. qí shí wǒ xǐ huan shuō pǔ tōng huà.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "是，老师说这样比较清楚。",
+            "pinyin": "shì, lǎo shī shuō zhè yàng bǐ jiào qīng chu.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "其他同学用铅笔写吗？",
+            "pinyin": "qí tā tóng xué yòng qiān bǐ xiě ma?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 77
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-order-exa-6",
+      "id": "block-ex-l81-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l81-order-exa-6",
+          "id": "ex-l81-translate-exa-6",
           "prompt": {
-            "fr": "Construis « La lune est particulièrement brillante ce soir »."
+            "fr": "Traduis en chinois : « La lune est particulièrement brillante ce soir »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l81-produce"
@@ -1272,10 +1129,28 @@
           "required": true
         },
         "tokens": [
+          {
+            "id": "f",
+            "hanzi": "亮",
+            "pinyin": "liàng",
+            "audio": null
+          },
           {
             "id": "d",
             "hanzi": "月亮",
             "pinyin": "yuè liang",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今",
+            "pinyin": "jīn",
             "audio": null
           },
           {
@@ -1291,21 +1166,15 @@
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "今",
-            "pinyin": "jīn",
+            "id": "h",
+            "hanzi": "新闻",
+            "pinyin": "xīn wén",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "亮",
-            "pinyin": "liàng",
+            "id": "g",
+            "hanzi": "总是",
+            "pinyin": "zǒng shì",
             "audio": null
           }
         ],
@@ -1317,9 +1186,74 @@
           "e",
           "f"
         ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 77
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l81-order-exa-7",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l81-order-exa-7",
+          "prompt": {
+            "fr": "Construis « Il arrive toujours à l’heure »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l81-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "准",
+            "pinyin": "zhǔn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "时",
+            "pinyin": "shí",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "总是",
+            "pinyin": "zǒng shì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
         "acceptedVariants": [
-          "今晚的月亮特别亮。",
-          "今晚的月亮特别亮"
+          "他总是准时到。",
+          "他总是准时到"
         ]
       },
       "metadata": {
@@ -1330,33 +1264,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l81-speak-exa-7",
+      "id": "block-ex-l81-dialogue-1-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l81-speak-exa-7",
+          "id": "ex-l81-dialogue-1-3",
           "prompt": {
-            "fr": "Dis « Il arrive toujours à l’heure »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l81-produce"
+            "l81-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "他总是准时到。",
-        "referencePinyin": "tā zǒng shì zhǔn shí dào.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "他总是准时到。"
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我上三年级。其实我喜欢说普通话。",
+            "pinyin": "wǒ shàng sān nián jí. qí shí wǒ xǐ huan shuō pǔ tōng huà.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "其他同学用铅笔写吗？",
+            "pinyin": "qí tā tóng xué yòng qiān bǐ xiě ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你是几年级的学生？",
+            "pinyin": "nǐ shì jǐ nián jí de xué shēng?",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 77
       }
     },
@@ -1387,6 +1342,55 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
+        "lessonDay": 77
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l81-read-dia-3",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l81-read-dia-3",
+          "prompt": {
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 其他同学用铅笔写吗？"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l81-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Combien d’enfants as-tu ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Tu es en quelle année scolaire ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Les autres élèves écrivent-ils au crayon ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 77
       }
     },

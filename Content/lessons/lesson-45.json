@@ -639,49 +639,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-pick-087",
+      "id": "block-ex-l45-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l45-pick-087",
+          "id": "ex-l45-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l45-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "认识",
+            "pinyin": "rèn shí",
+            "right": {
+              "fr": "connaître ; faire connaissance"
+            }
+          },
+          {
+            "id": "b",
+            "left": "椅子",
+            "pinyin": "yǐ zi",
+            "right": {
+              "fr": "chaise"
+            }
+          },
+          {
+            "id": "c",
+            "left": "月",
+            "pinyin": "yuè",
+            "right": {
+              "fr": "mois ; lune"
+            }
+          },
+          {
+            "id": "d",
+            "left": "错",
+            "pinyin": "cuò",
+            "right": {
+              "fr": "faux ; erreur"
+            }
+          },
+          {
+            "id": "e",
+            "left": "鸡蛋",
+            "pinyin": "jī dàn",
+            "right": {
+              "fr": "œuf"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-dict-py-087",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l45-dict-py-087",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "认识",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "鸡蛋 (jī dàn)"
+              "fr": "yǐ zi"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "认识 (rèn shí)"
+              "fr": "rèn shí"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "跳舞 (tiào wǔ)"
+              "fr": "tiào wǔ"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "椅子 (yǐ zi)"
+              "fr": "jī dàn"
             },
             "audio": null
           }
@@ -696,166 +764,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-reverse-087",
+      "id": "block-ex-l45-tone-135",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l45-reverse-087",
+          "id": "ex-l45-tone-135",
           "prompt": {
-            "fr": "Comment dit-on « connaître ; faire connaissance » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l45-understand"
           ],
           "required": true
         },
+        "promptText": "椅子",
         "choices": [
           {
-            "id": "a",
+            "id": "t10",
             "label": {
-              "fr": "认识 (rèn shí)"
+              "fr": "Ton 1 ¯ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t20",
             "label": {
-              "fr": "椅子 (yǐ zi)"
+              "fr": "Ton 2 ˊ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t30",
             "label": {
-              "fr": "跳舞 (tiào wǔ)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t40",
             "label": {
-              "fr": "鸡蛋 (jī dàn)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-pick-137",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l45-pick-137",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l45-understand"
-          ],
-          "required": true
-        },
-        "promptText": "月",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "错 (cuò)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "跳舞 (tiào wǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "认识 (rèn shí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "月 (yuè)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-reverse-166",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l45-reverse-166",
-          "prompt": {
-            "fr": "Comment dit-on « faux ; erreur » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l45-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "月 (yuè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "跳舞 (tiào wǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "错 (cuò)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "椅子 (yǐ zi)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t30"
       },
       "metadata": {
         "stage": "discover",
@@ -886,14 +842,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "月 (yuè)"
+              "fr": "错 (cuò)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "错 (cuò)"
+              "fr": "月 (yuè)"
             },
             "audio": null
           },
@@ -912,7 +868,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -922,54 +878,176 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-pick-250",
+      "id": "block-ex-l45-reverse-137",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l45-pick-250",
+          "id": "ex-l45-reverse-137",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Comment dit-on « mois ; lune » en chinois ?"
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Choisis le mot chinois qui convient."
           },
           "objectiveIDs": [
             "l45-understand"
           ],
           "required": true
         },
-        "promptText": "踢足球",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "踢足球 (tī zú qiú)"
+              "fr": "错 (cuò)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "鸡蛋 (jī dàn)"
+              "fr": "认识 (rèn shí)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "认识 (rèn shí)"
+              "fr": "跳舞 (tiào wǔ)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "椅子 (yǐ zi)"
+              "fr": "月 (yuè)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l45-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "踢足球",
+            "pinyin": null,
+            "right": {
+              "fr": "tī zú qiú"
+            }
+          },
+          {
+            "id": "b",
+            "left": "跳舞",
+            "pinyin": null,
+            "right": {
+              "fr": "tiào wǔ"
+            }
+          },
+          {
+            "id": "c",
+            "left": "吃",
+            "pinyin": null,
+            "right": {
+              "fr": "chī"
+            }
+          },
+          {
+            "id": "d",
+            "left": "饱",
+            "pinyin": null,
+            "right": {
+              "fr": "bǎo"
+            }
+          },
+          {
+            "id": "e",
+            "left": "变化",
+            "pinyin": null,
+            "right": {
+              "fr": "biàn huà"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-reverse-250",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-reverse-250",
+          "prompt": {
+            "fr": "Comment dit-on « jouer au football » en chinois ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot chinois qui convient."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "认识 (rèn shí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "跳舞 (tiào wǔ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "踢足球 (tī zú qiú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "鸡蛋 (jī dàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1063,16 +1141,134 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-order-exa-6",
+      "id": "block-ex-l45-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l45-order-exa-6",
+          "id": "ex-l45-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Les enfants jouent au football au parc »."
+            "fr": "Traduis en chinois : « La chaise est à côté de la table »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "认识",
+            "pinyin": "rèn shí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "椅子",
+            "pinyin": "yǐ zi",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "跳舞",
+            "pinyin": "tiào wǔ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l45-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l45-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你吃饱了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "要。我把时间改一下，就能参加。",
+            "pinyin": "yào。 wǒ bǎ shí jiān gǎi yī xià， jiù néng cān jiā。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "不一样，天气变化很大。",
+            "pinyin": "bù yí yàng， tiān qì biàn huà hěn dà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "吃饱了，谢谢你帮忙。",
+            "pinyin": "chī bǎo le， xiè xiè nǐ bāng máng。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-translate-exa-6",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l45-translate-exa-6",
+          "prompt": {
+            "fr": "Traduis en chinois : « Les enfants jouent au football au parc »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l45-produce"
@@ -1087,9 +1283,27 @@
             "audio": null
           },
           {
+            "id": "f",
+            "hanzi": "椅子",
+            "pinyin": "yǐ zi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "踢足球",
+            "pinyin": "tī zú qiú",
+            "audio": null
+          },
+          {
             "id": "d",
             "hanzi": "公园",
             "pinyin": "gōng yuán",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "跳舞",
+            "pinyin": "tiào wǔ",
             "audio": null
           },
           {
@@ -1103,12 +1317,6 @@
             "hanzi": "在",
             "pinyin": "zài",
             "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "踢足球",
-            "pinyin": "tī zú qiú",
-            "audio": null
           }
         ],
         "correctOrder": [
@@ -1118,10 +1326,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "孩子们在公园踢足球。",
-          "孩子们在公园踢足球"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1131,242 +1336,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-fill-exa-1",
+      "id": "block-ex-l45-dialogue-1-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l45-fill-exa-1",
+          "id": "ex-l45-dialogue-1-3",
           "prompt": {
-            "fr": "Complète : 我___他。 (« Je le connais »)"
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我___他。",
-        "acceptedAnswers": [
-          "认识"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l45-order-exa-2",
-          "prompt": {
-            "fr": "Construis « La chaise est à côté de la table »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "椅子",
-            "pinyin": "yǐ zi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "椅子在桌子旁边。",
-          "椅子在桌子旁边"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l45-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 这个___很忙。 (« Ce mois-ci est très chargé »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这个___很忙。",
-        "acceptedAnswers": [
-          "月"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l45-order-exa-4",
-          "prompt": {
-            "fr": "Construis « Cette réponse est fausse »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "错",
-            "pinyin": "cuò",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "答",
-            "pinyin": "dá",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "案",
-            "pinyin": "àn",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "这个答案错了。",
-          "这个答案错了"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-read-exa-6",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l45-read-exa-6",
-          "prompt": {
-            "fr": "Que signifie la phrase : 孩子们在公园踢足球。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
             "l45-understand"
           ],
           "required": true
         },
-        "choices": [
+        "lines": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Les enfants jouent au football au parc."
-            },
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "北方的天气和这里一样吗？",
+            "pinyin": "běi fāng de tiān qì hé zhè lǐ yī yàng ma？",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Vas-tu participer à la compétition ?"
-            },
+            "speaker": "Tao",
+            "hanzi": "吃饱了，谢谢你帮忙。",
+            "pinyin": "chī bǎo le， xiè xiè nǐ bāng máng。",
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "J’ai mangé deux œufs au petit déjeuner."
-            },
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你吃饱了吗？",
+            "pinyin": "nǐ chī bǎo le ma？",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1376,65 +1389,31 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-speak-exa-5",
+      "id": "block-ex-l45-fill-rea-2",
       "spec": {
-        "kind": "speaking",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l45-speak-exa-5",
+          "id": "ex-l45-fill-rea-2",
           "prompt": {
-            "fr": "Dis « J’ai mangé deux œufs au petit déjeuner »."
+            "fr": "Complète : 天气___以后，他把时间改好，准备参加比赛。 (« Après le changement de temps, il ajuste l’horaire et se prépare à participer à la compétition »)"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l45-produce"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "早饭我吃了两个鸡蛋。",
-        "referencePinyin": "zǎo fàn wǒ chī le liǎng gè jī dàn。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "早饭我吃了两个鸡蛋。"
+        "sentence": "天气___以后，他把时间改好，准备参加比赛。",
+        "acceptedAnswers": [
+          "变化"
         ],
-        "allowSelfRating": true
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l45-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Nous dansons le soir »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我们晚上跳舞。",
-        "referencePinyin": "wǒ men wǎn shàng tiào wǔ。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我们晚上跳舞。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "production",
         "lessonDay": 41
       }
     },

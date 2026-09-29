@@ -622,6 +622,188 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l85-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l85-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l85-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "包",
+            "pinyin": "bāo",
+            "right": {
+              "fr": "sac ; paquet"
+            }
+          },
+          {
+            "id": "b",
+            "left": "电梯",
+            "pinyin": "diàn tī",
+            "right": {
+              "fr": "ascenseur"
+            }
+          },
+          {
+            "id": "c",
+            "left": "耳朵",
+            "pinyin": "ěr duo",
+            "right": {
+              "fr": "oreille"
+            }
+          },
+          {
+            "id": "d",
+            "left": "感冒",
+            "pinyin": "gǎn mào",
+            "right": {
+              "fr": "rhume ; être enrhumé"
+            }
+          },
+          {
+            "id": "e",
+            "left": "刚才",
+            "pinyin": "gāng cái",
+            "right": {
+              "fr": "à l’instant"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l85-dict-py-357",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l85-dict-py-357",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l85-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "电梯",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "gāng cái"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "diàn tī"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "tū rán"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "xīn xiān"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l85-tone-313",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l85-tone-313",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l85-understand"
+          ],
+          "required": true
+        },
+        "promptText": "包",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t1"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l85-pick-379",
       "spec": {
         "kind": "listeningChoice",
@@ -643,77 +825,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "电梯 (diàn tī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "感冒 (gǎn mào)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "刚才 (gāng cái)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "耳朵 (ěr duo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-reverse-313",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l85-reverse-313",
-          "prompt": {
-            "fr": "Comment dit-on « sac ; paquet » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l85-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "包 (bāo)"
-            },
-            "audio": null
-          },
-          {
             "id": "b",
             "label": {
-              "fr": "刚才 (gāng cái)"
+              "fr": "电梯 (diàn tī)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "电梯 (diàn tī)"
+              "fr": "刚才 (gāng cái)"
             },
             "audio": null
           },
@@ -735,167 +861,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l85-pick-313",
+      "id": "block-ex-l85-dict-zh-548",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l85-pick-313",
+          "id": "ex-l85-dict-zh-548",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l85-understand"
           ],
           "required": true
         },
-        "promptText": "包",
+        "script": "hanzi",
+        "promptText": "新鲜",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "突然 (tū rán)"
+              "fr": "刚才"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "新鲜 (xīn xiān)"
+              "fr": "突然"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "刚才 (gāng cái)"
+              "fr": "感冒"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "包 (bāo)"
+              "fr": "新鲜"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-reverse-368",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l85-reverse-368",
-          "prompt": {
-            "fr": "Comment dit-on « oreille » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l85-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "新鲜 (xīn xiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "感冒 (gǎn mào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "耳朵 (ěr duo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "刚才 (gāng cái)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-pick-357",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l85-pick-357",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l85-understand"
-          ],
-          "required": true
-        },
-        "promptText": "电梯",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "突然 (tū rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "电梯 (diàn tī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "刚才 (gāng cái)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "新鲜 (xīn xiān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -982,16 +996,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l85-order-exa-1",
+      "id": "block-ex-l85-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l85-order-exa-1",
+          "id": "ex-l85-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Il y a un livre dans le sac »."
+            "fr": "Traduis en chinois : « Il y a un livre dans le sac »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l85-produce"
@@ -1000,9 +1014,15 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "一",
-            "pinyin": "yī",
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "书",
+            "pinyin": "shū",
             "audio": null
           },
           {
@@ -1018,15 +1038,21 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "里",
-            "pinyin": "lǐ",
+            "id": "g",
+            "hanzi": "感冒",
+            "pinyin": "gǎn mào",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "书",
-            "pinyin": "shū",
+            "id": "d",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "耳朵",
+            "pinyin": "ěr duo",
             "audio": null
           },
           {
@@ -1044,10 +1070,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "包里有一本书。",
-          "包里有一本书"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1057,130 +1080,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l85-fill-exa-2",
+      "id": "block-ex-l85-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l85-fill-exa-2",
+          "id": "ex-l85-talk-1",
           "prompt": {
-            "fr": "Complète : ___在门外。 (« L’ascenseur est devant la porte »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l85-produce"
+            "l85-understand"
           ],
           "required": true
         },
-        "sentence": "___在门外。",
-        "acceptedAnswers": [
-          "电梯"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l85-order-exa-4",
-          "prompt": {
-            "fr": "Construis « Je suis enrhumé »."
+        "speaker": "Mina",
+        "promptText": "你同意把活动改到下午吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "还没有，别忘记最后一箱书。",
+            "pinyin": "hái méi yǒu, bié wàng jì zuì hòu yì xiāng shū.",
+            "audio": null
           },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l85-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "b",
-            "hanzi": "感冒",
-            "pinyin": "gǎn mào",
+            "hanzi": "同意。突然下雨了，大家不能出去。",
+            "pinyin": "tóng yì. tū rán xià yǔ le, dà jiā bù néng chū qù.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "我们已经完成一半了吗？",
+            "pinyin": "wǒ men yǐ jīng wán chéng yí bàn le ma?",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "我感冒了。",
-          "我感冒了"
-        ]
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 81
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l85-fill-exa-7",
+      "id": "block-ex-l85-translate-exa-2",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "translation",
         "header": {
-          "id": "ex-l85-fill-exa-7",
+          "id": "ex-l85-translate-exa-2",
           "prompt": {
-            "fr": "Complète : 市场上的水果很___。 (« Les fruits du marché sont très frais »)"
+            "fr": "Traduis en chinois : « L’ascenseur est devant la porte »"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l85-produce"
-          ],
-          "required": true
-        },
-        "sentence": "市场上的水果很___。",
-        "acceptedAnswers": [
-          "新鲜"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l85-order-exa-3",
-          "prompt": {
-            "fr": "Construis « J’ai un peu mal à l’oreille »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l85-produce"
@@ -1189,39 +1146,39 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
             "id": "f",
-            "hanzi": "疼",
-            "pinyin": "téng",
+            "hanzi": "新鲜",
+            "pinyin": "xīn xiān",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "点",
-            "pinyin": "diǎn",
+            "id": "c",
+            "hanzi": "门",
+            "pinyin": "mén",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "电梯",
+            "pinyin": "diàn tī",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "一",
-            "pinyin": "yì",
+            "hanzi": "外",
+            "pinyin": "wài",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
+            "id": "e",
+            "hanzi": "包",
+            "pinyin": "bāo",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "耳朵",
-            "pinyin": "ěr duo",
+            "hanzi": "在",
+            "pinyin": "zài",
             "audio": null
           }
         ],
@@ -1229,18 +1186,145 @@
           "a",
           "b",
           "c",
-          "d",
-          "e",
-          "f"
+          "d"
         ],
-        "acceptedVariants": [
-          "我的耳朵有一点疼。",
-          "我的耳朵有一点疼"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l85-fill-exa-3",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l85-fill-exa-3",
+          "prompt": {
+            "fr": "Complète : 我的___有一点疼。 (« J’ai un peu mal à l’oreille »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l85-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我的___有一点疼。",
+        "acceptedAnswers": [
+          "耳朵"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l85-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l85-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l85-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "同意。突然下雨了，大家不能出去。",
+            "pinyin": "tóng yì. tū rán xià yǔ le, dà jiā bù néng chū qù.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "我们已经完成一半了吗？",
+            "pinyin": "wǒ men yǐ jīng wán chéng yí bàn le ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你同意把活动改到下午吗？",
+            "pinyin": "nǐ tóng yì bǎ huó dòng gǎi dào xià wǔ ma?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 81
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l85-read-exa-7",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l85-read-exa-7",
+          "prompt": {
+            "fr": "Que signifie la phrase : 市场上的水果很新鲜。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l85-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Les fruits du marché sont très frais."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Je n’ai pas le temps maintenant."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je suis d’accord avec ton idée."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 81
       }
     },
@@ -1271,38 +1355,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 81
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l85-speak-exa-5",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l85-speak-exa-5",
-          "prompt": {
-            "fr": "Dis « Il était ici tout à l’heure »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l85-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "他刚才在这里。",
-        "referencePinyin": "tā gāng cái zài zhè lǐ。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "他刚才在这里。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 81
       }
     },

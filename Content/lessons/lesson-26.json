@@ -636,6 +636,181 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l26-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l26-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "帮助",
+            "pinyin": "bāng zhù",
+            "right": {
+              "fr": "aider ; aide"
+            }
+          },
+          {
+            "id": "b",
+            "left": "别",
+            "pinyin": "bié",
+            "right": {
+              "fr": "ne… pas (impératif)"
+            }
+          },
+          {
+            "id": "c",
+            "left": "懂",
+            "pinyin": "dǒng",
+            "right": {
+              "fr": "comprendre"
+            }
+          },
+          {
+            "id": "d",
+            "left": "告诉",
+            "pinyin": "gào sù",
+            "right": {
+              "fr": "dire ; informer"
+            }
+          },
+          {
+            "id": "e",
+            "left": "欢迎",
+            "pinyin": "huān yíng",
+            "right": {
+              "fr": "accueillir ; bienvenue"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-dict-sent-dia-6",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l26-dict-sent-dia-6",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "谢谢！我懂了，也能帮助同学。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "zhè ge wèn tí bèi lǎo shī fā xiàn le。"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-tone-158",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l26-tone-158",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "promptText": "别",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l26-pick-154",
       "spec": {
         "kind": "listeningChoice",
@@ -664,77 +839,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "告诉 (gào sù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
               "fr": "帮助 (bāng zhù)"
             },
             "audio": null
           },
           {
-            "id": "d",
-            "label": {
-              "fr": "两 (liǎng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-reverse-158",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l26-reverse-158",
-          "prompt": {
-            "fr": "Comment dit-on « ne… pas (impératif) » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l26-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "两 (liǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "别 (bié)"
-            },
-            "audio": null
-          },
-          {
             "id": "c",
             "label": {
-              "fr": "懂 (dǒng)"
+              "fr": "告诉 (gào sù)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "被 (bèi)"
+              "fr": "两 (liǎng)"
             },
             "audio": null
           }
@@ -749,167 +868,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-pick-158",
+      "id": "block-ex-l26-dict-zh-175",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l26-pick-158",
+          "id": "ex-l26-dict-zh-175",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l26-understand"
           ],
           "required": true
         },
-        "promptText": "别",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "别 (bié)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "被 (bèi)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "懂 (dǒng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "两 (liǎng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-reverse-154",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l26-reverse-154",
-          "prompt": {
-            "fr": "Comment dit-on « aider ; aide » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l26-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "告诉 (gào sù)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "欢迎 (huān yíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "懂 (dǒng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "帮助 (bāng zhù)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-pick-175",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l26-pick-175",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l26-understand"
-          ],
-          "required": true
-        },
+        "script": "hanzi",
         "promptText": "懂",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "被 (bèi)"
+              "fr": "懂"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "别 (bié)"
+              "fr": "两"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "懂 (dǒng)"
+              "fr": "被"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "两 (liǎng)"
+              "fr": "别"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -1003,16 +1010,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-order-exa-4",
+      "id": "block-ex-l26-translate-dia-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l26-order-exa-4",
+          "id": "ex-l26-translate-dia-1",
           "prompt": {
-            "fr": "Construis « Dis-moi l’adresse, s’il te plaît »."
+            "fr": "Traduis en chinois : « As-tu besoin d’aide ? »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l26-produce"
@@ -1021,131 +1028,163 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "告诉",
-            "pinyin": "gào sù",
+            "id": "f",
+            "hanzi": "懂",
+            "pinyin": "dǒng",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "地",
-            "pinyin": "dì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "址",
-            "pinyin": "zhǐ",
+            "hanzi": "吗",
+            "pinyin": "ma",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "请告诉我地址。",
-          "请告诉我地址"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-fill-dia-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l26-fill-dia-6",
-          "prompt": {
-            "fr": "Complète : 谢谢！我___了，也能帮助同学。 (« Merci ! J’ai compris et je peux aider un camarade »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l26-produce"
-          ],
-          "required": true
-        },
-        "sentence": "谢谢！我___了，也能帮助同学。",
-        "acceptedAnswers": [
-          "懂"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l26-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Bienvenue chez moi »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l26-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "b",
             "hanzi": "你",
             "pinyin": "nǐ",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "家",
-            "pinyin": "jiā",
+            "hanzi": "两",
+            "pinyin": "liǎng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "帮助",
+            "pinyin": "bāng zhù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "需要",
+            "pinyin": "xū yào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l26-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你需要帮助吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "谢谢！我懂了，也能帮助同学。",
+            "pinyin": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我不懂，但是我可以再做一次。",
+            "pinyin": "wǒ bù dǒng， dàn shì wǒ kě yǐ zài zuò yī cì。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "需要。这个题太难，我做错了。",
+            "pinyin": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l26-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je comprends ce que tu veux dire »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "欢迎",
-            "pinyin": "huān yíng",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "别",
+            "pinyin": "bié",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "懂",
+            "pinyin": "dǒng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "被",
+            "pinyin": "bèi",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "意思",
+            "pinyin": "yì si",
             "audio": null
           }
         ],
@@ -1156,10 +1195,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "欢迎你来我家。",
-          "欢迎你来我家"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1169,43 +1205,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-fill-exa-7",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l26-fill-exa-7",
-          "prompt": {
-            "fr": "Complète : 这个问题___老师发现了。 (« Ce problème a été découvert par le professeur »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l26-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这个问题___老师发现了。",
-        "acceptedAnswers": [
-          "被"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-order-exa-6",
+      "id": "block-ex-l26-order-exa-7",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l26-order-exa-6",
+          "id": "ex-l26-order-exa-7",
           "prompt": {
-            "fr": "Construis « J’ai acheté deux vêtements »."
+            "fr": "Construis « Ce problème a été découvert par le professeur »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1217,39 +1223,45 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "f",
+            "hanzi": "发现",
+            "pinyin": "fā xiàn",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "买",
-            "pinyin": "mǎi",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "两",
-            "pinyin": "liǎng",
-            "audio": null
-          },
-          {
-            "id": "c",
+            "id": "g",
             "hanzi": "了",
             "pinyin": "le",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
+            "id": "e",
+            "hanzi": "老师",
+            "pinyin": "lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "被",
+            "pinyin": "bèi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "问题",
+            "pinyin": "wèn tí",
             "audio": null
           }
         ],
@@ -1259,16 +1271,127 @@
           "c",
           "d",
           "e",
-          "f"
+          "f",
+          "g"
         ],
         "acceptedVariants": [
-          "我买了两件衣服。",
-          "我买了两件衣服"
+          "这个问题被老师发现了。",
+          "这个问题被老师发现了"
         ]
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-dialogue-3-4",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l26-dialogue-3-4",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "别着急，先看第一句话。",
+            "pinyin": "bié zháo jí， xiān kàn dì yī jù huà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你等我，我告诉你办法。",
+            "pinyin": "nǐ děng wǒ， wǒ gào sù nǐ bàn fǎ。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我不懂，但是我可以再做一次。",
+            "pinyin": "wǒ bù dǒng， dàn shì wǒ kě yǐ zài zuò yī cì。",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "谢谢！我懂了，也能帮助同学。",
+            "pinyin": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-read-exa-5",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l26-read-exa-5",
+          "prompt": {
+            "fr": "Que signifie la phrase : 欢迎你来我家。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l26-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Ne t’inquiète pas."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Bienvenue chez moi."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je comprends ce que tu veux dire."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 22
       }
     },
@@ -1299,56 +1422,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-listen-rea-1",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l26-listen-rea-1",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
-          },
-          "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l26-understand"
-          ],
-          "required": true
-        },
-        "promptText": "学生做题的时候发现一个错误。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "En faisant l’exercice, l’étudiant découvre une erreur."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Merci ! J’ai compris et je peux aider un camarade."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Oui. Cet exercice est trop difficile, je me suis trompé."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 22
       }
     },

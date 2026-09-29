@@ -619,6 +619,312 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l88-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l88-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "差",
+            "pinyin": "chà",
+            "right": {
+              "fr": "mauvais ; différer"
+            }
+          },
+          {
+            "id": "b",
+            "left": "聪明",
+            "pinyin": "cōng ming",
+            "right": {
+              "fr": "intelligent"
+            }
+          },
+          {
+            "id": "c",
+            "left": "打扫",
+            "pinyin": "dǎ sǎo",
+            "right": {
+              "fr": "nettoyer"
+            }
+          },
+          {
+            "id": "d",
+            "left": "担心",
+            "pinyin": "dān xīn",
+            "right": {
+              "fr": "s’inquiéter"
+            }
+          },
+          {
+            "id": "e",
+            "left": "分",
+            "pinyin": "fēn",
+            "right": {
+              "fr": "diviser ; minute"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-dict-py-332",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l88-dict-py-332",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "差",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "chà"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "fēn"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "lóu"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "xiān"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-tone-344",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l88-tone-344",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "聪明",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t30",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton neutre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t10"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-pick-345",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l88-pick-345",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "promptText": "打扫",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "聪明 (cōng ming)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "担心 (dān xīn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "街道 (jiē dào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "打扫 (dǎ sǎo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l88-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "街道",
+            "pinyin": null,
+            "right": {
+              "fr": "jiē dào"
+            }
+          },
+          {
+            "id": "b",
+            "left": "楼",
+            "pinyin": null,
+            "right": {
+              "fr": "lóu"
+            }
+          },
+          {
+            "id": "c",
+            "left": "新鲜",
+            "pinyin": null,
+            "right": {
+              "fr": "xīn xiān"
+            }
+          },
+          {
+            "id": "d",
+            "left": "先",
+            "pinyin": null,
+            "right": {
+              "fr": "xiān"
+            }
+          },
+          {
+            "id": "e",
+            "left": "信",
+            "pinyin": null,
+            "right": {
+              "fr": "xìn"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l88-pick-332",
       "spec": {
         "kind": "listeningChoice",
@@ -640,62 +946,6 @@
           {
             "id": "a",
             "label": {
-              "fr": "差 (chà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "楼 (lóu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "分 (fēn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "街道 (jiē dào)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-reverse-332",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l88-reverse-332",
-          "prompt": {
-            "fr": "Comment dit-on « mauvais ; différer » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l88-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
               "fr": "楼 (lóu)"
             },
             "audio": null
@@ -710,189 +960,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "打扫 (dǎ sǎo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
               "fr": "差 (chà)"
             },
             "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-pick-344",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l88-pick-344",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l88-understand"
-          ],
-          "required": true
-        },
-        "promptText": "聪明",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "担心 (dān xīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "街道 (jiē dào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "聪明 (cōng ming)"
-            },
-            "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "打扫 (dǎ sǎo)"
+              "fr": "街道 (jiē dào)"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-reverse-344",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l88-reverse-344",
-          "prompt": {
-            "fr": "Comment dit-on « intelligent » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l88-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "担心 (dān xīn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "聪明 (cōng ming)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "街道 (jiē dào)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "打扫 (dǎ sǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-pick-457",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l88-pick-457",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l88-understand"
-          ],
-          "required": true
-        },
-        "promptText": "楼",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "楼 (lóu)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "分 (fēn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "差 (chà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "聪明 (cōng ming)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -986,16 +1066,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l88-order-exa-4",
+      "id": "block-ex-l88-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l88-order-exa-4",
+          "id": "ex-l88-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Maman s’inquiète pour l’enfant »."
+            "fr": "Traduis en chinois : « Le temps est mauvais aujourd’hui »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l88-produce"
@@ -1004,214 +1084,45 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "妈妈",
-            "pinyin": "mā ma",
-            "audio": null
-          },
-          {
             "id": "c",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
+            "hanzi": "天气",
+            "pinyin": "tiān qì",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "f",
             "hanzi": "担心",
             "pinyin": "dān xīn",
             "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "妈妈担心孩子。",
-          "妈妈担心孩子"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-fill-exa-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l88-fill-exa-1",
-          "prompt": {
-            "fr": "Complète : 今天的天气很___。 (« Le temps est mauvais aujourd’hui »)"
           },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l88-produce"
-          ],
-          "required": true
-        },
-        "sentence": "今天的天气很___。",
-        "acceptedAnswers": [
-          "差"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l88-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Mon professeur est très intelligent »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l88-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "b",
-            "hanzi": "老师",
-            "pinyin": "lǎo shī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "聪明",
-            "pinyin": "cōng míng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我的老师很聪明。",
-          "我的老师很聪明"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l88-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 我每天___房间。 (« Je nettoie la chambre chaque jour »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l88-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我每天___房间。",
-        "acceptedAnswers": [
-          "打扫"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 84
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l88-order-exa-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l88-order-exa-5",
-          "prompt": {
-            "fr": "Construis « Donne-moi cinq centimes, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l88-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "钱",
-            "pinyin": "qián",
+            "hanzi": "的",
+            "pinyin": "de",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "分",
-            "pinyin": "fēn",
+            "hanzi": "差",
+            "pinyin": "chà",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "给",
-            "pinyin": "gěi",
+            "id": "g",
+            "hanzi": "打扫",
+            "pinyin": "dǎ sǎo",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "五",
-            "pinyin": "wǔ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "很",
+            "pinyin": "hěn",
             "audio": null
           }
         ],
@@ -1220,13 +1131,9 @@
           "b",
           "c",
           "d",
-          "e",
-          "f"
+          "e"
         ],
-        "acceptedVariants": [
-          "请给我五分钱。",
-          "请给我五分钱"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1236,65 +1143,258 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l88-speak-exa-6",
+      "id": "block-ex-l88-talk-1",
       "spec": {
-        "kind": "speaking",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l88-speak-exa-6",
+          "id": "ex-l88-talk-1",
           "prompt": {
-            "fr": "Dis « Cette rue est très calme le soir »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l88-produce"
+            "l88-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "这条街道晚上很安静。",
-        "referencePinyin": "zhè tiáo jiē dào wǎn shang hěn ān jìng.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "这条街道晚上很安静。"
+        "speaker": "Mina",
+        "promptText": "你对什么有兴趣？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "需要。先选水果，再写信。",
+            "pinyin": "xū yào. xiān xuǎn shuǐ guǒ, zài xiě xìn.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我想买新鲜的水果，但是不知道选哪一种。",
+            "pinyin": "wǒ xiǎng mǎi xīn xiān de shuǐ guǒ, dàn shì bù zhī dào xuǎn nǎ yì zhǒng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你需要写信的纸吗？",
+            "pinyin": "nǐ xū yào xiě xìn de zhǐ ma?",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctReplyID": "b"
       },
       "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "stage": "guided",
+        "skill": "recognition",
         "lessonDay": 84
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l88-speak-exa-7",
+      "id": "block-ex-l88-translate-exa-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "translation",
         "header": {
-          "id": "ex-l88-speak-exa-7",
+          "id": "ex-l88-translate-exa-3",
           "prompt": {
-            "fr": "Dis « Nous habitons au cinquième étage de cet immeuble »."
+            "fr": "Traduis en chinois : « Je nettoie la chambre chaque jour »"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l88-produce"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "我们住在这栋楼的五楼。",
-        "referencePinyin": "wǒ men zhù zài zhè dòng lóu de wǔ lóu.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我们住在这栋楼的五楼。"
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "楼",
+            "pinyin": "lóu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "打扫",
+            "pinyin": "dǎ sǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "分",
+            "pinyin": "fēn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-fill-exa-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l88-fill-exa-2",
+          "prompt": {
+            "fr": "Complète : 我的老师很___。 (« Mon professeur est très intelligent »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l88-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我的老师很___。",
+        "acceptedAnswers": [
+          "聪明"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l88-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你需要写信的纸吗？",
+            "pinyin": "nǐ xū yào xiě xìn de zhǐ ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你对什么有兴趣？",
+            "pinyin": "nǐ duì shén me yǒu xìng qù?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我想买新鲜的水果，但是不知道选哪一种。",
+            "pinyin": "wǒ xiǎng mǎi xīn xiān de shuǐ guǒ, dàn shì bù zhī dào xuǎn nǎ yì zhǒng.",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
+        "lessonDay": 84
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l88-read-exa-6",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l88-read-exa-6",
+          "prompt": {
+            "fr": "Que signifie la phrase : 这条街道晚上很安静。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l88-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Cette rue est très calme le soir."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Nous habitons au cinquième étage de cet immeuble."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Les fruits du marché sont très frais."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 84
       }
     },

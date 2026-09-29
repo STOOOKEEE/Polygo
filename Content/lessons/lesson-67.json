@@ -664,162 +664,110 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l67-pick-308",
+      "id": "block-ex-l67-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l67-pick-308",
+          "id": "ex-l67-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l67-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "搬",
+            "pinyin": "bān",
+            "right": {
+              "fr": "déménager ; déplacer"
+            }
+          },
+          {
+            "id": "b",
+            "left": "当然",
+            "pinyin": "dāng rán",
+            "right": {
+              "fr": "bien sûr"
+            }
+          },
+          {
+            "id": "c",
+            "left": "环境",
+            "pinyin": "huán jìng",
+            "right": {
+              "fr": "environnement"
+            }
+          },
+          {
+            "id": "d",
+            "left": "练习",
+            "pinyin": "liàn xí",
+            "right": {
+              "fr": "s’exercer ; exercice"
+            }
+          },
+          {
+            "id": "e",
+            "left": "年轻",
+            "pinyin": "nián qīng",
+            "right": {
+              "fr": "jeune"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-dict-py-308",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l67-dict-py-308",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "搬",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "一共 (yí gòng)"
+              "fr": "rén"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "年轻 (nián qīng)"
+              "fr": "bān"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "当然 (dāng rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "搬 (bān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-reverse-308",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l67-reverse-308",
-          "prompt": {
-            "fr": "Comment dit-on « déménager ; déplacer » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l67-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "当然 (dāng rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "环境 (huán jìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "搬 (bān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "一共 (yí gòng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-pick-404",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l67-pick-404",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l67-understand"
-          ],
-          "required": true
-        },
-        "promptText": "环境",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "当然 (dāng rán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "环境 (huán jìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "练习 (liàn xí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "年轻 (nián qīng)"
+              "fr": "shì"
             },
             "audio": null
           }
@@ -834,27 +782,143 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l67-reverse-473",
+      "id": "block-ex-l67-tone-350",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l67-reverse-473",
+          "id": "ex-l67-tone-350",
           "prompt": {
-            "fr": "Comment dit-on « jeune » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l67-understand"
           ],
           "required": true
         },
+        "promptText": "当然",
+        "choices": [
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t32",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t12"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-dict-zh-404",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l67-dict-zh-404",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "环境",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "年轻 (nián qīng)"
+              "fr": "年轻"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "一共"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "环境"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "当然"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-pick-453",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l67-pick-453",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "promptText": "练习",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "环境 (huán jìng)"
             },
             "audio": null
           },
@@ -875,69 +939,12 @@
           {
             "id": "d",
             "label": {
-              "fr": "环境 (huán jìng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-pick-350",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l67-pick-350",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l67-understand"
-          ],
-          "required": true
-        },
-        "promptText": "当然",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "一共 (yí gòng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "年轻 (nián qīng)"
             },
             "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "环境 (huán jìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "当然 (dāng rán)"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1031,16 +1038,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l67-order-exa-3",
+      "id": "block-ex-l67-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l67-order-exa-3",
+          "id": "ex-l67-translate-exa-6",
           "prompt": {
-            "fr": "Construis « L’environnement de ce parc est très calme »."
+            "fr": "Traduis en chinois : « Cinq personnes sont arrivées au total »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l67-produce"
@@ -1048,134 +1055,10 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "g",
-            "hanzi": "安静",
-            "pinyin": "ān jìng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "环境",
-            "pinyin": "huán jìng",
-            "audio": null
-          },
           {
             "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "这个公园的环境很安静。",
-          "这个公园的环境很安静"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-fill-dia-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l67-fill-dia-1",
-          "prompt": {
-            "fr": "Complète : 你___到这里多久了？ (« Depuis combien de temps as-tu déménagé ici ? »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l67-produce"
-          ],
-          "required": true
-        },
-        "sentence": "你___到这里多久了？",
-        "acceptedAnswers": [
-          "搬"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-order-exa-6",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l67-order-exa-6",
-          "prompt": {
-            "fr": "Construis « Cinq personnes sont arrivées au total »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l67-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "一共",
-            "pinyin": "yí gòng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "人",
-            "pinyin": "rén",
+            "hanzi": "来",
+            "pinyin": "lái",
             "audio": null
           },
           {
@@ -1185,9 +1068,33 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "来",
-            "pinyin": "lái",
+            "id": "e",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "当然",
+            "pinyin": "dāng rán",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "人",
+            "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "练习",
+            "pinyin": "liàn xí",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "一共",
+            "pinyin": "yí gòng",
             "audio": null
           },
           {
@@ -1205,10 +1112,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "一共来了五个人。",
-          "一共来了五个人"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1218,31 +1122,220 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l67-fill-exa-2",
+      "id": "block-ex-l67-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l67-fill-exa-2",
+          "id": "ex-l67-talk-1",
           "prompt": {
-            "fr": "Complète : ___可以。 (« Bien sûr, c’est possible »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你搬到这里多久了？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，周末就可以看到了。",
+            "pinyin": "shì, zhōu mò jiù kě yǐ kàn dào le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "不久。年轻人正在准备一个表演。",
+            "pinyin": "bù jiǔ. nián qīng rén zhèng zài zhǔn bèi yí ge biǎo yǎn.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "他们一边练习体育动作，一边听音乐吗？",
+            "pinyin": "tā men yì biān liàn xí tǐ yù dòng zuò, yì biān tīng yīn yuè ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l67-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Nous déménageons demain »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l67-produce"
           ],
           "required": true
         },
-        "sentence": "___可以。",
-        "acceptedAnswers": [
-          "当然"
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "年轻",
+            "pinyin": "nián qīng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "搬",
+            "pinyin": "bān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "当然",
+            "pinyin": "dāng rán",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-talk-3",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l67-talk-3",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "他们一边练习体育动作，一边听音乐吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，周末就可以看到了。",
+            "pinyin": "shì, zhōu mò jiù kě yǐ kàn dào le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "不久。年轻人正在准备一个表演。",
+            "pinyin": "bù jiǔ. nián qīng rén zhèng zài zhǔn bèi yí ge biǎo yǎn.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你搬到这里多久了？",
+            "pinyin": "nǐ bān dào zhè lǐ duō jiǔ le?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 63
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l67-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l67-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l67-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "他们一边练习体育动作，一边听音乐吗？",
+            "pinyin": "tā men yì biān liàn xí tǐ yù dòng zuò, yì biān tīng yīn yuè ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "不久。年轻人正在准备一个表演。",
+            "pinyin": "bù jiǔ. nián qīng rén zhèng zài zhǔn bèi yí ge biǎo yǎn.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你搬到这里多久了？",
+            "pinyin": "nǐ bān dào zhè lǐ duō jiǔ le?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 63
       }
     },
@@ -1337,55 +1430,6 @@
           }
         ],
         "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 63
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l67-read-dia-3",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l67-read-dia-3",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 他们一边练习体育动作，一边听音乐吗？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l67-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Ils répètent des mouvements sportifs tout en écoutant de la musique ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Pas longtemps. Les jeunes préparent un spectacle."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "C’est en pratiquant chaque jour qu’on peut progresser."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",

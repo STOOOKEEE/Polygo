@@ -577,49 +577,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-pick-372",
+      "id": "block-ex-l56-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l56-pick-372",
+          "id": "ex-l56-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l56-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "放",
+            "pinyin": "fàng",
+            "right": {
+              "fr": "poser ; mettre"
+            }
+          },
+          {
+            "id": "b",
+            "left": "更",
+            "pinyin": "gèng",
+            "right": {
+              "fr": "davantage ; plus"
+            }
+          },
+          {
+            "id": "c",
+            "left": "害怕",
+            "pinyin": "hài pà",
+            "right": {
+              "fr": "avoir peur"
+            }
+          },
+          {
+            "id": "d",
+            "left": "满意",
+            "pinyin": "mǎn yì",
+            "right": {
+              "fr": "satisfait"
+            }
+          },
+          {
+            "id": "e",
+            "left": "先",
+            "pinyin": "xiān",
+            "right": {
+              "fr": "d’abord"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 52
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l56-dict-py-372",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l56-dict-py-372",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l56-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "放",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "放 (fàng)"
+              "fr": "fàng"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "越 (yuè)"
+              "fr": "gèng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "先 (xiān)"
+              "fr": "xiān"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "满意 (mǎn yì)"
+              "fr": "nǐ"
             },
             "audio": null
           }
@@ -634,48 +702,106 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-reverse-372",
+      "id": "block-ex-l56-tone-394",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l56-reverse-372",
+          "id": "ex-l56-tone-394",
           "prompt": {
-            "fr": "Comment dit-on « poser ; mettre » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l56-understand"
           ],
           "required": true
         },
+        "promptText": "害怕",
+        "choices": [
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t44"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 52
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l56-pick-600",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l56-pick-600",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l56-understand"
+          ],
+          "required": true
+        },
+        "promptText": "作用",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "先 (xiān)"
+              "fr": "满意 (mǎn yì)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "更 (gèng)"
+              "fr": "害怕 (hài pà)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "害怕 (hài pà)"
+              "fr": "先 (xiān)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "放 (fàng)"
+              "fr": "作用 (zuò yòng)"
             },
             "audio": null
           }
@@ -690,167 +816,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-pick-394",
+      "id": "block-ex-l56-dict-zh-383",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l56-pick-394",
+          "id": "ex-l56-dict-zh-383",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l56-understand"
           ],
           "required": true
         },
-        "promptText": "害怕",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "满意 (mǎn yì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "更 (gèng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "害怕 (hài pà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "先 (xiān)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 52
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l56-reverse-461",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l56-reverse-461",
-          "prompt": {
-            "fr": "Comment dit-on « satisfait » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l56-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "害怕 (hài pà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "满意 (mǎn yì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "先 (xiān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "越 (yuè)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 52
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l56-pick-383",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l56-pick-383",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l56-understand"
-          ],
-          "required": true
-        },
+        "script": "hanzi",
         "promptText": "更",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "更 (gèng)"
+              "fr": "放"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "先 (xiān)"
+              "fr": "先"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "放 (fàng)"
+              "fr": "更"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "满意 (mǎn yì)"
+              "fr": "地"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -944,16 +958,141 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-order-exa-1",
+      "id": "block-ex-l56-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l56-order-exa-1",
+          "id": "ex-l56-translate-exa-2",
           "prompt": {
-            "fr": "Construis « Pose le livre sur la table, s’il te plaît »."
+            "fr": "Traduis en chinois : « Aujourd’hui il fait encore plus froid qu’hier »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l56-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "冷",
+            "pinyin": "lěng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "满意",
+            "pinyin": "mǎn yì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "放",
+            "pinyin": "fàng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "比",
+            "pinyin": "bǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "更",
+            "pinyin": "gèng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "昨天",
+            "pinyin": "zuó tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 52
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l56-talk-2",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l56-talk-2",
+          "prompt": {
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l56-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Tao",
+        "promptText": "有一点。这个词的作用是什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "你饿了吗？",
+            "pinyin": "nǐ è le ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我发现这样说比较好，我们吃饭吧。",
+            "pinyin": "wǒ fā xiàn zhè yàng shuō bǐ jiào hǎo, wǒ men chī fàn ba.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "它使句子更清楚，而且意思越来越自然。",
+            "pinyin": "tā shǐ jù zi gèng qīng chu, ér qiě yì si yuè lái yuè zì rán.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 52
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l56-translate-exa-7",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l56-translate-exa-7",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le sport joue un rôle important pour le corps »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l56-produce"
@@ -963,44 +1102,50 @@
         "tokens": [
           {
             "id": "b",
-            "hanzi": "把",
-            "pinyin": "bǎ",
+            "hanzi": "对",
+            "pinyin": "duì",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "桌",
-            "pinyin": "zhuō",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "id": "c",
+            "hanzi": "身体",
+            "pinyin": "shēn tǐ",
             "audio": null
           },
           {
             "id": "d",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
             "hanzi": "放",
             "pinyin": "fàng",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "书",
-            "pinyin": "shū",
+            "id": "e",
+            "hanzi": "重要",
+            "pinyin": "zhòng yào",
             "audio": null
           },
           {
-            "id": "g",
-            "hanzi": "上",
-            "pinyin": "shàng",
+            "id": "h",
+            "hanzi": "先",
+            "pinyin": "xiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "作用",
+            "pinyin": "zuò yòng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "运动",
+            "pinyin": "yùn dòng",
             "audio": null
           }
         ],
@@ -1010,13 +1155,9 @@
           "c",
           "d",
           "e",
-          "f",
-          "g"
+          "f"
         ],
-        "acceptedVariants": [
-          "请把书放在桌上。",
-          "请把书放在桌上"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1026,13 +1167,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-fill-dia-3",
+      "id": "block-ex-l56-fill-exa-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l56-fill-dia-3",
+          "id": "ex-l56-fill-exa-1",
           "prompt": {
-            "fr": "Complète : 它使句子___清楚，而且意思越来越自然。 (« Il rend la phrase plus claire et le sens devient de plus en plus naturel »)"
+            "fr": "Complète : 请把书___在桌上。 (« Pose le livre sur la table, s’il te plaît »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1042,9 +1183,9 @@
           ],
           "required": true
         },
-        "sentence": "它使句子___清楚，而且意思越来越自然。",
+        "sentence": "请把书___在桌上。",
         "acceptedAnswers": [
-          "更"
+          "放"
         ],
         "caseSensitive": false
       },
@@ -1056,39 +1197,42 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l56-order-exa-3",
+      "id": "block-ex-l56-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l56-order-exa-3",
+          "id": "ex-l56-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « L’enfant a peur du noir »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l56-produce"
+            "l56-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "害怕",
-            "pinyin": "hài pà",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "c",
-            "hanzi": "黑",
-            "pinyin": "hēi",
+            "speaker": "Mina",
+            "hanzi": "它使句子更清楚，而且意思越来越自然。",
+            "pinyin": "tā shǐ jù zi gèng qīng chu, ér qiě yì si yuè lái yuè zì rán.",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
+            "speaker": "Mina",
+            "hanzi": "你饿了吗？",
+            "pinyin": "nǐ è le ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "有一点。这个词的作用是什么？",
+            "pinyin": "yǒu yì diǎn. zhè ge cí de zuò yòng shì shén me?",
             "audio": null
           }
         ],
@@ -1096,75 +1240,11 @@
           "a",
           "b",
           "c"
-        ],
-        "acceptedVariants": [
-          "孩子害怕黑。",
-          "孩子害怕黑"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 52
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l56-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l56-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 顾客对这件衣服很___。 (« Le client est très satisfait de ce vêtement »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l56-produce"
-          ],
-          "required": true
-        },
-        "sentence": "顾客对这件衣服很___。",
-        "acceptedAnswers": [
-          "满意"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 52
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l56-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l56-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : ___检查护照，然后出发。 (« Vérifie d’abord le passeport, puis pars »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l56-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___检查护照，然后出发。",
-        "acceptedAnswers": [
-          "先"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 52
       }
     },
@@ -1190,14 +1270,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Il rend la phrase plus claire et le sens devient de plus en plus naturel."
+              "fr": "Il fait de plus en plus froid."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il fait de plus en plus froid."
+              "fr": "Il rend la phrase plus claire et le sens devient de plus en plus naturel."
             },
             "audio": null
           },
@@ -1209,7 +1289,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1239,26 +1319,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "Le sport joue un rôle important pour le corps."
+              "fr": "Pose le livre sur la table, s’il te plaît."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il fait de plus en plus froid."
+              "fr": "Le sport joue un rôle important pour le corps."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Pose le livre sur la table, s’il te plaît."
+              "fr": "Il fait de plus en plus froid."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",

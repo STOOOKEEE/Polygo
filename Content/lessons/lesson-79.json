@@ -620,11 +620,193 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l79-pick-363",
+      "id": "block-ex-l79-match-meaning",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l79-match-meaning",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "段",
+            "pinyin": "duàn",
+            "right": {
+              "fr": "segment ; tranche"
+            }
+          },
+          {
+            "id": "b",
+            "left": "锻炼",
+            "pinyin": "duàn liàn",
+            "right": {
+              "fr": "faire de l’exercice"
+            }
+          },
+          {
+            "id": "c",
+            "left": "米",
+            "pinyin": "mǐ",
+            "right": {
+              "fr": "riz ; mètre"
+            }
+          },
+          {
+            "id": "d",
+            "left": "南",
+            "pinyin": "nán",
+            "right": {
+              "fr": "sud"
+            }
+          },
+          {
+            "id": "e",
+            "left": "文化",
+            "pinyin": "wén huà",
+            "right": {
+              "fr": "culture"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-dict-py-363",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l79-dict-py-363",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "段",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "nán"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "hái"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "duàn"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-tone-364",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-l79-tone-364",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "promptText": "锻炼",
+        "choices": [
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t44"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-pick-533",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l79-pick-363",
+          "id": "ex-l79-pick-533",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -636,38 +818,96 @@
           ],
           "required": true
         },
-        "promptText": "段",
+        "promptText": "文化",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "米 (mǐ)"
+              "fr": "锻炼 (duàn liàn)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "南 (nán)"
+              "fr": "作业 (zuò yè)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "作业 (zuò yè)"
+              "fr": "文化 (wén huà)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "段 (duàn)"
+              "fr": "影响 (yǐng xiǎng)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-dict-zh-571",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l79-dict-zh-571",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "影响",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "锻炼"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "影响"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "作业"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "文化"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -697,203 +937,33 @@
           {
             "id": "a",
             "label": {
-              "fr": "南 (nán)"
+              "fr": "段 (duàn)"
             },
             "audio": null
           },
           {
             "id": "b",
+            "label": {
+              "fr": "南 (nán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
             "label": {
               "fr": "米 (mǐ)"
             },
             "audio": null
           },
           {
-            "id": "c",
-            "label": {
-              "fr": "段 (duàn)"
-            },
-            "audio": null
-          },
-          {
             "id": "d",
             "label": {
               "fr": "影响 (yǐng xiǎng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-pick-364",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l79-pick-364",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l79-understand"
-          ],
-          "required": true
-        },
-        "promptText": "锻炼",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "影响 (yǐng xiǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "锻炼 (duàn liàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "文化 (wén huà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "作业 (zuò yè)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-reverse-364",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l79-reverse-364",
-          "prompt": {
-            "fr": "Comment dit-on « faire de l’exercice » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l79-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "锻炼 (duàn liàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "影响 (yǐng xiǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "作业 (zuò yè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "文化 (wén huà)"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-pick-463",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l79-pick-463",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l79-understand"
-          ],
-          "required": true
-        },
-        "promptText": "米",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "段 (duàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "南 (nán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "影响 (yǐng xiǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "米 (mǐ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -987,16 +1057,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l79-order-exa-2",
+      "id": "block-ex-l79-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l79-order-exa-2",
+          "id": "ex-l79-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Fais de l’exercice chaque jour »."
+            "fr": "Traduis en chinois : « Lis ce passage, s’il te plaît »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l79-produce"
@@ -1005,100 +1075,27 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "天",
-            "pinyin": "tiān",
+            "id": "f",
+            "hanzi": "米",
+            "pinyin": "mǐ",
             "audio": null
           },
-          {
-            "id": "c",
-            "hanzi": "锻炼",
-            "pinyin": "duàn liàn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "身体",
-            "pinyin": "shēn tǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "每天锻炼身体。",
-          "每天锻炼身体"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l79-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : 这座城市有丰富的___。 (« Cette ville possède une culture riche »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l79-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这座城市有丰富的___。",
-        "acceptedAnswers": [
-          "文化"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l79-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Lis ce passage, s’il te plaît »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l79-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
           {
             "id": "b",
             "hanzi": "读",
             "pinyin": "dú",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "南",
+            "pinyin": "nán",
             "audio": null
           },
           {
@@ -1111,12 +1108,6 @@
             "id": "a",
             "hanzi": "请",
             "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "这",
-            "pinyin": "zhè",
             "audio": null
           },
           {
@@ -1133,10 +1124,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "请读这一段。",
-          "请读这一段"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1146,13 +1134,138 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l79-fill-exa-4",
+      "id": "block-ex-l79-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l79-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l79-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你要离开图书馆了吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "还没有。为了了解历史，我每天练习阅读。",
+            "pinyin": "hái méi yǒu. wèi le liǎo jiě lì shǐ, wǒ měi tiān liàn xí yuè dú.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "讲一个绿色城市的故事。",
+            "pinyin": "jiǎng yí ge lǜ sè chéng shì de gù shi.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这封信讲了什么？",
+            "pinyin": "zhè fēng xìn jiǎng le shén me?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-translate-exa-7",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l79-translate-exa-7",
+          "prompt": {
+            "fr": "Traduis en chinois : « Les devoirs d’aujourd’hui ne sont pas nombreux »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l79-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "多",
+            "pinyin": "duō",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "作业",
+            "pinyin": "zuò yè",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "影响",
+            "pinyin": "yǐng xiǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "米",
+            "pinyin": "mǐ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 75
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l79-fill-exa-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l79-fill-exa-4",
+          "id": "ex-l79-fill-exa-2",
           "prompt": {
-            "fr": "Complète : 广州在中国的___方。 (« Canton se trouve dans le sud de la Chine »)"
+            "fr": "Complète : 每天___身体。 (« Fais de l’exercice chaque jour »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1162,9 +1275,9 @@
           ],
           "required": true
         },
-        "sentence": "广州在中国的___方。",
+        "sentence": "每天___身体。",
         "acceptedAnswers": [
-          "南"
+          "锻炼"
         ],
         "caseSensitive": false
       },
@@ -1176,147 +1289,103 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l79-order-exa-6",
+      "id": "block-ex-l79-dialogue-1-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l79-order-exa-6",
+          "id": "ex-l79-dialogue-1-3",
           "prompt": {
-            "fr": "Construis « La météo peut influencer notre programme »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l79-produce"
+            "l79-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "天气",
-            "pinyin": "tiān qì",
-            "audio": null
-          },
+        "lines": [
           {
             "id": "b",
-            "hanzi": "会",
-            "pinyin": "huì",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "计",
-            "pinyin": "jì",
+            "speaker": "Tao",
+            "hanzi": "还没有。为了了解历史，我每天练习阅读。",
+            "pinyin": "hái méi yǒu. wèi le liǎo jiě lì shǐ, wǒ měi tiān liàn xí yuè dú.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "影响",
-            "pinyin": "yǐng xiǎng",
+            "speaker": "Mina",
+            "hanzi": "这封信讲了什么？",
+            "pinyin": "zhè fēng xìn jiǎng le shén me?",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "划",
-            "pinyin": "huà",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你要离开图书馆了吗？",
+            "pinyin": "nǐ yào lí kāi tú shū guǎn le ma?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "天气会影响我们的计划。",
-          "天气会影响我们的计划"
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 75
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l79-speak-exa-3",
+      "id": "block-ex-l79-read-exa-1",
       "spec": {
-        "kind": "speaking",
+        "kind": "choice",
         "header": {
-          "id": "ex-l79-speak-exa-3",
+          "id": "ex-l79-read-exa-1",
           "prompt": {
-            "fr": "Dis « Un mètre équivaut à cent centimètres »."
+            "fr": "Que signifie la phrase : 请读这一段。"
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l79-produce"
+            "l79-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "一米等于一百厘米。",
-        "referencePinyin": "yì mǐ děng yú yì bǎi lí mǐ.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "一米等于一百厘米。"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Canton se trouve dans le sud de la Chine."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "De quoi parle cette lettre ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Lis ce passage, s’il te plaît."
+            },
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 75
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l79-speak-exa-7",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l79-speak-exa-7",
-          "prompt": {
-            "fr": "Dis « Les devoirs d’aujourd’hui ne sont pas nombreux »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l79-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "今天的作业不多。",
-        "referencePinyin": "jīn tiān de zuò yè bù duō.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "今天的作业不多。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 75
       }
     },

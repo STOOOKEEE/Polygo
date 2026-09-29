@@ -621,49 +621,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-pick-365",
+      "id": "block-ex-l93-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l93-pick-365",
+          "id": "ex-l93-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l93-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "多么",
+            "pinyin": "duō me",
+            "right": {
+              "fr": "tellement ; si"
+            }
+          },
+          {
+            "id": "b",
+            "left": "面包",
+            "pinyin": "miàn bāo",
+            "right": {
+              "fr": "pain"
+            }
+          },
+          {
+            "id": "c",
+            "left": "爬山",
+            "pinyin": "pá shān",
+            "right": {
+              "fr": "faire de la randonnée en montagne"
+            }
+          },
+          {
+            "id": "d",
+            "left": "奇怪",
+            "pinyin": "qí guài",
+            "right": {
+              "fr": "étrange"
+            }
+          },
+          {
+            "id": "e",
+            "left": "世界",
+            "pinyin": "shì jiè",
+            "right": {
+              "fr": "monde"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 89
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l93-dict-py-365",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l93-dict-py-365",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l93-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "多么",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "世界 (shì jiè)"
+              "fr": "shì jiè"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "多么 (duō me)"
+              "fr": "duō me"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "面包 (miàn bāo)"
+              "fr": "qí guài"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "奇怪 (qí guài)"
+              "fr": "miàn bāo"
             },
             "audio": null
           }
@@ -678,27 +746,85 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-reverse-365",
+      "id": "block-ex-l93-tone-464",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l93-reverse-365",
+          "id": "ex-l93-tone-464",
           "prompt": {
-            "fr": "Comment dit-on « tellement ; si » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l93-understand"
           ],
           "required": true
         },
+        "promptText": "面包",
+        "choices": [
+          {
+            "id": "t21",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t41"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 89
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l93-pick-501",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l93-pick-501",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l93-understand"
+          ],
+          "required": true
+        },
+        "promptText": "世界",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "多么 (duō me)"
+              "fr": "世界 (shì jiè)"
             },
             "audio": null
           },
@@ -712,14 +838,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "面包 (miàn bāo)"
+              "fr": "爬山 (pá shān)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "爬山 (pá shān)"
+              "fr": "面包 (miàn bāo)"
             },
             "audio": null
           }
@@ -734,23 +860,22 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-pick-502",
+      "id": "block-ex-l93-reverse-502",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l93-pick-502",
+          "id": "ex-l93-reverse-502",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Comment dit-on « mince » en chinois ?"
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Choisis le mot chinois qui convient."
           },
           "objectiveIDs": [
             "l93-understand"
           ],
           "required": true
         },
-        "promptText": "瘦",
         "choices": [
           {
             "id": "a",
@@ -762,14 +887,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "多么 (duō me)"
+              "fr": "奇怪 (qí guài)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "爬山 (pá shān)"
+              "fr": "多么 (duō me)"
             },
             "audio": null
           },
@@ -791,109 +916,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-reverse-528",
+      "id": "block-ex-l93-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l93-reverse-528",
+          "id": "ex-l93-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « dix mille » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l93-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "瘦 (shòu)"
-            },
-            "audio": null
+            "left": "瘦",
+            "pinyin": null,
+            "right": {
+              "fr": "shòu"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "爬山 (pá shān)"
-            },
-            "audio": null
+            "left": "万",
+            "pinyin": null,
+            "right": {
+              "fr": "wàn"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "万 (wàn)"
-            },
-            "audio": null
+            "left": "注意",
+            "pinyin": null,
+            "right": {
+              "fr": "zhù yì"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "奇怪 (qí guài)"
-            },
-            "audio": null
+            "left": "自己",
+            "pinyin": null,
+            "right": {
+              "fr": "zì jǐ"
+            }
+          },
+          {
+            "id": "e",
+            "left": "的",
+            "pinyin": null,
+            "right": {
+              "fr": "de"
+            }
           }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 89
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l93-reverse-464",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l93-reverse-464",
-          "prompt": {
-            "fr": "Comment dit-on « pain » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l93-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "奇怪 (qí guài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "面包 (miàn bāo)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "爬山 (pá shān)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "世界 (shì jiè)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -987,16 +1067,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-order-exa-7",
+      "id": "block-ex-l93-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l93-order-exa-7",
+          "id": "ex-l93-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Cette ville compte dix mille habitants »."
+            "fr": "Traduis en chinois : « Comme c’est beau ici ! »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l93-produce"
@@ -1004,134 +1084,10 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "g",
-            "hanzi": "人",
-            "pinyin": "rén",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
           {
             "id": "d",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "一",
-            "pinyin": "yí",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "城市",
-            "pinyin": "chéng shì",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "万",
-            "pinyin": "wàn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "这个城市有一万人。",
-          "这个城市有一万人"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 89
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l93-fill-exa-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l93-fill-exa-5",
-          "prompt": {
-            "fr": "Complète : 我们一起看看这个___。 (« Découvrons ce monde ensemble »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l93-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我们一起看看这个___。",
-        "acceptedAnswers": [
-          "世界"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 89
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l93-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l93-order-exa-1",
-          "prompt": {
-            "fr": "Construis « Comme c’est beau ici ! »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l93-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "多么",
-            "pinyin": "duō me",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "里",
-            "pinyin": "lǐ",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
             "audio": null
           },
           {
@@ -1141,9 +1097,33 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "多么",
+            "pinyin": "duō me",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "万",
+            "pinyin": "wàn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "爬山",
+            "pinyin": "pá shān",
             "audio": null
           }
         ],
@@ -1154,10 +1134,125 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "这里多么漂亮啊！",
-          "这里多么漂亮啊"
-        ]
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 89
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l93-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l93-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l93-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "最近你的学习怎么样？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我自己安排时间，已经不着急了。",
+            "pinyin": "wǒ zì jǐ ān pái shí jiān, yǐ jīng bù zháo jí le.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "注意了。祝你也找到自己的节奏。",
+            "pinyin": "zhù yì le. zhù nǐ yě zhǎo dào zì jǐ de jié zòu.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你注意休息了吗？",
+            "pinyin": "nǐ zhù yì xiū xi le ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 89
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l93-translate-exa-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l93-translate-exa-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le week-end, nous faisons une randonnée en montagne »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l93-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "爬山",
+            "pinyin": "pá shān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "世界",
+            "pinyin": "shì jiè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "奇怪",
+            "pinyin": "qí guài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "周末",
+            "pinyin": "zhōu mò",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1197,13 +1292,66 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l93-fill-exa-2",
+      "id": "block-ex-l93-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l93-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l93-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你注意休息了吗？",
+            "pinyin": "nǐ zhù yì xiū xi le ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "我自己安排时间，已经不着急了。",
+            "pinyin": "wǒ zì jǐ ān pái shí jiān, yǐ jīng bù zháo jí le.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "最近你的学习怎么样？",
+            "pinyin": "zuì jìn nǐ de xué xí zěn me yàng?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 89
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l93-fill-rea-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l93-fill-exa-2",
+          "id": "ex-l93-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 早饭我吃了两片___。 (« J’ai mangé deux tranches de pain au petit déjeuner »)"
+            "fr": "Complète : 他___每天的节奏，也祝朋友学习顺利。 (« Il fait attention au rythme de chaque journée et souhaite aussi de bonnes études à son ami »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1213,79 +1361,15 @@
           ],
           "required": true
         },
-        "sentence": "早饭我吃了两片___。",
+        "sentence": "他___每天的节奏，也祝朋友学习顺利。",
         "acceptedAnswers": [
-          "面包"
+          "注意"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
+        "stage": "reuse",
         "skill": "production",
-        "lessonDay": 89
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l93-speak-exa-3",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l93-speak-exa-3",
-          "prompt": {
-            "fr": "Dis « Le week-end, nous faisons une randonnée en montagne »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l93-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "周末我们一起爬山。",
-        "referencePinyin": "zhōu mò wǒ men yì qǐ pá shān.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "周末我们一起爬山。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 89
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l93-speak-exa-4",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l93-speak-exa-4",
-          "prompt": {
-            "fr": "Dis « Cette question est un peu étrange »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l93-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "这个问题有点奇怪。",
-        "referencePinyin": "zhè ge wèn tí yǒu diǎn qí guài.",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "这个问题有点奇怪。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
         "lessonDay": 89
       }
     },

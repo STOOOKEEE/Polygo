@@ -10,7 +10,7 @@ conception séparée, explicitement marquée `design-reference-only`.
 
 - Le cours contient 94 leçons dans 9 unités : 4 leçons d’introduction
   protégées et 90 séances planifiées.
-- Le contenu contient 1 655 exercices (27 introduction + 1 628 programme), 94
+- Le contenu contient 1 647 exercices (27 introduction + 1 620 programme), 94
   histoires inline, 196 paragraphes et 605 cartes distinctes (600 canoniques +
   5 extras). Les 897 associations leçon–carte sont fermées par le générateur.
 - Chaque séance quotidienne vise 15 minutes : 12 minutes de cours et 3 minutes

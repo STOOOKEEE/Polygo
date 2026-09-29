@@ -620,49 +620,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l60-pick-413",
+      "id": "block-ex-l60-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l60-pick-413",
+          "id": "ex-l60-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l60-understand"
           ],
           "required": true
         },
-        "promptText": "季节",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "花",
+            "pinyin": "huā",
+            "right": {
+              "fr": "fleur ; dépenser"
+            }
+          },
+          {
+            "id": "b",
+            "left": "花园",
+            "pinyin": "huā yuán",
+            "right": {
+              "fr": "jardin"
+            }
+          },
+          {
+            "id": "c",
+            "left": "换",
+            "pinyin": "huàn",
+            "right": {
+              "fr": "changer ; échanger"
+            }
+          },
+          {
+            "id": "d",
+            "left": "黄",
+            "pinyin": "huáng",
+            "right": {
+              "fr": "jaune"
+            }
+          },
+          {
+            "id": "e",
+            "left": "季节",
+            "pinyin": "jì jié",
+            "right": {
+              "fr": "saison"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-dict-py-399",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l60-dict-py-399",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l60-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "花园",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "季节 (jì jié)"
+              "fr": "huā yuán"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "一直 (yì zhí)"
+              "fr": "yì zhí"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "花园 (huā yuán)"
+              "fr": "jì jié"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "久 (jiǔ)"
+              "fr": "xí guàn"
             },
             "audio": null
           }
@@ -677,53 +745,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l60-reverse-399",
+      "id": "block-ex-l60-tone-399",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l60-reverse-399",
+          "id": "ex-l60-tone-399",
           "prompt": {
-            "fr": "Comment dit-on « jardin » en chinois ?"
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l60-understand"
           ],
           "required": true
         },
+        "promptText": "花园",
         "choices": [
           {
-            "id": "a",
+            "id": "t12",
             "label": {
-              "fr": "一直 (yì zhí)"
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t13",
             "label": {
-              "fr": "季节 (jì jié)"
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t22",
             "label": {
-              "fr": "久 (jiǔ)"
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t42",
             "label": {
-              "fr": "花园 (huā yuán)"
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "t12"
       },
       "metadata": {
         "stage": "discover",
@@ -768,131 +837,77 @@
           {
             "id": "c",
             "label": {
-              "fr": "花 (huā)"
+              "fr": "换 (huàn)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "换 (huàn)"
+              "fr": "花 (huā)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-dict-zh-405",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l60-dict-zh-405",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l60-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "换",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "花"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "久"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "换"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "黄"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-reverse-413",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l60-reverse-413",
-          "prompt": {
-            "fr": "Comment dit-on « saison » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l60-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "花园 (huā yuán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "季节 (jì jié)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "一直 (yì zhí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "换 (huàn)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-reverse-398",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l60-reverse-398",
-          "prompt": {
-            "fr": "Comment dit-on « fleur ; dépenser » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l60-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "花 (huā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "久 (jiǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "换 (huàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "黄 (huáng)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -986,16 +1001,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l60-order-exa-1",
+      "id": "block-ex-l60-translate-exa-3",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l60-order-exa-1",
+          "id": "ex-l60-translate-exa-3",
           "prompt": {
-            "fr": "Construis « Il y a beaucoup de fleurs dans le jardin »."
+            "fr": "Traduis en chinois : « Je veux changer de chemise »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l60-produce"
@@ -1003,115 +1018,10 @@
           "required": true
         },
         "tokens": [
-          {
-            "id": "a",
-            "hanzi": "花园",
-            "pinyin": "huā yuán",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "里",
-            "pinyin": "lǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "多",
-            "pinyin": "duō",
-            "audio": null
-          },
           {
             "id": "f",
-            "hanzi": "花",
-            "pinyin": "huā",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "花园里有很多花。",
-          "花园里有很多花"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-fill-exa-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l60-fill-exa-4",
-          "prompt": {
-            "fr": "Complète : 她穿着一件___色衣服。 (« Elle porte un vêtement jaune »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l60-produce"
-          ],
-          "required": true
-        },
-        "sentence": "她穿着一件___色衣服。",
-        "acceptedAnswers": [
-          "黄"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l60-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Je veux changer de chemise »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l60-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "件",
-            "pinyin": "jiàn",
+            "hanzi": "一直",
+            "pinyin": "yì zhí",
             "audio": null
           },
           {
@@ -1137,6 +1047,18 @@
             "hanzi": "我想",
             "pinyin": "wǒ xiǎng",
             "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "久",
+            "pinyin": "jiǔ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
           }
         ],
         "correctOrder": [
@@ -1146,74 +1068,275 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我想换一件衬衫。",
-          "我想换一件衬衫"
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l60-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l60-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你以前周末做什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "以前我总是在家，以后想去旅行。",
+            "pinyin": "yǐ qián wǒ zǒng shì zài jiā, yǐ hòu xiǎng qù lǚ xíng.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "会，学习以后再安排旅行。",
+            "pinyin": "huì, xué xí yǐ hòu zài ān pái lǚ xíng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你现在还会一直学习吗？",
+            "pinyin": "nǐ xiàn zài hái huì yì zhí xué xí ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-translate-exa-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l60-translate-exa-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il y a beaucoup de fleurs dans le jardin »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l60-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "g",
+            "hanzi": "久",
+            "pinyin": "jiǔ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "季节",
+            "pinyin": "jì jié",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "多",
+            "pinyin": "duō",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "花园",
+            "pinyin": "huā yuán",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "花",
+            "pinyin": "huā",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-fill-exa-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l60-fill-exa-2",
+          "prompt": {
+            "fr": "Complète : 我家有一个___。 (« Ma maison a un jardin »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l60-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我家有一个___。",
+        "acceptedAnswers": [
+          "花园"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 56
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l60-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l60-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l60-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "以前我总是在家，以后想去旅行。",
+            "pinyin": "yǐ qián wǒ zǒng shì zài jiā, yǐ hòu xiǎng qù lǚ xíng.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你现在还会一直学习吗？",
+            "pinyin": "nǐ xiàn zài hái huì yì zhí xué xí ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你以前周末做什么？",
+            "pinyin": "nǐ yǐ qián zhōu mò zuò shén me?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
         ]
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 56
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l60-fill-exa-5",
+      "id": "block-ex-l60-read-exa-5",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "choice",
         "header": {
-          "id": "ex-l60-fill-exa-5",
+          "id": "ex-l60-read-exa-5",
           "prompt": {
-            "fr": "Complète : 春天是我最喜欢的___。 (« Le printemps est ma saison préférée »)"
+            "fr": "Que signifie la phrase : 春天是我最喜欢的季节。"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l60-produce"
+            "l60-understand"
           ],
           "required": true
         },
-        "sentence": "春天是我最喜欢的___。",
-        "acceptedAnswers": [
-          "季节"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Que faisais-tu le week-end avant ?"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Elle porte un vêtement jaune."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le printemps est ma saison préférée."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctChoiceID": "c"
       },
       "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-fill-exa-6",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l60-fill-exa-6",
-          "prompt": {
-            "fr": "Complète : 好___没有见到你了。 (« Cela fait longtemps que je ne t’ai pas vu »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l60-produce"
-          ],
-          "required": true
-        },
-        "sentence": "好___没有见到你了。",
-        "acceptedAnswers": [
-          "久"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 56
       }
     },
@@ -1244,55 +1367,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 56
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l60-read-exa-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l60-read-exa-1",
-          "prompt": {
-            "fr": "Que signifie la phrase : 花园里有很多花。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l60-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Ma maison a un jardin."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Il y a beaucoup de fleurs dans le jardin."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Il étudie sans relâche et prévoit de voyager plus tard."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 56
       }
     },

@@ -621,49 +621,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-pick-500",
+      "id": "block-ex-l83-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l83-pick-500",
+          "id": "ex-l83-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l83-understand"
           ],
           "required": true
         },
-        "promptText": "使",
+        "pairs": [
+          {
+            "id": "a",
+            "left": "阿姨",
+            "pinyin": "ā yí",
+            "right": {
+              "fr": "tante ; madame"
+            }
+          },
+          {
+            "id": "b",
+            "left": "半",
+            "pinyin": "bàn",
+            "right": {
+              "fr": "moitié ; demi"
+            }
+          },
+          {
+            "id": "c",
+            "left": "表示",
+            "pinyin": "biǎo shì",
+            "right": {
+              "fr": "exprimer ; indiquer"
+            }
+          },
+          {
+            "id": "d",
+            "left": "别人",
+            "pinyin": "bié rén",
+            "right": {
+              "fr": "autrui ; les autres"
+            }
+          },
+          {
+            "id": "e",
+            "left": "上网",
+            "pinyin": "shàng wǎng",
+            "right": {
+              "fr": "aller sur Internet"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-dict-py-301",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l83-dict-py-301",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "阿姨",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "半 (bàn)"
+              "fr": "bié rén"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "阿姨 (ā yí)"
+              "fr": "shàng wǎng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "忘记 (wàng jì)"
+              "fr": "biǎo shì"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "使 (shǐ)"
+              "fr": "ā yí"
             },
             "audio": null
           }
@@ -678,53 +746,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-reverse-301",
+      "id": "block-ex-l83-tone-311",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l83-reverse-301",
+          "id": "ex-l83-tone-311",
           "prompt": {
-            "fr": "Comment dit-on « tante ; madame » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l83-understand"
           ],
           "required": true
         },
+        "promptText": "半",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "忘记 (wàng jì)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "表示 (biǎo shì)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "阿姨 (ā yí)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "上网 (shàng wǎng)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -762,14 +831,14 @@
           {
             "id": "b",
             "label": {
-              "fr": "别人 (bié rén)"
+              "fr": "表示 (biǎo shì)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "表示 (biǎo shì)"
+              "fr": "别人 (bié rén)"
             },
             "audio": null
           },
@@ -777,124 +846,69 @@
             "id": "d",
             "label": {
               "fr": "上网 (shàng wǎng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-dict-zh-529",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l83-dict-zh-529",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis les caractères."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "script": "hanzi",
+        "promptText": "忘记",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "别人"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "忘记"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "阿姨"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "表示"
             },
             "audio": null
           }
         ],
         "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 79
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l83-reverse-311",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l83-reverse-311",
-          "prompt": {
-            "fr": "Comment dit-on « moitié ; demi » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l83-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "半 (bàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "使 (shǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "阿姨 (ā yí)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "别人 (bié rén)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 79
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l83-pick-301",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l83-pick-301",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l83-understand"
-          ],
-          "required": true
-        },
-        "promptText": "阿姨",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "忘记 (wàng jì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "表示 (biǎo shì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "上网 (shàng wǎng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "阿姨 (ā yí)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -988,16 +1002,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-order-exa-2",
+      "id": "block-ex-l83-translate-exa-2",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l83-order-exa-2",
+          "id": "ex-l83-translate-exa-2",
           "prompt": {
-            "fr": "Construis « J’ai attendu une demi-heure »."
+            "fr": "Traduis en chinois : « J’ai attendu une demi-heure »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l83-produce"
@@ -1006,21 +1020,15 @@
         },
         "tokens": [
           {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
             "id": "b",
             "hanzi": "等",
             "pinyin": "děng",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "小时",
-            "pinyin": "xiǎo shí",
             "audio": null
           },
           {
@@ -1030,15 +1038,33 @@
             "audio": null
           },
           {
+            "id": "g",
+            "hanzi": "上网",
+            "pinyin": "shàng wǎng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "阿姨",
+            "pinyin": "ā yí",
+            "audio": null
+          },
+          {
             "id": "d",
             "hanzi": "半",
             "pinyin": "bàn",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "f",
+            "hanzi": "小时",
+            "pinyin": "xiǎo shí",
             "audio": null
           }
         ],
@@ -1050,10 +1076,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "我等了半个小时。",
-          "我等了半个小时"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1063,46 +1086,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-fill-exa-3",
+      "id": "block-ex-l83-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l83-fill-exa-3",
+          "id": "ex-l83-talk-1",
           "prompt": {
-            "fr": "Complète : 这个标志___出口。 (« Ce panneau indique la sortie »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l83-produce"
+            "l83-understand"
           ],
           "required": true
         },
-        "sentence": "这个标志___出口。",
-        "acceptedAnswers": [
-          "表示"
+        "speaker": "Mina",
+        "promptText": "你听得见我的声音吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "好了。你穿哪一双鞋？",
+            "pinyin": "hǎo le. nǐ chuān nǎ yì shuāng xié?",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "这次调整会使通话更清楚。",
+            "pinyin": "zhè cì tiáo zhěng huì shǐ tōng huà gèng qīng chu.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "声音太小，我先上网检查。",
+            "pinyin": "shēng yīn tài xiǎo, wǒ xiān shàng wǎng jiǎn chá.",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 79
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-order-exa-4",
+      "id": "block-ex-l83-translate-exa-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l83-order-exa-4",
+          "id": "ex-l83-translate-exa-5",
           "prompt": {
-            "fr": "Construis « Les autres sont tous rentrés »."
+            "fr": "Traduis en chinois : « Je vais sur Internet à la maison le soir »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l83-produce"
@@ -1111,27 +1152,39 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "回家",
-            "pinyin": "huí jiā",
+            "id": "d",
+            "hanzi": "上网",
+            "pinyin": "shàng wǎng",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "c",
+            "hanzi": "在家",
+            "pinyin": "zài jiā",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "阿姨",
+            "pinyin": "ā yí",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "别人",
-            "pinyin": "bié rén",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "忘记",
+            "pinyin": "wàng jì",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "都",
-            "pinyin": "dōu",
+            "hanzi": "晚上",
+            "pinyin": "wǎn shang",
             "audio": null
           }
         ],
@@ -1141,10 +1194,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "别人都回家了。",
-          "别人都回家了"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1154,43 +1204,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l83-fill-exa-1",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l83-fill-exa-1",
-          "prompt": {
-            "fr": "Complète : ___在商店。 (« La tante est au magasin »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l83-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___在商店。",
-        "acceptedAnswers": [
-          "阿姨"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 79
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l83-order-exa-7",
+      "id": "block-ex-l83-order-exa-1",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l83-order-exa-7",
+          "id": "ex-l83-order-exa-1",
           "prompt": {
-            "fr": "Construis « N’oublie pas de prendre les clés »."
+            "fr": "Construis « La tante est au magasin »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1202,51 +1222,90 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "钥",
-            "pinyin": "yào",
+            "id": "a",
+            "hanzi": "阿姨",
+            "pinyin": "ā yí",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "带",
-            "pinyin": "dài",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "忘记",
-            "pinyin": "wàng jì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "匙",
-            "pinyin": "shi",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "别",
-            "pinyin": "bié",
+            "hanzi": "在",
+            "pinyin": "zài",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
+          "c"
         ],
         "acceptedVariants": [
-          "别忘记带钥匙。",
-          "别忘记带钥匙"
+          "阿姨在商店。",
+          "阿姨在商店"
         ]
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
+        "lessonDay": 79
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l83-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l83-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l83-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "声音太小，我先上网检查。",
+            "pinyin": "shēng yīn tài xiǎo, wǒ xiān shàng wǎng jiǎn chá.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "这次调整会使通话更清楚。",
+            "pinyin": "zhè cì tiáo zhěng huì shǐ tōng huà gèng qīng chu.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你听得见我的声音吗？",
+            "pinyin": "nǐ tīng de jiàn wǒ de shēng yīn ma?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
         "lessonDay": 79
       }
     },
@@ -1302,14 +1361,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Le son est trop faible, je vais d’abord vérifier en ligne."
+              "fr": "C’est bon. Quelle paire de chaussures portes-tu ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "C’est bon. Quelle paire de chaussures portes-tu ?"
+              "fr": "Le son est trop faible, je vais d’abord vérifier en ligne."
             },
             "audio": null
           },
@@ -1321,7 +1380,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",

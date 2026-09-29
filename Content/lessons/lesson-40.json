@@ -634,49 +634,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-pick-114",
+      "id": "block-ex-l40-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l40-pick-114",
+          "id": "ex-l40-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l40-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "五",
+            "pinyin": "wǔ",
+            "right": {
+              "fr": "cinq"
+            }
+          },
+          {
+            "id": "b",
+            "left": "船",
+            "pinyin": "chuán",
+            "right": {
+              "fr": "bateau"
+            }
+          },
+          {
+            "id": "c",
+            "left": "等",
+            "pinyin": "děng",
+            "right": {
+              "fr": "attendre"
+            }
+          },
+          {
+            "id": "d",
+            "left": "快",
+            "pinyin": "kuài",
+            "right": {
+              "fr": "rapide ; bientôt"
+            }
+          },
+          {
+            "id": "e",
+            "left": "它",
+            "pinyin": "tā",
+            "right": {
+              "fr": "il/elle (objet ou animal)"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-dict-py-114",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l40-dict-py-114",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "五",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "五 (wǔ)"
+              "fr": "wǔ"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "找 (zhǎo)"
+              "fr": "tā"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "快 (kuài)"
+              "fr": "kuài"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "船 (chuán)"
+              "fr": "chuán"
             },
             "audio": null
           }
@@ -691,72 +759,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-reverse-114",
+      "id": "block-ex-l40-tone-163",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l40-reverse-114",
+          "id": "ex-l40-tone-163",
           "prompt": {
-            "fr": "Comment dit-on « cinq » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l40-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "它 (tā)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "快 (kuài)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "船 (chuán)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "五 (wǔ)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "d"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-pick-163",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l40-pick-163",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l40-understand"
@@ -766,35 +778,35 @@
         "promptText": "船",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "等 (děng)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
             "label": {
-              "fr": "快 (kuài)"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "t3",
             "label": {
-              "fr": "船 (chuán)"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "t4",
             "label": {
-              "fr": "它 (tā)"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "t2"
       },
       "metadata": {
         "stage": "discover",
@@ -804,110 +816,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-reverse-163",
+      "id": "block-ex-l40-dict-zh-213",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l40-reverse-163",
+          "id": "ex-l40-dict-zh-213",
           "prompt": {
-            "fr": "Comment dit-on « bateau » en chinois ?"
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l40-understand"
           ],
           "required": true
         },
+        "script": "hanzi",
+        "promptText": "快",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "五 (wǔ)"
+              "fr": "船"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "船 (chuán)"
+              "fr": "找"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "等 (děng)"
+              "fr": "等"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "找 (zhǎo)"
+              "fr": "快"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-pick-356",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l40-pick-356",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l40-understand"
-          ],
-          "required": true
-        },
-        "promptText": "地图",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "地图 (dì tú)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "五 (wǔ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "等 (děng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "船 (chuán)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -951,19 +908,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "它 (tā)"
+              "fr": "地图 (dì tú)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "地图 (dì tú)"
+              "fr": "它 (tā)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -1057,16 +1014,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-order-exa-7",
+      "id": "block-ex-l40-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l40-order-exa-7",
+          "id": "ex-l40-translate-exa-1",
           "prompt": {
-            "fr": "Construis « Regarde la carte, s’il te plaît »."
+            "fr": "Traduis en chinois : « J’ai cinq pommes »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l40-produce"
@@ -1075,99 +1032,9 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "地图",
-            "pinyin": "dì tú",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "看",
-            "pinyin": "kàn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "请看地图。",
-          "请看地图"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-fill-dia-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l40-fill-dia-2",
-          "prompt": {
-            "fr": "Complète : ___不能打开，问题比较大。 (« Il ne peut pas s’ouvrir ; le problème est assez important »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___不能打开，问题比较大。",
-        "acceptedAnswers": [
-          "它"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-order-exa-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l40-order-exa-1",
-          "prompt": {
-            "fr": "Construis « J’ai cinq pommes »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "苹果",
-            "pinyin": "píng guǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "五",
-            "pinyin": "wǔ",
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
             "audio": null
           },
           {
@@ -1177,15 +1044,33 @@
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
             "id": "b",
             "hanzi": "有",
             "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "等",
+            "pinyin": "děng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "五",
+            "pinyin": "wǔ",
             "audio": null
           }
         ],
@@ -1196,10 +1081,7 @@
           "d",
           "e"
         ],
-        "acceptedVariants": [
-          "我有五个苹果。",
-          "我有五个苹果"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1209,13 +1091,241 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-fill-exa-2",
+      "id": "block-ex-l40-talk-1",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l40-talk-1",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "啊，电脑怎么了？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我把电脑拿给经理，他会帮助我们。",
+            "pinyin": "wǒ bǎ diàn nǎo ná gěi jīng lǐ， tā huì bāng zhù wǒ men。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "它不能打开，问题比较大。",
+            "pinyin": "tā bù néng dǎ kāi， wèn tí bǐ jiào dà。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "不知道。现在我认真地检查它。",
+            "pinyin": "bù zhī dào。 xiàn zài wǒ rèn zhēn dì jiǎn chá tā。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-translate-exa-5",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l40-translate-exa-5",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il est sous la table »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "面",
+            "pinyin": "miàn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "地图",
+            "pinyin": "dì tú",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "五",
+            "pinyin": "wǔ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "下",
+            "pinyin": "xià",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "桌子",
+            "pinyin": "zhuō zi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "它",
+            "pinyin": "tā",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-listen-exa-7",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l40-listen-exa-7",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son sens."
+          },
+          "instruction": {
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "promptText": "请看地图。",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Regarde la carte, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Ouvre la porte, s’il te plaît."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Par qui a-t-il été fermé ?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-dialogue-1-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-l40-dialogue-1-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "我们有什么办法？",
+            "pinyin": "wǒ men yǒu shén me bàn fǎ？",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "啊，电脑怎么了？",
+            "pinyin": "a， diàn nǎo zěn me le？",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "它不能打开，问题比较大。",
+            "pinyin": "tā bù néng dǎ kāi， wèn tí bǐ jiào dà。",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-fill-rea-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l40-fill-exa-2",
+          "id": "ex-l40-fill-rea-2",
           "prompt": {
-            "fr": "Complète : ___在河上。 (« Le bateau est sur la rivière »)"
+            "fr": "Complète : 电脑___他打开以后，大家都笑了。 (« Après que l’ordinateur est ouvert, tout le monde sourit »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1225,133 +1335,65 @@
           ],
           "required": true
         },
-        "sentence": "___在河上。",
+        "sentence": "电脑___他打开以后，大家都笑了。",
         "acceptedAnswers": [
-          "船"
+          "被"
         ],
         "caseSensitive": false
       },
       "metadata": {
-        "stage": "guided",
+        "stage": "reuse",
         "skill": "production",
         "lessonDay": 36
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-order-exa-3",
+      "id": "block-ex-l40-listen-rea-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l40-order-exa-3",
+          "id": "ex-l40-listen-rea-1",
           "prompt": {
-            "fr": "Construis « Attends-moi, s’il te plaît »."
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l40-produce"
+            "l40-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
+        "promptText": "员工把电脑给经理，经理认真地检查。",
+        "choices": [
           {
             "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
+            "label": {
+              "fr": "Je donne l’ordinateur au manager ; il nous aidera."
+            },
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "等",
-            "pinyin": "děng",
+            "label": {
+              "fr": "Ce problème a été découvert par le professeur."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "L’employé donne l’ordinateur au manager, qui l’examine attentivement."
+            },
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "请等我。",
-          "请等我"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-speak-exa-4",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l40-speak-exa-4",
-          "prompt": {
-            "fr": "Dis « Il va bientôt pleuvoir »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "快下雨了。",
-        "referencePinyin": "kuài xià yǔ le。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "快下雨了。"
-        ],
-        "allowSelfRating": true
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-speak-exa-6",
-      "spec": {
-        "kind": "speaking",
-        "header": {
-          "id": "ex-l40-speak-exa-6",
-          "prompt": {
-            "fr": "Dis « Je cherche mon téléphone »."
-          },
-          "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": false
-        },
-        "referenceText": "我在找我的手机。",
-        "referencePinyin": "wǒ zài zhǎo wǒ de shǒu jī。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我在找我的手机。"
-        ],
-        "allowSelfRating": true
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 36
       }
     },

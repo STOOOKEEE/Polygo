@@ -575,49 +575,117 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-pick-330",
+      "id": "block-ex-l59-match-meaning",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l59-pick-330",
+          "id": "ex-l59-match-meaning",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son sens."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l59-understand"
           ],
           "required": true
         },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "草",
+            "pinyin": "cǎo",
+            "right": {
+              "fr": "herbe"
+            }
+          },
+          {
+            "id": "b",
+            "left": "冬",
+            "pinyin": "dōng",
+            "right": {
+              "fr": "hiver"
+            }
+          },
+          {
+            "id": "c",
+            "left": "画",
+            "pinyin": "huà",
+            "right": {
+              "fr": "dessiner ; peinture"
+            }
+          },
+          {
+            "id": "d",
+            "left": "坏",
+            "pinyin": "huài",
+            "right": {
+              "fr": "mauvais ; cassé"
+            }
+          },
+          {
+            "id": "e",
+            "left": "绿",
+            "pinyin": "lǜ",
+            "right": {
+              "fr": "vert"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-dict-py-330",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-l59-dict-py-330",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
         "promptText": "草",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "画 (huà)"
+              "fr": "huài"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "绿 (lǜ)"
+              "fr": "lǜ"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "坏 (huài)"
+              "fr": "dōng"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "草 (cǎo)"
+              "fr": "cǎo"
             },
             "audio": null
           }
@@ -632,41 +700,99 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-reverse-330",
+      "id": "block-ex-l59-tone-360",
       "spec": {
-        "kind": "choice",
+        "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l59-reverse-330",
+          "id": "ex-l59-tone-360",
           "prompt": {
-            "fr": "Comment dit-on « herbe » en chinois ?"
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
           },
           "objectiveIDs": [
             "l59-understand"
           ],
           "required": true
         },
+        "promptText": "冬",
         "choices": [
           {
-            "id": "a",
+            "id": "t1",
             "label": {
-              "fr": "画 (huà)"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t1"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-pick-400",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l59-pick-400",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "promptText": "画",
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "坏 (huài)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "冬 (dōng)"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "草 (cǎo)"
+              "fr": "画 (huà)"
             },
             "audio": null
           },
@@ -679,119 +805,6 @@
           }
         ],
         "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 55
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l59-pick-535",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l59-pick-535",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l59-understand"
-          ],
-          "required": true
-        },
-        "promptText": "习惯",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "画 (huà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "习惯 (xí guàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "冬 (dōng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "坏 (huài)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 55
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l59-reverse-394",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l59-reverse-394",
-          "prompt": {
-            "fr": "Comment dit-on « avoir peur » en chinois ?"
-          },
-          "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
-          },
-          "objectiveIDs": [
-            "l59-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "害怕 (hài pà)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "习惯 (xí guàn)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "冬 (dōng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "草 (cǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -828,26 +841,93 @@
           {
             "id": "b",
             "label": {
-              "fr": "绿 (lǜ)"
+              "fr": "虽然 (suī rán)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "冬 (dōng)"
+              "fr": "绿 (lǜ)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "虽然 (suī rán)"
+              "fr": "冬 (dōng)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-match-pinyin",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-l59-match-pinyin",
+          "prompt": {
+            "fr": "Associe chaque mot à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "l59-understand"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "习惯",
+            "pinyin": null,
+            "right": {
+              "fr": "xí guàn"
+            }
+          },
+          {
+            "id": "b",
+            "left": "害怕",
+            "pinyin": null,
+            "right": {
+              "fr": "hài pà"
+            }
+          },
+          {
+            "id": "c",
+            "left": "虽然",
+            "pinyin": null,
+            "right": {
+              "fr": "suī rán"
+            }
+          },
+          {
+            "id": "d",
+            "left": "条",
+            "pinyin": null,
+            "right": {
+              "fr": "tiáo"
+            }
+          },
+          {
+            "id": "e",
+            "left": "草",
+            "pinyin": null,
+            "right": {
+              "fr": "cǎo"
+            }
+          }
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -941,16 +1021,16 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-order-exa-1",
+      "id": "block-ex-l59-translate-exa-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l59-order-exa-1",
+          "id": "ex-l59-translate-exa-1",
           "prompt": {
-            "fr": "Construis « La vache mange de l’herbe »."
+            "fr": "Traduis en chinois : « La vache mange de l’herbe »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l59-produce"
@@ -959,9 +1039,9 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "牛",
-            "pinyin": "niú",
+            "id": "f",
+            "hanzi": "画",
+            "pinyin": "huà",
             "audio": null
           },
           {
@@ -971,15 +1051,27 @@
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "id": "a",
+            "hanzi": "牛",
+            "pinyin": "niú",
             "audio": null
           },
           {
             "id": "c",
             "hanzi": "吃",
             "pinyin": "chī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "坏",
+            "pinyin": "huài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
             "audio": null
           }
         ],
@@ -989,10 +1081,7 @@
           "c",
           "d"
         ],
-        "acceptedVariants": [
-          "牛在吃草。",
-          "牛在吃草"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1002,46 +1091,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-fill-exa-2",
+      "id": "block-ex-l59-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l59-fill-exa-2",
+          "id": "ex-l59-talk-1",
           "prompt": {
-            "fr": "Complète : ___天很冷。 (« L’hiver est très froid »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l59-produce"
+            "l59-understand"
           ],
           "required": true
         },
-        "sentence": "___天很冷。",
-        "acceptedAnswers": [
-          "冬"
+        "speaker": "Mina",
+        "promptText": "你害怕走这条街吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "那座老房子虽然旧，但是没有坏。",
+            "pinyin": "nà zuò lǎo fáng zi suī rán jiù, dàn shì méi yǒu huài.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "现在路灯多了，走路很简单。",
+            "pinyin": "xiàn zài lù dēng duō le, zǒu lù hěn jiǎn dān.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "以前我很害怕，因为灯很少。",
+            "pinyin": "yǐ qián wǒ hěn hài pà, yīn wèi dēng hěn shǎo.",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 55
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-order-exa-6",
+      "id": "block-ex-l59-translate-exa-6",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "translation",
         "header": {
-          "id": "ex-l59-order-exa-6",
+          "id": "ex-l59-translate-exa-6",
           "prompt": {
-            "fr": "Construis « Se lever tôt est déjà une habitude pour moi »."
+            "fr": "Traduis en chinois : « Se lever tôt est déjà une habitude pour moi »"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l59-produce"
@@ -1050,21 +1157,33 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "起",
-            "pinyin": "qǐ",
+            "id": "g",
+            "hanzi": "坏",
+            "pinyin": "huài",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
+            "id": "h",
+            "hanzi": "草",
+            "pinyin": "cǎo",
             "audio": null
           },
           {
             "id": "c",
             "hanzi": "已经",
             "pinyin": "yǐ jīng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "起",
+            "pinyin": "qǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "习惯",
+            "pinyin": "xí guàn",
             "audio": null
           },
           {
@@ -1080,9 +1199,9 @@
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "习惯",
-            "pinyin": "xí guàn",
+            "id": "e",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
             "audio": null
           }
         ],
@@ -1094,10 +1213,7 @@
           "e",
           "f"
         ],
-        "acceptedVariants": [
-          "早起已经是我的习惯。",
-          "早起已经是我的习惯"
-        ]
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1107,13 +1223,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-fill-exa-5",
+      "id": "block-ex-l59-fill-dia-4",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l59-fill-exa-5",
+          "id": "ex-l59-fill-dia-4",
           "prompt": {
-            "fr": "Complète : 春天的树叶是___色的。 (« Les feuilles des arbres sont vertes au printemps »)"
+            "fr": "Complète : 那座老房子虽然旧，但是没有___。 (« Même si cette vieille maison est usée, elle n’est pas cassée »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1123,9 +1239,9 @@
           ],
           "required": true
         },
-        "sentence": "春天的树叶是___色的。",
+        "sentence": "那座老房子虽然旧，但是没有___。",
         "acceptedAnswers": [
-          "绿"
+          "坏"
         ],
         "caseSensitive": false
       },
@@ -1137,33 +1253,54 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-speak-exa-3",
+      "id": "block-ex-l59-dialogue-2-3",
       "spec": {
-        "kind": "speaking",
+        "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l59-speak-exa-3",
+          "id": "ex-l59-dialogue-2-3",
           "prompt": {
-            "fr": "Dis « J’aime dessiner »."
+            "fr": "Remets le dialogue dans l’ordre."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
           },
           "objectiveIDs": [
-            "l59-produce"
+            "l59-understand"
           ],
-          "required": false
+          "required": true
         },
-        "referenceText": "我喜欢画画。",
-        "referencePinyin": "wǒ xǐ huān huà huà。",
-        "referenceAudio": null,
-        "acceptedTranscripts": [
-          "我喜欢画画。"
+        "lines": [
+          {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "以前我很害怕，因为灯很少。",
+            "pinyin": "yǐ qián wǒ hěn hài pà, yīn wèi dēng hěn shǎo.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "那座老房子虽然旧，但是没有坏。",
+            "pinyin": "nà zuò lǎo fáng zi suī rán jiù, dàn shì méi yǒu huài.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "现在路灯多了，走路很简单。",
+            "pinyin": "xiàn zài lù dēng duō le, zǒu lù hěn jiǎn dān.",
+            "audio": null
+          }
         ],
-        "allowSelfRating": true
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "speaking",
+        "skill": "recognition",
         "lessonDay": 55
       }
     },
@@ -1190,14 +1327,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "Maintenant il y a davantage de lampes et la vieille maison est toujours là."
+              "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
+              "fr": "Maintenant il y a davantage de lampes et la vieille maison est toujours là."
             },
             "audio": null
           },
@@ -1209,56 +1346,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 55
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l59-read-dia-4",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l59-read-dia-4",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 那座老房子虽然旧，但是没有坏。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l59-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Tu as peur de marcher dans cette rue ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Donne-moi une serviette, s’il te plaît."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Même si cette vieille maison est usée, elle n’est pas cassée."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
