@@ -53,12 +53,14 @@ from review_lessons import (
     introduction_examples,
     is_derived,
 )
+from pinyin_module import PinyinError, add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 
 
 SCHEMA_VERSION = 1
 HSK_LEGACY_STANDARD_ID = "HSK-legacy-2.0"
 HSK_LEGACY_STANDARD_VERSION = "2.0"
 PROTECTED_LEGACY_LESSONS = {"lesson-01", "lesson-02", "lesson-03", "lesson-04"}
+PINYIN_MODULE_FILE = "pinyin-module.json"
 
 
 class ContentError(Exception):
@@ -948,7 +950,7 @@ def apply_editorial_metadata(
         if lesson_id not in generated_ids and not is_derived(lesson)
     ]
     ordered_lessons = sorted(
-        existing_lessons + generated_lessons,
+        [lesson for lesson in existing_lessons if not is_pinyin(lesson)] + generated_lessons,
         key=lambda lesson: (lesson.get("order", 0), lesson.get("id", "")),
     )
     introduced: set[str] = set()
@@ -1161,6 +1163,9 @@ def lint_plan(course: dict[str, Any], lesson_ids: list[str], lessons: dict[str, 
         covered: set[str] = set(starter_covered)
         introduced_by_plan: set[str] = set()
         for session in sessions[:day]:
+            # Module 0 previews words that the daily lessons introduce: it covers none.
+            if is_pinyin(lessons[session["lessonID"]]):
+                continue
             for entry in lessons[session["lessonID"]].get("vocabulary", []):
                 canonical_id = canonical_catalog_id(entry, catalog)
                 if canonical_id is not None:
@@ -1380,6 +1385,10 @@ def new_vocabulary_by_lesson(lessons: dict[str, dict[str, Any]]) -> dict[str, li
     introduced: set[str] = set()
     result: dict[str, list[str]] = {}
     for lesson in sorted(lessons.values(), key=lambda item: (item.get("order", 0), item.get("id", ""))):
+        # Module 0 previews words that the daily lessons introduce: it owns none.
+        if is_pinyin(lesson):
+            result[lesson["id"]] = []
+            continue
         ids = [entry["id"] for entry in lesson.get("vocabulary", []) if isinstance(entry, dict) and isinstance(entry.get("id"), str)]
         result[lesson["id"]] = [vocab_id for vocab_id in ids if vocab_id not in introduced]
         introduced.update(ids)
@@ -1465,6 +1474,9 @@ def lint_review_structure(course: dict[str, Any], lessons: dict[str, dict[str, A
         lesson_ids = module["lessonIDs"]
         location = f"{context}.modules[{module['id']}]"
         derived = [lesson_id for lesson_id in lesson_ids if is_derived(lessons[lesson_id])]
+        if any(is_pinyin(lessons[lesson_id]) for lesson_id in lesson_ids):
+            # Module 0 has its own rules: pinyin_module.check_structure.
+            continue
         if not planned.intersection(lesson_ids):
             if derived:
                 raise ContentError(f"{location}: reviews and bosses belong to the planned units")
@@ -1487,6 +1499,18 @@ def lint_review_structure(course: dict[str, Any], lessons: dict[str, dict[str, A
             run = []
         if not is_derived(lessons[lesson_ids[-1]]) or lessons[lesson_ids[-1]]["metadata"]["lessonKind"] != BOSS:
             raise ContentError(f"{location}: the unit must end with a boss")
+
+
+def course_path(course: dict[str, Any]) -> list[str]:
+    """The lesson IDs in the order the learner walks them: units by order, lessons as listed."""
+    return [lesson_id for module in sorted(course["modules"], key=lambda module: module["order"]) for lesson_id in module["lessonIDs"]]
+
+
+def lint_lesson_order(course: dict[str, Any], lessons: dict[str, dict[str, Any]], context: str) -> None:
+    """A lesson's `order` is its 1-based position on the path."""
+    for position, lesson_id in enumerate(course_path(course), start=1):
+        if lessons[lesson_id].get("order") != position:
+            raise ContentError(f"{context}: lesson '{lesson_id}' has order {lessons[lesson_id].get('order')}, expected its path position {position}")
 
 
 def lint_bundle(root: Path) -> None:
@@ -1539,7 +1563,7 @@ def lint_bundle(root: Path) -> None:
             if not isinstance(module, dict):
                 raise ContentError(f"{location}: expected an object")
             module_ids.append(string(require(module, "id", location), location + ".id"))
-            module_orders.append(integer(require(module, "order", location), location + ".order", minimum=1))
+            module_orders.append(integer(require(module, "order", location), location + ".order", minimum=0))
             localized(require(module, "title", location), location + ".title")
             if module.get("level") is not None:
                 string(module["level"], location + ".level")
@@ -1556,6 +1580,11 @@ def lint_bundle(root: Path) -> None:
             raise ContentError(f"{context}: missing lesson files: {', '.join(missing)}")
         lint_plan(course, listed_lesson_ids, lessons, catalogs, context)
         lint_review_structure(course, lessons, context)
+        try:
+            check_structure(course, lessons, context)
+        except PinyinError as exc:
+            raise ContentError(str(exc)) from exc
+        lint_lesson_order(course, lessons, context)
         for lesson_id in listed_lesson_ids:
             lesson = lessons[lesson_id]
             location = f"lessons/{lesson_id}.json"
@@ -1602,7 +1631,12 @@ def lint_bundle(root: Path) -> None:
                 if block_id in global_block_ids:
                     raise ContentError(f"duplicate global block ID '{block_id}'")
                 global_block_ids.add(block_id)
-            if lesson_id not in PROTECTED_LEGACY_LESSONS:
+            if is_pinyin(lesson):
+                try:
+                    check_lesson(lesson)
+                except PinyinError as exc:
+                    raise ContentError(f"{location}: {exc}") from exc
+            elif lesson_id not in PROTECTED_LEGACY_LESSONS:
                 lint_exercise_session(lesson, location)
                 lint_new_vocabulary(lesson, new_by_lesson[lesson_id], location)
                 if is_derived(lesson):
@@ -1660,6 +1694,17 @@ def lint_bundle(root: Path) -> None:
         raise ContentError("bundle: no exercise documents found")
 
 
+def reset_protected_orders(root: Path) -> None:
+    """Give the protected starter lessons the order the authoring pack assumes, whatever the course now sequences before them."""
+    for lesson_id in sorted(PROTECTED_LEGACY_LESSONS):
+        path = root / "lessons" / f"{lesson_id}.json"
+        lesson = load_json(path)
+        number = int(lesson_id.removeprefix("lesson-"))
+        if lesson.get("order") != number:
+            lesson["order"] = number
+            write_json(path, lesson)
+
+
 def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any] | None, catalog_info: dict[str, Any] | None) -> set[Path]:
     source_version = string(require(source, "contentVersion", "authoring"), "authoring.contentVersion")
     course_source = require(source, "course", "authoring")
@@ -1669,6 +1714,8 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     existing_course_path = root / "courses" / f"{course_id}.json"
     existing_course = load_json(existing_course_path) if existing_course_path.exists() else None
     existing_vocab, existing_cards = collect_existing(root) if (root / "lessons").exists() else ({}, {})
+    if (root / "lessons").exists():
+        reset_protected_orders(root)
     blueprints = require(source, "lessons", "authoring")
     if not isinstance(blueprints, list) or not blueprints:
         raise ContentError("authoring.lessons: expected a non-empty array")
@@ -1702,13 +1749,35 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     for lesson in derived_lessons:
         apply_block_metadata(lesson, lesson["order"] - 4)
     generated_lessons += derived_lessons
-    # Reviews that the pack no longer lists leave the bundle.
+    pinyin_path = root / "authoring" / PINYIN_MODULE_FILE
+    pinyin_data = load_json(pinyin_path) if pinyin_path.exists() else None
+    pinyin_lessons: list[dict[str, Any]] = []
+    if pinyin_data is not None:
+        try:
+            pinyin_lessons = build_lessons(
+                pinyin_data, source_version,
+                lambda ref: resolve_catalog_or_existing(ref, existing_vocab, catalog_info),
+                lambda vocab_id, vocab: copy.deepcopy(existing_cards["card-" + vocab_id]) if "card-" + vocab_id in existing_cards else generated_card(vocab, vocab_id),
+            )
+        except PinyinError as exc:
+            raise ContentError(f"authoring/{PINYIN_MODULE_FILE}: {exc}") from exc
+        except KeyError as exc:
+            raise ContentError(f"authoring/{PINYIN_MODULE_FILE}: missing field {exc}") from exc
+        unique(generated_ids + derived_ids + [lesson["id"] for lesson in pinyin_lessons], "authoring.lessons.id")
+        for lesson in pinyin_lessons:
+            apply_block_metadata(lesson, lesson["order"])
+        generated_lessons += pinyin_lessons
+    # Reviews and pinyin lessons that their pack no longer lists leave the bundle.
+    pinyin_ids = [lesson["id"] for lesson in pinyin_lessons]
     for path in sorted((root / "lessons").glob("*.json")):
-        if is_derived(load_json(path)) and path.stem not in derived_ids:
+        existing = load_json(path)
+        if (is_derived(existing) and path.stem not in derived_ids) or (is_pinyin(existing) and path.stem not in pinyin_ids):
             path.unlink()
     generated_course = copy.deepcopy(course_source)
     generated_course.update({"schemaVersion": SCHEMA_VERSION, "contentVersion": source_version, "id": course_id})
     generated_course["modules"] = copy.deepcopy(modules_source)
+    if pinyin_data is not None:
+        add_to_course(generated_course, pinyin_data, pinyin_lessons)
     if isinstance(existing_course, dict):
         existing_modules = {module.get("id"): module for module in existing_course.get("modules", []) if isinstance(module, dict)}
         generated_module_ids = {module.get("id") for module in generated_course["modules"]}
@@ -1732,6 +1801,10 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
         module.setdefault("lessonIDs", [])
         if lesson["id"] not in module["lessonIDs"]:
             module["lessonIDs"].append(lesson["id"])
+    # A lesson's `order` is its position on the path.
+    order_of = {lesson_id: position for position, lesson_id in enumerate(course_path(generated_course), start=1)}
+    for lesson in generated_lessons:
+        lesson["order"] = order_of[lesson["id"]]
 
     manifest_path = root / "manifest.json"
     manifest = load_json(manifest_path)
@@ -1760,8 +1833,9 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     # protected lesson's payload, IDs, exercises and cards semantically intact.
     for path in sorted((root / "lessons").glob("*.json")):
         legacy = load_json(path)
-        if legacy.get("contentVersion") != source_version:
+        if legacy.get("contentVersion") != source_version or legacy.get("order") != order_of.get(legacy.get("id"), legacy.get("order")):
             legacy["contentVersion"] = source_version
+            legacy["order"] = order_of.get(legacy.get("id"), legacy.get("order"))
             write_json(path, legacy)
             changed.add(path.relative_to(root))
     if catalog is not None and isinstance(source.get("catalog"), dict) and "path" not in source["catalog"]:

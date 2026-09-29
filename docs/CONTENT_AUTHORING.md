@@ -241,6 +241,45 @@ exercices (aucun hanzi, pinyin ni traduction nouveau).
 
 Le générateur supprime les révisions que le pack ne liste plus.
 
+## Module 0 : pinyin et tons
+
+Les huit leçons `pinyin-01` à `pinyin-08` s'écrivent à la main dans
+`Content/authoring/pinyin-module.json` ; `Tools/pinyin_module.py` les expand et
+les contrôle, et `content_tool.py generate` les ajoute au cours, sans passer par
+le pack de 90 jours (l'assembleur reste inchangé). Le fichier contient :
+
+* `module` : `unit-00`, `order` 0 ; `course` : titre et description du cours, avec
+  les totaux `{total}`, `{pinyin}`, `{daily}`, `{reviews}`, `{bosses}` calculés
+  à la génération ;
+* `carriers` : la table `hanzi → pinyin` des textes que les exercices font
+  entendre. Un porteur est un caractère ou un mot réel et courant, à la lecture
+  non ambiguë (les caractères à lectures multiples de `POLYPHONES` sont refusés
+  comme texte lu) ; vérifier chaque entrée avec un dictionnaire avant de l'ajouter.
+  `不` et `一` s'y notent avec leur ton réel dans le mot (`bú shì`, `yì qǐ`) ; les
+  mots du vocabulaire d'une leçon doivent y porter le même pinyin que leur
+  entrée ;
+* `lessons` : `id`, `title`, `summary`, deux `objectives` (le premier pour les
+  exercices d'écoute, le second pour les autres), des blocs `introduction`
+  (`title`, `body`), `vocabulary` (références du catalogue ou de l'existant,
+  six à huit mots, présentés à l'avance) et `exercises`.
+
+Un exercice s'écrit par porteurs, jamais par pinyin : `tone` (`say`, `options`
+= schémas de tons, la réponse est déduite du porteur), `pinyin` (`say`,
+`choices` en pinyin), `hear` (`say`, `choices` en hanzi), `match` (`pairs`,
+`mode` `pinyin` ou `meaning`), `choice` (`prompt`, `choices`, `answer`) et `speak`
+(`say`). Chacun porte sa phase (`stage` : `discover`, `guided`, `reuse`), et
+`pinyin` / `hear` un `contrast` (`initial`, `final`, `tone`) quand tous les
+distracteurs ne diffèrent de la réponse que par ce trait. Le générateur tourne
+la position des bonnes réponses de façon déterministe.
+
+`lint` refuse un module 0 hors de 6 à 8 leçons, un exercice hors du budget de
+15 à 20, moins de quatre types, moins de 60 % d'écoute, moins de quatre paires
+minimales, une phase manquante ou dans le désordre, un objectif sans exercice,
+une réponse qui ne correspond pas aux porteurs (ton, pinyin, paire), un signe de
+ton mal placé, une syllabe proposée qu'aucun porteur n'atteste, un mot nouveau ou
+plus de huit mots aperçus, et un `order` qui n'est pas la position de la leçon sur
+le parcours. Le générateur réécrit cet `order` dans chaque leçon, protégées comprises.
+
 Voici une séance complète illustrative, marquée « non livrable » et non utilisée
 comme contenu du cours. Elle montre vocabulaire, grammaire, dialogue, choix,
 ordre, trou, oral, écoute TTS, lecture, puis bilan ; les traductions et le

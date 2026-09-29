@@ -19,9 +19,9 @@ nécessaires aux contrôles et vérifie les liens avant d'écrire le bundle.
 
 ## Bundle chargé par l'application
 
-Une release complète du parcours contient une introduction de quatre leçons,
-puis les 90 leçons quotidiennes et les 22 révisions et défis d'unité qui s'y
-intercalent :
+Une release complète du parcours contient le module 0 « Pinyin et tons » (huit
+leçons d'écoute), une introduction de quatre leçons, puis les 90 leçons
+quotidiennes et les 22 révisions et défis d'unité qui s'y intercalent :
 
 ~~~text
 Content/
@@ -29,11 +29,13 @@ Content/
   courses/
     mandarin-starter.json
   lessons/
+    pinyin-01.json … pinyin-08.json   # module 0, unit-00 : pinyin et tons à l'oreille
     lesson-01.json … lesson-04.json   # introduction protégée
     lesson-05.json … lesson-94.json   # 90 leçons du jour
     review-01.json … review-14.json   # une révision après chaque série de cinq leçons
     boss-unit-02.json … boss-unit-09.json  # un défi à la fin de chaque unité
   authoring/                           # sources de release conservées dans le dépôt
+    pinyin-module.json                 # module 0 écrit à la main, lu par le générateur
     90-day-authoring.json              # pack assemblé donné au générateur
     90-day-allocation.json             # allocation et plan de référence
     preview-first-five.json            # jours 1 à 5
@@ -94,8 +96,8 @@ Un fichier courses/{courseID}.json est un CourseManifest :
   "contentVersion": "2026.10.0",
   "id": "mandarin-starter",
   "slug": "mandarin-starter",
-  "title": {"fr": "Mandarin au quotidien — parcours de 112 jours"},
-  "description": {"fr": "Un parcours de 112 séances ..."},
+  "title": {"fr": "Mandarin au quotidien — parcours de 120 jours"},
+  "description": {"fr": "Un parcours de 120 séances ..."},
   "alignment": [
     {
       "framework": "HSK",
@@ -137,31 +139,36 @@ niveau ou une promesse d'examen.
 
 Un ModuleSummary contient id, order, title et lessonIDs. Les champs optionnels
 displayName et level servent aux surfaces de navigation et à l'index des
-histoires. L'introduction est unit-01 avec lesson-01 à lesson-04. Les modules
-du parcours quotidien sont :
+histoires. Le module 0 est unit-00 (order 0, les seuls IDs `pinyin-01` à
+`pinyin-08`), placé avant l'introduction unit-01 (lesson-01 à lesson-04). Les
+modules du parcours quotidien sont :
 
 | Module | Jours | Leçons du jour | Révisions | Défi |
 | --- | ---: | --- | --- | --- |
-| unit-02 — Vie pratique | 1–15 | lesson-05–lesson-16 | review-01, review-02 | boss-unit-02 |
-| unit-03 — Temps, études et santé | 16–30 | lesson-17–lesson-28 | review-03, review-04 | boss-unit-03 |
-| unit-04 — Achats et déplacements | 31–45 | lesson-29–lesson-40 | review-05, review-06 | boss-unit-04 |
-| unit-05 — Maison et communauté | 46–60 | lesson-41–lesson-52 | review-07, review-08 | boss-unit-05 |
-| unit-06 — Études et travail | 61–75 | lesson-53–lesson-64 | review-09, review-10 | boss-unit-06 |
-| unit-07 — Ville et voyage | 76–90 | lesson-65–lesson-76 | review-11, review-12 | boss-unit-07 |
-| unit-08 — Météo, nature et loisirs | 91–102 | lesson-77–lesson-86 | review-13 | boss-unit-08 |
-| unit-09 — Récits et opinions | 103–112 | lesson-87–lesson-94 | review-14 | boss-unit-09 |
+| unit-00 — Pinyin et tons | 1–8 | pinyin-01–pinyin-08 | — | — |
+| unit-02 — Vie pratique | 9–23 | lesson-05–lesson-16 | review-01, review-02 | boss-unit-02 |
+| unit-03 — Temps, études et santé | 24–38 | lesson-17–lesson-28 | review-03, review-04 | boss-unit-03 |
+| unit-04 — Achats et déplacements | 39–53 | lesson-29–lesson-40 | review-05, review-06 | boss-unit-04 |
+| unit-05 — Maison et communauté | 54–68 | lesson-41–lesson-52 | review-07, review-08 | boss-unit-05 |
+| unit-06 — Études et travail | 69–83 | lesson-53–lesson-64 | review-09, review-10 | boss-unit-06 |
+| unit-07 — Ville et voyage | 84–98 | lesson-65–lesson-76 | review-11, review-12 | boss-unit-07 |
+| unit-08 — Météo, nature et loisirs | 99–110 | lesson-77–lesson-86 | review-13 | boss-unit-08 |
+| unit-09 — Récits et opinions | 111–120 | lesson-87–lesson-94 | review-14 | boss-unit-09 |
 
 Les IDs des leçons du jour ne changent pas : la progression est indexée par ID.
 Les révisions et les défis ont leurs propres IDs (`review-NN`, `boss-<unité>`).
 Dans chaque module, `lessonIDs` suit l'ordre du parcours et le champ `order` des
-leçons suit cet ordre : `order` est la position dans la séquence du cours (les
-quatre introductions, puis un jour de plan = un `order`), non le numéro de
-l'ID. Les lecons `lesson-34`, `lesson-64` et `lesson-94` (bilans de
+leçons est leur position 1-based sur le parcours (unités par `order`, leçons dans
+l'ordre de `lessonIDs`) : les huit leçons du module 0, puis les quatre
+introductions, puis un jour de plan = un `order`, sans rapport avec le numéro de
+l'ID. Le générateur réécrit cet `order` dans chaque leçon, protégées comprises, et
+le linter le vérifie. Les lecons `lesson-34`, `lesson-64` et `lesson-94` (bilans de
 l'allocation, sans mot nouveau) restent des leçons ordinaires ; les jours 30, 60
 et 90 de l'allocation désignent les jours des 90 leçons avant l'insertion des
-révisions. Les jalons du plan sont replacés sur le défi qui clôt l'unité de leur
-leçon : la couverture ne change pas puisque révisions et défis n'ajoutent aucun
-mot. Le jalon des 300 lexèmes tombe au jour 60 (`boss-unit-05`, après lesson-52).
+révisions et du module 0. Les jalons du plan sont replacés sur le défi qui clôt
+l'unité de leur leçon puis décalés de huit jours : la couverture ne change pas
+puisque révisions, défis et module 0 n'ajoutent aucun mot. Le jalon des 300
+lexèmes tombe au jour 68 (`boss-unit-05`, après lesson-52).
 
 ## Plan quotidien de 15 minutes
 
@@ -173,7 +180,7 @@ il contient :
 | targetMinutes | entier | 15 |
 | catalogID | chaîne optionnelle | ID du catalogue de progression, ici hsk-legacy-600 |
 | catalogVersion | chaîne optionnelle | version du payload, ici 2026.09.0 |
-| sessions | tableau | 112 entrées contiguës, jours 1 à 112 (90 leçons, 14 révisions, 8 défis) |
+| sessions | tableau | 120 entrées contiguës, jours 1 à 120 (8 leçons du module 0, 90 leçons, 14 révisions, 8 défis) |
 | milestones | tableau | jalons uniques dont le jour reste dans le plan |
 
 Chaque entrée sessions a quatre champs :
@@ -224,9 +231,9 @@ Les jalons livrés portent les couvertures suivantes :
 
 | Jour | Couverture |
 | ---: | --- |
-| 60 | rangs 1–300 du catalogue hsk-legacy-600 |
-| 75 | consolidation et réemploi, sans nouvelle cible numérique |
-| 112 | rangs 1–600 du catalogue hsk-legacy-600 |
+| 68 | rangs 1–300 du catalogue hsk-legacy-600 |
+| 83 | consolidation et réemploi, sans nouvelle cible numérique |
+| 120 | rangs 1–600 du catalogue hsk-legacy-600 |
 
 claims décrit une planification éditoriale. Une exposition lexicale, une carte
 réussie ou une leçon terminée ne doit pas être reformulée en maîtrise, niveau
@@ -236,14 +243,15 @@ acquis ou score d'examen.
 
 Dans chaque unité du plan, une révision suit chaque série de cinq leçons du jour
 et un défi (« boss ») clôt l'unité ; un défi qui termine une série de cinq tient
-lieu de révision. `unit-01` (les quatre introductions) n'est pas planifiée et n'a
-ni révision ni défi. Ce sont des leçons ordinaires pour le décodeur Swift, avec
+lieu de révision. `unit-00` (module 0) et `unit-01` (les quatre introductions) n'ont
+ni révision ni défi : la première est traitée à part (voir plus bas), la seconde
+n'est pas planifiée. Ce sont des leçons ordinaires pour le décodeur Swift, avec
 les IDs `review-NN` et `boss-<unité>` (`boss-unit-02`) ; la CI Swift et le linter
 les reconnaissent à `metadata.lessonKind` (`review` ou `boss`) :
 
 | Clé de `metadata` | Contrat |
 | --- | --- |
-| lessonKind | `review` ou `boss` |
+| lessonKind | `review` ou `boss` (`pinyin` pour le module 0, voir plus bas) |
 | reviewedLessonIDs | les 5 leçons qui précèdent la révision ; toutes les leçons du jour de l'unité pour un défi |
 | newVocabularyIDs | toujours vide (`newVocabularyCount` vaut 0) |
 
@@ -262,6 +270,52 @@ traduction, mise en ordre et oral. Chaque bloc d'exercice porte
 chaque phase (`discover`, `guided`, `reuse`) commence par les leçons les plus
 anciennes. Un défi dure 13 minutes de cours et 2 de révision SRS (une révision,
 12 + 3).
+
+## Module 0 : pinyin et tons
+
+`unit-00` (« Pinyin et tons », `order` 0) compte huit leçons `pinyin-01` à
+`pinyin-08` : les quatre tons et le ton neutre, les consonnes de base (b/p, d/t,
+g/k, m f n l h), j q x et z c s, zh ch sh r, les voyelles et les finales
+(-n / -ng), les enchaînements de tons (3e ton devant 3e ton, 不 et 一),
+l'orthographe du pinyin (y, w, ü, iu ui un, apostrophe) et un bilan d'écoute.
+Elles occupent les jours 1 à 8 du plan (12 + 3 minutes) et sont écrites à la main
+dans `Content/authoring/pinyin-module.json` ; `content_tool.py generate` les
+produit avec `Tools/pinyin_module.py`, à côté du pack de 90 jours, sans le
+modifier. Ce sont des leçons ordinaires pour le décodeur Swift, reconnues par
+`metadata.lessonKind` = `pinyin` :
+
+| Clé de `metadata` | Contrat |
+| --- | --- |
+| lessonKind | `pinyin` |
+| newVocabularyIDs | toujours vide (`newVocabularyCount` vaut 0) : les mots sont enseignés par les leçons du jour |
+| previewVocabularyIDs | les 6 à 8 mots que la leçon présente à l'avance, identiques (objet et carte) à ceux des leçons du jour |
+| carriers | table `hanzi → pinyin` de tous les textes que la leçon fait entendre ou afficher (les « porteurs ») |
+
+Chaque leçon a une ou plusieurs `introduction` (explication courte en français,
+conseils concrets pour un francophone), un bloc `vocabulary`, 15 à 20 exercices
+(18 dans les leçons livrées) répartis dans les trois phases `discover`, `guided` et
+`reuse`, et un `recap`. Elle emploie au moins quatre types d'exercice
+(`toneDiscrimination`, `dictation`, `listeningChoice`, `matching`, `choice`,
+`speaking` auto-évalué), dont au moins 60 % d'écoute pure, et au moins quatre
+exercices de paires minimales : `metadata.contrast` (`initial`, `final` ou
+`tone`) d'un bloc d'exercice déclare que chaque distracteur ne diffère de la
+bonne réponse que par ce trait. Aucun dialogue, aucune lecture ; aucun mot
+nouveau : le module ne compte donc pas dans `newVocabularyIDs` des leçons du
+jour ni dans la couverture des jalons.
+
+Tout texte chinois lu par la synthèse vocale est un porteur : un caractère ou un
+mot réel, avec son pinyin, listé une fois dans la table `carriers` du fichier
+d'écriture. Les exercices nomment des porteurs sans jamais épeler de pinyin ;
+le générateur en déduit les réponses (le ton d'un mot, le pinyin d'un
+caractère). Le linter rejoue chaque réponse à partir de `metadata.carriers`
+seul : tons lus sur les signes, 3e ton devant 3e ton dit comme un 2e ton
+(`nǐ hǎo` s'entend `ní hǎo`), signes de ton bien placés, chaque syllabe proposée
+attestée par un porteur (aucune syllabe inexistante n'est offerte), paires
+minimales exactes, caractères à lectures multiples refusés comme texte lu.
+`不` et `一` sont notés avec leur ton réel dans la phrase (`bú shì`, `yí ge`).
+
+`check_structure` vérifie que le premier module du parcours ne contient que
+ces huit leçons, dans l'ordre, et qu'elles sont les huit premiers jours du plan.
 
 ## Document de leçon généré
 
@@ -685,13 +739,15 @@ versions, les IDs de cours, modules, leçons, blocs et exercices, les objectifs,
 les références lexicales, les cartes, les questions de lecture et les assets.
 Lorsqu'un catalogue est présent, il vérifie ses 600 rangs contigus, son
 référentiel HSK-legacy-2.0 / 2.0, les sidecars, les formes et les cibles
-canoniques du plan. Il vérifie aussi les 112 sessions, les budgets de
-15 minutes, les frontières de rang des jalons de 300 et 600 lexèmes et les
+canoniques du plan. Il vérifie aussi les 120 sessions, les budgets de
+15 minutes, les frontières de rang des jalons de 300 et 600 lexèmes, l'`order`
+de chaque leçon (sa position sur le parcours) et les
 révisions : une révision après chaque série de cinq leçons du jour, un défi à
 la fin de chaque unité planifiée, aucun mot nouveau, 15 à 20 exercices pour une
 révision et 18 à 20 pour un défi, tous les types plus récents dans une révision
 et le dialogue à mener dans la dernière phase d'un défi, chaque phase
-commençant par les leçons les plus anciennes.
+commençant par les leçons les plus anciennes. Pour le module 0, il rejoue les
+réponses de chaque leçon `pinyin-NN` (voir « Module 0 : pinyin et tons »).
 
 Une release peut afficher une référence, une exposition ou une progression
 éditoriale. Elle ne doit pas afficher ces champs comme une maîtrise, un niveau

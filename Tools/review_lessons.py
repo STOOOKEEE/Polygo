@@ -150,14 +150,14 @@ def remap_milestones(
         new = day_of[f"boss-{module['id']}"] if lesson_id == daily[-1] else day_of[lesson_id]
         moved = copy.deepcopy(milestone)
         moved["day"] = new
-        moved["id"] = _renumber(milestone["id"], old, new)
+        moved["id"] = renumber(milestone["id"], old, new)
         if "claims" in moved:
-            moved["claims"] = [_renumber(claim, old, new) for claim in moved["claims"]]
+            moved["claims"] = [renumber(claim, old, new) for claim in moved["claims"]]
         result.append(moved)
     return result
 
 
-def _renumber(text: str, old: int, new: int) -> str:
+def renumber(text: str, old: int, new: int) -> str:
     return re.sub(rf"(?<!\d){old}(?!\d)", str(new), text)
 
 

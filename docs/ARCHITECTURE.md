@@ -363,7 +363,11 @@ public struct HomeState: Codable, Hashable, Sendable {
 La règle MVP est `sequentialLesson` : la première leçon est disponible après
 l’onboarding ; une suivante est débloquée lorsque tous les objectifs requis de
 la précédente ont un résultat satisfaisant. Les cartes dues et les leçons déjà
-terminées restent accessibles depuis l’accueil.
+terminées restent accessibles depuis l’accueil. Le module 0 (`pinyin-NN`) suit
+sa propre chaîne : ses leçons se débloquent l’une après l’autre, mais les autres
+leçons ne l’attendent pas (`AppModel.isLessonUnlocked`) ; `AppModel.resumeLessonID`
+et le plan quotidien ne le proposent plus à un apprenant qui a déclaré connaître le
+pinyin ou qui a terminé une leçon au-delà.
 
 ### Exercices et réponses
 

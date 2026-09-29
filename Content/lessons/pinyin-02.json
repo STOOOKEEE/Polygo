@@ -1,0 +1,1656 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "pinyin-02",
+  "moduleID": "unit-00",
+  "order": 2,
+  "title": {
+    "fr": "Les consonnes de base"
+  },
+  "summary": {
+    "fr": "Entendre la différence entre b et p, d et t, g et k (le souffle), puis m, f, n, l et h."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "pinyin-02-hear",
+      "required": true,
+      "statement": {
+        "fr": "Distinguer à l’oreille b/p, d/t, g/k et les autres consonnes de base (m, f, n, l, h)."
+      }
+    },
+    {
+      "id": "pinyin-02-link",
+      "required": true,
+      "statement": {
+        "fr": "Expliquer la différence entre consonnes sans souffle (b, d, g) et avec souffle (p, t, k), et les redire."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-067",
+      "canonicalID": "米饭|mǐ fàn|67",
+      "hanzi": "米饭",
+      "pinyin": "mǐ fàn",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "米饭",
+          "vocabularyID": "vocab-hsk20-067",
+          "pinyin": "mǐ fàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "riz cuit"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃米饭。",
+        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+        "translation": {
+          "fr": "J’aime manger du riz."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "米饭|mǐ fàn|67",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 67,
+        "level": 1
+      },
+      "traditionalHanzi": "米飯"
+    },
+    {
+      "id": "vocab-hsk20-034",
+      "canonicalID": "狗|gǒu|34",
+      "hanzi": "狗",
+      "pinyin": "gǒu",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "狗",
+          "vocabularyID": "vocab-hsk20-034",
+          "pinyin": "gǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "那只狗在门外。",
+        "pinyin": "nà zhī gǒu zài mén wài。",
+        "translation": {
+          "fr": "Ce chien-là est dehors, devant la porte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "狗|gǒu|34",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 34,
+        "level": 1
+      },
+      "traditionalHanzi": "狗"
+    },
+    {
+      "id": "vocab-hsk20-037",
+      "canonicalID": "喝|hē|37",
+      "hanzi": "喝",
+      "pinyin": "hē",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "喝",
+          "vocabularyID": "vocab-hsk20-037",
+          "pinyin": "hē"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "boire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你喝水吗？",
+        "pinyin": "nǐ hē shuǐ ma？",
+        "translation": {
+          "fr": "Bois-tu de l’eau ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "喝|hē|37",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 37,
+        "level": 1
+      },
+      "traditionalHanzi": "喝"
+    },
+    {
+      "id": "vocab-hsk20-014",
+      "canonicalID": "大|dà|14",
+      "hanzi": "大",
+      "pinyin": "dà",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "大",
+          "vocabularyID": "vocab-hsk20-014",
+          "pinyin": "dà"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "grand ; gros"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这只狗很大。",
+        "pinyin": "zhè zhī gǒu hěn dà。",
+        "translation": {
+          "fr": "Ce chien est très grand."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "大|dà|14",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 14,
+        "level": 1
+      },
+      "traditionalHanzi": "大"
+    },
+    {
+      "id": "vocab-hsk20-024",
+      "canonicalID": "多|duō|24",
+      "hanzi": "多",
+      "pinyin": "duō",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "多",
+          "vocabularyID": "vocab-hsk20-024",
+          "pinyin": "duō"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "beaucoup ; nombreux"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这里有很多人。",
+        "pinyin": "zhè lǐ yǒu hěn duō rén。",
+        "translation": {
+          "fr": "Il y a beaucoup de personnes ici."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "多|duō|24",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 24,
+        "level": 1
+      },
+      "traditionalHanzi": "多"
+    },
+    {
+      "id": "vocab-hsk20-182",
+      "canonicalID": "哥哥|gē ge|182",
+      "hanzi": "哥哥",
+      "pinyin": "gē ge",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "哥哥",
+          "vocabularyID": "vocab-hsk20-182",
+          "pinyin": "gē ge"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "grand frère"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我哥哥在学校。",
+        "pinyin": "wǒ gē ge zài xué xiào。",
+        "translation": {
+          "fr": "Mon grand frère est à l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "哥哥|gē ge|182",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 182,
+        "level": 2
+      },
+      "traditionalHanzi": "哥哥"
+    },
+    {
+      "id": "vocab-hsk20-152",
+      "canonicalID": "白|bái|152",
+      "hanzi": "白",
+      "pinyin": "bái",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "白",
+          "vocabularyID": "vocab-hsk20-152",
+          "pinyin": "bái"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "blanc"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "白色的猫在门口。",
+        "pinyin": "bái sè de māo zài mén kǒu。",
+        "translation": {
+          "fr": "Le chat blanc est à la porte."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "白|bái|152",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 152,
+        "level": 2
+      },
+      "traditionalHanzi": "白"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-02-intro-1",
+      "title": {
+        "fr": "Consonne, voyelle, ton : les trois morceaux d’une syllabe"
+      },
+      "body": {
+        "fr": "Le pinyin écrit les sons du mandarin avec l’alphabet latin. Une syllabe se compose d’une consonne d’attaque (l’initiale), d’une voyelle ou d’un groupe de voyelles (la finale) et d’un ton. Dans bà (爸, papa), b est l’initiale, a est la finale, et le signe ˋ note le ton.\nCette leçon couvre onze initiales, par familles : b p m f · d t n l · g k h.\nm, f, n et l se disent presque comme en français."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-02-intro-2",
+      "title": {
+        "fr": "Le piège : souffle ou pas de souffle"
+      },
+      "body": {
+        "fr": "Les initiales b, d et g ne se disent pas comme nos b, d, g français : la gorge ne vibre pas. Elles ressemblent à nos p, t, k de « papa », « tata », « coco » : b ≈ p, d ≈ t, g ≈ k, sans aucun souffle.\nLes initiales p, t et k sont aspirées : on dit le même son, puis on lâche un petit souffle d’air. Test : place une feuille de papier devant ta bouche. Elle bouge pour pà (怕, avoir peur) mais à peine pour bà (爸, papa).\nRetiens les couples : b sans souffle, p avec souffle ; d sans, t avec ; g sans, k avec."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-02-intro-3",
+      "title": {
+        "fr": "Le h chinois"
+      },
+      "body": {
+        "fr": "Le h du pinyin n’est pas muet comme en français : c’est un souffle rauque, frotté au fond de la gorge, comme le j espagnol de « jamón » ou le ch allemand de « Bach ». hē (喝, boire) ne se dit donc pas « é »."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-pinyin-02-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-067",
+        "vocab-hsk20-034",
+        "vocab-hsk20-037",
+        "vocab-hsk20-014",
+        "vocab-hsk20-024",
+        "vocab-hsk20-182",
+        "vocab-hsk20-152"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-01",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-02-01",
+          "prompt": {
+            "fr": "Laquelle de ces initiales est aspirée (avec un petit souffle d’air) ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-02-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "g"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "b"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "d"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "t"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-02",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-02",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "爸",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "bà"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pà"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mà"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dà"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-03",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-03",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "怕",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "pà"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "nà"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "là"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "bà"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-04",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-04",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "跑",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "老 (lǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "岛 (dǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "饱 (bǎo)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "跑 (pǎo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-05",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-02-05",
+          "prompt": {
+            "fr": "Écoute chaque caractère et associe-le à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un caractère (il se prononce), puis touche son pinyin."
+          },
+          "objectiveIDs": [
+            "pinyin-02-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "哥",
+            "pinyin": null,
+            "right": {
+              "fr": "gē"
+            }
+          },
+          {
+            "id": "b",
+            "left": "科",
+            "pinyin": null,
+            "right": {
+              "fr": "kē"
+            }
+          },
+          {
+            "id": "c",
+            "left": "喝",
+            "pinyin": null,
+            "right": {
+              "fr": "hē"
+            }
+          },
+          {
+            "id": "d",
+            "left": "河",
+            "pinyin": null,
+            "right": {
+              "fr": "hé"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-06",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-06",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "打",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "dǎ"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "tǎ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mǎ"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "nǎ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-07",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-07",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "读",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "图 (tú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "炉 (lú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "湖 (hú)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "读 (dú)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-08",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-08",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "到",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "gào"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "kào"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "dào"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "tào"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-09",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-09",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "靠",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "套 (tào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "告 (gào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "靠 (kào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "到 (dào)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-10",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-02-10",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "pinyin-02-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "狗",
+            "pinyin": "gǒu",
+            "right": {
+              "fr": "chien"
+            }
+          },
+          {
+            "id": "b",
+            "left": "喝",
+            "pinyin": "hē",
+            "right": {
+              "fr": "boire"
+            }
+          },
+          {
+            "id": "c",
+            "left": "大",
+            "pinyin": "dà",
+            "right": {
+              "fr": "grand ; gros"
+            }
+          },
+          {
+            "id": "d",
+            "left": "多",
+            "pinyin": "duō",
+            "right": {
+              "fr": "beaucoup ; nombreux"
+            }
+          },
+          {
+            "id": "e",
+            "left": "白",
+            "pinyin": "bái",
+            "right": {
+              "fr": "blanc"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-11",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-11",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "米",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "nǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "lǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "mǐ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-12",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-12",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "蓝",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "寒 (hán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "烦 (fán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "蓝 (lán)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "男 (nán)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-13",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-02-13",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "饭",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "hàn"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "bàn"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "pàn"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "fàn"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-14",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-14",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "汉",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "半 (bàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "盼 (pàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "饭 (fàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "汉 (hàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-15",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-02-15",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "哥哥",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "妈妈 (mā ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "爸爸 (bà ba)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "弟弟 (dì di)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "哥哥 (gē ge)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-16",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-02-16",
+          "prompt": {
+            "fr": "Pour dire le b de bà (爸), il faut…"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-02-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "dire un p français puis lâcher un fort souffle d’air"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dire un v français"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "faire vibrer la gorge, comme pour le b français"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "dire un p français simple, sans vibration de la gorge ni souffle"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-17",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-02-17",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-02-hear"
+          ],
+          "required": true
+        },
+        "promptText": "狗",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-02-18",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-pinyin-02-18",
+          "prompt": {
+            "fr": "Dis à voix haute : gē ge."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis-le, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "pinyin-02-link"
+          ],
+          "required": false
+        },
+        "referenceText": "哥哥",
+        "referencePinyin": "gē ge",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "哥哥"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "speaking",
+        "lessonDay": 2
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-pinyin-02-recap",
+      "objectiveIDs": [
+        "pinyin-02-hear",
+        "pinyin-02-link"
+      ],
+      "vocabularyIDs": [
+        "vocab-hsk20-067",
+        "vocab-hsk20-034",
+        "vocab-hsk20-037",
+        "vocab-hsk20-014",
+        "vocab-hsk20-024",
+        "vocab-hsk20-182",
+        "vocab-hsk20-152"
+      ],
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 2
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-067",
+      "vocabularyID": "vocab-hsk20-067",
+      "front": {
+        "hanzi": "米饭",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "米饭",
+        "pinyin": "mǐ fàn",
+        "text": {
+          "fr": "riz cuit"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-034",
+      "vocabularyID": "vocab-hsk20-034",
+      "front": {
+        "hanzi": "狗",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "狗",
+        "pinyin": "gǒu",
+        "text": {
+          "fr": "chien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-037",
+      "vocabularyID": "vocab-hsk20-037",
+      "front": {
+        "hanzi": "喝",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "喝",
+        "pinyin": "hē",
+        "text": {
+          "fr": "boire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-014",
+      "vocabularyID": "vocab-hsk20-014",
+      "front": {
+        "hanzi": "大",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "大",
+        "pinyin": "dà",
+        "text": {
+          "fr": "grand ; gros"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-024",
+      "vocabularyID": "vocab-hsk20-024",
+      "front": {
+        "hanzi": "多",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "text": {
+          "fr": "beaucoup ; nombreux"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-182",
+      "vocabularyID": "vocab-hsk20-182",
+      "front": {
+        "hanzi": "哥哥",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "哥哥",
+        "pinyin": "gē ge",
+        "text": {
+          "fr": "grand frère"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-152",
+      "vocabularyID": "vocab-hsk20-152",
+      "front": {
+        "hanzi": "白",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "白",
+        "pinyin": "bái",
+        "text": {
+          "fr": "blanc"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "lessonKind": "pinyin",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-00",
+    "sectionID": "section-00",
+    "unitID": "unit-00",
+    "newVocabularyIDs": [],
+    "reusedVocabularyIDs": [],
+    "newVocabularyCount": 0,
+    "extraVocabularyIDs": [],
+    "previewVocabularyIDs": [
+      "vocab-hsk20-067",
+      "vocab-hsk20-034",
+      "vocab-hsk20-037",
+      "vocab-hsk20-014",
+      "vocab-hsk20-024",
+      "vocab-hsk20-182",
+      "vocab-hsk20-152"
+    ],
+    "carriers": {
+      "你": "nǐ",
+      "到": "dào",
+      "半": "bàn",
+      "告": "gào",
+      "哥": "gē",
+      "哥哥": "gē ge",
+      "哪": "nǎ",
+      "喝": "hē",
+      "图": "tú",
+      "塔": "tǎ",
+      "大": "dà",
+      "套": "tào",
+      "妈妈": "mā ma",
+      "寒": "hán",
+      "岛": "dǎo",
+      "底": "dǐ",
+      "弟弟": "dì di",
+      "怕": "pà",
+      "打": "dǎ",
+      "汉": "hàn",
+      "河": "hé",
+      "湖": "hú",
+      "炉": "lú",
+      "烦": "fán",
+      "爸": "bà",
+      "爸爸": "bà ba",
+      "狗": "gǒu",
+      "男": "nán",
+      "盼": "pàn",
+      "科": "kē",
+      "米": "mǐ",
+      "老": "lǎo",
+      "蓝": "lán",
+      "读": "dú",
+      "跑": "pǎo",
+      "辣": "là",
+      "那": "nà",
+      "里": "lǐ",
+      "靠": "kào",
+      "饭": "fàn",
+      "饱": "bǎo",
+      "马": "mǎ",
+      "骂": "mà"
+    }
+  }
+}

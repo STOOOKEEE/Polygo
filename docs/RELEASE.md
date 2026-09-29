@@ -8,16 +8,17 @@ conception séparée, explicitement marquée `design-reference-only`.
 
 ## État du candidat
 
-- Le cours contient 116 leçons dans 9 unités : 4 leçons d’introduction
-  protégées et 112 séances planifiées (90 leçons du jour, 14 révisions et
+- Le cours contient 124 leçons dans 10 unités : le module 0 « Pinyin et tons »
+  (8 leçons d’écoute), 4 leçons d’introduction protégées et 120 séances
+  planifiées (8 leçons du module 0, 90 leçons du jour, 14 révisions et
   8 défis d’unité).
-- Le contenu contient 2 059 exercices (27 introduction + 1 620 leçons du jour +
-  412 révisions et défis), 94 histoires inline, 196 paragraphes et 605 cartes
-  distinctes (600 canoniques + 5 extras). Les 1 797 associations leçon–carte sont
-  fermées par le générateur.
+- Le contenu contient 2 203 exercices (27 introduction + 144 module 0 + 1 620
+  leçons du jour + 412 révisions et défis), 94 histoires inline, 196 paragraphes
+  et 605 cartes distinctes (600 canoniques + 5 extras). Les 1 854 associations
+  leçon–carte sont fermées par le générateur.
 - Chaque séance quotidienne vise 15 minutes : 12 minutes de cours et 3 minutes
-  de révision. La couverture vérifiée est 300/300 rangs au jour 60 et 600/600
-  rangs au jour 112 ; ces comptes décrivent le contenu planifié, pas une preuve
+  de révision. La couverture vérifiée est 300/300 rangs au jour 68 et 600/600
+  rangs au jour 120 ; ces comptes décrivent le contenu planifié, pas une preuve
   d’acquisition.
 - Le recto des nouvelles cartes affiche uniquement le hanzi ; pinyin et sens
   français sont au verso. Les 270 exercices à choix conservent IDs et réponses,

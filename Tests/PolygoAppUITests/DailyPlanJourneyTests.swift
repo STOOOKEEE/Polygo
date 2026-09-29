@@ -5,6 +5,8 @@ import XCTest
 /// protected starter lessons. Progress is passed as the same JSONL event
 /// journal used by the app and imported by the bounded Debug fixture hook;
 /// all post-seed answers go through the real UI.
+/// The eight module 0 sessions are skipped once a later lesson is complete, so
+/// the first session after the starters is day 9.
 final class DailyPlanJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -72,8 +74,8 @@ final class DailyPlanJourneyTests: XCTestCase {
         )
 
         XCTAssertTrue(
-            element(containing: "Jour 1 sur 112").waitForExistence(timeout: timeout),
-            "Aujourd’hui doit afficher J1/112"
+            element(containing: "Jour 9 sur 120").waitForExistence(timeout: timeout),
+            "Aujourd’hui doit afficher J9/120"
         )
         XCTAssertTrue(
             element(containing: "minutes de cours").waitForExistence(timeout: timeout),
@@ -186,12 +188,12 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit rester accessible")
         XCTAssertTrue(today.isHittable, "Le bouton Aujourd’hui doit être visible")
         today.tap()
-        XCTAssertTrue(element(containing: "Jour 2 sur 112").waitForExistence(timeout: timeout), "La séance suivante doit être J2")
+        XCTAssertTrue(element(containing: "Jour 10 sur 120").waitForExistence(timeout: timeout), "La séance suivante doit être J10")
         assertCoinBalance(50)
         attachScreenshot(named: "ios-daily-plan-day-two")
         app.terminate()
         app.launch()
-        XCTAssertTrue(element(containing: "Jour 2 sur 112").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
+        XCTAssertTrue(element(containing: "Jour 10 sur 120").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
         assertCoinBalance(50)
         XCTAssertFalse(element(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
     }

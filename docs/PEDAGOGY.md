@@ -1,9 +1,9 @@
 # Pédagogie et progression Polygo
 
 Contrat éditorial du programme **Mandarin au quotidien**, version 2026.10.0.
-Ce document décrit les quatre leçons d'introduction et les 112 séances
-quotidiennes qui les suivent : 90 leçons du jour, 14 révisions et 8 défis
-d'unité. Il complète [ARCHITECTURE.md](ARCHITECTURE.md),
+Ce document décrit les quatre leçons d'introduction et les 120 séances du plan :
+les 8 leçons d'écoute du module 0 « Pinyin et tons », 90 leçons du jour,
+14 révisions et 8 défis d'unité. Il complète [ARCHITECTURE.md](ARCHITECTURE.md),
 [CONTENT_SCHEMA.md](CONTENT_SCHEMA.md), [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md)
 et [SRS.md](SRS.md). Les durées, paliers et niveaux sont des décisions
 éditoriales ; ils ne mesurent pas le temps réel passé et ne promettent pas un
@@ -11,24 +11,32 @@ résultat d'examen.
 
 ## Périmètre du parcours
 
-Les leçons `lesson-01` à `lesson-04` forment l'introduction `unit-01`
-(`level-01`). Elles installent les premières salutations, la présentation, le
-pays d'origine et un mini-échange. Le programme quotidien commence ensuite au
-jour 1 avec `lesson-05` et se termine au jour 112 avec `boss-unit-09`. Le jour est
-l'unité de progression ; l'identifiant de leçon reste stable même si un jour
-est manqué.
+Le module 0, `unit-00` « Pinyin et tons » (`pinyin-01` à `pinyin-08`, `level-00`),
+ouvre le parcours et les jours 1 à 8 du plan : huit séances d'écoute pure pour
+installer l'oreille avant le premier mot (voir plus bas). Les leçons `lesson-01`
+à `lesson-04` forment ensuite l'introduction `unit-01` (`level-01`). Elles
+installent les premières salutations, la présentation, le pays d'origine et un
+mini-échange. Le programme quotidien de mots commence ensuite au jour 9 avec
+`lesson-05` et se termine au jour 120 avec `boss-unit-09`. Le jour est l'unité de
+progression ; l'identifiant de leçon reste stable même si un jour est manqué.
 
 | Bloc | Jours | Leçons du jour | Fonction éditoriale |
 | --- | ---: | ---: | --- |
-| Introduction | avant le jour 1 | 01–04 | installer les premiers échanges |
-| `unit-02` — Vie pratique | 1–15 | 05–16 | maison, repas, famille et déplacements simples |
-| `unit-03` — Temps, études et santé | 16–30 | 17–28 | routine, études, santé et loisirs |
-| `unit-04` — Achats et déplacements | 31–45 | 29–40 | achats, directions et vie quotidienne |
-| `unit-05` — Maison et communauté | 46–60 | 41–52 | quartier, maison et relations |
-| `unit-06` — Études et travail | 61–75 | 53–64 | études, bureau et consolidation intermédiaire |
-| `unit-07` — Ville et voyage | 76–90 | 65–76 | ville, transport et voyage |
-| `unit-08` — Météo, nature et loisirs | 91–102 | 77–86 | environnement, météo et activités |
-| `unit-09` — Récits et opinions | 103–112 | 87–94 | récits, opinions et bilan final |
+| `unit-00` — Pinyin et tons | 1–8 | `pinyin-01`–`08` | écouter les tons, les consonnes, les finales et l'orthographe du pinyin |
+| Introduction | avant le jour 9 | 01–04 | installer les premiers échanges |
+| `unit-02` — Vie pratique | 9–23 | 05–16 | maison, repas, famille et déplacements simples |
+| `unit-03` — Temps, études et santé | 24–38 | 17–28 | routine, études, santé et loisirs |
+| `unit-04` — Achats et déplacements | 39–53 | 29–40 | achats, directions et vie quotidienne |
+| `unit-05` — Maison et communauté | 54–68 | 41–52 | quartier, maison et relations |
+| `unit-06` — Études et travail | 69–83 | 53–64 | études, bureau et consolidation intermédiaire |
+| `unit-07` — Ville et voyage | 84–98 | 65–76 | ville, transport et voyage |
+| `unit-08` — Météo, nature et loisirs | 99–110 | 77–86 | environnement, météo et activités |
+| `unit-09` — Récits et opinions | 111–120 | 87–94 | récits, opinions et bilan final |
+
+Le module 0 est recommandé, pas obligatoire : `lesson-01` s'ouvre sans lui. Un
+apprenant qui choisit « Je connais le pinyin » ou « Je lis déjà quelques phrases »
+à l'onboarding, ou qui termine une leçon au-delà du module 0, n'y est plus ramené
+et le plan le compte comme dépassé (l'écran Aujourd'hui commence alors au jour 9).
 
 Dans chaque unité, une **révision** (`review-NN`) suit chaque série de cinq leçons
 du jour et un **défi d'unité** (`boss-unit-NN`) la clôt ; le défi d'une unité dont
@@ -47,6 +55,21 @@ Les sources d'authoring qui portent ce parcours sont
 et `Content/authoring/90-day-allocation.json` pour l'allocation commune. La
 release transforme ces fragments en documents chargés sous `Content/`.
 
+### Module 0 : apprendre à entendre
+
+Chaque leçon du module 0 alterne une explication courte, avec des conseils
+concrets pour un francophone, puis 18 exercices d'écoute : discriminer (paires
+minimales sur une seule différence : le ton, la consonne initiale ou la finale),
+reconnaître un mot entier, relier un son à son pinyin, dire à voix haute avec
+auto-évaluation. Les six premières leçons vont du plus simple au plus fin (tons
+isolés, `b/p d/t g/k`, `j q x` et `z c s`, `zh ch sh r`, finales et `-n / -ng`,
+enchaînements et 3e ton devant 3e ton) ; la septième pose l'orthographe (`y`,
+`w`, `ü`, `iu ui un`, apostrophe) et la huitième est un bilan sans règle
+nouvelle. Les mots portés par les exercices (« porteurs ») sont des caractères
+ou des mots réels et courants, dont le pinyin est vérifié ; les mots de
+vocabulaire de chaque leçon sont ceux que les leçons du jour enseigneront
+(aperçu, sans mot nouveau et sans compter dans les jalons).
+
 ## Une séance de 15 minutes
 
 Chaque entrée de `course.plan.sessions` porte un budget de 15 minutes :
@@ -55,9 +78,9 @@ ne devient ni une minuterie obligatoire ni une mesure d'engagement.
 
 | Période | Cours nouveau | Rappel SRS | Total |
 | --- | ---: | ---: | ---: |
-| Jours 1–112 | `lesson.estimatedMinutes` (12 min, 13 min pour un défi d'unité) | `15 - courseMinutes` (3 min, 2 min pour un défi) | 15 min |
+| Jours 1–120 | `lesson.estimatedMinutes` (12 min, 13 min pour un défi d'unité) | `15 - courseMinutes` (3 min, 2 min pour un défi) | 15 min |
 
-Pour chacune des 112 sessions, `courseMinutes` reprend la durée de la leçon
+Pour chacune des 120 sessions, `courseMinutes` reprend la durée de la leçon
 associée et `reviewMinutes` complète ce budget jusqu'à 15 minutes. Les leçons
 quotidiennes et les révisions valent 12 minutes, donc 12 + 3 ; un défi vaut
 13 + 2. Les bilans de l'allocation (jours 30, 60 et 90 avant l'insertion des
@@ -99,13 +122,13 @@ sur le nombre de cartes affichées :
 
 | Jalon | Ce qui est planifié | Ce que cela ne dit pas |
 | --- | --- | --- |
-| Jour 60 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
-| Jour 75 | consolidation et réemploi, sans nouvelle cible numérique | qu'un niveau ou une liste est validé |
-| Jour 112 | les rangs 1 à 600 sont planifiés | qu'un apprenant maîtrise le catalogue ou réussira un examen |
+| Jour 68 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
+| Jour 83 | consolidation et réemploi, sans nouvelle cible numérique | qu'un niveau ou une liste est validé |
+| Jour 120 | les rangs 1 à 600 sont planifiés | qu'un apprenant maîtrise le catalogue ou réussira un examen |
 
 Les révisions et les défis d'unité n'introduisent aucun mot : les jalons se posent
 sur le défi qui clôt l'unité de la leçon qui portait le jalon dans l'allocation
-(jours 48, 60 et 90 avant l'insertion des révisions).
+(jours 48, 60 et 90 avant l'insertion des révisions et du module 0).
 
 Une entrée rencontrée est une exposition éditoriale. La maîtrise demande des
 rappels et des productions observables, et reste indépendante du jour atteint.
@@ -184,7 +207,7 @@ et dans `PolygoSRS.SM2Scheduler`. Le contenu ne contient aucun état apprenant.
 La release vérifie les IDs, la résolution du catalogue, l'unicité des cartes,
 les objectifs et les exercices, les références de lecture, les deux scripts,
 les tons, les traductions et les assets réellement présents. Elle vérifie aussi
-que les 112 sessions sont contiguës, que chaque budget vaut 15 minutes, que
+que les 120 sessions sont contiguës, que chaque budget vaut 15 minutes, que
 les couvertures des jalons de 300 et 600 lexèmes portent sur les rangs canoniques
 annoncés et que chaque unité suit le rythme révision / défi décrit plus haut.
 Une publication peut afficher un repère de curriculum, une exposition ou une

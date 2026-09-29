@@ -1,0 +1,1528 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "pinyin-08",
+  "moduleID": "unit-00",
+  "order": 8,
+  "title": {
+    "fr": "Bilan d’écoute"
+  },
+  "summary": {
+    "fr": "Un bilan sans règle nouvelle : tons, consonnes, finales et enchaînements, à l’oreille."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "pinyin-08-hear",
+      "required": true,
+      "statement": {
+        "fr": "Reconnaître à l’oreille les tons, les consonnes, les finales et les enchaînements vus dans le module."
+      }
+    },
+    {
+      "id": "pinyin-08-link",
+      "required": true,
+      "statement": {
+        "fr": "Redire des mots courants avec les bons tons et énoncer les règles du module."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-083",
+      "canonicalID": "请|qǐng|83",
+      "hanzi": "请",
+      "pinyin": "qǐng",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "请",
+          "vocabularyID": "vocab-hsk20-083",
+          "pinyin": "qǐng"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "prier de ; inviter"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请坐。",
+        "pinyin": "qǐng zuò。",
+        "translation": {
+          "fr": "Asseyez-vous, s’il vous plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "请|qǐng|83",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 83,
+        "level": 1
+      },
+      "traditionalHanzi": "請"
+    },
+    {
+      "id": "vocab-hsk20-023",
+      "canonicalID": "对不起|duì bù qǐ|23",
+      "hanzi": "对不起",
+      "pinyin": "duì bù qǐ",
+      "toneNumbers": [
+        4,
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "对不起",
+          "vocabularyID": "vocab-hsk20-023",
+          "pinyin": "duì bù qǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "désolé ; pardon"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "对不起，我来晚了。",
+        "pinyin": "duì bù qǐ， wǒ lái wǎn le。",
+        "translation": {
+          "fr": "Désolé, je suis arrivé en retard."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "对不起|duì bù qǐ|23",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 23,
+        "level": 1
+      },
+      "traditionalHanzi": "對不起"
+    },
+    {
+      "id": "vocab-hsk20-066",
+      "canonicalID": "没关系|méi guān xì|66",
+      "hanzi": "没关系",
+      "pinyin": "méi guān xì",
+      "toneNumbers": [
+        2,
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "没关系",
+          "vocabularyID": "vocab-hsk20-066",
+          "pinyin": "méi guān xì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ce n’est pas grave"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "没关系，我们再试。",
+        "pinyin": "méi guān xì， wǒ men zài shì。",
+        "translation": {
+          "fr": "Ce n’est pas grave, nous réessaierons."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "没关系|méi guān xì|66",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 66,
+        "level": 1
+      },
+      "traditionalHanzi": "沒關係"
+    },
+    {
+      "id": "vocab-hsk20-077",
+      "canonicalID": "朋友|péng yǒu|77",
+      "hanzi": "朋友",
+      "pinyin": "péng yǒu",
+      "toneNumbers": [
+        2,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "朋友",
+          "vocabularyID": "vocab-hsk20-077",
+          "pinyin": "péng yǒu"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ami"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我的朋友来了。",
+        "pinyin": "wǒ de péng yǒu lái le。",
+        "translation": {
+          "fr": "Mon ami est arrivé."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "朋友|péng yǒu|77",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 77,
+        "level": 1
+      },
+      "traditionalHanzi": "朋友"
+    },
+    {
+      "id": "vocab-hsk20-201",
+      "canonicalID": "姐姐|jiě jie|201",
+      "hanzi": "姐姐",
+      "pinyin": "jiě jie",
+      "toneNumbers": [
+        3,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "姐姐",
+          "vocabularyID": "vocab-hsk20-201",
+          "pinyin": "jiě jie"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "grande sœur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我姐姐在家。",
+        "pinyin": "wǒ jiě jie zài jiā。",
+        "translation": {
+          "fr": "Ma grande sœur est à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "姐姐|jiě jie|201",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 201,
+        "level": 2
+      },
+      "traditionalHanzi": "姐姐"
+    },
+    {
+      "id": "vocab-hsk20-224",
+      "canonicalID": "妹妹|mèi mei|224",
+      "hanzi": "妹妹",
+      "pinyin": "mèi mei",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "妹妹",
+          "vocabularyID": "vocab-hsk20-224",
+          "pinyin": "mèi mei"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "petite sœur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我妹妹在学校。",
+        "pinyin": "wǒ mèi mèi zài xué xiào。",
+        "translation": {
+          "fr": "Ma petite sœur est à l’école."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "妹妹|mèi mei|224",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 224,
+        "level": 2
+      },
+      "traditionalHanzi": "妹妹"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-08-intro-1",
+      "title": {
+        "fr": "Un bilan pour écouter, pas pour apprendre"
+      },
+      "body": {
+        "fr": "Cette leçon ne contient aucune règle nouvelle. Elle mélange ce que tu as entendu dans le module : les tons, les consonnes, les finales et les enchaînements. Écoute chaque enregistrement autant de fois que nécessaire.\nSi une question te résiste, elle te dit quoi réécouter :\n· tons isolés et mots de deux syllabes : leçons 1 et 6 ;\n· b/p, d/t, g/k : leçon 2 ; j/q/x et z/c/s : leçon 3 ; zh/ch/sh/r : leçon 4 ;\n· finales, -n et -ng : leçon 5 ;\n· orthographe : leçon 7.\nAprès ce bilan, la leçon « Dire bonjour » t’attend : tu entendras enfin des phrases entières."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-pinyin-08-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-083",
+        "vocab-hsk20-023",
+        "vocab-hsk20-066",
+        "vocab-hsk20-077",
+        "vocab-hsk20-201",
+        "vocab-hsk20-224"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-01",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-08-01",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "请",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-02",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-08-02",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "谢谢",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "jiě jie"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "xiě xie"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "xiè xie"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-03",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-08-03",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "对不起",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "朋友 (péng yǒu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "对不起 (duì bù qǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "谢谢 (xiè xie)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "再见 (zài jiàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-04",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-08-04",
+          "prompt": {
+            "fr": "Écoute chaque caractère et associe-le à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un caractère (il se prononce), puis touche son pinyin."
+          },
+          "objectiveIDs": [
+            "pinyin-08-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "谢谢",
+            "pinyin": null,
+            "right": {
+              "fr": "xiè xie"
+            }
+          },
+          {
+            "id": "b",
+            "left": "请",
+            "pinyin": null,
+            "right": {
+              "fr": "qǐng"
+            }
+          },
+          {
+            "id": "c",
+            "left": "朋友",
+            "pinyin": null,
+            "right": {
+              "fr": "péng yǒu"
+            }
+          },
+          {
+            "id": "d",
+            "left": "姐姐",
+            "pinyin": null,
+            "right": {
+              "fr": "jiě jie"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-05",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-08-05",
+          "prompt": {
+            "fr": "Quel signe note le 3e ton ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-08-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-06",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-08-06",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "姐姐",
+        "choices": [
+          {
+            "id": "t30",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t34",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t30"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-07",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-08-07",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "四",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "zhì"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "sì"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "shì"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "zì"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-08",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-08-08",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "笑",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "叫 (jiào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "笑 (xiào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "跳 (tiào)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "俏 (qiào)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-09",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-08-09",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "忙",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "máng"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "méng"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mén"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "mán"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "final",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-10",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-08-10",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "词",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "时 (shí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "直 (zhí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "词 (cí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "迟 (chí)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-11",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-08-11",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "不对",
+        "choices": [
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t24",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t24"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-12",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-08-12",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "你好",
+        "choices": [
+          {
+            "id": "t21",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t23",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t31",
+            "label": {
+              "fr": "Ton 3 ˇ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t23"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-13",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-08-13",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "一起",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "yì qǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "yí qǐ"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "yī qǐ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-14",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-08-14",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "半",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "饭 (fàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "汉 (hàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "半 (bàn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "盼 (pàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-15",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-08-15",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "汉语",
+        "choices": [
+          {
+            "id": "t13",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t23",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t43",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 3 ˇ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t43"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-16",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-08-16",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-08-hear"
+          ],
+          "required": true
+        },
+        "promptText": "谢谢",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "谢谢 (xiè xie)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "姐姐 (jiě jie)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "弟弟 (dì di)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "妹妹 (mèi mei)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-17",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-08-17",
+          "prompt": {
+            "fr": "Laquelle de ces phrases est juste ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-08-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "Devant un 4e ton, 不 reste toujours bù"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "一 se dit toujours yī, quel que soit le ton qui suit"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "Après j, q, x, le ü s’écrit toujours avec un tréma"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Deux 3es tons de suite : le premier se dit comme un 2e ton (nǐ hǎo → ní hǎo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-08-18",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-pinyin-08-18",
+          "prompt": {
+            "fr": "Dis à voix haute : xiè xie, zài jiàn."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis-le, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "pinyin-08-link"
+          ],
+          "required": false
+        },
+        "referenceText": "谢谢，再见",
+        "referencePinyin": "xiè xie, zài jiàn",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "谢谢，再见"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "speaking",
+        "lessonDay": 8
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-pinyin-08-recap",
+      "objectiveIDs": [
+        "pinyin-08-hear",
+        "pinyin-08-link"
+      ],
+      "vocabularyIDs": [
+        "vocab-hsk20-083",
+        "vocab-hsk20-023",
+        "vocab-hsk20-066",
+        "vocab-hsk20-077",
+        "vocab-hsk20-201",
+        "vocab-hsk20-224"
+      ],
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 8
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-083",
+      "vocabularyID": "vocab-hsk20-083",
+      "front": {
+        "hanzi": "请",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "请",
+        "pinyin": "qǐng",
+        "text": {
+          "fr": "prier de ; inviter"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-023",
+      "vocabularyID": "vocab-hsk20-023",
+      "front": {
+        "hanzi": "对不起",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "对不起",
+        "pinyin": "duì bù qǐ",
+        "text": {
+          "fr": "désolé ; pardon"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-066",
+      "vocabularyID": "vocab-hsk20-066",
+      "front": {
+        "hanzi": "没关系",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "没关系",
+        "pinyin": "méi guān xì",
+        "text": {
+          "fr": "ce n’est pas grave"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-077",
+      "vocabularyID": "vocab-hsk20-077",
+      "front": {
+        "hanzi": "朋友",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "朋友",
+        "pinyin": "péng yǒu",
+        "text": {
+          "fr": "ami"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-201",
+      "vocabularyID": "vocab-hsk20-201",
+      "front": {
+        "hanzi": "姐姐",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "姐姐",
+        "pinyin": "jiě jie",
+        "text": {
+          "fr": "grande sœur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-224",
+      "vocabularyID": "vocab-hsk20-224",
+      "front": {
+        "hanzi": "妹妹",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "妹妹",
+        "pinyin": "mèi mei",
+        "text": {
+          "fr": "petite sœur"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "lessonKind": "pinyin",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-00",
+    "sectionID": "section-00",
+    "unitID": "unit-00",
+    "newVocabularyIDs": [],
+    "reusedVocabularyIDs": [],
+    "newVocabularyCount": 0,
+    "extraVocabularyIDs": [],
+    "previewVocabularyIDs": [
+      "vocab-hsk20-083",
+      "vocab-hsk20-023",
+      "vocab-hsk20-066",
+      "vocab-hsk20-077",
+      "vocab-hsk20-201",
+      "vocab-hsk20-224"
+    ],
+    "carriers": {
+      "一": "yī",
+      "一个": "yí ge",
+      "一起": "yì qǐ",
+      "不对": "bú duì",
+      "你好": "nǐ hǎo",
+      "俏": "qiào",
+      "再见": "zài jiàn",
+      "写": "xiě",
+      "制": "zhì",
+      "半": "bàn",
+      "叫": "jiào",
+      "四": "sì",
+      "妹妹": "mèi mei",
+      "姐姐": "jiě jie",
+      "字": "zì",
+      "对不起": "duì bù qǐ",
+      "弟弟": "dì di",
+      "忙": "máng",
+      "时": "shí",
+      "是": "shì",
+      "朋友": "péng yǒu",
+      "汉": "hàn",
+      "汉语": "Hàn yǔ",
+      "直": "zhí",
+      "盼": "pàn",
+      "笑": "xiào",
+      "萌": "méng",
+      "蛮": "mán",
+      "词": "cí",
+      "请": "qǐng",
+      "谢谢": "xiè xie",
+      "起": "qǐ",
+      "跳": "tiào",
+      "迟": "chí",
+      "门": "mén",
+      "饭": "fàn"
+    }
+  }
+}

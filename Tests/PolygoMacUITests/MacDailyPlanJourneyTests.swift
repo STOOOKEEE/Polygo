@@ -6,6 +6,8 @@ import XCTest
 /// session through the macOS UI. The fixture represents four real
 /// lessonCompleted events from an earlier visit; the bounded Debug import
 /// only transfers that journal into the AUT sandbox.
+/// The eight module 0 sessions are skipped once a later lesson is complete, so
+/// the first session after the starters is day 9.
 final class MacDailyPlanJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -73,8 +75,8 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             "L5 doit conserver l’écoute, l’oral puis la lecture en fin de séance"
         )
 
-        let dayOne = text(containing: "Jour 1 sur 112")
-        XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J1/112")
+        let dayOne = text(containing: "Jour 9 sur 120")
+        XCTAssertTrue(dayOne.waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J9/120")
         XCTAssertTrue(text(containing: "minutes de cours").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de cours")
         XCTAssertTrue(text(containing: "minutes de révision").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher le budget de révision")
         assertCoinBalance(40)
@@ -181,12 +183,12 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit rester accessible")
         XCTAssertTrue(today.isHittable, "Le bouton Aujourd’hui doit être visible")
         today.click()
-        let dayTwo = text(containing: "Jour 2 sur 112")
-        XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J2")
+        let dayTwo = text(containing: "Jour 10 sur 120")
+        XCTAssertTrue(dayTwo.waitForExistence(timeout: timeout), "La complétion de L5 doit faire progresser le programme à J10")
         assertCoinBalance(50)
         app.terminate()
         app.launch()
-        XCTAssertTrue(text(containing: "Jour 2 sur 112").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
+        XCTAssertTrue(text(containing: "Jour 10 sur 120").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
         assertCoinBalance(50)
         XCTAssertFalse(text(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
         attachScreenshot(named: "mac-daily-plan-day-two")

@@ -1,0 +1,1674 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "pinyin-01",
+  "moduleID": "unit-00",
+  "order": 1,
+  "title": {
+    "fr": "Les quatre tons"
+  },
+  "summary": {
+    "fr": "Écouter et reconnaître les quatre tons du mandarin et le ton neutre, sur des syllabes puis sur des mots."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "pinyin-01-hear",
+      "required": true,
+      "statement": {
+        "fr": "Reconnaître à l’oreille les quatre tons du mandarin et le ton neutre."
+      }
+    },
+    {
+      "id": "pinyin-01-link",
+      "required": true,
+      "statement": {
+        "fr": "Associer chaque ton à son signe et à sa mélodie, puis le redire."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-061",
+      "canonicalID": "妈妈|mā ma|61",
+      "hanzi": "妈妈",
+      "pinyin": "mā ma",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "妈妈",
+          "vocabularyID": "vocab-hsk20-061",
+          "pinyin": "mā ma"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "maman"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "妈妈在厨房。",
+        "pinyin": "mā ma zài chú fáng。",
+        "translation": {
+          "fr": "Maman est dans la cuisine."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "妈妈|mā ma|61",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 61,
+        "level": 1
+      },
+      "traditionalHanzi": "媽媽"
+    },
+    {
+      "id": "vocab-hsk20-003",
+      "canonicalID": "爸爸|bà ba|3",
+      "hanzi": "爸爸",
+      "pinyin": "bà ba",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "爸爸",
+          "vocabularyID": "vocab-hsk20-003",
+          "pinyin": "bà ba"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "papa"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我爸爸在家。",
+        "pinyin": "wǒ bà ba zài jiā。",
+        "translation": {
+          "fr": "Mon père est à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "爸爸|bà ba|3",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 3,
+        "level": 1
+      },
+      "traditionalHanzi": "爸爸"
+    },
+    {
+      "id": "vocab-hsk20-062",
+      "canonicalID": "吗|ma|62",
+      "hanzi": "吗",
+      "pinyin": "ma",
+      "toneNumbers": [
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "吗",
+          "vocabularyID": "vocab-hsk20-062",
+          "pinyin": "ma"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "particule interrogative"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你喝茶吗？",
+        "pinyin": "nǐ hē chá ma？",
+        "translation": {
+          "fr": "Bois-tu du thé ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吗|ma|62",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 62,
+        "level": 1
+      },
+      "traditionalHanzi": "嗎"
+    },
+    {
+      "id": "vocab-hsk20-098",
+      "canonicalID": "书|shū|98",
+      "hanzi": "书",
+      "pinyin": "shū",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "书",
+          "vocabularyID": "vocab-hsk20-098",
+          "pinyin": "shū"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "livre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我正在读这本书。",
+        "pinyin": "wǒ zhèng zài dú zhè běn shū。",
+        "translation": {
+          "fr": "Je lis ce livre en ce moment."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "书|shū|98",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 98,
+        "level": 1
+      },
+      "traditionalHanzi": "書"
+    },
+    {
+      "id": "vocab-hsk20-010",
+      "canonicalID": "茶|chá|10",
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "茶",
+          "vocabularyID": "vocab-hsk20-010",
+          "pinyin": "chá"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "thé"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天喝茶。",
+        "pinyin": "wǒ měi tiān hē chá。",
+        "translation": {
+          "fr": "Je bois du thé chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "茶|chá|10",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 10,
+        "level": 1
+      },
+      "traditionalHanzi": "茶"
+    },
+    {
+      "id": "vocab-hsk20-100",
+      "canonicalID": "水|shuǐ|100",
+      "hanzi": "水",
+      "pinyin": "shuǐ",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "水",
+          "vocabularyID": "vocab-hsk20-100",
+          "pinyin": "shuǐ"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "eau"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请给我一杯水。",
+        "pinyin": "qǐng gěi wǒ yī bēi shuǐ。",
+        "translation": {
+          "fr": "Donne-moi un verre d’eau, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "水|shuǐ|100",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 100,
+        "level": 1
+      },
+      "traditionalHanzi": "水"
+    },
+    {
+      "id": "vocab-shi",
+      "hanzi": "是",
+      "traditionalHanzi": "是",
+      "pinyin": "shì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "是",
+          "vocabularyID": "vocab-shi",
+          "pinyin": "shì",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "partOfSpeech": "verb",
+      "grammarNotes": [
+        {
+          "pattern": "A 是 B",
+          "explanation": {
+            "fr": "是 relie le sujet et son identité ou sa catégorie : 我是法国人 signifie « je suis français·e »."
+          },
+          "examples": [
+            {
+              "hanzi": "我是法国人。",
+              "pinyin": "wǒ shì Fǎguó rén.",
+              "translation": {
+                "fr": "Je suis français·e."
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-shi",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "être ; c'est"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我是法国人。",
+        "pinyin": "wǒ shì Fǎguó rén.",
+        "translation": {
+          "fr": "Je suis français·e."
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "是 relie deux informations comme un petit pont : je suis..."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "是",
+          "traditional": "是"
+        }
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-01-intro-1",
+      "title": {
+        "fr": "Le mandarin est une langue à tons"
+      },
+      "body": {
+        "fr": "En mandarin, chaque syllabe porte sa propre mélodie : c’est le ton. Le même son dit avec un autre ton devient un autre mot : mā (妈, maman), má (麻, chanvre), mǎ (马, cheval), mà (骂, gronder).\nEn français, la mélodie appartient à la phrase entière (une question, une surprise). Ici, elle appartient à chaque syllabe. C’est le premier réflexe à installer, et l’oreille s’y habitue vite si tu écoutes beaucoup avant de parler.\nDans ce module, tu lis très peu : tu écoutes, tu compares, tu choisis. Rejoue chaque enregistrement autant de fois que tu veux."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-01-intro-2",
+      "title": {
+        "fr": "Les quatre tons et le ton neutre"
+      },
+      "body": {
+        "fr": "Ton 1 (mā, signe ¯) : haut et plat. Tiens une note aiguë, comme un « aaah » chanté, sans la faire bouger.\nTon 2 (má, signe ˊ) : montant. Monte comme dans « Quoi ? » dit avec surprise.\nTon 3 (mǎ, signe ˇ) : bas, avec un creux. Descends bien bas, comme dans un « Hum… » de doute, et remonte un peu à la fin si la syllabe est seule.\nTon 4 (mà, signe ˋ) : descendant, court et net. Comme un ordre sec : « Non ! ».\nTon neutre (ma, aucun signe) : léger et bref. Sa hauteur dépend de la syllabe qui précède.\nEn pinyin, le signe du ton se pose sur la voyelle. Astuce : dessine la courbe dans l’air avec la main en disant la syllabe."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-pinyin-01-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-061",
+        "vocab-hsk20-003",
+        "vocab-hsk20-062",
+        "vocab-hsk20-098",
+        "vocab-hsk20-010",
+        "vocab-hsk20-100",
+        "vocab-shi"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-01",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-01-01",
+          "prompt": {
+            "fr": "Combien de tons différents compte le mandarin, sans compter le ton neutre ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-01-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "Quatre"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "Cinq"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Deux"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Trois"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-02",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-02",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "妈",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t1"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-03",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-03",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "麻",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-04",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-04",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "马",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-05",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-05",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "骂",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t4"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-06",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-01-06",
+          "prompt": {
+            "fr": "Écoute chaque caractère et associe-le à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un caractère (il se prononce), puis touche son pinyin."
+          },
+          "objectiveIDs": [
+            "pinyin-01-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "妈",
+            "pinyin": null,
+            "right": {
+              "fr": "mā"
+            }
+          },
+          {
+            "id": "b",
+            "left": "麻",
+            "pinyin": null,
+            "right": {
+              "fr": "má"
+            }
+          },
+          {
+            "id": "c",
+            "left": "马",
+            "pinyin": null,
+            "right": {
+              "fr": "mǎ"
+            }
+          },
+          {
+            "id": "d",
+            "left": "骂",
+            "pinyin": null,
+            "right": {
+              "fr": "mà"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-07",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-01-07",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "马",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "mā"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "má"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "mǎ"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "mà"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-08",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-01-08",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "骂",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "麻 (má)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "马 (mǎ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "骂 (mà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "妈 (mā)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-09",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-09",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "茶",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-10",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-10",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "水",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t3"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-11",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-01-11",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "书",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "shū"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "shú"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "shǔ"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "shù"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-12",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-01-12",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "是",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "茶 (chá)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "水 (shuǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "书 (shū)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-13",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-01-13",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "妈妈",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "mà ma"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "má ma"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "mā ma"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "mā mā"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-14",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-14",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "爸爸",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t40",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t40"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-15",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-01-15",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "妈妈",
+        "choices": [
+          {
+            "id": "t10",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton neutre"
+            },
+            "audio": null
+          },
+          {
+            "id": "t11",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t10"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-16",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-01-16",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "爸爸",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "爸爸 (bà ba)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "哥哥 (gē ge)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "弟弟 (dì di)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "妈妈 (mā ma)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-17",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-01-17",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-01-hear"
+          ],
+          "required": true
+        },
+        "promptText": "马",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "马 (mǎ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "骂 (mà)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "妈 (mā)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "麻 (má)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "tone",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-01-18",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-pinyin-01-18",
+          "prompt": {
+            "fr": "Dis les quatre tons à la suite : mā má mǎ mà."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis-le, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "pinyin-01-link"
+          ],
+          "required": false
+        },
+        "referenceText": "妈麻马骂",
+        "referencePinyin": "mā má mǎ mà",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "妈麻马骂"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "speaking",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-pinyin-01-recap",
+      "objectiveIDs": [
+        "pinyin-01-hear",
+        "pinyin-01-link"
+      ],
+      "vocabularyIDs": [
+        "vocab-hsk20-061",
+        "vocab-hsk20-003",
+        "vocab-hsk20-062",
+        "vocab-hsk20-098",
+        "vocab-hsk20-010",
+        "vocab-hsk20-100",
+        "vocab-shi"
+      ],
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 1
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-061",
+      "vocabularyID": "vocab-hsk20-061",
+      "front": {
+        "hanzi": "妈妈",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "妈妈",
+        "pinyin": "mā ma",
+        "text": {
+          "fr": "maman"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-003",
+      "vocabularyID": "vocab-hsk20-003",
+      "front": {
+        "hanzi": "爸爸",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "爸爸",
+        "pinyin": "bà ba",
+        "text": {
+          "fr": "papa"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-062",
+      "vocabularyID": "vocab-hsk20-062",
+      "front": {
+        "hanzi": "吗",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吗",
+        "pinyin": "ma",
+        "text": {
+          "fr": "particule interrogative"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-098",
+      "vocabularyID": "vocab-hsk20-098",
+      "front": {
+        "hanzi": "书",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "书",
+        "pinyin": "shū",
+        "text": {
+          "fr": "livre"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-010",
+      "vocabularyID": "vocab-hsk20-010",
+      "front": {
+        "hanzi": "茶",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "茶",
+        "pinyin": "chá",
+        "text": {
+          "fr": "thé"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-100",
+      "vocabularyID": "vocab-hsk20-100",
+      "front": {
+        "hanzi": "水",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "水",
+        "pinyin": "shuǐ",
+        "text": {
+          "fr": "eau"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-shi",
+      "vocabularyID": "vocab-shi",
+      "front": {
+        "hanzi": "是",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "是",
+        "pinyin": "shì · 4",
+        "text": {
+          "fr": "être ; c'est"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "identity"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "lessonKind": "pinyin",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-00",
+    "sectionID": "section-00",
+    "unitID": "unit-00",
+    "newVocabularyIDs": [],
+    "reusedVocabularyIDs": [],
+    "newVocabularyCount": 0,
+    "extraVocabularyIDs": [],
+    "previewVocabularyIDs": [
+      "vocab-hsk20-061",
+      "vocab-hsk20-003",
+      "vocab-hsk20-062",
+      "vocab-hsk20-098",
+      "vocab-hsk20-010",
+      "vocab-hsk20-100",
+      "vocab-shi"
+    ],
+    "carriers": {
+      "书": "shū",
+      "哥哥": "gē ge",
+      "妈": "mā",
+      "妈妈": "mā ma",
+      "弟弟": "dì di",
+      "是": "shì",
+      "树": "shù",
+      "水": "shuǐ",
+      "熟": "shú",
+      "爸爸": "bà ba",
+      "茶": "chá",
+      "马": "mǎ",
+      "骂": "mà",
+      "麻": "má",
+      "鼠": "shǔ"
+    }
+  }
+}

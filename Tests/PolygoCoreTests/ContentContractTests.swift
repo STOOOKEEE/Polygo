@@ -171,7 +171,7 @@ final class ContentContractTests: XCTestCase {
 
             let moduleOrders = course.modules.map(\.order)
             XCTAssertEqual(Set(moduleOrders).count, moduleOrders.count, "Module orders must be unique in \(course.id.rawValue)")
-            XCTAssertTrue(moduleOrders.allSatisfy { $0 > 0 }, "Module orders must be positive")
+            XCTAssertTrue(moduleOrders.allSatisfy { $0 >= 0 }, "Module orders must not be negative")
 
             let courseLessonIDs = course.modules.flatMap(\.lessonIDs)
             XCTAssertFalse(courseLessonIDs.isEmpty, "\(course.id.rawValue) must contain a lesson")
@@ -266,6 +266,7 @@ final class ContentContractTests: XCTestCase {
 
     /// The platform journeys keep these four lesson and exercise IDs stable.
     /// Their canonical answers are still evaluated through the real engine.
+    /// Module 0 (`pinyin-NN`) comes first on the path; the starters follow it.
     func testStarterFixtureRetainsFirstFourLessonAndExerciseIDs() async throws {
         let content = store()
         let index = try await content.index()
@@ -273,6 +274,7 @@ final class ContentContractTests: XCTestCase {
         let orderedLessonIDs = course.modules
             .sorted { $0.order < $1.order }
             .flatMap(\.lessonIDs)
+            .filter { !$0.rawValue.hasPrefix("pinyin-") }
 
         XCTAssertGreaterThanOrEqual(orderedLessonIDs.count, starterLessonIDs.count)
         XCTAssertEqual(Array(orderedLessonIDs.prefix(starterLessonIDs.count)), starterLessonIDs)
@@ -291,6 +293,58 @@ final class ContentContractTests: XCTestCase {
                 XCTAssertTrue(evaluation.accepted, "Starter answer for \(exercise.spec.id.rawValue) must be accepted")
                 XCTAssertEqual(evaluation.score, 1, accuracy: 0.000_001)
             }
+        }
+    }
+
+    /// Module 0 teaches pinyin and tones by ear before lesson-01: 6–8 lessons
+    /// that open the path and the plan, each a listening session of 15–20
+    /// exercises through the three phases, with minimal pairs and no new word.
+    func testModuleZeroOpensThePathAndThePlanWithListeningLessons() async throws {
+        let (index, snapshots) = try await allCourseSnapshots()
+        let snapshot = try XCTUnwrap(snapshots.first(where: { $0.manifest.id == index.defaultCourseID }))
+        let modules = snapshot.manifest.modules.sorted { $0.order < $1.order }
+        let moduleZero = try XCTUnwrap(modules.first)
+        XCTAssertEqual(moduleZero.id.rawValue, "unit-00")
+        XCTAssertEqual(moduleZero.order, 0)
+        XCTAssertTrue((6...8).contains(moduleZero.lessonIDs.count), "Module 0 has 6 to 8 lessons")
+        XCTAssertTrue(moduleZero.lessonIDs.allSatisfy { $0.rawValue.hasPrefix("pinyin-") })
+        XCTAssertEqual(
+            snapshot.lessons.filter { $0.id.rawValue.hasPrefix("pinyin-") }.count, moduleZero.lessonIDs.count,
+            "Only module 0 holds pinyin lessons"
+        )
+        XCTAssertEqual(modules.dropFirst().first?.lessonIDs, starterLessonIDs, "The starter unit follows module 0")
+        XCTAssertEqual(snapshot.lessons.map(\.order), Array(1...snapshot.lessons.count), "A lesson's order is its position on the path")
+
+        let plan = try XCTUnwrap(snapshot.manifest.plan)
+        let sessions = plan.orderedSessions
+        let head = sessions.prefix(moduleZero.lessonIDs.count)
+        XCTAssertEqual(head.map(\.lessonID), moduleZero.lessonIDs, "Module 0 takes the first days of the plan")
+        XCTAssertTrue(head.allSatisfy { $0.courseMinutes == 12 && $0.reviewMinutes == 3 })
+        let courseMetadata = try XCTUnwrap(try rawCourse(index.defaultCourseID)["metadata"] as? [String: Any])
+        XCTAssertEqual(courseMetadata["plannedSessionCount"] as? Int, sessions.count)
+        XCTAssertEqual(courseMetadata["availableLessonCount"] as? Int, sessions.count + starterLessonIDs.count)
+
+        let listening: Set<String> = ["toneDiscrimination", "dictation", "listeningChoice"]
+        let phases = ["discover", "guided", "reuse"]
+        for lessonID in moduleZero.lessonIDs {
+            let raw = try rawLesson(lessonID)
+            let metadata = try XCTUnwrap(raw["metadata"] as? [String: Any])
+            XCTAssertEqual(metadata["lessonKind"] as? String, "pinyin")
+            XCTAssertEqual(metadata["newVocabularyIDs"] as? [String], [], "\(lessonID.rawValue) introduces no word")
+            let exercises = try XCTUnwrap(raw["blocks"] as? [[String: Any]]).filter { $0["kind"] as? String == "exercise" }
+            XCTAssertTrue((15...20).contains(exercises.count), "\(lessonID.rawValue) runs 15–20 exercises")
+            let kinds = exercises.compactMap { ($0["spec"] as? [String: Any])?["kind"] as? String }
+            XCTAssertGreaterThanOrEqual(Set(kinds).count, 4, "\(lessonID.rawValue) varies its exercise kinds")
+            XCTAssertGreaterThanOrEqual(
+                Double(kinds.filter(listening.contains).count), 0.6 * Double(kinds.count),
+                "\(lessonID.rawValue) is mostly listening"
+            )
+            let contrasts = exercises.filter { editorialMetadata(in: $0)?["contrast"] != nil }
+            XCTAssertGreaterThanOrEqual(contrasts.count, 4, "\(lessonID.rawValue) drills minimal pairs")
+            let ranks = exercises.compactMap { phases.firstIndex(of: editorialMetadata(in: $0)?["stage"] as? String ?? "") }
+            XCTAssertEqual(ranks.count, exercises.count)
+            XCTAssertEqual(ranks, ranks.sorted(), "\(lessonID.rawValue) follows the phase order")
+            XCTAssertEqual(Set(ranks).count, phases.count)
         }
     }
 
@@ -484,12 +538,12 @@ final class ContentContractTests: XCTestCase {
 
             XCTAssertEqual(plan.targetMinutes, 15, "\(snapshot.manifest.id.rawValue) daily target")
             let sessions = plan.orderedSessions
-            // 90 daily lessons, a review after each five of them and a boss closing each of the 8 units.
+            // 8 module 0 lessons, 90 daily lessons, a review after each five of them and a boss closing each of the 8 units.
             XCTAssertEqual(
                 sessions.filter { $0.lessonID.rawValue.hasPrefix("lesson-") }.count, 90,
                 "\(snapshot.manifest.id.rawValue) must schedule 90 daily lessons"
             )
-            XCTAssertEqual(sessions.count, 90 + 14 + 8, "\(snapshot.manifest.id.rawValue) must author 112 sessions")
+            XCTAssertEqual(sessions.count, 8 + 90 + 14 + 8, "\(snapshot.manifest.id.rawValue) must author 120 sessions")
             let days = sessions.map(\.day)
             XCTAssertEqual(days, Array(1...sessions.count), "Plan days must be contiguous and start at one")
             XCTAssertEqual(Set(sessions.map(\.lessonID)).count, sessions.count, "A lesson may occur in only one plan day")
@@ -738,10 +792,16 @@ final class ContentContractTests: XCTestCase {
                 XCTAssertTrue(newIDs.isDisjoint(with: introducedVocabulary), "A vocabulary ID can be introduced only once")
                 XCTAssertTrue(reusedIDs.isDisjoint(with: newIDs))
                 XCTAssertTrue(reusedIDs.isSubset(of: introducedVocabulary), "Reused vocabulary in \(lesson.id.rawValue) must have appeared earlier")
-                XCTAssertTrue(
-                    localVocabularyIDs.subtracting(newIDs).subtracting(extraIDs).isSubset(of: introducedVocabulary),
-                    "A non-new vocabulary object in \(lesson.id.rawValue) must be an actual earlier reuse or a declared extra"
-                )
+                if metadata["lessonKind"] as? String == "pinyin" {
+                    // Module 0 only previews words: the daily lessons introduce them.
+                    let preview = Set((metadata["previewVocabularyIDs"] as? [String] ?? []).compactMap(VocabularyID.init(rawValue:)))
+                    XCTAssertEqual(preview, localVocabularyIDs, "\(lesson.id.rawValue) must preview exactly its vocabulary")
+                } else {
+                    XCTAssertTrue(
+                        localVocabularyIDs.subtracting(newIDs).subtracting(extraIDs).isSubset(of: introducedVocabulary),
+                        "A non-new vocabulary object in \(lesson.id.rawValue) must be an actual earlier reuse or a declared extra"
+                    )
+                }
                 introducedVocabulary.formUnion(newIDs)
 
                 let blocks = try XCTUnwrap(raw["blocks"] as? [[String: Any]])
@@ -849,7 +909,7 @@ final class ContentContractTests: XCTestCase {
         var reviews = 0
         var bosses = 0
 
-        for module in snapshot.manifest.modules where !planned.isDisjoint(with: module.lessonIDs) {
+        for module in snapshot.manifest.modules where !planned.isDisjoint(with: module.lessonIDs) && !module.lessonIDs.allSatisfy({ $0.rawValue.hasPrefix("pinyin-") }) {
             var run: [LessonID] = []
             for lessonID in module.lessonIDs {
                 let raw = try rawLesson(lessonID)

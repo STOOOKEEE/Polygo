@@ -1,0 +1,1707 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.0",
+  "id": "pinyin-04",
+  "moduleID": "unit-00",
+  "order": 4,
+  "title": {
+    "fr": "zh, ch, sh, r : la langue recourbée"
+  },
+  "summary": {
+    "fr": "Entendre la différence entre les consonnes à plat (z, c, s) et recourbées (zh, ch, sh), puis le r chinois."
+  },
+  "estimatedMinutes": 12,
+  "objectives": [
+    {
+      "id": "pinyin-04-hear",
+      "required": true,
+      "statement": {
+        "fr": "Distinguer à l’oreille zh/ch/sh/r et les consonnes à plat z/c/s."
+      }
+    },
+    {
+      "id": "pinyin-04-link",
+      "required": true,
+      "statement": {
+        "fr": "Savoir placer la langue pour zh, ch, sh, r et les redire."
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "vocab-hsk20-011",
+      "canonicalID": "吃|chī|11",
+      "hanzi": "吃",
+      "pinyin": "chī",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "吃",
+          "vocabularyID": "vocab-hsk20-011",
+          "pinyin": "chī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "manger"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃米饭。",
+        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+        "translation": {
+          "fr": "J’aime manger du riz."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吃|chī|11",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 11,
+        "level": 1
+      },
+      "traditionalHanzi": "喫"
+    },
+    {
+      "id": "vocab-hsk20-094",
+      "canonicalID": "十|shí|94",
+      "hanzi": "十",
+      "pinyin": "shí",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "十",
+          "vocabularyID": "vocab-hsk20-094",
+          "pinyin": "shí"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "dix"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我有十本书。",
+        "pinyin": "wǒ yǒu shí běn shū。",
+        "translation": {
+          "fr": "J’ai dix livres."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "十|shí|94",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 94,
+        "level": 1
+      },
+      "traditionalHanzi": "十"
+    },
+    {
+      "id": "vocab-hsk20-088",
+      "canonicalID": "日|rì|88",
+      "hanzi": "日",
+      "pinyin": "rì",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "日",
+          "vocabularyID": "vocab-hsk20-088",
+          "pinyin": "rì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "jour ; date"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天是九月三日。",
+        "pinyin": "jīn tiān shì jiǔ yuè sān rì。",
+        "translation": {
+          "fr": "Nous sommes le 3 septembre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "日|rì|88",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 88,
+        "level": 1
+      },
+      "traditionalHanzi": "日"
+    },
+    {
+      "id": "vocab-ren",
+      "hanzi": "人",
+      "traditionalHanzi": "人",
+      "pinyin": "rén",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "人",
+          "vocabularyID": "vocab-ren",
+          "pinyin": "rén",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [
+        {
+          "pattern": "pays + 人",
+          "explanation": {
+            "fr": "Après un nom de pays, 人 signifie « personne de ce pays » : 法国人, français·e ; 中国人, chinois·e."
+          },
+          "examples": [
+            {
+              "hanzi": "我是中国人。",
+              "pinyin": "wǒ shì Zhōngguó rén.",
+              "translation": {
+                "fr": "Je suis chinois·e."
+              },
+              "audio": null
+            }
+          ],
+          "metadata": {
+            "standardID": "HSK-3.0",
+            "standardVersion": "2025-11",
+            "legacyStandardID": "HSK-legacy-2.0",
+            "legacyStandardVersion": "2.0",
+            "levelID": "level-01",
+            "sectionID": "section-01",
+            "unitID": "unit-01",
+            "grammarID": "grammar-vocab-ren",
+            "skill": [
+              "recognition",
+              "production"
+            ],
+            "acceptedVariants": []
+          }
+        }
+      ],
+      "meaning": {
+        "fr": "personne ; humain"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "法国人",
+        "pinyin": "Fǎguó rén",
+        "translation": {
+          "fr": "Français·e"
+        },
+        "audio": null
+      },
+      "memoryStory": {
+        "fr": "人 ressemble à une personne qui marche."
+      },
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "isNew": true,
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "script": {
+          "simplified": "人",
+          "traditional": "人"
+        }
+      }
+    },
+    {
+      "id": "vocab-hsk20-085",
+      "canonicalID": "热|rè|85",
+      "hanzi": "热",
+      "pinyin": "rè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "热",
+          "vocabularyID": "vocab-hsk20-085",
+          "pinyin": "rè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "chaud"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "水很热。",
+        "pinyin": "shuǐ hěn rè。",
+        "translation": {
+          "fr": "L’eau est très chaude."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "热|rè|85",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 85,
+        "level": 1
+      },
+      "traditionalHanzi": "熱"
+    },
+    {
+      "id": "vocab-hsk20-142",
+      "canonicalID": "这|zhè|142",
+      "hanzi": "这",
+      "pinyin": "zhè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "这",
+          "vocabularyID": "vocab-hsk20-142",
+          "pinyin": "zhè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ce/cette-ci ; ici"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是我的书。",
+        "pinyin": "zhè shì wǒ de shū。",
+        "translation": {
+          "fr": "C’est mon livre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "这|zhè|142",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 142,
+        "level": 1
+      },
+      "traditionalHanzi": "這"
+    },
+    {
+      "id": "vocab-hsk20-294",
+      "canonicalID": "知道|zhī dào|294",
+      "hanzi": "知道",
+      "pinyin": "zhī dào",
+      "toneNumbers": [
+        1,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "知道",
+          "vocabularyID": "vocab-hsk20-294",
+          "pinyin": "zhī dào"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "savoir"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我知道答案。",
+        "pinyin": "wǒ zhī dào dá àn。",
+        "translation": {
+          "fr": "Je connais la réponse."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "知道|zhī dào|294",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 294,
+        "level": 2
+      },
+      "traditionalHanzi": "知道"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-04-intro-1",
+      "title": {
+        "fr": "zh, ch, sh, r : la langue recourbée"
+      },
+      "body": {
+        "fr": "Pour ces quatre initiales, recourbe la pointe de la langue vers l’arrière, en direction du palais (le « toit » de la bouche), sans la coller. Les lèvres sont légèrement arrondies.\nzh (zhī, 知) : comme z, mais avec la langue recourbée ; sans souffle.\nch (chī, 吃) : la même chose avec un souffle d’air.\nsh (shī, 诗) : proche du « ch » de « chat », dit avec la langue recourbée : plus sombre et plus creux.\nr (rì, 日) : proche du « j » de « jour », avec la langue recourbée. Ce n’est pas le r français !"
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "introduction",
+      "id": "block-pinyin-04-intro-2",
+      "title": {
+        "fr": "À plat ou recourbée ?"
+      },
+      "body": {
+        "fr": "Deux familles à ne pas mélanger :\nz, c, s : la pointe de la langue à plat, contre les dents du haut.\nzh, ch, sh : la pointe de la langue recourbée vers l’arrière.\nsì (四, quatre) et shì (是, être) forment un couple très fréquent, que l’oreille française confond au début. Écoute-les souvent, l’un après l’autre.\nComme après z, c, s, la lettre i après zh, ch, sh et r est un son bourdonnant : chī (吃, manger) sonne « chrrr », pas « chi »."
+      },
+      "metadata": {
+        "stage": "introduce",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "vocabulary",
+      "id": "block-pinyin-04-vocabulary",
+      "vocabularyIDs": [
+        "vocab-hsk20-011",
+        "vocab-hsk20-094",
+        "vocab-hsk20-088",
+        "vocab-ren",
+        "vocab-hsk20-085",
+        "vocab-hsk20-142",
+        "vocab-hsk20-294"
+      ],
+      "metadata": {
+        "stage": "observe",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-01",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-04-01",
+          "prompt": {
+            "fr": "Pour zh, ch, sh et r, où faut-il placer la pointe de la langue ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-04-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "À plat, contre les dents du bas"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Entre les dents, comme pour le « th » anglais"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "Au fond de la gorge, sans la bouger"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Recourbée vers l’arrière, en direction du palais"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-02",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-02",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "是",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "字 (zì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "日 (rì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "四 (sì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-03",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-04-03",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "四",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "cì"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "sì"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "shì"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "zì"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-04",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-04",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "吃",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "知 (zhī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "吃 (chī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "诗 (shī)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "丝 (sī)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-05",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-04-05",
+          "prompt": {
+            "fr": "Écoute chaque caractère et associe-le à son pinyin."
+          },
+          "instruction": {
+            "fr": "Touche un caractère (il se prononce), puis touche son pinyin."
+          },
+          "objectiveIDs": [
+            "pinyin-04-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "这",
+            "pinyin": null,
+            "right": {
+              "fr": "zhè"
+            }
+          },
+          {
+            "id": "b",
+            "left": "彻",
+            "pinyin": null,
+            "right": {
+              "fr": "chè"
+            }
+          },
+          {
+            "id": "c",
+            "left": "设",
+            "pinyin": null,
+            "right": {
+              "fr": "shè"
+            }
+          },
+          {
+            "id": "d",
+            "left": "热",
+            "pinyin": null,
+            "right": {
+              "fr": "rè"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-06",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-04-06",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "热",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "shè"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "rè"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "zhè"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chè"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "d"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-07",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-07",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "日",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "四 (sì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "日 (rì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "力 (lì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-08",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-04-08",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "抽",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "zhōu"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "chōu"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "shōu"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "sōu"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-09",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-09",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "收",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "抽 (chōu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "收 (shōu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "搜 (sōu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "周 (zhōu)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-10",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-04-10",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis ses deux tons."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "知道",
+        "choices": [
+          {
+            "id": "t12",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t14",
+            "label": {
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+            },
+            "audio": null
+          },
+          {
+            "id": "t41",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t44",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t14"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-11",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-11",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "人",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "门 (mén)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "人 (rén)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "神 (shén)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "沉 (chén)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-12",
+      "spec": {
+        "kind": "matching",
+        "header": {
+          "id": "ex-pinyin-04-12",
+          "prompt": {
+            "fr": "Associe chaque mot à son sens."
+          },
+          "instruction": {
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
+          },
+          "objectiveIDs": [
+            "pinyin-04-link"
+          ],
+          "required": true
+        },
+        "pairs": [
+          {
+            "id": "a",
+            "left": "吃",
+            "pinyin": "chī",
+            "right": {
+              "fr": "manger"
+            }
+          },
+          {
+            "id": "b",
+            "left": "十",
+            "pinyin": "shí",
+            "right": {
+              "fr": "dix"
+            }
+          },
+          {
+            "id": "c",
+            "left": "日",
+            "pinyin": "rì",
+            "right": {
+              "fr": "jour ; date"
+            }
+          },
+          {
+            "id": "d",
+            "left": "人",
+            "pinyin": "rén",
+            "right": {
+              "fr": "personne ; humain"
+            }
+          },
+          {
+            "id": "e",
+            "left": "热",
+            "pinyin": "rè",
+            "right": {
+              "fr": "chaud"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-13",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-pinyin-04-13",
+          "prompt": {
+            "fr": "Écoute, puis choisis le pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "知",
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "zhī"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "chī"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "shī"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "zī"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-14",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-14",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "在",
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "晒 (shài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "菜 (cài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "债 (zhài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-15",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-pinyin-04-15",
+          "prompt": {
+            "fr": "Écoute, puis choisis le caractère que tu entends."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "十",
+        "choices": [
+          {
+            "id": "d",
+            "label": {
+              "fr": "集 (jí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "十 (shí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "直 (zhí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "迟 (chí)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "contrast": "initial",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-16",
+      "spec": {
+        "kind": "toneDiscrimination",
+        "header": {
+          "id": "ex-pinyin-04-16",
+          "prompt": {
+            "fr": "Écoute la syllabe, puis choisis son ton."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
+          },
+          "objectiveIDs": [
+            "pinyin-04-hear"
+          ],
+          "required": true
+        },
+        "promptText": "十",
+        "choices": [
+          {
+            "id": "t1",
+            "label": {
+              "fr": "Ton 1 ¯ (haut et plat)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t2",
+            "label": {
+              "fr": "Ton 2 ˊ (montant)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t3",
+            "label": {
+              "fr": "Ton 3 ˇ (descend puis remonte)"
+            },
+            "audio": null
+          },
+          {
+            "id": "t4",
+            "label": {
+              "fr": "Ton 4 ˋ (descendant)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "t2"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-17",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-pinyin-04-17",
+          "prompt": {
+            "fr": "Laquelle de ces paires oppose une consonne « à plat » et une consonne « recourbée » ?"
+          },
+          "instruction": {
+            "fr": "Choisis la bonne réponse."
+          },
+          "objectiveIDs": [
+            "pinyin-04-link"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "b et p"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "j et q"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "m et n"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "s et sh"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-pinyin-04-18",
+      "spec": {
+        "kind": "speaking",
+        "header": {
+          "id": "ex-pinyin-04-18",
+          "prompt": {
+            "fr": "Dis à voix haute : sì shí sì."
+          },
+          "instruction": {
+            "fr": "Écoute le modèle, dis-le, puis auto-évalue-toi."
+          },
+          "objectiveIDs": [
+            "pinyin-04-link"
+          ],
+          "required": false
+        },
+        "referenceText": "四十四",
+        "referencePinyin": "sì shí sì",
+        "referenceAudio": null,
+        "acceptedTranscripts": [
+          "四十四"
+        ],
+        "allowSelfRating": true
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "speaking",
+        "lessonDay": 4
+      }
+    },
+    {
+      "kind": "recap",
+      "id": "block-pinyin-04-recap",
+      "objectiveIDs": [
+        "pinyin-04-hear",
+        "pinyin-04-link"
+      ],
+      "vocabularyIDs": [
+        "vocab-hsk20-011",
+        "vocab-hsk20-094",
+        "vocab-hsk20-088",
+        "vocab-ren",
+        "vocab-hsk20-085",
+        "vocab-hsk20-142",
+        "vocab-hsk20-294"
+      ],
+      "metadata": {
+        "stage": "review",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "lessonDay": 4
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-vocab-hsk20-011",
+      "vocabularyID": "vocab-hsk20-011",
+      "front": {
+        "hanzi": "吃",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吃",
+        "pinyin": "chī",
+        "text": {
+          "fr": "manger"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-094",
+      "vocabularyID": "vocab-hsk20-094",
+      "front": {
+        "hanzi": "十",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "十",
+        "pinyin": "shí",
+        "text": {
+          "fr": "dix"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-088",
+      "vocabularyID": "vocab-hsk20-088",
+      "front": {
+        "hanzi": "日",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "日",
+        "pinyin": "rì",
+        "text": {
+          "fr": "jour ; date"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-ren",
+      "vocabularyID": "vocab-ren",
+      "front": {
+        "hanzi": "人",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "人",
+        "pinyin": "rén · 2",
+        "text": {
+          "fr": "personne ; humain"
+        },
+        "audio": null
+      },
+      "tags": [
+        "unit-01",
+        "lesson-03",
+        "people"
+      ],
+      "reviewDimensions": [
+        "word",
+        "meaning",
+        "tone",
+        "character",
+        "listening",
+        "speaking"
+      ],
+      "reviewDirections": [
+        "hanzi-to-meaning",
+        "meaning-to-hanzi",
+        "sentence-to-response"
+      ],
+      "metadata": {
+        "standardID": "HSK-3.0",
+        "standardVersion": "2025-11",
+        "legacyStandardID": "HSK-legacy-2.0",
+        "legacyStandardVersion": "2.0",
+        "levelID": "level-01",
+        "sectionID": "section-01",
+        "unitID": "unit-01",
+        "skill": [
+          "recognition",
+          "production"
+        ],
+        "reviewDimensions": [
+          "word",
+          "meaning",
+          "tone",
+          "character",
+          "listening",
+          "speaking"
+        ]
+      }
+    },
+    {
+      "id": "card-vocab-hsk20-085",
+      "vocabularyID": "vocab-hsk20-085",
+      "front": {
+        "hanzi": "热",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "热",
+        "pinyin": "rè",
+        "text": {
+          "fr": "chaud"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-142",
+      "vocabularyID": "vocab-hsk20-142",
+      "front": {
+        "hanzi": "这",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "这",
+        "pinyin": "zhè",
+        "text": {
+          "fr": "ce/cette-ci ; ici"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-294",
+      "vocabularyID": "vocab-hsk20-294",
+      "front": {
+        "hanzi": "知道",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "知道",
+        "pinyin": "zhī dào",
+        "text": {
+          "fr": "savoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    }
+  ],
+  "metadata": {
+    "lessonKind": "pinyin",
+    "standardID": "HSK-legacy-2.0",
+    "standardVersion": "2.0",
+    "legacyStandardID": "HSK-legacy-2.0",
+    "legacyStandardVersion": "2.0",
+    "levelID": "level-00",
+    "sectionID": "section-00",
+    "unitID": "unit-00",
+    "newVocabularyIDs": [],
+    "reusedVocabularyIDs": [],
+    "newVocabularyCount": 0,
+    "extraVocabularyIDs": [],
+    "previewVocabularyIDs": [
+      "vocab-hsk20-011",
+      "vocab-hsk20-094",
+      "vocab-hsk20-088",
+      "vocab-ren",
+      "vocab-hsk20-085",
+      "vocab-hsk20-142",
+      "vocab-hsk20-294"
+    ],
+    "carriers": {
+      "丝": "sī",
+      "人": "rén",
+      "债": "zhài",
+      "力": "lì",
+      "十": "shí",
+      "吃": "chī",
+      "周": "zhōu",
+      "四": "sì",
+      "四十四": "sì shí sì",
+      "在": "zài",
+      "字": "zì",
+      "彻": "chè",
+      "抽": "chōu",
+      "搜": "sōu",
+      "收": "shōu",
+      "日": "rì",
+      "是": "shì",
+      "晒": "shài",
+      "次": "cì",
+      "沉": "chén",
+      "热": "rè",
+      "直": "zhí",
+      "知": "zhī",
+      "知道": "zhī dào",
+      "神": "shén",
+      "菜": "cài",
+      "设": "shè",
+      "诗": "shī",
+      "资": "zī",
+      "这": "zhè",
+      "迟": "chí",
+      "门": "mén",
+      "集": "jí"
+    }
+  }
+}

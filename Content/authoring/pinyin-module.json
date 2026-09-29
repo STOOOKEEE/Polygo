@@ -1,0 +1,2155 @@
+{
+ "schemaVersion": 1,
+ "module": {
+  "id": "unit-00",
+  "order": 0,
+  "title": {
+   "fr": "Pinyin et tons"
+  }
+ },
+ "course": {
+  "title": {
+   "fr": "Mandarin au quotidien — parcours de {total} jours"
+  },
+  "description": {
+   "fr": "Un parcours de {total} séances pour apprendre à écouter, puis comprendre, produire et réemployer le mandarin du quotidien : {pinyin} leçons d’écoute sur le pinyin et les tons, {daily} leçons, {reviews} révisions cumulatives et {bosses} défis de fin d’unité. Repère HSK classique 2.0 / legacy ; la couverture décrit les lexèmes rencontrés et ne garantit ni maîtrise ni score d’examen."
+  }
+ },
+ "carriers": {
+  "妈": "mā",
+  "麻": "má",
+  "马": "mǎ",
+  "骂": "mà",
+  "书": "shū",
+  "熟": "shú",
+  "鼠": "shǔ",
+  "树": "shù",
+  "茶": "chá",
+  "水": "shuǐ",
+  "是": "shì",
+  "爸": "bà",
+  "怕": "pà",
+  "那": "nà",
+  "辣": "là",
+  "大": "dà",
+  "跑": "pǎo",
+  "饱": "bǎo",
+  "老": "lǎo",
+  "岛": "dǎo",
+  "哥": "gē",
+  "科": "kē",
+  "喝": "hē",
+  "河": "hé",
+  "打": "dǎ",
+  "塔": "tǎ",
+  "哪": "nǎ",
+  "读": "dú",
+  "图": "tú",
+  "炉": "lú",
+  "湖": "hú",
+  "到": "dào",
+  "套": "tào",
+  "告": "gào",
+  "靠": "kào",
+  "米": "mǐ",
+  "你": "nǐ",
+  "里": "lǐ",
+  "底": "dǐ",
+  "蓝": "lán",
+  "男": "nán",
+  "寒": "hán",
+  "烦": "fán",
+  "饭": "fàn",
+  "汉": "hàn",
+  "半": "bàn",
+  "盼": "pàn",
+  "狗": "gǒu",
+  "国": "guó",
+  "夺": "duó",
+  "驼": "tuó",
+  "罗": "luó",
+  "七": "qī",
+  "鸡": "jī",
+  "西": "xī",
+  "资": "zī",
+  "叫": "jiào",
+  "笑": "xiào",
+  "俏": "qiào",
+  "跳": "tiào",
+  "己": "jǐ",
+  "起": "qǐ",
+  "洗": "xǐ",
+  "字": "zì",
+  "次": "cì",
+  "四": "sì",
+  "记": "jì",
+  "在": "zài",
+  "菜": "cài",
+  "赛": "sài",
+  "代": "dài",
+  "早": "zǎo",
+  "草": "cǎo",
+  "嫂": "sǎo",
+  "做": "zuò",
+  "错": "cuò",
+  "诺": "nuò",
+  "舵": "duò",
+  "去": "qù",
+  "小": "xiǎo",
+  "脚": "jiǎo",
+  "巧": "qiǎo",
+  "表": "biǎo",
+  "钱": "qián",
+  "咸": "xián",
+  "连": "lián",
+  "年": "nián",
+  "日": "rì",
+  "知": "zhī",
+  "吃": "chī",
+  "诗": "shī",
+  "丝": "sī",
+  "这": "zhè",
+  "彻": "chè",
+  "设": "shè",
+  "热": "rè",
+  "力": "lì",
+  "周": "zhōu",
+  "抽": "chōu",
+  "收": "shōu",
+  "搜": "sōu",
+  "人": "rén",
+  "神": "shén",
+  "沉": "chén",
+  "门": "mén",
+  "债": "zhài",
+  "晒": "shài",
+  "直": "zhí",
+  "迟": "chí",
+  "十": "shí",
+  "集": "jí",
+  "绿": "lǜ",
+  "路": "lù",
+  "乐": "lè",
+  "女": "nǚ",
+  "努": "nǔ",
+  "豆": "dòu",
+  "弟": "dì",
+  "山": "shān",
+  "商": "shāng",
+  "身": "shēn",
+  "生": "shēng",
+  "心": "xīn",
+  "星": "xīng",
+  "先": "xiān",
+  "香": "xiāng",
+  "萌": "méng",
+  "忙": "máng",
+  "蛮": "mán",
+  "红": "hóng",
+  "买": "mǎi",
+  "美": "měi",
+  "某": "mǒu",
+  "满": "mǎn",
+  "猫": "māo",
+  "咪": "mī",
+  "摸": "mō",
+  "狼": "láng",
+  "粮": "liáng",
+  "恒": "héng",
+  "航": "háng",
+  "五": "wǔ",
+  "雨": "yǔ",
+  "虎": "hǔ",
+  "母": "mǔ",
+  "鱼": "yú",
+  "玉": "yù",
+  "有": "yǒu",
+  "又": "yòu",
+  "油": "yóu",
+  "优": "yōu",
+  "我": "wǒ",
+  "月": "yuè",
+  "运": "yùn",
+  "院": "yuàn",
+  "会": "huì",
+  "灰": "huī",
+  "回": "huí",
+  "悔": "huǐ",
+  "春": "chūn",
+  "穿": "chuān",
+  "窗": "chuāng",
+  "区": "qū",
+  "渠": "qú",
+  "取": "qǔ",
+  "请": "qǐng",
+  "写": "xiě",
+  "词": "cí",
+  "时": "shí",
+  "一": "yī",
+  "不": "bù",
+  "妈妈": "mā ma",
+  "爸爸": "bà ba",
+  "哥哥": "gē ge",
+  "弟弟": "dì di",
+  "姐姐": "jiě jie",
+  "妹妹": "mèi mei",
+  "谢谢": "xiè xie",
+  "再见": "zài jiàn",
+  "知道": "zhī dào",
+  "四十四": "sì shí sì",
+  "女儿": "nǚ ér",
+  "红绿蓝": "hóng lǜ lán",
+  "飞机": "fēi jī",
+  "学习": "xué xí",
+  "学校": "xué xiào",
+  "你好": "nǐ hǎo",
+  "水果": "shuǐ guǒ",
+  "老师": "lǎo shī",
+  "不是": "bú shì",
+  "不去": "bú qù",
+  "不对": "bú duì",
+  "一起": "yì qǐ",
+  "一年": "yì nián",
+  "一个": "yí ge",
+  "汉语": "Hàn yǔ",
+  "米饭": "mǐ fàn",
+  "今天": "jīn tiān",
+  "明天": "míng tiān",
+  "每天": "měi tiān",
+  "昨天": "zuó tiān",
+  "椅": "yǐ",
+  "对不起": "duì bù qǐ",
+  "朋友": "péng yǒu",
+  "西安": "xī'ān",
+  "我有鱼": "wǒ yǒu yú",
+  "制": "zhì"
+ },
+ "lessons": [
+  {
+   "id": "pinyin-01",
+   "title": "Les quatre tons",
+   "summary": "Écouter et reconnaître les quatre tons du mandarin et le ton neutre, sur des syllabes puis sur des mots.",
+   "objectives": [
+    {
+     "id": "pinyin-01-hear",
+     "statement": "Reconnaître à l’oreille les quatre tons du mandarin et le ton neutre."
+    },
+    {
+     "id": "pinyin-01-link",
+     "statement": "Associer chaque ton à son signe et à sa mélodie, puis le redire."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "Le mandarin est une langue à tons",
+     "body": "En mandarin, chaque syllabe porte sa propre mélodie : c’est le ton. Le même son dit avec un autre ton devient un autre mot : mā (妈, maman), má (麻, chanvre), mǎ (马, cheval), mà (骂, gronder).\nEn français, la mélodie appartient à la phrase entière (une question, une surprise). Ici, elle appartient à chaque syllabe. C’est le premier réflexe à installer, et l’oreille s’y habitue vite si tu écoutes beaucoup avant de parler.\nDans ce module, tu lis très peu : tu écoutes, tu compares, tu choisis. Rejoue chaque enregistrement autant de fois que tu veux."
+    },
+    {
+     "title": "Les quatre tons et le ton neutre",
+     "body": "Ton 1 (mā, signe ¯) : haut et plat. Tiens une note aiguë, comme un « aaah » chanté, sans la faire bouger.\nTon 2 (má, signe ˊ) : montant. Monte comme dans « Quoi ? » dit avec surprise.\nTon 3 (mǎ, signe ˇ) : bas, avec un creux. Descends bien bas, comme dans un « Hum… » de doute, et remonte un peu à la fin si la syllabe est seule.\nTon 4 (mà, signe ˋ) : descendant, court et net. Comme un ordre sec : « Non ! ».\nTon neutre (ma, aucun signe) : léger et bref. Sa hauteur dépend de la syllabe qui précède.\nEn pinyin, le signe du ton se pose sur la voyelle. Astuce : dessine la courbe dans l’air avec la main en disant la syllabe."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-061",
+    "hsk20-003",
+    "hsk20-062",
+    "hsk20-098",
+    "hsk20-010",
+    "hsk20-100",
+    "hsk20-097"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Combien de tons différents compte le mandarin, sans compter le ton neutre ?",
+     "choices": [
+      "Deux",
+      "Trois",
+      "Quatre",
+      "Cinq"
+     ],
+     "answer": 2
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "妈",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "麻",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "马",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "骂",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "妈",
+      "麻",
+      "马",
+      "骂"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "马",
+     "choices": [
+      "mā",
+      "má",
+      "mǎ",
+      "mà"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "骂",
+     "choices": [
+      "妈",
+      "麻",
+      "马",
+      "骂"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "茶",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "水",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "书",
+     "choices": [
+      "shū",
+      "shú",
+      "shǔ",
+      "shù"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "是",
+     "choices": [
+      "书",
+      "茶",
+      "水",
+      "是"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "妈妈",
+     "choices": [
+      "mā ma",
+      "mā mā",
+      "mà ma",
+      "má ma"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "爸爸",
+     "options": [
+      "10",
+      "40",
+      "41",
+      "44"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "妈妈",
+     "options": [
+      "10",
+      "11",
+      "12",
+      "14"
+     ]
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "爸爸",
+     "choices": [
+      "妈妈",
+      "爸爸",
+      "哥哥",
+      "弟弟"
+     ]
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "马",
+     "choices": [
+      "妈",
+      "麻",
+      "马",
+      "骂"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "妈麻马骂",
+     "prompt": "Dis les quatre tons à la suite : mā má mǎ mà."
+    }
+   ]
+  },
+  {
+   "id": "pinyin-02",
+   "title": "Les consonnes de base",
+   "summary": "Entendre la différence entre b et p, d et t, g et k (le souffle), puis m, f, n, l et h.",
+   "objectives": [
+    {
+     "id": "pinyin-02-hear",
+     "statement": "Distinguer à l’oreille b/p, d/t, g/k et les autres consonnes de base (m, f, n, l, h)."
+    },
+    {
+     "id": "pinyin-02-link",
+     "statement": "Expliquer la différence entre consonnes sans souffle (b, d, g) et avec souffle (p, t, k), et les redire."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "Consonne, voyelle, ton : les trois morceaux d’une syllabe",
+     "body": "Le pinyin écrit les sons du mandarin avec l’alphabet latin. Une syllabe se compose d’une consonne d’attaque (l’initiale), d’une voyelle ou d’un groupe de voyelles (la finale) et d’un ton. Dans bà (爸, papa), b est l’initiale, a est la finale, et le signe ˋ note le ton.\nCette leçon couvre onze initiales, par familles : b p m f · d t n l · g k h.\nm, f, n et l se disent presque comme en français."
+    },
+    {
+     "title": "Le piège : souffle ou pas de souffle",
+     "body": "Les initiales b, d et g ne se disent pas comme nos b, d, g français : la gorge ne vibre pas. Elles ressemblent à nos p, t, k de « papa », « tata », « coco » : b ≈ p, d ≈ t, g ≈ k, sans aucun souffle.\nLes initiales p, t et k sont aspirées : on dit le même son, puis on lâche un petit souffle d’air. Test : place une feuille de papier devant ta bouche. Elle bouge pour pà (怕, avoir peur) mais à peine pour bà (爸, papa).\nRetiens les couples : b sans souffle, p avec souffle ; d sans, t avec ; g sans, k avec."
+    },
+    {
+     "title": "Le h chinois",
+     "body": "Le h du pinyin n’est pas muet comme en français : c’est un souffle rauque, frotté au fond de la gorge, comme le j espagnol de « jamón » ou le ch allemand de « Bach ». hē (喝, boire) ne se dit donc pas « é »."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-067",
+    "hsk20-034",
+    "hsk20-037",
+    "hsk20-014",
+    "hsk20-024",
+    "hsk20-182",
+    "hsk20-152"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Laquelle de ces initiales est aspirée (avec un petit souffle d’air) ?",
+     "choices": [
+      "b",
+      "d",
+      "t",
+      "g"
+     ],
+     "answer": 2
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "爸",
+     "choices": [
+      "bà",
+      "pà",
+      "mà",
+      "dà"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "怕",
+     "choices": [
+      "bà",
+      "pà",
+      "nà",
+      "là"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "跑",
+     "choices": [
+      "饱",
+      "跑",
+      "老",
+      "岛"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "哥",
+      "科",
+      "喝",
+      "河"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "打",
+     "choices": [
+      "dǎ",
+      "tǎ",
+      "mǎ",
+      "nǎ"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "读",
+     "choices": [
+      "读",
+      "图",
+      "炉",
+      "湖"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "到",
+     "choices": [
+      "dào",
+      "tào",
+      "gào",
+      "kào"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "靠",
+     "choices": [
+      "告",
+      "靠",
+      "到",
+      "套"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "guided",
+     "pairs": [
+      "狗",
+      "喝",
+      "大",
+      "多",
+      "白"
+     ],
+     "mode": "meaning"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "米",
+     "choices": [
+      "mǐ",
+      "nǐ",
+      "lǐ",
+      "dǐ"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "蓝",
+     "choices": [
+      "蓝",
+      "男",
+      "寒",
+      "烦"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "饭",
+     "choices": [
+      "bàn",
+      "pàn",
+      "fàn",
+      "hàn"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "汉",
+     "choices": [
+      "半",
+      "盼",
+      "饭",
+      "汉"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "哥哥",
+     "choices": [
+      "哥哥",
+      "妈妈",
+      "爸爸",
+      "弟弟"
+     ]
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Pour dire le b de bà (爸), il faut…",
+     "choices": [
+      "faire vibrer la gorge, comme pour le b français",
+      "dire un p français simple, sans vibration de la gorge ni souffle",
+      "dire un p français puis lâcher un fort souffle d’air",
+      "dire un v français"
+     ],
+     "answer": 1
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "狗",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "哥哥"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-03",
+   "title": "j, q, x et z, c, s",
+   "summary": "Distinguer j, q, x (la bouche sourit) et z, c, s (la langue à plat), avec et sans souffle.",
+   "objectives": [
+    {
+     "id": "pinyin-03-hear",
+     "statement": "Distinguer à l’oreille j/q/x et z/c/s, avec et sans souffle."
+    },
+    {
+     "id": "pinyin-03-link",
+     "statement": "Savoir quelles initiales sont aspirées et avec quelles voyelles j, q, x s’emploient, et les redire."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "j, q, x : la bouche sourit",
+     "body": "Ces trois initiales se disent les lèvres étirées, comme pour dire « i », la pointe de la langue derrière les dents du bas. Les comparaisons qui suivent sont approximatives : écoute surtout les enregistrements.\nj (jī, 鸡) : proche du « dj » de « djinn », mais léger, sans souffle.\nq (qī, 七) : la même chose avec un souffle d’air, un peu comme le « tch » de « tchin-tchin ».\nx (xī, 西) : un peu comme le « ch » de « chien » dit en souriant, sans arrondir les lèvres.\nj, q et x sont toujours suivies d’un i ou d’un ü (voir la leçon sur l’orthographe)."
+    },
+    {
+     "title": "z, c, s : la langue à plat",
+     "body": "z (zì, 字) : un « ts » sans souffle, comme dans « tsé-tsé » ou « pizza ».\nc (cì, 次) : le même « ts » avec un souffle d’air.\ns (sì, 四) : le « s » de « sac ».\nAprès z, c et s, la lettre i ne se dit pas « i » : c’est un son bourdonnant, dents serrées, comme un « z » que l’on prolonge. Ne cherche pas à dire « zi » : dis « zzz »."
+    },
+    {
+     "title": "Le souffle, encore lui",
+     "body": "Comme pour b/p, la différence entre j et q, et entre z et c, est le souffle : j et z n’en ont pas ; q et c en ont un. Écoute zài (在, être à) et cài (菜, plat) : ils ne diffèrent que par ce souffle."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-080",
+    "hsk20-084",
+    "hsk20-122",
+    "hsk20-265",
+    "hsk20-009",
+    "hsk20-104",
+    "hsk20-147",
+    "hsk20-139"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Laquelle de ces initiales est aspirée (avec un souffle d’air) ?",
+     "choices": [
+      "j",
+      "x",
+      "q",
+      "z"
+     ],
+     "answer": 2
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "七",
+     "choices": [
+      "jī",
+      "qī",
+      "xī",
+      "zī"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "笑",
+     "choices": [
+      "叫",
+      "笑",
+      "俏",
+      "跳"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "洗",
+     "choices": [
+      "jǐ",
+      "qǐ",
+      "xǐ",
+      "lǐ"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "七",
+      "去",
+      "小",
+      "笑"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "字",
+     "choices": [
+      "zì",
+      "cì",
+      "sì",
+      "jì"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "菜",
+     "choices": [
+      "在",
+      "菜",
+      "赛",
+      "代"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "早",
+     "choices": [
+      "zǎo",
+      "cǎo",
+      "sǎo",
+      "dǎo"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "错",
+     "choices": [
+      "zuò",
+      "cuò",
+      "duò",
+      "nuò"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "去",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "小",
+     "choices": [
+      "jiǎo",
+      "qiǎo",
+      "xiǎo",
+      "biǎo"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "guided",
+     "pairs": [
+      "七",
+      "去",
+      "小",
+      "笑",
+      "菜"
+     ],
+     "mode": "meaning"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "四",
+     "choices": [
+      "字",
+      "次",
+      "四",
+      "记"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "起",
+     "choices": [
+      "己",
+      "起",
+      "洗",
+      "里"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "钱",
+     "choices": [
+      "qián",
+      "xián",
+      "lián",
+      "nián"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "小",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Quelles initiales ne s’emploient qu’avec un i ou un ü ?",
+     "choices": [
+      "b, p, m, f",
+      "j, q, x",
+      "z, c, s",
+      "g, k, h"
+     ],
+     "answer": 1
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "再见"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-04",
+   "title": "zh, ch, sh, r : la langue recourbée",
+   "summary": "Entendre la différence entre les consonnes à plat (z, c, s) et recourbées (zh, ch, sh), puis le r chinois.",
+   "objectives": [
+    {
+     "id": "pinyin-04-hear",
+     "statement": "Distinguer à l’oreille zh/ch/sh/r et les consonnes à plat z/c/s."
+    },
+    {
+     "id": "pinyin-04-link",
+     "statement": "Savoir placer la langue pour zh, ch, sh, r et les redire."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "zh, ch, sh, r : la langue recourbée",
+     "body": "Pour ces quatre initiales, recourbe la pointe de la langue vers l’arrière, en direction du palais (le « toit » de la bouche), sans la coller. Les lèvres sont légèrement arrondies.\nzh (zhī, 知) : comme z, mais avec la langue recourbée ; sans souffle.\nch (chī, 吃) : la même chose avec un souffle d’air.\nsh (shī, 诗) : proche du « ch » de « chat », dit avec la langue recourbée : plus sombre et plus creux.\nr (rì, 日) : proche du « j » de « jour », avec la langue recourbée. Ce n’est pas le r français !"
+    },
+    {
+     "title": "À plat ou recourbée ?",
+     "body": "Deux familles à ne pas mélanger :\nz, c, s : la pointe de la langue à plat, contre les dents du haut.\nzh, ch, sh : la pointe de la langue recourbée vers l’arrière.\nsì (四, quatre) et shì (是, être) forment un couple très fréquent, que l’oreille française confond au début. Écoute-les souvent, l’un après l’autre.\nComme après z, c, s, la lettre i après zh, ch, sh et r est un son bourdonnant : chī (吃, manger) sonne « chrrr », pas « chi »."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-011",
+    "hsk20-094",
+    "hsk20-088",
+    "hsk20-086",
+    "hsk20-085",
+    "hsk20-142",
+    "hsk20-294"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Pour zh, ch, sh et r, où faut-il placer la pointe de la langue ?",
+     "choices": [
+      "Recourbée vers l’arrière, en direction du palais",
+      "À plat, contre les dents du bas",
+      "Entre les dents, comme pour le « th » anglais",
+      "Au fond de la gorge, sans la bouger"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "是",
+     "choices": [
+      "四",
+      "是",
+      "字",
+      "日"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "四",
+     "choices": [
+      "sì",
+      "shì",
+      "zì",
+      "cì"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "吃",
+     "choices": [
+      "知",
+      "吃",
+      "诗",
+      "丝"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "这",
+      "彻",
+      "设",
+      "热"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "热",
+     "choices": [
+      "zhè",
+      "chè",
+      "shè",
+      "rè"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "日",
+     "choices": [
+      "日",
+      "是",
+      "力",
+      "四"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "抽",
+     "choices": [
+      "zhōu",
+      "chōu",
+      "shōu",
+      "sōu"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "收",
+     "choices": [
+      "周",
+      "抽",
+      "收",
+      "搜"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "知道",
+     "options": [
+      "12",
+      "14",
+      "41",
+      "44"
+     ]
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "人",
+     "choices": [
+      "人",
+      "神",
+      "沉",
+      "门"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "match",
+     "stage": "guided",
+     "pairs": [
+      "吃",
+      "十",
+      "日",
+      "人",
+      "热"
+     ],
+     "mode": "meaning"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "知",
+     "choices": [
+      "zī",
+      "zhī",
+      "chī",
+      "shī"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "在",
+     "choices": [
+      "在",
+      "债",
+      "晒",
+      "菜"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "十",
+     "choices": [
+      "十",
+      "直",
+      "迟",
+      "集"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "十",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Laquelle de ces paires oppose une consonne « à plat » et une consonne « recourbée » ?",
+     "choices": [
+      "s et sh",
+      "b et p",
+      "j et q",
+      "m et n"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "四十四"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-05",
+   "title": "Voyelles et finales",
+   "summary": "Entendre les voyelles simples et composées, le ü, et la différence entre les finales en -n et en -ng.",
+   "objectives": [
+    {
+     "id": "pinyin-05-hear",
+     "statement": "Distinguer à l’oreille les voyelles (u/ü/i, ai/ei/ao/ou) et les finales en -n et en -ng."
+    },
+    {
+     "id": "pinyin-05-link",
+     "statement": "Décrire la prononciation de ü, de -n / -ng et de ian, et les redire."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "Les voyelles simples",
+     "body": "a : comme le « a » de « pas », bouche bien ouverte.\no : comme le « o » de « mot », les lèvres arrondies.\ne : pas de « e » français. Dis un « o » en étirant les lèvres, sans les arrondir. Dans ie et üe, le e sonne comme un « è ».\ni : comme le « i » de « ici ».\nu : comme « ou » dans « fou ».\nü : comme le « u » français de « tu » ou de « lune ». Bonne nouvelle : tu le fais déjà !"
+    },
+    {
+     "title": "Les voyelles composées",
+     "body": "ai ≈ « aï » (comme dans « ail »).\nei ≈ « éï » (comme dans « eille »).\nao ≈ « aou » (comme dans « miaou »).\nou ≈ un « o » qui glisse vers « ou », comme dans le mot anglais « go »."
+    },
+    {
+     "title": "Les finales nasales : -n contre -ng",
+     "body": "En français, « an », « en » et « on » sont des voyelles nasales. En mandarin, ce sont une voyelle suivie d’une vraie consonne :\n-n (an, en, in) : la pointe de la langue touche derrière les dents du haut, comme dans « panne ».\n-ng (ang, eng, ing, ong) : le fond de la langue touche le palais mou, comme le « ng » de « parking ».\nshān (山, montagne) et shāng (商, commerce) ne diffèrent que par cette consonne finale.\nAttention : ian ne se dit pas « i-an » mais plutôt « yèn » ; ong sonne « oung »."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-076",
+    "hsk20-458",
+    "hsk20-447",
+    "hsk20-193",
+    "hsk20-127",
+    "hsk20-225",
+    "hsk20-063",
+    "hsk20-064"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Quelle voyelle du pinyin se prononce comme le « u » français de « tu » ?",
+     "choices": [
+      "u",
+      "ü",
+      "o",
+      "e"
+     ],
+     "answer": 1
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "绿",
+     "choices": [
+      "lǜ",
+      "lù",
+      "lì",
+      "lè"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "女",
+     "choices": [
+      "nǚ",
+      "nǔ",
+      "nǐ",
+      "nǎ"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "豆",
+     "choices": [
+      "到",
+      "豆",
+      "大",
+      "弟"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "绿",
+      "路",
+      "力",
+      "女"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "山",
+     "choices": [
+      "shān",
+      "shāng",
+      "shēn",
+      "shēng"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "商",
+     "choices": [
+      "山",
+      "商",
+      "身",
+      "生"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "星",
+     "choices": [
+      "xīn",
+      "xīng",
+      "xiān",
+      "xiāng"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "门",
+     "choices": [
+      "门",
+      "萌",
+      "忙",
+      "蛮"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "红",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "买",
+     "choices": [
+      "mǎi",
+      "měi",
+      "mǒu",
+      "mǎn"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "猫",
+     "choices": [
+      "猫",
+      "妈",
+      "咪",
+      "摸"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "match",
+     "stage": "guided",
+     "pairs": [
+      "绿",
+      "蓝",
+      "红",
+      "猫",
+      "门"
+     ],
+     "mode": "meaning"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "蓝",
+     "choices": [
+      "lán",
+      "láng",
+      "lián",
+      "liáng"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "红",
+     "choices": [
+      "红",
+      "恒",
+      "寒",
+      "航"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Comment se dit à peu près la finale ian (dans 先 xiān) ?",
+     "choices": [
+      "« i-an », en deux syllabes bien séparées",
+      "« yèn », avec un n final bien prononcé",
+      "comme le « ien » nasal de « bien »",
+      "comme le « ian » nasal de « viande »"
+     ],
+     "answer": 1
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "女儿",
+     "options": [
+      "32",
+      "31",
+      "42",
+      "22"
+     ]
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "红绿蓝"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-06",
+   "title": "Enchaîner les tons",
+   "summary": "Écouter la mélodie de mots à deux syllabes, la règle des deux 3es tons, et les tons qui changent de 不 et de 一.",
+   "objectives": [
+    {
+     "id": "pinyin-06-hear",
+     "statement": "Reconnaître à l’oreille la mélodie de mots à deux syllabes, y compris quand le ton change (3-3, 不, 一)."
+    },
+    {
+     "id": "pinyin-06-link",
+     "statement": "Énoncer la règle des deux 3es tons et celles de 不 et de 一, et redire un mot avec sa mélodie."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "Deux syllabes, deux mélodies",
+     "body": "Un mot de deux syllabes enchaîne deux tons : 4 × 4 = 16 combinaisons, plus celles qui finissent sur un ton neutre. Écoute la mélodie du mot entier, pas chaque syllabe séparément.\n1-1 fēi jī (飞机) · 1-2 zhōng guó (中国) · 1-3 shēn tǐ (身体) · 1-4 yī yuàn (医院)\n2-1 xué shēng (学生) · 2-2 xué xí (学习) · 2-3 péng yǒu (朋友) · 2-4 xué xiào (学校)\n3-1 lǎo shī (老师) · 3-2 měi guó (美国) · 3-3 nǐ hǎo (你好) · 3-4 mǐ fàn (米饭)\n4-1 shàng bān (上班) · 4-2 dà xué (大学) · 4-3 Hàn yǔ (汉语) · 4-4 zài jiàn (再见)\nAvec un ton neutre : mā ma (妈妈), bà ba (爸爸), míng zi (名字), yǐ zi (椅子)."
+    },
+    {
+     "title": "Deux 3es tons de suite",
+     "body": "Règle d’or : quand deux 3es tons se suivent, le premier se prononce comme un 2e ton. On écrit nǐ hǎo, mais on dit ní hǎo. Le signe écrit ne change pas : c’est ton oreille qui doit le savoir.\nDevant un 1er, un 2e ou un 4e ton, le 3e ton reste bas et ne remonte pas (le « demi 3e ton ») : lǎo shī, měi guó, mǐ fàn."
+    },
+    {
+     "title": "Les tons qui changent : 不 et 一",
+     "body": "不 (bù) devient bú devant un 4e ton : bú shì (不是), bú qù (不去). Devant les autres tons, il reste bù : bù hǎo, bù chī.\n一 (yī) se dit yī quand il est seul (un nombre, une date). Devant un 4e ton, il devient yí : yí ge (一个). Devant un 1er, un 2e ou un 3e ton, il devient yì : yì tiān (一天), yì nián (一年), yì qǐ (一起).\nLe pinyin note ces changements pour 不 et 一 : on écrit bú shì, yí ge, yì qǐ. Pour les deux 3es tons, on ne note rien."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-007",
+    "hsk20-131",
+    "vocab-ni-hao",
+    "hsk20-055",
+    "hsk20-048",
+    "hsk20-035",
+    "hsk20-128",
+    "hsk20-069"
+   ],
+   "exercises": [
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "飞机",
+     "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "学习",
+     "options": [
+      "21",
+      "22",
+      "23",
+      "24"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "学校",
+     "options": [
+      "14",
+      "24",
+      "34",
+      "44"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "再见",
+     "options": [
+      "14",
+      "24",
+      "41",
+      "44"
+     ]
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "飞机",
+      "学习",
+      "学校",
+      "再见"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "choice",
+     "stage": "guided",
+     "prompt": "Que se passe-t-il quand deux 3es tons se suivent, comme dans 你好 ?",
+     "choices": [
+      "Le premier se prononce comme un 2e ton : on entend ní hǎo",
+      "Le second devient un 4e ton",
+      "Les deux deviennent des 1ers tons",
+      "Rien ne change : on entend deux 3es tons complets"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "你好",
+     "options": [
+      "13",
+      "23",
+      "31",
+      "44"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "水果",
+     "options": [
+      "21",
+      "23",
+      "24",
+      "43"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "老师",
+     "options": [
+      "11",
+      "21",
+      "31",
+      "41"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "不是",
+     "choices": [
+      "bù shì",
+      "bú shì"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "不去",
+     "choices": [
+      "bú qù",
+      "bù qù"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "一年",
+     "options": [
+      "12",
+      "22",
+      "42",
+      "14"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "一个",
+     "choices": [
+      "yí ge",
+      "yì ge",
+      "yī ge",
+      "yǐ ge"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "今天",
+     "choices": [
+      "今天",
+      "明天",
+      "每天",
+      "昨天"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "汉语",
+     "options": [
+      "43",
+      "41",
+      "13",
+      "23"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "一起",
+     "choices": [
+      "yì qǐ",
+      "yí qǐ",
+      "yī qǐ",
+      "yǐ qǐ"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Devant quel ton 不 (bù) se dit-il bú ?",
+     "choices": [
+      "Devant un 4e ton : bú shì",
+      "Devant un 1er ton : bú chī",
+      "Devant un 3e ton : bú hǎo",
+      "Devant un 2e ton : bú lái"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "你好"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-07",
+   "title": "Lire le pinyin : y, w, ü et apostrophe",
+   "summary": "Comprendre les règles d’orthographe du pinyin : y et w, iu ui un, le ü sans tréma, l’apostrophe.",
+   "objectives": [
+    {
+     "id": "pinyin-07-hear",
+     "statement": "Relier les sons entendus à leur écriture en pinyin, y compris avec y, w et ü."
+    },
+    {
+     "id": "pinyin-07-link",
+     "statement": "Appliquer les règles d’orthographe du pinyin : y et w, iu ui un, ü sans tréma, apostrophe."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "y et w : écrire le début de la syllabe",
+     "body": "Quand une syllabe commence par i, u ou ü, sans consonne devant, le pinyin écrit y ou w :\ni → yi (一 yī) · ia → ya · ie → ye · iao → yao · iou → you (有 yǒu) · ian → yan · in → yin · ing → ying · iang → yang · iong → yong\nu → wu (五 wǔ) · ua → wa · uo → wo (我 wǒ) · uai → wai · uei → wei · uan → wan · uen → wen · uang → wang\nü → yu (鱼 yú) · üe → yue (月 yuè) · üan → yuan · ün → yun\ny et w ne sont donc pas de vraies consonnes : yǒu se dit à peu près « iou », wǒ « ouo »."
+    },
+    {
+     "title": "Trois finales raccourcies, et la place du signe de ton",
+     "body": "Après une consonne, iou, uei et uen s’écrivent iu, ui et un : liù (六) se dit « liou », huì (会) se dit « houeï », chūn (春) se dit « tchouenne ».\nLe signe de ton se pose sur le a s’il y en a un ; sinon sur le e ou le o ; dans iu et ui, sur la dernière lettre : liù, huì, xiè, wǒ."
+    },
+    {
+     "title": "Le tréma de ü",
+     "body": "Après n et l, u et ü existent tous les deux et se distinguent : nǚ (女) et nǔ (努) sont deux mots différents ; lǜ (绿, vert) garde son tréma.\nAprès j, q, x et y, seul ü est possible : le tréma disparaît et l’on écrit u tout court : qù (去), xué (学), yú (鱼). Ce u se dit comme le « u » français."
+    },
+    {
+     "title": "L’apostrophe et les mots d’un bloc",
+     "body": "Quand une syllabe qui commence par a, o ou e suit une autre syllabe dans un même mot, une apostrophe évite l’ambiguïté : xī'ān (西安, la ville de Xi'an) compte deux syllabes, alors que xiān (先, d’abord) n’en compte qu’une. De même : nǚ'ér (女儿, fille).\nEn pinyin, les syllabes d’un même mot se collent : Hànyǔ, xuéxí, Zhōngguó. Les noms propres prennent une majuscule."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-112",
+    "hsk20-136",
+    "hsk20-283",
+    "hsk20-137",
+    "hsk20-042",
+    "hsk20-114"
+   ],
+   "exercises": [
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Sans consonne devant, la voyelle u s’écrit…",
+     "choices": [
+      "u",
+      "wu",
+      "hu",
+      "ou"
+     ],
+     "answer": 1
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "五",
+     "choices": [
+      "wǔ",
+      "hǔ",
+      "mǔ"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "鱼",
+     "choices": [
+      "yú",
+      "yǔ",
+      "yù"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "有",
+     "choices": [
+      "有",
+      "又",
+      "油",
+      "优"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "我",
+      "有",
+      "鱼",
+      "月",
+      "五"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "choice",
+     "stage": "guided",
+     "prompt": "Dans 六 liù, la finale iou s’écrit…",
+     "choices": [
+      "iu",
+      "iou",
+      "io",
+      "yu"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "有",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "春",
+     "choices": [
+      "chūn",
+      "chuān",
+      "chuāng"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "去",
+     "choices": [
+      "区",
+      "渠",
+      "取",
+      "去"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "choice",
+     "stage": "guided",
+     "prompt": "Pourquoi écrit-on 去 « qù » et non « qü » ?",
+     "choices": [
+      "Après j, q, x et y, le tréma disparaît : u y note toujours le ü, comme le « u » français",
+      "Parce que le son est « ou »",
+      "Parce que le tréma n’existe pas en pinyin",
+      "Parce que q est toujours suivi de u"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "西安",
+     "choices": [
+      "xī'ān",
+      "xiān"
+     ]
+    },
+    {
+     "kind": "match",
+     "stage": "guided",
+     "pairs": [
+      "我",
+      "有",
+      "鱼",
+      "月",
+      "会"
+     ],
+     "mode": "meaning"
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "月",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "月",
+     "choices": [
+      "yuè",
+      "yùn",
+      "yuàn",
+      "yù"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "会",
+     "choices": [
+      "会",
+      "灰",
+      "回",
+      "悔"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Dans quel mot l’apostrophe est-elle nécessaire ?",
+     "choices": [
+      "xī'ān (西安)",
+      "nǐhǎo (你好)",
+      "hànyǔ (汉语)",
+      "zhōngguó (中国)"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "会",
+     "choices": [
+      "huì",
+      "huī",
+      "huí",
+      "huǐ"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "我有鱼"
+    }
+   ]
+  },
+  {
+   "id": "pinyin-08",
+   "title": "Bilan d’écoute",
+   "summary": "Un bilan sans règle nouvelle : tons, consonnes, finales et enchaînements, à l’oreille.",
+   "objectives": [
+    {
+     "id": "pinyin-08-hear",
+     "statement": "Reconnaître à l’oreille les tons, les consonnes, les finales et les enchaînements vus dans le module."
+    },
+    {
+     "id": "pinyin-08-link",
+     "statement": "Redire des mots courants avec les bons tons et énoncer les règles du module."
+    }
+   ],
+   "introduction": [
+    {
+     "title": "Un bilan pour écouter, pas pour apprendre",
+     "body": "Cette leçon ne contient aucune règle nouvelle. Elle mélange ce que tu as entendu dans le module : les tons, les consonnes, les finales et les enchaînements. Écoute chaque enregistrement autant de fois que nécessaire.\nSi une question te résiste, elle te dit quoi réécouter :\n· tons isolés et mots de deux syllabes : leçons 1 et 6 ;\n· b/p, d/t, g/k : leçon 2 ; j/q/x et z/c/s : leçon 3 ; zh/ch/sh/r : leçon 4 ;\n· finales, -n et -ng : leçon 5 ;\n· orthographe : leçon 7.\nAprès ce bilan, la leçon « Dire bonjour » t’attend : tu entendras enfin des phrases entières."
+    }
+   ],
+   "vocabulary": [
+    "hsk20-083",
+    "hsk20-023",
+    "hsk20-066",
+    "hsk20-077",
+    "hsk20-201",
+    "hsk20-224"
+   ],
+   "exercises": [
+    {
+     "kind": "tone",
+     "stage": "discover",
+     "say": "请",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "discover",
+     "say": "谢谢",
+     "choices": [
+      "xiè xie",
+      "jiě jie",
+      "xiě xie"
+     ]
+    },
+    {
+     "kind": "hear",
+     "stage": "discover",
+     "say": "对不起",
+     "choices": [
+      "对不起",
+      "谢谢",
+      "再见",
+      "朋友"
+     ]
+    },
+    {
+     "kind": "match",
+     "stage": "discover",
+     "pairs": [
+      "谢谢",
+      "请",
+      "朋友",
+      "姐姐"
+     ],
+     "mode": "pinyin"
+    },
+    {
+     "kind": "choice",
+     "stage": "discover",
+     "prompt": "Quel signe note le 3e ton ?",
+     "choices": [
+      "¯",
+      "ˊ",
+      "ˇ",
+      "ˋ"
+     ],
+     "answer": 2
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "姐姐",
+     "options": [
+      "30",
+      "31",
+      "34",
+      "40"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "四",
+     "choices": [
+      "sì",
+      "shì",
+      "zì",
+      "zhì"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "笑",
+     "choices": [
+      "叫",
+      "笑",
+      "跳",
+      "俏"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "pinyin",
+     "stage": "guided",
+     "say": "忙",
+     "choices": [
+      "mán",
+      "máng",
+      "méng",
+      "mén"
+     ],
+     "contrast": "final"
+    },
+    {
+     "kind": "hear",
+     "stage": "guided",
+     "say": "词",
+     "choices": [
+      "词",
+      "迟",
+      "时",
+      "直"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "不对",
+     "options": [
+      "24",
+      "44",
+      "14",
+      "42"
+     ]
+    },
+    {
+     "kind": "tone",
+     "stage": "guided",
+     "say": "你好",
+     "options": [
+      "21",
+      "23",
+      "31",
+      "41"
+     ]
+    },
+    {
+     "kind": "pinyin",
+     "stage": "reuse",
+     "say": "一起",
+     "choices": [
+      "yì qǐ",
+      "yí qǐ",
+      "yī qǐ"
+     ],
+     "contrast": "tone"
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "半",
+     "choices": [
+      "半",
+      "盼",
+      "饭",
+      "汉"
+     ],
+     "contrast": "initial"
+    },
+    {
+     "kind": "tone",
+     "stage": "reuse",
+     "say": "汉语",
+     "options": [
+      "43",
+      "41",
+      "13",
+      "23"
+     ]
+    },
+    {
+     "kind": "hear",
+     "stage": "reuse",
+     "say": "谢谢",
+     "choices": [
+      "谢谢",
+      "姐姐",
+      "弟弟",
+      "妹妹"
+     ]
+    },
+    {
+     "kind": "choice",
+     "stage": "reuse",
+     "prompt": "Laquelle de ces phrases est juste ?",
+     "choices": [
+      "Deux 3es tons de suite : le premier se dit comme un 2e ton (nǐ hǎo → ní hǎo)",
+      "Devant un 4e ton, 不 reste toujours bù",
+      "一 se dit toujours yī, quel que soit le ton qui suit",
+      "Après j, q, x, le ü s’écrit toujours avec un tréma"
+     ],
+     "answer": 0
+    },
+    {
+     "kind": "speak",
+     "stage": "reuse",
+     "say": "谢谢，再见",
+     "pinyin": "xiè xie, zài jiàn"
+    }
+   ]
+  }
+ ]
+}

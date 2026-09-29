@@ -480,6 +480,26 @@ public final class AppModel: ObservableObject {
         })
     }
 
+    /// Module 0 (`pinyin-NN`) is the recommended first step, not a gate: its
+    /// lessons unlock one after another and every other lesson opens without it.
+    nonisolated private static func isModuleZero(_ id: LessonID) -> Bool {
+        id.rawValue.hasPrefix("pinyin-")
+    }
+
+    /// A learner who said they know the pinyin, or who has completed a lesson
+    /// beyond module 0, is no longer sent back to it.
+    private var skipsModuleZero: Bool {
+        if let level = snapshot.profile?.startingLevel, level != "beginner" { return true }
+        return completedLessonIDs.contains { !Self.isModuleZero($0) }
+    }
+
+    /// The completed lessons as the daily plan counts them: a skipped module 0
+    /// is behind the learner.
+    private var planCompletedLessonIDs: Set<LessonID> {
+        guard skipsModuleZero else { return completedLessonIDs }
+        return completedLessonIDs.union(orderedLessonIDs.filter(Self.isModuleZero))
+    }
+
     public var dailyPlan: CoursePlan? { course?.plan }
 
     /// The authored programme session currently due after the completed
@@ -487,15 +507,15 @@ public final class AppModel: ObservableObject {
     /// they have actually been completed.
     public var dailyPlanSession: CoursePlanSession? {
         guard let dailyPlan else { return nil }
-        return dailyPlan.nextSession(completedLessonIDs: completedLessonIDs)
+        return dailyPlan.nextSession(completedLessonIDs: planCompletedLessonIDs)
     }
 
     public var dailyPlanDay: Int? {
-        dailyPlan?.currentDay(completedLessonIDs: completedLessonIDs)
+        dailyPlan?.currentDay(completedLessonIDs: planCompletedLessonIDs)
     }
 
     public var completedDailyPlanSessionCount: Int {
-        dailyPlan?.completedSessionCount(completedLessonIDs: completedLessonIDs) ?? 0
+        dailyPlan?.completedSessionCount(completedLessonIDs: planCompletedLessonIDs) ?? 0
     }
 
     public var dailyPlanTotalDays: Int {
@@ -586,7 +606,8 @@ public final class AppModel: ObservableObject {
     public func isLessonUnlocked(_ id: LessonID) -> Bool {
         guard let course else { return false }
         guard let module = course.modules.first(where: { $0.lessonIDs.contains(id) }), module.lessonIDs.contains(id) else { return false }
-        let ordered = orderedLessonIDs
+        let isModuleZero = Self.isModuleZero(id)
+        let ordered = orderedLessonIDs.filter { Self.isModuleZero($0) == isModuleZero }
         guard let position = ordered.firstIndex(of: id) else { return false }
         if position == 0 { return true }
         let previous = ordered[position - 1]
@@ -612,7 +633,8 @@ public final class AppModel: ObservableObject {
         }) {
             return mostRecent.0
         }
-        return orderedLessonIDs.first(where: { isLessonUnlocked($0) && snapshot.lessonProgress[$0]?.completedAt == nil })
+        let proposed = skipsModuleZero ? orderedLessonIDs.filter { !Self.isModuleZero($0) } : orderedLessonIDs
+        return proposed.first(where: { isLessonUnlocked($0) && snapshot.lessonProgress[$0]?.completedAt == nil })
     }
 
     public func dictionaryEntries() async -> [VocabularyEntry] {

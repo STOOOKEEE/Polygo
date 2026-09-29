@@ -34,7 +34,7 @@ _TONE_NAMES = {
 _TONE_SHORT = {1: "ton 1 ¯", 2: "ton 2 ˊ", 3: "ton 3 ˇ", 4: "ton 4 ˋ", 0: "ton neutre"}
 # Characters with several common readings: a text-to-speech voice may pick a
 # reading other than the catalogue's, so their tones cannot be asked.
-_POLYPHONES = set("了长行得地重为还觉乐没少数相应教种空便更差朝调着只干发分间量处传假背的和几")
+POLYPHONES = set("了长行得地重为还觉乐没少数相应教种空便更差朝调着只干发分间量处传假背的和几")
 
 
 def pinyin_tones(syllables: list[str]) -> list[int]:
@@ -60,7 +60,7 @@ def entry_tones(entry: dict[str, Any]) -> list[int] | None:
     syllables = pinyin.split()
     if len(hanzi) != len(tones) or len(syllables) != len(tones) or pinyin_tones(syllables) != tones:
         return None
-    if tones[0] == 0 or "不" in hanzi or "一" in hanzi or _POLYPHONES.intersection(hanzi):
+    if tones[0] == 0 or "不" in hanzi or "一" in hanzi or POLYPHONES.intersection(hanzi):
         return None
     if any(left == right == 3 for left, right in zip(tones, tones[1:])):
         return None
