@@ -85,20 +85,22 @@ captures du dépôt en proviennent (iPhone 16 Pro réduit à 603 × 1311, Mac
 | [accueil iPhone](screenshots/home-ios.png) | 603 × 1311 | `f64017c9c6fa45b3cd2831b1db473fe1c2c67a3ca3057cd9a204e6bc592b9b2a` |
 | [parcours iPhone sombre](screenshots/roadmap-ios-dark.png) | 603 × 1311 | `ede61115c36e8e58f0eca1e719ffffcaf7642472134bedcfcabda02356b20d68` |
 | [parcours iPhone clair](screenshots/roadmap-ios-light.png) | 603 × 1311 | `e5e4e800f91ada69a09f294a25b11eb8ded644ab832230e35248529fa4bd9e69` |
-| [dialogue iPhone](screenshots/dialogue-ios.png) | 603 × 1311 | `5e1fc792faa6143025e3236765a85c92a809e8dca43d1b80478fec3d91e98ac9` |
+| [dialogue iPhone](screenshots/dialogue-ios.png) | 603 × 1311 | `148c2adee71cbed2330f29de26fa98b5a24170b5be6351727876cb87a34e9201` |
+| [nouveaux mots iPhone](screenshots/lesson-words-ios.png) | 603 × 1311 | `a387bb517dee48415caca6ad517296a6f5db343fba24863ddd6a29d883b1d01d` |
 | [pièces après complétion](screenshots/coins-roadmap-ios.png) | 603 × 1311 | `69847ae112310994c2fe1d9c93b6e436c1a338407dff6a8421e294cc3ba6c515` |
 | [écriture guidée iPhone](screenshots/handwriting-guided-ios.png) | 603 × 1311 | `fd3b30a7cb7a9fadad35ed8ca93376a9c9f0965c1356020136a8f592e63fa184` |
 | [accueil Mac](screenshots/home-macos-dark.png) | 1600 × 900 | `411733e87ab26cdcf275371b73ad6392fe08fb973597b7dc4d1a5655bdb052e8` |
 | [parcours Mac](screenshots/roadmap-macos-dark.png) | 1600 × 900 | `6d10ed7a1e4564853562c6026a9fcffbcb0746a594b286defe03421137e78f7b` |
-| [dialogue Mac](screenshots/dialogue-macos-dark.png) | 1600 × 900 | `8d708d37774c985bf5380e59df3378b40557c11d42554ca6eb537862c31b2065` |
+| [dialogue Mac](screenshots/dialogue-macos-dark.png) | 1600 × 900 | `a0e84bfb751ab944629d35b3b523574464824c88515155a29c4443c54630dcdd` |
 | [séance J1 Mac](screenshots/daily-plan-day-one-macos.png) | 1600 × 900 | `67bd9b0ce8df676e8faf30d8b9191ef4bba4e3cfec78297cce7d0ca897bcfbe0` |
-| [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `9f4349e4a0144d2540ae09884d7d5b75e04ce9e1b070c0be64d349eb2194be20` |
+| [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `8f8003e4da81bb50ed455f5ac8dc9d5be84b6145d4edc4c222cb2d454f72af1a` |
 | [séance J2 Mac](screenshots/daily-plan-day-two-macos.png) | 1600 × 900 | `18a7d16bf79231ce34eea900b00b5fbc262461ca9cd91b7eba7f0e3692422784` |
 
-Les deux captures de dialogue (écran d’intro, pinyin et traduction masqués par
-défaut) proviennent du
-[run 36446200223](https://github.com/STOOOKEEE/Polygo/actions/runs/36446200223)
-sur `cc01093`. Les captures d’accueil, de parcours (unités repliables, clair
+Les captures du dialogue, des nouveaux mots et de la lecture L5 montrent la
+leçon en une seule suite d’étapes (apprentissage juste avant les exercices qui
+l’utilisent, pinyin et traduction masqués par défaut) ; elles proviennent du
+[run 36629569835](https://github.com/STOOOKEEE/Polygo/actions/runs/36629569835)
+sur `62b6bc6`. Les captures d’accueil, de parcours (unités repliables, clair
 et sombre) et de pièces après complétion proviennent des runs
 [36615123021](https://github.com/STOOOKEEE/Polygo/actions/runs/36615123021)
 sur `e85508f` (accueil iPhone) et
