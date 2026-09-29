@@ -52,8 +52,8 @@ final class MacNextLessonJourneyTests: XCTestCase {
         openLesson("lesson-02")
         XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "L2 terminée doit rouvrir son bilan")
         XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Mots appris")).firstMatch.waitForExistence(timeout: timeout),
-            "Le bilan L2 doit lister ses mots appris"
+            app.buttons.matching(identifier: "lesson.completion.word.vocab-ni").firstMatch.waitForExistence(timeout: timeout),
+            "Le bilan L2 doit lister ses mots appris, dont 你"
         )
         attachScreenshot(named: "mac-lesson-completion")
         let next = app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch

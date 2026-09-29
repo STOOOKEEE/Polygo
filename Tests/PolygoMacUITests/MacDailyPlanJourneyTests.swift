@@ -187,8 +187,8 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             "Le bilan doit signaler l’oral passé sans évaluation"
         )
         XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Mots appris")).firstMatch.waitForExistence(timeout: timeout),
-            "Le bilan doit lister les mots appris de L5"
+            app.buttons.matching(identifier: "lesson.completion.word.vocab-hsk20-010").firstMatch.waitForExistence(timeout: timeout),
+            "Le bilan doit lister les mots appris de L5, dont 茶"
         )
         XCTAssertTrue(
             app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch.exists,
