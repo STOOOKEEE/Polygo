@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-26",
-  "moduleID": "unit-03",
-  "order": 38,
+  "moduleID": "unit-04",
+  "order": 39,
   "title": {
     "fr": "Le devoir difficile"
   },
@@ -11,7 +11,7 @@
     "fr": "Demander de l’aide pour un devoir et corriger une erreur."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 2",
+  "level": "HSK classique 1",
   "objectives": [
     {
       "id": "l26-understand",
@@ -29,6 +29,88 @@
     }
   ],
   "vocabulary": [
+    {
+      "id": "vocab-hsk20-022",
+      "canonicalID": "读|dú|22",
+      "hanzi": "读",
+      "pinyin": "dú",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "读",
+          "vocabularyID": "vocab-hsk20-022",
+          "pinyin": "dú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天读书。",
+        "pinyin": "wǒ měi tiān dú shū。",
+        "translation": {
+          "fr": "Je lis chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "读|dú|22",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 22,
+        "level": 1
+      },
+      "traditionalHanzi": "讀"
+    },
+    {
+      "id": "vocab-hsk20-107",
+      "canonicalID": "太|tài|107",
+      "hanzi": "太",
+      "pinyin": "tài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "太",
+          "vocabularyID": "vocab-hsk20-107",
+          "pinyin": "tài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "trop ; tellement"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "今天太冷了。",
+        "pinyin": "jīn tiān tài lěng le。",
+        "translation": {
+          "fr": "Il fait trop froid aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "太|tài|107",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 107,
+        "level": 1
+      },
+      "traditionalHanzi": "太"
+    },
     {
       "id": "vocab-hsk20-154",
       "canonicalID": "帮助|bāng zhù|154",
@@ -72,31 +154,32 @@
       "traditionalHanzi": "幫助"
     },
     {
-      "id": "vocab-hsk20-158",
-      "canonicalID": "别|bié|158",
-      "hanzi": "别",
-      "pinyin": "bié",
+      "id": "vocab-hsk20-210",
+      "canonicalID": "可能|kě néng|210",
+      "hanzi": "可能",
+      "pinyin": "kě néng",
       "toneNumbers": [
+        3,
         2
       ],
       "segmentation": [
         {
-          "surface": "别",
-          "vocabularyID": "vocab-hsk20-158",
-          "pinyin": "bié"
+          "surface": "可能",
+          "vocabularyID": "vocab-hsk20-210",
+          "pinyin": "kě néng"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "ne… pas (impératif)"
+        "fr": "possible ; peut-être"
       },
       "audio": null,
       "example": {
-        "hanzi": "别担心。",
-        "pinyin": "bié dān xīn。",
+        "hanzi": "他可能在家。",
+        "pinyin": "tā kě néng zài jiā。",
         "translation": {
-          "fr": "Ne t’inquiète pas."
+          "fr": "Il est peut-être à la maison."
         },
         "audio": null
       },
@@ -104,261 +187,13 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "别|bié|158",
+        "canonicalID": "可能|kě néng|210",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 158,
+        "rank": 210,
         "level": 2
       },
-      "traditionalHanzi": "別"
-    },
-    {
-      "id": "vocab-hsk20-175",
-      "canonicalID": "懂|dǒng|175",
-      "hanzi": "懂",
-      "pinyin": "dǒng",
-      "toneNumbers": [
-        3
-      ],
-      "segmentation": [
-        {
-          "surface": "懂",
-          "vocabularyID": "vocab-hsk20-175",
-          "pinyin": "dǒng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "comprendre"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我懂你的意思。",
-        "pinyin": "wǒ dǒng nǐ de yì si。",
-        "translation": {
-          "fr": "Je comprends ce que tu veux dire."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "懂|dǒng|175",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 175,
-        "level": 2
-      },
-      "traditionalHanzi": "懂"
-    },
-    {
-      "id": "vocab-hsk20-181",
-      "canonicalID": "告诉|gào sù|181",
-      "hanzi": "告诉",
-      "pinyin": "gào sù",
-      "toneNumbers": [
-        4,
-        4
-      ],
-      "segmentation": [
-        {
-          "surface": "告诉",
-          "vocabularyID": "vocab-hsk20-181",
-          "pinyin": "gào sù"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "dire ; informer"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "请告诉我地址。",
-        "pinyin": "qǐng gào sù wǒ dì zhǐ。",
-        "translation": {
-          "fr": "Dis-moi l’adresse, s’il te plaît."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "告诉|gào sù|181",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 181,
-        "level": 2
-      },
-      "traditionalHanzi": "告訴"
-    },
-    {
-      "id": "vocab-hsk20-194",
-      "canonicalID": "欢迎|huān yíng|194",
-      "hanzi": "欢迎",
-      "pinyin": "huān yíng",
-      "toneNumbers": [
-        1,
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "欢迎",
-          "vocabularyID": "vocab-hsk20-194",
-          "pinyin": "huān yíng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "accueillir ; bienvenue"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "欢迎你来我家。",
-        "pinyin": "huān yíng nǐ lái wǒ jiā。",
-        "translation": {
-          "fr": "Bienvenue chez moi."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "欢迎|huān yíng|194",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 194,
-        "level": 2
-      },
-      "traditionalHanzi": "歡迎"
-    },
-    {
-      "id": "vocab-hsk20-217",
-      "canonicalID": "两|liǎng|217",
-      "hanzi": "两",
-      "pinyin": "liǎng",
-      "toneNumbers": [
-        3
-      ],
-      "segmentation": [
-        {
-          "surface": "两",
-          "vocabularyID": "vocab-hsk20-217",
-          "pinyin": "liǎng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "deux (quantité)"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我买了两件衣服。",
-        "pinyin": "wǒ mǎi le liǎng jiàn yī fú。",
-        "translation": {
-          "fr": "J’ai acheté deux vêtements."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "两|liǎng|217",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 217,
-        "level": 2
-      },
-      "traditionalHanzi": "兩"
-    },
-    {
-      "id": "vocab-hsk20-316",
-      "canonicalID": "被|bèi|316",
-      "hanzi": "被",
-      "pinyin": "bèi",
-      "toneNumbers": [
-        4
-      ],
-      "segmentation": [
-        {
-          "surface": "被",
-          "vocabularyID": "vocab-hsk20-316",
-          "pinyin": "bèi"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "marque du passif ; être recouvert par"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这个问题被老师发现了。",
-        "pinyin": "zhè ge wèn tí bèi lǎo shī fā xiàn le。",
-        "translation": {
-          "fr": "Ce problème a été découvert par le professeur."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "被|bèi|316",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 316,
-        "level": 3
-      },
-      "traditionalHanzi": "被"
-    },
-    {
-      "id": "vocab-hsk20-159",
-      "canonicalID": "长|cháng|159",
-      "hanzi": "长",
-      "pinyin": "cháng",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "长",
-          "vocabularyID": "vocab-hsk20-159",
-          "pinyin": "cháng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "long"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这条路很长。",
-        "pinyin": "zhè tiáo lù hěn zhǎng。",
-        "translation": {
-          "fr": "Cette route est longue."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "长|cháng|159",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 159,
-        "level": 2
-      },
-      "traditionalHanzi": "長"
+      "traditionalHanzi": "可能"
     },
     {
       "id": "vocab-hsk20-211",
@@ -403,31 +238,31 @@
       "traditionalHanzi": "可以"
     },
     {
-      "id": "vocab-hsk20-238",
-      "canonicalID": "让|ràng|238",
-      "hanzi": "让",
-      "pinyin": "ràng",
+      "id": "vocab-hsk20-159",
+      "canonicalID": "长|cháng|159",
+      "hanzi": "长",
+      "pinyin": "cháng",
       "toneNumbers": [
-        4
+        2
       ],
       "segmentation": [
         {
-          "surface": "让",
-          "vocabularyID": "vocab-hsk20-238",
-          "pinyin": "ràng"
+          "surface": "长",
+          "vocabularyID": "vocab-hsk20-159",
+          "pinyin": "cháng"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "laisser ; faire"
+        "fr": "long"
       },
       "audio": null,
       "example": {
-        "hanzi": "请让孩子先走。",
-        "pinyin": "qǐng ràng hái zi xiān zǒu。",
+        "hanzi": "这条路很长。",
+        "pinyin": "zhè tiáo lù hěn zhǎng。",
         "translation": {
-          "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+          "fr": "Cette route est longue."
         },
         "audio": null
       },
@@ -435,13 +270,96 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "让|ràng|238",
+        "canonicalID": "长|cháng|159",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 238,
+        "rank": 159,
         "level": 2
       },
-      "traditionalHanzi": "讓"
+      "traditionalHanzi": "長"
+    },
+    {
+      "id": "vocab-hsk20-051",
+      "canonicalID": "看|kàn|51",
+      "hanzi": "看",
+      "pinyin": "kàn",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "看",
+          "vocabularyID": "vocab-hsk20-051",
+          "pinyin": "kàn"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "regarder ; lire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请看这本书。",
+        "pinyin": "qǐng kàn zhè běn shū。",
+        "translation": {
+          "fr": "Regarde ce livre, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "看|kàn|51",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 51,
+        "level": 1
+      },
+      "traditionalHanzi": "看"
+    },
+    {
+      "id": "vocab-hsk20-055",
+      "canonicalID": "老师|lǎo shī|55",
+      "hanzi": "老师",
+      "pinyin": "lǎo shī",
+      "toneNumbers": [
+        3,
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "老师",
+          "vocabularyID": "vocab-hsk20-055",
+          "pinyin": "lǎo shī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "professeur"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "老师在教室。",
+        "pinyin": "lǎo shī zài jiào shì。",
+        "translation": {
+          "fr": "Le professeur est dans la classe."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "老师|lǎo shī|55",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 55,
+        "level": 1
+      },
+      "traditionalHanzi": "老師"
     }
   ],
   "blocks": [
@@ -464,16 +382,14 @@
       "kind": "vocabulary",
       "id": "block-lesson-26-vocabulary",
       "vocabularyIDs": [
+        "vocab-hsk20-022",
+        "vocab-hsk20-107",
         "vocab-hsk20-154",
-        "vocab-hsk20-158",
-        "vocab-hsk20-175",
-        "vocab-hsk20-181",
-        "vocab-hsk20-194",
-        "vocab-hsk20-217",
-        "vocab-hsk20-316",
-        "vocab-hsk20-159",
+        "vocab-hsk20-210",
         "vocab-hsk20-211",
-        "vocab-hsk20-238"
+        "vocab-hsk20-159",
+        "vocab-hsk20-051",
+        "vocab-hsk20-055"
       ],
       "metadata": {
         "stage": "observe",
@@ -549,7 +465,7 @@
     {
       "id": "block-lesson-26-reading",
       "storyID": "story-lesson-26",
-      "level": "HSK classique 2",
+      "level": "HSK classique 1",
       "title": {
         "fr": "Corriger"
       },
@@ -655,6 +571,22 @@
         "pairs": [
           {
             "id": "a",
+            "left": "读",
+            "pinyin": "dú",
+            "right": {
+              "fr": "lire"
+            }
+          },
+          {
+            "id": "b",
+            "left": "太",
+            "pinyin": "tài",
+            "right": {
+              "fr": "trop ; tellement"
+            }
+          },
+          {
+            "id": "c",
             "left": "帮助",
             "pinyin": "bāng zhù",
             "right": {
@@ -662,35 +594,19 @@
             }
           },
           {
-            "id": "b",
-            "left": "别",
-            "pinyin": "bié",
-            "right": {
-              "fr": "ne… pas (impératif)"
-            }
-          },
-          {
-            "id": "c",
-            "left": "懂",
-            "pinyin": "dǒng",
-            "right": {
-              "fr": "comprendre"
-            }
-          },
-          {
             "id": "d",
-            "left": "告诉",
-            "pinyin": "gào sù",
+            "left": "可能",
+            "pinyin": "kě néng",
             "right": {
-              "fr": "dire ; informer"
+              "fr": "possible ; peut-être"
             }
           },
           {
             "id": "e",
-            "left": "欢迎",
-            "pinyin": "huān yíng",
+            "left": "长",
+            "pinyin": "cháng",
             "right": {
-              "fr": "accueillir ; bienvenue"
+              "fr": "long"
             }
           }
         ]
@@ -703,13 +619,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-dict-sent-dia-6",
+      "id": "block-ex-l26-dict-py-022",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l26-dict-sent-dia-6",
+          "id": "ex-l26-dict-py-022",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -720,26 +636,33 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "谢谢！我懂了，也能帮助同学。",
+        "promptText": "读",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。"
+              "fr": "tài"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "zhè ge wèn tí bèi lǎo shī fā xiàn le。"
+              "fr": "cháng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。"
+              "fr": "dú"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "xiǎng"
             },
             "audio": null
           }
@@ -754,11 +677,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-tone-158",
+      "id": "block-ex-l26-tone-107",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l26-tone-158",
+          "id": "ex-l26-tone-107",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -770,7 +693,7 @@
           ],
           "required": true
         },
-        "promptText": "别",
+        "promptText": "太",
         "choices": [
           {
             "id": "t1",
@@ -801,7 +724,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t2"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -811,11 +734,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-pick-154",
+      "id": "block-ex-l26-pick-210",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l26-pick-154",
+          "id": "ex-l26-pick-210",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -827,33 +750,33 @@
           ],
           "required": true
         },
-        "promptText": "帮助",
+        "promptText": "可能",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "欢迎 (huān yíng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "帮助 (bāng zhù)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "可能 (kě néng)"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "告诉 (gào sù)"
+              "fr": "读 (dú)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "两 (liǎng)"
+              "fr": "太 (tài)"
             },
             "audio": null
           }
@@ -868,55 +791,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-dict-zh-175",
+      "id": "block-ex-l26-match-pinyin",
       "spec": {
-        "kind": "dictation",
+        "kind": "matching",
         "header": {
-          "id": "ex-l26-dict-zh-175",
+          "id": "ex-l26-match-pinyin",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis les caractères."
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l26-understand"
           ],
           "required": true
         },
-        "script": "hanzi",
-        "promptText": "懂",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "懂"
-            },
-            "audio": null
+            "left": "可以",
+            "pinyin": null,
+            "right": {
+              "fr": "kě yǐ"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "两"
-            },
-            "audio": null
+            "left": "看",
+            "pinyin": null,
+            "right": {
+              "fr": "kàn"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "被"
-            },
-            "audio": null
+            "left": "老师",
+            "pinyin": null,
+            "right": {
+              "fr": "lǎo shī"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "别"
-            },
-            "audio": null
+            "left": "读",
+            "pinyin": null,
+            "right": {
+              "fr": "dú"
+            }
+          },
+          {
+            "id": "e",
+            "left": "太",
+            "pinyin": null,
+            "right": {
+              "fr": "tài"
+            }
           }
-        ],
-        "correctChoiceID": "a"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1010,13 +942,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-translate-dia-1",
+      "id": "block-ex-l26-translate-exa-1",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l26-translate-dia-1",
+          "id": "ex-l26-translate-exa-1",
           "prompt": {
-            "fr": "Traduis en chinois : « As-tu besoin d’aide ? »"
+            "fr": "Traduis en chinois : « Je lis chaque jour »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1028,39 +960,39 @@
         },
         "tokens": [
           {
-            "id": "f",
-            "hanzi": "懂",
-            "pinyin": "dǒng",
-            "audio": null
-          },
-          {
             "id": "d",
-            "hanzi": "吗",
-            "pinyin": "ma",
+            "hanzi": "读书",
+            "pinyin": "dú shū",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "两",
-            "pinyin": "liǎng",
+            "id": "f",
+            "hanzi": "可能",
+            "pinyin": "kě néng",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "帮助",
-            "pinyin": "bāng zhù",
+            "hanzi": "天",
+            "pinyin": "tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "可以",
+            "pinyin": "kě yǐ",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "需要",
-            "pinyin": "xū yào",
+            "hanzi": "每",
+            "pinyin": "měi",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           }
         ],
@@ -1101,24 +1033,24 @@
         "replies": [
           {
             "id": "a",
+            "hanzi": "需要。这个题太难，我做错了。",
+            "pinyin": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "谢谢！我懂了，也能帮助同学。",
             "pinyin": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "c",
             "hanzi": "我不懂，但是我可以再做一次。",
             "pinyin": "wǒ bù dǒng， dàn shì wǒ kě yǐ zài zuò yī cì。",
             "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "需要。这个题太难，我做错了。",
-            "pinyin": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。",
-            "audio": null
           }
         ],
-        "correctReplyID": "c"
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
@@ -1128,13 +1060,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-translate-exa-3",
+      "id": "block-ex-l26-translate-exa-2",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l26-translate-exa-3",
+          "id": "ex-l26-translate-exa-2",
           "prompt": {
-            "fr": "Traduis en chinois : « Je comprends ce que tu veux dire »"
+            "fr": "Traduis en chinois : « Il fait trop froid aujourd’hui »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1146,45 +1078,39 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
             "id": "f",
-            "hanzi": "别",
-            "pinyin": "bié",
+            "hanzi": "帮助",
+            "pinyin": "bāng zhù",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "懂",
-            "pinyin": "dǒng",
+            "hanzi": "太",
+            "pinyin": "tài",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "被",
-            "pinyin": "bèi",
+            "id": "d",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "意思",
-            "pinyin": "yì si",
+            "hanzi": "可能",
+            "pinyin": "kě néng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "冷",
+            "pinyin": "lěng",
             "audio": null
           }
         ],
@@ -1192,8 +1118,7 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
         "acceptedOrders": []
       },
@@ -1205,13 +1130,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-order-exa-7",
+      "id": "block-ex-l26-order-exa-3",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l26-order-exa-7",
+          "id": "ex-l26-order-exa-3",
           "prompt": {
-            "fr": "Construis « Ce problème a été découvert par le professeur »."
+            "fr": "Construis « J’aide mon camarade de classe »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1223,60 +1148,32 @@
         },
         "tokens": [
           {
-            "id": "f",
-            "hanzi": "发现",
-            "pinyin": "fā xiàn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "老师",
-            "pinyin": "lǎo shī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "被",
-            "pinyin": "bèi",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
             "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "问题",
-            "pinyin": "wèn tí",
+            "hanzi": "同学",
+            "pinyin": "tóng xué",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "帮助",
+            "pinyin": "bāng zhù",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
+          "c"
         ],
         "acceptedVariants": [
-          "这个问题被老师发现了。",
-          "这个问题被老师发现了"
+          "我帮助同学。",
+          "我帮助同学"
         ]
       },
       "metadata": {
@@ -1287,11 +1184,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-dialogue-3-4",
+      "id": "block-ex-l26-dialogue-1-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l26-dialogue-3-4",
+          "id": "ex-l26-dialogue-1-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1307,29 +1204,29 @@
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "别着急，先看第一句话。",
-            "pinyin": "bié zháo jí， xiān kàn dì yī jù huà。",
+            "hanzi": "你需要帮助吗？",
+            "pinyin": "nǐ xū yào bāng zhù ma？",
             "audio": null
           },
           {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "你等我，我告诉你办法。",
-            "pinyin": "nǐ děng wǒ， wǒ gào sù nǐ bàn fǎ。",
+            "hanzi": "别着急，先看第一句话。",
+            "pinyin": "bié zháo jí， xiān kàn dì yī jù huà。",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "d",
             "speaker": "Tao",
             "hanzi": "我不懂，但是我可以再做一次。",
             "pinyin": "wǒ bù dǒng， dàn shì wǒ kě yǐ zài zuò yī cì。",
             "audio": null
           },
           {
-            "id": "d",
+            "id": "b",
             "speaker": "Tao",
-            "hanzi": "谢谢！我懂了，也能帮助同学。",
-            "pinyin": "xiè xiè！ wǒ dǒng le， yě néng bāng zhù tóng xué。",
+            "hanzi": "需要。这个题太难，我做错了。",
+            "pinyin": "xū yào。 zhè ge tí tài nán， wǒ zuò cuò le。",
             "audio": null
           }
         ],
@@ -1348,13 +1245,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-read-exa-5",
+      "id": "block-ex-l26-fill-rea-4",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l26-fill-rea-4",
+          "prompt": {
+            "fr": "Complète : 最后他懂了，___帮助同学。 (« Enfin, il comprend et peut aider son camarade »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "sentence": "最后他懂了，___帮助同学。",
+        "acceptedAnswers": [
+          "可以"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-read-rea-4",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l26-read-exa-5",
+          "id": "ex-l26-read-rea-4",
           "prompt": {
-            "fr": "Que signifie la phrase : 欢迎你来我家。"
+            "fr": "Dans le texte « Corriger », que signifie : 最后他懂了，可以帮助同学。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1368,60 +1295,30 @@
           {
             "id": "a",
             "label": {
-              "fr": "Ne t’inquiète pas."
+              "fr": "Attends-moi, je vais te dire comment faire."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Bienvenue chez moi."
+              "fr": "J’aide mon camarade de classe."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Je comprends ce que tu veux dire."
+              "fr": "Enfin, il comprend et peut aider son camarade."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-fill-rea-4",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l26-fill-rea-4",
-          "prompt": {
-            "fr": "Complète : 最后他___了，可以帮助同学。 (« Enfin, il comprend et peut aider son camarade »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l26-produce"
-          ],
-          "required": true
-        },
-        "sentence": "最后他___了，可以帮助同学。",
-        "acceptedAnswers": [
-          "懂"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 22
       }
     },
@@ -1559,12 +1456,12 @@
     {
       "id": "block-lesson-26-recap",
       "vocabularyIDs": [
+        "vocab-hsk20-022",
+        "vocab-hsk20-107",
         "vocab-hsk20-154",
-        "vocab-hsk20-158",
-        "vocab-hsk20-175",
-        "vocab-hsk20-181",
-        "vocab-hsk20-194",
-        "vocab-hsk20-217"
+        "vocab-hsk20-210",
+        "vocab-hsk20-211",
+        "vocab-hsk20-159"
       ],
       "objectiveIDs": [
         "l26-understand",
@@ -1582,6 +1479,48 @@
     }
   ],
   "cards": [
+    {
+      "id": "card-vocab-hsk20-022",
+      "vocabularyID": "vocab-hsk20-022",
+      "front": {
+        "hanzi": "读",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "读",
+        "pinyin": "dú",
+        "text": {
+          "fr": "lire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-107",
+      "vocabularyID": "vocab-hsk20-107",
+      "front": {
+        "hanzi": "太",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "太",
+        "pinyin": "tài",
+        "text": {
+          "fr": "trop ; tellement"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
     {
       "id": "card-vocab-hsk20-154",
       "vocabularyID": "vocab-hsk20-154",
@@ -1604,145 +1543,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-158",
-      "vocabularyID": "vocab-hsk20-158",
+      "id": "card-vocab-hsk20-210",
+      "vocabularyID": "vocab-hsk20-210",
       "front": {
-        "hanzi": "别",
+        "hanzi": "可能",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "别",
-        "pinyin": "bié",
+        "hanzi": "可能",
+        "pinyin": "kě néng",
         "text": {
-          "fr": "ne… pas (impératif)"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-175",
-      "vocabularyID": "vocab-hsk20-175",
-      "front": {
-        "hanzi": "懂",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "懂",
-        "pinyin": "dǒng",
-        "text": {
-          "fr": "comprendre"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-181",
-      "vocabularyID": "vocab-hsk20-181",
-      "front": {
-        "hanzi": "告诉",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "告诉",
-        "pinyin": "gào sù",
-        "text": {
-          "fr": "dire ; informer"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-194",
-      "vocabularyID": "vocab-hsk20-194",
-      "front": {
-        "hanzi": "欢迎",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "欢迎",
-        "pinyin": "huān yíng",
-        "text": {
-          "fr": "accueillir ; bienvenue"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-217",
-      "vocabularyID": "vocab-hsk20-217",
-      "front": {
-        "hanzi": "两",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "两",
-        "pinyin": "liǎng",
-        "text": {
-          "fr": "deux (quantité)"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-316",
-      "vocabularyID": "vocab-hsk20-316",
-      "front": {
-        "hanzi": "被",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "被",
-        "pinyin": "bèi",
-        "text": {
-          "fr": "marque du passif ; être recouvert par"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-159",
-      "vocabularyID": "vocab-hsk20-159",
-      "front": {
-        "hanzi": "长",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "长",
-        "pinyin": "cháng",
-        "text": {
-          "fr": "long"
+          "fr": "possible ; peut-être"
         },
         "audio": null
       },
@@ -1772,19 +1585,61 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-238",
-      "vocabularyID": "vocab-hsk20-238",
+      "id": "card-vocab-hsk20-159",
+      "vocabularyID": "vocab-hsk20-159",
       "front": {
-        "hanzi": "让",
+        "hanzi": "长",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "让",
-        "pinyin": "ràng",
+        "hanzi": "长",
+        "pinyin": "cháng",
         "text": {
-          "fr": "laisser ; faire"
+          "fr": "long"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-051",
+      "vocabularyID": "vocab-hsk20-051",
+      "front": {
+        "hanzi": "看",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "看",
+        "pinyin": "kàn",
+        "text": {
+          "fr": "regarder ; lire"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-055",
+      "vocabularyID": "vocab-hsk20-055",
+      "front": {
+        "hanzi": "老师",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "老师",
+        "pinyin": "lǎo shī",
+        "text": {
+          "fr": "professeur"
         },
         "audio": null
       },
@@ -1797,56 +1652,51 @@
     "allocationDay": 22,
     "allocationRange": "days06-45",
     "theme": "study",
+    "phase": "classic-1-150",
     "newVocabularyIDs": [
+      "vocab-hsk20-022",
+      "vocab-hsk20-107",
       "vocab-hsk20-154",
-      "vocab-hsk20-158",
-      "vocab-hsk20-175",
-      "vocab-hsk20-181",
-      "vocab-hsk20-194",
-      "vocab-hsk20-217",
-      "vocab-hsk20-316"
+      "vocab-hsk20-210",
+      "vocab-hsk20-211"
     ],
     "reusedVocabularyIDs": [
-      "vocab-hsk20-159",
-      "vocab-hsk20-211",
-      "vocab-hsk20-238"
+      "vocab-hsk20-051",
+      "vocab-hsk20-055",
+      "vocab-hsk20-159"
     ],
     "newCanonicalIDs": [
+      "hsk20-022",
+      "hsk20-107",
       "hsk20-154",
-      "hsk20-158",
-      "hsk20-175",
-      "hsk20-181",
-      "hsk20-194",
-      "hsk20-217",
-      "hsk20-316"
+      "hsk20-210",
+      "hsk20-211"
     ],
     "reusedCanonicalIDs": [
       "hsk20-159",
-      "hsk20-211",
-      "hsk20-238"
+      "hsk20-051",
+      "hsk20-055"
     ],
     "allocationNewVocabularyIDs": [
+      "hsk20-022",
+      "hsk20-107",
       "hsk20-154",
-      "hsk20-158",
-      "hsk20-175",
-      "hsk20-181",
-      "hsk20-194",
-      "hsk20-217",
-      "hsk20-316"
+      "hsk20-210",
+      "hsk20-211"
     ],
     "allocationReusedVocabularyIDs": [
       "hsk20-159",
-      "hsk20-211",
-      "hsk20-238"
+      "hsk20-051",
+      "hsk20-055"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-02",
+    "levelID": "level-01",
     "sectionID": "section-01",
-    "unitID": "unit-03",
-    "newVocabularyCount": 7,
+    "unitID": "unit-04",
+    "newVocabularyCount": 5,
     "extraVocabularyIDs": []
   }
 }

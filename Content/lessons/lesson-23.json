@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-23",
-  "moduleID": "unit-03",
+  "moduleID": "unit-04",
   "order": 35,
   "title": {
     "fr": "Préparer un anniversaire"
@@ -11,7 +11,7 @@
     "fr": "Organiser une journée d’anniversaire et enchaîner les actions."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 2",
+  "level": "HSK classique 1",
   "objectives": [
     {
       "id": "l23-understand",
@@ -30,114 +30,31 @@
   ],
   "vocabulary": [
     {
-      "id": "vocab-hsk20-011",
-      "canonicalID": "吃|chī|11",
-      "hanzi": "吃",
-      "pinyin": "chī",
-      "toneNumbers": [
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "吃",
-          "vocabularyID": "vocab-hsk20-011",
-          "pinyin": "chī"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "manger"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我喜欢吃米饭。",
-        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
-        "translation": {
-          "fr": "J’aime manger du riz."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "吃|chī|11",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 11,
-        "level": 1
-      },
-      "traditionalHanzi": "喫"
-    },
-    {
-      "id": "vocab-hsk20-108",
-      "canonicalID": "天气|tiān qì|108",
-      "hanzi": "天气",
-      "pinyin": "tiān qì",
-      "toneNumbers": [
-        1,
-        4
-      ],
-      "segmentation": [
-        {
-          "surface": "天气",
-          "vocabularyID": "vocab-hsk20-108",
-          "pinyin": "tiān qì"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "temps (météo)"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "今天的天气很好。",
-        "pinyin": "jīn tiān de tiān qì hěn hǎo。",
-        "translation": {
-          "fr": "Le temps est très beau aujourd’hui."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "天气|tiān qì|108",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 108,
-        "level": 1
-      },
-      "traditionalHanzi": "天氣"
-    },
-    {
-      "id": "vocab-hsk20-122",
-      "canonicalID": "小|xiǎo|122",
-      "hanzi": "小",
-      "pinyin": "xiǎo",
+      "id": "vocab-hsk20-036",
+      "canonicalID": "好|hǎo|36",
+      "hanzi": "好",
+      "pinyin": "hǎo",
       "toneNumbers": [
         3
       ],
       "segmentation": [
         {
-          "surface": "小",
-          "vocabularyID": "vocab-hsk20-122",
-          "pinyin": "xiǎo"
+          "surface": "好",
+          "vocabularyID": "vocab-hsk20-036",
+          "pinyin": "hǎo"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "petit"
+        "fr": "bon ; bien"
       },
       "audio": null,
       "example": {
-        "hanzi": "这只猫很小。",
-        "pinyin": "zhè zhī māo hěn xiǎo。",
+        "hanzi": "你好，我很好。",
+        "pinyin": "nǐ hǎo， wǒ hěn hǎo。",
         "translation": {
-          "fr": "Ce chat est très petit."
+          "fr": "Bonjour, je vais bien."
         },
         "audio": null
       },
@@ -145,123 +62,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "小|xiǎo|122",
+        "canonicalID": "好|hǎo|36",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 122,
+        "rank": 36,
         "level": 1
       },
-      "traditionalHanzi": "小"
+      "traditionalHanzi": "好"
     },
     {
-      "id": "vocab-hsk20-133",
-      "canonicalID": "医生|yī shēng|133",
-      "hanzi": "医生",
-      "pinyin": "yī shēng",
-      "toneNumbers": [
-        1,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "医生",
-          "vocabularyID": "vocab-hsk20-133",
-          "pinyin": "yī shēng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "médecin"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "医生来了。",
-        "pinyin": "yī shēng lái le。",
-        "translation": {
-          "fr": "Le médecin est arrivé."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "医生|yī shēng|133",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 133,
-        "level": 1
-      },
-      "traditionalHanzi": "醫生"
-    },
-    {
-      "id": "vocab-hsk20-152",
-      "canonicalID": "白|bái|152",
-      "hanzi": "白",
-      "pinyin": "bái",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "白",
-          "vocabularyID": "vocab-hsk20-152",
-          "pinyin": "bái"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "blanc"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "白色的猫在门口。",
-        "pinyin": "bái sè de māo zài mén kǒu。",
-        "translation": {
-          "fr": "Le chat blanc est à la porte."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "白|bái|152",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 152,
-        "level": 2
-      },
-      "traditionalHanzi": "白"
-    },
-    {
-      "id": "vocab-hsk20-238",
-      "canonicalID": "让|ràng|238",
-      "hanzi": "让",
-      "pinyin": "ràng",
+      "id": "vocab-hsk20-051",
+      "canonicalID": "看|kàn|51",
+      "hanzi": "看",
+      "pinyin": "kàn",
       "toneNumbers": [
         4
       ],
       "segmentation": [
         {
-          "surface": "让",
-          "vocabularyID": "vocab-hsk20-238",
-          "pinyin": "ràng"
+          "surface": "看",
+          "vocabularyID": "vocab-hsk20-051",
+          "pinyin": "kàn"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "laisser ; faire"
+        "fr": "regarder ; lire"
       },
       "audio": null,
       "example": {
-        "hanzi": "请让孩子先走。",
-        "pinyin": "qǐng ràng hái zi xiān zǒu。",
+        "hanzi": "请看这本书。",
+        "pinyin": "qǐng kàn zhè běn shū。",
         "translation": {
-          "fr": "Laisse d’abord passer l’enfant, s’il te plaît."
+          "fr": "Regarde ce livre, s’il te plaît."
         },
         "audio": null
       },
@@ -269,13 +103,54 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "让|ràng|238",
+        "canonicalID": "看|kàn|51",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 238,
-        "level": 2
+        "rank": 51,
+        "level": 1
       },
-      "traditionalHanzi": "讓"
+      "traditionalHanzi": "看"
+    },
+    {
+      "id": "vocab-hsk20-150",
+      "canonicalID": "做|zuò|150",
+      "hanzi": "做",
+      "pinyin": "zuò",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "做",
+          "vocabularyID": "vocab-hsk20-150",
+          "pinyin": "zuò"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "faire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我做作业。",
+        "pinyin": "wǒ zuò zuò yè。",
+        "translation": {
+          "fr": "Je fais mes devoirs."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "做|zuò|150",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 150,
+        "level": 1
+      },
+      "traditionalHanzi": "做"
     },
     {
       "id": "vocab-hsk20-242",
@@ -362,32 +237,31 @@
       "traditionalHanzi": "時間"
     },
     {
-      "id": "vocab-hsk20-134",
-      "canonicalID": "医院|yī yuàn|134",
-      "hanzi": "医院",
-      "pinyin": "yī yuàn",
+      "id": "vocab-hsk20-139",
+      "canonicalID": "在|zài|139",
+      "hanzi": "在",
+      "pinyin": "zài",
       "toneNumbers": [
-        1,
         4
       ],
       "segmentation": [
         {
-          "surface": "医院",
-          "vocabularyID": "vocab-hsk20-134",
-          "pinyin": "yī yuàn"
+          "surface": "在",
+          "vocabularyID": "vocab-hsk20-139",
+          "pinyin": "zài"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "hôpital"
+        "fr": "être à ; se trouver"
       },
       "audio": null,
       "example": {
-        "hanzi": "医院在学校旁边。",
-        "pinyin": "yī yuàn zài xué xiào páng biān。",
+        "hanzi": "我在家。",
+        "pinyin": "wǒ zài jiā。",
         "translation": {
-          "fr": "L’hôpital est à côté de l’école."
+          "fr": "Je suis à la maison."
         },
         "audio": null
       },
@@ -395,40 +269,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "医院|yī yuàn|134",
+        "canonicalID": "在|zài|139",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 134,
+        "rank": 139,
         "level": 1
       },
-      "traditionalHanzi": "醫院"
+      "traditionalHanzi": "在"
     },
     {
-      "id": "vocab-hsk20-136",
-      "canonicalID": "有|yǒu|136",
-      "hanzi": "有",
-      "pinyin": "yǒu",
+      "id": "vocab-hsk20-274",
+      "canonicalID": "要|yào|274",
+      "hanzi": "要",
+      "pinyin": "yào",
       "toneNumbers": [
-        3
+        4
       ],
       "segmentation": [
         {
-          "surface": "有",
-          "vocabularyID": "vocab-hsk20-136",
-          "pinyin": "yǒu"
+          "surface": "要",
+          "vocabularyID": "vocab-hsk20-274",
+          "pinyin": "yào"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "avoir ; il y a"
+        "fr": "vouloir ; devoir"
       },
       "audio": null,
       "example": {
-        "hanzi": "桌子上有一本书。",
-        "pinyin": "zhuō zi shàng yǒu yī běn shū。",
+        "hanzi": "我要回家。",
+        "pinyin": "wǒ yào huí jiā。",
         "translation": {
-          "fr": "Il y a un livre sur la table."
+          "fr": "Je veux rentrer à la maison."
         },
         "audio": null
       },
@@ -436,13 +310,54 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "有|yǒu|136",
+        "canonicalID": "要|yào|274",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 136,
+        "rank": 274,
+        "level": 2
+      },
+      "traditionalHanzi": "要"
+    },
+    {
+      "id": "vocab-hsk20-011",
+      "canonicalID": "吃|chī|11",
+      "hanzi": "吃",
+      "pinyin": "chī",
+      "toneNumbers": [
+        1
+      ],
+      "segmentation": [
+        {
+          "surface": "吃",
+          "vocabularyID": "vocab-hsk20-011",
+          "pinyin": "chī"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "manger"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我喜欢吃米饭。",
+        "pinyin": "wǒ xǐ huān chī mǐ fàn。",
+        "translation": {
+          "fr": "J’aime manger du riz."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "吃|chī|11",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 11,
         "level": 1
       },
-      "traditionalHanzi": "有"
+      "traditionalHanzi": "喫"
     }
   ],
   "blocks": [
@@ -465,16 +380,14 @@
       "kind": "vocabulary",
       "id": "block-lesson-23-vocabulary",
       "vocabularyIDs": [
-        "vocab-hsk20-011",
-        "vocab-hsk20-108",
-        "vocab-hsk20-122",
-        "vocab-hsk20-133",
-        "vocab-hsk20-152",
-        "vocab-hsk20-238",
+        "vocab-hsk20-036",
+        "vocab-hsk20-051",
+        "vocab-hsk20-150",
         "vocab-hsk20-242",
         "vocab-hsk20-243",
-        "vocab-hsk20-134",
-        "vocab-hsk20-136"
+        "vocab-hsk20-139",
+        "vocab-hsk20-274",
+        "vocab-hsk20-011"
       ],
       "metadata": {
         "stage": "observe",
@@ -550,7 +463,7 @@
     {
       "id": "block-lesson-23-reading",
       "storyID": "story-lesson-23",
-      "level": "HSK classique 2",
+      "level": "HSK classique 1",
       "title": {
         "fr": "Le jour spécial"
       },
@@ -656,42 +569,42 @@
         "pairs": [
           {
             "id": "a",
-            "left": "吃",
-            "pinyin": "chī",
+            "left": "好",
+            "pinyin": "hǎo",
             "right": {
-              "fr": "manger"
+              "fr": "bon ; bien"
             }
           },
           {
             "id": "b",
-            "left": "天气",
-            "pinyin": "tiān qì",
+            "left": "看",
+            "pinyin": "kàn",
             "right": {
-              "fr": "temps (météo)"
+              "fr": "regarder ; lire"
             }
           },
           {
             "id": "c",
-            "left": "小",
-            "pinyin": "xiǎo",
+            "left": "做",
+            "pinyin": "zuò",
             "right": {
-              "fr": "petit"
+              "fr": "faire"
             }
           },
           {
             "id": "d",
-            "left": "医生",
-            "pinyin": "yī shēng",
+            "left": "生日",
+            "pinyin": "shēng rì",
             "right": {
-              "fr": "médecin"
+              "fr": "anniversaire"
             }
           },
           {
             "id": "e",
-            "left": "白",
-            "pinyin": "bái",
+            "left": "时间",
+            "pinyin": "shí jiān",
             "right": {
-              "fr": "blanc"
+              "fr": "temps ; durée"
             }
           }
         ]
@@ -704,11 +617,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-dict-sent-dia-6",
+      "id": "block-ex-l23-dict-sent-dia-2",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l23-dict-sent-dia-6",
+          "id": "ex-l23-dict-sent-dia-2",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -721,26 +634,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "有三个小时，我们一起吃饭。",
+        "promptText": "很好。今年我的生日在星期六。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "wǎn shàng yǒu jǐ gè xiǎo shí de shí jiān？"
+              "fr": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。"
+              "fr": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。"
+              "fr": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。"
             },
             "audio": null
           }
@@ -755,13 +668,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-tone-108",
+      "id": "block-ex-l23-tone-036",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l23-tone-108",
+          "id": "ex-l23-tone-036",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis ses deux tons."
+            "fr": "Écoute la syllabe, puis choisis son ton."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
@@ -771,38 +684,38 @@
           ],
           "required": true
         },
-        "promptText": "天气",
+        "promptText": "好",
         "choices": [
           {
-            "id": "t13",
+            "id": "t1",
             "label": {
-              "fr": "Ton 1 ¯ puis ton 3 ˇ"
+              "fr": "Ton 1 ¯ (haut et plat)"
             },
             "audio": null
           },
           {
-            "id": "t14",
+            "id": "t2",
             "label": {
-              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+              "fr": "Ton 2 ˊ (montant)"
             },
             "audio": null
           },
           {
-            "id": "t24",
+            "id": "t3",
             "label": {
-              "fr": "Ton 2 ˊ puis ton 4 ˋ"
+              "fr": "Ton 3 ˇ (descend puis remonte)"
             },
             "audio": null
           },
           {
-            "id": "t44",
+            "id": "t4",
             "label": {
-              "fr": "Ton 4 ˋ puis ton 4 ˋ"
+              "fr": "Ton 4 ˋ (descendant)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "t14"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -812,11 +725,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-pick-011",
+      "id": "block-ex-l23-pick-051",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l23-pick-011",
+          "id": "ex-l23-pick-051",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -828,33 +741,33 @@
           ],
           "required": true
         },
-        "promptText": "吃",
+        "promptText": "看",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "小 (xiǎo)"
+              "fr": "好 (hǎo)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "白 (bái)"
+              "fr": "做 (zuò)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "吃 (chī)"
+              "fr": "看 (kàn)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "让 (ràng)"
+              "fr": "时间 (shí jiān)"
             },
             "audio": null
           }
@@ -869,11 +782,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-dict-zh-122",
+      "id": "block-ex-l23-dict-zh-011",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l23-dict-zh-122",
+          "id": "ex-l23-dict-zh-011",
           "prompt": {
             "fr": "Écoute le mot, puis choisis les caractères."
           },
@@ -886,33 +799,33 @@
           "required": true
         },
         "script": "hanzi",
-        "promptText": "小",
+        "promptText": "吃",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "吃"
+              "fr": "好"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "小"
+              "fr": "吃"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "白"
+              "fr": "看"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "让"
+              "fr": "做"
             },
             "audio": null
           }
@@ -1011,13 +924,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-translate-exa-2",
+      "id": "block-ex-l23-translate-dia-1",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l23-translate-exa-2",
+          "id": "ex-l23-translate-dia-1",
           "prompt": {
-            "fr": "Traduis en chinois : « Le temps est très beau aujourd’hui »"
+            "fr": "Traduis en chinois : « Comment était ton anniversaire l’an dernier ? »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1029,39 +942,45 @@
         },
         "tokens": [
           {
-            "id": "b",
+            "id": "c",
             "hanzi": "的",
             "pinyin": "de",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "医生",
-            "pinyin": "yī shēng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很好",
-            "pinyin": "hěn hǎo",
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "天气",
-            "pinyin": "tiān qì",
+            "hanzi": "去年",
+            "pinyin": "qù nián",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "让",
-            "pinyin": "ràng",
+            "hanzi": "怎么样",
+            "pinyin": "zěn me yàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "生日",
+            "pinyin": "shēng rì",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "时间",
+            "pinyin": "shí jiān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "做",
+            "pinyin": "zuò",
             "audio": null
           }
         ],
@@ -1069,111 +988,10 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
         "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 19
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l23-talk-1",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l23-talk-1",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l23-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "去年你的生日怎么样？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "我先去医院看爷爷，然后回家。",
-            "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "有三个小时，我们一起吃饭。",
-            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "很好。今年我的生日在星期六。",
-            "pinyin": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 19
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l23-order-exa-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l23-order-exa-4",
-          "prompt": {
-            "fr": "Construis « Le médecin est arrivé »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l23-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "医生",
-            "pinyin": "yī shēng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "医生来了。",
-          "医生来了"
-        ]
       },
       "metadata": {
         "stage": "guided",
@@ -1210,8 +1028,133 @@
           },
           {
             "id": "b",
+            "hanzi": "很好。今年我的生日在星期六。",
+            "pinyin": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。",
+            "audio": null
+          },
+          {
+            "id": "c",
             "hanzi": "我先去医院看爷爷，然后回家。",
             "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l23-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Regarde ce livre, s’il te plaît »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l23-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "做",
+            "pinyin": "zuò",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "本",
+            "pinyin": "běn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "好",
+            "pinyin": "hǎo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 19
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l23-talk-5",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l23-talk-5",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l23-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "晚上有几个小时的时间？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我先去医院看爷爷，然后回家。",
+            "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有三个小时，我们一起吃饭。",
+            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
             "audio": null
           },
           {
@@ -1231,11 +1174,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-dialogue-4-3",
+      "id": "block-ex-l23-dialogue-2-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l23-dialogue-4-3",
+          "id": "ex-l23-dialogue-2-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1249,31 +1192,39 @@
         },
         "lines": [
           {
-            "id": "c",
-            "speaker": "Tao",
-            "hanzi": "有三个小时，我们一起吃饭。",
-            "pinyin": "yǒu sān gè xiǎo shí， wǒ men yì qǐ chī fàn。",
-            "audio": null
-          },
-          {
             "id": "b",
             "speaker": "Mina",
-            "hanzi": "晚上有几个小时的时间？",
-            "pinyin": "wǎn shàng yǒu jǐ gè xiǎo shí de shí jiān？",
+            "hanzi": "早上你先做什么？",
+            "pinyin": "zǎo shàng nǐ xiān zuò shén me？",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Tao",
+            "hanzi": "很好。今年我的生日在星期六。",
+            "pinyin": "hěn hǎo。 jīn nián wǒ de shēng rì zài xīng qī liù。",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
             "hanzi": "我先去医院看爷爷，然后回家。",
             "pinyin": "wǒ xiān qù yī yuàn kàn yé yé， rán hòu huí jiā。",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Mina",
+            "hanzi": "晚上有几个小时的时间？",
+            "pinyin": "wǎn shàng yǒu jǐ gè xiǎo shí de shí jiān？",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
       },
       "metadata": {
@@ -1314,13 +1265,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l23-read-dia-6",
+      "id": "block-ex-l23-read-dia-2",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l23-read-dia-6",
+          "id": "ex-l23-read-dia-2",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 有三个小时，我们一起吃饭。"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 很好。今年我的生日在星期六。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1334,21 +1285,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "Nous avons trois heures ; nous dînerons ensemble."
+              "fr": "Très bien. Cette année, mon anniversaire est samedi."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il y a un livre sur la table."
+              "fr": "Nous avons trois heures ; nous dînerons ensemble."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Que fais-tu d’abord le matin ?"
+              "fr": "Je n’ai pas le temps maintenant."
             },
             "audio": null
           }
@@ -1495,12 +1446,12 @@
     {
       "id": "block-lesson-23-recap",
       "vocabularyIDs": [
-        "vocab-hsk20-011",
-        "vocab-hsk20-108",
-        "vocab-hsk20-122",
-        "vocab-hsk20-133",
-        "vocab-hsk20-152",
-        "vocab-hsk20-238"
+        "vocab-hsk20-036",
+        "vocab-hsk20-051",
+        "vocab-hsk20-150",
+        "vocab-hsk20-242",
+        "vocab-hsk20-243",
+        "vocab-hsk20-139"
       ],
       "objectiveIDs": [
         "l23-understand",
@@ -1519,19 +1470,19 @@
   ],
   "cards": [
     {
-      "id": "card-vocab-hsk20-011",
-      "vocabularyID": "vocab-hsk20-011",
+      "id": "card-vocab-hsk20-036",
+      "vocabularyID": "vocab-hsk20-036",
       "front": {
-        "hanzi": "吃",
+        "hanzi": "好",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "吃",
-        "pinyin": "chī",
+        "hanzi": "好",
+        "pinyin": "hǎo",
         "text": {
-          "fr": "manger"
+          "fr": "bon ; bien"
         },
         "audio": null
       },
@@ -1540,19 +1491,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-108",
-      "vocabularyID": "vocab-hsk20-108",
+      "id": "card-vocab-hsk20-051",
+      "vocabularyID": "vocab-hsk20-051",
       "front": {
-        "hanzi": "天气",
+        "hanzi": "看",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "天气",
-        "pinyin": "tiān qì",
+        "hanzi": "看",
+        "pinyin": "kàn",
         "text": {
-          "fr": "temps (météo)"
+          "fr": "regarder ; lire"
         },
         "audio": null
       },
@@ -1561,82 +1512,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-122",
-      "vocabularyID": "vocab-hsk20-122",
+      "id": "card-vocab-hsk20-150",
+      "vocabularyID": "vocab-hsk20-150",
       "front": {
-        "hanzi": "小",
+        "hanzi": "做",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "小",
-        "pinyin": "xiǎo",
+        "hanzi": "做",
+        "pinyin": "zuò",
         "text": {
-          "fr": "petit"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-133",
-      "vocabularyID": "vocab-hsk20-133",
-      "front": {
-        "hanzi": "医生",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "医生",
-        "pinyin": "yī shēng",
-        "text": {
-          "fr": "médecin"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-152",
-      "vocabularyID": "vocab-hsk20-152",
-      "front": {
-        "hanzi": "白",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "白",
-        "pinyin": "bái",
-        "text": {
-          "fr": "blanc"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-238",
-      "vocabularyID": "vocab-hsk20-238",
-      "front": {
-        "hanzi": "让",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "让",
-        "pinyin": "ràng",
-        "text": {
-          "fr": "laisser ; faire"
+          "fr": "faire"
         },
         "audio": null
       },
@@ -1687,19 +1575,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-134",
-      "vocabularyID": "vocab-hsk20-134",
+      "id": "card-vocab-hsk20-139",
+      "vocabularyID": "vocab-hsk20-139",
       "front": {
-        "hanzi": "医院",
+        "hanzi": "在",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "医院",
-        "pinyin": "yī yuàn",
+        "hanzi": "在",
+        "pinyin": "zài",
         "text": {
-          "fr": "hôpital"
+          "fr": "être à ; se trouver"
         },
         "audio": null
       },
@@ -1708,19 +1596,40 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-136",
-      "vocabularyID": "vocab-hsk20-136",
+      "id": "card-vocab-hsk20-274",
+      "vocabularyID": "vocab-hsk20-274",
       "front": {
-        "hanzi": "有",
+        "hanzi": "要",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "有",
-        "pinyin": "yǒu",
+        "hanzi": "要",
+        "pinyin": "yào",
         "text": {
-          "fr": "avoir ; il y a"
+          "fr": "vouloir ; devoir"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-011",
+      "vocabularyID": "vocab-hsk20-011",
+      "front": {
+        "hanzi": "吃",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "吃",
+        "pinyin": "chī",
+        "text": {
+          "fr": "manger"
         },
         "audio": null
       },
@@ -1733,56 +1642,51 @@
     "allocationDay": 19,
     "allocationRange": "days06-45",
     "theme": "time",
+    "phase": "classic-1-150",
     "newVocabularyIDs": [
-      "vocab-hsk20-011",
-      "vocab-hsk20-108",
-      "vocab-hsk20-122",
-      "vocab-hsk20-133",
-      "vocab-hsk20-152",
-      "vocab-hsk20-238",
-      "vocab-hsk20-242"
-    ],
-    "reusedVocabularyIDs": [
-      "vocab-hsk20-134",
-      "vocab-hsk20-136",
+      "vocab-hsk20-036",
+      "vocab-hsk20-051",
+      "vocab-hsk20-150",
+      "vocab-hsk20-242",
       "vocab-hsk20-243"
     ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-011",
+      "vocab-hsk20-139",
+      "vocab-hsk20-274"
+    ],
     "newCanonicalIDs": [
-      "hsk20-011",
-      "hsk20-108",
-      "hsk20-122",
-      "hsk20-133",
-      "hsk20-152",
-      "hsk20-238",
-      "hsk20-242"
+      "hsk20-036",
+      "hsk20-051",
+      "hsk20-150",
+      "hsk20-242",
+      "hsk20-243"
     ],
     "reusedCanonicalIDs": [
-      "hsk20-243",
-      "hsk20-134",
-      "hsk20-136"
+      "hsk20-139",
+      "hsk20-274",
+      "hsk20-011"
     ],
     "allocationNewVocabularyIDs": [
-      "hsk20-011",
-      "hsk20-108",
-      "hsk20-122",
-      "hsk20-133",
-      "hsk20-152",
-      "hsk20-238",
-      "hsk20-242"
+      "hsk20-036",
+      "hsk20-051",
+      "hsk20-150",
+      "hsk20-242",
+      "hsk20-243"
     ],
     "allocationReusedVocabularyIDs": [
-      "hsk20-243",
-      "hsk20-134",
-      "hsk20-136"
+      "hsk20-139",
+      "hsk20-274",
+      "hsk20-011"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-02",
+    "levelID": "level-01",
     "sectionID": "section-01",
-    "unitID": "unit-03",
-    "newVocabularyCount": 7,
+    "unitID": "unit-04",
+    "newVocabularyCount": 5,
     "extraVocabularyIDs": []
   }
 }

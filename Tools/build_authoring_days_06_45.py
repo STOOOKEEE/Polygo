@@ -19,6 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 AUTHORING = ROOT / "Content" / "authoring"
 ALLOCATION_PATH = AUTHORING / "90-day-allocation.json"
 OUTPUT_PATH = AUTHORING / "90-day-authoring-days-06-45.json"
+# The story-index label of each allocation phase: ranks 1–150, then 151–300.
+LEVELS = {"classic-1-150": "HSK classique 1", "classic-151-300": "HSK classique 2"}
 
 
 def sentence_pinyin(hanzi: str) -> str:
@@ -899,6 +901,7 @@ def speaking_exercise(eid: str, objective: str, data: tuple[str, str, str]) -> d
 
 def build_lesson(day: int, data: dict[str, Any], allocation: list[dict[str, Any]]) -> dict[str, Any]:
     row = allocation[day - 1]
+    level = LEVELS[row["phase"]]
     lesson_number = day + 4
     lesson_id = f"lesson-{lesson_number:02d}"
     understand = f"l{lesson_number}-understand"
@@ -908,7 +911,7 @@ def build_lesson(day: int, data: dict[str, Any], allocation: list[dict[str, Any]
     refs = list(dict.fromkeys(new + reused))
     reading_title, p1_hanzi, p1_fr, p2_hanzi, p2_fr = data["reading"]
     dialogue = {"id": f"block-{lesson_id}-dialogue", "lines": [line(speaker, hanzi, translation) for speaker, hanzi, translation in data["dialogue"]]}
-    reading = {"id": f"block-{lesson_id}-reading", "storyID": f"story-{lesson_id}", "level": "HSK classique 2" if day <= 30 else "HSK classique 3", "title": {"fr": reading_title}, "paragraphs": [paragraph("p1", p1_hanzi, p1_fr), paragraph("p2", p2_hanzi, p2_fr)], "comprehensionExerciseIDs": [f"ex-l{lesson_number:02d}-reading"]}
+    reading = {"id": f"block-{lesson_id}-reading", "storyID": f"story-{lesson_id}", "level": level, "title": {"fr": reading_title}, "paragraphs": [paragraph("p1", p1_hanzi, p1_fr), paragraph("p2", p2_hanzi, p2_fr)], "comprehensionExerciseIDs": [f"ex-l{lesson_number:02d}-reading"]}
     reading_question = data["readingChoice"]
     exercises = [
         choice_exercise(f"ex-l{lesson_number:02d}-meaning", understand, data["choice"]),
@@ -922,7 +925,7 @@ def build_lesson(day: int, data: dict[str, Any], allocation: list[dict[str, Any]
         "id": lesson_id,
         "moduleID": row["moduleID"],
         "order": lesson_number,
-        "level": "HSK classique 2" if day <= 30 else "HSK classique 3",
+        "level": level,
         "title": {"fr": data["title"]},
         "summary": {"fr": data["summary"]},
         "estimatedMinutes": 12,
@@ -934,7 +937,7 @@ def build_lesson(day: int, data: dict[str, Any], allocation: list[dict[str, Any]
         "reading": reading,
         "exercises": exercises,
         "recap": {"id": f"block-{lesson_id}-recap", "vocabularyIDs": refs[:6], "objectiveIDs": [understand, produce]},
-        "metadata": {"allocationDay": day, "allocationRange": "days06-45", "theme": row["theme"], "newVocabularyIDs": new, "reusedVocabularyIDs": reused, "newCanonicalIDs": new, "reusedCanonicalIDs": reused},
+        "metadata": {"allocationDay": day, "allocationRange": "days06-45", "theme": row["theme"], "phase": row["phase"], "newVocabularyIDs": new, "reusedVocabularyIDs": reused, "newCanonicalIDs": new, "reusedCanonicalIDs": reused},
     }
 
 

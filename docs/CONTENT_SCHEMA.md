@@ -20,8 +20,8 @@ nécessaires aux contrôles et vérifie les liens avant d'écrire le bundle.
 ## Bundle chargé par l'application
 
 Une release complète du parcours contient le module 0 « Pinyin et tons » (huit
-leçons d'écoute), une introduction de quatre leçons, puis les 90 leçons
-quotidiennes et les 22 révisions et défis d'unité qui s'y intercalent :
+leçons d'écoute), une introduction de quatre leçons, puis les 66 leçons
+quotidiennes et les 16 révisions et défis d'unité qui s'y intercalent :
 
 ~~~text
 Content/
@@ -31,8 +31,8 @@ Content/
   lessons/
     pinyin-01.json … pinyin-08.json   # module 0, unit-00 : pinyin et tons à l'oreille
     lesson-01.json … lesson-04.json   # introduction protégée
-    lesson-05.json … lesson-94.json   # 90 leçons du jour
-    review-01.json … review-14.json   # une révision après chaque série de cinq leçons
+    lesson-05.json … lesson-70.json   # 66 leçons du jour
+    review-01.json … review-08.json   # une révision après la cinquième leçon de chaque unité
     boss-unit-02.json … boss-unit-09.json  # un défi à la fin de chaque unité
   authoring/                           # sources de release conservées dans le dépôt
     pinyin-module.json                 # module 0 écrit à la main, lu par le générateur
@@ -40,8 +40,8 @@ Content/
     90-day-allocation.json             # allocation et plan de référence
     preview-first-five.json            # jours 1 à 5
     90-day-authoring-days-06-45.json   # jours 6 à 45
-    90-day-authoring-days-46-90.json   # jours 46 à 90
-    hsk-legacy-600.json                # catalogue partagé
+    90-day-authoring-days-46-66.json   # jours 46 à 66
+    hsk-legacy-600.json                # catalogue partagé (référentiel de 600 entrées, 300 enseignées)
     hsk-legacy-examples-001-400.json   # exemples 1 à 400
     hsk-legacy-examples-401-600.json   # exemples 401 à 600
   assets/
@@ -96,8 +96,8 @@ Un fichier courses/{courseID}.json est un CourseManifest :
   "contentVersion": "2026.10.0",
   "id": "mandarin-starter",
   "slug": "mandarin-starter",
-  "title": {"fr": "Mandarin au quotidien — parcours de 120 jours"},
-  "description": {"fr": "Un parcours de 120 séances ..."},
+  "title": {"fr": "Mandarin au quotidien — parcours de 90 jours"},
+  "description": {"fr": "Un parcours de 90 séances ..."},
   "alignment": [
     {
       "framework": "HSK",
@@ -146,14 +146,14 @@ modules du parcours quotidien sont :
 | Module | Jours | Leçons du jour | Révisions | Défi |
 | --- | ---: | --- | --- | --- |
 | unit-00 — Pinyin et tons | 1–8 | pinyin-01–pinyin-08 | — | — |
-| unit-02 — Vie pratique | 9–23 | lesson-05–lesson-16 | review-01, review-02 | boss-unit-02 |
-| unit-03 — Temps, études et santé | 24–38 | lesson-17–lesson-28 | review-03, review-04 | boss-unit-03 |
-| unit-04 — Achats et déplacements | 39–53 | lesson-29–lesson-40 | review-05, review-06 | boss-unit-04 |
-| unit-05 — Maison et communauté | 54–68 | lesson-41–lesson-52 | review-07, review-08 | boss-unit-05 |
-| unit-06 — Études et travail | 69–83 | lesson-53–lesson-64 | review-09, review-10 | boss-unit-06 |
-| unit-07 — Ville et voyage | 84–98 | lesson-65–lesson-76 | review-11, review-12 | boss-unit-07 |
-| unit-08 — Météo, nature et loisirs | 99–110 | lesson-77–lesson-86 | review-13 | boss-unit-08 |
-| unit-09 — Récits et opinions | 111–120 | lesson-87–lesson-94 | review-14 | boss-unit-09 |
+| unit-02 — Vie pratique | 9–18 | lesson-05–lesson-12 | review-01 | boss-unit-02 |
+| unit-03 — Temps, études et santé | 19–28 | lesson-13–lesson-20 | review-02 | boss-unit-03 |
+| unit-04 — Journées bien remplies | 29–38 | lesson-21–lesson-28 | review-03 | boss-unit-04 |
+| unit-05 — Achats et déplacements | 39–48 | lesson-29–lesson-36 | review-04 | boss-unit-05 |
+| unit-06 — Études, travail et voyage | 49–58 | lesson-37–lesson-44 | review-05 | boss-unit-06 |
+| unit-07 — Quartier et communauté | 59–68 | lesson-45–lesson-52 | review-06 | boss-unit-07 |
+| unit-08 — Travail et habitudes | 69–79 | lesson-53–lesson-61 | review-07 | boss-unit-08 |
+| unit-09 — Voyages, nature et loisirs | 80–90 | lesson-62–lesson-70 | review-08 | boss-unit-09 |
 
 Les IDs des leçons du jour ne changent pas : la progression est indexée par ID.
 Les révisions et les défis ont leurs propres IDs (`review-NN`, `boss-<unité>`).
@@ -162,13 +162,14 @@ leçons est leur position 1-based sur le parcours (unités par `order`, leçons 
 l'ordre de `lessonIDs`) : les huit leçons du module 0, puis les quatre
 introductions, puis un jour de plan = un `order`, sans rapport avec le numéro de
 l'ID. Le générateur réécrit cet `order` dans chaque leçon, protégées comprises, et
-le linter le vérifie. Les lecons `lesson-34`, `lesson-64` et `lesson-94` (bilans de
-l'allocation, sans mot nouveau) restent des leçons ordinaires ; les jours 30, 60
-et 90 de l'allocation désignent les jours des 90 leçons avant l'insertion des
+le linter le vérifie. Les leçons `lesson-34` et `lesson-64` (« Bilan » dans leur
+titre) sont des leçons du jour ordinaires, avec leurs mots nouveaux ; les jours de
+l'allocation (1 à 66) désignent les jours des 66 leçons avant l'insertion des
 révisions et du module 0. Les jalons du plan sont replacés sur le défi qui clôt
 l'unité de leur leçon puis décalés de huit jours : la couverture ne change pas
-puisque révisions, défis et module 0 n'ajoutent aucun mot. Le jalon des 300
-lexèmes tombe au jour 68 (`boss-unit-05`, après lesson-52).
+puisque révisions, défis et module 0 n'ajoutent aucun mot. Le jalon des 150
+lexèmes tombe au jour 58 (`boss-unit-06`, après lesson-44) et celui des 300
+lexèmes au jour 90 (`boss-unit-09`, après lesson-70).
 
 ## Plan quotidien de 15 minutes
 
@@ -180,7 +181,7 @@ il contient :
 | targetMinutes | entier | 15 |
 | catalogID | chaîne optionnelle | ID du catalogue de progression, ici hsk-legacy-600 |
 | catalogVersion | chaîne optionnelle | version du payload, ici 2026.09.0 |
-| sessions | tableau | 120 entrées contiguës, jours 1 à 120 (8 leçons du module 0, 90 leçons, 14 révisions, 8 défis) |
+| sessions | tableau | 90 entrées contiguës, jours 1 à 90 (8 leçons du module 0, 66 leçons, 8 révisions, 8 défis) |
 | milestones | tableau | jalons uniques dont le jour reste dans le plan |
 
 Chaque entrée sessions a quatre champs :
@@ -195,7 +196,7 @@ Chaque entrée sessions a quatre champs :
 ~~~
 
 Pour chaque jour du parcours, courseMinutes reprend estimatedMinutes de la
-leçon (12 minutes dans les 90 leçons du jour et les révisions, 13 dans les défis
+leçon (12 minutes dans les 66 leçons du jour et les révisions, 13 dans les défis
 d'unité) et reviewMinutes vaut 15 moins courseMinutes. Les deux valeurs sont
 strictement positives et leur somme vaut targetMinutes. Le budget quotidien est
 donc 12 + 3 = 15, ou 13 + 2 = 15 pour un défi. Ce sont des budgets éditoriaux destinés à
@@ -223,7 +224,7 @@ optionnelle et claims. La référence du programme complet est :
 VocabularyCoverage contient vocabularyTarget, éventuellement
 newVocabularyTarget, catalogID, catalogVersion et canonicalOnly.
 canonicalOnly doit être true. La clé éditoriale requiredRankRange, par exemple
-[1, 300], peut préciser la frontière contrôlée ; le type Swift ne l'utilise pas,
+[1, 150] ou [1, 300], peut préciser la frontière contrôlée ; le type Swift ne l'utilise pas,
 mais le linter vérifie que les entrées jusqu'au rang annoncé sont effectivement
 couvertes.
 
@@ -231,9 +232,8 @@ Les jalons livrés portent les couvertures suivantes :
 
 | Jour | Couverture |
 | ---: | --- |
-| 68 | rangs 1–300 du catalogue hsk-legacy-600 |
-| 83 | consolidation et réemploi, sans nouvelle cible numérique |
-| 120 | rangs 1–600 du catalogue hsk-legacy-600 |
+| 58 | rangs 1–150 du catalogue hsk-legacy-600 (HSK classique 1) |
+| 90 | rangs 1–300 du catalogue hsk-legacy-600 (HSK classique 1–2) |
 
 claims décrit une planification éditoriale. Une exposition lexicale, une carte
 réussie ou une leçon terminée ne doit pas être reformulée en maîtrise, niveau
@@ -280,7 +280,7 @@ g/k, m f n l h), j q x et z c s, zh ch sh r, les voyelles et les finales
 l'orthographe du pinyin (y, w, ü, iu ui un, apostrophe) et un bilan d'écoute.
 Elles occupent les jours 1 à 8 du plan (12 + 3 minutes) et sont écrites à la main
 dans `Content/authoring/pinyin-module.json` ; `content_tool.py generate` les
-produit avec `Tools/pinyin_module.py`, à côté du pack de 90 jours, sans le
+produit avec `Tools/pinyin_module.py`, à côté du pack des leçons du jour, sans le
 modifier. Ce sont des leçons ordinaires pour le décodeur Swift, reconnues par
 `metadata.lessonKind` = `pinyin` :
 
@@ -351,7 +351,8 @@ des preuves distinctes.
 Le tableau vocabulary contient les entrées locales de la leçon. Une entrée
 réutilisée est recopiée avec le même ID et le même objet ; elle ne reçoit pas
 une nouvelle carte parce qu'elle apparaît dans une phrase ultérieure. Les
-entrées de catalogue suivent vocab-hsk20-001 à vocab-hsk20-600. Les quatre
+entrées de catalogue suivent vocab-hsk20-001 à vocab-hsk20-600 ; le parcours
+n'utilise que 001 à 300. Les quatre
 leçons protégées gardent leurs IDs historiques et leurs cartes historiques.
 
 ## Blocs et textes
@@ -543,7 +544,7 @@ vocabulaire déjà livré ; le générateur résout ces trois formes.
 L'allocation 90-day-allocation.json est une source indépendante et lisible par
 revue. Elle conserve courseID, le catalogue et ses frontières de rang, les
 13 baselineCanonicalIDs, allocationPolicy, les huit modules quotidiens, les
-trois milestones, le plan et 90 lignes lessons. Une ligne d'allocation contient
+deux milestones, le plan et 66 lignes lessons. Une ligne d'allocation contient
 notamment :
 
 ~~~json
@@ -552,7 +553,7 @@ notamment :
   "lessonID": "lesson-10",
   "moduleID": "unit-02",
   "theme": "home",
-  "phase": "classic-1-300",
+  "phase": "classic-1-150",
   "newVocabularyIDs": ["hsk20-006", "hsk20-013"],
   "reusedVocabularyIDs": ["hsk20-095"],
   "newCanonicalIDs": ["hsk20-006", "hsk20-013"],
@@ -563,16 +564,17 @@ notamment :
     "patterns": ["在 + lieu"],
     "anchorCanonicalID": "hsk20-098",
     "reviewable": true
-  },
-  "checkpoint": false
+  }
 }
 ~~~
 
 Les valeurs de newCount de cet extrait sont illustratives ; le linter
 recalcule la couverture à partir des leçons et du catalogue. Une séance
-introduit six à huit mots nouveaux : les rangs 1–300 sont planifiés au plus
-tard au jour 48, puis les rangs 301–600 jusqu'au jour 90. Les jours 30, 60 et
-90 sont des bilans sans mot nouveau. Les mots réutilisés et les mots de
+introduit trois à cinq mots nouveaux : les rangs 1–150 sont planifiés au plus
+tard au jour 40 de l'allocation (phase `classic-1-150`, jours 1 à 40), puis le
+reste des rangs 151–300 jusqu'au jour 66 (phase `classic-151-300`). Aucune
+entrée de rang supérieur à 300 n'est planifiée. Dans `grammarTarget`,
+`anchorCanonicalID` est un mot de la séance. Les mots réutilisés et les mots de
 contexte restent distincts des nouvelles entrées canoniques.
 
 ## Fragments d'authoring et assemblage
@@ -584,7 +586,7 @@ puissent être relues sans reconstruire les phrases :
 | --- | --- |
 | preview-first-five.json | cours de départ et jours 1–5, leçons lesson-05–lesson-09 |
 | 90-day-authoring-days-06-45.json | leçons lesson-10–lesson-49, plage d'allocation 6–45 |
-| 90-day-authoring-days-46-90.json | leçons lesson-50–lesson-94, budgets et overrides de la plage 46–90 |
+| 90-day-authoring-days-46-66.json | leçons lesson-50–lesson-70, budgets et overrides de la plage 46–66 |
 | 90-day-allocation.json | ordre, modules, cibles de rang, jalons et budgets communs |
 | 90-day-authoring.json | résultat vérifié de l'assemblage des trois fragments |
 | hsk-legacy-examples-*.json | exemples de phrases par plage de rang du catalogue |
@@ -642,7 +644,7 @@ La chaîne de release est :
 ~~~text
 python3 Tools/build_90_day_authoring.py
 python3 Tools/build_authoring_days_06_45.py
-python3 Tools/build_authoring_days_46_90.py
+python3 Tools/build_authoring_days_46_66.py
 python3 Tools/build_preview_authoring.py
 python3 Tools/assemble_90_day_authoring.py
 python3 Tools/content_tool.py generate \
@@ -653,7 +655,7 @@ python3 Tools/content_tool.py lint --root Content
 Les quatre leçons lesson-01 à lesson-04 sont protégées : le générateur les
 conserve et ajoute les leçons quotidiennes dans leurs modules. L'assemblage
 échoue si une plage ne contient pas exactement les IDs attendus, si un module
-ou un budget diverge de l'allocation, ou si les 90 jours ne sont pas contigus.
+ou un budget diverge de l'allocation, ou si les 66 jours ne sont pas contigus.
 content_tool.py prépare une copie temporaire, la génère et la valide avant de
 recopier les fichiers modifiés dans Content/.
 
@@ -739,8 +741,8 @@ versions, les IDs de cours, modules, leçons, blocs et exercices, les objectifs,
 les références lexicales, les cartes, les questions de lecture et les assets.
 Lorsqu'un catalogue est présent, il vérifie ses 600 rangs contigus, son
 référentiel HSK-legacy-2.0 / 2.0, les sidecars, les formes et les cibles
-canoniques du plan. Il vérifie aussi les 120 sessions, les budgets de
-15 minutes, les frontières de rang des jalons de 300 et 600 lexèmes, l'`order`
+canoniques du plan. Il vérifie aussi les 90 sessions, les budgets de
+15 minutes, les frontières de rang des jalons de 150 et 300 lexèmes, l'`order`
 de chaque leçon (sa position sur le parcours) et les
 révisions : une révision après chaque série de cinq leçons du jour, un défi à
 la fin de chaque unité planifiée, aucun mot nouveau, 15 à 20 exercices pour une

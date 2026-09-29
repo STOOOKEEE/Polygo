@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-29",
-  "moduleID": "unit-04",
+  "moduleID": "unit-05",
   "order": 43,
   "title": {
     "fr": "Choisir une veste"
@@ -11,7 +11,7 @@
     "fr": "Comparer des vêtements, demander un prix et trouver une taille."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 2",
+  "level": "HSK classique 1",
   "objectives": [
     {
       "id": "l29-understand",
@@ -29,6 +29,48 @@
     }
   ],
   "vocabulary": [
+    {
+      "id": "vocab-hsk20-025",
+      "canonicalID": "多少|duō shǎo|25",
+      "hanzi": "多少",
+      "pinyin": "duō shǎo",
+      "toneNumbers": [
+        1,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "多少",
+          "vocabularyID": "vocab-hsk20-025",
+          "pinyin": "duō shǎo"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "combien"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "你要多少钱？",
+        "pinyin": "nǐ yào duō shǎo qián？",
+        "translation": {
+          "fr": "Combien d’argent veux-tu ?"
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "多少|duō shǎo|25",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 25,
+        "level": 1
+      },
+      "traditionalHanzi": "多少"
+    },
     {
       "id": "vocab-hsk20-056",
       "canonicalID": "冷|lěng|56",
@@ -71,32 +113,31 @@
       "traditionalHanzi": "冷"
     },
     {
-      "id": "vocab-hsk20-130",
-      "canonicalID": "学校|xué xiào|130",
-      "hanzi": "学校",
-      "pinyin": "xué xiào",
+      "id": "vocab-hsk20-122",
+      "canonicalID": "小|xiǎo|122",
+      "hanzi": "小",
+      "pinyin": "xiǎo",
       "toneNumbers": [
-        2,
-        4
+        3
       ],
       "segmentation": [
         {
-          "surface": "学校",
-          "vocabularyID": "vocab-hsk20-130",
-          "pinyin": "xué xiào"
+          "surface": "小",
+          "vocabularyID": "vocab-hsk20-122",
+          "pinyin": "xiǎo"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "école"
+        "fr": "petit"
       },
       "audio": null,
       "example": {
-        "hanzi": "学校在这里。",
-        "pinyin": "xué xiào zài zhè lǐ。",
+        "hanzi": "这只猫很小。",
+        "pinyin": "zhè zhī māo hěn xiǎo。",
         "translation": {
-          "fr": "L’école est ici."
+          "fr": "Ce chat est très petit."
         },
         "audio": null
       },
@@ -104,13 +145,13 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "学校|xué xiào|130",
+        "canonicalID": "小|xiǎo|122",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 130,
+        "rank": 122,
         "level": 1
       },
-      "traditionalHanzi": "學校"
+      "traditionalHanzi": "小"
     },
     {
       "id": "vocab-hsk20-132",
@@ -197,33 +238,31 @@
       "traditionalHanzi": "便宜"
     },
     {
-      "id": "vocab-hsk20-179",
-      "canonicalID": "服务员|fú wù yuán|179",
-      "hanzi": "服务员",
-      "pinyin": "fú wù yuán",
+      "id": "vocab-hsk20-015",
+      "canonicalID": "的|de|15",
+      "hanzi": "的",
+      "pinyin": "de",
       "toneNumbers": [
-        2,
-        4,
-        2
+        0
       ],
       "segmentation": [
         {
-          "surface": "服务员",
-          "vocabularyID": "vocab-hsk20-179",
-          "pinyin": "fú wù yuán"
+          "surface": "的",
+          "vocabularyID": "vocab-hsk20-015",
+          "pinyin": "de"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "serveur ; employé de service"
+        "fr": "particule de détermination"
       },
       "audio": null,
       "example": {
-        "hanzi": "服务员给我水。",
-        "pinyin": "fú wù yuán gěi wǒ shuǐ。",
+        "hanzi": "这是我的书。",
+        "pinyin": "zhè shì wǒ de shū。",
         "translation": {
-          "fr": "Le serveur me donne de l’eau."
+          "fr": "C’est mon livre."
         },
         "audio": null
       },
@@ -231,123 +270,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "服务员|fú wù yuán|179",
+        "canonicalID": "的|de|15",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 179,
-        "level": 2
+        "rank": 15,
+        "level": 1
       },
-      "traditionalHanzi": "服務員"
+      "traditionalHanzi": "的"
     },
     {
-      "id": "vocab-hsk20-187",
-      "canonicalID": "贵|guì|187",
-      "hanzi": "贵",
-      "pinyin": "guì",
-      "toneNumbers": [
-        4
-      ],
-      "segmentation": [
-        {
-          "surface": "贵",
-          "vocabularyID": "vocab-hsk20-187",
-          "pinyin": "guì"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "cher"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这件衣服太贵了。",
-        "pinyin": "zhè jiàn yī fú tài guì le。",
-        "translation": {
-          "fr": "Ce vêtement est trop cher."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "贵|guì|187",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 187,
-        "level": 2
-      },
-      "traditionalHanzi": "貴"
-    },
-    {
-      "id": "vocab-hsk20-230",
-      "canonicalID": "旁边|páng biān|230",
-      "hanzi": "旁边",
-      "pinyin": "páng biān",
-      "toneNumbers": [
-        2,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "旁边",
-          "vocabularyID": "vocab-hsk20-230",
-          "pinyin": "páng biān"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "à côté"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "椅子在桌子旁边。",
-        "pinyin": "yǐ zi zài zhuō zi páng biān。",
-        "translation": {
-          "fr": "La chaise est à côté de la table."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "旁边|páng biān|230",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 230,
-        "level": 2
-      },
-      "traditionalHanzi": "旁邊"
-    },
-    {
-      "id": "vocab-hsk20-162",
-      "canonicalID": "穿|chuān|162",
-      "hanzi": "穿",
-      "pinyin": "chuān",
+      "id": "vocab-hsk20-021",
+      "canonicalID": "都|dōu|21",
+      "hanzi": "都",
+      "pinyin": "dōu",
       "toneNumbers": [
         1
       ],
       "segmentation": [
         {
-          "surface": "穿",
-          "vocabularyID": "vocab-hsk20-162",
-          "pinyin": "chuān"
+          "surface": "都",
+          "vocabularyID": "vocab-hsk20-021",
+          "pinyin": "dōu"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "porter (un vêtement)"
+        "fr": "tous ; tout"
       },
       "audio": null,
       "example": {
-        "hanzi": "她穿红衣服。",
-        "pinyin": "tā chuān hóng yī fú。",
+        "hanzi": "我们都喜欢茶。",
+        "pinyin": "wǒ men dōu xǐ huān chá。",
         "translation": {
-          "fr": "Elle porte des vêtements rouges."
+          "fr": "Nous aimons tous le thé."
         },
         "audio": null
       },
@@ -355,41 +311,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "穿|chuān|162",
+        "canonicalID": "都|dōu|21",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 162,
-        "level": 2
+        "rank": 21,
+        "level": 1
       },
-      "traditionalHanzi": "穿"
+      "traditionalHanzi": "都"
     },
     {
-      "id": "vocab-hsk20-169",
-      "canonicalID": "但是|dàn shì|169",
-      "hanzi": "但是",
-      "pinyin": "dàn shì",
+      "id": "vocab-hsk20-036",
+      "canonicalID": "好|hǎo|36",
+      "hanzi": "好",
+      "pinyin": "hǎo",
       "toneNumbers": [
-        4,
-        4
+        3
       ],
       "segmentation": [
         {
-          "surface": "但是",
-          "vocabularyID": "vocab-hsk20-169",
-          "pinyin": "dàn shì"
+          "surface": "好",
+          "vocabularyID": "vocab-hsk20-036",
+          "pinyin": "hǎo"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "mais"
+        "fr": "bon ; bien"
       },
       "audio": null,
       "example": {
-        "hanzi": "我想去，但是今天下雨。",
-        "pinyin": "wǒ xiǎng qù， dàn shì jīn tiān xià yǔ。",
+        "hanzi": "你好，我很好。",
+        "pinyin": "nǐ hǎo， wǒ hěn hǎo。",
         "translation": {
-          "fr": "Je veux y aller, mais il pleut aujourd’hui."
+          "fr": "Bonjour, je vais bien."
         },
         "audio": null
       },
@@ -397,54 +352,13 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "但是|dàn shì|169",
+        "canonicalID": "好|hǎo|36",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 169,
-        "level": 2
+        "rank": 36,
+        "level": 1
       },
-      "traditionalHanzi": "但是"
-    },
-    {
-      "id": "vocab-hsk20-193",
-      "canonicalID": "红|hóng|193",
-      "hanzi": "红",
-      "pinyin": "hóng",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "红",
-          "vocabularyID": "vocab-hsk20-193",
-          "pinyin": "hóng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "rouge"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我喜欢红色。",
-        "pinyin": "wǒ xǐ huān hóng sè。",
-        "translation": {
-          "fr": "J’aime le rouge."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "红|hóng|193",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 193,
-        "level": 2
-      },
-      "traditionalHanzi": "紅"
+      "traditionalHanzi": "好"
     }
   ],
   "blocks": [
@@ -467,16 +381,14 @@
       "kind": "vocabulary",
       "id": "block-lesson-29-vocabulary",
       "vocabularyIDs": [
+        "vocab-hsk20-025",
         "vocab-hsk20-056",
-        "vocab-hsk20-130",
+        "vocab-hsk20-122",
         "vocab-hsk20-132",
         "vocab-hsk20-157",
-        "vocab-hsk20-179",
-        "vocab-hsk20-187",
-        "vocab-hsk20-230",
-        "vocab-hsk20-162",
-        "vocab-hsk20-169",
-        "vocab-hsk20-193"
+        "vocab-hsk20-015",
+        "vocab-hsk20-021",
+        "vocab-hsk20-036"
       ],
       "metadata": {
         "stage": "observe",
@@ -552,7 +464,7 @@
     {
       "id": "block-lesson-29-reading",
       "storyID": "story-lesson-29",
-      "level": "HSK classique 2",
+      "level": "HSK classique 1",
       "title": {
         "fr": "Au magasin"
       },
@@ -658,6 +570,14 @@
         "pairs": [
           {
             "id": "a",
+            "left": "多少",
+            "pinyin": "duō shǎo",
+            "right": {
+              "fr": "combien"
+            }
+          },
+          {
+            "id": "b",
             "left": "冷",
             "pinyin": "lěng",
             "right": {
@@ -665,15 +585,15 @@
             }
           },
           {
-            "id": "b",
-            "left": "学校",
-            "pinyin": "xué xiào",
+            "id": "c",
+            "left": "小",
+            "pinyin": "xiǎo",
             "right": {
-              "fr": "école"
+              "fr": "petit"
             }
           },
           {
-            "id": "c",
+            "id": "d",
             "left": "衣服",
             "pinyin": "yī fu",
             "right": {
@@ -681,19 +601,11 @@
             }
           },
           {
-            "id": "d",
+            "id": "e",
             "left": "便宜",
             "pinyin": "pián yi",
             "right": {
               "fr": "bon marché"
-            }
-          },
-          {
-            "id": "e",
-            "left": "服务员",
-            "pinyin": "fú wù yuán",
-            "right": {
-              "fr": "serveur ; employé de service"
             }
           }
         ]
@@ -706,11 +618,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l29-dict-sent-exa-6",
+      "id": "block-ex-l29-dict-sent-dia-1",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l29-dict-sent-exa-6",
+          "id": "ex-l29-dict-sent-dia-1",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -723,26 +635,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "这件衣服太贵了。",
+        "promptText": "这件衣服多少钱？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "zhè jiàn hěn guì， wǒ bù mǎi。"
+              "fr": "zhè jiàn yī fú hěn pián yi。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "zhè jiàn yī fú duō shǎo qián？"
+              "fr": "zhè jiàn hěn guì， wǒ bù mǎi。"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "zhè jiàn yī fú tài guì le。"
+              "fr": "zhè jiàn yī fú duō shǎo qián？"
             },
             "audio": null
           }
@@ -814,11 +726,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l29-pick-179",
+      "id": "block-ex-l29-pick-025",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l29-pick-179",
+          "id": "ex-l29-pick-025",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -830,33 +742,33 @@
           ],
           "required": true
         },
-        "promptText": "服务员",
+        "promptText": "多少",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "服务员 (fú wù yuán)"
+              "fr": "多少 (duō shǎo)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "旁边 (páng biān)"
+              "fr": "便宜 (pián yi)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "学校 (xué xiào)"
+              "fr": "衣服 (yī fu)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "衣服 (yī fu)"
+              "fr": "冷 (lěng)"
             },
             "audio": null
           }
@@ -871,48 +783,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l29-reverse-179",
+      "id": "block-ex-l29-dict-zh-132",
       "spec": {
-        "kind": "choice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l29-reverse-179",
+          "id": "ex-l29-dict-zh-132",
           "prompt": {
-            "fr": "Comment dit-on « serveur ; employé de service » en chinois ?"
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l29-understand"
           ],
           "required": true
         },
+        "script": "hanzi",
+        "promptText": "衣服",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "学校 (xué xiào)"
+              "fr": "多少"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "旁边 (páng biān)"
+              "fr": "便宜"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "便宜 (pián yi)"
+              "fr": "杯子"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "服务员 (fú wù yuán)"
+              "fr": "衣服"
             },
             "audio": null
           }
@@ -1011,13 +925,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l29-translate-exa-2",
+      "id": "block-ex-l29-translate-exa-3",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l29-translate-exa-2",
+          "id": "ex-l29-translate-exa-3",
           "prompt": {
-            "fr": "Traduis en chinois : « L’école est ici »"
+            "fr": "Traduis en chinois : « Ce chat est très petit »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1029,139 +943,15 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "里",
-            "pinyin": "lǐ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
             "id": "f",
-            "hanzi": "衣服",
-            "pinyin": "yī fu",
-            "audio": null
-          },
-          {
-            "id": "e",
             "hanzi": "冷",
             "pinyin": "lěng",
             "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-talk-1",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l29-talk-1",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l29-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "这件衣服多少钱？",
-        "replies": [
           {
             "id": "a",
-            "hanzi": "你穿什么颜色？",
-            "pinyin": "nǐ chuān shén me yán sè？",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "好，离门近的衣服都在这里。",
-            "pinyin": "hǎo， lí mén jìn de yī fú dōu zài zhè lǐ。",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "三百元，但是那件比较便宜。",
-            "pinyin": "sān bǎi yuán， dàn shì nà jiàn bǐ jiào pián yi。",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 25
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l29-translate-exa-4",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l29-translate-exa-4",
-          "prompt": {
-            "fr": "Traduis en chinois : « Ce vêtement est bon marché »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l29-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "贵",
-            "pinyin": "guì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "便宜",
-            "pinyin": "pián yi",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           },
           {
@@ -1171,21 +961,27 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
+            "id": "g",
+            "hanzi": "多少",
+            "pinyin": "duō shǎo",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "件",
-            "pinyin": "jiàn",
+            "hanzi": "只",
+            "pinyin": "zhī",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "id": "c",
+            "hanzi": "猫",
+            "pinyin": "māo",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "小",
+            "pinyin": "xiǎo",
             "audio": null
           }
         ],
@@ -1233,22 +1029,160 @@
           },
           {
             "id": "b",
-            "hanzi": "我穿红衣服。请找两件小的。",
-            "pinyin": "wǒ chuān hóng yī fú。 qǐng zhǎo liǎng jiàn xiǎo de。",
+            "hanzi": "这件衣服多少钱？",
+            "pinyin": "zhè jiàn yī fú duō shǎo qián？",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "这件衣服多少钱？",
-            "pinyin": "zhè jiàn yī fú duō shǎo qián？",
+            "hanzi": "我穿红衣服。请找两件小的。",
+            "pinyin": "wǒ chuān hóng yī fú。 qǐng zhǎo liǎng jiàn xiǎo de。",
             "audio": null
           }
         ],
-        "correctReplyID": "b"
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
         "skill": "recognition",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-translate-exa-5",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l29-translate-exa-5",
+          "prompt": {
+            "fr": "Traduis en chinois : « Ce vêtement est bon marché »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "衣服",
+            "pinyin": "yī fú",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "件",
+            "pinyin": "jiàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "冷",
+            "pinyin": "lěng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "便宜",
+            "pinyin": "pián yi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "多少",
+            "pinyin": "duō shǎo",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 25
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l29-order-exa-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l29-order-exa-1",
+          "prompt": {
+            "fr": "Construis « Combien d’argent veux-tu ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l29-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "钱",
+            "pinyin": "qián",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "多少",
+            "pinyin": "duō shǎo",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "要",
+            "pinyin": "yào",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "你要多少钱？",
+          "你要多少钱"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
         "lessonDay": 25
       }
     },
@@ -1343,7 +1277,7 @@
         "header": {
           "id": "ex-l29-fill-rea-2",
           "prompt": {
-            "fr": "Complète : 顾客找小的___，最后买了两件，一共三百元。 (« Le client cherche de petits vêtements et en achète finalement deux, pour trois cents yuans au total »)"
+            "fr": "Complète : 顾客找___的衣服，最后买了两件，一共三百元。 (« Le client cherche de petits vêtements et en achète finalement deux, pour trois cents yuans au total »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1353,9 +1287,9 @@
           ],
           "required": true
         },
-        "sentence": "顾客找小的___，最后买了两件，一共三百元。",
+        "sentence": "顾客找___的衣服，最后买了两件，一共三百元。",
         "acceptedAnswers": [
-          "衣服"
+          "小"
         ],
         "caseSensitive": false
       },
@@ -1499,12 +1433,12 @@
     {
       "id": "block-lesson-29-recap",
       "vocabularyIDs": [
+        "vocab-hsk20-025",
         "vocab-hsk20-056",
-        "vocab-hsk20-130",
+        "vocab-hsk20-122",
         "vocab-hsk20-132",
         "vocab-hsk20-157",
-        "vocab-hsk20-179",
-        "vocab-hsk20-187"
+        "vocab-hsk20-015"
       ],
       "objectiveIDs": [
         "l29-understand",
@@ -1522,6 +1456,27 @@
     }
   ],
   "cards": [
+    {
+      "id": "card-vocab-hsk20-025",
+      "vocabularyID": "vocab-hsk20-025",
+      "front": {
+        "hanzi": "多少",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "多少",
+        "pinyin": "duō shǎo",
+        "text": {
+          "fr": "combien"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
     {
       "id": "card-vocab-hsk20-056",
       "vocabularyID": "vocab-hsk20-056",
@@ -1544,19 +1499,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-130",
-      "vocabularyID": "vocab-hsk20-130",
+      "id": "card-vocab-hsk20-122",
+      "vocabularyID": "vocab-hsk20-122",
       "front": {
-        "hanzi": "学校",
+        "hanzi": "小",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "学校",
-        "pinyin": "xué xiào",
+        "hanzi": "小",
+        "pinyin": "xiǎo",
         "text": {
-          "fr": "école"
+          "fr": "petit"
         },
         "audio": null
       },
@@ -1607,19 +1562,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-179",
-      "vocabularyID": "vocab-hsk20-179",
+      "id": "card-vocab-hsk20-015",
+      "vocabularyID": "vocab-hsk20-015",
       "front": {
-        "hanzi": "服务员",
+        "hanzi": "的",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "服务员",
-        "pinyin": "fú wù yuán",
+        "hanzi": "的",
+        "pinyin": "de",
         "text": {
-          "fr": "serveur ; employé de service"
+          "fr": "particule de détermination"
         },
         "audio": null
       },
@@ -1628,19 +1583,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-187",
-      "vocabularyID": "vocab-hsk20-187",
+      "id": "card-vocab-hsk20-021",
+      "vocabularyID": "vocab-hsk20-021",
       "front": {
-        "hanzi": "贵",
+        "hanzi": "都",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "贵",
-        "pinyin": "guì",
+        "hanzi": "都",
+        "pinyin": "dōu",
         "text": {
-          "fr": "cher"
+          "fr": "tous ; tout"
         },
         "audio": null
       },
@@ -1649,82 +1604,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-230",
-      "vocabularyID": "vocab-hsk20-230",
+      "id": "card-vocab-hsk20-036",
+      "vocabularyID": "vocab-hsk20-036",
       "front": {
-        "hanzi": "旁边",
+        "hanzi": "好",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "旁边",
-        "pinyin": "páng biān",
+        "hanzi": "好",
+        "pinyin": "hǎo",
         "text": {
-          "fr": "à côté"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-162",
-      "vocabularyID": "vocab-hsk20-162",
-      "front": {
-        "hanzi": "穿",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "穿",
-        "pinyin": "chuān",
-        "text": {
-          "fr": "porter (un vêtement)"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-169",
-      "vocabularyID": "vocab-hsk20-169",
-      "front": {
-        "hanzi": "但是",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "但是",
-        "pinyin": "dàn shì",
-        "text": {
-          "fr": "mais"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-193",
-      "vocabularyID": "vocab-hsk20-193",
-      "front": {
-        "hanzi": "红",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "红",
-        "pinyin": "hóng",
-        "text": {
-          "fr": "rouge"
+          "fr": "bon ; bien"
         },
         "audio": null
       },
@@ -1737,56 +1629,51 @@
     "allocationDay": 25,
     "allocationRange": "days06-45",
     "theme": "shopping",
+    "phase": "classic-1-150",
     "newVocabularyIDs": [
+      "vocab-hsk20-025",
       "vocab-hsk20-056",
-      "vocab-hsk20-130",
+      "vocab-hsk20-122",
       "vocab-hsk20-132",
-      "vocab-hsk20-157",
-      "vocab-hsk20-179",
-      "vocab-hsk20-187",
-      "vocab-hsk20-230"
+      "vocab-hsk20-157"
     ],
     "reusedVocabularyIDs": [
-      "vocab-hsk20-162",
-      "vocab-hsk20-169",
-      "vocab-hsk20-193"
+      "vocab-hsk20-015",
+      "vocab-hsk20-021",
+      "vocab-hsk20-036"
     ],
     "newCanonicalIDs": [
+      "hsk20-025",
       "hsk20-056",
-      "hsk20-130",
+      "hsk20-122",
       "hsk20-132",
-      "hsk20-157",
-      "hsk20-179",
-      "hsk20-187",
-      "hsk20-230"
+      "hsk20-157"
     ],
     "reusedCanonicalIDs": [
-      "hsk20-162",
-      "hsk20-169",
-      "hsk20-193"
+      "hsk20-015",
+      "hsk20-021",
+      "hsk20-036"
     ],
     "allocationNewVocabularyIDs": [
+      "hsk20-025",
       "hsk20-056",
-      "hsk20-130",
+      "hsk20-122",
       "hsk20-132",
-      "hsk20-157",
-      "hsk20-179",
-      "hsk20-187",
-      "hsk20-230"
+      "hsk20-157"
     ],
     "allocationReusedVocabularyIDs": [
-      "hsk20-162",
-      "hsk20-169",
-      "hsk20-193"
+      "hsk20-015",
+      "hsk20-021",
+      "hsk20-036"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-02",
+    "levelID": "level-01",
     "sectionID": "section-01",
-    "unitID": "unit-04",
-    "newVocabularyCount": 7,
+    "unitID": "unit-05",
+    "newVocabularyCount": 5,
     "extraVocabularyIDs": []
   }
 }

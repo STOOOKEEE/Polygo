@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-58",
-  "moduleID": "unit-06",
+  "moduleID": "unit-08",
   "order": 79,
   "title": {
     "fr": "Manger avec attention"
@@ -11,7 +11,7 @@
     "fr": "Comparer un repas sucré et une option plus légère."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 3",
+  "level": "HSK classique 2",
   "objectives": [
     {
       "id": "l58-understand",
@@ -30,32 +30,73 @@
   ],
   "vocabulary": [
     {
-      "id": "vocab-hsk20-349",
-      "canonicalID": "蛋糕|dàn gāo|349",
-      "hanzi": "蛋糕",
-      "pinyin": "dàn gāo",
+      "id": "vocab-hsk20-158",
+      "canonicalID": "别|bié|158",
+      "hanzi": "别",
+      "pinyin": "bié",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "别",
+          "vocabularyID": "vocab-hsk20-158",
+          "pinyin": "bié"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ne… pas (impératif)"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "别担心。",
+        "pinyin": "bié dān xīn。",
+        "translation": {
+          "fr": "Ne t’inquiète pas."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "别|bié|158",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 158,
+        "level": 2
+      },
+      "traditionalHanzi": "別"
+    },
+    {
+      "id": "vocab-hsk20-160",
+      "canonicalID": "唱歌|chàng gē|160",
+      "hanzi": "唱歌",
+      "pinyin": "chàng gē",
       "toneNumbers": [
         4,
         1
       ],
       "segmentation": [
         {
-          "surface": "蛋糕",
-          "vocabularyID": "vocab-hsk20-349",
-          "pinyin": "dàn gāo"
+          "surface": "唱歌",
+          "vocabularyID": "vocab-hsk20-160",
+          "pinyin": "chàng gē"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "gâteau"
+        "fr": "chanter"
       },
       "audio": null,
       "example": {
-        "hanzi": "生日蛋糕很好吃。",
-        "pinyin": "shēng rì dàn gāo hěn hǎo chī。",
+        "hanzi": "我们一起唱歌。",
+        "pinyin": "wǒ men yì qǐ chàng gē。",
         "translation": {
-          "fr": "Le gâteau d’anniversaire est délicieux."
+          "fr": "Nous chantons ensemble."
         },
         "audio": null
       },
@@ -63,40 +104,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "蛋糕|dàn gāo|349",
+        "canonicalID": "唱歌|chàng gē|160",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 349,
-        "level": 3
+        "rank": 160,
+        "level": 2
       },
-      "traditionalHanzi": "蛋糕"
+      "traditionalHanzi": "唱歌"
     },
     {
-      "id": "vocab-hsk20-382",
-      "canonicalID": "跟|gēn|382",
-      "hanzi": "跟",
-      "pinyin": "gēn",
+      "id": "vocab-hsk20-267",
+      "canonicalID": "姓|xìng|267",
+      "hanzi": "姓",
+      "pinyin": "xìng",
       "toneNumbers": [
-        1
+        4
       ],
       "segmentation": [
         {
-          "surface": "跟",
-          "vocabularyID": "vocab-hsk20-382",
-          "pinyin": "gēn"
+          "surface": "姓",
+          "vocabularyID": "vocab-hsk20-267",
+          "pinyin": "xìng"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "avec ; suivre"
+        "fr": "nom de famille"
       },
       "audio": null,
       "example": {
-        "hanzi": "我跟朋友一起去。",
-        "pinyin": "wǒ gēn péng yǒu yì qǐ qù。",
+        "hanzi": "你姓什么？",
+        "pinyin": "nǐ xìng shén me？",
         "translation": {
-          "fr": "J’y vais avec un ami."
+          "fr": "Quel est ton nom de famille ?"
         },
         "audio": null
       },
@@ -104,41 +145,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "跟|gēn|382",
+        "canonicalID": "姓|xìng|267",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 382,
-        "level": 3
+        "rank": 267,
+        "level": 2
       },
-      "traditionalHanzi": "跟"
+      "traditionalHanzi": "姓"
     },
     {
-      "id": "vocab-hsk20-389",
-      "canonicalID": "关心|guān xīn|389",
-      "hanzi": "关心",
-      "pinyin": "guān xīn",
+      "id": "vocab-hsk20-273",
+      "canonicalID": "药|yào|273",
+      "hanzi": "药",
+      "pinyin": "yào",
       "toneNumbers": [
-        1,
-        1
+        4
       ],
       "segmentation": [
         {
-          "surface": "关心",
-          "vocabularyID": "vocab-hsk20-389",
-          "pinyin": "guān xīn"
+          "surface": "药",
+          "vocabularyID": "vocab-hsk20-273",
+          "pinyin": "yào"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "se soucier de"
+        "fr": "médicament"
       },
       "audio": null,
       "example": {
-        "hanzi": "我很关心你。",
-        "pinyin": "wǒ hěn guān xīn nǐ。",
+        "hanzi": "医生给我药。",
+        "pinyin": "yī shēng gěi wǒ yào。",
         "translation": {
-          "fr": "Je me soucie beaucoup de toi."
+          "fr": "Le médecin me donne un médicament."
         },
         "audio": null
       },
@@ -146,125 +186,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "关心|guān xīn|389",
+        "canonicalID": "药|yào|273",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 389,
-        "level": 3
+        "rank": 273,
+        "level": 2
       },
-      "traditionalHanzi": "關心"
+      "traditionalHanzi": "藥"
     },
     {
-      "id": "vocab-hsk20-391",
-      "canonicalID": "国家|guó jiā|391",
-      "hanzi": "国家",
-      "pinyin": "guó jiā",
+      "id": "vocab-hsk20-136",
+      "canonicalID": "有|yǒu|136",
+      "hanzi": "有",
+      "pinyin": "yǒu",
       "toneNumbers": [
-        2,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "国家",
-          "vocabularyID": "vocab-hsk20-391",
-          "pinyin": "guó jiā"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "pays ; État"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "中国是一个大国家。",
-        "pinyin": "zhōng guó shì yí gè dà guó jiā。",
-        "translation": {
-          "fr": "La Chine est un grand pays."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "国家|guó jiā|391",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 391,
-        "level": 3
-      },
-      "traditionalHanzi": "國家"
-    },
-    {
-      "id": "vocab-hsk20-392",
-      "canonicalID": "果汁|guǒ zhī|392",
-      "hanzi": "果汁",
-      "pinyin": "guǒ zhī",
-      "toneNumbers": [
-        3,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "果汁",
-          "vocabularyID": "vocab-hsk20-392",
-          "pinyin": "guǒ zhī"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "jus de fruit"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我喜欢喝果汁。",
-        "pinyin": "wǒ xǐ huān hē guǒ zhī。",
-        "translation": {
-          "fr": "J’aime boire du jus de fruit."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "果汁|guǒ zhī|392",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 392,
-        "level": 3
-      },
-      "traditionalHanzi": "果汁"
-    },
-    {
-      "id": "vocab-hsk20-455",
-      "canonicalID": "了解|liǎo jiě|455",
-      "hanzi": "了解",
-      "pinyin": "liǎo jiě",
-      "toneNumbers": [
-        3,
         3
       ],
       "segmentation": [
         {
-          "surface": "了解",
-          "vocabularyID": "vocab-hsk20-455",
-          "pinyin": "liǎo jiě"
+          "surface": "有",
+          "vocabularyID": "vocab-hsk20-136",
+          "pinyin": "yǒu"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "comprendre ; connaître"
+        "fr": "avoir ; il y a"
       },
       "audio": null,
       "example": {
-        "hanzi": "我想了解这个城市。",
-        "pinyin": "wǒ xiǎng liǎo jiě zhè ge chéng shì.",
+        "hanzi": "桌子上有一本书。",
+        "pinyin": "zhuō zi shàng yǒu yī běn shū。",
         "translation": {
-          "fr": "Je veux mieux connaître cette ville."
+          "fr": "Il y a un livre sur la table."
         },
         "audio": null
       },
@@ -272,165 +227,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "了解|liǎo jiě|455",
+        "canonicalID": "有|yǒu|136",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 455,
-        "level": 3
-      },
-      "traditionalHanzi": "瞭解"
-    },
-    {
-      "id": "vocab-hsk20-495",
-      "canonicalID": "如果|rú guǒ|495",
-      "hanzi": "如果",
-      "pinyin": "rú guǒ",
-      "toneNumbers": [
-        2,
-        3
-      ],
-      "segmentation": [
-        {
-          "surface": "如果",
-          "vocabularyID": "vocab-hsk20-495",
-          "pinyin": "rú guǒ"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "si"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "如果下雨，我们就坐车。",
-        "pinyin": "rú guǒ xià yǔ, wǒ men jiù zuò chē.",
-        "translation": {
-          "fr": "S’il pleut, nous prendrons la voiture."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "如果|rú guǒ|495",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 495,
-        "level": 3
-      },
-      "traditionalHanzi": "如果"
-    },
-    {
-      "id": "vocab-hsk20-540",
-      "canonicalID": "相同|xiāng tóng|540",
-      "hanzi": "相同",
-      "pinyin": "xiāng tóng",
-      "toneNumbers": [
-        1,
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "相同",
-          "vocabularyID": "vocab-hsk20-540",
-          "pinyin": "xiāng tóng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "identique ; pareil"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这两杯水的温度相同。",
-        "pinyin": "zhè liǎng bēi shuǐ de wēn dù xiāng tóng.",
-        "translation": {
-          "fr": "La température de ces deux verres d’eau est identique."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "相同|xiāng tóng|540",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 540,
-        "level": 3
-      },
-      "traditionalHanzi": "相同"
-    },
-    {
-      "id": "vocab-hsk20-038",
-      "canonicalID": "和|hé|38",
-      "hanzi": "和",
-      "pinyin": "hé",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "和",
-          "vocabularyID": "vocab-hsk20-038",
-          "pinyin": "hé"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "et ; avec"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我和朋友一起去。",
-        "pinyin": "wǒ hé péng yǒu yì qǐ qù。",
-        "translation": {
-          "fr": "J’y vais avec un ami."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "和|hé|38",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 38,
+        "rank": 136,
         "level": 1
       },
-      "traditionalHanzi": "和"
+      "traditionalHanzi": "有"
     },
     {
-      "id": "vocab-hsk20-039",
-      "canonicalID": "很|hěn|39",
-      "hanzi": "很",
-      "pinyin": "hěn",
+      "id": "vocab-hsk20-142",
+      "canonicalID": "这|zhè|142",
+      "hanzi": "这",
+      "pinyin": "zhè",
       "toneNumbers": [
-        3
+        4
       ],
       "segmentation": [
         {
-          "surface": "很",
-          "vocabularyID": "vocab-hsk20-039",
-          "pinyin": "hěn"
+          "surface": "这",
+          "vocabularyID": "vocab-hsk20-142",
+          "pinyin": "zhè"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "très"
+        "fr": "ce/cette-ci ; ici"
       },
       "audio": null,
       "example": {
-        "hanzi": "这个菜很好吃。",
-        "pinyin": "zhè ge cài hěn hǎo chī。",
+        "hanzi": "这是我的书。",
+        "pinyin": "zhè shì wǒ de shū。",
         "translation": {
-          "fr": "Ce plat est très bon."
+          "fr": "C’est mon livre."
         },
         "audio": null
       },
@@ -438,13 +268,55 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "很|hěn|39",
+        "canonicalID": "这|zhè|142",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 39,
+        "rank": 142,
         "level": 1
       },
-      "traditionalHanzi": "很"
+      "traditionalHanzi": "這"
+    },
+    {
+      "id": "vocab-hsk20-169",
+      "canonicalID": "但是|dàn shì|169",
+      "hanzi": "但是",
+      "pinyin": "dàn shì",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "但是",
+          "vocabularyID": "vocab-hsk20-169",
+          "pinyin": "dàn shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "mais"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我想去，但是今天下雨。",
+        "pinyin": "wǒ xiǎng qù， dàn shì jīn tiān xià yǔ。",
+        "translation": {
+          "fr": "Je veux y aller, mais il pleut aujourd’hui."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "但是|dàn shì|169",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 169,
+        "level": 2
+      },
+      "traditionalHanzi": "但是"
     }
   ],
   "blocks": [
@@ -467,16 +339,13 @@
       "kind": "vocabulary",
       "id": "block-lesson-58-vocabulary",
       "vocabularyIDs": [
-        "vocab-hsk20-349",
-        "vocab-hsk20-382",
-        "vocab-hsk20-389",
-        "vocab-hsk20-391",
-        "vocab-hsk20-392",
-        "vocab-hsk20-455",
-        "vocab-hsk20-495",
-        "vocab-hsk20-540",
-        "vocab-hsk20-038",
-        "vocab-hsk20-039"
+        "vocab-hsk20-158",
+        "vocab-hsk20-160",
+        "vocab-hsk20-267",
+        "vocab-hsk20-273",
+        "vocab-hsk20-136",
+        "vocab-hsk20-142",
+        "vocab-hsk20-169"
       ],
       "metadata": {
         "stage": "observe",
@@ -534,7 +403,7 @@
     {
       "id": "block-lesson-58-reading",
       "storyID": "story-lesson-58",
-      "level": "HSK classique 3",
+      "level": "HSK classique 2",
       "title": {
         "fr": "Choisir une boisson"
       },
@@ -640,42 +509,42 @@
         "pairs": [
           {
             "id": "a",
-            "left": "蛋糕",
-            "pinyin": "dàn gāo",
+            "left": "别",
+            "pinyin": "bié",
             "right": {
-              "fr": "gâteau"
+              "fr": "ne… pas (impératif)"
             }
           },
           {
             "id": "b",
-            "left": "跟",
-            "pinyin": "gēn",
+            "left": "唱歌",
+            "pinyin": "chàng gē",
             "right": {
-              "fr": "avec ; suivre"
+              "fr": "chanter"
             }
           },
           {
             "id": "c",
-            "left": "关心",
-            "pinyin": "guān xīn",
+            "left": "姓",
+            "pinyin": "xìng",
             "right": {
-              "fr": "se soucier de"
+              "fr": "nom de famille"
             }
           },
           {
             "id": "d",
-            "left": "国家",
-            "pinyin": "guó jiā",
+            "left": "药",
+            "pinyin": "yào",
             "right": {
-              "fr": "pays ; État"
+              "fr": "médicament"
             }
           },
           {
             "id": "e",
-            "left": "果汁",
-            "pinyin": "guǒ zhī",
+            "left": "有",
+            "pinyin": "yǒu",
             "right": {
-              "fr": "jus de fruit"
+              "fr": "avoir ; il y a"
             }
           }
         ]
@@ -688,11 +557,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-dict-py-389",
+      "id": "block-ex-l58-dict-py-158",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l58-dict-py-389",
+          "id": "ex-l58-dict-py-158",
           "prompt": {
             "fr": "Écoute le mot, puis choisis son pinyin."
           },
@@ -705,33 +574,33 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "关心",
+        "promptText": "别",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "rú guǒ"
+              "fr": "xìng"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "guǒ zhī"
+              "fr": "yào"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "guān xīn"
+              "fr": "bié"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "dàn gāo"
+              "fr": "zhè"
             },
             "audio": null
           }
@@ -746,13 +615,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-tone-382",
+      "id": "block-ex-l58-tone-160",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l58-tone-382",
+          "id": "ex-l58-tone-160",
           "prompt": {
-            "fr": "Écoute la syllabe, puis choisis son ton."
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
@@ -762,38 +631,38 @@
           ],
           "required": true
         },
-        "promptText": "跟",
+        "promptText": "唱歌",
         "choices": [
           {
-            "id": "t1",
+            "id": "t40",
             "label": {
-              "fr": "Ton 1 ¯ (haut et plat)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t2",
+            "id": "t41",
             "label": {
-              "fr": "Ton 2 ˊ (montant)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "t3",
+            "id": "t42",
             "label": {
-              "fr": "Ton 3 ˇ (descend puis remonte)"
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "t4",
+            "id": "t44",
             "label": {
-              "fr": "Ton 4 ˋ (descendant)"
+              "fr": "Ton 4 ˋ puis ton 4 ˋ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "t1"
+        "correctChoiceID": "t41"
       },
       "metadata": {
         "stage": "discover",
@@ -803,48 +672,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-reverse-495",
+      "id": "block-ex-l58-pick-267",
       "spec": {
-        "kind": "choice",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l58-reverse-495",
+          "id": "ex-l58-pick-267",
           "prompt": {
-            "fr": "Comment dit-on « si » en chinois ?"
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
           },
           "objectiveIDs": [
             "l58-understand"
           ],
           "required": true
         },
+        "promptText": "姓",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "关心 (guān xīn)"
+              "fr": "别 (bié)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "如果 (rú guǒ)"
+              "fr": "姓 (xìng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "了解 (liǎo jiě)"
+              "fr": "药 (yào)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "国家 (guó jiā)"
+              "fr": "唱歌 (chàng gē)"
             },
             "audio": null
           }
@@ -859,49 +729,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-pick-391",
+      "id": "block-ex-l58-dict-zh-136",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l58-pick-391",
+          "id": "ex-l58-dict-zh-136",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l58-understand"
           ],
           "required": true
         },
-        "promptText": "国家",
+        "script": "hanzi",
+        "promptText": "有",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "国家 (guó jiā)"
+              "fr": "有"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "了解 (liǎo jiě)"
+              "fr": "别"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "果汁 (guǒ zhī)"
+              "fr": "姓"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "如果 (rú guǒ)"
+              "fr": "药"
             },
             "audio": null
           }
@@ -1000,13 +871,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-translate-exa-2",
+      "id": "block-ex-l58-translate-exa-4",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l58-translate-exa-2",
+          "id": "ex-l58-translate-exa-4",
           "prompt": {
-            "fr": "Traduis en chinois : « J’y vais avec un ami »"
+            "fr": "Traduis en chinois : « Le médecin me donne un médicament »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1019,44 +890,38 @@
         "tokens": [
           {
             "id": "c",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "如果",
-            "pinyin": "rú guǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "一起",
-            "pinyin": "yì qǐ",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "国家",
-            "pinyin": "guó jiā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "跟",
-            "pinyin": "gēn",
-            "audio": null
-          },
-          {
-            "id": "a",
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
           },
           {
+            "id": "b",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "唱歌",
+            "pinyin": "chàng gē",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "药",
+            "pinyin": "yào",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "医生",
+            "pinyin": "yī shēng",
+            "audio": null
+          },
+          {
             "id": "e",
-            "hanzi": "去",
-            "pinyin": "qù",
+            "hanzi": "姓",
+            "pinyin": "xìng",
             "audio": null
           }
         ],
@@ -1064,8 +929,7 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
         "acceptedOrders": []
       },
@@ -1125,13 +989,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-translate-exa-5",
+      "id": "block-ex-l58-translate-exa-2",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l58-translate-exa-5",
+          "id": "ex-l58-translate-exa-2",
           "prompt": {
-            "fr": "Traduis en chinois : « J’aime boire du jus de fruit »"
+            "fr": "Traduis en chinois : « Nous chantons ensemble »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1143,47 +1007,34 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "果汁",
-            "pinyin": "guǒ zhī",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "b",
+            "hanzi": "一起",
+            "pinyin": "yì qǐ",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "喝",
-            "pinyin": "hē",
+            "hanzi": "唱歌",
+            "pinyin": "chàng gē",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
+            "id": "d",
+            "hanzi": "药",
+            "pinyin": "yào",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "国家",
-            "pinyin": "guó jiā",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "了解",
-            "pinyin": "liǎo jiě",
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
+          "c"
         ],
         "acceptedOrders": []
       },
@@ -1195,27 +1046,51 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-fill-dia-4",
+      "id": "block-ex-l58-order-exa-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l58-fill-dia-4",
+          "id": "ex-l58-order-exa-3",
           "prompt": {
-            "fr": "Complète : 这两杯___的味道相同。 (« Le goût de ces deux jus est identique »)"
+            "fr": "Construis « Quel est ton nom de famille ? »."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
             "l58-produce"
           ],
           "required": true
         },
-        "sentence": "这两杯___的味道相同。",
-        "acceptedAnswers": [
-          "果汁"
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "姓",
+            "pinyin": "xìng",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedVariants": [
+          "你姓什么？",
+          "你姓什么"
+        ]
       },
       "metadata": {
         "stage": "guided",
@@ -1278,63 +1153,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-listen-rea-1",
+      "id": "block-ex-l58-fill-rea-1",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l58-listen-rea-1",
+          "id": "ex-l58-fill-rea-1",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
+            "fr": "Complète : 他用筷子吃了一点饭，小心地没___碰倒盘子。 (« Il mange un peu de riz avec des baguettes et fait attention à ne pas renverser l’assiette »)"
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
-            "l58-understand"
+            "l58-produce"
           ],
           "required": true
         },
-        "promptText": "他用筷子吃了一点饭，小心地没有碰倒盘子。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Il mange un peu de riz avec des baguettes et fait attention à ne pas renverser l’assiette."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Fais attention en mangeant avec les baguettes, ne touche pas l’assiette."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Même si le gâteau est sucré, je ne bois que du jus de fruit."
-            },
-            "audio": null
-          }
+        "sentence": "他用筷子吃了一点饭，小心地没___碰倒盘子。",
+        "acceptedAnswers": [
+          "有"
         ],
-        "correctChoiceID": "a"
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 54
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l58-read-dia-2",
+      "id": "block-ex-l58-read-dia-3",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l58-read-dia-2",
+          "id": "ex-l58-read-dia-3",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 虽然蛋糕很甜，但是我只喝果汁。"
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 用筷子吃饭要小心，别碰到盘子。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1348,14 +1203,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "La température de ces deux verres d’eau est identique."
+              "fr": "Fais attention en mangeant avec les baguettes, ne touche pas l’assiette."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Le goût de ces deux jus est identique."
+              "fr": "Il mange un peu de riz avec des baguettes et fait attention à ne pas renverser l’assiette."
             },
             "audio": null
           },
@@ -1367,7 +1222,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1510,16 +1365,13 @@
     {
       "id": "block-lesson-58-recap",
       "vocabularyIDs": [
-        "vocab-hsk20-349",
-        "vocab-hsk20-382",
-        "vocab-hsk20-389",
-        "vocab-hsk20-391",
-        "vocab-hsk20-392",
-        "vocab-hsk20-455",
-        "vocab-hsk20-495",
-        "vocab-hsk20-540",
-        "vocab-hsk20-038",
-        "vocab-hsk20-039"
+        "vocab-hsk20-158",
+        "vocab-hsk20-160",
+        "vocab-hsk20-267",
+        "vocab-hsk20-273",
+        "vocab-hsk20-136",
+        "vocab-hsk20-142",
+        "vocab-hsk20-169"
       ],
       "objectiveIDs": [
         "l58-understand",
@@ -1538,19 +1390,19 @@
   ],
   "cards": [
     {
-      "id": "card-vocab-hsk20-349",
-      "vocabularyID": "vocab-hsk20-349",
+      "id": "card-vocab-hsk20-158",
+      "vocabularyID": "vocab-hsk20-158",
       "front": {
-        "hanzi": "蛋糕",
+        "hanzi": "别",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "蛋糕",
-        "pinyin": "dàn gāo",
+        "hanzi": "别",
+        "pinyin": "bié",
         "text": {
-          "fr": "gâteau"
+          "fr": "ne… pas (impératif)"
         },
         "audio": null
       },
@@ -1559,19 +1411,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-382",
-      "vocabularyID": "vocab-hsk20-382",
+      "id": "card-vocab-hsk20-160",
+      "vocabularyID": "vocab-hsk20-160",
       "front": {
-        "hanzi": "跟",
+        "hanzi": "唱歌",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "跟",
-        "pinyin": "gēn",
+        "hanzi": "唱歌",
+        "pinyin": "chàng gē",
         "text": {
-          "fr": "avec ; suivre"
+          "fr": "chanter"
         },
         "audio": null
       },
@@ -1580,19 +1432,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-389",
-      "vocabularyID": "vocab-hsk20-389",
+      "id": "card-vocab-hsk20-267",
+      "vocabularyID": "vocab-hsk20-267",
       "front": {
-        "hanzi": "关心",
+        "hanzi": "姓",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "关心",
-        "pinyin": "guān xīn",
+        "hanzi": "姓",
+        "pinyin": "xìng",
         "text": {
-          "fr": "se soucier de"
+          "fr": "nom de famille"
         },
         "audio": null
       },
@@ -1601,19 +1453,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-391",
-      "vocabularyID": "vocab-hsk20-391",
+      "id": "card-vocab-hsk20-273",
+      "vocabularyID": "vocab-hsk20-273",
       "front": {
-        "hanzi": "国家",
+        "hanzi": "药",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "国家",
-        "pinyin": "guó jiā",
+        "hanzi": "药",
+        "pinyin": "yào",
         "text": {
-          "fr": "pays ; État"
+          "fr": "médicament"
         },
         "audio": null
       },
@@ -1622,19 +1474,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-392",
-      "vocabularyID": "vocab-hsk20-392",
+      "id": "card-vocab-hsk20-136",
+      "vocabularyID": "vocab-hsk20-136",
       "front": {
-        "hanzi": "果汁",
+        "hanzi": "有",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "果汁",
-        "pinyin": "guǒ zhī",
+        "hanzi": "有",
+        "pinyin": "yǒu",
         "text": {
-          "fr": "jus de fruit"
+          "fr": "avoir ; il y a"
         },
         "audio": null
       },
@@ -1643,19 +1495,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-455",
-      "vocabularyID": "vocab-hsk20-455",
+      "id": "card-vocab-hsk20-142",
+      "vocabularyID": "vocab-hsk20-142",
       "front": {
-        "hanzi": "了解",
+        "hanzi": "这",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "了解",
-        "pinyin": "liǎo jiě",
+        "hanzi": "这",
+        "pinyin": "zhè",
         "text": {
-          "fr": "comprendre ; connaître"
+          "fr": "ce/cette-ci ; ici"
         },
         "audio": null
       },
@@ -1664,82 +1516,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-495",
-      "vocabularyID": "vocab-hsk20-495",
+      "id": "card-vocab-hsk20-169",
+      "vocabularyID": "vocab-hsk20-169",
       "front": {
-        "hanzi": "如果",
+        "hanzi": "但是",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "如果",
-        "pinyin": "rú guǒ",
+        "hanzi": "但是",
+        "pinyin": "dàn shì",
         "text": {
-          "fr": "si"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-540",
-      "vocabularyID": "vocab-hsk20-540",
-      "front": {
-        "hanzi": "相同",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "相同",
-        "pinyin": "xiāng tóng",
-        "text": {
-          "fr": "identique ; pareil"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-038",
-      "vocabularyID": "vocab-hsk20-038",
-      "front": {
-        "hanzi": "和",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "和",
-        "pinyin": "hé",
-        "text": {
-          "fr": "et ; avec"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-039",
-      "vocabularyID": "vocab-hsk20-039",
-      "front": {
-        "hanzi": "很",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "很",
-        "pinyin": "hěn",
-        "text": {
-          "fr": "très"
+          "fr": "mais"
         },
         "audio": null
       },
@@ -1750,65 +1539,54 @@
   ],
   "metadata": {
     "allocationDay": 54,
-    "allocationRange": "days46-90",
+    "allocationRange": "days46-66",
     "theme": "Manger avec attention",
     "themeLabel": {
       "fr": "Manger avec attention"
     },
-    "phase": "classic-301-600",
-    "checkpoint": false,
+    "phase": "classic-151-300",
     "newVocabularyIDs": [
-      "vocab-hsk20-349",
-      "vocab-hsk20-382",
-      "vocab-hsk20-389",
-      "vocab-hsk20-391",
-      "vocab-hsk20-392",
-      "vocab-hsk20-455",
-      "vocab-hsk20-495"
+      "vocab-hsk20-158",
+      "vocab-hsk20-160",
+      "vocab-hsk20-267",
+      "vocab-hsk20-273"
     ],
     "reusedVocabularyIDs": [
-      "vocab-hsk20-038",
-      "vocab-hsk20-039",
-      "vocab-hsk20-540"
+      "vocab-hsk20-136",
+      "vocab-hsk20-142",
+      "vocab-hsk20-169"
     ],
     "newCanonicalIDs": [
-      "hsk20-349",
-      "hsk20-382",
-      "hsk20-389",
-      "hsk20-391",
-      "hsk20-392",
-      "hsk20-455",
-      "hsk20-495"
+      "hsk20-158",
+      "hsk20-160",
+      "hsk20-267",
+      "hsk20-273"
     ],
     "reusedCanonicalIDs": [
-      "hsk20-540",
-      "hsk20-038",
-      "hsk20-039"
+      "hsk20-136",
+      "hsk20-142",
+      "hsk20-169"
     ],
     "grammarPattern": "虽然…但是…",
-    "grammarAnchor": "hsk20-540",
     "allocationNewVocabularyIDs": [
-      "hsk20-349",
-      "hsk20-382",
-      "hsk20-389",
-      "hsk20-391",
-      "hsk20-392",
-      "hsk20-455",
-      "hsk20-495"
+      "hsk20-158",
+      "hsk20-160",
+      "hsk20-267",
+      "hsk20-273"
     ],
     "allocationReusedVocabularyIDs": [
-      "hsk20-540",
-      "hsk20-038",
-      "hsk20-039"
+      "hsk20-136",
+      "hsk20-142",
+      "hsk20-169"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-03",
+    "levelID": "level-02",
     "sectionID": "section-01",
-    "unitID": "unit-06",
-    "newVocabularyCount": 7,
+    "unitID": "unit-08",
+    "newVocabularyCount": 4,
     "extraVocabularyIDs": []
   }
 }

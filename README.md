@@ -59,40 +59,43 @@ les validations natives sont exécutées sur les runners Apple, pas simulées ic
 
 ## Contenu livré
 
-Le bundle contient 124 leçons dans 10 unités :
+Le bundle contient 94 leçons dans 10 unités :
 
 - le module 0, « Pinyin et tons » (`unit-00`, `pinyin-01` à `pinyin-08`) : huit
   leçons d’écoute (tons, consonnes, finales, enchaînements, orthographe, bilan)
   bâties sur des paires minimales, sans dialogue ni mot nouveau ;
-- 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 120 séances
-  planifiées : les 8 leçons du module 0 (jours 1 à 8), 90 leçons du jour
-  (`lesson-05` à `lesson-94`), 14 révisions (`review-01` à `review-14`, une après
-  chaque série de cinq leçons) et 8 défis de fin d’unité (`boss-unit-02` à
+- 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 90 séances
+  planifiées : les 8 leçons du module 0 (jours 1 à 8), 66 leçons du jour
+  (`lesson-05` à `lesson-70`), 8 révisions (`review-01` à `review-08`, une après
+  la cinquième leçon de chaque unité) et 8 défis de fin d’unité (`boss-unit-02` à
   `boss-unit-09`) ;
-- 2 203 exercices au total : 27 dans l’introduction, 144 dans le module 0
-  (18 par leçon), 1 620 dans les 90 leçons du jour (18 par séance) et 412 dans
+- 1 663 exercices au total : 27 dans l’introduction, 144 dans le module 0
+  (18 par leçon), 1 188 dans les 66 leçons du jour (18 par séance) et 304 dans
   les révisions (18) et les défis (20) ;
-- 94 histoires inline et 196 paragraphes de lecture ;
-- 605 cartes et entrées lexicales distinctes, soit 600 lexèmes canoniques et
-  5 mots supplémentaires de contexte, pour 1 854 associations leçon–carte (le
-  module 0 présente à l’avance 57 mots que les leçons du jour enseignent) ;
+- 70 histoires inline et 148 paragraphes de lecture ;
+- 307 cartes et entrées lexicales distinctes, soit 300 lexèmes canoniques (les
+  rangs 1 à 300 du référentiel HSK classique 1–2), 2 mots d’écoute du module 0
+  de rang supérieur (`绿`, `蓝`) et 5 mots supplémentaires de contexte, pour
+  1 022 associations leçon–carte (le module 0 présente à l’avance 55 mots que
+  les leçons du jour enseignent) ;
 - 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
   n’est embarqué.
 
 Chaque séance du programme vise 15 minutes, réparties en 12 minutes de cours et
 3 minutes de révision (13 + 2 pour un défi d’unité). Chaque leçon du jour introduit
-au plus huit mots nouveaux ; les révisions, les défis et le module 0 n’en
-introduisent aucun. Le module 0 est le premier pas recommandé, pas une porte :
-`lesson-01` s’ouvre sans lui, et un apprenant qui déclare connaître le pinyin
-(ou qui termine une leçon au-delà) n’y est plus ramené.
-Le plan couvre les 300 lexèmes de rang 1 à 300 au jour 68, le défi de l’unité 5
-(332 entrées canoniques livrées à ce point, dont des mots de rang supérieur
-pour des ancres de grammaire et des questions de sens), puis les 600 lexèmes au
-jour 120, le défi de l’unité 9. Une couverture
-éditoriale ne prouve ni acquisition ni réussite à un examen.
+trois à cinq mots nouveaux (jamais plus de huit) ; les révisions, les défis et
+le module 0 n’en introduisent aucun. Le module 0 est le premier pas recommandé,
+pas une porte : `lesson-01` s’ouvre sans lui, et un apprenant qui déclare
+connaître le pinyin (ou qui termine une leçon au-delà) n’y est plus ramené.
+Le plan couvre les 150 lexèmes de rang 1 à 150 (HSK classique 1) au jour 58, le
+défi de l’unité 6, puis les 300 lexèmes de rang 1 à 300 (HSK classique 1–2) au
+jour 90, le défi de l’unité 9, qui clôt le parcours. Les rangs 301 à 600 du
+catalogue restent un référentiel : certains textes des leçons du jour en
+emploient des mots, sans que le parcours les enseigne ni les compte. Une
+couverture éditoriale ne prouve ni acquisition ni réussite à un examen.
 
 Les cartes des séances quotidiennes affichent le hanzi seul au recto ; le
-pinyin et le sens français sont révélés au verso. Les choix des 270 exercices de
+pinyin et le sens français sont révélés au verso. Les choix des 198 exercices de
 type choix sont tournés de manière déterministe pendant la génération selon le
 jour et la position de l’exercice : les identifiants et les bonnes réponses ne
 changent pas, mais la première option n’est pas toujours correcte.

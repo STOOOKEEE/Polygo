@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Assemble the reviewed Mandarin authoring pack: 90 daily lessons and the reviews between them.
+"""Assemble the reviewed Mandarin authoring pack: the daily lessons and the reviews between them.
 
 The course is authored in three independently reviewable lesson fragments:
-the five-session preview, days 6–45, and days 46–90.  This script only
+the five-session preview, days 6–45, and days 46–66.  This script only
 joins those documents and copies the allocation's modules and day plan.  It
 does not derive or rewrite any Mandarin, pinyin, translation, answer, or
 example sentence.
@@ -30,12 +30,14 @@ ROOT = Path(__file__).resolve().parents[1]
 AUTHORING = ROOT / "Content" / "authoring"
 PREVIEW_PATH = AUTHORING / "preview-first-five.json"
 DAYS_06_45_PATH = AUTHORING / "90-day-authoring-days-06-45.json"
-DAYS_46_90_PATH = AUTHORING / "90-day-authoring-days-46-90.json"
+DAYS_46_66_PATH = AUTHORING / "90-day-authoring-days-46-66.json"
 ALLOCATION_PATH = AUTHORING / "90-day-allocation.json"
 OUTPUT_PATH = AUTHORING / "90-day-authoring.json"
 CONTENT_VERSION = "2026.10.0"
 COURSE_ID = "mandarin-starter"
 PREVIEW_LAST_DAY = 5
+# The last fragment starts on this day and runs to the allocation's final day.
+LAST_FRAGMENT_START = 46
 
 
 class AssemblyError(ValueError):
@@ -99,6 +101,7 @@ def apply_preview_allocation(lesson: dict[str, Any], row: dict[str, Any]) -> Non
         "allocationDay": row["day"],
         "allocationRange": "days01-05",
         "theme": row["theme"],
+        "phase": row["phase"],
         "newVocabularyIDs": row["newCanonicalIDs"],
         "reusedVocabularyIDs": row["reusedCanonicalIDs"],
         "newCanonicalIDs": row["newCanonicalIDs"],
@@ -106,29 +109,42 @@ def apply_preview_allocation(lesson: dict[str, Any], row: dict[str, Any]) -> Non
     }
 
 
+def anchor_grammar(lesson: dict[str, Any], row: dict[str, Any]) -> None:
+    """File a grammar note under a word the lesson teaches.
+
+    An authored anchor above the course's canonical ranks is never taught; the
+    allocation names the lesson word that replaces it. Only the note's anchor
+    changes: its pattern, explanation and examples are left as authored.
+    """
+    for note in lesson["grammar"]:
+        if note["vocabularyID"] not in lesson["vocabularyIDs"]:
+            note["vocabularyID"] = row["grammarTarget"]["anchorCanonicalID"]
+
+
 def assemble() -> dict[str, Any]:
     preview = load(PREVIEW_PATH)
     days_06_45 = load(DAYS_06_45_PATH)
-    days_46_90 = load(DAYS_46_90_PATH)
+    days_46_66 = load(DAYS_46_66_PATH)
     allocation = load(ALLOCATION_PATH)
     for document, path in (
         (preview, PREVIEW_PATH),
         (days_06_45, DAYS_06_45_PATH),
-        (days_46_90, DAYS_46_90_PATH),
+        (days_46_66, DAYS_46_66_PATH),
         (allocation, ALLOCATION_PATH),
     ):
         check_version(document, path)
 
     if preview.get("course", {}).get("id") != COURSE_ID:
         raise AssemblyError(f"{PREVIEW_PATH}.course.id: expected {COURSE_ID}")
-    if days_46_90.get("courseID") != COURSE_ID:
-        raise AssemblyError(f"{DAYS_46_90_PATH}.courseID: expected {COURSE_ID}")
+    if days_46_66.get("courseID") != COURSE_ID:
+        raise AssemblyError(f"{DAYS_46_66_PATH}.courseID: expected {COURSE_ID}")
     if allocation.get("courseID") != COURSE_ID:
         raise AssemblyError(f"{ALLOCATION_PATH}.courseID: expected {COURSE_ID}")
 
     allocation_rows = allocation.get("lessons")
-    if not isinstance(allocation_rows, list) or len(allocation_rows) != 90:
-        raise AssemblyError(f"{ALLOCATION_PATH}.lessons: expected 90 day rows")
+    if not isinstance(allocation_rows, list) or len(allocation_rows) <= LAST_FRAGMENT_START:
+        raise AssemblyError(f"{ALLOCATION_PATH}.lessons: expected day rows beyond day {LAST_FRAGMENT_START}")
+    daily_lessons = len(allocation_rows)
     rows_by_day: dict[int, dict[str, Any]] = {}
     for index, row in enumerate(allocation_rows):
         if not isinstance(row, dict) or not isinstance(row.get("day"), int):
@@ -137,13 +153,13 @@ def assemble() -> dict[str, Any]:
         if day in rows_by_day:
             raise AssemblyError(f"{ALLOCATION_PATH}.lessons: duplicate day {day}")
         rows_by_day[day] = row
-    if set(rows_by_day) != set(range(1, 91)):
-        raise AssemblyError(f"{ALLOCATION_PATH}.lessons: expected contiguous days 1–90")
+    if set(rows_by_day) != set(range(1, daily_lessons + 1)):
+        raise AssemblyError(f"{ALLOCATION_PATH}.lessons: expected contiguous days 1–{daily_lessons}")
 
     fragments = (
         (1, 5, lesson_map(preview, PREVIEW_PATH)),
-        (6, 45, lesson_map(days_06_45, DAYS_06_45_PATH)),
-        (46, 90, lesson_map(days_46_90, DAYS_46_90_PATH)),
+        (PREVIEW_LAST_DAY + 1, LAST_FRAGMENT_START - 1, lesson_map(days_06_45, DAYS_06_45_PATH)),
+        (LAST_FRAGMENT_START, daily_lessons, lesson_map(days_46_66, DAYS_46_66_PATH)),
     )
     lessons: list[dict[str, Any]] = []
     seen_lesson_ids: set[str] = set()
@@ -167,12 +183,14 @@ def assemble() -> dict[str, Any]:
                 apply_preview_allocation(lesson, row)
             elif lesson.get("vocabularyIDs") != allocation_vocabulary(row):
                 raise AssemblyError(f"day {day}: fragment vocabulary differs from the allocation; rerun the range builders")
+            if day > PREVIEW_LAST_DAY:
+                anchor_grammar(lesson, row)
             if lesson_id in seen_lesson_ids:
                 raise AssemblyError(f"duplicate assembled lesson '{lesson_id}'")
             seen_lesson_ids.add(lesson_id)
             lessons.append(lesson)
-    if len(lessons) != 90:
-        raise AssemblyError(f"assembled lessons: expected 90, got {len(lessons)}")
+    if len(lessons) != daily_lessons:
+        raise AssemblyError(f"assembled lessons: expected {daily_lessons}, got {len(lessons)}")
 
     modules = allocation.get("modules")
     if not isinstance(modules, list) or not modules:
@@ -197,8 +215,8 @@ def assemble() -> dict[str, Any]:
     if not isinstance(plan, dict):
         raise AssemblyError(f"{ALLOCATION_PATH}.plan: expected an object")
     sessions = plan.get("sessions")
-    if not isinstance(sessions, list) or len(sessions) != 90:
-        raise AssemblyError(f"{ALLOCATION_PATH}.plan.sessions: expected 90 sessions")
+    if not isinstance(sessions, list) or len(sessions) != daily_lessons:
+        raise AssemblyError(f"{ALLOCATION_PATH}.plan.sessions: expected {daily_lessons} sessions")
     for index, session in enumerate(sessions):
         if not isinstance(session, dict):
             raise AssemblyError(f"{ALLOCATION_PATH}.plan.sessions[{index}]: expected an object")
@@ -270,7 +288,7 @@ def assemble() -> dict[str, Any]:
                 "starterLessonCount": 4,
                 "plannedSessionCount": total,
                 "availableLessonCount": 4 + total,
-                "canonicalVocabularyCount": 600,
+                "canonicalVocabularyCount": allocation["catalog"]["rankRanges"]["course"][1],
             },
             "standardReferences": [
                 {

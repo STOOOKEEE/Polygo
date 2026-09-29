@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the editorial allocation for the 90-session classic HSK course.
+"""Build the editorial allocation for the 90-session classic HSK 1–2 course.
 
 This tool writes a reviewable plan only. It does not invent dialogue,
 readings, exercises, pinyin, translations, or lesson prose. Those texts are
@@ -24,68 +24,59 @@ AUTHORING = ROOT / "Content" / "authoring"
 CATALOG_PATH = AUTHORING / "hsk-legacy-600.json"
 PREVIEW_PATH = AUTHORING / "preview-first-five.json"
 DAYS_06_45_PATH = AUTHORING / "90-day-authoring-days-06-45.json"
-DAYS_46_90_PATH = AUTHORING / "90-day-authoring-days-46-90.json"
+DAYS_46_66_PATH = AUTHORING / "90-day-authoring-days-46-66.json"
 ALLOCATION_PATH = AUTHORING / "90-day-allocation.json"
 CONTENT_VERSION = "2026.10.0"
 
-MIN_NEW_PER_LESSON = 6
-MAX_NEW_PER_LESSON = 8
-# Ranks 1–300 need 287 new words after the 13 starter words, but eight words
-# per lesson only gives 8 × 29 = 232 by day 30. The HSK 1–2 milestone moves to
-# the end of unit 5: from there both phases run at about 6.7 words a day.
-MILESTONE_DAY = 48
-REVIEW_DAYS = (30, 60, 90)
-FIXED_PREVIEW_DAYS = 5
+MIN_NEW_PER_LESSON = 3
+MAX_NEW_PER_LESSON = 5
+# The course teaches the 300 canonical words of ranks 1–300 (HSK classique 1
+# and 2). Rank 150 closes HSK 1, and 66 daily lessons at 3–5 new words a day
+# introduce the 287 words that the four starter lessons do not.
+CANONICAL_TARGET = 300
+HSK1_TARGET = 150
 MAX_LEXEME = 4
 
-
-MODULES: list[dict[str, Any]] = [
-    {"id": "unit-02", "order": 2, "title": "Vie pratique", "days": range(1, 13)},
-    {"id": "unit-03", "order": 3, "title": "Temps, études et santé", "days": range(13, 25)},
-    {"id": "unit-04", "order": 4, "title": "Achats et déplacements", "days": range(25, 37)},
-    {"id": "unit-05", "order": 5, "title": "Maison et communauté", "days": range(37, 49)},
-    {"id": "unit-06", "order": 6, "title": "Études et travail", "days": range(49, 61)},
-    {"id": "unit-07", "order": 7, "title": "Ville et voyage", "days": range(61, 73)},
-    {"id": "unit-08", "order": 8, "title": "Météo, nature et loisirs", "days": range(73, 83)},
-    {"id": "unit-09", "order": 9, "title": "Récits et opinions", "days": range(83, 91)},
+# A unit of at most nine lessons holds a single review, after its fifth lesson,
+# and its boss: 66 lessons, 8 reviews and 8 bosses fill 82 sessions, and the 8
+# pinyin lessons of module 0 bring the plan to exactly 90 sessions.
+UNITS: list[tuple[str, str, int]] = [
+    ("unit-02", "Vie pratique", 8),
+    ("unit-03", "Temps, études et santé", 8),
+    ("unit-04", "Journées bien remplies", 8),
+    ("unit-05", "Achats et déplacements", 8),
+    ("unit-06", "Études, travail et voyage", 8),
+    ("unit-07", "Quartier et communauté", 8),
+    ("unit-08", "Travail et habitudes", 9),
+    ("unit-09", "Voyages, nature et loisirs", 9),
 ]
+DAYS = sum(size for _, _, size in UNITS)
 
 
-# The order is intentional: it is the editorial route through the course,
-# including the three review days.
+def _modules() -> list[dict[str, Any]]:
+    modules: list[dict[str, Any]] = []
+    first = 1
+    for order, (unit_id, title, size) in enumerate(UNITS, start=2):
+        modules.append({"id": unit_id, "order": order, "title": title, "days": range(first, first + size)})
+        first += size
+    return modules
+
+
+MODULES = _modules()
+# HSK 1 (ranks 1–150) closes with unit-06: the authored lessons ask for about
+# forty HSK 2 words before that day, which leaves no room for ending it sooner
+# at 3–5 new words a lesson.
+HSK1_LAST_DAY = next(module for module in MODULES if module["id"] == "unit-06")["days"][-1]
+
+
+# The order is intentional: it is the editorial route through the course.
 DAY_THEMES = [
     "food", "home", "family", "time", "shopping", "home", "food", "family", "time", "travel", "routine", "daily-review",
     "study", "routine", "health", "communication", "study", "work", "time", "health", "leisure", "study", "daily-review", "health",
-    "shopping", "travel", "food", "shopping", "city", "classic-checkpoint", "home", "community", "health", "study", "work", "communication",
+    "shopping", "travel", "food", "shopping", "city", "daily-review", "home", "community", "health", "study", "work", "communication",
     "city", "travel", "shopping", "home", "routine", "community", "study", "work", "communication", "health", "city", "community",
-    "work", "study", "routine", "communication", "work", "health", "city", "travel", "shopping", "city", "community", "classic-checkpoint",
-    "travel", "nature", "leisure", "communication", "city", "travel", "weather", "nature", "leisure", "health", "food", "nature",
-    "travel", "leisure", "communication", "nature", "story", "opinion", "problem-solving", "culture", "story", "opinion",
-    "communication", "story", "opinion", "problem-solving", "culture", "story", "opinion", "classic-final-checkpoint",
-]
-
-
-GRAMMAR_TARGETS = [
-    ("在 + lieu", "在 situe une personne ou un objet dans un lieu."),
-    ("也 + verbe", "也 place une information équivalente avant le verbe."),
-    ("有 + nom", "有 exprime la possession ou l’existence."),
-    ("这/那 + nom", "这 et 那 désignent respectivement ce qui est proche et éloigné."),
-    ("几 + classificateur", "几 demande une petite quantité."),
-    ("想/要 + verbe", "想 et 要 précèdent l’action souhaitée."),
-    ("会/能 + verbe", "会 et 能 précèdent une capacité ou une possibilité."),
-    ("正在 + verbe", "正在 indique une action en cours."),
-    ("verbe + 了", "了 marque ici une action terminée."),
-    ("verbe + 过", "过 indique une expérience passée."),
-    ("A 比 B + adjectif", "比 introduit le terme de comparaison."),
-    ("因为…所以…", "因为 présente la cause et 所以 la conséquence."),
-    ("从 A 到 B", "从 et 到 encadrent un trajet ou une durée."),
-    ("先…然后…", "先 présente la première action et 然后 la suivante."),
-    ("一边…一边…", "一边 relie deux actions simultanées."),
-    ("把 + objet + verbe", "把 place l’objet avant l’action et son résultat."),
-    ("被 + agent", "被 introduit ce qui subit l’action."),
-    ("虽然…但是…", "虽然 introduit une concession suivie de 但是."),
-    ("如果…就…", "如果 pose une condition et 就 sa conséquence."),
-    ("越来越 + adjectif", "越来越 décrit une évolution progressive."),
+    "work", "study", "routine", "communication", "work", "health", "city", "travel", "shopping", "city", "community", "daily-review",
+    "travel", "nature", "leisure", "communication", "city", "travel",
 ]
 
 
@@ -106,7 +97,7 @@ def load_authored_lessons() -> tuple[dict[int, dict[str, Any]], dict[int, str]]:
     """Return the authored lesson fragments and late-course grammar anchors, keyed by course day."""
     lessons: dict[int, dict[str, Any]] = {}
     anchors: dict[int, str] = {}
-    for path in (PREVIEW_PATH, DAYS_06_45_PATH, DAYS_46_90_PATH):
+    for path in (PREVIEW_PATH, DAYS_06_45_PATH, DAYS_46_66_PATH):
         document = json.loads(path.read_text(encoding="utf-8"))
         for lesson in document["lessons"]:
             lessons[lesson["order"] - 4] = lesson
@@ -168,36 +159,42 @@ def schedule_new_words(
     deadlines: dict[str, int],
     extras: dict[int, int],
 ) -> dict[int, list[str]]:
-    """Give every non-baseline catalogue word one introduction day.
+    """Give every canonical word (rank 1–300) that is not a starter word one introduction day.
 
     Each lesson introduces between MIN_NEW_PER_LESSON and MAX_NEW_PER_LESSON
-    words, counting the lesson's non-catalogue extras. Ranks 1–300 are all
-    introduced by MILESTONE_DAY; a word required by its lesson (grammar anchor,
-    meaning question) is introduced no later than that lesson. Within these
-    limits the schedule minimises the number of (word, lesson) pairs where an
-    authored text uses a word before it is introduced.
+    words, counting the lesson's non-catalogue extras. The HSK 1 words (ranks
+    1–150) are all introduced by HSK1_LAST_DAY; a word required by its lesson
+    (grammar anchor, meaning question) is introduced no later than that lesson.
+    Words of rank above 300 are never scheduled: they are outside the course's
+    vocabulary. Within these limits the schedule minimises the (word, lesson)
+    pairs where an authored text uses a word before it is introduced, and
+    prefers to introduce a word in a lesson whose own text uses it.
     """
     rank = {entry["id"]: entry["rank"] for entry in entries}
-    words = sorted((entry["id"] for entry in entries if entry["id"] not in baseline), key=rank.__getitem__)
+    words = sorted(
+        (entry["id"] for entry in entries if entry["id"] not in baseline and entry["rank"] <= CANONICAL_TARGET),
+        key=rank.__getitem__,
+    )
     limit = {
-        word: min(deadlines.get(word, 90), MILESTONE_DAY if rank[word] <= 300 else 90)
+        word: min(deadlines.get(word, DAYS), HSK1_LAST_DAY if rank[word] <= HSK1_TARGET else DAYS)
         for word in words
     }
-    slots = [day for day in range(1, 91) if day not in REVIEW_DAYS]
     phases = [
-        [day for day in slots if day <= MILESTONE_DAY],
-        [day for day in slots if day > MILESTONE_DAY],
+        list(range(1, HSK1_LAST_DAY + 1)),
+        list(range(HSK1_LAST_DAY + 1, DAYS + 1)),
     ]
     pools = [
-        {word for word in words if rank[word] <= 300 or deadlines.get(word, 91) <= MILESTONE_DAY},
-        {word for word in words if rank[word] > 300 and deadlines.get(word, 91) > MILESTONE_DAY},
+        {word for word in words if rank[word] <= HSK1_TARGET or deadlines.get(word, DAYS + 1) <= HSK1_LAST_DAY},
+        {word for word in words if rank[word] > HSK1_TARGET and deadlines.get(word, DAYS + 1) > HSK1_LAST_DAY},
     ]
 
     def first_use(word: str) -> int:
-        return uses.get(word, [91])[0]
+        return uses.get(word, [DAYS + 1])[0]
 
     def cost(word: str, day: int) -> int:
-        return bisect.bisect_left(uses.get(word, []), day)
+        """Twice the earlier uses of the word, plus one when the day's own text never uses it."""
+        days = uses.get(word, [])
+        return 2 * bisect.bisect_left(days, day) + (0 if day in days else 1)
 
     day_of: dict[str, int] = {}
     by_day: dict[int, list[str]] = {}
@@ -268,9 +265,10 @@ def reuse_refs(day: int, seen: list[str], count: int, required: set[str], attest
     return picked
 
 
-def grammar_target(day: int, anchor: str | None, patterns: list[str] | None = None) -> dict[str, Any]:
-    selected = patterns or [GRAMMAR_TARGETS[(day - 6) % len(GRAMMAR_TARGETS)][0]]
-    return {"patterns": selected, "anchorCanonicalID": anchor, "reviewable": True}
+def grammar_anchor(note: dict[str, Any], vocabulary: list[str], lexicon: dict[str, list[str]]) -> str:
+    """The lesson word a grammar note is filed under: one its own examples use, else the lesson's first word."""
+    used = {word for example in note["examples"] for word in segment(example["hanzi"], lexicon)}
+    return next((word for word in vocabulary if word in used), vocabulary[0])
 
 
 def build() -> dict[str, Any]:
@@ -281,7 +279,9 @@ def build() -> dict[str, Any]:
         item["existingVocabularyID"]: item["canonicalLexemeID"]
         for item in catalog.get("existingCourseMappings", [])
     }
-    themes_by_day = {day: DAY_THEMES[day - 1] for day in range(1, 91)}
+    if len(DAY_THEMES) != DAYS:
+        raise ValueError(f"{len(DAY_THEMES)} themes for {DAYS} lessons")
+    themes_by_day = {day: DAY_THEMES[day - 1] for day in range(1, DAYS + 1)}
     lexicon: dict[str, list[str]] = {}
     for entry in entries:
         lexicon.setdefault(entry["hanzi"], []).append(entry["id"])
@@ -290,61 +290,57 @@ def build() -> dict[str, Any]:
     # where an early introduction costs the least.
     lessons, override_anchors = load_authored_lessons()
     baseline = set(existing_to_canonical.values())
-    text_words = {day: set(segment(authored_text(lessons[day]), lexicon)) for day in range(1, 91)}
+    text_words = {day: set(segment(authored_text(lessons[day]), lexicon)) for day in range(1, DAYS + 1)}
     uses: dict[str, list[int]] = {}
-    for day in range(1, 91):
+    for day in range(1, DAYS + 1):
         for word in text_words[day]:
             uses.setdefault(word, []).append(day)
-    required = {day: required_words(lessons[day], lexicon, by_id, existing_to_canonical) for day in range(1, 91)}
+    required = {day: required_words(lessons[day], lexicon, by_id, existing_to_canonical) for day in range(1, DAYS + 1)}
     for day, anchor in override_anchors.items():
         required[day].add(anchor)
     deadlines: dict[str, int] = {}
     for day, words in required.items():
         for word in words:
             deadlines[word] = min(deadlines.get(word, day), day)
-    extras = {day: len(lessons[day].get("extraVocabulary", [])) for day in range(1, 91)}
+    extras = {day: len(lessons[day].get("extraVocabulary", [])) for day in range(1, DAYS + 1)}
     new_by_day = schedule_new_words(entries, baseline, uses, deadlines, extras)
 
     seen: list[str] = list(existing_to_canonical.values())
     rows: list[dict[str, Any]] = []
-    for day in range(1, 91):
-        checkpoint = day in REVIEW_DAYS
-        new = [] if checkpoint else new_by_day[day]
+    for day in range(1, DAYS + 1):
+        new = new_by_day[day]
         # A required word met earlier stays in the lesson as a reused row.
         needed = {word for word in required[day] if word in seen}
-        reused = reuse_refs(day, seen, 10 if checkpoint else 3, needed, text_words[day])
+        reused = reuse_refs(day, seen, 3, needed, text_words[day])
         reused = [value for value in reused if value not in new]
-        if day <= FIXED_PREVIEW_DAYS:
-            patterns = [note["pattern"] for note in lessons[day]["grammar"]]
-            anchor = canonical_ref(lessons[day]["grammar"][0]["vocabularyID"], by_id, existing_to_canonical)
-        else:
-            patterns = ["rappel guidé des structures précédentes"] if checkpoint else None
-            anchor = new[0] if new else (reused[0] if reused else (seen[0] if seen else None))
+        notes = lessons[day]["grammar"]
+        vocabulary = list(dict.fromkeys(new + reused))
+        authored = override_anchors.get(day) or canonical_ref(notes[0]["vocabularyID"], by_id, existing_to_canonical)
+        anchor = authored if authored in vocabulary else grammar_anchor(notes[0], vocabulary, lexicon)
         rows.append({
             "day": day,
             "lessonID": f"lesson-{day + 4:02d}",
             "moduleID": module_for_day(day)["id"],
             "theme": themes_by_day[day],
-            "phase": "classic-1-300" if day <= MILESTONE_DAY else "classic-301-600",
+            "phase": "classic-1-150" if day <= HSK1_LAST_DAY else "classic-151-300",
             "newVocabularyIDs": new,
             "reusedVocabularyIDs": reused,
             "newCanonicalIDs": new,
             "reusedCanonicalIDs": reused,
             "newCount": len(new),
             "reusedCount": len(reused),
-            "grammarTarget": grammar_target(day, anchor, patterns),
-            "checkpoint": checkpoint,
+            "grammarTarget": {"patterns": [note["pattern"] for note in notes], "anchorCanonicalID": anchor, "reviewable": True},
         })
         seen.extend(value for value in new if value not in seen)
 
-    covered_milestone = baseline | {value for row in rows[:MILESTONE_DAY] for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"] if value in by_id}
-    covered_day90 = baseline | {value for row in rows for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"] if value in by_id}
-    required_300 = {f"hsk20-{rank:03d}" for rank in range(1, 301)}
-    required_600 = {f"hsk20-{rank:03d}" for rank in range(1, 601)}
-    if not required_300.issubset(covered_milestone):
-        raise ValueError(f"day {MILESTONE_DAY} misses ranks: {sorted(required_300 - covered_milestone)[:8]}")
-    if not required_600.issubset(covered_day90):
-        raise ValueError(f"day 90 misses ranks: {sorted(required_600 - covered_day90)[:8]}")
+    covered_hsk1 = baseline | {value for row in rows[:HSK1_LAST_DAY] for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"] if value in by_id}
+    covered_course = baseline | {value for row in rows for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"] if value in by_id}
+    required_hsk1 = {f"hsk20-{rank:03d}" for rank in range(1, HSK1_TARGET + 1)}
+    required_course = {f"hsk20-{rank:03d}" for rank in range(1, CANONICAL_TARGET + 1)}
+    if not required_hsk1.issubset(covered_hsk1):
+        raise ValueError(f"day {HSK1_LAST_DAY} misses ranks: {sorted(required_hsk1 - covered_hsk1)[:8]}")
+    if not required_course.issubset(covered_course):
+        raise ValueError(f"day {DAYS} misses ranks: {sorted(required_course - covered_course)[:8]}")
 
     module_payload = [
         {"id": module["id"], "order": module["order"], "title": localized(module["title"]), "lessonIDs": [f"lesson-{day + 4:02d}" for day in module["days"]]}
@@ -356,22 +352,18 @@ def build() -> dict[str, Any]:
         "contentVersion": catalog["contentVersion"],
         "standardID": catalog["standard"]["id"],
         "standardVersion": catalog["standard"]["version"],
-        "rankRanges": {"day40": [1, 300], "day90": [1, 600]},
+        "rankRanges": {"hsk1": [1, HSK1_TARGET], "course": [1, CANONICAL_TARGET]},
     }
     milestones = [
         {
-            "id": f"classic-day-{MILESTONE_DAY}", "day": MILESTONE_DAY, "title": localized("Jalon : HSK classique 1–2"), "reference": reference,
-            "coverage": {"catalogID": catalog["id"], "catalogVersion": catalog["contentVersion"], "canonicalOnly": True, "vocabularyTarget": 300, "requiredRankRange": [1, 300]},
-            "claims": [f"Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour {MILESTONE_DAY}.", "Un mot rencontré ne constitue pas une preuve de maîtrise."],
+            "id": f"classic-day-{HSK1_LAST_DAY}", "day": HSK1_LAST_DAY, "title": localized("Jalon : HSK classique 1"), "reference": reference,
+            "coverage": {"catalogID": catalog["id"], "catalogVersion": catalog["contentVersion"], "canonicalOnly": True, "vocabularyTarget": HSK1_TARGET, "requiredRankRange": [1, HSK1_TARGET]},
+            "claims": [f"Les rangs 1 à {HSK1_TARGET} du catalogue sont planifiés au plus tard au jour {HSK1_LAST_DAY}.", "Un mot rencontré ne constitue pas une preuve de maîtrise."],
         },
         {
-            "id": "classic-day-60", "day": 60, "title": localized("Jalon intermédiaire : consolidation"), "reference": reference,
-            "claims": ["Le jour 60 est un bilan de réemploi ; aucun nouveau seuil de catalogue n’est revendiqué."],
-        },
-        {
-            "id": "classic-day-90", "day": 90, "title": localized("Jalon : catalogue HSK classique complet"), "reference": reference,
-            "coverage": {"catalogID": catalog["id"], "catalogVersion": catalog["contentVersion"], "canonicalOnly": True, "vocabularyTarget": 600, "requiredRankRange": [1, 600]},
-            "claims": ["Les 600 lexèmes canoniques du catalogue sont planifiés dans les 90 séances.", "Cette couverture éditoriale ne garantit pas l’acquisition."],
+            "id": f"classic-day-{DAYS}", "day": DAYS, "title": localized("Jalon : HSK classique 1–2"), "reference": reference,
+            "coverage": {"catalogID": catalog["id"], "catalogVersion": catalog["contentVersion"], "canonicalOnly": True, "vocabularyTarget": CANONICAL_TARGET, "requiredRankRange": [1, CANONICAL_TARGET]},
+            "claims": [f"Les {CANONICAL_TARGET} lexèmes canoniques des rangs 1 à {CANONICAL_TARGET} sont planifiés au plus tard au jour {DAYS}.", "Cette couverture éditoriale ne garantit pas l’acquisition."],
         },
     ]
     sessions = [
@@ -383,7 +375,7 @@ def build() -> dict[str, Any]:
             "courseMinutes": 12,
             "reviewMinutes": 3,
         }
-        for day in range(1, 91)
+        for day in range(1, DAYS + 1)
     ]
     return {
         "schemaVersion": 1,
@@ -393,11 +385,10 @@ def build() -> dict[str, Any]:
         "reference": reference,
         "baselineCanonicalIDs": sorted(baseline, key=lambda value: int(value.rsplit("-", 1)[1])),
         "allocationPolicy": {
-            "phaseOneDays": [1, MILESTONE_DAY],
-            "phaseTwoDays": [MILESTONE_DAY + 1, 90],
+            "phaseOneDays": [1, HSK1_LAST_DAY],
+            "phaseTwoDays": [HSK1_LAST_DAY + 1, DAYS],
             "newPerLesson": [MIN_NEW_PER_LESSON, MAX_NEW_PER_LESSON],
-            "checkpointDays": [30, 60, 90],
-            "authoringFiles": {"days06to45": "authoring/90-day-authoring-days-06-45.json", "days46to90": "authoring/90-day-authoring-days-46-90.json"},
+            "authoringFiles": {"days06to45": "authoring/90-day-authoring-days-06-45.json", "days46to66": "authoring/90-day-authoring-days-46-66.json"},
         },
         "modules": module_payload,
         "milestones": milestones,
@@ -410,11 +401,11 @@ def main() -> None:
     allocation = build()
     ALLOCATION_PATH.write_text(json.dumps(allocation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     rows = allocation["lessons"]
-    covered_milestone = set(allocation["baselineCanonicalIDs"]) | {value for row in rows[:MILESTONE_DAY] for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"]}
-    covered90 = set(allocation["baselineCanonicalIDs"]) | {value for row in rows for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"]}
+    covered_hsk1 = set(allocation["baselineCanonicalIDs"]) | {value for row in rows[:HSK1_LAST_DAY] for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"]}
+    covered_course = set(allocation["baselineCanonicalIDs"]) | {value for row in rows for value in row["newCanonicalIDs"] + row["reusedCanonicalIDs"]}
     print(f"wrote {ALLOCATION_PATH} ({len(rows)} days)")
     print("new counts", [row["newCount"] for row in rows])
-    print("coverage", {f"day{MILESTONE_DAY}": len(covered_milestone), "day90": len(covered90)})
+    print("coverage", {f"day{HSK1_LAST_DAY}": len(covered_hsk1), f"day{DAYS}": len(covered_course)})
 
 
 if __name__ == "__main__":

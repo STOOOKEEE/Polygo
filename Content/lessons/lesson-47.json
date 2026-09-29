@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-47",
-  "moduleID": "unit-05",
+  "moduleID": "unit-07",
   "order": 65,
   "title": {
     "fr": "Étudier à la bibliothèque"
@@ -11,7 +11,7 @@
     "fr": "Organiser une séance de mathématiques et conseiller une méthode de travail."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 3",
+  "level": "HSK classique 2",
   "objectives": [
     {
       "id": "l47-understand",
@@ -30,32 +30,32 @@
   ],
   "vocabulary": [
     {
-      "id": "vocab-hsk20-020",
-      "canonicalID": "东西|dōng xī|20",
-      "hanzi": "东西",
-      "pinyin": "dōng xī",
+      "id": "vocab-hsk20-169",
+      "canonicalID": "但是|dàn shì|169",
+      "hanzi": "但是",
+      "pinyin": "dàn shì",
       "toneNumbers": [
-        1,
-        1
+        4,
+        4
       ],
       "segmentation": [
         {
-          "surface": "东西",
-          "vocabularyID": "vocab-hsk20-020",
-          "pinyin": "dōng xī"
+          "surface": "但是",
+          "vocabularyID": "vocab-hsk20-169",
+          "pinyin": "dàn shì"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "chose ; affaire"
+        "fr": "mais"
       },
       "audio": null,
       "example": {
-        "hanzi": "这些东西在桌子上。",
-        "pinyin": "zhè xiē dōng xi zài zhuō zi shàng。",
+        "hanzi": "我想去，但是今天下雨。",
+        "pinyin": "wǒ xiǎng qù， dàn shì jīn tiān xià yǔ。",
         "translation": {
-          "fr": "Ces affaires sont sur la table."
+          "fr": "Je veux y aller, mais il pleut aujourd’hui."
         },
         "audio": null
       },
@@ -63,40 +63,166 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "东西|dōng xī|20",
+        "canonicalID": "但是|dàn shì|169",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 20,
-        "level": 1
+        "rank": 169,
+        "level": 2
       },
-      "traditionalHanzi": "東西"
+      "traditionalHanzi": "但是"
     },
     {
-      "id": "vocab-hsk20-104",
-      "canonicalID": "四|sì|104",
-      "hanzi": "四",
-      "pinyin": "sì",
+      "id": "vocab-hsk20-173",
+      "canonicalID": "弟弟|dì di|173",
+      "hanzi": "弟弟",
+      "pinyin": "dì di",
+      "toneNumbers": [
+        4,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "弟弟",
+          "vocabularyID": "vocab-hsk20-173",
+          "pinyin": "dì di"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "petit frère"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我弟弟在家。",
+        "pinyin": "wǒ dì di zài jiā。",
+        "translation": {
+          "fr": "Mon petit frère est à la maison."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "弟弟|dì di|173",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 173,
+        "level": 2
+      },
+      "traditionalHanzi": "弟弟"
+    },
+    {
+      "id": "vocab-hsk20-181",
+      "canonicalID": "告诉|gào sù|181",
+      "hanzi": "告诉",
+      "pinyin": "gào sù",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "告诉",
+          "vocabularyID": "vocab-hsk20-181",
+          "pinyin": "gào sù"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "dire ; informer"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "请告诉我地址。",
+        "pinyin": "qǐng gào sù wǒ dì zhǐ。",
+        "translation": {
+          "fr": "Dis-moi l’adresse, s’il te plaît."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "告诉|gào sù|181",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 181,
+        "level": 2
+      },
+      "traditionalHanzi": "告訴"
+    },
+    {
+      "id": "vocab-hsk20-209",
+      "canonicalID": "考试|kǎo shì|209",
+      "hanzi": "考试",
+      "pinyin": "kǎo shì",
+      "toneNumbers": [
+        3,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "考试",
+          "vocabularyID": "vocab-hsk20-209",
+          "pinyin": "kǎo shì"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "examen ; passer un examen"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "明天有考试。",
+        "pinyin": "míng tiān yǒu kǎo shì。",
+        "translation": {
+          "fr": "Il y a un examen demain."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "考试|kǎo shì|209",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 209,
+        "level": 2
+      },
+      "traditionalHanzi": "考試"
+    },
+    {
+      "id": "vocab-hsk20-287",
+      "canonicalID": "再|zài|287",
+      "hanzi": "再",
+      "pinyin": "zài",
       "toneNumbers": [
         4
       ],
       "segmentation": [
         {
-          "surface": "四",
-          "vocabularyID": "vocab-hsk20-104",
-          "pinyin": "sì"
+          "surface": "再",
+          "vocabularyID": "vocab-hsk20-287",
+          "pinyin": "zài"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "quatre"
+        "fr": "encore ; de nouveau"
       },
       "audio": null,
       "example": {
-        "hanzi": "我有四个苹果。",
-        "pinyin": "wǒ yǒu sì gè píng guǒ。",
+        "hanzi": "请再说一遍。",
+        "pinyin": "qǐng zài shuō yí biàn。",
         "translation": {
-          "fr": "J’ai quatre pommes."
+          "fr": "Répète, s’il te plaît."
         },
         "audio": null
       },
@@ -104,209 +230,81 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "四|sì|104",
+        "canonicalID": "再|zài|287",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 104,
+        "rank": 287,
+        "level": 2
+      },
+      "traditionalHanzi": "再"
+    },
+    {
+      "id": "vocab-hsk20-022",
+      "canonicalID": "读|dú|22",
+      "hanzi": "读",
+      "pinyin": "dú",
+      "toneNumbers": [
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "读",
+          "vocabularyID": "vocab-hsk20-022",
+          "pinyin": "dú"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "lire"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "我每天读书。",
+        "pinyin": "wǒ měi tiān dú shū。",
+        "translation": {
+          "fr": "Je lis chaque jour."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "读|dú|22",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 22,
         "level": 1
       },
-      "traditionalHanzi": "四"
+      "traditionalHanzi": "讀"
     },
     {
-      "id": "vocab-hsk20-182",
-      "canonicalID": "哥哥|gē ge|182",
-      "hanzi": "哥哥",
-      "pinyin": "gē ge",
+      "id": "vocab-hsk20-039",
+      "canonicalID": "很|hěn|39",
+      "hanzi": "很",
+      "pinyin": "hěn",
       "toneNumbers": [
-        1,
-        0
-      ],
-      "segmentation": [
-        {
-          "surface": "哥哥",
-          "vocabularyID": "vocab-hsk20-182",
-          "pinyin": "gē ge"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "grand frère"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我哥哥在学校。",
-        "pinyin": "wǒ gē ge zài xué xiào。",
-        "translation": {
-          "fr": "Mon grand frère est à l’école."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "哥哥|gē ge|182",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 182,
-        "level": 2
-      },
-      "traditionalHanzi": "哥哥"
-    },
-    {
-      "id": "vocab-hsk20-283",
-      "canonicalID": "鱼|yú|283",
-      "hanzi": "鱼",
-      "pinyin": "yú",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "鱼",
-          "vocabularyID": "vocab-hsk20-283",
-          "pinyin": "yú"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "poisson"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我喜欢吃鱼。",
-        "pinyin": "wǒ xǐ huān chī yú。",
-        "translation": {
-          "fr": "J’aime manger du poisson."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "鱼|yú|283",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 283,
-        "level": 2
-      },
-      "traditionalHanzi": "魚"
-    },
-    {
-      "id": "vocab-hsk20-284",
-      "canonicalID": "元|yuán|284",
-      "hanzi": "元",
-      "pinyin": "yuán",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "元",
-          "vocabularyID": "vocab-hsk20-284",
-          "pinyin": "yuán"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "yuan"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这个苹果三元。",
-        "pinyin": "zhè ge píng guǒ sān yuán。",
-        "translation": {
-          "fr": "Cette pomme coûte trois yuans."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "元|yuán|284",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 284,
-        "level": 2
-      },
-      "traditionalHanzi": "元"
-    },
-    {
-      "id": "vocab-hsk20-297",
-      "canonicalID": "自行车|zì xíng chē|297",
-      "hanzi": "自行车",
-      "pinyin": "zì xíng chē",
-      "toneNumbers": [
-        4,
-        2,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "自行车",
-          "vocabularyID": "vocab-hsk20-297",
-          "pinyin": "zì xíng chē"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "vélo"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我骑自行车上班。",
-        "pinyin": "wǒ qí zì xíng chē shàng bān。",
-        "translation": {
-          "fr": "Je vais travailler à vélo."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "自行车|zì xíng chē|297",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 297,
-        "level": 2
-      },
-      "traditionalHanzi": "自行車"
-    },
-    {
-      "id": "vocab-hsk20-524",
-      "canonicalID": "图书馆|tú shū guǎn|524",
-      "hanzi": "图书馆",
-      "pinyin": "tú shū guǎn",
-      "toneNumbers": [
-        2,
-        1,
         3
       ],
       "segmentation": [
         {
-          "surface": "图书馆",
-          "vocabularyID": "vocab-hsk20-524",
-          "pinyin": "tú shū guǎn"
+          "surface": "很",
+          "vocabularyID": "vocab-hsk20-039",
+          "pinyin": "hěn"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "bibliothèque"
+        "fr": "très"
       },
       "audio": null,
       "example": {
-        "hanzi": "我在图书馆找到了这本书。",
-        "pinyin": "wǒ zài tú shū guǎn zhǎo dào le zhè běn shū.",
+        "hanzi": "这个菜很好吃。",
+        "pinyin": "zhè ge cài hěn hǎo chī。",
         "translation": {
-          "fr": "J’ai trouvé ce livre à la bibliothèque."
+          "fr": "Ce plat est très bon."
         },
         "audio": null
       },
@@ -314,41 +312,41 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "图书馆|tú shū guǎn|524",
+        "canonicalID": "很|hěn|39",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 524,
-        "level": 3
+        "rank": 39,
+        "level": 1
       },
-      "traditionalHanzi": "圖書館"
+      "traditionalHanzi": "很"
     },
     {
-      "id": "vocab-hsk20-570",
-      "canonicalID": "应该|yīng gāi|570",
-      "hanzi": "应该",
-      "pinyin": "yīng gāi",
+      "id": "vocab-hsk20-048",
+      "canonicalID": "今天|jīn tiān|48",
+      "hanzi": "今天",
+      "pinyin": "jīn tiān",
       "toneNumbers": [
         1,
         1
       ],
       "segmentation": [
         {
-          "surface": "应该",
-          "vocabularyID": "vocab-hsk20-570",
-          "pinyin": "yīng gāi"
+          "surface": "今天",
+          "vocabularyID": "vocab-hsk20-048",
+          "pinyin": "jīn tiān"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "devoir ; être censé"
+        "fr": "aujourd’hui"
       },
       "audio": null,
       "example": {
-        "hanzi": "你应该早点休息。",
-        "pinyin": "nǐ yīng gāi zǎo diǎn xiū xi.",
+        "hanzi": "今天是星期一。",
+        "pinyin": "jīn tiān shì xīng qī yī。",
         "translation": {
-          "fr": "Tu devrais te reposer plus tôt."
+          "fr": "Nous sommes lundi aujourd’hui."
         },
         "audio": null
       },
@@ -356,55 +354,13 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "应该|yīng gāi|570",
+        "canonicalID": "今天|jīn tiān|48",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 570,
-        "level": 3
+        "rank": 48,
+        "level": 1
       },
-      "traditionalHanzi": "應該"
-    },
-    {
-      "id": "vocab-hsk20-168",
-      "canonicalID": "大家|dà jiā|168",
-      "hanzi": "大家",
-      "pinyin": "dà jiā",
-      "toneNumbers": [
-        4,
-        1
-      ],
-      "segmentation": [
-        {
-          "surface": "大家",
-          "vocabularyID": "vocab-hsk20-168",
-          "pinyin": "dà jiā"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "tout le monde"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "大家都来了。",
-        "pinyin": "dà jiā dōu lái le。",
-        "translation": {
-          "fr": "Tout le monde est arrivé."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "大家|dà jiā|168",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 168,
-        "level": 2
-      },
-      "traditionalHanzi": "大家"
+      "traditionalHanzi": "今天"
     }
   ],
   "blocks": [
@@ -427,15 +383,14 @@
       "kind": "vocabulary",
       "id": "block-lesson-47-vocabulary",
       "vocabularyIDs": [
-        "vocab-hsk20-020",
-        "vocab-hsk20-104",
-        "vocab-hsk20-182",
-        "vocab-hsk20-283",
-        "vocab-hsk20-284",
-        "vocab-hsk20-297",
-        "vocab-hsk20-524",
-        "vocab-hsk20-570",
-        "vocab-hsk20-168"
+        "vocab-hsk20-169",
+        "vocab-hsk20-173",
+        "vocab-hsk20-181",
+        "vocab-hsk20-209",
+        "vocab-hsk20-287",
+        "vocab-hsk20-022",
+        "vocab-hsk20-039",
+        "vocab-hsk20-048"
       ],
       "metadata": {
         "stage": "observe",
@@ -511,7 +466,7 @@
     {
       "id": "block-lesson-47-reading",
       "storyID": "story-lesson-47",
-      "level": "HSK classique 3",
+      "level": "HSK classique 2",
       "title": {
         "fr": "La préparation"
       },
@@ -617,42 +572,42 @@
         "pairs": [
           {
             "id": "a",
-            "left": "东西",
-            "pinyin": "dōng xī",
+            "left": "但是",
+            "pinyin": "dàn shì",
             "right": {
-              "fr": "chose ; affaire"
+              "fr": "mais"
             }
           },
           {
             "id": "b",
-            "left": "四",
-            "pinyin": "sì",
+            "left": "弟弟",
+            "pinyin": "dì di",
             "right": {
-              "fr": "quatre"
+              "fr": "petit frère"
             }
           },
           {
             "id": "c",
-            "left": "哥哥",
-            "pinyin": "gē ge",
+            "left": "告诉",
+            "pinyin": "gào sù",
             "right": {
-              "fr": "grand frère"
+              "fr": "dire ; informer"
             }
           },
           {
             "id": "d",
-            "left": "鱼",
-            "pinyin": "yú",
+            "left": "考试",
+            "pinyin": "kǎo shì",
             "right": {
-              "fr": "poisson"
+              "fr": "examen ; passer un examen"
             }
           },
           {
             "id": "e",
-            "left": "元",
-            "pinyin": "yuán",
+            "left": "再",
+            "pinyin": "zài",
             "right": {
-              "fr": "yuan"
+              "fr": "encore ; de nouveau"
             }
           }
         ]
@@ -665,11 +620,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-dict-py-020",
+      "id": "block-ex-l47-dict-py-169",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l47-dict-py-020",
+          "id": "ex-l47-dict-py-169",
           "prompt": {
             "fr": "Écoute le mot, puis choisis son pinyin."
           },
@@ -682,33 +637,33 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "东西",
+        "promptText": "但是",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "gē ge"
+              "fr": "kǎo shì"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "yīng gāi"
+              "fr": "dì di"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "dà jiā"
+              "fr": "gào sù"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "dōng xī"
+              "fr": "dàn shì"
             },
             "audio": null
           }
@@ -723,13 +678,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-tone-104",
+      "id": "block-ex-l47-tone-173",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l47-tone-104",
+          "id": "ex-l47-tone-173",
           "prompt": {
-            "fr": "Écoute la syllabe, puis choisis son ton."
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
@@ -739,38 +694,38 @@
           ],
           "required": true
         },
-        "promptText": "四",
+        "promptText": "弟弟",
         "choices": [
           {
-            "id": "t1",
+            "id": "t10",
             "label": {
-              "fr": "Ton 1 ¯ (haut et plat)"
+              "fr": "Ton 1 ¯ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t2",
+            "id": "t40",
             "label": {
-              "fr": "Ton 2 ˊ (montant)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t3",
+            "id": "t41",
             "label": {
-              "fr": "Ton 3 ˇ (descend puis remonte)"
+              "fr": "Ton 4 ˋ puis ton 1 ¯"
             },
             "audio": null
           },
           {
-            "id": "t4",
+            "id": "t42",
             "label": {
-              "fr": "Ton 4 ˋ (descendant)"
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "t4"
+        "correctChoiceID": "t40"
       },
       "metadata": {
         "stage": "discover",
@@ -780,11 +735,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-pick-182",
+      "id": "block-ex-l47-pick-287",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l47-pick-182",
+          "id": "ex-l47-pick-287",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -796,33 +751,33 @@
           ],
           "required": true
         },
-        "promptText": "哥哥",
+        "promptText": "再",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "东西 (dōng xī)"
+              "fr": "告诉 (gào sù)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "元 (yuán)"
+              "fr": "弟弟 (dì di)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "哥哥 (gē ge)"
+              "fr": "再 (zài)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "自行车 (zì xíng chē)"
+              "fr": "考试 (kǎo shì)"
             },
             "audio": null
           }
@@ -837,49 +792,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-pick-297",
+      "id": "block-ex-l47-dict-zh-181",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l47-pick-297",
+          "id": "ex-l47-dict-zh-181",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l47-understand"
           ],
           "required": true
         },
-        "promptText": "自行车",
+        "script": "hanzi",
+        "promptText": "告诉",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "哥哥 (gē ge)"
+              "fr": "考试"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "自行车 (zì xíng chē)"
+              "fr": "告诉"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "东西 (dōng xī)"
+              "fr": "但是"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "鱼 (yú)"
+              "fr": "弟弟"
             },
             "audio": null
           }
@@ -978,13 +934,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-translate-exa-1",
+      "id": "block-ex-l47-translate-rea-2",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l47-translate-exa-1",
+          "id": "ex-l47-translate-rea-2",
           "prompt": {
-            "fr": "Traduis en chinois : « Ces affaires sont sur la table »"
+            "fr": "Traduis en chinois : « Le directeur leur dit que l’examen est demain »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -996,51 +952,45 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "东西",
-            "pinyin": "dōng xi",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "id": "b",
+            "hanzi": "告诉",
+            "pinyin": "gào sù",
             "audio": null
           },
           {
             "id": "e",
-            "hanzi": "桌子",
-            "pinyin": "zhuō zi",
+            "hanzi": "考试",
+            "pinyin": "kǎo shì",
             "audio": null
           },
           {
-            "id": "h",
-            "hanzi": "四",
-            "pinyin": "sì",
+            "id": "c",
+            "hanzi": "大家",
+            "pinyin": "dà jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "校长",
+            "pinyin": "xiào zhǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "但是",
+            "pinyin": "dàn shì",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
             "audio": null
           },
           {
             "id": "g",
-            "hanzi": "元",
-            "pinyin": "yuán",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "些",
-            "pinyin": "xiē",
+            "hanzi": "弟弟",
+            "pinyin": "dì di",
             "audio": null
           }
         ],
@@ -1049,8 +999,7 @@
           "b",
           "c",
           "d",
-          "e",
-          "f"
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -1110,13 +1059,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-translate-exa-6",
+      "id": "block-ex-l47-translate-exa-3",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l47-translate-exa-6",
+          "id": "ex-l47-translate-exa-3",
           "prompt": {
-            "fr": "Traduis en chinois : « Je vais travailler à vélo »"
+            "fr": "Traduis en chinois : « Dis-moi l’adresse, s’il te plaît »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1128,39 +1077,45 @@
         },
         "tokens": [
           {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "但是",
+            "pinyin": "dàn shì",
+            "audio": null
+          },
+          {
             "id": "d",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
+            "hanzi": "地",
+            "pinyin": "dì",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "骑",
-            "pinyin": "qí",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "哥哥",
-            "pinyin": "gē ge",
+            "hanzi": "告诉",
+            "pinyin": "gào sù",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "自行车",
-            "pinyin": "zì xíng chē",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "鱼",
-            "pinyin": "yú",
+            "hanzi": "再",
+            "pinyin": "zài",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "id": "e",
+            "hanzi": "址",
+            "pinyin": "zhǐ",
             "audio": null
           }
         ],
@@ -1168,7 +1123,8 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -1180,27 +1136,72 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-fill-exa-3",
+      "id": "block-ex-l47-order-dia-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l47-fill-exa-3",
+          "id": "ex-l47-order-dia-3",
           "prompt": {
-            "fr": "Complète : 我___在学校。 (« Mon grand frère est à l’école »)"
+            "fr": "Construis « Le directeur dit-il qu’il y a un examen aujourd’hui ? »."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
             "l47-produce"
           ],
           "required": true
         },
-        "sentence": "我___在学校。",
-        "acceptedAnswers": [
-          "哥哥"
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "校长",
+            "pinyin": "xiào zhǎng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "说",
+            "pinyin": "shuō",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "要",
+            "pinyin": "yào",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "考试",
+            "pinyin": "kǎo shì",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "校长说今天要考试吗？",
+          "校长说今天要考试吗"
+        ]
       },
       "metadata": {
         "stage": "guided",
@@ -1263,13 +1264,43 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-read-exa-6",
+      "id": "block-ex-l47-fill-rea-4",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l47-fill-rea-4",
+          "prompt": {
+            "fr": "Complète : 学生应该先读书，___写答案。 (« Les étudiants devraient d’abord lire, puis écrire les réponses »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "sentence": "学生应该先读书，___写答案。",
+        "acceptedAnswers": [
+          "再"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-read-rea-2",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l47-read-exa-6",
+          "id": "ex-l47-read-rea-2",
           "prompt": {
-            "fr": "Que signifie la phrase : 我骑自行车上班。"
+            "fr": "Dans le texte « La préparation », que signifie : 校长告诉大家明天考试。"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1283,21 +1314,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "Cette pomme coûte trois yuans."
+              "fr": "Nous sommes lundi aujourd’hui."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Je vais travailler à vélo."
+              "fr": "Le directeur leur dit que l’examen est demain."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Tout le monde est arrivé."
+              "fr": "Il y a un examen demain."
             },
             "audio": null
           }
@@ -1307,74 +1338,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 43
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l47-order-rea-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l47-order-rea-1",
-          "prompt": {
-            "fr": "Construis « Les étudiants étudient les mathématiques à la bibliothèque »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l47-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "图书馆",
-            "pinyin": "tú shū guǎn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "学习",
-            "pinyin": "xué xí",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "学生",
-            "pinyin": "xué shēng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "数学",
-            "pinyin": "shù xué",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "学生在图书馆学习数学。",
-          "学生在图书馆学习数学"
-        ]
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 43
       }
     },
@@ -1512,12 +1475,12 @@
     {
       "id": "block-lesson-47-recap",
       "vocabularyIDs": [
-        "vocab-hsk20-020",
-        "vocab-hsk20-104",
-        "vocab-hsk20-182",
-        "vocab-hsk20-283",
-        "vocab-hsk20-284",
-        "vocab-hsk20-297"
+        "vocab-hsk20-169",
+        "vocab-hsk20-173",
+        "vocab-hsk20-181",
+        "vocab-hsk20-209",
+        "vocab-hsk20-287",
+        "vocab-hsk20-022"
       ],
       "objectiveIDs": [
         "l47-understand",
@@ -1536,19 +1499,19 @@
   ],
   "cards": [
     {
-      "id": "card-vocab-hsk20-020",
-      "vocabularyID": "vocab-hsk20-020",
+      "id": "card-vocab-hsk20-169",
+      "vocabularyID": "vocab-hsk20-169",
       "front": {
-        "hanzi": "东西",
+        "hanzi": "但是",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "东西",
-        "pinyin": "dōng xī",
+        "hanzi": "但是",
+        "pinyin": "dàn shì",
         "text": {
-          "fr": "chose ; affaire"
+          "fr": "mais"
         },
         "audio": null
       },
@@ -1557,19 +1520,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-104",
-      "vocabularyID": "vocab-hsk20-104",
+      "id": "card-vocab-hsk20-173",
+      "vocabularyID": "vocab-hsk20-173",
       "front": {
-        "hanzi": "四",
+        "hanzi": "弟弟",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "四",
-        "pinyin": "sì",
+        "hanzi": "弟弟",
+        "pinyin": "dì di",
         "text": {
-          "fr": "quatre"
+          "fr": "petit frère"
         },
         "audio": null
       },
@@ -1578,19 +1541,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-182",
-      "vocabularyID": "vocab-hsk20-182",
+      "id": "card-vocab-hsk20-181",
+      "vocabularyID": "vocab-hsk20-181",
       "front": {
-        "hanzi": "哥哥",
+        "hanzi": "告诉",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "哥哥",
-        "pinyin": "gē ge",
+        "hanzi": "告诉",
+        "pinyin": "gào sù",
         "text": {
-          "fr": "grand frère"
+          "fr": "dire ; informer"
         },
         "audio": null
       },
@@ -1599,19 +1562,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-283",
-      "vocabularyID": "vocab-hsk20-283",
+      "id": "card-vocab-hsk20-209",
+      "vocabularyID": "vocab-hsk20-209",
       "front": {
-        "hanzi": "鱼",
+        "hanzi": "考试",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "鱼",
-        "pinyin": "yú",
+        "hanzi": "考试",
+        "pinyin": "kǎo shì",
         "text": {
-          "fr": "poisson"
+          "fr": "examen ; passer un examen"
         },
         "audio": null
       },
@@ -1620,19 +1583,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-284",
-      "vocabularyID": "vocab-hsk20-284",
+      "id": "card-vocab-hsk20-287",
+      "vocabularyID": "vocab-hsk20-287",
       "front": {
-        "hanzi": "元",
+        "hanzi": "再",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "元",
-        "pinyin": "yuán",
+        "hanzi": "再",
+        "pinyin": "zài",
         "text": {
-          "fr": "yuan"
+          "fr": "encore ; de nouveau"
         },
         "audio": null
       },
@@ -1641,19 +1604,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-297",
-      "vocabularyID": "vocab-hsk20-297",
+      "id": "card-vocab-hsk20-022",
+      "vocabularyID": "vocab-hsk20-022",
       "front": {
-        "hanzi": "自行车",
+        "hanzi": "读",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "自行车",
-        "pinyin": "zì xíng chē",
+        "hanzi": "读",
+        "pinyin": "dú",
         "text": {
-          "fr": "vélo"
+          "fr": "lire"
         },
         "audio": null
       },
@@ -1662,19 +1625,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-524",
-      "vocabularyID": "vocab-hsk20-524",
+      "id": "card-vocab-hsk20-039",
+      "vocabularyID": "vocab-hsk20-039",
       "front": {
-        "hanzi": "图书馆",
+        "hanzi": "很",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "图书馆",
-        "pinyin": "tú shū guǎn",
+        "hanzi": "很",
+        "pinyin": "hěn",
         "text": {
-          "fr": "bibliothèque"
+          "fr": "très"
         },
         "audio": null
       },
@@ -1683,40 +1646,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-570",
-      "vocabularyID": "vocab-hsk20-570",
+      "id": "card-vocab-hsk20-048",
+      "vocabularyID": "vocab-hsk20-048",
       "front": {
-        "hanzi": "应该",
+        "hanzi": "今天",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "应该",
-        "pinyin": "yīng gāi",
+        "hanzi": "今天",
+        "pinyin": "jīn tiān",
         "text": {
-          "fr": "devoir ; être censé"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-168",
-      "vocabularyID": "vocab-hsk20-168",
-      "front": {
-        "hanzi": "大家",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "大家",
-        "pinyin": "dà jiā",
-        "text": {
-          "fr": "tout le monde"
+          "fr": "aujourd’hui"
         },
         "audio": null
       },
@@ -1729,53 +1671,51 @@
     "allocationDay": 43,
     "allocationRange": "days06-45",
     "theme": "study",
+    "phase": "classic-151-300",
     "newVocabularyIDs": [
-      "vocab-hsk20-020",
-      "vocab-hsk20-104",
-      "vocab-hsk20-182",
-      "vocab-hsk20-283",
-      "vocab-hsk20-284",
-      "vocab-hsk20-297"
+      "vocab-hsk20-169",
+      "vocab-hsk20-173",
+      "vocab-hsk20-181",
+      "vocab-hsk20-209",
+      "vocab-hsk20-287"
     ],
     "reusedVocabularyIDs": [
-      "vocab-hsk20-168",
-      "vocab-hsk20-524",
-      "vocab-hsk20-570"
+      "vocab-hsk20-022",
+      "vocab-hsk20-039",
+      "vocab-hsk20-048"
     ],
     "newCanonicalIDs": [
-      "hsk20-020",
-      "hsk20-104",
-      "hsk20-182",
-      "hsk20-283",
-      "hsk20-284",
-      "hsk20-297"
+      "hsk20-169",
+      "hsk20-173",
+      "hsk20-181",
+      "hsk20-209",
+      "hsk20-287"
     ],
     "reusedCanonicalIDs": [
-      "hsk20-524",
-      "hsk20-570",
-      "hsk20-168"
+      "hsk20-022",
+      "hsk20-039",
+      "hsk20-048"
     ],
     "allocationNewVocabularyIDs": [
-      "hsk20-020",
-      "hsk20-104",
-      "hsk20-182",
-      "hsk20-283",
-      "hsk20-284",
-      "hsk20-297"
+      "hsk20-169",
+      "hsk20-173",
+      "hsk20-181",
+      "hsk20-209",
+      "hsk20-287"
     ],
     "allocationReusedVocabularyIDs": [
-      "hsk20-524",
-      "hsk20-570",
-      "hsk20-168"
+      "hsk20-022",
+      "hsk20-039",
+      "hsk20-048"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-03",
+    "levelID": "level-02",
     "sectionID": "section-01",
-    "unitID": "unit-05",
-    "newVocabularyCount": 6,
+    "unitID": "unit-07",
+    "newVocabularyCount": 5,
     "extraVocabularyIDs": []
   }
 }

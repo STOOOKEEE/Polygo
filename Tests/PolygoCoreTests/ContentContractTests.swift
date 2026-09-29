@@ -538,12 +538,12 @@ final class ContentContractTests: XCTestCase {
 
             XCTAssertEqual(plan.targetMinutes, 15, "\(snapshot.manifest.id.rawValue) daily target")
             let sessions = plan.orderedSessions
-            // 8 module 0 lessons, 90 daily lessons, a review after each five of them and a boss closing each of the 8 units.
+            // 8 module 0 lessons, 66 daily lessons, a review after the fifth lesson of each of the 8 units and a boss closing each unit.
             XCTAssertEqual(
-                sessions.filter { $0.lessonID.rawValue.hasPrefix("lesson-") }.count, 90,
-                "\(snapshot.manifest.id.rawValue) must schedule 90 daily lessons"
+                sessions.filter { $0.lessonID.rawValue.hasPrefix("lesson-") }.count, 66,
+                "\(snapshot.manifest.id.rawValue) must schedule 66 daily lessons"
             )
-            XCTAssertEqual(sessions.count, 8 + 90 + 14 + 8, "\(snapshot.manifest.id.rawValue) must author 120 sessions")
+            XCTAssertEqual(sessions.count, 8 + 66 + 8 + 8, "\(snapshot.manifest.id.rawValue) must author 90 sessions")
             let days = sessions.map(\.day)
             XCTAssertEqual(days, Array(1...sessions.count), "Plan days must be contiguous and start at one")
             XCTAssertEqual(Set(sessions.map(\.lessonID)).count, sessions.count, "A lesson may occur in only one plan day")
@@ -569,10 +569,9 @@ final class ContentContractTests: XCTestCase {
             let catalog = try canonicalCatalog()
             let milestoneDays = plan.milestones.map(\.day)
             XCTAssertEqual(Set(milestoneDays).count, milestoneDays.count, "Milestone days must be unique")
-            // The HSK 1–2 boundary sits at the end of unit 5: with at most
-            // eight new words per lesson, 300 lexemes are out of reach by day 30.
-            // Reviews add no word, so each milestone falls on the boss that closes its unit.
-            for target in [300, 600] {
+            // HSK 1 closes with unit 6 and HSK 1–2 with the course's last unit. Reviews
+            // add no word, so each milestone falls on the boss that closes its unit.
+            for target in [150, 300] {
                 let milestone = try XCTUnwrap(
                     plan.milestones.first(where: { $0.coverage?.vocabularyTarget == target }),
                     "Missing milestone covering \(target) lexemes"
@@ -615,9 +614,7 @@ final class ContentContractTests: XCTestCase {
                 // may use a higher-level lexeme for a natural scene before
                 // the boundary, so the total delivered set can exceed the
                 // target; every lexeme through the boundary must be present.
-                let targetLexemes = target == 300
-                    ? Set(catalog.lexemeKeysByRank.filter { (1...300).contains($0.key) }.map(\.value))
-                    : catalog.lexemeKeys
+                let targetLexemes = Set(catalog.lexemeKeysByRank.filter { (1...target).contains($0.key) }.map(\.value))
                 XCTAssertEqual(
                     targetLexemes.intersection(covered).count,
                     coverage.vocabularyTarget,
@@ -948,8 +945,21 @@ final class ContentContractTests: XCTestCase {
             XCTAssertEqual((last["metadata"] as? [String: Any])?["lessonKind"] as? String, "boss", "\(module.id.rawValue) must end with a boss")
         }
 
-        XCTAssertEqual(reviews, 14)
+        XCTAssertEqual(reviews, 8)
         XCTAssertEqual(bosses, 8)
+    }
+
+    /// The four starter lessons and the daily lessons teach the 300 canonical
+    /// words of ranks 1–300, and no other word of the catalogue.
+    func testDailyLessonsTeachExactlyTheCanonicalRanksOneToThreeHundred() async throws {
+        let (index, snapshots) = try await allCourseSnapshots()
+        let snapshot = try XCTUnwrap(snapshots.first(where: { $0.manifest.id == index.defaultCourseID }))
+        let plan = try XCTUnwrap(snapshot.manifest.plan)
+        let catalog = try canonicalCatalog()
+        let taught = starterLessonIDs + plan.orderedSessions.map(\.lessonID).filter { $0.rawValue.hasPrefix("lesson-") }
+        let covered = try canonicalIDs(in: taught, snapshots: snapshots, catalog: catalog)
+        let target = Set(catalog.lexemeKeysByRank.filter { (1...300).contains($0.key) }.map(\.value))
+        XCTAssertEqual(covered, target, "The taught canonical words must be exactly the ranks 1–300")
     }
 
     /// A lesson introduces at most eight words, and each of them is presented
@@ -964,6 +974,9 @@ final class ContentContractTests: XCTestCase {
             let metadata = try XCTUnwrap(raw["metadata"] as? [String: Any])
             let newIDs = try XCTUnwrap(metadata["newVocabularyIDs"] as? [String])
             XCTAssertLessThanOrEqual(newIDs.count, 8, "\(lesson.id.rawValue) introduces more than eight words")
+            if lesson.id.rawValue.hasPrefix("lesson-") {
+                XCTAssertTrue((3...5).contains(newIDs.count), "\(lesson.id.rawValue) must introduce three to five words, not \(newIDs.count)")
+            }
             let blocks = try XCTUnwrap(raw["blocks"] as? [[String: Any]])
             let presented = blocks
                 .filter { $0["kind"] as? String == "exercise" }
@@ -1224,8 +1237,6 @@ final class ContentContractTests: XCTestCase {
         var fillBlankCount = 0
         var foundStarterFill = false
         var foundNewLessonFill = false
-        var foundLatinPrefixFill77 = false
-        var foundLatinPrefixFill80 = false
 
         for lesson in snapshots.flatMap(\.lessons) {
             for block in exerciseBlocks(in: lesson) {
@@ -1271,16 +1282,6 @@ final class ContentContractTests: XCTestCase {
                     XCTAssertEqual(exercise.sentence, "你___茶吗？")
                     XCTAssertEqual(exercise.canonicalSpeechAnswer, "喝")
                     XCTAssertEqual(exercise.canonicalSpeechSentence, "你喝茶吗？")
-                case "ex-l77-fill":
-                    foundLatinPrefixFill77 = true
-                    XCTAssertEqual(exercise.sentence, "Tao___今天先准备。")
-                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "决定")
-                    XCTAssertEqual(exercise.canonicalSpeechSentence, "决定今天先准备。")
-                case "ex-l80-fill":
-                    foundLatinPrefixFill80 = true
-                    XCTAssertEqual(exercise.sentence, "Tao___一袋米。")
-                    XCTAssertEqual(exercise.canonicalSpeechAnswer, "拿")
-                    XCTAssertEqual(exercise.canonicalSpeechSentence, "拿一袋米。")
                 default:
                     break
                 }
@@ -1290,8 +1291,6 @@ final class ContentContractTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(fillBlankCount, 2, "Le catalogue doit contenir plusieurs exercices à trou")
         XCTAssertTrue(foundStarterFill, "Le fill de la leçon 2 doit être couvert")
         XCTAssertTrue(foundNewLessonFill, "Le fill d’une nouvelle leçon doit être couvert")
-        XCTAssertTrue(foundLatinPrefixFill77, "Le fill latin de la leçon 77 doit être couvert")
-        XCTAssertTrue(foundLatinPrefixFill80, "Le fill latin de la leçon 80 doit être couvert")
     }
 
     func testFillBlankChoiceOptionsAreFiveChineseAndVaryAcrossCorpus() async throws {

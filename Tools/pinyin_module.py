@@ -450,6 +450,7 @@ def add_to_course(course: dict[str, Any], data: dict[str, Any], lessons: list[di
         "daily": sum(lesson_id.startswith("lesson-") for lesson_id in sessions),
         "reviews": sum(lesson_id.startswith("review-") for lesson_id in sessions),
         "bosses": sum(lesson_id.startswith("boss-") for lesson_id in sessions),
+        "words": course["metadata"]["canonicalVocabularyCount"],
     }
     course["title"] = {"fr": data["course"]["title"]["fr"].format(**counts)}
     course["description"] = {"fr": data["course"]["description"]["fr"].format(**counts)}

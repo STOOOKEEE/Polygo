@@ -8,20 +8,22 @@ conception séparée, explicitement marquée `design-reference-only`.
 
 ## État du candidat
 
-- Le cours contient 124 leçons dans 10 unités : le module 0 « Pinyin et tons »
-  (8 leçons d’écoute), 4 leçons d’introduction protégées et 120 séances
-  planifiées (8 leçons du module 0, 90 leçons du jour, 14 révisions et
-  8 défis d’unité).
-- Le contenu contient 2 203 exercices (27 introduction + 144 module 0 + 1 620
-  leçons du jour + 412 révisions et défis), 94 histoires inline, 196 paragraphes
-  et 605 cartes distinctes (600 canoniques + 5 extras). Les 1 854 associations
-  leçon–carte sont fermées par le générateur.
+- Le cours contient 94 leçons dans 10 unités : le module 0 « Pinyin et tons »
+  (8 leçons d’écoute), 4 leçons d’introduction protégées et 90 séances
+  planifiées (8 leçons du module 0, 66 leçons du jour, 8 révisions et
+  8 défis d’unité). Le parcours enseigne 300 mots, les rangs 1 à 300 du
+  catalogue (HSK classique 1–2), à raison de trois à cinq mots par leçon du jour.
+- Le contenu contient 1 663 exercices (27 introduction + 144 module 0 + 1 188
+  leçons du jour + 304 révisions et défis), 70 histoires inline, 148 paragraphes
+  et 307 cartes distinctes (300 canoniques, 2 mots d’écoute du module 0 de rang
+  supérieur et 5 extras). Les 1 022 associations leçon–carte sont fermées par le
+  générateur.
 - Chaque séance quotidienne vise 15 minutes : 12 minutes de cours et 3 minutes
-  de révision. La couverture vérifiée est 300/300 rangs au jour 68 et 600/600
-  rangs au jour 120 ; ces comptes décrivent le contenu planifié, pas une preuve
+  de révision. La couverture vérifiée est 150/150 rangs au jour 58 et 300/300
+  rangs au jour 90 ; ces comptes décrivent le contenu planifié, pas une preuve
   d’acquisition.
 - Le recto des nouvelles cartes affiche uniquement le hanzi ; pinyin et sens
-  français sont au verso. Les 270 exercices à choix conservent IDs et réponses,
+  français sont au verso. Les 198 exercices à choix conservent IDs et réponses,
   avec une rotation déterministe des options basée sur le jour et la position de
   l’exercice.
 - Les quatre fixtures d’introduction conservent exactement leur payload
@@ -36,16 +38,16 @@ conception séparée, explicitement marquée `design-reference-only`.
 ## Contrôles réalisés
 
 - [x] Assembler `Content/authoring/90-day-authoring.json` depuis les fragments
-  preview, jours 6–45 et jours 46–90.
+  preview, jours 6–45 et jours 46–66.
 - [x] Régénérer le bundle avec `Tools/content_tool.py generate` et passer
   `Tools/content_tool.py lint --root Content`.
-- [x] Vérifier les 90 sessions, les budgets 12+3, les jalons J48/J60/J90 et la
-  couverture 300/300 puis 600/600 du catalogue `hsk-legacy-600`.
-- [x] Vérifier l’unicité des identifiants : 94 histoires et 196 paragraphes,
+- [x] Vérifier les 90 sessions, les budgets 12+3, les jalons J58/J90 et la
+  couverture 150/150 puis 300/300 du catalogue `hsk-legacy-600`.
+- [x] Vérifier l’unicité des identifiants : 70 histoires et 148 paragraphes,
   sans doublon global.
 - [x] Comparer les quatre leçons protégées et leurs cartes avec HEAD ; les
   identifiants, ordre, objectifs, vocabulaire, blocs et réponses sont stables.
-- [x] Vérifier les 270 choix : aucune réponse correcte n’est imposée par une
+- [x] Vérifier les 198 choix : aucune réponse correcte n’est imposée par une
   convention de position, tout en conservant `correctChoiceID`.
 - [x] Exécuter `swift test --parallel` : **55/55** tests portables réussis,
   dont 12 contrats de contenu.

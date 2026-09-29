@@ -1026,7 +1026,7 @@ def apply_editorial_metadata(
             "standardVersion": HSK_LEGACY_STANDARD_VERSION,
             "legacyStandardID": HSK_LEGACY_STANDARD_ID,
             "legacyStandardVersion": HSK_LEGACY_STANDARD_VERSION,
-            "levelID": "level-02" if day <= 30 else "level-03",
+            "levelID": "level-01" if metadata.get("phase") == "classic-1-150" else "level-02",
             "sectionID": "section-01",
             "unitID": lesson.get("moduleID"),
             "newVocabularyIDs": new_ids,
@@ -1784,14 +1784,16 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
         for module_id, module in existing_modules.items():
             if module_id not in generated_module_ids:
                 generated_course["modules"].append(copy.deepcopy(module))
+        listed = {lesson_id for module in generated_course["modules"] for lesson_id in module.get("lessonIDs", [])}
         for module in generated_course["modules"]:
             old = existing_modules.get(module.get("id"))
             if old:
-                # The pack orders its own lessons; lessons it does not list stay after them.
-                current = module.get("lessonIDs", [])
-                module["lessonIDs"] = current + [
+                # The pack orders its own lessons; a lesson it lists in no unit stays
+                # after them in its old unit, unless its file has been deleted.
+                module["lessonIDs"] = module.get("lessonIDs", []) + [
                     lesson_id for lesson_id in old.get("lessonIDs", [])
-                    if lesson_id not in current and not lesson_id.startswith(DERIVED_KINDS)
+                    if lesson_id not in listed and not lesson_id.startswith(DERIVED_KINDS)
+                    and (root / "lessons" / f"{lesson_id}.json").exists()
                 ]
     module_by_id = {module.get("id"): module for module in generated_course["modules"]}
     for lesson in generated_lessons:

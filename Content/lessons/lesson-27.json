@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "contentVersion": "2026.10.0",
   "id": "lesson-27",
-  "moduleID": "unit-03",
+  "moduleID": "unit-04",
   "order": 40,
   "title": {
     "fr": "Une invitation chaleureuse"
@@ -11,7 +11,7 @@
     "fr": "Accueillir un invité, décrire un repas et exprimer une concession."
   },
   "estimatedMinutes": 12,
-  "level": "HSK classique 2",
+  "level": "HSK classique 1",
   "objectives": [
     {
       "id": "l27-understand",
@@ -30,31 +30,114 @@
   ],
   "vocabulary": [
     {
-      "id": "vocab-hsk20-162",
-      "canonicalID": "穿|chuān|162",
-      "hanzi": "穿",
-      "pinyin": "chuān",
+      "id": "vocab-hsk20-004",
+      "canonicalID": "杯子|bēi zi|4",
+      "hanzi": "杯子",
+      "pinyin": "bēi zi",
+      "toneNumbers": [
+        1,
+        0
+      ],
+      "segmentation": [
+        {
+          "surface": "杯子",
+          "vocabularyID": "vocab-hsk20-004",
+          "pinyin": "bēi zi"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "tasse ; verre"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这个杯子很漂亮。",
+        "pinyin": "zhè ge bēi zi hěn piào liàng。",
+        "translation": {
+          "fr": "Ce verre est très joli."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "杯子|bēi zi|4",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 4,
+        "level": 1
+      },
+      "traditionalHanzi": "杯子"
+    },
+    {
+      "id": "vocab-hsk20-009",
+      "canonicalID": "菜|cài|9",
+      "hanzi": "菜",
+      "pinyin": "cài",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "菜",
+          "vocabularyID": "vocab-hsk20-009",
+          "pinyin": "cài"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "plat ; légume"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这道菜很好吃。",
+        "pinyin": "zhè dào cài hěn hǎo chī。",
+        "translation": {
+          "fr": "Ce plat est très bon."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "菜|cài|9",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 9,
+        "level": 1
+      },
+      "traditionalHanzi": "菜"
+    },
+    {
+      "id": "vocab-hsk20-037",
+      "canonicalID": "喝|hē|37",
+      "hanzi": "喝",
+      "pinyin": "hē",
       "toneNumbers": [
         1
       ],
       "segmentation": [
         {
-          "surface": "穿",
-          "vocabularyID": "vocab-hsk20-162",
-          "pinyin": "chuān"
+          "surface": "喝",
+          "vocabularyID": "vocab-hsk20-037",
+          "pinyin": "hē"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "porter (un vêtement)"
+        "fr": "boire"
       },
       "audio": null,
       "example": {
-        "hanzi": "她穿红衣服。",
-        "pinyin": "tā chuān hóng yī fú。",
+        "hanzi": "你喝水吗？",
+        "pinyin": "nǐ hē shuǐ ma？",
         "translation": {
-          "fr": "Elle porte des vêtements rouges."
+          "fr": "Bois-tu de l’eau ?"
         },
         "audio": null
       },
@@ -62,261 +145,13 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "穿|chuān|162",
+        "canonicalID": "喝|hē|37",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 162,
-        "level": 2
+        "rank": 37,
+        "level": 1
       },
-      "traditionalHanzi": "穿"
-    },
-    {
-      "id": "vocab-hsk20-178",
-      "canonicalID": "非常|fēi cháng|178",
-      "hanzi": "非常",
-      "pinyin": "fēi cháng",
-      "toneNumbers": [
-        1,
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "非常",
-          "vocabularyID": "vocab-hsk20-178",
-          "pinyin": "fēi cháng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "très ; extrêmement"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "这件衣服非常漂亮。",
-        "pinyin": "zhè jiàn yī fú fēi cháng piào liàng。",
-        "translation": {
-          "fr": "Ce vêtement est très joli."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "非常|fēi cháng|178",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 178,
-        "level": 2
-      },
-      "traditionalHanzi": "非常"
-    },
-    {
-      "id": "vocab-hsk20-188",
-      "canonicalID": "过|guo|188",
-      "hanzi": "过",
-      "pinyin": "guo",
-      "toneNumbers": [
-        0
-      ],
-      "segmentation": [
-        {
-          "surface": "过",
-          "vocabularyID": "vocab-hsk20-188",
-          "pinyin": "guo"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "avoir déjà fait (expérience)"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我去过北京。",
-        "pinyin": "wǒ qù guo Běi jīng。",
-        "translation": {
-          "fr": "Je suis déjà allé à Pékin."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "过|guo|188",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 188,
-        "level": 2
-      },
-      "traditionalHanzi": "過"
-    },
-    {
-      "id": "vocab-hsk20-193",
-      "canonicalID": "红|hóng|193",
-      "hanzi": "红",
-      "pinyin": "hóng",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "红",
-          "vocabularyID": "vocab-hsk20-193",
-          "pinyin": "hóng"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "rouge"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我喜欢红色。",
-        "pinyin": "wǒ xǐ huān hóng sè。",
-        "translation": {
-          "fr": "J’aime le rouge."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "红|hóng|193",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 193,
-        "level": 2
-      },
-      "traditionalHanzi": "紅"
-    },
-    {
-      "id": "vocab-hsk20-195",
-      "canonicalID": "还|hái|195",
-      "hanzi": "还",
-      "pinyin": "hái",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "还",
-          "vocabularyID": "vocab-hsk20-195",
-          "pinyin": "hái"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "encore ; aussi"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我还要喝茶。",
-        "pinyin": "wǒ hái yào hē chá。",
-        "translation": {
-          "fr": "Je veux encore boire du thé."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "还|hái|195",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 195,
-        "level": 2
-      },
-      "traditionalHanzi": "還"
-    },
-    {
-      "id": "vocab-hsk20-216",
-      "canonicalID": "离|lí|216",
-      "hanzi": "离",
-      "pinyin": "lí",
-      "toneNumbers": [
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "离",
-          "vocabularyID": "vocab-hsk20-216",
-          "pinyin": "lí"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "être éloigné de"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "医院离家不远。",
-        "pinyin": "yī yuàn lí jiā bù yuǎn。",
-        "translation": {
-          "fr": "L’hôpital n’est pas loin de chez moi."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "离|lí|216",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 216,
-        "level": 2
-      },
-      "traditionalHanzi": "離"
-    },
-    {
-      "id": "vocab-hsk20-376",
-      "canonicalID": "复习|fù xí|376",
-      "hanzi": "复习",
-      "pinyin": "fù xí",
-      "toneNumbers": [
-        4,
-        2
-      ],
-      "segmentation": [
-        {
-          "surface": "复习",
-          "vocabularyID": "vocab-hsk20-376",
-          "pinyin": "fù xí"
-        }
-      ],
-      "partOfSpeech": null,
-      "grammarNotes": [],
-      "meaning": {
-        "fr": "réviser"
-      },
-      "audio": null,
-      "example": {
-        "hanzi": "我们晚上复习。",
-        "pinyin": "wǒ men wǎn shang fù xí。",
-        "translation": {
-          "fr": "Nous révisons le soir."
-        },
-        "audio": null
-      },
-      "memoryStory": null,
-      "metadata": {
-        "catalogID": "hsk-legacy-600",
-        "catalogVersion": "2026.09.0",
-        "canonicalID": "复习|fù xí|376",
-        "standardID": "HSK-legacy-2.0",
-        "standardVersion": "2.0",
-        "rank": 376,
-        "level": 3
-      },
-      "traditionalHanzi": "複習"
+      "traditionalHanzi": "喝"
     },
     {
       "id": "vocab-hsk20-194",
@@ -361,31 +196,31 @@
       "traditionalHanzi": "歡迎"
     },
     {
-      "id": "vocab-hsk20-131",
-      "canonicalID": "一|yī|131",
-      "hanzi": "一",
-      "pinyin": "yī",
+      "id": "vocab-hsk20-188",
+      "canonicalID": "过|guo|188",
+      "hanzi": "过",
+      "pinyin": "guo",
       "toneNumbers": [
-        1
+        0
       ],
       "segmentation": [
         {
-          "surface": "一",
-          "vocabularyID": "vocab-hsk20-131",
-          "pinyin": "yī"
+          "surface": "过",
+          "vocabularyID": "vocab-hsk20-188",
+          "pinyin": "guo"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "un ; une"
+        "fr": "avoir déjà fait (expérience)"
       },
       "audio": null,
       "example": {
-        "hanzi": "我有一个女儿。",
-        "pinyin": "wǒ yǒu yí gè nǚ ér。",
+        "hanzi": "我去过北京。",
+        "pinyin": "wǒ qù guo Běi jīng。",
         "translation": {
-          "fr": "J’ai une fille."
+          "fr": "Je suis déjà allé à Pékin."
         },
         "audio": null
       },
@@ -393,40 +228,40 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "一|yī|131",
+        "canonicalID": "过|guo|188",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 131,
-        "level": 1
+        "rank": 188,
+        "level": 2
       },
-      "traditionalHanzi": "一"
+      "traditionalHanzi": "過"
     },
     {
-      "id": "vocab-hsk20-136",
-      "canonicalID": "有|yǒu|136",
-      "hanzi": "有",
-      "pinyin": "yǒu",
+      "id": "vocab-hsk20-139",
+      "canonicalID": "在|zài|139",
+      "hanzi": "在",
+      "pinyin": "zài",
       "toneNumbers": [
-        3
+        4
       ],
       "segmentation": [
         {
-          "surface": "有",
-          "vocabularyID": "vocab-hsk20-136",
-          "pinyin": "yǒu"
+          "surface": "在",
+          "vocabularyID": "vocab-hsk20-139",
+          "pinyin": "zài"
         }
       ],
       "partOfSpeech": null,
       "grammarNotes": [],
       "meaning": {
-        "fr": "avoir ; il y a"
+        "fr": "être à ; se trouver"
       },
       "audio": null,
       "example": {
-        "hanzi": "桌子上有一本书。",
-        "pinyin": "zhuō zi shàng yǒu yī běn shū。",
+        "hanzi": "我在家。",
+        "pinyin": "wǒ zài jiā。",
         "translation": {
-          "fr": "Il y a un livre sur la table."
+          "fr": "Je suis à la maison."
         },
         "audio": null
       },
@@ -434,13 +269,54 @@
       "metadata": {
         "catalogID": "hsk-legacy-600",
         "catalogVersion": "2026.09.0",
-        "canonicalID": "有|yǒu|136",
+        "canonicalID": "在|zài|139",
         "standardID": "HSK-legacy-2.0",
         "standardVersion": "2.0",
-        "rank": 136,
+        "rank": 139,
         "level": 1
       },
-      "traditionalHanzi": "有"
+      "traditionalHanzi": "在"
+    },
+    {
+      "id": "vocab-hsk20-142",
+      "canonicalID": "这|zhè|142",
+      "hanzi": "这",
+      "pinyin": "zhè",
+      "toneNumbers": [
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "这",
+          "vocabularyID": "vocab-hsk20-142",
+          "pinyin": "zhè"
+        }
+      ],
+      "partOfSpeech": null,
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "ce/cette-ci ; ici"
+      },
+      "audio": null,
+      "example": {
+        "hanzi": "这是我的书。",
+        "pinyin": "zhè shì wǒ de shū。",
+        "translation": {
+          "fr": "C’est mon livre."
+        },
+        "audio": null
+      },
+      "memoryStory": null,
+      "metadata": {
+        "catalogID": "hsk-legacy-600",
+        "catalogVersion": "2026.09.0",
+        "canonicalID": "这|zhè|142",
+        "standardID": "HSK-legacy-2.0",
+        "standardVersion": "2.0",
+        "rank": 142,
+        "level": 1
+      },
+      "traditionalHanzi": "這"
     }
   ],
   "blocks": [
@@ -463,16 +339,13 @@
       "kind": "vocabulary",
       "id": "block-lesson-27-vocabulary",
       "vocabularyIDs": [
-        "vocab-hsk20-162",
-        "vocab-hsk20-178",
-        "vocab-hsk20-188",
-        "vocab-hsk20-193",
-        "vocab-hsk20-195",
-        "vocab-hsk20-216",
-        "vocab-hsk20-376",
+        "vocab-hsk20-004",
+        "vocab-hsk20-009",
+        "vocab-hsk20-037",
         "vocab-hsk20-194",
-        "vocab-hsk20-131",
-        "vocab-hsk20-136"
+        "vocab-hsk20-188",
+        "vocab-hsk20-139",
+        "vocab-hsk20-142"
       ],
       "metadata": {
         "stage": "observe",
@@ -548,7 +421,7 @@
     {
       "id": "block-lesson-27-reading",
       "storyID": "story-lesson-27",
-      "level": "HSK classique 2",
+      "level": "HSK classique 1",
       "title": {
         "fr": "Chez un ami"
       },
@@ -654,42 +527,42 @@
         "pairs": [
           {
             "id": "a",
-            "left": "穿",
-            "pinyin": "chuān",
+            "left": "杯子",
+            "pinyin": "bēi zi",
             "right": {
-              "fr": "porter (un vêtement)"
+              "fr": "tasse ; verre"
             }
           },
           {
             "id": "b",
-            "left": "非常",
-            "pinyin": "fēi cháng",
+            "left": "菜",
+            "pinyin": "cài",
             "right": {
-              "fr": "très ; extrêmement"
+              "fr": "plat ; légume"
             }
           },
           {
             "id": "c",
-            "left": "过",
-            "pinyin": "guo",
+            "left": "喝",
+            "pinyin": "hē",
             "right": {
-              "fr": "avoir déjà fait (expérience)"
+              "fr": "boire"
             }
           },
           {
             "id": "d",
-            "left": "红",
-            "pinyin": "hóng",
+            "left": "欢迎",
+            "pinyin": "huān yíng",
             "right": {
-              "fr": "rouge"
+              "fr": "accueillir ; bienvenue"
             }
           },
           {
             "id": "e",
-            "left": "还",
-            "pinyin": "hái",
+            "left": "过",
+            "pinyin": "guo",
             "right": {
-              "fr": "encore ; aussi"
+              "fr": "avoir déjà fait (expérience)"
             }
           }
         ]
@@ -702,13 +575,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-dict-sent-exa-1",
+      "id": "block-ex-l27-dict-py-004",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l27-dict-sent-exa-1",
+          "id": "ex-l27-dict-py-004",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -719,31 +592,38 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "她穿红衣服。",
+        "promptText": "杯子",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "tā chuān hóng yī fú。"
+              "fr": "huān yíng"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "wǒ hái yào hē chá。"
+              "fr": "lǎo shī"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "wǒ xǐ huān hóng sè。"
+              "fr": "yóu yǒng"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "bēi zi"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -753,11 +633,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-tone-162",
+      "id": "block-ex-l27-tone-037",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l27-tone-162",
+          "id": "ex-l27-tone-037",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -769,7 +649,7 @@
           ],
           "required": true
         },
-        "promptText": "穿",
+        "promptText": "喝",
         "choices": [
           {
             "id": "t1",
@@ -810,11 +690,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-pick-188",
+      "id": "block-ex-l27-pick-009",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l27-pick-188",
+          "id": "ex-l27-pick-009",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -826,33 +706,33 @@
           ],
           "required": true
         },
-        "promptText": "过",
+        "promptText": "菜",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "还 (hái)"
+              "fr": "喝 (hē)"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "离 (lí)"
+              "fr": "杯子 (bēi zi)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "过 (guo)"
+              "fr": "菜 (cài)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "红 (hóng)"
+              "fr": "欢迎 (huān yíng)"
             },
             "audio": null
           }
@@ -867,53 +747,64 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-reverse-178",
+      "id": "block-ex-l27-match-pinyin",
       "spec": {
-        "kind": "choice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l27-reverse-178",
+          "id": "ex-l27-match-pinyin",
           "prompt": {
-            "fr": "Comment dit-on « très ; extrêmement » en chinois ?"
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Choisis le mot chinois qui convient."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l27-understand"
           ],
           "required": true
         },
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "复习 (fù xí)"
-            },
-            "audio": null
+            "left": "在",
+            "pinyin": null,
+            "right": {
+              "fr": "zài"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "非常 (fēi cháng)"
-            },
-            "audio": null
+            "left": "这",
+            "pinyin": null,
+            "right": {
+              "fr": "zhè"
+            }
           },
           {
             "id": "c",
-            "label": {
-              "fr": "离 (lí)"
-            },
-            "audio": null
+            "left": "杯子",
+            "pinyin": null,
+            "right": {
+              "fr": "bēi zi"
+            }
           },
           {
             "id": "d",
-            "label": {
-              "fr": "还 (hái)"
-            },
-            "audio": null
+            "left": "菜",
+            "pinyin": null,
+            "right": {
+              "fr": "cài"
+            }
+          },
+          {
+            "id": "e",
+            "left": "喝",
+            "pinyin": null,
+            "right": {
+              "fr": "hē"
+            }
           }
-        ],
-        "correctChoiceID": "b"
+        ]
       },
       "metadata": {
         "stage": "discover",
@@ -1007,13 +898,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-translate-exa-2",
+      "id": "block-ex-l27-translate-dia-1",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l27-translate-exa-2",
+          "id": "ex-l27-translate-dia-1",
           "prompt": {
-            "fr": "Traduis en chinois : « Ce vêtement est très joli »"
+            "fr": "Traduis en chinois : « Bienvenue chez moi ! »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1025,45 +916,45 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
+            "id": "d",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "过",
-            "pinyin": "guo",
+            "hanzi": "菜",
+            "pinyin": "cài",
             "audio": null
           },
           {
-            "id": "g",
-            "hanzi": "离",
-            "pinyin": "lí",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "非常",
-            "pinyin": "fēi cháng",
+            "id": "c",
+            "hanzi": "来",
+            "pinyin": "lái",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "hanzi": "欢迎",
+            "pinyin": "huān yíng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "你",
+            "pinyin": "nǐ",
             "audio": null
           }
         ],
@@ -1105,14 +996,14 @@
         "replies": [
           {
             "id": "a",
-            "hanzi": "非常好吃，但是有一点辣。",
-            "pinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
+            "hanzi": "不，只有一点。你给客人红茶吧。",
+            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "不，只有一点。你给客人红茶吧。",
-            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
+            "hanzi": "非常好吃，但是有一点辣。",
+            "pinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
             "audio": null
           },
           {
@@ -1122,7 +1013,7 @@
             "audio": null
           }
         ],
-        "correctReplyID": "a"
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
@@ -1132,13 +1023,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-translate-exa-4",
+      "id": "block-ex-l27-translate-exa-1",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l27-translate-exa-4",
+          "id": "ex-l27-translate-exa-1",
           "prompt": {
-            "fr": "Traduis en chinois : « J’aime le rouge »"
+            "fr": "Traduis en chinois : « Ce verre est très joli »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1151,38 +1042,44 @@
         "tokens": [
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "复习",
-            "pinyin": "fù xí",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "色",
-            "pinyin": "sè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "过",
-            "pinyin": "guo",
+            "id": "g",
+            "hanzi": "菜",
+            "pinyin": "cài",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "红",
-            "pinyin": "hóng",
+            "hanzi": "杯子",
+            "pinyin": "bēi zi",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
             "audio": null
           }
         ],
@@ -1190,7 +1087,8 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -1202,13 +1100,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-order-exa-7",
+      "id": "block-ex-l27-order-exa-2",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l27-order-exa-7",
+          "id": "ex-l27-order-exa-2",
           "prompt": {
-            "fr": "Construis « Nous révisons le soir »."
+            "fr": "Construis « Ce plat est très bon »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1220,32 +1118,46 @@
         },
         "tokens": [
           {
+            "id": "e",
+            "hanzi": "好吃",
+            "pinyin": "hǎo chī",
+            "audio": null
+          },
+          {
             "id": "b",
-            "hanzi": "晚上",
-            "pinyin": "wǎn shang",
+            "hanzi": "道",
+            "pinyin": "dào",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "复习",
-            "pinyin": "fù xí",
+            "hanzi": "菜",
+            "pinyin": "cài",
             "audio": null
           },
           {
             "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d",
+          "e"
         ],
         "acceptedVariants": [
-          "我们晚上复习。",
-          "我们晚上复习"
+          "这道菜很好吃。",
+          "这道菜很好吃"
         ]
       },
       "metadata": {
@@ -1256,11 +1168,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-dialogue-3-3",
+      "id": "block-ex-l27-dialogue-4-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l27-dialogue-3-3",
+          "id": "ex-l27-dialogue-4-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1274,24 +1186,24 @@
         },
         "lines": [
           {
-            "id": "c",
-            "speaker": "Mina",
-            "hanzi": "不，只有一点。你给客人红茶吧。",
-            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "我吃了两公斤？",
+            "pinyin": "wǒ chī le liǎng gōng jīn？",
             "audio": null
           },
           {
-            "id": "a",
-            "speaker": "Mina",
-            "hanzi": "非常好吃，但是有一点辣。",
-            "pinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "好，我告诉他黑色的杯子在哪里。",
+            "pinyin": "hǎo， wǒ gào sù tā hēi sè de bēi zi zài nǎ lǐ。",
             "audio": null
           },
           {
             "id": "b",
-            "speaker": "Tao",
-            "hanzi": "我吃了两公斤？",
-            "pinyin": "wǒ chī le liǎng gōng jīn？",
+            "speaker": "Mina",
+            "hanzi": "不，只有一点。你给客人红茶吧。",
+            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
             "audio": null
           }
         ],
@@ -1315,7 +1227,7 @@
         "header": {
           "id": "ex-l27-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 朋友欢迎客人到家里，桌子上有好吃的菜和___茶。 (« Un ami accueille un invité chez lui ; il y a de bons plats et du thé rouge sur la table »)"
+            "fr": "Complète : 朋友___客人到家里，桌子上有好吃的菜和红茶。 (« Un ami accueille un invité chez lui ; il y a de bons plats et du thé rouge sur la table »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1325,9 +1237,9 @@
           ],
           "required": true
         },
-        "sentence": "朋友欢迎客人到家里，桌子上有好吃的菜和___茶。",
+        "sentence": "朋友___客人到家里，桌子上有好吃的菜和红茶。",
         "acceptedAnswers": [
-          "红"
+          "欢迎"
         ],
         "caseSensitive": false
       },
@@ -1339,13 +1251,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-fill-rea-2",
+      "id": "block-ex-l27-fill-rea-3",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l27-fill-rea-2",
+          "id": "ex-l27-fill-rea-3",
           "prompt": {
-            "fr": "Complète : 菜___好吃，但是客人只吃了一点。 (« Les plats sont très bons, mais l’invité n’en mange qu’un peu »)"
+            "fr": "Complète : 他用黑色的___喝茶。 (« Il boit le thé dans une tasse noire »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1355,9 +1267,9 @@
           ],
           "required": true
         },
-        "sentence": "菜___好吃，但是客人只吃了一点。",
+        "sentence": "他用黑色的___喝茶。",
         "acceptedAnswers": [
-          "非常"
+          "杯子"
         ],
         "caseSensitive": false
       },
@@ -1501,12 +1413,12 @@
     {
       "id": "block-lesson-27-recap",
       "vocabularyIDs": [
-        "vocab-hsk20-162",
-        "vocab-hsk20-178",
+        "vocab-hsk20-004",
+        "vocab-hsk20-009",
+        "vocab-hsk20-037",
+        "vocab-hsk20-194",
         "vocab-hsk20-188",
-        "vocab-hsk20-193",
-        "vocab-hsk20-195",
-        "vocab-hsk20-216"
+        "vocab-hsk20-139"
       ],
       "objectiveIDs": [
         "l27-understand",
@@ -1525,19 +1437,19 @@
   ],
   "cards": [
     {
-      "id": "card-vocab-hsk20-162",
-      "vocabularyID": "vocab-hsk20-162",
+      "id": "card-vocab-hsk20-004",
+      "vocabularyID": "vocab-hsk20-004",
       "front": {
-        "hanzi": "穿",
+        "hanzi": "杯子",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "穿",
-        "pinyin": "chuān",
+        "hanzi": "杯子",
+        "pinyin": "bēi zi",
         "text": {
-          "fr": "porter (un vêtement)"
+          "fr": "tasse ; verre"
         },
         "audio": null
       },
@@ -1546,19 +1458,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-178",
-      "vocabularyID": "vocab-hsk20-178",
+      "id": "card-vocab-hsk20-009",
+      "vocabularyID": "vocab-hsk20-009",
       "front": {
-        "hanzi": "非常",
+        "hanzi": "菜",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "非常",
-        "pinyin": "fēi cháng",
+        "hanzi": "菜",
+        "pinyin": "cài",
         "text": {
-          "fr": "très ; extrêmement"
+          "fr": "plat ; légume"
         },
         "audio": null
       },
@@ -1567,103 +1479,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-188",
-      "vocabularyID": "vocab-hsk20-188",
+      "id": "card-vocab-hsk20-037",
+      "vocabularyID": "vocab-hsk20-037",
       "front": {
-        "hanzi": "过",
+        "hanzi": "喝",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "过",
-        "pinyin": "guo",
+        "hanzi": "喝",
+        "pinyin": "hē",
         "text": {
-          "fr": "avoir déjà fait (expérience)"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-193",
-      "vocabularyID": "vocab-hsk20-193",
-      "front": {
-        "hanzi": "红",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "红",
-        "pinyin": "hóng",
-        "text": {
-          "fr": "rouge"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-195",
-      "vocabularyID": "vocab-hsk20-195",
-      "front": {
-        "hanzi": "还",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "还",
-        "pinyin": "hái",
-        "text": {
-          "fr": "encore ; aussi"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-216",
-      "vocabularyID": "vocab-hsk20-216",
-      "front": {
-        "hanzi": "离",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "离",
-        "pinyin": "lí",
-        "text": {
-          "fr": "être éloigné de"
-        },
-        "audio": null
-      },
-      "tags": [
-        "catalog"
-      ]
-    },
-    {
-      "id": "card-vocab-hsk20-376",
-      "vocabularyID": "vocab-hsk20-376",
-      "front": {
-        "hanzi": "复习",
-        "pinyin": null,
-        "text": null,
-        "audio": null
-      },
-      "back": {
-        "hanzi": "复习",
-        "pinyin": "fù xí",
-        "text": {
-          "fr": "réviser"
+          "fr": "boire"
         },
         "audio": null
       },
@@ -1693,19 +1521,19 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-131",
-      "vocabularyID": "vocab-hsk20-131",
+      "id": "card-vocab-hsk20-188",
+      "vocabularyID": "vocab-hsk20-188",
       "front": {
-        "hanzi": "一",
+        "hanzi": "过",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "一",
-        "pinyin": "yī",
+        "hanzi": "过",
+        "pinyin": "guo",
         "text": {
-          "fr": "un ; une"
+          "fr": "avoir déjà fait (expérience)"
         },
         "audio": null
       },
@@ -1714,19 +1542,40 @@
       ]
     },
     {
-      "id": "card-vocab-hsk20-136",
-      "vocabularyID": "vocab-hsk20-136",
+      "id": "card-vocab-hsk20-139",
+      "vocabularyID": "vocab-hsk20-139",
       "front": {
-        "hanzi": "有",
+        "hanzi": "在",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "有",
-        "pinyin": "yǒu",
+        "hanzi": "在",
+        "pinyin": "zài",
         "text": {
-          "fr": "avoir ; il y a"
+          "fr": "être à ; se trouver"
+        },
+        "audio": null
+      },
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "card-vocab-hsk20-142",
+      "vocabularyID": "vocab-hsk20-142",
+      "front": {
+        "hanzi": "这",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "这",
+        "pinyin": "zhè",
+        "text": {
+          "fr": "ce/cette-ci ; ici"
         },
         "audio": null
       },
@@ -1739,56 +1588,48 @@
     "allocationDay": 23,
     "allocationRange": "days06-45",
     "theme": "daily-review",
+    "phase": "classic-1-150",
     "newVocabularyIDs": [
-      "vocab-hsk20-162",
-      "vocab-hsk20-178",
-      "vocab-hsk20-188",
-      "vocab-hsk20-193",
-      "vocab-hsk20-195",
-      "vocab-hsk20-216",
-      "vocab-hsk20-376"
-    ],
-    "reusedVocabularyIDs": [
-      "vocab-hsk20-131",
-      "vocab-hsk20-136",
+      "vocab-hsk20-004",
+      "vocab-hsk20-009",
+      "vocab-hsk20-037",
       "vocab-hsk20-194"
     ],
+    "reusedVocabularyIDs": [
+      "vocab-hsk20-139",
+      "vocab-hsk20-142",
+      "vocab-hsk20-188"
+    ],
     "newCanonicalIDs": [
-      "hsk20-162",
-      "hsk20-178",
-      "hsk20-188",
-      "hsk20-193",
-      "hsk20-195",
-      "hsk20-216",
-      "hsk20-376"
+      "hsk20-004",
+      "hsk20-009",
+      "hsk20-037",
+      "hsk20-194"
     ],
     "reusedCanonicalIDs": [
-      "hsk20-194",
-      "hsk20-131",
-      "hsk20-136"
+      "hsk20-188",
+      "hsk20-139",
+      "hsk20-142"
     ],
     "allocationNewVocabularyIDs": [
-      "hsk20-162",
-      "hsk20-178",
-      "hsk20-188",
-      "hsk20-193",
-      "hsk20-195",
-      "hsk20-216",
-      "hsk20-376"
+      "hsk20-004",
+      "hsk20-009",
+      "hsk20-037",
+      "hsk20-194"
     ],
     "allocationReusedVocabularyIDs": [
-      "hsk20-194",
-      "hsk20-131",
-      "hsk20-136"
+      "hsk20-188",
+      "hsk20-139",
+      "hsk20-142"
     ],
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "legacyStandardID": "HSK-legacy-2.0",
     "legacyStandardVersion": "2.0",
-    "levelID": "level-02",
+    "levelID": "level-01",
     "sectionID": "section-01",
-    "unitID": "unit-03",
-    "newVocabularyCount": 7,
+    "unitID": "unit-04",
+    "newVocabularyCount": 4,
     "extraVocabularyIDs": []
   }
 }

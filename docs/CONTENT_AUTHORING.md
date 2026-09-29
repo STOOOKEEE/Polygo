@@ -32,10 +32,11 @@ compte uniquement les lexèmes canoniques réellement couverts dans le catalogue
 référencé ; un mot hors catalogue ne compte pas. `claims` reste
 descriptif : aucun claim ne doit déduire l'acquisition d'un niveau du seul jour
 du calendrier. Pour le programme actuel, la référence demandée est
-`HSK-legacy-2.0`/`2.0` (libellé utilisateur : HSK classique), avec 300 lexèmes canoniques au jour 48 et 600 au jour
-90 ; cela reste distinct des repères HSK 3.0 (500/1000). Le jalon des 300 lexèmes
-tombe à la fin de l'unité 5 : avec au plus huit mots nouveaux par séance, les
-séances 1 à 29 n'en apportent que 232 avant le jour de bilan 30.
+`HSK-legacy-2.0`/`2.0` (libellé utilisateur : HSK classique), avec 150 lexèmes canoniques (rangs 1 à 150, HSK
+classique 1) à la fin de l'unité 6 puis 300 (rangs 1 à 300, HSK classique 1–2) à la
+fin de l'unité 9 ; cela reste distinct des repères HSK 3.0 (500/1000). Le
+catalogue garde ses 600 entrées comme référentiel, mais le parcours ne s'engage
+que sur les rangs 1 à 300.
 
 Chaque objet de `lessons` contient `id`, `moduleID`, `order`, `title`,
 `summary`, `estimatedMinutes`, `objectives`, `vocabularyIDs`, `extraVocabulary`, `grammar`, un
@@ -153,8 +154,8 @@ applique ces règles :
 
 ## Mots nouveaux par séance
 
-Une séance présente au plus huit mots nouveaux (six ou sept dans le contenu
-actuel), extras hors catalogue compris. Un mot est nouveau dans la première
+Une séance présente au plus huit mots nouveaux, extras hors catalogue compris.
+L'allocation en vise trois à cinq (quatre ou cinq dans le contenu actuel). Un mot est nouveau dans la première
 leçon, par ordre, dont le vocabulaire le liste ; les mots repris d'une leçon
 précédente sont réutilisés et ne comptent pas.
 
@@ -163,23 +164,31 @@ vocabulaire canonique de chaque séance. Elle lit les textes écrits des
 fragments (dialogue, lecture, exemples de grammaire, exercices), jamais leurs
 listes de vocabulaire, puis :
 
-* répartit les 587 lexèmes hors leçons de départ entre les 87 séances qui ne
-  sont pas des bilans (jours 30, 60, 90), à raison de 6 à 8 par séance ; les
-  rangs 1 à 300 sont tous introduits au plus tard au jour 48 (`MILESTONE_DAY`) ;
+* répartit les 287 lexèmes de rang 1 à 300 hors leçons de départ entre les 66
+  séances du jour (`DAYS`), à raison de 3 à 5 par séance (`MIN_NEW_PER_LESSON`,
+  `MAX_NEW_PER_LESSON`) ; les rangs 1 à 150 sont tous introduits au plus tard à
+  la dernière leçon de l'unité 6 (`HSK1_LAST_DAY`, jour 40). Aucun mot de rang
+  supérieur à 300 n'est planifié ;
 * impose qu'un mot soit introduit au plus tard dans la séance dont il est
   l'ancre de grammaire ou la question de sens ; un tel mot déjà vu reste dans la
   séance comme mot réutilisé ;
 * échange ensuite des mots entre séances d'une même phase tant que cela réduit
   le nombre de couples (mot, séance) où un texte emploie un mot avant son
-  introduction. Les textes écrits ne sont pas modifiés : une séance peut donc
-  encore contenir un mot enseigné plus tard, comme avant ce partage.
+  introduction, en préférant introduire un mot dans une séance dont le texte
+  l'emploie. Les textes écrits ne sont pas modifiés : une séance peut donc encore
+  contenir un mot enseigné plus tard ou hors du parcours (rang supérieur à 300) ;
+* désigne l'ancre de grammaire de chaque séance : l'ancre écrite si elle est
+  enseignée, sinon un mot de la séance qu'emploient les exemples de la note.
+  L'assembleur reporte cette ancre sur toute note dont l'ancre écrite n'est pas
+  dans le vocabulaire de la séance (les jours 6 à 66) ; les fragments ne sont pas
+  modifiés.
 
 Ordre d'exécution : `build_90_day_authoring.py`, puis
-`build_authoring_days_06_45.py`, `build_authoring_days_46_90.py` et
+`build_authoring_days_06_45.py`, `build_authoring_days_46_66.py` et
 `build_preview_authoring.py`, puis `assemble_90_day_authoring.py`, puis
 `content_tool.py generate`. Le fragment des jours 1 à 5 n'a pas de liste de
 vocabulaire ; l'assembleur la remplit depuis l'allocation et refuse un
-fragment des jours 6 à 90 dont le vocabulaire diffère de l'allocation.
+fragment des jours 6 à 66 dont le vocabulaire diffère de l'allocation.
 
 Chaque mot nouveau est présenté par au moins trois exercices de la séance, d'au
 moins trois familles différentes (`choice`, `listeningChoice`, `wordOrder`,
@@ -214,7 +223,9 @@ exercices (aucun hanzi, pinyin ni traduction nouveau).
 
 * **Placement** (`derive_layout`, appelé par `assemble_90_day_authoring.py`) :
   dans chaque unité planifiée, `review-NN` suit chaque série de cinq leçons du
-  jour, sauf quand la série termine l'unité ; `boss-<unité>` clôt l'unité. Le
+  jour, sauf quand la série termine l'unité ; `boss-<unité>` clôt l'unité. Les
+  huit unités de huit ou neuf leçons (`UNITS`) donnent 8 révisions et 8 défis :
+  avec les 66 leçons et les 8 leçons du module 0, le plan compte 90 séances. Le
   plan gagne ces séances (12 + 3 minutes pour une révision, 13 + 2 pour un
   défi), les jours et les `order` des leçons sont renumérotés dans l'ordre du
   parcours (les IDs des leçons du jour ne changent pas), les jalons suivent
@@ -239,17 +250,19 @@ exercices (aucun hanzi, pinyin ni traduction nouveau).
   types récents, un défi sans son dialogue final, ou un ordre qui ne commence pas
   par les leçons les plus anciennes.
 
-Le générateur supprime les révisions que le pack ne liste plus.
+Le générateur supprime les révisions que le pack ne liste plus. Il ne supprime
+pas une leçon du jour retirée du pack : supprimer son fichier avant de
+régénérer, faute de quoi le contrôle du bundle la retrouve dans son ancienne unité.
 
 ## Module 0 : pinyin et tons
 
 Les huit leçons `pinyin-01` à `pinyin-08` s'écrivent à la main dans
 `Content/authoring/pinyin-module.json` ; `Tools/pinyin_module.py` les expand et
 les contrôle, et `content_tool.py generate` les ajoute au cours, sans passer par
-le pack de 90 jours (l'assembleur reste inchangé). Le fichier contient :
+le pack des leçons du jour (l'assembleur reste inchangé). Le fichier contient :
 
 * `module` : `unit-00`, `order` 0 ; `course` : titre et description du cours, avec
-  les totaux `{total}`, `{pinyin}`, `{daily}`, `{reviews}`, `{bosses}` calculés
+  les totaux `{total}`, `{pinyin}`, `{daily}`, `{reviews}`, `{bosses}`, `{words}` calculés
   à la génération ;
 * `carriers` : la table `hanzi → pinyin` des textes que les exercices font
   entendre. Un porteur est un caractère ou un mot réel et courant, à la lecture
