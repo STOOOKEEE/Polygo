@@ -868,6 +868,61 @@ final class ExerciseAndProgressTests: XCTestCase {
         XCTAssertEqual(progress.lastEvaluations[exerciseKey], correct)
     }
 
+    func testFirstAttemptSurvivesRetriesAndLaterEventsUntilRestart() throws {
+        let profileKey = profileID("profile-first-try")
+        let lessonKey = lessonID("lesson-first-try")
+        let block = blockID("block-first-try")
+        func evaluation(_ id: String, _ outcome: EvaluationOutcome, score: Double, accepted: Bool) throws -> ExerciseEvaluation {
+            try ExerciseEvaluation(exerciseID: exerciseID(id), outcome: outcome, score: score, feedback: .unchecked(["fr": "Retour"]), accepted: accepted)
+        }
+        let payloads: [ProgressEventPayload] = [
+            .lessonStarted(lessonID: lessonKey, at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-retried", .incorrect, score: 0, accepted: false), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-retried", .correct, score: 1, accepted: true), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-right", .correct, score: 1, accepted: true), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-right", .incorrect, score: 0, accepted: false), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-self", .selfReported, score: 0.6, accepted: true), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-partial", .partial, score: 0.5, accepted: true), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-skipped", .skipped, score: 0, accepted: false), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-incomplete", .unavailable, score: 0, accepted: false), at: now),
+            .exerciseEvaluated(lessonID: lessonKey, blockID: block, evaluation: try evaluation("ex-incomplete", .correct, score: 1, accepted: true), at: now),
+            .lessonCheckpointSaved(lessonID: lessonKey, exerciseIndex: 5, exerciseID: nil, answer: nil, evaluation: nil, dialogueDrafts: [:], dialogueResults: [:], at: now),
+            .lessonCompleted(lessonID: lessonKey, at: now.addingTimeInterval(7 * 60))
+        ]
+        var snapshot = ProgressSnapshot.empty(now: now)
+        for (offset, payload) in payloads.enumerated() {
+            snapshot = try reducer.reduce(snapshot, event("first-try-\(offset)", profileID: profileKey, lamport: UInt64(offset + 1), payload: payload))
+        }
+
+        let expected: [ExerciseID: Bool] = [
+            exerciseID("ex-retried"): false,
+            exerciseID("ex-right"): true,
+            exerciseID("ex-self"): true,
+            exerciseID("ex-partial"): false,
+            exerciseID("ex-incomplete"): true
+        ]
+        let progress = try XCTUnwrap(snapshot.lessonProgress[lessonKey])
+        XCTAssertEqual(progress.firstAttemptResults, expected)
+        XCTAssertEqual(progress.timeSpent, 7 * 60)
+        let decoded = try JSONDecoder().decode(LessonProgress.self, from: JSONEncoder().encode(progress))
+        XCTAssertEqual(decoded.firstAttemptResults, expected)
+
+        snapshot = try reducer.reduce(
+            snapshot,
+            event("first-try-restart", profileID: profileKey, lamport: 100, payload: .lessonRestarted(lessonID: lessonKey, at: now))
+        )
+        XCTAssertEqual(snapshot.lessonProgress[lessonKey]?.firstAttemptResults, [:])
+    }
+
+    func testTimeSpentOnlyMeasuresOneSitting() {
+        let lessonKey = lessonID("lesson-duration")
+        XCTAssertNil(LessonProgress(lessonID: lessonKey, lastOpenedAt: now).timeSpent, "Unfinished")
+        XCTAssertNil(LessonProgress(lessonID: lessonKey, completedAt: now).timeSpent, "Opening unknown")
+        XCTAssertEqual(LessonProgress(lessonID: lessonKey, completedAt: now.addingTimeInterval(LessonProgress.longestMeasuredSession), lastOpenedAt: now).timeSpent, LessonProgress.longestMeasuredSession)
+        XCTAssertNil(LessonProgress(lessonID: lessonKey, completedAt: now.addingTimeInterval(LessonProgress.longestMeasuredSession + 1), lastOpenedAt: now).timeSpent, "Resumed another day")
+        XCTAssertNil(LessonProgress(lessonID: lessonKey, completedAt: now.addingTimeInterval(-1), lastOpenedAt: now).timeSpent, "Clock went back")
+    }
+
     func testReducerRejectsEventsForAnotherProfile() throws {
         let firstProfile = profileID("profile-one")
         let secondProfile = profileID("profile-two")

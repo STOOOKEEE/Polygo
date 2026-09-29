@@ -41,7 +41,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
         case .introduction(let value):
-            try container.encode(Kind.introduction, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.title, forKey: .title); try container.encode(value.body, forKey: .body); try container.encodeIfPresent(value.audio, forKey: .audio); try container.encodeIfPresent(GrammarLink(value.grammarPointID), forKey: .metadata)
+            try container.encode(Kind.introduction, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.title, forKey: .title); try container.encode(value.body, forKey: .body); try container.encodeIfPresent(value.audio, forKey: .audio); try container.encodeIfPresent(BlockMetadata(grammarPointID: value.grammarPointID), forKey: .metadata)
         case .vocabulary(let value):
             try container.encode(Kind.vocabulary, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.vocabularyIDs, forKey: .vocabularyIDs)
         case .dialogue(let value):
@@ -49,7 +49,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         case .reading(let value):
             try container.encode(Kind.reading, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.storyID, forKey: .storyID); try container.encodeIfPresent(value.level, forKey: .level); try container.encode(value.title, forKey: .title); try container.encode(value.paragraphs, forKey: .paragraphs); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .exercise(let value):
-            try container.encode(Kind.exercise, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.spec, forKey: .spec); try container.encodeIfPresent(GrammarLink(value.grammarPointID), forKey: .metadata)
+            try container.encode(Kind.exercise, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.spec, forKey: .spec); try container.encodeIfPresent(BlockMetadata(grammarPointID: value.grammarPointID, phase: value.phase), forKey: .metadata)
         case .recap(let value):
             try container.encode(Kind.recap, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.vocabularyIDs, forKey: .vocabularyIDs); try container.encode(value.objectiveIDs, forKey: .objectiveIDs)
         }
@@ -57,14 +57,19 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
 }
 
 /// The part of a block's editorial `metadata` that the app reads: the grammar
-/// point a note teaches or an exercise practises. Other metadata stays
-/// release-only and is ignored by the decoder.
-struct GrammarLink: Codable, Hashable, Sendable {
+/// point a note teaches or an exercise practises, and the session phase of an
+/// exercise (`stage`). Other metadata stays release-only and is ignored by the
+/// decoder.
+struct BlockMetadata: Codable, Hashable, Sendable {
     let grammarPointID: String?
+    /// Kept as authored: teaching blocks carry editorial stages
+    /// (`introduce`, `observe`…) that are not session phases.
+    let stage: String?
 
-    init?(_ grammarPointID: String?) {
-        guard let grammarPointID else { return nil }
+    init?(grammarPointID: String?, phase: LessonPhase? = nil) {
+        guard grammarPointID != nil || phase != nil else { return nil }
         self.grammarPointID = grammarPointID
+        self.stage = phase?.rawValue
     }
 }
 
@@ -90,14 +95,14 @@ public struct IntroductionBlock: Codable, Hashable, Sendable {
             title: try c.decode(LocalizedText.self, forKey: .title),
             body: try c.decode(LocalizedText.self, forKey: .body),
             audio: try c.decodeIfPresent(AssetReference.self, forKey: .audio),
-            grammarPointID: try c.decodeIfPresent(GrammarLink.self, forKey: .metadata)?.grammarPointID
+            grammarPointID: try c.decodeIfPresent(BlockMetadata.self, forKey: .metadata)?.grammarPointID
         )
     }
 
     public func encode(to encoder: Encoder) throws {
         var c = encoder.container(keyedBy: CodingKeys.self)
         try c.encode(id, forKey: .id); try c.encode(title, forKey: .title); try c.encode(body, forKey: .body)
-        try c.encodeIfPresent(audio, forKey: .audio); try c.encodeIfPresent(GrammarLink(grammarPointID), forKey: .metadata)
+        try c.encodeIfPresent(audio, forKey: .audio); try c.encodeIfPresent(BlockMetadata(grammarPointID: grammarPointID), forKey: .metadata)
     }
 }
 
@@ -226,26 +231,31 @@ public struct ExerciseBlock: Codable, Hashable, Sendable {
     public let spec: ExerciseSpec
     /// Grammar point practised by this exercise (`metadata.grammarPointID`).
     public let grammarPointID: String?
+    /// Session phase of the exercise (`metadata.stage`); nil when the lesson
+    /// does not divide its exercises into phases.
+    public let phase: LessonPhase?
 
     private enum CodingKeys: String, CodingKey { case id, spec, metadata }
 
-    public init(id: BlockID, spec: ExerciseSpec, grammarPointID: String? = nil) {
-        self.id = id; self.spec = spec; self.grammarPointID = grammarPointID
+    public init(id: BlockID, spec: ExerciseSpec, grammarPointID: String? = nil, phase: LessonPhase? = nil) {
+        self.id = id; self.spec = spec; self.grammarPointID = grammarPointID; self.phase = phase
     }
 
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        let metadata = try c.decodeIfPresent(BlockMetadata.self, forKey: .metadata)
         self.init(
             id: try c.decode(BlockID.self, forKey: .id),
             spec: try c.decode(ExerciseSpec.self, forKey: .spec),
-            grammarPointID: try c.decodeIfPresent(GrammarLink.self, forKey: .metadata)?.grammarPointID
+            grammarPointID: metadata?.grammarPointID,
+            phase: metadata?.stage.flatMap(LessonPhase.init(rawValue:))
         )
     }
 
     public func encode(to encoder: Encoder) throws {
         var c = encoder.container(keyedBy: CodingKeys.self)
         try c.encode(id, forKey: .id); try c.encode(spec, forKey: .spec)
-        try c.encodeIfPresent(GrammarLink(grammarPointID), forKey: .metadata)
+        try c.encodeIfPresent(BlockMetadata(grammarPointID: grammarPointID, phase: phase), forKey: .metadata)
     }
 }
 

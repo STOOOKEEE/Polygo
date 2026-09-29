@@ -18,6 +18,9 @@ public struct LessonFlow: Hashable, Sendable {
     /// Recaps and teaching blocks that no exercise follows. They belong to the
     /// end-of-lesson bilan rather than to a step.
     public let closingBlocks: [LessonBlock]
+    /// The steps grouped into consecutive runs of one session phase, in
+    /// order. A lesson without phases is one segment whose phase is nil.
+    public let phaseSegments: [LessonPhaseSegment]
     /// Position in `steps` of each exercise, by exercise index.
     private let exerciseStepIndices: [Int]
 
@@ -56,15 +59,24 @@ public struct LessonFlow: Hashable, Sendable {
 
         var steps: [LessonStep] = []
         var exerciseStepIndices: [Int] = []
+        // Teaching steps take the phase of the exercise they prepare.
+        var segments: [LessonPhaseSegment] = []
         for (index, exercise) in exercises.enumerated() {
+            let start = steps.count
             steps += (teachingBefore[index] ?? []).map(LessonStep.teaching)
             exerciseStepIndices.append(steps.count)
             steps.append(.exercise(index: index, block: exercise))
+            if let last = segments.last, last.phase == exercise.phase {
+                segments[segments.count - 1] = LessonPhaseSegment(phase: last.phase, steps: last.steps.lowerBound..<steps.count)
+            } else {
+                segments.append(LessonPhaseSegment(phase: exercise.phase, steps: start..<steps.count))
+            }
         }
 
         self.steps = steps
         self.exercises = exercises
         self.closingBlocks = closingBlocks
+        self.phaseSegments = segments
         self.exerciseStepIndices = exerciseStepIndices
     }
 
@@ -78,6 +90,21 @@ public struct LessonFlow: Hashable, Sendable {
     /// the last step.
     public func exerciseIndex(forStep stepIndex: Int) -> Int {
         exerciseStepIndices.firstIndex { $0 >= stepIndex } ?? exercises.count
+    }
+
+    /// Session phase of a step: its exercise's, or for a teaching step the
+    /// phase of the exercise it prepares.
+    public func phase(ofStep stepIndex: Int) -> LessonPhase? {
+        let exerciseIndex = exerciseIndex(forStep: stepIndex)
+        return exercises.indices.contains(exerciseIndex) ? exercises[exerciseIndex].phase : nil
+    }
+
+    /// The phase the next exercise opens, when it differs from the phase of
+    /// the exercise at `exerciseIndex`; nil otherwise and after the last one.
+    public func phaseStarting(afterExercise exerciseIndex: Int) -> LessonPhase? {
+        guard exercises.indices.contains(exerciseIndex), exercises.indices.contains(exerciseIndex + 1) else { return nil }
+        let next = exercises[exerciseIndex + 1].phase
+        return next != exercises[exerciseIndex].phase ? next : nil
     }
 
     /// Step to open for a checkpoint saved at `exerciseIndex`. Pending work

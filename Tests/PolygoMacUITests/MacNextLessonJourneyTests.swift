@@ -45,6 +45,21 @@ final class MacNextLessonJourneyTests: XCTestCase {
         assertLessonThreeStartsOnItsSituation()
     }
 
+    func testFinishedRecapListsItsWordsAndContinuesToTheNextLesson() throws {
+        launch(seeding: try journal(lessonThreeTerminalCheckpoint: false))
+        openPath()
+
+        openLesson("lesson-02")
+        XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "L2 terminée doit rouvrir son bilan")
+        XCTAssertTrue(text(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan L2 doit lister ses mots appris")
+        attachScreenshot(named: "mac-lesson-completion")
+        let next = app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch
+        XCTAssertTrue(next.waitForExistence(timeout: timeout), "Le bilan doit proposer la leçon suivante")
+        next.click()
+
+        assertLessonThreeStartsOnItsSituation()
+    }
+
     func testUnfinishedLessonSavedAtTheEndWithoutAnswersOpensOnItsSituation() throws {
         // Earlier builds could persist this terminal checkpoint for a lesson
         // the learner never answered.

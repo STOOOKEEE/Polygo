@@ -555,6 +555,17 @@ public struct ExerciseEvaluation: Codable, Hashable, Sendable {
     }
 }
 
+public extension ExerciseEvaluation {
+    /// Whether the answer was judged at all: a skipped exercise or an
+    /// incomplete answer (`unavailable`) says nothing about the learner.
+    var isScored: Bool { outcome != .skipped && outcome != .unavailable }
+
+    /// Accepted with a score of at least 0.8. A self-reported oral or
+    /// handwriting answer carries no score; its acceptance is a deliberate
+    /// learner decision and counts.
+    var countsAsCorrect: Bool { accepted && (outcome == .selfReported || score >= 0.8) }
+}
+
 public protocol ExerciseEngine: Sendable {
     func evaluate(spec: ExerciseSpec, answer: ExerciseAnswer) -> ExerciseEvaluation
 }

@@ -116,6 +116,11 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(verify.isEnabled, "Une réponse choisie doit activer l’enregistrement")
         verify.click()
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
+        XCTAssertTrue(
+            app.descendants(matching: .any).matching(identifier: "lesson.feedback").firstMatch.waitForExistence(timeout: timeout),
+            "Tavi doit réagir à la réponse évaluée"
+        )
+        attachScreenshot(named: "mac-daily-plan-lesson-five-feedback")
         app.buttons.matching(NSPredicate(format: "label == %@", "Continuer")).firstMatch.click()
         let oralExercise = app.staticTexts.matching(
             identifier: "lesson.exercise.ex-l5-speak"
@@ -179,6 +184,12 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit signaler l’oral passé sans évaluation"
         )
+        XCTAssertTrue(text(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan doit lister les mots appris de L5")
+        XCTAssertTrue(
+            app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch.exists,
+            "Le bilan doit proposer la leçon suivante"
+        )
+        attachScreenshot(named: "mac-daily-plan-lesson-five-completion")
         let path = app.buttons.matching(NSPredicate(format: "label == %@", "Retour au parcours")).firstMatch
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.click()

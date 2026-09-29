@@ -68,7 +68,8 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 pendingAnswer: existing.pendingAnswer,
                 pendingEvaluation: existing.pendingEvaluation,
                 dialogueDrafts: existing.dialogueDrafts,
-                dialogueResults: existing.dialogueResults
+                dialogueResults: existing.dialogueResults,
+                firstAttemptResults: existing.firstAttemptResults
             )
             activeRoute = "lesson/\(lessonID.rawValue)"
 
@@ -101,7 +102,8 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 pendingAnswer: answer,
                 pendingEvaluation: evaluation,
                 dialogueDrafts: dialogueDrafts,
-                dialogueResults: dialogueResults
+                dialogueResults: dialogueResults,
+                firstAttemptResults: existing.firstAttemptResults
             )
 
         case .exerciseEvaluated(let lessonID, _, let evaluation, _):
@@ -111,6 +113,10 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
             var mistakes = existing.mistakeExerciseIDs
             var evaluations = existing.lastEvaluations
             evaluations[evaluation.exerciseID] = evaluation
+            var firstAttempts = existing.firstAttemptResults
+            if evaluation.isScored, firstAttempts[evaluation.exerciseID] == nil {
+                firstAttempts[evaluation.exerciseID] = evaluation.countsAsCorrect
+            }
             if evaluation.outcome != .skipped {
                 answered.insert(evaluation.exerciseID)
                 if evaluation.accepted && evaluation.score >= 0.8 {
@@ -138,7 +144,8 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 pendingAnswer: existing.pendingAnswer,
                 pendingEvaluation: existing.pendingEvaluation,
                 dialogueDrafts: existing.dialogueDrafts,
-                dialogueResults: existing.dialogueResults
+                dialogueResults: existing.dialogueResults,
+                firstAttemptResults: firstAttempts
             )
 
         case .lessonCompleted(let lessonID, let date):
@@ -159,7 +166,8 @@ public struct DefaultProgressReducer: ProgressReducer, Sendable {
                 pendingAnswer: existing.pendingAnswer,
                 pendingEvaluation: existing.pendingEvaluation,
                 dialogueDrafts: existing.dialogueDrafts,
-                dialogueResults: existing.dialogueResults
+                dialogueResults: existing.dialogueResults,
+                firstAttemptResults: existing.firstAttemptResults
             )
 
             if firstCompletionEventIDs != nil, firstCompletionEventIDs?[lessonID] == nil {

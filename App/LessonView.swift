@@ -6,6 +6,7 @@ public struct LessonView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.sylluneReduceMotion) private var reduceMotion
     public let lessonID: LessonID
     @State private var lesson: LessonDocument?
     /// The lesson as one sequence of teaching and exercise screens.
@@ -28,6 +29,11 @@ public struct LessonView: View {
     public init(lessonID: LessonID) { self.lessonID = lessonID }
 
     private var exercises: [ExerciseBlock] { flow?.exercises ?? [] }
+
+    /// First-try results of the current attempt, as the journal records them.
+    private func sessionStats(_ flow: LessonFlow) -> LessonSessionStats {
+        LessonSessionStats(exercises: flow.exercises, firstAttempts: model.snapshot.lessonProgress[lessonID]?.firstAttemptResults ?? [:])
+    }
 
     public var body: some View {
         Group {
@@ -182,9 +188,10 @@ public struct LessonView: View {
             VStack(alignment: .leading, spacing: 18) {
                 switch step {
                 case .teaching(let teaching): teachingContent(teaching, lesson: lesson)
-                case .exercise(_, let block): exerciseContent(lesson, spec: block.spec)
+                case .exercise(let index, let block): exerciseContent(lesson, flow: flow, exerciseIndex: index, spec: block.spec)
                 }
             }
+            .animation(reduceMotion ? nil : .easeOut(duration: 0.25), value: evaluation)
             .frame(maxWidth: 720, alignment: .leading)
             .frame(maxWidth: .infinity)
             .padding(20)
@@ -192,7 +199,7 @@ public struct LessonView: View {
         // A new step starts at the top of its content.
         .id(step.id)
         .safeAreaInset(edge: .top, spacing: 0) {
-            stepHeader(step, total: flow.steps.count)
+            stepHeader(step, flow: flow)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             switch step {
@@ -202,22 +209,59 @@ public struct LessonView: View {
         }
     }
 
-    private func stepHeader(_ step: LessonStep, total: Int) -> some View {
-        HStack(spacing: 14) {
-            Text("\(currentStep + 1) / \(total)")
-                .font(.callout.weight(.semibold))
-                .monospacedDigit()
-                .foregroundStyle(SylluneColor.inkMuted)
-                .accessibilityLabel("Étape \(currentStep + 1) sur \(total), \(stepKindName(step))")
-                .accessibilityIdentifier(stepIdentifier(step))
-            SylluneProgressBar(value: Double(currentStep) / Double(max(1, total)))
+    /// Step counter with the current phase, the progress bar split into the
+    /// lesson's phases, and the run of correct first tries once it counts.
+    /// There are no lives: a mistake only resets the run.
+    private func stepHeader(_ step: LessonStep, flow: LessonFlow) -> some View {
+        let total = flow.steps.count
+        let phase = flow.phase(ofStep: currentStep)
+        let streak = sessionStats(flow).streak(throughExercise: flow.exerciseIndex(forStep: currentStep))
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                Text("\(currentStep + 1) / \(total)")
+                    .font(.callout.weight(.semibold))
+                    .monospacedDigit()
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .accessibilityLabel(stepAccessibilityLabel(step, total: total, phase: phase))
+                    .accessibilityIdentifier(stepIdentifier(step))
+                if let phase {
+                    Text(phase.title)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(SylluneColor.jadeDeep)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(SylluneColor.jade.opacity(0.14), in: Capsule())
+                        // Read with the step counter.
+                        .accessibilityHidden(true)
+                }
+                Spacer(minLength: 8)
+                if streak >= TaviReaction.visibleStreak {
+                    Label("\(streak)", systemImage: "flame.fill")
+                        .font(.callout.weight(.bold))
+                        .monospacedDigit()
+                        .foregroundStyle(SylluneColor.coral)
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("Série de \(streak) bonnes réponses d’affilée")
+                        .accessibilityIdentifier("lesson.streak")
+                        .transition(.opacity)
+                }
+            }
+            LessonPhaseProgressBar(segments: flow.phaseSegments, currentStep: currentStep, totalSteps: total)
         }
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.35), value: currentStep)
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.25), value: streak)
         .frame(maxWidth: 720)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
         .background(.ultraThinMaterial)
         .overlay(alignment: .bottom) { Divider() }
+    }
+
+    private func stepAccessibilityLabel(_ step: LessonStep, total: Int, phase: LessonPhase?) -> String {
+        let position = "Étape \(currentStep + 1) sur \(total)"
+        guard let phase else { return "\(position), \(stepKindName(step))" }
+        return "\(position), \(phase.title), \(stepKindName(step))"
     }
 
     private func stepIdentifier(_ step: LessonStep) -> String {
@@ -273,7 +317,7 @@ public struct LessonView: View {
         )
     }
 
-    @ViewBuilder private func exerciseContent(_ lesson: LessonDocument, spec: ExerciseSpec) -> some View {
+    @ViewBuilder private func exerciseContent(_ lesson: LessonDocument, flow: LessonFlow, exerciseIndex: Int, spec: ExerciseSpec) -> some View {
         if let reading = readingReference(in: lesson, for: spec.id) {
             readingReferenceDisclosure(reading)
         }
@@ -304,7 +348,16 @@ public struct LessonView: View {
             .disabled(evaluation != nil || isEvaluating)
 
         if let evaluation {
-            FeedbackView(evaluation: evaluation)
+            FeedbackView(
+                evaluation: evaluation,
+                reaction: TaviReaction(
+                    evaluation: evaluation,
+                    stepIndex: currentStep,
+                    streak: sessionStats(flow).streak(throughExercise: exerciseIndex),
+                    nextPhase: flow.phaseStarting(afterExercise: exerciseIndex)
+                )
+            )
+            .transition(reduceMotion ? AnyTransition.identity : AnyTransition.opacity.combined(with: AnyTransition.scale(scale: 0.97, anchor: .top)))
         }
     }
 
@@ -643,6 +696,11 @@ public struct LessonView: View {
     @ViewBuilder private func completionView(_ lesson: LessonDocument, flow: LessonFlow) -> some View {
         let successCount = answered.values.filter { evaluationCountsAsComplete($0) }.count
         let skippedCount = answered.values.filter { $0.outcome == .skipped }.count
+        let progress = model.snapshot.lessonProgress[lessonID]
+        let wordsRecap = LessonWordsRecap(lesson: lesson)
+        // Offered once the lesson is recorded as completed, so the next one
+        // is open.
+        let nextLessonID = progress?.completedAt == nil ? nil : model.lesson(after: lessonID)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .center, spacing: 14) {
@@ -669,6 +727,8 @@ public struct LessonView: View {
                         .foregroundStyle(SylluneColor.inkMuted)
                 }
 
+                completionStats(sessionStats(flow), timeSpent: progress?.timeSpent)
+
                 if let earnedCoins, earnedCoins > 0 {
                     HStack(spacing: 10) {
                         SylluneCoinIcon()
@@ -686,27 +746,14 @@ public struct LessonView: View {
                     .accessibilityElement(children: .combine)
                 }
 
-                Button("Recommencer cette leçon") {
-                    Task { @MainActor in
-                        guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
-                        currentStep = 0
-                        answer = nil
-                        evaluation = nil
-                        answered = [:]
-                        dialogueDrafts = [:]
-                        dialogueResults = [:]
-                        earnedCoins = nil
-                        finished = false
-                    }
+                if let wordsRecap {
+                    LessonWordsSection(recap: wordsRecap, languageCodes: model.preferredLanguageCodes)
                 }
-                .buttonStyle(.bordered)
-                Button("Retour au parcours") {
-                    // Leave the recap only on request and persist the path root,
-                    // rather than automatically opening the next lesson.
-                    dismiss()
-                    model.persistRoute(.path)
+
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) { secondaryCompletionActions(hasWords: wordsRecap != nil) }
+                    VStack(alignment: .leading, spacing: 10) { secondaryCompletionActions(hasWords: wordsRecap != nil) }
                 }
-                .buttonStyle(SyllunePrimaryButtonStyle())
 
                 // The authored recap closes the lesson with its words and the
                 // objectives the answers reached.
@@ -724,37 +771,321 @@ public struct LessonView: View {
             .frame(maxWidth: .infinity)
             .padding(20)
         }
+        // The way on stays in reach under a long recap, like a step's action.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            completionActionBar(nextLessonID: nextLessonID)
+        }
+    }
+
+    @ViewBuilder private func secondaryCompletionActions(hasWords: Bool) -> some View {
+        if hasWords {
+            Button("Revoir les mots") {
+                // The lesson's cards join the review queue on completion.
+                dismiss()
+                model.persistRoute(.cards)
+            }
+            .buttonStyle(.bordered)
+            .accessibilityIdentifier("lesson.completion.reviewWords")
+        }
+        Button("Recommencer cette leçon") {
+            Task { @MainActor in
+                guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
+                currentStep = 0
+                answer = nil
+                evaluation = nil
+                answered = [:]
+                dialogueDrafts = [:]
+                dialogueResults = [:]
+                earnedCoins = nil
+                finished = false
+            }
+        }
+        .buttonStyle(.bordered)
+    }
+
+    /// Continue to the next lesson when it is open, or go back to the path.
+    /// The recap is left only on request.
+    private func completionActionBar(nextLessonID: LessonID?) -> some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 12) { completionActions(nextLessonID: nextLessonID) }
+            VStack(spacing: 10) { completionActions(nextLessonID: nextLessonID) }
+        }
+        .frame(maxWidth: 620)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .top) { Divider() }
+    }
+
+    @ViewBuilder private func completionActions(nextLessonID: LessonID?) -> some View {
+        if let nextLessonID {
+            Button("Retour au parcours", action: returnToPath)
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .accessibilityIdentifier("lesson.completion.path")
+            Button("Continuer vers la leçon suivante") {
+                dismiss()
+                model.persistRoute(.lesson(nextLessonID))
+            }
+            .buttonStyle(SyllunePrimaryButtonStyle())
+            .accessibilityIdentifier("lesson.completion.next")
+        } else {
+            Button("Retour au parcours", action: returnToPath)
+                .buttonStyle(SyllunePrimaryButtonStyle())
+                .accessibilityIdentifier("lesson.completion.path")
+        }
+    }
+
+    private func returnToPath() {
+        dismiss()
+        model.persistRoute(.path)
+    }
+
+    /// First-try accuracy, time and best run. Hidden when the attempt has no
+    /// scored answer, as for a recap restored from an older journal.
+    @ViewBuilder private func completionStats(_ stats: LessonSessionStats, timeSpent: TimeInterval?) -> some View {
+        if let accuracy = stats.accuracy {
+            let percent = Int((accuracy * 100).rounded())
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 140), spacing: 12, alignment: .top)], alignment: .leading, spacing: 12) {
+                CompletionStatTile(
+                    title: "Précision",
+                    symbol: "target",
+                    value: "\(percent) %",
+                    detail: "au premier essai",
+                    accessibilityValue: "\(percent) pour cent au premier essai"
+                )
+                if let timeSpent {
+                    let minutes = Int((timeSpent / 60).rounded())
+                    CompletionStatTile(
+                        title: "Temps",
+                        symbol: "clock",
+                        value: minutes < 1 ? "< 1 min" : "\(minutes) min",
+                        detail: nil,
+                        accessibilityValue: minutes < 1 ? "moins d’une minute" : (minutes == 1 ? "1 minute" : "\(minutes) minutes")
+                    )
+                }
+                CompletionStatTile(
+                    title: "Meilleure série",
+                    symbol: "flame.fill",
+                    value: "\(stats.bestStreak)",
+                    detail: stats.bestStreak == 1 ? "bonne réponse" : "bonnes réponses d’affilée",
+                    accessibilityValue: stats.bestStreak == 1 ? "1 bonne réponse" : "\(stats.bestStreak) bonnes réponses d’affilée"
+                )
+            }
+        }
     }
 
     private func evaluationCountsAsComplete(_ value: ExerciseEvaluation?) -> Bool {
-        guard let value, value.accepted else { return false }
-        // Self-reported oral and handwriting answers do not carry an acoustic
-        // or visual score. Their acceptance records a deliberate learner
-        // decision; the SRS rating still controls when the item returns.
-        return value.outcome == .selfReported || value.score >= 0.8
+        value?.countsAsCorrect == true
     }
 }
 
+private struct CompletionStatTile: View {
+    let title: String
+    let symbol: String
+    let value: String
+    let detail: String?
+    let accessibilityValue: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Label(title, systemImage: symbol)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(SylluneColor.inkMuted)
+            Text(value)
+                .font(.title2.weight(.bold))
+                .monospacedDigit()
+                .foregroundStyle(SylluneColor.ink)
+            if let detail {
+                Text(detail)
+                    .font(.caption)
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sylluneCard(radius: 16)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(title)
+        .accessibilityValue(accessibilityValue)
+    }
+}
+
+/// The lesson's words as chips: each one plays the word and opens its fiche.
+private struct LessonWordsSection: View {
+    let recap: LessonWordsRecap
+    let languageCodes: [String]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(recap.kind == .learned ? "Mots appris" : "Mots revus")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(SylluneColor.ink)
+                .accessibilityAddTraits(.isHeader)
+            Text("Touche un mot pour l’écouter et ouvrir sa fiche.")
+                .font(.callout)
+                .foregroundStyle(SylluneColor.inkMuted)
+            SylluneFlowLayout(horizontalSpacing: 10, verticalSpacing: 10) {
+                ForEach(recap.words, id: \.id) { word in
+                    LessonWordChip(word: word, meaning: word.meaning.resolve(preferred: languageCodes) ?? "")
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sylluneCard(radius: 16)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("lesson.completion.words")
+    }
+}
+
+private struct LessonWordChip: View {
+    let word: VocabularyEntry
+    let meaning: String
+    @EnvironmentObject private var model: AppModel
+    @Environment(\.sylluneShellWordNavigation) private var shellWordNavigation
+    @State private var showsWord = false
+
+    var body: some View {
+        Button(action: open) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(word.hanzi)
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(SylluneColor.ink)
+                Text(word.pinyin)
+                    .font(.callout)
+                    .foregroundStyle(SylluneColor.jadeDeep)
+                if !meaning.isEmpty {
+                    Text(meaning)
+                        .font(.caption)
+                        .foregroundStyle(SylluneColor.inkMuted)
+                        .lineLimit(2)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .frame(minWidth: 88, minHeight: 44, alignment: .leading)
+            .background(SylluneColor.surfaceRaised, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(meaning.isEmpty ? "\(word.hanzi), \(word.pinyin)" : "\(word.hanzi), \(word.pinyin), \(meaning)")
+        .accessibilityHint("Écoute ce mot en mandarin et ouvre sa fiche.")
+        .accessibilityIdentifier("lesson.completion.word.\(word.id.rawValue)")
+        .navigationDestination(isPresented: $showsWord) {
+            // The chip has already started the word's audio.
+            WordDetailView(vocabularyID: word.id, autoPlayAudio: false)
+        }
+    }
+
+    private func open() {
+        let target = PolygoCore.MandarinSpeechText.target(from: word.hanzi)
+        if !target.isEmpty {
+            Task { @MainActor in
+                try? await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal, asset: word.audio)
+            }
+        }
+        if let shellWordNavigation {
+            shellWordNavigation(word.id)
+        } else {
+            showsWord = true
+        }
+    }
+}
+
+/// The answer's verdict and explanation, then Tavi's reaction. One
+/// VoiceOver element reads everything once; the artwork is decorative.
 private struct FeedbackView: View {
     let evaluation: ExerciseEvaluation
+    let reaction: TaviReaction?
+
     var body: some View {
         let isSkipped = evaluation.outcome == .skipped
-        HStack(alignment: .top, spacing: 10) {
-            Image(systemName: isSkipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill"))
-                .foregroundStyle(isSkipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
-            VStack(alignment: .leading, spacing: 4) {
-                Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Correct" : "À revoir")).font(.headline)
-                Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body)
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: isSkipped ? "forward.end.circle.fill" : (evaluation.accepted ? "checkmark.circle.fill" : "arrow.counterclockwise.circle.fill"))
+                    .foregroundStyle(isSkipped ? SylluneColor.inkMuted : (evaluation.accepted ? SylluneColor.success : SylluneColor.error))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(isSkipped ? "Passé sans évaluation" : (evaluation.accepted ? "Correct" : "À revoir")).font(.headline)
+                    Text(evaluation.feedback.resolve(preferred: ["fr", "en"]) ?? "").font(.body)
+                }
+                Spacer(minLength: 0)
             }
-            Spacer(minLength: 0)
-            TaviMascot(pose: .encouragement)
-                .frame(width: 60, height: 60)
-                .accessibilityHidden(true)
-                .allowsHitTesting(false)
+            if let reaction {
+                HStack(alignment: .center, spacing: 10) {
+                    TaviMascot(pose: reaction.mood == .celebration ? .celebration : .encouragement)
+                        .frame(width: 56, height: 56)
+                        .accessibilityHidden(true)
+                        .allowsHitTesting(false)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(reaction.message)
+                            .font(.callout.weight(.semibold))
+                        if let announcement = reaction.phaseAnnouncement {
+                            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                                Image(systemName: "arrow.forward.circle.fill")
+                                    .accessibilityHidden(true)
+                                Text(announcement)
+                            }
+                            .font(.callout)
+                            .foregroundStyle(SylluneColor.jadeDeep)
+                        }
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(SylluneColor.surfaceRaised, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                }
+            }
         }
         .foregroundStyle(SylluneColor.ink)
         .padding(16).frame(maxWidth: .infinity, alignment: .leading).sylluneCard(radius: 12)
         .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("lesson.feedback")
+    }
+}
+
+/// The lesson's progress bar, split into its phases: each segment is as wide
+/// as its share of the steps and fills as the learner moves through it.
+private struct LessonPhaseProgressBar: View {
+    let segments: [LessonPhaseSegment]
+    let currentStep: Int
+    let totalSteps: Int
+
+    private static let gap: CGFloat = 4
+
+    var body: some View {
+        GeometryReader { proxy in
+            let available = max(0, proxy.size.width - Self.gap * CGFloat(max(0, segments.count - 1)))
+            HStack(spacing: Self.gap) {
+                ForEach(segments, id: \.steps.lowerBound) { segment in
+                    let width = available * CGFloat(segment.steps.count) / CGFloat(max(1, totalSteps))
+                    ZStack(alignment: .leading) {
+                        Capsule()
+                            .fill(SylluneColor.progressTrack)
+                        Capsule()
+                            .fill(SylluneColor.jade)
+                            .frame(width: width * segment.completion(atStep: currentStep))
+                    }
+                    .frame(width: width)
+                }
+            }
+        }
+        // GeometryReader otherwise takes all the vertical space it is given.
+        .frame(height: 8)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Progression")
+        .accessibilityValue(accessibilityValue)
+    }
+
+    private var accessibilityValue: String {
+        let percent = "\(Int(Double(currentStep) / Double(max(1, totalSteps)) * 100)) pour cent"
+        let phased = segments.filter { $0.phase != nil }
+        guard let position = phased.firstIndex(where: { $0.steps.contains(currentStep) }),
+              let phase = phased[position].phase else { return percent }
+        return "\(percent), phase \(position + 1) sur \(phased.count) : \(phase.title)"
     }
 }
 

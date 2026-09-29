@@ -155,13 +155,17 @@ public struct LessonProgress: Codable, Hashable, Sendable {
     /// keyed by block ID so a lesson can contain more than one dialogue.
     public let dialogueDrafts: [BlockID: String]
     public let dialogueResults: [BlockID: Bool]
+    /// Whether each exercise was right at its first scored answer in the
+    /// current attempt (`ExerciseEvaluation.countsAsCorrect`). Later retries
+    /// never change it; a skipped or incomplete answer is not an attempt.
+    public let firstAttemptResults: [ExerciseID: Bool]
 
     private enum CodingKeys: String, CodingKey {
         case lessonID, completedObjectiveIDs, completedAt, attemptCount,
              bestScore, lastOpenedAt, answeredExerciseIDs, correctExerciseIDs,
              mistakeExerciseIDs, lastEvaluations, currentExerciseIndex,
              currentExerciseID, pendingAnswer, pendingEvaluation,
-             dialogueDrafts, dialogueResults
+             dialogueDrafts, dialogueResults, firstAttemptResults
     }
 
     public init(
@@ -180,7 +184,8 @@ public struct LessonProgress: Codable, Hashable, Sendable {
         pendingAnswer: ExerciseAnswer? = nil,
         pendingEvaluation: ExerciseEvaluation? = nil,
         dialogueDrafts: [BlockID: String] = [:],
-        dialogueResults: [BlockID: Bool] = [:]
+        dialogueResults: [BlockID: Bool] = [:],
+        firstAttemptResults: [ExerciseID: Bool] = [:]
     ) {
         self.lessonID = lessonID; self.completedObjectiveIDs = completedObjectiveIDs; self.completedAt = completedAt
         self.attemptCount = max(0, attemptCount); self.bestScore = min(1, max(0, bestScore)); self.lastOpenedAt = lastOpenedAt
@@ -191,6 +196,7 @@ public struct LessonProgress: Codable, Hashable, Sendable {
         self.pendingEvaluation = pendingEvaluation
         self.dialogueDrafts = dialogueDrafts
         self.dialogueResults = dialogueResults
+        self.firstAttemptResults = firstAttemptResults
     }
 
     public init(from decoder: Decoder) throws {
@@ -211,13 +217,26 @@ public struct LessonProgress: Codable, Hashable, Sendable {
             pendingAnswer: try c.decodeIfPresent(ExerciseAnswer.self, forKey: .pendingAnswer),
             pendingEvaluation: try c.decodeIfPresent(ExerciseEvaluation.self, forKey: .pendingEvaluation),
             dialogueDrafts: try c.decodeIfPresent([BlockID: String].self, forKey: .dialogueDrafts) ?? [:],
-            dialogueResults: try c.decodeIfPresent([BlockID: Bool].self, forKey: .dialogueResults) ?? [:]
+            dialogueResults: try c.decodeIfPresent([BlockID: Bool].self, forKey: .dialogueResults) ?? [:],
+            firstAttemptResults: try c.decodeIfPresent([ExerciseID: Bool].self, forKey: .firstAttemptResults) ?? [:]
         )
     }
 
     public var answeredCount: Int { answeredExerciseIDs.count }
     public var correctCount: Int { correctExerciseIDs.count }
     public var completionRate: Double { answeredExerciseIDs.isEmpty ? 0 : Double(correctExerciseIDs.count) / Double(answeredExerciseIDs.count) }
+
+    /// Longest span from opening to completion still read as one sitting.
+    /// Beyond it the learner paused, and the span no longer measures work.
+    public static let longestMeasuredSession: TimeInterval = 2 * 60 * 60
+
+    /// Time from opening the current attempt to completing it, when both are
+    /// known and form one sitting.
+    public var timeSpent: TimeInterval? {
+        guard let lastOpenedAt, let completedAt else { return nil }
+        let span = completedAt.timeIntervalSince(lastOpenedAt)
+        return (0...Self.longestMeasuredSession).contains(span) ? span : nil
+    }
 }
 
 public enum ReviewRating: Int, Codable, Hashable, Sendable, CaseIterable {

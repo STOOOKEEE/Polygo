@@ -340,8 +340,11 @@ public struct RecapBlock: Codable, Hashable, Sendable {
 }
 ```
 
-Seul `metadata.grammarPointID` est décodé des métadonnées de bloc ; le reste
-reste éditorial. `LessonFlow` (`Sources/PolygoCore/LessonFlow.swift`) transforme
+Des métadonnées de bloc, seuls `metadata.grammarPointID` et, pour un exercice,
+`metadata.stage` (`discover`, `guided`, `reuse` → `ExerciseBlock.phase`, nil
+pour toute autre valeur ou en son absence) sont décodés ; le reste reste
+éditorial. Des métadonnées de leçon, seul `metadata.newVocabularyIDs` l’est
+(`LessonDocument.metadata`, optionnel). `LessonFlow` (`Sources/PolygoCore/LessonFlow.swift`) transforme
 les blocs en une suite plate d’étapes `LessonStep` (apprentissage ou exercice) :
 chaque bloc d’apprentissage est placé juste avant le premier exercice qui en a
 besoin (note de grammaire avant son premier exercice lié, dialogue avant le
@@ -349,7 +352,20 @@ premier exercice qui cite une de ses répliques ou figure dans ses
 `comprehensionExerciseIDs`, lecture avant sa question), sinon à sa place d’auteur ;
 le vocabulaire est découpé en cartes de trois mots et le récapitulatif rejoint le
 bilan. La progression reste indexée par exercice ; `LessonFlow` fait la
-correspondance étape ↔ exercice et choisit l’étape de reprise.
+correspondance étape ↔ exercice et choisit l’étape de reprise. Il regroupe aussi
+les étapes en `phaseSegments` : une étape d’apprentissage prend la phase de
+l’exercice qu’elle prépare, et une leçon sans phases forme un seul segment.
+
+`Sources/PolygoCore/LessonSession.swift` porte le reste de la logique de séance.
+Le réducteur note dans `LessonProgress.firstAttemptResults` le verdict de la
+première réponse évaluée de chaque exercice (`ExerciseEvaluation.countsAsCorrect` ;
+un saut ou une réponse incomplète ne compte pas) ; un redémarrage l’efface.
+`LessonSessionStats` en tire, dans l’ordre de la leçon, la précision au premier
+essai et les séries de bonnes réponses ; `LessonProgress.timeSpent` mesure
+l’ouverture → la complétion quand l’écart reste sous deux heures. `TaviReaction`
+choisit la réplique de la mascotte dans de petites listes fixes, par position
+d’étape (pas de hasard), et `LessonWordsRecap` liste les mots nouveaux de la
+leçon, ou ceux de son récapitulatif quand elle n’en introduit aucun.
 
 Le parcours initial n’a pas besoin d’un serveur : il est construit à partir du
 manifeste et du snapshot local.

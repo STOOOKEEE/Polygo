@@ -472,6 +472,14 @@ public final class AppModel: ObservableObject {
         course?.modules.sorted { $0.order < $1.order }.flatMap(\.lessonIDs) ?? []
     }
 
+    /// The lesson that follows `id` in course order, when it is open.
+    public func lesson(after id: LessonID) -> LessonID? {
+        let ordered = orderedLessonIDs
+        guard let position = ordered.firstIndex(of: id), position + 1 < ordered.count else { return nil }
+        let following = ordered[position + 1]
+        return isLessonUnlocked(following) ? following : nil
+    }
+
     /// The lesson IDs that have a durable completion event. A plan day is
     /// derived from this set, never from the wall clock.
     public var completedLessonIDs: Set<LessonID> {

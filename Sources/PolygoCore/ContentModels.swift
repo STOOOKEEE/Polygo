@@ -129,6 +129,9 @@ public struct LessonDocument: Codable, Hashable, Sendable {
     public let vocabulary: [VocabularyEntry]
     public let blocks: [LessonBlock]
     public let cards: [ReviewCard]
+    /// The part of the lesson's editorial metadata the app reads. Older
+    /// lesson files omit it.
+    public let metadata: LessonMetadata?
 
     public init(
         schemaVersion: Int = 1,
@@ -143,7 +146,8 @@ public struct LessonDocument: Codable, Hashable, Sendable {
         objectives: [LearningObjective],
         vocabulary: [VocabularyEntry],
         blocks: [LessonBlock],
-        cards: [ReviewCard]
+        cards: [ReviewCard],
+        metadata: LessonMetadata? = nil
     ) {
         self.schemaVersion = schemaVersion
         self.contentVersion = contentVersion
@@ -158,6 +162,18 @@ public struct LessonDocument: Codable, Hashable, Sendable {
         self.vocabulary = vocabulary
         self.blocks = blocks
         self.cards = cards
+        self.metadata = metadata
+    }
+}
+
+/// Lesson metadata read by the app; the rest (allocation, theme, canonical
+/// IDs…) stays editorial and is ignored by the decoder.
+public struct LessonMetadata: Codable, Hashable, Sendable {
+    /// Words this lesson introduces for the first time, in authored order.
+    public let newVocabularyIDs: [VocabularyID]?
+
+    public init(newVocabularyIDs: [VocabularyID]? = nil) {
+        self.newVocabularyIDs = newVocabularyIDs
     }
 }
 

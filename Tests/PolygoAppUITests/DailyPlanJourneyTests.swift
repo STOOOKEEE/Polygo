@@ -122,6 +122,11 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(verify.isEnabled, "Une réponse choisie doit activer l’enregistrement")
         verify.tap()
         XCTAssertTrue(element(containing: "Correct").waitForExistence(timeout: timeout), "La réponse d’écoute doit être évaluée")
+        XCTAssertTrue(
+            app.descendants(matching: .any).matching(identifier: "lesson.feedback").firstMatch.waitForExistence(timeout: timeout),
+            "Tavi doit réagir à la réponse évaluée"
+        )
+        attachScreenshot(named: "ios-daily-plan-lesson-five-feedback")
         button(exactly: "Continuer").tap()
         let oralExercise = app.staticTexts.matching(
             identifier: "lesson.exercise.ex-l5-speak"
@@ -185,6 +190,10 @@ final class DailyPlanJourneyTests: XCTestCase {
             element(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit signaler l’oral passé sans évaluation"
         )
+        XCTAssertTrue(element(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan doit lister les mots appris de L5")
+        XCTAssertTrue(element(containing: "Précision").exists, "Le bilan doit afficher la précision au premier essai")
+        XCTAssertTrue(button(exactly: "Continuer vers la leçon suivante").exists, "Le bilan doit proposer la leçon suivante")
+        attachScreenshot(named: "ios-daily-plan-lesson-five-completion")
         let path = button(exactly: "Retour au parcours")
         XCTAssertTrue(path.waitForExistence(timeout: timeout), "Le bilan doit revenir au parcours")
         path.tap()
