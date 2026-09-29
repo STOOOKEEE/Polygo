@@ -367,12 +367,13 @@
       "kind": "introduction",
       "id": "block-lesson-59-grammar-01",
       "title": {
-        "fr": "Grammaire — 以前…现在…"
+        "fr": "Grammaire — 还 et 再 : encore, toujours, de nouveau"
       },
       "body": {
-        "fr": "以前 situe une situation passée et 现在 introduit la situation actuelle.\nExemple 1 : 以前我很害怕，现在走路很简单。\nyǐ qián wǒ hěn hài pà, xiàn zài zǒu lù hěn jiǎn dān.\nAvant j’avais très peur ; maintenant marcher est simple."
+        "fr": "En français, « encore » recouvre deux idées, le chinois les sépare. 还 (hái) se place devant le verbe pour dire « toujours » (l’état continue) ou « en plus ». 再 (zài) se place aussi devant le verbe, mais pour une action qui recommencera plus tard : 我明天再来 = je reviendrai demain. 再见 est un mot figé, comme « à la prochaine ».\nFormule : 还 / 再 + verbe\nExemple 1 : 他还在公司工作。\ntā hái zài gōng sī gōng zuò.\nIl travaille toujours à l’entreprise.\nExemple 2 : 我还想吃米饭。\nwǒ hái xiǎng chī mǐ fàn.\nJe veux aussi manger du riz.\nExemple 3 : 我明天再来。\nwǒ míng tiān zài lái.\nJe reviendrai demain.\nExemple 4 : 你再看一次吧。\nnǐ zài kàn yí cì ba.\nRegarde encore une fois.\nAttention : Ne traduis pas toujours « encore » par le même mot. Pour dire que quelqu’un fait toujours quelque chose, on met 还 : 他还在公司工作。 Avec 再, on parle d’une répétition à venir : 明天再来。"
       },
       "metadata": {
+        "grammarPointID": "gram-hai-zai",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 55
@@ -878,6 +879,128 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l59-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l59-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je reviendrai demain »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "再",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": [
+          [
+            "b",
+            "a",
+            "c",
+            "d"
+          ]
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-hai-zai",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l59-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l59-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 他___在公司工作。 (« Il travaille toujours à l’entreprise ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l59-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "还 (hái)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "再 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "也 (yě)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-hai-zai",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 55
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l59-order",
       "spec": {
         "kind": "wordOrder",
@@ -1087,135 +1210,27 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-translate-exa-1",
+      "id": "block-ex-l59-fill-dia-7",
       "spec": {
-        "kind": "translation",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l59-translate-exa-1",
+          "id": "ex-l59-fill-dia-7",
           "prompt": {
-            "fr": "Traduis en chinois : « Je comprends ce que tu veux dire »"
+            "fr": "Complète : 是吗？___你说话，我都不懂。 (« Vraiment ? L’an dernier, quand tu parlais, je ne comprenais rien »)"
           },
           "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l59-produce"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "g",
-            "hanzi": "公司",
-            "pinyin": "gōng sī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "累",
-            "pinyin": "lèi",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "意思",
-            "pinyin": "yì si",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "懂",
-            "pinyin": "dǒng",
-            "audio": null
-          }
+        "sentence": "是吗？___你说话，我都不懂。",
+        "acceptedAnswers": [
+          "去年"
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 55
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l59-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l59-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Je travaille dans une entreprise »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l59-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "公司",
-            "pinyin": "gōng sī",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "我在公司上班。",
-          "我在公司上班"
-        ]
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
@@ -1278,57 +1293,65 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l59-fill-rea-2",
+      "id": "block-ex-l59-order-rea-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l59-fill-rea-2",
+          "id": "ex-l59-order-rea-1",
           "prompt": {
-            "fr": "Complète : 他工作很多个___，有时候很累。 (« Il travaille de longues heures et, parfois, il est très fatigué »)"
+            "fr": "Construis « Mon ami travaille dans une entreprise »."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
             "l59-produce"
           ],
           "required": true
         },
-        "sentence": "他工作很多个___，有时候很累。",
-        "acceptedAnswers": [
-          "小时"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 55
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l59-fill-rea-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l59-fill-rea-3",
-          "prompt": {
-            "fr": "Complète : ___他不懂电脑，现在他懂了，所以工作快多了。 (« L’an dernier il ne s’y connaissait pas en informatique ; maintenant si, donc il travaille beaucoup plus vite »)"
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
           },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
+          {
+            "id": "e",
+            "hanzi": "工作",
+            "pinyin": "gōng zuò",
+            "audio": null
           },
-          "objectiveIDs": [
-            "l59-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___他不懂电脑，现在他懂了，所以工作快多了。",
-        "acceptedAnswers": [
-          "去年"
+          {
+            "id": "d",
+            "hanzi": "公司",
+            "pinyin": "gōng sī",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "朋友",
+            "pinyin": "péng you",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我的朋友在公司工作。",
+          "我的朋友在公司工作"
+        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1719,5 +1742,19 @@
     "unitID": "unit-08",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-hai-zai",
+      "pattern": "还 / 再 + verbe",
+      "function": "还 et 再 : encore, toujours, de nouveau",
+      "markers": [
+        "还",
+        "再"
+      ],
+      "errors": [
+        "Ne traduis pas toujours « encore » par le même mot. Pour dire que quelqu’un fait toujours quelque chose, on met 还 : 他还在公司工作。 Avec 再, on parle d’une répétition à venir : 明天再来。"
+      ]
+    }
+  ]
 }

@@ -335,42 +335,13 @@
       "kind": "introduction",
       "id": "block-lesson-09-grammar-01",
       "title": {
-        "fr": "Grammaire — verbe + 了"
+        "fr": "Grammaire — 想 et 会 : envie et capacité + verbe"
       },
       "body": {
-        "fr": "了 placé après le verbe signale ici une action terminée : 我看了 signifie « j’ai regardé ».\nExemple 1 : 我看了电影。\nwǒ kàn le diàn yǐng.\nJ’ai regardé un film."
+        "fr": "想 (xiǎng) et 会 (huì) sont des verbes modaux : ils se placent juste avant le verbe principal, qui ne change jamais de forme. 想 exprime l’envie (« avoir envie de »), 会 une capacité apprise ou ce qui va arriver. On nie le modal avec 不 : 不想, 不会. Pour poser la question, ajoute 吗 à la fin.\nFormule : Sujet + 想/会 + verbe\nExemple 1 : 我不想去。\nwǒ bù xiǎng qù.\nJe n’ai pas envie d’y aller.\nExemple 2 : 你会去吗？\nnǐ huì qù ma?\nTu viendras ?\nExemple 3 : 你想去我家吗？\nnǐ xiǎng qù wǒ jiā ma?\nÇa te dit de venir chez moi ?\nExemple 4 : 朋友会去我家。\npéng you huì qù wǒ jiā.\nMon ami viendra chez moi.\nAttention : Ne mets pas le modal après le verbe : 我去想 ne veut rien dire, dis 我想去。 Pour nier, 不 va devant le modal, pas devant le verbe principal : 我不想去。"
       },
       "metadata": {
-        "stage": "introduce",
-        "skill": "recognition",
-        "lessonDay": 5
-      }
-    },
-    {
-      "kind": "introduction",
-      "id": "block-lesson-09-grammar-02",
-      "title": {
-        "fr": "Grammaire — 会 + verbe"
-      },
-      "body": {
-        "fr": "会 indique une capacité apprise ou une possibilité future : 我会说汉语 signifie « je sais parler chinois ».\nExemple 1 : 我会说汉语。\nwǒ huì shuō Hàn yǔ.\nJe sais parler chinois."
-      },
-      "metadata": {
-        "stage": "introduce",
-        "skill": "recognition",
-        "lessonDay": 5
-      }
-    },
-    {
-      "kind": "introduction",
-      "id": "block-lesson-09-grammar-03",
-      "title": {
-        "fr": "Grammaire — 从 A 到 B"
-      },
-      "body": {
-        "fr": "从 et 到 encadrent un point de départ et un point d’arrivée.\nExemple 1 : 从家到火车站很近。\ncóng jiā dào huǒ chē zhàn hěn jìn.\nDe la maison à la gare, c’est proche."
-      },
-      "metadata": {
+        "grammarPointID": "gram-xiang-hui",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 5
@@ -633,11 +604,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-dict-sent-dia-4",
+      "id": "block-ex-l9-dict-sent-dia-5",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l9-dict-sent-dia-4",
+          "id": "ex-l9-dict-sent-dia-5",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -650,26 +621,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "会！我买了茶，也买了书。",
+        "promptText": "你买了茶！我有电影，你有茶。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "huì! wǒ mǎi le chá, yě mǎi le shū."
+              "fr": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "xiǎng! wǒ zài huǒ chē zhàn, nǐ zài nǎ?"
+              "fr": "cóng huǒ chē zhàn qù nǐ jiā, wǒ bù zhī dào."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá."
+              "fr": "wǒ zài jiā, diàn nǎo yě zài jiā. nǐ huì qù ma?"
             },
             "audio": null
           }
@@ -850,6 +821,118 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l9-gram-1",
+          "prompt": {
+            "fr": "Construis « Tu viendras ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "会",
+            "pinyin": "huì",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "你会去吗？",
+          "你会去吗"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-xiang-hui",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 5
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l9-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l9-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 我不___去。 (« Je n’ai pas envie d’y aller ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l9-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "会 (huì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "有 (yǒu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "想 (xiǎng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-xiang-hui",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 5
       }
@@ -1142,54 +1225,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-talk-2",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l9-talk-2",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l9-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "想！我在火车站，你在哪？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "从火车站去商店，从商店去我家。",
-            "pinyin": "cóng huǒ chē zhàn qù shāng diàn, cóng shāng diàn qù wǒ jiā.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "你好！我有电影，你想去我家吗？",
-            "pinyin": "nǐ hǎo! wǒ yǒu diàn yǐng, nǐ xiǎng qù wǒ jiā ma?",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我在家，电脑也在家。你会去吗？",
-            "pinyin": "wǒ zài jiā, diàn nǎo yě zài jiā. nǐ huì qù ma?",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 5
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l9-dialogue-4-3",
       "spec": {
         "kind": "dialogueOrder",
@@ -1264,74 +1299,6 @@
           "从"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 5
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l9-order-rea-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l9-order-rea-4",
-          "prompt": {
-            "fr": "Construis « Il va venir chez moi »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l9-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "会",
-            "pinyin": "huì",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "朋友会去我家。",
-          "朋友会去我家"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1728,5 +1695,19 @@
     "unitID": "unit-02",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-xiang-hui",
+      "pattern": "Sujet + 想/会 + verbe",
+      "function": "想 et 会 : envie et capacité + verbe",
+      "markers": [
+        "想",
+        "会"
+      ],
+      "errors": [
+        "Ne mets pas le modal après le verbe : 我去想 ne veut rien dire, dis 我想去。 Pour nier, 不 va devant le modal, pas devant le verbe principal : 我不想去。"
+      ]
+    }
+  ]
 }

@@ -15,6 +15,10 @@ in `metadata.stage`: the newer kinds open the discovery phase (matching,
 dictation, tones), guided practice (translation, conversation) and re-use
 (dialogue ordering), and each lesson gets at least `MIN_NEW_KINDS` of them.
 
+A lesson with a grammar note also carries the note's two exercises (`metadata.grammarPointID`): they
+lead the guided phase, count in the session's length and in the exposure of the words they present,
+but not in the phase's share of derived exercises.
+
 The session is planned as a cover: the lesson introduces at most
 `MAX_NEW_WORDS` words, and each of them must be presented by at least
 `MIN_EXPOSURES` exercises of at least `MIN_EXPOSURE_KINDS` different kinds.
@@ -45,6 +49,7 @@ EXERCISE_TARGET = 18
 MAX_NEW_WORDS = 8
 MIN_EXPOSURES = 3
 MIN_EXPOSURE_KINDS = 3
+GRAMMAR_FAMILY = "grammar"
 _PHASE_CAPS = {"discover": 8, "guided": 7, "reuse": 7}
 _PHASE_MINIMUM = 5
 # Speaking is self-rated and quick to build, so it must not crowd out the rest.
@@ -1005,7 +1010,8 @@ class _Planner:
         )
 
     def _load(self, phase: str) -> int:
-        return sum(1 for item in self.chosen if item.exercise.phase == phase)
+        # The grammar exercises of a lesson come on top of the phase's own share.
+        return sum(1 for item in self.chosen if item.exercise.phase == phase and item.family != GRAMMAR_FAMILY)
 
     def _allowed(self, candidate: Candidate) -> bool:
         if len(self.chosen) >= EXERCISE_BUDGET[1] or self._load(candidate.exercise.phase) >= _PHASE_CAPS[candidate.exercise.phase]:
@@ -1097,9 +1103,12 @@ def expand_lesson_exercises(
         ("discover", authored_block("meaning")), ("guided", authored_block("order")), ("guided", authored_block("fill")),
         ("reuse", authored_block("listen")), ("reuse", authored_block("speak")), ("reuse", reading_authored),
     ]
+    # The lesson's grammar note comes with exercises that manipulate its structure; they lead guided practice.
+    grammar_blocks = [block for block in exercise_blocks if block.get("metadata", {}).get("grammarPointID")]
     planner = _Planner(
         builder,
-        [builder.candidate(Exercise(phase, block["spec"]), "authored") for phase, block in fixed],
+        [builder.candidate(Exercise(phase, block["spec"]), "authored") for phase, block in fixed]
+        + [builder.candidate(Exercise("guided", block["spec"]), GRAMMAR_FAMILY) for block in grammar_blocks],
         builder.candidates(),
     )
     planner.require_new_kinds()
@@ -1120,17 +1129,18 @@ def expand_lesson_exercises(
     ordered: list[Candidate] = []
     for phase in PHASES:
         session = [item for item in planner.chosen if item.exercise.phase == phase and not any(item.exercise.spec is spec for spec in closing_specs)]
-        ordered.extend(_spread_kinds(session))
+        grammar = [item for item in session if item.family == GRAMMAR_FAMILY]
+        ordered.extend(grammar + _spread_kinds([item for item in session if item.family != GRAMMAR_FAMILY]))
     for spec in closing_specs:
         ordered.append(next(item for item in planner.chosen if item.exercise.spec is spec))
-    builder.reposition([item.exercise for item in ordered if item.family != "authored"])
+    builder.reposition([item.exercise for item in ordered if item.family not in {"authored", GRAMMAR_FAMILY}])
 
     new_blocks = [
         {
             "kind": "exercise",
             "id": f"block-{item.exercise.spec['header']['id']}",
             "spec": item.exercise.spec,
-            "metadata": {"stage": item.exercise.phase},
+            "metadata": {**authored.get(item.exercise.spec["header"]["id"], {}).get("metadata", {}), "stage": item.exercise.phase},
         }
         for item in ordered
     ]

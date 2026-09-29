@@ -368,12 +368,13 @@
       "kind": "introduction",
       "id": "block-lesson-47-grammar-01",
       "title": {
-        "fr": "Grammaire — 虽然…但是…"
+        "fr": "Grammaire — 但是 : dire « mais »"
       },
       "body": {
-        "fr": "虽然 introduit une concession suivie de 但是.\nExemple 1 : 虽然考试很难，但是我一定努力。\nsuī rán kǎo shì hěn nán， dàn shì wǒ yí dìng nǔ lì。\nMême si l’examen est difficile, je travaillerai sérieusement."
+        "fr": "但是 (dàn shì) veut dire « mais » et ouvre la deuxième partie de la phrase, comme en français. Le sujet vient après lui : 他学习汉语，但是很多字不会写. Il suit donc presque toujours une première proposition, séparée par une virgule ; ici, tu vois seulement la seconde partie. Ne le confonds pas avec 和 (hé) : 和 relie des noms, jamais deux propositions.\nFormule : Phrase A，但是 + phrase B\nExemple 1 : 但是我不想去。\ndàn shì wǒ bù xiǎng qù.\nMais je n’ai pas envie d’y aller.\nExemple 2 : 但是他不想读书。\ndàn shì tā bù xiǎng dú shū.\nMais il n’a pas envie de lire.\nExemple 3 : 但是明天我有考试。\ndàn shì míng tiān wǒ yǒu kǎo shì.\nMais demain, j’ai un examen.\nExemple 4 : 但是很多字不会写。\ndàn shì hěn duō zì bú huì xiě.\nMais il y a beaucoup de caractères qu’il ne sait pas écrire.\nAttention : Ne traduis pas « mais » par 和 : 和 ne relie que des noms (茶和水). Pour opposer deux idées, mets 但是 devant la seconde : 我想去，但是我没有时间."
       },
       "metadata": {
+        "grammarPointID": "gram-danshi",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 43
@@ -822,57 +823,189 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-pick-181",
+      "id": "block-ex-l47-match-pinyin",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "matching",
         "header": {
-          "id": "ex-l47-pick-181",
+          "id": "ex-l47-match-pinyin",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+            "fr": "Associe chaque mot à son pinyin."
           },
           "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+            "fr": "Touche un mot, puis touche ce qui lui correspond."
           },
           "objectiveIDs": [
             "l47-understand"
           ],
           "required": true
         },
-        "promptText": "告诉",
-        "choices": [
+        "pairs": [
           {
             "id": "a",
-            "label": {
-              "fr": "弟弟 (dì di)"
-            },
-            "audio": null
+            "left": "读",
+            "pinyin": null,
+            "right": {
+              "fr": "dú"
+            }
           },
           {
             "id": "b",
-            "label": {
-              "fr": "告诉 (gào sù)"
-            },
+            "left": "很",
+            "pinyin": null,
+            "right": {
+              "fr": "hěn"
+            }
+          },
+          {
+            "id": "c",
+            "left": "今天",
+            "pinyin": null,
+            "right": {
+              "fr": "jīn tiān"
+            }
+          },
+          {
+            "id": "d",
+            "left": "但是",
+            "pinyin": null,
+            "right": {
+              "fr": "dàn shì"
+            }
+          },
+          {
+            "id": "e",
+            "left": "弟弟",
+            "pinyin": null,
+            "right": {
+              "fr": "dì di"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l47-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Mais je n’ai pas envie d’y aller »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "想",
+            "pinyin": "xiǎng",
             "audio": null
           },
           {
             "id": "c",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "但是",
+            "pinyin": "dàn shì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "也",
+            "pinyin": "yě",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-danshi",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 43
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l47-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l47-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : ___他不想读书。 (« Mais il n’a pas envie de lire ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l47-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
             "label": {
               "fr": "但是 (dàn shì)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "b",
             "label": {
-              "fr": "考试 (kǎo shì)"
+              "fr": "和 (hé)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "所以 (suǒ yǐ)"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
-        "stage": "discover",
+        "grammarPointID": "gram-danshi",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 43
       }
@@ -1061,24 +1194,24 @@
         "replies": [
           {
             "id": "a",
+            "hanzi": "是。他学习汉语，但是很多字不会写。",
+            "pinyin": "shì. tā xué xí hàn yǔ, dàn shì hěn duō zì bú huì xiě.",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "我告诉他了，但是他不想读书。",
             "pinyin": "wǒ gào sù tā le, dàn shì tā bù xiǎng dú shū.",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "c",
             "hanzi": "明天我弟弟有考试，他希望我帮助他。",
             "pinyin": "míng tiān wǒ dì di yǒu kǎo shì, tā xī wàng wǒ bāng zhù tā.",
             "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "是。他学习汉语，但是很多字不会写。",
-            "pinyin": "shì. tā xué xí hàn yǔ, dàn shì hěn duō zì bú huì xiě.",
-            "audio": null
           }
         ],
-        "correctReplyID": "c"
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
@@ -1088,128 +1221,27 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-translate-exa-5",
+      "id": "block-ex-l47-fill-dia-1",
       "spec": {
-        "kind": "translation",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l47-translate-exa-5",
+          "id": "ex-l47-fill-dia-1",
           "prompt": {
-            "fr": "Traduis en chinois : « Répète, s’il te plaît »"
+            "fr": "Complète : 明天我___有考试，他希望我帮助他。 (« Mon petit frère a un examen demain, il voudrait que je l’aide »)"
           },
           "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l47-produce"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "再",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "考试",
-            "pinyin": "kǎo shì",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "告诉",
-            "pinyin": "gào sù",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "说",
-            "pinyin": "shuō",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "一",
-            "pinyin": "yí",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "遍",
-            "pinyin": "biàn",
-            "audio": null
-          }
+        "sentence": "明天我___有考试，他希望我帮助他。",
+        "acceptedAnswers": [
+          "弟弟"
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 43
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l47-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l47-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Mon petit frère est à la maison »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l47-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "弟弟",
-            "pinyin": "dì di",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "我弟弟在家。",
-          "我弟弟在家"
-        ]
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
@@ -1272,57 +1304,28 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l47-fill-rea-1",
+      "id": "block-ex-l47-listen-rea-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l47-fill-rea-1",
+          "id": "ex-l47-listen-rea-1",
           "prompt": {
-            "fr": "Complète : 我朋友的___明天有考试。 (« Le petit frère d’un ami a un examen demain »)"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l47-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我朋友的___明天有考试。",
-        "acceptedAnswers": [
-          "弟弟"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 43
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l47-read-dia-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l47-read-dia-1",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 明天我弟弟有考试，他希望我帮助他。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
             "l47-understand"
           ],
           "required": true
         },
+        "promptText": "我朋友的弟弟明天有考试。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Je le lui ai déjà dit, mais il n’a pas envie de lire."
+              "fr": "L’examen est demain, il doit s’y mettre !"
             },
             "audio": null
           },
@@ -1336,12 +1339,12 @@
           {
             "id": "c",
             "label": {
-              "fr": "Tu peux l’aider ? Toi aussi, tu étudies le chinois."
+              "fr": "Le petit frère d’un ami a un examen demain."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1726,5 +1729,18 @@
     "unitID": "unit-07",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-danshi",
+      "pattern": "Phrase A，但是 + phrase B",
+      "function": "但是 : dire « mais »",
+      "markers": [
+        "但是"
+      ],
+      "errors": [
+        "Ne traduis pas « mais » par 和 : 和 ne relie que des noms (茶和水). Pour opposer deux idées, mets 但是 devant la seconde : 我想去，但是我没有时间."
+      ]
+    }
+  ]
 }

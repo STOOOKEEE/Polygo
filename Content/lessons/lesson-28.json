@@ -326,12 +326,13 @@
       "kind": "introduction",
       "id": "block-lesson-28-grammar-01",
       "title": {
-        "fr": "Grammaire — 如果…就…"
+        "fr": "Grammaire — 个 et 块 : nombre + classificateur"
       },
       "body": {
-        "fr": "如果 pose une condition et 就 présente sa conséquence.\nExemple 1 : 如果可以，就现在进去。\nrú guǒ kě yǐ， jiù xiàn zài jìn qù。\nSi c’est possible, entre maintenant."
+        "fr": "Entre un nombre et un nom, le chinois glisse toujours un classificateur, un petit mot sans équivalent en français : nombre + classificateur + nom. 个 est le classificateur général : « 三个朋友 », « 一个商店 ». Pour l’argent, on compte en 块 (yuan) : « 十块钱 », et 钱 peut être omis. Le nom ne change jamais, même au pluriel.\nFormule : Nombre + 个 / 块 + nom\nExemple 1 : 我有三个朋友。\nwǒ yǒu sān gè péng you.\nJ’ai trois amis.\nExemple 2 : 学校前面有一个商店。\nxué xiào qián miàn yǒu yí gè shāng diàn.\nIl y a un magasin devant l’école.\nExemple 3 : 这个红杯子十七块。\nzhè ge hóng bēi zi shí qī kuài.\nCette tasse rouge coûte dix-sept yuans.\nExemple 4 : 我今天有十块钱。\nwǒ jīn tiān yǒu shí kuài qián.\nAujourd’hui j’ai dix yuans.\nAttention : Ne saute pas le classificateur : 三朋友 est faux, dis 三个朋友. Et ne compte pas l’argent avec 个 : 十个钱 est faux, dis 十块钱."
       },
       "metadata": {
+        "grammarPointID": "gram-measure",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 24
@@ -845,6 +846,128 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l28-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l28-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « J’ai trois amis »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "朋友",
+            "pinyin": "péng you",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "三",
+            "pinyin": "sān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "块",
+            "pinyin": "kuài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-measure",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l28-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l28-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 我今天有十___钱。 (« Aujourd’hui j’ai dix yuans ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l28-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "家 (jiā)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "块 (kuài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "个 (gè)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-measure",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 24
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l28-order",
       "spec": {
         "kind": "wordOrder",
@@ -1047,76 +1170,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l28-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l28-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « Je n’ai pas d’argent »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l28-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "买",
-            "pinyin": "mǎi",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "钱",
-            "pinyin": "qián",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "没",
-            "pinyin": "méi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l28-talk-8",
       "spec": {
         "kind": "conversationChoice",
@@ -1243,55 +1296,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 24
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l28-read-rea-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l28-read-rea-1",
-          "prompt": {
-            "fr": "Dans le texte « Rouge ou bleue ? », que signifie : 我在学校前面的商店买杯子，不知道要什么颜色。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l28-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "J’achète une tasse dans le magasin devant l’école, et je ne sais pas de quelle couleur la prendre."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "La rouge est très jolie, elle coûte dix-sept yuans et je n’ai pas beaucoup d’argent."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Et la bleue ? Elle est plus petite que la rouge, elle doit coûter dix yuans."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 24
       }
     },
@@ -1648,5 +1652,19 @@
     "unitID": "unit-04",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-measure",
+      "pattern": "Nombre + 个 / 块 + nom",
+      "function": "个 et 块 : nombre + classificateur",
+      "markers": [
+        "个",
+        "块"
+      ],
+      "errors": [
+        "Ne saute pas le classificateur : 三朋友 est faux, dis 三个朋友. Et ne compte pas l’argent avec 个 : 十个钱 est faux, dis 十块钱."
+      ]
+    }
+  ]
 }

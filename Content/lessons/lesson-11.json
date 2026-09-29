@@ -367,12 +367,13 @@
       "kind": "introduction",
       "id": "block-lesson-11-grammar-01",
       "title": {
-        "fr": "Grammaire — 也 + verbe"
+        "fr": "Grammaire — 也 et 都 : aussi, tous"
       },
       "body": {
-        "fr": "也 ajoute une information équivalente avant le verbe.\nExemple 1 : 我也吃米饭。\nwǒ yě chī mǐ fàn。\nJe mange aussi du riz."
+        "fr": "也 (yě) veut dire « aussi » et 都 (dōu) « tous, tout ». Tous deux se placent entre le sujet et le verbe (ou l’adjectif), jamais à la fin de la phrase. Si tu les combines, l’ordre est fixe : 也都. 都 reprend un sujet pluriel : 我们都 = nous tous.\nFormule : Sujet + 也/都 + verbe\nExemple 1 : 菜也多。\ncài yě duō.\nIl y a aussi beaucoup de légumes.\nExemple 2 : 你也喝牛奶吗？\nnǐ yě hē niú nǎi ma?\nTu bois aussi du lait ?\nExemple 3 : 妈妈和爸爸都在家。\nmā ma hé bà ba dōu zài jiā.\nMaman et papa sont tous les deux à la maison.\nExemple 4 : 我们也都喝牛奶。\nwǒ men yě dōu hē niú nǎi.\nNous buvons tous du lait aussi.\nAttention : Ne mets pas 也 ni 都 en fin de phrase comme le français « aussi » : 我喝茶也 est faux, dis 我也喝茶。 Avec les deux, 也 passe avant 都 : 也都, jamais 都也。"
       },
       "metadata": {
+        "grammarPointID": "gram-ye-dou",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 7
@@ -878,6 +879,125 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l11-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l11-gram-1",
+          "prompt": {
+            "fr": "Construis « Nous sommes tous à la maison, nous aussi »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "也",
+            "pinyin": "yě",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我们也都在家。",
+          "我们也都在家"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-ye-dou",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l11-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l11-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 妈妈和爸爸___在家。 (« Maman et papa sont tous les deux à la maison ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l11-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "都 (dōu)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "也 (yě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "的 (de)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-ye-dou",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 7
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l11-order",
       "spec": {
         "kind": "wordOrder",
@@ -1087,76 +1207,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l11-translate-exa-3",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l11-translate-exa-3",
-          "prompt": {
-            "fr": "Traduis en chinois : « C’est mon livre »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l11-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "妹妹",
-            "pinyin": "mèi mei",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "牛奶",
-            "pinyin": "niú nǎi",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "书",
-            "pinyin": "shū",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l11-talk-8",
       "spec": {
         "kind": "conversationChoice",
@@ -1287,88 +1337,6 @@
           "妹妹"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 7
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l11-order-rea-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l11-order-rea-1",
-          "prompt": {
-            "fr": "Construis « Aujourd’hui, nous mangeons du riz chez mon ami »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l11-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "吃",
-            "pinyin": "chī",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "米饭",
-            "pinyin": "mǐ fàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "今天我们在朋友家吃米饭。",
-          "今天我们在朋友家吃米饭"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1753,5 +1721,19 @@
     "unitID": "unit-02",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-ye-dou",
+      "pattern": "Sujet + 也/都 + verbe",
+      "function": "也 et 都 : aussi, tous",
+      "markers": [
+        "也",
+        "都"
+      ],
+      "errors": [
+        "Ne mets pas 也 ni 都 en fin de phrase comme le français « aussi » : 我喝茶也 est faux, dis 我也喝茶。 Avec les deux, 也 passe avant 都 : 也都, jamais 都也。"
+      ]
+    }
+  ]
 }

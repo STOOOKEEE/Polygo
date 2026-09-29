@@ -377,12 +377,13 @@
       "kind": "introduction",
       "id": "block-lesson-51-grammar-01",
       "title": {
-        "fr": "Grammaire — 被 + agent"
+        "fr": "Grammaire — 最 : dire « le plus »"
       },
       "body": {
-        "fr": "被 présente ce qui subit une action et peut ensuite préciser l’agent.\nExemple 1 : 雨水被风吹进来了。\nyǔ shuǐ bèi fēng chuī jìn lái le.\nL’eau de pluie a été poussée à l’intérieur par le vent."
+        "fr": "最 (zuì) veut dire « le plus » : on le place juste devant l’adjectif ou le verbe, 最漂亮 (le plus joli), 最喜欢 (aimer le plus). Il n’y a pas de mot pour « de » et on n’ajoute pas 很. Devant un nom, l’adjectif prend 的 : 最漂亮的路 (la plus belle rue).\nFormule : Sujet + 最 + adjectif / verbe\nExemple 1 : 我最喜欢吃鱼。\nwǒ zuì xǐ huān chī yú.\nCe que j’aime le plus, c’est manger du poisson.\nExemple 2 : 红的最漂亮。\nhóng de zuì piào liàng.\nLe rouge est le plus joli.\nExemple 3 : 他是我最好的朋友。\ntā shì wǒ zuì hǎo de péng yǒu.\nC’est mon meilleur ami.\nExemple 4 : 这是北京最漂亮的路。\nzhè shì běi jīng zuì piào liàng de lù.\nC’est la plus belle rue de Pékin.\nAttention : Ne mets pas 很 avec 最 : dis 最漂亮, jamais 很最漂亮 ni 最很漂亮. Et 最 se place avant le verbe : 我最喜欢吃鱼, pas 我喜欢吃鱼最."
       },
       "metadata": {
+        "grammarPointID": "gram-zui",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 47
@@ -896,6 +897,121 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l51-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l51-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Le rouge est le plus joli »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "最",
+            "pinyin": "zuì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "红",
+            "pinyin": "hóng",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-zui",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l51-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l51-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 这是北京___漂亮的路。 (« C’est la plus belle rue de Pékin ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l51-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "比 (bǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "太 (tài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "最 (zuì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-zui",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 47
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l51-order",
       "spec": {
         "kind": "wordOrder",
@@ -1112,76 +1228,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l51-translate-exa-3",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l51-translate-exa-3",
-          "prompt": {
-            "fr": "Traduis en chinois : « Je connais la réponse »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l51-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "答",
-            "pinyin": "dá",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "知道",
-            "pinyin": "zhī dào",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "最",
-            "pinyin": "zuì",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "案",
-            "pinyin": "àn",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "进",
-            "pinyin": "jìn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 47
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l51-talk-3",
       "spec": {
         "kind": "conversationChoice",
@@ -1304,88 +1350,6 @@
           "百"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 47
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l51-order-rea-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l51-order-rea-1",
-          "prompt": {
-            "fr": "Construis « C’est la plus belle rue de Pékin »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l51-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "路",
-            "pinyin": "lù",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "北京",
-            "pinyin": "běi jīng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "最",
-            "pinyin": "zuì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "这是北京最漂亮的路。",
-          "这是北京最漂亮的路"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1823,5 +1787,18 @@
     "unitID": "unit-07",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-zui",
+      "pattern": "Sujet + 最 + adjectif / verbe",
+      "function": "最 : dire « le plus »",
+      "markers": [
+        "最"
+      ],
+      "errors": [
+        "Ne mets pas 很 avec 最 : dis 最漂亮, jamais 很最漂亮 ni 最很漂亮. Et 最 se place avant le verbe : 我最喜欢吃鱼, pas 我喜欢吃鱼最."
+      ]
+    }
+  ]
 }

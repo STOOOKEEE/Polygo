@@ -69,15 +69,17 @@ Les champs linguistiques sont les suivants :
 * `extraVocabulary` contient les mots hors catalogue, au même format lexical
   mais sans `canonicalID`; ils peuvent être affichés et utilisés dans les
   phrases, mais ne comptent jamais dans `vocabularyTarget`.
-* `grammar` est une liste de `{vocabularyID, pattern, explanation, examples}`.
-  `examples` contient au moins un exemple `{hanzi, pinyin, translation}` avec
-  sa traduction `fr`. La référence `vocabularyID` est vérifiée dans le lexique
-  de la leçon, puis le générateur abaisse chaque note en `IntroductionBlock`
-  autonome (`block-<lesson>-grammar-01`, etc.) : le titre reprend le pattern et
-  le corps affiche l'explication française, puis chaque exemple sur trois
-  lignes (hanzi, pinyin, français). Une note de grammaire est donc propre à la
-  séance et ne modifie jamais le `VocabularyEntry` réutilisé ; le même lexème
-  peut ainsi recevoir une explication différente lors d'une séance ultérieure.
+* `grammar` est une liste de notes `{pattern, explanation, examples}`, avec en
+  option `id`, `formula` et `mistake`. `examples` contient au moins un exemple
+  `{hanzi, pinyin, translation}` avec sa traduction `fr`. Le générateur abaisse
+  chaque note en `IntroductionBlock` autonome (`block-<lesson>-grammar-01`,
+  etc.) : le titre reprend le pattern et le corps affiche l'explication
+  française, la formule (`Formule : …`), chaque exemple sur trois lignes (hanzi,
+  pinyin, français) puis la faute fréquente (`Attention : …`) ; avec un `id`, le
+  bloc porte `metadata.grammarPointID`. Une note de grammaire est donc propre à
+  la séance et ne modifie jamais le `VocabularyEntry` réutilisé. Pour les 66
+  séances du jour, l'assembleur retire les `grammar` des fragments : la
+  grammaire y vient du syllabus (voir « Syllabus de grammaire »).
 * `dialogue` contient `{id, lines, participation?}`. Une ligne contient
   `{speaker, hanzi, pinyin, translation, audio?}`.
 * `reading` contient `{id, storyID, level?, title, paragraphs, comprehensionExerciseIDs?}`.
@@ -101,9 +103,13 @@ gardent leur étape éditoriale.
 | Phase (`stage`) | Exercices | Contenu |
 | --- | --- | --- |
 | `discover` | 5 à 7 | association mot/sens ou mot/pinyin (`matching`), dictée (`dictation`), discrimination des tons (`toneDiscrimination`), reconnaissance du sens et écoute de mots |
-| `guided` | 6 à 7 | traduction par tuiles (`translation`), mini-conversation (`conversationChoice`), remise en ordre, phrase à trous, écoute de répliques |
+| `guided` | 6 à 7, plus les 2 exercices de la note de grammaire | les deux exercices de la note s'il y en a une, puis traduction par tuiles (`translation`), mini-conversation (`conversationChoice`), remise en ordre, phrase à trous, écoute de répliques |
 | `reuse` | 5 à 6 | remise en ordre du dialogue (`dialogueOrder`), phrases du texte ou du dialogue (trou, sens), oral, puis l'écoute, l'oral et la lecture écrits dans le pack |
 
+Une leçon dotée d'une note de grammaire reçoit en plus ses deux exercices
+(`ex-l<N>-gram-1` et `-2`), placés en tête de la phase `guided` : ils comptent dans le total de 15 à 20
+mais pas dans la part de la phase, et laissent moins de place aux exercices dérivés
+(le total reste de 18) sans changer la garantie d'exposition des mots nouveaux.
 Les six exercices du pack (`meaning`, `order`, `fill`, `listen`, `speak`,
 `reading`) gardent leurs IDs ; `listen`, `speak` et `reading` ferment toujours la
 séance, et leur texte est celui de la scène écrite à la main (`meaning`, `order` et `fill`
@@ -180,11 +186,11 @@ listes de vocabulaire, puis :
   introduction, en préférant introduire un mot dans une séance dont le texte
   l'emploie. Les textes écrits ne sont pas modifiés : une séance peut donc encore
   contenir un mot enseigné plus tard ou hors du parcours (rang supérieur à 300) ;
-* désigne l'ancre de grammaire de chaque séance : l'ancre écrite si elle est
-  enseignée, sinon un mot de la séance qu'emploient les exemples de la note.
-  L'assembleur reporte cette ancre sur toute note dont l'ancre écrite n'est pas
-  dans le vocabulaire de la séance (les jours 6 à 66) ; les fragments ne sont pas
-  modifiés.
+* désigne l'ancre de grammaire de chaque séance (`grammarTarget`) : l'ancre écrite
+  si elle est enseignée, sinon un mot de la séance qu'emploient les exemples de la
+  note. Les notes `grammar` des fragments ne servent qu'à cette allocation :
+  l'assembleur les retire du pack, et `generate` pose à leur place celles du
+  syllabus de grammaire.
 
 Ordre d'exécution : `build_90_day_authoring.py`, puis
 `build_authoring_days_06_45.py`, `build_authoring_days_46_66.py` et
@@ -222,7 +228,8 @@ trois familles. `lint` vérifie aussi chaque exercice récent contre sa leçon :
 paires de `matching` prises au vocabulaire de la leçon (sens ou pinyin exact),
 correcte réponse de `dictation` égale au texte lu ou à son pinyin attesté, choix
 de `toneDiscrimination` dont l'ID suit les `toneNumbers` du mot, tuiles de
-`translation` uniques avec une tuile en trop et une phrase que la leçon montre,
+`translation` uniques avec une tuile en trop et une phrase que la leçon montre (les
+autres ordres acceptés réarrangent les mêmes tuiles),
 `dialogueOrder` qui suit le dialogue sans le modifier, `conversationChoice` à
 trois réponses dont la bonne suit la réplique lue. Une séance doit utiliser au
 moins quatre de ces six familles. Les quatre leçons protégées gardent leurs six exercices
@@ -301,8 +308,9 @@ réponse de l'écoute et celle de la question de lecture passent en tête (les I
 ceux de la scène), puis la rotation déterministe des exercices de choix fait varier leur position. Un mot
 glosé prend l'ID `vocab-x-<code hexadécimal du hanzi>` (`vocab-x-997f` pour 饿) ; un
 même mot glosé dans deux leçons doit l'être de la même façon. Les exercices `meaning`,
-`order` et `fill` du pack, la grammaire et les révisions dérivées ne changent pas de
-source (les révisions et défis reprennent les nouvelles répliques à la génération).
+`order` et `fill` du pack et les révisions dérivées ne changent pas de source (les
+révisions et défis reprennent les nouvelles répliques et les notes de grammaire à la
+génération) ; la grammaire vient du syllabus.
 
 ### Règles de vocabulaire
 
@@ -413,6 +421,84 @@ Le générateur supprime les révisions que le pack ne liste plus. Il ne supprim
 pas une leçon du jour retirée du pack : supprimer son fichier avant de
 régénérer, faute de quoi le contrôle du bundle la retrouve dans son ancienne unité.
 
+## Syllabus de grammaire
+
+La grammaire des 66 séances du jour s'écrit à la main dans un seul fichier,
+`Content/authoring/grammar-syllabus.json` : 30 notes, une toutes les deux ou trois
+leçons (`lesson-05`, 07, 09, 11, 13, 15, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+43, 45, 47, 49, 51, 54, 57, 59, 62, 64, 66, 68), du plus simple au plus composé : la question en `吗`,
+`在` + lieu, `想`/`会`, `也`/`都`, `要`, `的`, `不`/`没`, `了`, l'heure en `点`, `有`, `能`/`可以`, les
+classificateurs, les mots de lieu, `很`, `比`, `过`, la date, l'âge, `几`/`多少`, `就`, `但是`,
+`因为…所以…`, `最`, `得`, `吧`, `还`/`再`, `着`, `离`, `别`, `给`/`让`. Chaque structure est illustrée de
+préférence par le dialogue ou la lecture de sa leçon ; les exemples écrits pour l'occasion
+n'emploient que des mots déjà enseignés. Une leçon sans note n'a aucun bloc de grammaire.
+
+```json
+{
+  "schemaVersion": 1,
+  "notes": [
+    {
+      "id": "gram-ma-question",
+      "lessonID": "lesson-05",
+      "title": "吗 : poser une question oui/non",
+      "formula": "Phrase affirmative + 吗 ?",
+      "markers": ["吗"],
+      "explanation": {"fr": "2 à 6 phrases, 600 caractères au plus, sur une ligne."},
+      "examples": [{"hanzi": "你饿吗？", "pinyin": "nǐ è ma?", "translation": {"fr": "Tu as faim ?"}}],
+      "mistake": {"fr": "La faute fréquente d'un francophone et la forme correcte (260 caractères au plus)."},
+      "exercises": [
+        {"kind": "wordOrder", "answer": {"hanzi": "你是中国人吗？", "pinyin": "nǐ shì zhōng guó rén ma?", "translation": {"fr": "Es-tu chinois ?"}}, "tiles": ["你", "是", "中国", "人", "吗"]},
+        {"kind": "choice", "answer": {"hanzi": "你渴吗？", "pinyin": "nǐ kě ma?", "translation": {"fr": "Tu as soif ?"}}, "blank": "吗", "wrong": ["和", "是"]}
+      ]
+    }
+  ]
+}
+```
+
+* `markers` : les mots enseignés qui portent la structure. Chaque exemple et chaque réponse
+  d'exercice en contient un au moins, chaque marqueur figure dans un exemple, et le mot
+  masqué d'un exercice de trou ou de choix est un marqueur qui n'apparaît qu'une fois dans la
+  phrase.
+* `examples` : trois ou quatre phrases simples (sans ponctuation intérieure, 22 hanzi au plus, sans
+  prénom), aux mots enseignés jusqu'à la leçon (les extras glosés des leçons jusqu'à celle-ci
+  comptent), en pinyin d'une syllabe par hanzi comme les scènes. `title`, `formula`,
+  `explanation` et `mistake` ne citent, eux aussi, que des mots enseignés.
+* `exercises` : exactement deux. Le premier assemble la structure (`wordOrder`, un seul ordre
+  possible, ou `translation`, dont la réponse est l'un des exemples, avec une ou deux tuiles en
+  trop `extraTiles` et, au besoin, les autres phrases correctes `alternatives` faites des mêmes
+  tuiles) ; le second choisit le bon mot (`fillBlank`, dont `alternatives` liste les mots
+  équivalents, ou `choice`, dont `wrong` donne deux ou trois mots faux, jamais valides dans la
+  phrase). Le générateur écrit les énoncés (`Construis « … ».`, `Traduis en chinois : « … »`,
+  `Complète : … (« … »)`, `Quel mot complète la phrase : …`), mélange les tuiles de façon
+  reproductible et donne aux exercices les identifiants `ex-l<N>-gram-1` et `-2`.
+
+`generate` refuse un syllabus qui manque à ces règles ou dont une leçon n'est pas au
+programme ; `lint` le contrôle aussi, avec le bundle généré. Il refuse :
+
+* moins de 25 ou plus de 30 notes, une première note après `lesson-07`, une dernière avant `lesson-68`,
+  ou deux notes séparées de moins de deux ou de plus de trois leçons (au plus deux leçons de suite
+  sans note) ;
+* une explication de moins de deux ou de plus de six phrases, ou de plus de 600 caractères ;
+* moins de trois exemples ; un mot non enseigné jusqu'à la leçon, dans un exemple, un exercice, la
+  formule, le titre, l'explication ou la faute fréquente ; un pinyin qui ne suit pas le hanzi ;
+* des exercices qui ne sont pas deux (assemblage puis choix du mot), dont la réponse n'emploie pas un
+  marqueur, ou dont les tuiles ne composent pas la réponse ;
+* dans le bundle : un bloc de grammaire ailleurs qu'à une leçon désignée, un bloc ou un exercice
+  qui diffère de sa note (`metadata.grammarPointID`, phase `guided`, réponse et marqueur
+  recalculés depuis la spécification générée), une leçon désignée sans `grammarPoints`.
+
+Le bloc généré est l'`IntroductionBlock` `block-lesson-NN-grammar-01`, dont le titre est
+`Grammaire — <title>` et dont le corps suit l'ordre : explication, `Formule : …`, `Exemple N : …`
+(hanzi, pinyin, français) puis `Attention : …` ; la leçon porte aussi
+`grammarPoints: [{id, pattern, function, markers, errors}]`. Les révisions et défis reprennent, pour
+chaque note des leçons couvertes, son titre et son premier exemple.
+
+```sh
+python3 Tools/content_tool.py grammar-brief --lesson lesson-NN   # phrases de la leçon employables, vocabulaire enseigné
+python3 Tools/content_tool.py grammar-lint --file notes.json --pinyin-check   # des notes seules, avec pypinyin s'il est installé
+python3 Tools/content_tool.py grammar-lint   # tout le syllabus
+```
+
 ## Module 0 : pinyin et tons
 
 Les huit leçons `pinyin-01` à `pinyin-08` s'écrivent à la main dans
@@ -472,7 +558,7 @@ contenu chinois sont des exemples à remplacer par les textes validés de releas
   "vocabularyIDs": ["hsk20-example-zai", "hsk20-example-lu"],
   "extraVocabulary": [{"id": "vocab-example-near", "hanzi": "附近", "pinyin": "fùjìn", "toneNumbers": [4, 4], "meaning": {"fr": "à proximité"}, "partOfSpeech": "adverb"}],
   "grammar": [
-    {"vocabularyID": "vocab-example-zai", "pattern": "在 + lieu", "explanation": {"fr": "在 place le lieu après le sujet dans une phrase simple."}, "examples": []}
+    {"pattern": "在 + lieu", "explanation": {"fr": "在 place le lieu après le sujet dans une phrase simple."}, "examples": [{"hanzi": "我在这里。", "pinyin": "wǒ zài zhè lǐ.", "translation": {"fr": "Je suis ici."}}]}
   ],
   "dialogue": {
     "id": "block-l5-dialogue",

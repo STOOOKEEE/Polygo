@@ -377,12 +377,13 @@
       "kind": "introduction",
       "id": "block-lesson-38-grammar-01",
       "title": {
-        "fr": "Grammaire — verbe + 了"
+        "fr": "Grammaire — 月, 日, 星期 : dire la date"
       },
       "body": {
-        "fr": "了 placé après le verbe marque une vérification terminée.\nExemple 1 : 老师检查了句子。\nlǎo shī jiǎn chá le jù zi。\nLe professeur a vérifié les phrases."
+        "fr": "En chinois, on va du plus grand au plus petit, à l’inverse du français : le mois, puis le jour (二月七日 = le 7 février), puis le jour de la semaine (星期二 = mardi). Le jour de la semaine se forme avec 星期 + un numéro : 星期一 lundi, 星期二 mardi. Pour demander, on remplace le numéro par 几 : 几月几日, 星期几. Il n’y a pas de « le » et, pour une date simple, pas besoin de 是 : 今天二月七日.\nFormule : Nombre + 月 + nombre + 日 ; 星期 + nombre\nExemple 1 : 今天二月七日。\njīn tiān èr yuè qī rì.\nAujourd’hui, c’est le 7 février.\nExemple 2 : 今天几月几日？\njīn tiān jǐ yuè jǐ rì?\nOn est le combien aujourd’hui ?\nExemple 3 : 明天星期几？\nmíng tiān xīng qī jǐ?\nDemain, on est quel jour ?\nExemple 4 : 我的生日是十二月五日。\nwǒ de shēng rì shì shí èr yuè wǔ rì.\nMon anniversaire, c’est le 5 décembre.\nAttention : Ne suis pas l’ordre français « le 7 février » : 七日二月 est faux, dis 二月七日 (mois puis jour). De même, on dit 星期几 et non 几星期 pour demander le jour."
       },
       "metadata": {
+        "grammarPointID": "gram-date",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 34
@@ -870,6 +871,125 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l38-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l38-gram-1",
+          "prompt": {
+            "fr": "Construis « Aujourd’hui, ce n’est pas lundi »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "不",
+            "pinyin": "bú",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "星期",
+            "pinyin": "xīng qī",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "今天不是星期一。",
+          "今天不是星期一"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-date",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l38-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l38-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 今天十二___二日。 (« Aujourd’hui, on est le 2 décembre ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l38-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "月 (yuè)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "日 (rì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "星期 (xīng qī)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-date",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 34
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l38-order",
       "spec": {
         "kind": "wordOrder",
@@ -1163,74 +1283,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l38-order-exa-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l38-order-exa-3",
-          "prompt": {
-            "fr": "Construis « Une semaine compte sept jours »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l38-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "星期",
-            "pinyin": "xīng qī",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "一",
-            "pinyin": "yī",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "七",
-            "pinyin": "qī",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "一星期有七天。",
-          "一星期有七天"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l38-dialogue-3-4",
       "spec": {
         "kind": "dialogueOrder",
@@ -1317,55 +1369,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 34
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l38-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l38-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 今天二月七日。你写了吗？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l38-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Pardon, j’ai écrit lundi. Je ne suis pas une bonne élève !"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Aujourd’hui, c’est le 7 février. Tu l’as écrit ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Écris ton nom, s’il te plaît."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 34
       }
     },
@@ -1782,5 +1785,20 @@
     "unitID": "unit-06",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-date",
+      "pattern": "Nombre + 月 + nombre + 日 ; 星期 + nombre",
+      "function": "月, 日, 星期 : dire la date",
+      "markers": [
+        "月",
+        "日",
+        "星期"
+      ],
+      "errors": [
+        "Ne suis pas l’ordre français « le 7 février » : 七日二月 est faux, dis 二月七日 (mois puis jour). De même, on dit 星期几 et non 几星期 pour demander le jour."
+      ]
+    }
+  ]
 }

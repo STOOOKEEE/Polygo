@@ -336,12 +336,13 @@
       "kind": "introduction",
       "id": "block-lesson-40-grammar-01",
       "title": {
-        "fr": "Grammaire — 比较 + adjectif"
+        "fr": "Grammaire — 岁 : dire et demander l’âge"
       },
       "body": {
-        "fr": "比较 se place avant un adjectif pour atténuer la description : le problème est assez important.\nExemple 1 : 这个问题比较大。\nzhè ge wèn tí bǐ jiào dà。\nCe problème est assez important."
+        "fr": "Pour dire l’âge, on met le nombre puis 岁, sans verbe : 我八岁. Le français dit « j’ai huit ans » avec le verbe avoir, mais en chinois on n’emploie pas 有. Pour demander l’âge d’un enfant, on remplace le nombre par 几 : 你几岁了？ Pour un adulte, la question habituelle est 你多大了？ Le 了 final est fréquent : il marque l’âge atteint maintenant.\nFormule : Sujet + nombre + 岁 (pas de verbe)\nExemple 1 : 我八岁。\nwǒ bā suì.\nJ’ai huit ans.\nExemple 2 : 我的电视五岁了。\nwǒ de diàn shì wǔ suì le.\nMa télé a cinq ans.\nExemple 3 : 你几岁了？\nnǐ jǐ suì le?\nTu as quel âge ?\nExemple 4 : 你的电视几岁了？\nnǐ de diàn shì jǐ suì le?\nElle a quel âge, ta télé ?\nAttention : Ne traduis pas « j’ai » : 我有八岁 est faux, dis 我八岁. Et pour un adulte, 你几岁了 sonne enfantin : préfère 你多大了."
       },
       "metadata": {
+        "grammarPointID": "gram-age",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 36
@@ -623,11 +624,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-dict-sent-dia-2",
+      "id": "block-ex-l40-dict-sent-dia-5",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l40-dict-sent-dia-2",
+          "id": "ex-l40-dict-sent-dia-5",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -640,26 +641,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "你的电视几岁了？",
+        "promptText": "我们买一个大电视，好吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "wǒ wǎn shàng kàn diàn shì。"
+              "fr": "shuǐ tài duō le, xiàn zài bù néng kāi."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "nǐ de diàn shì jǐ suì le?"
+              "fr": "wǒ men mǎi yí gè dà diàn shì, hǎo ma?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "dà diàn shì bù pián yi."
+              "fr": "hǎo, míng tiān qù shāng diàn kàn kàn."
             },
             "audio": null
           }
@@ -674,11 +675,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-tone-014",
+      "id": "block-ex-l40-tone-100",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l40-tone-014",
+          "id": "ex-l40-tone-100",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -690,7 +691,7 @@
           ],
           "required": true
         },
-        "promptText": "大",
+        "promptText": "水",
         "choices": [
           {
             "id": "t1",
@@ -721,7 +722,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t4"
+        "correctChoiceID": "t3"
       },
       "metadata": {
         "stage": "discover",
@@ -731,11 +732,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-pick-018",
+      "id": "block-ex-l40-pick-014",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l40-pick-018",
+          "id": "ex-l40-pick-014",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -747,33 +748,33 @@
           ],
           "required": true
         },
-        "promptText": "电视",
+        "promptText": "大",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "岁 (suì)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "水 (shuǐ)"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "岁 (suì)"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "大 (dà)"
+              "fr": "电视 (diàn shì)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "电视 (diàn shì)"
+              "fr": "大 (dà)"
             },
             "audio": null
           }
@@ -788,11 +789,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-dict-zh-100",
+      "id": "block-ex-l40-dict-zh-105",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l40-dict-zh-100",
+          "id": "ex-l40-dict-zh-105",
           "prompt": {
             "fr": "Écoute le mot, puis choisis les caractères."
           },
@@ -805,12 +806,12 @@
           "required": true
         },
         "script": "hanzi",
-        "promptText": "水",
+        "promptText": "岁",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "岁"
+              "fr": "水"
             },
             "audio": null
           },
@@ -824,7 +825,7 @@
           {
             "id": "c",
             "label": {
-              "fr": "水"
+              "fr": "岁"
             },
             "audio": null
           },
@@ -841,6 +842,113 @@
       "metadata": {
         "stage": "discover",
         "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l40-gram-1",
+          "prompt": {
+            "fr": "Construis « Ma fille a neuf ans »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "岁",
+            "pinyin": "suì",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "九",
+            "pinyin": "jiǔ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "女儿",
+            "pinyin": "nǚ ér",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "我的女儿九岁了。",
+          "我的女儿九岁了"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-age",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-gram-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l40-gram-2",
+          "prompt": {
+            "fr": "Complète : 我的哥哥十___了。 (« Mon grand frère a dix ans »)"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l40-produce"
+          ],
+          "required": true
+        },
+        "sentence": "我的哥哥十___了。",
+        "acceptedAnswers": [
+          "岁"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "grammarPointID": "gram-age",
+        "stage": "guided",
+        "skill": "production",
         "lessonDay": 36
       }
     },
@@ -930,13 +1038,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l40-translate-exa-1",
+      "id": "block-ex-l40-translate-dia-2",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l40-translate-exa-1",
+          "id": "ex-l40-translate-dia-2",
           "prompt": {
-            "fr": "Traduis en chinois : « Ce chien est très grand »"
+            "fr": "Traduis en chinois : « Elle a quel âge, ta télé ? »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -948,36 +1056,6 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "只",
-            "pinyin": "zhī",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "大",
-            "pinyin": "dà",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "岁",
-            "pinyin": "suì",
-            "audio": null
-          },
-          {
             "id": "g",
             "hanzi": "水",
             "pinyin": "shuǐ",
@@ -985,8 +1063,44 @@
           },
           {
             "id": "c",
-            "hanzi": "狗",
-            "pinyin": "gǒu",
+            "hanzi": "电视",
+            "pinyin": "diàn shì",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "大",
+            "pinyin": "dà",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "几",
+            "pinyin": "jǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "岁",
+            "pinyin": "suì",
             "audio": null
           }
         ],
@@ -995,87 +1109,10 @@
           "b",
           "c",
           "d",
-          "e"
+          "e",
+          "f"
         ],
         "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-talk-7",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l40-talk-7",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l40-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "那小电视呢？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "大电视不便宜。",
-            "pinyin": "dà diàn shì bù pián yi.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "小电视便宜，你的家不大，我们买小的。",
-            "pinyin": "xiǎo diàn shì pián yi, nǐ de jiā bù dà, wǒ men mǎi xiǎo de.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "水太多了，现在不能开。",
-            "pinyin": "shuǐ tài duō le, xiàn zài bù néng kāi.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "b"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-fill-dia-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l40-fill-dia-3",
-          "prompt": {
-            "fr": "Complète : 五___了。昨天我的杯子在电视旁边，水在电视上。 (« Cinq ans. Hier, mon verre était à côté de la télé, et l’eau s’est renversée dessus »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": true
-        },
-        "sentence": "五___了。昨天我的杯子在电视旁边，水在电视上。",
-        "acceptedAnswers": [
-          "岁"
-        ],
-        "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
@@ -1106,8 +1143,56 @@
         "replies": [
           {
             "id": "a",
+            "hanzi": "大电视不便宜。",
+            "pinyin": "dà diàn shì bù pián yi.",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "你的电视几岁了？",
             "pinyin": "nǐ de diàn shì jǐ suì le?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "小电视便宜，你的家不大，我们买小的。",
+            "pinyin": "xiǎo diàn shì pián yi, nǐ de jiā bù dà, wǒ men mǎi xiǎo de.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 36
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l40-talk-7",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l40-talk-7",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l40-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "那小电视呢？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "小电视便宜，你的家不大，我们买小的。",
+            "pinyin": "xiǎo diàn shì pián yi, nǐ de jiā bù dà, wǒ men mǎi xiǎo de.",
             "audio": null
           },
           {
@@ -1118,8 +1203,8 @@
           },
           {
             "id": "c",
-            "hanzi": "小电视便宜，你的家不大，我们买小的。",
-            "pinyin": "xiǎo diàn shì pián yi, nǐ de jiā bù dà, wǒ men mǎi xiǎo de.",
+            "hanzi": "水太多了，现在不能开。",
+            "pinyin": "shuǐ tài duō le, xiàn zài bù néng kāi.",
             "audio": null
           }
         ],
@@ -1181,88 +1266,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "recognition",
-        "lessonDay": 36
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l40-order-rea-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l40-order-rea-2",
-          "prompt": {
-            "fr": "Construis « L’eau de mon verre s’était renversée dessus »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l40-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "上",
-            "pinyin": "shàng",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "杯子",
-            "pinyin": "bēi zi",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "电视",
-            "pinyin": "diàn shì",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "水",
-            "pinyin": "shuǐ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "里",
-            "pinyin": "lǐ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "杯子里的水在电视上。",
-          "杯子里的水在电视上"
-        ]
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
         "lessonDay": 36
       }
     },
@@ -1704,5 +1707,18 @@
     "unitID": "unit-06",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-age",
+      "pattern": "Sujet + nombre + 岁 (pas de verbe)",
+      "function": "岁 : dire et demander l’âge",
+      "markers": [
+        "岁"
+      ],
+      "errors": [
+        "Ne traduis pas « j’ai » : 我有八岁 est faux, dis 我八岁. Et pour un adulte, 你几岁了 sonne enfantin : préfère 你多大了."
+      ]
+    }
+  ]
 }

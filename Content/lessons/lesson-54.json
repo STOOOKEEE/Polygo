@@ -366,12 +366,13 @@
       "kind": "introduction",
       "id": "block-lesson-54-grammar-01",
       "title": {
-        "fr": "Grammaire — 关于 + nom"
+        "fr": "Grammaire — 得 : dire comment l’action se fait"
       },
       "body": {
-        "fr": "关于 introduit le sujet dont on parle ou dont traite un texte.\nExemple 1 : 这是关于中国文化的作业。\nzhè shì guān yú Zhōng guó wén huà de zuò yè.\nC’est un devoir sur la culture chinoise."
+        "fr": "Après un verbe, 得 (de) introduit un adjectif qui dit comment l’action se fait : 吃得很多 (manger beaucoup), 写得很好 (écrire bien). Devant l’adjectif, on met 很 comme d’habitude. Si le verbe a un objet, on répète le verbe : 做菜做得很好. Pour nier, on met 不 devant l’adjectif : 写得不好. Attention, 得 n’est pas 的, qui relie un nom.\nFormule : Verbe + 得 + 很 + adjectif\nExemple 1 : 我吃得很多！\nwǒ chī de hěn duō!\nJe mange beaucoup !\nExemple 2 : 他写得很好。\ntā xiě de hěn hǎo.\nIl écrit bien.\nExemple 3 : 他写得不好。\ntā xiě de bù hǎo.\nIl n’écrit pas bien.\nExemple 4 : 她做菜做得很好。\ntā zuò cài zuò de hěn hǎo.\nElle cuisine très bien.\nAttention : Ne place pas l’adjectif avant le verbe (他很好写 ne veut pas dire « il écrit bien ») et n’écris pas 的 à la place de 得 : 他写得很好."
       },
       "metadata": {
+        "grammarPointID": "gram-de-complement",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 50
@@ -877,6 +878,109 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l54-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l54-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il écrit bien »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l54-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "他",
+            "pinyin": "tā",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "好",
+            "pinyin": "hǎo",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "写",
+            "pinyin": "xiě",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "得",
+            "pinyin": "de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-de-complement",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-gram-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l54-gram-2",
+          "prompt": {
+            "fr": "Complète : 她做菜做___很好。 (« Elle cuisine très bien »)"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l54-produce"
+          ],
+          "required": true
+        },
+        "sentence": "她做菜做___很好。",
+        "acceptedAnswers": [
+          "得"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "grammarPointID": "gram-de-complement",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l54-order",
       "spec": {
         "kind": "wordOrder",
@@ -1093,83 +1197,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-translate-exa-1",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l54-translate-exa-1",
-          "prompt": {
-            "fr": "Traduis en chinois : « Ce vêtement est très joli »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l54-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "g",
-            "hanzi": "觉得",
-            "pinyin": "jué de",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "非常",
-            "pinyin": "fēi cháng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l54-talk-7",
       "spec": {
         "kind": "conversationChoice",
@@ -1304,55 +1331,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-read-dia-3",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l54-read-dia-3",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 孩子的书？你觉得怎么样？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l54-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Cette ville compte mille habitants."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Un livre pour enfants ? Tu en penses quoi ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Je trouve ce plat très bon."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 50
       }
     },
@@ -1739,5 +1717,18 @@
     "unitID": "unit-08",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-de-complement",
+      "pattern": "Verbe + 得 + 很 + adjectif",
+      "function": "得 : dire comment l’action se fait",
+      "markers": [
+        "得"
+      ],
+      "errors": [
+        "Ne place pas l’adjectif avant le verbe (他很好写 ne veut pas dire « il écrit bien ») et n’écris pas 的 à la place de 得 : 他写得很好."
+      ]
+    }
+  ]
 }

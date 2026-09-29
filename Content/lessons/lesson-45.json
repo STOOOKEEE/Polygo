@@ -324,12 +324,13 @@
       "kind": "introduction",
       "id": "block-lesson-45-grammar-01",
       "title": {
-        "fr": "Grammaire — 把 + objet + verbe"
+        "fr": "Grammaire — 就 : dès que, aussitôt"
       },
       "body": {
-        "fr": "把 place l’objet avant l’action et son résultat.\nExemple 1 : 我把时间改好了。\nwǒ bǎ shí jiān gǎi hǎo le。\nJ’ai bien modifié l’horaire."
+        "fr": "Après une première action terminée avec 了, 就 annonce que la suivante vient aussitôt : 你到了就打电话 veut dire « dès que tu arrives, appelle ». 就 se place juste devant le verbe de la seconde action. Si cette seconde action a son propre sujet, il se met avant 就 : 你到了我们就去.\nFormule : Action 1 + 了 + (sujet) + 就 + verbe 2\nExemple 1 : 你到了我们就去。\nnǐ dào le wǒ men jiù qù.\nDès que tu arrives, on y va.\nExemple 2 : 你到了就打电话。\nnǐ dào le jiù dǎ diàn huà.\nAppelle-moi dès que tu arrives.\nExemple 3 : 我到了就要吃米饭。\nwǒ dào le jiù yào chī mǐ fàn.\nDès que j’arrive, je mange du riz.\nExemple 4 : 他到了我们就坐出租车回家。\ntā dào le wǒ men jiù zuò chū zū chē huí jiā.\nDès qu’il arrive, nous rentrons en taxi.\nAttention : Le français met « dès que » en tête de phrase, mais 就 ne s’y met jamais : il va devant le second verbe. Dis 你到了就打电话, pas 就你到了打电话."
       },
       "metadata": {
+        "grammarPointID": "gram-jiu",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 41
@@ -620,13 +621,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-dict-sent-dia-2",
+      "id": "block-ex-l45-dict-py-172",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l45-dict-sent-dia-2",
+          "id": "ex-l45-dict-py-172",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -637,31 +638,38 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "我到了，就在门旁边。你在哪里？",
+        "promptText": "等",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "wǒ dào le, jiù zài mén páng biān. nǐ zài nǎ lǐ?"
+              "fr": "dào"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "shàng wǔ shí diǎn. nǐ dào le jiù dǎ diàn huà, hǎo ma?"
+              "fr": "děng"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "wǒ méi chī, suǒ yǐ wǒ dào le jiù yào chī mǐ fàn."
+              "fr": "jiù"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "chī"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -843,6 +851,135 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l45-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l45-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Dès que tu arrives, on y va »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "就",
+            "pinyin": "jiù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-jiu",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l45-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l45-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 我到了___要吃米饭。 (« Dès que j’arrive, je mange du riz ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l45-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "也 (yě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "就 (jiù)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-jiu",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 41
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l45-order",
       "spec": {
         "kind": "wordOrder",
@@ -927,13 +1064,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l45-translate-exa-1",
+      "id": "block-ex-l45-translate-exa-6",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l45-translate-exa-1",
+          "id": "ex-l45-translate-exa-6",
           "prompt": {
-            "fr": "Traduis en chinois : « Je suis arrivé à la maison »"
+            "fr": "Traduis en chinois : « Je n’ai pas le temps maintenant »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -945,39 +1082,39 @@
         },
         "tokens": [
           {
-            "id": "c",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "等",
-            "pinyin": "děng",
-            "audio": null
-          },
-          {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "现在",
+            "pinyin": "xiàn zài",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "时间",
+            "pinyin": "shí jiān",
             "audio": null
           },
           {
             "id": "e",
+            "hanzi": "所以",
+            "pinyin": "suǒ yǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
             "hanzi": "就",
             "pinyin": "jiù",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "到",
-            "pinyin": "dào",
+            "hanzi": "没",
+            "pinyin": "méi",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
             "audio": null
           }
         ],
@@ -1070,54 +1207,6 @@
       "metadata": {
         "stage": "guided",
         "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-talk-8",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l45-talk-8",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l45-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "我吃了。你呢？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "喂，你到机场了吗？",
-            "pinyin": "wèi, nǐ dào jī chǎng le ma?",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "好！他几点到？",
-            "pinyin": "hǎo! tā jǐ diǎn dào?",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我没吃，所以我到了就要吃米饭。",
-            "pinyin": "wǒ méi chī, suǒ yǐ wǒ dào le jiù yào chī mǐ fàn.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
         "lessonDay": 41
       }
     },
@@ -1242,36 +1331,6 @@
           "今天我的朋友从法国来。",
           "今天我的朋友从法国来"
         ]
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 41
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l45-fill-rea-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l45-fill-rea-3",
-          "prompt": {
-            "fr": "Complète : ___我下午一点就去机场等他。 (« Alors j’irai à l’aéroport à une heure de l’après-midi pour l’attendre »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l45-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___我下午一点就去机场等他。",
-        "acceptedAnswers": [
-          "所以"
-        ],
-        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
@@ -1632,5 +1691,18 @@
     "unitID": "unit-07",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-jiu",
+      "pattern": "Action 1 + 了 + (sujet) + 就 + verbe 2",
+      "function": "就 : dès que, aussitôt",
+      "markers": [
+        "就"
+      ],
+      "errors": [
+        "Le français met « dès que » en tête de phrase, mais 就 ne s’y met jamais : il va devant le second verbe. Dis 你到了就打电话, pas 就你到了打电话."
+      ]
+    }
+  ]
 }

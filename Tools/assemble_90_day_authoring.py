@@ -12,6 +12,9 @@ and the plan: their sessions take days of the plan, the milestones move with
 their lessons, and the counts in the course description follow.  Only their
 blueprints are written here; `content_tool.py generate` builds the lessons.
 
+The fragments' `grammar` notes steer the allocation of the vocabulary and go no further: `content_tool.py
+generate` lays the notes of `Content/authoring/grammar-syllabus.json` on the lessons instead.
+
 The allocation owns every lesson's canonical vocabulary. The range builders
 copy it into their fragments; the preview fragment carries none, so it is
 filled from the allocation here.
@@ -109,18 +112,6 @@ def apply_preview_allocation(lesson: dict[str, Any], row: dict[str, Any]) -> Non
     }
 
 
-def anchor_grammar(lesson: dict[str, Any], row: dict[str, Any]) -> None:
-    """File a grammar note under a word the lesson teaches.
-
-    An authored anchor above the course's canonical ranks is never taught; the
-    allocation names the lesson word that replaces it. Only the note's anchor
-    changes: its pattern, explanation and examples are left as authored.
-    """
-    for note in lesson["grammar"]:
-        if note["vocabularyID"] not in lesson["vocabularyIDs"]:
-            note["vocabularyID"] = row["grammarTarget"]["anchorCanonicalID"]
-
-
 def assemble() -> dict[str, Any]:
     preview = load(PREVIEW_PATH)
     days_06_45 = load(DAYS_06_45_PATH)
@@ -183,8 +174,9 @@ def assemble() -> dict[str, Any]:
                 apply_preview_allocation(lesson, row)
             elif lesson.get("vocabularyIDs") != allocation_vocabulary(row):
                 raise AssemblyError(f"day {day}: fragment vocabulary differs from the allocation; rerun the range builders")
-            if day > PREVIEW_LAST_DAY:
-                anchor_grammar(lesson, row)
+            # The grammar of the daily lessons is authored in grammar-syllabus.json; the fragments'
+            # own notes only steered the vocabulary allocation.
+            lesson.pop("grammar", None)
             if lesson_id in seen_lesson_ids:
                 raise AssemblyError(f"duplicate assembled lesson '{lesson_id}'")
             seen_lesson_ids.add(lesson_id)

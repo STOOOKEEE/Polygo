@@ -47,6 +47,7 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 | Séances du plan quotidien | 90 : 8 leçons du module 0, 66 leçons (`lesson-05` à `lesson-70`), 8 révisions (`review-01` à `review-08`), 8 défis d’unité (`boss-unit-02` à `boss-unit-09`) |
 | Unités du cours final | 10 (`unit-00` à `unit-09`) |
 | Exercices | 1 663 (27 introduction + 144 module 0 + 1 188 leçons du jour + 144 révisions + 160 défis) |
+| Notes de grammaire | 30 (`Content/authoring/grammar-syllabus.json`), une toutes les 2 ou 3 leçons de `lesson-05` à `lesson-68`, avec 2 exercices chacune (60), dans les 1 188 exercices des leçons du jour |
 | Histoires inline | 70 |
 | Paragraphes de lecture | 147 |
 | Cartes distinctes | 313 (300 canoniques + 2 mots d’écoute du module 0 de rang supérieur + 11 extras) |

@@ -367,12 +367,13 @@
       "kind": "introduction",
       "id": "block-lesson-26-grammar-01",
       "title": {
-        "fr": "Grammaire — 被 + agent"
+        "fr": "Grammaire — 能 et 可以 : pouvoir"
       },
       "body": {
-        "fr": "被 introduit ce qui subit l’action.\nExemple 1 : 这个错误被老师发现了。\nzhè ge cuò wù bèi lǎo shī fā xiàn le。\nCette erreur a été découverte par le professeur."
+        "fr": "Pour dire « pouvoir », le chinois place 能 ou 可以 devant le verbe, sans conjugaison. 可以 donne ou demande une permission : « 你可以帮助我吗？ ». 能 dit que la situation permet d’agir : « 今天我不能去 ». Pour un savoir-faire appris, on emploie 会 : « 我不会读 ». On nie avec 不 devant : 不能, 不可以 (interdit).\nFormule : Sujet + 能 / 可以 + verbe\nExemple 1 : 我可以回答。\nwǒ kě yǐ huí dá.\nJe peux répondre.\nExemple 2 : 你可以帮助我吗？\nnǐ kě yǐ bāng zhù wǒ ma?\nTu peux m’aider ?\nExemple 3 : 今天我不能去。\njīn tiān wǒ bù néng qù.\nAujourd’hui je ne peux pas y aller.\nExemple 4 : 明天你能来我家吗？\nmíng tiān nǐ néng lái wǒ jiā ma?\nDemain, peux-tu venir chez moi ?\nAttention : Ne traduis pas tout « pouvoir » par 会 : 会 = savoir faire (我不会读). Pour demander la permission, dis 我可以回答吗？ ; 我会回答吗？ ne demande pas la permission."
       },
       "metadata": {
+        "grammarPointID": "gram-neng-keyi",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 22
@@ -894,6 +895,118 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l26-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l26-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Aujourd’hui je ne peux pas y aller »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "能",
+            "pinyin": "néng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": [
+          [
+            "b",
+            "a",
+            "c",
+            "d",
+            "e"
+          ]
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-neng-keyi",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l26-gram-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l26-gram-2",
+          "prompt": {
+            "fr": "Complète : 你___帮助我吗？ (« Tu peux m’aider ? »)"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l26-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你___帮助我吗？",
+        "acceptedAnswers": [
+          "可以",
+          "能"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "grammarPointID": "gram-neng-keyi",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 22
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l26-order",
       "spec": {
         "kind": "wordOrder",
@@ -1110,83 +1223,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l26-translate-exa-1",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l26-translate-exa-1",
-          "prompt": {
-            "fr": "Traduis en chinois : « Je lis chaque jour »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l26-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "读书",
-            "pinyin": "dú shū",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "可能",
-            "pinyin": "kě néng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "可以",
-            "pinyin": "kě yǐ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-order-exa-2",
+      "id": "block-ex-l26-order-exa-1",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l26-order-exa-2",
+          "id": "ex-l26-order-exa-1",
           "prompt": {
-            "fr": "Construis « Il fait trop froid aujourd’hui »."
+            "fr": "Construis « Je lis chaque jour »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1198,27 +1241,27 @@
         },
         "tokens": [
           {
-            "id": "a",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
+            "id": "c",
+            "hanzi": "天",
+            "pinyin": "tiān",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "冷",
-            "pinyin": "lěng",
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "了",
-            "pinyin": "le",
+            "hanzi": "读书",
+            "pinyin": "dú shū",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "太",
-            "pinyin": "tài",
+            "hanzi": "每",
+            "pinyin": "měi",
             "audio": null
           }
         ],
@@ -1229,8 +1272,8 @@
           "d"
         ],
         "acceptedVariants": [
-          "今天太冷了。",
-          "今天太冷了"
+          "我每天读书。",
+          "我每天读书"
         ]
       },
       "metadata": {
@@ -1319,55 +1362,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 22
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l26-read-rea-3",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l26-read-rea-3",
-          "prompt": {
-            "fr": "Dans le texte « Lire avec un ami », que signifie : 我朋友可以帮助我，他读，我听。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l26-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Aujourd’hui je lis le livre du professeur."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Il est peut-être à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Mon ami peut m’aider : il lit, j’écoute."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 22
       }
     },
@@ -1748,5 +1742,19 @@
     "unitID": "unit-04",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-neng-keyi",
+      "pattern": "Sujet + 能 / 可以 + verbe",
+      "function": "能 et 可以 : pouvoir",
+      "markers": [
+        "能",
+        "可以"
+      ],
+      "errors": [
+        "Ne traduis pas tout « pouvoir » par 会 : 会 = savoir faire (我不会读). Pour demander la permission, dis 我可以回答吗？ ; 我会回答吗？ ne demande pas la permission."
+      ]
+    }
+  ]
 }

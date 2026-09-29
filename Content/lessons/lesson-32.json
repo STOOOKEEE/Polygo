@@ -370,12 +370,13 @@
       "kind": "introduction",
       "id": "block-lesson-32-grammar-01",
       "title": {
-        "fr": "Grammaire — 有 + nom"
+        "fr": "Grammaire — 很 : l’adjectif sans « être »"
       },
       "body": {
-        "fr": "有 exprime ici la présence d’un objet dans un magasin.\nExemple 1 : 这家商店有新衣服。\nzhè jiā shāng diàn yǒu xīn yī fú。\nCe magasin a de nouveaux vêtements."
+        "fr": "En français, l’adjectif s’accroche au verbe « être » : « il est grand ». En chinois, l’adjectif fait déjà office de verbe : on n’ajoute pas 是. On place 很 devant lui, un mot faible qui veut souvent dire simplement « est » : « 这个很漂亮 ». Sans 很, la phrase sonne comme une comparaison. Pour nier, on met 不 à la place de 很 : « 今天不热 ».\nFormule : Sujet + 很 + adjectif\nExemple 1 : 我很好。\nwǒ hěn hǎo.\nJe vais bien.\nExemple 2 : 这个很漂亮。\nzhè ge hěn piào liàng.\nCelui-ci est très joli.\nExemple 3 : 你的衣服很漂亮。\nnǐ de yī fu hěn piào liàng.\nTes vêtements sont très jolis.\nExemple 4 : 今天天气很热。\njīn tiān tiān qì hěn rè.\nIl fait très chaud aujourd’hui.\nAttention : N’utilise pas 是 avant un adjectif : 他是好 est faux, dis 他很好. Et n’oublie pas 很 : 我热 sonne comme une comparaison, dis 我很热."
       },
       "metadata": {
+        "grammarPointID": "gram-hen",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 28
@@ -888,6 +889,128 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l32-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l32-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Tes vêtements sont très jolis »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l32-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "衣服",
+            "pinyin": "yī fu",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "漂亮",
+            "pinyin": "piào liàng",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-hen",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l32-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l32-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 今天天气___热。 (« Il fait très chaud aujourd’hui ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l32-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "很 (hěn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "不 (bù)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-hen",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 28
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l32-order",
       "spec": {
         "kind": "wordOrder",
@@ -1090,83 +1213,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l32-translate-exa-1",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l32-translate-exa-1",
-          "prompt": {
-            "fr": "Traduis en chinois : « Ce vêtement est très joli »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l32-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "已经",
-            "pinyin": "yǐ jīng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "漂亮",
-            "pinyin": "piào liàng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 28
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l32-talk-4",
       "spec": {
         "kind": "conversationChoice",
@@ -1289,81 +1335,6 @@
           "已经"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 28
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l32-order-rea-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l32-order-rea-1",
-          "prompt": {
-            "fr": "Construis « Vendredi, c’est l’anniversaire de mon ami »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l32-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "生日",
-            "pinyin": "shēng rì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "星期",
-            "pinyin": "xīng qī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "五",
-            "pinyin": "wǔ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "星期五是朋友的生日。",
-          "星期五是朋友的生日"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1748,5 +1719,18 @@
     "unitID": "unit-05",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-hen",
+      "pattern": "Sujet + 很 + adjectif",
+      "function": "很 : l’adjectif sans « être »",
+      "markers": [
+        "很"
+      ],
+      "errors": [
+        "N’utilise pas 是 avant un adjectif : 他是好 est faux, dis 他很好. Et n’oublie pas 很 : 我热 sonne comme une comparaison, dis 我很热."
+      ]
+    }
+  ]
 }

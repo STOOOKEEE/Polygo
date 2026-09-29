@@ -376,12 +376,13 @@
       "kind": "introduction",
       "id": "block-lesson-68-grammar-01",
       "title": {
-        "fr": "Grammaire — 还 + objet (huán)"
+        "fr": "Grammaire — 给 et 让 : donner, à, laisser"
       },
       "body": {
-        "fr": "Dans 还书 ou 还画, 还 se prononce huán et signifie rendre quelque chose.\nExemple 1 : 我会把画还给老师。\nwǒ huì bǎ huà huán gěi lǎo shī.\nJe rendrai la peinture au professeur."
+        "fr": "给 (gěi) veut dire « donner » : 朋友给我一个白杯子. Devant un verbe, il veut dire « à » ou « pour » : 我给妈妈打电话 = je téléphone à maman. 让 (ràng) veut dire « laisser » ou « faire faire » : 让我看看 = laisse-moi regarder. Dans les deux cas, la personne vient juste après 给 ou 让, avant le verbe.\nFormule : 给 / 让 + personne + verbe\nExemple 1 : 我给妈妈打电话。\nwǒ gěi mā ma dǎ diàn huà.\nJe téléphone à maman.\nExemple 2 : 让我看看是什么。\nràng wǒ kàn kan shì shén me.\nLaisse-moi voir ce que c’est.\nExemple 3 : 你让我很高兴。\nnǐ ràng wǒ hěn gāo xìng.\nTu me fais très plaisir.\nExemple 4 : 朋友给我一个白杯子。\npéng yǒu gěi wǒ yí ge bái bēi zi.\nUn ami m’a donné une tasse blanche.\nAttention : Ne calque pas « téléphoner à maman » : 我打电话妈妈 est faux. On met 给 et la personne avant le verbe : 我给妈妈打电话。 Ne confonds pas 让 (laisser) et 给 (donner)."
       },
       "metadata": {
+        "grammarPointID": "gram-gei-rang",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 64
@@ -715,11 +716,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l68-tone-238",
+      "id": "block-ex-l68-tone-152",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l68-tone-238",
+          "id": "ex-l68-tone-152",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -731,7 +732,7 @@
           ],
           "required": true
         },
-        "promptText": "让",
+        "promptText": "白",
         "choices": [
           {
             "id": "t1",
@@ -762,7 +763,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t4"
+        "correctChoiceID": "t2"
       },
       "metadata": {
         "stage": "discover",
@@ -772,11 +773,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l68-pick-152",
+      "id": "block-ex-l68-pick-174",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l68-pick-152",
+          "id": "ex-l68-pick-174",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -788,12 +789,12 @@
           ],
           "required": true
         },
-        "promptText": "白",
+        "promptText": "第一",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "让 (ràng)"
+              "fr": "快乐 (kuài lè)"
             },
             "audio": null
           },
@@ -807,14 +808,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "第一 (dì yī)"
+              "fr": "白 (bái)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "白 (bái)"
+              "fr": "第一 (dì yī)"
             },
             "audio": null
           }
@@ -881,6 +882,128 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l68-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je téléphone à maman »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "打电话",
+            "pinyin": "dǎ diàn huà",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "妈妈",
+            "pinyin": "mā ma",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "让",
+            "pinyin": "ràng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "给",
+            "pinyin": "gěi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": [
+          [
+            "a",
+            "d",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-gei-rang",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l68-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 你___我很高兴。 (« Tu me fais très plaisir ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "让 (ràng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "给 (gěi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-gei-rang",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 64
       }
@@ -1048,124 +1171,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l68-talk-3",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l68-talk-3",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l68-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "是一个白杯子，你喜欢吗？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "太好了！你想再看一本吗？我还有一本新书。",
-            "pinyin": "tài hǎo le! nǐ xiǎng zài kàn yì běn ma? wǒ hái yǒu yì běn xīn shū.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "谢谢！让我看看是什么。",
-            "pinyin": "xiè xie! ràng wǒ kàn kan shì shén me.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "喜欢！这是我第一个白杯子。",
-            "pinyin": "xǐ huān! zhè shì wǒ dì yī ge bái bēi zi.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 64
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l68-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l68-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « C’est la première leçon »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l68-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "课",
-            "pinyin": "kè",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "第一",
-            "pinyin": "dì yī",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "让",
-            "pinyin": "ràng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "给",
-            "pinyin": "gěi",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 64
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l68-talk-6",
       "spec": {
         "kind": "conversationChoice",
@@ -1193,22 +1198,52 @@
           },
           {
             "id": "b",
-            "hanzi": "第一课我看了三次，后面的课很好看。",
-            "pinyin": "dì yī kè wǒ kàn le sān cì, hòu miàn de kè hěn hǎo kàn.",
+            "hanzi": "是一个白杯子，你喜欢吗？",
+            "pinyin": "shì yí ge bái bēi zi, nǐ xǐ huān ma?",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "是一个白杯子，你喜欢吗？",
-            "pinyin": "shì yí ge bái bēi zi, nǐ xǐ huān ma?",
+            "hanzi": "第一课我看了三次，后面的课很好看。",
+            "pinyin": "dì yī kè wǒ kàn le sān cì, hòu miàn de kè hěn hǎo kàn.",
             "audio": null
           }
         ],
-        "correctReplyID": "b"
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
         "skill": "recognition",
+        "lessonDay": 64
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l68-fill-dia-1",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l68-fill-dia-1",
+          "prompt": {
+            "fr": "Complète : 生日___！这是给你的。 (« Joyeux anniversaire ! C’est pour toi »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l68-produce"
+          ],
+          "required": true
+        },
+        "sentence": "生日___！这是给你的。",
+        "acceptedAnswers": [
+          "快乐"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
         "lessonDay": 64
       }
     },
@@ -1294,36 +1329,6 @@
         "sentence": "今天是我的生日，朋友___我一个白杯子。",
         "acceptedAnswers": [
           "给"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 64
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l68-fill-rea-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l68-fill-rea-2",
-          "prompt": {
-            "fr": "Complète : 这是我___个白杯子，我很喜欢。 (« C’est ma première tasse blanche, elle me plaît beaucoup »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l68-produce"
-          ],
-          "required": true
-        },
-        "sentence": "这是我___个白杯子，我很喜欢。",
-        "acceptedAnswers": [
-          "第一"
         ],
         "caseSensitive": false
       },
@@ -1752,5 +1757,19 @@
     "unitID": "unit-09",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-gei-rang",
+      "pattern": "给 / 让 + personne + verbe",
+      "function": "给 et 让 : donner, à, laisser",
+      "markers": [
+        "给",
+        "让"
+      ],
+      "errors": [
+        "Ne calque pas « téléphoner à maman » : 我打电话妈妈 est faux. On met 给 et la personne avant le verbe : 我给妈妈打电话。 Ne confonds pas 让 (laisser) et 给 (donner)."
+      ]
+    }
+  ]
 }

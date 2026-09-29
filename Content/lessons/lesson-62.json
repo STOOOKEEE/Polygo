@@ -349,12 +349,13 @@
       "kind": "introduction",
       "id": "block-lesson-62-grammar-01",
       "title": {
-        "fr": "Grammaire — 比较 + adjectif"
+        "fr": "Grammaire — 着 : un état qui dure"
       },
       "body": {
-        "fr": "比较 atténue ou compare un degré : une chose est relativement plus ou moins ainsi.\nExemple 1 : 这条路比较难，另一条路更容易。\nzhè tiáo lù bǐ jiào nán, lìng yì tiáo lù gèng róng yì.\nCette route est assez difficile, l’autre est plus facile."
+        "fr": "着 (zhe) se place juste après un verbe et décrit un état qui dure : 门开着 = la porte est ouverte (et reste ouverte). Il sert aussi à dire comment on fait une autre action : 笑着回答 = répondre en souriant. C’est une particule légère, sans ton marqué, et le verbe ne change jamais de forme.\nFormule : Verbe + 着 (+ verbe)\nExemple 1 : 那个教室的门开着！\nnà ge jiào shì de mén kāi zhe!\nLa porte de cette salle est ouverte !\nExemple 2 : 老师坐着看书呢。\nlǎo shī zuò zhe kàn shū ne.\nLe professeur est assis en train de lire.\nExemple 3 : 他笑着回答我。\ntā xiào zhe huí dá wǒ.\nIl m’a répondu en souriant.\nExemple 4 : 我看着手机上的地图找了十分钟。\nwǒ kàn zhe shǒu jī shàng de dì tú zhǎo le shí fēn zhōng.\nJ’ai cherché pendant dix minutes en regardant la carte sur mon téléphone.\nAttention : Ne mets pas 着 pour une action terminée : « J’ai acheté un livre » se dit 我买了一本书, pas 我买着一本书。 着 sert seulement à montrer que l’état ou la manière continue."
       },
       "metadata": {
+        "grammarPointID": "gram-zhe",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 58
@@ -745,63 +746,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-pick-246",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l62-pick-246",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l62-understand"
-          ],
-          "required": true
-        },
-        "promptText": "手机",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "地图 (dì tú)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "手机 (shǒu jī)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "课 (kè)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "找 (zhǎo)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l62-dict-zh-007",
       "spec": {
         "kind": "dictation",
@@ -824,14 +768,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "不"
+              "fr": "着"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "着"
+              "fr": "不"
             },
             "audio": null
           },
@@ -850,11 +794,118 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
         "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l62-gram-1",
+          "prompt": {
+            "fr": "Construis « Le professeur est assis en train de lire »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "着",
+            "pinyin": "zhe",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "呢",
+            "pinyin": "ne",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "老师",
+            "pinyin": "lǎo shī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "坐",
+            "pinyin": "zuò",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedVariants": [
+          "老师坐着看书呢。",
+          "老师坐着看书呢"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-zhe",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-gram-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l62-gram-2",
+          "prompt": {
+            "fr": "Complète : 他笑___回答我。 (« Il m’a répondu en souriant »)"
+          },
+          "instruction": {
+            "fr": "Écris le mot manquant en caractères chinois."
+          },
+          "objectiveIDs": [
+            "l62-produce"
+          ],
+          "required": true
+        },
+        "sentence": "他笑___回答我。",
+        "acceptedAnswers": [
+          "着"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "grammarPointID": "gram-zhe",
+        "stage": "guided",
+        "skill": "production",
         "lessonDay": 58
       }
     },
@@ -1049,24 +1100,24 @@
         "replies": [
           {
             "id": "a",
+            "hanzi": "你的手机上不是有地图吗？",
+            "pinyin": "nǐ de shǒu jī shàng bú shì yǒu dì tú ma?",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "对，就是这里。你的手机可以休息了！",
             "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "c",
             "hanzi": "有，老师坐着看书呢。",
             "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
             "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "你的手机上不是有地图吗？",
-            "pinyin": "nǐ de shǒu jī shàng bú shì yǒu dì tú ma?",
-            "audio": null
           }
         ],
-        "correctReplyID": "c"
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
@@ -1180,18 +1231,18 @@
           },
           {
             "id": "b",
-            "hanzi": "有，老师坐着看书呢。",
-            "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
+            "hanzi": "对，就是这里。你的手机可以休息了！",
+            "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "对，就是这里。你的手机可以休息了！",
-            "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
+            "hanzi": "有，老师坐着看书呢。",
+            "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
             "audio": null
           }
         ],
-        "correctReplyID": "b"
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
@@ -1262,113 +1313,51 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-fill-rea-2",
+      "id": "block-ex-l62-listen-rea-2",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "listeningChoice",
         "header": {
-          "id": "ex-l62-fill-rea-2",
+          "id": "ex-l62-listen-rea-2",
           "prompt": {
-            "fr": "Complète : 我看___手机上的地图找了十分钟，还是不知道。 (« J’ai cherché dix minutes avec la carte de mon téléphone sous les yeux, et je ne savais toujours pas »)"
+            "fr": "Écoute la phrase, puis choisis son sens."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l62-produce"
+            "l62-understand"
           ],
           "required": true
         },
-        "sentence": "我看___手机上的地图找了十分钟，还是不知道。",
-        "acceptedAnswers": [
-          "着"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-order-rea-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l62-order-rea-4",
-          "prompt": {
-            "fr": "Construis « Nous sommes vite arrivés dans la salle »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l62-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
+        "promptText": "我看着手机上的地图找了十分钟，还是不知道。",
+        "choices": [
           {
-            "id": "e",
-            "hanzi": "到",
-            "pinyin": "dào",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "了",
-            "pinyin": "le",
+            "id": "a",
+            "label": {
+              "fr": "Un élève m’a dit en souriant qu’il allait lui aussi en cours et qu’on pouvait y aller ensemble."
+            },
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "教室",
-            "pinyin": "jiào shì",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "就",
-            "pinyin": "jiù",
+            "label": {
+              "fr": "J’ai cherché dix minutes avec la carte de mon téléphone sous les yeux, et je ne savais toujours pas."
+            },
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "快",
-            "pinyin": "kuài",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "label": {
+              "fr": "D’accord, vite, allons-y. Il est neuf heures cinquante et le cours est à dix heures."
+            },
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "我们很快就到了教室。",
-          "我们很快就到了教室"
-        ]
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 58
       }
     },
@@ -1754,5 +1743,18 @@
     "extraVocabularyIDs": [
       "vocab-x-5730-56fe"
     ]
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-zhe",
+      "pattern": "Verbe + 着 (+ verbe)",
+      "function": "着 : un état qui dure",
+      "markers": [
+        "着"
+      ],
+      "errors": [
+        "Ne mets pas 着 pour une action terminée : « J’ai acheté un livre » se dit 我买了一本书, pas 我买着一本书。 着 sert seulement à montrer que l’état ou la manière continue."
+      ]
+    }
+  ]
 }

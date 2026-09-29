@@ -75,6 +75,10 @@ Le bundle contient 94 leçons dans 10 unités :
 - 70 histoires inline et 147 paragraphes de lecture ; chacune des 66 leçons du jour a un
   dialogue de 8 à 12 répliques et une lecture de 4 à 6 phrases écrits à la main
   (`Content/authoring/situations/`) ;
+- 30 notes de grammaire (`Content/authoring/grammar-syllabus.json`), une toutes les
+  deux ou trois leçons de `lesson-05` à `lesson-68`, chacune avec trois ou quatre
+  exemples, la faute fréquente d’un francophone et deux exercices de manipulation
+  (assemblage puis choix du mot) en début de phase guidée ;
 - 313 cartes et entrées lexicales distinctes, soit 300 lexèmes canoniques (les
   rangs 1 à 300 du référentiel HSK classique 1–2), 2 mots d’écoute du module 0
   de rang supérieur (`绿`, `蓝`) et 11 mots supplémentaires hors catalogue, pour

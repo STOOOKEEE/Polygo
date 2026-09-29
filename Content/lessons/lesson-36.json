@@ -378,12 +378,13 @@
       "kind": "introduction",
       "id": "block-lesson-36-grammar-01",
       "title": {
-        "fr": "Grammaire — 会/能 + verbe"
+        "fr": "Grammaire — 过 : avoir déjà fait quelque chose"
       },
       "body": {
-        "fr": "会 indique une capacité ou une intention future.\nExemple 1 : 我会帮助邻居。\nwǒ huì bāng zhù lín jū。\nJ’aiderai le voisin."
+        "fr": "Après le verbe, 过 (guo) dit qu’on a déjà vécu cette expérience au moins une fois, sans dire quand : c’est l’idée du « déjà » français. Pour nier, on met 没 devant le verbe et on garde 过 : 没去过 veut dire « jamais allé ». Avec 了, au contraire, on raconte un fait précis et terminé : 昨天我买了书.\nFormule : Verbe + 过 ; négation : 没 + verbe + 过\nExemple 1 : 我看过这个电影。\nwǒ kàn guo zhè ge diàn yǐng.\nJ’ai déjà vu ce film.\nExemple 2 : 你去过北京吗？\nnǐ qù guo běi jīng ma?\nTu es déjà allé à Pékin ?\nExemple 3 : 我没去过北京。\nwǒ méi qù guo běi jīng.\nJe ne suis jamais allé à Pékin.\nExemple 4 : 我的朋友去过法国。\nwǒ de péng yǒu qù guo fǎ guó.\nMon ami est déjà allé en France.\nAttention : N’utilise pas 不 avec 过 : pour « je ne suis jamais allé », dis 我没去过北京, jamais 我不去过北京. 不 nie une volonté ou une habitude, pas une expérience passée."
       },
       "metadata": {
+        "grammarPointID": "gram-guo",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 32
@@ -897,6 +898,118 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l36-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l36-gram-1",
+          "prompt": {
+            "fr": "Construis « Je n’y suis jamais allé »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "没",
+            "pinyin": "méi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "过",
+            "pinyin": "guo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我没去过。",
+          "我没去过"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-guo",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l36-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l36-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 我喝___中国茶。 (« J’ai déjà bu du thé chinois ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l36-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "了 (le)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "过 (guo)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-guo",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 32
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l36-order",
       "spec": {
         "kind": "wordOrder",
@@ -1106,83 +1219,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l36-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l36-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « Ce livre est très bon »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "住",
-            "pinyin": "zhù",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "本",
-            "pinyin": "běn",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "书",
-            "pinyin": "shū",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "好",
-            "pinyin": "hǎo",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "苹果",
-            "pinyin": "píng guǒ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l36-talk-5",
       "spec": {
         "kind": "conversationChoice",
@@ -1313,81 +1349,6 @@
           "本"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 32
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l36-order-rea-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l36-order-rea-4",
-          "prompt": {
-            "fr": "Construis « Demain, il viendra chez moi »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l36-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "他",
-            "pinyin": "tā",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "明天",
-            "pinyin": "míng tiān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "会",
-            "pinyin": "huì",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "明天他会来我家。",
-          "明天他会来我家"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1820,5 +1781,18 @@
     "unitID": "unit-05",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-guo",
+      "pattern": "Verbe + 过 ; négation : 没 + verbe + 过",
+      "function": "过 : avoir déjà fait quelque chose",
+      "markers": [
+        "过"
+      ],
+      "errors": [
+        "N’utilise pas 不 avec 过 : pour « je ne suis jamais allé », dis 我没去过北京, jamais 我不去过北京. 不 nie une volonté ou une habitude, pas une expérience passée."
+      ]
+    }
+  ]
 }

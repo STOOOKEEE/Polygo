@@ -323,12 +323,13 @@
       "kind": "introduction",
       "id": "block-lesson-57-grammar-01",
       "title": {
-        "fr": "Grammaire — 把 + objet + verbe"
+        "fr": "Grammaire — 吧 : proposer, adoucir, deviner"
       },
       "body": {
-        "fr": "把 place l’objet avant le verbe quand on décrit ce qu’on en fait.\nExemple 1 : 我把文件放在盒子里。\nwǒ bǎ wén jiàn fàng zài hé zi lǐ.\nJe mets les documents dans la boîte."
+        "fr": "吧 (ba) se met à la fin de la phrase. Avec « nous », il propose : 我们走吧 (allons-y). Avec « tu », il adoucit un ordre : 你坐下休息吧 (assieds-toi donc). Après une supposition, il demande confirmation : 他吃得很多吧？ (il mange beaucoup, non ?). Contrairement à 吗, il ne pose pas une vraie question : tu attends que l’autre soit d’accord.\nFormule : Phrase + 吧\nExemple 1 : 我们走吧。\nwǒ men zǒu ba.\nAllons-y.\nExemple 2 : 我们去饭馆吧。\nwǒ men qù fàn guǎn ba.\nAllons au restaurant.\nExemple 3 : 你坐下休息吧。\nnǐ zuò xià xiū xī ba.\nAssieds-toi et repose-toi.\nExemple 4 : 他吃得很多吧？\ntā chī de hěn duō ba?\nIl doit beaucoup manger, non ?\nAttention : Ne confonds pas 吧 et 吗 : 你去吗？ demande si tu y vas, 你去吧 dit « vas-y ». Et 吧 vient toujours à la fin de la phrase."
       },
       "metadata": {
+        "grammarPointID": "gram-ba",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 53
@@ -840,6 +841,121 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l57-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l57-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Allons au restaurant »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l57-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "饭馆",
+            "pinyin": "fàn guǎn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "吧",
+            "pinyin": "ba",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-ba",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 53
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l57-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l57-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 你坐下休息___。 (« Assieds-toi et repose-toi ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l57-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "吗 (ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "呢 (ne)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "吧 (ba)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-ba",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 53
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l57-order",
       "spec": {
         "kind": "wordOrder",
@@ -1056,83 +1172,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l57-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l57-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « Cet immeuble est très haut »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l57-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "高",
-            "pinyin": "gāo",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "快",
-            "pinyin": "kuài",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "出",
-            "pinyin": "chū",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "座",
-            "pinyin": "zuò",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "楼",
-            "pinyin": "lóu",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 53
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l57-talk-7",
       "spec": {
         "kind": "conversationChoice",
@@ -1259,55 +1298,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 53
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l57-read-dia-6",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l57-read-dia-6",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 他比我还高！医生告诉我，他有五十公斤。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l57-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Mon petit frère a quinze ans, il est plus grand que moi et pèse cinquante kilos."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Il est même plus grand que moi ! Le médecin m’a dit qu’il pesait cinquante kilos."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Mon petit frère. Il est à l’intérieur, le médecin l’examine."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 53
       }
     },
@@ -1669,5 +1659,18 @@
     "unitID": "unit-08",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-ba",
+      "pattern": "Phrase + 吧",
+      "function": "吧 : proposer, adoucir, deviner",
+      "markers": [
+        "吧"
+      ],
+      "errors": [
+        "Ne confonds pas 吧 et 吗 : 你去吗？ demande si tu y vas, 你去吧 dit « vas-y ». Et 吧 vient toujours à la fin de la phrase."
+      ]
+    }
+  ]
 }

@@ -325,12 +325,13 @@
       "kind": "introduction",
       "id": "block-lesson-30-grammar-01",
       "title": {
-        "fr": "Grammaire — 在 + lieu"
+        "fr": "Grammaire — 前面 et 旁边 : devant, à côté de"
       },
       "body": {
-        "fr": "在 place le lieu après le sujet ou le lieu recherché.\nExemple 1 : 车站在学校旁边。\nchē zhàn zài xué xiào páng biān。\nLa gare est à côté de l’école."
+        "fr": "En français, la préposition vient avant le lieu : « devant l’école ». En chinois, le mot de position vient après : « 学校前面 » (école + devant). Tout ce groupe se place après 在 : X + 在 + lieu + 前面 ou 旁边. Sans 在, le lieu passe en tête : « 学校前面有一个商店 ». 里 et 上 fonctionnent de même : « 书在桌子上 ».\nFormule : X + 在 + lieu + 前面 / 旁边\nExemple 1 : 火车站在商店旁边。\nhuǒ chē zhàn zài shāng diàn páng biān.\nLa gare est à côté du magasin.\nExemple 2 : 商店在学校前面。\nshāng diàn zài xué xiào qián miàn.\nLe magasin est devant l’école.\nExemple 3 : 我家在学校旁边。\nwǒ jiā zài xué xiào páng biān.\nMa maison est à côté de l’école.\nExemple 4 : 学校前面有一个商店。\nxué xiào qián miàn yǒu yí gè shāng diàn.\nDevant l’école, il y a un magasin.\nAttention : Ne calque pas le français « devant l’école » : le mot de position se place après le lieu. Dis 商店在学校前面, pas 商店在前面学校."
       },
       "metadata": {
+        "grammarPointID": "gram-place-words",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 26
@@ -833,6 +834,121 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l30-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l30-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « La gare est à côté du magasin »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "火车站",
+            "pinyin": "huǒ chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-place-words",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l30-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 商店在学校___。 (« Le magasin est devant l’école ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "旁边 (páng biān)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "上 (shàng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "前面 (qián miàn)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-place-words",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l30-order",
       "spec": {
         "kind": "wordOrder",
@@ -1042,135 +1158,27 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-translate-dia-2",
+      "id": "block-ex-l30-fill-dia-4",
       "spec": {
-        "kind": "translation",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l30-translate-dia-2",
+          "id": "ex-l30-fill-dia-4",
           "prompt": {
-            "fr": "Traduis en chinois : « La gare est à côté du magasin »"
+            "fr": "Complète : 商店在学校前面。从这里去，要___分钟。 (« Le magasin est devant l’école. D’ici, il faut dix minutes »)"
           },
           "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l30-produce"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "分钟",
-            "pinyin": "fēn zhōng",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "火车站",
-            "pinyin": "huǒ chē zhàn",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "商店",
-            "pinyin": "shāng diàn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "怎么",
-            "pinyin": "zěn me",
-            "audio": null
-          }
+        "sentence": "商店在学校前面。从这里去，要___分钟。",
+        "acceptedAnswers": [
+          "十"
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l30-order-exa-2",
-          "prompt": {
-            "fr": "Construis « J’ai dix livres »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "本",
-            "pinyin": "běn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "书",
-            "pinyin": "shū",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "十",
-            "pinyin": "shí",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我有十本书。",
-          "我有十本书"
-        ]
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
@@ -1233,80 +1241,62 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-fill-rea-2",
+      "id": "block-ex-l30-order-rea-5",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l30-fill-rea-2",
+          "id": "ex-l30-order-rea-5",
           "prompt": {
-            "fr": "Complète : 从我家去学校，要___分钟。 (« De chez moi à l’école, il faut dix minutes »)"
+            "fr": "Construis « Comment y vas-tu ? »."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
             "l30-produce"
           ],
           "required": true
         },
-        "sentence": "从我家去学校，要___分钟。",
-        "acceptedAnswers": [
-          "十"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-read-dia-4",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l30-read-dia-4",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Lin : 商店在学校前面。从这里去，要十分钟。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l30-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "De chez moi à l’école, il faut dix minutes."
-            },
-            "audio": null
-          },
+        "tokens": [
           {
             "id": "b",
-            "label": {
-              "fr": "Bonjour ! Où est la gare ? Je ne connais pas le chemin."
-            },
+            "hanzi": "怎么",
+            "pinyin": "zěn me",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "Le magasin est devant l’école. D’ici, il faut dix minutes."
-            },
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "学校",
+            "pinyin": "xué xiào",
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "你怎么去学校？",
+          "你怎么去学校"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 26
       }
     },
@@ -1663,5 +1653,19 @@
     "unitID": "unit-05",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-place-words",
+      "pattern": "X + 在 + lieu + 前面 / 旁边",
+      "function": "前面 et 旁边 : devant, à côté de",
+      "markers": [
+        "前面",
+        "旁边"
+      ],
+      "errors": [
+        "Ne calque pas le français « devant l’école » : le mot de position se place après le lieu. Dis 商店在学校前面, pas 商店在前面学校."
+      ]
+    }
+  ]
 }

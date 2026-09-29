@@ -324,12 +324,13 @@
       "kind": "introduction",
       "id": "block-lesson-22-grammar-01",
       "title": {
-        "fr": "Grammaire — 从 A 到 B"
+        "fr": "Grammaire — 点 : dire l’heure"
       },
       "body": {
-        "fr": "从 et 到 encadrent le départ et l’arrivée d’un trajet.\nExemple 1 : 从家到公司要半小时。\ncóng jiā dào gōng sī yào bàn xiǎo shí。\nDe la maison à l’entreprise, il faut une demi-heure."
+        "fr": "En français, on dit « à sept heures » avec une préposition. En chinois, il n’y en a pas : on lit le nombre suivi de 点, comme 四点 pour « quatre heures ». Cette heure se place avant le verbe, après le sujet ou au début de la phrase : 我十一点上班, 四点我来. Pour demander l’heure, on remplace le nombre par 几 : 现在几点 ?\nFormule : Nombre + 点 ; 几点 ?\nExemple 1 : 现在几点？\nxiàn zài jǐ diǎn?\nQuelle heure est-il ?\nExemple 2 : 我十一点上班。\nwǒ shí yī diǎn shàng bān.\nJe commence à onze heures.\nExemple 3 : 四点我来。\nsì diǎn wǒ lái.\nJe viens à quatre heures.\nExemple 4 : 他下午四点来我家。\ntā xià wǔ sì diǎn lái wǒ jiā.\nIl vient chez moi à quatre heures de l’après-midi.\nAttention : Ne place pas l’heure après le verbe comme en français (« je viens à quatre heures ») : 我来四点 est faux, dis 我四点来. Et n’ajoute aucun mot pour « à »."
       },
       "metadata": {
+        "grammarPointID": "gram-dian-time",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 18
@@ -611,13 +612,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-dict-sent-dia-2",
+      "id": "block-ex-l22-dict-py-218",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l22-dict-sent-dia-2",
+          "id": "ex-l22-dict-py-218",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -628,31 +629,38 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "我十一点上班，这是你的书。",
+        "promptText": "路",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "bú zuò le, xiè xie! wǒ yào qù shàng bān le."
+              "fr": "diǎn"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "wǒ shí yī diǎn shàng bān, zhè shì nǐ de shū."
+              "fr": "xià"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "nà xià wǔ nǐ lái wǒ jiā chī yú ma?"
+              "fr": "lù"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "zài"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -828,6 +836,136 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l22-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je commence à onze heures »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l22-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "七",
+            "pinyin": "qī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yī",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "上班",
+            "pinyin": "shàng bān",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "十",
+            "pinyin": "shí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": [
+          [
+            "b",
+            "c",
+            "d",
+            "a",
+            "e"
+          ]
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-dian-time",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 18
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l22-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l22-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 他下午四___来我家。 (« Il vient chez moi à quatre heures de l’après-midi ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l22-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "点 (diǎn)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "个 (gè)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-dian-time",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 18
       }
@@ -1036,90 +1174,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l22-translate-exa-3",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l22-translate-exa-3",
-          "prompt": {
-            "fr": "Traduis en chinois : « Cette route mène à l’école »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l22-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "通",
-            "pinyin": "tōng",
-            "audio": null
-          },
-          {
-            "id": "h",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "路",
-            "pinyin": "lù",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "条",
-            "pinyin": "tiáo",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "向",
-            "pinyin": "xiàng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l22-talk-9",
       "spec": {
         "kind": "conversationChoice",
@@ -1242,88 +1296,6 @@
           "点"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 18
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l22-order-rea-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l22-order-rea-1",
-          "prompt": {
-            "fr": "Construis « Mon ami travaille dans le magasin de la gare »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l22-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "朋友",
-            "pinyin": "péng you",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "商店",
-            "pinyin": "shāng diàn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "火车站",
-            "pinyin": "huǒ chē zhàn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "工作",
-            "pinyin": "gōng zuò",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "我的朋友在火车站的商店工作。",
-          "我的朋友在火车站的商店工作"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1684,5 +1656,18 @@
     "unitID": "unit-04",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-dian-time",
+      "pattern": "Nombre + 点 ; 几点 ?",
+      "function": "点 : dire l’heure",
+      "markers": [
+        "点"
+      ],
+      "errors": [
+        "Ne place pas l’heure après le verbe comme en français (« je viens à quatre heures ») : 我来四点 est faux, dis 我四点来. Et n’ajoute aucun mot pour « à »."
+      ]
+    }
+  ]
 }

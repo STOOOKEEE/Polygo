@@ -369,12 +369,13 @@
       "kind": "introduction",
       "id": "block-lesson-66-grammar-01",
       "title": {
-        "fr": "Grammaire — 虽然…但是…"
+        "fr": "Grammaire — 别 : ne … pas ! (défense, conseil)"
       },
       "body": {
-        "fr": "虽然 introduit une concession ; 但是 maintient le point principal malgré celle-ci.\nExemple 1 : 虽然冬天很冷，但是公园也很安静。\nsuī rán dōng tiān hěn lěng, dàn shì gōng yuán yě hěn ān jìng.\nMême si l’hiver est froid, le parc est aussi très calme."
+        "fr": "别 (bié) se place devant le verbe pour dire à quelqu’un de ne pas faire quelque chose : 别走 = ne pars pas. On l’entend souvent avec 了 (« ne … plus ») ou avec 吧 (conseil plus doux). Attention : 不 dit ce que quelqu’un ne fait pas (我不去), alors que 别 demande à l’autre de ne pas le faire. Le verbe ne change pas de forme.\nFormule : 别 + verbe (+ 了 / 吧)\nExemple 1 : 别走！\nbié zǒu!\nNe pars pas !\nExemple 2 : 别等了。\nbié děng le.\nN’attends plus.\nExemple 3 : 别看手机了。\nbié kàn shǒu jī le.\nNe regarde plus ton téléphone.\nExemple 4 : 你今天别去上班吧。\nnǐ jīn tiān bié qù shàng bān ba.\nNe va pas au travail aujourd’hui.\nAttention : Ne dis pas 不走 pour « Ne pars pas ! » : 不走 veut dire « je ne pars pas » ou « il ne part pas ». Pour interdire ou conseiller, mets 别 devant le verbe : 别走！"
       },
       "metadata": {
+        "grammarPointID": "gram-bie",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 62
@@ -890,6 +891,114 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l66-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l66-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « N’attends plus »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "等",
+            "pinyin": "děng",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "别",
+            "pinyin": "bié",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-bie",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l66-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l66-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : ___看手机了。 (« Ne regarde plus ton téléphone ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l66-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "不 (bù)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "没 (méi)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "别 (bié)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-bie",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 62
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l66-order",
       "spec": {
         "kind": "wordOrder",
@@ -1129,83 +1238,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l66-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l66-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « Cette femme est professeur »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l66-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "女人",
-            "pinyin": "nǚ rén",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "个",
-            "pinyin": "ge",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "眼睛",
-            "pinyin": "yǎn jīng",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "老师",
-            "pinyin": "lǎo shī",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "笑",
-            "pinyin": "xiào",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "那",
-            "pinyin": "nà",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l66-dialogue-3-3",
       "spec": {
         "kind": "dialogueOrder",
@@ -1300,55 +1332,6 @@
           }
         ],
         "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 62
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l66-read-dia-5",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l66-read-dia-5",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 前面有一个男人和一个女人，那两个人在笑。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l66-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Moi aussi, j’aime rire ! Allons vite les rejoindre."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Mes yeux sont très fatigués."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Devant, il y a un homme et une femme, et ils rient."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1739,5 +1722,18 @@
     "unitID": "unit-09",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-bie",
+      "pattern": "别 + verbe (+ 了 / 吧)",
+      "function": "别 : ne … pas ! (défense, conseil)",
+      "markers": [
+        "别"
+      ],
+      "errors": [
+        "Ne dis pas 不走 pour « Ne pars pas ! » : 不走 veut dire « je ne pars pas » ou « il ne part pas ». Pour interdire ou conseiller, mets 别 devant le verbe : 别走！"
+      ]
+    }
+  ]
 }

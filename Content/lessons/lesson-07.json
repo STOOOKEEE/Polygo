@@ -376,12 +376,13 @@
       "kind": "introduction",
       "id": "block-lesson-07-grammar-01",
       "title": {
-        "fr": "Grammaire — nom + 的 + nom"
+        "fr": "Grammaire — 在 : dire où l’on se trouve"
       },
       "body": {
-        "fr": "的 relie un possesseur et ce qui lui appartient : 我的妈妈 signifie « ma maman ».\nExemple 1 : 我的妈妈在家。\nwǒ de mā ma zài jiā.\nMa maman est à la maison."
+        "fr": "Ici, 在 (zài) est le verbe : il veut dire « être à » ou « se trouver ». Il se place entre le sujet et le lieu, sans autre verbe. Pour nier, mets 不 devant : 不在. Pour demander où, remplace le lieu par 哪 : 你在哪 ?\nFormule : Sujet + 在 + lieu\nExemple 1 : 妈妈在家。\nmā ma zài jiā.\nMaman est à la maison.\nExemple 2 : 爸爸不在。\nbà ba bú zài.\nPapa n’est pas là.\nExemple 3 : 你在哪？\nnǐ zài nǎ?\nTu es où ?\nExemple 4 : 哥哥在中国。\ngē ge zài zhōng guó.\nMon grand frère est en Chine.\nAttention : Ne traduis pas « être » par 是 devant un lieu : 妈妈是在家 n’est pas la phrase neutre. Dis simplement 妈妈在家。 Pour nier, 不 se place devant 在 : 爸爸不在家。"
       },
       "metadata": {
+        "grammarPointID": "gram-zai-location",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 3
@@ -883,6 +884,125 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l7-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l7-gram-1",
+          "prompt": {
+            "fr": "Construis « Ton ami est en Chine »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "中国",
+            "pinyin": "zhōng guó",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "朋友",
+            "pinyin": "péng you",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "你的朋友在中国。",
+          "你的朋友在中国"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-zai-location",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l7-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l7-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 妈妈___家。 (« Maman est à la maison ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l7-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "有 (yǒu)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-zai-location",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 3
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l7-order",
       "spec": {
         "kind": "wordOrder",
@@ -1162,54 +1282,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-talk-7",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l7-talk-7",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l7-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "谢谢！是白茶吗？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "是，也有红茶和绿茶。",
-            "pinyin": "shì, yě yǒu hóng chá hé lǜ chá.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "妈妈在，爸爸不在。",
-            "pinyin": "mā ma zài, bà ba bú zài.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "请喝茶。这是妈妈的茶。",
-            "pinyin": "qǐng hē chá. zhè shì mā ma de chá.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "a"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 3
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l7-dialogue-4-3",
       "spec": {
         "kind": "dialogueOrder",
@@ -1282,36 +1354,6 @@
         "sentence": "我___有妈妈、爸爸和哥哥。",
         "acceptedAnswers": [
           "家"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 3
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l7-fill-rea-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l7-fill-rea-3",
-          "prompt": {
-            "fr": "Complète : ___星期一和星期五在家，爸爸星期日在家。 (« Maman est à la maison le lundi et le vendredi, papa le dimanche »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l7-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___星期一和星期五在家，爸爸星期日在家。",
-        "acceptedAnswers": [
-          "妈妈"
         ],
         "caseSensitive": false
       },
@@ -1746,5 +1788,18 @@
     "unitID": "unit-02",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-zai-location",
+      "pattern": "Sujet + 在 + lieu",
+      "function": "在 : dire où l’on se trouve",
+      "markers": [
+        "在"
+      ],
+      "errors": [
+        "Ne traduis pas « être » par 是 devant un lieu : 妈妈是在家 n’est pas la phrase neutre. Dis simplement 妈妈在家。 Pour nier, 不 se place devant 在 : 爸爸不在家。"
+      ]
+    }
+  ]
 }

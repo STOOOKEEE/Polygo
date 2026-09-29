@@ -105,7 +105,7 @@ Le cycle d'apprentissage reste le même dans chaque séance :
 
 Chaque séance quotidienne raconte une situation concrète écrite à la main : un
 dialogue de 8 à 12 répliques entre Mina, Tao et leurs proches, une lecture de 4 à 6
-phrases en un à trois paragraphes, une note de grammaire et six activités écrites :
+phrases en un à trois paragraphes et six activités écrites :
 choix de sens, ordre des mots, trou, écoute, production orale et compréhension de
 lecture. L'oral reste
 `required: false` quand aucun service de prononciation n'est configuré. Une
@@ -129,9 +129,7 @@ l'utilité : les mots du niveau 1 passent avant ceux du niveau 2, qui ne sont
 avancés que pour une leçon dont la question de sens ou l'ancre de grammaire les
 réclame ; un mot que le texte d'une leçon emploie est introduit dans cette
 leçon lorsque les bornes ci-dessus le permettent, ce qui groupe les mots par
-situation. Une note de grammaire est rattachée à un mot de sa leçon : si son
-ancre d'origine sort du périmètre, l'allocation désigne le mot de la leçon
-qu'emploient les exemples de la note. Les textes actuels des leçons peuvent
+situation. Les textes actuels des leçons peuvent
 encore nommer des mots que le parcours n'enseigne pas ou enseigne dans une autre
 leçon ; ils seront réécrits sur cette liste de mots.
 
@@ -197,6 +195,29 @@ son chemin et son SHA-256 n'existent pas. Le TTS éventuel est un repli de
 l'adaptateur audio ; il ne transforme pas l'absence d'un enregistrement en
 ressource hors ligne. Les guides manuscrits des quatre leçons d'introduction
 restent des assets séparés et vérifiables.
+
+## Grammaire
+
+La grammaire suit un syllabus unique de 30 notes (`Content/authoring/grammar-syllabus.json`),
+une toutes les deux ou trois séances, jamais plus de deux séances de suite sans note.
+L'ordre va du plus simple au plus composé : la question en `吗`, `在` + lieu, les verbes
+modaux (`想`, `会`, `要`), `也`/`都`, `的`, la négation (`不`/`没`), l'accompli `了`, l'heure,
+`有`, `能`/`可以`, les classificateurs, les mots de lieu, `很`, `比`, `过`, la date, l'âge,
+`几`/`多少`, puis les liens de la phrase (`就`, `但是`, `因为…所以…`), `最`, `得`, `吧`,
+`还`/`再`, `着`, `离`, `别` et `给`/`让`. Chaque note est placée dans une séance dont le
+dialogue ou la lecture illustre la structure, et n'emploie que des mots déjà enseignés.
+
+Une note tient en une explication courte (deux à six phrases, souvent par contraste avec
+le français), une formule (`Sujet + 在 + lieu`), trois ou quatre exemples tirés de la séance
+quand c'est possible et la faute que commet le plus souvent un francophone. Elle est
+suivie de deux exercices de manipulation en tête de la phase guidée, où la structure est
+produite plutôt que reconnue : assembler la phrase (`wordOrder` ou `translation`), puis
+choisir le mot qui convient (`fillBlank` ou `choice`). Une réponse fausse n'est jamais
+une phrase correcte du même sens : les autres ordres ou mots équivalents sont listés
+comme réponses acceptées. Les exercices de la note prennent la place d'exercices dérivés,
+sans réduire l'exposition des mots nouveaux ni le nombre de familles d'exercices.
+Les révisions et les défis reprennent le titre et un exemple de chaque note des leçons
+couvertes.
 
 ## Objectifs, aide et SRS
 

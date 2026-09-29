@@ -366,12 +366,13 @@
       "kind": "introduction",
       "id": "block-lesson-49-grammar-01",
       "title": {
-        "fr": "Grammaire — 越来越 + adjectif"
+        "fr": "Grammaire — 因为…所以… : la cause et la conséquence"
       },
       "body": {
-        "fr": "越来越 décrit une évolution progressive.\nExemple 1 : 我们的关系越来越好。\nwǒ men de guān xì yuè lái yuè hǎo。\nNos relations s’améliorent de plus en plus."
+        "fr": "En français, on dit « parce que… » ou « donc… », jamais les deux ensemble. En chinois, on les met souvent tous les deux : 因为 (yīn wèi) devant la cause, 所以 (suǒ yǐ) devant la conséquence, avec une virgule entre les deux : 因为路很长，所以我坐出租车. Tu peux aussi n’en garder qu’un seul. Seul, 因为 répond à 为什么 : 因为我饿.\nFormule : 因为 + cause，所以 + conséquence\nExemple 1 : 因为我饿。\nyīn wèi wǒ è.\nParce que j’ai faim.\nExemple 2 : 因为路很长。\nyīn wèi lù hěn cháng.\nParce que la route est longue.\nExemple 3 : 所以我坐出租车。\nsuǒ yǐ wǒ zuò chū zū chē.\nDonc je prends un taxi.\nExemple 4 : 所以我不想走路。\nsuǒ yǐ wǒ bù xiǎng zǒu lù.\nDonc je n’ai pas envie de marcher.\nAttention : Ne mets pas 所以 devant la cause : 因为 introduit toujours la cause et 所以 la conséquence. Dis 因为我饿，所以我吃米饭."
       },
       "metadata": {
+        "grammarPointID": "gram-yinwei-suoyi",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 45
@@ -903,6 +904,121 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l49-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l49-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Parce que la route est longue »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "e",
+            "hanzi": "远",
+            "pinyin": "yuǎn",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "长",
+            "pinyin": "cháng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "路",
+            "pinyin": "lù",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "因为",
+            "pinyin": "yīn wèi",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-yinwei-suoyi",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l49-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l49-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : ___我坐出租车。 (« Donc je prends un taxi ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l49-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "但是 (dàn shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "所以 (suǒ yǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "因为 (yīn wèi)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-yinwei-suoyi",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 45
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l49-order",
       "spec": {
         "kind": "wordOrder",
@@ -1162,90 +1278,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l49-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l49-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « J’ai acheté deux vêtements »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l49-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
-            "audio": null
-          },
-          {
-            "id": "h",
-            "hanzi": "远",
-            "pinyin": "yuǎn",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "件",
-            "pinyin": "jiàn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "买",
-            "pinyin": "mǎi",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "两",
-            "pinyin": "liǎng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "因为",
-            "pinyin": "yīn wèi",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 45
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l49-dialogue-2-4",
       "spec": {
         "kind": "dialogueOrder",
@@ -1328,88 +1360,6 @@
           "两"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 45
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l49-order-rea-4",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l49-order-rea-4",
-          "prompt": {
-            "fr": "Construis « Ceux qui habitent près aiment beaucoup marcher »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l49-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "同学",
-            "pinyin": "tóng xué",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "喜欢",
-            "pinyin": "xǐ huān",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "近",
-            "pinyin": "jìn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "走路",
-            "pinyin": "zǒu lù",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "很",
-            "pinyin": "hěn",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "家近的同学很喜欢走路。",
-          "家近的同学很喜欢走路"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1794,5 +1744,19 @@
     "unitID": "unit-07",
     "newVocabularyCount": 5,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-yinwei-suoyi",
+      "pattern": "因为 + cause，所以 + conséquence",
+      "function": "因为…所以… : la cause et la conséquence",
+      "markers": [
+        "因为",
+        "所以"
+      ],
+      "errors": [
+        "Ne mets pas 所以 devant la cause : 因为 introduit toujours la cause et 所以 la conséquence. Dis 因为我饿，所以我吃米饭."
+      ]
+    }
+  ]
 }

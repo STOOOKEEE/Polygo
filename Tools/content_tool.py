@@ -53,6 +53,18 @@ from review_lessons import (
     introduction_examples,
     is_derived,
 )
+from grammar_syllabus import (
+    GrammarError,
+    apply_syllabus,
+    brief as grammar_brief,
+    bundle_problems as grammar_bundle_problems,
+    check_syllabus,
+    load_notes,
+    load_syllabus,
+    pinyin_problems as grammar_pinyin_problems,
+    syllabus_path,
+    taught_context,
+)
 from pinyin_module import PinyinError, add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 from situations import (
     SituationError,
@@ -475,7 +487,7 @@ def normalize_exercise(exercise: dict[str, Any], context: str) -> dict[str, Any]
     if kind not in allowed:
         raise ContentError(f"{context}.kind: unsupported '{kind}'")
     result: dict[str, Any] = {"kind": kind, "header": normalize_header(exercise, context)}
-    common = {"objectiveIDs", "required", "prompt", "instruction", "id", "kind", "header"}
+    common = {"objectiveIDs", "required", "prompt", "instruction", "id", "kind", "header", "grammarPointID"}
     for key, value in exercise.items():
         if key not in common:
             result[key] = copy.deepcopy(value)
@@ -526,10 +538,8 @@ def grammar_introduction(
 ) -> dict[str, Any]:
     """Lower one authoring grammar note to the existing lesson block shape.
 
-    Grammar is a lesson explanation, rather than a property of a vocabulary
-    entry.  Keeping this lowering here means a reused entry can retain its
-    canonical JSON object while the lesson can introduce another use of the
-    same lexeme.
+    A note may carry the `id` of its syllabus entry, a `formula` and the
+    frequent `mistake`; the block then links to the entry in its metadata.
     """
     location = f"{context}.grammar[{index}]"
     pattern = string(require(note, "pattern", location), location + ".pattern")
@@ -541,6 +551,8 @@ def grammar_introduction(
     if not isinstance(examples, list) or not examples:
         raise ContentError(f"{location}.examples: expected a non-empty array")
     lines = [explanation["fr"]]
+    if note.get("formula") is not None:
+        lines.append(f"Formule : {string(note['formula'], location + '.formula')}")
     for example_index, example in enumerate(examples):
         example_location = f"{location}.examples[{example_index}]"
         if not isinstance(example, dict):
@@ -555,13 +567,21 @@ def grammar_introduction(
             pinyin,
             translation["fr"],
         ])
+    if note.get("mistake") is not None:
+        mistake = localized(note["mistake"], location + ".mistake")
+        if "fr" not in mistake:
+            raise ContentError(f"{location}.mistake: expected a 'fr' translation")
+        lines.append(f"Attention : {mistake['fr']}")
 
-    return {
+    block: dict[str, Any] = {
         "kind": "introduction",
         "id": f"block-{context.removeprefix('lesson ')}-grammar-{index + 1:02d}",
         "title": {"fr": f"Grammaire — {pattern}"},
         "body": {"fr": "\n".join(lines)},
     }
+    if note.get("id") is not None:
+        block["metadata"] = {"grammarPointID": string(note["id"], location + ".id")}
+    return block
 
 
 def normalize_lesson(
@@ -626,11 +646,8 @@ def normalize_lesson(
         raise ContentError(f"{context}.grammar: expected an array")
     local_vocab = {entry["id"]: entry for entry in vocabulary}
     for index, note in enumerate(grammar):
-        location = f"{context}.grammar[{index}]"
         if not isinstance(note, dict):
-            raise ContentError(f"{location}: expected an object")
-        vocab_ref = string(require(note, "vocabularyID", location), location + ".vocabularyID")
-        resolve_local_reference(vocab_ref, local_vocab, existing_vocab, catalog_info, location)
+            raise ContentError(f"{context}.grammar[{index}]: expected an object")
 
     blocks: list[dict[str, Any]] = []
     if blueprint.get("introduction") is not None:
@@ -680,7 +697,10 @@ def normalize_lesson(
                 day = max(1, lesson_number(result) - 4)
                 rotation = (day + index + 1) % len(choices)
                 normalized["choices"] = choices[rotation:] + choices[:rotation]
-        blocks.append({"kind": "exercise", "id": f"block-{normalized['header']['id']}", "spec": normalized})
+        block = {"kind": "exercise", "id": f"block-{normalized['header']['id']}", "spec": normalized}
+        if exercise.get("grammarPointID") is not None:
+            block["metadata"] = {"grammarPointID": string(exercise["grammarPointID"], f"{context}.exercises[{index}].grammarPointID")}
+        blocks.append(block)
     if blueprint.get("recap") is not None:
         recap = copy.deepcopy(blueprint["recap"])
         recap["kind"] = "recap"
@@ -1315,8 +1335,10 @@ def lint_new_kind(spec: dict[str, Any], lesson: dict[str, Any], where: str) -> N
         by_id = dict(zip(ids, hanzi))
         for sequence in [order] + list(spec.get("acceptedOrders", [])):
             check(set(sequence) <= set(ids) and len(set(sequence)) == len(sequence), "has an accepted order that does not use its tiles once")
-            sentence = "".join(by_id[tile] for tile in sequence)
-            check(any(sentence in text for text in material), f"assembles '{sentence}', which the lesson never shows")
+        # The answer is a sentence the lesson shows; an accepted order only rearranges the same tiles.
+        check(all(sorted(sequence) == sorted(order) for sequence in spec.get("acceptedOrders", [])), "has an accepted order that uses other tiles than the correct order")
+        sentence = "".join(by_id[tile] for tile in order)
+        check(any(sentence in text for text in material), f"assembles '{sentence}', which the lesson never shows")
     elif kind == "dialogueOrder":
         items = spec.get("lines")
         check(isinstance(items, list) and DIALOGUE_ORDER_LINES[0] <= len(items) <= DIALOGUE_ORDER_LINES[1], f"needs {DIALOGUE_ORDER_LINES[0]} to {DIALOGUE_ORDER_LINES[1]} lines")
@@ -1713,6 +1735,13 @@ def lint_bundle(root: Path) -> None:
         raise ContentError(str(exc)) from exc
     if problems:
         raise ContentError("situations:\n  " + "\n  ".join(problems))
+    try:
+        notes = load_syllabus(root)
+        problems = check_syllabus(notes, lessons, load_catalog(root)) + grammar_bundle_problems(notes, lessons)
+    except (GrammarError, SituationError) as exc:
+        raise ContentError(str(exc)) from exc
+    if problems:
+        raise ContentError("grammar syllabus:\n  " + "\n  ".join(problems))
 
 
 def reset_protected_orders(root: Path) -> None:
@@ -1752,6 +1781,22 @@ def overlay_situations(root: Path, blueprints: list[Any]) -> list[Any]:
         raise ContentError(str(exc)) from exc
 
 
+def overlay_grammar(root: Path, blueprints: list[Any]) -> list[Any]:
+    """Replace the assembled grammar of the daily lessons by the syllabus's notes and exercises; a faulty syllabus is refused.
+
+    The notes are checked against the lessons already in `root`, which teach the same words.
+    """
+    try:
+        notes = load_syllabus(root)
+        lessons, catalog = load_lessons(root), load_catalog(root)
+        problems = check_syllabus(notes, lessons, catalog)
+        if problems:
+            raise ContentError("grammar syllabus:\n  " + "\n  ".join(problems))
+        return apply_syllabus(blueprints, notes, lessons, catalog)
+    except (GrammarError, SituationError) as exc:
+        raise ContentError(str(exc)) from exc
+
+
 def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any] | None, catalog_info: dict[str, Any] | None) -> set[Path]:
     source_version = string(require(source, "contentVersion", "authoring"), "authoring.contentVersion")
     course_source = require(source, "course", "authoring")
@@ -1767,6 +1812,7 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     if not isinstance(blueprints, list) or not blueprints:
         raise ContentError("authoring.lessons: expected a non-empty array")
     blueprints = overlay_situations(root, blueprints)
+    blueprints = overlay_grammar(root, blueprints)
     generated_lessons = [normalize_lesson(item, source_version, existing_vocab, existing_cards, catalog_info) for item in blueprints]
     generated_ids = [lesson["id"] for lesson in generated_lessons]
     unique(generated_ids, "authoring.lessons.id")
@@ -1959,6 +2005,13 @@ def main(argv: list[str]) -> int:
     situations_parser.add_argument("--file", type=Path, required=True)
     situations_parser.add_argument("--root", type=Path, default=Path("Content"))
     situations_parser.add_argument("--pinyin-check", action="store_true", help="also compare the pinyin with pypinyin, when installed")
+    grammar_brief_parser = subparsers.add_parser("grammar-brief", help="print what a writer needs to author one lesson's grammar note")
+    grammar_brief_parser.add_argument("--lesson", required=True, help="a daily lesson ID such as lesson-05")
+    grammar_brief_parser.add_argument("--root", type=Path, default=Path("Content"))
+    grammar_lint_parser = subparsers.add_parser("grammar-lint", help="check grammar notes without regenerating anything")
+    grammar_lint_parser.add_argument("--file", type=Path, help="notes to check; default: the syllabus of --root, as a whole")
+    grammar_lint_parser.add_argument("--root", type=Path, default=Path("Content"))
+    grammar_lint_parser.add_argument("--pinyin-check", action="store_true", help="also compare the pinyin with pypinyin, when installed")
     args = parser.parse_args(argv)
     try:
         if args.command == "lint":
@@ -1967,6 +2020,23 @@ def main(argv: list[str]) -> int:
         elif args.command == "generate":
             generate(args.root, args.input)
             print(f"content generated and linted: {args.root}")
+        elif args.command == "grammar-brief":
+            lessons = load_lessons(args.root)
+            context = taught_context(lessons, load_catalog(args.root), args.lesson)
+            print(grammar_brief(context, lessons[args.lesson], load_syllabus(args.root) if syllabus_path(args.root).exists() else []))
+        elif args.command == "grammar-lint":
+            notes = load_notes(args.file or syllabus_path(args.root))
+            problems = check_syllabus(notes, load_lessons(args.root), load_catalog(args.root), complete=args.file is None)
+            if args.pinyin_check:
+                pinyin, note = grammar_pinyin_problems(notes)
+                if note:
+                    print(note)
+                problems.extend(pinyin)
+            if problems:
+                print("\n".join(problems), file=sys.stderr)
+                print(f"grammar lint failed: {len(problems)} problem(s)", file=sys.stderr)
+                return 2
+            print(f"grammar lint passed: {args.file or syllabus_path(args.root)}")
         elif args.command == "situation-brief":
             lessons = load_lessons(args.root)
             context = build_context(lessons, load_catalog(args.root), args.lesson)
@@ -1979,7 +2049,7 @@ def main(argv: list[str]) -> int:
                 return 2
             print(f"situations lint passed: {args.file}")
         return 0
-    except (ContentError, SituationError) as exc:
+    except (ContentError, SituationError, GrammarError) as exc:
         print(f"content error: {exc}", file=sys.stderr)
         return 2
 

@@ -325,12 +325,13 @@
       "kind": "introduction",
       "id": "block-lesson-64-grammar-01",
       "title": {
-        "fr": "Grammaire — Bilan des structures du niveau 3"
+        "fr": "Grammaire — 离 : la distance entre deux lieux"
       },
       "body": {
-        "fr": "Cette séance réunit cause, 把, concession et résultat dans une réponse suivie.\nExemple 1 : 虽然路很长，但是我们终于到了。\nsuī rán lù hěn cháng, dàn shì wǒ men zhōng yú dào le.\nMême si la route était longue, nous sommes finalement arrivés.\nExemple 2 : 我把地图放在桌上。\nwǒ bǎ dì tú fàng zài zhuō shàng.\nJ’ai posé la carte sur la table."
+        "fr": "Pour dire qu’un lieu est proche ou loin d’un autre, on utilise 离 (lí) : A + 离 + B + adjectif. Il n’y a pas de verbe « être » : 近 (proche) et 远 (loin) sont des adjectifs, souvent précédés de 很 ou de 不. 离 relie deux lieux fixes, alors que 从 marque le point de départ d’un trajet : 从家到学校 = de la maison à l’école.\nFormule : A + 离 + B + 近 / 远\nExemple 1 : 那个房间离这里很近。\nnà ge fáng jiān lí zhè lǐ hěn jìn.\nCette chambre est tout près d’ici.\nExemple 2 : 我家离火车站不远。\nwǒ jiā lí huǒ chē zhàn bù yuǎn.\nMa maison n’est pas loin de la gare.\nExemple 3 : 房间离学校也很近。\nfáng jiān lí xué xiào yě hěn jìn.\nLa chambre est aussi tout près de l’école.\nExemple 4 : 你现在的房间离学校太远了。\nnǐ xiàn zài de fáng jiān lí xué xiào tài yuǎn le.\nTa chambre actuelle est trop loin de l’école.\nAttention : Ne traduis pas « loin de » par 从 ou 在 : 学校从我家很远 est faux. On dit 学校离我家很远, sans verbe ni 是, avec l’adjectif 近 ou 远 à la fin."
       },
       "metadata": {
+        "grammarPointID": "gram-li",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 60
@@ -612,13 +613,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-dict-sent-dia-7",
+      "id": "block-ex-l64-dict-py-162",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l64-dict-sent-dia-7",
+          "id": "ex-l64-dict-py-162",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
+            "fr": "Écoute le mot, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -629,31 +630,38 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "因为离学校近，所以贵一点。",
+        "promptText": "穿",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "bié děng le, wǒ men qù kàn kan fáng jiān ba."
+              "fr": "chuān"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "yīn wèi lí xué xiào jìn, suǒ yǐ guì yì diǎn."
+              "fr": "lí"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "jīn tiān hěn lěng, nǐ chuān de tài shǎo le."
+              "fr": "guì"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "dào"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -663,11 +671,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-tone-162",
+      "id": "block-ex-l64-tone-187",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l64-tone-162",
+          "id": "ex-l64-tone-187",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -679,7 +687,7 @@
           ],
           "required": true
         },
-        "promptText": "穿",
+        "promptText": "贵",
         "choices": [
           {
             "id": "t1",
@@ -710,7 +718,7 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t1"
+        "correctChoiceID": "t4"
       },
       "metadata": {
         "stage": "discover",
@@ -829,6 +837,144 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l64-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Ma maison n’est pas loin de la gare »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "远",
+            "pinyin": "yuǎn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "从",
+            "pinyin": "cóng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "不",
+            "pinyin": "bù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "火车站",
+            "pinyin": "huǒ chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "离",
+            "pinyin": "lí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": [
+          [
+            "d",
+            "c",
+            "a",
+            "b",
+            "e",
+            "f"
+          ]
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-li",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 60
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l64-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l64-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 学校___我家很远。 (« L’école est très loin de chez moi ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l64-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "离 (lí)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "从 (cóng)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-li",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 60
       }
@@ -1037,119 +1183,31 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l64-translate-exa-1",
+      "id": "block-ex-l64-fill-dia-2",
       "spec": {
-        "kind": "translation",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l64-translate-exa-1",
+          "id": "ex-l64-fill-dia-2",
           "prompt": {
-            "fr": "Traduis en chinois : « Elle porte des vêtements rouges »"
+            "fr": "Complète : 没关系，那个___离这里很近，走十分钟就到了。 (« Ce n’est pas grave, cette chambre est tout près d’ici, dix minutes à pied et on y est »)"
           },
           "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
             "l64-produce"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "离",
-            "pinyin": "lí",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "穿",
-            "pinyin": "chuān",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "贵",
-            "pinyin": "guì",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "衣服",
-            "pinyin": "yī fú",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "她",
-            "pinyin": "tā",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "红",
-            "pinyin": "hóng",
-            "audio": null
-          }
+        "sentence": "没关系，那个___离这里很近，走十分钟就到了。",
+        "acceptedAnswers": [
+          "房间"
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedOrders": []
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "guided",
         "skill": "production",
-        "lessonDay": 60
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l64-talk-3",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l64-talk-3",
-          "prompt": {
-            "fr": "Écoute Tao, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l64-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Tao",
-        "promptText": "你为什么想找新房间？你现在的房间不好吗？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "不是不好，但是离学校太远了。坐公共汽车要一个小时。",
-            "pinyin": "bú shì bù hǎo, dàn shì lí xué xiào tài yuǎn le. zuò gōng gòng qì chē yào yí ge xiǎo shí.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "好，房间就在前面，快到了。",
-            "pinyin": "hǎo, fáng jiān jiù zài qián miàn, kuài dào le.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "没关系，那个房间离这里很近，走十分钟就到了。",
-            "pinyin": "méi guān xì, nà ge fáng jiān lí zhè lǐ hěn jìn, zǒu shí fēn zhōng jiù dào le.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "a"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
         "lessonDay": 60
       }
     },
@@ -1227,36 +1285,6 @@
         "sentence": "昨天很冷，我___了三件衣服去看房间。",
         "acceptedAnswers": [
           "穿"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 60
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l64-fill-rea-2",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l64-fill-rea-2",
-          "prompt": {
-            "fr": "Complète : ___不大，但是很漂亮，离学校也很近。 (« Elle n’est pas grande, mais elle est très jolie et elle est aussi tout près de l’école »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l64-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___不大，但是很漂亮，离学校也很近。",
-        "acceptedAnswers": [
-          "房间"
         ],
         "caseSensitive": false
       },
@@ -1624,5 +1652,18 @@
     "unitID": "unit-09",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-li",
+      "pattern": "A + 离 + B + 近 / 远",
+      "function": "离 : la distance entre deux lieux",
+      "markers": [
+        "离"
+      ],
+      "errors": [
+        "Ne traduis pas « loin de » par 从 ou 在 : 学校从我家很远 est faux. On dit 学校离我家很远, sans verbe ni 是, avec l’adjectif 近 ou 远 à la fin."
+      ]
+    }
+  ]
 }

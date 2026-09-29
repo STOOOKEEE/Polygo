@@ -328,12 +328,13 @@
       "kind": "introduction",
       "id": "block-lesson-24-grammar-01",
       "title": {
-        "fr": "Grammaire — 一边…一边…"
+        "fr": "Grammaire — 有 : avoir et il y a"
       },
       "body": {
-        "fr": "一边 relie deux actions simultanées.\nExemple 1 : 我一边走路一边听音乐。\nwǒ yī biān zǒu lù yī biān tīng yīn yuè。\nJ’écoute de la musique tout en marchant."
+        "fr": "Comme « avoir » en français, 有 se place après le sujet : 我有时间. Mais 有 veut aussi dire « il y a » : on commence par le lieu, puis 有, puis la chose, comme dans 医院里有茶. Avec 在, l’ordre change : la chose vient d’abord, 茶在医院里. Pour nier, on dit toujours 没有, jamais 不有. Pour poser la question, on ajoute 吗 ou on dit 有没有.\nFormule : Sujet + 有 + objet ; Lieu + 有 + chose\nExemple 1 : 她十一点有时间。\ntā shí yī diǎn yǒu shí jiān.\nElle aura du temps à onze heures.\nExemple 2 : 我没有时间。\nwǒ méi yǒu shí jiān.\nJe n’ai pas le temps.\nExemple 3 : 医院里有茶吗？\nyī yuàn lǐ yǒu chá ma?\nIl y a du thé dans l’hôpital ?\nExemple 4 : 前面的商店有茶和牛奶。\nqián miàn de shāng diàn yǒu chá hé niú nǎi.\nLe magasin là-devant a du thé et du lait.\nAttention : Ne dis pas 不有 : 有 se nie toujours avec 没 (我没有时间). Pour « il y a du thé à l’hôpital », le lieu vient d’abord (医院里有茶) ; avec 在, c’est la chose d’abord (茶在医院里)."
       },
       "metadata": {
+        "grammarPointID": "gram-you",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 20
@@ -666,11 +667,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-tone-081",
+      "id": "block-ex-l24-tone-096",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l24-tone-081",
+          "id": "ex-l24-tone-096",
           "prompt": {
             "fr": "Écoute le mot, puis choisis ses deux tons."
           },
@@ -682,19 +683,26 @@
           ],
           "required": true
         },
-        "promptText": "前面",
+        "promptText": "时候",
         "choices": [
           {
-            "id": "t14",
+            "id": "t20",
             "label": {
-              "fr": "Ton 1 ¯ puis ton 4 ˋ"
+              "fr": "Ton 2 ˊ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t23",
+            "id": "t21",
             "label": {
-              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+              "fr": "Ton 2 ˊ puis ton 1 ¯"
+            },
+            "audio": null
+          },
+          {
+            "id": "t22",
+            "label": {
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
             },
             "audio": null
           },
@@ -704,16 +712,9 @@
               "fr": "Ton 2 ˊ puis ton 4 ˋ"
             },
             "audio": null
-          },
-          {
-            "id": "t44",
-            "label": {
-              "fr": "Ton 4 ˋ puis ton 4 ˋ"
-            },
-            "audio": null
           }
         ],
-        "correctChoiceID": "t24"
+        "correctChoiceID": "t20"
       },
       "metadata": {
         "stage": "discover",
@@ -723,11 +724,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-dict-zh-096",
+      "id": "block-ex-l24-dict-zh-081",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l24-dict-zh-096",
+          "id": "ex-l24-dict-zh-081",
           "prompt": {
             "fr": "Écoute le mot, puis choisis les caractères."
           },
@@ -740,12 +741,12 @@
           "required": true
         },
         "script": "hanzi",
-        "promptText": "时候",
+        "promptText": "前面",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "说话"
+              "fr": "时候"
             },
             "audio": null
           },
@@ -759,14 +760,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "前面"
+              "fr": "说话"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "时候"
+              "fr": "前面"
             },
             "audio": null
           }
@@ -832,6 +833,118 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l24-gram-1",
+          "prompt": {
+            "fr": "Construis « Je n’ai pas le temps »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l24-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "c",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "没",
+            "pinyin": "méi",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "时间",
+            "pinyin": "shí jiān",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "我没有时间。",
+          "我没有时间"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-you",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 20
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l24-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l24-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 前面的商店___茶和牛奶。 (« Le magasin là-devant a du thé et du lait ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l24-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "在 (zài)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "有 (yǒu)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-you",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 20
       }
@@ -1117,54 +1230,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l24-talk-5",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l24-talk-5",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "现在几点？她今天有时间吗？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "她在前面，你看，她在和人说话。",
-            "pinyin": "tā zài qián miàn, nǐ kàn, tā zài hé rén shuō huà.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "我要牛奶，谢谢！",
-            "pinyin": "wǒ yào niú nǎi, xiè xie!",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "十点。她十一点有时间，我们在这里坐一下。",
-            "pinyin": "shí diǎn. tā shí yī diǎn yǒu shí jiān, wǒ men zài zhè lǐ zuò yī xià.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l24-dialogue-2-3",
       "spec": {
         "kind": "dialogueOrder",
@@ -1243,55 +1308,6 @@
       "metadata": {
         "stage": "reuse",
         "skill": "production",
-        "lessonDay": 20
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l24-read-dia-2",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l24-read-dia-2",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 她在前面，你看，她在和人说话。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l24-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Quelle heure est-il ? Elle a un moment aujourd’hui ?"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Elle est devant, regarde : elle parle avec quelqu’un."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "À onze heures elle a du temps, nous prenons le thé avec elle."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
         "lessonDay": 20
       }
     },
@@ -1648,5 +1664,18 @@
     "unitID": "unit-04",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-you",
+      "pattern": "Sujet + 有 + objet ; Lieu + 有 + chose",
+      "function": "有 : avoir et il y a",
+      "markers": [
+        "有"
+      ],
+      "errors": [
+        "Ne dis pas 不有 : 有 se nie toujours avec 没 (我没有时间). Pour « il y a du thé à l’hôpital », le lieu vient d’abord (医院里有茶) ; avec 在, c’est la chose d’abord (茶在医院里)."
+      ]
+    }
+  ]
 }

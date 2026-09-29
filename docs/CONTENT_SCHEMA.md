@@ -382,11 +382,25 @@ audio?. Les histoires du parcours quotidien sont complètes et inline dans les
 ReadingBlock ; un storyID stable permet leur affichage dans l'explorateur sans
 dupliquer un fichier de récit.
 
-Le générateur abaisse chaque note grammar d'un fragment en un
-IntroductionBlock autonome. Son ID suit block-lesson-XX-grammar-01, son titre
-reprend le patron et son body conserve l'explication puis, pour chaque exemple,
-les caractères, le pinyin et la traduction. Une note de grammaire de séance ne
-modifie pas l'entrée lexicale réutilisée.
+Le générateur abaisse chaque note grammar en un IntroductionBlock autonome. Son
+ID suit block-lesson-XX-grammar-01, son titre est « Grammaire — » suivi du
+patron et son body conserve l'explication, la formule (`Formule : …`), pour
+chaque exemple `Exemple N : hanzi`, le pinyin et la traduction, puis la faute
+fréquente (`Attention : …`). Une note de grammaire de séance ne modifie pas
+l'entrée lexicale réutilisée.
+
+Pour les 66 séances du jour, les notes viennent d'un syllabus unique,
+`Content/authoring/grammar-syllabus.json` (30 notes, une toutes les deux ou trois
+leçons de `lesson-05` à `lesson-68`) : voir CONTENT_AUTHORING.md, « Syllabus de
+grammaire ». Le bloc de grammaire porte `metadata.grammarPointID` (l'ID de la note,
+par exemple `gram-ma-question`) et la leçon un `grammarPoints` d'un élément
+`{id, pattern, function, markers, errors}` (`pattern` est la formule, `function` le titre,
+`markers` les mots qui portent la structure, `errors` la faute fréquente). Les deux
+exercices de la note, `ex-l<N>-gram-1` (assemblage : `wordOrder` ou `translation`) et
+`ex-l<N>-gram-2` (choix du mot : `fillBlank` ou `choice`), sont des blocs `exercise`
+de la phase `guided` dont `metadata.grammarPointID` renvoie à la même note ; leur
+réponse emploie un des `markers`. Ces clés de métadonnées sont, comme les autres, ignorées
+par le décodeur Codable ; le contrat de contenu les vérifie.
 
 ## Exercices
 
@@ -617,22 +631,28 @@ remplacés à `generate` par la scène écrite à la main de
 phrases de lecture (voir CONTENT_AUTHORING.md, « Situations écrites à la main »). Une
 séance du jour sans scène est refusée par `generate` et par `lint`.
 
-Une note de grammaire d'authoring a la forme :
+Une note de grammaire d'authoring (pack) a la forme :
 
 ~~~json
 {
-  "vocabularyID": "hsk20-098",
-  "pattern": "在 + lieu",
+  "id": "gram-zai-location",
+  "pattern": "在 : dire où l’on se trouve",
+  "formula": "Sujet + 在 + lieu",
   "explanation": {"fr": "在 se place après le sujet et avant le lieu."},
   "examples": [
     {
       "hanzi": "手机在桌子上。",
-      "pinyin": "shǒu jī zài zhuō zi shàng。",
+      "pinyin": "shǒu jī zài zhuō zi shàng.",
       "translation": {"fr": "Le téléphone est sur la table."}
     }
-  ]
+  ],
+  "mistake": {"fr": "Ne traduis pas « être » par 是 devant un lieu."}
 }
 ~~~
+
+`id`, `formula` et `mistake` sont facultatifs ; `pattern`, `explanation` et
+`examples` sont obligatoires. Les notes des séances du jour s'écrivent dans le
+syllabus, pas dans le pack.
 
 Un blueprint utilise vocabularyIDs pour le catalogue et extraVocabulary pour
 les mots de contexte. Le tableau exercises conserve les champs de la famille

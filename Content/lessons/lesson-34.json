@@ -328,42 +328,13 @@
       "kind": "introduction",
       "id": "block-lesson-34-grammar-01",
       "title": {
-        "fr": "Grammaire — 因为…所以…"
+        "fr": "Grammaire — 比 : comparer deux choses"
       },
       "body": {
-        "fr": "因为 présente la cause et 所以 la conséquence.\nExemple 1 : 因为下雨，所以我坐出租车。\nyīn wèi xià yǔ， suǒ yǐ wǒ zuò chū zū chē。\nComme il pleut, je prends un taxi."
+        "fr": "Pour comparer, le chinois place 比 entre les deux termes : A + 比 + B + adjectif, c’est-à-dire « A est plus … que B ». Le français ajoute « plus », le chinois ne met aucun mot pour cela. L’adjectif reste seul, sans 很. On peut reprendre le nom avec 的 : « 蓝的比红的小 ».\nFormule : A + 比 + B + adjectif\nExemple 1 : 今天比昨天热。\njīn tiān bǐ zuó tiān rè.\nIl fait plus chaud aujourd’hui qu’hier.\nExemple 2 : 蓝的比红的小。\nlán de bǐ hóng de xiǎo.\nLa bleue est plus petite que la rouge.\nExemple 3 : 鱼比菜好吃。\nyú bǐ cài hǎo chī.\nLe poisson est meilleur que les légumes.\nExemple 4 : 这个杯子比那个大。\nzhè ge bēi zi bǐ nà ge dà.\nCette tasse est plus grande que celle-là.\nAttention : Ne mets pas 很 devant l’adjectif après 比 : 今天比昨天很热 est faux, dis 今天比昨天热. Et ne cherche pas de mot pour « plus » : 比 suffit."
       },
       "metadata": {
-        "stage": "introduce",
-        "skill": "recognition",
-        "lessonDay": 30
-      }
-    },
-    {
-      "kind": "introduction",
-      "id": "block-lesson-34-grammar-02",
-      "title": {
-        "fr": "Grammaire — 先…然后…"
-      },
-      "body": {
-        "fr": "先 et 然后 ordonnent deux actions.\nExemple 1 : 我先吃饭，然后学习。\nwǒ xiān chī fàn， rán hòu xué xí。\nJe mange d’abord, puis j’étudie."
-      },
-      "metadata": {
-        "stage": "introduce",
-        "skill": "recognition",
-        "lessonDay": 30
-      }
-    },
-    {
-      "kind": "introduction",
-      "id": "block-lesson-34-grammar-03",
-      "title": {
-        "fr": "Grammaire — A 比 B + adjectif"
-      },
-      "body": {
-        "fr": "比 compare deux éléments.\nExemple 1 : 今天比昨天高兴。\njīn tiān bǐ zuó tiān gāo xìng。\nAujourd’hui je suis plus heureux qu’hier."
-      },
-      "metadata": {
+        "grammarPointID": "gram-bi",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 30
@@ -868,6 +839,121 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l34-gram-1",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l34-gram-1",
+          "prompt": {
+            "fr": "Traduis en chinois : « Il fait plus chaud aujourd’hui qu’hier »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "热",
+            "pinyin": "rè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "比",
+            "pinyin": "bǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "昨天",
+            "pinyin": "zuó tiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "grammarPointID": "gram-bi",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l34-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l34-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 这个杯子___那个大。 (« Cette tasse est plus grande que celle-là ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l34-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "c",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "比 (bǐ)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "和 (hé)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-bi",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 30
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l34-order",
       "spec": {
         "kind": "wordOrder",
@@ -1084,88 +1170,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l34-translate-dia-4",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l34-translate-dia-4",
-          "prompt": {
-            "fr": "Traduis en chinois : « On y mange bien ? »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l34-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "的",
-            "pinyin": "de",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "菜",
-            "pinyin": "cài",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "高兴",
-            "pinyin": "gāo xìng",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "昨天",
-            "pinyin": "zuó tiān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "饭馆",
-            "pinyin": "fàn guǎn",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "好吃",
-            "pinyin": "hǎo chī",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 30
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l34-talk-7",
+      "id": "block-ex-l34-talk-5",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l34-talk-7",
+          "id": "ex-l34-talk-5",
           "prompt": {
             "fr": "Écoute An, puis choisis la meilleure réponse."
           },
@@ -1178,24 +1187,24 @@
           "required": true
         },
         "speaker": "An",
-        "promptText": "我也想去，明天中午可以吗？",
+        "promptText": "饭馆的菜好吃吗？",
         "replies": [
           {
             "id": "a",
+            "hanzi": "很好吃！鱼比菜好吃，我很高兴。",
+            "pinyin": "hěn hǎo chī! yú bǐ cài hǎo chī, wǒ hěn gāo xìng.",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "可以！饭馆的门是红的，很漂亮。",
             "pinyin": "kě yǐ! fàn guǎn de mén shì hóng de, hěn piào liàng.",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "c",
             "hanzi": "三十块，很便宜！饭馆在学校前面。",
             "pinyin": "sān shí kuài, hěn pián yi! fàn guǎn zài xué xiào qián miàn.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "很好吃！鱼比菜好吃，我很高兴。",
-            "pinyin": "hěn hǎo chī! yú bǐ cài hǎo chī, wǒ hěn gāo xìng.",
             "audio": null
           }
         ],
@@ -1283,88 +1292,6 @@
           "昨天"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 30
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l34-order-rea-5",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l34-order-rea-5",
-          "prompt": {
-            "fr": "Construis « Demain, j’ai aussi envie d’y aller avec maman »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l34-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "e",
-            "hanzi": "和",
-            "pinyin": "hé",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "妈妈",
-            "pinyin": "mā ma",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "明天",
-            "pinyin": "míng tiān",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "想",
-            "pinyin": "xiǎng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "也",
-            "pinyin": "yě",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f",
-          "g"
-        ],
-        "acceptedVariants": [
-          "明天我也想和妈妈去。",
-          "明天我也想和妈妈去"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1725,5 +1652,18 @@
     "unitID": "unit-05",
     "newVocabularyCount": 4,
     "extraVocabularyIDs": []
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-bi",
+      "pattern": "A + 比 + B + adjectif",
+      "function": "比 : comparer deux choses",
+      "markers": [
+        "比"
+      ],
+      "errors": [
+        "Ne mets pas 很 devant l’adjectif après 比 : 今天比昨天很热 est faux, dis 今天比昨天热. Et ne cherche pas de mot pour « plus » : 比 suffit."
+      ]
+    }
+  ]
 }

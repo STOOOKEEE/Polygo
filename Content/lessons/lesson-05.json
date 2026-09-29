@@ -364,27 +364,13 @@
       "kind": "introduction",
       "id": "block-lesson-05-grammar-01",
       "title": {
-        "fr": "Grammaire — A 和 B"
+        "fr": "Grammaire — 吗 : poser une question oui/non"
       },
       "body": {
-        "fr": "和 relie deux noms ou deux groupes : 茶和菜 signifie « le thé et le plat ».\nExemple 1 : 茶和菜都很好。\nchá hé cài dōu hěn hǎo.\nLe thé et le plat sont tous les deux très bons."
+        "fr": "En français, on dit « est-ce que » ou on inverse le sujet. En chinois, tu gardes la phrase affirmative et tu ajoutes 吗 (ma) à la fin. Pas d’inversion, pas d’auxiliaire. Pour répondre, on reprend le verbe ou l’adjectif : 饿 pour oui, 不饿 pour non.\nFormule : Phrase affirmative + 吗 ?\nExemple 1 : 你饿吗？\nnǐ è ma?\nTu as faim ?\nExemple 2 : 茶热吗？\nchá rè ma?\nEst-ce que le thé est chaud ?\nExemple 3 : 你喝茶吗？\nnǐ hē chá ma?\nTu bois du thé ?\nExemple 4 : 你有水吗？\nnǐ yǒu shuǐ ma?\nTu as de l’eau ?\nAttention : N’inverse rien et ne place pas 吗 après le sujet : 你吗饿 est faux, 吗 ferme toujours la phrase. Pour répondre, reprends le verbe (饿, 有) : ne cherche pas un mot « oui » à part."
       },
       "metadata": {
-        "stage": "introduce",
-        "skill": "recognition",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "introduction",
-      "id": "block-lesson-05-grammar-02",
-      "title": {
-        "fr": "Grammaire — phrase + 吗？"
-      },
-      "body": {
-        "fr": "吗 transforme une phrase déclarative en question oui/non.\nExemple 1 : 你喝茶吗？\nnǐ hē chá ma?\nTu bois du thé ?"
-      },
-      "metadata": {
+        "grammarPointID": "gram-ma-question",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 1
@@ -666,11 +652,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-dict-sent-dia-7",
+      "id": "block-ex-l5-dict-sent-dia-1",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l5-dict-sent-dia-7",
+          "id": "ex-l5-dict-sent-dia-1",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -683,26 +669,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "有，我有茶和水。你喝茶吗？",
+        "promptText": "你好！你饿吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn."
+              "fr": "wǒ měi tiān hē chá。"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú."
+              "fr": "hē! chá rè ma?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?"
+              "fr": "nǐ hǎo! nǐ è ma?"
             },
             "audio": null
           }
@@ -774,63 +760,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-pick-038",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l5-pick-038",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l5-understand"
-          ],
-          "required": true
-        },
-        "promptText": "和",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "和 (hé)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "渴 (kě)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "吗 (ma)"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "茶 (chá)"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l5-dict-zh-010",
       "spec": {
         "kind": "dictation",
@@ -853,28 +782,85 @@
           {
             "id": "a",
             "label": {
-              "fr": "吗"
+              "fr": "茶"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "和"
+              "fr": "吗"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "饿"
+              "fr": "和"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "茶"
+              "fr": "饿"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-pick-038",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l5-pick-038",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "promptText": "和",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "渴 (kě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "吗 (ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "茶 (chá)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "和 (hé)"
             },
             "audio": null
           }
@@ -883,6 +869,125 @@
       },
       "metadata": {
         "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l5-gram-1",
+          "prompt": {
+            "fr": "Construis « Es-tu chinois ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "人",
+            "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "中国",
+            "pinyin": "zhōng guó",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "你是中国人吗？",
+          "你是中国人吗"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-ma-question",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l5-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l5-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 你渴___？ (« Tu as soif ? ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l5-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "吗 (ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "和 (hé)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "是 (shì)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-ma-question",
+        "stage": "guided",
         "skill": "recognition",
         "lessonDay": 1
       }
@@ -1098,88 +1203,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-translate-exa-1",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l5-translate-exa-1",
-          "prompt": {
-            "fr": "Traduis en chinois : « Je bois du thé chaque jour »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l5-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "和",
-            "pinyin": "hé",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "茶",
-            "pinyin": "chá",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-talk-1",
+      "id": "block-ex-l5-talk-7",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l5-talk-1",
+          "id": "ex-l5-talk-7",
           "prompt": {
             "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
@@ -1192,24 +1220,24 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "你好！你饿吗？",
+        "promptText": "有，我有茶和水。你喝茶吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "谢谢！我吃米饭，你吃鱼。",
-            "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.",
+            "hanzi": "我不吃鱼，我吃菜和米饭。",
+            "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "饿！你有什么菜？",
-            "pinyin": "è! nǐ yǒu shén me cài?",
+            "hanzi": "喝！茶热吗？",
+            "pinyin": "hē! chá rè ma?",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "喝！茶热吗？",
-            "pinyin": "hē! chá rè ma?",
+            "hanzi": "饿！你有什么菜？",
+            "pinyin": "è! nǐ yǒu shén me cài?",
             "audio": null
           }
         ],
@@ -1297,67 +1325,6 @@
           "和"
         ],
         "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-order-rea-3",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l5-order-rea-3",
-          "prompt": {
-            "fr": "Construis « Tu manges du poisson ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l5-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "吃",
-            "pinyin": "chī",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "鱼",
-            "pinyin": "yú",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "你吃鱼吗？",
-          "你吃鱼吗"
-        ]
       },
       "metadata": {
         "stage": "reuse",
@@ -1849,5 +1816,18 @@
       "vocab-x-997f",
       "vocab-x-6e34"
     ]
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-ma-question",
+      "pattern": "Phrase affirmative + 吗 ?",
+      "function": "吗 : poser une question oui/non",
+      "markers": [
+        "吗"
+      ],
+      "errors": [
+        "N’inverse rien et ne place pas 吗 après le sujet : 你吗饿 est faux, 吗 ferme toujours la phrase. Pour répondre, reprends le verbe (饿, 有) : ne cherche pas un mot « oui » à part."
+      ]
+    }
+  ]
 }

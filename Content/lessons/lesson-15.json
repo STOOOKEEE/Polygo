@@ -351,12 +351,13 @@
       "kind": "introduction",
       "id": "block-lesson-15-grammar-01",
       "title": {
-        "fr": "Grammaire — 想/要 + verbe"
+        "fr": "Grammaire — 的 : le possesseur d’abord"
       },
       "body": {
-        "fr": "想 et 要 se placent avant l’action souhaitée.\nExemple 1 : 我想学汉语。\nwǒ xiǎng xué hàn yǔ。\nJe veux apprendre le chinois."
+        "fr": "En français, la chose vient d’abord : « le chien de mon ami ». En chinois, l’ordre est inversé : le possesseur, puis 的, puis la chose. Ainsi 老师的狗 se lit « professeur + de + chien ». Avec un pronom, c’est pareil : 我的书 veut dire « mon livre ». Pour la maison ou les proches, on peut souvent omettre 的 : 我家, 我妈妈.\nFormule : Possesseur + 的 + chose\nExemple 1 : 这是我的书。\nzhè shì wǒ de shū.\nC’est mon livre.\nExemple 2 : 老师的狗很大。\nlǎo shī de gǒu hěn dà.\nLe chien du professeur est grand.\nExemple 3 : 你要我的电话吗？\nnǐ yào wǒ de diàn huà ma?\nTu veux mon numéro de téléphone ?\nExemple 4 : 他也是我的汉语老师。\ntā yě shì wǒ de hàn yǔ lǎo shī.\nC’est aussi mon professeur de chinois.\nAttention : Ne calque pas l’ordre français : 老师的狗 est « le chien du professeur », alors que 狗的老师 serait « le professeur du chien ». Et n’oublie pas 的 entre deux mots : dis 我的书, pas 我书."
       },
       "metadata": {
+        "grammarPointID": "gram-de-possession",
         "stage": "introduce",
         "skill": "recognition",
         "lessonDay": 11
@@ -869,6 +870,125 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l15-gram-1",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l15-gram-1",
+          "prompt": {
+            "fr": "Construis « C’est ton chat »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l15-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "猫",
+            "pinyin": "māo",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "的",
+            "pinyin": "de",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这是你的猫。",
+          "这是你的猫"
+        ]
+      },
+      "metadata": {
+        "grammarPointID": "gram-de-possession",
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 11
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l15-gram-2",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l15-gram-2",
+          "prompt": {
+            "fr": "Quel mot complète la phrase : 老师___狗很大。 (« Le chien du professeur est grand ») ?"
+          },
+          "instruction": {
+            "fr": "Choisis le mot qui convient."
+          },
+          "objectiveIDs": [
+            "l15-produce"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "b",
+            "label": {
+              "fr": "和 (hé)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "呢 (ne)"
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "的 (de)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "grammarPointID": "gram-de-possession",
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 11
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l15-order",
       "spec": {
         "kind": "wordOrder",
@@ -1071,83 +1191,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l15-translate-exa-1",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l15-translate-exa-1",
-          "prompt": {
-            "fr": "Traduis en chinois : « J’ai trois pommes »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l15-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "f",
-            "hanzi": "汉语",
-            "pinyin": "Hàn yǔ",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "电话",
-            "pinyin": "diàn huà",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "苹果",
-            "pinyin": "píng guǒ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "个",
-            "pinyin": "gè",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "三",
-            "pinyin": "sān",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 11
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l15-talk-8",
       "spec": {
         "kind": "conversationChoice",
@@ -1268,36 +1311,6 @@
         "sentence": "我有一个中国___，他也是我的汉语老师。",
         "acceptedAnswers": [
           "朋友"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "production",
-        "lessonDay": 11
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l15-fill-rea-5",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l15-fill-rea-5",
-          "prompt": {
-            "fr": "Complète : ___我的汉语不多，我想有很多朋友。 (« Pour l’instant, mon chinois n’est pas très bon, et j’aimerais avoir beaucoup d’amis »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l15-produce"
-          ],
-          "required": true
-        },
-        "sentence": "___我的汉语不多，我想有很多朋友。",
-        "acceptedAnswers": [
-          "现在"
         ],
         "caseSensitive": false
       },
@@ -1684,5 +1697,18 @@
     "extraVocabularyIDs": [
       "vocab-x-7535-8bdd"
     ]
-  }
+  },
+  "grammarPoints": [
+    {
+      "id": "gram-de-possession",
+      "pattern": "Possesseur + 的 + chose",
+      "function": "的 : le possesseur d’abord",
+      "markers": [
+        "的"
+      ],
+      "errors": [
+        "Ne calque pas l’ordre français : 老师的狗 est « le chien du professeur », alors que 狗的老师 serait « le professeur du chien ». Et n’oublie pas 的 entre deux mots : dis 我的书, pas 我书."
+      ]
+    }
+  ]
 }
