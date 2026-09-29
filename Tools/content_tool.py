@@ -54,6 +54,20 @@ from review_lessons import (
     is_derived,
 )
 from pinyin_module import PinyinError, add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
+from situations import (
+    SituationError,
+    SituationSet,
+    apply_situation,
+    brief,
+    build_context,
+    bundle_problems,
+    lint_set,
+    load_catalog,
+    load_file,
+    load_lessons,
+    load_situations,
+    pinyin_crosscheck,
+)
 
 
 SCHEMA_VERSION = 1
@@ -1513,7 +1527,7 @@ def lint_lesson_order(course: dict[str, Any], lessons: dict[str, dict[str, Any]]
             raise ContentError(f"{context}: lesson '{lesson_id}' has order {lessons[lesson_id].get('order')}, expected its path position {position}")
 
 
-def lint_bundle(root: Path) -> None:
+def lint_bundle(root: Path, require_situations: bool = False) -> None:
     manifest = load_json(root / "manifest.json")
     if not isinstance(manifest, dict):
         raise ContentError("manifest.json: expected an object")
@@ -1692,6 +1706,12 @@ def lint_bundle(root: Path) -> None:
                 global_card_objects[card["id"]] = card
     if not global_exercise_ids:
         raise ContentError("bundle: no exercise documents found")
+    try:
+        problems = bundle_problems(load_situations(root), lessons, load_catalog(root), require=require_situations)
+    except SituationError as exc:
+        raise ContentError(str(exc)) from exc
+    if problems:
+        raise ContentError("situations:\n  " + "\n  ".join(problems))
 
 
 def reset_protected_orders(root: Path) -> None:
@@ -1703,6 +1723,29 @@ def reset_protected_orders(root: Path) -> None:
         if lesson.get("order") != number:
             lesson["order"] = number
             write_json(path, lesson)
+
+
+def overlay_situations(root: Path, blueprints: list[Any]) -> list[Any]:
+    """Replace the assembled texts of the lessons that have a situation file by the hand-written scene.
+
+    The scenes are checked against the lessons already in `root`, which teach the same words, so a
+    malformed file stops the generation with its writer-facing messages before anything is expanded.
+    """
+    try:
+        situations = load_situations(root)
+        listed = {item.get("id") for item in blueprints if isinstance(item, dict)}
+        unknown = sorted(set(situations.entries) - listed)
+        if unknown:
+            raise ContentError(f"situations for lessons the pack does not list: {', '.join(unknown)}")
+        problems = lint_set(situations, load_lessons(root), load_catalog(root))
+        if problems:
+            raise ContentError("situations:\n  " + "\n  ".join(problems))
+        return [
+            apply_situation(item, situations.entries[item["id"]]) if item.get("id") in situations.entries else item
+            for item in blueprints
+        ]
+    except SituationError as exc:
+        raise ContentError(str(exc)) from exc
 
 
 def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any] | None, catalog_info: dict[str, Any] | None) -> set[Path]:
@@ -1719,6 +1762,7 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     blueprints = require(source, "lessons", "authoring")
     if not isinstance(blueprints, list) or not blueprints:
         raise ContentError("authoring.lessons: expected a non-empty array")
+    blueprints = overlay_situations(root, blueprints)
     generated_lessons = [normalize_lesson(item, source_version, existing_vocab, existing_cards, catalog_info) for item in blueprints]
     generated_ids = [lesson["id"] for lesson in generated_lessons]
     unique(generated_ids, "authoring.lessons.id")
@@ -1849,7 +1893,7 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     return changed
 
 
-def generate(root: Path, source_path: Path) -> None:
+def generate(root: Path, source_path: Path, require_situations: bool = False) -> None:
     source = load_json(source_path)
     if not isinstance(source, dict):
         raise ContentError("authoring pack: expected an object")
@@ -1863,7 +1907,7 @@ def generate(root: Path, source_path: Path) -> None:
         staging = Path(temporary) / "Content"
         shutil.copytree(root, staging)
         changed = generate_in_place(staging, source, catalog, catalog_info)
-        lint_bundle(staging)
+        lint_bundle(staging, require_situations)
         for relative in changed:
             source_file = staging / relative
             target_file = root / relative
@@ -1874,24 +1918,66 @@ def generate(root: Path, source_path: Path) -> None:
                 stale.unlink()
 
 
+def situations_lint(root: Path, path: Path, pinyin_check: bool) -> list[str]:
+    """Check one situation file against the lessons it writes, without regenerating anything.
+
+    The other files of the situations folder only tell which extras earlier lessons already gloss.
+    """
+    situations = load_situations(root)
+    for lesson_id in [lesson_id for lesson_id, name in situations.files.items() if name == path.name]:
+        del situations.entries[lesson_id], situations.files[lesson_id]
+    written = load_file(path)
+    situations.entries.update(written)
+    situations.files.update({lesson_id: path.name for lesson_id in written})
+    problems = lint_set(situations, load_lessons(root), load_catalog(root), only=path.name)
+    if pinyin_check:
+        for lesson_id in written:
+            mismatches, note = pinyin_crosscheck(written[lesson_id])
+            if note:
+                print(note)
+                break
+            problems.extend(f"{lesson_id}.{mismatch}" for mismatch in mismatches)
+    return problems
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     lint_parser = subparsers.add_parser("lint", help="validate a generated content root")
     lint_parser.add_argument("--root", type=Path, default=Path("Content"))
+    lint_parser.add_argument("--require-situations", action="store_true", help="every daily lesson must have a hand-written situation")
     generate_parser = subparsers.add_parser("generate", help="expand an authoring pack")
     generate_parser.add_argument("--input", type=Path, required=True)
     generate_parser.add_argument("--root", type=Path, default=Path("Content"))
+    generate_parser.add_argument("--require-situations", action="store_true", help="every daily lesson must have a hand-written situation")
+    brief_parser = subparsers.add_parser("situation-brief", help="print what a writer needs to write one lesson's situation")
+    brief_parser.add_argument("--lesson", required=True, help="a daily lesson ID such as lesson-05")
+    brief_parser.add_argument("--root", type=Path, default=Path("Content"))
+    situations_parser = subparsers.add_parser("situations-lint", help="check one situation file without regenerating")
+    situations_parser.add_argument("--file", type=Path, required=True)
+    situations_parser.add_argument("--root", type=Path, default=Path("Content"))
+    situations_parser.add_argument("--pinyin-check", action="store_true", help="also compare the pinyin with pypinyin, when installed")
     args = parser.parse_args(argv)
     try:
         if args.command == "lint":
-            lint_bundle(args.root)
+            lint_bundle(args.root, args.require_situations)
             print(f"content lint passed: {args.root}")
-        else:
-            generate(args.root, args.input)
+        elif args.command == "generate":
+            generate(args.root, args.input, args.require_situations)
             print(f"content generated and linted: {args.root}")
+        elif args.command == "situation-brief":
+            lessons = load_lessons(args.root)
+            context = build_context(lessons, load_catalog(args.root), args.lesson)
+            print(brief(context, load_situations(args.root), lessons))
+        else:
+            problems = situations_lint(args.root, args.file, args.pinyin_check)
+            if problems:
+                print("\n".join(problems), file=sys.stderr)
+                print(f"situations lint failed: {len(problems)} problem(s) in {args.file}", file=sys.stderr)
+                return 2
+            print(f"situations lint passed: {args.file}")
         return 0
-    except ContentError as exc:
+    except (ContentError, SituationError) as exc:
         print(f"content error: {exc}", file=sys.stderr)
         return 2
 

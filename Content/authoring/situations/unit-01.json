@@ -1,0 +1,40 @@
+{
+  "lesson-05": {
+    "situation": {"fr": "Mina reçoit Tao à déjeuner : elle lui demande s’il a faim ou soif et ce qu’il mange."},
+    "title": {"fr": "Un déjeuner chez Mina"},
+    "dialogue": [
+      {"speaker": "Mina", "hanzi": "你好！你饿吗？", "pinyin": "nǐ hǎo! nǐ è ma?", "translation": {"fr": "Salut ! Tu as faim ?"}},
+      {"speaker": "Tao", "hanzi": "饿！你有什么菜？", "pinyin": "è! nǐ yǒu shén me cài?", "translation": {"fr": "Oui ! Qu’as-tu comme plats ?"}},
+      {"speaker": "Mina", "hanzi": "我有米饭、鱼和菜。", "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.", "translation": {"fr": "J’ai du riz, du poisson et des légumes."}},
+      {"speaker": "Tao", "hanzi": "我不吃鱼，我吃菜和米饭。", "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.", "translation": {"fr": "Je ne mange pas de poisson, je mange des légumes et du riz."}},
+      {"speaker": "Mina", "hanzi": "菜不多，米饭多。", "pinyin": "cài bù duō, mǐ fàn duō.", "translation": {"fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."}},
+      {"speaker": "Tao", "hanzi": "没关系！你有水吗？我渴。", "pinyin": "méi guān xì! nǐ yǒu shuǐ ma? wǒ kě.", "translation": {"fr": "Ce n’est pas grave ! Tu as de l’eau ? J’ai soif."}},
+      {"speaker": "Mina", "hanzi": "有，我有茶和水。你喝茶吗？", "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?", "translation": {"fr": "Oui, j’ai du thé et de l’eau. Tu bois du thé ?"}},
+      {"speaker": "Tao", "hanzi": "喝！茶热吗？", "pinyin": "hē! chá rè ma?", "translation": {"fr": "Oui ! Il est chaud, le thé ?"}},
+      {"speaker": "Mina", "hanzi": "热，请喝。", "pinyin": "rè, qǐng hē.", "translation": {"fr": "Il est chaud. Bois, je t’en prie."}},
+      {"speaker": "Tao", "hanzi": "谢谢！我吃米饭，你吃鱼。", "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.", "translation": {"fr": "Merci ! Moi, je mange du riz, et toi, du poisson."}}
+    ],
+    "reading": {
+      "title": {"fr": "Un mot pour le professeur"},
+      "paragraphs": [
+        {"hanzi": "老师，你好！今天我有米饭、鱼和菜。你吃鱼吗？", "pinyin": "lǎo shī, nǐ hǎo! jīn tiān wǒ yǒu mǐ fàn, yú hé cài. nǐ chī yú ma?", "translation": {"fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Vous mangez du poisson ?"}},
+        {"hanzi": "我有茶和水。你喝茶吗？", "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?", "translation": {"fr": "J’ai du thé et de l’eau. Vous buvez du thé ?"}}
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {"fr": "Que demande la personne au professeur ?"},
+      "choices": [
+        {"id": "a", "label": {"fr": "S’il mange du poisson et s’il boit du thé."}},
+        {"id": "b", "label": {"fr": "S’il veut acheter un livre."}},
+        {"id": "c", "label": {"fr": "S’il a un chat."}}
+      ],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {"hanzi": "我不吃鱼，我吃菜和米饭。", "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.", "translation": {"fr": "Je ne mange pas de poisson, je mange des légumes et du riz."}},
+    "speakSentence": {"hanzi": "你有水吗？", "pinyin": "nǐ yǒu shuǐ ma?", "translation": {"fr": "Tu as de l’eau ?"}},
+    "extraVocabulary": [
+      {"hanzi": "饿", "traditionalHanzi": "餓", "pinyin": "è", "meaning": {"fr": "avoir faim"}, "partOfSpeech": "adjective"},
+      {"hanzi": "渴", "traditionalHanzi": "渴", "pinyin": "kě", "meaning": {"fr": "avoir soif"}, "partOfSpeech": "adjective"}
+    ]
+  }
+}

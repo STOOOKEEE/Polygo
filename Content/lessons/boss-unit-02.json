@@ -153,25 +153,50 @@
       "traditionalHanzi": "嗎"
     },
     {
-      "id": "vocab-dan",
-      "hanzi": "但",
-      "traditionalHanzi": "但",
-      "pinyin": "dàn",
+      "id": "vocab-x-997f",
+      "hanzi": "饿",
+      "traditionalHanzi": "餓",
+      "pinyin": "è",
       "toneNumbers": [
         4
       ],
       "segmentation": [
         {
-          "surface": "但",
-          "vocabularyID": "vocab-dan",
-          "pinyin": "dàn",
-          "partOfSpeech": "conjunction"
+          "surface": "饿",
+          "vocabularyID": "vocab-x-997f",
+          "pinyin": "è",
+          "partOfSpeech": "adjective"
         }
       ],
-      "partOfSpeech": "conjunction",
+      "partOfSpeech": "adjective",
       "grammarNotes": [],
       "meaning": {
-        "fr": "mais"
+        "fr": "avoir faim"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
+    },
+    {
+      "id": "vocab-x-6e34",
+      "hanzi": "渴",
+      "traditionalHanzi": "渴",
+      "pinyin": "kě",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "渴",
+          "vocabularyID": "vocab-x-6e34",
+          "pinyin": "kě",
+          "partOfSpeech": "adjective"
+        }
+      ],
+      "partOfSpeech": "adjective",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "avoir soif"
       },
       "audio": null,
       "example": null,
@@ -1440,28 +1465,28 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "你喝茶吗？",
-          "pinyin": "nǐ hē chá ma?",
+          "hanzi": "你好！你饿吗？",
+          "pinyin": "nǐ hǎo! nǐ è ma?",
           "translation": {
-            "fr": "Tu bois du thé ?"
+            "fr": "Salut ! Tu as faim ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "喝。",
-          "pinyin": "hē.",
+          "hanzi": "饿！你有什么菜？",
+          "pinyin": "è! nǐ yǒu shén me cài?",
           "translation": {
-            "fr": "Oui."
+            "fr": "Oui ! Qu’as-tu comme plats ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你吃菜吗？",
-          "pinyin": "nǐ chī cài ma?",
+          "hanzi": "我有米饭、鱼和菜。",
+          "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
           "translation": {
-            "fr": "Tu manges le plat ?"
+            "fr": "J’ai du riz, du poisson et des légumes."
           },
           "audio": null
         },
@@ -1653,10 +1678,18 @@
           },
           {
             "id": "d",
-            "left": "但",
+            "left": "饿",
             "pinyin": null,
             "right": {
-              "fr": "dàn"
+              "fr": "è"
+            }
+          },
+          {
+            "id": "e",
+            "left": "渴",
+            "pinyin": null,
+            "right": {
+              "fr": "kě"
             }
           }
         ]
@@ -1750,14 +1783,14 @@
           {
             "id": "a",
             "label": {
-              "fr": "yě"
+              "fr": "chá"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "zài"
+              "fr": "kuài"
             },
             "audio": null
           },
@@ -1771,7 +1804,7 @@
           {
             "id": "d",
             "label": {
-              "fr": "jiā"
+              "fr": "xiǎng"
             },
             "audio": null
           }
@@ -1875,7 +1908,7 @@
           {
             "id": "a",
             "label": {
-              "fr": "aussi"
+              "fr": "élève ; étudiant"
             },
             "audio": null
           },
@@ -1889,14 +1922,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "vouloir ; penser"
+              "fr": "maison ; famille"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "il"
+              "fr": "être à ; se trouver"
             },
             "audio": null
           }
@@ -2230,26 +2263,26 @@
           ],
           "required": true
         },
-        "promptText": "你喝茶吗？",
+        "promptText": "你好！你饿吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Je sais parler chinois."
+              "fr": "Nous regardons un film le week-end."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Tu bois du thé ?"
+              "fr": "Salut ! Tu as faim ?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Nous regardons un film le week-end."
+              "fr": "Je veux boire du thé."
             },
             "audio": null
           }
@@ -2341,14 +2374,14 @@
           },
           {
             "id": "e",
-            "hanzi": "几",
-            "pinyin": "jǐ",
+            "hanzi": "的",
+            "pinyin": "de",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "但",
-            "pinyin": "dàn",
+            "hanzi": "饿",
+            "pinyin": "è",
             "audio": null
           }
         ],
@@ -2542,8 +2575,8 @@
         "tokens": [
           {
             "id": "g",
-            "hanzi": "电影",
-            "pinyin": "diàn yǐng",
+            "hanzi": "想",
+            "pinyin": "xiǎng",
             "audio": null
           },
           {
@@ -2794,19 +2827,40 @@
       ]
     },
     {
-      "id": "card-vocab-dan",
-      "vocabularyID": "vocab-dan",
+      "id": "card-vocab-x-997f",
+      "vocabularyID": "vocab-x-997f",
       "front": {
-        "hanzi": "但",
+        "hanzi": "饿",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "但",
-        "pinyin": "dàn",
+        "hanzi": "饿",
+        "pinyin": "è",
         "text": {
-          "fr": "mais"
+          "fr": "avoir faim"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
+    },
+    {
+      "id": "card-vocab-x-6e34",
+      "vocabularyID": "vocab-x-6e34",
+      "front": {
+        "hanzi": "渴",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "渴",
+        "pinyin": "kě",
+        "text": {
+          "fr": "avoir soif"
         },
         "audio": null
       },
@@ -3469,7 +3523,8 @@
       "vocab-hsk20-010",
       "vocab-hsk20-038",
       "vocab-hsk20-062",
-      "vocab-dan",
+      "vocab-x-997f",
+      "vocab-x-6e34",
       "vocab-hsk20-017",
       "vocab-hsk20-021",
       "vocab-hsk20-139",

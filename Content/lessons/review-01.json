@@ -9,7 +9,7 @@
     "fr": "Révision 1"
   },
   "summary": {
-    "fr": "Retrouve, en commençant par les plus anciennes, les mots, les phrases et les structures de « Boire et manger », « À la maison », « La famille et la date », « Acheter des pommes » et « Une journée organisée »."
+    "fr": "Retrouve, en commençant par les plus anciennes, les mots, les phrases et les structures de « Un déjeuner chez Mina », « À la maison », « La famille et la date », « Acheter des pommes » et « Une journée organisée »."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -153,25 +153,50 @@
       "traditionalHanzi": "嗎"
     },
     {
-      "id": "vocab-dan",
-      "hanzi": "但",
-      "traditionalHanzi": "但",
-      "pinyin": "dàn",
+      "id": "vocab-x-997f",
+      "hanzi": "饿",
+      "traditionalHanzi": "餓",
+      "pinyin": "è",
       "toneNumbers": [
         4
       ],
       "segmentation": [
         {
-          "surface": "但",
-          "vocabularyID": "vocab-dan",
-          "pinyin": "dàn",
-          "partOfSpeech": "conjunction"
+          "surface": "饿",
+          "vocabularyID": "vocab-x-997f",
+          "pinyin": "è",
+          "partOfSpeech": "adjective"
         }
       ],
-      "partOfSpeech": "conjunction",
+      "partOfSpeech": "adjective",
       "grammarNotes": [],
       "meaning": {
-        "fr": "mais"
+        "fr": "avoir faim"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
+    },
+    {
+      "id": "vocab-x-6e34",
+      "hanzi": "渴",
+      "traditionalHanzi": "渴",
+      "pinyin": "kě",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "渴",
+          "vocabularyID": "vocab-x-6e34",
+          "pinyin": "kě",
+          "partOfSpeech": "adjective"
+        }
+      ],
+      "partOfSpeech": "adjective",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "avoir soif"
       },
       "audio": null,
       "example": null,
@@ -889,7 +914,7 @@
         "fr": "Révision 1"
       },
       "body": {
-        "fr": "Cette séance ne contient aucun mot nouveau : elle reprend les mots, les phrases et les structures de « Boire et manger », « À la maison », « La famille et la date », « Acheter des pommes » et « Une journée organisée ». Les exercices commencent par les leçons les plus anciennes.\n\nStructures à retrouver :\nA 和 B\nExemple 1 : 茶和菜都很好。\nchá hé cài dōu hěn hǎo.\nLe thé et le plat sont tous les deux très bons.\nphrase + 吗？\nExemple 2 : 你喝茶吗？\nnǐ hē chá ma?\nTu bois du thé ?\nsujet + 在 + lieu\nExemple 3 : 电脑在家里。\ndiàn nǎo zài jiā lǐ.\nL’ordinateur est à la maison.\n也 + verbe\nExemple 4 : 我也看电影。\nwǒ yě kàn diàn yǐng.\nJe regarde aussi un film.\nnom + 的 + nom\nExemple 5 : 我的妈妈在家。\nwǒ de mā ma zài jiā.\nMa maman est à la maison.\n想 + verbe\nExemple 6 : 我想买苹果。\nwǒ xiǎng mǎi píng guǒ.\nJe veux acheter des pommes.\nprix + 块\nExemple 7 : 苹果三块。\npíng guǒ sān kuài.\nLes pommes coûtent trois yuans.\nverbe + 了\nExemple 8 : 我看了电影。\nwǒ kàn le diàn yǐng.\nJ’ai regardé un film.\n会 + verbe\nExemple 9 : 我会说汉语。\nwǒ huì shuō Hàn yǔ.\nJe sais parler chinois."
+        "fr": "Cette séance ne contient aucun mot nouveau : elle reprend les mots, les phrases et les structures de « Un déjeuner chez Mina », « À la maison », « La famille et la date », « Acheter des pommes » et « Une journée organisée ». Les exercices commencent par les leçons les plus anciennes.\n\nStructures à retrouver :\nA 和 B\nExemple 1 : 茶和菜都很好。\nchá hé cài dōu hěn hǎo.\nLe thé et le plat sont tous les deux très bons.\nphrase + 吗？\nExemple 2 : 你喝茶吗？\nnǐ hē chá ma?\nTu bois du thé ?\nsujet + 在 + lieu\nExemple 3 : 电脑在家里。\ndiàn nǎo zài jiā lǐ.\nL’ordinateur est à la maison.\n也 + verbe\nExemple 4 : 我也看电影。\nwǒ yě kàn diàn yǐng.\nJe regarde aussi un film.\nnom + 的 + nom\nExemple 5 : 我的妈妈在家。\nwǒ de mā ma zài jiā.\nMa maman est à la maison.\n想 + verbe\nExemple 6 : 我想买苹果。\nwǒ xiǎng mǎi píng guǒ.\nJe veux acheter des pommes.\nprix + 块\nExemple 7 : 苹果三块。\npíng guǒ sān kuài.\nLes pommes coûtent trois yuans.\nverbe + 了\nExemple 8 : 我看了电影。\nwǒ kàn le diàn yǐng.\nJ’ai regardé un film.\n会 + verbe\nExemple 9 : 我会说汉语。\nwǒ huì shuō Hàn yǔ.\nJe sais parler chinois."
       },
       "metadata": {
         "stage": "introduce",
@@ -903,28 +928,28 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "你喝茶吗？",
-          "pinyin": "nǐ hē chá ma?",
+          "hanzi": "你好！你饿吗？",
+          "pinyin": "nǐ hǎo! nǐ è ma?",
           "translation": {
-            "fr": "Tu bois du thé ?"
+            "fr": "Salut ! Tu as faim ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "喝。",
-          "pinyin": "hē.",
+          "hanzi": "饿！你有什么菜？",
+          "pinyin": "è! nǐ yǒu shén me cài?",
           "translation": {
-            "fr": "Oui."
+            "fr": "Oui ! Qu’as-tu comme plats ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你吃菜吗？",
-          "pinyin": "nǐ chī cài ma?",
+          "hanzi": "我有米饭、鱼和菜。",
+          "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
           "translation": {
-            "fr": "Tu manges le plat ?"
+            "fr": "J’ai du riz, du poisson et des légumes."
           },
           "audio": null
         },
@@ -1046,6 +1071,58 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-review-01-dict-sent-dia-1",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-review-01-dict-sent-dia-1",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "review-01-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "你好！你饿吗？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "wǒ měi tiān hē chá。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "nǐ hǎo! nǐ è ma?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "wǒ kàn le diàn yǐng。"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "b"
+      },
+      "metadata": {
+        "stage": "discover",
+        "sourceLessonID": "lesson-05",
+        "skill": "recognition",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-review-01-match-meaning-1",
       "spec": {
         "kind": "matching",
@@ -1089,10 +1166,10 @@
           },
           {
             "id": "d",
-            "left": "但",
-            "pinyin": "dàn",
+            "left": "饿",
+            "pinyin": "è",
             "right": {
-              "fr": "mais"
+              "fr": "avoir faim"
             }
           }
         ]
@@ -1149,10 +1226,18 @@
           },
           {
             "id": "d",
-            "left": "但",
+            "left": "饿",
             "pinyin": null,
             "right": {
-              "fr": "dàn"
+              "fr": "è"
+            }
+          },
+          {
+            "id": "e",
+            "left": "渴",
+            "pinyin": null,
+            "right": {
+              "fr": "kě"
             }
           }
         ]
@@ -1187,33 +1272,33 @@
           {
             "id": "a",
             "label": {
-              "fr": "aussi"
+              "fr": "particule interrogative"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "être à ; se trouver"
+              "fr": "tous ; tout"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "tous ; tout"
+              "fr": "aussi"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "particule de détermination"
+              "fr": "être à ; se trouver"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -1304,152 +1389,38 @@
           {
             "id": "a",
             "label": {
-              "fr": "dàn"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
               "fr": "de"
             },
             "audio": null
           },
           {
+            "id": "b",
+            "label": {
+              "fr": "zài"
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "cóng"
+              "fr": "chá"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "kuài"
+              "fr": "yě"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
         "sourceLessonID": "lesson-07",
         "skill": "recognition",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-review-01-dict-sent-dia-15",
-      "spec": {
-        "kind": "dictation",
-        "header": {
-          "id": "ex-review-01-dict-sent-dia-15",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
-          },
-          "objectiveIDs": [
-            "review-01-understand"
-          ],
-          "required": true
-        },
-        "script": "pinyin",
-        "promptText": "你会骑自行车吗？你几点回家？",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "wǒ mā ma hé wǒ bà ba zài jiā."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "wǒ de diàn nǎo zài zhuō zi shàng。"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "discover",
-        "sourceLessonID": "lesson-09",
-        "skill": "recognition",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-review-01-order-dia-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-review-01-order-dia-1",
-          "prompt": {
-            "fr": "Construis « Tu bois du thé ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "review-01-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "喝",
-            "pinyin": "hē",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "茶",
-            "pinyin": "chá",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "acceptedVariants": [
-          "你喝茶吗？",
-          "你喝茶吗"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "sourceLessonID": "lesson-05",
-        "skill": "production",
         "lessonDay": 6
       }
     },
@@ -1506,27 +1477,65 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-review-01-fill-dia-12",
+      "id": "block-ex-review-01-order-dia-12",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-review-01-fill-dia-12",
+          "id": "ex-review-01-order-dia-12",
           "prompt": {
-            "fr": "Complète : 我想___商店买苹果。 (« Je veux aller au magasin acheter des pommes »)"
+            "fr": "Construis « Je veux aller au magasin acheter des pommes »."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
             "review-01-produce"
           ],
           "required": true
         },
-        "sentence": "我想___商店买苹果。",
-        "acceptedAnswers": [
-          "去"
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "买",
+            "pinyin": "mǎi",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "苹果",
+            "pinyin": "píng guǒ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我想去商店买苹果。",
+          "我想去商店买苹果"
+        ]
       },
       "metadata": {
         "stage": "guided",
@@ -1626,6 +1635,37 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-review-01-fill-dia-15",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-review-01-fill-dia-15",
+          "prompt": {
+            "fr": "Complète : 你___骑自行车吗？你几点回家？ (« Tu sais faire du vélo ? À quelle heure rentres-tu ? »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "review-01-produce"
+          ],
+          "required": true
+        },
+        "sentence": "你___骑自行车吗？你几点回家？",
+        "acceptedAnswers": [
+          "会"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "sourceLessonID": "lesson-09",
+        "skill": "production",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-review-01-talk-17",
       "spec": {
         "kind": "conversationChoice",
@@ -1659,8 +1699,8 @@
           },
           {
             "id": "c",
-            "hanzi": "喝。",
-            "pinyin": "hē.",
+            "hanzi": "饿！你有什么菜？",
+            "pinyin": "è! nǐ yǒu shén me cài?",
             "audio": null
           }
         ],
@@ -1695,22 +1735,22 @@
           {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "你吃菜吗？",
-            "pinyin": "nǐ chī cài ma?",
+            "hanzi": "我有米饭、鱼和菜。",
+            "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
             "audio": null
           },
           {
             "id": "b",
             "speaker": "Tao",
-            "hanzi": "喝。",
-            "pinyin": "hē.",
+            "hanzi": "饿！你有什么菜？",
+            "pinyin": "è! nǐ yǒu shén me cài?",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "你喝茶吗？",
-            "pinyin": "nǐ hē chá ma?",
+            "hanzi": "你好！你饿吗？",
+            "pinyin": "nǐ hǎo! nǐ è ma?",
             "audio": null
           }
         ],
@@ -1862,60 +1902,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-review-01-dialogue-13-3",
-      "spec": {
-        "kind": "dialogueOrder",
-        "header": {
-          "id": "ex-review-01-dialogue-13-3",
-          "prompt": {
-            "fr": "Remets le dialogue dans l’ordre."
-          },
-          "instruction": {
-            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
-          },
-          "objectiveIDs": [
-            "review-01-understand"
-          ],
-          "required": true
-        },
-        "lines": [
-          {
-            "id": "b",
-            "speaker": "Tao",
-            "hanzi": "现在三点。",
-            "pinyin": "xiàn zài sān diǎn.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "speaker": "Mina",
-            "hanzi": "我想去商店买苹果。",
-            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "speaker": "Mina",
-            "hanzi": "现在几点？",
-            "pinyin": "xiàn zài jǐ diǎn?",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ]
-      },
-      "metadata": {
-        "stage": "reuse",
-        "sourceLessonID": "lesson-08",
-        "skill": "recognition",
-        "lessonDay": 6
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-review-01-speak-dia-11",
       "spec": {
         "kind": "speaking",
@@ -1944,6 +1930,60 @@
         "stage": "reuse",
         "sourceLessonID": "lesson-08",
         "skill": "speaking",
+        "lessonDay": 6
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-review-01-dialogue-17-3",
+      "spec": {
+        "kind": "dialogueOrder",
+        "header": {
+          "id": "ex-review-01-dialogue-17-3",
+          "prompt": {
+            "fr": "Remets le dialogue dans l’ordre."
+          },
+          "instruction": {
+            "fr": "Touche les répliques dans l’ordre de la conversation, de la première à la dernière."
+          },
+          "objectiveIDs": [
+            "review-01-understand"
+          ],
+          "required": true
+        },
+        "lines": [
+          {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "不在，我去了火车站。",
+            "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "你昨天在家吗？",
+            "pinyin": "nǐ zuó tiān zài jiā ma?",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "你会骑自行车吗？你几点回家？",
+            "pinyin": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "metadata": {
+        "stage": "reuse",
+        "sourceLessonID": "lesson-09",
+        "skill": "recognition",
         "lessonDay": 6
       }
     },
@@ -2036,19 +2076,40 @@
       ]
     },
     {
-      "id": "card-vocab-dan",
-      "vocabularyID": "vocab-dan",
+      "id": "card-vocab-x-997f",
+      "vocabularyID": "vocab-x-997f",
       "front": {
-        "hanzi": "但",
+        "hanzi": "饿",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "但",
-        "pinyin": "dàn",
+        "hanzi": "饿",
+        "pinyin": "è",
         "text": {
-          "fr": "mais"
+          "fr": "avoir faim"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
+    },
+    {
+      "id": "card-vocab-x-6e34",
+      "vocabularyID": "vocab-x-6e34",
+      "front": {
+        "hanzi": "渴",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "渴",
+        "pinyin": "kě",
+        "text": {
+          "fr": "avoir soif"
         },
         "audio": null
       },
@@ -2435,7 +2496,8 @@
       "vocab-hsk20-010",
       "vocab-hsk20-038",
       "vocab-hsk20-062",
-      "vocab-dan",
+      "vocab-x-997f",
+      "vocab-x-6e34",
       "vocab-hsk20-017",
       "vocab-hsk20-021",
       "vocab-hsk20-139",

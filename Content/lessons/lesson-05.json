@@ -5,10 +5,10 @@
   "moduleID": "unit-02",
   "order": 13,
   "title": {
-    "fr": "Boire et manger"
+    "fr": "Un déjeuner chez Mina"
   },
   "summary": {
-    "fr": "Nommer une boisson et un plat, puis faire une proposition simple."
+    "fr": "Mina reçoit Tao à déjeuner : elle lui demande s’il a faim ou soif et ce qu’il mange."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -309,25 +309,50 @@
       }
     },
     {
-      "id": "vocab-dan",
-      "hanzi": "但",
-      "traditionalHanzi": "但",
-      "pinyin": "dàn",
+      "id": "vocab-x-997f",
+      "hanzi": "饿",
+      "traditionalHanzi": "餓",
+      "pinyin": "è",
       "toneNumbers": [
         4
       ],
       "segmentation": [
         {
-          "surface": "但",
-          "vocabularyID": "vocab-dan",
-          "pinyin": "dàn",
-          "partOfSpeech": "conjunction"
+          "surface": "饿",
+          "vocabularyID": "vocab-x-997f",
+          "pinyin": "è",
+          "partOfSpeech": "adjective"
         }
       ],
-      "partOfSpeech": "conjunction",
+      "partOfSpeech": "adjective",
       "grammarNotes": [],
       "meaning": {
-        "fr": "mais"
+        "fr": "avoir faim"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
+    },
+    {
+      "id": "vocab-x-6e34",
+      "hanzi": "渴",
+      "traditionalHanzi": "渴",
+      "pinyin": "kě",
+      "toneNumbers": [
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "渴",
+          "vocabularyID": "vocab-x-6e34",
+          "pinyin": "kě",
+          "partOfSpeech": "adjective"
+        }
+      ],
+      "partOfSpeech": "adjective",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "avoir soif"
       },
       "audio": null,
       "example": null,
@@ -375,7 +400,8 @@
         "vocab-wo",
         "vocab-ni",
         "vocab-zaijian",
-        "vocab-dan"
+        "vocab-x-997f",
+        "vocab-x-6e34"
       ],
       "metadata": {
         "stage": "observe",
@@ -388,55 +414,91 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "你喝茶吗？",
-          "pinyin": "nǐ hē chá ma?",
+          "hanzi": "你好！你饿吗？",
+          "pinyin": "nǐ hǎo! nǐ è ma?",
           "translation": {
-            "fr": "Tu bois du thé ?"
+            "fr": "Salut ! Tu as faim ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "喝。",
-          "pinyin": "hē.",
+          "hanzi": "饿！你有什么菜？",
+          "pinyin": "è! nǐ yǒu shén me cài?",
           "translation": {
-            "fr": "Oui."
+            "fr": "Oui ! Qu’as-tu comme plats ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你吃菜吗？",
-          "pinyin": "nǐ chī cài ma?",
+          "hanzi": "我有米饭、鱼和菜。",
+          "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
           "translation": {
-            "fr": "Tu manges le plat ?"
+            "fr": "J’ai du riz, du poisson et des légumes."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "吃，但不多。",
-          "pinyin": "chī, dàn bù duō.",
+          "hanzi": "我不吃鱼，我吃菜和米饭。",
+          "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.",
           "translation": {
-            "fr": "Oui, mais pas beaucoup."
+            "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "茶和菜都很好！",
-          "pinyin": "chá hé cài dōu hěn hǎo!",
+          "hanzi": "菜不多，米饭多。",
+          "pinyin": "cài bù duō, mǐ fàn duō.",
           "translation": {
-            "fr": "Le thé et le plat sont très bons !"
+            "fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "很好！",
-          "pinyin": "hěn hǎo!",
+          "hanzi": "没关系！你有水吗？我渴。",
+          "pinyin": "méi guān xì! nǐ yǒu shuǐ ma? wǒ kě.",
           "translation": {
-            "fr": "Très bien !"
+            "fr": "Ce n’est pas grave ! Tu as de l’eau ? J’ai soif."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "有，我有茶和水。你喝茶吗？",
+          "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
+          "translation": {
+            "fr": "Oui, j’ai du thé et de l’eau. Tu bois du thé ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "喝！茶热吗？",
+          "pinyin": "hē! chá rè ma?",
+          "translation": {
+            "fr": "Oui ! Il est chaud, le thé ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "热，请喝。",
+          "pinyin": "rè, qǐng hē.",
+          "translation": {
+            "fr": "Il est chaud. Bois, je t’en prie."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "谢谢！我吃米饭，你吃鱼。",
+          "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.",
+          "translation": {
+            "fr": "Merci ! Moi, je mange du riz, et toi, du poisson."
           },
           "audio": null
         }
@@ -452,25 +514,25 @@
       "id": "block-l5-reading",
       "storyID": "story-l5-tea",
       "title": {
-        "fr": "Une tasse"
+        "fr": "Un mot pour le professeur"
       },
       "paragraphs": [
         {
           "id": "lesson-05-p1",
-          "hanzi": "我喝茶。",
-          "pinyin": "wǒ hē chá.",
+          "hanzi": "老师，你好！今天我有米饭、鱼和菜。你吃鱼吗？",
+          "pinyin": "lǎo shī, nǐ hǎo! jīn tiān wǒ yǒu mǐ fàn, yú hé cài. nǐ chī yú ma?",
           "translation": {
-            "fr": "Je bois du thé."
+            "fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Vous mangez du poisson ?"
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-05-p2",
-          "hanzi": "我喝茶，吃菜。",
-          "pinyin": "wǒ hē chá, chī cài.",
+          "hanzi": "我有茶和水。你喝茶吗？",
+          "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
           "translation": {
-            "fr": "Je bois du thé et je mange un plat."
+            "fr": "J’ai du thé et de l’eau. Vous buvez du thé ?"
           },
           "segmentation": [],
           "audio": null
@@ -580,10 +642,10 @@
           },
           {
             "id": "d",
-            "left": "但",
-            "pinyin": "dàn",
+            "left": "饿",
+            "pinyin": "è",
             "right": {
-              "fr": "mais"
+              "fr": "avoir faim"
             }
           },
           {
@@ -604,13 +666,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-dict-py-062",
+      "id": "block-ex-l5-dict-sent-dia-7",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l5-dict-py-062",
+          "id": "ex-l5-dict-sent-dia-7",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son pinyin."
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -621,38 +683,31 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "吗",
+        "promptText": "有，我有茶和水。你喝茶吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "dàn"
+              "fr": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "ma"
+              "fr": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "chá"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "hé"
+              "fr": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
@@ -662,11 +717,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-tone-dan",
+      "id": "block-ex-l5-tone-x-997f",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l5-tone-dan",
+          "id": "ex-l5-tone-x-997f",
           "prompt": {
             "fr": "Écoute la syllabe, puis choisis son ton."
           },
@@ -678,7 +733,7 @@
           ],
           "required": true
         },
-        "promptText": "但",
+        "promptText": "饿",
         "choices": [
           {
             "id": "t1",
@@ -719,6 +774,63 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l5-pick-038",
+      "spec": {
+        "kind": "listeningChoice",
+        "header": {
+          "id": "ex-l5-pick-038",
+          "prompt": {
+            "fr": "Écoute le mot, puis choisis-le à l’écrit."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
+          },
+          "objectiveIDs": [
+            "l5-understand"
+          ],
+          "required": true
+        },
+        "promptText": "和",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "和 (hé)"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "渴 (kě)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "吗 (ma)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "茶 (chá)"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "a"
+      },
+      "metadata": {
+        "stage": "discover",
+        "skill": "recognition",
+        "lessonDay": 1
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l5-dict-zh-010",
       "spec": {
         "kind": "dictation",
@@ -741,85 +853,28 @@
           {
             "id": "a",
             "label": {
-              "fr": "茶"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "但"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
               "fr": "吗"
             },
             "audio": null
           },
           {
-            "id": "d",
-            "label": {
-              "fr": "和"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "skill": "recognition",
-        "lessonDay": 1
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l5-pick-038",
-      "spec": {
-        "kind": "listeningChoice",
-        "header": {
-          "id": "ex-l5-pick-038",
-          "prompt": {
-            "fr": "Écoute le mot, puis choisis-le à l’écrit."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis le mot que tu entends."
-          },
-          "objectiveIDs": [
-            "l5-understand"
-          ],
-          "required": true
-        },
-        "promptText": "和",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "茶 (chá)"
-            },
-            "audio": null
-          },
-          {
             "id": "b",
             "label": {
-              "fr": "吗 (ma)"
+              "fr": "和"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "但 (dàn)"
+              "fr": "饿"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "和 (hé)"
+              "fr": "茶"
             },
             "audio": null
           }
@@ -918,13 +973,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-translate-dia-3",
+      "id": "block-ex-l5-translate-rea-4",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l5-translate-dia-3",
+          "id": "ex-l5-translate-rea-4",
           "prompt": {
-            "fr": "Traduis en chinois : « Tu manges le plat ? »"
+            "fr": "Traduis en chinois : « J’ai du thé et de l’eau »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -936,39 +991,45 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "和",
-            "pinyin": "hé",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "你",
-            "pinyin": "nǐ",
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
             "audio": null
           },
           {
             "id": "f",
-            "hanzi": "但",
-            "pinyin": "dàn",
+            "hanzi": "饿",
+            "pinyin": "è",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "菜",
-            "pinyin": "cài",
+            "hanzi": "茶",
+            "pinyin": "chá",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "水",
+            "pinyin": "shuǐ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "渴",
+            "pinyin": "kě",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "吃",
-            "pinyin": "chī",
+            "hanzi": "和",
+            "pinyin": "hé",
             "audio": null
           }
         ],
@@ -976,7 +1037,8 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -988,13 +1050,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-talk-1",
+      "id": "block-ex-l5-talk-2",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l5-talk-1",
+          "id": "ex-l5-talk-2",
           "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -1004,25 +1066,25 @@
           ],
           "required": true
         },
-        "speaker": "Mina",
-        "promptText": "你喝茶吗？",
+        "speaker": "Tao",
+        "promptText": "饿！你有什么菜？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "很好！",
-            "pinyin": "hěn hǎo!",
+            "hanzi": "有，我有茶和水。你喝茶吗？",
+            "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "吃，但不多。",
-            "pinyin": "chī, dàn bù duō.",
+            "hanzi": "菜不多，米饭多。",
+            "pinyin": "cài bù duō, mǐ fàn duō.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "喝。",
-            "pinyin": "hē.",
+            "hanzi": "我有米饭、鱼和菜。",
+            "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
             "audio": null
           }
         ],
@@ -1113,79 +1175,59 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-order-exa-2",
+      "id": "block-ex-l5-talk-1",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l5-order-exa-2",
+          "id": "ex-l5-talk-1",
           "prompt": {
-            "fr": "Construis « J’y vais avec un ami »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l5-produce"
+            "l5-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "和",
-            "pinyin": "hé",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "一起",
-            "pinyin": "yì qǐ",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
+        "speaker": "Mina",
+        "promptText": "你好！你饿吗？",
+        "replies": [
           {
             "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
+            "hanzi": "谢谢！我吃米饭，你吃鱼。",
+            "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "饿！你有什么菜？",
+            "pinyin": "è! nǐ yǒu shén me cài?",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "朋友",
-            "pinyin": "péng yǒu",
+            "hanzi": "喝！茶热吗？",
+            "pinyin": "hē! chá rè ma?",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我和朋友一起去。",
-          "我和朋友一起去"
-        ]
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 1
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-dialogue-3-3",
+      "id": "block-ex-l5-dialogue-5-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l5-dialogue-3-3",
+          "id": "ex-l5-dialogue-5-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1201,22 +1243,22 @@
           {
             "id": "b",
             "speaker": "Tao",
-            "hanzi": "吃，但不多。",
-            "pinyin": "chī, dàn bù duō.",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "speaker": "Mina",
-            "hanzi": "你吃菜吗？",
-            "pinyin": "nǐ chī cài ma?",
+            "hanzi": "没关系！你有水吗？我渴。",
+            "pinyin": "méi guān xì! nǐ yǒu shuǐ ma? wǒ kě.",
             "audio": null
           },
           {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "茶和菜都很好！",
-            "pinyin": "chá hé cài dōu hěn hǎo!",
+            "hanzi": "有，我有茶和水。你喝茶吗？",
+            "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "speaker": "Mina",
+            "hanzi": "菜不多，米饭多。",
+            "pinyin": "cài bù duō, mǐ fàn duō.",
             "audio": null
           }
         ],
@@ -1240,7 +1282,7 @@
         "header": {
           "id": "ex-l5-fill-rea-2",
           "prompt": {
-            "fr": "Complète : 我喝___，吃菜。 (« Je bois du thé et je mange un plat »)"
+            "fr": "Complète : 今天我有米饭、鱼___菜。 (« Aujourd’hui, j’ai du riz, du poisson et des légumes »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1250,9 +1292,9 @@
           ],
           "required": true
         },
-        "sentence": "我喝___，吃菜。",
+        "sentence": "今天我有米饭、鱼___菜。",
         "acceptedAnswers": [
-          "茶"
+          "和"
         ],
         "caseSensitive": false
       },
@@ -1264,50 +1306,62 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l5-read-dia-1",
+      "id": "block-ex-l5-order-rea-3",
       "spec": {
-        "kind": "choice",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l5-read-dia-1",
+          "id": "ex-l5-order-rea-3",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你喝茶吗？"
+            "fr": "Construis « Vous mangez du poisson ? »."
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
-            "l5-understand"
+            "l5-produce"
           ],
           "required": true
         },
-        "choices": [
+        "tokens": [
           {
             "id": "a",
-            "label": {
-              "fr": "Oui, mais pas beaucoup."
-            },
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "吗",
+            "pinyin": "ma",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Tu bois du thé ?"
-            },
+            "hanzi": "吃",
+            "pinyin": "chī",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "Je bois du thé et je mange un plat."
-            },
+            "hanzi": "鱼",
+            "pinyin": "yú",
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedVariants": [
+          "你吃鱼吗？",
+          "你吃鱼吗"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 1
       }
     },
@@ -1329,26 +1383,26 @@
           ],
           "required": true
         },
-        "promptText": "茶和菜都很好！",
+        "promptText": "我不吃鱼，我吃菜和米饭。",
         "choices": [
           {
             "id": "c",
             "label": {
-              "fr": "Le thé et le plat sont très bons."
+              "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Le thé est froid."
+              "fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Je n’ai pas de tasse."
+              "fr": "Merci ! Moi, je mange du riz, et toi, du poisson."
             },
             "audio": null
           }
@@ -1369,7 +1423,7 @@
         "header": {
           "id": "ex-l5-speak",
           "prompt": {
-            "fr": "Dis « Le thé et le plat sont très bons ». "
+            "fr": "Dis « Tu as de l’eau ? »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
@@ -1379,11 +1433,11 @@
           ],
           "required": false
         },
-        "referenceText": "茶和菜都很好！",
-        "referencePinyin": "chá hé cài dōu hěn hǎo!",
+        "referenceText": "你有水吗？",
+        "referencePinyin": "nǐ yǒu shuǐ ma?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "茶和菜都很好！"
+          "你有水吗？"
         ],
         "allowSelfRating": true
       },
@@ -1401,7 +1455,7 @@
         "header": {
           "id": "ex-l5-reading",
           "prompt": {
-            "fr": "Que fait la personne dans le texte ?"
+            "fr": "Que demande la personne au professeur ?"
           },
           "instruction": {
             "fr": "Relis le petit texte avant de répondre."
@@ -1415,26 +1469,26 @@
           {
             "id": "b",
             "label": {
-              "fr": "Elle lit un journal."
+              "fr": "S’il veut acheter un livre."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Elle boit du thé et mange un plat."
+              "fr": "S’il a un chat."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Elle prend le bus."
+              "fr": "S’il mange du poisson et s’il boit du thé."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1703,19 +1757,40 @@
       }
     },
     {
-      "id": "card-vocab-dan",
-      "vocabularyID": "vocab-dan",
+      "id": "card-vocab-x-997f",
+      "vocabularyID": "vocab-x-997f",
       "front": {
-        "hanzi": "但",
+        "hanzi": "饿",
         "pinyin": null,
         "text": null,
         "audio": null
       },
       "back": {
-        "hanzi": "但",
-        "pinyin": "dàn",
+        "hanzi": "饿",
+        "pinyin": "è",
         "text": {
-          "fr": "mais"
+          "fr": "avoir faim"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
+    },
+    {
+      "id": "card-vocab-x-6e34",
+      "vocabularyID": "vocab-x-6e34",
+      "front": {
+        "hanzi": "渴",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "渴",
+        "pinyin": "kě",
+        "text": {
+          "fr": "avoir soif"
         },
         "audio": null
       },
@@ -1733,7 +1808,8 @@
       "vocab-hsk20-010",
       "vocab-hsk20-038",
       "vocab-hsk20-062",
-      "vocab-dan"
+      "vocab-x-997f",
+      "vocab-x-6e34"
     ],
     "reusedVocabularyIDs": [
       "vocab-ni",
@@ -1750,6 +1826,7 @@
       "hsk20-074",
       "hsk20-138"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-010",
       "hsk20-038",
@@ -1767,9 +1844,10 @@
     "levelID": "level-01",
     "sectionID": "section-01",
     "unitID": "unit-02",
-    "newVocabularyCount": 4,
+    "newVocabularyCount": 5,
     "extraVocabularyIDs": [
-      "vocab-dan"
+      "vocab-x-997f",
+      "vocab-x-6e34"
     ]
   }
 }

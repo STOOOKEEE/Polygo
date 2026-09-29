@@ -150,7 +150,7 @@ def _similar_sentences(left: str, right: str) -> bool:
     return not union or len(words[0] & words[1]) / len(union) >= 0.6
 
 
-def _split_sentences(pinyin: str) -> list[str]:
+def split_sentences(pinyin: str) -> list[str]:
     parts: list[str] = []
     current = ""
     for char in pinyin:
@@ -164,7 +164,7 @@ def _split_sentences(pinyin: str) -> list[str]:
     return parts
 
 
-def _split_french(text: str) -> list[str]:
+def split_french(text: str) -> list[str]:
     return [part for part in re.split(r"(?<=[.!?])\s+", text.strip()) if part]
 
 
@@ -318,9 +318,9 @@ class SessionBuilder:
             return [], ""
         result: list[Sentence] = []
         for paragraph in block.get("paragraphs", []):
-            hanzi_parts = _split_sentences(paragraph.get("hanzi", ""))
-            pinyin_parts = _split_sentences(paragraph.get("pinyin", ""))
-            french_parts = _split_french(_fr(paragraph.get("translation")))
+            hanzi_parts = split_sentences(paragraph.get("hanzi", ""))
+            pinyin_parts = split_sentences(paragraph.get("pinyin", ""))
+            french_parts = split_french(_fr(paragraph.get("translation")))
             if not (len(hanzi_parts) == len(pinyin_parts) == len(french_parts)):
                 continue
             for hanzi, pinyin, french in zip(hanzi_parts, pinyin_parts, french_parts):

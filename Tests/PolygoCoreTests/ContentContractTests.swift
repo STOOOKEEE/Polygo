@@ -962,6 +962,45 @@ final class ContentContractTests: XCTestCase {
         XCTAssertEqual(covered, target, "The taught canonical words must be exactly the ranks 1–300")
     }
 
+    /// A lesson flagged `situationAuthored` carries a hand-written scene: a dialogue of
+    /// 8–12 lines and a reading of 4–6 sentences in at most three paragraphs.
+    func testSituationAuthoredLessonsKeepTheirDialogueAndReadingLengths() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        var authored = 0
+
+        for lesson in snapshots.flatMap(\.lessons) {
+            let metadata = try XCTUnwrap(try rawLesson(lesson.id)["metadata"] as? [String: Any])
+            guard metadata["situationAuthored"] as? Bool == true else { continue }
+            authored += 1
+            let dialogues = lesson.blocks.compactMap { block -> DialogueBlock? in
+                if case .dialogue(let value) = block { return value }
+                return nil
+            }
+            let readings = lesson.blocks.compactMap { block -> ReadingBlock? in
+                if case .reading(let value) = block { return value }
+                return nil
+            }
+            let dialogue = try XCTUnwrap(dialogues.first, "\(lesson.id.rawValue) needs its dialogue")
+            let reading = try XCTUnwrap(readings.first, "\(lesson.id.rawValue) needs its reading")
+            XCTAssertEqual(dialogues.count, 1, "\(lesson.id.rawValue) has one dialogue")
+            XCTAssertEqual(readings.count, 1, "\(lesson.id.rawValue) has one reading")
+            XCTAssertTrue((8...12).contains(dialogue.lines.count), "\(lesson.id.rawValue) dialogue has \(dialogue.lines.count) lines, expected 8–12")
+            XCTAssertTrue((1...3).contains(reading.paragraphs.count), "\(lesson.id.rawValue) reading has \(reading.paragraphs.count) paragraphs, expected 1–3")
+            let sentences = reading.paragraphs.reduce(0) { count, paragraph in
+                count + paragraph.hanzi.filter { "。！？".contains($0) }.count
+            }
+            XCTAssertTrue((4...6).contains(sentences), "\(lesson.id.rawValue) reading has \(sentences) sentences, expected 4–6")
+            for line in dialogue.lines {
+                let hanziCount = line.hanzi.filter { character in
+                    character.unicodeScalars.contains { (0x4E00...0x9FFF).contains($0.value) }
+                }.count
+                XCTAssertLessThanOrEqual(hanziCount, 22, "\(lesson.id.rawValue) dialogue line '\(line.hanzi)' is too long")
+            }
+        }
+
+        XCTAssertGreaterThan(authored, 0, "at least one lesson must carry a hand-written situation")
+    }
+
     /// A lesson introduces at most eight words, and each of them is presented
     /// by at least three exercises of at least three kinds.
     func testEveryNewWordIsPractisedByThreeExercisesOfThreeKinds() async throws {

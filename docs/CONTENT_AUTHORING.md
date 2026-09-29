@@ -189,6 +189,8 @@ Ordre d'exécution : `build_90_day_authoring.py`, puis
 `content_tool.py generate`. Le fragment des jours 1 à 5 n'a pas de liste de
 vocabulaire ; l'assembleur la remplit depuis l'allocation et refuse un
 fragment des jours 6 à 66 dont le vocabulaire diffère de l'allocation.
+`content_tool.py generate` pose ensuite les scènes de `Content/authoring/situations/`
+sur les leçons du pack (voir « Situations écrites à la main »).
 
 Chaque mot nouveau est présenté par au moins trois exercices de la séance, d'au
 moins trois familles différentes (`choice`, `listeningChoice`, `wordOrder`,
@@ -214,6 +216,142 @@ de `toneDiscrimination` dont l'ID suit les `toneNumbers` du mot, tuiles de
 trois réponses dont la bonne suit la réplique lue. Une séance doit utiliser au
 moins quatre de ces six familles. Les quatre leçons protégées gardent leurs six exercices
 d'origine.
+
+## Situations écrites à la main
+
+Le dialogue, la lecture et les trois exercices de clôture (`listen`, `speak`,
+`reading`) d'une séance quotidienne s'écrivent à la main, une scène concrète par
+leçon, dans `Content/authoring/situations/unit-NN.json` ; `Tools/situations.py` les
+lit, les contrôle et les pose sur la leçon à `content_tool.py generate`, à la place du
+texte assemblé. Une leçon sans scène garde son texte assemblé ; `lint --require-situations`
+(et `generate --require-situations`) exige les 66 scènes.
+
+`NN` est le rang de l'unité parmi les huit unités quotidiennes (l'unité `unit-02` du
+parcours s'écrit dans `unit-01.json`) : `unit-01` leçons 5–12, `unit-02` 13–20,
+`unit-03` 21–28, `unit-04` 29–36, `unit-05` 37–44, `unit-06` 45–52, `unit-07` 53–61,
+`unit-08` 62–70. Une leçon écrite dans un autre fichier est refusée.
+
+### Format
+
+Le fichier associe un ID de leçon à sa scène. Tous les textes visibles sont des objets
+`{"fr": "…"}` ; le pinyin s'écrit une syllabe par hanzi.
+
+```json
+{
+  "lesson-05": {
+    "situation": {"fr": "Mina reçoit Tao à déjeuner : …"},
+    "title": {"fr": "Un déjeuner chez Mina"},
+    "dialogue": [
+      {"speaker": "Mina", "hanzi": "你好！你饿吗？", "pinyin": "nǐ hǎo! nǐ è ma?", "translation": {"fr": "Salut ! Tu as faim ?"}}
+    ],
+    "reading": {
+      "title": {"fr": "Un mot pour le professeur"},
+      "paragraphs": [
+        {"hanzi": "我有茶和水。你喝茶吗？", "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?", "translation": {"fr": "J’ai du thé et de l’eau. Vous buvez du thé ?"}}
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {"fr": "Que demande la personne au professeur ?"},
+      "choices": [{"id": "a", "label": {"fr": "…"}}, {"id": "b", "label": {"fr": "…"}}, {"id": "c", "label": {"fr": "…"}}],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {"hanzi": "我不吃鱼，我吃菜和米饭。", "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.", "translation": {"fr": "…"}},
+    "speakSentence": {"hanzi": "你有水吗？", "pinyin": "nǐ yǒu shuǐ ma?", "translation": {"fr": "Tu as de l’eau ?"}},
+    "extraVocabulary": [
+      {"hanzi": "饿", "traditionalHanzi": "餓", "pinyin": "è", "meaning": {"fr": "avoir faim"}, "partOfSpeech": "adjective"}
+    ]
+  }
+}
+```
+
+`situation` (une phrase) devient le `summary` de la leçon, `title` son titre (40 signes
+au plus). `dialogue` compte 8 à 12 répliques (`speaker` : `Mina`, `Tao`, `An` ou `Lin`,
+au moins deux et trois au plus par dialogue). `reading` compte 1 à 3 paragraphes et 4 à 6 phrases
+en tout ; chaque paragraphe finit par `。`, `！` ou `？` et donne autant de phrases en
+hanzi, en pinyin et en français (une phrase française finit par `.`, `?` ou `!` ; pas
+d'autre point suivi d'une espace). `readingQuestion` propose trois choix `a`, `b`, `c`,
+dont l'un est juste et que le texte permet de départager. `listenSentence` et
+`speakSentence` reprennent mot pour mot une réplique du dialogue ou une de ses phrases
+(hanzi et pinyin), sans nom latin, de quatre hanzi au moins, et diffèrent l'une de l'autre.
+`extraVocabulary` (facultatif) glose les mots hors du vocabulaire enseigné :
+`{hanzi, traditionalHanzi, pinyin, meaning: {fr}, partOfSpeech}`.
+
+### Ce que la pose modifie
+
+La pose remplace le titre, le résumé, les répliques du dialogue, le titre et les paragraphes
+de la lecture (identifiants `p1`, `p2`…, `segmentation: []`, `audio: null`), l'`extraVocabulary`
+de la leçon, et les exercices `ex-lNN-listen`, `ex-lNN-speak` et celui que la lecture
+référence : les IDs des blocs, de l'histoire, de l'exercice et
+`comprehensionExerciseIDs` restent ceux du pack, et `metadata.situationAuthored` vaut
+`true`. Les distracteurs de l'écoute sont les traductions d'autres répliques (les plus
+proches en longueur) : deux répliques ne se traduisent donc pas par la même phrase. Un mot
+glosé prend l'ID `vocab-x-<code hexadécimal du hanzi>` (`vocab-x-997f` pour 饿) ; un
+même mot glosé dans deux leçons doit l'être de la même façon. Les exercices `meaning`,
+`order` et `fill` du pack, la grammaire et les révisions dérivées ne changent pas de
+source (les révisions et défis reprennent les nouvelles répliques à la génération).
+
+### Règles de vocabulaire
+
+`lint` (et `generate`, avant d'écrire quoi que ce soit) refuse une scène si :
+
+* un mot n'est ni enseigné jusqu'à cette leçon incluse (leçons de départ, aperçu du module 0
+  et séances du jour, d'après le bundle généré), ni un prénom (`Mina`, `Tao`, `An`, `Lin`), ni
+  un extra glosé. Les mots sont trouvés par découpage en plus court chemin de mots
+  enseignés ; le contrôle voit les hanzi, pas le sens. Le message nomme chaque mot refusé
+  et la leçon qui l'enseigne ;
+* un mot nouveau de la leçon (`metadata.newVocabularyIDs` hors extras) manque au dialogue
+  et à la lecture, ou la lecture en contient moins de deux ;
+* les mots nouveaux, extras nouveaux compris, dépassent cinq (le contrat Swift veut trois à
+  cinq mots nouveaux par leçon) : avec quatre mots du plan, un extra au plus ; avec cinq,
+  aucun. Un extra n'est jamais un mot du plan (rangs 1 à 300, enseigné plus tard) ni un mot
+  déjà enseigné ; un extra doit servir, et pèse au plus 8 % des mots d'un texte (un au minimum) ;
+* le dialogue ou la lecture sort de sa longueur, une réplique dépasse 22 hanzi, deux répliques
+  consécutives sont identiques (sauf une salutation), plus de deux répliques portent un nom latin
+  (une ligne à nom latin n'alimente pas les exercices générés) ;
+* le hanzi contient autre chose que des hanzi, `，。！？、；：` et des prénoms ; le pinyin autre
+  chose que des syllabes minuscules bien écrites (marque de ton bien placée) et `, . ? ! ; :` ;
+  le pinyin ne suit pas le hanzi (une syllabe par hanzi, la même ponctuation au même endroit ;
+  儿 s'écrit `r` collé à la syllabe précédente, `nǎr`).
+
+### Commandes
+
+```sh
+python3 Tools/content_tool.py situation-brief --lesson lesson-NN   # tout ce qu'il faut pour écrire une leçon
+python3 Tools/content_tool.py situations-lint --file Content/authoring/situations/unit-NN.json
+python3 Tools/content_tool.py situations-lint --file … --pinyin-check   # facultatif : pypinyin
+python3 Tools/content_tool.py generate --input Content/authoring/90-day-authoring.json --root Content
+python3 Tools/content_tool.py lint --root Content [--require-situations]
+```
+
+`situation-brief` affiche l'unité et le fichier, le thème et le résumé actuels, les mots
+nouveaux et repris, la note de grammaire, les personnages et les scènes déjà écrites, les
+règles, le vocabulaire autorisé (hanzi, pinyin, sens, par leçon) et un squelette JSON.
+`situations-lint` ne régénère rien et signale tous les défauts d'un fichier. Avec
+`--pinyin-check`, chaque syllabe est comparée aux lectures de `pypinyin` s'il est installé
+(sinon une note l'indique) ; les formes neutres et les variantes de 不 et 一 passent. Ce contrôle
+est pour les rédacteurs et la relecture : `lint` n'en dépend pas. Le bundle
+régénéré est aussi comparé aux fichiers de scènes : modifier une scène sans régénérer fait échouer
+`lint`. Le générateur copie le bundle dans un dossier temporaire (`TMPDIR`) : le libérer s'il est plein.
+
+### Guide du rédacteur
+
+* Une leçon, une situation concrète et située (un repas, un achat, une rencontre) que Mina et Tao
+  vivent ; le lecteur doit pouvoir la résumer en une phrase, celle de `situation`.
+* Registre : le chinois parlé de tous les jours, des répliques courtes qu'on dirait vraiment ;
+  jamais de phrase de manuel (« Je suis un étudiant. Tu es un étudiant. ») ni de liste de mots
+  déguisée en dialogue. Une question appelle sa réponse dans la réplique suivante.
+* Mina et Tao mènent le dialogue et s'alternent (le premier locuteur est à gauche dans l'application) ;
+  `An` et `Lin` peuvent apparaître, à trois voix au plus. Le lecteur a déjà rencontré Mina et Tao :
+  reprenez leurs goûts et leurs habitudes (voir « Personnages » du brief) sans les contredire.
+* Employez tous les mots nouveaux, et réemployez des mots vus plus tôt : c'est ce qui les fait vivre.
+  Les mots enseignés plus tard, même très courants (好, 很, 的), sont interdits : contournez-les.
+* La lecture n'est pas le dialogue récrit : un petit texte à part (un message, une note, un récit
+  de deux ou trois phrases) qui reprend le lexique de la leçon. La question de lecture porte sur le
+  sens du texte, avec deux mauvaises réponses plausibles.
+* Traductions françaises naturelles (pas de mot à mot), avec les apostrophes typographiques `’` et
+  les espaces avant `? ! :` ; une note culturelle brève peut trouver place dans `situation`.
+* Vérifiez chaque ligne avec un dictionnaire ou un locuteur : l'outil ne juge ni le naturel du
+  chinois, ni l'exactitude du pinyin, ni celle du français.
 
 ## Révisions et défis d'unité
 
