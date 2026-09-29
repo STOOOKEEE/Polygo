@@ -5,10 +5,10 @@
   "moduleID": "unit-02",
   "order": 17,
   "title": {
-    "fr": "Une journée organisée"
+    "fr": "Un film chez Tao"
   },
   "summary": {
-    "fr": "Parler d’un déplacement, d’une capacité et d’une action terminée."
+    "fr": "Tao invite Mina, qui est à la gare, à voir un film chez lui et lui explique comment venir."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -398,56 +398,74 @@
       "id": "block-l9-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "你昨天在家吗？",
-          "pinyin": "nǐ zuó tiān zài jiā ma?",
-          "translation": {
-            "fr": "Tu étais à la maison hier ?"
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "不在，我去了火车站。",
-          "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+          "hanzi": "你好！我有电影，你想去我家吗？",
+          "pinyin": "nǐ hǎo! wǒ yǒu diàn yǐng, nǐ xiǎng qù wǒ jiā ma?",
           "translation": {
-            "fr": "Non, je suis allé à la gare."
+            "fr": "Salut ! J’ai un film, ça te dit de venir chez moi ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你会骑自行车吗？你几点回家？",
-          "pinyin": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?",
+          "hanzi": "想！我在火车站，你在哪？",
+          "pinyin": "xiǎng! wǒ zài huǒ chē zhàn, nǐ zài nǎ?",
           "translation": {
-            "fr": "Tu sais faire du vélo ? À quelle heure rentres-tu ?"
+            "fr": "Oui ! Je suis à la gare. Et toi, tu es où ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "会。五点回家。",
-          "pinyin": "huì. wǔ diǎn huí jiā.",
+          "hanzi": "我在家，电脑也在家。你会去吗？",
+          "pinyin": "wǒ zài jiā, diàn nǎo yě zài jiā. nǐ huì qù ma?",
           "translation": {
-            "fr": "Oui. Je rentre à cinq heures."
+            "fr": "Je suis chez moi, l’ordinateur aussi. Tu viendras ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我从家走到火车站。",
-          "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+          "hanzi": "会！我买了茶，也买了书。",
+          "pinyin": "huì! wǒ mǎi le chá, yě mǎi le shū.",
           "translation": {
-            "fr": "Je marche de la maison jusqu’à la gare."
+            "fr": "Oui ! J’ai acheté du thé, et un livre aussi."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "好，我回家。",
-          "pinyin": "hǎo, wǒ huí jiā.",
+          "hanzi": "你买了茶！我有电影，你有茶。",
+          "pinyin": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá.",
           "translation": {
-            "fr": "D’accord, je rentre à la maison."
+            "fr": "Tu as acheté du thé ! Moi, j’ai le film, toi le thé."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "从火车站去你家，我不知道。",
+          "pinyin": "cóng huǒ chē zhàn qù nǐ jiā, wǒ bù zhī dào.",
+          "translation": {
+            "fr": "De la gare jusque chez toi, je ne connais pas le chemin."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "从火车站去商店，从商店去我家。",
+          "pinyin": "cóng huǒ chē zhàn qù shāng diàn, cóng shāng diàn qù wǒ jiā.",
+          "translation": {
+            "fr": "De la gare, tu vas au magasin, et du magasin tu viens chez moi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我知道了！再见！",
+          "pinyin": "wǒ zhī dào le! zài jiàn!",
+          "translation": {
+            "fr": "J’ai compris ! À tout à l’heure !"
           },
           "audio": null
         }
@@ -463,25 +481,25 @@
       "id": "block-l9-reading",
       "storyID": "story-l9-station",
       "title": {
-        "fr": "Vers la gare"
+        "fr": "Un vendredi chez moi"
       },
       "paragraphs": [
         {
           "id": "lesson-09-p1",
-          "hanzi": "我昨天去了火车站。",
-          "pinyin": "wǒ zuó tiān qù le huǒ chē zhàn.",
+          "hanzi": "今天是星期五，我在家。我有电影，朋友想去我家。",
+          "pinyin": "jīn tiān shì xīng qī wǔ, wǒ zài jiā. wǒ yǒu diàn yǐng, péng yǒu xiǎng qù wǒ jiā.",
           "translation": {
-            "fr": "Je suis allé à la gare hier."
+            "fr": "Aujourd’hui, on est vendredi et je suis chez moi. J’ai un film, et mon ami a envie de venir chez moi."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-09-p2",
-          "hanzi": "我从家走到火车站，我回家。",
-          "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn, wǒ huí jiā.",
+          "hanzi": "朋友从火车站去商店，买了茶。朋友会去我家。电影和茶都有了！",
+          "pinyin": "péng yǒu cóng huǒ chē zhàn qù shāng diàn, mǎi le chá. péng yǒu huì qù wǒ jiā. diàn yǐng hé chá dōu yǒu le!",
           "translation": {
-            "fr": "Je marche de la maison jusqu’à la gare, puis je rentre."
+            "fr": "Mon ami va de la gare au magasin et achète du thé. Il va venir chez moi. Nous avons le film et le thé !"
           },
           "segmentation": [],
           "audio": null
@@ -615,11 +633,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-dict-sent-exa-3",
+      "id": "block-ex-l9-dict-sent-dia-4",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l9-dict-sent-exa-3",
+          "id": "ex-l9-dict-sent-dia-4",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -632,26 +650,26 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "我看了电影。",
+        "promptText": "会！我买了茶，也买了书。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "wǒ kàn le diàn yǐng。"
+              "fr": "huì! wǒ mǎi le chá, yě mǎi le shū."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "huì. wǔ diǎn huí jiā."
+              "fr": "xiǎng! wǒ zài huǒ chē zhàn, nǐ zài nǎ?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "wǒ huì shuō hàn yǔ。"
+              "fr": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá."
             },
             "audio": null
           }
@@ -922,13 +940,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-translate-exa-1",
+      "id": "block-ex-l9-translate-rea-5",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l9-translate-exa-1",
+          "id": "ex-l9-translate-rea-5",
           "prompt": {
-            "fr": "Traduis en chinois : « Nous regardons un film le week-end »"
+            "fr": "Traduis en chinois : « Nous avons le film et le thé ! »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -940,39 +958,51 @@
         },
         "tokens": [
           {
+            "id": "e",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "从",
+            "pinyin": "cóng",
+            "audio": null
+          },
+          {
             "id": "b",
-            "hanzi": "周末",
-            "pinyin": "zhōu mò",
+            "hanzi": "和",
+            "pinyin": "hé",
             "audio": null
           },
           {
             "id": "d",
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "audio": null
+          },
+          {
+            "id": "a",
             "hanzi": "电影",
             "pinyin": "diàn yǐng",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "f",
+            "id": "h",
             "hanzi": "会",
             "pinyin": "huì",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "看",
-            "pinyin": "kàn",
+            "hanzi": "茶",
+            "pinyin": "chá",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "id": "f",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           }
         ],
@@ -980,7 +1010,9 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e",
+          "f"
         ],
         "acceptedOrders": []
       },
@@ -998,7 +1030,7 @@
         "header": {
           "id": "ex-l9-talk-1",
           "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -1008,25 +1040,25 @@
           ],
           "required": true
         },
-        "speaker": "Mina",
-        "promptText": "你昨天在家吗？",
+        "speaker": "Tao",
+        "promptText": "你好！我有电影，你想去我家吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "不在，我去了火车站。",
-            "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+            "hanzi": "想！我在火车站，你在哪？",
+            "pinyin": "xiǎng! wǒ zài huǒ chē zhàn, nǐ zài nǎ?",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "会。五点回家。",
-            "pinyin": "huì. wǔ diǎn huí jiā.",
+            "hanzi": "会！我买了茶，也买了书。",
+            "pinyin": "huì! wǒ mǎi le chá, yě mǎi le shū.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "好，我回家。",
-            "pinyin": "hǎo, wǒ huí jiā.",
+            "hanzi": "从火车站去你家，我不知道。",
+            "pinyin": "cóng huǒ chē zhàn qù nǐ jiā, wǒ bù zhī dào.",
             "audio": null
           }
         ],
@@ -1040,13 +1072,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-translate-exa-4",
+      "id": "block-ex-l9-translate-exa-3",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l9-translate-exa-4",
+          "id": "ex-l9-translate-exa-3",
           "prompt": {
-            "fr": "Traduis en chinois : « Je marche de la maison à l’école »"
+            "fr": "Traduis en chinois : « J’ai regardé un film »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1059,20 +1091,14 @@
         "tokens": [
           {
             "id": "b",
-            "hanzi": "从家",
-            "pinyin": "cóng jiā",
+            "hanzi": "看",
+            "pinyin": "kàn",
             "audio": null
           },
           {
-            "id": "f",
-            "hanzi": "会",
-            "pinyin": "huì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
+            "id": "c",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
@@ -1082,21 +1108,21 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "走",
-            "pinyin": "zǒu",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
             "id": "d",
-            "hanzi": "到",
-            "pinyin": "dào",
+            "hanzi": "电影",
+            "pinyin": "diàn yǐng",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "会",
+            "pinyin": "huì",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "从",
+            "pinyin": "cóng",
             "audio": null
           }
         ],
@@ -1104,8 +1130,7 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
         "acceptedOrders": []
       },
@@ -1117,11 +1142,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-talk-3",
+      "id": "block-ex-l9-talk-2",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l9-talk-3",
+          "id": "ex-l9-talk-2",
           "prompt": {
             "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
@@ -1134,24 +1159,24 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "你会骑自行车吗？你几点回家？",
+        "promptText": "想！我在火车站，你在哪？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "好，我回家。",
-            "pinyin": "hǎo, wǒ huí jiā.",
+            "hanzi": "从火车站去商店，从商店去我家。",
+            "pinyin": "cóng huǒ chē zhàn qù shāng diàn, cóng shāng diàn qù wǒ jiā.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "不在，我去了火车站。",
-            "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+            "hanzi": "你好！我有电影，你想去我家吗？",
+            "pinyin": "nǐ hǎo! wǒ yǒu diàn yǐng, nǐ xiǎng qù wǒ jiā ma?",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "会。五点回家。",
-            "pinyin": "huì. wǔ diǎn huí jiā.",
+            "hanzi": "我在家，电脑也在家。你会去吗？",
+            "pinyin": "wǒ zài jiā, diàn nǎo yě zài jiā. nǐ huì qù ma?",
             "audio": null
           }
         ],
@@ -1165,11 +1190,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-dialogue-2-4",
+      "id": "block-ex-l9-dialogue-4-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l9-dialogue-2-4",
+          "id": "ex-l9-dialogue-4-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1183,39 +1208,31 @@
         },
         "lines": [
           {
-            "id": "c",
-            "speaker": "Tao",
-            "hanzi": "会。五点回家。",
-            "pinyin": "huì. wǔ diǎn huí jiā.",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "speaker": "Mina",
-            "hanzi": "我从家走到火车站。",
-            "pinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
-            "audio": null
-          },
-          {
             "id": "b",
-            "speaker": "Mina",
-            "hanzi": "你会骑自行车吗？你几点回家？",
-            "pinyin": "nǐ huì qí zì xíng chē ma? nǐ jǐ diǎn huí jiā?",
+            "speaker": "Tao",
+            "hanzi": "你买了茶！我有电影，你有茶。",
+            "pinyin": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá.",
             "audio": null
           },
           {
             "id": "a",
-            "speaker": "Tao",
-            "hanzi": "不在，我去了火车站。",
-            "pinyin": "bù zài, wǒ qù le huǒ chē zhàn.",
+            "speaker": "Mina",
+            "hanzi": "会！我买了茶，也买了书。",
+            "pinyin": "huì! wǒ mǎi le chá, yě mǎi le shū.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Mina",
+            "hanzi": "从火车站去你家，我不知道。",
+            "pinyin": "cóng huǒ chē zhàn qù nǐ jiā, wǒ bù zhī dào.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
+          "c"
         ]
       },
       "metadata": {
@@ -1226,100 +1243,99 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-read-exa-3",
+      "id": "block-ex-l9-fill-rea-3",
       "spec": {
-        "kind": "choice",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l9-read-exa-3",
+          "id": "ex-l9-fill-rea-3",
           "prompt": {
-            "fr": "Que signifie la phrase : 我看了电影。"
+            "fr": "Complète : 朋友___火车站去商店，买了茶。 (« Mon ami va de la gare au magasin et achète du thé »)"
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
-            "l9-understand"
+            "l9-produce"
           ],
           "required": true
         },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Oui. Je rentre à cinq heures."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "J’ai regardé un film."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "La gare est devant."
-            },
-            "audio": null
-          }
+        "sentence": "朋友___火车站去商店，买了茶。",
+        "acceptedAnswers": [
+          "从"
         ],
-        "correctChoiceID": "b"
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 5
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l9-listen-rea-2",
+      "id": "block-ex-l9-order-rea-4",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l9-listen-rea-2",
+          "id": "ex-l9-order-rea-4",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
+            "fr": "Construis « Il va venir chez moi »."
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
-            "l9-understand"
+            "l9-produce"
           ],
           "required": true
         },
-        "promptText": "我从家走到火车站，我回家。",
-        "choices": [
+        "tokens": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Je marche de la maison jusqu’à la gare, puis je rentre."
-            },
+            "id": "e",
+            "hanzi": "家",
+            "pinyin": "jiā",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Tu sais faire du vélo ? À quelle heure rentres-tu ?"
-            },
+            "hanzi": "会",
+            "pinyin": "huì",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "朋友",
+            "pinyin": "péng yǒu",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "D’accord, je rentre à la maison."
-            },
+            "hanzi": "去",
+            "pinyin": "qù",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "朋友会去我家。",
+          "朋友会去我家"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 5
       }
     },
@@ -1331,7 +1347,7 @@
         "header": {
           "id": "ex-l9-listen",
           "prompt": {
-            "fr": "Que fait Mina ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1341,31 +1357,31 @@
           ],
           "required": true
         },
-        "promptText": "我从家走到火车站。",
+        "promptText": "从火车站去商店，从商店去我家。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Elle prend l’avion."
+              "fr": "De la gare, tu vas au magasin, et du magasin tu viens chez moi."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Elle marche jusqu’à la gare."
+              "fr": "De la gare jusque chez toi, je ne connais pas le chemin."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Elle reste à la maison."
+              "fr": "Tu as acheté du thé ! Moi, j’ai le film, toi le thé."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1381,7 +1397,7 @@
         "header": {
           "id": "ex-l9-speak",
           "prompt": {
-            "fr": "Dis « Je marche de la maison jusqu’à la gare ». "
+            "fr": "Dis « Tu viendras ? »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
@@ -1391,11 +1407,11 @@
           ],
           "required": false
         },
-        "referenceText": "我从家走到火车站。",
-        "referencePinyin": "wǒ cóng jiā zǒu dào huǒ chē zhàn.",
+        "referenceText": "你会去吗？",
+        "referencePinyin": "nǐ huì qù ma?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "我从家走到火车站。"
+          "你会去吗？"
         ],
         "allowSelfRating": true
       },
@@ -1413,7 +1429,7 @@
         "header": {
           "id": "ex-l9-reading",
           "prompt": {
-            "fr": "Comment la personne se déplace-t-elle ?"
+            "fr": "Qu’est-ce que l’ami a acheté au magasin ?"
           },
           "instruction": {
             "fr": "Relis le petit texte avant de répondre."
@@ -1427,26 +1443,26 @@
           {
             "id": "c",
             "label": {
-              "fr": "Elle nage."
-            },
-            "audio": null
-          },
-          {
-            "id": "a",
-            "label": {
-              "fr": "Elle marche."
+              "fr": "Du lait."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Elle prend l’avion."
+              "fr": "Du thé."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Un livre."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1691,6 +1707,7 @@
       "hsk20-112",
       "hsk20-139"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-019",
       "hsk20-042",

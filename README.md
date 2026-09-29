@@ -72,11 +72,13 @@ Le bundle contient 94 leçons dans 10 unités :
 - 1 663 exercices au total : 27 dans l’introduction, 144 dans le module 0
   (18 par leçon), 1 188 dans les 66 leçons du jour (18 par séance) et 304 dans
   les révisions (18) et les défis (20) ;
-- 70 histoires inline et 148 paragraphes de lecture ;
-- 307 cartes et entrées lexicales distinctes, soit 300 lexèmes canoniques (les
+- 70 histoires inline et 147 paragraphes de lecture ; chacune des 66 leçons du jour a un
+  dialogue de 8 à 12 répliques et une lecture de 4 à 6 phrases écrits à la main
+  (`Content/authoring/situations/`) ;
+- 313 cartes et entrées lexicales distinctes, soit 300 lexèmes canoniques (les
   rangs 1 à 300 du référentiel HSK classique 1–2), 2 mots d’écoute du module 0
-  de rang supérieur (`绿`, `蓝`) et 5 mots supplémentaires de contexte, pour
-  1 022 associations leçon–carte (le module 0 présente à l’avance 55 mots que
+  de rang supérieur (`绿`, `蓝`) et 11 mots supplémentaires hors catalogue, pour
+  1 038 associations leçon–carte (le module 0 présente à l’avance 55 mots que
   les leçons du jour enseignent) ;
 - 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
   n’est embarqué.

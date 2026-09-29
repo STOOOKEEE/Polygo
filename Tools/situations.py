@@ -21,7 +21,7 @@ import unicodedata
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Iterable, Mapping
 
 from exercise_expansion import split_french, split_sentences
 from exercise_kinds import pinyin_tones
@@ -767,9 +767,8 @@ def lint_set(
     catalog: list[dict[str, Any]],
     *,
     only: str | None = None,
-    require: bool = False,
 ) -> list[str]:
-    """Check every situation (or those of file `only`), and that a required set is complete."""
+    """Check every situation (or those of file `only`); a whole-set check also requires every daily lesson to have one."""
     problems: list[str] = []
     by_number = sorted(situations.entries, key=lesson_number)
     for lesson_id in by_number:
@@ -789,12 +788,20 @@ def lint_set(
             for extra in _extras_of(situations.entries[other])
         }
         problems.extend(check_situation(situations.entries[lesson_id], context, earlier))
-    if require and only is None:
-        daily = [lesson_id for lesson_id, lesson in lessons.items() if _LESSON_ID.fullmatch(lesson_id) and lesson_number(lesson_id) >= FIRST_DAILY_LESSON]
-        missing = sorted(set(daily) - set(situations.entries))
+    if only is None:
+        missing = missing_situations(lessons, situations)
         if missing:
             problems.append(f"situations missing for {len(missing)} daily lessons: {', '.join(missing[:6])}{'…' if len(missing) > 6 else ''}")
     return problems
+
+
+def missing_situations(lesson_ids: Iterable[str], situations: SituationSet) -> list[str]:
+    """The daily lessons among `lesson_ids` that no situation file writes."""
+    daily = {
+        lesson_id for lesson_id in lesson_ids
+        if _LESSON_ID.fullmatch(lesson_id) and FIRST_DAILY_LESSON <= lesson_number(lesson_id) <= LAST_DAILY_LESSON
+    }
+    return sorted(daily - set(situations.entries), key=lesson_number)
 
 
 def _extras_of(situation: Any) -> list[dict[str, Any]]:
@@ -864,12 +871,13 @@ def apply_situation(blueprint: dict[str, Any], situation: dict[str, Any]) -> dic
     wrong = _listen_distractors(situation)
     if len(wrong) < LISTEN_CHOICES - 1:
         raise SituationError(f"{lesson_id}: the dialogue offers too few different translations for the listening exercise")
-    position = number % LISTEN_CHOICES
-    texts = wrong[:position] + [listen["translation"]["fr"]] + wrong[position:]
+    # The answer comes first, like every pack exercise: `normalize_lesson` then rotates the choices by
+    # lesson, so the correct position varies without a second shuffle that would cancel that rotation.
+    texts = [listen["translation"]["fr"], *wrong]
     listen_exercise.update({
         "prompt": _label(LISTEN_PROMPT), "instruction": _label(LISTEN_INSTRUCTION), "promptText": listen["hanzi"],
         "choices": [_choice(READING_CHOICES[index], text) for index, text in enumerate(texts)],
-        "correctChoiceID": READING_CHOICES[position],
+        "correctChoiceID": READING_CHOICES[0],
     })
 
     speak = situation["speakSentence"]
@@ -885,9 +893,10 @@ def apply_situation(blueprint: dict[str, Any], situation: dict[str, Any]) -> dic
     reading_ids = lesson["reading"].get("comprehensionExerciseIDs", [])
     if len(reading_ids) != 1:
         raise SituationError(f"{lesson_id}: the pack's reading must name one comprehension exercise")
+    answer_first = sorted(question["choices"], key=lambda choice: choice["id"] != question["correctChoiceID"])
     _exercise(lesson, reading_ids[0]).update({
         "prompt": _label(question["prompt"]["fr"]), "instruction": _label(READING_INSTRUCTION),
-        "choices": [_choice(choice["id"], choice["label"]["fr"]) for choice in question["choices"]],
+        "choices": [_choice(choice["id"], choice["label"]["fr"]) for choice in answer_first],
         "correctChoiceID": question["correctChoiceID"],
     })
     return lesson
@@ -920,11 +929,9 @@ def bundle_problems(
     situations: SituationSet,
     lessons: Mapping[str, dict[str, Any]],
     catalog: list[dict[str, Any]],
-    *,
-    require: bool,
 ) -> list[str]:
-    """What a generated bundle owes its situation files: sound scenes, flagged lessons, texts that match."""
-    problems = lint_set(situations, lessons, catalog, require=require)
+    """What a generated bundle owes its situation files: a scene per daily lesson, sound scenes, flagged lessons, texts that match."""
+    problems = lint_set(situations, lessons, catalog)
     for lesson_id, lesson in lessons.items():
         flagged = lesson.get("metadata", {}).get("situationAuthored") is True
         if flagged and lesson_id not in situations.entries:

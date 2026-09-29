@@ -1,40 +1,1197 @@
 {
   "lesson-05": {
-    "situation": {"fr": "Mina reçoit Tao à déjeuner : elle lui demande s’il a faim ou soif et ce qu’il mange."},
-    "title": {"fr": "Un déjeuner chez Mina"},
+    "situation": {
+      "fr": "Mina reçoit Tao à déjeuner : elle lui demande s’il a faim ou soif et ce qu’il mange."
+    },
+    "title": {
+      "fr": "Un déjeuner chez Mina"
+    },
     "dialogue": [
-      {"speaker": "Mina", "hanzi": "你好！你饿吗？", "pinyin": "nǐ hǎo! nǐ è ma?", "translation": {"fr": "Salut ! Tu as faim ?"}},
-      {"speaker": "Tao", "hanzi": "饿！你有什么菜？", "pinyin": "è! nǐ yǒu shén me cài?", "translation": {"fr": "Oui ! Qu’as-tu comme plats ?"}},
-      {"speaker": "Mina", "hanzi": "我有米饭、鱼和菜。", "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.", "translation": {"fr": "J’ai du riz, du poisson et des légumes."}},
-      {"speaker": "Tao", "hanzi": "我不吃鱼，我吃菜和米饭。", "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.", "translation": {"fr": "Je ne mange pas de poisson, je mange des légumes et du riz."}},
-      {"speaker": "Mina", "hanzi": "菜不多，米饭多。", "pinyin": "cài bù duō, mǐ fàn duō.", "translation": {"fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."}},
-      {"speaker": "Tao", "hanzi": "没关系！你有水吗？我渴。", "pinyin": "méi guān xì! nǐ yǒu shuǐ ma? wǒ kě.", "translation": {"fr": "Ce n’est pas grave ! Tu as de l’eau ? J’ai soif."}},
-      {"speaker": "Mina", "hanzi": "有，我有茶和水。你喝茶吗？", "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?", "translation": {"fr": "Oui, j’ai du thé et de l’eau. Tu bois du thé ?"}},
-      {"speaker": "Tao", "hanzi": "喝！茶热吗？", "pinyin": "hē! chá rè ma?", "translation": {"fr": "Oui ! Il est chaud, le thé ?"}},
-      {"speaker": "Mina", "hanzi": "热，请喝。", "pinyin": "rè, qǐng hē.", "translation": {"fr": "Il est chaud. Bois, je t’en prie."}},
-      {"speaker": "Tao", "hanzi": "谢谢！我吃米饭，你吃鱼。", "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.", "translation": {"fr": "Merci ! Moi, je mange du riz, et toi, du poisson."}}
+      {
+        "speaker": "Mina",
+        "hanzi": "你好！你饿吗？",
+        "pinyin": "nǐ hǎo! nǐ è ma?",
+        "translation": {
+          "fr": "Salut ! Tu as faim ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "饿！你有什么菜？",
+        "pinyin": "è! nǐ yǒu shén me cài?",
+        "translation": {
+          "fr": "Oui ! Qu’as-tu comme plats ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我有米饭、鱼和菜。",
+        "pinyin": "wǒ yǒu mǐ fàn, yú hé cài.",
+        "translation": {
+          "fr": "J’ai du riz, du poisson et des légumes."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我不吃鱼，我吃菜和米饭。",
+        "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.",
+        "translation": {
+          "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "菜不多，米饭多。",
+        "pinyin": "cài bù duō, mǐ fàn duō.",
+        "translation": {
+          "fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "没关系！你有水吗？我渴。",
+        "pinyin": "méi guān xì! nǐ yǒu shuǐ ma? wǒ kě.",
+        "translation": {
+          "fr": "Ce n’est pas grave ! Tu as de l’eau ? J’ai soif."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "有，我有茶和水。你喝茶吗？",
+        "pinyin": "yǒu, wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
+        "translation": {
+          "fr": "Oui, j’ai du thé et de l’eau. Tu bois du thé ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "喝！茶热吗？",
+        "pinyin": "hē! chá rè ma?",
+        "translation": {
+          "fr": "Oui ! Il est chaud, le thé ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "热，请喝。",
+        "pinyin": "rè, qǐng hē.",
+        "translation": {
+          "fr": "Il est chaud. Bois, je t’en prie."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "谢谢！我吃米饭，你吃鱼。",
+        "pinyin": "xiè xie! wǒ chī mǐ fàn, nǐ chī yú.",
+        "translation": {
+          "fr": "Merci ! Moi, je mange du riz, et toi, du poisson."
+        }
+      }
     ],
     "reading": {
-      "title": {"fr": "Un mot pour le professeur"},
+      "title": {
+        "fr": "Un mot pour le professeur"
+      },
       "paragraphs": [
-        {"hanzi": "老师，你好！今天我有米饭、鱼和菜。你吃鱼吗？", "pinyin": "lǎo shī, nǐ hǎo! jīn tiān wǒ yǒu mǐ fàn, yú hé cài. nǐ chī yú ma?", "translation": {"fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Vous mangez du poisson ?"}},
-        {"hanzi": "我有茶和水。你喝茶吗？", "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?", "translation": {"fr": "J’ai du thé et de l’eau. Vous buvez du thé ?"}}
+        {
+          "hanzi": "老师，你好！今天我有米饭、鱼和菜。你吃鱼吗？",
+          "pinyin": "lǎo shī, nǐ hǎo! jīn tiān wǒ yǒu mǐ fàn, yú hé cài. nǐ chī yú ma?",
+          "translation": {
+            "fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Tu manges du poisson ?"
+          }
+        },
+        {
+          "hanzi": "我有茶和水。你喝茶吗？",
+          "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
+          "translation": {
+            "fr": "J’ai du thé et de l’eau. Tu bois du thé ?"
+          }
+        }
       ]
     },
     "readingQuestion": {
-      "prompt": {"fr": "Que demande la personne au professeur ?"},
+      "prompt": {
+        "fr": "Que demande la personne au professeur ?"
+      },
       "choices": [
-        {"id": "a", "label": {"fr": "S’il mange du poisson et s’il boit du thé."}},
-        {"id": "b", "label": {"fr": "S’il veut acheter un livre."}},
-        {"id": "c", "label": {"fr": "S’il a un chat."}}
+        {
+          "id": "a",
+          "label": {
+            "fr": "S’il mange du poisson et s’il boit du thé."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "S’il veut acheter un livre."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "S’il a un chat."
+          }
+        }
       ],
       "correctChoiceID": "a"
     },
-    "listenSentence": {"hanzi": "我不吃鱼，我吃菜和米饭。", "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.", "translation": {"fr": "Je ne mange pas de poisson, je mange des légumes et du riz."}},
-    "speakSentence": {"hanzi": "你有水吗？", "pinyin": "nǐ yǒu shuǐ ma?", "translation": {"fr": "Tu as de l’eau ?"}},
+    "listenSentence": {
+      "hanzi": "我不吃鱼，我吃菜和米饭。",
+      "pinyin": "wǒ bù chī yú, wǒ chī cài hé mǐ fàn.",
+      "translation": {
+        "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你有水吗？",
+      "pinyin": "nǐ yǒu shuǐ ma?",
+      "translation": {
+        "fr": "Tu as de l’eau ?"
+      }
+    },
     "extraVocabulary": [
-      {"hanzi": "饿", "traditionalHanzi": "餓", "pinyin": "è", "meaning": {"fr": "avoir faim"}, "partOfSpeech": "adjective"},
-      {"hanzi": "渴", "traditionalHanzi": "渴", "pinyin": "kě", "meaning": {"fr": "avoir soif"}, "partOfSpeech": "adjective"}
+      {
+        "hanzi": "饿",
+        "traditionalHanzi": "餓",
+        "pinyin": "è",
+        "meaning": {
+          "fr": "avoir faim"
+        },
+        "partOfSpeech": "adjective"
+      },
+      {
+        "hanzi": "渴",
+        "traditionalHanzi": "渴",
+        "pinyin": "kě",
+        "meaning": {
+          "fr": "avoir soif"
+        },
+        "partOfSpeech": "adjective"
+      }
     ]
+  },
+  "lesson-06": {
+    "situation": {
+      "fr": "Mina et Tao vérifient ce qu’ils ont dans leur sac avant le cours de chinois de demain."
+    },
+    "title": {
+      "fr": "Avant le cours de chinois"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "你好！明天有汉语，你有书吗？",
+        "pinyin": "nǐ hǎo! míng tiān yǒu hàn yǔ, nǐ yǒu shū ma?",
+        "translation": {
+          "fr": "Salut ! Demain, on a cours de chinois. Tu as ton livre ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "有，书在这。你有电脑吗？",
+        "pinyin": "yǒu, shū zài zhè. nǐ yǒu diàn nǎo ma?",
+        "translation": {
+          "fr": "Oui, le voilà. Et toi, tu as ton ordinateur ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我也有，电脑在这。",
+        "pinyin": "wǒ yě yǒu, diàn nǎo zài zhè.",
+        "translation": {
+          "fr": "Moi aussi, il est là."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "书和电脑都在这。你有水吗？",
+        "pinyin": "shū hé diàn nǎo dōu zài zhè. nǐ yǒu shuǐ ma?",
+        "translation": {
+          "fr": "Le livre et l’ordinateur sont là, tout est là. Tu as de l’eau ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "水不在这，茶在这。你喝茶吗？",
+        "pinyin": "shuǐ bú zài zhè, chá zài zhè. nǐ hē chá ma?",
+        "translation": {
+          "fr": "Pas d’eau ici, mais voilà du thé. Tu en bois ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我也喝茶。谢谢！",
+        "pinyin": "wǒ yě hē chá. xiè xie!",
+        "translation": {
+          "fr": "Moi aussi, je bois du thé. Merci !"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "不客气。老师明天在吗？",
+        "pinyin": "bú kè qi. lǎo shī míng tiān zài ma?",
+        "translation": {
+          "fr": "De rien. Le professeur sera là demain ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "在，学生都在。再见！",
+        "pinyin": "zài, xué shēng dōu zài. zài jiàn!",
+        "translation": {
+          "fr": "Oui, et tous les élèves aussi. Salut !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Un jour sans les parents"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天爸爸和妈妈都不在，哥哥也不在。我和猫在这，电脑也在这。猫喝水，我喝茶。",
+          "pinyin": "jīn tiān bà ba hé mā ma dōu bú zài, gē ge yě bú zài. wǒ hé māo zài zhè, diàn nǎo yě zài zhè. māo hē shuǐ, wǒ hē chá.",
+          "translation": {
+            "fr": "Aujourd’hui, papa et maman ne sont pas là, mon grand frère non plus. Le chat et moi, nous sommes ici, et l’ordinateur aussi. Le chat boit de l’eau, moi je bois du thé."
+          }
+        },
+        {
+          "hanzi": "我是学生，明天有汉语。电脑和书都在这，我知道！",
+          "pinyin": "wǒ shì xué shēng, míng tiān yǒu hàn yǔ. diàn nǎo hé shū dōu zài zhè, wǒ zhī dào!",
+          "translation": {
+            "fr": "Je suis étudiante et demain j’ai cours de chinois. L’ordinateur et le livre sont bien là, je le sais !"
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Qui est avec la narratrice aujourd’hui ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Sa mère."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Son chat."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Son frère."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "书和电脑都在这。你有水吗？",
+      "pinyin": "shū hé diàn nǎo dōu zài zhè. nǐ yǒu shuǐ ma?",
+      "translation": {
+        "fr": "Le livre et l’ordinateur sont là, tout est là. Tu as de l’eau ?"
+      }
+    },
+    "speakSentence": {
+      "hanzi": "我也喝茶。谢谢！",
+      "pinyin": "wǒ yě hē chá. xiè xie!",
+      "translation": {
+        "fr": "Moi aussi, je bois du thé. Merci !"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-07": {
+    "situation": {
+      "fr": "Mina rend visite à Tao : il lui présente sa maison, dit quand son père est là et lui offre le thé de sa mère."
+    },
+    "title": {
+      "fr": "Chez Tao, un vendredi"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "你好！这是我家。",
+        "pinyin": "nǐ hǎo! zhè shì wǒ jiā.",
+        "translation": {
+          "fr": "Salut ! Voici chez moi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "你家不小！妈妈和爸爸都在吗？",
+        "pinyin": "nǐ jiā bù xiǎo! mā ma hé bà ba dōu zài ma?",
+        "translation": {
+          "fr": "Elle n’est pas petite, ta maison ! Ta mère et ton père sont là ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "妈妈在，爸爸不在。",
+        "pinyin": "mā ma zài, bà ba bú zài.",
+        "translation": {
+          "fr": "Ma mère est là, mon père non."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "爸爸星期几在家？",
+        "pinyin": "bà ba xīng qī jǐ zài jiā?",
+        "translation": {
+          "fr": "Ton père est à la maison quel jour ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "星期日。今天是七月五日，星期五。",
+        "pinyin": "xīng qī rì. jīn tiān shì qī yuè wǔ rì, xīng qī wǔ.",
+        "translation": {
+          "fr": "Le dimanche. Aujourd’hui, c’est le 5 juillet, un vendredi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "请喝茶。这是妈妈的茶。",
+        "pinyin": "qǐng hē chá. zhè shì mā ma de chá.",
+        "translation": {
+          "fr": "Bois du thé, je t’en prie. C’est le thé de ma mère."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "谢谢！是白茶吗？",
+        "pinyin": "xiè xie! shì bái chá ma?",
+        "translation": {
+          "fr": "Merci ! C’est du thé blanc ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "是，也有红茶和绿茶。",
+        "pinyin": "shì, yě yǒu hóng chá hé lǜ chá.",
+        "translation": {
+          "fr": "Oui, il y a aussi du thé noir et du thé vert."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我喝绿茶。你家的茶多！",
+        "pinyin": "wǒ hē lǜ chá. nǐ jiā de chá duō!",
+        "translation": {
+          "fr": "Je prendrai du thé vert. Tu as plein de thés chez toi !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Ma famille"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "我家有妈妈、爸爸和哥哥。哥哥在中国，爸爸和妈妈在法国。",
+          "pinyin": "wǒ jiā yǒu mā ma, bà ba hé gē ge. gē ge zài zhōng guó, bà ba hé mā ma zài fǎ guó.",
+          "translation": {
+            "fr": "Chez moi, il y a maman, papa et mon grand frère. Mon frère est en Chine, papa et maman sont en France."
+          }
+        },
+        {
+          "hanzi": "妈妈星期一和星期五在家，爸爸星期日在家。今天是星期五，妈妈在家，爸爸不在。",
+          "pinyin": "mā ma xīng qī yī hé xīng qī wǔ zài jiā, bà ba xīng qī rì zài jiā. jīn tiān shì xīng qī wǔ, mā ma zài jiā, bà ba bú zài.",
+          "translation": {
+            "fr": "Maman est à la maison le lundi et le vendredi, papa le dimanche. Aujourd’hui, on est vendredi : maman est là, papa non."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Où est le grand frère de la narratrice ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "En France."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "À la maison."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "En Chine."
+          }
+        }
+      ],
+      "correctChoiceID": "c"
+    },
+    "listenSentence": {
+      "hanzi": "星期日。今天是七月五日，星期五。",
+      "pinyin": "xīng qī rì. jīn tiān shì qī yuè wǔ rì, xīng qī wǔ.",
+      "translation": {
+        "fr": "Le dimanche. Aujourd’hui, c’est le 5 juillet, un vendredi."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "爸爸星期几在家？",
+      "pinyin": "bà ba xīng qī jǐ zài jiā?",
+      "translation": {
+        "fr": "Ton père est à la maison quel jour ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-08": {
+    "situation": {
+      "fr": "Mina et Tao vont au magasin de la gare : elle veut du thé, lui un livre, et ils demandent les prix."
+    },
+    "title": {
+      "fr": "Au magasin de la gare"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "你好！你去火车站吗？",
+        "pinyin": "nǐ hǎo! nǐ qù huǒ chē zhàn ma?",
+        "translation": {
+          "fr": "Salut ! Tu vas à la gare ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "去，我去火车站的商店。你也想去吗？",
+        "pinyin": "qù, wǒ qù huǒ chē zhàn de shāng diàn. nǐ yě xiǎng qù ma?",
+        "translation": {
+          "fr": "Oui, je vais au magasin de la gare. Tu veux venir aussi ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "想！我想买茶。",
+        "pinyin": "xiǎng! wǒ xiǎng mǎi chá.",
+        "translation": {
+          "fr": "Oui ! Je voudrais acheter du thé."
+        }
+      },
+      {
+        "speaker": "An",
+        "hanzi": "你好！想买什么？",
+        "pinyin": "nǐ hǎo! xiǎng mǎi shén me?",
+        "translation": {
+          "fr": "Bonjour ! Vous désirez ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "有红茶吗？几块？",
+        "pinyin": "yǒu hóng chá ma? jǐ kuài?",
+        "translation": {
+          "fr": "Vous avez du thé noir ? C’est combien ?"
+        }
+      },
+      {
+        "speaker": "An",
+        "hanzi": "红茶、绿茶都有。红茶七块，绿茶十块。",
+        "pinyin": "hóng chá, lǜ chá dōu yǒu. hóng chá qī kuài, lǜ chá shí kuài.",
+        "translation": {
+          "fr": "Il y a du thé noir et du thé vert. Le noir coûte 7 yuans, le vert 10."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我想买书。这书几块？",
+        "pinyin": "wǒ xiǎng mǎi shū. zhè shū jǐ kuài?",
+        "translation": {
+          "fr": "Moi, je voudrais un livre. Il coûte combien ?"
+        }
+      },
+      {
+        "speaker": "An",
+        "hanzi": "这书十五块。",
+        "pinyin": "zhè shū shí wǔ kuài.",
+        "translation": {
+          "fr": "Ce livre coûte 15 yuans."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我买红茶。",
+        "pinyin": "wǒ mǎi hóng chá.",
+        "translation": {
+          "fr": "Moi, j’achète le thé noir."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我买书。",
+        "pinyin": "wǒ mǎi shū.",
+        "translation": {
+          "fr": "Et moi, le livre."
+        }
+      },
+      {
+        "speaker": "An",
+        "hanzi": "谢谢！再见！",
+        "pinyin": "xiè xie! zài jiàn!",
+        "translation": {
+          "fr": "Merci ! Au revoir !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Un tour à la gare"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天我去火车站。火车站有商店，水四块，茶七块。",
+          "pinyin": "jīn tiān wǒ qù huǒ chē zhàn. huǒ chē zhàn yǒu shāng diàn, shuǐ sì kuài, chá qī kuài.",
+          "translation": {
+            "fr": "Aujourd’hui, je vais à la gare. Il y a un magasin à la gare : l’eau coûte 4 yuans, le thé 7."
+          }
+        },
+        {
+          "hanzi": "我想买水，也想买书。书十五块，我不买。",
+          "pinyin": "wǒ xiǎng mǎi shuǐ, yě xiǎng mǎi shū. shū shí wǔ kuài, wǒ bù mǎi.",
+          "translation": {
+            "fr": "Je voudrais acheter de l’eau, et aussi un livre. Le livre coûte 15 yuans, je ne l’achète pas."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Qu’est-ce qui coûte 15 yuans ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Le livre."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "L’eau."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Le thé."
+          }
+        }
+      ],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {
+      "hanzi": "去，我去火车站的商店。你也想去吗？",
+      "pinyin": "qù, wǒ qù huǒ chē zhàn de shāng diàn. nǐ yě xiǎng qù ma?",
+      "translation": {
+        "fr": "Oui, je vais au magasin de la gare. Tu veux venir aussi ?"
+      }
+    },
+    "speakSentence": {
+      "hanzi": "这书几块？",
+      "pinyin": "zhè shū jǐ kuài?",
+      "translation": {
+        "fr": "Il coûte combien, ce livre ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-09": {
+    "situation": {
+      "fr": "Tao invite Mina, qui est à la gare, à voir un film chez lui et lui explique comment venir."
+    },
+    "title": {
+      "fr": "Un film chez Tao"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "你好！我有电影，你想去我家吗？",
+        "pinyin": "nǐ hǎo! wǒ yǒu diàn yǐng, nǐ xiǎng qù wǒ jiā ma?",
+        "translation": {
+          "fr": "Salut ! J’ai un film, ça te dit de venir chez moi ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "想！我在火车站，你在哪？",
+        "pinyin": "xiǎng! wǒ zài huǒ chē zhàn, nǐ zài nǎ?",
+        "translation": {
+          "fr": "Oui ! Je suis à la gare. Et toi, tu es où ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我在家，电脑也在家。你会去吗？",
+        "pinyin": "wǒ zài jiā, diàn nǎo yě zài jiā. nǐ huì qù ma?",
+        "translation": {
+          "fr": "Je suis chez moi, l’ordinateur aussi. Tu viendras ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "会！我买了茶，也买了书。",
+        "pinyin": "huì! wǒ mǎi le chá, yě mǎi le shū.",
+        "translation": {
+          "fr": "Oui ! J’ai acheté du thé, et un livre aussi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你买了茶！我有电影，你有茶。",
+        "pinyin": "nǐ mǎi le chá! wǒ yǒu diàn yǐng, nǐ yǒu chá.",
+        "translation": {
+          "fr": "Tu as acheté du thé ! Moi, j’ai le film, toi le thé."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "从火车站去你家，我不知道。",
+        "pinyin": "cóng huǒ chē zhàn qù nǐ jiā, wǒ bù zhī dào.",
+        "translation": {
+          "fr": "De la gare jusque chez toi, je ne connais pas le chemin."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "从火车站去商店，从商店去我家。",
+        "pinyin": "cóng huǒ chē zhàn qù shāng diàn, cóng shāng diàn qù wǒ jiā.",
+        "translation": {
+          "fr": "De la gare, tu vas au magasin, et du magasin tu viens chez moi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我知道了！再见！",
+        "pinyin": "wǒ zhī dào le! zài jiàn!",
+        "translation": {
+          "fr": "J’ai compris ! À tout à l’heure !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Un vendredi chez moi"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天是星期五，我在家。我有电影，朋友想去我家。",
+          "pinyin": "jīn tiān shì xīng qī wǔ, wǒ zài jiā. wǒ yǒu diàn yǐng, péng yǒu xiǎng qù wǒ jiā.",
+          "translation": {
+            "fr": "Aujourd’hui, on est vendredi et je suis chez moi. J’ai un film, et mon ami a envie de venir chez moi."
+          }
+        },
+        {
+          "hanzi": "朋友从火车站去商店，买了茶。朋友会去我家。电影和茶都有了！",
+          "pinyin": "péng yǒu cóng huǒ chē zhàn qù shāng diàn, mǎi le chá. péng yǒu huì qù wǒ jiā. diàn yǐng hé chá dōu yǒu le!",
+          "translation": {
+            "fr": "Mon ami va de la gare au magasin et achète du thé. Il va venir chez moi. Nous avons le film et le thé !"
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Qu’est-ce que l’ami a acheté au magasin ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Un livre."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Du thé."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Du lait."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "从火车站去商店，从商店去我家。",
+      "pinyin": "cóng huǒ chē zhàn qù shāng diàn, cóng shāng diàn qù wǒ jiā.",
+      "translation": {
+        "fr": "De la gare, tu vas au magasin, et du magasin tu viens chez moi."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你会去吗？",
+      "pinyin": "nǐ huì qù ma?",
+      "translation": {
+        "fr": "Tu viendras ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-10": {
+    "situation": {
+      "fr": "Mina et Tao préparent leurs affaires pour le cours de lundi : quel livre est à qui, et où sont-ils ?"
+    },
+    "title": {
+      "fr": "Quel livre pour lundi ?"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "星期一有汉语。我的书在哪？",
+        "pinyin": "xīng qī yī yǒu hàn yǔ. wǒ de shū zài nǎ?",
+        "translation": {
+          "fr": "Lundi, on a cours de chinois. Où est mon livre ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "书在这，电脑也在这。",
+        "pinyin": "shū zài zhè, diàn nǎo yě zài zhè.",
+        "translation": {
+          "fr": "Le livre est là, et l’ordinateur aussi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "这不是我的书，是老师的书。",
+        "pinyin": "zhè bú shì wǒ de shū, shì lǎo shī de shū.",
+        "translation": {
+          "fr": "Ce n’est pas mon livre, c’est celui du professeur."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "对不起！你的书是红的吗？",
+        "pinyin": "duì bù qǐ! nǐ de shū shì hóng de ma?",
+        "translation": {
+          "fr": "Pardon ! Le tien, c’est le rouge ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "不是，是绿的。红的是妈妈的书。",
+        "pinyin": "bú shì, shì lǜ de. hóng de shì mā ma de shū.",
+        "translation": {
+          "fr": "Non, c’est le vert. Le rouge, c’est le livre de maman."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你妈妈也有汉语书吗？",
+        "pinyin": "nǐ mā ma yě yǒu hàn yǔ shū ma?",
+        "translation": {
+          "fr": "Ta mère a aussi un livre de chinois ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "有，妈妈也是学生。",
+        "pinyin": "yǒu, mā ma yě shì xué shēng.",
+        "translation": {
+          "fr": "Oui, maman est étudiante aussi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "绿的在这！",
+        "pinyin": "lǜ de zài zhè!",
+        "translation": {
+          "fr": "Le vert, il est là !"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "谢谢！书和电脑都有了！",
+        "pinyin": "xiè xie! shū hé diàn nǎo dōu yǒu le!",
+        "translation": {
+          "fr": "Merci ! J’ai mon livre et mon ordinateur."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Mon livre vert"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "星期一有汉语，我有书，也有电脑。我的书是绿的，妈妈的书是红的。",
+          "pinyin": "xīng qī yī yǒu hàn yǔ, wǒ yǒu shū, yě yǒu diàn nǎo. wǒ de shū shì lǜ de, mā ma de shū shì hóng de.",
+          "translation": {
+            "fr": "Lundi, j’ai cours de chinois ; j’ai mon livre et aussi mon ordinateur. Mon livre est vert, celui de maman est rouge."
+          }
+        },
+        {
+          "hanzi": "妈妈星期一也有汉语。妈妈的书在家，不在这。",
+          "pinyin": "mā ma xīng qī yī yě yǒu hàn yǔ. mā ma de shū zài jiā, bú zài zhè.",
+          "translation": {
+            "fr": "Maman a aussi cours de chinois le lundi. Son livre est à la maison, pas ici."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "De quelle couleur est le livre de la maman ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Vert."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Bleu."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Rouge."
+          }
+        }
+      ],
+      "correctChoiceID": "c"
+    },
+    "listenSentence": {
+      "hanzi": "这不是我的书，是老师的书。",
+      "pinyin": "zhè bú shì wǒ de shū, shì lǎo shī de shū.",
+      "translation": {
+        "fr": "Ce n’est pas mon livre, c’est celui du professeur."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你妈妈也有汉语书吗？",
+      "pinyin": "nǐ mā ma yě yǒu hàn yǔ shū ma?",
+      "translation": {
+        "fr": "Ta mère a aussi un livre de chinois ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-11": {
+    "situation": {
+      "fr": "Tao présente sa petite sœur à Mina, puis ils déjeunent ensemble : riz, poisson, thé et lait."
+    },
+    "title": {
+      "fr": "Un déjeuner avec la petite sœur"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "你好！这是我妹妹。",
+        "pinyin": "nǐ hǎo! zhè shì wǒ mèi mei.",
+        "translation": {
+          "fr": "Salut ! Voici ma petite sœur."
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "你好！我家有米饭，也有鱼。鱼很大！",
+        "pinyin": "nǐ hǎo! wǒ jiā yǒu mǐ fàn, yě yǒu yú. yú hěn dà!",
+        "translation": {
+          "fr": "Bonjour ! Chez nous, il y a du riz et du poisson. Il est gros, le poisson !"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "谢谢！我们吃鱼，也吃菜。",
+        "pinyin": "xiè xie! wǒ men chī yú, yě chī cài.",
+        "translation": {
+          "fr": "Merci ! On mange du poisson, et des légumes aussi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你喝茶吗？我妹妹不喝茶，喝牛奶。",
+        "pinyin": "nǐ hē chá ma? wǒ mèi mei bù hē chá, hē niú nǎi.",
+        "translation": {
+          "fr": "Tu bois du thé ? Ma petite sœur n’en boit pas, elle boit du lait."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我喝茶。牛奶热吗？",
+        "pinyin": "wǒ hē chá. niú nǎi rè ma?",
+        "translation": {
+          "fr": "Moi, du thé. Le lait est chaud ?"
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "很热！你也喝牛奶吗？",
+        "pinyin": "hěn rè! nǐ yě hē niú nǎi ma?",
+        "translation": {
+          "fr": "Très chaud ! Tu en veux aussi ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "喝！茶和牛奶我都喝。",
+        "pinyin": "hē! chá hé niú nǎi wǒ dōu hē.",
+        "translation": {
+          "fr": "Oui ! Le thé et le lait, je bois les deux."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你有妹妹吗？",
+        "pinyin": "nǐ yǒu mèi mei ma?",
+        "translation": {
+          "fr": "Et toi, tu as une petite sœur ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我有哥哥和姐姐。我家有爸爸、妈妈、哥哥、姐姐和我。",
+        "pinyin": "wǒ yǒu gē ge hé jiě jie. wǒ jiā yǒu bà ba, mā ma, gē ge, jiě jie hé wǒ.",
+        "translation": {
+          "fr": "J’ai un grand frère et une grande sœur. Chez moi, il y a papa, maman, mon frère, ma sœur et moi."
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "请吃！米饭很多。",
+        "pinyin": "qǐng chī! mǐ fàn hěn duō.",
+        "translation": {
+          "fr": "Servez-vous ! Il y a plein de riz."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Chez mon ami"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天我们在朋友家吃米饭。鱼很大，菜也多。",
+          "pinyin": "jīn tiān wǒ men zài péng yǒu jiā chī mǐ fàn. yú hěn dà, cài yě duō.",
+          "translation": {
+            "fr": "Aujourd’hui, nous mangeons du riz chez mon ami. Le poisson est gros et il y a beaucoup de légumes."
+          }
+        },
+        {
+          "hanzi": "朋友的妹妹很小，不喝茶，喝牛奶。吃了米饭，我们喝茶和牛奶。",
+          "pinyin": "péng yǒu de mèi mei hěn xiǎo, bù hē chá, hē niú nǎi. chī le mǐ fàn, wǒ men hē chá hé niú nǎi.",
+          "translation": {
+            "fr": "La petite sœur de mon ami est toute petite : elle ne boit pas de thé, elle boit du lait. Après le riz, nous buvons du thé et du lait."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Que boit la petite sœur de l’ami ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Du lait."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Du thé."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "De l’eau."
+          }
+        }
+      ],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {
+      "hanzi": "我有哥哥和姐姐。我家有爸爸、妈妈、哥哥、姐姐和我。",
+      "pinyin": "wǒ yǒu gē ge hé jiě jie. wǒ jiā yǒu bà ba, mā ma, gē ge, jiě jie hé wǒ.",
+      "translation": {
+        "fr": "J’ai un grand frère et une grande sœur. Chez moi, il y a papa, maman, mon frère, ma sœur et moi."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你喝茶吗？我妹妹不喝茶，喝牛奶。",
+      "pinyin": "nǐ hē chá ma? wǒ mèi mei bù hē chá, hē niú nǎi.",
+      "translation": {
+        "fr": "Tu bois du thé ? Ma petite sœur n’en boit pas, elle boit du lait."
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-12": {
+    "situation": {
+      "fr": "Mina arrive chez Tao : sa petite sœur est là et son grand frère, étudiant en France, rentre dimanche."
+    },
+    "title": {
+      "fr": "Le frère revient"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "你好！你来了！",
+        "pinyin": "nǐ hǎo! nǐ lái le!",
+        "translation": {
+          "fr": "Salut ! Te voilà !"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我来了。你妹妹在家吗？",
+        "pinyin": "wǒ lái le. nǐ mèi mei zài jiā ma?",
+        "translation": {
+          "fr": "Me voilà. Ta petite sœur est à la maison ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "在，妹妹在家。哥哥星期日回来。",
+        "pinyin": "zài, mèi mei zài jiā. gē ge xīng qī rì huí lái.",
+        "translation": {
+          "fr": "Oui, elle est là. Mon grand frère rentre dimanche."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "你哥哥是学生吗？",
+        "pinyin": "nǐ gē ge shì xué shēng ma?",
+        "translation": {
+          "fr": "Ton frère est étudiant ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "是，他在法国。",
+        "pinyin": "shì, tā zài fǎ guó.",
+        "translation": {
+          "fr": "Oui, il est en France."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "他在法国？我也是法国人！",
+        "pinyin": "tā zài fǎ guó? wǒ yě shì fǎ guó rén!",
+        "translation": {
+          "fr": "Il est en France ? Moi aussi, je suis française !"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我知道！你有哥哥吗？",
+        "pinyin": "wǒ zhī dào! nǐ yǒu gē ge ma?",
+        "translation": {
+          "fr": "Je sais ! Et toi, tu as un frère ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "有，我哥哥也是学生，他在中国。",
+        "pinyin": "yǒu, wǒ gē ge yě shì xué shēng, tā zài zhōng guó.",
+        "translation": {
+          "fr": "Oui, mon frère est aussi étudiant, il est en Chine."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "他也回家吗？",
+        "pinyin": "tā yě huí jiā ma?",
+        "translation": {
+          "fr": "Lui aussi, il rentre à la maison ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "回，星期日回。",
+        "pinyin": "huí, xīng qī rì huí.",
+        "translation": {
+          "fr": "Oui, dimanche."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Le frère de mon ami"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "我朋友有哥哥和妹妹。哥哥是学生，他在法国。妹妹也是学生，今天在家。",
+          "pinyin": "wǒ péng yǒu yǒu gē ge hé mèi mei. gē ge shì xué shēng, tā zài fǎ guó. mèi mei yě shì xué shēng, jīn tiān zài jiā.",
+          "translation": {
+            "fr": "Mon ami a un grand frère et une petite sœur. Son frère est étudiant, il est en France. Sa sœur est aussi étudiante, elle est à la maison aujourd’hui."
+          }
+        },
+        {
+          "hanzi": "星期日哥哥回来，我也去朋友家。朋友家的人都在，我笑了！",
+          "pinyin": "xīng qī rì gē ge huí lái, wǒ yě qù péng yǒu jiā. péng yǒu jiā de rén dōu zài, wǒ xiào le!",
+          "translation": {
+            "fr": "Dimanche, le frère rentre et moi aussi je vais chez mon ami. Toute la famille de mon ami est là, et je souris !"
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Quel jour le frère de l’ami revient-il ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Lundi."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Dimanche."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Vendredi."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "我知道！你有哥哥吗？",
+      "pinyin": "wǒ zhī dào! nǐ yǒu gē ge ma?",
+      "translation": {
+        "fr": "Je sais ! Et toi, tu as un frère ?"
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你哥哥是学生吗？",
+      "pinyin": "nǐ gē ge shì xué shēng ma?",
+      "translation": {
+        "fr": "Ton frère est étudiant ?"
+      }
+    },
+    "extraVocabulary": []
   }
 }

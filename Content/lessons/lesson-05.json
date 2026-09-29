@@ -522,7 +522,7 @@
           "hanzi": "老师，你好！今天我有米饭、鱼和菜。你吃鱼吗？",
           "pinyin": "lǎo shī, nǐ hǎo! jīn tiān wǒ yǒu mǐ fàn, yú hé cài. nǐ chī yú ma?",
           "translation": {
-            "fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Vous mangez du poisson ?"
+            "fr": "Bonjour, professeur ! Aujourd’hui, j’ai du riz, du poisson et des légumes. Tu manges du poisson ?"
           },
           "segmentation": [],
           "audio": null
@@ -532,7 +532,7 @@
           "hanzi": "我有茶和水。你喝茶吗？",
           "pinyin": "wǒ yǒu chá hé shuǐ. nǐ hē chá ma?",
           "translation": {
-            "fr": "J’ai du thé et de l’eau. Vous buvez du thé ?"
+            "fr": "J’ai du thé et de l’eau. Tu bois du thé ?"
           },
           "segmentation": [],
           "audio": null
@@ -1312,7 +1312,7 @@
         "header": {
           "id": "ex-l5-order-rea-3",
           "prompt": {
-            "fr": "Construis « Vous mangez du poisson ? »."
+            "fr": "Construis « Tu manges du poisson ? »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1388,26 +1388,26 @@
           {
             "id": "c",
             "label": {
-              "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
+              "fr": "Merci ! Moi, je mange du riz, et toi, du poisson."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."
+              "fr": "Je ne mange pas de poisson, je mange des légumes et du riz."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Merci ! Moi, je mange du riz, et toi, du poisson."
+              "fr": "Il n’y a pas beaucoup de légumes, mais il y a beaucoup de riz."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",

@@ -1,0 +1,1242 @@
+{
+  "lesson-45": {
+    "situation": {
+      "fr": "Mina attend Tao à l’aéroport : il est en taxi sous la pluie, ils parlent de l’arrivée de l’avion d’An et du déjeuner."
+    },
+    "title": {
+      "fr": "Attendre à l’aéroport"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "喂，你到机场了吗？",
+        "pinyin": "wèi, nǐ dào jī chǎng le ma?",
+        "translation": {
+          "fr": "Allô, tu es arrivée à l’aéroport ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我到了，就在门旁边。你在哪里？",
+        "pinyin": "wǒ dào le, jiù zài mén páng biān. nǐ zài nǎ lǐ?",
+        "translation": {
+          "fr": "Oui, je suis juste à côté de la porte. Tu es où ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我在出租车里。今天下雨，所以路上要很长时间。",
+        "pinyin": "wǒ zài chū zū chē lǐ. jīn tiān xià yǔ, suǒ yǐ lù shàng yào hěn cháng shí jiān.",
+        "translation": {
+          "fr": "Je suis dans le taxi. Il pleut aujourd’hui, alors la route va prendre longtemps."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "没关系，An的飞机也没到。我就在这里等你。",
+        "pinyin": "méi guān xì, An de fēi jī yě méi dào. wǒ jiù zài zhè lǐ děng nǐ.",
+        "translation": {
+          "fr": "Ce n’est pas grave, l’avion d’An n’est pas encore arrivé non plus. Je t’attends ici."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "好！他几点到？",
+        "pinyin": "hǎo! tā jǐ diǎn dào?",
+        "translation": {
+          "fr": "D’accord ! Il arrive à quelle heure ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "上午十点。你到了就打电话，好吗？",
+        "pinyin": "shàng wǔ shí diǎn. nǐ dào le jiù dǎ diàn huà, hǎo ma?",
+        "translation": {
+          "fr": "À dix heures. Appelle-moi dès que tu arrives, d’accord ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "好。你吃了吗？",
+        "pinyin": "hǎo. nǐ chī le ma?",
+        "translation": {
+          "fr": "D’accord. Tu as mangé ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我吃了。你呢？",
+        "pinyin": "wǒ chī le. nǐ ne?",
+        "translation": {
+          "fr": "Oui. Et toi ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我没吃，所以我到了就要吃米饭。",
+        "pinyin": "wǒ méi chī, suǒ yǐ wǒ dào le jiù yào chī mǐ fàn.",
+        "translation": {
+          "fr": "Non, alors dès que j’arrive, je mange du riz."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "机场里有饭馆，你到了我们就去。",
+        "pinyin": "jī chǎng lǐ yǒu fàn guǎn, nǐ dào le wǒ men jiù qù.",
+        "translation": {
+          "fr": "Il y a un restaurant dans l’aéroport : dès que tu arrives, on y va."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "好，等我！",
+        "pinyin": "hǎo, děng wǒ!",
+        "translation": {
+          "fr": "D’accord, attends-moi !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Un ami qui arrive en avion"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天我的朋友从法国来。他坐飞机，下午三点到北京。",
+          "pinyin": "jīn tiān wǒ de péng yǒu cóng fǎ guó lái. tā zuò fēi jī, xià wǔ sān diǎn dào běi jīng.",
+          "translation": {
+            "fr": "Aujourd’hui, mon ami vient de France. Il prend l’avion et arrive à Pékin à trois heures de l’après-midi."
+          }
+        },
+        {
+          "hanzi": "所以我下午一点就去机场等他。他到了，我们就坐出租车回家。我家有米饭和鱼，他可以吃很多。",
+          "pinyin": "suǒ yǐ wǒ xià wǔ yì diǎn jiù qù jī chǎng děng tā. tā dào le, wǒ men jiù zuò chū zū chē huí jiā. wǒ jiā yǒu mǐ fàn hé yú, tā kě yǐ chī hěn duō.",
+          "translation": {
+            "fr": "Alors j’irai à l’aéroport à une heure de l’après-midi pour l’attendre. Une fois arrivé, nous rentrerons en taxi. J’ai du riz et du poisson à la maison, il pourra en manger beaucoup."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "À quelle heure l’ami arrive-t-il à Pékin ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "À une heure de l’après-midi."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "À trois heures de l’après-midi."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "À dix heures du matin."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "今天下雨，所以路上要很长时间。",
+      "pinyin": "jīn tiān xià yǔ, suǒ yǐ lù shàng yào hěn cháng shí jiān.",
+      "translation": {
+        "fr": "Il pleut aujourd’hui, alors la route va prendre longtemps."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你到了就打电话，好吗？",
+      "pinyin": "nǐ dào le jiù dǎ diàn huà, hǎo ma?",
+      "translation": {
+        "fr": "Appelle-moi dès que tu arrives, d’accord ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-46": {
+    "situation": {
+      "fr": "Mina et Tao arrivent au restaurant pour l’anniversaire de Lin et font la connaissance de son mari."
+    },
+    "title": {
+      "fr": "L’anniversaire de Lin"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "你看，Lin在那张桌子旁边，那是她丈夫吗？",
+        "pinyin": "nǐ kàn, Lin zài nà zhāng zhuō zi páng biān, nà shì tā zhàng fu ma?",
+        "translation": {
+          "fr": "Regarde, Lin est à côté de cette table. C’est son mari, là-bas ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "是，他是医生。你不认识他吗？",
+        "pinyin": "shì, tā shì yī shēng. nǐ bù rèn shí tā ma?",
+        "translation": {
+          "fr": "Oui, il est médecin. Tu ne le connais pas ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "不认识。今天大家都来吗？",
+        "pinyin": "bù rèn shí. jīn tiān dà jiā dōu lái ma?",
+        "translation": {
+          "fr": "Non. Tout le monde vient aujourd’hui ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "都来！今天是她的生日，大家一起吃，一起喝。",
+        "pinyin": "dōu lái! jīn tiān shì tā de shēng rì, dà jiā yì qǐ chī, yì qǐ hē.",
+        "translation": {
+          "fr": "Oui ! C’est son anniversaire : on mange et on boit tous ensemble."
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "你好！这是我丈夫。",
+        "pinyin": "nǐ hǎo! zhè shì wǒ zhàng fu.",
+        "translation": {
+          "fr": "Bonjour ! Voici mon mari."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "你好，认识你很高兴！",
+        "pinyin": "nǐ hǎo, rèn shí nǐ hěn gāo xìng!",
+        "translation": {
+          "fr": "Bonjour, ravie de faire ta connaissance !"
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "我也很高兴。请坐，这张桌子很大，大家都能坐。",
+        "pinyin": "wǒ yě hěn gāo xìng. qǐng zuò, zhè zhāng zhuō zi hěn dà, dà jiā dōu néng zuò.",
+        "translation": {
+          "fr": "Moi aussi. Asseyez-vous, cette table est grande, il y a de la place pour tout le monde."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你想吃什么？我想吃米饭和鱼。",
+        "pinyin": "nǐ xiǎng chī shén me? wǒ xiǎng chī mǐ fàn hé yú.",
+        "translation": {
+          "fr": "Tu veux manger quoi ? Moi, je veux du riz et du poisson."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我想吃鱼，也想喝茶。",
+        "pinyin": "wǒ xiǎng chī yú, yě xiǎng hē chá.",
+        "translation": {
+          "fr": "Moi, du poisson, et aussi du thé."
+        }
+      },
+      {
+        "speaker": "Lin",
+        "hanzi": "我丈夫也想吃鱼，我们一起吃！",
+        "pinyin": "wǒ zhàng fu yě xiǎng chī yú, wǒ men yì qǐ chī!",
+        "translation": {
+          "fr": "Mon mari veut aussi du poisson, on en mange tous ensemble !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Mon anniversaire"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天是我的生日，我和朋友一起去饭馆。我丈夫上午工作，下午来饭馆。",
+          "pinyin": "jīn tiān shì wǒ de shēng rì, wǒ hé péng yǒu yì qǐ qù fàn guǎn. wǒ zhàng fu shàng wǔ gōng zuò, xià wǔ lái fàn guǎn.",
+          "translation": {
+            "fr": "Aujourd’hui, c’est mon anniversaire, et je vais au restaurant avec mes amis. Mon mari travaille le matin et vient au restaurant l’après-midi."
+          }
+        },
+        {
+          "hanzi": "饭馆里有一张大桌子，大家都坐在这里。我们吃米饭、鱼和水果，也喝茶。大家都很高兴。",
+          "pinyin": "fàn guǎn lǐ yǒu yī zhāng dà zhuō zi, dà jiā dōu zuò zài zhè lǐ. wǒ men chī mǐ fàn, yú hé shuǐ guǒ, yě hē chá. dà jiā dōu hěn gāo xìng.",
+          "translation": {
+            "fr": "Au restaurant, il y a une grande table où nous sommes tous assis. Nous mangeons du riz, du poisson et des fruits, et nous buvons aussi du thé. Tout le monde est content."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Quand le mari de Lin arrive-t-il au restaurant ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Le matin."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Le soir."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "L’après-midi."
+          }
+        }
+      ],
+      "correctChoiceID": "c"
+    },
+    "listenSentence": {
+      "hanzi": "请坐，这张桌子很大，大家都能坐。",
+      "pinyin": "qǐng zuò, zhè zhāng zhuō zi hěn dà, dà jiā dōu néng zuò.",
+      "translation": {
+        "fr": "Asseyez-vous, cette table est grande, il y a de la place pour tout le monde."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你好，认识你很高兴！",
+      "pinyin": "nǐ hǎo, rèn shí nǐ hěn gāo xìng!",
+      "translation": {
+        "fr": "Bonjour, ravie de faire ta connaissance !"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-47": {
+    "situation": {
+      "fr": "Le frère de Tao a un examen de chinois demain : Tao demande à Mina de l’aider à se préparer."
+    },
+    "title": {
+      "fr": "Un examen de chinois demain"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "明天我弟弟有考试，他希望我帮助他。",
+        "pinyin": "míng tiān wǒ dì di yǒu kǎo shì, tā xī wàng wǒ bāng zhù tā.",
+        "translation": {
+          "fr": "Mon petit frère a un examen demain, il voudrait que je l’aide."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "什么考试？汉语吗？",
+        "pinyin": "shén me kǎo shì? hàn yǔ ma?",
+        "translation": {
+          "fr": "Quel examen ? De chinois ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "是。他学习汉语，但是很多字不会写。",
+        "pinyin": "shì. tā xué xí hàn yǔ, dàn shì hěn duō zì bú huì xiě.",
+        "translation": {
+          "fr": "Oui. Il étudie le chinois, mais il y a beaucoup de caractères qu’il ne sait pas écrire."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "那你告诉他，要多读，也要多写。",
+        "pinyin": "nà nǐ gào sù tā, yào duō dú, yě yào duō xiě.",
+        "translation": {
+          "fr": "Alors dis-lui de lire beaucoup et d’écrire beaucoup aussi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我告诉他了，但是他不想读书。",
+        "pinyin": "wǒ gào sù tā le, dàn shì tā bù xiǎng dú shū.",
+        "translation": {
+          "fr": "Je le lui ai déjà dit, mais il n’a pas envie de lire."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "明天就考试了，他要准备！",
+        "pinyin": "míng tiān jiù kǎo shì le, tā yào zhǔn bèi!",
+        "translation": {
+          "fr": "L’examen est demain, il doit s’y mettre !"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你能帮助他吗？你也在学习汉语。",
+        "pinyin": "nǐ néng bāng zhù tā ma? nǐ yě zài xué xí hàn yǔ.",
+        "translation": {
+          "fr": "Tu peux l’aider ? Toi aussi, tu étudies le chinois."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "可以，今天下午我在教室，他可以来。",
+        "pinyin": "kě yǐ, jīn tiān xià wǔ wǒ zài jiào shì, tā kě yǐ lái.",
+        "translation": {
+          "fr": "Bien sûr, cet après-midi je serai dans la salle de classe, il peut venir."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "太好了！他有很多问题。",
+        "pinyin": "tài hǎo le! tā yǒu hěn duō wèn tí.",
+        "translation": {
+          "fr": "Super ! Il a plein de questions."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "没关系，我们再看一下书，他就会了。",
+        "pinyin": "méi guān xì, wǒ men zài kàn yī xià shū, tā jiù huì le.",
+        "translation": {
+          "fr": "Pas de souci, on regardera le livre encore une fois et il y arrivera."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Le petit frère d’un ami"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "我朋友的弟弟明天有考试。他很想学习，但是有很多字不会写。",
+          "pinyin": "wǒ péng yǒu de dì di míng tiān yǒu kǎo shì. tā hěn xiǎng xué xí, dàn shì yǒu hěn duō zì bú huì xiě.",
+          "translation": {
+            "fr": "Le petit frère d’un ami a un examen demain. Il a très envie d’étudier, mais il y a beaucoup de caractères qu’il ne sait pas écrire."
+          }
+        },
+        {
+          "hanzi": "今天下午他来教室，我告诉他：字要多读，也要多写。他读了很多，也写了很多字。我希望明天他很高兴。",
+          "pinyin": "jīn tiān xià wǔ tā lái jiào shì, wǒ gào sù tā: zì yào duō dú, yě yào duō xiě. tā dú le hěn duō, yě xiě le hěn duō zì. wǒ xī wàng míng tiān tā hěn gāo xìng.",
+          "translation": {
+            "fr": "Cet après-midi, il vient dans la salle de classe et je lui dis : il faut beaucoup lire les caractères et aussi beaucoup les écrire. Il a beaucoup lu et beaucoup écrit. J’espère qu’il sera content demain."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Que conseille l’auteur du texte au petit frère de son ami ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "De lire et d’écrire davantage les caractères."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "De dormir davantage avant l’examen."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "D’acheter un nouveau livre."
+          }
+        }
+      ],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {
+      "hanzi": "他学习汉语，但是很多字不会写。",
+      "pinyin": "tā xué xí hàn yǔ, dàn shì hěn duō zì bú huì xiě.",
+      "translation": {
+        "fr": "Il étudie le chinois, mais il y a beaucoup de caractères qu’il ne sait pas écrire."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "明天就考试了，他要准备！",
+      "pinyin": "míng tiān jiù kǎo shì le, tā yào zhǔn bèi!",
+      "translation": {
+        "fr": "L’examen est demain, il doit s’y mettre !"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-48": {
+    "situation": {
+      "fr": "Tao a commencé un nouveau travail dans un petit magasin près de la gare et raconte sa première journée à Mina."
+    },
+    "title": {
+      "fr": "Un nouveau travail"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "你今天开始上班了，新工作怎么样？",
+        "pinyin": "nǐ jīn tiān kāi shǐ shàng bān le, xīn gōng zuò zěn me yàng?",
+        "translation": {
+          "fr": "Alors, tu as commencé à travailler aujourd’hui : ce nouveau travail, ça donne quoi ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "很好！人很多，但是大家都欢迎我。",
+        "pinyin": "hěn hǎo! rén hěn duō, dàn shì dà jiā dōu huān yíng wǒ.",
+        "translation": {
+          "fr": "Très bien ! Il y a beaucoup de monde, mais tout le monde m’a bien accueilli."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "你在哪里工作？",
+        "pinyin": "nǐ zài nǎ lǐ gōng zuò?",
+        "translation": {
+          "fr": "Tu travailles où ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "火车站前面的小商店。我今天已经看了五次时间。",
+        "pinyin": "huǒ chē zhàn qián miàn de xiǎo shāng diàn. wǒ jīn tiān yǐ jīng kàn le wǔ cì shí jiān.",
+        "translation": {
+          "fr": "Dans le petit magasin devant la gare. Aujourd’hui, j’ai déjà regardé l’heure cinq fois."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "五次？你想回家了吗？",
+        "pinyin": "wǔ cì? nǐ xiǎng huí jiā le ma?",
+        "translation": {
+          "fr": "Cinq fois ? Tu as déjà envie de rentrer ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "不是想家，是商店有新电脑，我在等很多人来看。",
+        "pinyin": "bú shì xiǎng jiā, shì shāng diàn yǒu xīn diàn nǎo, wǒ zài děng hěn duō rén lái kàn.",
+        "translation": {
+          "fr": "Ce n’est pas ça : le magasin a de nouveaux ordinateurs, et j’attends que beaucoup de gens viennent les voir."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "那你现在还在工作吗？",
+        "pinyin": "nà nǐ xiàn zài hái zài gōng zuò ma?",
+        "translation": {
+          "fr": "Et là, tu travailles encore ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "在，我还有一点工作。你今天做什么了？",
+        "pinyin": "zài, wǒ hái yǒu yì diǎn gōng zuò. nǐ jīn tiān zuò shén me le?",
+        "translation": {
+          "fr": "Oui, il me reste un peu de travail. Et toi, qu’as-tu fait aujourd’hui ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我今天开始读一本新书，是汉语书。",
+        "pinyin": "wǒ jīn tiān kāi shǐ dú yī běn xīn shū, shì hàn yǔ shū.",
+        "translation": {
+          "fr": "Aujourd’hui, j’ai commencé un nouveau livre, un livre de chinois."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "太好了！明天你告诉我，书怎么样。",
+        "pinyin": "tài hǎo le! míng tiān nǐ gào sù wǒ, shū zěn me yàng.",
+        "translation": {
+          "fr": "Génial ! Demain, tu me diras ce qu’il vaut."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Ma première journée"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "我在火车站前面的小商店工作。商店里有新电脑，也有新衣服。",
+          "pinyin": "wǒ zài huǒ chē zhàn qián miàn de xiǎo shāng diàn gōng zuò. shāng diàn lǐ yǒu xīn diàn nǎo, yě yǒu xīn yī fu.",
+          "translation": {
+            "fr": "Je travaille dans le petit magasin devant la gare. Il y a de nouveaux ordinateurs et de nouveaux vêtements."
+          }
+        },
+        {
+          "hanzi": "今天来了很多人，我看了很多次时间，还没喝水。现在我开始想家了。我想回家看电视。",
+          "pinyin": "jīn tiān lái le hěn duō rén, wǒ kàn le hěn duō cì shí jiān, hái méi hē shuǐ. xiàn zài wǒ kāi shǐ xiǎng jiā le. wǒ xiǎng huí jiā kàn diàn shì.",
+          "translation": {
+            "fr": "Aujourd’hui, beaucoup de gens sont venus, j’ai regardé l’heure très souvent et je n’ai pas encore bu d’eau. Maintenant, la maison commence à me manquer. Je voudrais rentrer regarder la télévision."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Où travaille la personne qui parle ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "À l’aéroport."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Dans un petit magasin devant la gare."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "À l’école."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "我今天已经看了五次时间。",
+      "pinyin": "wǒ jīn tiān yǐ jīng kàn le wǔ cì shí jiān.",
+      "translation": {
+        "fr": "Aujourd’hui, j’ai déjà regardé l’heure cinq fois."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你今天做什么了？",
+      "pinyin": "nǐ jīn tiān zuò shén me le?",
+      "translation": {
+        "fr": "Qu’as-tu fait aujourd’hui ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-49": {
+    "situation": {
+      "fr": "Mina et Tao comparent le trajet jusqu’à l’école : Tao habite tout près et va à pied, Mina habite loin et prend un taxi."
+    },
+    "title": {
+      "fr": "Près ou loin de l’école"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "从你家到学校远吗？",
+        "pinyin": "cóng nǐ jiā dào xué xiào yuǎn ma?",
+        "translation": {
+          "fr": "De chez toi à l’école, c’est loin ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "不远，很近。我走路去，五分钟就到。",
+        "pinyin": "bù yuǎn, hěn jìn. wǒ zǒu lù qù, wǔ fēn zhōng jiù dào.",
+        "translation": {
+          "fr": "Non, c’est tout près. J’y vais à pied, j’y suis en cinq minutes."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "太好了！我家很远。",
+        "pinyin": "tài hǎo le! wǒ jiā hěn yuǎn.",
+        "translation": {
+          "fr": "Tu en as de la chance ! Chez moi, c’est très loin."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你怎么去学校？坐出租车吗？",
+        "pinyin": "nǐ zěn me qù xué xiào? zuò chū zū chē ma?",
+        "translation": {
+          "fr": "Comment vas-tu à l’école ? En taxi ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "是，因为路很长，所以我坐出租车。",
+        "pinyin": "shì, yīn wèi lù hěn cháng, suǒ yǐ wǒ zuò chū zū chē.",
+        "translation": {
+          "fr": "Oui, comme la route est longue, je prends un taxi."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "出租车要很多钱吗？",
+        "pinyin": "chū zū chē yào hěn duō qián ma?",
+        "translation": {
+          "fr": "Un taxi, ça coûte cher ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我一个人坐要三十块，两个人坐就便宜。",
+        "pinyin": "wǒ yí gè rén zuò yào sān shí kuài, liǎng gè rén zuò jiù pián yi.",
+        "translation": {
+          "fr": "Toute seule, ça fait trente yuans ; à deux, c’est moins cher."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "明天下雨，我不想走路。我们两个人一起坐，好吗？",
+        "pinyin": "míng tiān xià yǔ, wǒ bù xiǎng zǒu lù. wǒ men liǎng gè rén yì qǐ zuò, hǎo ma?",
+        "translation": {
+          "fr": "Demain, il pleut, je n’ai pas envie de marcher. On le prend à deux, d’accord ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "好！你家在我的路上，你在门旁边等我。",
+        "pinyin": "hǎo! nǐ jiā zài wǒ de lù shàng, nǐ zài mén páng biān děng wǒ.",
+        "translation": {
+          "fr": "D’accord ! Ta maison est sur mon chemin, attends-moi devant la porte."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "好，你几点走？",
+        "pinyin": "hǎo, nǐ jǐ diǎn zǒu?",
+        "translation": {
+          "fr": "D’accord, tu pars à quelle heure ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "七点走，你等我！",
+        "pinyin": "qī diǎn zǒu, nǐ děng wǒ!",
+        "translation": {
+          "fr": "À sept heures. Attends-moi !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Une petite enquête"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "今天有三个同学告诉我怎么来学校。有两个同学的家很近，因为路不长，所以走路来。",
+          "pinyin": "jīn tiān yǒu sān gè tóng xué gào sù wǒ zěn me lái xué xiào. yǒu liǎng gè tóng xué de jiā hěn jìn, yīn wèi lù bù cháng, suǒ yǐ zǒu lù lái.",
+          "translation": {
+            "fr": "Aujourd’hui, trois camarades m’ont dit comment ils viennent à l’école. Deux d’entre eux habitent tout près : la route n’est pas longue, alors ils viennent à pied."
+          }
+        },
+        {
+          "hanzi": "有一个同学的家很远，他坐出租车，要三十分钟。家近的同学很喜欢走路。",
+          "pinyin": "yǒu yí gè tóng xué de jiā hěn yuǎn, tā zuò chū zū chē, yào sān shí fēn zhōng. jiā jìn de tóng xué hěn xǐ huān zǒu lù.",
+          "translation": {
+            "fr": "Un camarade habite très loin : il prend un taxi, et il lui faut trente minutes. Ceux qui habitent près aiment beaucoup marcher."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Pourquoi deux camarades viennent-ils à l’école à pied ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Parce qu’il pleut."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Parce que les taxis sont trop chers."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Parce que leur maison est près de l’école."
+          }
+        }
+      ],
+      "correctChoiceID": "c"
+    },
+    "listenSentence": {
+      "hanzi": "是，因为路很长，所以我坐出租车。",
+      "pinyin": "shì, yīn wèi lù hěn cháng, suǒ yǐ wǒ zuò chū zū chē.",
+      "translation": {
+        "fr": "Oui, comme la route est longue, je prends un taxi."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "从你家到学校远吗？",
+      "pinyin": "cóng nǐ jiā dào xué xiào yuǎn ma?",
+      "translation": {
+        "fr": "De chez toi à l’école, c’est loin ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-50": {
+    "situation": {
+      "fr": "Après une course à pied, Mina et Tao se reposent, boivent de l’eau et parlent de ce qu’ils feront demain."
+    },
+    "title": {
+      "fr": "Après la course"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "今天我们跑步了，你身体怎么样？",
+        "pinyin": "jīn tiān wǒ men pǎo bù le, nǐ shēn tǐ zěn me yàng?",
+        "translation": {
+          "fr": "On a couru aujourd’hui, comment tu te sens ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我很热，想喝水。",
+        "pinyin": "wǒ hěn rè, xiǎng hē shuǐ.",
+        "translation": {
+          "fr": "J’ai très chaud, je voudrais de l’eau."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "水在这里。你坐下休息吧。",
+        "pinyin": "shuǐ zài zhè lǐ. nǐ zuò xià xiū xī ba.",
+        "translation": {
+          "fr": "Voilà l’eau. Assieds-toi et repose-toi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "谢谢！我们跑步多长时间了？",
+        "pinyin": "xiè xie! wǒ men pǎo bù duō cháng shí jiān le?",
+        "translation": {
+          "fr": "Merci ! Ça fait combien de temps qu’on court ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "四十分钟，比昨天多。",
+        "pinyin": "sì shí fēn zhōng, bǐ zuó tiān duō.",
+        "translation": {
+          "fr": "Quarante minutes, plus qu’hier."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "明天我们也去跑步，好吗？",
+        "pinyin": "míng tiān wǒ men yě qù pǎo bù, hǎo ma?",
+        "translation": {
+          "fr": "Demain, on va courir aussi, d’accord ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "明天要下雨，可能不能去。",
+        "pinyin": "míng tiān yào xià yǔ, kě néng bù néng qù.",
+        "translation": {
+          "fr": "Demain, il va pleuvoir, on ne pourra peut-être pas y aller."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "没关系。那我想在家洗衣服，你呢？",
+        "pinyin": "méi guān xì. nà wǒ xiǎng zài jiā xǐ yī fu, nǐ ne?",
+        "translation": {
+          "fr": "Ce n’est pas grave. Alors moi, je vais laver des vêtements à la maison, et toi ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "我在家休息，看电视。",
+        "pinyin": "wǒ zài jiā xiū xī, kàn diàn shì.",
+        "translation": {
+          "fr": "Moi, je me repose à la maison et je regarde la télé."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "好吧，今天我们都早点睡觉。",
+        "pinyin": "hǎo ba, jīn tiān wǒ men dōu zǎo diǎn shuì jiào.",
+        "translation": {
+          "fr": "D’accord, aujourd’hui on se couche tous les deux tôt."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Une journée sportive"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "我喜欢跑步。今天上午我跑步，时间很长，有四十分钟。到家，我洗了衣服，喝了很多水。",
+          "pinyin": "wǒ xǐ huān pǎo bù. jīn tiān shàng wǔ wǒ pǎo bù, shí jiān hěn cháng, yǒu sì shí fēn zhōng. dào jiā, wǒ xǐ le yī fu, hē le hěn duō shuǐ.",
+          "translation": {
+            "fr": "J’aime courir. Ce matin, j’ai couru longtemps : quarante minutes. Arrivé à la maison, j’ai lavé mes vêtements et bu beaucoup d’eau."
+          }
+        },
+        {
+          "hanzi": "下午我在家休息。朋友打电话来，想明天一起去看电影。",
+          "pinyin": "xià wǔ wǒ zài jiā xiū xī. péng yǒu dǎ diàn huà lái, xiǎng míng tiān yì qǐ qù kàn diàn yǐng.",
+          "translation": {
+            "fr": "L’après-midi, je me repose à la maison. Un ami m’appelle : il voudrait aller voir un film avec moi demain."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Que fait la personne l’après-midi ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Elle se repose à la maison."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Elle court quarante minutes."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Elle va au cinéma."
+          }
+        }
+      ],
+      "correctChoiceID": "a"
+    },
+    "listenSentence": {
+      "hanzi": "明天要下雨，可能不能去。",
+      "pinyin": "míng tiān yào xià yǔ, kě néng bù néng qù.",
+      "translation": {
+        "fr": "Demain, il va pleuvoir, on ne pourra peut-être pas y aller."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "你坐下休息吧。",
+      "pinyin": "nǐ zuò xià xiū xī ba.",
+      "translation": {
+        "fr": "Assieds-toi et repose-toi."
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-51": {
+    "situation": {
+      "fr": "Mina et Tao se promènent dans une jolie rue de Pékin, entrent dans un magasin et choisissent un vêtement selon le prix."
+    },
+    "title": {
+      "fr": "Une jolie rue de Pékin"
+    },
+    "dialogue": [
+      {
+        "speaker": "Mina",
+        "hanzi": "这里的路很漂亮！你知道这是哪里吗？",
+        "pinyin": "zhè lǐ de lù hěn piào liàng! nǐ zhī dào zhè shì nǎ lǐ ma?",
+        "translation": {
+          "fr": "Cette rue est très jolie ! Tu sais où on est ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "知道，这是北京最漂亮的路。",
+        "pinyin": "zhī dào, zhè shì běi jīng zuì piào liàng de lù.",
+        "translation": {
+          "fr": "Oui, c’est la plus belle rue de Pékin."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "你看，那家商店很大！我们进去看看吧？",
+        "pinyin": "nǐ kàn, nà jiā shāng diàn hěn dà! wǒ men jìn qù kàn kàn ba?",
+        "translation": {
+          "fr": "Regarde, ce magasin est grand ! On va jeter un œil à l’intérieur ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "好。你想买什么？",
+        "pinyin": "hǎo. nǐ xiǎng mǎi shén me?",
+        "translation": {
+          "fr": "D’accord. Tu veux acheter quoi ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我想买衣服。你知道哪个好吗？",
+        "pinyin": "wǒ xiǎng mǎi yī fu. nǐ zhī dào nǎ ge hǎo ma?",
+        "translation": {
+          "fr": "Je voudrais acheter un vêtement. Tu sais lequel est bien ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "红的最漂亮，那个蓝的也很好。",
+        "pinyin": "hóng de zuì piào liàng, nà ge lán de yě hěn hǎo.",
+        "translation": {
+          "fr": "Le rouge est le plus joli, et le bleu est bien aussi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "红的多少钱？",
+        "pinyin": "hóng de duō shǎo qián?",
+        "translation": {
+          "fr": "Le rouge, c’est combien ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "一百块。",
+        "pinyin": "yì bǎi kuài.",
+        "translation": {
+          "fr": "Cent yuans."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "一百块？我的钱不多！蓝的呢？",
+        "pinyin": "yì bǎi kuài? wǒ de qián bù duō! lán de ne?",
+        "translation": {
+          "fr": "Cent yuans ? Je n’ai pas beaucoup d’argent ! Et le bleu ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "蓝的五十块，便宜很多。",
+        "pinyin": "lán de wǔ shí kuài, pián yi hěn duō.",
+        "translation": {
+          "fr": "Le bleu coûte cinquante yuans, c’est bien moins cher."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "那我买蓝的，谢谢你！",
+        "pinyin": "nà wǒ mǎi lán de, xiè xie nǐ!",
+        "translation": {
+          "fr": "Alors je prends le bleu, merci !"
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Un jour de pluie"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "这是北京最漂亮的路。下雨的时候，很多人进商店。",
+          "pinyin": "zhè shì běi jīng zuì piào liàng de lù. xià yǔ de shí hou, hěn duō rén jìn shāng diàn.",
+          "translation": {
+            "fr": "C’est la plus belle rue de Pékin. Quand il pleut, beaucoup de gens entrent dans les magasins."
+          }
+        },
+        {
+          "hanzi": "有一家小商店的杯子很便宜，一个五块。今天有一百个人进了这家商店。",
+          "pinyin": "yǒu yī jiā xiǎo shāng diàn de bēi zi hěn pián yi, yí gè wǔ kuài. jīn tiān yǒu yì bǎi gè rén jìn le zhè jiā shāng diàn.",
+          "translation": {
+            "fr": "Dans un petit magasin, les tasses sont très bon marché : cinq yuans pièce. Aujourd’hui, cent personnes sont entrées dans ce magasin."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Combien de personnes sont entrées dans le magasin aujourd’hui ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Cinquante."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Cent."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Cinq cents."
+          }
+        }
+      ],
+      "correctChoiceID": "b"
+    },
+    "listenSentence": {
+      "hanzi": "红的最漂亮，那个蓝的也很好。",
+      "pinyin": "hóng de zuì piào liàng, nà ge lán de yě hěn hǎo.",
+      "translation": {
+        "fr": "Le rouge est le plus joli, et le bleu est bien aussi."
+      }
+    },
+    "speakSentence": {
+      "hanzi": "我们进去看看吧？",
+      "pinyin": "wǒ men jìn qù kàn kàn ba?",
+      "translation": {
+        "fr": "On va jeter un œil à l’intérieur ?"
+      }
+    },
+    "extraVocabulary": []
+  },
+  "lesson-52": {
+    "situation": {
+      "fr": "Un soir, Mina attend le bus pour aller dîner chez Tao : il l’appelle, le bus tarde, puis arrive enfin."
+    },
+    "title": {
+      "fr": "Un bus en retard"
+    },
+    "dialogue": [
+      {
+        "speaker": "Tao",
+        "hanzi": "喂，今天晚上你来我家吗？",
+        "pinyin": "wèi, jīn tiān wǎn shàng nǐ lái wǒ jiā ma?",
+        "translation": {
+          "fr": "Allô, tu viens chez moi ce soir ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "去！但是我不知道坐几号公共汽车。",
+        "pinyin": "qù! dàn shì wǒ bù zhī dào zuò jǐ hào gōng gòng qì chē.",
+        "translation": {
+          "fr": "Oui ! Mais je ne sais pas quel numéro de bus prendre."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "三十二号，在我家旁边下。",
+        "pinyin": "sān shí èr hào, zài wǒ jiā páng biān xià.",
+        "translation": {
+          "fr": "Le 32, tu descends à côté de chez moi."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "好，我现在在学校外等。",
+        "pinyin": "hǎo, wǒ xiàn zài zài xué xiào wài děng.",
+        "translation": {
+          "fr": "D’accord, je suis devant l’école en train d’attendre."
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "你等了多长时间了？",
+        "pinyin": "nǐ děng le duō cháng shí jiān le?",
+        "translation": {
+          "fr": "Ça fait combien de temps que tu attends ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "二十分钟了。公共汽车怎么还不来？",
+        "pinyin": "èr shí fēn zhōng le. gōng gòng qì chē zěn me hái bù lái?",
+        "translation": {
+          "fr": "Vingt minutes. Pourquoi le bus n’arrive-t-il pas ?"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "没关系，我在家等你。",
+        "pinyin": "méi guān xì, wǒ zài jiā děng nǐ.",
+        "translation": {
+          "fr": "Pas de souci, je t’attends à la maison."
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "来了来了！是三十二号！",
+        "pinyin": "lái le lái le! shì sān shí èr hào!",
+        "translation": {
+          "fr": "Il arrive, il arrive ! C’est le 32 !"
+        }
+      },
+      {
+        "speaker": "Tao",
+        "hanzi": "太好了！我做了很多菜，你吃得多吗？",
+        "pinyin": "tài hǎo le! wǒ zuò le hěn duō cài, nǐ chī de duō ma?",
+        "translation": {
+          "fr": "Super ! J’ai préparé plein de plats, tu manges beaucoup ?"
+        }
+      },
+      {
+        "speaker": "Mina",
+        "hanzi": "我吃得很多！我很想吃你做的菜。",
+        "pinyin": "wǒ chī de hěn duō! wǒ hěn xiǎng chī nǐ zuò de cài.",
+        "translation": {
+          "fr": "Beaucoup ! J’ai très envie de goûter ta cuisine."
+        }
+      }
+    ],
+    "reading": {
+      "title": {
+        "fr": "Attendre le bus sous la pluie"
+      },
+      "paragraphs": [
+        {
+          "hanzi": "昨天晚上下雨，我在学校外等公共汽车。我等了二十分钟，公共汽车还没有来。",
+          "pinyin": "zuó tiān wǎn shàng xià yǔ, wǒ zài xué xiào wài děng gōng gòng qì chē. wǒ děng le èr shí fēn zhōng, gōng gòng qì chē hái méi yǒu lái.",
+          "translation": {
+            "fr": "Hier soir, il pleuvait et j’attendais le bus devant l’école. J’ai attendu vingt minutes et le bus n’était toujours pas là."
+          }
+        },
+        {
+          "hanzi": "朋友打电话来，我告诉他，我很想去他家，但是昨天公共汽车太少了。我到朋友家的时候，已经九点了。",
+          "pinyin": "péng yǒu dǎ diàn huà lái, wǒ gào sù tā, wǒ hěn xiǎng qù tā jiā, dàn shì zuó tiān gōng gòng qì chē tài shǎo le. wǒ dào péng yǒu jiā de shí hou, yǐ jīng jiǔ diǎn le.",
+          "translation": {
+            "fr": "Mon ami m’a appelée, je lui ai dit que j’avais très envie de venir chez lui, mais qu’il y avait trop peu de bus hier soir. Quand je suis arrivée chez lui, il était déjà neuf heures."
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "prompt": {
+        "fr": "Combien de temps la personne a-t-elle attendu le bus ?"
+      },
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "fr": "Dix minutes."
+          }
+        },
+        {
+          "id": "b",
+          "label": {
+            "fr": "Trente minutes."
+          }
+        },
+        {
+          "id": "c",
+          "label": {
+            "fr": "Vingt minutes."
+          }
+        }
+      ],
+      "correctChoiceID": "c"
+    },
+    "listenSentence": {
+      "hanzi": "太好了！我做了很多菜，你吃得多吗？",
+      "pinyin": "tài hǎo le! wǒ zuò le hěn duō cài, nǐ chī de duō ma?",
+      "translation": {
+        "fr": "Super ! J’ai préparé plein de plats, tu manges beaucoup ?"
+      }
+    },
+    "speakSentence": {
+      "hanzi": "公共汽车怎么还不来？",
+      "pinyin": "gōng gòng qì chē zěn me hái bù lái?",
+      "translation": {
+        "fr": "Pourquoi le bus n’arrive-t-il pas ?"
+      }
+    },
+    "extraVocabulary": []
+  }
+}

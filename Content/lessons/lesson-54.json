@@ -5,10 +5,10 @@
   "moduleID": "unit-08",
   "order": 74,
   "title": {
-    "fr": "Un devoir sur la culture"
+    "fr": "Un livre pour enfants"
   },
   "summary": {
-    "fr": "Parler d’une recherche scolaire et de l’effet d’un mot dans un texte."
+    "fr": "Mina lit un livre pour enfants recommandé par son professeur ; Tao lui demande ce qu’elle en pense et si elle pourra le finir aujourd’hui."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 2",
@@ -400,38 +400,92 @@
       "id": "block-lesson-54-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "你的作业写完了吗？",
-          "pinyin": "nǐ de zuò yè xiě wán le ma?",
-          "translation": {
-            "fr": "As-tu fini tes devoirs ?"
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "还差一点。我用字典查词语。",
-          "pinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
+          "hanzi": "你在看什么书？",
+          "pinyin": "nǐ zài kàn shén me shū?",
           "translation": {
-            "fr": "Il reste encore un peu. Je cherche les mots dans le dictionnaire."
+            "fr": "Qu’est-ce que tu lis ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "这是关于中国文化的作业吗？",
-          "pinyin": "zhè shì guān yú Zhōng guó wén huà de zuò yè ma?",
+          "hanzi": "一本孩子的书。老师告诉我，这本书很好。",
+          "pinyin": "yì běn hái zi de shū. lǎo shī gào su wǒ, zhè běn shū hěn hǎo.",
           "translation": {
-            "fr": "C’est un devoir sur la culture chinoise ?"
+            "fr": "Un livre pour enfants. Le professeur m’a dit qu’il était très bien."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "是。这个词会影响整句话的意思。",
-          "pinyin": "shì. zhè ge cí huì yǐng xiǎng zhěng jù huà de yì si.",
+          "hanzi": "孩子的书？你觉得怎么样？",
+          "pinyin": "hái zi de shū? nǐ jué de zěn me yàng?",
           "translation": {
-            "fr": "Oui. Ce mot peut influencer le sens de toute la phrase."
+            "fr": "Un livre pour enfants ? Tu en penses quoi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我觉得非常好！字不多，我都认识。",
+          "pinyin": "wǒ jué de fēi cháng hǎo! zì bù duō, wǒ dōu rèn shi.",
+          "translation": {
+            "fr": "Je le trouve super ! Il n’y a pas beaucoup de caractères et je les connais tous."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "这本书有多少字？",
+          "pinyin": "zhè běn shū yǒu duō shǎo zì?",
+          "translation": {
+            "fr": "Il y a combien de caractères dans ce livre ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "老师告诉我，有一千个字。",
+          "pinyin": "lǎo shī gào su wǒ, yǒu yì qiān gè zì.",
+          "translation": {
+            "fr": "Le professeur m’a dit qu’il y en avait mille."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "一千个字！你今天读得完吗？",
+          "pinyin": "yì qiān gè zì! nǐ jīn tiān dú de wán ma?",
+          "translation": {
+            "fr": "Mille caractères ! Tu vas arriver à le finir aujourd’hui ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我不知道。现在三点了，我晚上再读吧。",
+          "pinyin": "wǒ bù zhī dào. xiàn zài sān diǎn le, wǒ wǎn shang zài dú ba.",
+          "translation": {
+            "fr": "Je ne sais pas. Il est déjà trois heures, je continuerai ce soir."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好，你读完就告诉我，我也想看。",
+          "pinyin": "hǎo, nǐ dú wán jiù gào su wǒ, wǒ yě xiǎng kàn.",
+          "translation": {
+            "fr": "D’accord, dis-le-moi quand tu auras fini, je veux le lire aussi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "好！你想看，我们就一起看吧。",
+          "pinyin": "hǎo! nǐ xiǎng kàn, wǒ men jiù yì qǐ kàn ba.",
+          "translation": {
+            "fr": "Ça marche ! Si tu veux le lire, lisons-le ensemble."
           },
           "audio": null
         }
@@ -448,25 +502,25 @@
       "storyID": "story-lesson-54",
       "level": "HSK classique 2",
       "title": {
-        "fr": "Chercher un mot juste"
+        "fr": "Mon premier livre"
       },
       "paragraphs": [
         {
           "id": "lesson-54-p1",
-          "hanzi": "Tao写关于中国文化的作业，但是还有一个词不明白。",
-          "pinyin": "Tao xiě guān yú Zhōng guó wén huà de zuò yè, dàn shì hái yǒu yí ge cí bù míng bai.",
+          "hanzi": "昨天我读完了一本孩子的书。书里有一千个字，我认识很多。",
+          "pinyin": "zuó tiān wǒ dú wán le yì běn hái zi de shū. shū lǐ yǒu yì qiān gè zì, wǒ rèn shi hěn duō.",
           "translation": {
-            "fr": "Tao écrit un devoir sur la culture chinoise, mais il ne comprend pas encore un mot."
+            "fr": "Hier, j’ai fini un livre pour enfants. Il contient mille caractères et j’en connais beaucoup."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-54-p2",
-          "hanzi": "他查了字典，发现这个词会影响整句话的意思。",
-          "pinyin": "tā chá le zì diǎn, fā xiàn zhè ge cí huì yǐng xiǎng zhěng jù huà de yì si.",
+          "hanzi": "我觉得汉语非常有意思。我想再读一本长一点的书。",
+          "pinyin": "wǒ jué de hàn yǔ fēi cháng yǒu yì si. wǒ xiǎng zài dú yì běn cháng yì diǎn de shū.",
           "translation": {
-            "fr": "Il consulte le dictionnaire et découvre que ce mot peut influencer le sens de toute la phrase."
+            "fr": "Je trouve le chinois très intéressant. J’aimerais lire un livre un peu plus long."
           },
           "segmentation": [],
           "audio": null
@@ -600,13 +654,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-dict-py-178",
+      "id": "block-ex-l54-dict-sent-dia-3",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l54-dict-py-178",
+          "id": "ex-l54-dict-sent-dia-3",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son pinyin."
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -617,38 +671,31 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "非常",
+        "promptText": "孩子的书？你觉得怎么样？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "jué de"
+              "fr": "hái zi de shū? nǐ jué de zěn me yàng?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "hái zi"
+              "fr": "lǎo shī gào su wǒ, yǒu yì qiān gè zì."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "fēi cháng"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "jīn tiān"
+              "fr": "wǒ jué de zhè ge cài hěn hǎo chī。"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -658,11 +705,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-tone-189",
+      "id": "block-ex-l54-tone-178",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l54-tone-189",
+          "id": "ex-l54-tone-178",
           "prompt": {
             "fr": "Écoute le mot, puis choisis ses deux tons."
           },
@@ -674,38 +721,38 @@
           ],
           "required": true
         },
-        "promptText": "孩子",
+        "promptText": "非常",
         "choices": [
           {
-            "id": "t20",
+            "id": "t10",
             "label": {
-              "fr": "Ton 2 ˊ puis ton neutre"
+              "fr": "Ton 1 ¯ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t23",
+            "id": "t12",
             "label": {
-              "fr": "Ton 2 ˊ puis ton 3 ˇ"
+              "fr": "Ton 1 ¯ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "t30",
+            "id": "t22",
             "label": {
-              "fr": "Ton 3 ˇ puis ton neutre"
+              "fr": "Ton 2 ˊ puis ton 2 ˊ"
             },
             "audio": null
           },
           {
-            "id": "t40",
+            "id": "t32",
             "label": {
-              "fr": "Ton 4 ˋ puis ton neutre"
+              "fr": "Ton 3 ˇ puis ton 2 ˊ"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "t20"
+        "correctChoiceID": "t12"
       },
       "metadata": {
         "stage": "discover",
@@ -715,11 +762,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-pick-206",
+      "id": "block-ex-l54-pick-189",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l54-pick-206",
+          "id": "ex-l54-pick-189",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -731,33 +778,33 @@
           ],
           "required": true
         },
-        "promptText": "觉得",
+        "promptText": "孩子",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "非常 (fēi cháng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
             "label": {
               "fr": "觉得 (jué de)"
             },
             "audio": null
           },
           {
-            "id": "c",
+            "id": "b",
             "label": {
               "fr": "孩子 (hái zi)"
             },
             "audio": null
           },
           {
+            "id": "c",
+            "label": {
+              "fr": "非常 (fēi cháng)"
+            },
+            "audio": null
+          },
+          {
             "id": "d",
             "label": {
-              "fr": "千 (qiān)"
+              "fr": "完 (wán)"
             },
             "audio": null
           }
@@ -772,11 +819,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-dict-zh-131",
+      "id": "block-ex-l54-dict-zh-206",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l54-dict-zh-131",
+          "id": "ex-l54-dict-zh-206",
           "prompt": {
             "fr": "Écoute le mot, puis choisis les caractères."
           },
@@ -789,33 +836,33 @@
           "required": true
         },
         "script": "hanzi",
-        "promptText": "一",
+        "promptText": "觉得",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "一"
+              "fr": "觉得"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "千"
+              "fr": "孩子"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "完"
+              "fr": "非常"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "这"
+              "fr": "今天"
             },
             "audio": null
           }
@@ -914,6 +961,138 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l54-translate-rea-3",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l54-translate-rea-3",
+          "prompt": {
+            "fr": "Traduis en chinois : « Je trouve le chinois très intéressant »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l54-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "觉得",
+            "pinyin": "jué de",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "非常",
+            "pinyin": "fēi cháng",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "意思",
+            "pinyin": "yì si",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "汉语",
+            "pinyin": "hàn yǔ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "完",
+            "pinyin": "wán",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "千",
+            "pinyin": "qiān",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l54-talk-5",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l54-talk-5",
+          "prompt": {
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l54-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Tao",
+        "promptText": "这本书有多少字？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "老师告诉我，有一千个字。",
+            "pinyin": "lǎo shī gào su wǒ, yǒu yì qiān gè zì.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "一本孩子的书。老师告诉我，这本书很好。",
+            "pinyin": "yì běn hái zi de shū. lǎo shī gào su wǒ, zhè běn shū hěn hǎo.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "我觉得非常好！字不多，我都认识。",
+            "pinyin": "wǒ jué de fēi cháng hǎo! zì bù duō, wǒ dōu rèn shi.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 50
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l54-translate-exa-1",
       "spec": {
         "kind": "translation",
@@ -991,13 +1170,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-talk-1",
+      "id": "block-ex-l54-talk-7",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l54-talk-1",
+          "id": "ex-l54-talk-7",
           "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -1007,29 +1186,29 @@
           ],
           "required": true
         },
-        "speaker": "Mina",
-        "promptText": "你的作业写完了吗？",
+        "speaker": "Tao",
+        "promptText": "一千个字！你今天读得完吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "还差一点。我用字典查词语。",
-            "pinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
+            "hanzi": "一本孩子的书。老师告诉我，这本书很好。",
+            "pinyin": "yì běn hái zi de shū. lǎo shī gào su wǒ, zhè běn shū hěn hǎo.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "是。这个词会影响整句话的意思。",
-            "pinyin": "shì. zhè ge cí huì yǐng xiǎng zhěng jù huà de yì si.",
+            "hanzi": "好！你想看，我们就一起看吧。",
+            "pinyin": "hǎo! nǐ xiǎng kàn, wǒ men jiù yì qǐ kàn ba.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "这是关于中国文化的作业吗？",
-            "pinyin": "zhè shì guān yú Zhōng guó wén huà de zuò yè ma?",
+            "hanzi": "我不知道。现在三点了，我晚上再读吧。",
+            "pinyin": "wǒ bù zhī dào. xiàn zài sān diǎn le, wǒ wǎn shang zài dú ba.",
             "audio": null
           }
         ],
-        "correctReplyID": "a"
+        "correctReplyID": "c"
       },
       "metadata": {
         "stage": "guided",
@@ -1039,156 +1218,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-translate-exa-5",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l54-translate-exa-5",
-          "prompt": {
-            "fr": "Traduis en chinois : « J’ai fini mes devoirs »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l54-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "作业",
-            "pinyin": "zuò yè",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "千",
-            "pinyin": "qiān",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "非常",
-            "pinyin": "fēi cháng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "完",
-            "pinyin": "wán",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "了",
-            "pinyin": "le",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "做",
-            "pinyin": "zuò",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-order-exa-2",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-l54-order-exa-2",
-          "prompt": {
-            "fr": "Construis « Les enfants jouent au parc »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "l54-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "孩子",
-            "pinyin": "hái zi",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "们",
-            "pinyin": "men",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "玩",
-            "pinyin": "wán",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "孩子们在公园玩。",
-          "孩子们在公园玩"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 50
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l54-dialogue-1-3",
+      "id": "block-ex-l54-dialogue-3-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l54-dialogue-1-3",
+          "id": "ex-l54-dialogue-3-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1202,31 +1236,39 @@
         },
         "lines": [
           {
-            "id": "b",
+            "id": "a",
             "speaker": "Tao",
-            "hanzi": "还差一点。我用字典查词语。",
-            "pinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
+            "hanzi": "孩子的书？你觉得怎么样？",
+            "pinyin": "hái zi de shū? nǐ jué de zěn me yàng?",
             "audio": null
           },
           {
-            "id": "a",
+            "id": "d",
             "speaker": "Mina",
-            "hanzi": "你的作业写完了吗？",
-            "pinyin": "nǐ de zuò yè xiě wán le ma?",
+            "hanzi": "老师告诉我，有一千个字。",
+            "pinyin": "lǎo shī gào su wǒ, yǒu yì qiān gè zì.",
             "audio": null
           },
           {
             "id": "c",
+            "speaker": "Tao",
+            "hanzi": "这本书有多少字？",
+            "pinyin": "zhè běn shū yǒu duō shǎo zì?",
+            "audio": null
+          },
+          {
+            "id": "b",
             "speaker": "Mina",
-            "hanzi": "这是关于中国文化的作业吗？",
-            "pinyin": "zhè shì guān yú Zhōng guó wén huà de zuò yè ma?",
+            "hanzi": "我觉得非常好！字不多，我都认识。",
+            "pinyin": "wǒ jué de fēi cháng hǎo! zì bù duō, wǒ dōu rèn shi.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
       },
       "metadata": {
@@ -1243,7 +1285,7 @@
         "header": {
           "id": "ex-l54-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 他查了字典，发现___个词会影响整句话的意思。 (« Il consulte le dictionnaire et découvre que ce mot peut influencer le sens de toute la phrase »)"
+            "fr": "Complète : 昨天我读___了一本孩子的书。 (« Hier, j’ai fini un livre pour enfants »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1253,9 +1295,9 @@
           ],
           "required": true
         },
-        "sentence": "他查了字典，发现___个词会影响整句话的意思。",
+        "sentence": "昨天我读___了一本孩子的书。",
         "acceptedAnswers": [
-          "这"
+          "完"
         ],
         "caseSensitive": false
       },
@@ -1267,13 +1309,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l54-read-dia-1",
+      "id": "block-ex-l54-read-dia-3",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l54-read-dia-1",
+          "id": "ex-l54-read-dia-3",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你的作业写完了吗？"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 孩子的书？你觉得怎么样？"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1287,26 +1329,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "Il y a un livre sur la table."
+              "fr": "Cette ville compte mille habitants."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Cette ville compte mille habitants."
+              "fr": "Un livre pour enfants ? Tu en penses quoi ?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "As-tu fini tes devoirs ?"
+              "fr": "Je trouve ce plat très bon."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1322,7 +1364,7 @@
         "header": {
           "id": "ex-l54-listen",
           "prompt": {
-            "fr": "Quel est l’effet du mot ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1332,26 +1374,26 @@
           ],
           "required": true
         },
-        "promptText": "是。这个词会影响整句话的意思。",
+        "promptText": "我觉得非常好！字不多，我都认识。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Il influence le sens de la phrase."
+              "fr": "Je le trouve super ! Il n’y a pas beaucoup de caractères et je les connais tous."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Il rend la table basse."
+              "fr": "Un livre pour enfants. Le professeur m’a dit qu’il était très bien."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Il ferme la bibliothèque."
+              "fr": "Je ne sais pas. Il est déjà trois heures, je continuerai ce soir."
             },
             "audio": null
           }
@@ -1372,22 +1414,21 @@
         "header": {
           "id": "ex-l54-speak",
           "prompt": {
-            "fr": "Dis que tu consultes le dictionnaire."
+            "fr": "Dis « Tu vas arriver à le finir aujourd’hui ? »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l54-produce"
           ],
           "required": false
         },
-        "referenceText": "还差一点。我用字典查词语。",
-        "referencePinyin": "hái chà yì diǎn. wǒ yòng zì diǎn chá cí yǔ.",
+        "referenceText": "你今天读得完吗？",
+        "referencePinyin": "nǐ jīn tiān dú de wán ma?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "还差一点。我用字典查词语。",
-          "还差一点。我用字典查词语"
+          "你今天读得完吗？"
         ],
         "allowSelfRating": true
       },
@@ -1405,10 +1446,10 @@
         "header": {
           "id": "ex-l54-reading",
           "prompt": {
-            "fr": "Quel est le sujet du devoir ?"
+            "fr": "Qu’a fait la personne hier ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l54-understand"
@@ -1417,28 +1458,28 @@
         },
         "choices": [
           {
+            "id": "b",
+            "label": {
+              "fr": "Elle a préparé un repas pour des enfants."
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "Le sport."
+              "fr": "Elle a fini de lire un livre pour enfants."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "La météo."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "La culture chinoise."
+              "fr": "Elle a acheté un journal."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1676,6 +1717,7 @@
       "hsk20-142"
     ],
     "grammarPattern": "关于 + nom",
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-178",
       "hsk20-189",

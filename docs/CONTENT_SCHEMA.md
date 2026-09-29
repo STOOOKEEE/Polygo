@@ -609,6 +609,14 @@ extensions lisibles par les outils de release ; le décodeur Codable V1 les
 ignore. Les clés linguistiques restent dans le blueprint : le générateur ne
 peut pas compléter un champ manquant à partir d'une glose.
 
+Pour les 66 séances du jour (`lesson-05` à `lesson-70`), le `dialogue`, le `reading`,
+l'`extraVocabulary` et les exercices `listen`, `speak` et `reading` du blueprint sont
+remplacés à `generate` par la scène écrite à la main de
+`Content/authoring/situations/unit-NN.json` ; le document généré porte alors
+`metadata.situationAuthored: true` et compte 8 à 12 répliques de dialogue et 4 à 6
+phrases de lecture (voir CONTENT_AUTHORING.md, « Situations écrites à la main »). Une
+séance du jour sans scène est refusée par `generate` et par `lint`.
+
 Une note de grammaire d'authoring a la forme :
 
 ~~~json

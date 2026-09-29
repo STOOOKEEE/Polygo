@@ -962,16 +962,19 @@ final class ContentContractTests: XCTestCase {
         XCTAssertEqual(covered, target, "The taught canonical words must be exactly the ranks 1–300")
     }
 
-    /// A lesson flagged `situationAuthored` carries a hand-written scene: a dialogue of
+    /// Every daily lesson (lesson-05 to lesson-70) carries a hand-written scene: a dialogue of
     /// 8–12 lines and a reading of 4–6 sentences in at most three paragraphs.
-    func testSituationAuthoredLessonsKeepTheirDialogueAndReadingLengths() async throws {
+    func testEveryDailyLessonCarriesAHandWrittenSituationWithinTheLengthBudget() async throws {
         let (_, snapshots) = try await allCourseSnapshots()
-        var authored = 0
+        let daily = snapshots.flatMap(\.lessons).filter { lesson in
+            guard lesson.id.rawValue.hasPrefix("lesson-"), let number = Int(lesson.id.rawValue.dropFirst("lesson-".count)) else { return false }
+            return (5...70).contains(number)
+        }
+        XCTAssertEqual(daily.count, 66, "lesson-05 to lesson-70 are the 66 daily lessons")
 
-        for lesson in snapshots.flatMap(\.lessons) {
+        for lesson in daily {
             let metadata = try XCTUnwrap(try rawLesson(lesson.id)["metadata"] as? [String: Any])
-            guard metadata["situationAuthored"] as? Bool == true else { continue }
-            authored += 1
+            XCTAssertEqual(metadata["situationAuthored"] as? Bool, true, "\(lesson.id.rawValue) must carry a hand-written situation")
             let dialogues = lesson.blocks.compactMap { block -> DialogueBlock? in
                 if case .dialogue(let value) = block { return value }
                 return nil
@@ -997,8 +1000,6 @@ final class ContentContractTests: XCTestCase {
                 XCTAssertLessThanOrEqual(hanziCount, 22, "\(lesson.id.rawValue) dialogue line '\(line.hanzi)' is too long")
             }
         }
-
-        XCTAssertGreaterThan(authored, 0, "at least one lesson must carry a hand-written situation")
     }
 
     /// A lesson introduces at most eight words, and each of them is presented

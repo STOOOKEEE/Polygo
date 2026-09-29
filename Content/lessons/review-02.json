@@ -9,7 +9,7 @@
     "fr": "Révision 2"
   },
   "summary": {
-    "fr": "Retrouve, en commençant par les plus anciennes, les mots, les phrases et les structures de « Organiser demain », « Partir pour l’aéroport », « Un appel à Pékin », « Corriger un exercice » et « Préparer l’examen »."
+    "fr": "Retrouve, en commençant par les plus anciennes, les mots, les phrases et les structures de « Rendez-vous demain », « Attendre à l’aéroport », « Un appel en Chine », « Qui connaît le plus de caractères ? » et « Un après-midi en classe »."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -570,6 +570,32 @@
       "traditionalHanzi": "現在"
     },
     {
+      "id": "vocab-x-7535-8bdd",
+      "hanzi": "电话",
+      "traditionalHanzi": "電話",
+      "pinyin": "diàn huà",
+      "toneNumbers": [
+        4,
+        4
+      ],
+      "segmentation": [
+        {
+          "surface": "电话",
+          "vocabularyID": "vocab-x-7535-8bdd",
+          "pinyin": "diàn huà",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "téléphone"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
+    },
+    {
       "id": "vocab-hsk20-073",
       "canonicalID": "能|néng|73",
       "hanzi": "能",
@@ -955,7 +981,7 @@
         "fr": "Révision 2"
       },
       "body": {
-        "fr": "Cette séance ne contient aucun mot nouveau : elle reprend les mots, les phrases et les structures de « Organiser demain », « Partir pour l’aéroport », « Un appel à Pékin », « Corriger un exercice » et « Préparer l’examen ». Les exercices commencent par les leçons les plus anciennes.\n\nStructures à retrouver :\n这/那 + nom\nExemple 1 : 这是今天的报纸。\nzhè shì jīn tiān de bào zhǐ。\nVoici le journal d’aujourd’hui.\n几 + classificateur\nExemple 2 : 你买几张票？\nnǐ mǎi jǐ zhāng piào？\nTu achètes combien de billets ?\n想/要 + verbe\nExemple 3 : 我想学汉语。\nwǒ xiǎng xué hàn yǔ。\nJe veux apprendre le chinois.\n会/能 + verbe\nExemple 4 : 现在我能回答这道题。\nxiàn zài wǒ néng huí dá zhè dào tí。\nMaintenant je peux répondre à cet exercice.\n正在 + verbe\nExemple 5 : 我正在写字。\nwǒ zhèng zài xiě zì。\nJe suis en train d’écrire des caractères."
+        "fr": "Cette séance ne contient aucun mot nouveau : elle reprend les mots, les phrases et les structures de « Rendez-vous demain », « Attendre à l’aéroport », « Un appel en Chine », « Qui connaît le plus de caractères ? » et « Un après-midi en classe ». Les exercices commencent par les leçons les plus anciennes.\n\nStructures à retrouver :\n这/那 + nom\nExemple 1 : 这是今天的报纸。\nzhè shì jīn tiān de bào zhǐ。\nVoici le journal d’aujourd’hui.\n几 + classificateur\nExemple 2 : 你买几张票？\nnǐ mǎi jǐ zhāng piào？\nTu achètes combien de billets ?\n想/要 + verbe\nExemple 3 : 我想学汉语。\nwǒ xiǎng xué hàn yǔ。\nJe veux apprendre le chinois.\n会/能 + verbe\nExemple 4 : 现在我能回答这道题。\nxiàn zài wǒ néng huí dá zhè dào tí。\nMaintenant je peux répondre à cet exercice.\n正在 + verbe\nExemple 5 : 我正在写字。\nwǒ zhèng zài xiě zì。\nJe suis en train d’écrire des caractères."
       },
       "metadata": {
         "stage": "introduce",
@@ -968,137 +994,137 @@
       "id": "block-review-02-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "明天上午你有时间吗？",
-          "pinyin": "míng tiān shàng wǔ nǐ yǒu shí jiān ma？",
+          "speaker": "Tao",
+          "hanzi": "今天不去，我在家。你呢？",
+          "pinyin": "jīn tiān bù qù, wǒ zài jiā. nǐ ne?",
           "translation": {
-            "fr": "Tu as du temps demain matin ?"
+            "fr": "Pas aujourd’hui, je reste à la maison. Et toi ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我也在家。明天星期三，我要去商店。你想去吗？",
+          "pinyin": "wǒ yě zài jiā. míng tiān xīng qī sān, wǒ yào qù shāng diàn. nǐ xiǎng qù ma?",
+          "translation": {
+            "fr": "Moi aussi, je suis à la maison. Demain c’est mercredi, je vais aller au magasin. Tu veux venir ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "有，我们十点见。",
-          "pinyin": "yǒu， wǒ men shí diǎn jiàn。",
+          "hanzi": "想！你要买什么？",
+          "pinyin": "xiǎng! nǐ yào mǎi shén me?",
           "translation": {
-            "fr": "Oui, retrouvons-nous à dix heures."
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Mina",
-          "hanzi": "中午吃饭要多少分钟？",
-          "pinyin": "zhōng wǔ chī fàn yào duō shǎo fēn zhōng？",
-          "translation": {
-            "fr": "Combien de minutes faut-il pour déjeuner à midi ?"
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Mina",
-          "hanzi": "你怎么去机场？",
-          "pinyin": "nǐ zěn me qù jī chǎng？",
-          "translation": {
-            "fr": "Comment vas-tu à l’aéroport ?"
+            "fr": "Oui ! Tu vas acheter quoi ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我坐出租车，不坐公共汽车。",
-          "pinyin": "wǒ zuò chū zū chē， bù zuò gōng gòng qì chē。",
+          "hanzi": "你姐姐是老师吗？",
+          "pinyin": "nǐ jiě jie shì lǎo shī ma?",
           "translation": {
-            "fr": "Je prends un taxi, pas le bus."
+            "fr": "Ta sœur est professeure ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "飞机几点走？",
-          "pinyin": "fēi jī jǐ diǎn zǒu？",
+          "hanzi": "不是，姐姐是学生。你有姐姐吗？",
+          "pinyin": "bú shì, jiě jie shì xué shēng. nǐ yǒu jiě jie ma?",
           "translation": {
-            "fr": "À quelle heure part l’avion ?"
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Mina",
-          "hanzi": "你爱北京吗？",
-          "pinyin": "nǐ ài běi jīng ma？",
-          "translation": {
-            "fr": "Tu aimes Pékin ?"
+            "fr": "Non, elle est étudiante. Et toi, tu as une grande sœur ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "爱。我想学汉语。",
-          "pinyin": "ài。 wǒ xiǎng xué hàn yǔ。",
+          "hanzi": "有，我有姐姐、哥哥和妹妹。",
+          "pinyin": "yǒu, wǒ yǒu jiě jie, gē ge hé mèi mei.",
           "translation": {
-            "fr": "Oui. Je veux apprendre le chinois."
+            "fr": "Oui, j’ai une grande sœur, un grand frère et une petite sœur."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "十个字？很多！你在中国有电话吗？",
+          "pinyin": "shí gè zì? hěn duō! nǐ zài zhōng guó yǒu diàn huà ma?",
+          "translation": {
+            "fr": "Dix caractères ? C’est déjà beaucoup ! Tu as un téléphone en Chine ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你有几个杯子？",
-          "pinyin": "nǐ yǒu jǐ gè bēi zi？",
+          "hanzi": "有，我买了一个电话。你要我的电话吗？",
+          "pinyin": "yǒu, wǒ mǎi le yí gè diàn huà. nǐ yào wǒ de diàn huà ma?",
           "translation": {
-            "fr": "Combien de tasses as-tu ?"
+            "fr": "Oui, j’ai acheté un téléphone. Tu veux mon numéro de téléphone ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "要，谢谢！再见！",
+          "pinyin": "yào, xiè xie! zài jiàn!",
+          "translation": {
+            "fr": "Oui, merci ! Au revoir !"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "大家有几道题？",
-          "pinyin": "dà jiā yǒu jǐ dào tí？",
+          "hanzi": "是红吗？",
+          "pinyin": "shì hóng ma?",
           "translation": {
-            "fr": "Combien d’exercices avez-vous tous ?"
+            "fr": "C’est « rouge » ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我们有三道题，但是我不懂第二道。",
-          "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+          "hanzi": "是！这个呢？",
+          "pinyin": "shì! zhè gè ne?",
           "translation": {
-            "fr": "Nous en avons trois, mais je ne comprends pas le deuxième."
+            "fr": "Oui ! Et celui-ci ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "为什么不懂？",
-          "pinyin": "wèi shén me bù dǒng？",
+          "hanzi": "是蓝？不，是绿！",
+          "pinyin": "shì lán? bù, shì lǜ!",
           "translation": {
-            "fr": "Pourquoi ne le comprends-tu pas ?"
+            "fr": "C’est « bleu » ? Non, c’est « vert » !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "我在这里！什么问题？",
+          "pinyin": "wǒ zài zhè lǐ! shén me wèn tí?",
+          "translation": {
+            "fr": "Je suis là ! C’est quoi, la question ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "你正在读什么？",
-          "pinyin": "nǐ zhèng zài dú shén me？",
+          "hanzi": "这个字是什么？",
+          "pinyin": "zhè gè zì shì shén me?",
           "translation": {
-            "fr": "Qu’es-tu en train de lire ?"
+            "fr": "Ce caractère, c’est quoi ?"
           },
           "audio": null
         },
         {
-          "speaker": "Tao",
-          "hanzi": "我正在读课本，准备考试。",
-          "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+          "speaker": "An",
+          "hanzi": "是绿！这个问题不大。",
+          "pinyin": "shì lǜ! zhè gè wèn tí bú dà.",
           "translation": {
-            "fr": "Je lis le manuel et je prépare l’examen."
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Mina",
-          "hanzi": "同学们在哪里写字？",
-          "pinyin": "tóng xué men zài nǎ lǐ xiě zì？",
-          "translation": {
-            "fr": "Où les camarades écrivent-ils ?"
+            "fr": "C’est « vert » ! Ce n’est pas une grosse question."
           },
           "audio": null
         }
@@ -1107,6 +1133,58 @@
       "metadata": {
         "stage": "understand",
         "skill": "listening",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-review-02-dict-sent-dia-1",
+      "spec": {
+        "kind": "dictation",
+        "header": {
+          "id": "ex-review-02-dict-sent-dia-1",
+          "prompt": {
+            "fr": "Écoute la phrase, puis choisis son pinyin."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
+          },
+          "objectiveIDs": [
+            "review-02-understand"
+          ],
+          "required": true
+        },
+        "script": "pinyin",
+        "promptText": "今天不去，我在家。你呢？",
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "xiàn zài wǒ néng huí dá zhè dào tí。"
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "wǒ zài zhè lǐ! shén me wèn tí?"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "jīn tiān bù qù, wǒ zài jiā. nǐ ne?"
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "discover",
+        "sourceLessonID": "lesson-13",
+        "skill": "recognition",
         "lessonDay": 16
       }
     },
@@ -1172,11 +1250,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-review-02-match-pinyin-2",
+      "id": "block-ex-review-02-match-pinyin-1",
       "spec": {
         "kind": "matching",
         "header": {
-          "id": "ex-review-02-match-pinyin-2",
+          "id": "ex-review-02-match-pinyin-1",
           "prompt": {
             "fr": "Associe chaque mot à son pinyin."
           },
@@ -1191,49 +1269,41 @@
         "pairs": [
           {
             "id": "a",
-            "left": "里",
+            "left": "今天",
             "pinyin": null,
             "right": {
-              "fr": "lǐ"
+              "fr": "jīn tiān"
             }
           },
           {
             "id": "b",
-            "left": "没",
+            "left": "明天",
             "pinyin": null,
             "right": {
-              "fr": "méi"
+              "fr": "míng tiān"
             }
           },
           {
             "id": "c",
-            "left": "下午",
+            "left": "三",
             "pinyin": null,
             "right": {
-              "fr": "xià wǔ"
+              "fr": "sān"
             }
           },
           {
             "id": "d",
-            "left": "坐",
+            "left": "要",
             "pinyin": null,
             "right": {
-              "fr": "zuò"
-            }
-          },
-          {
-            "id": "e",
-            "left": "机场",
-            "pinyin": null,
-            "right": {
-              "fr": "jī chǎng"
+              "fr": "yào"
             }
           }
         ]
       },
       "metadata": {
         "stage": "discover",
-        "sourceLessonID": "lesson-14",
+        "sourceLessonID": "lesson-13",
         "skill": "recognition",
         "lessonDay": 16
       }
@@ -1262,7 +1332,7 @@
           {
             "id": "a",
             "label": {
-              "fr": "gè"
+              "fr": "néng"
             },
             "audio": null
           },
@@ -1276,19 +1346,19 @@
           {
             "id": "c",
             "label": {
-              "fr": "méi"
+              "fr": "yào"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "sān"
+              "fr": "gè"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -1320,89 +1390,37 @@
           {
             "id": "a",
             "label": {
-              "fr": "pouvoir ; être capable"
+              "fr": "après-midi"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "classificateur général"
+              "fr": "ami"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "question ; problème"
+              "fr": "chinois (langue)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "chinois (langue)"
+              "fr": "camarade de classe"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "discover",
         "sourceLessonID": "lesson-15",
-        "skill": "recognition",
-        "lessonDay": 16
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-review-02-dict-sent-dia-13",
-      "spec": {
-        "kind": "dictation",
-        "header": {
-          "id": "ex-review-02-dict-sent-dia-13",
-          "prompt": {
-            "fr": "Écoute la phrase, puis choisis son pinyin."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
-          },
-          "objectiveIDs": [
-            "review-02-understand"
-          ],
-          "required": true
-        },
-        "script": "pinyin",
-        "promptText": "你正在读什么？",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "nǐ zhèng zài dú shén me？"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "dà jiā yǒu jǐ dào tí？"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "wǒ yǒu sān gè píng guǒ。"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "a"
-      },
-      "metadata": {
-        "stage": "discover",
-        "sourceLessonID": "lesson-17",
         "skill": "recognition",
         "lessonDay": 16
       }
@@ -1467,120 +1485,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-review-02-fill-dia-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-review-02-fill-dia-3",
-          "prompt": {
-            "fr": "Complète : 中午吃饭___多少分钟？ (« Combien de minutes faut-il pour déjeuner à midi ? »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "review-02-produce"
-          ],
-          "required": true
-        },
-        "sentence": "中午吃饭___多少分钟？",
-        "acceptedAnswers": [
-          "要"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "sourceLessonID": "lesson-13",
-        "skill": "production",
-        "lessonDay": 16
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-review-02-order-dia-1",
-      "spec": {
-        "kind": "wordOrder",
-        "header": {
-          "id": "ex-review-02-order-dia-1",
-          "prompt": {
-            "fr": "Construis « Tu as du temps demain matin ? »."
-          },
-          "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
-          },
-          "objectiveIDs": [
-            "review-02-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "吗",
-            "pinyin": "ma",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "明天",
-            "pinyin": "míng tiān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "时间",
-            "pinyin": "shí jiān",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "上午",
-            "pinyin": "shàng wǔ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "明天上午你有时间吗？",
-          "明天上午你有时间吗"
-        ]
-      },
-      "metadata": {
-        "stage": "guided",
-        "sourceLessonID": "lesson-13",
-        "skill": "production",
-        "lessonDay": 16
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-review-02-talk-5",
       "spec": {
         "kind": "conversationChoice",
         "header": {
           "id": "ex-review-02-talk-5",
           "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -1590,25 +1501,25 @@
           ],
           "required": true
         },
-        "speaker": "Mina",
-        "promptText": "你怎么去机场？",
+        "speaker": "Tao",
+        "promptText": "你姐姐是老师吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "爱。我想学汉语。",
-            "pinyin": "ài。 wǒ xiǎng xué hàn yǔ。",
+            "hanzi": "有，我买了一个电话。你要我的电话吗？",
+            "pinyin": "yǒu, wǒ mǎi le yí gè diàn huà. nǐ yào wǒ de diàn huà ma?",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "我正在读课本，准备考试。",
-            "pinyin": "wǒ zhèng zài dú kè běn， zhǔn bèi kǎo shì。",
+            "hanzi": "是蓝？不，是绿！",
+            "pinyin": "shì lán? bù, shì lǜ!",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "我坐出租车，不坐公共汽车。",
-            "pinyin": "wǒ zuò chū zū chē， bù zuò gōng gòng qì chē。",
+            "hanzi": "不是，姐姐是学生。你有姐姐吗？",
+            "pinyin": "bú shì, jiě jie shì xué shēng. nǐ yǒu jiě jie ma?",
             "audio": null
           }
         ],
@@ -1629,7 +1540,7 @@
         "header": {
           "id": "ex-review-02-listen-dia-7",
           "prompt": {
-            "fr": "Écoute la réplique de Mina, puis choisis son sens."
+            "fr": "Écoute la réplique de Lin, puis choisis son sens."
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1639,26 +1550,26 @@
           ],
           "required": true
         },
-        "promptText": "你爱北京吗？",
+        "promptText": "十个字？很多！你在中国有电话吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Demain, je vais à l’école."
+              "fr": "Pas aujourd’hui, je reste à la maison. Et toi ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Tu aimes Pékin ?"
+              "fr": "Dix caractères ? C’est déjà beaucoup ! Tu as un téléphone en Chine ?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Nous sommes lundi aujourd’hui."
+              "fr": "C’est « vert » ! Ce n’est pas une grosse question."
             },
             "audio": null
           }
@@ -1680,7 +1591,7 @@
         "header": {
           "id": "ex-review-02-translate-dia-10",
           "prompt": {
-            "fr": "Traduis en chinois : « Combien d’exercices avez-vous tous ? »"
+            "fr": "Traduis en chinois : « C’est « rouge » ? »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1692,54 +1603,34 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "题",
-            "pinyin": "tí",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "有",
-            "pinyin": "yǒu",
-            "audio": null
-          },
-          {
             "id": "a",
-            "hanzi": "大家",
-            "pinyin": "dà jiā",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "今天",
-            "pinyin": "jīn tiān",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "里",
-            "pinyin": "lǐ",
+            "hanzi": "是",
+            "pinyin": "shì",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "几",
-            "pinyin": "jǐ",
+            "hanzi": "吗",
+            "pinyin": "ma",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "红",
+            "pinyin": "hóng",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "道",
-            "pinyin": "dào",
+            "hanzi": "里",
+            "pinyin": "lǐ",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d",
-          "e"
+          "c"
         ],
         "acceptedOrders": []
       },
@@ -1752,13 +1643,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-review-02-fill-dia-15",
+      "id": "block-ex-review-02-fill-dia-13",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-review-02-fill-dia-15",
+          "id": "ex-review-02-fill-dia-13",
           "prompt": {
-            "fr": "Complète : ___们在哪里写字？ (« Où les camarades écrivent-ils ? »)"
+            "fr": "Complète : 我在这___！什么问题？ (« Je suis là ! C’est quoi, la question ? »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1768,11 +1659,111 @@
           ],
           "required": true
         },
-        "sentence": "___们在哪里写字？",
+        "sentence": "我在这___！什么问题？",
         "acceptedAnswers": [
-          "同学"
+          "里"
         ],
         "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "sourceLessonID": "lesson-17",
+        "skill": "production",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-review-02-fill-dia-15",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-review-02-fill-dia-15",
+          "prompt": {
+            "fr": "Complète : 是绿！这个___不大。 (« C’est « vert » ! Ce n’est pas une grosse question »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "review-02-produce"
+          ],
+          "required": true
+        },
+        "sentence": "是绿！这个___不大。",
+        "acceptedAnswers": [
+          "问题"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "guided",
+        "sourceLessonID": "lesson-17",
+        "skill": "production",
+        "lessonDay": 16
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-review-02-order-dia-14",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-review-02-order-dia-14",
+          "prompt": {
+            "fr": "Construis « Ce caractère, c’est quoi ? »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "review-02-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "字",
+            "pinyin": "zì",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "是",
+            "pinyin": "shì",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "这个字是什么？",
+          "这个字是什么"
+        ]
       },
       "metadata": {
         "stage": "guided",
@@ -1802,23 +1793,23 @@
         "lines": [
           {
             "id": "b",
-            "speaker": "Tao",
-            "hanzi": "有，我们十点见。",
-            "pinyin": "yǒu， wǒ men shí diǎn jiàn。",
+            "speaker": "Mina",
+            "hanzi": "我也在家。明天星期三，我要去商店。你想去吗？",
+            "pinyin": "wǒ yě zài jiā. míng tiān xīng qī sān, wǒ yào qù shāng diàn. nǐ xiǎng qù ma?",
             "audio": null
           },
           {
             "id": "c",
-            "speaker": "Mina",
-            "hanzi": "中午吃饭要多少分钟？",
-            "pinyin": "zhōng wǔ chī fàn yào duō shǎo fēn zhōng？",
+            "speaker": "Tao",
+            "hanzi": "想！你要买什么？",
+            "pinyin": "xiǎng! nǐ yào mǎi shén me?",
             "audio": null
           },
           {
             "id": "a",
-            "speaker": "Mina",
-            "hanzi": "明天上午你有时间吗？",
-            "pinyin": "míng tiān shàng wǔ nǐ yǒu shí jiān ma？",
+            "speaker": "Tao",
+            "hanzi": "今天不去，我在家。你呢？",
+            "pinyin": "jīn tiān bù qù, wǒ zài jiā. nǐ ne?",
             "audio": null
           }
         ],
@@ -1843,7 +1834,7 @@
         "header": {
           "id": "ex-review-02-read-dia-4",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你怎么去机场？"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 你姐姐是老师吗？"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1857,7 +1848,7 @@
           {
             "id": "a",
             "label": {
-              "fr": "Comment vas-tu à l’aéroport ?"
+              "fr": "Ta sœur est professeure ?"
             },
             "audio": null
           },
@@ -1893,7 +1884,7 @@
         "header": {
           "id": "ex-review-02-read-dia-5",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Tao : 我坐出租车，不坐公共汽车。"
+            "fr": "Dans le dialogue, que signifie la réplique de Mina : 不是，姐姐是学生。你有姐姐吗？"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1907,21 +1898,21 @@
           {
             "id": "a",
             "label": {
-              "fr": "Nous sommes lundi aujourd’hui."
+              "fr": "Je suis là ! C’est quoi, la question ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Je veux rentrer à la maison."
+              "fr": "C’est « bleu » ? Non, c’est « vert » !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Je prends un taxi, pas le bus."
+              "fr": "Non, elle est étudiante. Et toi, tu as une grande sœur ?"
             },
             "audio": null
           }
@@ -1957,22 +1948,22 @@
           {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "为什么不懂？",
-            "pinyin": "wèi shén me bù dǒng？",
+            "hanzi": "是蓝？不，是绿！",
+            "pinyin": "shì lán? bù, shì lǜ!",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "大家有几道题？",
-            "pinyin": "dà jiā yǒu jǐ dào tí？",
+            "hanzi": "是红吗？",
+            "pinyin": "shì hóng ma?",
             "audio": null
           },
           {
             "id": "b",
             "speaker": "Tao",
-            "hanzi": "我们有三道题，但是我不懂第二道。",
-            "pinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+            "hanzi": "是！这个呢？",
+            "pinyin": "shì! zhè gè ne?",
             "audio": null
           }
         ],
@@ -1997,7 +1988,7 @@
         "header": {
           "id": "ex-review-02-speak-dia-11",
           "prompt": {
-            "fr": "Dis « Nous en avons trois, mais je ne comprends pas le deuxième »."
+            "fr": "Dis « Oui ! Et celui-ci ? »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
@@ -2007,11 +1998,11 @@
           ],
           "required": false
         },
-        "referenceText": "我们有三道题，但是我不懂第二道。",
-        "referencePinyin": "wǒ men yǒu sān dào tí， dàn shì wǒ bù dǒng dì èr dào。",
+        "referenceText": "是！这个呢？",
+        "referencePinyin": "shì! zhè gè ne?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "我们有三道题，但是我不懂第二道。"
+          "是！这个呢？"
         ],
         "allowSelfRating": true
       },
@@ -2030,7 +2021,7 @@
         "header": {
           "id": "ex-review-02-speak-dia-12",
           "prompt": {
-            "fr": "Dis « Pourquoi ne le comprends-tu pas ? »."
+            "fr": "Dis « C’est « bleu » ? Non, c’est « vert » ! »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
@@ -2040,11 +2031,11 @@
           ],
           "required": false
         },
-        "referenceText": "为什么不懂？",
-        "referencePinyin": "wèi shén me bù dǒng？",
+        "referenceText": "是蓝？不，是绿！",
+        "referencePinyin": "shì lán? bù, shì lǜ!",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "为什么不懂？"
+          "是蓝？不，是绿！"
         ],
         "allowSelfRating": true
       },
@@ -2354,6 +2345,27 @@
       ]
     },
     {
+      "id": "card-vocab-x-7535-8bdd",
+      "vocabularyID": "vocab-x-7535-8bdd",
+      "front": {
+        "hanzi": "电话",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "电话",
+        "pinyin": "diàn huà",
+        "text": {
+          "fr": "téléphone"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
+    },
+    {
       "id": "card-vocab-hsk20-073",
       "vocabularyID": "vocab-hsk20-073",
       "front": {
@@ -2574,6 +2586,7 @@
       "vocab-hsk20-035",
       "vocab-hsk20-077",
       "vocab-hsk20-120",
+      "vocab-x-7535-8bdd",
       "vocab-hsk20-073",
       "vocab-hsk20-156",
       "vocab-hsk20-196",

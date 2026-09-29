@@ -103,9 +103,11 @@ Le cycle d'apprentissage reste le même dans chaque séance :
 4. **Transférer** : reprendre la même fonction dans une situation légèrement
    différente, avec un guidage qui diminue lorsque le rappel réussit.
 
-Les fragments quotidiens contiennent une scène, une lecture de deux paragraphes,
-une note de grammaire et six activités : choix de sens, ordre des mots, trou,
-écoute, production orale et compréhension de lecture. L'oral reste
+Chaque séance quotidienne raconte une situation concrète écrite à la main : un
+dialogue de 8 à 12 répliques entre Mina, Tao et leurs proches, une lecture de 4 à 6
+phrases en un à trois paragraphes, une note de grammaire et six activités écrites :
+choix de sens, ordre des mots, trou, écoute, production orale et compréhension de
+lecture. L'oral reste
 `required: false` quand aucun service de prononciation n'est configuré. Une
 réponse parlée ou une auto-évaluation ne devient jamais un score de
 prononciation.

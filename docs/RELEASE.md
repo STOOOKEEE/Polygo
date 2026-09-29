@@ -14,9 +14,9 @@ conception séparée, explicitement marquée `design-reference-only`.
   8 défis d’unité). Le parcours enseigne 300 mots, les rangs 1 à 300 du
   catalogue (HSK classique 1–2), à raison de trois à cinq mots par leçon du jour.
 - Le contenu contient 1 663 exercices (27 introduction + 144 module 0 + 1 188
-  leçons du jour + 304 révisions et défis), 70 histoires inline, 148 paragraphes
-  et 307 cartes distinctes (300 canoniques, 2 mots d’écoute du module 0 de rang
-  supérieur et 5 extras). Les 1 022 associations leçon–carte sont fermées par le
+  leçons du jour + 304 révisions et défis), 70 histoires inline, 147 paragraphes
+  et 313 cartes distinctes (300 canoniques, 2 mots d’écoute du module 0 de rang
+  supérieur et 11 extras). Les 1 038 associations leçon–carte sont fermées par le
   générateur.
 - Chaque séance quotidienne vise 15 minutes : 12 minutes de cours et 3 minutes
   de révision. La couverture vérifiée est 150/150 rangs au jour 58 et 300/300
@@ -43,7 +43,7 @@ conception séparée, explicitement marquée `design-reference-only`.
   `Tools/content_tool.py lint --root Content`.
 - [x] Vérifier les 90 sessions, les budgets 12+3, les jalons J58/J90 et la
   couverture 150/150 puis 300/300 du catalogue `hsk-legacy-600`.
-- [x] Vérifier l’unicité des identifiants : 70 histoires et 148 paragraphes,
+- [x] Vérifier l’unicité des identifiants : 70 histoires et 147 paragraphes,
   sans doublon global.
 - [x] Comparer les quatre leçons protégées et leurs cartes avec HEAD ; les
   identifiants, ordre, objectifs, vocabulaire, blocs et réponses sont stables.

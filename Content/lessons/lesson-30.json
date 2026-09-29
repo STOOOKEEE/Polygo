@@ -5,10 +5,10 @@
   "moduleID": "unit-05",
   "order": 44,
   "title": {
-    "fr": "Demander son chemin"
+    "fr": "Où est la gare ?"
   },
   "summary": {
-    "fr": "Demander poliment une direction et situer les lieux autour de soi."
+    "fr": "Mina et Tao ne trouvent pas la gare : une passante leur indique le magasin, l’école et le temps de marche."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 1",
@@ -359,55 +359,82 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "您好，请问去车站的路怎么走？",
-          "pinyin": "nín hǎo， qǐng wèn qù chē zhàn de lù zěn me zǒu？",
+          "hanzi": "你好！火车站在哪里？我不知道路。",
+          "pinyin": "nǐ hǎo! huǒ chē zhàn zài nǎ lǐ? wǒ bù zhī dào lù.",
           "translation": {
-            "fr": "Bonjour, excusez-moi, comment va-t-on à la gare ?"
+            "fr": "Bonjour ! Où est la gare ? Je ne connais pas le chemin."
           },
           "audio": null
         },
         {
-          "speaker": "Tao",
-          "hanzi": "您先走这条路，每天都有车。",
-          "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
+          "speaker": "Lin",
+          "hanzi": "火车站在商店旁边。",
+          "pinyin": "huǒ chē zhàn zài shāng diàn páng biān.",
           "translation": {
-            "fr": "Prenez d’abord cette route ; il y a des véhicules chaque jour."
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Mina",
-          "hanzi": "车站在商店旁边吗？",
-          "pinyin": "chē zhàn zài shāng diàn páng biān ma？",
-          "translation": {
-            "fr": "La gare est-elle à côté du magasin ?"
-          },
-          "audio": null
-        },
-        {
-          "speaker": "Tao",
-          "hanzi": "不，在学校旁边，离这里不远。",
-          "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
-          "translation": {
-            "fr": "Non, elle est à côté de l’école, pas loin d’ici."
+            "fr": "La gare est à côté du magasin."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我什么时候可以到？",
-          "pinyin": "wǒ shén me shí hòu kě yǐ dào？",
+          "hanzi": "商店在哪里？我们怎么去？",
+          "pinyin": "shāng diàn zài nǎ lǐ? wǒ men zěn me qù?",
           "translation": {
-            "fr": "Quand puis-je arriver ?"
+            "fr": "Et le magasin, il est où ? Comment y va-t-on ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "商店在学校前面。从这里去，要十分钟。",
+          "pinyin": "shāng diàn zài xué xiào qián miàn. cóng zhè lǐ qù, yào shí fēn zhōng.",
+          "translation": {
+            "fr": "Le magasin est devant l’école. D’ici, il faut dix minutes."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "走十分钟就到。请让孩子先过。",
-          "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
+          "hanzi": "十分钟，很好！现在三点，我哥哥五点来火车站。",
+          "pinyin": "shí fēn zhōng, hěn hǎo! xiàn zài sān diǎn, wǒ gē ge wǔ diǎn lái huǒ chē zhàn.",
           "translation": {
-            "fr": "Vous y serez en dix minutes. Laissez d’abord passer les enfants."
+            "fr": "Dix minutes, parfait ! Il est trois heures et mon frère arrive à la gare à cinq heures."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "那我们有很多时间！我想和你哥哥说话。",
+          "pinyin": "nà wǒ men yǒu hěn duō shí jiān! wǒ xiǎng hé nǐ gē ge shuō huà.",
+          "translation": {
+            "fr": "Alors on a largement le temps ! J’ai envie de parler avec ton frère."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "好！他也想和你说话。",
+          "pinyin": "hǎo! tā yě xiǎng hé nǐ shuō huà.",
+          "translation": {
+            "fr": "Avec plaisir ! Lui aussi, il veut te parler."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "谢谢你，再见！",
+          "pinyin": "xiè xie nǐ, zài jiàn!",
+          "translation": {
+            "fr": "Merci beaucoup, au revoir !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Lin",
+          "hanzi": "不客气，再见！",
+          "pinyin": "bú kè qi, zài jiàn!",
+          "translation": {
+            "fr": "De rien, au revoir !"
           },
           "audio": null
         }
@@ -424,25 +451,25 @@
       "storyID": "story-lesson-30",
       "level": "HSK classique 1",
       "title": {
-        "fr": "Une direction"
+        "fr": "Ma maison, mon école"
       },
       "paragraphs": [
         {
           "id": "lesson-30-p1",
-          "hanzi": "客人问去车站的路。车站在学校旁边，离商店不远。",
-          "pinyin": "kè rén wèn qù chē zhàn de lù。 chē zhàn zài xué xiào páng biān， lí shāng diàn bù yuǎn。",
+          "hanzi": "我家在学校旁边，路很好。从我家去学校，要十分钟。学校前面有一个商店，商店旁边是医院。",
+          "pinyin": "wǒ jiā zài xué xiào páng biān, lù hěn hǎo. cóng wǒ jiā qù xué xiào, yào shí fēn zhōng. xué xiào qián miàn yǒu yí gè shāng diàn, shāng diàn páng biān shì yī yuàn.",
           "translation": {
-            "fr": "Un visiteur demande le chemin de la gare. La gare est à côté de l’école, pas loin du magasin."
+            "fr": "Ma maison est à côté de l’école, et la route est agréable. De chez moi à l’école, il faut dix minutes. Devant l’école, il y a un magasin, et à côté du magasin, il y a un hôpital."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-30-p2",
-          "hanzi": "他走十分钟就到。路上有很多孩子，所以他让孩子先过。",
-          "pinyin": "tā zǒu shí fēn zhōng jiù dào。 lù shàng yǒu hěn duō hái zi， suǒ yǐ tā ràng hái zi xiān guò。",
+          "hanzi": "你的学校在哪里？你怎么去学校？",
+          "pinyin": "nǐ de xué xiào zài nǎ lǐ? nǐ zěn me qù xué xiào?",
           "translation": {
-            "fr": "Il y arrive en dix minutes. Il y a beaucoup d’enfants sur la route, alors il les laisse passer d’abord."
+            "fr": "Où est ton école ? Comment y vas-tu ?"
           },
           "segmentation": [],
           "audio": null
@@ -890,138 +917,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-translate-rea-3",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l30-translate-rea-3",
-          "prompt": {
-            "fr": "Traduis en chinois : « Il y arrive en dix minutes »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l30-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "十",
-            "pinyin": "shí",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "怎么",
-            "pinyin": "zěn me",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "他",
-            "pinyin": "tā",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "就",
-            "pinyin": "jiù",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "分钟",
-            "pinyin": "fēn zhōng",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "到",
-            "pinyin": "dào",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "走",
-            "pinyin": "zǒu",
-            "audio": null
-          },
-          {
-            "id": "h",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l30-talk-1",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l30-talk-1",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l30-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "您好，请问去车站的路怎么走？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "您先走这条路，每天都有车。",
-            "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "不，在学校旁边，离这里不远。",
-            "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "走十分钟就到。请让孩子先过。",
-            "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "a"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 26
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l30-translate-exa-1",
       "spec": {
         "kind": "translation",
@@ -1116,28 +1011,28 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "车站在商店旁边吗？",
+        "promptText": "商店在哪里？我们怎么去？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "走十分钟就到。请让孩子先过。",
-            "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
+            "hanzi": "商店在学校前面。从这里去，要十分钟。",
+            "pinyin": "shāng diàn zài xué xiào qián miàn. cóng zhè lǐ qù, yào shí fēn zhōng.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "您先走这条路，每天都有车。",
-            "pinyin": "nín xiān zǒu zhè tiáo lù， měi tiān dōu yǒu chē。",
+            "hanzi": "火车站在商店旁边。",
+            "pinyin": "huǒ chē zhàn zài shāng diàn páng biān.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "不，在学校旁边，离这里不远。",
-            "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
+            "hanzi": "不客气，再见！",
+            "pinyin": "bú kè qi, zài jiàn!",
             "audio": null
           }
         ],
-        "correctReplyID": "c"
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
@@ -1147,11 +1042,149 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-dialogue-4-3",
+      "id": "block-ex-l30-translate-dia-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l30-translate-dia-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « La gare est à côté du magasin »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "旁边",
+            "pinyin": "páng biān",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "分钟",
+            "pinyin": "fēn zhōng",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "火车站",
+            "pinyin": "huǒ chē zhàn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "怎么",
+            "pinyin": "zěn me",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-order-exa-2",
+      "spec": {
+        "kind": "wordOrder",
+        "header": {
+          "id": "ex-l30-order-exa-2",
+          "prompt": {
+            "fr": "Construis « J’ai dix livres »."
+          },
+          "instruction": {
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+          },
+          "objectiveIDs": [
+            "l30-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "本",
+            "pinyin": "běn",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "十",
+            "pinyin": "shí",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedVariants": [
+          "我有十本书。",
+          "我有十本书"
+        ]
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 26
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l30-dialogue-2-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l30-dialogue-4-3",
+          "id": "ex-l30-dialogue-2-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1165,24 +1198,24 @@
         },
         "lines": [
           {
+            "id": "a",
+            "speaker": "Lin",
+            "hanzi": "火车站在商店旁边。",
+            "pinyin": "huǒ chē zhàn zài shāng diàn páng biān.",
+            "audio": null
+          },
+          {
             "id": "c",
-            "speaker": "Tao",
-            "hanzi": "走十分钟就到。请让孩子先过。",
-            "pinyin": "zǒu shí fēn zhōng jiù dào。 qǐng ràng hái zi xiān guò。",
+            "speaker": "Lin",
+            "hanzi": "商店在学校前面。从这里去，要十分钟。",
+            "pinyin": "shāng diàn zài xué xiào qián miàn. cóng zhè lǐ qù, yào shí fēn zhōng.",
             "audio": null
           },
           {
             "id": "b",
             "speaker": "Mina",
-            "hanzi": "我什么时候可以到？",
-            "pinyin": "wǒ shén me shí hòu kě yǐ dào？",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "speaker": "Tao",
-            "hanzi": "不，在学校旁边，离这里不远。",
-            "pinyin": "bù， zài xué xiào páng biān， lí zhè lǐ bù yuǎn。",
+            "hanzi": "商店在哪里？我们怎么去？",
+            "pinyin": "shāng diàn zài nǎ lǐ? wǒ men zěn me qù?",
             "audio": null
           }
         ],
@@ -1206,7 +1239,7 @@
         "header": {
           "id": "ex-l30-fill-rea-2",
           "prompt": {
-            "fr": "Complète : 车站在学校___，离商店不远。 (« La gare est à côté de l’école, pas loin du magasin »)"
+            "fr": "Complète : 从我家去学校，要___分钟。 (« De chez moi à l’école, il faut dix minutes »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1216,9 +1249,9 @@
           ],
           "required": true
         },
-        "sentence": "车站在学校___，离商店不远。",
+        "sentence": "从我家去学校，要___分钟。",
         "acceptedAnswers": [
-          "旁边"
+          "十"
         ],
         "caseSensitive": false
       },
@@ -1230,76 +1263,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l30-order-rea-1",
+      "id": "block-ex-l30-read-dia-4",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "choice",
         "header": {
-          "id": "ex-l30-order-rea-1",
+          "id": "ex-l30-read-dia-4",
           "prompt": {
-            "fr": "Construis « Un visiteur demande le chemin de la gare »."
+            "fr": "Dans le dialogue, que signifie la réplique de Lin : 商店在学校前面。从这里去，要十分钟。"
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l30-produce"
+            "l30-understand"
           ],
           "required": true
         },
-        "tokens": [
+        "choices": [
           {
-            "id": "e",
-            "hanzi": "的",
-            "pinyin": "de",
+            "id": "a",
+            "label": {
+              "fr": "De chez moi à l’école, il faut dix minutes."
+            },
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "问",
-            "pinyin": "wèn",
+            "label": {
+              "fr": "Bonjour ! Où est la gare ? Je ne connais pas le chemin."
+            },
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "去",
-            "pinyin": "qù",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "客人",
-            "pinyin": "kè rén",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "车站",
-            "pinyin": "chē zhàn",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "路",
-            "pinyin": "lù",
+            "label": {
+              "fr": "Le magasin est devant l’école. D’ici, il faut dix minutes."
+            },
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        "acceptedVariants": [
-          "客人问去车站的路。",
-          "客人问去车站的路"
-        ]
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 26
       }
     },
@@ -1311,7 +1318,7 @@
         "header": {
           "id": "ex-l30-listen",
           "prompt": {
-            "fr": "Combien de temps faut-il marcher ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1321,31 +1328,31 @@
           ],
           "required": true
         },
-        "promptText": "走十分钟就到。",
+        "promptText": "从这里去，要十分钟。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Cinq minutes."
+              "fr": "D’ici, il faut dix minutes."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Dix minutes."
+              "fr": "Merci beaucoup, au revoir !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Une heure."
+              "fr": "La gare est à côté du magasin."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1361,21 +1368,21 @@
         "header": {
           "id": "ex-l30-speak",
           "prompt": {
-            "fr": "Dis « La gare n’est pas loin d’ici ». "
+            "fr": "Dis « Où est la gare ? »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l30-produce"
           ],
           "required": false
         },
-        "referenceText": "车站离这里不远。",
-        "referencePinyin": "chē zhàn lí zhè lǐ bù yuǎn。",
+        "referenceText": "火车站在哪里？",
+        "referencePinyin": "huǒ chē zhàn zài nǎ lǐ?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "车站离这里不远。"
+          "火车站在哪里？"
         ],
         "allowSelfRating": true
       },
@@ -1393,10 +1400,10 @@
         "header": {
           "id": "ex-l30-reading",
           "prompt": {
-            "fr": "Pourquoi le visiteur laisse-t-il passer les enfants ?"
+            "fr": "Combien de temps faut-il pour aller de chez la personne à l’école ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l30-understand"
@@ -1405,28 +1412,28 @@
         },
         "choices": [
           {
+            "id": "b",
+            "label": {
+              "fr": "Trente minutes."
+            },
+            "audio": null
+          },
+          {
             "id": "c",
             "label": {
-              "fr": "Le magasin est fermé."
+              "fr": "Dix minutes."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Il y a beaucoup d’enfants sur la route."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Il est malade."
+              "fr": "Cinq minutes."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1635,6 +1642,7 @@
       "hsk20-036",
       "hsk20-039"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-030",
       "hsk20-094",

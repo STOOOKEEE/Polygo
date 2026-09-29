@@ -48,9 +48,9 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 | Unités du cours final | 10 (`unit-00` à `unit-09`) |
 | Exercices | 1 663 (27 introduction + 144 module 0 + 1 188 leçons du jour + 144 révisions + 160 défis) |
 | Histoires inline | 70 |
-| Paragraphes de lecture | 148 |
-| Cartes distinctes | 307 (300 canoniques + 2 mots d’écoute du module 0 de rang supérieur + 5 extras) |
-| Associations leçon–carte | 1 022 |
+| Paragraphes de lecture | 147 |
+| Cartes distinctes | 313 (300 canoniques + 2 mots d’écoute du module 0 de rang supérieur + 11 extras) |
+| Associations leçon–carte | 1 038 |
 | Guides de tracé livrés | 3 (`你`, `我`, `国`) |
 
 Le catalogue `hsk-legacy-600` contient 600 entrées de référence ; le parcours
@@ -94,11 +94,11 @@ contenu ; la refonte ne régénère ni les leçons ni le catalogue.
 - `python3 Tools/content_tool.py lint --root Content` passe.
 - La couverture indépendante vérifie 150/150 lexèmes aux rangs 1–150 au jour
   58 et 300/300 aux rangs 1–300 au jour 90.
-- Les identifiants de paragraphes sont uniques (148/148). Les choix de type
+- Les identifiants de paragraphes sont uniques (147/147). Les choix de type
   choix gardent leurs IDs et leurs bonnes réponses ; les 198 exercices
-  `choice`/`listeningChoice` ont une position correcte répartie 66/65/67 entre
+  `choice`/`listeningChoice` ont une position correcte répartie 64/64/70 entre
   les trois options après rotation déterministe.
-- La suite portable actuelle compte 94 tests ; les résultats de la campagne
+- La suite portable actuelle compte 95 tests ; les résultats de la campagne
   Apple sont consignés dans le [rapport QA](QA_REPORT.md).
 - `git diff --check` passe. `Tools/__pycache__/` et les fichiers `.pyc` sont
   ignorés ; aucun secret, certificat, profil, base locale ou artefact machine

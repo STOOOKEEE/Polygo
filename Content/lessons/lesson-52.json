@@ -5,10 +5,10 @@
   "moduleID": "unit-07",
   "order": 71,
   "title": {
-    "fr": "Le nettoyage du quartier"
+    "fr": "Un bus en retard"
   },
   "summary": {
-    "fr": "Organiser une action collective et parler d’un retard dans la ville."
+    "fr": "Un soir, Mina attend le bus pour aller dîner chez Tao : il l’appelle, le bus tarde, puis arrive enfin."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 2",
@@ -402,38 +402,92 @@
       "id": "block-lesson-52-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "今天公共汽车迟到了，街上突然出现很多人。",
-          "pinyin": "jīn tiān gōng gòng qì chē chí dào le, jiē shàng tū rán chū xiàn hěn duō rén.",
-          "translation": {
-            "fr": "Aujourd’hui le bus est en retard et beaucoup de gens sont soudain apparus dans la rue."
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "我们约好打扫公园，除了邻居以外，学生也来了。",
-          "pinyin": "wǒ men yuē hǎo dǎ sǎo gōng yuán, chú le lín jū yǐ wài, xué shēng yě lái le.",
+          "hanzi": "喂，今天晚上你来我家吗？",
+          "pinyin": "wèi, jīn tiān wǎn shàng nǐ lái wǒ jiā ma?",
           "translation": {
-            "fr": "Nous avions prévu de nettoyer le parc ; en plus des voisins, des élèves sont venus aussi."
+            "fr": "Allô, tu viens chez moi ce soir ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "城市变得更干净了。",
-          "pinyin": "chéng shì biàn de gèng gān jìng le.",
+          "hanzi": "去！但是我不知道坐几号公共汽车。",
+          "pinyin": "qù! dàn shì wǒ bù zhī dào zuò jǐ hào gōng gòng qì chē.",
           "translation": {
-            "fr": "La ville est devenue plus propre."
+            "fr": "Oui ! Mais je ne sais pas quel numéro de bus prendre."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "等公共汽车的时候，我们先把树叶扫好。",
-          "pinyin": "děng gōng gòng qì chē de shí hou, wǒ men xiān bǎ shù yè sǎo hǎo.",
+          "hanzi": "三十二号，在我家旁边下。",
+          "pinyin": "sān shí èr hào, zài wǒ jiā páng biān xià.",
           "translation": {
-            "fr": "En attendant le bus, nous ramassons d’abord bien les feuilles."
+            "fr": "Le 32, tu descends à côté de chez moi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "好，我现在在学校外等。",
+          "pinyin": "hǎo, wǒ xiàn zài zài xué xiào wài děng.",
+          "translation": {
+            "fr": "D’accord, je suis devant l’école en train d’attendre."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "你等了多长时间了？",
+          "pinyin": "nǐ děng le duō cháng shí jiān le?",
+          "translation": {
+            "fr": "Ça fait combien de temps que tu attends ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "二十分钟了。公共汽车怎么还不来？",
+          "pinyin": "èr shí fēn zhōng le. gōng gòng qì chē zěn me hái bù lái?",
+          "translation": {
+            "fr": "Vingt minutes. Pourquoi le bus n’arrive-t-il pas ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "没关系，我在家等你。",
+          "pinyin": "méi guān xì, wǒ zài jiā děng nǐ.",
+          "translation": {
+            "fr": "Pas de souci, je t’attends à la maison."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "来了来了！是三十二号！",
+          "pinyin": "lái le lái le! shì sān shí èr hào!",
+          "translation": {
+            "fr": "Il arrive, il arrive ! C’est le 32 !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "太好了！我做了很多菜，你吃得多吗？",
+          "pinyin": "tài hǎo le! wǒ zuò le hěn duō cài, nǐ chī de duō ma?",
+          "translation": {
+            "fr": "Super ! J’ai préparé plein de plats, tu manges beaucoup ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我吃得很多！我很想吃你做的菜。",
+          "pinyin": "wǒ chī de hěn duō! wǒ hěn xiǎng chī nǐ zuò de cài.",
+          "translation": {
+            "fr": "Beaucoup ! J’ai très envie de goûter ta cuisine."
           },
           "audio": null
         }
@@ -450,25 +504,25 @@
       "storyID": "story-lesson-52",
       "level": "HSK classique 2",
       "title": {
-        "fr": "Une matinée de bénévolat"
+        "fr": "Attendre le bus sous la pluie"
       },
       "paragraphs": [
         {
           "id": "lesson-52-p1",
-          "hanzi": "公共汽车迟到了，志愿者们先在公园见面。",
-          "pinyin": "gōng gòng qì chē chí dào le, zhì yuàn zhě men xiān zài gōng yuán jiàn miàn.",
+          "hanzi": "昨天晚上下雨，我在学校外等公共汽车。我等了二十分钟，公共汽车还没有来。",
+          "pinyin": "zuó tiān wǎn shàng xià yǔ, wǒ zài xué xiào wài děng gōng gòng qì chē. wǒ děng le èr shí fēn zhōng, gōng gòng qì chē hái méi yǒu lái.",
           "translation": {
-            "fr": "Le bus est arrivé en retard ; les bénévoles se sont d’abord retrouvés au parc."
+            "fr": "Hier soir, il pleuvait et j’attendais le bus devant l’école. J’ai attendu vingt minutes et le bus n’était toujours pas là."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-52-p2",
-          "hanzi": "除了邻居以外，学生也参加了打扫。",
-          "pinyin": "chú le lín jū yǐ wài, xué shēng yě cān jiā le dǎ sǎo.",
+          "hanzi": "朋友打电话来，我告诉他，我很想去他家，但是昨天公共汽车太少了。我到朋友家的时候，已经九点了。",
+          "pinyin": "péng yǒu dǎ diàn huà lái, wǒ gào sù tā, wǒ hěn xiǎng qù tā jiā, dàn shì zuó tiān gōng gòng qì chē tài shǎo le. wǒ dào péng yǒu jiā de shí hou, yǐ jīng jiǔ diǎn le.",
           "translation": {
-            "fr": "En plus des voisins, des élèves ont aussi participé au nettoyage."
+            "fr": "Mon ami m’a appelée, je lui ai dit que j’avais très envie de venir chez lui, mais qu’il y avait trop peu de bus hier soir. Quand je suis arrivée chez lui, il était déjà neuf heures."
           },
           "segmentation": [],
           "audio": null
@@ -916,13 +970,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-translate-exa-2",
+      "id": "block-ex-l52-translate-exa-5",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l52-translate-exa-2",
+          "id": "ex-l52-translate-exa-5",
           "prompt": {
-            "fr": "Traduis en chinois : « Je prends le bus pour aller travailler »"
+            "fr": "Traduis en chinois : « Je lis le soir »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -934,39 +988,39 @@
         },
         "tokens": [
           {
-            "id": "b",
-            "hanzi": "坐",
-            "pinyin": "zuò",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "公共汽车",
-            "pinyin": "gōng gòng qì chē",
-            "audio": null
-          },
-          {
             "id": "f",
+            "hanzi": "号",
+            "pinyin": "hào",
+            "audio": null
+          },
+          {
+            "id": "a",
             "hanzi": "晚上",
             "pinyin": "wǎn shang",
             "audio": null
           },
           {
-            "id": "a",
+            "id": "e",
+            "hanzi": "外",
+            "pinyin": "wài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "看",
+            "pinyin": "kàn",
+            "audio": null
+          },
+          {
+            "id": "b",
             "hanzi": "我",
             "pinyin": "wǒ",
             "audio": null
           },
           {
             "id": "d",
-            "hanzi": "上班",
-            "pinyin": "shàng bān",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "得",
-            "pinyin": "de",
+            "hanzi": "书",
+            "pinyin": "shū",
             "audio": null
           }
         ],
@@ -986,31 +1040,49 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-fill-dia-1",
+      "id": "block-ex-l52-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l52-fill-dia-1",
+          "id": "ex-l52-talk-1",
           "prompt": {
-            "fr": "Complète : ___公共汽车迟到了，街上突然出现很多人。 (« Aujourd’hui le bus est en retard et beaucoup de gens sont soudain apparus dans la rue »)"
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l52-produce"
+            "l52-understand"
           ],
           "required": true
         },
-        "sentence": "___公共汽车迟到了，街上突然出现很多人。",
-        "acceptedAnswers": [
-          "今天"
+        "speaker": "Tao",
+        "promptText": "喂，今天晚上你来我家吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "来了来了！是三十二号！",
+            "pinyin": "lái le lái le! shì sān shí èr hào!",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "去！但是我不知道坐几号公共汽车。",
+            "pinyin": "qù! dàn shì wǒ bù zhī dào zuò jǐ hào gōng gòng qì chē.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "二十分钟了。公共汽车怎么还不来？",
+            "pinyin": "èr shí fēn zhōng le. gōng gòng qì chē zěn me hái bù lái?",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 48
       }
     },
@@ -1093,79 +1165,59 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-order-exa-3",
+      "id": "block-ex-l52-talk-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l52-order-exa-3",
+          "id": "ex-l52-talk-5",
           "prompt": {
-            "fr": "Construis « Mon billet porte le numéro trois »."
+            "fr": "Écoute Tao, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l52-produce"
+            "l52-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "b",
-            "hanzi": "票",
-            "pinyin": "piào",
-            "audio": null
-          },
+        "speaker": "Tao",
+        "promptText": "你等了多长时间了？",
+        "replies": [
           {
             "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
+            "hanzi": "二十分钟了。公共汽车怎么还不来？",
+            "pinyin": "èr shí fēn zhōng le. gōng gòng qì chē zěn me hái bù lái?",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "号",
-            "pinyin": "hào",
+            "id": "b",
+            "hanzi": "来了来了！是三十二号！",
+            "pinyin": "lái le lái le! shì sān shí èr hào!",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "是",
-            "pinyin": "shì",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "三",
-            "pinyin": "sān",
+            "hanzi": "我吃得很多！我很想吃你做的菜。",
+            "pinyin": "wǒ chī de hěn duō! wǒ hěn xiǎng chī nǐ zuò de cài.",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedVariants": [
-          "我的票是三号。",
-          "我的票是三号"
-        ]
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 48
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-dialogue-1-3",
+      "id": "block-ex-l52-dialogue-1-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l52-dialogue-1-3",
+          "id": "ex-l52-dialogue-1-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1179,31 +1231,39 @@
         },
         "lines": [
           {
-            "id": "c",
+            "id": "b",
             "speaker": "Mina",
-            "hanzi": "城市变得更干净了。",
-            "pinyin": "chéng shì biàn de gèng gān jìng le.",
+            "hanzi": "去！但是我不知道坐几号公共汽车。",
+            "pinyin": "qù! dàn shì wǒ bù zhī dào zuò jǐ hào gōng gòng qì chē.",
             "audio": null
           },
           {
             "id": "a",
-            "speaker": "Mina",
-            "hanzi": "今天公共汽车迟到了，街上突然出现很多人。",
-            "pinyin": "jīn tiān gōng gòng qì chē chí dào le, jiē shàng tū rán chū xiàn hěn duō rén.",
+            "speaker": "Tao",
+            "hanzi": "喂，今天晚上你来我家吗？",
+            "pinyin": "wèi, jīn tiān wǎn shàng nǐ lái wǒ jiā ma?",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "c",
             "speaker": "Tao",
-            "hanzi": "我们约好打扫公园，除了邻居以外，学生也来了。",
-            "pinyin": "wǒ men yuē hǎo dǎ sǎo gōng yuán, chú le lín jū yǐ wài, xué shēng yě lái le.",
+            "hanzi": "三十二号，在我家旁边下。",
+            "pinyin": "sān shí èr hào, zài wǒ jiā páng biān xià.",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Mina",
+            "hanzi": "好，我现在在学校外等。",
+            "pinyin": "hǎo, wǒ xiàn zài zài xué xiào wài děng.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
       },
       "metadata": {
@@ -1214,13 +1274,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-fill-rea-2",
+      "id": "block-ex-l52-fill-rea-1",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l52-fill-rea-2",
+          "id": "ex-l52-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 除了邻居以___，学生也参加了打扫。 (« En plus des voisins, des élèves ont aussi participé au nettoyage »)"
+            "fr": "Complète : 昨天___下雨，我在学校外等公共汽车。 (« Hier soir, il pleuvait et j’attendais le bus devant l’école »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1230,9 +1290,9 @@
           ],
           "required": true
         },
-        "sentence": "除了邻居以___，学生也参加了打扫。",
+        "sentence": "昨天___下雨，我在学校外等公共汽车。",
         "acceptedAnswers": [
-          "外"
+          "晚上"
         ],
         "caseSensitive": false
       },
@@ -1244,47 +1304,46 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l52-listen-rea-1",
+      "id": "block-ex-l52-read-rea-1",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "choice",
         "header": {
-          "id": "ex-l52-listen-rea-1",
+          "id": "ex-l52-read-rea-1",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
+            "fr": "Dans le texte « Attendre le bus sous la pluie », que signifie : 昨天晚上下雨，我在学校外等公共汽车。"
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
             "l52-understand"
           ],
           "required": true
         },
-        "promptText": "公共汽车迟到了，志愿者们先在公园见面。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Nous avions prévu de nettoyer le parc ; en plus des voisins, des élèves sont venus aussi."
+              "fr": "Le 32, tu descends à côté de chez moi."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Le bus est arrivé en retard ; les bénévoles se sont d’abord retrouvés au parc."
+              "fr": "Vingt minutes. Pourquoi le bus n’arrive-t-il pas ?"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "En plus des voisins, des élèves ont aussi participé au nettoyage."
+              "fr": "Hier soir, il pleuvait et j’attendais le bus devant l’école."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1300,7 +1359,7 @@
         "header": {
           "id": "ex-l52-listen",
           "prompt": {
-            "fr": "Qui est venu en plus des voisins ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1310,31 +1369,31 @@
           ],
           "required": true
         },
-        "promptText": "我们约好打扫公园，除了邻居以外，学生也来了。",
+        "promptText": "太好了！我做了很多菜，你吃得多吗？",
         "choices": [
           {
             "id": "b",
             "label": {
-              "fr": "Des élèves."
+              "fr": "Oui ! Mais je ne sais pas quel numéro de bus prendre."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Des médecins."
+              "fr": "D’accord, je suis devant l’école en train d’attendre."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Des chauffeurs."
+              "fr": "Super ! J’ai préparé plein de plats, tu manges beaucoup ?"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1350,22 +1409,21 @@
         "header": {
           "id": "ex-l52-speak",
           "prompt": {
-            "fr": "Dis que la ville est devenue plus propre."
+            "fr": "Dis « Pourquoi le bus n’arrive-t-il pas ? »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l52-produce"
           ],
           "required": false
         },
-        "referenceText": "城市变得更干净了。",
-        "referencePinyin": "chéng shì biàn de gèng gān jìng le.",
+        "referenceText": "公共汽车怎么还不来？",
+        "referencePinyin": "gōng gòng qì chē zěn me hái bù lái?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "城市变得更干净了。",
-          "城市变得更干净了"
+          "公共汽车怎么还不来？"
         ],
         "allowSelfRating": true
       },
@@ -1383,10 +1441,10 @@
         "header": {
           "id": "ex-l52-reading",
           "prompt": {
-            "fr": "Où les bénévoles se retrouvent-ils ?"
+            "fr": "Combien de temps la personne a-t-elle attendu le bus ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l52-understand"
@@ -1395,28 +1453,28 @@
         },
         "choices": [
           {
+            "id": "c",
+            "label": {
+              "fr": "Vingt minutes."
+            },
+            "audio": null
+          },
+          {
             "id": "a",
             "label": {
-              "fr": "À l’aéroport."
+              "fr": "Dix minutes."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Au parc."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Au bureau."
+              "fr": "Trente minutes."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1654,6 +1712,7 @@
       "hsk20-054"
     ],
     "grammarPattern": "除了…以外…",
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-171",
       "hsk20-184",

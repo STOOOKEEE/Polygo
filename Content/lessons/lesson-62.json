@@ -5,10 +5,10 @@
   "moduleID": "unit-09",
   "order": 84,
   "title": {
-    "fr": "Une carte difficile à lire"
+    "fr": "Où est la salle de cours ?"
   },
   "summary": {
-    "fr": "Demander son chemin et comparer deux itinéraires en ville."
+    "fr": "Mina et Tao, en retard pour leur cours de chinois, cherchent la bonne salle dans une grande école avec la carte de leur téléphone."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 2",
@@ -316,6 +316,32 @@
         "level": 1
       },
       "traditionalHanzi": "不"
+    },
+    {
+      "id": "vocab-x-5730-56fe",
+      "hanzi": "地图",
+      "traditionalHanzi": "地圖",
+      "pinyin": "dì tú",
+      "toneNumbers": [
+        4,
+        2
+      ],
+      "segmentation": [
+        {
+          "surface": "地图",
+          "vocabularyID": "vocab-x-5730-56fe",
+          "pinyin": "dì tú",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "carte ; plan"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
     }
   ],
   "blocks": [
@@ -344,7 +370,8 @@
         "vocab-hsk20-296",
         "vocab-hsk20-289",
         "vocab-hsk20-298",
-        "vocab-hsk20-007"
+        "vocab-hsk20-007",
+        "vocab-x-5730-56fe"
       ],
       "metadata": {
         "stage": "observe",
@@ -357,37 +384,91 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "你对这张地图满意吗？",
-          "pinyin": "nǐ duì zhè zhāng dì tú mǎn yì ma?",
+          "hanzi": "你知道汉语课的教室在哪里吗？",
+          "pinyin": "nǐ zhī dào hàn yǔ kè de jiào shì zài nǎ lǐ ma?",
           "translation": {
-            "fr": "Es-tu satisfait de cette carte ?"
+            "fr": "Tu sais où se trouve la salle du cours de chinois ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我不太满意，但是这条路比较难。",
-          "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
+          "hanzi": "你的手机上不是有地图吗？",
+          "pinyin": "nǐ de shǒu jī shàng bú shì yǒu dì tú ma?",
           "translation": {
-            "fr": "Je ne suis pas très satisfait, mais cette route est assez difficile."
+            "fr": "Tu n’as pas une carte sur ton téléphone ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "那个胖叔叔也在找车站。",
-          "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
+          "hanzi": "有，但是字太小了，我看不懂。",
+          "pinyin": "yǒu, dàn shì zì tài xiǎo le, wǒ kàn bu dǒng.",
           "translation": {
-            "fr": "Cet oncle corpulent cherche aussi la gare."
+            "fr": "Si, mais les caractères sont trop petits, je n’arrive pas à lire."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "走另一边吧，那里更容易。",
-          "pinyin": "zǒu lìng yì biān ba, nà lǐ gèng róng yì.",
+          "hanzi": "我也不知道，这个学校太大了。我们一起找找吧。",
+          "pinyin": "wǒ yě bù zhī dào, zhè ge xué xiào tài dà le. wǒ men yì qǐ zhǎo zhao ba.",
           "translation": {
-            "fr": "Prenons l’autre côté, c’est plus facile par là."
+            "fr": "Moi non plus, cette école est trop grande. Cherchons ensemble."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "好，快走吧。现在九点五十，十点有课。",
+          "pinyin": "hǎo, kuài zǒu ba. xiàn zài jiǔ diǎn wǔ shí, shí diǎn yǒu kè.",
+          "translation": {
+            "fr": "D’accord, vite, allons-y. Il est neuf heures cinquante et le cours est à dix heures."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "你看，那个教室的门开着！",
+          "pinyin": "nǐ kàn, nà ge jiào shì de mén kāi zhe!",
+          "translation": {
+            "fr": "Regarde, la porte de cette salle est ouverte !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "教室里有人吗？",
+          "pinyin": "jiào shì lǐ yǒu rén ma?",
+          "translation": {
+            "fr": "Il y a quelqu’un dans la salle ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "有，老师坐着看书呢。",
+          "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
+          "translation": {
+            "fr": "Oui, le professeur est assis en train de lire."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "是我们的教室吗？",
+          "pinyin": "shì wǒ men de jiào shì ma?",
+          "translation": {
+            "fr": "C’est notre salle ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "对，就是这里。你的手机可以休息了！",
+          "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
+          "translation": {
+            "fr": "Oui, c’est ici. Ton téléphone peut se reposer !"
           },
           "audio": null
         }
@@ -404,25 +485,25 @@
       "storyID": "story-lesson-62",
       "level": "HSK classique 2",
       "title": {
-        "fr": "Trouver une route plus facile"
+        "fr": "Dix minutes pour trouver la salle"
       },
       "paragraphs": [
         {
           "id": "lesson-62-p1",
-          "hanzi": "Tao对地图不太满意，一条路比较难，另一条路更容易。",
-          "pinyin": "Tao duì dì tú bú tài mǎn yì, yì tiáo lù bǐ jiào nán, lìng yì tiáo lù gèng róng yì.",
+          "hanzi": "我今天上午有汉语课，但是我不知道教室在哪里。我看着手机上的地图找了十分钟，还是不知道。",
+          "pinyin": "wǒ jīn tiān shàng wǔ yǒu hàn yǔ kè, dàn shì wǒ bù zhī dào jiào shì zài nǎ lǐ. wǒ kàn zhe shǒu jī shàng de dì tú zhǎo le shí fēn zhōng, hái shi bù zhī dào.",
           "translation": {
-            "fr": "Tao n’est pas très satisfait de la carte : une route est assez difficile, l’autre est plus facile."
+            "fr": "Ce matin, j’ai cours de chinois, mais je ne sais pas où est la salle. J’ai cherché dix minutes avec la carte de mon téléphone sous les yeux, et je ne savais toujours pas."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-62-p2",
-          "hanzi": "Mina和Tao跟着另一条路去车站。",
-          "pinyin": "Mina hé Tao gēn zhe lìng yì tiáo lù qù chē zhàn.",
+          "hanzi": "一个学生笑着告诉我，他也去上课，我们可以一起走。我们很快就到了教室。老师已经在教室里了，我很高兴。",
+          "pinyin": "yí ge xué shēng xiào zhe gào su wǒ, tā yě qù shàng kè, wǒ men kě yǐ yì qǐ zǒu. wǒ men hěn kuài jiù dào le jiào shì. lǎo shī yǐ jīng zài jiào shì lǐ le, wǒ hěn gāo xìng.",
           "translation": {
-            "fr": "Mina et Tao suivent l’autre route jusqu’à la gare."
+            "fr": "Un élève m’a dit en souriant qu’il allait lui aussi en cours et qu’on pouvait y aller ensemble. Nous sommes vite arrivés dans la salle. Le professeur y était déjà, et j’étais contente."
           },
           "segmentation": [],
           "audio": null
@@ -540,10 +621,10 @@
           },
           {
             "id": "e",
-            "left": "张",
-            "pinyin": "zhāng",
+            "left": "地图",
+            "pinyin": "dì tú",
             "right": {
-              "fr": "feuille ; classificateur plat"
+              "fr": "carte ; plan"
             }
           }
         ]
@@ -585,7 +666,7 @@
           {
             "id": "b",
             "label": {
-              "fr": "qǐng gěi wǒ yī zhāng zhǐ。"
+              "fr": "shì wǒ men de jiào shì ma?"
             },
             "audio": null
           },
@@ -685,7 +766,7 @@
           {
             "id": "a",
             "label": {
-              "fr": "课 (kè)"
+              "fr": "地图 (dì tú)"
             },
             "audio": null
           },
@@ -699,14 +780,14 @@
           {
             "id": "c",
             "label": {
-              "fr": "找 (zhǎo)"
+              "fr": "课 (kè)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "着 (zhe)"
+              "fr": "找 (zhǎo)"
             },
             "audio": null
           }
@@ -750,21 +831,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "找"
+              "fr": "着"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "着"
+              "fr": "课"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "课"
+              "fr": "找"
             },
             "audio": null
           }
@@ -863,131 +944,6 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-translate-exa-3",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l62-translate-exa-3",
-          "prompt": {
-            "fr": "Traduis en chinois : « Je cherche mon téléphone »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l62-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "找",
-            "pinyin": "zhǎo",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "课",
-            "pinyin": "kè",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "手机",
-            "pinyin": "shǒu jī",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "着",
-            "pinyin": "zhe",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l62-talk-1",
-      "spec": {
-        "kind": "conversationChoice",
-        "header": {
-          "id": "ex-l62-talk-1",
-          "prompt": {
-            "fr": "Écoute Mina, puis choisis la meilleure réponse."
-          },
-          "instruction": {
-            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
-          },
-          "objectiveIDs": [
-            "l62-understand"
-          ],
-          "required": true
-        },
-        "speaker": "Mina",
-        "promptText": "你对这张地图满意吗？",
-        "replies": [
-          {
-            "id": "a",
-            "hanzi": "走另一边吧，那里更容易。",
-            "pinyin": "zǒu lìng yì biān ba, nà lǐ gèng róng yì.",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "那个胖叔叔也在找车站。",
-            "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "我不太满意，但是这条路比较难。",
-            "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
-            "audio": null
-          }
-        ],
-        "correctReplyID": "c"
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "recognition",
-        "lessonDay": 58
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l62-translate-exa-1",
       "spec": {
         "kind": "translation",
@@ -1019,14 +975,14 @@
           },
           {
             "id": "g",
-            "hanzi": "着",
-            "pinyin": "zhe",
+            "hanzi": "地图",
+            "pinyin": "dì tú",
             "audio": null
           },
           {
             "id": "h",
-            "hanzi": "手机",
-            "pinyin": "shǒu jī",
+            "hanzi": "找",
+            "pinyin": "zhǎo",
             "audio": null
           },
           {
@@ -1072,27 +1028,122 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-fill-dia-3",
+      "id": "block-ex-l62-talk-1",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l62-fill-dia-3",
+          "id": "ex-l62-talk-1",
           "prompt": {
-            "fr": "Complète : 那个胖叔叔也在___车站。 (« Cet oncle corpulent cherche aussi la gare »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "你知道汉语课的教室在哪里吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "对，就是这里。你的手机可以休息了！",
+            "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有，老师坐着看书呢。",
+            "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你的手机上不是有地图吗？",
+            "pinyin": "nǐ de shǒu jī shàng bú shì yǒu dì tú ma?",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "c"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-translate-exa-2",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l62-translate-exa-2",
+          "prompt": {
+            "fr": "Traduis en chinois : « Mon téléphone est dans la chambre »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
           },
           "objectiveIDs": [
             "l62-produce"
           ],
           "required": true
         },
-        "sentence": "那个胖叔叔也在___车站。",
-        "acceptedAnswers": [
-          "找"
+        "tokens": [
+          {
+            "id": "f",
+            "hanzi": "着",
+            "pinyin": "zhe",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我的",
+            "pinyin": "wǒ de",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "手机",
+            "pinyin": "shǒu jī",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "房间",
+            "pinyin": "fáng jiān",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "地图",
+            "pinyin": "dì tú",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "acceptedOrders": []
       },
       "metadata": {
         "stage": "guided",
@@ -1102,11 +1153,59 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-dialogue-1-3",
+      "id": "block-ex-l62-talk-7",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l62-talk-7",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l62-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "教室里有人吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "我也不知道，这个学校太大了。我们一起找找吧。",
+            "pinyin": "wǒ yě bù zhī dào, zhè ge xué xiào tài dà le. wǒ men yì qǐ zhǎo zhao ba.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "有，老师坐着看书呢。",
+            "pinyin": "yǒu, lǎo shī zuò zhe kàn shū ne.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "对，就是这里。你的手机可以休息了！",
+            "pinyin": "duì, jiù shì zhè lǐ. nǐ de shǒu jī kě yǐ xiū xi le!",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "b"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 58
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l62-dialogue-1-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l62-dialogue-1-3",
+          "id": "ex-l62-dialogue-1-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1120,31 +1219,39 @@
         },
         "lines": [
           {
+            "id": "b",
+            "speaker": "Tao",
+            "hanzi": "你的手机上不是有地图吗？",
+            "pinyin": "nǐ de shǒu jī shàng bú shì yǒu dì tú ma?",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Tao",
+            "hanzi": "我也不知道，这个学校太大了。我们一起找找吧。",
+            "pinyin": "wǒ yě bù zhī dào, zhè ge xué xiào tài dà le. wǒ men yì qǐ zhǎo zhao ba.",
+            "audio": null
+          },
+          {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "那个胖叔叔也在找车站。",
-            "pinyin": "nà ge pàng shū shu yě zài zhǎo chē zhàn.",
+            "hanzi": "有，但是字太小了，我看不懂。",
+            "pinyin": "yǒu, dàn shì zì tài xiǎo le, wǒ kàn bu dǒng.",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "你对这张地图满意吗？",
-            "pinyin": "nǐ duì zhè zhāng dì tú mǎn yì ma?",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "speaker": "Tao",
-            "hanzi": "我不太满意，但是这条路比较难。",
-            "pinyin": "wǒ bú tài mǎn yì, dàn shì zhè tiáo lù bǐ jiào nán.",
+            "hanzi": "你知道汉语课的教室在哪里吗？",
+            "pinyin": "nǐ zhī dào hàn yǔ kè de jiào shì zài nǎ lǐ ma?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
       },
       "metadata": {
@@ -1155,99 +1262,113 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-read-exa-3",
+      "id": "block-ex-l62-fill-rea-2",
       "spec": {
-        "kind": "choice",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l62-read-exa-3",
+          "id": "ex-l62-fill-rea-2",
           "prompt": {
-            "fr": "Que signifie la phrase : 我在找我的手机。"
+            "fr": "Complète : 我看___手机上的地图找了十分钟，还是不知道。 (« J’ai cherché dix minutes avec la carte de mon téléphone sous les yeux, et je ne savais toujours pas »)"
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
-            "l62-understand"
+            "l62-produce"
           ],
           "required": true
         },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Prenons l’autre côté, c’est plus facile par là."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Je cherche mon téléphone."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "J’ai un cours l’après-midi."
-            },
-            "audio": null
-          }
+        "sentence": "我看___手机上的地图找了十分钟，还是不知道。",
+        "acceptedAnswers": [
+          "着"
         ],
-        "correctChoiceID": "b"
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 58
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l62-read-dia-3",
+      "id": "block-ex-l62-order-rea-4",
       "spec": {
-        "kind": "choice",
+        "kind": "wordOrder",
         "header": {
-          "id": "ex-l62-read-dia-3",
+          "id": "ex-l62-order-rea-4",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 那个胖叔叔也在找车站。"
+            "fr": "Construis « Nous sommes vite arrivés dans la salle »."
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
           },
           "objectiveIDs": [
-            "l62-understand"
+            "l62-produce"
           ],
           "required": true
         },
-        "choices": [
+        "tokens": [
           {
-            "id": "a",
-            "label": {
-              "fr": "Cet oncle corpulent cherche aussi la gare."
-            },
+            "id": "e",
+            "hanzi": "到",
+            "pinyin": "dào",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "了",
+            "pinyin": "le",
             "audio": null
           },
           {
             "id": "b",
-            "label": {
-              "fr": "Donne-moi une feuille, s’il te plaît."
-            },
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "教室",
+            "pinyin": "jiào shì",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "就",
+            "pinyin": "jiù",
             "audio": null
           },
           {
             "id": "c",
-            "label": {
-              "fr": "Es-tu satisfait de cette carte ?"
-            },
+            "hanzi": "快",
+            "pinyin": "kuài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g"
+        ],
+        "acceptedVariants": [
+          "我们很快就到了教室。",
+          "我们很快就到了教室"
+        ]
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 58
       }
     },
@@ -1259,7 +1380,7 @@
         "header": {
           "id": "ex-l62-listen",
           "prompt": {
-            "fr": "Quelle route choisissent-ils ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1269,31 +1390,31 @@
           ],
           "required": true
         },
-        "promptText": "走另一边吧，那里更容易。",
+        "promptText": "你的手机上不是有地图吗？",
         "choices": [
           {
             "id": "c",
             "label": {
-              "fr": "Ils rentrent chez eux."
+              "fr": "Oui, le professeur est assis en train de lire."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "La route difficile."
+              "fr": "Tu n’as pas une carte sur ton téléphone ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "L’autre route, plus facile."
+              "fr": "Regarde, la porte de cette salle est ouverte !"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1309,22 +1430,21 @@
         "header": {
           "id": "ex-l62-speak",
           "prompt": {
-            "fr": "Dis que tu comprends la carte."
+            "fr": "Dis « Regarde, la porte de cette salle est ouverte ! »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l62-produce"
           ],
           "required": false
         },
-        "referenceText": "你对这张地图满意吗？",
-        "referencePinyin": "nǐ duì zhè zhāng dì tú mǎn yì ma?",
+        "referenceText": "你看，那个教室的门开着！",
+        "referencePinyin": "nǐ kàn, nà ge jiào shì de mén kāi zhe!",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "你对这张地图满意吗？",
-          "你对这张地图满意吗"
+          "你看，那个教室的门开着！"
         ],
         "allowSelfRating": true
       },
@@ -1342,10 +1462,10 @@
         "header": {
           "id": "ex-l62-reading",
           "prompt": {
-            "fr": "Où vont Mina et Tao ?"
+            "fr": "Qui aide la personne à trouver la salle ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l62-understand"
@@ -1354,28 +1474,28 @@
         },
         "choices": [
           {
-            "id": "b",
+            "id": "a",
             "label": {
-              "fr": "À l’hôpital."
+              "fr": "Le professeur, qui l’attendait dans la salle."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Au supermarché."
+              "fr": "Un ami qui lui a prêté son téléphone."
             },
             "audio": null
           },
           {
-            "id": "a",
+            "id": "b",
             "label": {
-              "fr": "À la gare."
+              "fr": "Un élève qui allait au même cours."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1556,6 +1676,27 @@
       "tags": [
         "catalog"
       ]
+    },
+    {
+      "id": "card-vocab-x-5730-56fe",
+      "vocabularyID": "vocab-x-5730-56fe",
+      "front": {
+        "hanzi": "地图",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "地图",
+        "pinyin": "dì tú",
+        "text": {
+          "fr": "carte ; plan"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
     }
   ],
   "metadata": {
@@ -1570,7 +1711,8 @@
       "vocab-hsk20-212",
       "vocab-hsk20-246",
       "vocab-hsk20-291",
-      "vocab-hsk20-296"
+      "vocab-hsk20-296",
+      "vocab-x-5730-56fe"
     ],
     "reusedVocabularyIDs": [
       "vocab-hsk20-007",
@@ -1589,6 +1731,7 @@
       "hsk20-007"
     ],
     "grammarPattern": "比较 + adjectif",
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-212",
       "hsk20-246",
@@ -1607,7 +1750,9 @@
     "levelID": "level-02",
     "sectionID": "section-01",
     "unitID": "unit-09",
-    "newVocabularyCount": 4,
-    "extraVocabularyIDs": []
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": [
+      "vocab-x-5730-56fe"
+    ]
   }
 }

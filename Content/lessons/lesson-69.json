@@ -5,10 +5,10 @@
   "moduleID": "unit-09",
   "order": 92,
   "title": {
-    "fr": "Trouver son chemin au parc"
+    "fr": "Au marché du matin"
   },
   "summary": {
-    "fr": "Demander une indication malgré le vent et rendre un trajet progressivement plus clair."
+    "fr": "Tôt le matin, Tao entraîne Mina, encore endormie, au marché où un couple vend des fruits ; elle demande le prix de la pastèque."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 2",
@@ -317,6 +317,32 @@
         "level": 2
       },
       "traditionalHanzi": "近"
+    },
+    {
+      "id": "vocab-x-5e02-573a",
+      "hanzi": "市场",
+      "traditionalHanzi": "市場",
+      "pinyin": "shì chǎng",
+      "toneNumbers": [
+        4,
+        3
+      ],
+      "segmentation": [
+        {
+          "surface": "市场",
+          "vocabularyID": "vocab-x-5e02-573a",
+          "pinyin": "shì chǎng",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "partOfSpeech": "noun",
+      "grammarNotes": [],
+      "meaning": {
+        "fr": "marché"
+      },
+      "audio": null,
+      "example": null,
+      "memoryStory": null
     }
   ],
   "blocks": [
@@ -345,7 +371,8 @@
         "vocab-hsk20-234",
         "vocab-hsk20-165",
         "vocab-hsk20-171",
-        "vocab-hsk20-203"
+        "vocab-hsk20-203",
+        "vocab-x-5e02-573a"
       ],
       "metadata": {
         "stage": "observe",
@@ -357,38 +384,92 @@
       "id": "block-lesson-69-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "请把公园的地址说清楚。",
-          "pinyin": "qǐng bǎ gōng yuán de dì zhǐ shuō qīng chu.",
-          "translation": {
-            "fr": "Dis clairement l’adresse du parc, s’il te plaît."
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "从这里往北走，路就容易找了。",
-          "pinyin": "cóng zhè lǐ wǎng běi zǒu, lù jiù róng yì zhǎo le.",
+          "hanzi": "你走得太慢了，快点走！",
+          "pinyin": "nǐ zǒu de tài màn le, kuài diǎn zǒu!",
           "translation": {
-            "fr": "Depuis ici, va vers le nord et la route sera facile à trouver."
+            "fr": "Tu marches trop lentement, dépêche-toi !"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "今天刮风，带上地图很重要。",
-          "pinyin": "jīn tiān guā fēng, dài shàng dì tú hěn zhòng yào.",
+          "hanzi": "我今天六点起床，现在还想睡觉。",
+          "pinyin": "wǒ jīn tiān liù diǎn qǐ chuáng, xiàn zài hái xiǎng shuì jiào.",
           "translation": {
-            "fr": "Il y a du vent aujourd’hui ; il est important de prendre une carte."
+            "fr": "Je me suis levée à six heures aujourd’hui, et j’ai encore envie de dormir."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "公园越来越近了。",
-          "pinyin": "gōng yuán yuè lái yuè jìn le.",
+          "hanzi": "但是市场里的水果很新，也很便宜。",
+          "pinyin": "dàn shì shì chǎng lǐ de shuǐ guǒ hěn xīn, yě hěn pián yi.",
           "translation": {
-            "fr": "Le parc est de plus en plus proche."
+            "fr": "Mais les fruits du marché sont très frais, et pas chers."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "那个人在卖什么？",
+          "pinyin": "nà ge rén zài mài shén me?",
+          "translation": {
+            "fr": "Qu’est-ce qu’il vend, cet homme ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "他在卖西瓜，他的妻子在卖苹果。",
+          "pinyin": "tā zài mài xī guā, tā de qī zi zài mài píng guǒ.",
+          "translation": {
+            "fr": "Il vend des pastèques, et sa femme des pommes."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我去问问西瓜多少钱一公斤。",
+          "pinyin": "wǒ qù wèn wen xī guā duō shǎo qián yì gōng jīn.",
+          "translation": {
+            "fr": "Je vais demander combien coûte le kilo de pastèque."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "去吧，就在前面，很近。",
+          "pinyin": "qù ba, jiù zài qián miàn, hěn jìn.",
+          "translation": {
+            "fr": "Vas-y, c’est juste devant, tout près."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "三块一公斤，比商店便宜。他和妻子六点就起床了！",
+          "pinyin": "sān kuài yì gōng jīn, bǐ shāng diàn pián yi. tā hé qī zi liù diǎn jiù qǐ chuáng le!",
+          "translation": {
+            "fr": "Trois yuans le kilo, moins cher qu’au magasin. Lui et sa femme se sont levés dès six heures !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "那我们买两个吧。",
+          "pinyin": "nà wǒ men mǎi liǎng ge ba.",
+          "translation": {
+            "fr": "Alors achetons-en deux."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "好！早点起床，西瓜便宜，真不错！",
+          "pinyin": "hǎo! zǎo diǎn qǐ chuáng, xī guā pián yi, zhēn bú cuò!",
+          "translation": {
+            "fr": "D’accord ! Se lever tôt, des pastèques pas chères, c’est vraiment bien !"
           },
           "audio": null
         }
@@ -405,25 +486,25 @@
       "storyID": "story-lesson-69",
       "level": "HSK classique 2",
       "title": {
-        "fr": "L’adresse du parc"
+        "fr": "Un couple au marché"
       },
       "paragraphs": [
         {
           "id": "lesson-69-p1",
-          "hanzi": "刮风的时候，Tao把公园地址说得很清楚。",
-          "pinyin": "guā fēng de shí hou, Tao bǎ gōng yuán dì zhǐ shuō de hěn qīng chu.",
+          "hanzi": "卖西瓜的人和他的妻子起床很早。六点，他和妻子已经在市场里了。",
+          "pinyin": "mài xī guā de rén hé tā de qī zi qǐ chuáng hěn zǎo. liù diǎn, tā hé qī zi yǐ jīng zài shì chǎng lǐ le.",
           "translation": {
-            "fr": "Quand il y a du vent, Tao énonce clairement l’adresse du parc."
+            "fr": "Le vendeur de pastèques et sa femme se lèvent très tôt. À six heures, lui et sa femme sont déjà au marché."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-69-p2",
-          "hanzi": "他们往北走，公园越来越近。",
-          "pinyin": "tā men wǎng běi zǒu, gōng yuán yuè lái yuè jìn.",
+          "hanzi": "买东西的人很多，大家都走得很慢。有一个学生想知道西瓜多少钱一公斤。卖西瓜的人笑着告诉他，三块一公斤，很便宜。",
+          "pinyin": "mǎi dōng xi de rén hěn duō, dà jiā dōu zǒu de hěn màn. yǒu yí ge xué shēng xiǎng zhī dào xī guā duō shǎo qián yì gōng jīn. mài xī guā de rén xiào zhe gào su tā, sān kuài yì gōng jīn, hěn pián yi.",
           "translation": {
-            "fr": "Ils marchent vers le nord et le parc se rapproche de plus en plus."
+            "fr": "Il y a beaucoup de monde qui fait ses courses, et tout le monde avance lentement. Un étudiant voudrait savoir combien coûte le kilo de pastèque. Le vendeur lui répond en souriant : trois yuans le kilo, c’est très bon marché."
           },
           "segmentation": [],
           "audio": null
@@ -541,10 +622,10 @@
           },
           {
             "id": "e",
-            "left": "从",
-            "pinyin": "cóng",
+            "left": "市场",
+            "pinyin": "shì chǎng",
             "right": {
-              "fr": "depuis ; de"
+              "fr": "marché"
             }
           }
         ]
@@ -593,7 +674,7 @@
           {
             "id": "c",
             "label": {
-              "fr": "jìn"
+              "fr": "cóng"
             },
             "audio": null
           },
@@ -700,21 +781,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "起床 (qǐ chuáng)"
+              "fr": "市场 (shì chǎng)"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "卖 (mài)"
+              "fr": "起床 (qǐ chuáng)"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "慢 (màn)"
+              "fr": "卖 (mài)"
             },
             "audio": null
           }
@@ -729,64 +810,55 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l69-match-pinyin",
+      "id": "block-ex-l69-dict-zh-234",
       "spec": {
-        "kind": "matching",
+        "kind": "dictation",
         "header": {
-          "id": "ex-l69-match-pinyin",
+          "id": "ex-l69-dict-zh-234",
           "prompt": {
-            "fr": "Associe chaque mot à son pinyin."
+            "fr": "Écoute le mot, puis choisis les caractères."
           },
           "instruction": {
-            "fr": "Touche un mot, puis touche ce qui lui correspond."
+            "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
           },
           "objectiveIDs": [
             "l69-understand"
           ],
           "required": true
         },
-        "pairs": [
+        "script": "hanzi",
+        "promptText": "起床",
+        "choices": [
           {
             "id": "a",
-            "left": "得",
-            "pinyin": null,
-            "right": {
-              "fr": "de"
-            }
+            "label": {
+              "fr": "妻子"
+            },
+            "audio": null
           },
           {
             "id": "b",
-            "left": "近",
-            "pinyin": null,
-            "right": {
-              "fr": "jìn"
-            }
+            "label": {
+              "fr": "市场"
+            },
+            "audio": null
           },
           {
             "id": "c",
-            "left": "卖",
-            "pinyin": null,
-            "right": {
-              "fr": "mài"
-            }
+            "label": {
+              "fr": "正在"
+            },
+            "audio": null
           },
           {
             "id": "d",
-            "left": "慢",
-            "pinyin": null,
-            "right": {
-              "fr": "màn"
-            }
-          },
-          {
-            "id": "e",
-            "left": "妻子",
-            "pinyin": null,
-            "right": {
-              "fr": "qī zi"
-            }
+            "label": {
+              "fr": "起床"
+            },
+            "audio": null
           }
-        ]
+        ],
+        "correctChoiceID": "d"
       },
       "metadata": {
         "stage": "discover",
@@ -880,6 +952,138 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l69-translate-dia-4",
+      "spec": {
+        "kind": "translation",
+        "header": {
+          "id": "ex-l69-translate-dia-4",
+          "prompt": {
+            "fr": "Traduis en chinois : « Qu’est-ce qu’il vend, cet homme ? »"
+          },
+          "instruction": {
+            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
+          },
+          "objectiveIDs": [
+            "l69-produce"
+          ],
+          "required": true
+        },
+        "tokens": [
+          {
+            "id": "d",
+            "hanzi": "在",
+            "pinyin": "zài",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "那",
+            "pinyin": "nà",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "人",
+            "pinyin": "rén",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "卖",
+            "pinyin": "mài",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "什么",
+            "pinyin": "shén me",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "个",
+            "pinyin": "ge",
+            "audio": null
+          },
+          {
+            "id": "h",
+            "hanzi": "妻子",
+            "pinyin": "qī zi",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "慢",
+            "pinyin": "màn",
+            "audio": null
+          }
+        ],
+        "correctOrder": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "acceptedOrders": []
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "production",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l69-talk-4",
+      "spec": {
+        "kind": "conversationChoice",
+        "header": {
+          "id": "ex-l69-talk-4",
+          "prompt": {
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
+          },
+          "instruction": {
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
+          },
+          "objectiveIDs": [
+            "l69-understand"
+          ],
+          "required": true
+        },
+        "speaker": "Mina",
+        "promptText": "那个人在卖什么？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "他在卖西瓜，他的妻子在卖苹果。",
+            "pinyin": "tā zài mài xī guā, tā de qī zi zài mài píng guǒ.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "那我们买两个吧。",
+            "pinyin": "nà wǒ men mǎi liǎng ge ba.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去吧，就在前面，很近。",
+            "pinyin": "qù ba, jiù zài qián miàn, hěn jìn.",
+            "audio": null
+          }
+        ],
+        "correctReplyID": "a"
+      },
+      "metadata": {
+        "stage": "guided",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l69-translate-exa-1",
       "spec": {
         "kind": "translation",
@@ -899,8 +1103,8 @@
         "tokens": [
           {
             "id": "g",
-            "hanzi": "起床",
-            "pinyin": "qǐ chuáng",
+            "hanzi": "慢",
+            "pinyin": "màn",
             "audio": null
           },
           {
@@ -935,8 +1139,8 @@
           },
           {
             "id": "f",
-            "hanzi": "妻子",
-            "pinyin": "qī zi",
+            "hanzi": "市场",
+            "pinyin": "shì chǎng",
             "audio": null
           }
         ],
@@ -957,120 +1161,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l69-fill-exa-3",
-      "spec": {
-        "kind": "fillBlank",
-        "header": {
-          "id": "ex-l69-fill-exa-3",
-          "prompt": {
-            "fr": "Complète : 我的___在家。 (« Ma femme est à la maison »)"
-          },
-          "instruction": {
-            "fr": "Choisis le mot manquant."
-          },
-          "objectiveIDs": [
-            "l69-produce"
-          ],
-          "required": true
-        },
-        "sentence": "我的___在家。",
-        "acceptedAnswers": [
-          "妻子"
-        ],
-        "caseSensitive": false
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 65
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l69-translate-exa-2",
-      "spec": {
-        "kind": "translation",
-        "header": {
-          "id": "ex-l69-translate-exa-2",
-          "prompt": {
-            "fr": "Traduis en chinois : « Parle un peu plus lentement, s’il te plaît »"
-          },
-          "instruction": {
-            "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
-          },
-          "objectiveIDs": [
-            "l69-produce"
-          ],
-          "required": true
-        },
-        "tokens": [
-          {
-            "id": "d",
-            "hanzi": "点",
-            "pinyin": "diǎn",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "慢",
-            "pinyin": "màn",
-            "audio": null
-          },
-          {
-            "id": "g",
-            "hanzi": "起床",
-            "pinyin": "qǐ chuáng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "请",
-            "pinyin": "qǐng",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "一",
-            "pinyin": "yì",
-            "audio": null
-          },
-          {
-            "id": "e",
-            "hanzi": "说",
-            "pinyin": "shuō",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "卖",
-            "pinyin": "mài",
-            "audio": null
-          }
-        ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c",
-          "d",
-          "e"
-        ],
-        "acceptedOrders": []
-      },
-      "metadata": {
-        "stage": "guided",
-        "skill": "production",
-        "lessonDay": 65
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l69-order-exa-4",
+      "id": "block-ex-l69-order-exa-2",
       "spec": {
         "kind": "wordOrder",
         "header": {
-          "id": "ex-l69-order-exa-4",
+          "id": "ex-l69-order-exa-2",
           "prompt": {
-            "fr": "Construis « Je me lève à six heures chaque jour »."
+            "fr": "Construis « Parle un peu plus lentement, s’il te plaît »."
           },
           "instruction": {
             "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
@@ -1082,39 +1179,33 @@
         },
         "tokens": [
           {
-            "id": "e",
+            "id": "b",
+            "hanzi": "慢",
+            "pinyin": "màn",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "一",
+            "pinyin": "yì",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "audio": null
+          },
+          {
+            "id": "d",
             "hanzi": "点",
             "pinyin": "diǎn",
             "audio": null
           },
           {
-            "id": "d",
-            "hanzi": "六",
-            "pinyin": "liù",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "起床",
-            "pinyin": "qǐ chuáng",
-            "audio": null
-          },
-          {
-            "id": "a",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "天",
-            "pinyin": "tiān",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "每",
-            "pinyin": "měi",
+            "id": "e",
+            "hanzi": "说",
+            "pinyin": "shuō",
             "audio": null
           }
         ],
@@ -1123,12 +1214,11 @@
           "b",
           "c",
           "d",
-          "e",
-          "f"
+          "e"
         ],
         "acceptedVariants": [
-          "我每天六点起床。",
-          "我每天六点起床"
+          "请慢一点说。",
+          "请慢一点说"
         ]
       },
       "metadata": {
@@ -1139,11 +1229,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l69-dialogue-1-3",
+      "id": "block-ex-l69-dialogue-1-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l69-dialogue-1-3",
+          "id": "ex-l69-dialogue-1-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1157,81 +1247,40 @@
         },
         "lines": [
           {
-            "id": "c",
+            "id": "b",
             "speaker": "Mina",
-            "hanzi": "今天刮风，带上地图很重要。",
-            "pinyin": "jīn tiān guā fēng, dài shàng dì tú hěn zhòng yào.",
+            "hanzi": "我今天六点起床，现在还想睡觉。",
+            "pinyin": "wǒ jīn tiān liù diǎn qǐ chuáng, xiàn zài hái xiǎng shuì jiào.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "speaker": "Tao",
+            "hanzi": "但是市场里的水果很新，也很便宜。",
+            "pinyin": "dàn shì shì chǎng lǐ de shuǐ guǒ hěn xīn, yě hěn pián yi.",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "speaker": "Mina",
+            "hanzi": "那个人在卖什么？",
+            "pinyin": "nà ge rén zài mài shén me?",
             "audio": null
           },
           {
             "id": "a",
-            "speaker": "Mina",
-            "hanzi": "请把公园的地址说清楚。",
-            "pinyin": "qǐng bǎ gōng yuán de dì zhǐ shuō qīng chu.",
-            "audio": null
-          },
-          {
-            "id": "b",
             "speaker": "Tao",
-            "hanzi": "从这里往北走，路就容易找了。",
-            "pinyin": "cóng zhè lǐ wǎng běi zǒu, lù jiù róng yì zhǎo le.",
+            "hanzi": "你走得太慢了，快点走！",
+            "pinyin": "nǐ zǒu de tài màn le, kuài diǎn zǒu!",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 65
-      }
-    },
-    {
-      "kind": "exercise",
-      "id": "block-ex-l69-read-exa-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l69-read-exa-1",
-          "prompt": {
-            "fr": "Que signifie la phrase : 这家商店卖衣服。"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l69-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "L’école est très proche d’ici."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Ce magasin vend des vêtements."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Le parc est de plus en plus proche."
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1247,7 +1296,7 @@
         "header": {
           "id": "ex-l69-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 他们往北走，公园越来越___。 (« Ils marchent vers le nord et le parc se rapproche de plus en plus »)"
+            "fr": "Complète : ___西瓜的人和他的妻子起床很早。 (« Le vendeur de pastèques et sa femme se lèvent très tôt »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1257,9 +1306,9 @@
           ],
           "required": true
         },
-        "sentence": "他们往北走，公园越来越___。",
+        "sentence": "___西瓜的人和他的妻子起床很早。",
         "acceptedAnswers": [
-          "近"
+          "卖"
         ],
         "caseSensitive": false
       },
@@ -1271,13 +1320,62 @@
     },
     {
       "kind": "exercise",
+      "id": "block-ex-l69-read-rea-1",
+      "spec": {
+        "kind": "choice",
+        "header": {
+          "id": "ex-l69-read-rea-1",
+          "prompt": {
+            "fr": "Dans le texte « Un couple au marché », que signifie : 卖西瓜的人和他的妻子起床很早。"
+          },
+          "instruction": {
+            "fr": "Lis la phrase, puis choisis son sens."
+          },
+          "objectiveIDs": [
+            "l69-understand"
+          ],
+          "required": true
+        },
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Mais les fruits du marché sont très frais, et pas chers."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "D’accord ! Se lever tôt, des pastèques pas chères, c’est vraiment bien !"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Le vendeur de pastèques et sa femme se lèvent très tôt."
+            },
+            "audio": null
+          }
+        ],
+        "correctChoiceID": "c"
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "recognition",
+        "lessonDay": 65
+      }
+    },
+    {
+      "kind": "exercise",
       "id": "block-ex-l69-listen",
       "spec": {
         "kind": "listeningChoice",
         "header": {
           "id": "ex-l69-listen",
           "prompt": {
-            "fr": "Que devient la distance au parc ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1287,31 +1385,31 @@
           ],
           "required": true
         },
-        "promptText": "公园越来越近了。",
+        "promptText": "你走得太慢了，快点走！",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Le parc s’éloigne."
+              "fr": "Tu marches trop lentement, dépêche-toi !"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Le parc se rapproche."
+              "fr": "Vas-y, c’est juste devant, tout près."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Le parc ferme."
+              "fr": "Il vend des pastèques, et sa femme des pommes."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1327,22 +1425,21 @@
         "header": {
           "id": "ex-l69-speak",
           "prompt": {
-            "fr": "Dis l’adresse clairement."
+            "fr": "Dis « Je vais demander combien coûte le kilo de pastèque »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l69-produce"
           ],
           "required": false
         },
-        "referenceText": "请把公园的地址说清楚。",
-        "referencePinyin": "qǐng bǎ gōng yuán de dì zhǐ shuō qīng chu.",
+        "referenceText": "我去问问西瓜多少钱一公斤。",
+        "referencePinyin": "wǒ qù wèn wen xī guā duō shǎo qián yì gōng jīn.",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "请把公园的地址说清楚。",
-          "请把公园的地址说清楚"
+          "我去问问西瓜多少钱一公斤。"
         ],
         "allowSelfRating": true
       },
@@ -1360,10 +1457,10 @@
         "header": {
           "id": "ex-l69-reading",
           "prompt": {
-            "fr": "Dans quelle direction marchent-ils ?"
+            "fr": "Que font le vendeur de pastèques et sa femme ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l69-understand"
@@ -1374,21 +1471,21 @@
           {
             "id": "c",
             "label": {
-              "fr": "Vers le sud."
+              "fr": "Ils dorment tard le matin."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Vers le nord."
+              "fr": "Ils se lèvent tôt pour vendre au marché."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Vers l’ouest."
+              "fr": "Ils achètent des pastèques au marché."
             },
             "audio": null
           }
@@ -1574,6 +1671,27 @@
       "tags": [
         "catalog"
       ]
+    },
+    {
+      "id": "card-vocab-x-5e02-573a",
+      "vocabularyID": "vocab-x-5e02-573a",
+      "front": {
+        "hanzi": "市场",
+        "pinyin": null,
+        "text": null,
+        "audio": null
+      },
+      "back": {
+        "hanzi": "市场",
+        "pinyin": "shì chǎng",
+        "text": {
+          "fr": "marché"
+        },
+        "audio": null
+      },
+      "tags": [
+        "extra"
+      ]
     }
   ],
   "metadata": {
@@ -1588,7 +1706,8 @@
       "vocab-hsk20-220",
       "vocab-hsk20-221",
       "vocab-hsk20-233",
-      "vocab-hsk20-234"
+      "vocab-hsk20-234",
+      "vocab-x-5e02-573a"
     ],
     "reusedVocabularyIDs": [
       "vocab-hsk20-165",
@@ -1607,6 +1726,7 @@
       "hsk20-203"
     ],
     "grammarPattern": "越来越 + adjectif",
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-220",
       "hsk20-221",
@@ -1625,7 +1745,9 @@
     "levelID": "level-02",
     "sectionID": "section-01",
     "unitID": "unit-09",
-    "newVocabularyCount": 4,
-    "extraVocabularyIDs": []
+    "newVocabularyCount": 5,
+    "extraVocabularyIDs": [
+      "vocab-x-5e02-573a"
+    ]
   }
 }

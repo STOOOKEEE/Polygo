@@ -3,7 +3,9 @@
 Le contenu linguistique est écrit dans un pack d'authoring puis transformé en
 JSON embarqué par `Tools/content_tool.py`. Le générateur ne produit aucun
 hanzi, pinyin, exemple ou scénario : chaque entrée doit venir du pack fourni
-par l'équipe contenu. Il ne remplace pas non plus la validation linguistique.
+par l'équipe contenu, et le dialogue, la lecture et les exercices de clôture des
+66 séances du jour viennent des scènes écrites à la main (voir « Situations écrites
+à la main »). Il ne remplace pas non plus la validation linguistique.
 Les exercices supplémentaires d'une séance (voir « Budget d'exercices ») sont
 seulement recombinés à partir de ce matériel.
 
@@ -90,7 +92,7 @@ Les champs linguistiques sont les suivants :
 
 ## Budget d'exercices d'une séance quotidienne
 
-Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 dans le
+Chaque leçon `lesson-05` à `lesson-70` livre entre 15 et 20 exercices (18 dans le
 contenu actuel) répartis en trois phases
 ordonnées. La phase est portée par le `metadata.stage` de chaque bloc
 `exercise` ; les blocs d'introduction, vocabulaire, dialogue, lecture et bilan
@@ -102,9 +104,10 @@ gardent leur étape éditoriale.
 | `guided` | 6 à 7 | traduction par tuiles (`translation`), mini-conversation (`conversationChoice`), remise en ordre, phrase à trous, écoute de répliques |
 | `reuse` | 5 à 6 | remise en ordre du dialogue (`dialogueOrder`), phrases du texte ou du dialogue (trou, sens), oral, puis l'écoute, l'oral et la lecture écrits dans le pack |
 
-Les six exercices écrits dans le pack (`meaning`, `order`, `fill`, `listen`,
-`speak`, `reading`) sont conservés tels quels avec leurs IDs ; `listen`,
-`speak` et `reading` ferment toujours la séance. Les autres sont choisis par
+Les six exercices du pack (`meaning`, `order`, `fill`, `listen`, `speak`,
+`reading`) gardent leurs IDs ; `listen`, `speak` et `reading` ferment toujours la
+séance, et leur texte est celui de la scène écrite à la main (`meaning`, `order` et `fill`
+restent ceux du pack). Les autres sont choisis par
 `Tools/exercise_expansion.py` lors de `content_tool.py generate`, à partir des
 seules données de la leçon : sens et exemples du vocabulaire, répliques du
 dialogue et phrases du texte. Le générateur n'écrit donc aucun hanzi, pinyin ou
@@ -192,6 +195,14 @@ fragment des jours 6 à 66 dont le vocabulaire diffère de l'allocation.
 `content_tool.py generate` pose ensuite les scènes de `Content/authoring/situations/`
 sur les leçons du pack (voir « Situations écrites à la main »).
 
+Le dialogue, la lecture et les exercices `listen`, `speak` et `reading` des
+fragments ne sont donc plus ce que voit l'apprenant : la scène les remplace à
+`generate`. Ils restent pourtant l'entrée de l'allocation, qui y lit quels mots
+chaque séance emploie pour décider où les introduire ; les supprimer déplacerait
+des mots d'une séance à l'autre et ferait échouer les scènes déjà écrites, puisque
+leur vocabulaire autorisé suit cette allocation. Changer l'allocation, c'est donc
+récrire les scènes concernées.
+
 Chaque mot nouveau est présenté par au moins trois exercices de la séance, d'au
 moins trois familles différentes (`choice`, `listeningChoice`, `wordOrder`,
 `fillBlank`, `speaking`, `matching`, `dictation`, `toneDiscrimination`,
@@ -223,8 +234,9 @@ Le dialogue, la lecture et les trois exercices de clôture (`listen`, `speak`,
 `reading`) d'une séance quotidienne s'écrivent à la main, une scène concrète par
 leçon, dans `Content/authoring/situations/unit-NN.json` ; `Tools/situations.py` les
 lit, les contrôle et les pose sur la leçon à `content_tool.py generate`, à la place du
-texte assemblé. Une leçon sans scène garde son texte assemblé ; `lint --require-situations`
-(et `generate --require-situations`) exige les 66 scènes.
+texte assemblé. Les 66 séances du jour (`lesson-05` à `lesson-70`) ont
+toutes leur scène : `generate` refuse un pack qui liste une séance du jour sans scène, et `lint`
+refuse un bundle où l'une manque.
 
 `NN` est le rang de l'unité parmi les huit unités quotidiennes (l'unité `unit-02` du
 parcours s'écrit dans `unit-01.json`) : `unit-01` leçons 5–12, `unit-02` 13–20,
@@ -284,7 +296,9 @@ de la leçon, et les exercices `ex-lNN-listen`, `ex-lNN-speak` et celui que la l
 référence : les IDs des blocs, de l'histoire, de l'exercice et
 `comprehensionExerciseIDs` restent ceux du pack, et `metadata.situationAuthored` vaut
 `true`. Les distracteurs de l'écoute sont les traductions d'autres répliques (les plus
-proches en longueur) : deux répliques ne se traduisent donc pas par la même phrase. Un mot
+proches en longueur) : deux répliques ne se traduisent donc pas par la même phrase. La bonne
+réponse de l'écoute et celle de la question de lecture passent en tête (les IDs `a`, `b`, `c` restent
+ceux de la scène), puis la rotation déterministe des exercices de choix fait varier leur position. Un mot
 glosé prend l'ID `vocab-x-<code hexadécimal du hanzi>` (`vocab-x-997f` pour 饿) ; un
 même mot glosé dans deux leçons doit l'être de la même façon. Les exercices `meaning`,
 `order` et `fill` du pack, la grammaire et les révisions dérivées ne changent pas de
@@ -320,7 +334,7 @@ python3 Tools/content_tool.py situation-brief --lesson lesson-NN   # tout ce qu'
 python3 Tools/content_tool.py situations-lint --file Content/authoring/situations/unit-NN.json
 python3 Tools/content_tool.py situations-lint --file … --pinyin-check   # facultatif : pypinyin
 python3 Tools/content_tool.py generate --input Content/authoring/90-day-authoring.json --root Content
-python3 Tools/content_tool.py lint --root Content [--require-situations]
+python3 Tools/content_tool.py lint --root Content   # exige les 66 scènes
 ```
 
 `situation-brief` affiche l'unité et le fichier, le thème et le résumé actuels, les mots
@@ -343,6 +357,13 @@ régénéré est aussi comparé aux fichiers de scènes : modifier une scène sa
 * Mina et Tao mènent le dialogue et s'alternent (le premier locuteur est à gauche dans l'application) ;
   `An` et `Lin` peuvent apparaître, à trois voix au plus. Le lecteur a déjà rencontré Mina et Tao :
   reprenez leurs goûts et leurs habitudes (voir « Personnages » du brief) sans les contredire.
+* Les prénoms s'écrivent en lettres latines, à l'identique dans le hanzi et dans le pinyin
+  (`你好，Tao！` / `nǐ hǎo, Tao!`, `Tao的生日` / `Tao de shēng rì`), au plus deux répliques par
+  dialogue ; jamais dans `listenSentence` ni `speakSentence`, lus à voix haute en mandarin.
+* Continuité : la famille de Tao compte une grande sœur (médecin), un grand frère (en France),
+  une petite sœur et un petit frère ; Mina a un grand frère (en Chine) et une grande sœur, ses
+  parents et le chat Baibai (白白) sont en France ; An est un ami et Lin une amie de Tao. Les autres rôles
+  (vendeur, médecin, serveur, chauffeur) prennent le nom de `An` ou de `Lin` sans reprendre leur histoire.
 * Employez tous les mots nouveaux, et réemployez des mots vus plus tôt : c'est ce qui les fait vivre.
   Les mots enseignés plus tard, même très courants (好, 很, 的), sont interdits : contournez-les.
 * La lecture n'est pas le dialogue récrit : un petit texte à part (un message, une note, un récit

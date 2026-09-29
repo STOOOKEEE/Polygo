@@ -5,10 +5,10 @@
   "moduleID": "unit-04",
   "order": 40,
   "title": {
-    "fr": "Une invitation chaleureuse"
+    "fr": "Bienvenue chez Tao"
   },
   "summary": {
-    "fr": "Accueillir un invité, décrire un repas et exprimer une concession."
+    "fr": "Mina vient chez Tao pour la première fois : il l’accueille, lui offre du thé dans la tasse de sa sœur et lui sert le repas qu’il a préparé."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 1",
@@ -357,56 +357,83 @@
       "id": "block-lesson-27-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "欢迎你来我家！",
-          "pinyin": "huān yíng nǐ lái wǒ jiā！",
-          "translation": {
-            "fr": "Bienvenue chez moi !"
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "谢谢。这个菜好吃吗？",
-          "pinyin": "xiè xiè。 zhè ge cài hǎo chī ma？",
+          "hanzi": "欢迎，欢迎！请坐。",
+          "pinyin": "huān yíng, huān yíng! qǐng zuò.",
           "translation": {
-            "fr": "Merci. Ce plat est-il bon ?"
+            "fr": "Bienvenue, bienvenue ! Assieds-toi."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "非常好吃，但是有一点辣。",
-          "pinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
+          "hanzi": "谢谢！你家很大，我没来过。",
+          "pinyin": "xiè xie! nǐ jiā hěn dà, wǒ méi lái guo.",
           "translation": {
-            "fr": "Il est très bon, mais un peu épicé."
+            "fr": "Merci ! Ta maison est grande, je n’étais jamais venue."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我吃了两公斤？",
-          "pinyin": "wǒ chī le liǎng gōng jīn？",
+          "hanzi": "你喝茶吗？这个杯子是我姐姐的。",
+          "pinyin": "nǐ hē chá ma? zhè ge bēi zi shì wǒ jiě jie de.",
           "translation": {
-            "fr": "J’en ai mangé deux kilos ?"
+            "fr": "Tu bois du thé ? Cette tasse est celle de ma sœur."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "不，只有一点。你给客人红茶吧。",
-          "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
+          "hanzi": "喝，谢谢！这个红杯子很大。",
+          "pinyin": "hē, xiè xie! zhè ge hóng bēi zi hěn dà.",
           "translation": {
-            "fr": "Non, seulement un peu. Donne plutôt du thé rouge à l’invité."
+            "fr": "Oui, merci ! Cette tasse rouge est très grande."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "好，我告诉他黑色的杯子在哪里。",
-          "pinyin": "hǎo， wǒ gào sù tā hēi sè de bēi zi zài nǎ lǐ。",
+          "hanzi": "我姐姐的杯子都很大。菜在桌子上，请吃！",
+          "pinyin": "wǒ jiě jie de bēi zi dōu hěn dà. cài zài zhuō zi shàng, qǐng chī!",
           "translation": {
-            "fr": "D’accord, je lui dis où est la tasse noire."
+            "fr": "Les tasses de ma sœur sont toutes grandes. Le repas est sur la table, mange !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "这个菜是你做的吗？",
+          "pinyin": "zhè ge cài shì nǐ zuò de ma?",
+          "translation": {
+            "fr": "C’est toi qui as préparé ce plat ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "是！我做了鱼和菜，不多，请吃。",
+          "pinyin": "shì! wǒ zuò le yú hé cài, bù duō, qǐng chī.",
+          "translation": {
+            "fr": "Oui ! J’ai fait du poisson et des légumes, ce n’est pas beaucoup, mais mange."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "不多？太多了！谢谢你的欢迎。",
+          "pinyin": "bù duō? tài duō le! xiè xie nǐ de huān yíng.",
+          "translation": {
+            "fr": "Pas beaucoup ? C’est énorme ! Merci pour ton accueil."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "不客气！你是我的朋友。",
+          "pinyin": "bú kè qi! nǐ shì wǒ de péng you.",
+          "translation": {
+            "fr": "De rien ! Tu es mon amie."
           },
           "audio": null
         }
@@ -423,25 +450,25 @@
       "storyID": "story-lesson-27",
       "level": "HSK classique 1",
       "title": {
-        "fr": "Chez un ami"
+        "fr": "Chez mon ami"
       },
       "paragraphs": [
         {
           "id": "lesson-27-p1",
-          "hanzi": "朋友欢迎客人到家里，桌子上有好吃的菜和红茶。",
-          "pinyin": "péng yǒu huān yíng kè rén dào jiā lǐ， zhuō zi shàng yǒu hǎo chī de cài hé hóng chá。",
+          "hanzi": "今天我去朋友家。他家很大，桌子上有一个红杯子。",
+          "pinyin": "jīn tiān wǒ qù péng you jiā. tā jiā hěn dà, zhuō zi shàng yǒu yī gè hóng bēi zi.",
           "translation": {
-            "fr": "Un ami accueille un invité chez lui ; il y a de bons plats et du thé rouge sur la table."
+            "fr": "Aujourd’hui je vais chez un ami. Sa maison est grande et il y a une tasse rouge sur la table."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-27-p2",
-          "hanzi": "菜非常好吃，但是客人只吃了一点。他用黑色的杯子喝茶。",
-          "pinyin": "cài fēi cháng hǎo chī， dàn shì kè rén zhǐ chī le yì diǎn。 tā yòng hēi sè de bēi zi hē chá。",
+          "hanzi": "他欢迎我，请我喝茶。菜很多，我也吃了很多。",
+          "pinyin": "tā huān yíng wǒ, qǐng wǒ hē chá. cài hěn duō, wǒ yě chī le hěn duō.",
           "translation": {
-            "fr": "Les plats sont très bons, mais l’invité n’en mange qu’un peu. Il boit le thé dans une tasse noire."
+            "fr": "Il m’accueille et m’invite à boire du thé. Il y a beaucoup de plats, et j’en ai beaucoup mangé."
           },
           "segmentation": [],
           "audio": null
@@ -575,13 +602,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-dict-py-004",
+      "id": "block-ex-l27-dict-sent-dia-4",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l27-dict-py-004",
+          "id": "ex-l27-dict-sent-dia-4",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son pinyin."
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -592,38 +619,31 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "杯子",
+        "promptText": "喝，谢谢！这个红杯子很大。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "huān yíng"
+              "fr": "hē, xiè xie! zhè ge hóng bēi zi hěn dà."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "lǎo shī"
+              "fr": "xiè xie! nǐ jiā hěn dà, wǒ méi lái guo."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "yóu yǒng"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "bēi zi"
+              "fr": "shì! wǒ zuò le yú hé cài, bù duō, qǐng chī."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "discover",
@@ -633,13 +653,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-tone-037",
+      "id": "block-ex-l27-tone-004",
       "spec": {
         "kind": "toneDiscrimination",
         "header": {
-          "id": "ex-l27-tone-037",
+          "id": "ex-l27-tone-004",
           "prompt": {
-            "fr": "Écoute la syllabe, puis choisis son ton."
+            "fr": "Écoute le mot, puis choisis ses deux tons."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis la mélodie que tu entends."
@@ -649,38 +669,38 @@
           ],
           "required": true
         },
-        "promptText": "喝",
+        "promptText": "杯子",
         "choices": [
           {
-            "id": "t1",
+            "id": "t10",
             "label": {
-              "fr": "Ton 1 ¯ (haut et plat)"
+              "fr": "Ton 1 ¯ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t2",
+            "id": "t14",
             "label": {
-              "fr": "Ton 2 ˊ (montant)"
+              "fr": "Ton 1 ¯ puis ton 4 ˋ"
             },
             "audio": null
           },
           {
-            "id": "t3",
+            "id": "t30",
             "label": {
-              "fr": "Ton 3 ˇ (descend puis remonte)"
+              "fr": "Ton 3 ˇ puis ton neutre"
             },
             "audio": null
           },
           {
-            "id": "t4",
+            "id": "t40",
             "label": {
-              "fr": "Ton 4 ˋ (descendant)"
+              "fr": "Ton 4 ˋ puis ton neutre"
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "t1"
+        "correctChoiceID": "t10"
       },
       "metadata": {
         "stage": "discover",
@@ -898,13 +918,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-translate-dia-1",
+      "id": "block-ex-l27-translate-exa-3",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l27-translate-dia-1",
+          "id": "ex-l27-translate-exa-3",
           "prompt": {
-            "fr": "Traduis en chinois : « Bienvenue chez moi ! »"
+            "fr": "Traduis en chinois : « Bois-tu de l’eau ? »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -916,45 +936,39 @@
         },
         "tokens": [
           {
-            "id": "d",
-            "hanzi": "我",
-            "pinyin": "wǒ",
-            "audio": null
-          },
-          {
             "id": "f",
-            "hanzi": "菜",
-            "pinyin": "cài",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "来",
-            "pinyin": "lái",
-            "audio": null
-          },
-          {
-            "id": "a",
             "hanzi": "欢迎",
             "pinyin": "huān yíng",
             "audio": null
           },
           {
-            "id": "e",
-            "hanzi": "家",
-            "pinyin": "jiā",
-            "audio": null
-          },
-          {
-            "id": "g",
+            "id": "b",
             "hanzi": "喝",
             "pinyin": "hē",
             "audio": null
           },
           {
-            "id": "b",
+            "id": "e",
+            "hanzi": "菜",
+            "pinyin": "cài",
+            "audio": null
+          },
+          {
+            "id": "a",
             "hanzi": "你",
             "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "水",
+            "pinyin": "shuǐ",
+            "audio": null
+          },
+          {
+            "id": "d",
+            "hanzi": "吗",
+            "pinyin": "ma",
             "audio": null
           }
         ],
@@ -962,8 +976,7 @@
           "a",
           "b",
           "c",
-          "d",
-          "e"
+          "d"
         ],
         "acceptedOrders": []
       },
@@ -975,13 +988,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-talk-2",
+      "id": "block-ex-l27-talk-6",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l27-talk-2",
+          "id": "ex-l27-talk-6",
           "prompt": {
-            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -991,25 +1004,25 @@
           ],
           "required": true
         },
-        "speaker": "Tao",
-        "promptText": "谢谢。这个菜好吃吗？",
+        "speaker": "Mina",
+        "promptText": "这个菜是你做的吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "不，只有一点。你给客人红茶吧。",
-            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
+            "hanzi": "你喝茶吗？这个杯子是我姐姐的。",
+            "pinyin": "nǐ hē chá ma? zhè ge bēi zi shì wǒ jiě jie de.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "非常好吃，但是有一点辣。",
-            "pinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
+            "hanzi": "是！我做了鱼和菜，不多，请吃。",
+            "pinyin": "shì! wǒ zuò le yú hé cài, bù duō, qǐng chī.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "欢迎你来我家！",
-            "pinyin": "huān yíng nǐ lái wǒ jiā！",
+            "hanzi": "我姐姐的杯子都很大。菜在桌子上，请吃！",
+            "pinyin": "wǒ jiě jie de bēi zi dōu hěn dà. cài zài zhuō zi shàng, qǐng chī!",
             "audio": null
           }
         ],
@@ -1168,11 +1181,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-dialogue-4-3",
+      "id": "block-ex-l27-dialogue-1-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l27-dialogue-4-3",
+          "id": "ex-l27-dialogue-1-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1186,24 +1199,24 @@
         },
         "lines": [
           {
+            "id": "b",
+            "speaker": "Mina",
+            "hanzi": "谢谢！你家很大，我没来过。",
+            "pinyin": "xiè xie! nǐ jiā hěn dà, wǒ méi lái guo.",
+            "audio": null
+          },
+          {
             "id": "a",
             "speaker": "Tao",
-            "hanzi": "我吃了两公斤？",
-            "pinyin": "wǒ chī le liǎng gōng jīn？",
+            "hanzi": "欢迎，欢迎！请坐。",
+            "pinyin": "huān yíng, huān yíng! qǐng zuò.",
             "audio": null
           },
           {
             "id": "c",
             "speaker": "Tao",
-            "hanzi": "好，我告诉他黑色的杯子在哪里。",
-            "pinyin": "hǎo， wǒ gào sù tā hēi sè de bēi zi zài nǎ lǐ。",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "speaker": "Mina",
-            "hanzi": "不，只有一点。你给客人红茶吧。",
-            "pinyin": "bù， zhǐ yǒu yì diǎn。 nǐ gěi kè rén hóng chá ba。",
+            "hanzi": "你喝茶吗？这个杯子是我姐姐的。",
+            "pinyin": "nǐ hē chá ma? zhè ge bēi zi shì wǒ jiě jie de.",
             "audio": null
           }
         ],
@@ -1221,13 +1234,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-fill-rea-1",
+      "id": "block-ex-l27-fill-rea-3",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l27-fill-rea-1",
+          "id": "ex-l27-fill-rea-3",
           "prompt": {
-            "fr": "Complète : 朋友___客人到家里，桌子上有好吃的菜和红茶。 (« Un ami accueille un invité chez lui ; il y a de bons plats et du thé rouge sur la table »)"
+            "fr": "Complète : 他___我，请我喝茶。 (« Il m’accueille et m’invite à boire du thé »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1237,7 +1250,7 @@
           ],
           "required": true
         },
-        "sentence": "朋友___客人到家里，桌子上有好吃的菜和红茶。",
+        "sentence": "他___我，请我喝茶。",
         "acceptedAnswers": [
           "欢迎"
         ],
@@ -1251,31 +1264,50 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l27-fill-rea-3",
+      "id": "block-ex-l27-read-dia-3",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "choice",
         "header": {
-          "id": "ex-l27-fill-rea-3",
+          "id": "ex-l27-read-dia-3",
           "prompt": {
-            "fr": "Complète : 他用黑色的___喝茶。 (« Il boit le thé dans une tasse noire »)"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 你喝茶吗？这个杯子是我姐姐的。"
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Lis la phrase, puis choisis son sens."
           },
           "objectiveIDs": [
-            "l27-produce"
+            "l27-understand"
           ],
           "required": true
         },
-        "sentence": "他用黑色的___喝茶。",
-        "acceptedAnswers": [
-          "杯子"
+        "choices": [
+          {
+            "id": "a",
+            "label": {
+              "fr": "Tu bois du thé ? Cette tasse est celle de ma sœur."
+            },
+            "audio": null
+          },
+          {
+            "id": "b",
+            "label": {
+              "fr": "Il m’accueille et m’invite à boire du thé."
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
+            "label": {
+              "fr": "Je suis déjà allé à Pékin."
+            },
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 23
       }
     },
@@ -1287,7 +1319,7 @@
         "header": {
           "id": "ex-l27-listen",
           "prompt": {
-            "fr": "Quelle boisson Tao doit-il donner ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1297,31 +1329,31 @@
           ],
           "required": true
         },
-        "promptText": "你给客人红茶吧。",
+        "promptText": "我做了鱼和菜，不多，请吃。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "Du lait."
+              "fr": "J’ai fait du poisson et des légumes, ce n’est pas beaucoup, mais mange."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Du thé rouge."
+              "fr": "Les tasses de ma sœur sont toutes grandes. Le repas est sur la table, mange !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Du café."
+              "fr": "Merci ! Ta maison est grande, je n’étais jamais venue."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1337,21 +1369,21 @@
         "header": {
           "id": "ex-l27-speak",
           "prompt": {
-            "fr": "Dis « Le plat est très bon, mais un peu épicé ». "
+            "fr": "Dis « C’est toi qui as préparé ce plat ? »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l27-produce"
           ],
           "required": false
         },
-        "referenceText": "非常好吃，但是有一点辣。",
-        "referencePinyin": "fēi cháng hǎo chī， dàn shì yǒu yì diǎn là。",
+        "referenceText": "这个菜是你做的吗？",
+        "referencePinyin": "zhè ge cài shì nǐ zuò de ma?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "非常好吃，但是有一点辣。"
+          "这个菜是你做的吗？"
         ],
         "allowSelfRating": true
       },
@@ -1369,10 +1401,10 @@
         "header": {
           "id": "ex-l27-reading",
           "prompt": {
-            "fr": "Dans quoi l’invité boit-il le thé ?"
+            "fr": "Qu’y a-t-il sur la table ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l27-understand"
@@ -1383,26 +1415,26 @@
           {
             "id": "c",
             "label": {
-              "fr": "Une bouteille rouge."
-            },
-            "audio": null
-          },
-          {
-            "id": "a",
-            "label": {
-              "fr": "Une tasse noire."
+              "fr": "Un livre."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Un verre blanc."
+              "fr": "Une tasse rouge."
+            },
+            "audio": null
+          },
+          {
+            "id": "a",
+            "label": {
+              "fr": "Une tasse bleue."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "reuse",
@@ -1611,6 +1643,7 @@
       "hsk20-139",
       "hsk20-142"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-004",
       "hsk20-009",

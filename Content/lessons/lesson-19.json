@@ -5,10 +5,10 @@
   "moduleID": "unit-03",
   "order": 30,
   "title": {
-    "fr": "À l’hôpital"
+    "fr": "Visite à l’hôpital"
   },
   "summary": {
-    "fr": "Décrire un état de santé et distinguer plusieurs degrés de température."
+    "fr": "Tao est malade : Mina lui rend visite à l’hôpital et lui apporte du lait."
   },
   "estimatedMinutes": 12,
   "level": "HSK classique 1",
@@ -359,55 +359,91 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "你的身体怎么样？",
-          "pinyin": "nǐ de shēn tǐ zěn me yàng？",
+          "hanzi": "你在医院！你生病了吗？",
+          "pinyin": "nǐ zài yī yuàn! nǐ shēng bìng le ma?",
           "translation": {
-            "fr": "Comment vas-tu ?"
+            "fr": "Tu es à l’hôpital ! Tu es tombé malade ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我生病了，今天很冷。",
-          "pinyin": "wǒ shēng bìng le， jīn tiān hěn lěng。",
+          "hanzi": "是，我身体很热，不想吃米饭。",
+          "pinyin": "shì, wǒ shēn tǐ hěn rè, bù xiǎng chī mǐ fàn.",
           "translation": {
-            "fr": "Je suis malade, il fait très froid aujourd’hui."
+            "fr": "Oui, j’ai de la fièvre et je n’ai pas envie de manger du riz."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "医院里热吗？",
-          "pinyin": "yī yuàn lǐ rè ma？",
+          "hanzi": "你妈妈来过了吗？",
+          "pinyin": "nǐ mā ma lái guo le ma?",
           "translation": {
-            "fr": "Fait-il chaud dans l’hôpital ?"
+            "fr": "Ta maman est déjà venue ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "里面很暖，我觉得好多了。",
-          "pinyin": "lǐ miàn hěn nuǎn， wǒ jué de hǎo duō le。",
+          "hanzi": "来过了。我要在医院多喝水。",
+          "pinyin": "lái guo le. wǒ yào zài yī yuàn duō hē shuǐ.",
           "translation": {
-            "fr": "Il fait bien chaud à l’intérieur, je me sens beaucoup mieux."
+            "fr": "Oui. Je dois rester à l’hôpital et boire beaucoup d’eau."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "医生给你什么药？",
-          "pinyin": "yī shēng gěi nǐ shén me yào？",
+          "hanzi": "我买了牛奶，你也多喝牛奶。",
+          "pinyin": "wǒ mǎi le niú nǎi, nǐ yě duō hē niú nǎi.",
           "translation": {
-            "fr": "Quel médicament le médecin te donne-t-il ?"
+            "fr": "J’ai acheté du lait, bois-en beaucoup toi aussi."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "给我药。我希望很快好起来。",
-          "pinyin": "gěi wǒ yào。 wǒ xī wàng hěn kuài hǎo qǐ lái。",
+          "hanzi": "谢谢！牛奶热吗？我不喝热的。",
+          "pinyin": "xiè xie! niú nǎi rè ma? wǒ bù hē rè de.",
           "translation": {
-            "fr": "Il me donne un médicament. J’espère aller mieux rapidement."
+            "fr": "Merci ! Il est chaud, le lait ? Je n’en bois pas de chaud."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "不热。你爸爸呢？",
+          "pinyin": "bú rè. nǐ bà ba ne?",
+          "translation": {
+            "fr": "Non, il n’est pas chaud. Et ton papa ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我爸爸下午来。",
+          "pinyin": "wǒ bà ba xià wǔ lái.",
+          "translation": {
+            "fr": "Mon papa vient cet après-midi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "多喝水，明天你的身体不热了，你能回家！",
+          "pinyin": "duō hē shuǐ, míng tiān nǐ de shēn tǐ bú rè le, nǐ néng huí jiā!",
+          "translation": {
+            "fr": "Bois beaucoup d’eau : demain tu n’auras plus de fièvre et tu pourras rentrer !"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "明天回家，我很想吃米饭！",
+          "pinyin": "míng tiān huí jiā, wǒ hěn xiǎng chī mǐ fàn!",
+          "translation": {
+            "fr": "Rentrer demain, j’ai très envie de manger du riz !"
           },
           "audio": null
         }
@@ -424,25 +460,25 @@
       "storyID": "story-lesson-19",
       "level": "HSK classique 1",
       "title": {
-        "fr": "Une visite à l’hôpital"
+        "fr": "Un ami à l’hôpital"
       },
       "paragraphs": [
         {
           "id": "lesson-19-p1",
-          "hanzi": "Tao生病了，身体不舒服，所以去医院看医生。",
-          "pinyin": "Tao shēng bìng le， shēn tǐ bù shū fú， suǒ yǐ qù yī yuàn kàn yī shēng。",
+          "hanzi": "今天我的朋友生病了，他在医院。医院里的人很多，我朋友的妈妈也在那里。",
+          "pinyin": "jīn tiān wǒ de péng you shēng bìng le, tā zài yī yuàn. yī yuàn lǐ de rén hěn duō, wǒ péng you de mā ma yě zài nà lǐ.",
           "translation": {
-            "fr": "Tao est malade et ne se sent pas bien, alors il va à l’hôpital voir le médecin."
+            "fr": "Aujourd’hui, mon ami est tombé malade et il est à l’hôpital. Il y a beaucoup de monde à l’hôpital, et la maman de mon ami est là aussi."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-19-p2",
-          "hanzi": "外面很冷，医院里面很热。医生给他药，他希望明天好起来。",
-          "pinyin": "wài miàn hěn lěng， yī yuàn lǐ miàn hěn rè。 yī shēng gěi tā yào， tā xī wàng míng tiān hǎo qǐ lái。",
+          "hanzi": "我朋友的身体很热，他不吃米饭。我买了牛奶，请他喝。明天我也来医院。",
+          "pinyin": "wǒ péng you de shēn tǐ hěn rè, tā bù chī mǐ fàn. wǒ mǎi le niú nǎi, qǐng tā hē. míng tiān wǒ yě lái yī yuàn.",
           "translation": {
-            "fr": "Il fait froid dehors et chaud dans l’hôpital. Le médecin lui donne un médicament ; il espère aller mieux demain."
+            "fr": "Mon ami a de la fièvre et ne mange pas de riz. J’ai acheté du lait et je lui propose d’en boire. Demain, je viendrai aussi à l’hôpital."
           },
           "segmentation": [],
           "audio": null
@@ -576,13 +612,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l19-dict-py-024",
+      "id": "block-ex-l19-dict-sent-dia-4",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l19-dict-py-024",
+          "id": "ex-l19-dict-sent-dia-4",
           "prompt": {
-            "fr": "Écoute le mot, puis choisis son pinyin."
+            "fr": "Écoute la phrase, puis choisis son pinyin."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, puis choisis ce que tu as entendu."
@@ -593,38 +629,31 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "多",
+        "promptText": "来过了。我要在医院多喝水。",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "bù"
+              "fr": "shì, wǒ shēn tǐ hěn rè, bù xiǎng chī mǐ fàn."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "de"
+              "fr": "lái guo le. wǒ yào zài yī yuàn duō hē shuǐ."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "hěn"
-            },
-            "audio": null
-          },
-          {
-            "id": "d",
-            "label": {
-              "fr": "duō"
+              "fr": "xiè xie! niú nǎi rè ma? wǒ bù hē rè de."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "b"
       },
       "metadata": {
         "stage": "discover",
@@ -691,11 +720,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l19-pick-134",
+      "id": "block-ex-l19-pick-024",
       "spec": {
         "kind": "listeningChoice",
         "header": {
-          "id": "ex-l19-pick-134",
+          "id": "ex-l19-pick-024",
           "prompt": {
             "fr": "Écoute le mot, puis choisis-le à l’écrit."
           },
@@ -707,33 +736,33 @@
           ],
           "required": true
         },
-        "promptText": "医院",
+        "promptText": "多",
         "choices": [
           {
             "id": "a",
-            "label": {
-              "fr": "生病 (shēng bìng)"
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "身体 (shēn tǐ)"
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
             "label": {
               "fr": "医院 (yī yuàn)"
             },
             "audio": null
           },
           {
-            "id": "d",
+            "id": "b",
+            "label": {
+              "fr": "生病 (shēng bìng)"
+            },
+            "audio": null
+          },
+          {
+            "id": "c",
             "label": {
               "fr": "多 (duō)"
+            },
+            "audio": null
+          },
+          {
+            "id": "d",
+            "label": {
+              "fr": "身体 (shēn tǐ)"
             },
             "audio": null
           }
@@ -748,11 +777,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l19-dict-zh-241",
+      "id": "block-ex-l19-dict-zh-134",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l19-dict-zh-241",
+          "id": "ex-l19-dict-zh-134",
           "prompt": {
             "fr": "Écoute le mot, puis choisis les caractères."
           },
@@ -765,7 +794,7 @@
           "required": true
         },
         "script": "hanzi",
-        "promptText": "生病",
+        "promptText": "医院",
         "choices": [
           {
             "id": "a",
@@ -777,21 +806,21 @@
           {
             "id": "b",
             "label": {
-              "fr": "生病"
+              "fr": "医院"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "医院"
+              "fr": "生病"
             },
             "audio": null
           },
           {
             "id": "d",
             "label": {
-              "fr": "同学"
+              "fr": "老师"
             },
             "audio": null
           }
@@ -890,13 +919,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l19-translate-exa-2",
+      "id": "block-ex-l19-translate-rea-5",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l19-translate-exa-2",
+          "id": "ex-l19-translate-rea-5",
           "prompt": {
-            "fr": "Traduis en chinois : « L’hôpital est à côté de l’école »"
+            "fr": "Traduis en chinois : « Demain, je viendrai aussi à l’hôpital »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -909,38 +938,44 @@
         "tokens": [
           {
             "id": "e",
-            "hanzi": "多",
-            "pinyin": "duō",
-            "audio": null
-          },
-          {
-            "id": "f",
-            "hanzi": "身体",
-            "pinyin": "shēn tǐ",
-            "audio": null
-          },
-          {
-            "id": "c",
-            "hanzi": "学校",
-            "pinyin": "xué xiào",
-            "audio": null
-          },
-          {
-            "id": "a",
             "hanzi": "医院",
             "pinyin": "yī yuàn",
             "audio": null
           },
           {
+            "id": "f",
+            "hanzi": "生病",
+            "pinyin": "shēng bìng",
+            "audio": null
+          },
+          {
             "id": "d",
-            "hanzi": "旁边",
-            "pinyin": "páng biān",
+            "hanzi": "来",
+            "pinyin": "lái",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "也",
+            "pinyin": "yě",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "audio": null
+          },
+          {
+            "id": "g",
+            "hanzi": "身体",
+            "pinyin": "shēn tǐ",
+            "audio": null
+          },
+          {
+            "id": "a",
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
             "audio": null
           }
         ],
@@ -948,7 +983,8 @@
           "a",
           "b",
           "c",
-          "d"
+          "d",
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -977,24 +1013,24 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "你的身体怎么样？",
+        "promptText": "你在医院！你生病了吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "给我药。我希望很快好起来。",
-            "pinyin": "gěi wǒ yào。 wǒ xī wàng hěn kuài hǎo qǐ lái。",
+            "hanzi": "明天回家，我很想吃米饭！",
+            "pinyin": "míng tiān huí jiā, wǒ hěn xiǎng chī mǐ fàn!",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "我生病了，今天很冷。",
-            "pinyin": "wǒ shēng bìng le， jīn tiān hěn lěng。",
+            "hanzi": "是，我身体很热，不想吃米饭。",
+            "pinyin": "shì, wǒ shēn tǐ hěn rè, bù xiǎng chī mǐ fàn.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "里面很暖，我觉得好多了。",
-            "pinyin": "lǐ miàn hěn nuǎn， wǒ jué de hǎo duō le。",
+            "hanzi": "来过了。我要在医院多喝水。",
+            "pinyin": "lái guo le. wǒ yào zài yī yuàn duō hē shuǐ.",
             "audio": null
           }
         ],
@@ -1109,24 +1145,24 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "医院里热吗？",
+        "promptText": "你妈妈来过了吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "里面很暖，我觉得好多了。",
-            "pinyin": "lǐ miàn hěn nuǎn， wǒ jué de hǎo duō le。",
+            "hanzi": "来过了。我要在医院多喝水。",
+            "pinyin": "lái guo le. wǒ yào zài yī yuàn duō hē shuǐ.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "我生病了，今天很冷。",
-            "pinyin": "wǒ shēng bìng le， jīn tiān hěn lěng。",
+            "hanzi": "明天回家，我很想吃米饭！",
+            "pinyin": "míng tiān huí jiā, wǒ hěn xiǎng chī mǐ fàn!",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "给我药。我希望很快好起来。",
-            "pinyin": "gěi wǒ yào。 wǒ xī wàng hěn kuài hǎo qǐ lái。",
+            "hanzi": "我爸爸下午来。",
+            "pinyin": "wǒ bà ba xià wǔ lái.",
             "audio": null
           }
         ],
@@ -1160,29 +1196,29 @@
           {
             "id": "c",
             "speaker": "Mina",
-            "hanzi": "医院里热吗？",
-            "pinyin": "yī yuàn lǐ rè ma？",
+            "hanzi": "你妈妈来过了吗？",
+            "pinyin": "nǐ mā ma lái guo le ma?",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "你的身体怎么样？",
-            "pinyin": "nǐ de shēn tǐ zěn me yàng？",
+            "hanzi": "你在医院！你生病了吗？",
+            "pinyin": "nǐ zài yī yuàn! nǐ shēng bìng le ma?",
             "audio": null
           },
           {
             "id": "b",
             "speaker": "Tao",
-            "hanzi": "我生病了，今天很冷。",
-            "pinyin": "wǒ shēng bìng le， jīn tiān hěn lěng。",
+            "hanzi": "是，我身体很热，不想吃米饭。",
+            "pinyin": "shì, wǒ shēn tǐ hěn rè, bù xiǎng chī mǐ fàn.",
             "audio": null
           },
           {
             "id": "d",
             "speaker": "Tao",
-            "hanzi": "里面很暖，我觉得好多了。",
-            "pinyin": "lǐ miàn hěn nuǎn， wǒ jué de hǎo duō le。",
+            "hanzi": "来过了。我要在医院多喝水。",
+            "pinyin": "lái guo le. wǒ yào zài yī yuàn duō hē shuǐ.",
             "audio": null
           }
         ],
@@ -1207,7 +1243,7 @@
         "header": {
           "id": "ex-l19-fill-rea-1",
           "prompt": {
-            "fr": "Complète : 外面很冷，___里面很热。 (« Il fait froid dehors et chaud dans l’hôpital »)"
+            "fr": "Complète : 今天我的朋友___了，他在医院。 (« Aujourd’hui, mon ami est tombé malade et il est à l’hôpital »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1217,7 +1253,37 @@
           ],
           "required": true
         },
-        "sentence": "外面很冷，___里面很热。",
+        "sentence": "今天我的朋友___了，他在医院。",
+        "acceptedAnswers": [
+          "生病"
+        ],
+        "caseSensitive": false
+      },
+      "metadata": {
+        "stage": "reuse",
+        "skill": "production",
+        "lessonDay": 15
+      }
+    },
+    {
+      "kind": "exercise",
+      "id": "block-ex-l19-fill-rea-2",
+      "spec": {
+        "kind": "fillBlank",
+        "header": {
+          "id": "ex-l19-fill-rea-2",
+          "prompt": {
+            "fr": "Complète : ___里的人很多，我朋友的妈妈也在那里。 (« Il y a beaucoup de monde à l’hôpital, et la maman de mon ami est là aussi »)"
+          },
+          "instruction": {
+            "fr": "Choisis le mot manquant."
+          },
+          "objectiveIDs": [
+            "l19-produce"
+          ],
+          "required": true
+        },
+        "sentence": "___里的人很多，我朋友的妈妈也在那里。",
         "acceptedAnswers": [
           "医院"
         ],
@@ -1231,62 +1297,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l19-read-dia-1",
-      "spec": {
-        "kind": "choice",
-        "header": {
-          "id": "ex-l19-read-dia-1",
-          "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 你的身体怎么样？"
-          },
-          "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
-          },
-          "objectiveIDs": [
-            "l19-understand"
-          ],
-          "required": true
-        },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Il est tombé malade."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "C’est mon livre."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Comment vas-tu ?"
-            },
-            "audio": null
-          }
-        ],
-        "correctChoiceID": "c"
-      },
-      "metadata": {
-        "stage": "reuse",
-        "skill": "recognition",
-        "lessonDay": 15
-      }
-    },
-    {
-      "kind": "exercise",
       "id": "block-ex-l19-listen",
       "spec": {
         "kind": "listeningChoice",
         "header": {
           "id": "ex-l19-listen",
           "prompt": {
-            "fr": "Comment Tao se sent-il ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1296,26 +1313,26 @@
           ],
           "required": true
         },
-        "promptText": "我生病了，今天很冷。",
+        "promptText": "我要在医院多喝水。",
         "choices": [
           {
             "id": "b",
             "label": {
-              "fr": "Il est très heureux."
+              "fr": "Rentrer demain, j’ai très envie de manger du riz !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Il est en retard."
+              "fr": "J’ai acheté du lait, bois-en beaucoup toi aussi."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Il est malade."
+              "fr": "Je dois rester à l’hôpital et boire beaucoup d’eau."
             },
             "audio": null
           }
@@ -1336,21 +1353,21 @@
         "header": {
           "id": "ex-l19-speak",
           "prompt": {
-            "fr": "Dis « Je suis allé à l’hôpital ». "
+            "fr": "Dis « Tu es tombé malade ? »."
           },
           "instruction": {
-            "fr": "Écoute le modèle, dis la phrase, puis auto-évalue-toi."
+            "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
           },
           "objectiveIDs": [
             "l19-produce"
           ],
           "required": false
         },
-        "referenceText": "我去过医院。",
-        "referencePinyin": "wǒ qù guò yī yuàn。",
+        "referenceText": "你生病了吗？",
+        "referencePinyin": "nǐ shēng bìng le ma?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "我去过医院。"
+          "你生病了吗？"
         ],
         "allowSelfRating": true
       },
@@ -1368,10 +1385,10 @@
         "header": {
           "id": "ex-l19-reading",
           "prompt": {
-            "fr": "Pourquoi Tao va-t-il à l’hôpital ?"
+            "fr": "Qu’est-ce que la narratrice apporte à son ami ?"
           },
           "instruction": {
-            "fr": "Relis les deux paragraphes avant de répondre."
+            "fr": "Relis le petit texte avant de répondre."
           },
           "objectiveIDs": [
             "l19-understand"
@@ -1380,23 +1397,23 @@
         },
         "choices": [
           {
-            "id": "a",
+            "id": "b",
             "label": {
-              "fr": "Parce qu’il prépare un examen."
+              "fr": "Du lait."
             },
             "audio": null
           },
           {
-            "id": "b",
+            "id": "a",
             "label": {
-              "fr": "Parce qu’il est malade."
+              "fr": "Du riz."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Parce qu’il achète un billet."
+              "fr": "Du thé."
             },
             "audio": null
           }
@@ -1610,6 +1627,7 @@
       "hsk20-015",
       "hsk20-039"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-024",
       "hsk20-134",

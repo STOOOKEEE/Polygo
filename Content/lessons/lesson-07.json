@@ -5,10 +5,10 @@
   "moduleID": "unit-02",
   "order": 15,
   "title": {
-    "fr": "La famille et la date"
+    "fr": "Chez Tao, un vendredi"
   },
   "summary": {
-    "fr": "Nommer des proches et situer une activité dans le temps."
+    "fr": "Mina rend visite à Tao : il lui présente sa maison, dit quand son père est là et lui offre le thé de sa mère."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -409,56 +409,83 @@
       "id": "block-l7-dialogue",
       "lines": [
         {
-          "speaker": "Mina",
-          "hanzi": "今天是几月几日？",
-          "pinyin": "jīn tiān shì jǐ yuè jǐ rì?",
-          "translation": {
-            "fr": "Quelle date sommes-nous ?"
-          },
-          "audio": null
-        },
-        {
           "speaker": "Tao",
-          "hanzi": "今天是九月三日。",
-          "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
+          "hanzi": "你好！这是我家。",
+          "pinyin": "nǐ hǎo! zhè shì wǒ jiā.",
           "translation": {
-            "fr": "Nous sommes le 3 septembre."
+            "fr": "Salut ! Voici chez moi."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我妈妈和我爸爸在家。",
-          "pinyin": "wǒ mā ma hé wǒ bà ba zài jiā.",
+          "hanzi": "你家不小！妈妈和爸爸都在吗？",
+          "pinyin": "nǐ jiā bù xiǎo! mā ma hé bà ba dōu zài ma?",
           "translation": {
-            "fr": "Ma maman et mon papa sont à la maison."
+            "fr": "Elle n’est pas petite, ta maison ! Ta mère et ton père sont là ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "她的儿子在家。",
-          "pinyin": "tā de ér zi zài jiā.",
+          "hanzi": "妈妈在，爸爸不在。",
+          "pinyin": "mā ma zài, bà ba bú zài.",
           "translation": {
-            "fr": "Son fils est à la maison."
+            "fr": "Ma mère est là, mon père non."
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我的女儿在家。",
-          "pinyin": "wǒ de nǚ ér zài jiā.",
+          "hanzi": "爸爸星期几在家？",
+          "pinyin": "bà ba xīng qī jǐ zài jiā?",
           "translation": {
-            "fr": "Ma fille est à la maison."
+            "fr": "Ton père est à la maison quel jour ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "你呢？",
-          "pinyin": "nǐ ne?",
+          "hanzi": "星期日。今天是七月五日，星期五。",
+          "pinyin": "xīng qī rì. jīn tiān shì qī yuè wǔ rì, xīng qī wǔ.",
           "translation": {
-            "fr": "Et toi ?"
+            "fr": "Le dimanche. Aujourd’hui, c’est le 5 juillet, un vendredi."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "请喝茶。这是妈妈的茶。",
+          "pinyin": "qǐng hē chá. zhè shì mā ma de chá.",
+          "translation": {
+            "fr": "Bois du thé, je t’en prie. C’est le thé de ma mère."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "谢谢！是白茶吗？",
+          "pinyin": "xiè xie! shì bái chá ma?",
+          "translation": {
+            "fr": "Merci ! C’est du thé blanc ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "是，也有红茶和绿茶。",
+          "pinyin": "shì, yě yǒu hóng chá hé lǜ chá.",
+          "translation": {
+            "fr": "Oui, il y a aussi du thé noir et du thé vert."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我喝绿茶。你家的茶多！",
+          "pinyin": "wǒ hē lǜ chá. nǐ jiā de chá duō!",
+          "translation": {
+            "fr": "Je prendrai du thé vert. Tu as plein de thés chez toi !"
           },
           "audio": null
         }
@@ -474,25 +501,25 @@
       "id": "block-l7-reading",
       "storyID": "story-l7-family",
       "title": {
-        "fr": "Un calendrier familial"
+        "fr": "Ma famille"
       },
       "paragraphs": [
         {
           "id": "lesson-07-p1",
-          "hanzi": "今天是九月三日。",
-          "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
+          "hanzi": "我家有妈妈、爸爸和哥哥。哥哥在中国，爸爸和妈妈在法国。",
+          "pinyin": "wǒ jiā yǒu mā ma, bà ba hé gē ge. gē ge zài zhōng guó, bà ba hé mā ma zài fǎ guó.",
           "translation": {
-            "fr": "Nous sommes le 3 septembre."
+            "fr": "Chez moi, il y a maman, papa et mon grand frère. Mon frère est en Chine, papa et maman sont en France."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-07-p2",
-          "hanzi": "她的儿子在家，我的女儿在家。",
-          "pinyin": "tā de ér zi zài jiā, wǒ de nǚ ér zài jiā.",
+          "hanzi": "妈妈星期一和星期五在家，爸爸星期日在家。今天是星期五，妈妈在家，爸爸不在。",
+          "pinyin": "mā ma xīng qī yī hé xīng qī wǔ zài jiā, bà ba xīng qī rì zài jiā. jīn tiān shì xīng qī wǔ, mā ma zài jiā, bà ba bú zài.",
           "translation": {
-            "fr": "Son fils et ma fille sont à la maison."
+            "fr": "Maman est à la maison le lundi et le vendredi, papa le dimanche. Aujourd’hui, on est vendredi : maman est là, papa non."
           },
           "segmentation": [],
           "audio": null
@@ -1010,11 +1037,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-talk-1",
+      "id": "block-ex-l7-talk-2",
       "spec": {
         "kind": "conversationChoice",
         "header": {
-          "id": "ex-l7-talk-1",
+          "id": "ex-l7-talk-2",
           "prompt": {
             "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
@@ -1027,24 +1054,24 @@
           "required": true
         },
         "speaker": "Mina",
-        "promptText": "今天是几月几日？",
+        "promptText": "你家不小！妈妈和爸爸都在吗？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "她的儿子在家。",
-            "pinyin": "tā de ér zi zài jiā.",
+            "hanzi": "是，也有红茶和绿茶。",
+            "pinyin": "shì, yě yǒu hóng chá hé lǜ chá.",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "今天是九月三日。",
-            "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
+            "hanzi": "妈妈在，爸爸不在。",
+            "pinyin": "mā ma zài, bà ba bú zài.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "你呢？",
-            "pinyin": "nǐ ne?",
+            "hanzi": "你好！这是我家。",
+            "pinyin": "nǐ hǎo! zhè shì wǒ jiā.",
             "audio": null
           }
         ],
@@ -1058,13 +1085,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-translate-dia-5",
+      "id": "block-ex-l7-translate-exa-2",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l7-translate-dia-5",
+          "id": "ex-l7-translate-exa-2",
           "prompt": {
-            "fr": "Traduis en chinois : « Ma fille est à la maison »"
+            "fr": "Traduis en chinois : « Combien d’enfants as-tu ? »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1076,34 +1103,54 @@
         },
         "tokens": [
           {
+            "id": "b",
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "audio": null
+          },
+          {
             "id": "d",
+            "hanzi": "个",
+            "pinyin": "gè",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "孩子",
+            "pinyin": "hái zi",
+            "audio": null
+          },
+          {
+            "id": "g",
             "hanzi": "妈妈",
             "pinyin": "mā ma",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "我的",
-            "pinyin": "wǒ de",
-            "audio": null
-          },
-          {
             "id": "c",
-            "hanzi": "在家",
-            "pinyin": "zài jiā",
+            "hanzi": "几",
+            "pinyin": "jǐ",
             "audio": null
           },
           {
-            "id": "b",
-            "hanzi": "女儿",
-            "pinyin": "nǚ ér",
+            "id": "a",
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "audio": null
+          },
+          {
+            "id": "f",
+            "hanzi": "家",
+            "pinyin": "jiā",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d",
+          "e"
         ],
         "acceptedOrders": []
       },
@@ -1115,41 +1162,59 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-fill-dia-3",
+      "id": "block-ex-l7-talk-7",
       "spec": {
-        "kind": "fillBlank",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l7-fill-dia-3",
+          "id": "ex-l7-talk-7",
           "prompt": {
-            "fr": "Complète : 我___和我爸爸在家。 (« Ma maman et mon papa sont à la maison »)"
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Choisis le mot manquant."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l7-produce"
+            "l7-understand"
           ],
           "required": true
         },
-        "sentence": "我___和我爸爸在家。",
-        "acceptedAnswers": [
-          "妈妈"
+        "speaker": "Mina",
+        "promptText": "谢谢！是白茶吗？",
+        "replies": [
+          {
+            "id": "a",
+            "hanzi": "是，也有红茶和绿茶。",
+            "pinyin": "shì, yě yǒu hóng chá hé lǜ chá.",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "妈妈在，爸爸不在。",
+            "pinyin": "mā ma zài, bà ba bú zài.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "请喝茶。这是妈妈的茶。",
+            "pinyin": "qǐng hē chá. zhè shì mā ma de chá.",
+            "audio": null
+          }
         ],
-        "caseSensitive": false
+        "correctReplyID": "a"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 3
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-dialogue-1-4",
+      "id": "block-ex-l7-dialogue-4-3",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l7-dialogue-1-4",
+          "id": "ex-l7-dialogue-4-3",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1163,39 +1228,31 @@
         },
         "lines": [
           {
-            "id": "b",
-            "speaker": "Tao",
-            "hanzi": "今天是九月三日。",
-            "pinyin": "jīn tiān shì jiǔ yuè sān rì.",
-            "audio": null
-          },
-          {
             "id": "c",
-            "speaker": "Mina",
-            "hanzi": "我妈妈和我爸爸在家。",
-            "pinyin": "wǒ mā ma hé wǒ bà ba zài jiā.",
+            "speaker": "Tao",
+            "hanzi": "请喝茶。这是妈妈的茶。",
+            "pinyin": "qǐng hē chá. zhè shì mā ma de chá.",
             "audio": null
           },
           {
             "id": "a",
             "speaker": "Mina",
-            "hanzi": "今天是几月几日？",
-            "pinyin": "jīn tiān shì jǐ yuè jǐ rì?",
+            "hanzi": "爸爸星期几在家？",
+            "pinyin": "bà ba xīng qī jǐ zài jiā?",
             "audio": null
           },
           {
-            "id": "d",
+            "id": "b",
             "speaker": "Tao",
-            "hanzi": "她的儿子在家。",
-            "pinyin": "tā de ér zi zài jiā.",
+            "hanzi": "星期日。今天是七月五日，星期五。",
+            "pinyin": "xīng qī rì. jīn tiān shì qī yuè wǔ rì, xīng qī wǔ.",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c",
-          "d"
+          "c"
         ]
       },
       "metadata": {
@@ -1206,100 +1263,61 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-listen-rea-2",
+      "id": "block-ex-l7-fill-rea-1",
       "spec": {
-        "kind": "listeningChoice",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l7-listen-rea-2",
+          "id": "ex-l7-fill-rea-1",
           "prompt": {
-            "fr": "Écoute la phrase, puis choisis son sens."
+            "fr": "Complète : 我___有妈妈、爸爸和哥哥。 (« Chez moi, il y a maman, papa et mon grand frère »)"
           },
           "instruction": {
-            "fr": "Écoute la phrase en mandarin, puis choisis son sens."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
-            "l7-understand"
+            "l7-produce"
           ],
           "required": true
         },
-        "promptText": "她的儿子在家，我的女儿在家。",
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Son fils et ma fille sont à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Ma maman et mon papa sont à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Il y a cinq personnes dans ma famille."
-            },
-            "audio": null
-          }
+        "sentence": "我___有妈妈、爸爸和哥哥。",
+        "acceptedAnswers": [
+          "家"
         ],
-        "correctChoiceID": "a"
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 3
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l7-read-dia-3",
+      "id": "block-ex-l7-fill-rea-3",
       "spec": {
-        "kind": "choice",
+        "kind": "fillBlank",
         "header": {
-          "id": "ex-l7-read-dia-3",
+          "id": "ex-l7-fill-rea-3",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 我妈妈和我爸爸在家。"
+            "fr": "Complète : ___星期一和星期五在家，爸爸星期日在家。 (« Maman est à la maison le lundi et le vendredi, papa le dimanche »)"
           },
           "instruction": {
-            "fr": "Lis la phrase, puis choisis son sens."
+            "fr": "Choisis le mot manquant."
           },
           "objectiveIDs": [
-            "l7-understand"
+            "l7-produce"
           ],
           "required": true
         },
-        "choices": [
-          {
-            "id": "a",
-            "label": {
-              "fr": "Ma fille est à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "b",
-            "label": {
-              "fr": "Son fils et ma fille sont à la maison."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Ma maman et mon papa sont à la maison."
-            },
-            "audio": null
-          }
+        "sentence": "___星期一和星期五在家，爸爸星期日在家。",
+        "acceptedAnswers": [
+          "妈妈"
         ],
-        "correctChoiceID": "c"
+        "caseSensitive": false
       },
       "metadata": {
         "stage": "reuse",
-        "skill": "recognition",
+        "skill": "production",
         "lessonDay": 3
       }
     },
@@ -1311,7 +1329,7 @@
         "header": {
           "id": "ex-l7-listen",
           "prompt": {
-            "fr": "Qui est à la maison ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1321,31 +1339,31 @@
           ],
           "required": true
         },
-        "promptText": "她的儿子在家。",
+        "promptText": "星期日。今天是七月五日，星期五。",
         "choices": [
           {
             "id": "b",
             "label": {
-              "fr": "Son fils."
+              "fr": "Je prendrai du thé vert. Tu as plein de thés chez toi !"
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Son père."
+              "fr": "Elle n’est pas petite, ta maison ! Ta mère et ton père sont là ?"
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "Sa fille."
+              "fr": "Le dimanche. Aujourd’hui, c’est le 5 juillet, un vendredi."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1361,7 +1379,7 @@
         "header": {
           "id": "ex-l7-speak",
           "prompt": {
-            "fr": "Dis « Ma maman est à la maison ». "
+            "fr": "Dis « Ton père est à la maison quel jour ? »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
@@ -1371,11 +1389,11 @@
           ],
           "required": false
         },
-        "referenceText": "我的妈妈在家。",
-        "referencePinyin": "wǒ de mā ma zài jiā.",
+        "referenceText": "爸爸星期几在家？",
+        "referencePinyin": "bà ba xīng qī jǐ zài jiā?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "我的妈妈在家。"
+          "爸爸星期几在家？"
         ],
         "allowSelfRating": true
       },
@@ -1393,7 +1411,7 @@
         "header": {
           "id": "ex-l7-reading",
           "prompt": {
-            "fr": "Qui est à la maison ?"
+            "fr": "Où est le grand frère de la narratrice ?"
           },
           "instruction": {
             "fr": "Relis le petit texte avant de répondre."
@@ -1405,28 +1423,28 @@
         },
         "choices": [
           {
+            "id": "c",
+            "label": {
+              "fr": "En Chine."
+            },
+            "audio": null
+          },
+          {
             "id": "a",
             "label": {
-              "fr": "La fille."
+              "fr": "En France."
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Le fils."
-            },
-            "audio": null
-          },
-          {
-            "id": "c",
-            "label": {
-              "fr": "Le père."
+              "fr": "À la maison."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "c"
       },
       "metadata": {
         "stage": "reuse",
@@ -1707,6 +1725,7 @@
       "hsk20-112",
       "hsk20-139"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-015",
       "hsk20-044",

@@ -5,10 +5,10 @@
   "moduleID": "unit-02",
   "order": 16,
   "title": {
-    "fr": "Acheter des pommes"
+    "fr": "Au magasin de la gare"
   },
   "summary": {
-    "fr": "Dire l’heure, demander un prix et acheter des pommes."
+    "fr": "Mina et Tao vont au magasin de la gare : elle veut du thé, lui un livre, et ils demandent les prix."
   },
   "estimatedMinutes": 12,
   "objectives": [
@@ -426,55 +426,100 @@
       "lines": [
         {
           "speaker": "Mina",
-          "hanzi": "现在几点？",
-          "pinyin": "xiàn zài jǐ diǎn?",
+          "hanzi": "你好！你去火车站吗？",
+          "pinyin": "nǐ hǎo! nǐ qù huǒ chē zhàn ma?",
           "translation": {
-            "fr": "Quelle heure est-il ?"
+            "fr": "Salut ! Tu vas à la gare ?"
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "现在三点。",
-          "pinyin": "xiàn zài sān diǎn.",
+          "hanzi": "去，我去火车站的商店。你也想去吗？",
+          "pinyin": "qù, wǒ qù huǒ chē zhàn de shāng diàn. nǐ yě xiǎng qù ma?",
           "translation": {
-            "fr": "Il est trois heures."
+            "fr": "Oui, je vais au magasin de la gare. Tu veux venir aussi ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "我想去商店买苹果。",
-          "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+          "hanzi": "想！我想买茶。",
+          "pinyin": "xiǎng! wǒ xiǎng mǎi chá.",
           "translation": {
-            "fr": "Je veux aller au magasin acheter des pommes."
+            "fr": "Oui ! Je voudrais acheter du thé."
           },
           "audio": null
         },
         {
-          "speaker": "Tao",
-          "hanzi": "苹果多少钱？",
-          "pinyin": "píng guǒ duō shao qián?",
+          "speaker": "An",
+          "hanzi": "你好！想买什么？",
+          "pinyin": "nǐ hǎo! xiǎng mǎi shén me?",
           "translation": {
-            "fr": "Combien coûtent les pommes ?"
+            "fr": "Bonjour ! Vous désirez ?"
           },
           "audio": null
         },
         {
           "speaker": "Mina",
-          "hanzi": "苹果三块。",
-          "pinyin": "píng guǒ sān kuài.",
+          "hanzi": "有红茶吗？几块？",
+          "pinyin": "yǒu hóng chá ma? jǐ kuài?",
           "translation": {
-            "fr": "Les pommes coûtent trois yuans."
+            "fr": "Vous avez du thé noir ? C’est combien ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "红茶、绿茶都有。红茶七块，绿茶十块。",
+          "pinyin": "hóng chá, lǜ chá dōu yǒu. hóng chá qī kuài, lǜ chá shí kuài.",
+          "translation": {
+            "fr": "Il y a du thé noir et du thé vert. Le noir coûte 7 yuans, le vert 10."
           },
           "audio": null
         },
         {
           "speaker": "Tao",
-          "hanzi": "我买。",
-          "pinyin": "wǒ mǎi.",
+          "hanzi": "我想买书。这书几块？",
+          "pinyin": "wǒ xiǎng mǎi shū. zhè shū jǐ kuài?",
           "translation": {
-            "fr": "J’achète."
+            "fr": "Moi, je voudrais un livre. Il coûte combien ?"
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "这书十五块。",
+          "pinyin": "zhè shū shí wǔ kuài.",
+          "translation": {
+            "fr": "Ce livre coûte 15 yuans."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Mina",
+          "hanzi": "我买红茶。",
+          "pinyin": "wǒ mǎi hóng chá.",
+          "translation": {
+            "fr": "Moi, j’achète le thé noir."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "Tao",
+          "hanzi": "我买书。",
+          "pinyin": "wǒ mǎi shū.",
+          "translation": {
+            "fr": "Et moi, le livre."
+          },
+          "audio": null
+        },
+        {
+          "speaker": "An",
+          "hanzi": "谢谢！再见！",
+          "pinyin": "xiè xie! zài jiàn!",
+          "translation": {
+            "fr": "Merci ! Au revoir !"
           },
           "audio": null
         }
@@ -490,25 +535,25 @@
       "id": "block-l8-reading",
       "storyID": "story-l8-shop",
       "title": {
-        "fr": "Au magasin"
+        "fr": "Un tour à la gare"
       },
       "paragraphs": [
         {
           "id": "lesson-08-p1",
-          "hanzi": "现在三点，我想去商店。",
-          "pinyin": "xiàn zài sān diǎn, wǒ xiǎng qù shāng diàn.",
+          "hanzi": "今天我去火车站。火车站有商店，水四块，茶七块。",
+          "pinyin": "jīn tiān wǒ qù huǒ chē zhàn. huǒ chē zhàn yǒu shāng diàn, shuǐ sì kuài, chá qī kuài.",
           "translation": {
-            "fr": "Il est trois heures, je veux aller au magasin."
+            "fr": "Aujourd’hui, je vais à la gare. Il y a un magasin à la gare : l’eau coûte 4 yuans, le thé 7."
           },
           "segmentation": [],
           "audio": null
         },
         {
           "id": "lesson-08-p2",
-          "hanzi": "苹果三块。",
-          "pinyin": "píng guǒ sān kuài.",
+          "hanzi": "我想买水，也想买书。书十五块，我不买。",
+          "pinyin": "wǒ xiǎng mǎi shuǐ, yě xiǎng mǎi shū. shū shí wǔ kuài, wǒ bù mǎi.",
           "translation": {
-            "fr": "Les pommes coûtent trois yuans."
+            "fr": "Je voudrais acheter de l’eau, et aussi un livre. Le livre coûte 15 yuans, je ne l’achète pas."
           },
           "segmentation": [],
           "audio": null
@@ -642,11 +687,11 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-dict-sent-dia-3",
+      "id": "block-ex-l8-dict-sent-dia-1",
       "spec": {
         "kind": "dictation",
         "header": {
-          "id": "ex-l8-dict-sent-dia-3",
+          "id": "ex-l8-dict-sent-dia-1",
           "prompt": {
             "fr": "Écoute la phrase, puis choisis son pinyin."
           },
@@ -659,12 +704,12 @@
           "required": true
         },
         "script": "pinyin",
-        "promptText": "我想去商店买苹果。",
+        "promptText": "你好！你去火车站吗？",
         "choices": [
           {
             "id": "a",
             "label": {
-              "fr": "nǐ yǒu jǐ gè hái zi？"
+              "fr": "wǒ xiǎng mǎi shū. zhè shū jǐ kuài?"
             },
             "audio": null
           },
@@ -678,7 +723,7 @@
           {
             "id": "c",
             "label": {
-              "fr": "wǒ xiǎng qù shāng diàn mǎi píng guǒ."
+              "fr": "nǐ hǎo! nǐ qù huǒ chē zhàn ma?"
             },
             "audio": null
           }
@@ -949,13 +994,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-translate-exa-1",
+      "id": "block-ex-l8-translate-rea-1",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l8-translate-exa-1",
+          "id": "ex-l8-translate-rea-1",
           "prompt": {
-            "fr": "Traduis en chinois : « La gare est devant »"
+            "fr": "Traduis en chinois : « Aujourd’hui, je vais à la gare »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -967,34 +1012,47 @@
         },
         "tokens": [
           {
-            "id": "a",
+            "id": "d",
             "hanzi": "火车站",
             "pinyin": "huǒ chē zhàn",
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "前面",
-            "pinyin": "qián miàn",
-            "audio": null
-          },
-          {
             "id": "b",
-            "hanzi": "在",
-            "pinyin": "zài",
+            "hanzi": "我",
+            "pinyin": "wǒ",
             "audio": null
           },
           {
-            "id": "d",
+            "id": "a",
+            "hanzi": "今天",
+            "pinyin": "jīn tiān",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "商店",
+            "pinyin": "shāng diàn",
+            "audio": null
+          },
+          {
+            "id": "f",
             "hanzi": "块",
             "pinyin": "kuài",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "去",
+            "pinyin": "qù",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ],
         "acceptedOrders": []
       },
@@ -1012,7 +1070,7 @@
         "header": {
           "id": "ex-l8-talk-4",
           "prompt": {
-            "fr": "Écoute Tao, puis choisis la meilleure réponse."
+            "fr": "Écoute An, puis choisis la meilleure réponse."
           },
           "instruction": {
             "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
@@ -1022,25 +1080,25 @@
           ],
           "required": true
         },
-        "speaker": "Tao",
-        "promptText": "苹果多少钱？",
+        "speaker": "An",
+        "promptText": "你好！想买什么？",
         "replies": [
           {
             "id": "a",
-            "hanzi": "我想去商店买苹果。",
-            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+            "hanzi": "你好！你去火车站吗？",
+            "pinyin": "nǐ hǎo! nǐ qù huǒ chē zhàn ma?",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "现在几点？",
-            "pinyin": "xiàn zài jǐ diǎn?",
+            "hanzi": "想！我想买茶。",
+            "pinyin": "xiǎng! wǒ xiǎng mǎi chá.",
             "audio": null
           },
           {
             "id": "c",
-            "hanzi": "苹果三块。",
-            "pinyin": "píng guǒ sān kuài.",
+            "hanzi": "有红茶吗？几块？",
+            "pinyin": "yǒu hóng chá ma? jǐ kuài?",
             "audio": null
           }
         ],
@@ -1054,13 +1112,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-translate-exa-2",
+      "id": "block-ex-l8-translate-dia-8",
       "spec": {
         "kind": "translation",
         "header": {
-          "id": "ex-l8-translate-exa-2",
+          "id": "ex-l8-translate-dia-8",
           "prompt": {
-            "fr": "Traduis en chinois : « Voici ce yuan pour toi »"
+            "fr": "Traduis en chinois : « Ce livre coûte 15 yuans »"
           },
           "instruction": {
             "fr": "Assemble la phrase avec les tuiles. Attention : certaines tuiles sont en trop."
@@ -1072,27 +1130,33 @@
         },
         "tokens": [
           {
-            "id": "e",
-            "hanzi": "你",
-            "pinyin": "nǐ",
-            "audio": null
-          },
-          {
-            "id": "b",
-            "hanzi": "块",
-            "pinyin": "kuài",
-            "audio": null
-          },
-          {
             "id": "f",
             "hanzi": "去",
             "pinyin": "qù",
             "audio": null
           },
           {
-            "id": "a",
-            "hanzi": "这",
-            "pinyin": "zhè",
+            "id": "d",
+            "hanzi": "五",
+            "pinyin": "wǔ",
+            "audio": null
+          },
+          {
+            "id": "e",
+            "hanzi": "块",
+            "pinyin": "kuài",
+            "audio": null
+          },
+          {
+            "id": "b",
+            "hanzi": "书",
+            "pinyin": "shū",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "十",
+            "pinyin": "shí",
             "audio": null
           },
           {
@@ -1102,15 +1166,9 @@
             "audio": null
           },
           {
-            "id": "c",
-            "hanzi": "钱",
-            "pinyin": "qián",
-            "audio": null
-          },
-          {
-            "id": "d",
-            "hanzi": "给",
-            "pinyin": "gěi",
+            "id": "a",
+            "hanzi": "这",
+            "pinyin": "zhè",
             "audio": null
           }
         ],
@@ -1131,65 +1189,59 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-order-exa-3",
+      "id": "block-ex-l8-talk-5",
       "spec": {
-        "kind": "wordOrder",
+        "kind": "conversationChoice",
         "header": {
-          "id": "ex-l8-order-exa-3",
+          "id": "ex-l8-talk-5",
           "prompt": {
-            "fr": "Construis « Nous allons au parc »."
+            "fr": "Écoute Mina, puis choisis la meilleure réponse."
           },
           "instruction": {
-            "fr": "Replace chaque groupe dans l’ordre, puis relis la phrase complète."
+            "fr": "Appuie sur l’écoute, lis la réplique, puis choisis la réponse qui convient."
           },
           "objectiveIDs": [
-            "l8-produce"
+            "l8-understand"
           ],
           "required": true
         },
-        "tokens": [
-          {
-            "id": "c",
-            "hanzi": "公园",
-            "pinyin": "gōng yuán",
-            "audio": null
-          },
+        "speaker": "Mina",
+        "promptText": "有红茶吗？几块？",
+        "replies": [
           {
             "id": "a",
-            "hanzi": "我们",
-            "pinyin": "wǒ men",
+            "hanzi": "谢谢！再见！",
+            "pinyin": "xiè xie! zài jiàn!",
             "audio": null
           },
           {
             "id": "b",
-            "hanzi": "去",
-            "pinyin": "qù",
+            "hanzi": "红茶、绿茶都有。红茶七块，绿茶十块。",
+            "pinyin": "hóng chá, lǜ chá dōu yǒu. hóng chá qī kuài, lǜ chá shí kuài.",
+            "audio": null
+          },
+          {
+            "id": "c",
+            "hanzi": "你好！想买什么？",
+            "pinyin": "nǐ hǎo! xiǎng mǎi shén me?",
             "audio": null
           }
         ],
-        "correctOrder": [
-          "a",
-          "b",
-          "c"
-        ],
-        "acceptedVariants": [
-          "我们去公园。",
-          "我们去公园"
-        ]
+        "correctReplyID": "b"
       },
       "metadata": {
         "stage": "guided",
-        "skill": "production",
+        "skill": "recognition",
         "lessonDay": 4
       }
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-dialogue-3-3",
+      "id": "block-ex-l8-dialogue-2-4",
       "spec": {
         "kind": "dialogueOrder",
         "header": {
-          "id": "ex-l8-dialogue-3-3",
+          "id": "ex-l8-dialogue-2-4",
           "prompt": {
             "fr": "Remets le dialogue dans l’ordre."
           },
@@ -1203,31 +1255,39 @@
         },
         "lines": [
           {
+            "id": "a",
+            "speaker": "Tao",
+            "hanzi": "去，我去火车站的商店。你也想去吗？",
+            "pinyin": "qù, wǒ qù huǒ chē zhàn de shāng diàn. nǐ yě xiǎng qù ma?",
+            "audio": null
+          },
+          {
             "id": "c",
-            "speaker": "Mina",
-            "hanzi": "苹果三块。",
-            "pinyin": "píng guǒ sān kuài.",
+            "speaker": "An",
+            "hanzi": "你好！想买什么？",
+            "pinyin": "nǐ hǎo! xiǎng mǎi shén me?",
             "audio": null
           },
           {
             "id": "b",
-            "speaker": "Tao",
-            "hanzi": "苹果多少钱？",
-            "pinyin": "píng guǒ duō shao qián?",
+            "speaker": "Mina",
+            "hanzi": "想！我想买茶。",
+            "pinyin": "xiǎng! wǒ xiǎng mǎi chá.",
             "audio": null
           },
           {
-            "id": "a",
+            "id": "d",
             "speaker": "Mina",
-            "hanzi": "我想去商店买苹果。",
-            "pinyin": "wǒ xiǎng qù shāng diàn mǎi píng guǒ.",
+            "hanzi": "有红茶吗？几块？",
+            "pinyin": "yǒu hóng chá ma? jǐ kuài?",
             "audio": null
           }
         ],
         "correctOrder": [
           "a",
           "b",
-          "c"
+          "c",
+          "d"
         ]
       },
       "metadata": {
@@ -1238,13 +1298,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-fill-rea-1",
+      "id": "block-ex-l8-fill-rea-2",
       "spec": {
         "kind": "fillBlank",
         "header": {
-          "id": "ex-l8-fill-rea-1",
+          "id": "ex-l8-fill-rea-2",
           "prompt": {
-            "fr": "Complète : 现在三点，我想___商店。 (« Il est trois heures, je veux aller au magasin »)"
+            "fr": "Complète : 火车站有___，水四块，茶七块。 (« Il y a un magasin à la gare : l’eau coûte 4 yuans, le thé 7 »)"
           },
           "instruction": {
             "fr": "Choisis le mot manquant."
@@ -1254,9 +1314,9 @@
           ],
           "required": true
         },
-        "sentence": "现在三点，我想___商店。",
+        "sentence": "火车站有___，水四块，茶七块。",
         "acceptedAnswers": [
-          "去"
+          "商店"
         ],
         "caseSensitive": false
       },
@@ -1268,13 +1328,13 @@
     },
     {
       "kind": "exercise",
-      "id": "block-ex-l8-read-dia-3",
+      "id": "block-ex-l8-read-dia-2",
       "spec": {
         "kind": "choice",
         "header": {
-          "id": "ex-l8-read-dia-3",
+          "id": "ex-l8-read-dia-2",
           "prompt": {
-            "fr": "Dans le dialogue, que signifie la réplique de Mina : 我想去商店买苹果。"
+            "fr": "Dans le dialogue, que signifie la réplique de Tao : 去，我去火车站的商店。你也想去吗？"
           },
           "instruction": {
             "fr": "Lis la phrase, puis choisis son sens."
@@ -1288,26 +1348,26 @@
           {
             "id": "a",
             "label": {
-              "fr": "Voici ce yuan pour toi."
+              "fr": "Oui, je vais au magasin de la gare. Tu veux venir aussi ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "Je veux aller au magasin acheter des pommes."
+              "fr": "Il y a un magasin à la gare : l’eau coûte 4 yuans, le thé 7."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Ce magasin est très grand."
+              "fr": "Il y a du thé noir et du thé vert. Le noir coûte 7 yuans, le vert 10."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1323,7 +1383,7 @@
         "header": {
           "id": "ex-l8-listen",
           "prompt": {
-            "fr": "Quel est le prix ?"
+            "fr": "Quelle phrase entends-tu ?"
           },
           "instruction": {
             "fr": "Écoute la phrase en mandarin, puis choisis son sens."
@@ -1333,31 +1393,31 @@
           ],
           "required": true
         },
-        "promptText": "苹果三块。",
+        "promptText": "去，我去火车站的商店。你也想去吗？",
         "choices": [
           {
             "id": "c",
             "label": {
-              "fr": "30 yuans"
+              "fr": "Moi, je voudrais un livre. Il coûte combien ?"
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "20 yuans"
+              "fr": "Oui, je vais au magasin de la gare. Tu veux venir aussi ?"
             },
             "audio": null
           },
           {
             "id": "b",
             "label": {
-              "fr": "3 yuans"
+              "fr": "Il y a du thé noir et du thé vert. Le noir coûte 7 yuans, le vert 10."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "b"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1373,7 +1433,7 @@
         "header": {
           "id": "ex-l8-speak",
           "prompt": {
-            "fr": "Dis « Je veux aller au magasin ». "
+            "fr": "Dis « Il coûte combien, ce livre ? »."
           },
           "instruction": {
             "fr": "Écoute le modèle, dis la phrase, puis réécoute-toi ou auto-évalue-toi."
@@ -1383,11 +1443,11 @@
           ],
           "required": false
         },
-        "referenceText": "我想去商店。",
-        "referencePinyin": "wǒ xiǎng qù shāng diàn.",
+        "referenceText": "这书几块？",
+        "referencePinyin": "zhè shū jǐ kuài?",
         "referenceAudio": null,
         "acceptedTranscripts": [
-          "我想去商店。"
+          "这书几块？"
         ],
         "allowSelfRating": true
       },
@@ -1405,7 +1465,7 @@
         "header": {
           "id": "ex-l8-reading",
           "prompt": {
-            "fr": "Où la personne veut-elle aller ?"
+            "fr": "Qu’est-ce qui coûte 15 yuans ?"
           },
           "instruction": {
             "fr": "Relis le petit texte avant de répondre."
@@ -1419,26 +1479,26 @@
           {
             "id": "b",
             "label": {
-              "fr": "À la gare."
+              "fr": "L’eau."
             },
             "audio": null
           },
           {
             "id": "c",
             "label": {
-              "fr": "Au magasin."
+              "fr": "Le thé."
             },
             "audio": null
           },
           {
             "id": "a",
             "label": {
-              "fr": "À l’école."
+              "fr": "Le livre."
             },
             "audio": null
           }
         ],
-        "correctChoiceID": "c"
+        "correctChoiceID": "a"
       },
       "metadata": {
         "stage": "reuse",
@@ -1706,6 +1766,7 @@
       "hsk20-112",
       "hsk20-021"
     ],
+    "situationAuthored": true,
     "allocationNewVocabularyIDs": [
       "hsk20-043",
       "hsk20-053",
