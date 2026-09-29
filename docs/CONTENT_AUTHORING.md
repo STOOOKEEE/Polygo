@@ -206,6 +206,41 @@ trois réponses dont la bonne suit la réplique lue. Une séance doit utiliser a
 moins quatre de ces six familles. Les quatre leçons protégées gardent leurs six exercices
 d'origine.
 
+## Révisions et défis d'unité
+
+Les révisions et les défis ne s'écrivent pas : `Tools/review_lessons.py` les
+dérive des leçons qu'ils reprennent, dans le même esprit que l'expansion des
+exercices (aucun hanzi, pinyin ni traduction nouveau).
+
+* **Placement** (`derive_layout`, appelé par `assemble_90_day_authoring.py`) :
+  dans chaque unité planifiée, `review-NN` suit chaque série de cinq leçons du
+  jour, sauf quand la série termine l'unité ; `boss-<unité>` clôt l'unité. Le
+  plan gagne ces séances (12 + 3 minutes pour une révision, 13 + 2 pour un
+  défi), les jours et les `order` des leçons sont renumérotés dans l'ordre du
+  parcours (les IDs des leçons du jour ne changent pas), les jalons suivent
+  leur leçon, ou le défi de son unité quand elle la termine, et la description du
+  cours reprend les totaux. Pour changer le rythme, modifier `REVIEW_EVERY`.
+* **Contenu** (`build_derived_lessons`, appelé par `generate`) : le vocabulaire est
+  celui que les leçons couvertes ont introduit (toutes les entrées d'une
+  révision, cinq par leçon pour un défi) ; le bloc `dialogue` reprend un extrait
+  de trois répliques consécutives par leçon (un défi prend six leçons réparties
+  sur l'unité, plus celles qui n'enseignent aucun mot) ; le bloc `introduction`
+  cite les structures de grammaire couvertes avec l'exemple de chaque note. Les
+  exercices sont construits par le `SessionBuilder` de `exercise_expansion.py`
+  sur ce matériel : chaque leçon couverte est interrogée, chaque type récent
+  est utilisé, un défi consacre sa dernière phase à un dialogue à mener.
+* **Ordre** : sans historique d'apprenant à la génération, « les items les plus
+  faibles d'abord » se lit comme « les plus anciens d'abord » : chaque phase
+  commence par les leçons les plus anciennes (`metadata.sourceLessonID`). Les
+  rappels SRS de la séance traitent la faiblesse propre à chaque apprenant.
+* **Contrôles** : `lint` refuse une série de plus de cinq leçons sans révision,
+  une unité sans défi final, un mot nouveau dans une révision ou un défi, un
+  budget hors de 15–20 exercices (18–20 pour un défi), une révision sans les six
+  types récents, un défi sans son dialogue final, ou un ordre qui ne commence pas
+  par les leçons les plus anciennes.
+
+Le générateur supprime les révisions que le pack ne liste plus.
+
 Voici une séance complète illustrative, marquée « non livrable » et non utilisée
 comme contenu du cours. Elle montre vocabulaire, grammaire, dialogue, choix,
 ordre, trou, oral, écoute TTS, lecture, puis bilan ; les traductions et le

@@ -72,8 +72,8 @@ final class DailyPlanJourneyTests: XCTestCase {
         )
 
         XCTAssertTrue(
-            element(containing: "Jour 1 sur 90").waitForExistence(timeout: timeout),
-            "Aujourd’hui doit afficher J1/90"
+            element(containing: "Jour 1 sur 112").waitForExistence(timeout: timeout),
+            "Aujourd’hui doit afficher J1/112"
         )
         XCTAssertTrue(
             element(containing: "minutes de cours").waitForExistence(timeout: timeout),
@@ -186,12 +186,12 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(today.waitForExistence(timeout: timeout), "Le bouton Aujourd’hui doit rester accessible")
         XCTAssertTrue(today.isHittable, "Le bouton Aujourd’hui doit être visible")
         today.tap()
-        XCTAssertTrue(element(containing: "Jour 2 sur 90").waitForExistence(timeout: timeout), "La séance suivante doit être J2")
+        XCTAssertTrue(element(containing: "Jour 2 sur 112").waitForExistence(timeout: timeout), "La séance suivante doit être J2")
         assertCoinBalance(50)
         attachScreenshot(named: "ios-daily-plan-day-two")
         app.terminate()
         app.launch()
-        XCTAssertTrue(element(containing: "Jour 2 sur 90").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
+        XCTAssertTrue(element(containing: "Jour 2 sur 112").waitForExistence(timeout: timeout), "La journée suivante doit survivre à une relance")
         assertCoinBalance(50)
         XCTAssertFalse(element(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
     }

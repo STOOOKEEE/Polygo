@@ -41,23 +41,23 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 
 | Élément | Compte livré |
 | --- | ---: |
-| Leçons disponibles dans le cours | 94 |
+| Leçons disponibles dans le cours | 116 |
 | Leçons d’introduction protégées | 4 (`lesson-01` à `lesson-04`) |
-| Séances du plan quotidien | 90 (`lesson-05` à `lesson-94`) |
+| Séances du plan quotidien | 112 : 90 leçons (`lesson-05` à `lesson-94`), 14 révisions (`review-01` à `review-14`), 8 défis d’unité (`boss-unit-02` à `boss-unit-09`) |
 | Unités du cours final | 9 |
-| Exercices | 1 647 (27 introduction + 1 620 programme) |
+| Exercices | 2 059 (27 introduction + 1 620 leçons du jour + 252 révisions + 160 défis) |
 | Histoires inline | 94 |
 | Paragraphes de lecture | 196 |
 | Cartes distinctes | 605 (600 canoniques + 5 extras) |
-| Associations leçon–carte | 897 |
+| Associations leçon–carte | 1 797 |
 | Guides de tracé livrés | 3 (`你`, `我`, `国`) |
 
 Le catalogue `hsk-legacy-600` contient 600 entrées canoniques. La couverture
-réelle atteint les 300 premiers rangs au jour 48 et les 600 rangs au jour 90 ;
-le jour 48 contient 32 entrées canoniques de rang supérieur (ancres de grammaire
-et questions de sens de séances antérieures). Chaque séance introduit six à huit mots nouveaux. Chaque séance est budgétée à 12 minutes de cours et 3 minutes de
-révision. Le manifeste porte `availableLessonCount: 94`, `starterLessonCount: 4`
-et `plannedSessionCount: 90` afin de distinguer le bundle complet du plan.
+réelle atteint les 300 premiers rangs au jour 60 (défi de l’unité 5) et les 600
+rangs au jour 112 (défi de l’unité 9) ; le jour 60 contient 32 entrées canoniques de rang supérieur (ancres de grammaire
+et questions de sens de séances antérieures). Chaque leçon du jour introduit six à huit mots nouveaux ; les révisions et les défis n’en introduisent aucun. Chaque séance est budgétée à 12 minutes de cours et 3 minutes de
+révision (13 + 2 pour un défi). Le manifeste porte `availableLessonCount: 116`, `starterLessonCount: 4`
+et `plannedSessionCount: 112` afin de distinguer le bundle complet du plan.
 
 L’alignement primaire du manifeste et du cours est
 `HSK-legacy-2.0` / `2.0` (HSK classique). HSK 3.0 / `2025-11` est conservé
@@ -77,19 +77,19 @@ réponses sont identiques. Seule leur `contentVersion` passe de `2026.09.0` à
 Les contrôles de génération ci-dessous appartiennent à la livraison du
 contenu ; la refonte ne régénère ni les leçons ni le catalogue.
 
-- `python3 Tools/assemble_90_day_authoring.py` assemble 90 leçons et 8
-  fragments de module.
+- `python3 Tools/assemble_90_day_authoring.py` assemble 90 leçons, y insère 14
+  révisions et 8 défis d’unité, et écrit 8 fragments de module.
 - `python3 Tools/content_tool.py generate --input
   Content/authoring/90-day-authoring.json --root Content` régénère le bundle et
   exécute son contrôle de fermeture.
 - `python3 Tools/content_tool.py lint --root Content` passe.
 - La couverture indépendante vérifie 300/300 lexèmes aux rangs 1–300 au jour
-  48 et 600/600 aux rangs 1–600 au jour 90.
+  60 et 600/600 aux rangs 1–600 au jour 112.
 - Les identifiants de paragraphes sont uniques (196/196). Les choix de type
   choix gardent leurs IDs et leurs bonnes réponses ; les 270 exercices
   `choice`/`listeningChoice` ont une position correcte répartie 92/90/88 entre
   les trois options après rotation déterministe.
-- La suite portable actuelle compte 91 tests ; les résultats de la campagne
+- La suite portable actuelle compte 92 tests ; les résultats de la campagne
   Apple sont consignés dans le [rapport QA](QA_REPORT.md).
 - `git diff --check` passe. `Tools/__pycache__/` et les fichiers `.pyc` sont
   ignorés ; aucun secret, certificat, profil, base locale ou artefact machine

@@ -28,6 +28,7 @@ from exercise_expansion import (
     ExpansionError,
     expand_lesson_exercises,
     exposure_shortfalls,
+    lesson_number,
     word_exposures,
 )
 from exercise_kinds import (
@@ -39,6 +40,18 @@ from exercise_kinds import (
     NEW_KINDS,
     entry_tones,
     tone_choice_id,
+)
+from review_lessons import (
+    BOSS,
+    BOSS_KINDS,
+    DERIVED_KINDS,
+    DERIVED_BUDGET,
+    REVIEW,
+    REVIEW_EVERY,
+    SESSION_MINUTES,
+    build_derived_lessons,
+    introduction_examples,
+    is_derived,
 )
 
 
@@ -647,7 +660,7 @@ def normalize_lesson(
                 # index zero for readability. Rotate only generated daily
                 # lessons so the UI cannot teach a position-based shortcut;
                 # the stable choice IDs and correctChoiceID stay unchanged.
-                day = max(1, result["order"] - 4)
+                day = max(1, lesson_number(result) - 4)
                 rotation = (day + index + 1) % len(choices)
                 normalized["choices"] = choices[rotation:] + choices[:rotation]
         blocks.append({"kind": "exercise", "id": f"block-{normalized['header']['id']}", "spec": normalized})
@@ -902,12 +915,26 @@ def canonical_catalog_entry_id(entry: dict[str, Any], catalog_info: dict[str, An
     return mapped if mapped in catalog_info["byID"] else None
 
 
+def apply_block_metadata(lesson: dict[str, Any], day: int) -> None:
+    for block in lesson.get("blocks", []):
+        if not isinstance(block, dict):
+            continue
+        block_metadata = copy.deepcopy(block.get("metadata", {}))
+        if not isinstance(block_metadata, dict):
+            block_metadata = {}
+        block_metadata.update(editorial_block_metadata(block))
+        block_metadata.setdefault("lessonDay", day)
+        block["metadata"] = block_metadata
+
+
 def apply_editorial_metadata(
     root: Path,
     generated_lessons: list[dict[str, Any]],
     catalog_info: dict[str, Any] | None,
-) -> None:
+) -> set[str]:
     """Add reviewable lesson and block metadata after fragment normalization.
+
+    Returns the words sentence tiles are segmented against.
 
     Vocabulary introduction is computed from the final lesson order and local
     IDs. This matters when a natural late-course scene reuses a catalogue row
@@ -918,7 +945,7 @@ def apply_editorial_metadata(
     existing_lessons = [
         lesson
         for lesson_id, lesson in all_lesson_files(root).items()
-        if lesson_id not in generated_ids
+        if lesson_id not in generated_ids and not is_derived(lesson)
     ]
     ordered_lessons = sorted(
         existing_lessons + generated_lessons,
@@ -977,9 +1004,7 @@ def apply_editorial_metadata(
             vocab_id for entry, vocab_id in zip(vocabulary, vocabulary_ids)
             if vocab_id is not None and canonical_catalog_entry_id(entry, catalog_info) is None
         ]
-        day = lesson.get("order", 0) - 4
-        if not isinstance(day, int) or day < 1:
-            day = 1
+        day = max(1, lesson_number(lesson) - 4)
         metadata = copy.deepcopy(lesson.get("metadata", {}))
         if not isinstance(metadata, dict):
             metadata = {}
@@ -1009,16 +1034,9 @@ def apply_editorial_metadata(
         })
         lesson["metadata"] = metadata
 
-        for block in lesson.get("blocks", []):
-            if not isinstance(block, dict):
-                continue
-            block_metadata = copy.deepcopy(block.get("metadata", {}))
-            if not isinstance(block_metadata, dict):
-                block_metadata = {}
-            block_metadata.update(editorial_block_metadata(block))
-            block_metadata.setdefault("lessonDay", day)
-            block["metadata"] = block_metadata
+        apply_block_metadata(lesson, day)
         introduced.update(vocab_id for vocab_id in new_ids if isinstance(vocab_id, str))
+    return lexicon
 
 
 def lint_reference(reference: Any, context: str) -> None:
@@ -1202,6 +1220,12 @@ def lint_new_kind(spec: dict[str, Any], lesson: dict[str, Any], where: str) -> N
     material = list(line_hanzi) + [
         _hanzi_only(entry.get("example", {}).get("hanzi")) for entry in entries if isinstance(entry.get("example"), dict)
     ]
+    examples = [
+        example
+        for block in lesson.get("blocks", []) if isinstance(block, dict) and block.get("kind") == "introduction"
+        for example in introduction_examples(block)
+    ]
+    material.extend(_hanzi_only(hanzi) for hanzi, _, _ in examples)
     for block in lesson.get("blocks", []):
         if isinstance(block, dict) and block.get("kind") == "reading":
             material.extend(_hanzi_only(paragraph.get("hanzi")) for paragraph in block.get("paragraphs", []) if isinstance(paragraph, dict))
@@ -1225,6 +1249,7 @@ def lint_new_kind(spec: dict[str, Any], lesson: dict[str, Any], where: str) -> N
             if isinstance(example, dict) and _hanzi_only(example.get("hanzi")) == hanzi:
                 result.add(example.get("pinyin"))
         result.update(line.get("pinyin") for line in lines if _hanzi_only(line.get("hanzi")) == hanzi)
+        result.update(pinyin for example_hanzi, pinyin, _ in examples if _hanzi_only(example_hanzi) == hanzi)
         return result
 
     if kind in {"dictation", "toneDiscrimination", "conversationChoice"}:
@@ -1377,6 +1402,93 @@ def lint_new_vocabulary(lesson: dict[str, Any], new_ids: list[str], location: st
         )
 
 
+def lint_derived_lesson(lesson: dict[str, Any], lessons: dict[str, dict[str, Any]], location: str) -> None:
+    """Check a review or boss: what it covers, that it teaches no word, and how its exercises run."""
+    metadata = lesson["metadata"]
+    kind = metadata["lessonKind"]
+    covers = metadata.get("reviewedLessonIDs")
+    if not isinstance(covers, list) or not covers or any(cover not in lessons or is_derived(lessons[cover]) for cover in covers):
+        raise ContentError(f"{location}: metadata.reviewedLessonIDs must list daily lessons")
+    if any(lessons[cover]["moduleID"] != lesson["moduleID"] or lessons[cover]["order"] >= lesson["order"] for cover in covers):
+        raise ContentError(f"{location}: covers lessons of its own unit that come before it")
+    if kind == REVIEW and len(covers) != REVIEW_EVERY:
+        raise ContentError(f"{location}: a review covers {REVIEW_EVERY} lessons, found {len(covers)}")
+    if not lesson["id"].startswith(f"{kind}-"):
+        raise ContentError(f"{location}: the ID of a {kind} starts with '{kind}-'")
+    if metadata.get("newVocabularyIDs") != [] or metadata.get("newVocabularyCount") != 0:
+        raise ContentError(f"{location}: a {kind} introduces no word")
+    covered_words = {entry["id"] for cover in covers for entry in lessons[cover]["vocabulary"]}
+    strangers = sorted({entry["id"] for entry in lesson["vocabulary"]} - covered_words)
+    if strangers:
+        raise ContentError(f"{location}: vocabulary outside the covered lessons: {', '.join(strangers)}")
+    if lesson["estimatedMinutes"] != SESSION_MINUTES[kind][0]:
+        raise ContentError(f"{location}: estimatedMinutes must be {SESSION_MINUTES[kind][0]}")
+    if not any(isinstance(block, dict) and block.get("kind") == "dialogue" and block.get("lines") for block in lesson["blocks"]):
+        raise ContentError(f"{location}: a {kind} needs the dialogue its exercises draw on")
+
+    exercises = [block for block in lesson["blocks"] if isinstance(block, dict) and block.get("kind") == "exercise"]
+    low, high = DERIVED_BUDGET[kind]
+    if not low <= len(exercises) <= high:
+        raise ContentError(f"{location}: a {kind} runs {low}–{high} exercises, found {len(exercises)}")
+    kinds = {block["spec"]["kind"] for block in exercises}
+    required = set(NEW_KINDS) if kind == REVIEW else set(BOSS_KINDS)
+    if not required <= kinds:
+        raise ContentError(f"{location}: a {kind} needs the exercise kinds {', '.join(sorted(required - kinds))}")
+    if kind == BOSS:
+        challenge = {block["spec"]["kind"] for block in exercises if block["metadata"]["stage"] == PHASES[-1]}
+        if not set(BOSS_KINDS) <= challenge:
+            raise ContentError(f"{location}: the last phase of a boss must run its dialogue challenge ({', '.join(BOSS_KINDS)})")
+    previous: dict[str, int] = {}
+    asked: dict[str, int] = {}
+    for block in exercises:
+        source = block["metadata"].get("sourceLessonID")
+        if source not in covers:
+            raise ContentError(f"{location}: exercise '{block['spec']['header']['id']}' needs a sourceLessonID among the covered lessons")
+        stage, position = block["metadata"]["stage"], covers.index(source)
+        if position < previous.get(stage, 0):
+            raise ContentError(f"{location}: exercise '{block['spec']['header']['id']}' comes after a more recent lesson; each phase starts with the oldest")
+        previous[stage] = position
+        asked[source] = asked.get(source, 0) + 1
+    unasked = [cover for cover in covers if asked.get(cover, 0) < (2 if kind == REVIEW else 1)]
+    if unasked:
+        raise ContentError(f"{location}: the exercises skip {', '.join(unasked)}")
+
+
+def lint_review_structure(course: dict[str, Any], lessons: dict[str, dict[str, Any]], context: str) -> None:
+    """Reviews and bosses in the plan's units: a review after each five daily lessons, a boss closing each unit.
+
+    A unit whose lessons the plan never schedules (the four starters) is exempt.
+    A boss that ends a run of five stands in for that run's review.
+    """
+    planned = {session["lessonID"] for session in course.get("plan", {}).get("sessions", [])}
+    for module in course["modules"]:
+        lesson_ids = module["lessonIDs"]
+        location = f"{context}.modules[{module['id']}]"
+        derived = [lesson_id for lesson_id in lesson_ids if is_derived(lessons[lesson_id])]
+        if not planned.intersection(lesson_ids):
+            if derived:
+                raise ContentError(f"{location}: reviews and bosses belong to the planned units")
+            continue
+        run: list[str] = []
+        for lesson_id in lesson_ids:
+            if lesson_id not in derived:
+                run.append(lesson_id)
+                if len(run) > REVIEW_EVERY:
+                    raise ContentError(f"{location}: more than {REVIEW_EVERY} lessons in a row without a review, from '{run[0]}'")
+                continue
+            metadata = lessons[lesson_id]["metadata"]
+            if lesson_id not in planned:
+                raise ContentError(f"{location}: '{lesson_id}' is not in the plan")
+            if metadata["lessonKind"] == REVIEW:
+                if len(run) != REVIEW_EVERY or metadata.get("reviewedLessonIDs") != run or lesson_id == lesson_ids[-1]:
+                    raise ContentError(f"{location}: '{lesson_id}' must follow exactly {REVIEW_EVERY} lessons that it covers, and not end the unit")
+            elif lesson_id != lesson_ids[-1] or lesson_id != f"boss-{module['id']}" or metadata.get("reviewedLessonIDs") != [item for item in lesson_ids if item not in derived]:
+                raise ContentError(f"{location}: '{lesson_id}' must be the last lesson of its unit and cover all of the unit's daily lessons")
+            run = []
+        if not is_derived(lessons[lesson_ids[-1]]) or lessons[lesson_ids[-1]]["metadata"]["lessonKind"] != BOSS:
+            raise ContentError(f"{location}: the unit must end with a boss")
+
+
 def lint_bundle(root: Path) -> None:
     manifest = load_json(root / "manifest.json")
     if not isinstance(manifest, dict):
@@ -1443,6 +1555,7 @@ def lint_bundle(root: Path) -> None:
         if missing:
             raise ContentError(f"{context}: missing lesson files: {', '.join(missing)}")
         lint_plan(course, listed_lesson_ids, lessons, catalogs, context)
+        lint_review_structure(course, lessons, context)
         for lesson_id in listed_lesson_ids:
             lesson = lessons[lesson_id]
             location = f"lessons/{lesson_id}.json"
@@ -1492,6 +1605,8 @@ def lint_bundle(root: Path) -> None:
             if lesson_id not in PROTECTED_LEGACY_LESSONS:
                 lint_exercise_session(lesson, location)
                 lint_new_vocabulary(lesson, new_by_lesson[lesson_id], location)
+                if is_derived(lesson):
+                    lint_derived_lesson(lesson, lessons, location)
             specs = exercise_specs(lesson)
             spec_ids = [string(require(spec.get("header", {}), "id", location + ".exercise.header"), location + ".exercise.header.id") for spec in specs]
             unique(spec_ids, location + ".exercise.id")
@@ -1562,11 +1677,35 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
     unique(generated_ids, "authoring.lessons.id")
     if set(generated_ids) & PROTECTED_LEGACY_LESSONS:
         raise ContentError("authoring.lessons: lesson-01..lesson-04 are protected legacy documents")
-    apply_editorial_metadata(root, generated_lessons, catalog_info)
+    lexicon = apply_editorial_metadata(root, generated_lessons, catalog_info)
 
     modules_source = require(source, "modules", "authoring")
     if not isinstance(modules_source, list) or not modules_source:
         raise ContentError("authoring.modules: expected a non-empty array")
+    derived_blueprints = source.get("reviewLessons", [])
+    if not isinstance(derived_blueprints, list) or not all(isinstance(item, dict) for item in derived_blueprints):
+        raise ContentError("authoring.reviewLessons: expected an array of objects")
+    derived_ids = [string(require(item, "id", "authoring.reviewLessons"), "authoring.reviewLessons.id") for item in derived_blueprints]
+    for item in derived_blueprints:
+        for key in ("kind", "moduleID", "covers", "order"):
+            require(item, key, f"authoring.reviewLessons.{item['id']}")
+        if item["kind"] not in DERIVED_KINDS:
+            raise ContentError(f"authoring.reviewLessons.{item['id']}.kind: expected one of {', '.join(DERIVED_KINDS)}")
+    unique(generated_ids + derived_ids, "authoring.lessons.id")
+    unit_titles = {module["id"]: localized(module["title"], "authoring.modules.title")["fr"] for module in modules_source}
+    try:
+        derived_lessons = build_derived_lessons(
+            derived_blueprints, {lesson["id"]: lesson for lesson in generated_lessons}, unit_titles, source_version, lexicon,
+        )
+    except ExpansionError as exc:
+        raise ContentError(str(exc)) from exc
+    for lesson in derived_lessons:
+        apply_block_metadata(lesson, lesson["order"] - 4)
+    generated_lessons += derived_lessons
+    # Reviews that the pack no longer lists leave the bundle.
+    for path in sorted((root / "lessons").glob("*.json")):
+        if is_derived(load_json(path)) and path.stem not in derived_ids:
+            path.unlink()
     generated_course = copy.deepcopy(course_source)
     generated_course.update({"schemaVersion": SCHEMA_VERSION, "contentVersion": source_version, "id": course_id})
     generated_course["modules"] = copy.deepcopy(modules_source)
@@ -1579,7 +1718,12 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
         for module in generated_course["modules"]:
             old = existing_modules.get(module.get("id"))
             if old:
-                module["lessonIDs"] = list(dict.fromkeys(old.get("lessonIDs", []) + module.get("lessonIDs", [])))
+                # The pack orders its own lessons; lessons it does not list stay after them.
+                current = module.get("lessonIDs", [])
+                module["lessonIDs"] = current + [
+                    lesson_id for lesson_id in old.get("lessonIDs", [])
+                    if lesson_id not in current and not lesson_id.startswith(DERIVED_KINDS)
+                ]
     module_by_id = {module.get("id"): module for module in generated_course["modules"]}
     for lesson in generated_lessons:
         module = module_by_id.get(lesson["moduleID"])
@@ -1598,6 +1742,14 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
         course_ids.append(course_id)
     manifest.update({"schemaVersion": SCHEMA_VERSION, "contentVersion": source_version, "courseIDs": course_ids})
     manifest.setdefault("defaultCourseID", course_id)
+    # The manifest's counts describe its default course.
+    if manifest["defaultCourseID"] == course_id and isinstance(manifest.get("metadata"), dict):
+        course_metadata = generated_course.get("metadata", {})
+        manifest["metadata"].update({
+            key: course_metadata[key]
+            for key in ("starterLessonCount", "plannedSessionCount", "availableLessonCount", "canonicalVocabularyCount")
+            if key in course_metadata
+        })
     changed: set[Path] = {Path("manifest.json"), Path("courses") / f"{course_id}.json"}
     write_json(root / "courses" / f"{course_id}.json", generated_course)
     for lesson in generated_lessons:
@@ -1641,6 +1793,9 @@ def generate(root: Path, source_path: Path) -> None:
             target_file = root / relative
             target_file.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source_file, target_file)
+        for stale in (root / "lessons").glob("*.json"):
+            if not (staging / "lessons" / stale.name).exists():
+                stale.unlink()
 
 
 def main(argv: list[str]) -> int:

@@ -59,22 +59,27 @@ les validations natives sont exécutées sur les runners Apple, pas simulées ic
 
 ## Contenu livré
 
-Le bundle contient 94 leçons dans 9 unités :
+Le bundle contient 116 leçons dans 9 unités :
 
-- 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 90 séances
-  planifiées (`lesson-05` à `lesson-94`) ;
-- 1 647 exercices au total : 27 dans l’introduction et 1 620 dans le programme de
-  90 jours (18 par séance) ;
+- 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 112 séances
+  planifiées : 90 leçons du jour (`lesson-05` à `lesson-94`), 14 révisions
+  (`review-01` à `review-14`, une après chaque série de cinq leçons) et 8 défis de
+  fin d’unité (`boss-unit-02` à `boss-unit-09`) ;
+- 2 059 exercices au total : 27 dans l’introduction, 1 620 dans les 90 leçons
+  du jour (18 par séance) et 412 dans les révisions (18) et les défis (20) ;
 - 94 histoires inline et 196 paragraphes de lecture ;
 - 605 cartes et entrées lexicales distinctes, soit 600 lexèmes canoniques et
-  5 mots supplémentaires de contexte, pour 897 associations leçon–carte ;
+  5 mots supplémentaires de contexte, pour 1 797 associations leçon–carte ;
 - 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
   n’est embarqué.
 
 Chaque séance du programme vise 15 minutes, réparties en 12 minutes de cours et
-3 minutes de révision. Chaque séance introduit six à huit mots nouveaux. Le plan couvre les 300 lexèmes de rang 1 à 300 au jour
-48 (332 entrées canoniques livrées à ce point, dont des mots de rang supérieur
-pour des ancres de grammaire et des questions de sens), puis les 600 lexèmes au jour 90. Une couverture
+3 minutes de révision (13 + 2 pour un défi d’unité). Chaque leçon du jour introduit
+au plus huit mots nouveaux ; les révisions et les défis n’en introduisent aucun.
+Le plan couvre les 300 lexèmes de rang 1 à 300 au jour 60, le défi de l’unité 5
+(332 entrées canoniques livrées à ce point, dont des mots de rang supérieur
+pour des ancres de grammaire et des questions de sens), puis les 600 lexèmes au
+jour 112, le défi de l’unité 9. Une couverture
 éditoriale ne prouve ni acquisition ni réussite à un examen.
 
 Les cartes des séances quotidiennes affichent le hanzi seul au recto ; le
@@ -92,7 +97,8 @@ traditionnel. Leur seule mise à jour de payload est la version de contenu
 
 Tavi, le panda roux original, accompagne l’accueil, les encouragements et les
 célébrations. Le parcours sinueux utilise des nœuds colorés et des icônes
-adaptées aux leçons. Les apparences Système, Clair et Sombre restent disponibles,
+adaptées aux leçons ; les révisions portent des flèches circulaires et les défis
+de fin d’unité une couronne. Les apparences Système, Clair et Sombre restent disponibles,
 ainsi que Réduire les animations.
 
 La même barre basse dessert **Aujourd’hui, Parcours, Explorer, Cartes et Profil**

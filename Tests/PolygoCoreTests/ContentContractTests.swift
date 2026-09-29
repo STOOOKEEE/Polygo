@@ -477,14 +477,19 @@ final class ContentContractTests: XCTestCase {
         )
         XCTAssertNotNil(
             defaultSnapshot.manifest.plan,
-            "The default course must carry the authored 90-day programme"
+            "The default course must carry the authored daily programme"
         )
         for snapshot in snapshots {
             guard let plan = snapshot.manifest.plan else { continue }
 
             XCTAssertEqual(plan.targetMinutes, 15, "\(snapshot.manifest.id.rawValue) daily target")
             let sessions = plan.orderedSessions
-            XCTAssertEqual(sessions.count, 90, "\(snapshot.manifest.id.rawValue) must author 90 daily sessions")
+            // 90 daily lessons, a review after each five of them and a boss closing each of the 8 units.
+            XCTAssertEqual(
+                sessions.filter { $0.lessonID.rawValue.hasPrefix("lesson-") }.count, 90,
+                "\(snapshot.manifest.id.rawValue) must schedule 90 daily lessons"
+            )
+            XCTAssertEqual(sessions.count, 90 + 14 + 8, "\(snapshot.manifest.id.rawValue) must author 112 sessions")
             let days = sessions.map(\.day)
             XCTAssertEqual(days, Array(1...sessions.count), "Plan days must be contiguous and start at one")
             XCTAssertEqual(Set(sessions.map(\.lessonID)).count, sessions.count, "A lesson may occur in only one plan day")
@@ -512,18 +517,24 @@ final class ContentContractTests: XCTestCase {
             XCTAssertEqual(Set(milestoneDays).count, milestoneDays.count, "Milestone days must be unique")
             // The HSK 1–2 boundary sits at the end of unit 5: with at most
             // eight new words per lesson, 300 lexemes are out of reach by day 30.
-            for day in [48, 90] {
+            // Reviews add no word, so each milestone falls on the boss that closes its unit.
+            for target in [300, 600] {
                 let milestone = try XCTUnwrap(
-                    plan.milestones.first(where: { $0.day == day }),
-                    "Missing day \(day) milestone"
+                    plan.milestones.first(where: { $0.coverage?.vocabularyTarget == target }),
+                    "Missing milestone covering \(target) lexemes"
                 )
+                let day = milestone.day
                 let coverage = try XCTUnwrap(milestone.coverage, "Day \(day) needs canonical coverage")
+                XCTAssertTrue(
+                    sessions[day - 1].lessonID.rawValue.hasPrefix("boss-"),
+                    "The \(target)-lexeme milestone must fall on a unit boss"
+                )
                 XCTAssertEqual(coverage.catalogID, catalog.id)
                 XCTAssertEqual(coverage.catalogVersion, catalog.version)
                 XCTAssertTrue(coverage.canonicalOnly)
                 XCTAssertEqual(
                     coverage.vocabularyTarget,
-                    day == 48 ? 300 : 600,
+                    target,
                     "The milestone target must be the authored HSK reference target"
                 )
                 if let reference = milestone.reference {
@@ -550,7 +561,7 @@ final class ContentContractTests: XCTestCase {
                 // may use a higher-level lexeme for a natural scene before
                 // the boundary, so the total delivered set can exceed the
                 // target; every lexeme through the boundary must be present.
-                let targetLexemes = day == 48
+                let targetLexemes = target == 300
                     ? Set(catalog.lexemeKeysByRank.filter { (1...300).contains($0.key) }.map(\.value))
                     : catalog.lexemeKeys
                 XCTAssertEqual(
@@ -823,6 +834,62 @@ final class ContentContractTests: XCTestCase {
         }
 
         XCTAssertGreaterThan(checkedLessons, 0)
+    }
+
+    /// Every planned unit runs its daily lessons in fives, each five followed by
+    /// a review of exactly those lessons; a boss closes the unit and covers all
+    /// of it. Reviews and bosses introduce no word.
+    func testEveryFiveDailyLessonsAreReviewedAndEveryUnitEndsWithABoss() async throws {
+        let (index, snapshots) = try await allCourseSnapshots()
+        let snapshot = try XCTUnwrap(snapshots.first(where: { $0.manifest.id == index.defaultCourseID }))
+        let plan = try XCTUnwrap(snapshot.manifest.plan)
+        let planned = Set(plan.sessions.map(\.lessonID))
+        let newKinds: Set<String> = ["matching", "dictation", "toneDiscrimination", "translation", "conversationChoice", "dialogueOrder"]
+        let bossKinds: Set<String> = ["listeningChoice", "conversationChoice", "translation", "dialogueOrder", "speaking"]
+        var reviews = 0
+        var bosses = 0
+
+        for module in snapshot.manifest.modules where !planned.isDisjoint(with: module.lessonIDs) {
+            var run: [LessonID] = []
+            for lessonID in module.lessonIDs {
+                let raw = try rawLesson(lessonID)
+                let metadata = try XCTUnwrap(raw["metadata"] as? [String: Any])
+                guard let kind = metadata["lessonKind"] as? String else {
+                    run.append(lessonID)
+                    XCTAssertLessThanOrEqual(run.count, 5, "\(module.id.rawValue): more than five lessons in a row without a review")
+                    continue
+                }
+                let covered = (try XCTUnwrap(metadata["reviewedLessonIDs"] as? [String])).compactMap(LessonID.init(rawValue:))
+                XCTAssertTrue(planned.contains(lessonID), "\(lessonID.rawValue) must be in the plan")
+                XCTAssertEqual(metadata["newVocabularyIDs"] as? [String], [], "\(lessonID.rawValue) must introduce no word")
+                let exerciseKinds = try (XCTUnwrap(raw["blocks"] as? [[String: Any]]))
+                    .filter { $0["kind"] as? String == "exercise" }
+                    .compactMap { ($0["spec"] as? [String: Any])?["kind"] as? String }
+                switch kind {
+                case "review":
+                    reviews += 1
+                    XCTAssertEqual(covered, run, "\(lessonID.rawValue) must review exactly the five lessons before it")
+                    XCTAssertEqual(run.count, 5)
+                    XCTAssertNotEqual(lessonID, module.lessonIDs.last, "A review cannot close a unit")
+                    XCTAssertTrue((15...20).contains(exerciseKinds.count), "\(lessonID.rawValue) runs 15–20 exercises")
+                    XCTAssertTrue(newKinds.isSubset(of: Set(exerciseKinds)), "\(lessonID.rawValue) must use every newer exercise kind")
+                case "boss":
+                    bosses += 1
+                    XCTAssertEqual(lessonID, module.lessonIDs.last, "A boss closes its unit")
+                    XCTAssertEqual(covered, module.lessonIDs.filter { !($0.rawValue.hasPrefix("review-") || $0.rawValue.hasPrefix("boss-")) })
+                    XCTAssertTrue((18...20).contains(exerciseKinds.count), "\(lessonID.rawValue) runs 18–20 exercises")
+                    XCTAssertTrue(bossKinds.isSubset(of: Set(exerciseKinds)), "\(lessonID.rawValue) must run the dialogue challenge")
+                default:
+                    XCTFail("\(lessonID.rawValue): unknown lesson kind \(kind)")
+                }
+                run = []
+            }
+            let last = try rawLesson(try XCTUnwrap(module.lessonIDs.last))
+            XCTAssertEqual((last["metadata"] as? [String: Any])?["lessonKind"] as? String, "boss", "\(module.id.rawValue) must end with a boss")
+        }
+
+        XCTAssertEqual(reviews, 14)
+        XCTAssertEqual(bosses, 8)
     }
 
     /// A lesson introduces at most eight words, and each of them is presented

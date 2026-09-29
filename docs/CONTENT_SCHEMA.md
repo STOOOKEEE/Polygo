@@ -20,7 +20,8 @@ nécessaires aux contrôles et vérifie les liens avant d'écrire le bundle.
 ## Bundle chargé par l'application
 
 Une release complète du parcours contient une introduction de quatre leçons,
-puis les 90 leçons quotidiennes :
+puis les 90 leçons quotidiennes et les 22 révisions et défis d'unité qui s'y
+intercalent :
 
 ~~~text
 Content/
@@ -29,7 +30,9 @@ Content/
     mandarin-starter.json
   lessons/
     lesson-01.json … lesson-04.json   # introduction protégée
-    lesson-05.json … lesson-94.json   # jours 1 à 90
+    lesson-05.json … lesson-94.json   # 90 leçons du jour
+    review-01.json … review-14.json   # une révision après chaque série de cinq leçons
+    boss-unit-02.json … boss-unit-09.json  # un défi à la fin de chaque unité
   authoring/                           # sources de release conservées dans le dépôt
     90-day-authoring.json              # pack assemblé donné au générateur
     90-day-allocation.json             # allocation et plan de référence
@@ -91,8 +94,8 @@ Un fichier courses/{courseID}.json est un CourseManifest :
   "contentVersion": "2026.10.0",
   "id": "mandarin-starter",
   "slug": "mandarin-starter",
-  "title": {"fr": "Mandarin au quotidien — parcours de 90 jours"},
-  "description": {"fr": "Un parcours de 90 séances ..."},
+  "title": {"fr": "Mandarin au quotidien — parcours de 112 jours"},
+  "description": {"fr": "Un parcours de 112 séances ..."},
   "alignment": [
     {
       "framework": "HSK",
@@ -137,21 +140,28 @@ displayName et level servent aux surfaces de navigation et à l'index des
 histoires. L'introduction est unit-01 avec lesson-01 à lesson-04. Les modules
 du parcours quotidien sont :
 
-| Module | Jours | Leçons |
-| --- | ---: | ---: |
-| unit-02 — Vie pratique | 1–12 | lesson-05–lesson-16 |
-| unit-03 — Temps, études et santé | 13–24 | lesson-17–lesson-28 |
-| unit-04 — Achats et déplacements | 25–36 | lesson-29–lesson-40 |
-| unit-05 — Maison et communauté | 37–48 | lesson-41–lesson-52 |
-| unit-06 — Études et travail | 49–60 | lesson-53–lesson-64 |
-| unit-07 — Ville et voyage | 61–72 | lesson-65–lesson-76 |
-| unit-08 — Météo, nature et loisirs | 73–82 | lesson-77–lesson-86 |
-| unit-09 — Récits et opinions | 83–90 | lesson-87–lesson-94 |
+| Module | Jours | Leçons du jour | Révisions | Défi |
+| --- | ---: | --- | --- | --- |
+| unit-02 — Vie pratique | 1–15 | lesson-05–lesson-16 | review-01, review-02 | boss-unit-02 |
+| unit-03 — Temps, études et santé | 16–30 | lesson-17–lesson-28 | review-03, review-04 | boss-unit-03 |
+| unit-04 — Achats et déplacements | 31–45 | lesson-29–lesson-40 | review-05, review-06 | boss-unit-04 |
+| unit-05 — Maison et communauté | 46–60 | lesson-41–lesson-52 | review-07, review-08 | boss-unit-05 |
+| unit-06 — Études et travail | 61–75 | lesson-53–lesson-64 | review-09, review-10 | boss-unit-06 |
+| unit-07 — Ville et voyage | 76–90 | lesson-65–lesson-76 | review-11, review-12 | boss-unit-07 |
+| unit-08 — Météo, nature et loisirs | 91–102 | lesson-77–lesson-86 | review-13 | boss-unit-08 |
+| unit-09 — Récits et opinions | 103–112 | lesson-87–lesson-94 | review-14 | boss-unit-09 |
 
-Les jours 30, 60 et 90 correspondent à lesson-34, lesson-64 et lesson-94 : ce
-sont les bilans, sans mot nouveau. Ces leçons restent des leçons ordinaires dans
-le bundle ; le statut de checkpoint vient de CoursePlan et de l'allocation. Le
-jalon des 300 lexèmes tombe au jour 48, dernier jour de l'unité 5 (lesson-52).
+Les IDs des leçons du jour ne changent pas : la progression est indexée par ID.
+Les révisions et les défis ont leurs propres IDs (`review-NN`, `boss-<unité>`).
+Dans chaque module, `lessonIDs` suit l'ordre du parcours et le champ `order` des
+leçons suit cet ordre : `order` est la position dans la séquence du cours (les
+quatre introductions, puis un jour de plan = un `order`), non le numéro de
+l'ID. Les lecons `lesson-34`, `lesson-64` et `lesson-94` (bilans de
+l'allocation, sans mot nouveau) restent des leçons ordinaires ; les jours 30, 60
+et 90 de l'allocation désignent les jours des 90 leçons avant l'insertion des
+révisions. Les jalons du plan sont replacés sur le défi qui clôt l'unité de leur
+leçon : la couverture ne change pas puisque révisions et défis n'ajoutent aucun
+mot. Le jalon des 300 lexèmes tombe au jour 60 (`boss-unit-05`, après lesson-52).
 
 ## Plan quotidien de 15 minutes
 
@@ -163,7 +173,7 @@ il contient :
 | targetMinutes | entier | 15 |
 | catalogID | chaîne optionnelle | ID du catalogue de progression, ici hsk-legacy-600 |
 | catalogVersion | chaîne optionnelle | version du payload, ici 2026.09.0 |
-| sessions | tableau | 90 entrées contiguës, jours 1 à 90 |
+| sessions | tableau | 112 entrées contiguës, jours 1 à 112 (90 leçons, 14 révisions, 8 défis) |
 | milestones | tableau | jalons uniques dont le jour reste dans le plan |
 
 Chaque entrée sessions a quatre champs :
@@ -178,10 +188,10 @@ Chaque entrée sessions a quatre champs :
 ~~~
 
 Pour chaque jour du parcours, courseMinutes reprend estimatedMinutes de la
-leçon (12 minutes dans les 90 leçons actuellement livrées) et
-reviewMinutes vaut 15 moins courseMinutes. Les deux valeurs sont strictement
-positives et leur somme vaut targetMinutes. Le budget quotidien est donc
-12 + 3 = 15 pour les jours 1 à 90. Ce sont des budgets éditoriaux destinés à
+leçon (12 minutes dans les 90 leçons du jour et les révisions, 13 dans les défis
+d'unité) et reviewMinutes vaut 15 moins courseMinutes. Les deux valeurs sont
+strictement positives et leur somme vaut targetMinutes. Le budget quotidien est
+donc 12 + 3 = 15, ou 13 + 2 = 15 pour un défi. Ce sont des budgets éditoriaux destinés à
 cadrer la séance ; ils ne mesurent pas le temps réellement passé. Les
 révisions sont choisies parmi les cartes SRS effectivement dues.
 
@@ -214,13 +224,44 @@ Les jalons livrés portent les couvertures suivantes :
 
 | Jour | Couverture |
 | ---: | --- |
-| 48 | rangs 1–300 du catalogue hsk-legacy-600 |
-| 60 | consolidation et réemploi, sans nouvelle cible numérique |
-| 90 | rangs 1–600 du catalogue hsk-legacy-600 |
+| 60 | rangs 1–300 du catalogue hsk-legacy-600 |
+| 75 | consolidation et réemploi, sans nouvelle cible numérique |
+| 112 | rangs 1–600 du catalogue hsk-legacy-600 |
 
 claims décrit une planification éditoriale. Une exposition lexicale, une carte
 réussie ou une leçon terminée ne doit pas être reformulée en maîtrise, niveau
 acquis ou score d'examen.
+
+## Révisions et défis d'unité
+
+Dans chaque unité du plan, une révision suit chaque série de cinq leçons du jour
+et un défi (« boss ») clôt l'unité ; un défi qui termine une série de cinq tient
+lieu de révision. `unit-01` (les quatre introductions) n'est pas planifiée et n'a
+ni révision ni défi. Ce sont des leçons ordinaires pour le décodeur Swift, avec
+les IDs `review-NN` et `boss-<unité>` (`boss-unit-02`) ; la CI Swift et le linter
+les reconnaissent à `metadata.lessonKind` (`review` ou `boss`) :
+
+| Clé de `metadata` | Contrat |
+| --- | --- |
+| lessonKind | `review` ou `boss` |
+| reviewedLessonIDs | les 5 leçons qui précèdent la révision ; toutes les leçons du jour de l'unité pour un défi |
+| newVocabularyIDs | toujours vide (`newVocabularyCount` vaut 0) |
+
+Leur `vocabulary` reprend, sans les modifier, les entrées introduites par les
+leçons couvertes (toutes pour une révision, cinq par leçon pour un défi) avec leurs
+cartes ; leur bloc `dialogue` enchaîne de courts extraits (trois répliques) des
+dialogues couverts, séparés pour les exercices de dialogue ; leur bloc
+`introduction` liste les structures de grammaire couvertes avec l'exemple de
+chaque note (`Exemple N : …`). Aucun texte chinois, pinyin ni traduction n'est
+nouveau. Une révision compte 18 exercices et reprend les six types plus récents
+(`matching`, `dictation`, `toneDiscrimination`, `translation`,
+`conversationChoice`, `dialogueOrder`) ; un défi en compte 20, et sa dernière
+phase est un dialogue à mener : écoute de répliques, choix de réponses,
+traduction, mise en ordre et oral. Chaque bloc d'exercice porte
+`metadata.sourceLessonID`, la plus ancienne leçon couverte qu'il interroge, et
+chaque phase (`discover`, `guided`, `reuse`) commence par les leçons les plus
+anciennes. Un défi dure 13 minutes de cours et 2 de révision SRS (une révision,
+12 + 3).
 
 ## Document de leçon généré
 
@@ -494,8 +535,13 @@ puissent être relues sans reconstruire les phrases :
 | 90-day-authoring.json | résultat vérifié de l'assemblage des trois fragments |
 | hsk-legacy-examples-*.json | exemples de phrases par plage de rang du catalogue |
 
-Le pack assemblé possède schemaVersion, contentVersion, course, catalog, modules
-et lessons. Chaque blueprint de leçon conserve id, moduleID, order, title,
+Le pack assemblé possède schemaVersion, contentVersion, course, catalog, modules,
+lessons et reviewLessons. `Tools/assemble_90_day_authoring.py` y insère les
+révisions et les défis d'unité (voir `Tools/review_lessons.py`) : il ajoute leurs
+séances au plan, renumérote les jours et les `order`, replace les jalons et
+recalcule les compteurs du cours. reviewLessons ne contient que les blueprints
+des leçons dérivées ; `content_tool.py generate` en écrit les leçons à partir des
+leçons du jour générées. Chaque blueprint de leçon conserve id, moduleID, order, title,
 summary, estimatedMinutes, objectives, vocabularyIDs, grammar, dialogue,
 reading, exercises et recap. level, extraVocabulary et metadata sont
 facultatifs selon le fragment. metadata décrit l'allocation
@@ -639,9 +685,13 @@ versions, les IDs de cours, modules, leçons, blocs et exercices, les objectifs,
 les références lexicales, les cartes, les questions de lecture et les assets.
 Lorsqu'un catalogue est présent, il vérifie ses 600 rangs contigus, son
 référentiel HSK-legacy-2.0 / 2.0, les sidecars, les formes et les cibles
-canoniques du plan. Il vérifie aussi les 90 sessions, la règle
-courseMinutes = estimatedMinutes, les budgets de 15 minutes et les frontières
-de rang des jours 30 et 90.
+canoniques du plan. Il vérifie aussi les 112 sessions, les budgets de
+15 minutes, les frontières de rang des jalons de 300 et 600 lexèmes et les
+révisions : une révision après chaque série de cinq leçons du jour, un défi à
+la fin de chaque unité planifiée, aucun mot nouveau, 15 à 20 exercices pour une
+révision et 18 à 20 pour un défi, tous les types plus récents dans une révision
+et le dialogue à mener dans la dernière phase d'un défi, chaque phase
+commençant par les leçons les plus anciennes.
 
 Une release peut afficher une référence, une exposition ou une progression
 éditoriale. Elle ne doit pas afficher ces champs comme une maîtrise, un niveau

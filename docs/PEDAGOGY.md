@@ -1,8 +1,9 @@
 # Pédagogie et progression Polygo
 
 Contrat éditorial du programme **Mandarin au quotidien**, version 2026.10.0.
-Ce document décrit les quatre leçons d'introduction et les 90 séances
-quotidiennes qui les suivent. Il complète [ARCHITECTURE.md](ARCHITECTURE.md),
+Ce document décrit les quatre leçons d'introduction et les 112 séances
+quotidiennes qui les suivent : 90 leçons du jour, 14 révisions et 8 défis
+d'unité. Il complète [ARCHITECTURE.md](ARCHITECTURE.md),
 [CONTENT_SCHEMA.md](CONTENT_SCHEMA.md), [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md)
 et [SRS.md](SRS.md). Les durées, paliers et niveaux sont des décisions
 éditoriales ; ils ne mesurent pas le temps réel passé et ne promettent pas un
@@ -13,21 +14,31 @@ résultat d'examen.
 Les leçons `lesson-01` à `lesson-04` forment l'introduction `unit-01`
 (`level-01`). Elles installent les premières salutations, la présentation, le
 pays d'origine et un mini-échange. Le programme quotidien commence ensuite au
-jour 1 avec `lesson-05` et se termine au jour 90 avec `lesson-94`. Le jour est
+jour 1 avec `lesson-05` et se termine au jour 112 avec `boss-unit-09`. Le jour est
 l'unité de progression ; l'identifiant de leçon reste stable même si un jour
 est manqué.
 
-| Bloc | Jours | Leçons | Fonction éditoriale |
+| Bloc | Jours | Leçons du jour | Fonction éditoriale |
 | --- | ---: | ---: | --- |
 | Introduction | avant le jour 1 | 01–04 | installer les premiers échanges |
-| `unit-02` — Vie pratique | 1–12 | 05–16 | maison, repas, famille et déplacements simples |
-| `unit-03` — Temps, études et santé | 13–24 | 17–28 | routine, études, santé et loisirs |
-| `unit-04` — Achats et déplacements | 25–36 | 29–40 | achats, directions et vie quotidienne |
-| `unit-05` — Maison et communauté | 37–48 | 41–52 | quartier, maison et relations |
-| `unit-06` — Études et travail | 49–60 | 53–64 | études, bureau et consolidation intermédiaire |
-| `unit-07` — Ville et voyage | 61–72 | 65–76 | ville, transport et voyage |
-| `unit-08` — Météo, nature et loisirs | 73–82 | 77–86 | environnement, météo et activités |
-| `unit-09` — Récits et opinions | 83–90 | 87–94 | récits, opinions et bilan final |
+| `unit-02` — Vie pratique | 1–15 | 05–16 | maison, repas, famille et déplacements simples |
+| `unit-03` — Temps, études et santé | 16–30 | 17–28 | routine, études, santé et loisirs |
+| `unit-04` — Achats et déplacements | 31–45 | 29–40 | achats, directions et vie quotidienne |
+| `unit-05` — Maison et communauté | 46–60 | 41–52 | quartier, maison et relations |
+| `unit-06` — Études et travail | 61–75 | 53–64 | études, bureau et consolidation intermédiaire |
+| `unit-07` — Ville et voyage | 76–90 | 65–76 | ville, transport et voyage |
+| `unit-08` — Météo, nature et loisirs | 91–102 | 77–86 | environnement, météo et activités |
+| `unit-09` — Récits et opinions | 103–112 | 87–94 | récits, opinions et bilan final |
+
+Dans chaque unité, une **révision** (`review-NN`) suit chaque série de cinq leçons
+du jour et un **défi d'unité** (`boss-unit-NN`) la clôt ; le défi d'une unité dont
+la dernière série compte cinq leçons tient lieu de révision. Aucun de ces
+séances ne présente de mot nouveau. La révision est un test cumulatif des cinq
+leçons précédentes : vocabulaire, phrases et structures, 18 exercices qui
+reprennent les six types plus récents, chaque phase commençant par les leçons les
+plus anciennes. Le défi couvre toute l'unité en 20 exercices et finit par un
+dialogue à mener (écoute, réponse, traduction, mise en ordre, oral). Les révisions
+ne remplacent pas le rappel SRS de 3 minutes (2 minutes les jours de défi).
 
 Les sources d'authoring qui portent ce parcours sont
 `Content/authoring/preview-first-five.json` pour les jours 1 à 5,
@@ -44,13 +55,14 @@ ne devient ni une minuterie obligatoire ni une mesure d'engagement.
 
 | Période | Cours nouveau | Rappel SRS | Total |
 | --- | ---: | ---: | ---: |
-| Jours 1–90 | `lesson.estimatedMinutes` (12 min dans la release actuelle) | `15 - courseMinutes` (3 min) | 15 min |
+| Jours 1–112 | `lesson.estimatedMinutes` (12 min, 13 min pour un défi d'unité) | `15 - courseMinutes` (3 min, 2 min pour un défi) | 15 min |
 
-Pour chacune des 90 sessions, `courseMinutes` reprend la durée de la leçon
+Pour chacune des 112 sessions, `courseMinutes` reprend la durée de la leçon
 associée et `reviewMinutes` complète ce budget jusqu'à 15 minutes. Les leçons
-quotidiennes actuelles valent 12 minutes, donc chaque session porte 12 + 3.
-Les jours 30, 60 et 90 restent des checkpoints éditoriaux ; leur budget ne
-change pas.
+quotidiennes et les révisions valent 12 minutes, donc 12 + 3 ; un défi vaut
+13 + 2. Les bilans de l'allocation (jours 30, 60 et 90 avant l'insertion des
+révisions : `lesson-34`, `lesson-64`, `lesson-94`) restent des checkpoints
+éditoriaux ; leur budget ne change pas.
 
 Le cycle d'apprentissage reste le même dans chaque séance :
 
@@ -87,9 +99,13 @@ sur le nombre de cartes affichées :
 
 | Jalon | Ce qui est planifié | Ce que cela ne dit pas |
 | --- | --- | --- |
-| Jour 48 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
-| Jour 60 | consolidation et réemploi, sans nouvelle cible numérique | qu'un niveau ou une liste est validé |
-| Jour 90 | les rangs 1 à 600 sont planifiés | qu'un apprenant maîtrise le catalogue ou réussira un examen |
+| Jour 60 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
+| Jour 75 | consolidation et réemploi, sans nouvelle cible numérique | qu'un niveau ou une liste est validé |
+| Jour 112 | les rangs 1 à 600 sont planifiés | qu'un apprenant maîtrise le catalogue ou réussira un examen |
+
+Les révisions et les défis d'unité n'introduisent aucun mot : les jalons se posent
+sur le défi qui clôt l'unité de la leçon qui portait le jalon dans l'allocation
+(jours 48, 60 et 90 avant l'insertion des révisions).
 
 Une entrée rencontrée est une exposition éditoriale. La maîtrise demande des
 rappels et des productions observables, et reste indépendante du jour atteint.
@@ -168,8 +184,9 @@ et dans `PolygoSRS.SM2Scheduler`. Le contenu ne contient aucun état apprenant.
 La release vérifie les IDs, la résolution du catalogue, l'unicité des cartes,
 les objectifs et les exercices, les références de lecture, les deux scripts,
 les tons, les traductions et les assets réellement présents. Elle vérifie aussi
-que les 90 sessions sont contiguës, que chaque budget vaut 15 minutes et que
-les couvertures des jours 30 et 90 portent sur les rangs canoniques annoncés.
+que les 112 sessions sont contiguës, que chaque budget vaut 15 minutes, que
+les couvertures des jalons de 300 et 600 lexèmes portent sur les rangs canoniques
+annoncés et que chaque unité suit le rythme révision / défi décrit plus haut.
 Une publication peut afficher un repère de curriculum, une exposition ou une
 progression ; elle ne doit pas présenter ces éléments comme une maîtrise ou un
 score d'examen.

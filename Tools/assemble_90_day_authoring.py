@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Assemble the reviewed 90-session Mandarin authoring pack.
+"""Assemble the reviewed Mandarin authoring pack: 90 daily lessons and the reviews between them.
 
 The course is authored in three independently reviewable lesson fragments:
 the five-session preview, days 6–45, and days 46–90.  This script only
 joins those documents and copies the allocation's modules and day plan.  It
 does not derive or rewrite any Mandarin, pinyin, translation, answer, or
 example sentence.
+
+It then places the reviews and unit bosses of `review_lessons` in the modules
+and the plan: their sessions take days of the plan, the milestones move with
+their lessons, and the counts in the course description follow.  Only their
+blueprints are written here; `content_tool.py generate` builds the lessons.
 
 The allocation owns every lesson's canonical vocabulary. The range builders
 copy it into their fragments; the preview fragment carries none, so it is
@@ -17,6 +22,8 @@ import copy
 import json
 from pathlib import Path
 from typing import Any
+
+from review_lessons import BOSS, REVIEW, derive_layout, derive_sessions, remap_milestones
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -207,14 +214,33 @@ def assemble() -> dict[str, Any]:
         if session.get("reviewMinutes") != plan.get("targetMinutes") - lesson.get("estimatedMinutes"):
             raise AssemblyError(f"day {index + 1}: reviewMinutes must fill the target budget")
 
+    # Reviews and bosses join the daily lessons: they take days of the plan, and
+    # every lesson's `order` becomes its position in the course sequence.
+    layout, derived = derive_layout(modules)
+    derived_sessions = derive_sessions(layout, plan["sessions"], derived)
+    orders = {session["lessonID"]: session["day"] + 4 for session in derived_sessions}
+    for lesson in lessons:
+        lesson["order"] = orders[lesson["id"]]
+    for blueprint in derived:
+        blueprint["order"] = orders[blueprint["id"]]
+    plan = {
+        **plan,
+        "sessions": derived_sessions,
+        "milestones": remap_milestones(plan["milestones"], plan["sessions"], derived_sessions, layout),
+    }
+    modules = layout
+    reviews = sum(blueprint["kind"] == REVIEW for blueprint in derived)
+    bosses = sum(blueprint["kind"] == BOSS for blueprint in derived)
+    total = len(derived_sessions)
+
     source_course = copy.deepcopy(preview["course"])
     source_course.update(
         {
             "id": COURSE_ID,
             "slug": COURSE_ID,
-            "title": {"fr": "Mandarin au quotidien — parcours de 90 jours"},
+            "title": {"fr": f"Mandarin au quotidien — parcours de {total} jours"},
             "description": {
-                "fr": "Un parcours de 90 séances pour comprendre, produire et réemployer le mandarin du quotidien. Repère HSK classique 2.0 / legacy ; la couverture décrit les lexèmes rencontrés et ne garantit ni maîtrise ni score d’examen."
+                "fr": f"Un parcours de {total} séances pour comprendre, produire et réemployer le mandarin du quotidien : {len(lessons)} leçons, {reviews} révisions cumulatives et {bosses} défis de fin d’unité. Repère HSK classique 2.0 / legacy ; la couverture décrit les lexèmes rencontrés et ne garantit ni maîtrise ni score d’examen."
             },
             # Keep the transition reference explicit: this release's plan is
             # aligned to the versioned classic HSK list only.
@@ -242,8 +268,8 @@ def assemble() -> dict[str, Any]:
                 "examClaim": "none",
                 "scriptPolicy": "simplified-and-traditional",
                 "starterLessonCount": 4,
-                "plannedSessionCount": 90,
-                "availableLessonCount": 94,
+                "plannedSessionCount": total,
+                "availableLessonCount": 4 + total,
                 "canonicalVocabularyCount": 600,
             },
             "standardReferences": [
@@ -270,6 +296,7 @@ def assemble() -> dict[str, Any]:
         "catalog": catalog,
         "modules": copy.deepcopy(modules),
         "lessons": lessons,
+        "reviewLessons": derived,
     }
 
 

@@ -2,7 +2,10 @@ import SwiftUI
 import PolygoCore
 
 /// Explicit symbols follow bundled lesson themes; unknown IDs keep a generic book.
+/// Reviews and unit bosses (`review-NN`, `boss-unit-NN`) have their own symbols.
 private func lessonPathSymbol(for lessonID: LessonID) -> String {
+    if lessonID.rawValue.hasPrefix("review-") { return "arrow.triangle.2.circlepath" }
+    if lessonID.rawValue.hasPrefix("boss-") { return "crown.fill" }
     switch lessonID.rawValue {
     case "lesson-01": return "hand.wave.fill"
     case "lesson-02": return "person.fill"

@@ -115,6 +115,14 @@ class Exercise:
     spec: dict[str, Any]
 
 
+def lesson_number(lesson: dict[str, Any]) -> int:
+    """The number in a daily lesson's ID (`lesson-10` is 10); `order` follows the course sequence."""
+    match = re.fullmatch(r"lesson-(\d+)", lesson["id"])
+    if match is None:
+        raise ExpansionError(f"{lesson['id']}: not a daily lesson ID")
+    return int(match.group(1))
+
+
 def _is_hanzi(char: str) -> bool:
     return "\u3400" <= char <= "\u4dbf" or "\u4e00" <= char <= "\u9fff"
 
@@ -183,6 +191,8 @@ class Candidate:
     words: frozenset[str]
     family: str
     sentence: str | None = None
+    # Position of the lesson the exercise draws on, oldest first; reviews sort by it.
+    origin: int = 0
 
     @property
     def kind(self) -> str:
@@ -241,16 +251,23 @@ def _spread_kinds(items: list[Candidate]) -> list[Candidate]:
     return result
 
 
-class _Builder:
+class SessionBuilder:
+    """Every exercise a lesson's material can produce (see `candidates`).
+
+    Review lessons subclass it with their own material and exercise identity.
+    """
+
     def __init__(
         self,
         lesson: dict[str, Any],
         new_ids: set[str],
         earlier_vocabulary: list[dict[str, Any]],
         lexicon: set[str],
+        identity: tuple[int, str] | None = None,
     ) -> None:
         self.lesson = lesson
-        self.lesson_no = int(lesson["order"])
+        # The number offsets the walk of correct answers; the prefix opens every exercise ID.
+        self.lesson_no, self.exercise_prefix = identity or (lesson_number(lesson), f"ex-l{lesson_number(lesson)}")
         self.new_ids = new_ids
         self.lexicon = lexicon
         self.vocabulary = [entry for entry in lesson["vocabulary"] if _fr(entry.get("meaning"))]
@@ -368,7 +385,7 @@ class _Builder:
             return None
         self.used_prompts.add((prompt, subject))
         return {
-            "id": f"ex-l{self.lesson_no}-{exercise_id}",
+            "id": f"{self.exercise_prefix}-{exercise_id}",
             "prompt": {"fr": prompt},
             "instruction": {"fr": instruction},
             "objectiveIDs": [self.objectives[objective]],
@@ -863,7 +880,11 @@ class _Builder:
 
     # -- candidate pool --------------------------------------------------
 
-    def candidate(self, exercise: Exercise, family: str) -> Candidate:
+    def _origin_of(self, item: dict[str, Any] | Sentence | None) -> int:
+        """Where the material comes from; a lesson has a single source."""
+        return 0
+
+    def candidate(self, exercise: Exercise, family: str, origin: int = 0) -> Candidate:
         spec = exercise.spec
         text_shown = exercise_text(spec)
         answers = spec.get("acceptedAnswers") or [""]
@@ -879,19 +900,24 @@ class _Builder:
             frozenset(word_id for word_id, hanzi in self.hanzi.items() if hanzi in text_shown),
             family,
             re.sub(f"[{re.escape(_PUNCTUATION)}]", "", text) if text else None,
+            origin,
         )
+
+    def _matching_groups(self, ordered: list[dict[str, Any]]) -> list[tuple[str, str, list[dict[str, Any]]]]:
+        """The matchings to offer: by meaning, then by pinyin over the words the first left out."""
+        first = self._matching_group(ordered, "meaning")
+        first_ids = {entry["id"] for entry in first}
+        second = self._matching_group([entry for entry in ordered if entry["id"] not in first_ids] + first, "pinyin")
+        return [(f"match-{mode}", mode, group) for mode, group in (("meaning", first), ("pinyin", second))]
 
     def candidates(self) -> list[Candidate]:
         """Every exercise this lesson's material can produce, new words first."""
         result: list[Candidate] = []
         ordered = sorted(self.vocabulary, key=lambda entry: entry["id"] not in self.new_ids)
-        first = self._matching_group(ordered, "meaning")
-        first_ids = {entry["id"] for entry in first}
-        second = self._matching_group([entry for entry in ordered if entry["id"] not in first_ids] + first, "pinyin")
-        for mode, group in (("meaning", first), ("pinyin", second)):
-            exercise = self.matching("discover", f"match-{mode}", group, mode)
+        for name, mode, group in self._matching_groups(ordered):
+            exercise = self.matching("discover", name, group, mode)
             if exercise is not None:
-                result.append(self.candidate(exercise, f"match-{mode}"))
+                result.append(self.candidate(exercise, f"match-{mode}", min(self._origin_of(entry) for entry in group)))
         for entry in ordered:
             slug = entry["id"].removeprefix("vocab-").removeprefix("hsk20-")
             builds = [
@@ -903,7 +929,7 @@ class _Builder:
             for family, build in builds:
                 exercise = build("discover", f"{family}-{slug}", entry)
                 if exercise is not None:
-                    result.append(self.candidate(exercise, family))
+                    result.append(self.candidate(exercise, family, self._origin_of(entry)))
         seen: set[str] = set()
         for source, sentences in (("dialogue", self.dialogue), ("reading", self.reading), ("example", self.examples)):
             for index, sentence in enumerate(sentences, start=1):
@@ -921,16 +947,16 @@ class _Builder:
                 ):
                     exercise = build(phase, f"{family}-{source[:3]}-{index}", sentence)
                     if exercise is not None:
-                        result.append(self.candidate(exercise, family))
+                        result.append(self.candidate(exercise, family, self._origin_of(sentence)))
         for index in range(len(self.turns) - 1):
             exercise = self.conversation_choice("guided", f"talk-{index + 1}", index)
             if exercise is not None:
-                result.append(self.candidate(exercise, "talk"))
+                result.append(self.candidate(exercise, "talk", self._origin_of(self.turns[index])))
         for size in (3, 4):
             for start in range(len(self.turns) - size + 1):
                 exercise = self.dialogue_order("reuse", f"dialogue-{start + 1}-{size}", start, size)
                 if exercise is not None:
-                    result.append(self.candidate(exercise, "dialogue"))
+                    result.append(self.candidate(exercise, "dialogue", self._origin_of(self.turns[start])))
         return result
 
     def reposition(self, exercises: list[Exercise]) -> None:
@@ -957,7 +983,7 @@ class _Builder:
 class _Planner:
     """Choose the session's exercises so that every new word is practised enough."""
 
-    def __init__(self, builder: "_Builder", authored: list[Candidate], pool: list[Candidate]) -> None:
+    def __init__(self, builder: "SessionBuilder", authored: list[Candidate], pool: list[Candidate]) -> None:
         self.builder = builder
         self.chosen = list(authored)
         self.pool = pool
@@ -1053,7 +1079,7 @@ def expand_lesson_exercises(
     reading = next((block for block in blocks if block.get("kind") == "reading"), {})
     reading_ids = set(reading.get("comprehensionExerciseIDs", []))
     authored = {block["spec"]["header"]["id"]: block for block in exercise_blocks}
-    lesson_no = int(lesson["order"])
+    lesson_no = lesson_number(lesson)
 
     def authored_block(suffix: str) -> dict[str, Any]:
         block = authored.get(f"ex-l{lesson_no}-{suffix}")
@@ -1061,7 +1087,7 @@ def expand_lesson_exercises(
             raise ExpansionError(f"{lesson['id']}: missing authored exercise '{suffix}'")
         return block
 
-    builder = _Builder(lesson, new_vocabulary_ids, earlier_vocabulary, lexicon)
+    builder = SessionBuilder(lesson, new_vocabulary_ids, earlier_vocabulary, lexicon)
     if len(new_vocabulary_ids) > MAX_NEW_WORDS:
         raise ExpansionError(f"{lesson['id']}: {len(new_vocabulary_ids)} new words, expected at most {MAX_NEW_WORDS}")
     reading_authored = next((block for exercise_id, block in authored.items() if exercise_id in reading_ids), None)
