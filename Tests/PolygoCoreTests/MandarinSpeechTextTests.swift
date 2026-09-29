@@ -70,6 +70,39 @@ final class MandarinSpeechTextTests: XCTestCase {
         XCTAssertEqual(MandarinSpeechText.dialogueSegments(from: [line("A", "…，")]), [])
     }
 
+    func testDialogueLineWithAClipIsOneSegmentWhileOthersAreSplitIntoClauses() throws {
+        let clip = try asset("audio-line")
+        let segments = MandarinSpeechText.dialogueSegments(from: [
+            line("Tao", "你好！你饿吗？", audio: clip),
+            line("Mina", "我不饿，你呢？"),
+            line("Mina", "Bonjour", audio: clip)
+        ])
+
+        XCTAssertEqual(segments.map(\.text), ["你好！你饿吗？", "我不饿，", "你呢？"])
+        XCTAssertEqual(segments.map(\.audio), [clip, nil, nil])
+        XCTAssertEqual(segments.map(\.postUtteranceDelay), [1.0, 0.35, 0])
+    }
+
+    func testReadingParagraphClipsKeepTheLongPauseBetweenParagraphs() throws {
+        let first = try asset("audio-p1")
+        let reading = ReadingBlock(
+            id: try XCTUnwrap(BlockID(rawValue: "reading")),
+            storyID: try XCTUnwrap(StoryID(rawValue: "story")),
+            level: "HSK 1",
+            title: .unchecked(["fr": "Lecture"]),
+            paragraphs: [
+                ReadingParagraph(id: "p1", hanzi: "我是学生。我学中文。", pinyin: "", translation: .unchecked(["fr": "P1"]), audio: first),
+                ReadingParagraph(id: "p2", hanzi: "他是老师。", pinyin: "", translation: .unchecked(["fr": "P2"]))
+            ]
+        )
+
+        let segments = MandarinSpeechText.readingSegments(from: reading)
+
+        XCTAssertEqual(segments.map(\.text), ["我是学生。我学中文。", "他是老师。"])
+        XCTAssertEqual(segments.map(\.audio), [first, nil])
+        XCTAssertEqual(segments.map(\.postUtteranceDelay), [1.0, 0])
+    }
+
     func testFillBlankCanonicalSpeechCompletesHanziWhileKeepingTheVisibleBlank() throws {
         let exercise = FillBlankExercise(
             header: ExerciseHeader(
@@ -116,7 +149,16 @@ final class MandarinSpeechTextTests: XCTestCase {
         )
     }
 
-    private func line(_ speaker: String, _ hanzi: String) -> DialogueLine {
-        DialogueLine(speaker: speaker, hanzi: hanzi, pinyin: "", translation: .unchecked(["fr": "Réplique"]))
+    private func line(_ speaker: String, _ hanzi: String, audio: AssetReference? = nil) -> DialogueLine {
+        DialogueLine(speaker: speaker, hanzi: hanzi, pinyin: "", translation: .unchecked(["fr": "Réplique"]), audio: audio)
+    }
+
+    private func asset(_ id: String) throws -> AssetReference {
+        AssetReference(
+            id: try XCTUnwrap(AssetID(rawValue: id)),
+            kind: .audio,
+            relativePath: "assets/audio/\(id).m4a",
+            sha256: String(repeating: "0", count: 64)
+        )
     }
 }

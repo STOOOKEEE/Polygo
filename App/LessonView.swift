@@ -814,6 +814,7 @@ private struct DialogueBlockView: View {
     @Binding var responseResult: Bool?
     @EnvironmentObject private var model: AppModel
     @State private var isPlaying = false
+    @AppStorage(SlowAudioToggle.storageKey) private var slowAudio = false
     @State private var playingLineIndex: Int?
     @State private var playbackToken = UUID()
     @State private var playbackMessage: String?
@@ -834,6 +835,7 @@ private struct DialogueBlockView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer(minLength: 6)
+                SlowAudioToggle()
                 Button {
                     togglePlayback()
                 } label: {
@@ -1164,15 +1166,13 @@ private struct DialogueBlockView: View {
         .accessibilityValue(isSelected ? (isCorrect ? "Bonne réplique" : "Incorrect") : "")
     }
 
+    /// Each line with a bundled clip plays it in its speaker's voice; the
+    /// others are synthesized clause by clause.
     private func speechSegments(for lines: [DialogueLine]) -> [SpeechSynthesisSegment] {
-        MandarinSpeechText.dialogueSegments(from: lines).map {
-            SpeechSynthesisSegment(
-                text: $0.text,
-                localeIdentifier: "zh-CN",
-                rate: .normal,
-                postUtteranceDelay: $0.postUtteranceDelay
-            )
-        }
+        SpeechSynthesisSegment.narration(
+            MandarinSpeechText.dialogueSegments(from: lines),
+            rate: SlowAudioToggle.rate(slow: slowAudio)
+        )
     }
 
     private func togglePlayback() {
@@ -1234,13 +1234,7 @@ private struct DialogueBlockView: View {
         playbackMessage = nil
         playbackTask = Task { @MainActor in
             do {
-                if let audio = line.audio {
-                    try await model.dependencies.audio.play(asset: audio)
-                } else {
-                    // Speak the line as segments so its internal comma
-                    // pauses are honoured like in full playback.
-                    try await model.dependencies.audio.speakSequence(speechSegments(for: [line]))
-                }
+                try await model.dependencies.audio.speakSequence(speechSegments(for: [line]))
                 guard playbackToken == token else { return }
                 playbackTask = nil
                 isPlaying = false
@@ -1267,25 +1261,29 @@ private struct ReadingPlaybackControl: View {
     let reading: ReadingBlock
     @EnvironmentObject private var model: AppModel
     @State private var isPlaying = false
+    @AppStorage(SlowAudioToggle.storageKey) private var slowAudio = false
     @State private var playbackToken = UUID()
     @State private var playbackMessage = "Prêt à écouter."
     @State private var playbackTask: Task<Void, Never>?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Button(action: togglePlayback) {
-                Label(
-                    isPlaying ? "Arrêter" : "Écouter tout le texte",
-                    systemImage: isPlaying ? "stop.fill" : "speaker.wave.2.fill"
-                )
+            HStack(spacing: 8) {
+                Button(action: togglePlayback) {
+                    Label(
+                        isPlaying ? "Arrêter" : "Écouter tout le texte",
+                        systemImage: isPlaying ? "stop.fill" : "speaker.wave.2.fill"
+                    )
+                }
+                .buttonStyle(.bordered)
+                .tint(SylluneColor.skyButton)
+                .frame(minHeight: 40)
+                .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue).playAll")
+                .accessibilityLabel(isPlaying ? "Arrêter la lecture du texte" : "Écouter tout le texte")
+                .accessibilityValue(isPlaying ? "Lecture en cours" : "Prêt à écouter")
+                .accessibilityHint("Lit toutes les phrases chinoises dans l’ordre avec une courte pause entre elles.")
+                SlowAudioToggle()
             }
-            .buttonStyle(.bordered)
-            .tint(SylluneColor.skyButton)
-            .frame(minHeight: 40)
-            .accessibilityIdentifier("lesson.reading.\(reading.id.rawValue).playAll")
-            .accessibilityLabel(isPlaying ? "Arrêter la lecture du texte" : "Écouter tout le texte")
-            .accessibilityValue(isPlaying ? "Lecture en cours" : "Prêt à écouter")
-            .accessibilityHint("Lit toutes les phrases chinoises dans l’ordre avec une courte pause entre elles.")
 
             Text(playbackMessage)
                 .font(.caption)
@@ -1303,14 +1301,10 @@ private struct ReadingPlaybackControl: View {
             return
         }
 
-        let segments = MandarinSpeechText.readingSegments(from: reading).map {
-            SpeechSynthesisSegment(
-                text: $0.text,
-                localeIdentifier: "zh-CN",
-                rate: .normal,
-                postUtteranceDelay: $0.postUtteranceDelay
-            )
-        }
+        let segments = SpeechSynthesisSegment.narration(
+            MandarinSpeechText.readingSegments(from: reading),
+            rate: SlowAudioToggle.rate(slow: slowAudio)
+        )
         guard !segments.isEmpty else {
             playbackMessage = "Le texte chinois est indisponible."
             return
@@ -1396,7 +1390,7 @@ private struct PedagogicalBlockView: View {
                 Text(value.body.resolve(preferred: languageCodes) ?? "")
                     .font(.body).foregroundStyle(SylluneColor.inkMuted)
                 if let audio = value.audio {
-                    Button { Task { try? await model.dependencies.audio.play(asset: audio) } } label: {
+                    Button { Task { try? await model.dependencies.audio.play(asset: audio, rate: .normal) } } label: {
                         Label("Écouter l’introduction", systemImage: "speaker.wave.2")
                     }
                     .buttonStyle(.bordered).tint(SylluneColor.sky)
@@ -1597,28 +1591,36 @@ private struct ListeningAnswerView: View {
     var listenTitle = "Écouter le mot"
     @Binding var answer: ExerciseAnswer?
     @State private var audioMessage: String?
+    @AppStorage(SlowAudioToggle.storageKey) private var slowAudio = false
     @EnvironmentObject private var model: AppModel
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Button {
-                Task {
-                    do {
-                        if let promptAudio = exercise.promptAudio {
-                            try await model.dependencies.audio.play(asset: promptAudio)
-                        } else if let promptText = exercise.promptText {
-                            try await model.dependencies.audio.speak(text: promptText, localeIdentifier: "zh-CN", rate: .normal)
-                        } else {
-                            audioMessage = "Aucune source audio n’est fournie. Le texte des réponses reste disponible."
-                            return
-                        }
-                        audioMessage = "Lecture terminée."
-                    } catch {
-                        audioMessage = "Audio indisponible. Le texte des réponses reste disponible."
+            HStack(spacing: 8) {
+                Button {
+                    guard let promptText = exercise.promptText else {
+                        audioMessage = "Aucune source audio n’est fournie. Le texte des réponses reste disponible."
+                        return
                     }
-                }
-            } label: { Label(listenTitle, systemImage: "speaker.wave.2.fill") }
-                .accessibilityIdentifier("lesson.exercise.\(exercise.header.id.rawValue).listen")
-                .buttonStyle(.borderedProminent).tint(SylluneColor.sky)
+                    Task {
+                        do {
+                            try await model.dependencies.audio.speak(
+                                text: promptText,
+                                localeIdentifier: "zh-CN",
+                                rate: SlowAudioToggle.rate(slow: slowAudio),
+                                asset: exercise.promptAudio
+                            )
+                            audioMessage = "Lecture terminée."
+                        } catch is CancellationError {
+                            audioMessage = "Lecture arrêtée."
+                        } catch {
+                            audioMessage = "Audio indisponible. Le texte des réponses reste disponible."
+                        }
+                    }
+                } label: { Label(listenTitle, systemImage: "speaker.wave.2.fill") }
+                    .accessibilityIdentifier("lesson.exercise.\(exercise.header.id.rawValue).listen")
+                    .buttonStyle(.borderedProminent).tint(SylluneColor.sky)
+                SlowAudioToggle()
+            }
             if let audioMessage { Text(audioMessage).font(.caption).foregroundStyle(SylluneColor.inkMuted) }
             ChoiceAnswerView(exercise: ChoiceExercise(header: exercise.header, choices: exercise.choices, correctChoiceID: exercise.correctChoiceID), answer: $answer)
         }

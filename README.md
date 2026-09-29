@@ -84,8 +84,10 @@ Le bundle contient 94 leçons dans 10 unités :
   de rang supérieur (`绿`, `蓝`) et 11 mots supplémentaires hors catalogue, pour
   1 038 associations leçon–carte (le module 0 présente à l’avance 55 mots que
   les leçons du jour enseignent) ;
-- 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
-  n’est embarqué.
+- 3 guides de tracé locaux pour `你`, `我` et `国` ;
+- des clips mandarins embarqués en deux voix (féminine pour Mina et Lin,
+  masculine pour Tao et An), synthétisés par Kokoro-82M v1.1-zh (Apache 2.0),
+  avec un mode « Lent » ; voir [docs/AUDIO.md](docs/AUDIO.md).
 
 Chaque séance du programme vise 15 minutes, réparties en 12 minutes de cours et
 3 minutes de révision (13 + 2 pour un défi d’unité). Chaque leçon du jour introduit
@@ -186,8 +188,8 @@ le snapshot sont stockés dans `Application Support/Polygo`. Les enregistrements
 vocaux sont temporaires et supprimés par défaut à la sortie de l’exercice ;
 aucun audio n’est conservé par défaut.
 
-La lecture orale extrait uniquement le mandarin et utilise
-`AVSpeechSynthesizer`. Tant qu’aucun fournisseur et aucune clé ne sont
+La lecture orale joue le clip embarqué du texte et, à défaut (texte d’une
+syllabe), extrait le mandarin pour `AVSpeechSynthesizer`. Tant qu’aucun fournisseur et aucune clé ne sont
 configurés, la composition affiche une note d’auto-écoute et propose
 « Continuer », enregistré comme `skipped` sans réussite. La transcription et sa
 confiance restent descriptives : elles ne produisent aucune note de

@@ -1196,6 +1196,32 @@ final class ContentContractTests: XCTestCase {
         }
     }
 
+    /// Dialogue lines, reading paragraphs and vocabulary examples of two or
+    /// more syllables play a bundled clip; single characters keep the device
+    /// voice. Words are left out: a two-syllable word whose tones fail the
+    /// generator's pitch check also keeps the device voice.
+    func testMultiSyllableLessonTextCarriesBundledAudio() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        var missing: [String] = []
+        func check(_ hanzi: String, _ audio: AssetReference?, _ lesson: LessonDocument) {
+            let syllables = hanzi.unicodeScalars.filter { (0x4E00...0x9FFF).contains($0.value) }.count
+            if syllables >= 2, audio == nil { missing.append("\(lesson.id.rawValue): \(hanzi)") }
+        }
+        for lesson in snapshots.flatMap(\.lessons) {
+            for entry in lesson.vocabulary {
+                if let example = entry.example { check(example.hanzi, example.audio, lesson) }
+            }
+            for block in lesson.blocks {
+                if case .dialogue(let value) = block {
+                    value.lines.forEach { check($0.hanzi, $0.audio, lesson) }
+                } else if case .reading(let value) = block {
+                    value.paragraphs.forEach { check($0.hanzi, $0.audio, lesson) }
+                }
+            }
+        }
+        XCTAssertEqual(missing, [])
+    }
+
     private func assetReferences(in lesson: LessonDocument) -> [AssetReference] {
         var references: [AssetReference] = []
         for entry in lesson.vocabulary {
@@ -1443,7 +1469,7 @@ final class ContentContractTests: XCTestCase {
                 case .reading(let reading):
                     readingCount += 1
                     let items = reading.paragraphs.enumerated().flatMap { paragraphIndex, paragraph in
-                        MandarinSpeechText.sentences(from: paragraph.hanzi).flatMap(MandarinSpeechText.clauses).map {
+                        narrationTexts(paragraph.hanzi, hasClip: paragraph.audio != nil).map {
                             (owner: paragraphIndex, text: $0)
                         }
                     }
@@ -1465,7 +1491,7 @@ final class ContentContractTests: XCTestCase {
                 case .dialogue(let dialogue):
                     dialogueCount += 1
                     let items = dialogue.lines.flatMap { line in
-                        MandarinSpeechText.sentences(from: line.hanzi).flatMap(MandarinSpeechText.clauses).map {
+                        narrationTexts(line.hanzi, hasClip: line.audio != nil).map {
                             (owner: line.speaker, text: $0)
                         }
                     }
@@ -1535,6 +1561,14 @@ final class ContentContractTests: XCTestCase {
             accuracy: 0.000_001,
             "La narration L2 ne doit pas ajouter de pause après la dernière phrase"
         )
+    }
+
+    /// A turn with a bundled clip is narrated as one segment; the others are
+    /// synthesized clause by clause.
+    private func narrationTexts(_ hanzi: String, hasClip: Bool) -> [String] {
+        let sentences = MandarinSpeechText.sentences(from: hanzi)
+        if hasClip, !sentences.isEmpty { return [sentences.joined()] }
+        return sentences.flatMap(MandarinSpeechText.clauses)
     }
 
     private func assertNarrationSegments(

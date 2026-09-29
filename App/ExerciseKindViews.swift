@@ -194,7 +194,7 @@ struct DialogueOrderAnswerView: View {
             if let index = selected.firstIndex(of: line.id) { selected.remove(at: index) }
             else { selected.append(line.id) }
             answer = selected.isEmpty ? nil : .wordOrder(tokenIDs: selected)
-            Task { try? await model.dependencies.audio.speak(text: line.hanzi, localeIdentifier: "zh-CN", rate: .normal) }
+            Task { try? await model.dependencies.audio.speak(text: line.hanzi, localeIdentifier: "zh-CN", rate: .normal, asset: line.audio) }
         } label: {
             HStack(spacing: 12) {
                 ZStack {
@@ -247,6 +247,7 @@ struct ConversationAnswerView: View {
     @Binding var answer: ExerciseAnswer?
     @EnvironmentObject private var model: AppModel
     @State private var audioMessage: String?
+    @AppStorage(SlowAudioToggle.storageKey) private var slowAudio = false
 
     init(exercise: ConversationChoiceExercise, answer: Binding<ExerciseAnswer?>) {
         self.exercise = exercise
@@ -273,6 +274,7 @@ struct ConversationAnswerView: View {
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .sylluneCard(radius: 12)
+            SlowAudioToggle()
             if let audioMessage { Text(audioMessage).font(.caption).foregroundStyle(SylluneColor.inkMuted) }
             ForEach(exercise.replies) { reply in
                 replyRow(reply)
@@ -336,16 +338,15 @@ struct ConversationAnswerView: View {
     }
 
     private func play(audio: AssetReference?, text: String?) {
+        guard let text else {
+            audioMessage = "Aucune source audio n’est fournie. Le texte reste disponible."
+            return
+        }
         Task {
             do {
-                if let audio {
-                    try await model.dependencies.audio.play(asset: audio)
-                } else if let text {
-                    try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: .normal)
-                } else {
-                    audioMessage = "Aucune source audio n’est fournie. Le texte reste disponible."
-                    return
-                }
+                try await model.dependencies.audio.speak(text: text, localeIdentifier: "zh-CN", rate: SlowAudioToggle.rate(slow: slowAudio), asset: audio)
+                audioMessage = nil
+            } catch is CancellationError {
                 audioMessage = nil
             } catch {
                 audioMessage = "Audio indisponible. Le texte reste disponible."

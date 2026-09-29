@@ -2,14 +2,18 @@ import Foundation
 
 /// A Mandarin sentence ready for a narrated reading or dialogue. Timing is
 /// carried beside the text so the app can configure an Apple utterance delay
-/// without adding artificial words or punctuation to learner content.
+/// without adding artificial words or punctuation to learner content. When
+/// `audio` is set, the segment is a whole bundled recording of `text`; the
+/// text stays available for synthesis when the recording cannot be played.
 public struct MandarinSpeechSegment: Codable, Hashable, Sendable {
     public let text: String
     public let postUtteranceDelay: TimeInterval
+    public let audio: AssetReference?
 
-    public init(text: String, postUtteranceDelay: TimeInterval = 0) {
+    public init(text: String, postUtteranceDelay: TimeInterval = 0, audio: AssetReference? = nil) {
         self.text = text
         self.postUtteranceDelay = min(max(0, postUtteranceDelay), 10)
+        self.audio = audio
     }
 }
 
@@ -179,30 +183,39 @@ public enum MandarinSpeechText {
             .filter { !$0.isEmpty }
     }
 
-    /// Returns the reading paragraphs in authored order as clause segments,
-    /// pausing after each clause, longer after each sentence, and longest
-    /// between paragraphs.
+    /// Returns the reading paragraphs in authored order, pausing after each
+    /// clause, longer after each sentence, and longest between paragraphs.
+    /// A paragraph with a bundled recording is one segment carrying it;
+    /// the others are split into clauses for synthesis.
     public static func readingSegments(from reading: ReadingBlock) -> [MandarinSpeechSegment] {
-        narrationSegments(reading.paragraphs.enumerated().map { (owner: $0.offset, text: $0.element.hanzi) })
+        narrationSegments(reading.paragraphs.enumerated().map { (owner: $0.offset, text: $0.element.hanzi, audio: $0.element.audio) })
     }
 
-    /// Returns dialogue lines in authored order as clause segments, pausing
-    /// after each clause, longer after each sentence, and longest when the
-    /// next sentence belongs to another speaker. A single line yields only
-    /// its own clause and sentence pauses, ending with no pause.
+    /// Returns dialogue lines in authored order, pausing after each clause,
+    /// longer after each sentence, and longest when the next sentence
+    /// belongs to another speaker. A line with a bundled recording is one
+    /// segment carrying it; the others are split into clauses. A single
+    /// line yields only its own internal pauses, ending with no pause.
     public static func dialogueSegments(from lines: [DialogueLine]) -> [MandarinSpeechSegment] {
-        narrationSegments(lines.map { (owner: $0.speaker, text: $0.hanzi) })
+        narrationSegments(lines.map { (owner: $0.speaker, text: $0.hanzi, audio: $0.audio) })
     }
 
     private static func narrationSegments<Owner: Equatable>(
-        _ turns: [(owner: Owner, text: String)]
+        _ turns: [(owner: Owner, text: String, audio: AssetReference?)]
     ) -> [MandarinSpeechSegment] {
-        var items: [(owner: Owner, sentence: Int, text: String)] = []
+        var items: [(owner: Owner, sentence: Int, text: String, audio: AssetReference?)] = []
         var sentenceIndex = 0
         for turn in turns {
-            for sentence in sentences(from: turn.text) {
+            let turnSentences = sentences(from: turn.text)
+            if let audio = turn.audio, !turnSentences.isEmpty {
+                // The recording already contains the turn's own pauses.
+                items.append((turn.owner, sentenceIndex, turnSentences.joined(), audio))
+                sentenceIndex += 1
+                continue
+            }
+            for sentence in turnSentences {
                 for clause in clauses(from: sentence) {
-                    items.append((turn.owner, sentenceIndex, clause))
+                    items.append((turn.owner, sentenceIndex, clause, nil))
                 }
                 sentenceIndex += 1
             }
@@ -210,13 +223,13 @@ public enum MandarinSpeechText {
 
         return items.enumerated().map { index, item in
             guard index + 1 < items.count else {
-                return MandarinSpeechSegment(text: item.text)
+                return MandarinSpeechSegment(text: item.text, audio: item.audio)
             }
             let next = items[index + 1]
             let pause = next.owner != item.owner
                 ? turnPause
                 : (next.sentence != item.sentence ? sentencePause : clausePause)
-            return MandarinSpeechSegment(text: item.text, postUtteranceDelay: pause)
+            return MandarinSpeechSegment(text: item.text, postUtteranceDelay: pause, audio: item.audio)
         }
     }
 

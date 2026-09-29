@@ -137,6 +137,15 @@ public enum SpeechRate: String, Codable, Hashable, Sendable, CaseIterable {
         case .slow: return 0.34
         }
     }
+
+    /// AVAudioPlayer rate for a bundled recording. The player stretches time
+    /// without changing pitch, so one clip serves both speeds.
+    var clipPlaybackRate: Float {
+        switch self {
+        case .normal: return 1.0
+        case .slow: return 0.7
+        }
+    }
 }
 
 /// Publicly re-export the portable Mandarin extraction rule from PolygoCore so
@@ -159,48 +168,69 @@ public struct ToneMarker: Codable, Hashable, Sendable, Identifiable {
     public var syllableIndex: Int { id }
 }
 
+/// A Mandarin utterance to say. When `asset` is set, the bundled recording is
+/// played and `text` is synthesized only if that recording is unavailable.
 public struct SpeechSynthesisRequest: Codable, Hashable, Sendable {
     public let text: String
     public let localeIdentifier: String
     public let rate: SpeechRate
     public let toneMarkers: [ToneMarker]
+    public let asset: AssetReference?
 
     public init(
         text: String,
         localeIdentifier: String = "zh-CN",
         rate: SpeechRate = .normal,
-        toneMarkers: [ToneMarker] = []
+        toneMarkers: [ToneMarker] = [],
+        asset: AssetReference? = nil
     ) {
         self.text = text
         self.localeIdentifier = localeIdentifier
         self.rate = rate
         self.toneMarkers = toneMarkers
+        self.asset = asset
     }
 }
 
 /// One Mandarin utterance in a narrated sequence. The delays are attached to
 /// utterances instead of being inserted into the text, so punctuation and
 /// word-level speech remain authored content while the synthesizer controls
-/// the natural space between phrases and turns.
+/// the natural space between phrases and turns. A segment with an `asset`
+/// plays that bundled recording and falls back to synthesizing `text`.
 public struct SpeechSynthesisSegment: Hashable, Sendable {
     public let text: String
     public let localeIdentifier: String
     public let rate: SpeechRate
     public let preUtteranceDelay: TimeInterval
     public let postUtteranceDelay: TimeInterval
+    public let asset: AssetReference?
 
     public init(
         text: String,
         localeIdentifier: String = "zh-CN",
         rate: SpeechRate = .normal,
         preUtteranceDelay: TimeInterval = 0,
-        postUtteranceDelay: TimeInterval = 0
+        postUtteranceDelay: TimeInterval = 0,
+        asset: AssetReference? = nil
     ) {
         self.text = text
         self.localeIdentifier = localeIdentifier
         self.rate = rate
         self.preUtteranceDelay = min(max(0, preUtteranceDelay), 10)
         self.postUtteranceDelay = min(max(0, postUtteranceDelay), 10)
+        self.asset = asset
+    }
+
+    /// Narration segments from PolygoCore, keeping each bundled recording.
+    public static func narration(_ segments: [MandarinSpeechSegment], rate: SpeechRate) -> [SpeechSynthesisSegment] {
+        segments.map {
+            SpeechSynthesisSegment(
+                text: $0.text,
+                rate: rate,
+                postUtteranceDelay: $0.postUtteranceDelay,
+                asset: $0.audio
+            )
+        }
     }
 }
 
@@ -212,7 +242,10 @@ public protocol AudioService: Sendable {
     func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws
     func stopSpeaking()
 
-    func play(asset: AssetReference) async throws
+    /// Plays a bundled recording to its end at the given rate. Stopping,
+    /// replacing, or cancelling it throws `CancellationError`; a recording
+    /// missing from the content root throws `AudioServiceError.invalidAssetURL`.
+    func play(asset: AssetReference, rate: SpeechRate) async throws
     func stopPlayback()
     func playbackStates() -> AsyncStream<AudioPlaybackState>
 
@@ -240,7 +273,8 @@ public extension AudioService {
             try await speak(SpeechSynthesisRequest(
                 text: segment.text,
                 localeIdentifier: segment.localeIdentifier,
-                rate: segment.rate
+                rate: segment.rate,
+                asset: segment.asset
             ))
             try await waitForSpeechDelay(segment.postUtteranceDelay)
         }
@@ -258,13 +292,15 @@ public extension AudioService {
         text: String,
         localeIdentifier: String = "zh-CN",
         rate: SpeechRate = .normal,
-        toneMarkers: [ToneMarker] = []
+        toneMarkers: [ToneMarker] = [],
+        asset: AssetReference? = nil
     ) async throws {
         try await speak(SpeechSynthesisRequest(
             text: text,
             localeIdentifier: localeIdentifier,
             rate: rate,
-            toneMarkers: toneMarkers
+            toneMarkers: toneMarkers,
+            asset: asset
         ))
     }
 }

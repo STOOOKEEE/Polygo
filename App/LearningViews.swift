@@ -1,5 +1,6 @@
 import SwiftUI
 import PolygoCore
+import PolygoApple
 
 /// Explicit symbols follow bundled lesson themes; unknown IDs keep a generic book.
 /// Reviews, unit bosses and module 0 (`review-NN`, `boss-unit-NN`, `pinyin-NN`) have their own symbols.
@@ -1549,32 +1550,37 @@ public struct WordDetailView: View {
         }
     }
 
-    private func playAudio(for entry: VocabularyEntry) async {
+    private func playAudio(for entry: VocabularyEntry, rate: SpeechRate = .normal) async {
         do {
-            if let asset = entry.audio {
-                do {
-                    try await model.dependencies.audio.play(asset: asset)
-                } catch {
-                    try await model.dependencies.audio.speak(text: entry.hanzi, localeIdentifier: "zh-CN", rate: .normal)
-                }
-            } else {
-                try await model.dependencies.audio.speak(text: entry.hanzi, localeIdentifier: "zh-CN", rate: .normal)
-            }
-            audioMessage = "Lecture en cours."
+            try await model.dependencies.audio.speak(text: entry.hanzi, localeIdentifier: "zh-CN", rate: rate, asset: entry.audio)
+            audioMessage = rate == .slow ? "Lecture lente terminée." : "Lecture terminée."
+        } catch is CancellationError {
+            audioMessage = "Lecture arrêtée."
         } catch {
             audioMessage = "Audio indisponible hors ligne."
         }
     }
 
     private func audioButton(for entry: VocabularyEntry) -> some View {
-        Button {
-            Task { await playAudio(for: entry) }
-        } label: {
-            Label("Écouter", systemImage: "speaker.wave.2.fill")
+        HStack(spacing: 8) {
+            Button {
+                Task { await playAudio(for: entry) }
+            } label: {
+                Label("Écouter", systemImage: "speaker.wave.2.fill")
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(SylluneColor.skyButton)
+            .frame(minHeight: 44)
+            Button {
+                Task { await playAudio(for: entry, rate: .slow) }
+            } label: {
+                Label("Lentement", systemImage: "tortoise")
+            }
+            .buttonStyle(.bordered)
+            .tint(SylluneColor.skyButton)
+            .frame(minHeight: 44)
+            .accessibilityLabel("Écouter lentement")
         }
-        .buttonStyle(.borderedProminent)
-        .tint(SylluneColor.skyButton)
-        .frame(minHeight: 44)
     }
 
     private func audioAvailability(for entry: VocabularyEntry) -> some View {

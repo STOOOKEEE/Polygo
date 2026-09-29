@@ -121,11 +121,16 @@ public struct StoryDetailView: View {
                     isStoryAudioPlaying = false
                     message = "Lecture arrêtée."
                 } else {
+                    isStoryAudioPlaying = true
+                    message = "Lecture en cours."
                     Task { @MainActor in
                         do {
-                            try await model.dependencies.audio.play(asset: audio)
-                            isStoryAudioPlaying = true
-                            message = "Lecture en cours."
+                            try await model.dependencies.audio.play(asset: audio, rate: .normal)
+                            isStoryAudioPlaying = false
+                            message = "Lecture terminée."
+                        } catch is CancellationError {
+                            isStoryAudioPlaying = false
+                            message = "Lecture arrêtée."
                         } catch {
                             isStoryAudioPlaying = false
                             message = "Audio indisponible hors ligne."

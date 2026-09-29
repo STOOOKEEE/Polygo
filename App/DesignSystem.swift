@@ -133,6 +133,7 @@ public final class SylluneAudioCommandCenter {
     private struct Registration {
         let id: UUID
         let text: String
+        let asset: AssetReference?
         let audio: any AudioService
     }
 
@@ -143,11 +144,12 @@ public final class SylluneAudioCommandCenter {
     private init() {}
 
     @discardableResult
-    public func register(text: String, audio: any AudioService) -> UUID {
+    public func register(text: String, asset: AssetReference? = nil, audio: any AudioService) -> UUID {
         let id = UUID()
         registrations[id] = Registration(
             id: id,
             text: PolygoCore.MandarinSpeechText.target(from: text),
+            asset: asset,
             audio: audio
         )
         order.append(id)
@@ -177,7 +179,8 @@ public final class SylluneAudioCommandCenter {
                 try await registration.audio.speak(
                     text: registration.text,
                     localeIdentifier: "zh-CN",
-                    rate: .normal
+                    rate: .normal,
+                    asset: registration.asset
                 )
                 if self?.speakingID == registration.id {
                     self?.speakingID = nil
@@ -200,6 +203,34 @@ public final class SylluneAudioCommandCenter {
             if let registration = registrations[id] { return registration }
         }
         return nil
+    }
+}
+
+/// The learner's “Lent” choice, kept across launches and shared by the
+/// dialogue, reading, listening and conversation players. Bundled clips play
+/// slower without a pitch change; the local voice uses its slow rate.
+public struct SlowAudioToggle: View {
+    public static let storageKey = "audio.slowMode"
+    @AppStorage(SlowAudioToggle.storageKey) private var isSlow = false
+
+    public init() {}
+
+    public static func rate(slow: Bool) -> SpeechRate {
+        slow ? .slow : .normal
+    }
+
+    public var body: some View {
+        Toggle(isOn: $isSlow) {
+            Label("Lent", systemImage: "tortoise")
+        }
+        .toggleStyle(.button)
+        .font(.callout.weight(.semibold))
+        .tint(SylluneColor.sky)
+        .frame(minHeight: 32)
+        .accessibilityIdentifier("audio.slowMode")
+        .accessibilityLabel("Lecture lente")
+        .accessibilityValue(isSlow ? "Activée" : "Désactivée")
+        .accessibilityHint("Ralentit l’audio mandarin sans changer la hauteur de la voix.")
     }
 }
 
@@ -566,7 +597,7 @@ public struct ChineseSelectableText: View {
                     }
                     .buttonStyle(.borderless)
                     .accessibilityLabel(isSpeaking ? "Arrêter la lecture en chinois" : "Lire le chinois")
-                    .accessibilityHint("Utilise une voix mandarin locale si elle est installée. Un message indique toute indisponibilité.")
+                    .accessibilityHint("Lit l’enregistrement embarqué, ou une voix mandarin locale si elle est installée. Un message indique toute indisponibilité.")
                     .frame(minHeight: 44, alignment: .leading)
 
                     if pinyin != nil || translation != nil || phraseAudio != nil {
@@ -575,7 +606,7 @@ public struct ChineseSelectableText: View {
                         }
                         .buttonStyle(.borderless)
                         .accessibilityLabel("Lire lentement en chinois")
-                        .accessibilityHint("Utilise la synthèse vocale locale à vitesse lente.")
+                        .accessibilityHint("Lit l’enregistrement embarqué ou la voix locale à vitesse lente.")
                         .frame(minHeight: 44, alignment: .leading)
                     }
                 }
@@ -767,7 +798,7 @@ public struct ChineseSelectableText: View {
     private func registerKeyboardPhrase() {
         guard commandRegistrationID == nil, speechEnabled else { return }
         guard !speechTarget.isEmpty else { return }
-        commandRegistrationID = SylluneAudioCommandCenter.shared.register(text: speechSource, audio: model.dependencies.audio)
+        commandRegistrationID = SylluneAudioCommandCenter.shared.register(text: speechSource, asset: speechAsset, audio: model.dependencies.audio)
     }
 
     private func toggleSpeech() {
@@ -779,27 +810,32 @@ public struct ChineseSelectableText: View {
             return
         }
 
+        say(rate: .normal)
+    }
+
+    /// A bundled clip records the displayed phrase, names included. A
+    /// separate speech source, such as a completed fill-in sentence, is
+    /// always read by the local voice.
+    private var speechAsset: AssetReference? {
+        speechText == nil ? phraseAudio : nil
+    }
+
+    private func say(rate: SpeechRate) {
         let target = speechTarget
         guard !target.isEmpty else {
             statusMessage = "Aucun texte mandarin à lire."
             return
         }
         onSpeechRequested?()
+        model.dependencies.audio.stopSpeaking()
+        model.dependencies.audio.stopPlayback()
         isSpeaking = true
         statusMessage = nil
         Task { @MainActor in
             do {
-                if let phraseAudio, PolygoCore.MandarinSpeechText.isTargetOnly(speechSource) {
-                    do {
-                        try await model.dependencies.audio.play(asset: phraseAudio)
-                    } catch {
-                        try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal)
-                    }
-                } else {
-                    try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal)
-                }
+                try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: rate, asset: speechAsset)
                 isSpeaking = false
-                statusMessage = "Lecture terminée."
+                statusMessage = rate == .slow ? "Lecture lente terminée." : "Lecture terminée."
             } catch is CancellationError {
                 isSpeaking = false
                 statusMessage = "Lecture arrêtée."
@@ -832,30 +868,6 @@ public struct ChineseSelectableText: View {
     }
 
     private func speakSlowly() {
-        let target = speechTarget
-        guard !target.isEmpty else {
-            statusMessage = "Aucun texte mandarin à lire."
-            return
-        }
-        onSpeechRequested?()
-        model.dependencies.audio.stopSpeaking()
-        model.dependencies.audio.stopPlayback()
-        isSpeaking = true
-        statusMessage = nil
-        Task { @MainActor in
-            do {
-                // A supplied asset has no rate control in AudioService. Slow
-                // playback therefore uses the local synthesizer explicitly.
-                try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .slow)
-                isSpeaking = false
-                statusMessage = "Lecture lente terminée."
-            } catch is CancellationError {
-                isSpeaking = false
-                statusMessage = "Lecture arrêtée."
-            } catch {
-                isSpeaking = false
-                statusMessage = "Audio indisponible hors ligne."
-            }
-        }
+        say(rate: .slow)
     }
 }

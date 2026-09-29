@@ -860,7 +860,9 @@ public enum AudioPlaybackState: Codable, Hashable, Sendable {
 public protocol AudioService: Sendable {
     func requestMicrophonePermission() async -> PermissionState
     func requestSpeechPermission() async -> PermissionState
-    func play(asset: AssetReference) async throws
+    func speak(_ request: SpeechSynthesisRequest) async throws        // asset?, sinon TTS
+    func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws
+    func play(asset: AssetReference, rate: SpeechRate) async throws   // jusqu’à la fin du clip
     func stopPlayback()
     func playbackStates() -> AsyncStream<AudioPlaybackState>
     func record(_ request: AudioRecordingRequest) async throws -> Recording
@@ -868,11 +870,12 @@ public protocol AudioService: Sendable {
 }
 ```
 
-`AVAudioPlayer` ou `AVAudioEngine` gère la lecture ; la capture peut utiliser
-`AVAudioRecorder` ou un engine selon le besoin de transcription. L’implémentation
+`AVAudioPlayer` lit les clips embarqués (`enableRate`, 0,7 en vitesse lente,
+sans changer la hauteur) ; `AVSpeechSynthesizer` lit un texte sans clip ou dont
+le clip est absent. La capture utilise `AVAudioRecorder`. L’implémentation
 iOS configure `AVAudioSession` conditionnellement ; macOS ne doit pas importer
 ce type uniquement disponible sur iOS. Le wrapper centralise interruptions,
-route audio et arrêt de l’enregistrement.
+route audio et arrêt de l’enregistrement. Voir [AUDIO.md](AUDIO.md).
 
 Le service Speech commence par demander la permission et vérifie la capacité de
 reconnaissance sur l’appareil. Lorsque la reconnaissance locale est disponible,

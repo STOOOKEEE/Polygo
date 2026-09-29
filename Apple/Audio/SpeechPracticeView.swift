@@ -472,32 +472,13 @@ public struct SpeechPracticeView: View {
 
         modelTask = Task { @MainActor in
             do {
-                if let asset = exercise.referenceAudio, selectedRate == .normal {
-                    do {
-                        try await audio.play(asset: asset)
-                        guard !Task.isCancelled else {
-                            isModelPlaying = false
-                            modelTask = nil
-                            return
-                        }
-                        // AudioService.play starts an AVAudioPlayer and returns
-                        // once it is accepted. Keep the toggle in its stop
-                        // state until the learner taps it or leaves the view.
-                        statusMessage = "Modèle lancé à vitesse normale."
-                        modelTask = nil
-                        return
-                    } catch is CancellationError {
-                        throw CancellationError()
-                    } catch {
-                        // Bundled audio is optional. Fall back to the local
-                        // Mandarin voice when the asset is unavailable.
-                    }
-                }
-
+                // The bundled model plays at the chosen speed; the local
+                // Mandarin voice reads the target when it is unavailable.
                 try await audio.speak(
                     text: target,
                     localeIdentifier: "zh-CN",
-                    rate: selectedRate
+                    rate: selectedRate,
+                    asset: exercise.referenceAudio
                 )
                 guard !Task.isCancelled else {
                     isModelPlaying = false

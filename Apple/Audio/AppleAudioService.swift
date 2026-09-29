@@ -45,6 +45,16 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     // existential while its mutable platform state remains queue-confined.
     private var player: AVAudioPlayer?
     private var activeAssetID: AssetID?
+    // A bundled clip resolves its continuation when it ends, is stopped, or
+    // is replaced. `activeClipID` lets a cancelled task stop only its clip.
+    private var activeClipID: UUID?
+    private var clipContinuation: CheckedContinuation<Void, Error>?
+    // Clip admission mirrors speech admission: cancellation can arrive
+    // before the initial main-queue hop. Guarded by `speechStateLock`, as is
+    // `narrationID`, the latest sequence allowed to continue.
+    private var queuedClipIDs: Set<UUID> = []
+    private var cancelledClipIDs: Set<UUID> = []
+    private var narrationID: UUID?
 
     // AVAudioRecorder state is main-queue confined. The admission sets are
     // protected separately because cancellation may arrive while the request
@@ -157,12 +167,64 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
             SpeechSynthesisSegment(
                 text: request.text,
                 localeIdentifier: request.localeIdentifier,
-                rate: request.rate
+                rate: request.rate,
+                asset: request.asset
             )
         ])
     }
 
     public func speakSequence(_ segments: [SpeechSynthesisSegment]) async throws {
+        try Task.checkCancellation()
+        guard !segments.isEmpty else { return }
+        let narration = UUID()
+        speechStateLock.lock()
+        narrationID = narration
+        speechStateLock.unlock()
+        guard segments.contains(where: { $0.asset != nil }) else {
+            try await synthesize(segments)
+            return
+        }
+        // Bundled clips and synthesized segments alternate, so each segment
+        // is said on its own and the pauses are awaited here. A newer
+        // sequence, a stop, or a cancelled task ends this one.
+        for segment in segments {
+            try await narrationPause(segment.preUtteranceDelay, narration: narration)
+            let spoken = SpeechSynthesisSegment(
+                text: segment.text,
+                localeIdentifier: segment.localeIdentifier,
+                rate: segment.rate
+            )
+            if let asset = segment.asset {
+                do {
+                    try await playClip(asset, rate: segment.rate)
+                } catch is AudioServiceError {
+                    // A missing or unreadable clip keeps the local voice.
+                    try ensureCurrentNarration(narration)
+                    try await synthesize([spoken])
+                }
+            } else {
+                try await synthesize([spoken])
+            }
+            try await narrationPause(segment.postUtteranceDelay, narration: narration)
+        }
+    }
+
+    private func narrationPause(_ delay: TimeInterval, narration: UUID) async throws {
+        try ensureCurrentNarration(narration)
+        guard delay > 0 else { return }
+        try await Task.sleep(nanoseconds: UInt64((delay * 1_000_000_000).rounded()))
+        try ensureCurrentNarration(narration)
+    }
+
+    private func ensureCurrentNarration(_ narration: UUID) throws {
+        try Task.checkCancellation()
+        speechStateLock.lock()
+        let isCurrent = narrationID == narration
+        speechStateLock.unlock()
+        guard isCurrent else { throw CancellationError() }
+    }
+
+    private func synthesize(_ segments: [SpeechSynthesisSegment]) async throws {
         try Task.checkCancellation()
         guard !segments.isEmpty else { return }
         let requestID = UUID()
@@ -190,10 +252,17 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         })
     }
 
+    /// Stops what is being said: synthesized speech and a bundled clip that
+    /// stands for it. A recording played back to the learner is left alone.
     public func stopSpeaking() {
         cancelQueuedSpeech()
         performOnMain { [weak self] in
-            self?.stopSpeechOnMain()
+            guard let self else { return }
+            self.stopSpeechOnMain()
+            if self.activeClipID != nil {
+                self.stopCurrentPlayer()
+                self.emit(.stopped)
+            }
         }
     }
 
@@ -332,6 +401,8 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         speechStateLock.lock()
         cancelledSpeechRequestIDs.formUnion(queuedSpeechRequestIDs)
         queuedSpeechRequestIDs.removeAll()
+        cancelledClipIDs.formUnion(queuedClipIDs)
+        narrationID = nil
         speechStateLock.unlock()
     }
 
@@ -455,43 +526,90 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
 
     // MARK: Asset and recording playback
 
-    public func play(asset: AssetReference) async throws {
+    public func play(asset: AssetReference, rate: SpeechRate) async throws {
         cancelQueuedSpeech()
-        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
-            performOnMain { [weak self] in
-                guard let self else {
-                    continuation.resume(throwing: AudioServiceError.unavailable)
-                    return
-                }
-                do {
-                    let url = try self.assetURL(for: asset)
-                    try self.prepareAudioForPlayback()
-                    self.stopCurrentPlayer()
-                    self.stopSpeechOnMain()
-                    self.emit(.loading(asset.id))
-                    let nextPlayer = try AVAudioPlayer(contentsOf: url)
-                    nextPlayer.delegate = self
-                    nextPlayer.prepareToPlay()
-                    self.player = nextPlayer
-                    self.activeAssetID = asset.id
-                    guard nextPlayer.play() else {
-                        self.player = nil
-                        self.activeAssetID = nil
-                        self.emit(.failed(AudioServiceError.playbackFailed("Le lecteur n’a pas démarré").localizedDescription))
-                        continuation.resume(throwing: AudioServiceError.playbackFailed("Le lecteur n’a pas démarré"))
+        try await playClip(asset, rate: rate)
+    }
+
+    private func playClip(_ asset: AssetReference, rate: SpeechRate) async throws {
+        let clipID = UUID()
+        speechStateLock.lock()
+        queuedClipIDs.insert(clipID)
+        speechStateLock.unlock()
+
+        try await withTaskCancellationHandler(operation: {
+            try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+                performOnMain { [weak self] in
+                    guard let self else {
+                        continuation.resume(throwing: AudioServiceError.unavailable)
                         return
                     }
-                    self.emit(.playing(asset.id, progress: 0))
-                    continuation.resume()
-                } catch let error as AudioServiceError {
-                    self.emit(.failed(error.localizedDescription))
-                    continuation.resume(throwing: error)
-                } catch {
-                    let wrapped = AudioServiceError.playbackFailed(error.localizedDescription)
-                    self.emit(.failed(wrapped.localizedDescription))
-                    continuation.resume(throwing: wrapped)
+                    self.beginClip(asset, rate: rate, clipID: clipID, continuation: continuation)
                 }
             }
+        }, onCancel: { [weak self] in
+            guard let self else { return }
+            self.speechStateLock.lock()
+            if self.queuedClipIDs.contains(clipID) {
+                self.cancelledClipIDs.insert(clipID)
+            }
+            self.speechStateLock.unlock()
+            self.performOnMain { [weak self] in
+                guard let self, self.activeClipID == clipID else { return }
+                self.stopCurrentPlayer()
+                self.emit(.stopped)
+            }
+        })
+    }
+
+    private func beginClip(
+        _ asset: AssetReference,
+        rate: SpeechRate,
+        clipID: UUID,
+        continuation: CheckedContinuation<Void, Error>
+    ) {
+        speechStateLock.lock()
+        queuedClipIDs.remove(clipID)
+        let wasCancelled = cancelledClipIDs.remove(clipID) != nil
+        speechStateLock.unlock()
+        guard !wasCancelled else {
+            continuation.resume(throwing: CancellationError())
+            return
+        }
+
+        do {
+            let url = try assetURL(for: asset)
+            try prepareAudioForPlayback()
+            stopCurrentPlayer()
+            stopSpeechOnMain()
+            emit(.loading(asset.id))
+            let nextPlayer = try AVAudioPlayer(contentsOf: url)
+            nextPlayer.delegate = self
+            nextPlayer.enableRate = true
+            nextPlayer.rate = rate.clipPlaybackRate
+            nextPlayer.prepareToPlay()
+            player = nextPlayer
+            activeAssetID = asset.id
+            activeClipID = clipID
+            clipContinuation = continuation
+            guard nextPlayer.play() else {
+                player = nil
+                activeAssetID = nil
+                activeClipID = nil
+                clipContinuation = nil
+                let error = AudioServiceError.playbackFailed("Le lecteur n’a pas démarré")
+                emit(.failed(error.localizedDescription))
+                continuation.resume(throwing: error)
+                return
+            }
+            emit(.playing(asset.id, progress: 0))
+        } catch let error as AudioServiceError {
+            emit(.failed(error.localizedDescription))
+            continuation.resume(throwing: error)
+        } catch {
+            let wrapped = AudioServiceError.playbackFailed(error.localizedDescription)
+            emit(.failed(wrapped.localizedDescription))
+            continuation.resume(throwing: wrapped)
         }
     }
 
@@ -796,17 +914,32 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         guard self.player === player else { return }
         self.player = nil
-        if let activeAssetID {
-            self.activeAssetID = nil
+        if activeAssetID != nil {
+            activeAssetID = nil
             emit(flag ? .idle : .failed("La lecture audio s’est interrompue."))
         }
+        finishClip(flag ? nil : AudioServiceError.playbackFailed("La lecture audio s’est interrompue."))
     }
 
     public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         guard self.player === player else { return }
         self.player = nil
         activeAssetID = nil
-        emit(.failed(error?.localizedDescription ?? "Le fichier audio est illisible."))
+        let reason = error?.localizedDescription ?? "Le fichier audio est illisible."
+        emit(.failed(reason))
+        finishClip(AudioServiceError.playbackFailed(reason))
+    }
+
+    /// Resolves the awaiting bundled clip, if any: success without an error.
+    private func finishClip(_ error: Error?) {
+        let continuation = clipContinuation
+        clipContinuation = nil
+        activeClipID = nil
+        if let error {
+            continuation?.resume(throwing: error)
+        } else {
+            continuation?.resume()
+        }
     }
 
     // MARK: Private state and paths
@@ -952,6 +1085,7 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
         player?.stop()
         player = nil
         activeAssetID = nil
+        finishClip(CancellationError())
     }
 
     private func stopRecordingOnMain() {

@@ -50,8 +50,9 @@ Content/
       guide-hanzi-ni.json
       guide-hanzi-wo.json
       guide-hanzi-guo.json
-  media/
-    audio/                             # seulement si des enregistrements existent
+    audio/
+      KOKORO-LICENSE.TXT               # licence Apache 2.0 et attribution Kokoro
+      <sha256-24>.m4a                  # un clip par (voix, texte, pinyin), voir AUDIO.md
 ~~~
 
 JSONContentStore lit manifest.json, les cours, les leçons et les assets
@@ -471,10 +472,9 @@ une auto-évaluation ne devient pas un score de prononciation. L'exercice oral
 est required: false lorsqu'aucun service de prononciation n'est configuré et
 peut être skipped.
 
-Une écoute utilise promptAudio seulement si un enregistrement livré est
-référencé. En l'absence d'un tel fichier, promptText donne le texte Mandarin au
-service TTS local. Ce repli permet la tâche d'écoute ; il ne déclare pas un
-audio hors ligne.
+Une écoute joue promptAudio, le clip embarqué de promptText. Sans clip (texte
+d'une syllabe, invite de ton refusée par le contrôle de tons), promptText est
+lu par le TTS local.
 
 ## Vocabulaire, scripts et cartes
 
@@ -757,10 +757,13 @@ Les trois guides livrés sont :
 | guide-hanzi-wo | assets/handwriting/guide-hanzi-wo.json | f5ef08d920b4dc9d394fd8c9a4fbbbbf2309d0092c1ee0976b711055114d9a64 |
 | guide-hanzi-guo | assets/handwriting/guide-hanzi-guo.json | b1273af6e93c964c2ef1ba0a4735e4d0a32552c2957f43b300e43f59ddbb196e |
 
-Le lot quotidien n'invente pas de fichiers audio. Ses champs audio sont null
-tant qu'un enregistrement et son hash ne sont pas livrés. promptText reste la
-source du TTS local pour les exercices d'écoute ; une voix TTS ne devient pas
-une AssetReference hors ligne.
+Les champs audio sont gérés par `Tools/build_audio.py` et rattachés par
+`content_tool.py generate` : chaque texte d'au moins deux syllabes (répliques,
+paragraphes, mots, exemples, cartes, invites d'écoute, de dictée, de ton, de
+conversation et modèles oraux) pointe vers `assets/audio/<hash>.m4a` avec son
+SHA-256 et sa durée ; les autres restent null et utilisent le TTS local. Le
+lint refuse une référence périmée ou absente et un clip orphelin. Voir
+[AUDIO.md](AUDIO.md) pour les voix, la licence et la régénération.
 
 ## Contrôles avant publication
 

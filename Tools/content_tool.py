@@ -65,6 +65,7 @@ from grammar_syllabus import (
     syllabus_path,
     taught_context,
 )
+from build_audio import AudioError, References as AudioReferences, attach as attach_clips, pinyin_index as audio_pinyin_index, problems as audio_problems
 from pinyin_module import PinyinError, add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 from situations import (
     SituationError,
@@ -1742,6 +1743,12 @@ def lint_bundle(root: Path) -> None:
         raise ContentError(str(exc)) from exc
     if problems:
         raise ContentError("grammar syllabus:\n  " + "\n  ".join(problems))
+    try:
+        problems = audio_problems(root, lessons)
+    except AudioError as exc:
+        raise ContentError(str(exc)) from exc
+    if problems:
+        raise ContentError("audio:\n  " + "\n  ".join(problems[:20]) + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else ""))
 
 
 def reset_protected_orders(root: Path) -> None:
@@ -1934,12 +1941,31 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
             legacy["order"] = order_of.get(legacy.get("id"), legacy.get("order"))
             write_json(path, legacy)
             changed.add(path.relative_to(root))
+    changed |= attach_audio(root)
     if catalog is not None and isinstance(source.get("catalog"), dict) and "path" not in source["catalog"]:
         catalog_path = root / "authoring" / f"{catalog_info['id']}.json"
         write_json(catalog_path, catalog)
         changed.add(catalog_path.relative_to(root))
     write_json(manifest_path, manifest)
     changed.add(Path("manifest.json"))
+    return changed
+
+
+def attach_audio(root: Path) -> set[Path]:
+    """Point every lesson's audio fields at the bundled clips that exist."""
+    lessons = all_lesson_files(root)
+    index = audio_pinyin_index(lessons)
+    references = AudioReferences(root)
+    changed: set[Path] = set()
+    for lesson_id, lesson in lessons.items():
+        try:
+            modified = attach_clips(lesson, index, references)
+        except AudioError as exc:
+            raise ContentError(str(exc)) from exc
+        if modified:
+            path = root / "lessons" / f"{lesson_id}.json"
+            write_json(path, lesson)
+            changed.add(path.relative_to(root))
     return changed
 
 
