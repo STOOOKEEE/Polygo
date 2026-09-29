@@ -752,7 +752,7 @@ public struct ChineseSelectableText: View {
                 let next = text.index(after: cursor)
                 let character = String(text[cursor..<next])
                 if PolygoCore.MandarinSpeechText.containsHanzi(character) {
-                    result.append(ChineseToken(id: result.count, surface: character, entry: nil))
+                    result.append(ChineseToken(id: result.count, surface: character, vocabularyID: nil))
                     cursor = next
                 } else {
                     // Keep French instructions and punctuation in readable
@@ -765,7 +765,7 @@ public struct ChineseSelectableText: View {
                         if PolygoCore.MandarinSpeechText.containsHanzi(value) { break }
                         end = following
                     }
-                    result.append(ChineseToken(id: result.count, surface: String(text[cursor..<end]), entry: nil))
+                    result.append(ChineseToken(id: result.count, surface: String(text[cursor..<end]), vocabularyID: nil))
                     cursor = end
                 }
             }
