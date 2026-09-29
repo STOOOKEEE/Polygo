@@ -1597,6 +1597,7 @@ private struct ListeningAnswerView: View {
     var listenTitle = "Écouter le mot"
     @Binding var answer: ExerciseAnswer?
     @State private var audioMessage: String?
+    @EnvironmentObject private var model: AppModel
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             Button {
