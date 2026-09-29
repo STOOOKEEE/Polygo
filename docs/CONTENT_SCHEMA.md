@@ -720,20 +720,57 @@ peut être ajoutée que si elle désigne un fichier livré.
 
 ## Pinyin, tons et graphies
 
-Le catalogue et les fiches utilisent le pinyin accentué, avec des espaces entre
-les syllabes : xué shēng, ěr duo. hsk n'est jamais une valeur de pinyin.
-toneNumbers contient un nombre par syllabe : 1 à 4 pour le ton lexical et 0
-pour une syllabe neutre. La fiche de vocabulaire conserve la lecture lexicale
-de l'entrée, tandis qu'un exemple, un dialogue ou une lecture peut représenter
-une réalisation contextuelle.
+Les fichiers d'écriture (catalogue, exemples, scènes, syllabus, module 0) notent
+la lecture en pinyin accentué, une syllabe par hanzi (xué shēng, ěr duo) ou mot
+par mot, au choix : seules comptent les syllabes. La clé `lexemeKey` /
+`canonicalID` (`学生|xué shēng|128`) garde la forme syllabique du catalogue :
+c'est un identifiant de progression, jamais affiché. hsk n'est jamais une
+valeur de pinyin. toneNumbers contient un nombre par syllabe : 1 à 4 pour le
+ton lexical et 0 pour une syllabe neutre. La fiche de vocabulaire conserve la
+lecture lexicale de l'entrée, tandis qu'un exemple, un dialogue ou une lecture
+peut représenter une réalisation contextuelle.
+
+Tout pinyin que l'apprenant lit dans les leçons générées s'écrit comme le
+prescrit GB/T 16159 ; `content_tool.py generate` le produit avec
+`Tools/pinyin_format.py` à partir du hanzi et de ses syllabes, et `lint` refuse
+tout autre forme :
+
+* les syllabes d'un mot sont jointes, les mots séparés : `Huǒchēzhàn zài
+  xuéxiào pángbiān.` Un mot est la plus longue entrée connue (catalogue,
+  vocabulaire des leçons, `EXTRA_WORDS`), un nombre (`shíwǔ`, `yìbǎi`), 第 et
+  son nombre (`dì-yī`) ; quelques expressions du catalogue s'écrivent en
+  plusieurs mots (`PHRASES` : `nǐ hǎo`, `bú kèqi`, `dǎ diànhuà`). Les
+  particules 的 了 吗 呢 吧 着 过 restent séparées (`kàn le`, `qù guo`), 们
+  rejoint son nom (`péngyoumen`), un hanzi redoublé son double (`kànkan`), et
+  une syllabe finale en r (erhua) son hanzi 儿 (`yíhuìr`) ;
+* dans un mot, une syllabe qui commence par a, o ou e prend une apostrophe :
+  `Xī'ān`, `nǚ'ér`, `shí'èr` ;
+* la ponctuation est ASCII, sans espace avant et avec une espace après :
+  ，、→ `,`, 。→ `.`, ？→ `?`, ！→ `!`, ：→ `:`, ；→ `;`, guillemets → `"` ;
+* une phrase (texte qui finit par 。？！) commence par une majuscule, comme
+  chaque phrase qui suit ; les noms propres (`PROPER_NOUNS` : `Běijīng`,
+  `Zhōngguó`, `Fǎguó`, `Hànyǔ`…) et les prénoms (`Mina`, `Tao`, `An`, `Lin`)
+  en prennent une partout. Un mot, une tuile, une carte ou un porteur du
+  module 0 reste en minuscules.
+
+Cela vaut pour le vocabulaire (et sa segmentation), ses exemples, les cartes
+(`nǐ hǎo · 3-3` garde ses chiffres de ton), les dialogues, les lectures, les
+tuiles, les paires, les répliques, `referencePinyin`, les choix de dictée en
+pinyin (écrits comme le texte dont ils sont la lecture dans le cours), les
+porteurs du module 0, et le pinyin cité dans le français : `学校 (xuéxiào)`,
+`xuéxiào (学校, école)` et la ligne de pinyin sous chaque `Exemple N : …`. Un
+pinyin cité sans hanzi dans une explication s'écrit directement mot par mot.
+Les réponses acceptées (`acceptedVariants`, `acceptedTranscripts`) ne sont pas
+réécrites : l'app compare une saisie sans espaces, accents, apostrophes, tirets
+ni majuscules.
 
 Le changement de ton de 不 et 一 est donc écrit dans les phrases lorsqu'il est
 retenu par l'édition (bú, bù, yí, yì selon le contexte), sans réécrire la fiche
 canonique. Le troisième ton de 你好 reste nǐ hǎo [3,3] dans l'entrée lexicale,
 même si le premier troisième ton est souvent réalisé comme un deuxième ton en
 parole continue. Les syllabes légères sont marquées lexicalement quand la
-lecture est relue : 吗 ma [0], 妈妈 mā ma [1,0], 妻子 qī zi [1,0],
-故事 gù shi [4,0], 耳朵 ěr duo [3,0]. Le neutre n'est pas produit par une
+lecture est relue : 吗 ma [0], 妈妈 māma [1,0], 妻子 qīzi [1,0],
+故事 gùshi [4,0], 耳朵 ěrduo [3,0]. Le neutre n'est pas produit par une
 substitution globale.
 
 Les formes traditionnelles sont conservées dans traditionalHanzi et produites

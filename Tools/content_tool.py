@@ -66,7 +66,8 @@ from grammar_syllabus import (
     taught_context,
 )
 from build_audio import AudioError, References as AudioReferences, attach as attach_clips, pinyin_index as audio_pinyin_index, problems as audio_problems
-from pinyin_module import PinyinError, add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
+from pinyin_format import Lexicon, PinyinError, format_lessons
+from pinyin_module import add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 from situations import (
     SituationError,
     SituationSet,
@@ -1730,6 +1731,12 @@ def lint_bundle(root: Path) -> None:
                 global_card_objects[card["id"]] = card
     if not global_exercise_ids:
         raise ContentError("bundle: no exercise documents found")
+    problems = pinyin_problems(root, lessons)
+    if problems:
+        raise ContentError(
+            "pinyin not written by words (run `content_tool.py generate`):\n  " + "\n  ".join(problems[:20])
+            + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else "")
+        )
     try:
         problems = bundle_problems(load_situations(root), lessons, load_catalog(root))
     except SituationError as exc:
@@ -1738,7 +1745,7 @@ def lint_bundle(root: Path) -> None:
         raise ContentError("situations:\n  " + "\n  ".join(problems))
     try:
         notes = load_syllabus(root)
-        problems = check_syllabus(notes, lessons, load_catalog(root)) + grammar_bundle_problems(notes, lessons)
+        problems = check_syllabus(notes, lessons, load_catalog(root)) + grammar_bundle_problems(notes, lessons, pinyin_lexicon(root, lessons))
     except (GrammarError, SituationError) as exc:
         raise ContentError(str(exc)) from exc
     if problems:
@@ -1749,6 +1756,54 @@ def lint_bundle(root: Path) -> None:
         raise ContentError(str(exc)) from exc
     if problems:
         raise ContentError("audio:\n  " + "\n  ".join(problems[:20]) + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else ""))
+
+
+def pinyin_lexicon(root: Path, lessons: dict[str, dict[str, Any]]) -> Lexicon:
+    """The words that group the bundle's pinyin: the catalogue's and the lessons' vocabulary."""
+    try:
+        catalog = load_catalog(root)
+    except SituationError as exc:
+        raise ContentError(str(exc)) from exc
+    return Lexicon([entry["hanzi"] for entry in catalog] + [entry["hanzi"] for lesson in lessons.values() for entry in lesson.get("vocabulary", [])])
+
+
+def formatted_pinyin(root: Path, lessons: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """The lessons with every learner-facing pinyin written by words (see pinyin_format)."""
+    formatted = copy.deepcopy(lessons)
+    try:
+        format_lessons(formatted, pinyin_lexicon(root, lessons))
+    except PinyinError as exc:
+        raise ContentError(f"pinyin: {exc}") from exc
+    return formatted
+
+
+def _differences(before: Any, after: Any, path: str) -> Iterable[str]:
+    if isinstance(before, dict):
+        for key in before:
+            yield from _differences(before[key], after[key], f"{path}.{key}")
+    elif isinstance(before, list):
+        for index, (left, right) in enumerate(zip(before, after)):
+            yield from _differences(left, right, f"{path}[{index}]")
+    elif before != after:
+        yield f"{path}: '{before}' is written '{after}'"
+
+
+def pinyin_problems(root: Path, lessons: dict[str, dict[str, Any]]) -> list[str]:
+    """Each learner-facing pinyin that is not written the way `pinyin_format` spells it."""
+    formatted = formatted_pinyin(root, lessons)
+    return [problem for lesson_id in sorted(lessons) for problem in _differences(lessons[lesson_id], formatted[lesson_id], lesson_id)]
+
+
+def spell_pinyin(root: Path) -> set[Path]:
+    """Write every learner-facing pinyin of the bundle by words; the changed lesson files."""
+    lessons = all_lesson_files(root)
+    changed: set[Path] = set()
+    for lesson_id, lesson in formatted_pinyin(root, lessons).items():
+        if lesson != lessons[lesson_id]:
+            path = root / "lessons" / f"{lesson_id}.json"
+            write_json(path, lesson)
+            changed.add(path.relative_to(root))
+    return changed
 
 
 def reset_protected_orders(root: Path) -> None:
@@ -1941,6 +1996,7 @@ def generate_in_place(root: Path, source: dict[str, Any], catalog: dict[str, Any
             legacy["order"] = order_of.get(legacy.get("id"), legacy.get("order"))
             write_json(path, legacy)
             changed.add(path.relative_to(root))
+    changed |= spell_pinyin(root)
     changed |= attach_audio(root)
     if catalog is not None and isinstance(source.get("catalog"), dict) and "path" not in source["catalog"]:
         catalog_path = root / "authoring" / f"{catalog_info['id']}.json"

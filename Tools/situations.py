@@ -25,7 +25,8 @@ from typing import Any, Iterable, Mapping
 
 from exercise_expansion import split_french, split_sentences
 from exercise_kinds import pinyin_tones
-from pinyin_module import PinyinError, check_pinyin, syllables as split_pinyin
+from pinyin_format import PinyinError, lenient_syllables, reading_key, syllables as split_pinyin
+from pinyin_module import check_pinyin
 from review_lessons import is_derived
 
 SITUATIONS_DIR = "situations"
@@ -68,7 +69,8 @@ _COST_ALLOWED, _COST_LATER, _COST_UNKNOWN, _COST_UNREACHED = 1, 1_000, 1_000_000
 _KEYS = {"situation", "title", "dialogue", "reading", "readingQuestion", "listenSentence", "speakSentence", "extraVocabulary"}
 _REQUIRED_KEYS = _KEYS - {"extraVocabulary"}
 _HANZI = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
-_PINYIN_TOKEN = re.compile(r"[^\W\d_]+|[,.?!;:]|\s+|.")
+_PINYIN_TOKEN = re.compile(r"[^\W\d_]+(?:['’\-][^\W\d_]+)*|[,.?!;:]|\s+|.")
+_MISPLACED_APOSTROPHE = re.compile(r"['’](?![aoeāáǎàēéěèōóǒò])", re.IGNORECASE)
 _LESSON_ID = re.compile(r"lesson-(\d+)")
 
 
@@ -305,7 +307,10 @@ def _pinyin_syllables(run: str) -> tuple[list[str], bool]:
 
 
 def _parse_pinyin(text: str, problems: list[str]) -> list[tuple[str, str, bool]]:
-    """(kind, text, erhua) for each syllable `s`, name `n` and punctuation mark `p`."""
+    """(kind, text, erhua) for each syllable `s`, name `n` and punctuation mark `p`.
+
+    A word may join its syllables (`xuéxiào`), with an apostrophe before a syllable that starts
+    with a, o or e (`nǚ'ér`), and take a capital: its syllables are what count."""
     tokens: list[tuple[str, str, bool]] = []
     for match in _PINYIN_TOKEN.finditer(text):
         piece = match.group()
@@ -317,8 +322,8 @@ def _parse_pinyin(text: str, problems: list[str]) -> list[tuple[str, str, bool]]
             if piece in CHARACTERS:
                 tokens.append(("n", piece, False))
                 continue
-            if piece != piece.lower():
-                problems.append(f"pinyin '{piece}' must be lowercase (only {', '.join(CHARACTERS)} take a capital)")
+            if _MISPLACED_APOSTROPHE.search(piece):
+                problems.append(f"pinyin '{piece}': an apostrophe only comes before a syllable that starts with a, o or e")
                 continue
             try:
                 parts, erhua = _pinyin_syllables(piece)
@@ -327,7 +332,7 @@ def _parse_pinyin(text: str, problems: list[str]) -> list[tuple[str, str, bool]]
             except PinyinError as exc:
                 problems.append(f"pinyin '{piece}': {str(exc).removeprefix('pinyin: ')}")
                 continue
-            tokens.extend(("s", part, erhua and position == len(parts) - 1) for position, part in enumerate(parts))
+            tokens.extend(("s", part.lower(), erhua and position == len(parts) - 1) for position, part in enumerate(parts))
         else:
             hint = ": use the ASCII marks , . ? ! ; :" if piece in "，。？！、；：" else ""
             problems.append(f"character {piece!r} is not allowed in the pinyin{hint}")
@@ -399,7 +404,7 @@ def _misaligned(items: list[tuple[str, str]], tokens: list[tuple[str, str, bool]
     around = "".join(char for _, char in items[max(0, position - 1):position + 2])
     return (
         f"the pinyin does not follow the hanzi (near '{around}': {chars} hanzi/names, {syllables} syllables/names; "
-        "one syllable per hanzi, one ASCII mark per ， 。 ？ ！ 、 ； ： at the same place)"
+        "one syllable per hanzi, a word's syllables joined or apart, one ASCII mark per ， 。 ？ ！ 、 ； ： at the same place)"
     )
 
 
@@ -457,7 +462,7 @@ def extra_entry(extra: dict[str, Any]) -> dict[str, Any]:
         "hanzi": hanzi,
         "traditionalHanzi": extra["traditionalHanzi"],
         "pinyin": extra["pinyin"],
-        "toneNumbers": pinyin_tones(extra["pinyin"].split()),
+        "toneNumbers": pinyin_tones(lenient_syllables(extra["pinyin"])),
         "segmentation": [{"surface": hanzi, "vocabularyID": vocab_id, "pinyin": extra["pinyin"], "partOfSpeech": extra["partOfSpeech"]}],
         "partOfSpeech": extra["partOfSpeech"],
         "grammarNotes": [],
@@ -551,8 +556,6 @@ class _Checker:
                 for problem in parsed.problems:
                     self.fail(where, problem)
                 continue
-            if parsed.pinyin != " ".join(pinyin.split()):
-                self.fail(where, f"write the pinyin one syllable at a time: '{parsed.pinyin}'")
             if hanzi in self.context.allowed:
                 self.fail(where, f"{hanzi} is already taught: it is not an extra")
             later = self.context.later.get(hanzi)
@@ -903,21 +906,23 @@ def apply_situation(blueprint: dict[str, Any], situation: dict[str, Any]) -> dic
 
 
 def lesson_drift(situation: dict[str, Any], lesson: dict[str, Any]) -> list[str]:
-    """Where a generated lesson differs from its situation file (the file was edited after generation)."""
+    """Where a generated lesson differs from its situation file (the file was edited after generation).
+
+    The pinyin is compared by what it reads: the bundle writes it by words (`pinyin_format`)."""
     problems: list[str] = []
     dialogue = next((block for block in lesson["blocks"] if block.get("kind") == "dialogue"), {})
     reading = next((block for block in lesson["blocks"] if block.get("kind") == "reading"), {})
     expected_lines = [
-        (item["speaker"], item["hanzi"], normalize_pinyin(item["hanzi"], item["pinyin"]), item["translation"]["fr"])
+        (item["speaker"], item["hanzi"], reading_key(normalize_pinyin(item["hanzi"], item["pinyin"])), item["translation"]["fr"])
         for item in situation["dialogue"]
     ]
-    lines = [(line["speaker"], line["hanzi"], line["pinyin"], line["translation"]["fr"]) for line in dialogue.get("lines", [])]
+    lines = [(line["speaker"], line["hanzi"], reading_key(line["pinyin"]), line["translation"]["fr"]) for line in dialogue.get("lines", [])]
     if lines != expected_lines:
         problems.append("the dialogue differs from its situation file")
     expected_paragraphs = [
-        (item["hanzi"], normalize_pinyin(item["hanzi"], item["pinyin"]), item["translation"]["fr"]) for item in situation["reading"]["paragraphs"]
+        (item["hanzi"], reading_key(normalize_pinyin(item["hanzi"], item["pinyin"])), item["translation"]["fr"]) for item in situation["reading"]["paragraphs"]
     ]
-    paragraphs = [(item["hanzi"], item["pinyin"], item["translation"]["fr"]) for item in reading.get("paragraphs", [])]
+    paragraphs = [(item["hanzi"], reading_key(item["pinyin"]), item["translation"]["fr"]) for item in reading.get("paragraphs", [])]
     if paragraphs != expected_paragraphs or reading.get("title", {}).get("fr") != situation["reading"]["title"]["fr"]:
         problems.append("the reading differs from its situation file")
     if lesson["title"]["fr"] != situation["title"]["fr"] or lesson["summary"]["fr"] != situation["situation"]["fr"]:
@@ -1033,7 +1038,8 @@ def brief(context: Context, situations: SituationSet, lessons: Mapping[str, dict
         f"  Mots autorisés : ceux du tableau ci-dessous (+ prénoms {', '.join(CHARACTERS)}, + extras glosses). "
         f"Mots nouveaux au total (canoniques + extras) : {MAX_NEW_WORDS} au plus, donc {max(cap, 0)} extra(s) nouveau(x) possible(s) ici ; "
         f"un extra ne pèse pas plus de {int(EXTRA_SHARE * 100)} % des mots d'un texte (1 au minimum).",
-        "  Hanzi : ponctuation pleine largeur (， 。 ？ ！). Pinyin : une syllabe par hanzi, séparées par des espaces, ponctuation ASCII (, . ? !).",
+        "  Hanzi : ponctuation pleine largeur (， 。 ？ ！). Pinyin : une syllabe par hanzi, séparées par des espaces ou jointes en mots "
+        "(apostrophe devant a, o, e : nǚ'ér), ponctuation ASCII (, . ? !) ; le générateur l'écrit ensuite mot par mot.",
         "",
         f"## Vocabulaire autorisé ({len(words)} mots, dans l'ordre où ils ont été vus ; l'aperçu du module 0 est en tête)",
         _table(words),

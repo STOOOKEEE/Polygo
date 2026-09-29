@@ -52,8 +52,9 @@ Les vitesses exposées sont .normal et .slow. Pour un clip, .slow règle
 sert les deux vitesses. Pour la synthèse, .slow vaut 0,34 au lieu de 0,50.
 SpeechSynthesisRequest conserve aussi des ToneMarker pour l’affichage
 pédagogique ; ces marqueurs ne sont pas ajoutés au texte lu et ne constituent
-jamais une évaluation de ton. MandarinToneMarkers.annotated(_:) fournit un
-repère visuel à partir des diacritiques pinyin ou d’une liste de tons.
+jamais une évaluation de ton. MandarinToneMarkers.annotated(_:) (PolygoCore)
+fournit un repère visuel à partir des diacritiques pinyin ou d’une liste de tons,
+un chiffre par syllabe, y compris dans un mot écrit d’un bloc (`Běi³jīng¹`).
 
 La capture se déroule dans le répertoire temporaire du système :
 

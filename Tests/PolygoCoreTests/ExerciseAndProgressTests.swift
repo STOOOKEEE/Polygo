@@ -87,6 +87,15 @@ final class ExerciseAndProgressTests: XCTestCase {
         XCTAssertEqual(TextNormalizer.normalize("ABC", caseSensitive: false), "abc")
     }
 
+    func testTypedPinyinMatchesWordGroupedCapitalisedPinyin() {
+        let spec = ExerciseSpec.fillBlank(
+            FillBlankExercise(header: header(), sentence: "我住在___。", acceptedAnswers: ["Běijīng", "Xī'ān"], caseSensitive: false)
+        )
+        XCTAssertTrue(engine.evaluate(spec: spec, answer: .text("bei jing")).accepted)
+        XCTAssertTrue(engine.evaluate(spec: spec, answer: .text("xī ān")).accepted)
+        XCTAssertFalse(engine.evaluate(spec: spec, answer: .text("xian jing")).accepted)
+    }
+
     func testFillBlankUsesNormalizedAcceptedVariantsAndHonorsCaseSensitivity() {
         let normalized = ExerciseSpec.fillBlank(
             FillBlankExercise(

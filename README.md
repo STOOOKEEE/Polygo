@@ -108,10 +108,16 @@ type choix sont tournés de manière déterministe pendant la génération selon
 jour et la position de l’exercice : les identifiants et les bonnes réponses ne
 changent pas, mais la première option n’est pas toujours correcte.
 
-Les quatre leçons d’introduction conservent exactement leur contenu apprenant,
-leurs identifiants, leurs exercices, leurs cartes et leurs paires simplifié /
-traditionnel. Leur seule mise à jour de payload est la version de contenu
-`2026.10.0` nécessaire au bundle commun.
+Tout le pinyin affiché dans les leçons s’écrit mot par mot selon GB/T 16159
+(`Huǒchēzhàn zài xuéxiào pángbiān.`), avec la ponctuation ASCII, une majuscule
+en tête de phrase et aux noms propres (`Běijīng`, `Hànyǔ`) et l’apostrophe de
+`Xī'ān` ; `content_tool.py generate` l’écrit et `lint` le vérifie (voir
+« Pinyin, tons et graphies » dans `docs/CONTENT_SCHEMA.md`).
+
+Les quatre leçons d’introduction conservent leur contenu apprenant, leurs
+identifiants, leurs exercices, leurs cartes et leurs paires simplifié /
+traditionnel. Leur payload ne change que par la version de contenu `2026.10.0`
+nécessaire au bundle commun et par leur pinyin, écrit mot par mot comme partout.
 
 ## Interface et pièces
 

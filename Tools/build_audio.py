@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 from exercise_kinds import pinyin_tones
-from pinyin_module import PinyinError, syllables
+from pinyin_format import PinyinError, syllables
 
 AUDIO_DIR = "assets/audio"
 ENGINE = "kokoro-82m-v1.1-zh"

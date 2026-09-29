@@ -310,31 +310,3 @@ private func waitForSpeechDelay(_ delay: TimeInterval) async throws {
     let nanoseconds = UInt64((delay * 1_000_000_000).rounded())
     try await Task.sleep(nanoseconds: nanoseconds)
 }
-
-/// Adds tone numbers to pinyin for an honest visual cue. Existing diacritics
-/// are detected when no explicit tone list is supplied; no audio or score is
-/// inferred from this formatting helper.
-public enum MandarinToneMarkers {
-    private static let toneDigits = ["⁰", "¹", "²", "³", "⁴", "⁵"]
-
-    public static func annotated(_ pinyin: String, toneNumbers: [Int] = []) -> String {
-        pinyin.split(whereSeparator: { $0.isWhitespace }).enumerated().map { index, token in
-            let syllable = String(token)
-            let detected = toneNumbers.indices.contains(index) ? toneNumbers[index] : tone(in: syllable)
-            guard detected >= 0, detected <= 5, detected != 0 else { return syllable }
-            return syllable + toneDigits[detected]
-        }.joined(separator: " ")
-    }
-
-    private static func tone(in syllable: String) -> Int {
-        let firstTone = "āēīōūǖĀĒĪŌŪǕ"
-        let secondTone = "áéíóúǘÁÉÍÓÚǗ"
-        let thirdTone = "ǎěǐǒǔǚǍĚǏǑǓǙ"
-        let fourthTone = "àèìòùǜÀÈÌÒÙǛ"
-        if syllable.contains(where: { firstTone.contains($0) }) { return 1 }
-        if syllable.contains(where: { secondTone.contains($0) }) { return 2 }
-        if syllable.contains(where: { thirdTone.contains($0) }) { return 3 }
-        if syllable.contains(where: { fourthTone.contains($0) }) { return 4 }
-        return 0
-    }
-}

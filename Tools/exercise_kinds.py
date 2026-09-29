@@ -10,6 +10,8 @@ from __future__ import annotations
 import random
 from typing import Any
 
+from pinyin_format import lenient_syllables
+
 NEW_KINDS = ("matching", "dictation", "toneDiscrimination", "translation", "conversationChoice", "dialogueOrder")
 # A daily lesson uses at least this many of the kinds above.
 MIN_NEW_KINDS = 4
@@ -57,7 +59,7 @@ def entry_tones(entry: dict[str, Any]) -> list[int] | None:
         return None
     if not tones or len(tones) > 2 or any(not isinstance(tone, int) or not 0 <= tone <= 4 for tone in tones):
         return None
-    syllables = pinyin.split()
+    syllables = lenient_syllables(pinyin)
     if len(hanzi) != len(tones) or len(syllables) != len(tones) or pinyin_tones(syllables) != tones:
         return None
     if tones[0] == 0 or "不" in hanzi or "一" in hanzi or POLYPHONES.intersection(hanzi):

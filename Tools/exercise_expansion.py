@@ -42,6 +42,7 @@ from exercise_kinds import (
     tone_label,
     tone_options,
 )
+from pinyin_format import lenient_syllables, reading_key
 
 PHASES = ("discover", "guided", "reuse")
 EXERCISE_BUDGET = (15, 20)
@@ -94,7 +95,7 @@ class Sentence:
 
     @property
     def syllables(self) -> list[str]:
-        return re.sub(f"[{re.escape(_PUNCTUATION)}.,!?;:]", " ", self.pinyin).split()
+        return lenient_syllables(self.pinyin)
 
     @property
     def is_clean(self) -> bool:
@@ -695,7 +696,7 @@ class SessionBuilder:
         """Wrong words of the same length that sound different, so the audio decides."""
         others = [
             item for item in self._word_distractors(entry, 8, name)
-            if item["pinyin"] != entry["pinyin"] and len(item["hanzi"]) == len(entry["hanzi"])
+            if reading_key(item["pinyin"]) != reading_key(entry["pinyin"]) and len(item["hanzi"]) == len(entry["hanzi"])
         ]
         return others[:3]
 
@@ -725,13 +726,13 @@ class SessionBuilder:
             return None
         candidates = [
             other for other in self.dialogue + self.examples
-            if other.hanzi != sentence.hanzi and other.pinyin.strip() and other.pinyin != sentence.pinyin
+            if other.hanzi != sentence.hanzi and other.pinyin.strip() and reading_key(other.pinyin) != reading_key(sentence.pinyin)
         ]
         self._rng(name).shuffle(candidates)
         candidates.sort(key=lambda other: abs(len(other.syllables) - len(sentence.syllables)))
         distractors: list[str] = []
         for other in candidates:
-            if other.pinyin not in distractors:
+            if reading_key(other.pinyin) not in map(reading_key, distractors):
                 distractors.append(other.pinyin)
             if len(distractors) == 2:
                 break
@@ -811,7 +812,7 @@ class SessionBuilder:
             hanzi = entry["hanzi"]
             if (
                 hanzi in seen or hanzi in sentence.hanzi or len(hanzi) > 2
-                or len(entry["pinyin"].split()) != len(hanzi) or _meaning_tokens(_fr(entry["meaning"])) & french
+                or len(lenient_syllables(entry["pinyin"])) != len(hanzi) or _meaning_tokens(_fr(entry["meaning"])) & french
             ):
                 continue
             seen.add(hanzi)

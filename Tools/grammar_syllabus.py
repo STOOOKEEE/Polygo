@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from exercise_expansion import split_french, split_sentences
-from pinyin_module import PinyinError, syllables as split_pinyin
+from pinyin_format import Lexicon, PinyinError, spell_prose, syllables as split_pinyin
 from situations import (
     FIRST_DAILY_LESSON,
     LAST_DAILY_LESSON,
@@ -602,8 +602,9 @@ def _answer_problems(block: dict[str, Any], expected: dict[str, Any]) -> list[st
     return problems
 
 
-def bundle_problems(notes: list[dict[str, Any]], lessons: Mapping[str, dict[str, Any]]) -> list[str]:
-    """What a generated bundle owes the syllabus: each note's block and exercises where designed, no grammar elsewhere."""
+def bundle_problems(notes: list[dict[str, Any]], lessons: Mapping[str, dict[str, Any]], lexicon: Lexicon) -> list[str]:
+    """What a generated bundle owes the syllabus: each note's block (its pinyin written by words) and exercises where
+    designed, no grammar elsewhere."""
     by_lesson = {note["lessonID"]: note for note in notes}
     problems: list[str] = []
     for lesson_id, lesson in sorted(lessons.items(), key=lambda item: item[1]["order"]):
@@ -622,7 +623,7 @@ def bundle_problems(notes: list[dict[str, Any]], lessons: Mapping[str, dict[str,
             problems.append(f"{lesson_id}: expected the single grammar block block-{lesson_id}-grammar-01; run `content_tool.py generate` again")
             continue
         block = grammar[0]
-        if block["title"].get("fr") != GRAMMAR_TITLE + note["title"] or block["body"].get("fr") != render_body(note) or block.get("metadata", {}).get("grammarPointID") != note["id"]:
+        if block["title"].get("fr") != GRAMMAR_TITLE + note["title"] or block["body"].get("fr") != spell_prose(render_body(note), lexicon) or block.get("metadata", {}).get("grammarPointID") != note["id"]:
             problems.append(f"{lesson_id}: the grammar block differs from note {note['id']}; run `content_tool.py generate` again")
         if [point.get("id") for point in lesson.get("grammarPoints", [])] != [note["id"]]:
             problems.append(f"{lesson_id}: grammarPoints must list {note['id']} alone")

@@ -253,7 +253,9 @@ parcours s'écrit dans `unit-01.json`) : `unit-01` leçons 5–12, `unit-02` 13�
 ### Format
 
 Le fichier associe un ID de leçon à sa scène. Tous les textes visibles sont des objets
-`{"fr": "…"}` ; le pinyin s'écrit une syllabe par hanzi.
+`{"fr": "…"}` ; le pinyin s'écrit une syllabe par hanzi (`mǐ fàn`) ou mot par mot (`mǐfàn`,
+`nǚ'ér`) : seules les syllabes comptent, `generate` l'écrit ensuite par mots avec les majuscules
+et la ponctuation du bundle (voir « Pinyin, tons et graphies » dans `CONTENT_SCHEMA.md`).
 
 ```json
 {
@@ -331,9 +333,10 @@ génération) ; la grammaire vient du syllabus.
   consécutives sont identiques (sauf une salutation), plus de deux répliques portent un nom latin
   (une ligne à nom latin n'alimente pas les exercices générés) ;
 * le hanzi contient autre chose que des hanzi, `，。！？、；：` et des prénoms ; le pinyin autre
-  chose que des syllabes minuscules bien écrites (marque de ton bien placée) et `, . ? ! ; :` ;
-  le pinyin ne suit pas le hanzi (une syllabe par hanzi, la même ponctuation au même endroit ;
-  儿 s'écrit `r` collé à la syllabe précédente, `nǎr`).
+  chose que des syllabes bien écrites (marque de ton bien placée), seules ou jointes en mots
+  (apostrophe seulement devant une syllabe qui commence par a, o ou e), et `, . ? ! ; :` ;
+  le pinyin ne suit pas le hanzi (une syllabe par hanzi une fois les mots coupés, la même
+  ponctuation au même endroit ; 儿 s'écrit `r` collé à la syllabe précédente, `nǎr`).
 
 ### Commandes
 
@@ -366,7 +369,7 @@ régénéré est aussi comparé aux fichiers de scènes : modifier une scène sa
   `An` et `Lin` peuvent apparaître, à trois voix au plus. Le lecteur a déjà rencontré Mina et Tao :
   reprenez leurs goûts et leurs habitudes (voir « Personnages » du brief) sans les contredire.
 * Les prénoms s'écrivent en lettres latines, à l'identique dans le hanzi et dans le pinyin
-  (`你好，Tao！` / `nǐ hǎo, Tao!`, `Tao的生日` / `Tao de shēng rì`), au plus deux répliques par
+  (`你好，Tao！` / `nǐ hǎo, Tao!`, `Tao的生日` / `Tao de shēngrì`), au plus deux répliques par
   dialogue ; jamais dans `listenSentence` ni `speakSentence`, lus à voix haute en mandarin.
 * Continuité : la famille de Tao compte une grande sœur (médecin), un grand frère (en France),
   une petite sœur et un petit frère ; Mina a un grand frère (en Chine) et une grande sœur, ses
@@ -461,7 +464,7 @@ n'emploient que des mots déjà enseignés. Une leçon sans note n'a aucun bloc 
   phrase.
 * `examples` : trois ou quatre phrases simples (sans ponctuation intérieure, 22 hanzi au plus, sans
   prénom), aux mots enseignés jusqu'à la leçon (les extras glosés des leçons jusqu'à celle-ci
-  comptent), en pinyin d'une syllabe par hanzi comme les scènes. `title`, `formula`,
+  comptent), en pinyin écrit comme dans les scènes. `title`, `formula`,
   `explanation` et `mistake` ne citent, eux aussi, que des mots enseignés.
 * `exercises` : exactement deux. Le premier assemble la structure (`wordOrder`, un seul ordre
   possible, ou `translation`, dont la réponse est l'un des exemples, avec une ou deux tuiles en
@@ -515,7 +518,11 @@ le pack des leçons du jour (l'assembleur reste inchangé). Le fichier contient 
   comme texte lu) ; vérifier chaque entrée avec un dictionnaire avant de l'ajouter.
   `不` et `一` s'y notent avec leur ton réel dans le mot (`bú shì`, `yì qǐ`) ; les
   mots du vocabulaire d'une leçon doivent y porter le même pinyin que leur
-  entrée ;
+  entrée.
+  Le générateur écrit ces porteurs, les choix et les paires qui en viennent par
+  mots comme tout le bundle (`māma`, `Xī'ān`) ; le pinyin cité dans une
+  introduction ou un choix sans hanzi entre parenthèses (`lǎoshī, Měiguó`)
+  s'écrit directement ainsi ;
 * `lessons` : `id`, `title`, `summary`, deux `objectives` (le premier pour les
   exercices d'écoute, le second pour les autres), des blocs `introduction`
   (`title`, `body`), `vocabulary` (références du catalogue ou de l'existant,

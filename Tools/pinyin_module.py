@@ -23,11 +23,11 @@ from __future__ import annotations
 import copy
 import re
 import unicodedata
-from functools import lru_cache
 from typing import Any, Callable
 
 from exercise_expansion import EXERCISE_BUDGET, PHASES
 from exercise_kinds import MATCHING_PAIRS, POLYPHONES, pinyin_tones, tone_choice_id, tone_label
+from pinyin_format import FINALS, INITIALS, PinyinError, syllables, untoned
 from review_lessons import renumber
 
 PINYIN = "pinyin"
@@ -40,18 +40,9 @@ MIN_CONTRASTS = 4
 CONTRASTS = ("initial", "final", "tone")
 LISTENING_KINDS = ("toneDiscrimination", "dictation", "listeningChoice")
 _LETTERS = "abcdefgh"
-_TONE_MARKS = {"\u0304", "\u0301", "\u030c", "\u0300"}
 _PUNCTUATION = "，。！？、；：,.!?;: "
-_INITIALS = ("zh", "ch", "sh", "b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "h", "j", "q", "x", "z", "c", "s", "r", "y", "w")
-_FINALS = frozenset(
-    "a o e ai ei ao ou an en ang eng ong er i ia ie iao iu ian in iang ing iong u ua uo uai ui uan un uang ue ü üe üan ün".split()
-)
 _TONE_VOWELS = frozenset("āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ")
 _HEAR_LABEL = re.compile(r"^(\S+) \((.+)\)$")
-
-
-class PinyinError(ValueError):
-    """Module 0 authoring data or a module 0 lesson breaks its contract."""
 
 
 def is_pinyin(lesson: dict[str, Any]) -> bool:
@@ -62,50 +53,11 @@ def is_pinyin(lesson: dict[str, Any]) -> bool:
 # -- pinyin ------------------------------------------------------------------
 
 
-def _plain(char: str) -> str:
-    """The letter under a tone mark (`ǚ` gives `ü`)."""
-    decomposed = "".join(part for part in unicodedata.normalize("NFD", char) if part not in _TONE_MARKS)
-    return unicodedata.normalize("NFC", decomposed)
-
-
-@lru_cache(maxsize=None)
-def _parse(plain: str, start: int) -> tuple[int, ...] | None:
-    """Lengths of the syllables that spell `plain[start:]`, or None when it is no pinyin."""
-    if start == len(plain):
-        return ()
-    for initial in [initial for initial in _INITIALS if plain.startswith(initial, start)] + [""]:
-        after = start + len(initial)
-        for size in range(min(5, len(plain) - after), 0, -1):
-            if plain[after:after + size] in _FINALS:
-                rest = _parse(plain, after + size)
-                if rest is not None:
-                    return (len(initial) + size,) + rest
-    return None
-
-
-def syllables(pinyin: str) -> list[str]:
-    """The syllables of a pinyin text: apart, or grouped into words (`Hànyǔ`), with or without apostrophes."""
-    result: list[str] = []
-    for chunk in re.split(r"[ ']+", pinyin.strip()):
-        if not chunk:
-            continue
-        lengths = _parse("".join(_plain(char) for char in chunk.lower()), 0)
-        if lengths is None:
-            raise PinyinError(f"'{chunk}' is not valid pinyin")
-        position = 0
-        for length in lengths:
-            result.append(chunk[position:position + length])
-            position += length
-    if not result:
-        raise PinyinError("empty pinyin")
-    return result
-
-
 def split_syllable(syllable: str) -> tuple[str, str, int]:
     """(initial, final, tone) of one syllable; the final and initial are spelled without tone marks."""
-    plain = "".join(_plain(char) for char in syllable.lower())
-    for initial in [initial for initial in _INITIALS if plain.startswith(initial)] + [""]:
-        if plain[len(initial):] in _FINALS:
+    plain = "".join(untoned(char) for char in syllable.lower())
+    for initial in [initial for initial in INITIALS if plain.startswith(initial)] + [""]:
+        if plain[len(initial):] in FINALS:
             return initial, plain[len(initial):], pinyin_tones([syllable])[0]
     raise PinyinError(f"'{syllable}' is not one pinyin syllable")
 
@@ -128,7 +80,7 @@ def _mark_is_placed_right(syllable: str) -> bool:
         target = final[-1]
     else:
         target = final[-1] if len(final) == 1 else final[0]
-    return _plain(marked[0]) == target
+    return untoned(marked[0]) == target
 
 
 def check_pinyin(pinyin: Any, where: str) -> list[str]:
@@ -515,7 +467,7 @@ def check_lesson(lesson: dict[str, Any]) -> None:
         parts = check_pinyin(pinyin, where)
         if len(parts) != len(hanzi):
             _fail(where, "needs one syllable per character")
-        attested.update(parts)
+        attested.update(part.lower() for part in parts)
     vocabulary_ids = [entry["id"] for entry in lesson["vocabulary"]]
     if len(vocabulary_ids) > MAX_WORDS or metadata.get("previewVocabularyIDs") != vocabulary_ids:
         _fail(lesson_id, f"metadata.previewVocabularyIDs must list the lesson's {MAX_WORDS} words at most")
@@ -582,7 +534,7 @@ def check_lesson(lesson: dict[str, Any]) -> None:
                 _fail(where, "has a correct pinyin that is not the carrier's")
             spoken(spec["promptText"], where)
             for label in ids.values():
-                if not set(check_pinyin(label, where)) <= attested:
+                if not {part.lower() for part in check_pinyin(label, where)} <= attested:
                     _fail(where, f"offers '{label}', whose syllables no carrier attests")
             if contrast:
                 _check_minimal_pair(correct, [label for choice_id, label in ids.items() if choice_id != spec["correctChoiceID"]], contrast, where)
@@ -618,8 +570,9 @@ def check_lesson(lesson: dict[str, Any]) -> None:
                     if entry is None or pair["pinyin"] != entry["pinyin"] or pair["right"]["fr"] != entry["meaning"]["fr"]:
                         _fail(where, f"pairs '{pair['left']}' with something else than its meaning")
         elif kind == "speaking":
-            expected = [part for piece in split_carriers(spec["referenceText"], carriers, where) for part in spoken(piece, where)]
-            found = syllables(re.sub(f"[{re.escape(_PUNCTUATION)}]+", " ", spec["referencePinyin"]))
+            # The bundle capitalises a sentence and a proper noun: the syllables are compared, not their case.
+            expected = [part.lower() for piece in split_carriers(spec["referenceText"], carriers, where) for part in spoken(piece, where)]
+            found = [part.lower() for part in syllables(re.sub(f"[{re.escape(_PUNCTUATION)}]+", " ", spec["referencePinyin"]))]
             if found != expected or spec["header"]["required"] is not False or spec.get("allowSelfRating") is not True:
                 _fail(where, "has a reference pinyin that is not its text's, or an oral activity that blocks progression")
         elif kind == "choice":
