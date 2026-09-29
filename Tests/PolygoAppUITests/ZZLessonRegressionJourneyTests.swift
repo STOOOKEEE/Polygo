@@ -349,7 +349,11 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if ready.waitForExistence(timeout: 3) {
             ready.tap()
         }
-        XCTAssertTrue(text(containing: "Aujourd’hui").waitForExistence(timeout: timeout), "L’espace d’apprentissage doit être ouvert")
+        // The first lesson opens full screen, without the tab bar.
+        let learningSpace = app.descendants(matching: .any).matching(
+            NSPredicate(format: "label CONTAINS[c] %@ OR identifier BEGINSWITH %@", "Aujourd’hui", "lesson.step.")
+        ).firstMatch
+        XCTAssertTrue(learningSpace.waitForExistence(timeout: timeout), "L’espace d’apprentissage doit être ouvert")
     }
 
     private func openFirstLesson() {
@@ -377,13 +381,18 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     /// Lessons teach just in time: continue through the teaching steps up to
-    /// the next exercise.
+    /// the next exercise. A step can still be loading, so wait for one first.
     private func continueThroughTeaching() {
         let next = button(identifier: "lesson.step.continue")
+        let anyStep = app.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@ OR identifier BEGINSWITH %@", "lesson.step.continue", "lesson.exercise.")
+        ).firstMatch
+        guard anyStep.waitForExistence(timeout: 5) else { return }
         var remaining = 8
-        while remaining > 0, next.waitForExistence(timeout: 1) {
+        while remaining > 0, next.exists {
             tapWhenVisible(next)
             remaining -= 1
+            _ = anyStep.waitForExistence(timeout: timeout)
         }
     }
 

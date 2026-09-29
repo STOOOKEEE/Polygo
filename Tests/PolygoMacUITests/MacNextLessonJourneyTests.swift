@@ -63,9 +63,10 @@ final class MacNextLessonJourneyTests: XCTestCase {
         attachScreenshot(named: "mac-next-lesson-intro")
         let next = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.step.continue")).firstMatch
         var remaining = 8
-        while remaining > 0, next.waitForExistence(timeout: 1) {
+        while remaining > 0, next.exists {
             next.click()
             remaining -= 1
+            _ = app.staticTexts.matching(identifier: "lesson.exercise.ex-l3-tone").firstMatch.waitForExistence(timeout: 2)
         }
         XCTAssertTrue(
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l3-tone").firstMatch.waitForExistence(timeout: timeout),

@@ -557,12 +557,18 @@ final class LessonReviewJourneyTests: XCTestCase {
 
     /// Lessons teach just in time: continue through the teaching steps
     /// (situation, words, notes, dialogue, reading) up to the next exercise.
+    /// A lesson can still be loading, so first wait for any step to appear.
     private func continueThroughTeaching() {
         let next = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.step.continue")).firstMatch
+        let anyStep = app.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@ OR identifier BEGINSWITH %@", "lesson.step.continue", "lesson.exercise.")
+        ).firstMatch
+        guard anyStep.waitForExistence(timeout: 5) else { return }
         var remaining = 8
-        while remaining > 0, next.waitForExistence(timeout: 1) {
+        while remaining > 0, next.exists {
             tapWhenVisible(next)
             remaining -= 1
+            _ = anyStep.waitForExistence(timeout: timeout)
         }
     }
 

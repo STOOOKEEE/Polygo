@@ -137,7 +137,13 @@ final class MacHomeJourneyTests: XCTestCase {
             evaluatedWith: app.windows
         )
         wait(for: [secondWindow], timeout: timeout)
-        defer { pressCommand("w") }
+        defer {
+            // Restored windows would leak into the next journeys: wait until
+            // the second window is really closed before the app terminates.
+            pressCommand("w")
+            let closed = expectation(for: NSPredicate(format: "count == 1"), evaluatedWith: app.windows)
+            wait(for: [closed], timeout: timeout)
+        }
 
         pressCommand("5")
         XCTAssertTrue(originalWindow.buttons["BottomTab.path"].isSelected,
@@ -227,10 +233,15 @@ final class MacHomeJourneyTests: XCTestCase {
     /// the next exercise.
     private func continueThroughTeaching() {
         let next = button(identifier: "lesson.step.continue")
+        let anyStep = app.descendants(matching: .any).matching(
+            NSPredicate(format: "identifier == %@ OR identifier BEGINSWITH %@", "lesson.step.continue", "lesson.exercise.")
+        ).firstMatch
+        guard anyStep.waitForExistence(timeout: 5) else { return }
         var remaining = 8
-        while remaining > 0, next.waitForExistence(timeout: 1) {
+        while remaining > 0, next.exists {
             next.click()
             remaining -= 1
+            _ = anyStep.waitForExistence(timeout: timeout)
         }
     }
 

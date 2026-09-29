@@ -812,7 +812,7 @@ private struct DialogueBlockView: View {
             }
 
             HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text("Touche une réplique pour voir le pinyin et la traduction.")
+                Text("Touche un mot pour sa fiche, ou une réplique pour son pinyin et sa traduction.")
                     .font(.caption)
                     .foregroundStyle(SylluneColor.inkMuted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -969,7 +969,7 @@ private struct DialogueBlockView: View {
                         .contentShape(Rectangle())
                         .onTapGesture { toggleReveal(index) }
 
-                        VStack(spacing: 2) {
+                        HStack(spacing: 0) {
                             Button {
                                 toggleReveal(index)
                             } label: {
