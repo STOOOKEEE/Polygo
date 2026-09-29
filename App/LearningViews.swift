@@ -972,9 +972,7 @@ private struct LearningPathUnit: View {
     }
 
     private func unitMark(finished: Bool) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(finished ? SylluneColor.success.opacity(0.14) : SylluneColor.jade.opacity(0.14))
+        Group {
             if finished {
                 Image(systemName: "checkmark")
                     .font(.headline.weight(.bold))
@@ -986,7 +984,12 @@ private struct LearningPathUnit: View {
                     .foregroundStyle(SylluneColor.jadeDeep)
             }
         }
-        .frame(width: 44, height: 44)
+        .padding(8)
+        .frame(minWidth: 44, minHeight: 44)
+        .background(
+            finished ? SylluneColor.success.opacity(0.14) : SylluneColor.jade.opacity(0.14),
+            in: RoundedRectangle(cornerRadius: 12, style: .continuous)
+        )
         .accessibilityHidden(true)
     }
 
@@ -1113,8 +1116,8 @@ private struct LearningPathUnit: View {
             .fill(reached ? SylluneColor.success : SylluneColor.progressTrack)
             .frame(width: 3)
             .frame(maxHeight: .infinity)
-            .padding(.top, rowPadding + nodeDiameter + 8)
-            .padding(.bottom, -(rowPadding - 8))
+            .padding(.top, rowPadding + nodeDiameter + 4)
+            .padding(.bottom, -(rowPadding - 4))
             .offset(x: rowPadding + nodeDiameter / 2 - 1.5)
             .accessibilityHidden(true)
             .allowsHitTesting(false)
