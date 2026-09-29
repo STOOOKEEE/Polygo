@@ -11,6 +11,8 @@ final class MacHomeJourneyTests: XCTestCase {
         continueAfterFailure = false
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
+            // Windows restored from an earlier journey would duplicate the chrome.
+            "-ApplePersistenceIgnoreState", "YES",
             "-syllune.profile.id", "mac-home-\(UUID().uuidString.lowercased())",
             "-syllune.onboarding.step", "0",
             "-AppleLanguages", "(fr)",

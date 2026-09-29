@@ -51,7 +51,10 @@ final class MacNextLessonJourneyTests: XCTestCase {
 
         openLesson("lesson-02")
         XCTAssertTrue(text(containing: "Leçon terminée").waitForExistence(timeout: timeout), "L2 terminée doit rouvrir son bilan")
-        XCTAssertTrue(text(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan L2 doit lister ses mots appris")
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "label == %@", "Mots appris")).firstMatch.waitForExistence(timeout: timeout),
+            "Le bilan L2 doit lister ses mots appris"
+        )
         attachScreenshot(named: "mac-lesson-completion")
         let next = app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch
         XCTAssertTrue(next.waitForExistence(timeout: timeout), "Le bilan doit proposer la leçon suivante")
@@ -92,6 +95,8 @@ final class MacNextLessonJourneyTests: XCTestCase {
     private func launch(seeding journal: Data) {
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
+            // Windows restored from an earlier journey would duplicate the chrome.
+            "-ApplePersistenceIgnoreState", "YES",
             "-syllune.profile.id", profileID,
             "-syllune.last.route", "path",
             "-AppleLanguages", "(fr)",

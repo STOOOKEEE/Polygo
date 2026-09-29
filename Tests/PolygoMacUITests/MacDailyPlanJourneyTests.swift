@@ -20,6 +20,8 @@ final class MacDailyPlanJourneyTests: XCTestCase {
 
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
+            // Windows restored from an earlier journey would duplicate the chrome.
+            "-ApplePersistenceIgnoreState", "YES",
             "-syllune.profile.id", profileID,
             "-syllune.last.route", "today",
             "-AppleLanguages", "(fr)",
@@ -184,7 +186,10 @@ final class MacDailyPlanJourneyTests: XCTestCase {
             text(containing: "1 exercice passé sans évaluation").waitForExistence(timeout: timeout),
             "Le bilan doit signaler l’oral passé sans évaluation"
         )
-        XCTAssertTrue(text(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan doit lister les mots appris de L5")
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "label == %@", "Mots appris")).firstMatch.waitForExistence(timeout: timeout),
+            "Le bilan doit lister les mots appris de L5"
+        )
         XCTAssertTrue(
             app.buttons.matching(NSPredicate(format: "label == %@", "Continuer vers la leçon suivante")).firstMatch.exists,
             "Le bilan doit proposer la leçon suivante"

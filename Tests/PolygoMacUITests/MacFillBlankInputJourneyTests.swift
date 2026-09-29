@@ -19,6 +19,8 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
 
         app = XCUIApplication(bundleIdentifier: "com.syllune.PolygoMac")
         app.launchArguments = [
+            // Windows restored from an earlier journey would duplicate the chrome.
+            "-ApplePersistenceIgnoreState", "YES",
             "-syllune.profile.id", profileID,
             "-syllune.last.route", "path",
             "-AppleLanguages", "(fr)",
