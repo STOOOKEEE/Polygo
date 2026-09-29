@@ -8,7 +8,9 @@ public struct LessonView: View {
     @Environment(\.dismiss) private var dismiss
     public let lessonID: LessonID
     @State private var lesson: LessonDocument?
-    @State private var currentIndex = 0
+    /// The lesson as one sequence of teaching and exercise screens.
+    @State private var flow: LessonFlow?
+    @State private var currentStep = 0
     @State private var answer: ExerciseAnswer?
     @State private var evaluation: ExerciseEvaluation?
     @State private var answered: [ExerciseID: ExerciseEvaluation] = [:]
@@ -19,29 +21,20 @@ public struct LessonView: View {
     @State private var isFinalizing = false
     @State private var finished = false
     @State private var earnedCoins: Int?
-    @State private var preambleExpanded = false
     @State private var readingReferenceExpanded = false
     @State private var dialogueDrafts: [BlockID: String] = [:]
     @State private var dialogueResults: [BlockID: Bool] = [:]
-    /// Shows the lesson preamble on its own screen before the first exercise.
-    @State private var showsIntro = true
 
     public init(lessonID: LessonID) { self.lessonID = lessonID }
 
-    private var exercises: [(BlockID, ExerciseSpec)] {
-        lesson?.blocks.compactMap { block in
-            if case .exercise(let value) = block { return (value.id, value.spec) }
-            return nil
-        } ?? []
-    }
+    private var exercises: [ExerciseBlock] { flow?.exercises ?? [] }
 
     public var body: some View {
         Group {
-            if let lesson {
-                if finished { completionView(lesson) }
-                else if exercises.isEmpty { ContentUnavailableView("Cette leçon n’a pas d’exercice", systemImage: "rectangle.and.pencil.and.ellipsis") }
-                else if showsIntro, currentIndex == 0, hasPreamble(lesson) { introView(lesson, firstExercise: exercises[0].0) }
-                else if currentIndex < exercises.count { exerciseView(lesson, block: exercises[currentIndex]) }
+            if let lesson, let flow {
+                if finished { completionView(lesson, flow: flow) }
+                else if flow.exercises.isEmpty { ContentUnavailableView("Cette leçon n’a pas d’exercice", systemImage: "rectangle.and.pencil.and.ellipsis") }
+                else if currentStep < flow.steps.count { stepView(lesson, flow: flow) }
                 else { ProgressView("Enregistrement de la leçon…") }
             } else {
                 ProgressView("Chargement de la leçon…")
@@ -52,8 +45,21 @@ public struct LessonView: View {
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
+        // One exit for every step: the close control replaces the stack's
+        // back button, and progress is checkpointed on disappear.
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Button { dismiss() } label: { Image(systemName: "xmark") }
+                    .accessibilityLabel("Quitter la leçon")
+                    .accessibilityHint("Ta progression est enregistrée.")
+                    .accessibilityIdentifier("lesson.close")
+            }
+        }
         .task {
-            lesson = await model.loadLesson(lessonID)
+            let loaded = await model.loadLesson(lessonID)
+            lesson = loaded
+            flow = loaded.map(LessonFlow.init(lesson:))
             restoreSavedStateIfNeeded()
             autoEvaluateSpeechIfReady(answer)
             if !didStart {
@@ -72,7 +78,7 @@ public struct LessonView: View {
             autoEvaluateSpeechIfReady(newAnswer)
         }
         .onChange(of: evaluation) { _, _ in scheduleCheckpoint() }
-        .onChange(of: currentIndex) { _, _ in scheduleCheckpoint() }
+        .onChange(of: currentStep) { _, _ in scheduleCheckpoint() }
         .onChange(of: scenePhase) { _, phase in
             guard phase == .inactive || phase == .background else { return }
             scheduleCheckpoint()
@@ -88,36 +94,36 @@ public struct LessonView: View {
     }
 
     private func restoreSavedStateIfNeeded() {
-        guard !didRestore, lesson != nil else { return }
+        guard !didRestore, let flow else { return }
         didRestore = true
         guard let progress = model.snapshot.lessonProgress[lessonID] else { return }
 
-        let savedIndex = progress.currentExerciseIndex
+        var exerciseIndex: Int
         if let savedID = progress.currentExerciseID,
-           let relocatedIndex = exercises.firstIndex(where: { $0.1.id == savedID }) {
-            currentIndex = relocatedIndex
+           let relocatedIndex = flow.exercises.firstIndex(where: { $0.spec.id == savedID }) {
+            exerciseIndex = relocatedIndex
         } else {
             // Content updates can add or remove exercises. Keep the saved
             // position inside the new document and discard a pending answer
             // if the saved exercise no longer exists at that position.
-            currentIndex = min(max(0, savedIndex), exercises.count)
+            exerciseIndex = min(max(0, progress.currentExerciseIndex), flow.exercises.count)
         }
         // A lesson only reaches its terminal position by advancing past an
         // evaluated last exercise, so an unfinished lesson saved there without
         // any evaluation was never worked through (older builds could write
         // one from another lesson's leaked view state). Start it again rather
         // than presenting an empty recap.
-        if currentIndex >= exercises.count, progress.completedAt == nil, progress.lastEvaluations.isEmpty {
-            currentIndex = 0
+        if exerciseIndex >= flow.exercises.count, progress.completedAt == nil, progress.lastEvaluations.isEmpty {
+            exerciseIndex = 0
         }
-        showsIntro = currentIndex == 0
 
         answered = progress.lastEvaluations
         dialogueDrafts = progress.dialogueDrafts
         dialogueResults = progress.dialogueResults
-        guard currentIndex < exercises.count else {
+        guard exerciseIndex < flow.exercises.count else {
             answer = nil
             evaluation = nil
+            currentStep = flow.steps.count
             // A terminal checkpoint can exist before the completion event (or
             // when the learner skipped a failed required answer). It is still
             // a resumable terminal screen, and must always offer a reset.
@@ -125,29 +131,32 @@ public struct LessonView: View {
             return
         }
 
-        let currentExercise = exercises[currentIndex].1
+        let currentExercise = flow.exercises[exerciseIndex].spec
         let savedExerciseMatches = progress.currentExerciseID == nil || progress.currentExerciseID == currentExercise.id
-        guard savedExerciseMatches else {
+        if savedExerciseMatches {
+            answer = progress.pendingAnswer
+            // New checkpoints carry the stable current exercise ID, so a nil
+            // pending evaluation means the learner intentionally cleared
+            // feedback (for example by tapping Réessayer). Only old snapshots
+            // without that field may fall back to their last evaluation.
+            evaluation = progress.pendingEvaluation ??
+                (progress.currentExerciseID == nil ? progress.lastEvaluations[currentExercise.id] : nil)
+            finished = progress.completedAt != nil
+        } else {
             answer = nil
             evaluation = nil
-            return
         }
-        answer = progress.pendingAnswer
-        // New checkpoints carry the stable current exercise ID, so a nil
-        // pending evaluation means the learner intentionally cleared feedback
-        // (for example by tapping Réessayer). Only old snapshots without that
-        // field may fall back to their last evaluation.
-        evaluation = progress.pendingEvaluation ??
-            (progress.currentExerciseID == nil ? progress.lastEvaluations[currentExercise.id] : nil)
-        // A learner who already answered the first exercise has seen the intro.
-        showsIntro = currentIndex == 0 && answer == nil && evaluation == nil
-        finished = progress.completedAt != nil
+        // Work in progress reopens the exercise; otherwise the learner resumes
+        // on the teaching that prepares it.
+        currentStep = flow.resumeStepIndex(exerciseIndex: exerciseIndex, hasPendingWork: answer != nil || evaluation != nil)
     }
 
     private func scheduleCheckpoint() {
-        guard didRestore, lesson != nil else { return }
-        let savedIndex = currentIndex
-        let savedExerciseID = savedIndex < exercises.count ? exercises[savedIndex].1.id : nil
+        guard didRestore, let flow else { return }
+        // Progress stays keyed by exercise: a teaching step is saved as the
+        // exercise it prepares.
+        let savedIndex = flow.exerciseIndex(forStep: currentStep)
+        let savedExerciseID = savedIndex < flow.exercises.count ? flow.exercises[savedIndex].spec.id : nil
         let savedAnswer = answer
         let savedEvaluation = evaluation
         let savedDialogueDrafts = dialogueDrafts
@@ -165,76 +174,153 @@ public struct LessonView: View {
         }
     }
 
-    @ViewBuilder private func exerciseView(_ lesson: LessonDocument, block: (BlockID, ExerciseSpec)) -> some View {
-        let spec = block.1
+    /// Every step shares one chrome: the step header with progress over the
+    /// whole lesson, the content, and one primary action at the bottom.
+    @ViewBuilder private func stepView(_ lesson: LessonDocument, flow: LessonFlow) -> some View {
+        let step = flow.steps[currentStep]
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                if let reading = readingReference(in: lesson, for: spec.id) {
-                    readingReferenceDisclosure(reading)
+                switch step {
+                case .teaching(let teaching): teachingContent(teaching, lesson: lesson)
+                case .exercise(_, let block): exerciseContent(lesson, spec: block.spec)
                 }
-                if case .speaking = spec {
-                    // The speaking control already presents the target phrase
-                    // and its pinyin. Keep the lesson shell to one short cue
-                    // so the recording action remains visible on an iPhone.
-                    Text("À toi de parler")
-                        .font(.headline)
-                        .foregroundStyle(SylluneColor.ink)
-                } else {
-                    ChineseSelectableText(
-                        spec.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Exercice",
-                        font: .title2.weight(.semibold),
-                        wordInteractionEnabled: false
-                    )
-                        .foregroundStyle(SylluneColor.ink)
-                    Text(instructionText(for: spec))
-                        .font(.body).foregroundStyle(SylluneColor.inkMuted)
-                }
-
-                answerControl(spec)
-                    // Each exercise owns small control state (selected
-                    // choices/tiles, card reveal). Recreate that state when
-                    // the stable exercise identity changes and keep controls
-                    // read-only while its feedback is visible.
-                    .id(spec.id)
-                    .disabled(evaluation != nil || isEvaluating)
-
-                if let evaluation {
-                    FeedbackView(evaluation: evaluation)
-                }
-
-                // Recap blocks are authored after the exercise sequence. Keep
-                // them in the lesson flow so the learner can see the bilan
-                // before deciding whether to finish the lesson.
-                if evaluation != nil, currentIndex == exercises.count - 1 {
-                    lessonEpilogue(lesson, after: block.0)
-                }
-
             }
             .frame(maxWidth: 720, alignment: .leading)
             .frame(maxWidth: .infinity)
             .padding(20)
         }
+        // A new step starts at the top of its content.
+        .id(step.id)
         .safeAreaInset(edge: .top, spacing: 0) {
-            HStack {
-                Text("\(currentIndex + 1) / \(exercises.count)")
-                    .font(.callout.weight(.semibold))
-                    .foregroundStyle(SylluneColor.inkMuted)
-                    .accessibilityIdentifier("lesson.exercise.\(spec.id.rawValue)")
-                Spacer()
-                ProgressView(value: Double(currentIndex), total: Double(max(1, exercises.count)))
-                    .tint(SylluneColor.jade)
-                    .frame(maxWidth: 180)
+            stepHeader(step, total: flow.steps.count)
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            switch step {
+            case .teaching: teachingActionBar()
+            case .exercise(_, let block): exerciseActionBar(spec: block.spec, blockID: block.id)
             }
+        }
+    }
+
+    private func stepHeader(_ step: LessonStep, total: Int) -> some View {
+        HStack(spacing: 14) {
+            Text("\(currentStep + 1) / \(total)")
+                .font(.callout.weight(.semibold))
+                .monospacedDigit()
+                .foregroundStyle(SylluneColor.inkMuted)
+                .accessibilityLabel("Étape \(currentStep + 1) sur \(total), \(stepKindName(step))")
+                .accessibilityIdentifier(stepIdentifier(step))
+            SylluneProgressBar(value: Double(currentStep) / Double(max(1, total)))
+        }
+        .frame(maxWidth: 720)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .bottom) { Divider() }
+    }
+
+    private func stepIdentifier(_ step: LessonStep) -> String {
+        switch step {
+        case .teaching(let teaching): return "lesson.step.teaching.\(teaching.id)"
+        case .exercise(_, let block): return "lesson.exercise.\(block.spec.id.rawValue)"
+        }
+    }
+
+    private func stepKindName(_ step: LessonStep) -> String {
+        guard case .teaching(let teaching) = step else { return "exercice" }
+        switch teaching.kind {
+        case .situation: return "situation"
+        case .words: return "nouveaux mots"
+        case .grammar: return "point de grammaire"
+        case .dialogue: return "dialogue"
+        case .reading: return "lecture"
+        }
+    }
+
+    private func teachingTitle(_ kind: LessonTeachingStep.Kind) -> String {
+        switch kind {
+        case .situation: return "Situation"
+        case .words: return "Nouveaux mots"
+        case .grammar: return "Point de grammaire"
+        case .dialogue: return "Découvre le dialogue"
+        case .reading: return "Lecture"
+        }
+    }
+
+    private func teachingSymbol(_ kind: LessonTeachingStep.Kind) -> String {
+        switch kind {
+        case .situation: return "sparkles"
+        case .words: return "character.book.closed"
+        case .grammar: return "text.book.closed"
+        case .dialogue: return "bubble.left.and.bubble.right"
+        case .reading: return "book.pages"
+        }
+    }
+
+    @ViewBuilder private func teachingContent(_ teaching: LessonTeachingStep, lesson: LessonDocument) -> some View {
+        Label(teachingTitle(teaching.kind), systemImage: teachingSymbol(teaching.kind))
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(SylluneColor.jadeDeep)
+            .accessibilityAddTraits(.isHeader)
+        PedagogicalBlockView(
+            block: teaching.block,
+            vocabulary: lesson.vocabulary,
+            objectives: lesson.objectives,
+            languageCodes: model.preferredLanguageCodes,
+            dialogueDraft: dialogueDraftBinding(for: teaching.block.id),
+            dialogueResult: dialogueResultBinding(for: teaching.block.id)
+        )
+    }
+
+    @ViewBuilder private func exerciseContent(_ lesson: LessonDocument, spec: ExerciseSpec) -> some View {
+        if let reading = readingReference(in: lesson, for: spec.id) {
+            readingReferenceDisclosure(reading)
+        }
+        if case .speaking = spec {
+            // The speaking control already presents the target phrase
+            // and its pinyin. Keep the lesson shell to one short cue
+            // so the recording action remains visible on an iPhone.
+            Text("À toi de parler")
+                .font(.headline)
+                .foregroundStyle(SylluneColor.ink)
+        } else {
+            ChineseSelectableText(
+                spec.header.prompt.resolve(preferred: model.preferredLanguageCodes) ?? "Exercice",
+                font: .title2.weight(.semibold),
+                wordInteractionEnabled: false
+            )
+                .foregroundStyle(SylluneColor.ink)
+            Text(instructionText(for: spec))
+                .font(.body).foregroundStyle(SylluneColor.inkMuted)
+        }
+
+        answerControl(spec)
+            // Each exercise owns small control state (selected
+            // choices/tiles, card reveal). Recreate that state when
+            // the stable exercise identity changes and keep controls
+            // read-only while its feedback is visible.
+            .id(spec.id)
+            .disabled(evaluation != nil || isEvaluating)
+
+        if let evaluation {
+            FeedbackView(evaluation: evaluation)
+        }
+    }
+
+    /// Teaching steps are read, not evaluated: one action moves on.
+    private func teachingActionBar() -> some View {
+        Button("Continuer") { advance() }
+            .buttonStyle(SyllunePrimaryButtonStyle())
+            .frame(maxWidth: .infinity)
+            .accessibilityIdentifier("lesson.step.continue")
+            .accessibilityHint("Passe à l’étape suivante de la leçon.")
             .frame(maxWidth: 720)
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
-            .padding(.vertical, 10)
+            .padding(.vertical, 12)
             .background(.ultraThinMaterial)
-            .overlay(alignment: .bottom) { Divider() }
-        }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            exerciseActionBar(spec: spec, blockID: block.0)
-        }
+            .overlay(alignment: .top) { Divider() }
     }
 
     private func instructionText(for spec: ExerciseSpec) -> String {
@@ -340,158 +426,13 @@ public struct LessonView: View {
         }
     }
 
-    private func hasPreamble(_ lesson: LessonDocument) -> Bool {
-        guard let first = exercises.first,
-              let index = lesson.blocks.firstIndex(where: { $0.id == first.0 }) else { return false }
-        return index > 0
-    }
-
-    @ViewBuilder private func introView(_ lesson: LessonDocument, firstExercise: BlockID) -> some View {
-        let hasDialogue = lesson.blocks.contains { block in
-            if case .dialogue = block { return true }
-            return false
-        }
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-                Text(hasDialogue ? "Découvre le dialogue" : "Découvre la leçon")
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(SylluneColor.ink)
-                    .accessibilityAddTraits(.isHeader)
-                Text("Écoute l’échange à ton rythme, puis commence les exercices.")
-                    .font(.body)
-                    .foregroundStyle(SylluneColor.inkMuted)
-                lessonPreamble(lesson, before: firstExercise)
-            }
-            .frame(maxWidth: 720, alignment: .leading)
-            .frame(maxWidth: .infinity)
-            .padding(20)
-        }
-        .safeAreaInset(edge: .top, spacing: 0) {
-            HStack {
-                Text("Intro")
-                    .font(.callout.weight(.semibold))
-                    .foregroundStyle(SylluneColor.inkMuted)
-                    .accessibilityIdentifier("lesson.intro")
-                Spacer()
-                ProgressView(value: 0, total: Double(max(1, exercises.count)))
-                    .tint(SylluneColor.jade)
-                    .frame(maxWidth: 180)
-            }
-            .frame(maxWidth: 720)
-            .frame(maxWidth: .infinity)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
-            .background(.ultraThinMaterial)
-            .overlay(alignment: .bottom) { Divider() }
-        }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            Button("Commencer les exercices") { showsIntro = false }
-                .buttonStyle(SyllunePrimaryButtonStyle())
-                .frame(maxWidth: .infinity)
-                .accessibilityIdentifier("lesson.intro.start")
-                .accessibilityHint("Affiche le premier exercice de la leçon.")
-                .frame(maxWidth: 720)
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 12)
-                .background(.ultraThinMaterial)
-                .overlay(alignment: .top) { Divider() }
-        }
-    }
-
-    @ViewBuilder private func lessonPreamble(_ lesson: LessonDocument, before blockID: BlockID) -> some View {
-        if let index = lesson.blocks.firstIndex(where: { $0.id == blockID }) {
-            let precedingBlocks = Array(lesson.blocks.prefix(upTo: index))
-            if !precedingBlocks.isEmpty {
-                let dialogueBlocks = precedingBlocks.filter { block in
-                    if case .dialogue = block { return true }
-                    return false
-                }
-                let supportingBlocks = precedingBlocks.filter { block in
-                    if case .dialogue = block { return false }
-                    return true
-                }
-                VStack(alignment: .leading, spacing: 14) {
-                    ForEach(dialogueBlocks, id: \.id) { block in
-                        PedagogicalBlockView(
-                            block: block,
-                            vocabulary: lesson.vocabulary,
-                            objectives: lesson.objectives,
-                            languageCodes: model.preferredLanguageCodes,
-                            dialogueDraft: dialogueDraftBinding(for: block.id),
-                            dialogueResult: dialogueResultBinding(for: block.id)
-                        )
-                    }
-                }
-                if !supportingBlocks.isEmpty {
-                    DisclosureGroup(isExpanded: $preambleExpanded) {
-                        VStack(alignment: .leading, spacing: 14) {
-                            ForEach(supportingBlocks, id: \.id) { block in
-                                PedagogicalBlockView(
-                                    block: block,
-                                    vocabulary: lesson.vocabulary,
-                                    objectives: lesson.objectives,
-                                    languageCodes: model.preferredLanguageCodes,
-                                    dialogueDraft: dialogueDraftBinding(for: block.id),
-                                    dialogueResult: dialogueResultBinding(for: block.id)
-                                )
-                            }
-                        }
-                        .padding(.top, 12)
-                    } label: {
-                        HStack(spacing: 10) {
-                            Image(systemName: "book.closed")
-                                .foregroundStyle(SylluneColor.jade)
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text("Découvrir avant de répondre")
-                                    .font(.headline)
-                                    .foregroundStyle(SylluneColor.ink)
-                                Text("Mots et lecture · facultatif")
-                                    .font(.caption)
-                                    .foregroundStyle(SylluneColor.inkMuted)
-                            }
-                            Spacer(minLength: 8)
-                        }
-                    }
-                    .tint(SylluneColor.ink)
-                    .padding(16)
-                    .sylluneCard(radius: 14)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder private func lessonEpilogue(_ lesson: LessonDocument, after blockID: BlockID) -> some View {
-        if let index = lesson.blocks.firstIndex(where: { $0.id == blockID }) {
-            let trailingBlocks = lesson.blocks.dropFirst(index + 1).filter { block in
-                if case .exercise = block { return false }
-                return true
-            }
-            if !trailingBlocks.isEmpty {
-                VStack(alignment: .leading, spacing: 14) {
-                    ForEach(Array(trailingBlocks), id: \.id) { block in
-                        PedagogicalBlockView(
-                            block: block,
-                            vocabulary: lesson.vocabulary,
-                            objectives: lesson.objectives,
-                            languageCodes: model.preferredLanguageCodes,
-                            objectiveResults: objectiveResults(for: block),
-                            dialogueDraft: dialogueDraftBinding(for: block.id),
-                            dialogueResult: dialogueResultBinding(for: block.id)
-                        )
-                    }
-                }
-            }
-        }
-    }
-
     private func objectiveResults(for block: LessonBlock) -> [String: Bool] {
         guard case .recap(let recap) = block else { return [:] }
         var results: [String: Bool] = [:]
         for objectiveID in recap.objectiveIDs {
-            let relatedExercises = exercises.filter { $0.1.header.objectiveIDs.contains(objectiveID) }
+            let relatedExercises = exercises.filter { $0.spec.header.objectiveIDs.contains(objectiveID) }
             guard !relatedExercises.isEmpty else { continue }
-            results[objectiveID] = relatedExercises.allSatisfy { evaluationCountsAsComplete(answered[$0.1.id]) }
+            results[objectiveID] = relatedExercises.allSatisfy { evaluationCountsAsComplete(answered[$0.spec.id]) }
         }
         return results
     }
@@ -577,7 +518,7 @@ public struct LessonView: View {
         if evaluation == nil {
             return continuesWithoutEvaluation(spec) ? "Continuer" : "Vérifier"
         }
-        if evaluation?.accepted == true { return currentIndex + 1 < exercises.count ? "Continuer" : "Terminer" }
+        if evaluation?.accepted == true { return currentStep + 1 < (flow?.steps.count ?? 0) ? "Continuer" : "Terminer" }
         return "Continuer malgré tout"
     }
 
@@ -626,15 +567,17 @@ public struct LessonView: View {
     private func autoEvaluateSpeechIfReady(_ candidate: ExerciseAnswer?) {
         guard evaluation == nil,
               !isEvaluating,
-              currentIndex < exercises.count,
+              let flow,
+              currentStep < flow.steps.count,
+              case .exercise(_, let block) = flow.steps[currentStep],
               let candidate,
-              case .speaking = exercises[currentIndex].1,
+              case .speaking = block.spec,
               case .speech(let speech) = candidate,
               speech.pronunciationAssessment?.isEvaluable == true else {
             return
         }
-        let spec = exercises[currentIndex].1
-        let blockID = exercises[currentIndex].0
+        let spec = block.spec
+        let blockID = block.id
         automaticEvaluationTask?.cancel()
         isEvaluating = true
         automaticEvaluationTask = Task { @MainActor in
@@ -650,13 +593,14 @@ public struct LessonView: View {
     }
 
     private func advance() {
-        if currentIndex + 1 < exercises.count {
-            currentIndex += 1
+        guard let flow else { return }
+        if currentStep + 1 < flow.steps.count {
+            currentStep += 1
             answer = nil
             evaluation = nil
             scheduleCheckpoint()
         } else {
-            let required = exercises.filter { $0.1.header.required }.map(\.1.id)
+            let required = exercises.filter { $0.spec.header.required }.map(\.spec.id)
             let complete = required.allSatisfy { evaluationCountsAsComplete(answered[$0]) }
             guard !isFinalizing else { return }
             // The terminal checkpoint must finish before the completion event
@@ -687,7 +631,7 @@ public struct LessonView: View {
                     }
                     earnedCoins = result.earnedCoins
                 }
-                currentIndex = exercises.count
+                currentStep = flow.steps.count
                 answer = nil
                 evaluation = nil
                 finished = true
@@ -696,7 +640,7 @@ public struct LessonView: View {
         }
     }
 
-    @ViewBuilder private func completionView(_ lesson: LessonDocument) -> some View {
+    @ViewBuilder private func completionView(_ lesson: LessonDocument, flow: LessonFlow) -> some View {
         let successCount = answered.values.filter { evaluationCountsAsComplete($0) }.count
         let skippedCount = answered.values.filter { $0.outcome == .skipped }.count
         ScrollView {
@@ -745,7 +689,7 @@ public struct LessonView: View {
                 Button("Recommencer cette leçon") {
                     Task { @MainActor in
                         guard await model.restartLesson(lessonID, persistRouteInNavigation: false) else { return }
-                        currentIndex = 0
+                        currentStep = 0
                         answer = nil
                         evaluation = nil
                         answered = [:]
@@ -753,8 +697,6 @@ public struct LessonView: View {
                         dialogueResults = [:]
                         earnedCoins = nil
                         finished = false
-                        preambleExpanded = false
-                        showsIntro = true
                     }
                 }
                 .buttonStyle(.bordered)
@@ -765,6 +707,18 @@ public struct LessonView: View {
                     model.persistRoute(.path)
                 }
                 .buttonStyle(SyllunePrimaryButtonStyle())
+
+                // The authored recap closes the lesson with its words and the
+                // objectives the answers reached.
+                ForEach(flow.closingBlocks, id: \.id) { block in
+                    PedagogicalBlockView(
+                        block: block,
+                        vocabulary: lesson.vocabulary,
+                        objectives: lesson.objectives,
+                        languageCodes: model.preferredLanguageCodes,
+                        objectiveResults: objectiveResults(for: block)
+                    )
+                }
             }
             .frame(maxWidth: 620, alignment: .leading)
             .frame(maxWidth: .infinity)
@@ -986,39 +940,57 @@ private struct DialogueBlockView: View {
                     let isRevealed = revealedLines.contains(index)
                     let translation = line.translation.resolve(preferred: languageCodes) ?? ""
                     HStack(alignment: .top, spacing: 6) {
-                        Button {
-                            if isRevealed { revealedLines.remove(index) } else { revealedLines.insert(index) }
-                        } label: {
-                            VStack(alignment: alignment, spacing: 4) {
-                                Text(line.hanzi)
-                                    .font(.title3.weight(.semibold))
-                                    .foregroundStyle(SylluneColor.ink)
-                                if isRevealed && !line.pinyin.isEmpty {
-                                    Text(line.pinyin)
-                                        .font(.caption)
-                                        .foregroundStyle(SylluneColor.jadeDeep)
-                                }
-                                if isRevealed && !translation.isEmpty {
-                                    Text(translation)
-                                        .font(.callout)
-                                        .foregroundStyle(SylluneColor.inkMuted)
-                                }
+                        // Words open their fiche; tapping elsewhere on the
+                        // line, or its reveal control, shows pinyin and
+                        // translation.
+                        VStack(alignment: alignment, spacing: 4) {
+                            ChineseSelectableText(
+                                hanzi: line.hanzi,
+                                font: .title3.weight(.semibold),
+                                speechEnabled: false,
+                                vocabulary: vocabulary,
+                                segmentation: line.segmentation,
+                                wordInteractionEnabled: true
+                            )
+                            .foregroundStyle(SylluneColor.ink)
+                            if isRevealed && !line.pinyin.isEmpty {
+                                Text(line.pinyin)
+                                    .font(.caption)
+                                    .foregroundStyle(SylluneColor.jadeDeep)
                             }
-                            .multilineTextAlignment(textAlignment)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .contentShape(Rectangle())
+                            if isRevealed && !translation.isEmpty {
+                                Text(translation)
+                                    .font(.callout)
+                                    .foregroundStyle(SylluneColor.inkMuted)
+                            }
                         }
-                        .buttonStyle(.plain)
-                        .accessibilityIdentifier("dialogue.line.\(index)")
-                        .accessibilityLabel(
-                            isRevealed
-                                ? [line.hanzi, "Pinyin : \(line.pinyin)", "Traduction : \(translation)"].joined(separator: ". ")
-                                : line.hanzi
-                        )
-                        .accessibilityHint("Affiche le pinyin et la traduction")
-                        .accessibilityValue(isRevealed ? "Pinyin et traduction affichés" : "Pinyin et traduction masqués")
+                        .multilineTextAlignment(textAlignment)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .contentShape(Rectangle())
+                        .onTapGesture { toggleReveal(index) }
 
-                        lineAudioButton(line, index: index)
+                        VStack(spacing: 2) {
+                            Button {
+                                toggleReveal(index)
+                            } label: {
+                                Image(systemName: isRevealed ? "eye.slash" : "eye")
+                                    .font(.callout.weight(.semibold))
+                                    .foregroundStyle(SylluneColor.inkMuted)
+                                    .frame(width: 32, height: 32)
+                                    .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.borderless)
+                            .accessibilityIdentifier("dialogue.line.\(index)")
+                            .accessibilityLabel(
+                                isRevealed
+                                    ? [line.hanzi, "Pinyin : \(line.pinyin)", "Traduction : \(translation)"].joined(separator: ". ")
+                                    : line.hanzi
+                            )
+                            .accessibilityHint("Affiche le pinyin et la traduction")
+                            .accessibilityValue(isRevealed ? "Pinyin et traduction affichés" : "Pinyin et traduction masqués")
+
+                            lineAudioButton(line, index: index)
+                        }
                     }
                 }
             }
@@ -1033,6 +1005,10 @@ private struct DialogueBlockView: View {
             )
             if isLeading { Spacer(minLength: 40) }
         }
+    }
+
+    private func toggleReveal(_ index: Int) {
+        if revealedLines.contains(index) { revealedLines.remove(index) } else { revealedLines.insert(index) }
     }
 
     private func lineAudioButton(_ line: DialogueLine, index: Int) -> some View {
@@ -1399,30 +1375,26 @@ private struct PedagogicalBlockView: View {
             .padding(16).sylluneCard(radius: 14)
 
         case .vocabulary(let value):
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Mots utiles").font(.headline).foregroundStyle(SylluneColor.ink)
+            // A word card per word: the lexeme with its audio, pinyin and
+            // meaning, then its example. Every word is tappable for its fiche.
+            VStack(alignment: .leading, spacing: 14) {
                 ForEach(value.vocabularyIDs, id: \.self) { id in
                     if let word = vocabulary.first(where: { $0.id == id }) {
-                        VStack(alignment: .leading, spacing: 6) {
-                            // A word is a learning interaction, not a detour
-                            // to another screen. The Chinese control speaks
-                            // the lexeme while the compact row keeps the
-                            // lesson moving.
+                        VStack(alignment: .leading, spacing: 10) {
                             ChineseSelectableText(
                                 hanzi: word.hanzi,
-                                font: .title3,
+                                font: .largeTitle.weight(.semibold),
                                 speechEnabled: true,
                                 vocabulary: [word],
                                 segmentation: word.segmentation,
                                 pinyin: word.pinyin,
                                 translation: word.meaning.resolve(preferred: languageCodes),
-                                audio: word.audio,
-                                wordInteractionEnabled: false
+                                audio: word.audio
                             )
                             .foregroundStyle(SylluneColor.ink)
 
                             if let example = word.example {
-                                let exampleTranslation = example.translation.resolve(preferred: languageCodes) ?? ""
+                                Divider()
                                 // The example is a full Mandarin phrase, so
                                 // the shared text control sends the complete
                                 // phrase to the local zh-CN TTS. Its pinyin
@@ -1431,22 +1403,23 @@ private struct PedagogicalBlockView: View {
                                 // lexeme's own pinyin and meaning.
                                 ChineseSelectableText(
                                     hanzi: example.hanzi,
-                                    font: .body,
+                                    font: .title3,
                                     speechEnabled: true,
+                                    vocabulary: vocabulary,
+                                    segmentation: example.segmentation,
                                     pinyin: example.pinyin,
-                                    translation: exampleTranslation,
-                                    audio: example.audio,
-                                    wordInteractionEnabled: false
+                                    translation: example.translation.resolve(preferred: languageCodes),
+                                    audio: example.audio
                                 )
                                 .foregroundStyle(SylluneColor.inkMuted)
-                                .padding(.leading, 10)
-                                .accessibilityLabel("Exemple : \(example.hanzi), \(example.pinyin), \(exampleTranslation)")
                             }
                         }
+                        .padding(16)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .sylluneCard(radius: 16)
                     }
                 }
             }
-            .padding(16).sylluneCard(radius: 14)
 
         case .dialogue(let value):
             DialogueBlockView(
@@ -1474,8 +1447,7 @@ private struct PedagogicalBlockView: View {
                             segmentation: paragraph.segmentation,
                             pinyin: paragraph.pinyin,
                             translation: paragraph.translation.resolve(preferred: languageCodes),
-                            audio: paragraph.audio,
-                            wordInteractionEnabled: false
+                            audio: paragraph.audio
                         )
                         .foregroundStyle(SylluneColor.ink)
                         .textSelection(.enabled)

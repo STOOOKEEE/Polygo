@@ -25,7 +25,7 @@ final class PolygoAppUITests: XCTestCase {
         app.launchArguments.removeLast(2)
         completeOnboardingIfNeeded()
         XCTAssertTrue(
-            app.buttons["lesson.intro.start"].waitForExistence(timeout: timeout),
+            app.staticTexts["lesson.step.teaching.block-l1-introduction"].waitForExistence(timeout: timeout),
             "Le nouvel onboarding doit ouvrir la première leçon, pas la route du profil précédent"
         )
 
@@ -42,26 +42,20 @@ final class PolygoAppUITests: XCTestCase {
             restart.tap()
         }
 
-        let introStart = app.buttons["lesson.intro.start"]
-        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "L’intro de la leçon doit être chargée")
+        let situation = app.staticTexts["lesson.step.teaching.block-l1-introduction"]
+        XCTAssertTrue(situation.waitForExistence(timeout: timeout), "La leçon doit s’ouvrir sur sa situation")
+        XCTAssertFalse(button(exactly: "Vérifier").exists, "Une étape d’apprentissage ne s’évalue pas")
 
-        // The intro keeps its optional discovery material collapsed. Expand
-        // it before targeting a vocabulary token so the test follows the
-        // learner-facing path rather than matching text in the introduction.
-        let discovery = element(containing: "Découvrir avant de répondre", type: .button)
-        XCTAssertTrue(discovery.waitForExistence(timeout: timeout), "La découverte facultative doit être proposée")
-        discovery.tap()
-
-        // Vocabulary tokens in the lesson are pronunciation controls. They
-        // must leave the exercise usable; the dedicated dictionary below is
-        // the explicit route to the optional word detail screen.
-        // The expanded discovery block also exposes dialogue lines as
-        // buttons whose labels contain 你好. Match the token's exact label so
-        // this action follows the vocabulary control.
-        let word = button(exactly: "你好")
-        XCTAssertTrue(word.waitForExistence(timeout: timeout), "Le mot 你好 doit être lié depuis la leçon")
-        tapWhenVisible(word)
-        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "La lecture du mot doit laisser la leçon utilisable")
+        // The next screens teach the new words, one small card group each,
+        // before the first exercise needs them. Each word is tappable.
+        tapWhenVisible(app.buttons["lesson.step.continue"])
+        XCTAssertTrue(
+            app.staticTexts["lesson.step.teaching.block-l1-vocabulary.1"].waitForExistence(timeout: timeout),
+            "Les nouveaux mots doivent suivre la situation"
+        )
+        XCTAssertTrue(button(exactly: "你好").waitForExistence(timeout: timeout), "Le mot 你好 doit être touchable dans sa carte")
+        continueToExercise("ex-l1-tone")
+        XCTAssertTrue(app.staticTexts["lesson.exercise.ex-l1-tone"].exists, "Le premier exercice doit suivre les mots")
 
         navigateToTab("Cartes")
         XCTAssertTrue(element(containing: "Cartes", type: .any).waitForExistence(timeout: timeout), "La section Cartes doit être accessible")
@@ -166,7 +160,7 @@ final class PolygoAppUITests: XCTestCase {
         if restart.waitForExistence(timeout: 3) {
             tapWhenVisible(restart)
         }
-        startExercisesIfIntroShown()
+        continueToExercise("ex-l1-tone")
         XCTAssertTrue(app.staticTexts["lesson.exercise.ex-l1-tone"].waitForExistence(timeout: timeout), "L’exercice réel doit être ouvert avant le raccourci")
         assertFocusedChromeHidden()
 
@@ -259,7 +253,7 @@ final class PolygoAppUITests: XCTestCase {
 
         let lesson = app.buttons["learningPath.lesson.lesson-01"]
         tapWhenVisible(lesson)
-        startExercisesIfIntroShown()
+        continueToExercise("ex-l1-tone")
         let exercise = app.staticTexts["lesson.exercise.ex-l1-tone"]
         XCTAssertTrue(exercise.waitForExistence(timeout: timeout), "L’exercice doit s’ouvrir depuis le parcours")
         let answer = element(containing: "3 — descend puis remonte", type: .button)
@@ -386,7 +380,7 @@ final class PolygoAppUITests: XCTestCase {
             attachScreenshot(named: "ios-onboarding-ready")
             ready.tap()
         }
-        let resumedLesson = app.buttons["lesson.intro.start"].waitForExistence(timeout: timeout)
+        let resumedLesson = app.staticTexts["lesson.step.teaching.block-l1-introduction"].waitForExistence(timeout: timeout)
             || app.staticTexts["lesson.exercise.ex-l1-tone"].exists
         let todayIsAvailable = app.buttons["BottomTab.today"].waitForExistence(timeout: timeout)
         XCTAssertTrue(resumedLesson || todayIsAvailable, "L’application doit ouvrir une leçon ou une destination principale")
@@ -412,20 +406,21 @@ final class PolygoAppUITests: XCTestCase {
     }
 
     private func leaveLessonBeforeSelectingTab() {
-        let lessonControl = app.buttons.matching(
-            NSPredicate(format: "label IN %@", ["Vérifier", "Recommencer cette leçon", "Commencer les exercices"])
-        ).firstMatch
-        guard lessonControl.exists else { return }
-
-        let back = app.navigationBars.buttons.firstMatch
-        XCTAssertTrue(back.waitForExistence(timeout: timeout), "La leçon doit pouvoir être quittée avant de changer de destination")
-        back.tap()
+        let close = app.buttons["lesson.close"]
+        guard close.exists else { return }
+        close.tap()
     }
 
-    /// Lessons open on their dialogue intro before the first exercise.
-    private func startExercisesIfIntroShown() {
-        let start = app.buttons["lesson.intro.start"]
-        if start.waitForExistence(timeout: 5) { tapWhenVisible(start) }
+    /// Lessons teach just in time: continue through the teaching steps
+    /// (situation, words, notes, dialogue, reading) up to the exercise.
+    private func continueToExercise(_ exerciseID: String) {
+        let exercise = app.staticTexts["lesson.exercise.\(exerciseID)"]
+        let next = app.buttons["lesson.step.continue"]
+        for _ in 0..<8 where !exercise.exists {
+            guard next.waitForExistence(timeout: 5) else { break }
+            tapWhenVisible(next)
+            _ = exercise.waitForExistence(timeout: 2)
+        }
     }
 
     private func goBack() {

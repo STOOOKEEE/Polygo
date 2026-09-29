@@ -20,7 +20,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, level, paragraphs, comprehensionExerciseIDs, participation, spec, objectiveIDs
+        case kind, value, id, title, body, audio, vocabularyIDs, lines, storyID, level, paragraphs, comprehensionExerciseIDs, participation, spec, objectiveIDs, metadata
     }
     private enum Kind: String, Codable { case introduction, vocabulary, dialogue, reading, exercise, recap }
 
@@ -41,7 +41,7 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
         case .introduction(let value):
-            try container.encode(Kind.introduction, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.title, forKey: .title); try container.encode(value.body, forKey: .body); try container.encodeIfPresent(value.audio, forKey: .audio)
+            try container.encode(Kind.introduction, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.title, forKey: .title); try container.encode(value.body, forKey: .body); try container.encodeIfPresent(value.audio, forKey: .audio); try container.encodeIfPresent(GrammarLink(value.grammarPointID), forKey: .metadata)
         case .vocabulary(let value):
             try container.encode(Kind.vocabulary, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.vocabularyIDs, forKey: .vocabularyIDs)
         case .dialogue(let value):
@@ -49,10 +49,22 @@ public enum LessonBlock: Codable, Hashable, Sendable, Identifiable {
         case .reading(let value):
             try container.encode(Kind.reading, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.storyID, forKey: .storyID); try container.encodeIfPresent(value.level, forKey: .level); try container.encode(value.title, forKey: .title); try container.encode(value.paragraphs, forKey: .paragraphs); try container.encode(value.comprehensionExerciseIDs, forKey: .comprehensionExerciseIDs)
         case .exercise(let value):
-            try container.encode(Kind.exercise, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.spec, forKey: .spec)
+            try container.encode(Kind.exercise, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.spec, forKey: .spec); try container.encodeIfPresent(GrammarLink(value.grammarPointID), forKey: .metadata)
         case .recap(let value):
             try container.encode(Kind.recap, forKey: .kind); try container.encode(value.id, forKey: .id); try container.encode(value.vocabularyIDs, forKey: .vocabularyIDs); try container.encode(value.objectiveIDs, forKey: .objectiveIDs)
         }
+    }
+}
+
+/// The part of a block's editorial `metadata` that the app reads: the grammar
+/// point a note teaches or an exercise practises. Other metadata stays
+/// release-only and is ignored by the decoder.
+struct GrammarLink: Codable, Hashable, Sendable {
+    let grammarPointID: String?
+
+    init?(_ grammarPointID: String?) {
+        guard let grammarPointID else { return nil }
+        self.grammarPointID = grammarPointID
     }
 }
 
@@ -61,9 +73,31 @@ public struct IntroductionBlock: Codable, Hashable, Sendable {
     public let title: LocalizedText
     public let body: LocalizedText
     public let audio: AssetReference?
+    /// Grammar point taught by this note (`metadata.grammarPointID`); nil for
+    /// a situation introduction.
+    public let grammarPointID: String?
 
-    public init(id: BlockID, title: LocalizedText, body: LocalizedText, audio: AssetReference? = nil) {
-        self.id = id; self.title = title; self.body = body; self.audio = audio
+    private enum CodingKeys: String, CodingKey { case id, title, body, audio, metadata }
+
+    public init(id: BlockID, title: LocalizedText, body: LocalizedText, audio: AssetReference? = nil, grammarPointID: String? = nil) {
+        self.id = id; self.title = title; self.body = body; self.audio = audio; self.grammarPointID = grammarPointID
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(
+            id: try c.decode(BlockID.self, forKey: .id),
+            title: try c.decode(LocalizedText.self, forKey: .title),
+            body: try c.decode(LocalizedText.self, forKey: .body),
+            audio: try c.decodeIfPresent(AssetReference.self, forKey: .audio),
+            grammarPointID: try c.decodeIfPresent(GrammarLink.self, forKey: .metadata)?.grammarPointID
+        )
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(id, forKey: .id); try c.encode(title, forKey: .title); try c.encode(body, forKey: .body)
+        try c.encodeIfPresent(audio, forKey: .audio); try c.encodeIfPresent(GrammarLink(grammarPointID), forKey: .metadata)
     }
 }
 
@@ -190,9 +224,28 @@ public struct ReadingParagraph: Codable, Hashable, Sendable, Identifiable {
 public struct ExerciseBlock: Codable, Hashable, Sendable {
     public let id: BlockID
     public let spec: ExerciseSpec
+    /// Grammar point practised by this exercise (`metadata.grammarPointID`).
+    public let grammarPointID: String?
 
-    public init(id: BlockID, spec: ExerciseSpec) {
-        self.id = id; self.spec = spec
+    private enum CodingKeys: String, CodingKey { case id, spec, metadata }
+
+    public init(id: BlockID, spec: ExerciseSpec, grammarPointID: String? = nil) {
+        self.id = id; self.spec = spec; self.grammarPointID = grammarPointID
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(
+            id: try c.decode(BlockID.self, forKey: .id),
+            spec: try c.decode(ExerciseSpec.self, forKey: .spec),
+            grammarPointID: try c.decodeIfPresent(GrammarLink.self, forKey: .metadata)?.grammarPointID
+        )
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(id, forKey: .id); try c.encode(spec, forKey: .spec)
+        try c.encodeIfPresent(GrammarLink(grammarPointID), forKey: .metadata)
     }
 }
 

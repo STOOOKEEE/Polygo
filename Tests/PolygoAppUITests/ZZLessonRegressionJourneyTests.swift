@@ -4,8 +4,9 @@ import XCTest
 
 /// Regression coverage for the learner-facing lesson flow. The test keeps a
 /// draft answer, moves the app through the inactive state, then relaunches it
-/// before and after validation. The same journey also exercises the compact
-/// dialogue intro, missing-line participation, token audio targets, and oral controls.
+/// before and after validation. The same journey also exercises the teaching
+/// steps (situation, word cards, dialogue with its missing-line participation)
+/// interleaved with the exercises, and the oral controls.
 final class ZZLessonRegressionJourneyTests: XCTestCase {
     private let timeout: TimeInterval = 20
     private var app: XCUIApplication!
@@ -41,77 +42,24 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         assertBottomNavigation(balance: 0)
         attachScreenshot(named: "home-after-onboarding")
         openFirstLesson()
-        expandDiscoveryIfNeeded()
-        let dialogueHeading = text(containing: "Dialogue")
-        XCTAssertTrue(dialogueHeading.waitForExistence(timeout: timeout), "Le dialogue doit être affiché")
-        bringIntoView(dialogueHeading)
-        attachScreenshot(named: "dialogue-discovery")
-        // Alias used by the visual review collector; retain the descriptive
-        // attachment above for the journey report as well.
-        attachScreenshot(named: "dialogue")
+        attachScreenshot(named: "lesson-situation")
+        XCTAssertFalse(button(exactly: "Vérifier").exists, "Une étape d’apprentissage ne s’évalue pas")
 
-        // The preamble must stay compact while still offering every authored
-        // line. Read the fixture here so a dialogue edit cannot silently
-        // leave the regression journey asserting yesterday's copy.
-        let lessonDialogue = try dialogueFromFixture(lessonID: "lesson-01")
-        let missingLine = try participationAnswerFromFixture(lessonDialogue)
-        for line in lessonDialogue.lines where line.hanzi != missingLine.hanzi {
-            XCTAssertTrue(text(containing: line.hanzi).waitForExistence(timeout: timeout), "Réplique absente : \(line.hanzi)")
-        }
-        for speaker in Set(lessonDialogue.lines.map(\.speaker)) {
-            XCTAssertTrue(text(containing: speaker).waitForExistence(timeout: timeout), "Locuteur absent : \(speaker)")
-        }
-
-        let playDialogue = button(exactly: "Écouter tout le dialogue en chinois")
-        XCTAssertTrue(playDialogue.waitForExistence(timeout: timeout), "Le dialogue doit proposer une lecture complète")
-        tapWhenVisible(playDialogue)
-        let stopDialogue = button(exactly: "Arrêter le dialogue")
-        if stopDialogue.waitForExistence(timeout: 3) {
-            tapWhenVisible(stopDialogue)
-        } else {
-            // A simulator without an installed Mandarin voice can reject TTS
-            // immediately. The playback contract is still checked below by
-            // the dedicated response action and the offline status path.
-            XCTAssertTrue(text(containingAny: ["Audio indisponible", "Lecture du dialogue"]).waitForExistence(timeout: timeout), "La lecture complète doit signaler son état")
-        }
-
-        let token = button(exactly: "早")
-        XCTAssertTrue(token.waitForExistence(timeout: timeout), "Chaque mot chinois doit être une cible audio")
-        tapWhenVisible(token)
-        // Tapping a token is an audio action. It must not require a detail
-        // page before the learner can continue in the lesson.
+        // The new words come next, a few per card, before the first
+        // exercise needs them. Every word is a touchable target.
+        tapWhenVisible(button(identifier: "lesson.step.continue"))
         XCTAssertTrue(
-            text(containing: "Dialogue").waitForExistence(timeout: timeout),
-            "La lecture d’un mot doit laisser le dialogue utilisable"
+            app.staticTexts.matching(identifier: "lesson.step.teaching.block-l1-vocabulary.1").firstMatch.waitForExistence(timeout: timeout),
+            "Les nouveaux mots doivent suivre la situation"
         )
-
-        XCTAssertTrue(
-            text(containing: "Question de compréhension").waitForExistence(timeout: timeout),
-            "Le dialogue doit annoncer sa question de compréhension"
-        )
-        XCTAssertTrue(
-            text(containing: "Quelle réplique de \(missingLine.speaker) manque").waitForExistence(timeout: timeout),
-            "La participation doit demander la réplique manquante"
-        )
-        XCTAssertTrue(text(containing: "Réplique manquante").exists, "La réplique à trouver doit être masquée avant la réponse")
-        let responseAudio = button(exactly: "Écouter la réponse")
-        XCTAssertTrue(responseAudio.waitForExistence(timeout: timeout), "La participation doit permettre d’écouter la réponse")
-        tapWhenVisible(responseAudio)
-
-        let correctChoice = button(containing: "Choisir \(missingLine.hanzi)")
-        XCTAssertTrue(correctChoice.waitForExistence(timeout: timeout), "La bonne réplique doit figurer parmi les choix")
-        tapWhenVisible(correctChoice)
-        XCTAssertTrue(
-            text(containing: "Bonne réplique").waitForExistence(timeout: timeout),
-            "La bonne réplique doit produire un retour"
-        )
-        XCTAssertFalse(text(containing: "Réplique manquante").exists, "La réplique trouvée doit être dévoilée")
-        startExercisesFromIntro()
+        XCTAssertTrue(button(exactly: "早").waitForExistence(timeout: timeout), "Chaque mot de la carte doit être une cible touchable")
+        attachScreenshot(named: "lesson-words")
+        continueThroughTeaching()
 
         // First exercise: preserve a selected choice while the app is
         // backgrounded and again after the process is relaunched.
         let firstPrompt = firstExercisePrompt().waitForExistence(timeout: timeout)
-        XCTAssertTrue(firstPrompt, "Le premier exercice doit rester accessible après le préambule")
+        XCTAssertTrue(firstPrompt, "Le premier exercice doit suivre les cartes de mots")
         // The fixture's correct answer is the third tone; use its stable
         // visible prefix so this assertion also catches a missing choice.
         let correctTone = button(containingAny: ["3 — descend puis remonte", "3 —"])
@@ -180,6 +128,69 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         tapWhenVisible(button(exactly: "Vérifier"))
         XCTAssertTrue(text(containing: "Correct").waitForExistence(timeout: timeout), "L’ordre restauré doit être accepté")
         tapWhenVisible(button(exactly: "Continuer"))
+
+        // The dialogue appears just before the question built on it.
+        let dialogueStep = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l1-dialogue").firstMatch
+        XCTAssertTrue(dialogueStep.waitForExistence(timeout: timeout), "Le dialogue doit précéder sa question de compréhension")
+        attachScreenshot(named: "dialogue-discovery")
+        // Alias used by the visual review collector; retain the descriptive
+        // attachment above for the journey report as well.
+        attachScreenshot(named: "dialogue")
+
+        // Every authored line stays available. Read the fixture here so a
+        // dialogue edit cannot silently leave the regression journey
+        // asserting yesterday's copy.
+        let lessonDialogue = try dialogueFromFixture(lessonID: "lesson-01")
+        let missingLine = try participationAnswerFromFixture(lessonDialogue)
+        for line in lessonDialogue.lines where line.hanzi != missingLine.hanzi {
+            XCTAssertTrue(text(containing: line.hanzi).waitForExistence(timeout: timeout), "Réplique absente : \(line.hanzi)")
+        }
+        for speaker in Set(lessonDialogue.lines.map(\.speaker)) {
+            XCTAssertTrue(text(containing: speaker).waitForExistence(timeout: timeout), "Locuteur absent : \(speaker)")
+        }
+
+        let playDialogue = button(exactly: "Écouter tout le dialogue en chinois")
+        XCTAssertTrue(playDialogue.waitForExistence(timeout: timeout), "Le dialogue doit proposer une lecture complète")
+        tapWhenVisible(playDialogue)
+        let stopDialogue = button(exactly: "Arrêter le dialogue")
+        if stopDialogue.waitForExistence(timeout: 3) {
+            tapWhenVisible(stopDialogue)
+        } else {
+            // A simulator without an installed Mandarin voice can reject TTS
+            // immediately. The playback contract is still checked below by
+            // the dedicated response action and the offline status path.
+            XCTAssertTrue(text(containingAny: ["Audio indisponible", "Lecture du dialogue"]).waitForExistence(timeout: timeout), "La lecture complète doit signaler son état")
+        }
+
+        XCTAssertTrue(
+            text(containing: "Question de compréhension").waitForExistence(timeout: timeout),
+            "Le dialogue doit annoncer sa question de compréhension"
+        )
+        XCTAssertTrue(
+            text(containing: "Quelle réplique de \(missingLine.speaker) manque").waitForExistence(timeout: timeout),
+            "La participation doit demander la réplique manquante"
+        )
+        XCTAssertTrue(text(containing: "Réplique manquante").exists, "La réplique à trouver doit être masquée avant la réponse")
+        let responseAudio = button(exactly: "Écouter la réponse")
+        XCTAssertTrue(responseAudio.waitForExistence(timeout: timeout), "La participation doit permettre d’écouter la réponse")
+        tapWhenVisible(responseAudio)
+
+        let correctChoice = button(containing: "Choisir \(missingLine.hanzi)")
+        XCTAssertTrue(correctChoice.waitForExistence(timeout: timeout), "La bonne réplique doit figurer parmi les choix")
+        tapWhenVisible(correctChoice)
+        XCTAssertTrue(
+            text(containing: "Bonne réplique").waitForExistence(timeout: timeout),
+            "La bonne réplique doit produire un retour"
+        )
+        XCTAssertFalse(text(containing: "Réplique manquante").exists, "La réplique trouvée doit être dévoilée")
+
+        // The reading follows, then its comprehension question.
+        tapWhenVisible(button(identifier: "lesson.step.continue"))
+        XCTAssertTrue(
+            app.staticTexts.matching(identifier: "lesson.step.teaching.block-l1-reading").firstMatch.waitForExistence(timeout: timeout),
+            "La lecture doit précéder sa question"
+        )
+        continueThroughTeaching()
 
         let readingChoice = button(containing: "Oui, 再见 clôt l'échange")
         XCTAssertTrue(readingChoice.waitForExistence(timeout: timeout), "La question de lecture doit être chargée")
@@ -359,13 +370,21 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         if restart.waitForExistence(timeout: 4) {
             tapWhenVisible(restart)
         }
-        XCTAssertTrue(button(identifier: "lesson.intro.start").waitForExistence(timeout: timeout), "L’intro de la leçon doit être visible")
+        XCTAssertTrue(
+            app.staticTexts.matching(identifier: "lesson.step.teaching.block-l1-introduction").firstMatch.waitForExistence(timeout: timeout),
+            "La leçon doit s’ouvrir sur sa situation"
+        )
     }
 
-    private func startExercisesFromIntro() {
-        let start = button(identifier: "lesson.intro.start")
-        XCTAssertTrue(start.waitForExistence(timeout: timeout), "L’intro doit proposer Commencer les exercices")
-        tapWhenVisible(start)
+    /// Lessons teach just in time: continue through the teaching steps up to
+    /// the next exercise.
+    private func continueThroughTeaching() {
+        let next = button(identifier: "lesson.step.continue")
+        var remaining = 8
+        while remaining > 0, next.waitForExistence(timeout: 1) {
+            tapWhenVisible(next)
+            remaining -= 1
+        }
     }
 
     private func reopenCurrentLessonIfNeeded() {
@@ -376,14 +395,6 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         let lesson = button(containing: "Dire bonjour")
         XCTAssertTrue(lesson.waitForExistence(timeout: timeout), "La leçon courante doit rester accessible")
         tapWhenVisible(lesson)
-    }
-
-    private func expandDiscoveryIfNeeded() {
-        let discovery = button(containing: "Découvrir avant de répondre")
-        if discovery.waitForExistence(timeout: 5) {
-            tapWhenVisible(discovery)
-        }
-        XCTAssertTrue(text(containing: "Dialogue").waitForExistence(timeout: timeout), "Le bloc découverte doit pouvoir être ouvert")
     }
 
     private func attachScreenshot(named name: String) {
@@ -458,7 +469,7 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             viewport.origin.y = max(viewport.minY, top)
             viewport.size.height = max(0, viewport.maxY - viewport.origin.y)
         }
-        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Recommencer cette leçon", "Commencer les exercices"] {
+        for label in ["Vérifier", "Continuer", "Terminer", "Continuer malgré tout", "Recommencer cette leçon"] {
             let candidate = button(exactly: label)
             guard candidate.exists, !candidate.frame.isEmpty, candidate.frame.minY > viewport.midY else { continue }
             viewport.size.height = max(0, min(viewport.maxY, candidate.frame.minY - 8) - viewport.minY)
@@ -497,14 +508,9 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func leaveLessonBeforeSelectingTab() {
-        let lessonControl = app.buttons.matching(
-            NSPredicate(format: "label IN %@", ["Vérifier", "Recommencer cette leçon", "Commencer les exercices"])
-        ).firstMatch
-        guard lessonControl.exists else { return }
-
-        let back = app.navigationBars.buttons.firstMatch
-        XCTAssertTrue(back.waitForExistence(timeout: timeout), "La leçon doit pouvoir être quittée avant de changer de destination")
-        back.tap()
+        let close = button(identifier: "lesson.close")
+        guard close.exists else { return }
+        close.tap()
     }
 
     private func assertBottomNavigation(balance expectedBalance: Int) {

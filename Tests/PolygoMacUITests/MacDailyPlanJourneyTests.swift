@@ -143,6 +143,13 @@ final class MacDailyPlanJourneyTests: XCTestCase {
         XCTAssertTrue(skipOral.waitForExistence(timeout: timeout), "L’oral optionnel doit rester franchissable hors ligne")
         skipOral.click()
 
+        // The text is read on its own step, right before its question.
+        let readingStep = app.staticTexts.matching(identifier: "lesson.step.teaching.\(readingBlock.id)").firstMatch
+        XCTAssertTrue(readingStep.waitForExistence(timeout: timeout), "Le texte doit précéder sa question de compréhension")
+        let continueReading = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.step.continue")).firstMatch
+        XCTAssertTrue(continueReading.waitForExistence(timeout: timeout), "L’étape de lecture doit proposer Continuer")
+        continueReading.click()
+
         let readingDisclosure = app.buttons.matching(
             NSPredicate(format: "identifier == %@", "lesson.reading.\(readingBlock.id)")
         ).firstMatch

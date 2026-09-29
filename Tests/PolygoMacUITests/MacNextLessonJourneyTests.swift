@@ -30,7 +30,7 @@ final class MacNextLessonJourneyTests: XCTestCase {
         app = nil
     }
 
-    func testNextLessonOpensOnIntroAfterReturningFromFinishedRecap() throws {
+    func testNextLessonOpensOnItsSituationAfterReturningFromFinishedRecap() throws {
         launch(seeding: try journal(lessonThreeTerminalCheckpoint: false))
         openPath()
 
@@ -42,29 +42,34 @@ final class MacNextLessonJourneyTests: XCTestCase {
         back.click()
 
         openLesson("lesson-03")
-        assertLessonThreeStartsOnIntro()
+        assertLessonThreeStartsOnItsSituation()
     }
 
-    func testUnfinishedLessonSavedAtTheEndWithoutAnswersOpensOnIntro() throws {
+    func testUnfinishedLessonSavedAtTheEndWithoutAnswersOpensOnItsSituation() throws {
         // Earlier builds could persist this terminal checkpoint for a lesson
         // the learner never answered.
         launch(seeding: try journal(lessonThreeTerminalCheckpoint: true))
         openPath()
 
         openLesson("lesson-03")
-        assertLessonThreeStartsOnIntro()
+        assertLessonThreeStartsOnItsSituation()
     }
 
-    private func assertLessonThreeStartsOnIntro() {
-        let introStart = app.buttons.matching(identifier: "lesson.intro.start").firstMatch
-        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "L3 jamais commencée doit s’ouvrir sur son introduction")
+    private func assertLessonThreeStartsOnItsSituation() {
+        let situation = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l3-introduction").firstMatch
+        XCTAssertTrue(situation.waitForExistence(timeout: timeout), "L3 jamais commencée doit s’ouvrir sur sa situation")
         XCTAssertFalse(text(containing: "Leçon enregistrée").exists, "L3 ne doit pas afficher de bilan")
         XCTAssertFalse(text(containing: "Leçon terminée").exists, "L3 ne doit pas hériter du bilan de L2")
         attachScreenshot(named: "mac-next-lesson-intro")
-        introStart.click()
+        let next = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.step.continue")).firstMatch
+        var remaining = 8
+        while remaining > 0, next.waitForExistence(timeout: 1) {
+            next.click()
+            remaining -= 1
+        }
         XCTAssertTrue(
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l3-tone").firstMatch.waitForExistence(timeout: timeout),
-            "L3 doit commencer par son premier exercice"
+            "Les mots de L3 doivent mener à son premier exercice"
         )
     }
 

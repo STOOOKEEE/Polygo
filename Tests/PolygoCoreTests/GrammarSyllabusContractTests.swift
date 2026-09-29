@@ -4,8 +4,8 @@ import XCTest
 /// Contract of the grammar syllabus shipped in the daily lessons: a note every two or three
 /// lessons, each with its examples and two guided-phase exercises that manipulate its structure.
 ///
-/// The lessons are read as raw JSON: the grammar links (`metadata.grammarPointID`,
-/// `grammarPoints`) are release metadata that the Codable decoder deliberately ignores.
+/// The lessons are read as raw JSON: `grammarPoints` and the editorial stages are release
+/// metadata that the Codable decoder ignores (it only keeps `metadata.grammarPointID`).
 final class GrammarSyllabusContractTests: XCTestCase {
     private typealias JSON = [String: Any]
 

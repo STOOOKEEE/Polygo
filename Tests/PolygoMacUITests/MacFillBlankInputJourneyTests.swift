@@ -53,15 +53,15 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         )
         lesson.click()
 
-        let introStart = app.buttons.matching(identifier: "lesson.intro.start").firstMatch
-        XCTAssertTrue(introStart.waitForExistence(timeout: timeout), "L2 doit s’ouvrir sur son dialogue avant les exercices")
-        XCTAssertFalse(button(exactly: "Vérifier").exists, "L’intro ne doit pas proposer Vérifier")
-        attachScreenshot(named: "mac-lesson-dialogue-intro")
-        introStart.click()
+        let situation = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l2-introduction").firstMatch
+        XCTAssertTrue(situation.waitForExistence(timeout: timeout), "L2 doit s’ouvrir sur sa situation")
+        XCTAssertFalse(button(exactly: "Vérifier").exists, "Une étape d’apprentissage ne doit pas proposer Vérifier")
+        attachScreenshot(named: "mac-lesson-situation")
+        continueThroughTeaching()
 
         XCTAssertTrue(
             app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-tone").firstMatch.waitForExistence(timeout: timeout),
-            "L’ouverture de la carte L2 doit commencer par son premier exercice"
+            "Les mots de L2 doivent mener à son premier exercice"
         )
 
         submitChoice(label: "2 — montant", exerciseID: "ex-l2-tone")
@@ -70,6 +70,12 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             tokens: ["你", "叫", "什么", "名字"],
             exerciseID: "ex-l2-order"
         )
+
+        // The dialogue comes right before the fill-in built on its lines.
+        let dialogue = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l2-dialogue").firstMatch
+        XCTAssertTrue(dialogue.waitForExistence(timeout: timeout), "Le dialogue L2 doit précéder l’exercice à trou")
+        attachScreenshot(named: "mac-lesson-dialogue")
+        continueThroughTeaching()
 
         let fillExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-fill").firstMatch
         XCTAssertTrue(fillExercise.waitForExistence(timeout: timeout), "Le parcours L2 doit atteindre l’exercice à trou")
@@ -158,6 +164,9 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         XCTAssertTrue(continueButton.isHittable, "Le bouton Continuer doit être cliquable")
         XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer doit être activé après une réponse correcte")
         continueButton.click()
+        let readingStep = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l2-reading").firstMatch
+        XCTAssertTrue(readingStep.waitForExistence(timeout: timeout), "Le texte L2 doit précéder sa question")
+        continueThroughTeaching()
         let nextExercise = app.staticTexts.matching(identifier: "lesson.exercise.ex-l2-reading-name").firstMatch
         XCTAssertTrue(nextExercise.waitForExistence(timeout: timeout), "La validation du choix doit faire progresser la leçon L2")
 
@@ -253,6 +262,17 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         XCTAssertTrue(continueButton.isHittable, "Le bouton Continuer de \(exerciseID) doit être cliquable")
         XCTAssertTrue(continueButton.isEnabled, "Le bouton Continuer de \(exerciseID) doit être activé après une réponse correcte")
         continueButton.click()
+    }
+
+    /// Lessons teach just in time: continue through the teaching steps up to
+    /// the next exercise.
+    private func continueThroughTeaching() {
+        let next = app.buttons.matching(NSPredicate(format: "identifier == %@", "lesson.step.continue")).firstMatch
+        var remaining = 8
+        while remaining > 0, next.waitForExistence(timeout: 1) {
+            next.click()
+            remaining -= 1
+        }
     }
 
     /// The active Path or lesson destination owns one vertical scroll view.

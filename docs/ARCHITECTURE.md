@@ -288,6 +288,7 @@ public struct IntroductionBlock: Codable, Hashable, Sendable {
     public let title: LocalizedText
     public let body: LocalizedText
     public let audio: AssetReference?
+    public let grammarPointID: String?   // metadata.grammarPointID d’une note
 }
 
 public struct VocabularyBlock: Codable, Hashable, Sendable {
@@ -329,6 +330,7 @@ public struct ReadingParagraph: Codable, Hashable, Sendable {
 public struct ExerciseBlock: Codable, Hashable, Sendable {
     public let id: BlockID
     public let spec: ExerciseSpec
+    public let grammarPointID: String?   // metadata.grammarPointID
 }
 
 public struct RecapBlock: Codable, Hashable, Sendable {
@@ -337,6 +339,17 @@ public struct RecapBlock: Codable, Hashable, Sendable {
     public let objectiveIDs: [String]
 }
 ```
+
+Seul `metadata.grammarPointID` est décodé des métadonnées de bloc ; le reste
+reste éditorial. `LessonFlow` (`Sources/PolygoCore/LessonFlow.swift`) transforme
+les blocs en une suite plate d’étapes `LessonStep` (apprentissage ou exercice) :
+chaque bloc d’apprentissage est placé juste avant le premier exercice qui en a
+besoin (note de grammaire avant son premier exercice lié, dialogue avant le
+premier exercice qui cite une de ses répliques ou figure dans ses
+`comprehensionExerciseIDs`, lecture avant sa question), sinon à sa place d’auteur ;
+le vocabulaire est découpé en cartes de trois mots et le récapitulatif rejoint le
+bilan. La progression reste indexée par exercice ; `LessonFlow` fait la
+correspondance étape ↔ exercice et choisit l’étape de reprise.
 
 Le parcours initial n’a pas besoin d’un serveur : il est construit à partir du
 manifeste et du snapshot local.
