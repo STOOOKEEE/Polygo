@@ -288,13 +288,29 @@ public struct ExampleSentence: Codable, Hashable, Sendable {
     public let hanzi: String
     public let pinyin: String
     public let translation: LocalizedText
+    /// The sentence's words in order; their surfaces spell `hanzi`, punctuation included.
+    public let segmentation: [TextSegment]
     public let audio: AssetReference?
 
-    public init(hanzi: String, pinyin: String, translation: LocalizedText, audio: AssetReference? = nil) {
+    private enum CodingKeys: String, CodingKey { case hanzi, pinyin, translation, segmentation, audio }
+
+    public init(hanzi: String, pinyin: String, translation: LocalizedText, segmentation: [TextSegment] = [], audio: AssetReference? = nil) {
         self.hanzi = hanzi
         self.pinyin = pinyin
         self.translation = translation
+        self.segmentation = segmentation
         self.audio = audio
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(
+            hanzi: try c.decode(String.self, forKey: .hanzi),
+            pinyin: try c.decode(String.self, forKey: .pinyin),
+            translation: try c.decode(LocalizedText.self, forKey: .translation),
+            segmentation: try c.decodeIfPresent([TextSegment].self, forKey: .segmentation) ?? [],
+            audio: try c.decodeIfPresent(AssetReference.self, forKey: .audio)
+        )
     }
 }
 
