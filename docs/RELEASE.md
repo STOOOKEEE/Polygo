@@ -10,11 +10,11 @@ conception séparée, explicitement marquée `design-reference-only`.
 
 - Le cours contient 94 leçons dans 9 unités : 4 leçons d’introduction
   protégées et 90 séances planifiées.
-- Le contenu contient 567 exercices (27 introduction + 540 programme), 94
+- Le contenu contient 1 655 exercices (27 introduction + 1 628 programme), 94
   histoires inline, 196 paragraphes et 605 cartes distinctes (600 canoniques +
-  5 extras). Les 911 associations leçon–carte sont fermées par le générateur.
+  5 extras). Les 897 associations leçon–carte sont fermées par le générateur.
 - Chaque séance quotidienne vise 15 minutes : 12 minutes de cours et 3 minutes
-  de révision. La couverture vérifiée est 300/300 rangs au jour 30 et 600/600
+  de révision. La couverture vérifiée est 300/300 rangs au jour 48 et 600/600
   rangs au jour 90 ; ces comptes décrivent le contenu planifié, pas une preuve
   d’acquisition.
 - Le recto des nouvelles cartes affiche uniquement le hanzi ; pinyin et sens
@@ -36,7 +36,7 @@ conception séparée, explicitement marquée `design-reference-only`.
   preview, jours 6–45 et jours 46–90.
 - [x] Régénérer le bundle avec `Tools/content_tool.py generate` et passer
   `Tools/content_tool.py lint --root Content`.
-- [x] Vérifier les 90 sessions, les budgets 12+3, les jalons J30/J60/J90 et la
+- [x] Vérifier les 90 sessions, les budgets 12+3, les jalons J48/J60/J90 et la
   couverture 300/300 puis 600/600 du catalogue `hsk-legacy-600`.
 - [x] Vérifier l’unicité des identifiants : 94 histoires et 196 paragraphes,
   sans doublon global.

@@ -87,7 +87,7 @@ sur le nombre de cartes affichées :
 
 | Jalon | Ce qui est planifié | Ce que cela ne dit pas |
 | --- | --- | --- |
-| Jour 30 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
+| Jour 48 | les rangs 1 à 300 du catalogue sont planifiés ; des entrées déjà vues peuvent s'y ajouter | qu'un apprenant connaît ou sait produire ces 300 lexèmes |
 | Jour 60 | consolidation et réemploi, sans nouvelle cible numérique | qu'un niveau ou une liste est validé |
 | Jour 90 | les rangs 1 à 600 sont planifiés | qu'un apprenant maîtrise le catalogue ou réussira un examen |
 

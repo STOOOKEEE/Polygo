@@ -8,7 +8,7 @@
     "standardID": "HSK-legacy-2.0",
     "standardVersion": "2.0",
     "rankRanges": {
-      "day30": [
+      "day40": [
         1,
         300
       ],
@@ -40,21 +40,17 @@
     "hsk20-143"
   ],
   "allocationPolicy": {
-    "fixedDays": [
-      1,
-      5
-    ],
     "phaseOneDays": [
-      6,
-      30
+      1,
+      48
     ],
     "phaseTwoDays": [
-      31,
+      49,
       90
     ],
-    "phaseOneNewPerLesson": [
-      8,
-      10
+    "newPerLesson": [
+      6,
+      8
     ],
     "checkpointDays": [
       30,
@@ -232,8 +228,8 @@
   ],
   "milestones": [
     {
-      "id": "classic-day-30",
-      "day": 30,
+      "id": "classic-day-48",
+      "day": 48,
       "title": {
         "fr": "Jalon : HSK classique 1–2"
       },
@@ -254,7 +250,7 @@
         ]
       },
       "claims": [
-        "Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour 30.",
+        "Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour 48.",
         "Un mot rencontré ne constitue pas une preuve de maîtrise."
       ]
     },
@@ -850,8 +846,8 @@
     ],
     "milestones": [
       {
-        "id": "classic-day-30",
-        "day": 30,
+        "id": "classic-day-48",
+        "day": 48,
         "title": {
           "fr": "Jalon : HSK classique 1–2"
         },
@@ -872,7 +868,7 @@
           ]
         },
         "claims": [
-          "Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour 30.",
+          "Les rangs 1 à 300 du catalogue sont planifiés au plus tard au jour 48.",
           "Un mot rencontré ne constitue pas une preuve de maîtrise."
         ]
       },
@@ -927,43 +923,33 @@
       "lessonID": "lesson-05",
       "moduleID": "unit-02",
       "theme": "food",
-      "phase": "fixed-preview",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-007",
-        "hsk20-009",
         "hsk20-010",
-        "hsk20-011",
+        "hsk20-017",
         "hsk20-021",
-        "hsk20-024",
-        "hsk20-036",
-        "hsk20-037",
         "hsk20-038",
-        "hsk20-039",
         "hsk20-062"
       ],
       "reusedVocabularyIDs": [
+        "hsk20-112",
         "hsk20-074",
-        "hsk20-112"
+        "hsk20-138"
       ],
       "newCanonicalIDs": [
-        "hsk20-007",
-        "hsk20-009",
         "hsk20-010",
-        "hsk20-011",
+        "hsk20-017",
         "hsk20-021",
-        "hsk20-024",
-        "hsk20-036",
-        "hsk20-037",
         "hsk20-038",
-        "hsk20-039",
         "hsk20-062"
       ],
       "reusedCanonicalIDs": [
+        "hsk20-112",
         "hsk20-074",
-        "hsk20-112"
+        "hsk20-138"
       ],
-      "newCount": 11,
-      "reusedCount": 2,
+      "newCount": 5,
+      "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "A 和 B",
@@ -979,49 +965,37 @@
       "lessonID": "lesson-06",
       "moduleID": "unit-02",
       "theme": "home",
-      "phase": "fixed-preview",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-017",
-        "hsk20-018",
+        "hsk20-015",
         "hsk20-019",
-        "hsk20-020",
-        "hsk20-034",
         "hsk20-045",
-        "hsk20-050",
-        "hsk20-051",
-        "hsk20-120",
+        "hsk20-061",
+        "hsk20-090",
         "hsk20-139",
         "hsk20-275"
       ],
       "reusedVocabularyIDs": [
+        "hsk20-017",
         "hsk20-021",
-        "hsk20-038",
-        "hsk20-062",
-        "hsk20-074",
-        "hsk20-112"
+        "hsk20-074"
       ],
       "newCanonicalIDs": [
-        "hsk20-017",
-        "hsk20-018",
+        "hsk20-015",
         "hsk20-019",
-        "hsk20-020",
-        "hsk20-034",
         "hsk20-045",
-        "hsk20-050",
-        "hsk20-051",
-        "hsk20-120",
+        "hsk20-061",
+        "hsk20-090",
         "hsk20-139",
         "hsk20-275"
       ],
       "reusedCanonicalIDs": [
+        "hsk20-017",
         "hsk20-021",
-        "hsk20-038",
-        "hsk20-062",
-        "hsk20-074",
-        "hsk20-112"
+        "hsk20-074"
       ],
-      "newCount": 11,
-      "reusedCount": 5,
+      "newCount": 7,
+      "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "sujet + 在 + lieu",
@@ -1038,55 +1012,37 @@
       "lessonID": "lesson-07",
       "moduleID": "unit-02",
       "theme": "family",
-      "phase": "fixed-preview",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-003",
-        "hsk20-015",
-        "hsk20-026",
+        "hsk20-042",
+        "hsk20-043",
         "hsk20-044",
-        "hsk20-047",
-        "hsk20-048",
-        "hsk20-049",
-        "hsk20-061",
-        "hsk20-076",
-        "hsk20-088",
+        "hsk20-053",
+        "hsk20-058",
         "hsk20-089",
-        "hsk20-137"
+        "hsk20-121"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-038",
-        "hsk20-139",
-        "hsk20-045",
-        "hsk20-074",
-        "hsk20-112",
-        "hsk20-072",
-        "hsk20-097"
+        "hsk20-015",
+        "hsk20-061",
+        "hsk20-074"
       ],
       "newCanonicalIDs": [
-        "hsk20-003",
-        "hsk20-015",
-        "hsk20-026",
+        "hsk20-042",
+        "hsk20-043",
         "hsk20-044",
-        "hsk20-047",
-        "hsk20-048",
-        "hsk20-049",
-        "hsk20-061",
-        "hsk20-076",
-        "hsk20-088",
+        "hsk20-053",
+        "hsk20-058",
         "hsk20-089",
-        "hsk20-137"
+        "hsk20-121"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-038",
-        "hsk20-139",
-        "hsk20-045",
-        "hsk20-074",
-        "hsk20-112",
-        "hsk20-072",
-        "hsk20-097"
+        "hsk20-015",
+        "hsk20-061",
+        "hsk20-074"
       ],
-      "newCount": 12,
-      "reusedCount": 7,
+      "newCount": 7,
+      "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "nom + 的 + nom"
@@ -1101,43 +1057,37 @@
       "lessonID": "lesson-08",
       "moduleID": "unit-02",
       "theme": "time",
-      "phase": "fixed-preview",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
         "hsk20-016",
-        "hsk20-025",
-        "hsk20-053",
-        "hsk20-063",
-        "hsk20-079",
-        "hsk20-082",
+        "hsk20-041",
         "hsk20-084",
-        "hsk20-090",
-        "hsk20-121"
+        "hsk20-165",
+        "hsk20-228",
+        "hsk20-248",
+        "hsk20-274"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-044",
-        "hsk20-089",
-        "hsk20-120",
-        "hsk20-112"
+        "hsk20-053",
+        "hsk20-090",
+        "hsk20-121"
       ],
       "newCanonicalIDs": [
         "hsk20-016",
-        "hsk20-025",
-        "hsk20-053",
-        "hsk20-063",
-        "hsk20-079",
-        "hsk20-082",
+        "hsk20-041",
         "hsk20-084",
+        "hsk20-165",
+        "hsk20-228",
+        "hsk20-248",
+        "hsk20-274"
+      ],
+      "reusedCanonicalIDs": [
+        "hsk20-053",
         "hsk20-090",
         "hsk20-121"
       ],
-      "reusedCanonicalIDs": [
-        "hsk20-044",
-        "hsk20-089",
-        "hsk20-120",
-        "hsk20-112"
-      ],
-      "newCount": 9,
-      "reusedCount": 4,
+      "newCount": 7,
+      "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "想 + verbe",
@@ -1153,53 +1103,39 @@
       "lessonID": "lesson-09",
       "moduleID": "unit-02",
       "theme": "shopping",
-      "phase": "fixed-preview",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-041",
-        "hsk20-042",
-        "hsk20-043",
-        "hsk20-058",
-        "hsk20-148",
-        "hsk20-165",
+        "hsk20-007",
+        "hsk20-039",
+        "hsk20-051",
+        "hsk20-057",
+        "hsk20-142",
         "hsk20-170",
-        "hsk20-297",
-        "hsk20-298",
-        "hsk20-485"
+        "hsk20-183"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-007",
-        "hsk20-016",
-        "hsk20-044",
-        "hsk20-045",
-        "hsk20-084",
-        "hsk20-139",
-        "hsk20-074",
-        "hsk20-112"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-041",
         "hsk20-042",
         "hsk20-043",
         "hsk20-058",
-        "hsk20-148",
-        "hsk20-165",
+        "hsk20-165"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-007",
+        "hsk20-039",
+        "hsk20-051",
+        "hsk20-057",
+        "hsk20-142",
         "hsk20-170",
-        "hsk20-297",
-        "hsk20-298",
-        "hsk20-485"
+        "hsk20-183"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-007",
-        "hsk20-016",
-        "hsk20-044",
-        "hsk20-045",
-        "hsk20-084",
-        "hsk20-139",
-        "hsk20-074",
-        "hsk20-112"
+        "hsk20-042",
+        "hsk20-043",
+        "hsk20-058",
+        "hsk20-165"
       ],
-      "newCount": 10,
-      "reusedCount": 8,
+      "newCount": 7,
+      "reusedCount": 4,
       "grammarTarget": {
         "patterns": [
           "verbe + 了",
@@ -1218,46 +1154,38 @@
       "theme": "home",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-006",
-        "hsk20-013",
+        "hsk20-077",
+        "hsk20-091",
         "hsk20-098",
-        "hsk20-135",
-        "hsk20-146",
-        "hsk20-177",
-        "hsk20-225",
-        "hsk20-246",
-        "hsk20-055",
-        "hsk20-077"
+        "hsk20-106",
+        "hsk20-131",
+        "hsk20-136"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-079",
-        "hsk20-095",
-        "hsk20-138"
+        "hsk20-112",
+        "hsk20-139",
+        "hsk20-142"
       ],
       "newCanonicalIDs": [
-        "hsk20-006",
-        "hsk20-013",
+        "hsk20-077",
+        "hsk20-091",
         "hsk20-098",
-        "hsk20-135",
-        "hsk20-146",
-        "hsk20-177",
-        "hsk20-225",
-        "hsk20-246",
-        "hsk20-055",
-        "hsk20-077"
+        "hsk20-106",
+        "hsk20-131",
+        "hsk20-136"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-079",
-        "hsk20-095",
-        "hsk20-138"
+        "hsk20-112",
+        "hsk20-139",
+        "hsk20-142"
       ],
-      "newCount": 10,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "在 + lieu"
         ],
-        "anchorCanonicalID": "hsk20-006",
+        "anchorCanonicalID": "hsk20-077",
         "reviewable": true
       },
       "checkpoint": false
@@ -1269,46 +1197,40 @@
       "theme": "food",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-028",
-        "hsk20-067",
-        "hsk20-101",
-        "hsk20-198",
-        "hsk20-207",
-        "hsk20-228",
-        "hsk20-260",
-        "hsk20-272",
-        "hsk20-283",
-        "hsk20-132"
+        "hsk20-048",
+        "hsk20-054",
+        "hsk20-113",
+        "hsk20-151",
+        "hsk20-156",
+        "hsk20-197",
+        "hsk20-200"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-006",
         "hsk20-019",
-        "hsk20-041"
+        "hsk20-228",
+        "hsk20-084"
       ],
       "newCanonicalIDs": [
-        "hsk20-028",
-        "hsk20-067",
-        "hsk20-101",
-        "hsk20-198",
-        "hsk20-207",
-        "hsk20-228",
-        "hsk20-260",
-        "hsk20-272",
-        "hsk20-283",
-        "hsk20-132"
+        "hsk20-048",
+        "hsk20-054",
+        "hsk20-113",
+        "hsk20-151",
+        "hsk20-156",
+        "hsk20-197",
+        "hsk20-200"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-006",
         "hsk20-019",
-        "hsk20-041"
+        "hsk20-228",
+        "hsk20-084"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "也 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-028",
+        "anchorCanonicalID": "hsk20-048",
         "reviewable": true
       },
       "checkpoint": false
@@ -1320,46 +1242,40 @@
       "theme": "family",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-032",
+        "hsk20-071",
+        "hsk20-073",
         "hsk20-128",
-        "hsk20-173",
-        "hsk20-179",
-        "hsk20-182",
-        "hsk20-189",
-        "hsk20-201",
+        "hsk20-196",
         "hsk20-224",
-        "hsk20-226",
-        "hsk20-229",
-        "hsk20-233"
+        "hsk20-256"
       ],
       "reusedVocabularyIDs": [
         "hsk20-097",
-        "hsk20-132",
-        "hsk20-148"
+        "hsk20-106",
+        "hsk20-112"
       ],
       "newCanonicalIDs": [
+        "hsk20-032",
+        "hsk20-071",
+        "hsk20-073",
         "hsk20-128",
-        "hsk20-173",
-        "hsk20-179",
-        "hsk20-182",
-        "hsk20-189",
-        "hsk20-201",
+        "hsk20-196",
         "hsk20-224",
-        "hsk20-226",
-        "hsk20-229",
-        "hsk20-233"
+        "hsk20-256"
       ],
       "reusedCanonicalIDs": [
         "hsk20-097",
-        "hsk20-132",
-        "hsk20-148"
+        "hsk20-106",
+        "hsk20-112"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "有 + nom"
         ],
-        "anchorCanonicalID": "hsk20-128",
+        "anchorCanonicalID": "hsk20-032",
         "reviewable": true
       },
       "checkpoint": false
@@ -1371,46 +1287,40 @@
       "theme": "time",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-030",
-        "hsk20-031",
+        "hsk20-027",
         "hsk20-069",
-        "hsk20-075",
-        "hsk20-092",
-        "hsk20-096",
+        "hsk20-094",
+        "hsk20-110",
         "hsk20-117",
-        "hsk20-127",
-        "hsk20-144",
-        "hsk20-155"
+        "hsk20-257",
+        "hsk20-259"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-008",
-        "hsk20-021",
-        "hsk20-042"
+        "hsk20-062",
+        "hsk20-074",
+        "hsk20-084"
       ],
       "newCanonicalIDs": [
-        "hsk20-030",
-        "hsk20-031",
+        "hsk20-027",
         "hsk20-069",
-        "hsk20-075",
-        "hsk20-092",
-        "hsk20-096",
+        "hsk20-094",
+        "hsk20-110",
         "hsk20-117",
-        "hsk20-127",
-        "hsk20-144",
-        "hsk20-155"
+        "hsk20-257",
+        "hsk20-259"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-008",
-        "hsk20-021",
-        "hsk20-042"
+        "hsk20-062",
+        "hsk20-074",
+        "hsk20-084"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "这/那 + nom"
         ],
-        "anchorCanonicalID": "hsk20-030",
+        "anchorCanonicalID": "hsk20-027",
         "reviewable": true
       },
       "checkpoint": false
@@ -1422,46 +1332,40 @@
       "theme": "travel",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-012",
-        "hsk20-029",
-        "hsk20-163",
-        "hsk20-184",
-        "hsk20-197",
-        "hsk20-219",
-        "hsk20-232",
+        "hsk20-035",
+        "hsk20-120",
+        "hsk20-140",
+        "hsk20-149",
+        "hsk20-161",
         "hsk20-293",
-        "hsk20-191",
-        "hsk20-214"
+        "hsk20-298"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-127",
-        "hsk20-143",
-        "hsk20-173"
+        "hsk20-197",
+        "hsk20-084",
+        "hsk20-089"
       ],
       "newCanonicalIDs": [
-        "hsk20-012",
-        "hsk20-029",
-        "hsk20-163",
-        "hsk20-184",
-        "hsk20-197",
-        "hsk20-219",
-        "hsk20-232",
+        "hsk20-035",
+        "hsk20-120",
+        "hsk20-140",
+        "hsk20-149",
+        "hsk20-161",
         "hsk20-293",
-        "hsk20-191",
-        "hsk20-214"
+        "hsk20-298"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-127",
-        "hsk20-143",
-        "hsk20-173"
+        "hsk20-197",
+        "hsk20-084",
+        "hsk20-089"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "几 + classificateur"
         ],
-        "anchorCanonicalID": "hsk20-012",
+        "anchorCanonicalID": "hsk20-035",
         "reviewable": true
       },
       "checkpoint": false
@@ -1473,46 +1377,38 @@
       "theme": "routine",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-001",
-        "hsk20-002",
-        "hsk20-004",
-        "hsk20-005",
-        "hsk20-023",
-        "hsk20-027",
-        "hsk20-035",
-        "hsk20-040",
-        "hsk20-052",
-        "hsk20-054"
+        "hsk20-022",
+        "hsk20-115",
+        "hsk20-141",
+        "hsk20-146",
+        "hsk20-150",
+        "hsk20-258"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-010",
-        "hsk20-024",
-        "hsk20-039"
+        "hsk20-035",
+        "hsk20-131",
+        "hsk20-136"
       ],
       "newCanonicalIDs": [
-        "hsk20-001",
-        "hsk20-002",
-        "hsk20-004",
-        "hsk20-005",
-        "hsk20-023",
-        "hsk20-027",
-        "hsk20-035",
-        "hsk20-040",
-        "hsk20-052",
-        "hsk20-054"
+        "hsk20-022",
+        "hsk20-115",
+        "hsk20-141",
+        "hsk20-146",
+        "hsk20-150",
+        "hsk20-258"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-010",
-        "hsk20-024",
-        "hsk20-039"
+        "hsk20-035",
+        "hsk20-131",
+        "hsk20-136"
       ],
-      "newCount": 10,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "想/要 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-001",
+        "anchorCanonicalID": "hsk20-022",
         "reviewable": true
       },
       "checkpoint": false
@@ -1524,46 +1420,40 @@
       "theme": "daily-review",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-032",
-        "hsk20-140",
-        "hsk20-141",
-        "hsk20-151",
-        "hsk20-156",
+        "hsk20-055",
+        "hsk20-066",
+        "hsk20-081",
+        "hsk20-083",
         "hsk20-168",
-        "hsk20-171",
-        "hsk20-248",
-        "hsk20-251",
-        "hsk20-257"
+        "hsk20-169",
+        "hsk20-174"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-132",
-        "hsk20-146",
-        "hsk20-177"
+        "hsk20-156",
+        "hsk20-257",
+        "hsk20-136"
       ],
       "newCanonicalIDs": [
-        "hsk20-032",
-        "hsk20-140",
-        "hsk20-141",
-        "hsk20-151",
-        "hsk20-156",
+        "hsk20-055",
+        "hsk20-066",
+        "hsk20-081",
+        "hsk20-083",
         "hsk20-168",
-        "hsk20-171",
-        "hsk20-248",
-        "hsk20-251",
-        "hsk20-257"
+        "hsk20-169",
+        "hsk20-174"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-132",
-        "hsk20-146",
-        "hsk20-177"
+        "hsk20-156",
+        "hsk20-257",
+        "hsk20-136"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "会/能 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-032",
+        "anchorCanonicalID": "hsk20-055",
         "reviewable": true
       },
       "checkpoint": false
@@ -1575,46 +1465,40 @@
       "theme": "study",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-022",
-        "hsk20-110",
+        "hsk20-103",
+        "hsk20-116",
         "hsk20-125",
         "hsk20-129",
-        "hsk20-130",
-        "hsk20-147",
-        "hsk20-200",
-        "hsk20-209",
-        "hsk20-212",
-        "hsk20-274"
+        "hsk20-177",
+        "hsk20-206",
+        "hsk20-208"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-008",
-        "hsk20-020",
-        "hsk20-032"
+        "hsk20-200",
+        "hsk20-110",
+        "hsk20-112"
       ],
       "newCanonicalIDs": [
-        "hsk20-022",
-        "hsk20-110",
+        "hsk20-103",
+        "hsk20-116",
         "hsk20-125",
         "hsk20-129",
-        "hsk20-130",
-        "hsk20-147",
-        "hsk20-200",
-        "hsk20-209",
-        "hsk20-212",
-        "hsk20-274"
+        "hsk20-177",
+        "hsk20-206",
+        "hsk20-208"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-008",
-        "hsk20-020",
-        "hsk20-032"
+        "hsk20-200",
+        "hsk20-110",
+        "hsk20-112"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "正在 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-022",
+        "anchorCanonicalID": "hsk20-103",
         "reviewable": true
       },
       "checkpoint": false
@@ -1626,46 +1510,40 @@
       "theme": "routine",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-057",
-        "hsk20-059",
-        "hsk20-060",
-        "hsk20-064",
+        "hsk20-024",
         "hsk20-065",
-        "hsk20-066",
-        "hsk20-071",
-        "hsk20-073",
-        "hsk20-080",
-        "hsk20-081"
+        "hsk20-107",
+        "hsk20-225",
+        "hsk20-264",
+        "hsk20-279",
+        "hsk20-287"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-144",
-        "hsk20-163",
-        "hsk20-179"
+        "hsk20-057",
+        "hsk20-083",
+        "hsk20-112"
       ],
       "newCanonicalIDs": [
-        "hsk20-057",
-        "hsk20-059",
-        "hsk20-060",
-        "hsk20-064",
+        "hsk20-024",
         "hsk20-065",
-        "hsk20-066",
-        "hsk20-071",
-        "hsk20-073",
-        "hsk20-080",
-        "hsk20-081"
+        "hsk20-107",
+        "hsk20-225",
+        "hsk20-264",
+        "hsk20-279",
+        "hsk20-287"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-144",
-        "hsk20-163",
-        "hsk20-179"
+        "hsk20-057",
+        "hsk20-083",
+        "hsk20-112"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 了"
         ],
-        "anchorCanonicalID": "hsk20-057",
+        "anchorCanonicalID": "hsk20-024",
         "reviewable": true
       },
       "checkpoint": false
@@ -1677,46 +1555,40 @@
       "theme": "health",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-036",
+        "hsk20-102",
+        "hsk20-134",
         "hsk20-240",
         "hsk20-241",
-        "hsk20-273",
-        "hsk20-014",
-        "hsk20-056",
-        "hsk20-078",
-        "hsk20-085",
-        "hsk20-122",
-        "hsk20-180",
-        "hsk20-213"
+        "hsk20-253",
+        "hsk20-504"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-010",
-        "hsk20-022",
-        "hsk20-034"
+        "hsk20-112",
+        "hsk20-141",
+        "hsk20-183"
       ],
       "newCanonicalIDs": [
+        "hsk20-036",
+        "hsk20-102",
+        "hsk20-134",
         "hsk20-240",
         "hsk20-241",
-        "hsk20-273",
-        "hsk20-014",
-        "hsk20-056",
-        "hsk20-078",
-        "hsk20-085",
-        "hsk20-122",
-        "hsk20-180",
-        "hsk20-213"
+        "hsk20-253",
+        "hsk20-504"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-010",
-        "hsk20-022",
-        "hsk20-034"
+        "hsk20-112",
+        "hsk20-141",
+        "hsk20-183"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 过"
         ],
-        "anchorCanonicalID": "hsk20-240",
+        "anchorCanonicalID": "hsk20-036",
         "reviewable": true
       },
       "checkpoint": false
@@ -1728,46 +1600,38 @@
       "theme": "communication",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-259",
-        "hsk20-278",
-        "hsk20-289",
-        "hsk20-296",
-        "hsk20-267",
-        "hsk20-290",
-        "hsk20-083",
-        "hsk20-087",
-        "hsk20-091",
-        "hsk20-093"
+        "hsk20-096",
+        "hsk20-109",
+        "hsk20-111",
+        "hsk20-145",
+        "hsk20-159",
+        "hsk20-278"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-143",
-        "hsk20-156",
-        "hsk20-177"
+        "hsk20-259",
+        "hsk20-112",
+        "hsk20-125"
       ],
       "newCanonicalIDs": [
-        "hsk20-259",
-        "hsk20-278",
-        "hsk20-289",
-        "hsk20-296",
-        "hsk20-267",
-        "hsk20-290",
-        "hsk20-083",
-        "hsk20-087",
-        "hsk20-091",
-        "hsk20-093"
+        "hsk20-096",
+        "hsk20-109",
+        "hsk20-111",
+        "hsk20-145",
+        "hsk20-159",
+        "hsk20-278"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-143",
-        "hsk20-156",
-        "hsk20-177"
+        "hsk20-259",
+        "hsk20-112",
+        "hsk20-125"
       ],
-      "newCount": 10,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "A 比 B + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-259",
+        "anchorCanonicalID": "hsk20-096",
         "reviewable": true
       },
       "checkpoint": false
@@ -1779,46 +1643,40 @@
       "theme": "study",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-094",
-        "hsk20-099",
-        "hsk20-100",
-        "hsk20-102",
-        "hsk20-103",
-        "hsk20-104",
-        "hsk20-105",
-        "hsk20-106",
-        "hsk20-107",
-        "hsk20-109"
+        "hsk20-033",
+        "hsk20-037",
+        "hsk20-118",
+        "hsk20-215",
+        "hsk20-218",
+        "hsk20-281",
+        "hsk20-286"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-012",
-        "hsk20-023",
-        "hsk20-035"
+        "hsk20-102",
+        "hsk20-109",
+        "hsk20-121"
       ],
       "newCanonicalIDs": [
-        "hsk20-094",
-        "hsk20-099",
-        "hsk20-100",
-        "hsk20-102",
-        "hsk20-103",
-        "hsk20-104",
-        "hsk20-105",
-        "hsk20-106",
-        "hsk20-107",
-        "hsk20-109"
+        "hsk20-033",
+        "hsk20-037",
+        "hsk20-118",
+        "hsk20-215",
+        "hsk20-218",
+        "hsk20-281",
+        "hsk20-286"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-012",
-        "hsk20-023",
-        "hsk20-035"
+        "hsk20-102",
+        "hsk20-109",
+        "hsk20-121"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "因为…所以…"
         ],
-        "anchorCanonicalID": "hsk20-094",
+        "anchorCanonicalID": "hsk20-033",
         "reviewable": true
       },
       "checkpoint": false
@@ -1830,46 +1688,40 @@
       "theme": "work",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-033",
-        "hsk20-186",
+        "hsk20-119",
+        "hsk20-205",
+        "hsk20-210",
         "hsk20-239",
-        "hsk20-111",
-        "hsk20-113",
-        "hsk20-114",
-        "hsk20-115",
-        "hsk20-116",
-        "hsk20-118",
-        "hsk20-119"
+        "hsk20-243",
+        "hsk20-276",
+        "hsk20-288"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-143",
-        "hsk20-156",
-        "hsk20-177"
+        "hsk20-033",
+        "hsk20-115",
+        "hsk20-116"
       ],
       "newCanonicalIDs": [
-        "hsk20-033",
-        "hsk20-186",
+        "hsk20-119",
+        "hsk20-205",
+        "hsk20-210",
         "hsk20-239",
-        "hsk20-111",
-        "hsk20-113",
-        "hsk20-114",
-        "hsk20-115",
-        "hsk20-116",
-        "hsk20-118",
-        "hsk20-119"
+        "hsk20-243",
+        "hsk20-276",
+        "hsk20-288"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-143",
-        "hsk20-156",
-        "hsk20-177"
+        "hsk20-033",
+        "hsk20-115",
+        "hsk20-116"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "从 A 到 B"
         ],
-        "anchorCanonicalID": "hsk20-033",
+        "anchorCanonicalID": "hsk20-119",
         "reviewable": true
       },
       "checkpoint": false
@@ -1881,46 +1733,40 @@
       "theme": "time",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-237",
-        "hsk20-242",
-        "hsk20-243",
-        "hsk20-256",
-        "hsk20-264",
-        "hsk20-288",
-        "hsk20-123",
-        "hsk20-124",
-        "hsk20-131",
-        "hsk20-133"
+        "hsk20-011",
+        "hsk20-108",
+        "hsk20-122",
+        "hsk20-133",
+        "hsk20-152",
+        "hsk20-238",
+        "hsk20-242"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-014",
-        "hsk20-025",
-        "hsk20-036"
+        "hsk20-243",
+        "hsk20-134",
+        "hsk20-136"
       ],
       "newCanonicalIDs": [
-        "hsk20-237",
-        "hsk20-242",
-        "hsk20-243",
-        "hsk20-256",
-        "hsk20-264",
-        "hsk20-288",
-        "hsk20-123",
-        "hsk20-124",
-        "hsk20-131",
-        "hsk20-133"
+        "hsk20-011",
+        "hsk20-108",
+        "hsk20-122",
+        "hsk20-133",
+        "hsk20-152",
+        "hsk20-238",
+        "hsk20-242"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-014",
-        "hsk20-025",
-        "hsk20-036"
+        "hsk20-243",
+        "hsk20-134",
+        "hsk20-136"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "先…然后…"
         ],
-        "anchorCanonicalID": "hsk20-237",
+        "anchorCanonicalID": "hsk20-011",
         "reviewable": true
       },
       "checkpoint": false
@@ -1932,46 +1778,40 @@
       "theme": "health",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-215",
-        "hsk20-221",
-        "hsk20-222",
-        "hsk20-134",
-        "hsk20-136",
-        "hsk20-142",
-        "hsk20-145",
-        "hsk20-150",
-        "hsk20-152",
-        "hsk20-153"
+        "hsk20-009",
+        "hsk20-063",
+        "hsk20-203",
+        "hsk20-204",
+        "hsk20-211",
+        "hsk20-270",
+        "hsk20-375"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-146",
-        "hsk20-165",
-        "hsk20-180"
+        "hsk20-134",
+        "hsk20-161",
+        "hsk20-177"
       ],
       "newCanonicalIDs": [
-        "hsk20-215",
-        "hsk20-221",
-        "hsk20-222",
-        "hsk20-134",
-        "hsk20-136",
-        "hsk20-142",
-        "hsk20-145",
-        "hsk20-150",
-        "hsk20-152",
-        "hsk20-153"
+        "hsk20-009",
+        "hsk20-063",
+        "hsk20-203",
+        "hsk20-204",
+        "hsk20-211",
+        "hsk20-270",
+        "hsk20-375"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-146",
-        "hsk20-165",
-        "hsk20-180"
+        "hsk20-134",
+        "hsk20-161",
+        "hsk20-177"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "一边…一边…"
         ],
-        "anchorCanonicalID": "hsk20-215",
+        "anchorCanonicalID": "hsk20-009",
         "reviewable": true
       },
       "checkpoint": false
@@ -1983,46 +1823,38 @@
       "theme": "leisure",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-149",
-        "hsk20-160",
-        "hsk20-167",
-        "hsk20-231",
-        "hsk20-250",
-        "hsk20-252",
-        "hsk20-255",
-        "hsk20-281",
-        "hsk20-286",
-        "hsk20-108"
+        "hsk20-025",
+        "hsk20-028",
+        "hsk20-034",
+        "hsk20-153",
+        "hsk20-299",
+        "hsk20-309"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-016",
-        "hsk20-027",
-        "hsk20-038"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-149",
-        "hsk20-160",
-        "hsk20-167",
-        "hsk20-231",
-        "hsk20-250",
-        "hsk20-252",
-        "hsk20-255",
         "hsk20-281",
         "hsk20-286",
-        "hsk20-108"
+        "hsk20-117"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-025",
+        "hsk20-028",
+        "hsk20-034",
+        "hsk20-153",
+        "hsk20-299",
+        "hsk20-309"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-016",
-        "hsk20-027",
-        "hsk20-038"
+        "hsk20-281",
+        "hsk20-286",
+        "hsk20-117"
       ],
-      "newCount": 10,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "把 + objet + verbe"
         ],
-        "anchorCanonicalID": "hsk20-149",
+        "anchorCanonicalID": "hsk20-025",
         "reviewable": true
       },
       "checkpoint": false
@@ -2036,38 +1868,32 @@
       "newVocabularyIDs": [
         "hsk20-154",
         "hsk20-158",
-        "hsk20-159",
-        "hsk20-161",
-        "hsk20-164",
-        "hsk20-166",
-        "hsk20-169",
-        "hsk20-172",
-        "hsk20-174",
-        "hsk20-175"
+        "hsk20-175",
+        "hsk20-181",
+        "hsk20-194",
+        "hsk20-217",
+        "hsk20-316"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-156",
-        "hsk20-171",
-        "hsk20-186"
+        "hsk20-159",
+        "hsk20-211",
+        "hsk20-238"
       ],
       "newCanonicalIDs": [
         "hsk20-154",
         "hsk20-158",
-        "hsk20-159",
-        "hsk20-161",
-        "hsk20-164",
-        "hsk20-166",
-        "hsk20-169",
-        "hsk20-172",
-        "hsk20-174",
-        "hsk20-175"
+        "hsk20-175",
+        "hsk20-181",
+        "hsk20-194",
+        "hsk20-217",
+        "hsk20-316"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-156",
-        "hsk20-171",
-        "hsk20-186"
+        "hsk20-159",
+        "hsk20-211",
+        "hsk20-238"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
@@ -2085,46 +1911,40 @@
       "theme": "daily-review",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-176",
+        "hsk20-162",
         "hsk20-178",
-        "hsk20-181",
-        "hsk20-183",
-        "hsk20-185",
         "hsk20-188",
-        "hsk20-190",
-        "hsk20-192",
         "hsk20-193",
-        "hsk20-194"
+        "hsk20-195",
+        "hsk20-216",
+        "hsk20-376"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-018",
-        "hsk20-029",
-        "hsk20-040"
+        "hsk20-194",
+        "hsk20-131",
+        "hsk20-136"
       ],
       "newCanonicalIDs": [
-        "hsk20-176",
+        "hsk20-162",
         "hsk20-178",
-        "hsk20-181",
-        "hsk20-183",
-        "hsk20-185",
         "hsk20-188",
-        "hsk20-190",
-        "hsk20-192",
         "hsk20-193",
-        "hsk20-194"
+        "hsk20-195",
+        "hsk20-216",
+        "hsk20-376"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-018",
-        "hsk20-029",
-        "hsk20-040"
+        "hsk20-194",
+        "hsk20-131",
+        "hsk20-136"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "虽然…但是…"
         ],
-        "anchorCanonicalID": "hsk20-176",
+        "anchorCanonicalID": "hsk20-162",
         "reviewable": true
       },
       "checkpoint": false
@@ -2136,46 +1956,40 @@
       "theme": "health",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-195",
-        "hsk20-196",
+        "hsk20-189",
+        "hsk20-199",
         "hsk20-202",
-        "hsk20-203",
-        "hsk20-204",
-        "hsk20-205",
-        "hsk20-206",
-        "hsk20-208",
-        "hsk20-210",
-        "hsk20-211"
+        "hsk20-223",
+        "hsk20-227",
+        "hsk20-254",
+        "hsk20-285"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-171",
-        "hsk20-178",
-        "hsk20-185"
+        "hsk20-196",
+        "hsk20-210",
+        "hsk20-205"
       ],
       "newCanonicalIDs": [
-        "hsk20-195",
-        "hsk20-196",
+        "hsk20-189",
+        "hsk20-199",
         "hsk20-202",
-        "hsk20-203",
-        "hsk20-204",
-        "hsk20-205",
-        "hsk20-206",
-        "hsk20-208",
-        "hsk20-210",
-        "hsk20-211"
+        "hsk20-223",
+        "hsk20-227",
+        "hsk20-254",
+        "hsk20-285"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-171",
-        "hsk20-178",
-        "hsk20-185"
+        "hsk20-196",
+        "hsk20-210",
+        "hsk20-205"
       ],
-      "newCount": 10,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "如果…就…"
         ],
-        "anchorCanonicalID": "hsk20-195",
+        "anchorCanonicalID": "hsk20-189",
         "reviewable": true
       },
       "checkpoint": false
@@ -2187,44 +2001,40 @@
       "theme": "shopping",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-056",
+        "hsk20-130",
+        "hsk20-132",
         "hsk20-157",
-        "hsk20-162",
+        "hsk20-179",
         "hsk20-187",
-        "hsk20-199",
-        "hsk20-220",
-        "hsk20-284",
-        "hsk20-291",
-        "hsk20-216",
-        "hsk20-217"
+        "hsk20-230"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-020",
-        "hsk20-031",
-        "hsk20-042"
+        "hsk20-162",
+        "hsk20-169",
+        "hsk20-193"
       ],
       "newCanonicalIDs": [
+        "hsk20-056",
+        "hsk20-130",
+        "hsk20-132",
         "hsk20-157",
-        "hsk20-162",
+        "hsk20-179",
         "hsk20-187",
-        "hsk20-199",
-        "hsk20-220",
-        "hsk20-284",
-        "hsk20-291",
-        "hsk20-216",
-        "hsk20-217"
+        "hsk20-230"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-020",
-        "hsk20-031",
-        "hsk20-042"
+        "hsk20-162",
+        "hsk20-169",
+        "hsk20-193"
       ],
-      "newCount": 9,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "越来越 + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-157",
+        "anchorCanonicalID": "hsk20-056",
         "reviewable": true
       },
       "checkpoint": false
@@ -2236,44 +2046,40 @@
       "theme": "travel",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-218",
-        "hsk20-223",
-        "hsk20-227",
-        "hsk20-230",
-        "hsk20-234",
-        "hsk20-235",
-        "hsk20-238",
+        "hsk20-078",
+        "hsk20-101",
+        "hsk20-236",
         "hsk20-244",
-        "hsk20-245"
+        "hsk20-265",
+        "hsk20-295",
+        "hsk20-300"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-183",
-        "hsk20-190",
-        "hsk20-197"
+        "hsk20-218",
+        "hsk20-230",
+        "hsk20-211"
       ],
       "newCanonicalIDs": [
-        "hsk20-218",
-        "hsk20-223",
-        "hsk20-227",
-        "hsk20-230",
-        "hsk20-234",
-        "hsk20-235",
-        "hsk20-238",
+        "hsk20-078",
+        "hsk20-101",
+        "hsk20-236",
         "hsk20-244",
-        "hsk20-245"
+        "hsk20-265",
+        "hsk20-295",
+        "hsk20-300"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-183",
-        "hsk20-190",
-        "hsk20-197"
+        "hsk20-218",
+        "hsk20-230",
+        "hsk20-211"
       ],
-      "newCount": 9,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "在 + lieu"
         ],
-        "anchorCanonicalID": "hsk20-218",
+        "anchorCanonicalID": "hsk20-078",
         "reviewable": true
       },
       "checkpoint": false
@@ -2285,44 +2091,38 @@
       "theme": "food",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-031",
         "hsk20-247",
-        "hsk20-253",
-        "hsk20-254",
-        "hsk20-258",
         "hsk20-261",
-        "hsk20-262",
-        "hsk20-263",
-        "hsk20-265",
-        "hsk20-266"
+        "hsk20-266",
+        "hsk20-277",
+        "hsk20-294"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-024",
-        "hsk20-035",
-        "hsk20-046"
+        "hsk20-244",
+        "hsk20-253",
+        "hsk20-254"
       ],
       "newCanonicalIDs": [
+        "hsk20-031",
         "hsk20-247",
-        "hsk20-253",
-        "hsk20-254",
-        "hsk20-258",
         "hsk20-261",
-        "hsk20-262",
-        "hsk20-263",
-        "hsk20-265",
-        "hsk20-266"
+        "hsk20-266",
+        "hsk20-277",
+        "hsk20-294"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-024",
-        "hsk20-035",
-        "hsk20-046"
+        "hsk20-244",
+        "hsk20-253",
+        "hsk20-254"
       ],
-      "newCount": 9,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "也 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-247",
+        "anchorCanonicalID": "hsk20-031",
         "reviewable": true
       },
       "checkpoint": false
@@ -2334,44 +2134,40 @@
       "theme": "shopping",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-002",
+        "hsk20-047",
+        "hsk20-099",
+        "hsk20-148",
         "hsk20-268",
-        "hsk20-270",
-        "hsk20-271",
-        "hsk20-276",
-        "hsk20-277",
-        "hsk20-282",
-        "hsk20-285",
-        "hsk20-287",
-        "hsk20-292"
+        "hsk20-269",
+        "hsk20-321"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-197",
-        "hsk20-204",
-        "hsk20-211"
+        "hsk20-270",
+        "hsk20-277",
+        "hsk20-169"
       ],
       "newCanonicalIDs": [
+        "hsk20-002",
+        "hsk20-047",
+        "hsk20-099",
+        "hsk20-148",
         "hsk20-268",
-        "hsk20-270",
-        "hsk20-271",
-        "hsk20-276",
-        "hsk20-277",
-        "hsk20-282",
-        "hsk20-285",
-        "hsk20-287",
-        "hsk20-292"
+        "hsk20-269",
+        "hsk20-321"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-197",
-        "hsk20-204",
-        "hsk20-211"
+        "hsk20-270",
+        "hsk20-277",
+        "hsk20-169"
       ],
-      "newCount": 9,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "有 + nom"
         ],
-        "anchorCanonicalID": "hsk20-268",
+        "anchorCanonicalID": "hsk20-002",
         "reviewable": true
       },
       "checkpoint": false
@@ -2383,44 +2179,40 @@
       "theme": "city",
       "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-236",
-        "hsk20-249",
-        "hsk20-269",
-        "hsk20-279",
+        "hsk20-012",
         "hsk20-280",
-        "hsk20-294",
-        "hsk20-295",
-        "hsk20-299",
-        "hsk20-300"
+        "hsk20-326",
+        "hsk20-329",
+        "hsk20-337",
+        "hsk20-436",
+        "hsk20-515"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-028",
-        "hsk20-039",
-        "hsk20-050"
+        "hsk20-236",
+        "hsk20-295",
+        "hsk20-298"
       ],
       "newCanonicalIDs": [
-        "hsk20-236",
-        "hsk20-249",
-        "hsk20-269",
-        "hsk20-279",
+        "hsk20-012",
         "hsk20-280",
-        "hsk20-294",
-        "hsk20-295",
-        "hsk20-299",
-        "hsk20-300"
+        "hsk20-326",
+        "hsk20-329",
+        "hsk20-337",
+        "hsk20-436",
+        "hsk20-515"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-028",
-        "hsk20-039",
-        "hsk20-050"
+        "hsk20-236",
+        "hsk20-295",
+        "hsk20-298"
       ],
-      "newCount": 9,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "这/那 + nom"
         ],
-        "anchorCanonicalID": "hsk20-236",
+        "anchorCanonicalID": "hsk20-012",
         "reviewable": true
       },
       "checkpoint": false
@@ -2434,28 +2226,28 @@
       "newVocabularyIDs": [],
       "reusedVocabularyIDs": [
         "hsk20-211",
-        "hsk20-218",
         "hsk20-225",
-        "hsk20-232",
-        "hsk20-239",
-        "hsk20-246",
-        "hsk20-253",
-        "hsk20-260",
-        "hsk20-267",
-        "hsk20-274"
+        "hsk20-274",
+        "hsk20-376",
+        "hsk20-169",
+        "hsk20-175",
+        "hsk20-248",
+        "hsk20-257",
+        "hsk20-279",
+        "hsk20-011"
       ],
       "newCanonicalIDs": [],
       "reusedCanonicalIDs": [
         "hsk20-211",
-        "hsk20-218",
         "hsk20-225",
-        "hsk20-232",
-        "hsk20-239",
-        "hsk20-246",
-        "hsk20-253",
-        "hsk20-260",
-        "hsk20-267",
-        "hsk20-274"
+        "hsk20-274",
+        "hsk20-376",
+        "hsk20-169",
+        "hsk20-175",
+        "hsk20-248",
+        "hsk20-257",
+        "hsk20-279",
+        "hsk20-011"
       ],
       "newCount": 0,
       "reusedCount": 10,
@@ -2473,40 +2265,42 @@
       "lessonID": "lesson-35",
       "moduleID": "unit-04",
       "theme": "home",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-313",
-        "hsk20-326",
-        "hsk20-341",
-        "hsk20-347",
-        "hsk20-351",
-        "hsk20-357"
+        "hsk20-040",
+        "hsk20-082",
+        "hsk20-092",
+        "hsk20-219",
+        "hsk20-232",
+        "hsk20-289",
+        "hsk20-296"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-041",
-        "hsk20-052",
-        "hsk20-063"
+        "hsk20-326",
+        "hsk20-036",
+        "hsk20-038"
       ],
       "newCanonicalIDs": [
-        "hsk20-313",
-        "hsk20-326",
-        "hsk20-341",
-        "hsk20-347",
-        "hsk20-351",
-        "hsk20-357"
+        "hsk20-040",
+        "hsk20-082",
+        "hsk20-092",
+        "hsk20-219",
+        "hsk20-232",
+        "hsk20-289",
+        "hsk20-296"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-041",
-        "hsk20-052",
-        "hsk20-063"
+        "hsk20-326",
+        "hsk20-036",
+        "hsk20-038"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "想/要 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-313",
+        "anchorCanonicalID": "hsk20-040",
         "reviewable": true
       },
       "checkpoint": false
@@ -2516,40 +2310,42 @@
       "lessonID": "lesson-36",
       "moduleID": "unit-04",
       "theme": "community",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-301",
+        "hsk20-064",
+        "hsk20-067",
+        "hsk20-209",
+        "hsk20-343",
+        "hsk20-369",
         "hsk20-426",
-        "hsk20-441",
-        "hsk20-456",
-        "hsk20-468",
-        "hsk20-503"
+        "hsk20-570"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-225",
-        "hsk20-232",
-        "hsk20-239"
+        "hsk20-039",
+        "hsk20-042",
+        "hsk20-047"
       ],
       "newCanonicalIDs": [
-        "hsk20-301",
+        "hsk20-064",
+        "hsk20-067",
+        "hsk20-209",
+        "hsk20-343",
+        "hsk20-369",
         "hsk20-426",
-        "hsk20-441",
-        "hsk20-456",
-        "hsk20-468",
-        "hsk20-503"
+        "hsk20-570"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-225",
-        "hsk20-232",
-        "hsk20-239"
+        "hsk20-039",
+        "hsk20-042",
+        "hsk20-047"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "会/能 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-301",
+        "anchorCanonicalID": "hsk20-064",
         "reviewable": true
       },
       "checkpoint": false
@@ -2559,32 +2355,32 @@
       "lessonID": "lesson-37",
       "moduleID": "unit-04",
       "theme": "health",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-317",
-        "hsk20-368",
-        "hsk20-369",
-        "hsk20-379",
-        "hsk20-417",
-        "hsk20-420"
+        "hsk20-003",
+        "hsk20-049",
+        "hsk20-085",
+        "hsk20-155",
+        "hsk20-164",
+        "hsk20-396"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-051",
-        "hsk20-062",
-        "hsk20-073"
+        "hsk20-369",
+        "hsk20-036",
+        "hsk20-038"
       ],
       "newCanonicalIDs": [
-        "hsk20-317",
-        "hsk20-368",
-        "hsk20-369",
-        "hsk20-379",
-        "hsk20-417",
-        "hsk20-420"
+        "hsk20-003",
+        "hsk20-049",
+        "hsk20-085",
+        "hsk20-155",
+        "hsk20-164",
+        "hsk20-396"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-051",
-        "hsk20-062",
-        "hsk20-073"
+        "hsk20-369",
+        "hsk20-036",
+        "hsk20-038"
       ],
       "newCount": 6,
       "reusedCount": 3,
@@ -2592,7 +2388,7 @@
         "patterns": [
           "正在 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-317",
+        "anchorCanonicalID": "hsk20-003",
         "reviewable": true
       },
       "checkpoint": false
@@ -2602,40 +2398,42 @@
       "lessonID": "lesson-38",
       "moduleID": "unit-04",
       "theme": "study",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-307",
-        "hsk20-320",
-        "hsk20-343",
-        "hsk20-376",
-        "hsk20-414",
-        "hsk20-436"
+        "hsk20-014",
+        "hsk20-029",
+        "hsk20-100",
+        "hsk20-251",
+        "hsk20-260",
+        "hsk20-310",
+        "hsk20-532"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-239",
-        "hsk20-246",
-        "hsk20-253"
+        "hsk20-343",
+        "hsk20-436",
+        "hsk20-027"
       ],
       "newCanonicalIDs": [
-        "hsk20-307",
-        "hsk20-320",
-        "hsk20-343",
-        "hsk20-376",
-        "hsk20-414",
-        "hsk20-436"
+        "hsk20-014",
+        "hsk20-029",
+        "hsk20-100",
+        "hsk20-251",
+        "hsk20-260",
+        "hsk20-310",
+        "hsk20-532"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-239",
-        "hsk20-246",
-        "hsk20-253"
+        "hsk20-343",
+        "hsk20-436",
+        "hsk20-027"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 了"
         ],
-        "anchorCanonicalID": "hsk20-307",
+        "anchorCanonicalID": "hsk20-014",
         "reviewable": true
       },
       "checkpoint": false
@@ -2645,40 +2443,42 @@
       "lessonID": "lesson-39",
       "moduleID": "unit-04",
       "theme": "work",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-310",
+        "hsk20-030",
+        "hsk20-050",
+        "hsk20-052",
+        "hsk20-147",
+        "hsk20-397",
         "hsk20-407",
-        "hsk20-432",
-        "hsk20-475",
-        "hsk20-305",
-        "hsk20-311"
+        "hsk20-551"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-061",
-        "hsk20-072",
-        "hsk20-083"
+        "hsk20-310",
+        "hsk20-015",
+        "hsk20-016"
       ],
       "newCanonicalIDs": [
-        "hsk20-310",
+        "hsk20-030",
+        "hsk20-050",
+        "hsk20-052",
+        "hsk20-147",
+        "hsk20-397",
         "hsk20-407",
-        "hsk20-432",
-        "hsk20-475",
-        "hsk20-305",
-        "hsk20-311"
+        "hsk20-551"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-061",
-        "hsk20-072",
-        "hsk20-083"
+        "hsk20-310",
+        "hsk20-015",
+        "hsk20-016"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 过"
         ],
-        "anchorCanonicalID": "hsk20-310",
+        "anchorCanonicalID": "hsk20-030",
         "reviewable": true
       },
       "checkpoint": false
@@ -2688,40 +2488,42 @@
       "lessonID": "lesson-40",
       "moduleID": "unit-04",
       "theme": "communication",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-302",
-        "hsk20-306",
-        "hsk20-309",
-        "hsk20-316",
-        "hsk20-318",
-        "hsk20-353"
+        "hsk20-114",
+        "hsk20-163",
+        "hsk20-172",
+        "hsk20-213",
+        "hsk20-249",
+        "hsk20-291",
+        "hsk20-356"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-253",
-        "hsk20-260",
-        "hsk20-267"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-302",
-        "hsk20-306",
         "hsk20-309",
         "hsk20-316",
-        "hsk20-318",
-        "hsk20-353"
+        "hsk20-050"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-114",
+        "hsk20-163",
+        "hsk20-172",
+        "hsk20-213",
+        "hsk20-249",
+        "hsk20-291",
+        "hsk20-356"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-253",
-        "hsk20-260",
-        "hsk20-267"
+        "hsk20-309",
+        "hsk20-316",
+        "hsk20-050"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "A 比 B + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-302",
+        "anchorCanonicalID": "hsk20-114",
         "reviewable": true
       },
       "checkpoint": false
@@ -2731,40 +2533,42 @@
       "lessonID": "lesson-41",
       "moduleID": "unit-05",
       "theme": "city",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-325",
-        "hsk20-355",
-        "hsk20-356",
-        "hsk20-397",
-        "hsk20-423",
-        "hsk20-510"
+        "hsk20-006",
+        "hsk20-267",
+        "hsk20-273",
+        "hsk20-314",
+        "hsk20-388",
+        "hsk20-524",
+        "hsk20-562"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-071",
-        "hsk20-082",
-        "hsk20-093"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-325",
-        "hsk20-355",
         "hsk20-356",
         "hsk20-397",
-        "hsk20-423",
-        "hsk20-510"
+        "hsk20-106"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-006",
+        "hsk20-267",
+        "hsk20-273",
+        "hsk20-314",
+        "hsk20-388",
+        "hsk20-524",
+        "hsk20-562"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-071",
-        "hsk20-082",
-        "hsk20-093"
+        "hsk20-356",
+        "hsk20-397",
+        "hsk20-106"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "因为…所以…"
         ],
-        "anchorCanonicalID": "hsk20-325",
+        "anchorCanonicalID": "hsk20-006",
         "reviewable": true
       },
       "checkpoint": false
@@ -2774,32 +2578,32 @@
       "lessonID": "lesson-42",
       "moduleID": "unit-05",
       "theme": "travel",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-551",
-        "hsk20-380",
-        "hsk20-403",
-        "hsk20-440",
-        "hsk20-471",
-        "hsk20-562"
+        "hsk20-023",
+        "hsk20-076",
+        "hsk20-088",
+        "hsk20-184",
+        "hsk20-246",
+        "hsk20-452"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-267",
-        "hsk20-274",
-        "hsk20-281"
+        "hsk20-551",
+        "hsk20-562",
+        "hsk20-015"
       ],
       "newCanonicalIDs": [
-        "hsk20-551",
-        "hsk20-380",
-        "hsk20-403",
-        "hsk20-440",
-        "hsk20-471",
-        "hsk20-562"
+        "hsk20-023",
+        "hsk20-076",
+        "hsk20-088",
+        "hsk20-184",
+        "hsk20-246",
+        "hsk20-452"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-267",
-        "hsk20-274",
-        "hsk20-281"
+        "hsk20-551",
+        "hsk20-562",
+        "hsk20-015"
       ],
       "newCount": 6,
       "reusedCount": 3,
@@ -2807,7 +2611,7 @@
         "patterns": [
           "从 A 到 B"
         ],
-        "anchorCanonicalID": "hsk20-551",
+        "anchorCanonicalID": "hsk20-023",
         "reviewable": true
       },
       "checkpoint": false
@@ -2817,40 +2621,42 @@
       "lessonID": "lesson-43",
       "moduleID": "unit-05",
       "theme": "shopping",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
+        "hsk20-013",
+        "hsk20-105",
+        "hsk20-186",
+        "hsk20-237",
         "hsk20-328",
-        "hsk20-334",
-        "hsk20-335",
-        "hsk20-422",
-        "hsk20-445",
+        "hsk20-338",
         "hsk20-450"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-081",
-        "hsk20-092",
-        "hsk20-103"
+        "hsk20-071",
+        "hsk20-077",
+        "hsk20-082"
       ],
       "newCanonicalIDs": [
+        "hsk20-013",
+        "hsk20-105",
+        "hsk20-186",
+        "hsk20-237",
         "hsk20-328",
-        "hsk20-334",
-        "hsk20-335",
-        "hsk20-422",
-        "hsk20-445",
+        "hsk20-338",
         "hsk20-450"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-081",
-        "hsk20-092",
-        "hsk20-103"
+        "hsk20-071",
+        "hsk20-077",
+        "hsk20-082"
       ],
-      "newCount": 6,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "先…然后…"
         ],
-        "anchorCanonicalID": "hsk20-328",
+        "anchorCanonicalID": "hsk20-013",
         "reviewable": true
       },
       "checkpoint": false
@@ -2860,38 +2666,42 @@
       "lessonID": "lesson-44",
       "moduleID": "unit-05",
       "theme": "home",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-396",
-        "hsk20-457",
-        "hsk20-504",
-        "hsk20-555",
-        "hsk20-583"
+        "hsk20-060",
+        "hsk20-075",
+        "hsk20-079",
+        "hsk20-167",
+        "hsk20-171",
+        "hsk20-222",
+        "hsk20-231"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-281",
-        "hsk20-288",
-        "hsk20-295"
+        "hsk20-396",
+        "hsk20-504",
+        "hsk20-125"
       ],
       "newCanonicalIDs": [
-        "hsk20-396",
-        "hsk20-457",
-        "hsk20-504",
-        "hsk20-555",
-        "hsk20-583"
+        "hsk20-060",
+        "hsk20-075",
+        "hsk20-079",
+        "hsk20-167",
+        "hsk20-171",
+        "hsk20-222",
+        "hsk20-231"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-281",
-        "hsk20-288",
-        "hsk20-295"
+        "hsk20-396",
+        "hsk20-504",
+        "hsk20-125"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "一边…一边…"
         ],
-        "anchorCanonicalID": "hsk20-396",
+        "anchorCanonicalID": "hsk20-060",
         "reviewable": true
       },
       "checkpoint": false
@@ -2901,38 +2711,42 @@
       "lessonID": "lesson-45",
       "moduleID": "unit-05",
       "theme": "routine",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-312",
-        "hsk20-314",
-        "hsk20-315",
-        "hsk20-319",
-        "hsk20-321"
+        "hsk20-087",
+        "hsk20-135",
+        "hsk20-137",
+        "hsk20-166",
+        "hsk20-198",
+        "hsk20-250",
+        "hsk20-252"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-092",
-        "hsk20-103",
-        "hsk20-114"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-312",
+        "hsk20-011",
         "hsk20-314",
-        "hsk20-315",
-        "hsk20-319",
         "hsk20-321"
       ],
-      "reusedCanonicalIDs": [
-        "hsk20-092",
-        "hsk20-103",
-        "hsk20-114"
+      "newCanonicalIDs": [
+        "hsk20-087",
+        "hsk20-135",
+        "hsk20-137",
+        "hsk20-166",
+        "hsk20-198",
+        "hsk20-250",
+        "hsk20-252"
       ],
-      "newCount": 5,
+      "reusedCanonicalIDs": [
+        "hsk20-011",
+        "hsk20-314",
+        "hsk20-321"
+      ],
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "把 + objet + verbe"
         ],
-        "anchorCanonicalID": "hsk20-312",
+        "anchorCanonicalID": "hsk20-087",
         "reviewable": true
       },
       "checkpoint": false
@@ -2942,38 +2756,42 @@
       "lessonID": "lesson-46",
       "moduleID": "unit-05",
       "theme": "community",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-520",
-        "hsk20-532",
-        "hsk20-557",
-        "hsk20-584",
-        "hsk20-322"
+        "hsk20-018",
+        "hsk20-144",
+        "hsk20-173",
+        "hsk20-185",
+        "hsk20-190",
+        "hsk20-191",
+        "hsk20-192"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-295",
-        "hsk20-302",
-        "hsk20-312"
+        "hsk20-532",
+        "hsk20-071",
+        "hsk20-074"
       ],
       "newCanonicalIDs": [
-        "hsk20-520",
-        "hsk20-532",
-        "hsk20-557",
-        "hsk20-584",
-        "hsk20-322"
+        "hsk20-018",
+        "hsk20-144",
+        "hsk20-173",
+        "hsk20-185",
+        "hsk20-190",
+        "hsk20-191",
+        "hsk20-192"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-295",
-        "hsk20-302",
-        "hsk20-312"
+        "hsk20-532",
+        "hsk20-071",
+        "hsk20-074"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "被 + agent"
         ],
-        "anchorCanonicalID": "hsk20-520",
+        "anchorCanonicalID": "hsk20-018",
         "reviewable": true
       },
       "checkpoint": false
@@ -2983,38 +2801,40 @@
       "lessonID": "lesson-47",
       "moduleID": "unit-05",
       "theme": "study",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-506",
-        "hsk20-524",
-        "hsk20-545",
-        "hsk20-560",
-        "hsk20-570"
+        "hsk20-020",
+        "hsk20-104",
+        "hsk20-182",
+        "hsk20-283",
+        "hsk20-284",
+        "hsk20-297"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-104",
-        "hsk20-115",
-        "hsk20-126"
+        "hsk20-524",
+        "hsk20-570",
+        "hsk20-168"
       ],
       "newCanonicalIDs": [
-        "hsk20-506",
-        "hsk20-524",
-        "hsk20-545",
-        "hsk20-560",
-        "hsk20-570"
+        "hsk20-020",
+        "hsk20-104",
+        "hsk20-182",
+        "hsk20-283",
+        "hsk20-284",
+        "hsk20-297"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-104",
-        "hsk20-115",
-        "hsk20-126"
+        "hsk20-524",
+        "hsk20-570",
+        "hsk20-168"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "虽然…但是…"
         ],
-        "anchorCanonicalID": "hsk20-506",
+        "anchorCanonicalID": "hsk20-020",
         "reviewable": true
       },
       "checkpoint": false
@@ -3024,38 +2844,42 @@
       "lessonID": "lesson-48",
       "moduleID": "unit-05",
       "theme": "work",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-324",
-        "hsk20-327",
-        "hsk20-329",
-        "hsk20-331",
+        "hsk20-127",
+        "hsk20-201",
+        "hsk20-207",
+        "hsk20-212",
+        "hsk20-262",
+        "hsk20-290",
         "hsk20-336"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-312",
-        "hsk20-319",
-        "hsk20-334"
+        "hsk20-329",
+        "hsk20-062",
+        "hsk20-065"
       ],
       "newCanonicalIDs": [
-        "hsk20-324",
-        "hsk20-327",
-        "hsk20-329",
-        "hsk20-331",
+        "hsk20-127",
+        "hsk20-201",
+        "hsk20-207",
+        "hsk20-212",
+        "hsk20-262",
+        "hsk20-290",
         "hsk20-336"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-312",
-        "hsk20-319",
-        "hsk20-334"
+        "hsk20-329",
+        "hsk20-062",
+        "hsk20-065"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "如果…就…"
         ],
-        "anchorCanonicalID": "hsk20-324",
+        "anchorCanonicalID": "hsk20-127",
         "reviewable": true
       },
       "checkpoint": false
@@ -3065,38 +2889,42 @@
       "lessonID": "lesson-49",
       "moduleID": "unit-05",
       "theme": "communication",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-388",
-        "hsk20-443",
-        "hsk20-454",
-        "hsk20-501",
-        "hsk20-519"
+        "hsk20-001",
+        "hsk20-026",
+        "hsk20-226",
+        "hsk20-229",
+        "hsk20-271",
+        "hsk20-282",
+        "hsk20-292"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-116",
-        "hsk20-127",
-        "hsk20-138"
+        "hsk20-388",
+        "hsk20-074",
+        "hsk20-083"
       ],
       "newCanonicalIDs": [
-        "hsk20-388",
-        "hsk20-443",
-        "hsk20-454",
-        "hsk20-501",
-        "hsk20-519"
+        "hsk20-001",
+        "hsk20-026",
+        "hsk20-226",
+        "hsk20-229",
+        "hsk20-271",
+        "hsk20-282",
+        "hsk20-292"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-116",
-        "hsk20-127",
-        "hsk20-138"
+        "hsk20-388",
+        "hsk20-074",
+        "hsk20-083"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "越来越 + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-388",
+        "anchorCanonicalID": "hsk20-001",
         "reviewable": true
       },
       "checkpoint": false
@@ -3106,38 +2934,42 @@
       "lessonID": "lesson-50",
       "moduleID": "unit-05",
       "theme": "health",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-452",
-        "hsk20-507",
-        "hsk20-515",
-        "hsk20-522",
-        "hsk20-525"
+        "hsk20-004",
+        "hsk20-005",
+        "hsk20-093",
+        "hsk20-160",
+        "hsk20-176",
+        "hsk20-255",
+        "hsk20-303"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-327",
-        "hsk20-341",
-        "hsk20-357"
+        "hsk20-452",
+        "hsk20-515",
+        "hsk20-015"
       ],
       "newCanonicalIDs": [
-        "hsk20-452",
-        "hsk20-507",
-        "hsk20-515",
-        "hsk20-522",
-        "hsk20-525"
+        "hsk20-004",
+        "hsk20-005",
+        "hsk20-093",
+        "hsk20-160",
+        "hsk20-176",
+        "hsk20-255",
+        "hsk20-303"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-327",
-        "hsk20-341",
-        "hsk20-357"
+        "hsk20-452",
+        "hsk20-515",
+        "hsk20-015"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "在 + lieu"
         ],
-        "anchorCanonicalID": "hsk20-452",
+        "anchorCanonicalID": "hsk20-004",
         "reviewable": true
       },
       "checkpoint": false
@@ -3147,38 +2979,42 @@
       "lessonID": "lesson-51",
       "moduleID": "unit-05",
       "theme": "city",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-303",
-        "hsk20-332",
-        "hsk20-333",
-        "hsk20-344",
-        "hsk20-377"
+        "hsk20-059",
+        "hsk20-080",
+        "hsk20-123",
+        "hsk20-124",
+        "hsk20-180",
+        "hsk20-214",
+        "hsk20-221"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-128",
-        "hsk20-139",
-        "hsk20-150"
+        "hsk20-303",
+        "hsk20-316",
+        "hsk20-015"
       ],
       "newCanonicalIDs": [
-        "hsk20-303",
-        "hsk20-332",
-        "hsk20-333",
-        "hsk20-344",
-        "hsk20-377"
+        "hsk20-059",
+        "hsk20-080",
+        "hsk20-123",
+        "hsk20-124",
+        "hsk20-180",
+        "hsk20-214",
+        "hsk20-221"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-128",
-        "hsk20-139",
-        "hsk20-150"
+        "hsk20-303",
+        "hsk20-316",
+        "hsk20-015"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "也 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-303",
+        "anchorCanonicalID": "hsk20-059",
         "reviewable": true
       },
       "checkpoint": false
@@ -3188,38 +3024,42 @@
       "lessonID": "lesson-52",
       "moduleID": "unit-05",
       "theme": "community",
-      "phase": "classic-301-600",
+      "phase": "classic-1-300",
       "newVocabularyIDs": [
-        "hsk20-337",
-        "hsk20-338",
-        "hsk20-339",
-        "hsk20-340",
-        "hsk20-345"
+        "hsk20-220",
+        "hsk20-233",
+        "hsk20-234",
+        "hsk20-235",
+        "hsk20-245",
+        "hsk20-263",
+        "hsk20-272"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-351",
-        "hsk20-376",
-        "hsk20-403"
-      ],
-      "newCanonicalIDs": [
         "hsk20-337",
         "hsk20-338",
-        "hsk20-339",
-        "hsk20-340",
-        "hsk20-345"
+        "hsk20-113"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-220",
+        "hsk20-233",
+        "hsk20-234",
+        "hsk20-235",
+        "hsk20-245",
+        "hsk20-263",
+        "hsk20-272"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-351",
-        "hsk20-376",
-        "hsk20-403"
+        "hsk20-337",
+        "hsk20-338",
+        "hsk20-113"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "有 + nom"
         ],
-        "anchorCanonicalID": "hsk20-337",
+        "anchorCanonicalID": "hsk20-220",
         "reviewable": true
       },
       "checkpoint": false
@@ -3232,29 +3072,31 @@
       "phase": "classic-301-600",
       "newVocabularyIDs": [
         "hsk20-346",
-        "hsk20-348",
-        "hsk20-350",
-        "hsk20-352",
-        "hsk20-354"
+        "hsk20-371",
+        "hsk20-511",
+        "hsk20-572",
+        "hsk20-595",
+        "hsk20-600"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-140",
-        "hsk20-151",
-        "hsk20-162"
+        "hsk20-407",
+        "hsk20-007",
+        "hsk20-016"
       ],
       "newCanonicalIDs": [
         "hsk20-346",
-        "hsk20-348",
-        "hsk20-350",
-        "hsk20-352",
-        "hsk20-354"
+        "hsk20-371",
+        "hsk20-511",
+        "hsk20-572",
+        "hsk20-595",
+        "hsk20-600"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-140",
-        "hsk20-151",
-        "hsk20-162"
+        "hsk20-407",
+        "hsk20-007",
+        "hsk20-016"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
@@ -3272,36 +3114,40 @@
       "theme": "study",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-595",
-        "hsk20-599",
-        "hsk20-533",
-        "hsk20-571",
+        "hsk20-306",
+        "hsk20-318",
+        "hsk20-370",
+        "hsk20-402",
+        "hsk20-559",
+        "hsk20-565",
         "hsk20-585"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-357",
-        "hsk20-388",
-        "hsk20-420"
+        "hsk20-595",
+        "hsk20-062",
+        "hsk20-074"
       ],
       "newCanonicalIDs": [
-        "hsk20-595",
-        "hsk20-599",
-        "hsk20-533",
-        "hsk20-571",
+        "hsk20-306",
+        "hsk20-318",
+        "hsk20-370",
+        "hsk20-402",
+        "hsk20-559",
+        "hsk20-565",
         "hsk20-585"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-357",
-        "hsk20-388",
-        "hsk20-420"
+        "hsk20-595",
+        "hsk20-062",
+        "hsk20-074"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "几 + classificateur"
         ],
-        "anchorCanonicalID": "hsk20-595",
+        "anchorCanonicalID": "hsk20-306",
         "reviewable": true
       },
       "checkpoint": false
@@ -3313,36 +3159,40 @@
       "theme": "routine",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-351",
+        "hsk20-353",
         "hsk20-358",
-        "hsk20-359",
-        "hsk20-362",
-        "hsk20-363",
-        "hsk20-364"
+        "hsk20-519",
+        "hsk20-540",
+        "hsk20-566",
+        "hsk20-568"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-152",
-        "hsk20-163",
-        "hsk20-174"
+        "hsk20-062",
+        "hsk20-074",
+        "hsk20-097"
       ],
       "newCanonicalIDs": [
+        "hsk20-351",
+        "hsk20-353",
         "hsk20-358",
-        "hsk20-359",
-        "hsk20-362",
-        "hsk20-363",
-        "hsk20-364"
+        "hsk20-519",
+        "hsk20-540",
+        "hsk20-566",
+        "hsk20-568"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-152",
-        "hsk20-163",
-        "hsk20-174"
+        "hsk20-062",
+        "hsk20-074",
+        "hsk20-097"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "想/要 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-358",
+        "anchorCanonicalID": "hsk20-351",
         "reviewable": true
       },
       "checkpoint": false
@@ -3354,36 +3204,38 @@
       "theme": "communication",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-600",
-        "hsk20-365",
-        "hsk20-366",
-        "hsk20-367",
-        "hsk20-370"
+        "hsk20-372",
+        "hsk20-383",
+        "hsk20-394",
+        "hsk20-461",
+        "hsk20-539",
+        "hsk20-579"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-397",
-        "hsk20-423",
-        "hsk20-445"
+        "hsk20-600",
+        "hsk20-436",
+        "hsk20-565"
       ],
       "newCanonicalIDs": [
-        "hsk20-600",
-        "hsk20-365",
-        "hsk20-366",
-        "hsk20-367",
-        "hsk20-370"
+        "hsk20-372",
+        "hsk20-383",
+        "hsk20-394",
+        "hsk20-461",
+        "hsk20-539",
+        "hsk20-579"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-397",
-        "hsk20-423",
-        "hsk20-445"
+        "hsk20-600",
+        "hsk20-436",
+        "hsk20-565"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "会/能 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-600",
+        "anchorCanonicalID": "hsk20-372",
         "reviewable": true
       },
       "checkpoint": false
@@ -3395,36 +3247,40 @@
       "theme": "work",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-371",
-        "hsk20-372",
-        "hsk20-373",
-        "hsk20-374",
-        "hsk20-375"
+        "hsk20-385",
+        "hsk20-418",
+        "hsk20-448",
+        "hsk20-456",
+        "hsk20-462",
+        "hsk20-520",
+        "hsk20-590"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-164",
-        "hsk20-175",
-        "hsk20-186"
+        "hsk20-371",
+        "hsk20-057",
+        "hsk20-062"
       ],
       "newCanonicalIDs": [
-        "hsk20-371",
-        "hsk20-372",
-        "hsk20-373",
-        "hsk20-374",
-        "hsk20-375"
+        "hsk20-385",
+        "hsk20-418",
+        "hsk20-448",
+        "hsk20-456",
+        "hsk20-462",
+        "hsk20-520",
+        "hsk20-590"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-164",
-        "hsk20-175",
-        "hsk20-186"
+        "hsk20-371",
+        "hsk20-057",
+        "hsk20-062"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "正在 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-371",
+        "anchorCanonicalID": "hsk20-385",
         "reviewable": true
       },
       "checkpoint": false
@@ -3436,36 +3292,40 @@
       "theme": "health",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-540",
-        "hsk20-544",
         "hsk20-349",
+        "hsk20-382",
+        "hsk20-389",
+        "hsk20-391",
         "hsk20-392",
-        "hsk20-446"
+        "hsk20-455",
+        "hsk20-495"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-420",
-        "hsk20-441",
-        "hsk20-457"
+        "hsk20-540",
+        "hsk20-038",
+        "hsk20-039"
       ],
       "newCanonicalIDs": [
-        "hsk20-540",
-        "hsk20-544",
         "hsk20-349",
+        "hsk20-382",
+        "hsk20-389",
+        "hsk20-391",
         "hsk20-392",
-        "hsk20-446"
+        "hsk20-455",
+        "hsk20-495"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-420",
-        "hsk20-441",
-        "hsk20-457"
+        "hsk20-540",
+        "hsk20-038",
+        "hsk20-039"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 了"
         ],
-        "anchorCanonicalID": "hsk20-540",
+        "anchorCanonicalID": "hsk20-349",
         "reviewable": true
       },
       "checkpoint": false
@@ -3477,36 +3337,38 @@
       "theme": "city",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-394",
+        "hsk20-330",
+        "hsk20-360",
+        "hsk20-400",
         "hsk20-401",
-        "hsk20-415",
-        "hsk20-434",
-        "hsk20-448"
+        "hsk20-458",
+        "hsk20-535"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-176",
-        "hsk20-187",
-        "hsk20-198"
+        "hsk20-394",
+        "hsk20-511",
+        "hsk20-519"
       ],
       "newCanonicalIDs": [
-        "hsk20-394",
+        "hsk20-330",
+        "hsk20-360",
+        "hsk20-400",
         "hsk20-401",
-        "hsk20-415",
-        "hsk20-434",
-        "hsk20-448"
+        "hsk20-458",
+        "hsk20-535"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-176",
-        "hsk20-187",
-        "hsk20-198"
+        "hsk20-394",
+        "hsk20-511",
+        "hsk20-519"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 过"
         ],
-        "anchorCanonicalID": "hsk20-394",
+        "anchorCanonicalID": "hsk20-330",
         "reviewable": true
       },
       "checkpoint": false
@@ -3518,36 +3380,40 @@
       "theme": "travel",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-564",
-        "hsk20-565",
-        "hsk20-566",
-        "hsk20-590",
-        "hsk20-597"
+        "hsk20-398",
+        "hsk20-399",
+        "hsk20-405",
+        "hsk20-406",
+        "hsk20-413",
+        "hsk20-433",
+        "hsk20-564"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-443",
-        "hsk20-456",
-        "hsk20-503"
+        "hsk20-535",
+        "hsk20-565",
+        "hsk20-566"
       ],
       "newCanonicalIDs": [
-        "hsk20-564",
-        "hsk20-565",
-        "hsk20-566",
-        "hsk20-590",
-        "hsk20-597"
+        "hsk20-398",
+        "hsk20-399",
+        "hsk20-405",
+        "hsk20-406",
+        "hsk20-413",
+        "hsk20-433",
+        "hsk20-564"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-443",
-        "hsk20-456",
-        "hsk20-503"
+        "hsk20-535",
+        "hsk20-565",
+        "hsk20-566"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "A 比 B + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-564",
+        "anchorCanonicalID": "hsk20-398",
         "reviewable": true
       },
       "checkpoint": false
@@ -3559,36 +3425,40 @@
       "theme": "shopping",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-462",
+        "hsk20-393",
+        "hsk20-466",
+        "hsk20-478",
         "hsk20-489",
         "hsk20-498",
-        "hsk20-546",
-        "hsk20-464"
+        "hsk20-508",
+        "hsk20-587"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-188",
-        "hsk20-199",
-        "hsk20-210"
+        "hsk20-462",
+        "hsk20-113",
+        "hsk20-115"
       ],
       "newCanonicalIDs": [
-        "hsk20-462",
+        "hsk20-393",
+        "hsk20-466",
+        "hsk20-478",
         "hsk20-489",
         "hsk20-498",
-        "hsk20-546",
-        "hsk20-464"
+        "hsk20-508",
+        "hsk20-587"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-188",
-        "hsk20-199",
-        "hsk20-210"
+        "hsk20-462",
+        "hsk20-113",
+        "hsk20-115"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "因为…所以…"
         ],
-        "anchorCanonicalID": "hsk20-462",
+        "anchorCanonicalID": "hsk20-393",
         "reviewable": true
       },
       "checkpoint": false
@@ -3600,36 +3470,40 @@
       "theme": "city",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-461",
-        "hsk20-466",
+        "hsk20-312",
+        "hsk20-390",
         "hsk20-470",
-        "hsk20-478",
-        "hsk20-484"
+        "hsk20-487",
+        "hsk20-494",
+        "hsk20-503",
+        "hsk20-581"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-485",
-        "hsk20-507",
-        "hsk20-525"
+        "hsk20-461",
+        "hsk20-007",
+        "hsk20-032"
       ],
       "newCanonicalIDs": [
-        "hsk20-461",
-        "hsk20-466",
+        "hsk20-312",
+        "hsk20-390",
         "hsk20-470",
-        "hsk20-478",
-        "hsk20-484"
+        "hsk20-487",
+        "hsk20-494",
+        "hsk20-503",
+        "hsk20-581"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-485",
-        "hsk20-507",
-        "hsk20-525"
+        "hsk20-461",
+        "hsk20-007",
+        "hsk20-032"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "从 A 到 B"
         ],
-        "anchorCanonicalID": "hsk20-461",
+        "anchorCanonicalID": "hsk20-312",
         "reviewable": true
       },
       "checkpoint": false
@@ -3641,36 +3515,38 @@
       "theme": "community",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-323",
+        "hsk20-361",
         "hsk20-378",
         "hsk20-381",
-        "hsk20-382",
-        "hsk20-383",
-        "hsk20-385"
+        "hsk20-384",
+        "hsk20-493"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-200",
-        "hsk20-211",
-        "hsk20-222"
+        "hsk20-276",
+        "hsk20-298",
+        "hsk20-382"
       ],
       "newCanonicalIDs": [
+        "hsk20-323",
+        "hsk20-361",
         "hsk20-378",
         "hsk20-381",
-        "hsk20-382",
-        "hsk20-383",
-        "hsk20-385"
+        "hsk20-384",
+        "hsk20-493"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-200",
-        "hsk20-211",
-        "hsk20-222"
+        "hsk20-276",
+        "hsk20-298",
+        "hsk20-382"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "先…然后…"
         ],
-        "anchorCanonicalID": "hsk20-378",
+        "anchorCanonicalID": "hsk20-323",
         "reviewable": true
       },
       "checkpoint": false
@@ -3683,29 +3559,29 @@
       "phase": "classic-301-600",
       "newVocabularyIDs": [],
       "reusedVocabularyIDs": [
-        "hsk20-503",
-        "hsk20-520",
-        "hsk20-544",
-        "hsk20-562",
-        "hsk20-584",
-        "hsk20-001",
-        "hsk20-008",
-        "hsk20-015",
-        "hsk20-022",
-        "hsk20-029"
+        "hsk20-378",
+        "hsk20-381",
+        "hsk20-356",
+        "hsk20-372",
+        "hsk20-436",
+        "hsk20-466",
+        "hsk20-511",
+        "hsk20-565",
+        "hsk20-572",
+        "hsk20-587"
       ],
       "newCanonicalIDs": [],
       "reusedCanonicalIDs": [
-        "hsk20-503",
-        "hsk20-520",
-        "hsk20-544",
-        "hsk20-562",
-        "hsk20-584",
-        "hsk20-001",
-        "hsk20-008",
-        "hsk20-015",
-        "hsk20-022",
-        "hsk20-029"
+        "hsk20-378",
+        "hsk20-381",
+        "hsk20-356",
+        "hsk20-372",
+        "hsk20-436",
+        "hsk20-466",
+        "hsk20-511",
+        "hsk20-565",
+        "hsk20-572",
+        "hsk20-587"
       ],
       "newCount": 0,
       "reusedCount": 10,
@@ -3713,7 +3589,7 @@
         "patterns": [
           "rappel guidé des structures précédentes"
         ],
-        "anchorCanonicalID": "hsk20-503",
+        "anchorCanonicalID": "hsk20-378",
         "reviewable": true
       },
       "checkpoint": true
@@ -3725,36 +3601,40 @@
       "theme": "travel",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-304",
+        "hsk20-342",
         "hsk20-387",
-        "hsk20-389",
-        "hsk20-390",
-        "hsk20-391",
-        "hsk20-393"
+        "hsk20-403",
+        "hsk20-412",
+        "hsk20-428",
+        "hsk20-449"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-217",
-        "hsk20-228",
-        "hsk20-239"
+        "hsk20-390",
+        "hsk20-108",
+        "hsk20-112"
       ],
       "newCanonicalIDs": [
+        "hsk20-304",
+        "hsk20-342",
         "hsk20-387",
-        "hsk20-389",
-        "hsk20-390",
-        "hsk20-391",
-        "hsk20-393"
+        "hsk20-403",
+        "hsk20-412",
+        "hsk20-428",
+        "hsk20-449"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-217",
-        "hsk20-228",
-        "hsk20-239"
+        "hsk20-390",
+        "hsk20-108",
+        "hsk20-112"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "把 + objet + verbe"
         ],
-        "anchorCanonicalID": "hsk20-387",
+        "anchorCanonicalID": "hsk20-304",
         "reviewable": true
       },
       "checkpoint": false
@@ -3766,36 +3646,40 @@
       "theme": "nature",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-304",
-        "hsk20-330",
-        "hsk20-342",
-        "hsk20-360",
-        "hsk20-361"
+        "hsk20-305",
+        "hsk20-339",
+        "hsk20-347",
+        "hsk20-517",
+        "hsk20-553",
+        "hsk20-557",
+        "hsk20-594"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-524",
-        "hsk20-546",
-        "hsk20-565"
+        "hsk20-304",
+        "hsk20-458",
+        "hsk20-511"
       ],
       "newCanonicalIDs": [
-        "hsk20-304",
-        "hsk20-330",
-        "hsk20-342",
-        "hsk20-360",
-        "hsk20-361"
+        "hsk20-305",
+        "hsk20-339",
+        "hsk20-347",
+        "hsk20-517",
+        "hsk20-553",
+        "hsk20-557",
+        "hsk20-594"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-524",
-        "hsk20-546",
-        "hsk20-565"
+        "hsk20-304",
+        "hsk20-458",
+        "hsk20-511"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "被 + agent"
         ],
-        "anchorCanonicalID": "hsk20-304",
+        "anchorCanonicalID": "hsk20-305",
         "reviewable": true
       },
       "checkpoint": false
@@ -3808,29 +3692,31 @@
       "phase": "classic-301-600",
       "newVocabularyIDs": [
         "hsk20-308",
-        "hsk20-323",
+        "hsk20-350",
+        "hsk20-404",
+        "hsk20-453",
         "hsk20-473",
-        "hsk20-476",
-        "hsk20-517"
+        "hsk20-561"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-229",
-        "hsk20-240",
-        "hsk20-251"
+        "hsk20-323",
+        "hsk20-086",
+        "hsk20-097"
       ],
       "newCanonicalIDs": [
         "hsk20-308",
-        "hsk20-323",
+        "hsk20-350",
+        "hsk20-404",
+        "hsk20-453",
         "hsk20-473",
-        "hsk20-476",
-        "hsk20-517"
+        "hsk20-561"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-229",
-        "hsk20-240",
-        "hsk20-251"
+        "hsk20-323",
+        "hsk20-086",
+        "hsk20-097"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
@@ -3848,36 +3734,40 @@
       "theme": "communication",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-398",
-        "hsk20-400",
-        "hsk20-402",
-        "hsk20-405",
-        "hsk20-406"
+        "hsk20-327",
+        "hsk20-409",
+        "hsk20-416",
+        "hsk20-429",
+        "hsk20-496",
+        "hsk20-536",
+        "hsk20-589"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-540",
-        "hsk20-560",
-        "hsk20-583"
+        "hsk20-195",
+        "hsk20-402",
+        "hsk20-169"
       ],
       "newCanonicalIDs": [
-        "hsk20-398",
-        "hsk20-400",
-        "hsk20-402",
-        "hsk20-405",
-        "hsk20-406"
+        "hsk20-327",
+        "hsk20-409",
+        "hsk20-416",
+        "hsk20-429",
+        "hsk20-496",
+        "hsk20-536",
+        "hsk20-589"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-540",
-        "hsk20-560",
-        "hsk20-583"
+        "hsk20-195",
+        "hsk20-402",
+        "hsk20-169"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "如果…就…"
         ],
-        "anchorCanonicalID": "hsk20-398",
+        "anchorCanonicalID": "hsk20-327",
         "reviewable": true
       },
       "checkpoint": false
@@ -3889,36 +3779,40 @@
       "theme": "city",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-487",
-        "hsk20-494",
-        "hsk20-589",
-        "hsk20-384",
-        "hsk20-386"
+        "hsk20-386",
+        "hsk20-408",
+        "hsk20-415",
+        "hsk20-424",
+        "hsk20-465",
+        "hsk20-534",
+        "hsk20-542"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-241",
-        "hsk20-252",
-        "hsk20-263"
+        "hsk20-487",
+        "hsk20-203",
+        "hsk20-205"
       ],
       "newCanonicalIDs": [
-        "hsk20-487",
-        "hsk20-494",
-        "hsk20-589",
-        "hsk20-384",
-        "hsk20-386"
+        "hsk20-386",
+        "hsk20-408",
+        "hsk20-415",
+        "hsk20-424",
+        "hsk20-465",
+        "hsk20-534",
+        "hsk20-542"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-241",
-        "hsk20-252",
-        "hsk20-263"
+        "hsk20-487",
+        "hsk20-203",
+        "hsk20-205"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "越来越 + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-487",
+        "anchorCanonicalID": "hsk20-386",
         "reviewable": true
       },
       "checkpoint": false
@@ -3930,36 +3824,38 @@
       "theme": "travel",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-408",
-        "hsk20-409",
         "hsk20-410",
         "hsk20-411",
-        "hsk20-412"
+        "hsk20-414",
+        "hsk20-460",
+        "hsk20-467",
+        "hsk20-554"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-555",
-        "hsk20-570",
-        "hsk20-595"
-      ],
-      "newCanonicalIDs": [
         "hsk20-408",
         "hsk20-409",
+        "hsk20-112"
+      ],
+      "newCanonicalIDs": [
         "hsk20-410",
         "hsk20-411",
-        "hsk20-412"
+        "hsk20-414",
+        "hsk20-460",
+        "hsk20-467",
+        "hsk20-554"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-555",
-        "hsk20-570",
-        "hsk20-595"
+        "hsk20-408",
+        "hsk20-409",
+        "hsk20-112"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "在 + lieu"
         ],
-        "anchorCanonicalID": "hsk20-408",
+        "anchorCanonicalID": "hsk20-410",
         "reviewable": true
       },
       "checkpoint": false
@@ -3972,29 +3868,33 @@
       "phase": "classic-301-600",
       "newVocabularyIDs": [
         "hsk20-395",
-        "hsk20-399",
-        "hsk20-404",
-        "hsk20-413",
-        "hsk20-430"
+        "hsk20-430",
+        "hsk20-479",
+        "hsk20-505",
+        "hsk20-513",
+        "hsk20-514",
+        "hsk20-543"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-253",
-        "hsk20-264",
-        "hsk20-275"
+        "hsk20-404",
+        "hsk20-275",
+        "hsk20-321"
       ],
       "newCanonicalIDs": [
         "hsk20-395",
-        "hsk20-399",
-        "hsk20-404",
-        "hsk20-413",
-        "hsk20-430"
+        "hsk20-430",
+        "hsk20-479",
+        "hsk20-505",
+        "hsk20-513",
+        "hsk20-514",
+        "hsk20-543"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-253",
-        "hsk20-264",
-        "hsk20-275"
+        "hsk20-404",
+        "hsk20-275",
+        "hsk20-321"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
@@ -4012,36 +3912,40 @@
       "theme": "nature",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-433",
+        "hsk20-362",
+        "hsk20-437",
         "hsk20-474",
+        "hsk20-477",
+        "hsk20-481",
         "hsk20-488",
-        "hsk20-496",
-        "hsk20-505"
+        "hsk20-569"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-564",
-        "hsk20-585",
-        "hsk20-001"
+        "hsk20-433",
+        "hsk20-041",
+        "hsk20-045"
       ],
       "newCanonicalIDs": [
-        "hsk20-433",
+        "hsk20-362",
+        "hsk20-437",
         "hsk20-474",
+        "hsk20-477",
+        "hsk20-481",
         "hsk20-488",
-        "hsk20-496",
-        "hsk20-505"
+        "hsk20-569"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-564",
-        "hsk20-585",
-        "hsk20-001"
+        "hsk20-433",
+        "hsk20-041",
+        "hsk20-045"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "有 + nom"
         ],
-        "anchorCanonicalID": "hsk20-433",
+        "anchorCanonicalID": "hsk20-362",
         "reviewable": true
       },
       "checkpoint": false
@@ -4053,36 +3957,40 @@
       "theme": "leisure",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-568",
-        "hsk20-573",
+        "hsk20-317",
+        "hsk20-480",
         "hsk20-512",
         "hsk20-538",
-        "hsk20-552"
+        "hsk20-541",
+        "hsk20-552",
+        "hsk20-573"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-265",
-        "hsk20-276",
-        "hsk20-287"
+        "hsk20-568",
+        "hsk20-361",
+        "hsk20-539"
       ],
       "newCanonicalIDs": [
-        "hsk20-568",
-        "hsk20-573",
+        "hsk20-317",
+        "hsk20-480",
         "hsk20-512",
         "hsk20-538",
-        "hsk20-552"
+        "hsk20-541",
+        "hsk20-552",
+        "hsk20-573"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-265",
-        "hsk20-276",
-        "hsk20-287"
+        "hsk20-568",
+        "hsk20-361",
+        "hsk20-539"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "这/那 + nom"
         ],
-        "anchorCanonicalID": "hsk20-568",
+        "anchorCanonicalID": "hsk20-317",
         "reviewable": true
       },
       "checkpoint": false
@@ -4094,36 +4002,38 @@
       "theme": "health",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-465",
-        "hsk20-477",
-        "hsk20-479",
-        "hsk20-480",
-        "hsk20-513"
+        "hsk20-340",
+        "hsk20-419",
+        "hsk20-531",
+        "hsk20-549",
+        "hsk20-555",
+        "hsk20-583"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-573",
-        "hsk20-597",
-        "hsk20-005"
+        "hsk20-465",
+        "hsk20-372",
+        "hsk20-477"
       ],
       "newCanonicalIDs": [
-        "hsk20-465",
-        "hsk20-477",
-        "hsk20-479",
-        "hsk20-480",
-        "hsk20-513"
+        "hsk20-340",
+        "hsk20-419",
+        "hsk20-531",
+        "hsk20-549",
+        "hsk20-555",
+        "hsk20-583"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-573",
-        "hsk20-597",
-        "hsk20-005"
+        "hsk20-465",
+        "hsk20-372",
+        "hsk20-477"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "几 + classificateur"
         ],
-        "anchorCanonicalID": "hsk20-465",
+        "anchorCanonicalID": "hsk20-340",
         "reviewable": true
       },
       "checkpoint": false
@@ -4135,36 +4045,40 @@
       "theme": "food",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-421",
         "hsk20-527",
-        "hsk20-542",
-        "hsk20-416",
-        "hsk20-418",
-        "hsk20-419"
+        "hsk20-550",
+        "hsk20-560",
+        "hsk20-563",
+        "hsk20-577",
+        "hsk20-584"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-277",
-        "hsk20-288",
-        "hsk20-299"
+        "hsk20-089",
+        "hsk20-094",
+        "hsk20-096"
       ],
       "newCanonicalIDs": [
+        "hsk20-421",
         "hsk20-527",
-        "hsk20-542",
-        "hsk20-416",
-        "hsk20-418",
-        "hsk20-419"
+        "hsk20-550",
+        "hsk20-560",
+        "hsk20-563",
+        "hsk20-577",
+        "hsk20-584"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-277",
-        "hsk20-288",
-        "hsk20-299"
+        "hsk20-089",
+        "hsk20-094",
+        "hsk20-096"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "想/要 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-527",
+        "anchorCanonicalID": "hsk20-421",
         "reviewable": true
       },
       "checkpoint": false
@@ -4176,36 +4090,40 @@
       "theme": "nature",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-580",
-        "hsk20-421",
-        "hsk20-424",
         "hsk20-425",
-        "hsk20-427"
+        "hsk20-427",
+        "hsk20-486",
+        "hsk20-490",
+        "hsk20-516",
+        "hsk20-575",
+        "hsk20-580"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-589",
-        "hsk20-002",
-        "hsk20-009"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-580",
         "hsk20-421",
         "hsk20-424",
+        "hsk20-287"
+      ],
+      "newCanonicalIDs": [
         "hsk20-425",
-        "hsk20-427"
+        "hsk20-427",
+        "hsk20-486",
+        "hsk20-490",
+        "hsk20-516",
+        "hsk20-575",
+        "hsk20-580"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-589",
-        "hsk20-002",
-        "hsk20-009"
+        "hsk20-421",
+        "hsk20-424",
+        "hsk20-287"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "会/能 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-580",
+        "anchorCanonicalID": "hsk20-425",
         "reviewable": true
       },
       "checkpoint": false
@@ -4217,36 +4135,38 @@
       "theme": "travel",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-428",
-        "hsk20-429",
         "hsk20-431",
         "hsk20-435",
-        "hsk20-437"
+        "hsk20-439",
+        "hsk20-558",
+        "hsk20-574",
+        "hsk20-588"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-289",
-        "hsk20-300",
-        "hsk20-311"
+        "hsk20-428",
+        "hsk20-106",
+        "hsk20-112"
       ],
       "newCanonicalIDs": [
-        "hsk20-428",
-        "hsk20-429",
         "hsk20-431",
         "hsk20-435",
-        "hsk20-437"
+        "hsk20-439",
+        "hsk20-558",
+        "hsk20-574",
+        "hsk20-588"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-289",
-        "hsk20-300",
-        "hsk20-311"
+        "hsk20-428",
+        "hsk20-106",
+        "hsk20-112"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "正在 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-428",
+        "anchorCanonicalID": "hsk20-431",
         "reviewable": true
       },
       "checkpoint": false
@@ -4258,36 +4178,40 @@
       "theme": "leisure",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-319",
+        "hsk20-320",
         "hsk20-438",
-        "hsk20-439",
         "hsk20-442",
         "hsk20-444",
-        "hsk20-447"
+        "hsk20-447",
+        "hsk20-451"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-599",
-        "hsk20-006",
-        "hsk20-013"
+        "hsk20-169",
+        "hsk20-170",
+        "hsk20-183"
       ],
       "newCanonicalIDs": [
+        "hsk20-319",
+        "hsk20-320",
         "hsk20-438",
-        "hsk20-439",
         "hsk20-442",
         "hsk20-444",
-        "hsk20-447"
+        "hsk20-447",
+        "hsk20-451"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-599",
-        "hsk20-006",
-        "hsk20-013"
+        "hsk20-169",
+        "hsk20-170",
+        "hsk20-183"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 了"
         ],
-        "anchorCanonicalID": "hsk20-438",
+        "anchorCanonicalID": "hsk20-319",
         "reviewable": true
       },
       "checkpoint": false
@@ -4299,36 +4223,40 @@
       "theme": "communication",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-449",
-        "hsk20-451",
-        "hsk20-453",
-        "hsk20-455",
-        "hsk20-458"
+        "hsk20-363",
+        "hsk20-364",
+        "hsk20-463",
+        "hsk20-469",
+        "hsk20-533",
+        "hsk20-571",
+        "hsk20-599"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-301",
-        "hsk20-312",
-        "hsk20-323"
-      ],
-      "newCanonicalIDs": [
         "hsk20-449",
         "hsk20-451",
-        "hsk20-453",
-        "hsk20-455",
-        "hsk20-458"
+        "hsk20-195"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-363",
+        "hsk20-364",
+        "hsk20-463",
+        "hsk20-469",
+        "hsk20-533",
+        "hsk20-571",
+        "hsk20-599"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-301",
-        "hsk20-312",
-        "hsk20-323"
+        "hsk20-449",
+        "hsk20-451",
+        "hsk20-195"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "verbe + 过"
         ],
-        "anchorCanonicalID": "hsk20-449",
+        "anchorCanonicalID": "hsk20-363",
         "reviewable": true
       },
       "checkpoint": false
@@ -4340,36 +4268,38 @@
       "theme": "nature",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-367",
         "hsk20-459",
-        "hsk20-460",
-        "hsk20-463",
-        "hsk20-467",
-        "hsk20-469"
+        "hsk20-472",
+        "hsk20-482",
+        "hsk20-491",
+        "hsk20-526"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-003",
-        "hsk20-010",
-        "hsk20-017"
-      ],
-      "newCanonicalIDs": [
-        "hsk20-459",
         "hsk20-460",
         "hsk20-463",
-        "hsk20-467",
-        "hsk20-469"
+        "hsk20-467"
+      ],
+      "newCanonicalIDs": [
+        "hsk20-367",
+        "hsk20-459",
+        "hsk20-472",
+        "hsk20-482",
+        "hsk20-491",
+        "hsk20-526"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-003",
-        "hsk20-010",
-        "hsk20-017"
+        "hsk20-460",
+        "hsk20-463",
+        "hsk20-467"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "A 比 B + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-459",
+        "anchorCanonicalID": "hsk20-367",
         "reviewable": true
       },
       "checkpoint": false
@@ -4381,36 +4311,40 @@
       "theme": "story",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-472",
-        "hsk20-481",
-        "hsk20-482",
+        "hsk20-325",
         "hsk20-483",
-        "hsk20-486"
+        "hsk20-485",
+        "hsk20-499",
+        "hsk20-547",
+        "hsk20-578",
+        "hsk20-597"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-313",
-        "hsk20-324",
-        "hsk20-335"
+        "hsk20-472",
+        "hsk20-044",
+        "hsk20-055"
       ],
       "newCanonicalIDs": [
-        "hsk20-472",
-        "hsk20-481",
-        "hsk20-482",
+        "hsk20-325",
         "hsk20-483",
-        "hsk20-486"
+        "hsk20-485",
+        "hsk20-499",
+        "hsk20-547",
+        "hsk20-578",
+        "hsk20-597"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-313",
-        "hsk20-324",
-        "hsk20-335"
+        "hsk20-472",
+        "hsk20-044",
+        "hsk20-055"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "因为…所以…"
         ],
-        "anchorCanonicalID": "hsk20-472",
+        "anchorCanonicalID": "hsk20-325",
         "reviewable": true
       },
       "checkpoint": false
@@ -4422,36 +4356,40 @@
       "theme": "opinion",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-490",
-        "hsk20-491",
+        "hsk20-341",
         "hsk20-492",
-        "hsk20-493",
-        "hsk20-495"
+        "hsk20-546",
+        "hsk20-576",
+        "hsk20-582",
+        "hsk20-592",
+        "hsk20-596"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-007",
-        "hsk20-014",
-        "hsk20-021"
+        "hsk20-490",
+        "hsk20-113",
+        "hsk20-141"
       ],
       "newCanonicalIDs": [
-        "hsk20-490",
-        "hsk20-491",
+        "hsk20-341",
         "hsk20-492",
-        "hsk20-493",
-        "hsk20-495"
+        "hsk20-546",
+        "hsk20-576",
+        "hsk20-582",
+        "hsk20-592",
+        "hsk20-596"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-007",
-        "hsk20-014",
-        "hsk20-021"
+        "hsk20-490",
+        "hsk20-113",
+        "hsk20-141"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "从 A 到 B"
         ],
-        "anchorCanonicalID": "hsk20-490",
+        "anchorCanonicalID": "hsk20-341",
         "reviewable": true
       },
       "checkpoint": false
@@ -4463,36 +4401,40 @@
       "theme": "problem-solving",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-301",
+        "hsk20-311",
+        "hsk20-322",
+        "hsk20-324",
         "hsk20-497",
-        "hsk20-499",
         "hsk20-500",
-        "hsk20-502",
-        "hsk20-508"
+        "hsk20-529"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-325",
-        "hsk20-336",
-        "hsk20-347"
+        "hsk20-499",
+        "hsk20-171",
+        "hsk20-211"
       ],
       "newCanonicalIDs": [
+        "hsk20-301",
+        "hsk20-311",
+        "hsk20-322",
+        "hsk20-324",
         "hsk20-497",
-        "hsk20-499",
         "hsk20-500",
-        "hsk20-502",
-        "hsk20-508"
+        "hsk20-529"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-325",
-        "hsk20-336",
-        "hsk20-347"
+        "hsk20-499",
+        "hsk20-171",
+        "hsk20-211"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "先…然后…"
         ],
-        "anchorCanonicalID": "hsk20-497",
+        "anchorCanonicalID": "hsk20-301",
         "reviewable": true
       },
       "checkpoint": false
@@ -4504,36 +4446,38 @@
       "theme": "culture",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-331",
+        "hsk20-333",
+        "hsk20-334",
+        "hsk20-441",
         "hsk20-509",
-        "hsk20-511",
-        "hsk20-514",
-        "hsk20-516",
-        "hsk20-518"
+        "hsk20-521"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-011",
-        "hsk20-018",
-        "hsk20-025"
+        "hsk20-106",
+        "hsk20-112",
+        "hsk20-115"
       ],
       "newCanonicalIDs": [
+        "hsk20-331",
+        "hsk20-333",
+        "hsk20-334",
+        "hsk20-441",
         "hsk20-509",
-        "hsk20-511",
-        "hsk20-514",
-        "hsk20-516",
-        "hsk20-518"
+        "hsk20-521"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-011",
-        "hsk20-018",
-        "hsk20-025"
+        "hsk20-106",
+        "hsk20-112",
+        "hsk20-115"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "一边…一边…"
         ],
-        "anchorCanonicalID": "hsk20-509",
+        "anchorCanonicalID": "hsk20-331",
         "reviewable": true
       },
       "checkpoint": false
@@ -4545,36 +4489,40 @@
       "theme": "story",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-521",
+        "hsk20-313",
+        "hsk20-357",
+        "hsk20-368",
+        "hsk20-379",
+        "hsk20-380",
         "hsk20-523",
-        "hsk20-526",
-        "hsk20-528",
-        "hsk20-529"
+        "hsk20-548"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-337",
-        "hsk20-348",
-        "hsk20-359"
+        "hsk20-521",
+        "hsk20-243",
+        "hsk20-274"
       ],
       "newCanonicalIDs": [
-        "hsk20-521",
+        "hsk20-313",
+        "hsk20-357",
+        "hsk20-368",
+        "hsk20-379",
+        "hsk20-380",
         "hsk20-523",
-        "hsk20-526",
-        "hsk20-528",
-        "hsk20-529"
+        "hsk20-548"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-337",
-        "hsk20-348",
-        "hsk20-359"
+        "hsk20-521",
+        "hsk20-243",
+        "hsk20-274"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "把 + objet + verbe"
         ],
-        "anchorCanonicalID": "hsk20-521",
+        "anchorCanonicalID": "hsk20-313",
         "reviewable": true
       },
       "checkpoint": false
@@ -4586,36 +4534,40 @@
       "theme": "opinion",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
+        "hsk20-307",
+        "hsk20-335",
+        "hsk20-355",
+        "hsk20-417",
         "hsk20-530",
-        "hsk20-531",
-        "hsk20-534",
-        "hsk20-535",
-        "hsk20-536"
+        "hsk20-537",
+        "hsk20-556"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-015",
-        "hsk20-022",
-        "hsk20-029"
+        "hsk20-531",
+        "hsk20-535",
+        "hsk20-333"
       ],
       "newCanonicalIDs": [
+        "hsk20-307",
+        "hsk20-335",
+        "hsk20-355",
+        "hsk20-417",
         "hsk20-530",
-        "hsk20-531",
-        "hsk20-534",
-        "hsk20-535",
-        "hsk20-536"
+        "hsk20-537",
+        "hsk20-556"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-015",
-        "hsk20-022",
-        "hsk20-029"
+        "hsk20-531",
+        "hsk20-535",
+        "hsk20-333"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "被 + agent"
         ],
-        "anchorCanonicalID": "hsk20-530",
+        "anchorCanonicalID": "hsk20-307",
         "reviewable": true
       },
       "checkpoint": false
@@ -4627,36 +4579,38 @@
       "theme": "communication",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-537",
-        "hsk20-539",
-        "hsk20-541",
-        "hsk20-543",
-        "hsk20-547"
+        "hsk20-377",
+        "hsk20-420",
+        "hsk20-422",
+        "hsk20-432",
+        "hsk20-440",
+        "hsk20-445"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-349",
-        "hsk20-360",
-        "hsk20-371"
-      ],
-      "newCanonicalIDs": [
         "hsk20-537",
         "hsk20-539",
-        "hsk20-541",
-        "hsk20-543",
         "hsk20-547"
       ],
-      "reusedCanonicalIDs": [
-        "hsk20-349",
-        "hsk20-360",
-        "hsk20-371"
+      "newCanonicalIDs": [
+        "hsk20-377",
+        "hsk20-420",
+        "hsk20-422",
+        "hsk20-432",
+        "hsk20-440",
+        "hsk20-445"
       ],
-      "newCount": 5,
+      "reusedCanonicalIDs": [
+        "hsk20-537",
+        "hsk20-539",
+        "hsk20-547"
+      ],
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "虽然…但是…"
         ],
-        "anchorCanonicalID": "hsk20-537",
+        "anchorCanonicalID": "hsk20-377",
         "reviewable": true
       },
       "checkpoint": false
@@ -4668,36 +4622,40 @@
       "theme": "story",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-548",
-        "hsk20-549",
-        "hsk20-550",
-        "hsk20-553",
-        "hsk20-554"
+        "hsk20-332",
+        "hsk20-344",
+        "hsk20-345",
+        "hsk20-348",
+        "hsk20-374",
+        "hsk20-423",
+        "hsk20-457"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-019",
-        "hsk20-026",
-        "hsk20-033"
+        "hsk20-548",
+        "hsk20-539",
+        "hsk20-549"
       ],
       "newCanonicalIDs": [
-        "hsk20-548",
-        "hsk20-549",
-        "hsk20-550",
-        "hsk20-553",
-        "hsk20-554"
+        "hsk20-332",
+        "hsk20-344",
+        "hsk20-345",
+        "hsk20-348",
+        "hsk20-374",
+        "hsk20-423",
+        "hsk20-457"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-019",
-        "hsk20-026",
-        "hsk20-033"
+        "hsk20-548",
+        "hsk20-539",
+        "hsk20-549"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "如果…就…"
         ],
-        "anchorCanonicalID": "hsk20-548",
+        "anchorCanonicalID": "hsk20-332",
         "reviewable": true
       },
       "checkpoint": false
@@ -4709,36 +4667,40 @@
       "theme": "opinion",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-556",
-        "hsk20-558",
-        "hsk20-559",
-        "hsk20-561",
-        "hsk20-563"
+        "hsk20-302",
+        "hsk20-315",
+        "hsk20-352",
+        "hsk20-354",
+        "hsk20-359",
+        "hsk20-366",
+        "hsk20-373"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-361",
-        "hsk20-372",
-        "hsk20-383"
+        "hsk20-556",
+        "hsk20-559",
+        "hsk20-007"
       ],
       "newCanonicalIDs": [
-        "hsk20-556",
-        "hsk20-558",
-        "hsk20-559",
-        "hsk20-561",
-        "hsk20-563"
+        "hsk20-302",
+        "hsk20-315",
+        "hsk20-352",
+        "hsk20-354",
+        "hsk20-359",
+        "hsk20-366",
+        "hsk20-373"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-361",
-        "hsk20-372",
-        "hsk20-383"
+        "hsk20-556",
+        "hsk20-559",
+        "hsk20-007"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "越来越 + adjectif"
         ],
-        "anchorCanonicalID": "hsk20-556",
+        "anchorCanonicalID": "hsk20-302",
         "reviewable": true
       },
       "checkpoint": false
@@ -4750,36 +4712,38 @@
       "theme": "problem-solving",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-567",
-        "hsk20-569",
-        "hsk20-572",
-        "hsk20-574",
-        "hsk20-575"
+        "hsk20-434",
+        "hsk20-443",
+        "hsk20-446",
+        "hsk20-454",
+        "hsk20-468",
+        "hsk20-567"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-023",
-        "hsk20-030",
-        "hsk20-037"
+        "hsk20-050",
+        "hsk20-058",
+        "hsk20-062"
       ],
       "newCanonicalIDs": [
-        "hsk20-567",
-        "hsk20-569",
-        "hsk20-572",
-        "hsk20-574",
-        "hsk20-575"
+        "hsk20-434",
+        "hsk20-443",
+        "hsk20-446",
+        "hsk20-454",
+        "hsk20-468",
+        "hsk20-567"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-023",
-        "hsk20-030",
-        "hsk20-037"
+        "hsk20-050",
+        "hsk20-058",
+        "hsk20-062"
       ],
-      "newCount": 5,
+      "newCount": 6,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "在 + lieu"
         ],
-        "anchorCanonicalID": "hsk20-567",
+        "anchorCanonicalID": "hsk20-434",
         "reviewable": true
       },
       "checkpoint": false
@@ -4791,36 +4755,40 @@
       "theme": "culture",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-576",
-        "hsk20-577",
-        "hsk20-578",
-        "hsk20-579",
-        "hsk20-581"
+        "hsk20-471",
+        "hsk20-475",
+        "hsk20-506",
+        "hsk20-507",
+        "hsk20-510",
+        "hsk20-518",
+        "hsk20-522"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-373",
-        "hsk20-384",
-        "hsk20-395"
+        "hsk20-576",
+        "hsk20-579",
+        "hsk20-532"
       ],
       "newCanonicalIDs": [
-        "hsk20-576",
-        "hsk20-577",
-        "hsk20-578",
-        "hsk20-579",
-        "hsk20-581"
+        "hsk20-471",
+        "hsk20-475",
+        "hsk20-506",
+        "hsk20-507",
+        "hsk20-510",
+        "hsk20-518",
+        "hsk20-522"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-373",
-        "hsk20-384",
-        "hsk20-395"
+        "hsk20-576",
+        "hsk20-579",
+        "hsk20-532"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "也 + verbe"
         ],
-        "anchorCanonicalID": "hsk20-576",
+        "anchorCanonicalID": "hsk20-471",
         "reviewable": true
       },
       "checkpoint": false
@@ -4832,36 +4800,40 @@
       "theme": "story",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-582",
+        "hsk20-525",
+        "hsk20-544",
+        "hsk20-545",
         "hsk20-586",
-        "hsk20-587",
-        "hsk20-588",
-        "hsk20-591"
+        "hsk20-591",
+        "hsk20-593",
+        "hsk20-598"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-027",
-        "hsk20-034",
-        "hsk20-041"
+        "hsk20-582",
+        "hsk20-587",
+        "hsk20-333"
       ],
       "newCanonicalIDs": [
-        "hsk20-582",
+        "hsk20-525",
+        "hsk20-544",
+        "hsk20-545",
         "hsk20-586",
-        "hsk20-587",
-        "hsk20-588",
-        "hsk20-591"
+        "hsk20-591",
+        "hsk20-593",
+        "hsk20-598"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-027",
-        "hsk20-034",
-        "hsk20-041"
+        "hsk20-582",
+        "hsk20-587",
+        "hsk20-333"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "有 + nom"
         ],
-        "anchorCanonicalID": "hsk20-582",
+        "anchorCanonicalID": "hsk20-525",
         "reviewable": true
       },
       "checkpoint": false
@@ -4873,36 +4845,40 @@
       "theme": "opinion",
       "phase": "classic-301-600",
       "newVocabularyIDs": [
-        "hsk20-592",
-        "hsk20-593",
-        "hsk20-594",
-        "hsk20-596",
-        "hsk20-598"
+        "hsk20-365",
+        "hsk20-464",
+        "hsk20-476",
+        "hsk20-484",
+        "hsk20-501",
+        "hsk20-502",
+        "hsk20-528"
       ],
       "reusedVocabularyIDs": [
-        "hsk20-385",
-        "hsk20-396",
-        "hsk20-407"
+        "hsk20-592",
+        "hsk20-596",
+        "hsk20-015"
       ],
       "newCanonicalIDs": [
-        "hsk20-592",
-        "hsk20-593",
-        "hsk20-594",
-        "hsk20-596",
-        "hsk20-598"
+        "hsk20-365",
+        "hsk20-464",
+        "hsk20-476",
+        "hsk20-484",
+        "hsk20-501",
+        "hsk20-502",
+        "hsk20-528"
       ],
       "reusedCanonicalIDs": [
-        "hsk20-385",
-        "hsk20-396",
-        "hsk20-407"
+        "hsk20-592",
+        "hsk20-596",
+        "hsk20-015"
       ],
-      "newCount": 5,
+      "newCount": 7,
       "reusedCount": 3,
       "grammarTarget": {
         "patterns": [
           "这/那 + nom"
         ],
-        "anchorCanonicalID": "hsk20-592",
+        "anchorCanonicalID": "hsk20-365",
         "reviewable": true
       },
       "checkpoint": false
@@ -4915,29 +4891,29 @@
       "phase": "classic-301-600",
       "newVocabularyIDs": [],
       "reusedVocabularyIDs": [
-        "hsk20-031",
-        "hsk20-038",
-        "hsk20-045",
-        "hsk20-052",
-        "hsk20-059",
-        "hsk20-066",
-        "hsk20-073",
-        "hsk20-080",
-        "hsk20-087",
-        "hsk20-094"
+        "hsk20-592",
+        "hsk20-175",
+        "hsk20-176",
+        "hsk20-196",
+        "hsk20-259",
+        "hsk20-275",
+        "hsk20-287",
+        "hsk20-289",
+        "hsk20-299",
+        "hsk20-309"
       ],
       "newCanonicalIDs": [],
       "reusedCanonicalIDs": [
-        "hsk20-031",
-        "hsk20-038",
-        "hsk20-045",
-        "hsk20-052",
-        "hsk20-059",
-        "hsk20-066",
-        "hsk20-073",
-        "hsk20-080",
-        "hsk20-087",
-        "hsk20-094"
+        "hsk20-592",
+        "hsk20-175",
+        "hsk20-176",
+        "hsk20-196",
+        "hsk20-259",
+        "hsk20-275",
+        "hsk20-287",
+        "hsk20-289",
+        "hsk20-299",
+        "hsk20-309"
       ],
       "newCount": 0,
       "reusedCount": 10,
@@ -4945,7 +4921,7 @@
         "patterns": [
           "rappel guidé des structures précédentes"
         ],
-        "anchorCanonicalID": "hsk20-031",
+        "anchorCanonicalID": "hsk20-592",
         "reviewable": true
       },
       "checkpoint": true

@@ -32,8 +32,10 @@ compte uniquement les lexèmes canoniques réellement couverts dans le catalogue
 référencé ; un mot hors catalogue ne compte pas. `claims` reste
 descriptif : aucun claim ne doit déduire l'acquisition d'un niveau du seul jour
 du calendrier. Pour le programme actuel, la référence demandée est
-`HSK-legacy-2.0`/`2.0` (libellé utilisateur : HSK classique), avec 300 lexèmes canoniques au jour 30 et 600 au jour
-90 ; cela reste distinct des repères HSK 3.0 (500/1000).
+`HSK-legacy-2.0`/`2.0` (libellé utilisateur : HSK classique), avec 300 lexèmes canoniques au jour 48 et 600 au jour
+90 ; cela reste distinct des repères HSK 3.0 (500/1000). Le jalon des 300 lexèmes
+tombe à la fin de l'unité 5 : avec au plus huit mots nouveaux par séance, les
+séances 1 à 29 n'en apportent que 232 avant le jour de bilan 30.
 
 Chaque objet de `lessons` contient `id`, `moduleID`, `order`, `title`,
 `summary`, `estimatedMinutes`, `objectives`, `vocabularyIDs`, `extraVocabulary`, `grammar`, un
@@ -87,43 +89,92 @@ Les champs linguistiques sont les suivants :
 
 ## Budget d'exercices d'une séance quotidienne
 
-Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 dans
-le contenu actuel) répartis en trois phases ordonnées. La phase est portée par
-le `metadata.stage` de chaque bloc `exercise` ; les blocs d'introduction,
-vocabulaire, dialogue, lecture et bilan gardent leur étape éditoriale.
+Chaque leçon `lesson-05` à `lesson-94` livre entre 15 et 20 exercices (18 pour
+83 leçons sur 90 dans le contenu actuel, 20 au plus) répartis en trois phases
+ordonnées. La phase est portée par le `metadata.stage` de chaque bloc
+`exercise` ; les blocs d'introduction, vocabulaire, dialogue, lecture et bilan
+gardent leur étape éditoriale.
 
 | Phase (`stage`) | Exercices | Contenu |
 | --- | --- | --- |
-| `discover` | 6 | reconnaissance du sens (mot → français, français → mot) et écoute de mots |
-| `guided` | 6 | remise en ordre, phrase à trous, écoute de répliques de dialogue |
-| `reuse` | 6 | remise en ordre et trou sur les phrases du texte ou du dialogue, sens d'une phrase lue, écoute, oral, compréhension de lecture |
+| `discover` | 5 à 7 | reconnaissance du sens (mot → français, français → mot) et écoute de mots, à choisir parmi des mots écrits |
+| `guided` | 6 à 7 | remise en ordre, phrase à trous, écoute de répliques de dialogue et de phrases d'exemple |
+| `reuse` | 5 à 6 | phrases du texte ou du dialogue (ordre, trou, sens), oral, puis l'écoute, l'oral et la lecture écrits dans le pack |
 
 Les six exercices écrits dans le pack (`meaning`, `order`, `fill`, `listen`,
-`speak`, `reading`) sont conservés tels quels avec leurs IDs. Les douze autres
-sont dérivés par `Tools/exercise_expansion.py` lors de `content_tool.py
-generate`, à partir des seules données de la leçon : sens et exemples du
-vocabulaire, répliques du dialogue et phrases du texte. Le générateur n'écrit
-donc aucun hanzi, pinyin ou traduction. Il applique ces règles :
+`speak`, `reading`) sont conservés tels quels avec leurs IDs ; `listen`,
+`speak` et `reading` ferment toujours la séance. Les autres sont choisis par
+`Tools/exercise_expansion.py` lors de `content_tool.py generate`, à partir des
+seules données de la leçon : sens et exemples du vocabulaire, répliques du
+dialogue et phrases du texte. Le générateur n'écrit donc aucun hanzi, pinyin ou
+traduction. Il produit d'abord tous les exercices possibles (`choice`,
+`listeningChoice`, `wordOrder`, `fillBlank`, `speaking`), puis en retient assez
+pour couvrir les mots nouveaux (voir ci-dessous) et compléter chaque phase. Il
+applique ces règles :
 
 * les distracteurs de sens viennent du vocabulaire de la leçon puis des deux
   leçons précédentes, sans recouvrement de sens avec la bonne réponse ; les
-  distracteurs de phrase viennent des phrases de la leçon ;
+  mots nouveaux passent en premier comme mauvaises réponses écrites, car chaque
+  choix les représente ; les distracteurs de phrase viennent des phrases de la
+  leçon ;
 * les tuiles d'un `wordOrder` segmentent la phrase par plus long mot connu du
   catalogue et du vocabulaire ; le pinyin de chaque tuile est repris du pinyin
   de la phrase (une syllabe par hanzi, sinon la phrase est écartée) ;
 * un `fillBlank` masque un mot de la leçon de un ou deux caractères, car la UI
   propose cinq choix tirés d'une banque de mots de même longueur ; la
   traduction française est rappelée dans l'énoncé pour lever l'ambiguïté ;
-* la bonne réponse d'un choix suit une marche déterministe (numéro de leçon et
-  rang), donc sa position varie sans hasard non reproductible ;
-* `speaking` reste facultatif ; les écoutes et lectures de phrase demandent au
-  moins quatre hanzi.
+* la bonne réponse d'un choix suit une marche déterministe dans l'ordre final
+  de la séance (numéro de leçon et rang), donc sa position varie sans hasard
+  non reproductible ;
+* `speaking` reste facultatif et ne dépasse pas trois exercices par séance ;
+  les écoutes et lectures de phrase demandent au moins quatre hanzi.
+
+## Mots nouveaux par séance
+
+Une séance présente au plus huit mots nouveaux (six ou sept dans le contenu
+actuel), extras hors catalogue compris. Un mot est nouveau dans la première
+leçon, par ordre, dont le vocabulaire le liste ; les mots repris d'une leçon
+précédente sont réutilisés et ne comptent pas.
+
+L'allocation (`Tools/build_90_day_authoring.py`) est la seule source du
+vocabulaire canonique de chaque séance. Elle lit les textes écrits des
+fragments (dialogue, lecture, exemples de grammaire, exercices), jamais leurs
+listes de vocabulaire, puis :
+
+* répartit les 587 lexèmes hors leçons de départ entre les 87 séances qui ne
+  sont pas des bilans (jours 30, 60, 90), à raison de 6 à 8 par séance ; les
+  rangs 1 à 300 sont tous introduits au plus tard au jour 48 (`MILESTONE_DAY`) ;
+* impose qu'un mot soit introduit au plus tard dans la séance dont il est
+  l'ancre de grammaire ou la question de sens ; un tel mot déjà vu reste dans la
+  séance comme mot réutilisé ;
+* échange ensuite des mots entre séances d'une même phase tant que cela réduit
+  le nombre de couples (mot, séance) où un texte emploie un mot avant son
+  introduction. Les textes écrits ne sont pas modifiés : une séance peut donc
+  encore contenir un mot enseigné plus tard, comme avant ce partage.
+
+Ordre d'exécution : `build_90_day_authoring.py`, puis
+`build_authoring_days_06_45.py`, `build_authoring_days_46_90.py` et
+`build_preview_authoring.py`, puis `assemble_90_day_authoring.py`, puis
+`content_tool.py generate`. Le fragment des jours 1 à 5 n'a pas de liste de
+vocabulaire ; l'assembleur la remplit depuis l'allocation et refuse un
+fragment des jours 6 à 90 dont le vocabulaire diffère de l'allocation.
+
+Chaque mot nouveau est présenté par au moins trois exercices de la séance, d'au
+moins trois familles différentes (`choice`, `listeningChoice`, `wordOrder`,
+`fillBlank`, `speaking`). Un exercice présente un mot quand son hanzi figure
+dans l'énoncé, dans une phrase (le trou rempli par la réponse), dans les
+tuiles, dans une phrase à écouter ou à dire, ou dans un choix. Un exercice de
+phrase compte pour chaque mot nouveau qu'il contient, et un choix de mots écrits
+compte pour chacun de ses libellés.
 
 `content_tool.py` refuse la génération, et `lint` refuse le bundle, si une
 leçon quotidienne sort du budget de 15 à 20 exercices, si un exercice n'a pas de
 phase, si les phases ne se suivent pas dans l'ordre, si deux exercices posent la
-même question ou si un choix a deux libellés identiques. Les quatre leçons
-protégées gardent leurs six exercices d'origine.
+même question, si un choix a deux libellés identiques, si elle présente plus de
+huit mots nouveaux, si `metadata.newVocabularyIDs` diffère des mots qu'aucune
+leçon précédente ne liste, ou si un mot nouveau n'a pas ses trois exercices de
+trois familles. Les quatre leçons protégées gardent leurs six exercices
+d'origine.
 
 Voici une séance complète illustrative, marquée « non livrable » et non utilisée
 comme contenu du cours. Elle montre vocabulaire, grammaire, dialogue, choix,

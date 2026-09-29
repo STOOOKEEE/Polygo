@@ -2,10 +2,14 @@
 """Assemble the reviewed 90-session Mandarin authoring pack.
 
 The course is authored in three independently reviewable lesson fragments:
-the fixed five-session preview, days 6–45, and days 46–90.  This script only
+the five-session preview, days 6–45, and days 46–90.  This script only
 joins those documents and copies the allocation's modules and day plan.  It
 does not derive or rewrite any Mandarin, pinyin, translation, answer, or
 example sentence.
+
+The allocation owns every lesson's canonical vocabulary. The range builders
+copy it into their fragments; the preview fragment carries none, so it is
+filled from the allocation here.
 """
 from __future__ import annotations
 
@@ -24,6 +28,7 @@ ALLOCATION_PATH = AUTHORING / "90-day-allocation.json"
 OUTPUT_PATH = AUTHORING / "90-day-authoring.json"
 CONTENT_VERSION = "2026.10.0"
 COURSE_ID = "mandarin-starter"
+PREVIEW_LAST_DAY = 5
 
 
 class AssemblyError(ValueError):
@@ -72,6 +77,26 @@ def lesson_map(document: dict[str, Any], path: Path) -> dict[str, dict[str, Any]
 
 def expected_lesson_id(day: int) -> str:
     return f"lesson-{day + 4:02d}"
+
+
+def allocation_vocabulary(row: dict[str, Any]) -> list[str]:
+    return list(dict.fromkeys(row["newCanonicalIDs"] + row["reusedCanonicalIDs"]))
+
+
+def apply_preview_allocation(lesson: dict[str, Any], row: dict[str, Any]) -> None:
+    """Give a preview lesson the vocabulary and metadata of its allocation row."""
+    refs = allocation_vocabulary(row)
+    lesson["vocabularyIDs"] = refs
+    lesson["recap"]["vocabularyIDs"] = refs[:6]
+    lesson["metadata"] = {
+        "allocationDay": row["day"],
+        "allocationRange": "days01-05",
+        "theme": row["theme"],
+        "newVocabularyIDs": row["newCanonicalIDs"],
+        "reusedVocabularyIDs": row["reusedCanonicalIDs"],
+        "newCanonicalIDs": row["newCanonicalIDs"],
+        "reusedCanonicalIDs": row["reusedCanonicalIDs"],
+    }
 
 
 def assemble() -> dict[str, Any]:
@@ -131,6 +156,10 @@ def assemble() -> dict[str, Any]:
                 raise AssemblyError(f"day {day}: lesson moduleID differs from allocation")
             if lesson.get("order") != day + 4:
                 raise AssemblyError(f"day {day}: lesson order differs from allocation")
+            if day <= PREVIEW_LAST_DAY:
+                apply_preview_allocation(lesson, row)
+            elif lesson.get("vocabularyIDs") != allocation_vocabulary(row):
+                raise AssemblyError(f"day {day}: fragment vocabulary differs from the allocation; rerun the range builders")
             if lesson_id in seen_lesson_ids:
                 raise AssemblyError(f"duplicate assembled lesson '{lesson_id}'")
             seen_lesson_ids.add(lesson_id)

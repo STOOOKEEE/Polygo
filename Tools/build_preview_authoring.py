@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Write the first five authoring sessions from the shared catalog."""
+"""Write the first five authoring sessions from the shared catalog.
+
+The preview lessons carry texts and exercises only; their vocabulary comes from
+the allocation when the pack is assembled.
+"""
 from __future__ import annotations
 
 import json
@@ -99,10 +103,6 @@ LESSONS = [
             {"id": "l5-understand", "text": fr("Comprendre une question simple sur une boisson ou un plat."), "required": True},
             {"id": "l5-produce", "text": fr("Produire une phrase courte avec un nom et un verbe d’action."), "required": True},
         ],
-        # The four mapped starter lexemes keep the first planned day
-        # self-contained for the 1–300 coverage boundary, even though their
-        # cards were introduced in the protected greeting lessons.
-        "vocabularyIDs": ["hsk20-007", "hsk20-009", "hsk20-010", "hsk20-011", "hsk20-021", "hsk20-024", "hsk20-036", "hsk20-037", "hsk20-038", "hsk20-039", "hsk20-062", "hsk20-068", "hsk20-070", "hsk20-086", "hsk20-126", "vocab-ni", "vocab-wo"],
         "extraVocabulary": [{
             "id": "vocab-dan", "hanzi": "但", "traditionalHanzi": "但", "pinyin": "dàn", "toneNumbers": [4],
             "segmentation": [{"surface": "但", "vocabularyID": "vocab-dan", "pinyin": "dàn", "partOfSpeech": "conjunction"}],
@@ -133,7 +133,7 @@ LESSONS = [
             speak("ex-l5-speak", "Dis « Le thé et le plat sont très bons ». ", "茶和菜都很好！", "chá hé cài dōu hěn hǎo!", "l5-produce"),
             reading_choice("ex-l5-reading", "Que fait la personne dans le texte ?", "l5-understand", [("a", "Elle prend le bus."), ("b", "Elle lit un journal."), ("c", "Elle boit du thé et mange un plat.")], "c"),
         ],
-        "recap": {"id": "block-l5-recap", "vocabularyIDs": ["hsk20-009", "hsk20-010", "hsk20-011", "hsk20-021", "hsk20-037", "hsk20-038"], "objectiveIDs": ["l5-understand", "l5-produce"]},
+        "recap": {"id": "block-l5-recap", "objectiveIDs": ["l5-understand", "l5-produce"]},
     },
     {
         "id": "lesson-06", "moduleID": "unit-02", "order": 6,
@@ -144,7 +144,6 @@ LESSONS = [
             {"id": "l6-understand", "text": fr("Repérer un objet et un lieu dans une phrase courte."), "required": True},
             {"id": "l6-produce", "text": fr("Dire où se trouve une personne ou un objet."), "required": True},
         ],
-        "vocabularyIDs": ["hsk20-017", "hsk20-018", "hsk20-019", "hsk20-020", "hsk20-021", "hsk20-034", "hsk20-038", "hsk20-045", "hsk20-050", "hsk20-051", "hsk20-062", "hsk20-120", "hsk20-139", "hsk20-275", "vocab-ni", "vocab-wo"],
         "grammar": [
             {"vocabularyID": "hsk20-139", "pattern": "sujet + 在 + lieu", "explanation": fr("在 se place après le sujet et avant le lieu : 电脑在家里 signifie « l’ordinateur est à la maison »."), "examples": [{"hanzi": "电脑在家里。", "pinyin": "diàn nǎo zài jiā lǐ.", "translation": fr("L’ordinateur est à la maison."), "audio": None}]},
             {"vocabularyID": "hsk20-275", "pattern": "也 + verbe", "explanation": fr("也 ajoute une information équivalente : « aussi » se place avant le verbe."), "examples": [{"hanzi": "我也看电影。", "pinyin": "wǒ yě kàn diàn yǐng.", "translation": fr("Je regarde aussi un film."), "audio": None}]},
@@ -170,7 +169,7 @@ LESSONS = [
             speak("ex-l6-speak", "Dis « Je regarde un film ». ", "我看电影。", "wǒ kàn diàn yǐng.", "l6-produce"),
             reading_choice("ex-l6-reading", "Que trouve-t-on à la maison ?", "l6-understand", [("a", "Un avion et un bateau."), ("b", "Un journal et un billet."), ("c", "Un ordinateur et une télévision.")], "c"),
         ],
-        "recap": {"id": "block-l6-recap", "vocabularyIDs": ["hsk20-017", "hsk20-019", "hsk20-020", "hsk20-038", "hsk20-051", "hsk20-139"], "objectiveIDs": ["l6-understand", "l6-produce"]},
+        "recap": {"id": "block-l6-recap", "objectiveIDs": ["l6-understand", "l6-produce"]},
     },
     {
         "id": "lesson-07", "moduleID": "unit-02", "order": 7,
@@ -181,7 +180,6 @@ LESSONS = [
             {"id": "l7-understand", "text": fr("Comprendre qui est présent et quand une activité a lieu."), "required": True},
             {"id": "l7-produce", "text": fr("Présenter un membre de la famille avec 的."), "required": True},
         ],
-        "vocabularyIDs": ["hsk20-003", "hsk20-015", "hsk20-026", "hsk20-038", "hsk20-044", "hsk20-047", "hsk20-048", "hsk20-049", "hsk20-061", "hsk20-076", "hsk20-088", "hsk20-089", "hsk20-137", "hsk20-139", "hsk20-045", "vocab-ni", "vocab-wo", "vocab-ne", "vocab-shi"],
         "grammar": [
             {"vocabularyID": "hsk20-015", "pattern": "nom + 的 + nom", "explanation": fr("的 relie un possesseur et ce qui lui appartient : 我的妈妈 signifie « ma maman »."), "examples": [{"hanzi": "我的妈妈在家。", "pinyin": "wǒ de mā ma zài jiā.", "translation": fr("Ma maman est à la maison."), "audio": None}]},
         ],
@@ -205,7 +203,7 @@ LESSONS = [
             speak("ex-l7-speak", "Dis « Ma maman est à la maison ». ", "我的妈妈在家。", "wǒ de mā ma zài jiā.", "l7-produce"),
             reading_choice("ex-l7-reading", "Qui est à la maison ?", "l7-understand", [("a", "La fille."), ("b", "Le fils."), ("c", "Le père.")], "b"),
         ],
-        "recap": {"id": "block-l7-recap", "vocabularyIDs": ["hsk20-003", "hsk20-026", "hsk20-047", "hsk20-048", "hsk20-061", "hsk20-076"], "objectiveIDs": ["l7-understand", "l7-produce"]},
+        "recap": {"id": "block-l7-recap", "objectiveIDs": ["l7-understand", "l7-produce"]},
     },
     {
         "id": "lesson-08", "moduleID": "unit-02", "order": 8,
@@ -216,7 +214,6 @@ LESSONS = [
             {"id": "l8-understand", "text": fr("Comprendre un lieu, une heure et un prix simple."), "required": True},
             {"id": "l8-produce", "text": fr("Demander un billet ou exprimer un souhait."), "required": True},
         ],
-        "vocabularyIDs": ["hsk20-016", "hsk20-025", "hsk20-044", "hsk20-053", "hsk20-063", "hsk20-079", "hsk20-082", "hsk20-084", "hsk20-089", "hsk20-090", "hsk20-120", "hsk20-121", "vocab-wo"],
         "grammar": [
             {"vocabularyID": "hsk20-121", "pattern": "想 + verbe", "explanation": fr("想 exprime un souhait et se place avant l’action : 我想买苹果 signifie « je veux acheter des pommes »."), "examples": [{"hanzi": "我想买苹果。", "pinyin": "wǒ xiǎng mǎi píng guǒ.", "translation": fr("Je veux acheter des pommes."), "audio": None}]},
             {"vocabularyID": "hsk20-053", "pattern": "prix + 块", "explanation": fr("块 est l’unité familière du yuan dans un prix courant."), "examples": [{"hanzi": "苹果三块。", "pinyin": "píng guǒ sān kuài.", "translation": fr("Les pommes coûtent trois yuans."), "audio": None}]},
@@ -241,7 +238,7 @@ LESSONS = [
             speak("ex-l8-speak", "Dis « Je veux aller au magasin ». ", "我想去商店。", "wǒ xiǎng qù shāng diàn.", "l8-produce"),
             reading_choice("ex-l8-reading", "Où la personne veut-elle aller ?", "l8-understand", [("a", "À l’école."), ("b", "À la gare."), ("c", "Au magasin.")], "c"),
         ],
-        "recap": {"id": "block-l8-recap", "vocabularyIDs": ["hsk20-016", "hsk20-053", "hsk20-063", "hsk20-079", "hsk20-090", "hsk20-121"], "objectiveIDs": ["l8-understand", "l8-produce"]},
+        "recap": {"id": "block-l8-recap", "objectiveIDs": ["l8-understand", "l8-produce"]},
     },
     {
         "id": "lesson-09", "moduleID": "unit-02", "order": 9,
@@ -252,7 +249,6 @@ LESSONS = [
             {"id": "l9-understand", "text": fr("Comprendre un itinéraire et une action déjà terminée."), "required": True},
             {"id": "l9-produce", "text": fr("Dire ce qu’on peut faire et où l’on va."), "required": True},
         ],
-        "vocabularyIDs": ["hsk20-007", "hsk20-016", "hsk20-041", "hsk20-042", "hsk20-043", "hsk20-044", "hsk20-045", "hsk20-058", "hsk20-084", "hsk20-139", "hsk20-148", "hsk20-165", "hsk20-170", "hsk20-297", "hsk20-298", "hsk20-485", "vocab-ni", "vocab-wo"],
         "grammar": [
             {"vocabularyID": "hsk20-058", "pattern": "verbe + 了", "explanation": fr("了 placé après le verbe signale ici une action terminée : 我看了 signifie « j’ai regardé »."), "examples": [{"hanzi": "我看了电影。", "pinyin": "wǒ kàn le diàn yǐng.", "translation": fr("J’ai regardé un film."), "audio": None}]},
             {"vocabularyID": "hsk20-042", "pattern": "会 + verbe", "explanation": fr("会 indique une capacité apprise ou une possibilité future : 我会说汉语 signifie « je sais parler chinois »."), "examples": [{"hanzi": "我会说汉语。", "pinyin": "wǒ huì shuō Hàn yǔ.", "translation": fr("Je sais parler chinois."), "audio": None}]},
@@ -278,7 +274,7 @@ LESSONS = [
             speak("ex-l9-speak", "Dis « Je marche de la maison jusqu’à la gare ». ", "我从家走到火车站。", "wǒ cóng jiā zǒu dào huǒ chē zhàn.", "l9-produce"),
             reading_choice("ex-l9-reading", "Comment la personne se déplace-t-elle ?", "l9-understand", [("a", "Elle marche."), ("b", "Elle prend l’avion."), ("c", "Elle nage.")], "a"),
         ],
-        "recap": {"id": "block-l9-recap", "vocabularyIDs": ["hsk20-041", "hsk20-042", "hsk20-043", "hsk20-058", "hsk20-165", "hsk20-297"], "objectiveIDs": ["l9-understand", "l9-produce"]},
+        "recap": {"id": "block-l9-recap", "objectiveIDs": ["l9-understand", "l9-produce"]},
     },
 ]
 

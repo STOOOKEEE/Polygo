@@ -63,18 +63,18 @@ Le bundle contient 94 leçons dans 9 unités :
 
 - 4 leçons d’introduction protégées (`lesson-01` à `lesson-04`) et 90 séances
   planifiées (`lesson-05` à `lesson-94`) ;
-- 567 exercices au total : 27 dans l’introduction et 540 dans le programme de
+- 1 655 exercices au total : 27 dans l’introduction et 1 628 dans le programme de
   90 jours ;
 - 94 histoires inline et 196 paragraphes de lecture ;
 - 605 cartes et entrées lexicales distinctes, soit 600 lexèmes canoniques et
-  5 mots supplémentaires de contexte, pour 911 associations leçon–carte ;
+  5 mots supplémentaires de contexte, pour 897 associations leçon–carte ;
 - 3 guides de tracé locaux pour `你`, `我` et `国` ; aucun audio de référence
   n’est embarqué.
 
 Chaque séance du programme vise 15 minutes, réparties en 12 minutes de cours et
-3 minutes de révision. Le plan couvre les 300 lexèmes de rang 1 à 300 au jour
-30 (301 entrées canoniques livrées à ce point, dont un mot de rang supérieur
-pour une scène naturelle), puis les 600 lexèmes au jour 90. Une couverture
+3 minutes de révision. Chaque séance introduit six à huit mots nouveaux. Le plan couvre les 300 lexèmes de rang 1 à 300 au jour
+48 (332 entrées canoniques livrées à ce point, dont des mots de rang supérieur
+pour des ancres de grammaire et des questions de sens), puis les 600 lexèmes au jour 90. Une couverture
 éditoriale ne prouve ni acquisition ni réussite à un examen.
 
 Les cartes des séances quotidiennes affichent le hanzi seul au recto ; le

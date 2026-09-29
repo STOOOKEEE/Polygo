@@ -510,7 +510,9 @@ final class ContentContractTests: XCTestCase {
             let catalog = try canonicalCatalog()
             let milestoneDays = plan.milestones.map(\.day)
             XCTAssertEqual(Set(milestoneDays).count, milestoneDays.count, "Milestone days must be unique")
-            for day in [30, 90] {
+            // The HSK 1–2 boundary sits at the end of unit 5: with at most
+            // eight new words per lesson, 300 lexemes are out of reach by day 30.
+            for day in [48, 90] {
                 let milestone = try XCTUnwrap(
                     plan.milestones.first(where: { $0.day == day }),
                     "Missing day \(day) milestone"
@@ -521,7 +523,7 @@ final class ContentContractTests: XCTestCase {
                 XCTAssertTrue(coverage.canonicalOnly)
                 XCTAssertEqual(
                     coverage.vocabularyTarget,
-                    day == 30 ? 300 : 600,
+                    day == 48 ? 300 : 600,
                     "The milestone target must be the authored HSK reference target"
                 )
                 if let reference = milestone.reference {
@@ -548,7 +550,7 @@ final class ContentContractTests: XCTestCase {
                 // may use a higher-level lexeme for a natural scene before
                 // the boundary, so the total delivered set can exceed the
                 // target; every lexeme through the boundary must be present.
-                let targetLexemes = day == 30
+                let targetLexemes = day == 48
                     ? Set(catalog.lexemeKeysByRank.filter { (1...300).contains($0.key) }.map(\.value))
                     : catalog.lexemeKeys
                 XCTAssertEqual(
@@ -821,6 +823,66 @@ final class ContentContractTests: XCTestCase {
         }
 
         XCTAssertGreaterThan(checkedLessons, 0)
+    }
+
+    /// A lesson introduces at most eight words, and each of them is presented
+    /// by at least three exercises of at least three kinds.
+    func testEveryNewWordIsPractisedByThreeExercisesOfThreeKinds() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        let starterIDs: Set<String> = ["lesson-01", "lesson-02", "lesson-03", "lesson-04"]
+        var checkedWords = 0
+
+        for lesson in snapshots.flatMap(\.lessons) where !starterIDs.contains(lesson.id.rawValue) {
+            let raw = try rawLesson(lesson.id)
+            let metadata = try XCTUnwrap(raw["metadata"] as? [String: Any])
+            let newIDs = try XCTUnwrap(metadata["newVocabularyIDs"] as? [String])
+            XCTAssertLessThanOrEqual(newIDs.count, 8, "\(lesson.id.rawValue) introduces more than eight words")
+            let blocks = try XCTUnwrap(raw["blocks"] as? [[String: Any]])
+            let presented = blocks
+                .filter { $0["kind"] as? String == "exercise" }
+                .compactMap { $0["spec"] as? [String: Any] }
+                .map { (kind: $0["kind"] as? String ?? "", text: presentedText(in: $0)) }
+            for newID in newIDs {
+                let entry = try XCTUnwrap(lesson.vocabulary.first { $0.id.rawValue == newID })
+                let matching = presented.filter { $0.text.contains(entry.hanzi) }
+                XCTAssertGreaterThanOrEqual(
+                    matching.count, 3,
+                    "\(entry.hanzi) in \(lesson.id.rawValue) needs three exercises"
+                )
+                XCTAssertGreaterThanOrEqual(
+                    Set(matching.map { $0.kind }).count, 3,
+                    "\(entry.hanzi) in \(lesson.id.rawValue) needs three exercise kinds"
+                )
+                checkedWords += 1
+            }
+        }
+
+        XCTAssertGreaterThan(checkedWords, 0)
+    }
+
+    /// The Mandarin an exercise presents: prompt, sentence with its answer,
+    /// tiles in order, and every choice.
+    private func presentedText(in spec: [String: Any]) -> String {
+        var parts: [String] = []
+        if let header = spec["header"] as? [String: Any],
+           let prompt = header["prompt"] as? [String: String] {
+            parts.append(prompt["fr"] ?? "")
+        }
+        parts.append(spec["promptText"] as? String ?? "")
+        parts.append(spec["referenceText"] as? String ?? "")
+        let answers = spec["acceptedAnswers"] as? [String] ?? []
+        parts.append((spec["sentence"] as? String ?? "").replacingOccurrences(of: "___", with: answers.first ?? ""))
+        let tokens = spec["tokens"] as? [[String: Any]] ?? []
+        let tokenText = Dictionary(uniqueKeysWithValues: tokens.compactMap { token -> (String, String)? in
+            guard let id = token["id"] as? String, let hanzi = token["hanzi"] as? String else { return nil }
+            return (id, hanzi)
+        })
+        parts.append((spec["correctOrder"] as? [String] ?? []).compactMap { tokenText[$0] }.joined())
+        for choice in spec["choices"] as? [[String: Any]] ?? [] {
+            parts.append((choice["label"] as? [String: String])?["fr"] ?? "")
+        }
+        parts.append(contentsOf: tokenText.values)
+        return parts.joined(separator: "\n")
     }
 
     // MARK: Linguistic completeness

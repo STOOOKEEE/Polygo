@@ -148,9 +148,10 @@ du parcours quotidien sont :
 | unit-08 — Météo, nature et loisirs | 73–82 | lesson-77–lesson-86 |
 | unit-09 — Récits et opinions | 83–90 | lesson-87–lesson-94 |
 
-Le jour 30 correspond à lesson-34, le jour 60 à lesson-64 et le jour 90 à
-lesson-94. Ces leçons restent des leçons ordinaires dans le bundle ; le statut
-de checkpoint vient de CoursePlan et de l'allocation.
+Les jours 30, 60 et 90 correspondent à lesson-34, lesson-64 et lesson-94 : ce
+sont les bilans, sans mot nouveau. Ces leçons restent des leçons ordinaires dans
+le bundle ; le statut de checkpoint vient de CoursePlan et de l'allocation. Le
+jalon des 300 lexèmes tombe au jour 48, dernier jour de l'unité 5 (lesson-52).
 
 ## Plan quotidien de 15 minutes
 
@@ -213,7 +214,7 @@ Les jalons livrés portent les couvertures suivantes :
 
 | Jour | Couverture |
 | ---: | --- |
-| 30 | rangs 1–300 du catalogue hsk-legacy-600 |
+| 48 | rangs 1–300 du catalogue hsk-legacy-600 |
 | 60 | consolidation et réemploi, sans nouvelle cible numérique |
 | 90 | rangs 1–600 du catalogue hsk-legacy-600 |
 
@@ -434,10 +435,11 @@ notamment :
 ~~~
 
 Les valeurs de newCount de cet extrait sont illustratives ; le linter
-recalcule la couverture à partir des leçons et du catalogue. Les rangs 1–300
-sont planifiés au jour 30, puis les rangs 301–600 jusqu'au jour 90. Le jour 60
-est un bilan de consolidation. Les mots réutilisés et les mots de contexte
-restent distincts des nouvelles entrées canoniques.
+recalcule la couverture à partir des leçons et du catalogue. Une séance
+introduit six à huit mots nouveaux : les rangs 1–300 sont planifiés au plus
+tard au jour 48, puis les rangs 301–600 jusqu'au jour 90. Les jours 30, 60 et
+90 sont des bilans sans mot nouveau. Les mots réutilisés et les mots de
+contexte restent distincts des nouvelles entrées canoniques.
 
 ## Fragments d'authoring et assemblage
 
@@ -486,11 +488,13 @@ Une note de grammaire d'authoring a la forme :
 Un blueprint utilise vocabularyIDs pour le catalogue et extraVocabulary pour
 les mots de contexte. Le tableau exercises conserve les champs de la famille
 choisie ; le générateur ajoute ensuite le header, le kind et l'ExerciseBlock au
-document runtime. Il complète aussi les six exercices écrits par douze exercices
+document runtime. Il complète aussi les six exercices écrits par des exercices
 dérivés du matériel de la leçon (`Tools/exercise_expansion.py`), pour un total de
-15 à 20 exercices par leçon quotidienne. Le `metadata.stage` de chaque bloc
+15 à 20 exercices par leçon quotidienne, choisis pour que chaque mot nouveau
+(huit au plus par leçon) soit présenté par trois exercices de trois familles. Le `metadata.stage` de chaque bloc
 d'exercice vaut `discover`, `guided` ou `reuse` et les phases se suivent dans
-cet ordre ; voir CONTENT_AUTHORING.md, « Budget d'exercices ».
+cet ordre ; voir CONTENT_AUTHORING.md, « Budget d'exercices » et « Mots
+nouveaux par séance ».
 
 La chaîne de release est :
 
@@ -498,6 +502,7 @@ La chaîne de release est :
 python3 Tools/build_90_day_authoring.py
 python3 Tools/build_authoring_days_06_45.py
 python3 Tools/build_authoring_days_46_90.py
+python3 Tools/build_preview_authoring.py
 python3 Tools/assemble_90_day_authoring.py
 python3 Tools/content_tool.py generate \
   --input Content/authoring/90-day-authoring.json --root Content

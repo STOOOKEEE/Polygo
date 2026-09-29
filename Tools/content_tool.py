@@ -18,7 +18,17 @@ import tempfile
 from pathlib import Path
 from typing import Any, Iterable
 
-from exercise_expansion import EXERCISE_BUDGET, PHASES, ExpansionError, expand_lesson_exercises
+from exercise_expansion import (
+    EXERCISE_BUDGET,
+    MAX_NEW_WORDS,
+    MIN_EXPOSURE_KINDS,
+    MIN_EXPOSURES,
+    PHASES,
+    ExpansionError,
+    expand_lesson_exercises,
+    exposure_shortfalls,
+    word_exposures,
+)
 
 
 SCHEMA_VERSION = 1
@@ -1163,6 +1173,33 @@ def lint_exercise_session(lesson: dict[str, Any], location: str) -> None:
         raise ContentError(f"{location}: exercises must run through {', '.join(PHASES)} in order")
 
 
+def new_vocabulary_by_lesson(lessons: dict[str, dict[str, Any]]) -> dict[str, list[str]]:
+    """Map each lesson to the vocabulary IDs no earlier lesson lists."""
+    introduced: set[str] = set()
+    result: dict[str, list[str]] = {}
+    for lesson in sorted(lessons.values(), key=lambda item: (item.get("order", 0), item.get("id", ""))):
+        ids = [entry["id"] for entry in lesson.get("vocabulary", []) if isinstance(entry, dict) and isinstance(entry.get("id"), str)]
+        result[lesson["id"]] = [vocab_id for vocab_id in ids if vocab_id not in introduced]
+        introduced.update(ids)
+    return result
+
+
+def lint_new_vocabulary(lesson: dict[str, Any], new_ids: list[str], location: str) -> None:
+    """Check that a lesson teaches few words and practises each of them enough."""
+    if len(new_ids) > MAX_NEW_WORDS:
+        raise ContentError(f"{location}: {len(new_ids)} new words, expected at most {MAX_NEW_WORDS}")
+    metadata = lesson.get("metadata") if isinstance(lesson.get("metadata"), dict) else {}
+    if metadata.get("newVocabularyIDs") != new_ids:
+        raise ContentError(f"{location}: metadata.newVocabularyIDs differs from the words no earlier lesson lists")
+    hanzi = {entry["id"]: entry["hanzi"] for entry in lesson["vocabulary"] if entry["id"] in new_ids}
+    shortfalls = exposure_shortfalls(word_exposures(exercise_specs(lesson), hanzi))
+    if shortfalls:
+        detail = ", ".join(f"{hanzi[vocab_id]} ({count} exercises, {kinds} kinds)" for vocab_id, (count, kinds) in sorted(shortfalls.items()))
+        raise ContentError(
+            f"{location}: each new word needs {MIN_EXPOSURES} exercises of {MIN_EXPOSURE_KINDS} kinds: {detail}"
+        )
+
+
 def lint_bundle(root: Path) -> None:
     manifest = load_json(root / "manifest.json")
     if not isinstance(manifest, dict):
@@ -1179,6 +1216,7 @@ def lint_bundle(root: Path) -> None:
     if default_course_id not in course_ids:
         raise ContentError("manifest.defaultCourseID: not present in courseIDs")
     lessons = all_lesson_files(root)
+    new_by_lesson = new_vocabulary_by_lesson(lessons)
     catalogs: dict[str, dict[str, Any]] = {}
     for path in sorted((root / "authoring").glob("*.json")) + sorted((root / "catalogs").glob("*.json")):
         value = load_json(path)
@@ -1276,6 +1314,7 @@ def lint_bundle(root: Path) -> None:
                 global_block_ids.add(block_id)
             if lesson_id not in PROTECTED_LEGACY_LESSONS:
                 lint_exercise_session(lesson, location)
+                lint_new_vocabulary(lesson, new_by_lesson[lesson_id], location)
             specs = exercise_specs(lesson)
             spec_ids = [string(require(spec.get("header", {}), "id", location + ".exercise.header"), location + ".exercise.header.id") for spec in specs]
             unique(spec_ids, location + ".exercise.id")

@@ -45,17 +45,17 @@ Les cases cochées ci-dessous désignent du travail implémenté et poussé sur
 | Leçons d’introduction protégées | 4 (`lesson-01` à `lesson-04`) |
 | Séances du plan quotidien | 90 (`lesson-05` à `lesson-94`) |
 | Unités du cours final | 9 |
-| Exercices | 567 (27 introduction + 540 programme) |
+| Exercices | 1 655 (27 introduction + 1 628 programme) |
 | Histoires inline | 94 |
 | Paragraphes de lecture | 196 |
 | Cartes distinctes | 605 (600 canoniques + 5 extras) |
-| Associations leçon–carte | 911 |
+| Associations leçon–carte | 897 |
 | Guides de tracé livrés | 3 (`你`, `我`, `国`) |
 
 Le catalogue `hsk-legacy-600` contient 600 entrées canoniques. La couverture
-réelle atteint les 300 premiers rangs au jour 30 et les 600 rangs au jour 90 ;
-le jour 30 contient une entrée canonique de rang supérieur pour une scène
-naturelle. Chaque séance est budgétée à 12 minutes de cours et 3 minutes de
+réelle atteint les 300 premiers rangs au jour 48 et les 600 rangs au jour 90 ;
+le jour 48 contient 32 entrées canoniques de rang supérieur (ancres de grammaire
+et questions de sens de séances antérieures). Chaque séance introduit six à huit mots nouveaux. Chaque séance est budgétée à 12 minutes de cours et 3 minutes de
 révision. Le manifeste porte `availableLessonCount: 94`, `starterLessonCount: 4`
 et `plannedSessionCount: 90` afin de distinguer le bundle complet du plan.
 
@@ -84,7 +84,7 @@ contenu ; la refonte ne régénère ni les leçons ni le catalogue.
   exécute son contrôle de fermeture.
 - `python3 Tools/content_tool.py lint --root Content` passe.
 - La couverture indépendante vérifie 300/300 lexèmes aux rangs 1–300 au jour
-  30 et 600/600 aux rangs 1–600 au jour 90.
+  48 et 600/600 aux rangs 1–600 au jour 90.
 - Les identifiants de paragraphes sont uniques (196/196). Les choix de type
   choix gardent leurs IDs et leurs bonnes réponses ; les 270 exercices
   `choice`/`listeningChoice` ont une position correcte répartie 92/90/88 entre
