@@ -76,7 +76,11 @@ ChineseSelectableText(
 )
 ```
 
-Quand aucune segmentation de contenu n’est fournie, le composant cherche les
+Les répliques, paragraphes et exemples du bundle portent leur `segmentation`
+(voir CONTENT_SCHEMA.md, « Segmentation des textes ») : chaque segment qui a un
+`vocabularyID` devient une cible, et sa fiche s'ouvre par cet ID même si la
+leçon qui définit le mot n'est pas encore chargée. Quand aucune segmentation de
+contenu n’est fournie, le composant cherche les
 entrées chargées dans le dictionnaire par correspondance gloutonne du mot le
 plus long. Il compare les formes simplifiées et traditionnelles, conserve la
 ponctuation, et rend chaque mot connu comme une cible indépendante. Un tap ou

@@ -155,7 +155,27 @@
               "translation": {
                 "fr": "Et toi ?"
               },
-              "audio": null
+              "audio": null,
+              "segmentation": [
+                {
+                  "surface": "你",
+                  "vocabularyID": "vocab-ni",
+                  "pinyin": "nǐ",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "呢",
+                  "vocabularyID": "vocab-ne",
+                  "pinyin": "ne",
+                  "partOfSpeech": "particle"
+                },
+                {
+                  "surface": "？",
+                  "vocabularyID": null,
+                  "pinyin": null,
+                  "partOfSpeech": null
+                }
+              ]
             }
           ],
           "metadata": {
@@ -193,7 +213,27 @@
           "relativePath": "assets/audio/60266e81164c55ca2fda5eb1.m4a",
           "sha256": "f4258af06df8542f5d8b712af7985ec05299a970a3619e7c12df94f0719693e7",
           "durationMilliseconds": 562
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "你",
+            "vocabularyID": "vocab-ni",
+            "pinyin": "nǐ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "呢",
+            "vocabularyID": "vocab-ne",
+            "pinyin": "ne",
+            "partOfSpeech": "particle"
+          },
+          {
+            "surface": "？",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "呢 laisse la question ouverte pour inviter l'autre personne à répondre."
@@ -366,7 +406,51 @@
             "relativePath": "assets/audio/645e9722ffdae5177fefeac2.m4a",
             "sha256": "4885421eaca82a850f62212568ce1aa507ec3cea7cdb40984b7dcd4ea1218e7d",
             "durationMilliseconds": 2266
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "你好",
+              "vocabularyID": "vocab-ni-hao",
+              "pinyin": "nǐ hǎo",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "什么",
+              "vocabularyID": "vocab-shenme",
+              "pinyin": "shénme",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "名字",
+              "vocabularyID": "vocab-mingzi",
+              "pinyin": "míngzi",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -381,7 +465,51 @@
             "relativePath": "assets/audio/0b7a767cb995478edf236da5.m4a",
             "sha256": "fa0d50a69e34f6055241b91a401cf4d67ba86b4fa5a0fcf06de0936a642c0ae2",
             "durationMilliseconds": 2160
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "林",
+              "vocabularyID": null,
+              "pinyin": "Lín",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "呢",
+              "vocabularyID": "vocab-ne",
+              "pinyin": "ne",
+              "partOfSpeech": "particle"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "An",
@@ -396,7 +524,69 @@
             "relativePath": "assets/audio/9928bbfc08f93175e134ee04.m4a",
             "sha256": "34291d9812e08565f3217f9a33b08a8dbb993d8058660ac3569bdd60ea54a95b",
             "durationMilliseconds": 2482
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "安",
+              "vocabularyID": null,
+              "pinyin": "Ān",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "哪",
+              "vocabularyID": "vocab-na",
+              "pinyin": "nǎ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "国",
+              "vocabularyID": "vocab-guo",
+              "pinyin": "guó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "人",
+              "vocabularyID": "vocab-ren",
+              "pinyin": "rén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -411,7 +601,51 @@
             "relativePath": "assets/audio/dbc1482f2b9e1db4371fd385.m4a",
             "sha256": "3201d28bc1dbdf89eb39e392eded7ac27f6a5cd98ab6583dcd27fff37113be2a",
             "durationMilliseconds": 2530
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "法国人",
+              "vocabularyID": null,
+              "pinyin": "Fǎguórén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "呢",
+              "vocabularyID": "vocab-ne",
+              "pinyin": "ne",
+              "partOfSpeech": "particle"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "An",
@@ -426,7 +660,63 @@
             "relativePath": "assets/audio/0b43e853649659f20c0ce4b7.m4a",
             "sha256": "39a1d41f8a2c198a16e51981c1a1b19492c9e7ca9d812167fa49573c1b30bcaf",
             "durationMilliseconds": 3149
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "中国人",
+              "vocabularyID": null,
+              "pinyin": "Zhōngguórén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "高兴",
+              "vocabularyID": "vocab-hsk20-031",
+              "pinyin": "gāoxìng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "认识",
+              "vocabularyID": "vocab-hsk20-087",
+              "pinyin": "rènshi",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -441,7 +731,57 @@
             "relativePath": "assets/audio/ddc175053513fe8293cb5bae.m4a",
             "sha256": "5c40fa4c6ccd8f138c72217a3afa88aa46d5db6bab4c7da96401def222c77742",
             "durationMilliseconds": 3082
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "也",
+              "vocabularyID": "vocab-hsk20-275",
+              "pinyin": "yě",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "一起",
+              "vocabularyID": "vocab-hsk20-276",
+              "pinyin": "yìqǐ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "练习",
+              "vocabularyID": null,
+              "pinyin": "liànxí",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "吧",
+              "vocabularyID": "vocab-hsk20-151",
+              "pinyin": "ba",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "An",
@@ -456,7 +796,45 @@
             "relativePath": "assets/audio/9c7b82db98c0e4b90d62cdde.m4a",
             "sha256": "2b3ec1e0e9c450ee7c0cd25209dfe7b8e297f54b1083b8a4cd54c48704342453",
             "durationMilliseconds": 2039
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "我们",
+              "vocabularyID": "vocab-hsk20-113",
+              "pinyin": "wǒmen",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "开始",
+              "vocabularyID": "vocab-hsk20-208",
+              "pinyin": "kāishǐ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "吧",
+              "vocabularyID": "vocab-hsk20-151",
+              "pinyin": "ba",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -465,7 +843,21 @@
           "translation": {
             "fr": "D'accord !"
           },
-          "audio": null
+          "audio": null,
+          "segmentation": [
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         }
       ],
       "comprehensionExerciseIDs": [
@@ -645,15 +1037,9 @@
               "partOfSpeech": "verb"
             },
             {
-              "surface": "法国",
-              "vocabularyID": "vocab-faguo",
-              "pinyin": "Fǎguó",
-              "partOfSpeech": "noun"
-            },
-            {
-              "surface": "人",
-              "vocabularyID": "vocab-ren",
-              "pinyin": "rén",
+              "surface": "法国人",
+              "vocabularyID": null,
+              "pinyin": "Fǎguórén",
               "partOfSpeech": "noun"
             },
             {
@@ -710,15 +1096,9 @@
               "partOfSpeech": "verb"
             },
             {
-              "surface": "中国",
-              "vocabularyID": "vocab-zhongguo",
-              "pinyin": "Zhōngguó",
-              "partOfSpeech": "noun"
-            },
-            {
-              "surface": "人",
-              "vocabularyID": "vocab-ren",
-              "pinyin": "rén",
+              "surface": "中国人",
+              "vocabularyID": null,
+              "pinyin": "Zhōngguórén",
               "partOfSpeech": "noun"
             },
             {

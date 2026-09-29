@@ -204,6 +204,7 @@ public struct ExampleSentence: Codable, Hashable, Sendable {
     public let hanzi: String
     public let pinyin: String
     public let translation: LocalizedText
+    public let segmentation: [TextSegment] // absent = []
     public let audio: AssetReference?
 }
 
@@ -304,6 +305,7 @@ public struct DialogueLine: Codable, Hashable, Sendable {
     public let hanzi: String
     public let pinyin: String
     public let translation: LocalizedText
+    public let segmentation: [TextSegment] // absent = []
     public let audio: AssetReference?
 }
 

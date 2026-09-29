@@ -66,7 +66,7 @@ from grammar_syllabus import (
     taught_context,
 )
 from build_audio import AudioError, References as AudioReferences, attach as attach_clips, pinyin_index as audio_pinyin_index, problems as audio_problems
-from pinyin_format import Lexicon, PinyinError, format_lessons
+from pinyin_format import Lexicon, PinyinError, format_lessons, segmentation_problems
 from pinyin_module import add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 from situations import (
     SituationError,
@@ -663,8 +663,6 @@ def normalize_lesson(
         if blueprint.get(key) is not None:
             block = copy.deepcopy(blueprint[key])
             block["kind"] = kind
-            # Reading segmentation is authored against the shared lexical
-            # IDs, then lowered to the local app vocabulary IDs.
             if kind == "reading":
                 # Paragraph IDs are catalogue identifiers, so the short IDs
                 # used by the compact authoring fragments (usually ``p1``
@@ -675,12 +673,6 @@ def normalize_lesson(
                     paragraph_id = paragraph.get("id")
                     if isinstance(paragraph_id, str) and paragraph_id:
                         paragraph["id"] = f"{lesson_id}-{paragraph_id}"
-                    for segment in paragraph.get("segmentation", []):
-                        if segment.get("vocabularyID") is not None:
-                            segment["vocabularyID"] = resolve_local_reference(
-                                segment["vocabularyID"], local_vocab, existing_vocab, catalog_info,
-                                f"{context}.reading.segmentation"
-                            )
             blocks.append(block)
     exercises = require(blueprint, "exercises", context)
     if not isinstance(exercises, list) or not exercises:
@@ -1731,10 +1723,16 @@ def lint_bundle(root: Path) -> None:
                 global_card_objects[card["id"]] = card
     if not global_exercise_ids:
         raise ContentError("bundle: no exercise documents found")
+    problems = segmentation_problems(lessons)
+    if problems:
+        raise ContentError(
+            "segmentation (run `content_tool.py generate`):\n  " + "\n  ".join(problems[:20])
+            + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else "")
+        )
     problems = pinyin_problems(root, lessons)
     if problems:
         raise ContentError(
-            "pinyin not written by words (run `content_tool.py generate`):\n  " + "\n  ".join(problems[:20])
+            "pinyin or segmentation not written by words (run `content_tool.py generate`):\n  " + "\n  ".join(problems[:20])
             + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else "")
         )
     try:
@@ -1778,10 +1776,13 @@ def formatted_pinyin(root: Path, lessons: dict[str, dict[str, Any]]) -> dict[str
 
 
 def _differences(before: Any, after: Any, path: str) -> Iterable[str]:
-    if isinstance(before, dict):
+    if isinstance(before, dict) and isinstance(after, dict):
         for key in before:
-            yield from _differences(before[key], after[key], f"{path}.{key}")
-    elif isinstance(before, list):
+            if key in after:
+                yield from _differences(before[key], after[key], f"{path}.{key}")
+        for key in sorted(after.keys() - before.keys()):
+            yield f"{path}.{key}: missing"
+    elif isinstance(before, list) and isinstance(after, list) and len(before) == len(after):
         for index, (left, right) in enumerate(zip(before, after)):
             yield from _differences(left, right, f"{path}[{index}]")
     elif before != after:
@@ -1789,7 +1790,7 @@ def _differences(before: Any, after: Any, path: str) -> Iterable[str]:
 
 
 def pinyin_problems(root: Path, lessons: dict[str, dict[str, Any]]) -> list[str]:
-    """Each learner-facing pinyin that is not written the way `pinyin_format` spells it."""
+    """Each learner-facing pinyin and segmentation that is not written the way `pinyin_format` writes it."""
     formatted = formatted_pinyin(root, lessons)
     return [problem for lesson_id in sorted(lessons) for problem in _differences(lessons[lesson_id], formatted[lesson_id], lesson_id)]
 

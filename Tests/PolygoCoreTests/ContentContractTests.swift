@@ -143,6 +143,23 @@ final class ContentContractTests: XCTestCase {
         XCTAssertFalse(value?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true, "\(message) must not be empty")
     }
 
+    /// A text's segments spell it whole, read its pinyin in order and link
+    /// only vocabulary that some lesson of the course defines.
+    private func assertSegmentation(_ segments: [TextSegment], of hanzi: String, reading pinyin: String, knownIDs: Set<VocabularyID>, _ context: String) {
+        XCTAssertFalse(segments.isEmpty, "\(context) needs segmentation")
+        XCTAssertEqual(segments.map(\.surface).joined(), hanzi, "\(context) segments must spell its text")
+        XCTAssertEqual(
+            TextNormalizer.normalize(segments.compactMap(\.pinyin).joined(separator: " ")),
+            TextNormalizer.normalize(pinyin),
+            "\(context) segments must read its pinyin"
+        )
+        for segment in segments {
+            if let vocabularyID = segment.vocabularyID {
+                XCTAssertTrue(knownIDs.contains(vocabularyID), "\(context) links \(vocabularyID.rawValue), which no lesson defines")
+            }
+        }
+    }
+
     // MARK: Discovery, ordering, and global identifier invariants
 
     func testBundledCourseDecodesEveryDiscoveredLessonAndStory() async throws {
@@ -408,11 +425,12 @@ final class ContentContractTests: XCTestCase {
                     XCTAssertTrue(value.vocabularyIDs.allSatisfy(vocabularyIDs.contains), "Vocabulary block \(block.id.rawValue) has a closed reference")
                 case .dialogue(let value):
                     XCTAssertFalse(value.lines.isEmpty, "\(block.id.rawValue) needs dialogue lines")
-                    for line in value.lines {
+                    for (index, line) in value.lines.enumerated() {
                         assertNonEmpty(line.speaker, "dialogue speaker")
                         assertNonEmpty(line.hanzi, "dialogue hanzi")
                         assertNonEmpty(line.pinyin, "dialogue pinyin")
                         assertNonEmpty(line.translation, "dialogue translation")
+                        assertSegmentation(line.segmentation, of: line.hanzi, reading: line.pinyin, knownIDs: globalVocabularyIDs, "\(block.id.rawValue) line \(index)")
                     }
                     XCTAssertTrue(value.comprehensionExerciseIDs.allSatisfy(exerciseIDs.contains))
                     if let participation = value.participation {
@@ -429,13 +447,7 @@ final class ContentContractTests: XCTestCase {
                         assertNonEmpty(paragraph.hanzi, "reading paragraph hanzi")
                         assertNonEmpty(paragraph.pinyin, "reading paragraph pinyin")
                         assertNonEmpty(paragraph.translation, "reading paragraph translation")
-                        XCTAssertTrue(paragraph.segmentation.allSatisfy { segment in
-                            assertNonEmpty(segment.surface, "reading segment surface")
-                            if let vocabularyID = segment.vocabularyID {
-                                return globalVocabularyIDs.contains(vocabularyID)
-                            }
-                            return true
-                        })
+                        assertSegmentation(paragraph.segmentation, of: paragraph.hanzi, reading: paragraph.pinyin, knownIDs: globalVocabularyIDs, "reading paragraph \(paragraph.id)")
                     }
                 case .exercise(let exerciseBlock):
                     let spec = exerciseBlock.spec
@@ -1087,6 +1099,7 @@ final class ContentContractTests: XCTestCase {
         }
 
         XCTAssertFalse(vocabularyByID.isEmpty)
+        let knownIDs = Set(vocabularyByID.keys)
         for entry in vocabularyByID.values {
             assertNonEmpty(entry.id.rawValue, "vocabulary ID")
             assertNonEmpty(entry.hanzi, "\(entry.id.rawValue) hanzi")
@@ -1097,27 +1110,38 @@ final class ContentContractTests: XCTestCase {
             XCTAssertFalse(entry.segmentation.isEmpty, "\(entry.id.rawValue) needs segmentation")
             XCTAssertTrue(entry.segmentation.allSatisfy { !$0.surface.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty })
             assertNonEmpty(entry.meaning, "\(entry.id.rawValue) meaning")
-            if let example = entry.example {
+            let examples = (entry.example.map { [$0] } ?? []) + entry.grammarNotes.flatMap(\.examples)
+            for example in examples {
                 assertNonEmpty(example.hanzi, "\(entry.id.rawValue) example hanzi")
                 assertNonEmpty(example.pinyin, "\(entry.id.rawValue) example pinyin")
                 assertNonEmpty(example.translation, "\(entry.id.rawValue) example translation")
+                assertSegmentation(example.segmentation, of: example.hanzi, reading: example.pinyin, knownIDs: knownIDs, "\(entry.id.rawValue) example")
             }
         }
 
+        // A linked segment is its entry read in context: the same syllables,
+        // whatever tone sandhi or neutral tone the sentence gives them.
         for lesson in snapshots.flatMap(\.lessons) {
+            var texts: [(hanzi: String, segments: [TextSegment])] = lesson.vocabulary
+                .flatMap { entry in (entry.example.map { [$0] } ?? []) + entry.grammarNotes.flatMap(\.examples) }
+                .map { ($0.hanzi, $0.segmentation) }
             for block in lesson.blocks {
-                guard case .reading(let reading) = block else { continue }
-                for paragraph in reading.paragraphs {
-                    for segment in paragraph.segmentation {
-                        guard let vocabularyID = segment.vocabularyID,
-                              let entry = vocabularyByID[vocabularyID],
-                              let pinyin = segment.pinyin else { continue }
-                        XCTAssertEqual(
-                            TextNormalizer.normalize(pinyin),
-                            TextNormalizer.normalize(entry.pinyin),
-                            "Segment \(segment.surface) in \(paragraph.id) disagrees with \(vocabularyID.rawValue) pinyin"
-                        )
-                    }
+                switch block {
+                case .dialogue(let value): texts += value.lines.map { ($0.hanzi, $0.segmentation) }
+                case .reading(let value): texts += value.paragraphs.map { ($0.hanzi, $0.segmentation) }
+                default: break
+                }
+            }
+            for text in texts {
+                for segment in text.segments {
+                    guard let vocabularyID = segment.vocabularyID,
+                          let entry = vocabularyByID[vocabularyID],
+                          let pinyin = segment.pinyin else { continue }
+                    XCTAssertEqual(
+                        TextNormalizer.normalize(pinyin),
+                        TextNormalizer.normalize(entry.pinyin),
+                        "Segment \(segment.surface) in \(text.hanzi) disagrees with \(vocabularyID.rawValue) pinyin"
+                    )
                 }
             }
         }

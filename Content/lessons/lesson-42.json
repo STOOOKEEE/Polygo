@@ -63,7 +63,33 @@
           "relativePath": "assets/audio/6c5027081c44ed1da496e5bb.m4a",
           "sha256": "cc22a997a3bf2860e138b79500e17c0461868937f8422a7c1efc41f949bc8c8c",
           "durationMilliseconds": 1092
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "飞机",
+            "vocabularyID": "vocab-hsk20-029",
+            "pinyin": "fēijī",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "到",
+            "vocabularyID": "vocab-hsk20-170",
+            "pinyin": "dào",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "了",
+            "vocabularyID": "vocab-hsk20-058",
+            "pinyin": "le",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -117,7 +143,39 @@
           "relativePath": "assets/audio/49e59dbcd9d69ab535703ca8.m4a",
           "sha256": "3f51a7fa974dd227f5ddb643b760ec7112ded58613b942f75bbff450a0a00a2a",
           "durationMilliseconds": 1458
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我",
+            "vocabularyID": "vocab-wo",
+            "pinyin": "wǒ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "看见",
+            "vocabularyID": "vocab-hsk20-052",
+            "pinyin": "kànjiàn",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "老师",
+            "vocabularyID": "vocab-hsk20-055",
+            "pinyin": "lǎoshī",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "了",
+            "vocabularyID": "vocab-hsk20-058",
+            "pinyin": "le",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -154,7 +212,7 @@
       "audio": null,
       "example": {
         "hanzi": "温度是零度。",
-        "pinyin": "Wēn dù shì líng dù.",
+        "pinyin": "Wēndù shì líng dù.",
         "translation": {
           "fr": "La température est de zéro degré."
         },
@@ -164,7 +222,39 @@
           "relativePath": "assets/audio/0210bd39c5868d3dafd47e29.m4a",
           "sha256": "d77ae5565c51e659864bb8f9bcbebd991c0e22fe4b175fde1c3e8e1f26ac4662",
           "durationMilliseconds": 1302
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "温度",
+            "vocabularyID": null,
+            "pinyin": "wēndù",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "是",
+            "vocabularyID": "vocab-shi",
+            "pinyin": "shì",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "零",
+            "vocabularyID": "vocab-hsk20-059",
+            "pinyin": "líng",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "度",
+            "vocabularyID": null,
+            "pinyin": "dù",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -201,7 +291,7 @@
       "audio": null,
       "example": {
         "hanzi": "今年是哪一年？",
-        "pinyin": "Jīn nián shì nǎ yī nián?",
+        "pinyin": "Jīnnián shì nǎ yī nián?",
         "translation": {
           "fr": "En quelle année sommes-nous ?"
         },
@@ -211,7 +301,45 @@
           "relativePath": "assets/audio/bfa5fc65bbfb37ba2afc84e9.m4a",
           "sha256": "5ff24b11a591d5f62e2126885e54024d3a5161d065e440af76f8a026d1a6422e",
           "durationMilliseconds": 1506
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "今年",
+            "vocabularyID": null,
+            "pinyin": "jīnnián",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "是",
+            "vocabularyID": "vocab-shi",
+            "pinyin": "shì",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "哪",
+            "vocabularyID": "vocab-na",
+            "pinyin": "nǎ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "一",
+            "vocabularyID": "vocab-hsk20-131",
+            "pinyin": "yī",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "年",
+            "vocabularyID": "vocab-hsk20-075",
+            "pinyin": "nián",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "？",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -259,7 +387,21 @@
           "relativePath": "assets/audio/668713a2d603a1eb4a8f1b89.m4a",
           "sha256": "8dd02e0dd27325b85c8d7f1d59286570ea91ecde1cadb6f266c3a614750183cc",
           "durationMilliseconds": 642
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "你好",
+            "vocabularyID": "vocab-ni-hao",
+            "pinyin": "nǐ hǎo",
+            "partOfSpeech": "interjection"
+          },
+          {
+            "surface": "！",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "你 désigne la personne à qui l'on parle."
@@ -316,7 +458,33 @@
           "relativePath": "assets/audio/a3eb0b84415e89b384db233d.m4a",
           "sha256": "d18b7d446536be6bf56a4ffc797f30e824a24e7a401d4144931a44b22042aa52",
           "durationMilliseconds": 1251
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我们",
+            "vocabularyID": "vocab-hsk20-113",
+            "pinyin": "wǒmen",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "去",
+            "vocabularyID": "vocab-hsk20-084",
+            "pinyin": "qù",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "公园",
+            "vocabularyID": null,
+            "pinyin": "gōngyuán",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -363,7 +531,45 @@
           "relativePath": "assets/audio/60c9e025abe894e4b1a20fc2.m4a",
           "sha256": "80d33b02420750c98bf9c8e3e3b306e3807934a0c558f0873f59525e61b55417",
           "durationMilliseconds": 1455
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我",
+            "vocabularyID": "vocab-wo",
+            "pinyin": "wǒ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "有",
+            "vocabularyID": "vocab-hsk20-136",
+            "pinyin": "yǒu",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "三",
+            "vocabularyID": "vocab-hsk20-089",
+            "pinyin": "sān",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "个",
+            "vocabularyID": "vocab-hsk20-032",
+            "pinyin": "gè",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "孩子",
+            "vocabularyID": "vocab-hsk20-189",
+            "pinyin": "háizi",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": null,
       "metadata": {
@@ -413,7 +619,57 @@
             "relativePath": "assets/audio/86473c5b55b65bc76ed43525.m4a",
             "sha256": "e1d6ade9052f11065ee58c836a9c6874952cd3e16110084ddf6eac090fd1e5c9",
             "durationMilliseconds": 2350
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "哥哥",
+              "vocabularyID": "vocab-hsk20-182",
+              "pinyin": "gēge",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "坐",
+              "vocabularyID": "vocab-hsk20-149",
+              "pinyin": "zuò",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "几",
+              "vocabularyID": "vocab-hsk20-044",
+              "pinyin": "jǐ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "点",
+              "vocabularyID": "vocab-hsk20-016",
+              "pinyin": "diǎn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "的",
+              "vocabularyID": "vocab-hsk20-015",
+              "pinyin": "de",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "飞机",
+              "vocabularyID": "vocab-hsk20-029",
+              "pinyin": "fēijī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -428,7 +684,105 @@
             "relativePath": "assets/audio/27104b66300dfda0ca402c60.m4a",
             "sha256": "2693fa540c730acf387a286ff067b3ea97d6963788680bf906b071ea2ae8dbeb",
             "durationMilliseconds": 4347
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "下午",
+              "vocabularyID": "vocab-hsk20-117",
+              "pinyin": "xiàwǔ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "三",
+              "vocabularyID": "vocab-hsk20-089",
+              "pinyin": "sān",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "点",
+              "vocabularyID": "vocab-hsk20-016",
+              "pinyin": "diǎn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "的",
+              "vocabularyID": "vocab-hsk20-015",
+              "pinyin": "de",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "现在",
+              "vocabularyID": "vocab-hsk20-120",
+              "pinyin": "xiànzài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "一点",
+              "vocabularyID": null,
+              "pinyin": "yìdiǎn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "我们",
+              "vocabularyID": "vocab-hsk20-113",
+              "pinyin": "wǒmen",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "去",
+              "vocabularyID": "vocab-hsk20-084",
+              "pinyin": "qù",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "喝",
+              "vocabularyID": "vocab-hsk20-037",
+              "pinyin": "hē",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "茶",
+              "vocabularyID": "vocab-hsk20-010",
+              "pinyin": "chá",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "吗",
+              "vocabularyID": "vocab-hsk20-062",
+              "pinyin": "ma",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Mina",
@@ -443,7 +797,69 @@
             "relativePath": "assets/audio/df6522a79d697b90ad952ae2.m4a",
             "sha256": "3ded9625f1652e800ef06e2091e2ea5625964129ce9b2e68ab3b753f9c83699e",
             "durationMilliseconds": 3314
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "在",
+              "vocabularyID": "vocab-hsk20-139",
+              "pinyin": "zài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "法国",
+              "vocabularyID": "vocab-faguo",
+              "pinyin": "Fǎguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "工作",
+              "vocabularyID": "vocab-hsk20-033",
+              "pinyin": "gōngzuò",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "吗",
+              "vocabularyID": "vocab-hsk20-062",
+              "pinyin": "ma",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -458,7 +874,105 @@
             "relativePath": "assets/audio/db5dec6d6e8ee2fc68313d45.m4a",
             "sha256": "4ba294cfb23cc18c70c619c985da2a2473f215836a466fc9627b16cf81b18a6d",
             "durationMilliseconds": 3051
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "二",
+              "vocabularyID": "vocab-hsk20-027",
+              "pinyin": "èr",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "零",
+              "vocabularyID": "vocab-hsk20-059",
+              "pinyin": "líng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "一",
+              "vocabularyID": "vocab-hsk20-131",
+              "pinyin": "yī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "九",
+              "vocabularyID": "vocab-hsk20-049",
+              "pinyin": "jiǔ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "年",
+              "vocabularyID": "vocab-hsk20-075",
+              "pinyin": "nián",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "去",
+              "vocabularyID": "vocab-hsk20-084",
+              "pinyin": "qù",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "的",
+              "vocabularyID": "vocab-hsk20-015",
+              "pinyin": "de",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "想",
+              "vocabularyID": "vocab-hsk20-121",
+              "pinyin": "xiǎng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Mina",
@@ -473,7 +987,105 @@
             "relativePath": "assets/audio/ac486db6dbb7a8e59992083a.m4a",
             "sha256": "f7a2b059cac84bfc9b48f79ba7c9db568c5b6b419bb42c27f4d8725d1cc83985",
             "durationMilliseconds": 3843
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "二",
+              "vocabularyID": "vocab-hsk20-027",
+              "pinyin": "èr",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "零",
+              "vocabularyID": "vocab-hsk20-059",
+              "pinyin": "líng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "二",
+              "vocabularyID": "vocab-hsk20-027",
+              "pinyin": "èr",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "二",
+              "vocabularyID": "vocab-hsk20-027",
+              "pinyin": "èr",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "年",
+              "vocabularyID": "vocab-hsk20-075",
+              "pinyin": "nián",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "来",
+              "vocabularyID": "vocab-hsk20-054",
+              "pinyin": "lái",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "中国",
+              "vocabularyID": "vocab-zhongguo",
+              "pinyin": "Zhōngguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "也",
+              "vocabularyID": "vocab-hsk20-275",
+              "pinyin": "yě",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "想",
+              "vocabularyID": "vocab-hsk20-121",
+              "pinyin": "xiǎng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "的",
+              "vocabularyID": "vocab-hsk20-015",
+              "pinyin": "de",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "妈妈",
+              "vocabularyID": "vocab-hsk20-061",
+              "pinyin": "māma",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -488,7 +1100,51 @@
             "relativePath": "assets/audio/faedaac32d32662883faf6d1.m4a",
             "sha256": "898dd78b54a69563a42634cdba876328618fbe46b829a40fc8da8152d633fac6",
             "durationMilliseconds": 1916
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "想",
+              "vocabularyID": "vocab-hsk20-121",
+              "pinyin": "xiǎng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "她",
+              "vocabularyID": "vocab-hsk20-047",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "可以",
+              "vocabularyID": "vocab-hsk20-211",
+              "pinyin": "kěyǐ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "打电话",
+              "vocabularyID": "vocab-hsk20-013",
+              "pinyin": "dǎ diànhuà",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Mina",
@@ -503,7 +1159,81 @@
             "relativePath": "assets/audio/50b6fcbc22a40a00a9b1ce40.m4a",
             "sha256": "63280c8794b4cf0a31264164eb5caaa30fd3bae7aabfe8bbee739452503cf596",
             "durationMilliseconds": 4274
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "昨天",
+              "vocabularyID": "vocab-hsk20-148",
+              "pinyin": "zuótiān",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "打电话",
+              "vocabularyID": "vocab-hsk20-013",
+              "pinyin": "dǎ diànhuà",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "看",
+              "vocabularyID": "vocab-hsk20-051",
+              "pinyin": "kàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "那个",
+              "vocabularyID": null,
+              "pinyin": "nàge",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "飞机",
+              "vocabularyID": "vocab-hsk20-029",
+              "pinyin": "fēijī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "来",
+              "vocabularyID": "vocab-hsk20-054",
+              "pinyin": "lái",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -518,7 +1248,69 @@
             "relativePath": "assets/audio/3c805233ee0cca56cbecbee2.m4a",
             "sha256": "59df42ba79d3d668e27a084989eba82042a7815617f88f3f5d461c1799080645",
             "durationMilliseconds": 2942
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "看见",
+              "vocabularyID": "vocab-hsk20-052",
+              "pinyin": "kànjiàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "三",
+              "vocabularyID": "vocab-hsk20-089",
+              "pinyin": "sān",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "点",
+              "vocabularyID": "vocab-hsk20-016",
+              "pinyin": "diǎn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "的",
+              "vocabularyID": "vocab-hsk20-015",
+              "pinyin": "de",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "飞机",
+              "vocabularyID": "vocab-hsk20-029",
+              "pinyin": "fēijī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Mina",
@@ -533,7 +1325,51 @@
             "relativePath": "assets/audio/71b34aeebc072886f76ab394.m4a",
             "sha256": "bdd4c68951af195b6cdad94d341e7e6dc59e9d769ddcd870d9229451f76da57e",
             "durationMilliseconds": 2077
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "看见",
+              "vocabularyID": "vocab-hsk20-052",
+              "pinyin": "kànjiàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "哥哥",
+              "vocabularyID": "vocab-hsk20-182",
+              "pinyin": "gēge",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "吗",
+              "vocabularyID": "vocab-hsk20-062",
+              "pinyin": "ma",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -548,7 +1384,51 @@
             "relativePath": "assets/audio/2d6025c81cb1bcc60b4d95f9.m4a",
             "sha256": "9c4c693da12ff12b315bc9308edaa01430e2e62e5e438edc350dfa35073f6f20",
             "durationMilliseconds": 1530
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "没有",
+              "vocabularyID": null,
+              "pinyin": "méiyǒu",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "人",
+              "vocabularyID": "vocab-ren",
+              "pinyin": "rén",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "太",
+              "vocabularyID": "vocab-hsk20-107",
+              "pinyin": "tài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "多",
+              "vocabularyID": "vocab-hsk20-024",
+              "pinyin": "duō",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Mina",
@@ -563,7 +1443,63 @@
             "relativePath": "assets/audio/acf00300ea409a01b2ca6915.m4a",
             "sha256": "95277276cfbed5bb14f320a979b2ef9204c99802618a3b5dc9919795be86767d",
             "durationMilliseconds": 2423
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我们",
+              "vocabularyID": "vocab-hsk20-113",
+              "pinyin": "wǒmen",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "去",
+              "vocabularyID": "vocab-hsk20-084",
+              "pinyin": "qù",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "门",
+              "vocabularyID": "vocab-hsk20-225",
+              "pinyin": "mén",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "旁边",
+              "vocabularyID": "vocab-hsk20-230",
+              "pinyin": "pángbiān",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "看",
+              "vocabularyID": "vocab-hsk20-051",
+              "pinyin": "kàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "吗",
+              "vocabularyID": "vocab-hsk20-062",
+              "pinyin": "ma",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Tao",
@@ -578,7 +1514,63 @@
             "relativePath": "assets/audio/b58b2dbb020ba33cf03b1d89.m4a",
             "sha256": "158518c4a52477358080e3871e2eb300fbacc8e1a2466fe77ff1c768a0619e38",
             "durationMilliseconds": 2314
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "好",
+              "vocabularyID": "vocab-hsk20-036",
+              "pinyin": "hǎo",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "看",
+              "vocabularyID": "vocab-hsk20-051",
+              "pinyin": "kàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "在",
+              "vocabularyID": "vocab-hsk20-139",
+              "pinyin": "zài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "那里",
+              "vocabularyID": null,
+              "pinyin": "nàlǐ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         }
       ],
       "kind": "dialogue",
@@ -603,7 +1595,164 @@
           "translation": {
             "fr": "Mon frère est parti travailler en France en 2019. Il y a beaucoup d’amis. Aujourd’hui, il rentre à Pékin en avion."
           },
-          "segmentation": [],
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "哥哥",
+              "vocabularyID": "vocab-hsk20-182",
+              "pinyin": "gēge",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "二",
+              "vocabularyID": "vocab-hsk20-027",
+              "pinyin": "èr",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "零",
+              "vocabularyID": "vocab-hsk20-059",
+              "pinyin": "líng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "一",
+              "vocabularyID": "vocab-hsk20-131",
+              "pinyin": "yī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "九",
+              "vocabularyID": "vocab-hsk20-049",
+              "pinyin": "jiǔ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "年",
+              "vocabularyID": "vocab-hsk20-075",
+              "pinyin": "nián",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "去",
+              "vocabularyID": "vocab-hsk20-084",
+              "pinyin": "qù",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "法国",
+              "vocabularyID": "vocab-faguo",
+              "pinyin": "Fǎguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "工作",
+              "vocabularyID": "vocab-hsk20-033",
+              "pinyin": "gōngzuò",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "在",
+              "vocabularyID": "vocab-hsk20-139",
+              "pinyin": "zài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "法国",
+              "vocabularyID": "vocab-faguo",
+              "pinyin": "Fǎguó",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "有",
+              "vocabularyID": "vocab-hsk20-136",
+              "pinyin": "yǒu",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "多",
+              "vocabularyID": "vocab-hsk20-024",
+              "pinyin": "duō",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "朋友",
+              "vocabularyID": "vocab-hsk20-077",
+              "pinyin": "péngyǒu",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "今天",
+              "vocabularyID": "vocab-hsk20-048",
+              "pinyin": "jīntiān",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "坐",
+              "vocabularyID": "vocab-hsk20-149",
+              "pinyin": "zuò",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "飞机",
+              "vocabularyID": "vocab-hsk20-029",
+              "pinyin": "fēijī",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "回",
+              "vocabularyID": "vocab-hsk20-041",
+              "pinyin": "huí",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "北京",
+              "vocabularyID": "vocab-hsk20-005",
+              "pinyin": "Běijīng",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
           "audio": {
             "id": "audio-eff7b896782144691ba234a8",
             "kind": "audio",
@@ -619,7 +1768,110 @@
           "translation": {
             "fr": "L’après-midi, nous l’avons vu à l’aéroport. Il est content, et moi aussi."
           },
-          "segmentation": [],
+          "segmentation": [
+            {
+              "surface": "我们",
+              "vocabularyID": "vocab-hsk20-113",
+              "pinyin": "wǒmen",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "下午",
+              "vocabularyID": "vocab-hsk20-117",
+              "pinyin": "xiàwǔ",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "在",
+              "vocabularyID": "vocab-hsk20-139",
+              "pinyin": "zài",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "机场",
+              "vocabularyID": "vocab-hsk20-197",
+              "pinyin": "jīchǎng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "看见",
+              "vocabularyID": "vocab-hsk20-052",
+              "pinyin": "kànjiàn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "了",
+              "vocabularyID": "vocab-hsk20-058",
+              "pinyin": "le",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "他",
+              "vocabularyID": "vocab-hsk20-106",
+              "pinyin": "tā",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "高兴",
+              "vocabularyID": "vocab-hsk20-031",
+              "pinyin": "gāoxìng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "，",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "也",
+              "vocabularyID": "vocab-hsk20-275",
+              "pinyin": "yě",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "高兴",
+              "vocabularyID": "vocab-hsk20-031",
+              "pinyin": "gāoxìng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ],
           "audio": {
             "id": "audio-7d79d269186e911a082fabbf",
             "kind": "audio",

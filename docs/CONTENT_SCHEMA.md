@@ -374,14 +374,46 @@ Le décodeur conserve la compatibilité avec une forme enveloppée sous value,
 mais les documents générés utilisent la forme plate. Les IDs de blocs et
 d'exercices sont uniques dans le bundle.
 
-Une DialogueLine contient speaker, hanzi, pinyin, translation et audio?.
-Une participation facultative porte prompt, audioLineIndex, acceptedResponses
+Une DialogueLine contient speaker, hanzi, pinyin, translation, segmentation et
+audio?. Une participation facultative porte prompt, audioLineIndex, acceptedResponses
 et éventuellement hint.
 
 Une ReadingParagraph contient id, hanzi, pinyin, translation, segmentation et
 audio?. Les histoires du parcours quotidien sont complètes et inline dans les
 ReadingBlock ; un storyID stable permet leur affichage dans l'explorateur sans
 dupliquer un fichier de récit.
+
+### Segmentation des textes
+
+Chaque texte mandarin que l'apprenant lit en entier porte une `segmentation` non
+vide : répliques de dialogue, paragraphes de lecture (donc les histoires de
+l'explorateur), exemples du vocabulaire (`example`) et exemples des notes
+lexicales (`grammarNotes[].examples`). Le décodeur Swift lit un tableau absent
+comme vide ; les documents générés l'écrivent toujours. Chaque segment est
+`{surface, vocabularyID, pinyin, partOfSpeech}` :
+
+* les `surface` mises bout à bout redonnent exactement le hanzi, ponctuation
+  comprise ; un segment est un mot tel que le pinyin l'écrit (même découpage,
+  voir « Pinyin, tons et graphies »), un signe de ponctuation ou un prénom en
+  lettres latines ; une expression de `PHRASES` qui est une entrée du vocabulaire
+  reste un seul segment (`你好`, `nǐ hǎo`) ;
+* `pinyin` est le mot tel que la phrase l'écrit, sans la majuscule de début de
+  phrase (`wǒ`, `Běijīng`, `bú`) ; il vaut null pour la ponctuation. Les pinyins
+  des segments, lus dans l'ordre, sont les mots du pinyin du texte ;
+* `vocabularyID` désigne l'entrée du vocabulaire d'une leçon du cours qui écrit
+  ce mot (celle de la leçon d'abord) quand elle se lit avec les mêmes syllabes, au
+  ton près (`不` lu `bú` est 不 `bù` ; `长` lu `zhǎng` n'est pas 长 `cháng`) ;
+  sinon null : mot du catalogue non enseigné, nombre, mot d'`EXTRA_WORDS`,
+  pluriel en 们, prénom, ponctuation. `partOfSpeech` reprend celui de l'entrée ;
+  un nom propre est `noun`.
+
+Un ID peut donc désigner un mot d'une autre leçon : `ChineseSelectableText`
+ouvre la fiche par son ID et `WordDetailView` cherche l'entrée dans toutes les
+leçons du cours (`AppModel.dictionaryEntries()`), chargées ou non.
+`content_tool.py generate` écrit la segmentation avec `Tools/pinyin_format.py`,
+juste après le pinyin ; `lint` refuse une segmentation absente ou vide, qui
+n'épelle pas son texte, ne lit pas son pinyin mot à mot, désigne un ID
+qu'aucune leçon ne définit, ou diffère de celle que le générateur écrirait.
 
 Le générateur abaisse chaque note grammar en un IntroductionBlock autonome. Son
 ID suit block-lesson-XX-grammar-01, son titre est « Grammaire — » suivi du

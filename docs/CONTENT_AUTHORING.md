@@ -300,7 +300,9 @@ dont l'un est juste et que le texte permet de départager. `listenSentence` et
 ### Ce que la pose modifie
 
 La pose remplace le titre, le résumé, les répliques du dialogue, le titre et les paragraphes
-de la lecture (identifiants `p1`, `p2`…, `segmentation: []`, `audio: null`), l'`extraVocabulary`
+de la lecture (identifiants `p1`, `p2`…, `audio: null` ; comme pour tout texte, la
+`segmentation` est écrite à la génération, voir CONTENT_SCHEMA.md, « Segmentation des
+textes », et une segmentation écrite dans un pack est remplacée), l'`extraVocabulary`
 de la leçon, et les exercices `ex-lNN-listen`, `ex-lNN-speak` et celui que la lecture
 référence : les IDs des blocs, de l'histoire, de l'exercice et
 `comprehensionExerciseIDs` restent ceux du pack, et `metadata.situationAuthored` vaut
@@ -577,7 +579,7 @@ contenu chinois sont des exemples à remplacer par les textes validés de releas
   "reading": {
     "id": "block-l5-reading", "storyID": "story-l5-direction", "title": {"fr": "Dans la rue"},
     "paragraphs": [
-      {"id": "p1", "hanzi": "我问路。", "pinyin": "wǒ wèn lù.", "translation": {"fr": "Je demande mon chemin."}, "segmentation": []}
+      {"id": "p1", "hanzi": "我问路。", "pinyin": "wǒ wèn lù.", "translation": {"fr": "Je demande mon chemin."}}
     ],
     "comprehensionExerciseIDs": ["ex-l5-reading"]
   },

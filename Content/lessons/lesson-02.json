@@ -120,7 +120,21 @@
           "relativePath": "assets/audio/668713a2d603a1eb4a8f1b89.m4a",
           "sha256": "8dd02e0dd27325b85c8d7f1d59286570ea91ecde1cadb6f266c3a614750183cc",
           "durationMilliseconds": 642
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "你好",
+            "vocabularyID": "vocab-ni-hao",
+            "pinyin": "nǐ hǎo",
+            "partOfSpeech": "interjection"
+          },
+          {
+            "surface": "！",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "你 désigne la personne à qui l'on parle."
@@ -178,7 +192,33 @@
           "relativePath": "assets/audio/bac533ad81757d89d4d3b298.m4a",
           "sha256": "fb339251f10eed502d21dc604d0bb6b040a97a38783ebe47e28deeeb80c92452",
           "durationMilliseconds": 902
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我",
+            "vocabularyID": "vocab-wo",
+            "pinyin": "wǒ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "叫",
+            "vocabularyID": "vocab-jiao",
+            "pinyin": "jiào",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "安",
+            "vocabularyID": null,
+            "pinyin": "Ān",
+            "partOfSpeech": "noun"
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "我 commence la phrase quand je parle de moi."
@@ -232,7 +272,33 @@
               "translation": {
                 "fr": "Je m'appelle Lin."
               },
-              "audio": null
+              "audio": null,
+              "segmentation": [
+                {
+                  "surface": "我",
+                  "vocabularyID": "vocab-wo",
+                  "pinyin": "wǒ",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "叫",
+                  "vocabularyID": "vocab-jiao",
+                  "pinyin": "jiào",
+                  "partOfSpeech": "verb"
+                },
+                {
+                  "surface": "林",
+                  "vocabularyID": null,
+                  "pinyin": "Lín",
+                  "partOfSpeech": "noun"
+                },
+                {
+                  "surface": "。",
+                  "vocabularyID": null,
+                  "pinyin": null,
+                  "partOfSpeech": null
+                }
+              ]
             }
           ],
           "metadata": {
@@ -268,7 +334,33 @@
           "relativePath": "assets/audio/bac533ad81757d89d4d3b298.m4a",
           "sha256": "fb339251f10eed502d21dc604d0bb6b040a97a38783ebe47e28deeeb80c92452",
           "durationMilliseconds": 902
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我",
+            "vocabularyID": "vocab-wo",
+            "pinyin": "wǒ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "叫",
+            "vocabularyID": "vocab-jiao",
+            "pinyin": "jiào",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "安",
+            "vocabularyID": null,
+            "pinyin": "Ān",
+            "partOfSpeech": "noun"
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "叫 est le verbe qui donne son nom à la phrase."
@@ -323,7 +415,33 @@
               "translation": {
                 "fr": "Comment t'appelles-tu ?"
               },
-              "audio": null
+              "audio": null,
+              "segmentation": [
+                {
+                  "surface": "你",
+                  "vocabularyID": "vocab-ni",
+                  "pinyin": "nǐ",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "叫",
+                  "vocabularyID": "vocab-jiao",
+                  "pinyin": "jiào",
+                  "partOfSpeech": "verb"
+                },
+                {
+                  "surface": "什么",
+                  "vocabularyID": "vocab-shenme",
+                  "pinyin": "shénme",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "？",
+                  "vocabularyID": null,
+                  "pinyin": null,
+                  "partOfSpeech": null
+                }
+              ]
             }
           ],
           "metadata": {
@@ -365,7 +483,39 @@
           "relativePath": "assets/audio/d865456a6fdf0ded24c1ae79.m4a",
           "sha256": "94b40bfce84673eae521deaf0684e0e64c8d33c86d39693adf4d36b37d37cdc2",
           "durationMilliseconds": 1325
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "你",
+            "vocabularyID": "vocab-ni",
+            "pinyin": "nǐ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "叫",
+            "vocabularyID": "vocab-jiao",
+            "pinyin": "jiào",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "什么",
+            "vocabularyID": "vocab-shenme",
+            "pinyin": "shénme",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "名字",
+            "vocabularyID": "vocab-mingzi",
+            "pinyin": "míngzi",
+            "partOfSpeech": "noun"
+          },
+          {
+            "surface": "？",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "什么 ouvre une petite fenêtre sur l'information que l'on cherche."
@@ -420,7 +570,45 @@
               "translation": {
                 "fr": "Quel est ton nom ?"
               },
-              "audio": null
+              "audio": null,
+              "segmentation": [
+                {
+                  "surface": "你",
+                  "vocabularyID": "vocab-ni",
+                  "pinyin": "nǐ",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "的",
+                  "vocabularyID": "vocab-hsk20-015",
+                  "pinyin": "de",
+                  "partOfSpeech": null
+                },
+                {
+                  "surface": "名字",
+                  "vocabularyID": "vocab-mingzi",
+                  "pinyin": "míngzi",
+                  "partOfSpeech": "noun"
+                },
+                {
+                  "surface": "是",
+                  "vocabularyID": "vocab-shi",
+                  "pinyin": "shì",
+                  "partOfSpeech": "verb"
+                },
+                {
+                  "surface": "什么",
+                  "vocabularyID": "vocab-shenme",
+                  "pinyin": "shénme",
+                  "partOfSpeech": "pronoun"
+                },
+                {
+                  "surface": "？",
+                  "vocabularyID": null,
+                  "pinyin": null,
+                  "partOfSpeech": null
+                }
+              ]
             }
           ],
           "metadata": {
@@ -462,7 +650,45 @@
           "relativePath": "assets/audio/7dbfa519578ac02a83f5a4c1.m4a",
           "sha256": "5e6a3d9531fdaeb3d4c4dd690905da567d0474cf5fb72e65fc3312289e1686f3",
           "durationMilliseconds": 1408
-        }
+        },
+        "segmentation": [
+          {
+            "surface": "我",
+            "vocabularyID": "vocab-wo",
+            "pinyin": "wǒ",
+            "partOfSpeech": "pronoun"
+          },
+          {
+            "surface": "的",
+            "vocabularyID": "vocab-hsk20-015",
+            "pinyin": "de",
+            "partOfSpeech": null
+          },
+          {
+            "surface": "名字",
+            "vocabularyID": "vocab-mingzi",
+            "pinyin": "míngzi",
+            "partOfSpeech": "noun"
+          },
+          {
+            "surface": "是",
+            "vocabularyID": "vocab-shi",
+            "pinyin": "shì",
+            "partOfSpeech": "verb"
+          },
+          {
+            "surface": "安",
+            "vocabularyID": null,
+            "pinyin": "Ān",
+            "partOfSpeech": "noun"
+          },
+          {
+            "surface": "。",
+            "vocabularyID": null,
+            "pinyin": null,
+            "partOfSpeech": null
+          }
+        ]
       },
       "memoryStory": {
         "fr": "名字 est le nom que l'on écrit sur une étiquette."
@@ -555,7 +781,51 @@
             "relativePath": "assets/audio/645e9722ffdae5177fefeac2.m4a",
             "sha256": "4885421eaca82a850f62212568ce1aa507ec3cea7cdb40984b7dcd4ea1218e7d",
             "durationMilliseconds": 2266
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "你好",
+              "vocabularyID": "vocab-ni-hao",
+              "pinyin": "nǐ hǎo",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "什么",
+              "vocabularyID": "vocab-shenme",
+              "pinyin": "shénme",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "名字",
+              "vocabularyID": "vocab-mingzi",
+              "pinyin": "míngzi",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -570,7 +840,51 @@
             "relativePath": "assets/audio/0b7a767cb995478edf236da5.m4a",
             "sha256": "fa0d50a69e34f6055241b91a401cf4d67ba86b4fa5a0fcf06de0936a642c0ae2",
             "durationMilliseconds": 2160
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "林",
+              "vocabularyID": null,
+              "pinyin": "Lín",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "呢",
+              "vocabularyID": "vocab-ne",
+              "pinyin": "ne",
+              "partOfSpeech": "particle"
+            },
+            {
+              "surface": "？",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "An",
@@ -585,7 +899,33 @@
             "relativePath": "assets/audio/bac533ad81757d89d4d3b298.m4a",
             "sha256": "fb339251f10eed502d21dc604d0bb6b040a97a38783ebe47e28deeeb80c92452",
             "durationMilliseconds": 902
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "叫",
+              "vocabularyID": "vocab-jiao",
+              "pinyin": "jiào",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "安",
+              "vocabularyID": null,
+              "pinyin": "Ān",
+              "partOfSpeech": "noun"
+            },
+            {
+              "surface": "。",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -600,7 +940,39 @@
             "relativePath": "assets/audio/b7602f136eb626c9f3f20b3d.m4a",
             "sha256": "f9ad2d27f81745a8188df1f1bd12a7da85a788e573919d0bb2e887fb89d89022",
             "durationMilliseconds": 1861
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "很",
+              "vocabularyID": "vocab-hsk20-039",
+              "pinyin": "hěn",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "高兴",
+              "vocabularyID": "vocab-hsk20-031",
+              "pinyin": "gāoxìng",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "认识",
+              "vocabularyID": "vocab-hsk20-087",
+              "pinyin": "rènshi",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "你",
+              "vocabularyID": "vocab-ni",
+              "pinyin": "nǐ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "An",
@@ -615,7 +987,45 @@
             "relativePath": "assets/audio/258fb494414c8a717590b488.m4a",
             "sha256": "303268742bd6fa5b539d52596d18c98b8bb7d1ed54e4b9ec89e26eeb34d470a5",
             "durationMilliseconds": 1846
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "我",
+              "vocabularyID": "vocab-wo",
+              "pinyin": "wǒ",
+              "partOfSpeech": "pronoun"
+            },
+            {
+              "surface": "也",
+              "vocabularyID": "vocab-hsk20-275",
+              "pinyin": "yě",
+              "partOfSpeech": null
+            },
+            {
+              "surface": "是",
+              "vocabularyID": "vocab-shi",
+              "pinyin": "shì",
+              "partOfSpeech": "verb"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            },
+            {
+              "surface": "再见",
+              "vocabularyID": "vocab-zaijian",
+              "pinyin": "zàijiàn",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         },
         {
           "speaker": "Lin",
@@ -630,7 +1040,21 @@
             "relativePath": "assets/audio/a2a2a7ebcc108d6771885361.m4a",
             "sha256": "21e2c095e1191158635c374a0c9458623b7e2d1eb68de0710a4c4709f5e9212c",
             "durationMilliseconds": 838
-          }
+          },
+          "segmentation": [
+            {
+              "surface": "再见",
+              "vocabularyID": "vocab-zaijian",
+              "pinyin": "zàijiàn",
+              "partOfSpeech": "interjection"
+            },
+            {
+              "surface": "！",
+              "vocabularyID": null,
+              "pinyin": null,
+              "partOfSpeech": null
+            }
+          ]
         }
       ],
       "comprehensionExerciseIDs": [

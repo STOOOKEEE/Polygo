@@ -654,10 +654,10 @@ public struct ChineseSelectableText: View {
     }
 
     @ViewBuilder private func tokenView(_ token: ChineseToken) -> some View {
-        if let entry = token.entry, wordInteractionEnabled {
+        if let vocabularyID = token.vocabularyID, wordInteractionEnabled {
             Button {
                 if speechEnabled { speakToken(token.surface) }
-                openWord(entry)
+                openWord(vocabularyID)
             } label: {
                 Text(token.surface)
                     .font(font)
@@ -706,10 +706,12 @@ public struct ChineseSelectableText: View {
         (speechEnabled || wordInteractionEnabled) && containsChinese
     }
 
+    /// A word's card opens by its ID: `WordDetailView` finds the entry in
+    /// every lesson of the course, loaded or not.
     private struct ChineseToken: Identifiable {
         let id: Int
         let surface: String
-        let entry: VocabularyEntry?
+        let vocabularyID: VocabularyID?
     }
 
     private var availableVocabulary: [VocabularyEntry] {
@@ -724,7 +726,7 @@ public struct ChineseSelectableText: View {
     private var tokens: [ChineseToken] {
         if !segmentation.isEmpty {
             return segmentation.enumerated().map { offset, segment in
-                ChineseToken(id: offset, surface: segment.surface, entry: vocabularyEntry(for: segment.vocabularyID))
+                ChineseToken(id: offset, surface: segment.surface, vocabularyID: segment.vocabularyID)
             }
         }
 
@@ -744,7 +746,7 @@ public struct ChineseSelectableText: View {
         var cursor = text.startIndex
         while cursor < text.endIndex {
             if let match = dictionary.first(where: { text[cursor...].hasPrefix($0.surface) }) {
-                result.append(ChineseToken(id: result.count, surface: match.surface, entry: match.entry))
+                result.append(ChineseToken(id: result.count, surface: match.surface, vocabularyID: match.entry.id))
                 cursor = text.index(cursor, offsetBy: match.surface.count)
             } else {
                 let next = text.index(after: cursor)
@@ -769,11 +771,6 @@ public struct ChineseSelectableText: View {
             }
         }
         return result
-    }
-
-    private func vocabularyEntry(for id: VocabularyID?) -> VocabularyEntry? {
-        guard let id else { return nil }
-        return availableVocabulary.first { $0.id == id }
     }
 
     private func registerKeyboardPhrase() {
@@ -827,11 +824,11 @@ public struct ChineseSelectableText: View {
         }
     }
 
-    private func openWord(_ entry: VocabularyEntry) {
+    private func openWord(_ vocabularyID: VocabularyID) {
         if let shellWordNavigation {
-            shellWordNavigation(entry.id)
+            shellWordNavigation(vocabularyID)
         } else {
-            selectedVocabularyID = entry.id
+            selectedVocabularyID = vocabularyID
         }
     }
 

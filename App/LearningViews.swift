@@ -1446,8 +1446,8 @@ public struct WordDetailView: View {
                                 font: .title3,
                                 speechEnabled: true,
                                 vocabulary: model.loadedLessons.values.flatMap(\.vocabulary),
-                                audio: example.audio,
-                                wordInteractionEnabled: false
+                                segmentation: example.segmentation,
+                                audio: example.audio
                             )
                                 .foregroundStyle(SylluneColor.ink)
                             Text(example.pinyin)

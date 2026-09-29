@@ -17,6 +17,9 @@ a reading into the written form of GB/T 16159 that every learner-facing pinyin o
 
 The formatter reads only the hanzi and the syllables, never the spacing, case or marks of the
 pinyin it is given: formatting a formatted text changes nothing, which is what lint checks.
+
+The same words cut each dialogue line, reading paragraph and example into the segments the app
+makes tappable (`segmentation`): the words a learner taps are the words the pinyin writes.
 """
 
 from __future__ import annotations
@@ -48,6 +51,7 @@ EXTRA_WORDS = frozenset(
     没有 一下 一点 一点儿 有点儿 一些 回来 回去 出来 出去 进来 进去 起来 过来 下来 上来
     星期一 星期二 星期三 星期四 星期五 星期六 星期天 星期日 可是 火车 汽车 红茶 绿茶 好看 春天 夏天 秋天 冬天
     吃饭 答案 读书 走路 上课 下课 有点 坐下 做完 吃完 看完 读完 买完 写完 好玩 大学
+    今年 早饭 下面 外面 温度 地址 晴朗 树叶 白色 红色 绿色 蓝色 听见 通向 洗手 门口
     一月 二月 三月 四月 五月 六月 七月 八月 九月 十月 十一月 十二月
     """.split()
 )
@@ -231,8 +235,9 @@ def _split(piece: list[_Unit], parts: tuple[str, ...]) -> list[tuple[str, str]] 
     return words
 
 
-def _words(units: list[_Unit], lexicon: Lexicon) -> list[tuple[str, str]]:
-    """(hanzi, spelling) of each word of a run of units.
+def _words(units: list[_Unit], lexicon: Lexicon) -> list[list[tuple[str, str]]]:
+    """(hanzi, spelling) of each word of a run of units, grouped by the lexicon entry they write:
+    a set phrase of `PHRASES` is one group of several words, any other word a group of its own.
 
     The segmentation with the fewest words wins; between equals, the one whose last word is the
     longest (backward maximum matching: 有 意见, not 有意 见).
@@ -254,19 +259,20 @@ def _words(units: list[_Unit], lexicon: Lexicon) -> list[tuple[str, str]]:
         assert found is not None  # a single unit is always a word
         cuts.append((found[1], end))
         end = found[1]
-    words: list[tuple[str, str]] = []
+    groups: list[list[tuple[str, str]]] = []
     for start, end in reversed(cuts):
         piece = units[start:end]
         text = "".join(unit.hanzi for unit in piece)
         # A phrase whose parts would cut an erhua or a number stays one word.
-        words.extend(_split(piece, lexicon.entries.get(text, (text,))) or [(text, _join([unit.spelling for unit in piece]))])
-    joined: list[tuple[str, str]] = []
-    for hanzi, spelling in words:
-        if joined and (hanzi == "们" or hanzi == joined[-1][0] and len(hanzi) == 1 and hanzi not in _DIGITS):
-            joined[-1] = (joined[-1][0] + hanzi, joined[-1][1] + spelling)
+        group = _split(piece, lexicon.entries.get(text, (text,))) or [(text, _join([unit.spelling for unit in piece]))]
+        last = groups[-1][-1] if groups else None
+        hanzi, spelling = group[0]
+        # 们 joins its noun and a doubled hanzi its double, in the group of the word they join.
+        if last and len(group) == 1 and (hanzi == "们" or hanzi == last[0] and len(hanzi) == 1 and hanzi not in _DIGITS):
+            groups[-1][-1] = (last[0] + hanzi, last[1] + spelling)
         else:
-            joined.append((hanzi, spelling))
-    return [(hanzi, _capital(spelling) if hanzi in PROPER_NOUNS else spelling) for hanzi, spelling in joined]
+            groups.append(group)
+    return [[(hanzi, _capital(spelling) if hanzi in PROPER_NOUNS else spelling) for hanzi, spelling in group] for group in groups]
 
 
 def _capital(text: str) -> str:
@@ -276,12 +282,9 @@ def _capital(text: str) -> str:
 # -- texts -------------------------------------------------------------------------
 
 
-def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
-    """The written pinyin of `hanzi`, read by the syllables of `pinyin`.
-
-    A `sentence` starts each of its sentences with a capital, the first one only when the text
-    ends like a sentence (`。？！`): a word or a tile, or a drill of words, does not.
-    """
+def _read(hanzi: str, pinyin: str, lexicon: Lexicon) -> list[tuple[str, list[tuple[str, str]]]]:
+    """The tokens of `hanzi` read by the syllables of `pinyin`, each with its (hanzi, spelling)
+    words: `w` a group of `_words`, `n` a name in Latin letters, `p` a mark (spelled as itself)."""
     items: list[tuple[str, str]] = []
     for token in _HANZI_TOKEN.findall(hanzi):
         if token.isspace():
@@ -306,12 +309,12 @@ def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
         else:
             readings.extend(("s", syllable, erhua) for syllable, erhua in _word_syllables(token))
 
-    tokens: list[tuple[str, str]] = []
+    tokens: list[tuple[str, list[tuple[str, str]]]] = []
     run: list[_Unit] = []
 
     def close_run() -> None:
         if run:
-            tokens.extend(("w", spelling) for _, spelling in _words(_numbers(run), lexicon))
+            tokens.extend(("w", group) for group in _words(_numbers(run), lexicon))
             run.clear()
 
     position = 0
@@ -320,7 +323,7 @@ def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
         kind, text = items[index]
         if kind == "p":
             close_run()
-            tokens.append(("p", text))
+            tokens.append(("p", [(text, text)]))
             index += 1
             continue
         if position >= len(readings):
@@ -331,7 +334,7 @@ def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
             if reading_kind != "n" or reading != text:
                 raise PinyinError(f"'{hanzi}' / '{pinyin}': the name {text} is not where the pinyin has it")
             close_run()
-            tokens.append(("n", text))
+            tokens.append(("n", [(text, text)]))
             index += 1
             continue
         if reading_kind != "s":
@@ -347,6 +350,16 @@ def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
     if position != len(readings):
         raise PinyinError(f"'{hanzi}' / '{pinyin}': the pinyin has more syllables than the text")
     close_run()
+    return tokens
+
+
+def spell(hanzi: str, pinyin: str, lexicon: Lexicon, *, sentence: bool) -> str:
+    """The written pinyin of `hanzi`, read by the syllables of `pinyin`.
+
+    A `sentence` starts each of its sentences with a capital, the first one only when the text
+    ends like a sentence (`。？！`): a word or a tile, or a drill of words, does not.
+    """
+    tokens = [(kind, spelling) for kind, group in _read(hanzi, pinyin, lexicon) for _, spelling in group]
     return _assemble(tokens, sentence, bool(tokens) and tokens[-1][0] == "p" and PUNCTUATION.get(tokens[-1][1], ",") in _SENTENCE_END)
 
 
@@ -374,6 +387,85 @@ def spell_card(hanzi: str, pinyin: str, lexicon: Lexicon) -> str:
     """A card's pinyin, with its tone digits kept apart (`nǐ hǎo · 3-3`)."""
     reading, separator, tones = pinyin.partition(" · ")
     return spell(hanzi, reading, lexicon, sentence=False) + separator + tones
+
+
+# -- segmentation ------------------------------------------------------------------
+
+
+def segmentation(hanzi: str, pinyin: str, lexicon: Lexicon, vocabulary: Mapping[str, Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """The segments of `hanzi` that a learner taps, in order, their surfaces spelling it whole: the
+    words `spell` writes, each mark and each name.
+
+    A set phrase that is a `vocabulary` entry stays one segment (`你好`, read `nǐ hǎo`). A word that
+    is an entry read with the same syllables, whatever their tones (`不` read `bú` is 不 `bù`, `长`
+    read `zhǎng` is not 长 `cháng`), carries its ID and part of speech; a proper noun is a noun. A
+    segment's pinyin is its word as the text writes it, without the capital that starts a sentence;
+    a mark has none.
+    """
+    segments: list[dict[str, Any]] = []
+    for kind, group in _read(hanzi, pinyin, lexicon):
+        if kind == "p":
+            segments.append({"surface": group[0][0], "vocabularyID": None, "pinyin": None, "partOfSpeech": None})
+        elif kind == "n":
+            segments.append({"surface": group[0][0], "vocabularyID": None, "pinyin": group[0][1], "partOfSpeech": "noun"})
+        else:
+            whole = "".join(surface for surface, _ in group)
+            words = [(whole, " ".join(spelling for _, spelling in group))] if len(group) > 1 and whole in vocabulary else group
+            for surface, spelling in words:
+                entry = vocabulary.get(surface, {})
+                if entry and _toneless(entry["pinyin"]) != _toneless(spelling):
+                    entry = {}
+                segments.append({
+                    "surface": surface,
+                    "vocabularyID": entry.get("id"),
+                    "pinyin": spelling,
+                    "partOfSpeech": entry.get("partOfSpeech") or ("noun" if surface in PROPER_NOUNS else None),
+                })
+    return segments
+
+
+def _toneless(pinyin: str) -> str:
+    return "".join(untoned(char) for char in reading_key(pinyin))
+
+
+def segmented_texts(lesson: Mapping[str, Any]) -> Iterable[tuple[str, dict[str, Any]]]:
+    """(path, text) of each Mandarin text of a lesson that carries a segmentation: vocabulary
+    examples, grammar note examples, dialogue lines and reading paragraphs."""
+    for index, entry in enumerate(lesson.get("vocabulary", [])):
+        if isinstance(entry.get("example"), dict):
+            yield f"vocabulary[{index}].example", entry["example"]
+        for note_index, note in enumerate(entry.get("grammarNotes", [])):
+            for example_index, example in enumerate(note.get("examples", [])):
+                yield f"vocabulary[{index}].grammarNotes[{note_index}].examples[{example_index}]", example
+    for index, block in enumerate(lesson.get("blocks", [])):
+        for key in ("lines", "paragraphs"):
+            for item_index, item in enumerate(block.get(key, [])):
+                yield f"blocks[{index}].{key}[{item_index}]", item
+
+
+def segmentation_problems(lessons: Mapping[str, Mapping[str, Any]]) -> list[str]:
+    """Each segmented text whose segmentation is missing or empty, does not spell its hanzi, does
+    not read its pinyin word by word, or names a vocabulary ID that no lesson defines."""
+    known = {entry.get("id") for lesson in lessons.values() for entry in lesson.get("vocabulary", [])}
+    problems: list[str] = []
+    for lesson_id in sorted(lessons):
+        for path, text in segmented_texts(lessons[lesson_id]):
+            where = f"{lesson_id}.{path}"
+            segments = text.get("segmentation")
+            if not isinstance(segments, list) or not segments or not all(isinstance(segment, dict) for segment in segments):
+                problems.append(f"{where}: '{text.get('hanzi')}' has no segmentation")
+                continue
+            surfaces = "".join(str(segment.get("surface")) for segment in segments)
+            if surfaces != text.get("hanzi"):
+                problems.append(f"{where}: the segments spell '{surfaces}', not '{text.get('hanzi')}'")
+            read = [word for segment in segments if isinstance(segment.get("pinyin"), str) for word in re.findall(_LETTERS, segment["pinyin"].lower())]
+            if read != re.findall(_LETTERS, str(text.get("pinyin")).lower()):
+                problems.append(f"{where}: the segments read '{' '.join(read)}', the text '{text.get('pinyin')}'")
+            problems.extend(
+                f"{where}: segment '{segment.get('surface')}' names {segment['vocabularyID']}, which no lesson defines"
+                for segment in segments if segment.get("vocabularyID") is not None and segment["vocabularyID"] not in known
+            )
+    return problems
 
 
 # -- prose -------------------------------------------------------------------------
@@ -428,12 +520,14 @@ def spell_prose(text: str, lexicon: Lexicon) -> str:
 
 
 def format_lessons(lessons: Mapping[str, dict[str, Any]], lexicon: Lexicon) -> None:
-    """Write every learner-facing pinyin of the lessons, in place.
+    """Write every learner-facing pinyin of the lessons, and the segmentation of their texts, in place.
 
-    Each pinyin field is spelled from the hanzi it reads. A pinyin choice of a dictation carries
-    no hanzi: it takes the spelling that the lessons give its reading (a word's or a sentence's,
-    like the text it is asked of), else the spelling of the asked text's hanzi (the made-up
-    syllables of a minimal pair). Prose, last, gets `spell_prose`.
+    Each pinyin field is spelled from the hanzi it reads. Each text of `segmented_texts` then gets
+    the `segmentation` of its spelled words, linked to the lessons' vocabulary (its own lesson's
+    entry first). A pinyin choice of a dictation carries no hanzi: it takes the spelling that the
+    lessons give its reading (a word's or a sentence's, like the text it is asked of), else the
+    spelling of the asked text's hanzi (the made-up syllables of a minimal pair). Prose, last, gets
+    `spell_prose`.
     """
     readings: dict[bool, dict[str, set[str]]] = {False: {}, True: {}}
 
@@ -468,8 +562,6 @@ def format_lessons(lessons: Mapping[str, dict[str, Any]], lexicon: Lexicon) -> N
                 field(line, "pinyin", line.get("hanzi"), True)
             for paragraph in block.get("paragraphs", []):
                 field(paragraph, "pinyin", paragraph.get("hanzi"), True)
-                for segment in paragraph.get("segmentation", []):
-                    field(segment, "pinyin", segment.get("surface"), False)
             spec = block.get("spec")
             if not isinstance(spec, dict):
                 continue
@@ -485,6 +577,13 @@ def format_lessons(lessons: Mapping[str, dict[str, Any]], lexicon: Lexicon) -> N
                 field(item, "pinyin", item.get("hanzi"), True)
             if isinstance(spec.get("referencePinyin"), str):
                 _format_speaking(spec, lexicon)
+
+    vocabulary = {entry["hanzi"]: entry for lesson in lessons.values() for entry in lesson.get("vocabulary", [])}
+    for lesson in lessons.values():
+        # A lesson's own entry wins over another lesson's entry of the same word.
+        own = {**vocabulary, **{entry["hanzi"]: entry for entry in lesson.get("vocabulary", [])}}
+        for _, text in segmented_texts(lesson):
+            text["segmentation"] = segmentation(text["hanzi"], text["pinyin"], lexicon, own)
 
     for lesson in lessons.values():
         words = {entry.get("hanzi") for entry in lesson.get("vocabulary", [])} | set(lesson.get("metadata", {}).get("carriers") or {})
