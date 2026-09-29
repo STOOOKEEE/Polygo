@@ -44,8 +44,10 @@ private extension Color {
 }
 
 public enum SylluneColor {
-    // Cream and indigo surfaces stay distinct in both appearances; accent
-    // foregrounds are paired with their adaptive fills below.
+    // One charter for every tab: cream/indigo neutrals, jade as the primary
+    // accent, sun for rewards (coins, streak, unit challenges), sky and coral
+    // as secondary accents, success/error for feedback. Every screen follows
+    // the system appearance through these adaptive tokens; none forces a theme.
     public static let canvas = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
     public static let surface = Color.sylluneAdaptive(light: SylluneRGB(1, 0.988, 0.961), dark: SylluneRGB(0.102, 0.129, 0.263))
     public static let surfaceRaised = Color.sylluneAdaptive(light: SylluneRGB(0.949, 0.910, 0.843), dark: SylluneRGB(0.141, 0.176, 0.337))
@@ -64,36 +66,15 @@ public enum SylluneColor {
 
     public static let heroStart = Color.sylluneAdaptive(light: SylluneRGB(0.090, 0.435, 0.392), dark: SylluneRGB(0.235, 0.180, 0.373))
     public static let heroEnd = Color.sylluneAdaptive(light: SylluneRGB(0.031, 0.286, 0.318), dark: SylluneRGB(0.102, 0.129, 0.263))
+    /// Text on the deep fills that stay dark in both appearances: the hero
+    /// gradient, coral and `skyButton`.
+    public static let inkOnDeep = Color.white
     public static let progressTrack = Color.sylluneAdaptive(light: SylluneRGB(0.886, 0.855, 0.800), dark: SylluneRGB(0.224, 0.263, 0.396))
     public static let inkOnSuccess = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
     public static let pathJade = Color.sylluneAdaptive(light: SylluneRGB(0.080, 0.435, 0.384), dark: SylluneRGB(0.278, 0.843, 0.761))
-    public static let pathCoral = Color.sylluneAdaptive(light: SylluneRGB(0.750, 0.275, 0.220), dark: SylluneRGB(1, 0.475, 0.353))
     public static let pathSky = Color.sylluneAdaptive(light: SylluneRGB(0.122, 0.360, 0.588), dark: SylluneRGB(0.550, 0.718, 0.992))
-    public static let pathViolet = Color.sylluneAdaptive(light: SylluneRGB(0.350, 0.230, 0.580), dark: SylluneRGB(0.770, 0.630, 0.996))
 
     public static let inkOnJade = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
-    public static let inkOnCoral = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
-    public static let inkOnSky = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
-    public static let inkOnViolet = Color.sylluneAdaptive(light: SylluneRGB(1, 0.973, 0.914), dark: SylluneRGB(0.063, 0.082, 0.176))
-
-    public static func pathAccent(for index: Int) -> Color {
-        switch index % 4 {
-        case 0: return pathJade
-        case 1: return pathCoral
-        case 2: return pathSky
-        default: return pathViolet
-        }
-    }
-
-    public static func pathAccentForeground(for index: Int) -> Color {
-        switch index % 4 {
-        case 0: return inkOnJade
-        case 1: return inkOnCoral
-        case 2: return inkOnSky
-        default: return inkOnViolet
-        }
-    }
-
     public static let inkOnSun = Color.sylluneAdaptive(light: SylluneRGB(0.161, 0.137, 0.247), dark: SylluneRGB(0.161, 0.137, 0.247))
 }
 
@@ -433,7 +414,7 @@ public struct SylluneLogoMark: View {
             Circle().fill(SylluneColor.coral)
             Image(systemName: "waveform.path.ecg")
                 .font(.system(size: size * 0.42, weight: .semibold))
-                .foregroundStyle(.white)
+                .foregroundStyle(SylluneColor.inkOnDeep)
                 .accessibilityHidden(true)
         }
         .frame(width: size, height: size)

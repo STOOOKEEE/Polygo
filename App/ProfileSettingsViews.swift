@@ -101,7 +101,7 @@ public struct ProfileView: View {
     private var profileIdentity: some View {
         HStack(spacing: 14) {
             Circle().fill(SylluneColor.coral).frame(width: 58, height: 58)
-                .overlay(Text(initials).font(.title2.weight(.semibold)).foregroundStyle(.white))
+                .overlay(Text(initials).font(.title2.weight(.semibold)).foregroundStyle(SylluneColor.inkOnDeep))
                 .accessibilityLabel("Initiales : \(initials)")
             VStack(alignment: .leading, spacing: 4) {
                 Text(model.greeting).font(.title2.weight(.semibold)).foregroundStyle(SylluneColor.ink)

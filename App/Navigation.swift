@@ -173,16 +173,6 @@ private enum BottomTab: String, CaseIterable, Identifiable {
         }
     }
 
-    var accent: Color {
-        switch self {
-        case .today: return SylluneColor.sun
-        case .path: return SylluneColor.pathCoral
-        case .explorer: return SylluneColor.pathSky
-        case .cards: return SylluneColor.pathViolet
-        case .profile: return SylluneColor.pathJade
-        }
-    }
-
     var shortcut: KeyEquivalent {
         switch self {
         case .today: return "1"
@@ -458,7 +448,7 @@ struct BottomNavigationShell: View {
             VStack(spacing: 3) {
                 Image(systemName: tab.symbolName)
                     .font(.body.weight(isSelected ? .semibold : .regular))
-                    .foregroundStyle(isSelected ? tab.accent : SylluneColor.inkMuted)
+                    .foregroundStyle(isSelected ? SylluneColor.jadeDeep : SylluneColor.inkMuted)
                     .accessibilityHidden(true)
                 Text(tab.title)
                     .font(.caption2.weight(.semibold))
@@ -472,7 +462,7 @@ struct BottomNavigationShell: View {
             .background {
                 if isSelected {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(tab.accent.opacity(0.14))
+                        .fill(SylluneColor.jade.opacity(0.14))
                 }
             }
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))

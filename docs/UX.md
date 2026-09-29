@@ -18,7 +18,7 @@ Le logo vectoriel original est [Syllune-Logo.svg](../Design/Syllune-Logo.svg) ; 
 
 ### Couleurs sémantiques
 
-Les couleurs sont des rôles, pas des valeurs dispersées dans les vues. Chaque couleur a une forme ou un libellé associé : la couleur ne porte jamais seule l’information.
+Les couleurs sont des rôles, pas des valeurs dispersées dans les vues. Chaque couleur a une forme ou un libellé associé : la couleur ne porte jamais seule l’information. Une seule charte sert les cinq onglets : fond crème (indigo en sombre), cartes `surface`, jade comme accent principal, `sun` pour les récompenses, `sky`/`coral` comme accents secondaires et `success`/`error` pour le retour. Aucun écran n’impose son propre thème : tous suivent le réglage Apparence (système, clair ou sombre) à travers les mêmes tokens adaptatifs.
 
 | Token | Clair | Sombre | Usage |
 | --- | --- | --- | --- |
@@ -28,16 +28,16 @@ Les couleurs sont des rôles, pas des valeurs dispersées dans les vues. Chaque 
 | `ink` | `#29233F` | `#FFF8E9` | Texte principal et caractères chinois |
 | `inkMuted` | `#6D6681` | `#BFC7E5` | Texte secondaire, métadonnées |
 | `border` | `#E2DACC` | `#394365` | Séparateurs et contours |
-| `jade` | `#148F7A` | `#47D7C2` | Accent jade |
-| `jadeDeep` | `#176F64` | `#74E7D5` | Liens et texte accentué |
-| `coral` | `#BC463B` | `#FF795A` | Accent corail |
-| `sun` | `#F3C55E` | `#F5C75E` | Pièces et repères miel |
-| `sky` | `#276096` | `#8CB7FD` | Écoute et audio |
-| `pathViolet` | `#593B94` | `#C4A1FE` | Accent iris du parcours |
+| `jade` | `#148F7A` | `#47D7C2` | Accent principal : onglet sélectionné, progression, étape actuelle |
+| `jadeDeep` | `#176F64` | `#74E7D5` | Liens, surtitres et texte accentué |
+| `jadeButton` | `#176F64` | `#47D7C2` | Fond du bouton principal et de l’étape actuelle |
+| `coral` | `#BC463B` | `#FF795A` | « Difficile », « Défi de l’unité », avatar |
+| `sun` | `#F3C55E` | `#F5C75E` | Récompenses : pièces, série, contour des défis |
+| `sky` | `#276096` | `#8CB7FD` | Écoute, audio, Explorer, « Révision » |
 | `success` | `#166F49` | `#71DEA7` | Réponse correcte, terminé |
 | `error` | `#B53347` | `#FA7A8C` | Erreur corrigeable, permission refusée |
 
-Valeurs hexadécimales arrondies depuis `App/DesignSystem.swift`. Les fonds accentués utilisent leurs premiers plans adaptatifs associés (`inkOnJade`, `inkOnCoral`, `inkOnSky`, `inkOnViolet`, `inkOnSun`), pas un blanc imposé dans les deux thèmes. Les combinaisons doivent atteindre au moins 4,5:1 pour le corps et 3:1 pour les grands titres ou les éléments graphiques porteurs d’information. Les états « juste » et « à revoir » ajoutent toujours une icône et un libellé.
+Valeurs hexadécimales arrondies depuis `App/DesignSystem.swift`. Les fonds accentués utilisent leurs premiers plans adaptatifs associés (`inkOnJade`, `inkOnSuccess`, `inkOnSun`) ; `inkOnDeep` (blanc) est réservé aux fonds qui restent foncés dans les deux thèmes : dégradé héros, `coral`, `skyButton`. Les combinaisons doivent atteindre au moins 4,5:1 pour le corps et 3:1 pour les grands titres ou les éléments graphiques porteurs d’information. Les états « juste » et « à revoir » ajoutent toujours une icône et un libellé. Les vues n’ajoutent ni couleur brute, ni dégradé, ni relief propres : seules les ombres légères de `sylluneCard` détachent une surface.
 
 ### Typographie
 
@@ -50,7 +50,7 @@ Valeurs hexadécimales arrondies depuis `App/DesignSystem.swift`. Les fonds acce
 
 ### Formes, rythme et icônes
 
-Espacements : `4, 8, 12, 16, 20, 24, 32, 40`. Rayons : `12` pour les champs, `18` pour les cartes, `24` pour les panneaux d’accueil, `999` pour les pastilles. Bordure standard `1 pt`; ombre très légère uniquement sur une surface qui se détache du fond.
+Espacements : `4, 8, 12, 16, 20, 24, 32, 40`. Rayons : `12` pour les champs et pastilles d’icône, `16`–`18` pour les cartes et lignes internes, `24` pour les panneaux d’accueil et les cartes d’unité du parcours, `999` pour les pastilles. Bordure standard `1 pt`; ombre très légère uniquement sur une surface qui se détache du fond (`sylluneCard`).
 
 Les contrôles interactifs visent au moins `44×44 pt` sur iPhone/iPad. Chaque bouton de navigation basse a un minimum de `64×54 pt`, avant ses marges. Les leçons utilisent des SF Symbols sémantiques associés à leurs identifiants stables ; les illustrations de Tavi et de la pièce sont des ressources originales, sans dépendance réseau.
 
@@ -97,15 +97,15 @@ Une action ouvre une route identifiée (`lessonID`, `reviewQueueID`, `mistakeFil
 
 ### Parcours
 
-Le parcours est une carte de progression dans une colonne centrée (520 pt max) sur les trois plateformes. Une carte d’en-tête compacte affiche « TON CHEMIN », le compte « N sur M terminées » et une barre de progression ; le palier du programme, le titre complet, la description et les références du cours restent dans « À propos de ce parcours ».
+Le parcours reprend le langage visuel de l’accueil : fond `canvas`, cartes `sylluneCard` de rayon 24, dans une colonne centrée (600 pt max) sur les trois plateformes. Une carte d’en-tête compacte affiche « TON CHEMIN », le compte « N sur M terminées » et une barre de progression ; le palier du programme, le titre complet, la description et les références du cours restent dans « À propos de ce parcours ».
 
-Chaque unité s’ouvre sur une bannière pleine couleur (accent tournant de la palette) avec la pastille de son numéro, son titre, son nombre d’étapes et d’étapes terminées. Tavi est posé sur la bannière de la première unité et de celle qui contient l’étape actuelle. Un grand Hanzi de l’unité apparaît en filigrane (≈ 5 %), masqué pour l’accessibilité.
+Chaque module du manifeste devient une carte d’unité repliable. Son en-tête est un bouton (`learningPath.unit.<moduleID>`) : pastille du numéro (coche verte une fois l’unité terminée), « UNITÉ n », titre du module, mini-barre et « x/y leçons », chevron. VoiceOver l’annonce comme en-tête « Unité n, titre, x sur y leçons terminées » avec la valeur « Dépliée » ou « Repliée ». Par défaut, seules sont dépliées l’unité de l’étape actuelle et celle de la prochaine leçon du programme principal (le module 0 étant facultatif, un débutant voit donc l’unité 0 et l’unité 1) ; les unités terminées et à venir sont repliées mais gardent leur en-tête. Chaque choix d’ouverture ou de fermeture est mémorisé pour la scène (`@SceneStorage`). Tavi, en petit, se tient dans l’en-tête de l’unité de l’étape actuelle.
 
-Les nœuds suivent une sinusoïde douce reliée par une piste épaisse et courbe : couleur de l’unité jusqu’à la dernière étape terminée, gris ensuite. Chaque nœud est un bouton rond en relief (face en dégradé, socle plus sombre qui s’enfonce à l’appui) avec l’icône du thème de la leçon (flèches circulaires pour une révision `review-NN`, couronne pour le défi `boss-unit-NN` qui clôt l’unité) ; terminé : badge coche ; verrouillé : gris et cadenas. Les titres ne sont pas affichés à côté de chaque nœud : l’étape actuelle porte un anneau de progression des exercices et une bulle « titre + Commencer / Continuer · Exercice n sur m ». Un tap sur un nœud déverrouillé ouvre directement la leçon ; un tap sur un nœud verrouillé affiche une bulle « Termine l’étape précédente pour la déverrouiller » sans action. Un coffre décoratif clôt chaque unité, doré quand toutes ses leçons sont terminées (« Fin de l’unité · terminée / à compléter »), sans récompense associée.
+Une unité dépliée liste ses leçons en lignes reliées par un trait vertical (vert jusqu’à la dernière leçon terminée, gris ensuite). Chaque ligne affiche toujours le titre de la leçon et son état ; le nœud rond (44 pt, suit Dynamic Type) porte l’icône du thème de la leçon et partage l’iconographie des lignes de l’accueil : terminé = fond `success` et badge coche, actuelle = fond jade plein et anneau de progression des exercices, disponible = contour jade, verrouillé = fond `surfaceRaised` et badge cadenas. Les révisions `review-NN` (flèches circulaires) portent le surtitre « RÉVISION » ; le défi `boss-unit-NN` (couronne) porte « DÉFI DE L’UNITÉ » et un contour `sun`. L’étape actuelle est surlignée en jade et montre « Exercice n sur m » et une pastille « Commencer » ou « Continuer ». Toucher une ligne déverrouillée ouvre la leçon ; une ligne verrouillée n’est pas un bouton et indique « Verrouillée · termine l’étape précédente ».
 
 Le module 0 (unité 0 « Pinyin et tons », leçons `pinyin-01` à `pinyin-08`) ouvre le parcours avec l’icône « onde sonore » (`waveform`). C’est un premier pas recommandé, pas une porte : ses leçons se déverrouillent l’une après l’autre, mais `lesson-01` s’ouvre sans elles. Un apprenant qui a choisi « Je connais le pinyin » ou « Je lis déjà quelques phrases », ou qui a terminé une leçon au-delà du module 0, ne s’y voit plus proposé ; le plan quotidien le compte alors comme dépassé (le premier jour affiché est le jour 9).
 
-À l’ouverture, le parcours défile jusqu’à l’étape actuelle ; quand elle sort de l’écran, un bouton flottant « Revenir à l’étape actuelle » (flèche vers elle) y ramène. Chaque nœud reste un seul élément d’accessibilité « titre, statut, progression » (identifiant `learningPath.lesson.<id>`) ; Réduire les animations supprime les transitions de défilement et d’appui, et les tailles de nœuds et de bulles suivent Dynamic Type.
+À l’ouverture, le parcours défile jusqu’à l’étape actuelle si elle n’est pas déjà visible, sans rouvrir une unité que l’apprenant a repliée ; quand elle sort de l’écran, un bouton flottant « Revenir à l’étape actuelle » (flèche vers elle) déplie son unité si besoin et y ramène. Chaque ligne reste un seul élément d’accessibilité « [type,] titre, statut, progression » (identifiant `learningPath.lesson.<id>`) ; Réduire les animations supprime les transitions de repli et de défilement.
 
 La **cible pédagogique MVP** couvre l’unité 1, « Premiers échanges » (HSK 1 / A1), en trois leçons :
 
