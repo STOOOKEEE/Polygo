@@ -124,10 +124,11 @@ nécessaire au bundle commun et par leur pinyin, écrit mot par mot comme partou
 Tavi, le panda roux original, accompagne l’accueil, les encouragements et les
 célébrations. Tous les onglets partagent une même charte (fond crème ou indigo,
 cartes douces, jade pour l’action principale, or pour les récompenses). Le
-parcours regroupe les leçons en cartes d’unité repliables avec leur progression ;
-chaque leçon garde son titre visible et une icône adaptée : les révisions portent
-des flèches circulaires, les défis de fin d’unité une couronne et les leçons du
-module 0 une onde sonore. Les apparences Système, Clair et Sombre restent disponibles,
+parcours reste une carte de jeu : bannières d’unité colorées, piste sinueuse,
+nœuds en relief et bulle « Commencer / Continuer » sur l’étape actuelle. Chaque
+leçon a une icône adaptée : les révisions portent des flèches circulaires, les
+défis de fin d’unité une couronne et les leçons du module 0 une onde sonore.
+Les apparences Système, Clair et Sombre restent disponibles,
 ainsi que Réduire les animations.
 
 La même barre basse dessert **Aujourd’hui, Parcours, Explorer, Cartes et Profil**
