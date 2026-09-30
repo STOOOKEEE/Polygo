@@ -154,7 +154,13 @@
       "meaning": {
         "fr": "bonjour ; salut"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-8be0a16db3d871c86f62b65e",
+        "kind": "audio",
+        "relativePath": "assets/audio/8be0a16db3d871c86f62b65e.m4a",
+        "sha256": "857b4d78c4b98578cc08e8bae6a322e8a46bcf0427559b31ebdea035421c6732",
+        "durationMilliseconds": 730
+      },
       "example": {
         "hanzi": "你好！",
         "pinyin": "Nǐ hǎo!",
@@ -226,14 +232,26 @@
       "meaning": {
         "fr": "bonjour (le matin)"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-b1e612ae5dd7568a5ef1d512",
+        "kind": "audio",
+        "relativePath": "assets/audio/b1e612ae5dd7568a5ef1d512.m4a",
+        "sha256": "db3086665932aeed5105a969a0d9c7d5d98488f7b169f6f15622d400be4c88c0",
+        "durationMilliseconds": 585
+      },
       "example": {
         "hanzi": "早！",
         "pinyin": "Zǎo!",
         "translation": {
           "fr": "Bonjour !"
         },
-        "audio": null,
+        "audio": {
+          "id": "audio-4abaf105953b59e04a43ec8d",
+          "kind": "audio",
+          "relativePath": "assets/audio/4abaf105953b59e04a43ec8d.m4a",
+          "sha256": "1d16d5c3bf88f6864fdac15d9c09ab32dcfc44eac7003f91c0a27b7559c1907a",
+          "durationMilliseconds": 490
+        },
         "segmentation": [
           {
             "surface": "早",
@@ -294,11 +312,11 @@
         "fr": "au revoir"
       },
       "audio": {
-        "id": "audio-a736f8256ef71b51c834ef65",
+        "id": "audio-22baa75bb594cfa4ff958e1c",
         "kind": "audio",
-        "relativePath": "assets/audio/a736f8256ef71b51c834ef65.m4a",
-        "sha256": "0268dae82b799acf083de0c133eff8d86fbe9f660df390a84f165aa4b7c37c1c",
-        "durationMilliseconds": 743
+        "relativePath": "assets/audio/22baa75bb594cfa4ff958e1c.m4a",
+        "sha256": "add919708bdfc620dd04aabd0ba732a5091631e081b93fd52ae1bea6e2cd6834",
+        "durationMilliseconds": 745
       },
       "example": {
         "hanzi": "明天再见！",
@@ -431,11 +449,11 @@
         "fr": "merci"
       },
       "audio": {
-        "id": "audio-afdfe330c00a6be7d39652f2",
+        "id": "audio-098e0cecabf3e20a32fbddde",
         "kind": "audio",
-        "relativePath": "assets/audio/afdfe330c00a6be7d39652f2.m4a",
-        "sha256": "2c0c2a03ba02a6f7219cbddea33126e4b50d74072339fb0d398d82082e09edcd",
-        "durationMilliseconds": 781
+        "relativePath": "assets/audio/098e0cecabf3e20a32fbddde.m4a",
+        "sha256": "8b0b8b66feb25458151e5446314ca8dc891ed2d910dabeff9e0545c7495bce3d",
+        "durationMilliseconds": 785
       },
       "example": {
         "hanzi": "谢谢你！",
@@ -562,13 +580,7 @@
       "meaning": {
         "fr": "de rien ; je vous en prie"
       },
-      "audio": {
-        "id": "audio-77cad305e2493aa6377cbe46",
-        "kind": "audio",
-        "relativePath": "assets/audio/77cad305e2493aa6377cbe46.m4a",
-        "sha256": "4c220d65e4e64998f29fdc4d8eb6772ddf40041cb03b5422f542041b96168ef8",
-        "durationMilliseconds": 1010
-      },
+      "audio": null,
       "example": {
         "hanzi": "不客气！",
         "pinyin": "Bú kèqi!",
@@ -682,7 +694,13 @@
           "translation": {
             "fr": "Bonjour !"
           },
-          "audio": null,
+          "audio": {
+            "id": "audio-654c4a998c90cf86a7400f2b",
+            "kind": "audio",
+            "relativePath": "assets/audio/654c4a998c90cf86a7400f2b.m4a",
+            "sha256": "782281fed906193dc8489459b8898309c7d46ec8a0e055c68e2a0b9c7f30d122",
+            "durationMilliseconds": 605
+          },
           "segmentation": [
             {
               "surface": "早",
@@ -985,7 +1003,13 @@
               "partOfSpeech": null
             }
           ],
-          "audio": null
+          "audio": {
+            "id": "audio-654c4a998c90cf86a7400f2b",
+            "kind": "audio",
+            "relativePath": "assets/audio/654c4a998c90cf86a7400f2b.m4a",
+            "sha256": "782281fed906193dc8489459b8898309c7d46ec8a0e055c68e2a0b9c7f30d122",
+            "durationMilliseconds": 605
+          }
         },
         {
           "id": "story-hello-p2",
@@ -1102,7 +1126,7 @@
         "header": {
           "id": "ex-l1-tone",
           "prompt": {
-            "fr": "Quel ton porte 早 (zǎo) ?"
+            "fr": "Quel ton porte 早 (zao) ?"
           },
           "instruction": {
             "fr": "Choisis le numéro du ton."
@@ -1117,6 +1141,13 @@
             "id": "tone-1",
             "label": {
               "fr": "1 — haut et stable"
+            },
+            "audio": null
+          },
+          {
+            "id": "tone-2",
+            "label": {
+              "fr": "2 — montant"
             },
             "audio": null
           },
@@ -1483,7 +1514,13 @@
         },
         "referenceText": "你好",
         "referencePinyin": "nǐ hǎo",
-        "referenceAudio": null,
+        "referenceAudio": {
+          "id": "audio-8be0a16db3d871c86f62b65e",
+          "kind": "audio",
+          "relativePath": "assets/audio/8be0a16db3d871c86f62b65e.m4a",
+          "sha256": "857b4d78c4b98578cc08e8bae6a322e8a46bcf0427559b31ebdea035421c6732",
+          "durationMilliseconds": 730
+        },
         "acceptedTranscripts": [
           "你好",
           "你好！",
@@ -1667,7 +1704,13 @@
         "hanzi": "你好",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-8be0a16db3d871c86f62b65e",
+          "kind": "audio",
+          "relativePath": "assets/audio/8be0a16db3d871c86f62b65e.m4a",
+          "sha256": "857b4d78c4b98578cc08e8bae6a322e8a46bcf0427559b31ebdea035421c6732",
+          "durationMilliseconds": 730
+        }
       },
       "back": {
         "hanzi": "你好",
@@ -1675,7 +1718,13 @@
         "text": {
           "fr": "bonjour ; salut"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-8be0a16db3d871c86f62b65e",
+          "kind": "audio",
+          "relativePath": "assets/audio/8be0a16db3d871c86f62b65e.m4a",
+          "sha256": "857b4d78c4b98578cc08e8bae6a322e8a46bcf0427559b31ebdea035421c6732",
+          "durationMilliseconds": 730
+        }
       },
       "tags": [
         "unit-01",
@@ -1724,7 +1773,13 @@
         "hanzi": "早",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-b1e612ae5dd7568a5ef1d512",
+          "kind": "audio",
+          "relativePath": "assets/audio/b1e612ae5dd7568a5ef1d512.m4a",
+          "sha256": "db3086665932aeed5105a969a0d9c7d5d98488f7b169f6f15622d400be4c88c0",
+          "durationMilliseconds": 585
+        }
       },
       "back": {
         "hanzi": "早",
@@ -1732,7 +1787,13 @@
         "text": {
           "fr": "bonjour (le matin)"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-b1e612ae5dd7568a5ef1d512",
+          "kind": "audio",
+          "relativePath": "assets/audio/b1e612ae5dd7568a5ef1d512.m4a",
+          "sha256": "db3086665932aeed5105a969a0d9c7d5d98488f7b169f6f15622d400be4c88c0",
+          "durationMilliseconds": 585
+        }
       },
       "tags": [
         "unit-01",
@@ -1782,11 +1843,11 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-a736f8256ef71b51c834ef65",
+          "id": "audio-22baa75bb594cfa4ff958e1c",
           "kind": "audio",
-          "relativePath": "assets/audio/a736f8256ef71b51c834ef65.m4a",
-          "sha256": "0268dae82b799acf083de0c133eff8d86fbe9f660df390a84f165aa4b7c37c1c",
-          "durationMilliseconds": 743
+          "relativePath": "assets/audio/22baa75bb594cfa4ff958e1c.m4a",
+          "sha256": "add919708bdfc620dd04aabd0ba732a5091631e081b93fd52ae1bea6e2cd6834",
+          "durationMilliseconds": 745
         }
       },
       "back": {
@@ -1796,11 +1857,11 @@
           "fr": "au revoir"
         },
         "audio": {
-          "id": "audio-a736f8256ef71b51c834ef65",
+          "id": "audio-22baa75bb594cfa4ff958e1c",
           "kind": "audio",
-          "relativePath": "assets/audio/a736f8256ef71b51c834ef65.m4a",
-          "sha256": "0268dae82b799acf083de0c133eff8d86fbe9f660df390a84f165aa4b7c37c1c",
-          "durationMilliseconds": 743
+          "relativePath": "assets/audio/22baa75bb594cfa4ff958e1c.m4a",
+          "sha256": "add919708bdfc620dd04aabd0ba732a5091631e081b93fd52ae1bea6e2cd6834",
+          "durationMilliseconds": 745
         }
       },
       "tags": [
@@ -1851,11 +1912,11 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-afdfe330c00a6be7d39652f2",
+          "id": "audio-098e0cecabf3e20a32fbddde",
           "kind": "audio",
-          "relativePath": "assets/audio/afdfe330c00a6be7d39652f2.m4a",
-          "sha256": "2c0c2a03ba02a6f7219cbddea33126e4b50d74072339fb0d398d82082e09edcd",
-          "durationMilliseconds": 781
+          "relativePath": "assets/audio/098e0cecabf3e20a32fbddde.m4a",
+          "sha256": "8b0b8b66feb25458151e5446314ca8dc891ed2d910dabeff9e0545c7495bce3d",
+          "durationMilliseconds": 785
         }
       },
       "back": {
@@ -1865,11 +1926,11 @@
           "fr": "merci"
         },
         "audio": {
-          "id": "audio-afdfe330c00a6be7d39652f2",
+          "id": "audio-098e0cecabf3e20a32fbddde",
           "kind": "audio",
-          "relativePath": "assets/audio/afdfe330c00a6be7d39652f2.m4a",
-          "sha256": "2c0c2a03ba02a6f7219cbddea33126e4b50d74072339fb0d398d82082e09edcd",
-          "durationMilliseconds": 781
+          "relativePath": "assets/audio/098e0cecabf3e20a32fbddde.m4a",
+          "sha256": "8b0b8b66feb25458151e5446314ca8dc891ed2d910dabeff9e0545c7495bce3d",
+          "durationMilliseconds": 785
         }
       },
       "tags": [
@@ -1919,13 +1980,7 @@
         "hanzi": "不客气",
         "pinyin": null,
         "text": null,
-        "audio": {
-          "id": "audio-77cad305e2493aa6377cbe46",
-          "kind": "audio",
-          "relativePath": "assets/audio/77cad305e2493aa6377cbe46.m4a",
-          "sha256": "4c220d65e4e64998f29fdc4d8eb6772ddf40041cb03b5422f542041b96168ef8",
-          "durationMilliseconds": 1010
-        }
+        "audio": null
       },
       "back": {
         "hanzi": "不客气",
@@ -1933,13 +1988,7 @@
         "text": {
           "fr": "de rien ; je vous en prie"
         },
-        "audio": {
-          "id": "audio-77cad305e2493aa6377cbe46",
-          "kind": "audio",
-          "relativePath": "assets/audio/77cad305e2493aa6377cbe46.m4a",
-          "sha256": "4c220d65e4e64998f29fdc4d8eb6772ddf40041cb03b5422f542041b96168ef8",
-          "durationMilliseconds": 1010
-        }
+        "audio": null
       },
       "tags": [
         "unit-01",

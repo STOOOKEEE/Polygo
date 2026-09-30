@@ -1221,9 +1221,7 @@ final class ContentContractTests: XCTestCase {
     }
 
     /// Dialogue lines, reading paragraphs and vocabulary examples of two or
-    /// more syllables play a bundled clip; single characters keep the device
-    /// voice. Words are left out: a two-syllable word whose tones fail the
-    /// generator's pitch check also keeps the device voice.
+    /// more syllables play a bundled clip.
     func testMultiSyllableLessonTextCarriesBundledAudio() async throws {
         let (_, snapshots) = try await allCourseSnapshots()
         var missing: [String] = []
@@ -1244,6 +1242,78 @@ final class ContentContractTests: XCTestCase {
             }
         }
         XCTAssertEqual(missing, [])
+    }
+
+    /// A tone question never shows the tone-marked pinyin of what it asks
+    /// before the answer, and one asked syllable offers the four tones: the
+    /// learner has to hear or remember the tone, not read it.
+    func testToneQuestionsDoNotRevealTheAskedTone() async throws {
+        let (_, snapshots) = try await allCourseSnapshots()
+        let lessons = snapshots.flatMap(\.lessons)
+        let marks = CharacterSet(charactersIn: "\u{0304}\u{0301}\u{030C}\u{0300}")
+        func toneMarked(_ syllable: String) -> Bool {
+            syllable.decomposedStringWithCanonicalMapping.unicodeScalars.contains { marks.contains($0) }
+        }
+        func isHanzi(_ character: Character) -> Bool {
+            character.unicodeScalars.allSatisfy { (0x4E00...0x9FFF).contains($0.value) }
+        }
+        var readings: [Character: Set<String>] = [:]
+        var words: [String: Set<String>] = [:]
+        for entry in lessons.flatMap(\.vocabulary) {
+            let pinyin = entry.pinyin.lowercased()
+            let syllables = pinyin.split(whereSeparator: { !$0.isLetter }).flatMap { PinyinSyllables.split($0) ?? [] }
+            if syllables.contains(where: toneMarked) {
+                words[entry.hanzi, default: []].formUnion([pinyin, pinyin.replacingOccurrences(of: " ", with: "")])
+            }
+            guard syllables.count == entry.hanzi.count else { continue }
+            for (character, syllable) in zip(entry.hanzi, syllables) where toneMarked(syllable) {
+                readings[character, default: []].insert(syllable)
+            }
+        }
+        func revealed(_ asked: String, in texts: [String]) -> Set<String> {
+            let forbidden = asked.reduce(into: words[asked] ?? []) { $0.formUnion(readings[$1] ?? []) }
+            let tokens = texts.flatMap { text in
+                text.lowercased().split(whereSeparator: { !$0.isLetter || isHanzi($0) }).map(String.init)
+            }
+            return Set(tokens).intersection(forbidden)
+        }
+
+        var asked = 0
+        var problems: [String] = []
+        for lesson in lessons {
+            for block in exerciseBlocks(in: lesson) {
+                let header: ExerciseHeader
+                let choices: [Choice]
+                let text: String
+                let oneSyllable: Bool
+                switch block.spec {
+                case .toneDiscrimination(let exercise):
+                    header = exercise.header
+                    choices = exercise.choices
+                    text = exercise.promptText ?? ""
+                    oneSyllable = exercise.correctChoiceID.count == 2
+                case .choice(let exercise):
+                    let prompt = exercise.header.prompt.resolve() ?? ""
+                    guard prompt.contains("Quel ton porte") || prompt.contains("premier ton de") else { continue }
+                    header = exercise.header
+                    choices = exercise.choices
+                    text = String(prompt.filter(isHanzi))
+                    oneSyllable = true
+                default:
+                    continue
+                }
+                asked += 1
+                let texts = [header.prompt.resolve() ?? "", header.instruction.resolve() ?? ""] + choices.map { $0.label.resolve() ?? "" }
+                let shown = revealed(text, in: texts)
+                if !shown.isEmpty { problems.append("\(header.id.rawValue) shows \(shown.sorted())") }
+                if oneSyllable {
+                    let offered = Set(choices.compactMap { ($0.label.resolve() ?? "").first(where: \.isNumber)?.wholeNumberValue })
+                    if !Set(1...4).isSubset(of: offered) { problems.append("\(header.id.rawValue) offers tones \(offered.sorted())") }
+                }
+            }
+        }
+        XCTAssertGreaterThan(asked, 100)
+        XCTAssertEqual(problems, [])
     }
 
     private func assetReferences(in lesson: LessonDocument) -> [AssetReference] {

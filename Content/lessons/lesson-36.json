@@ -51,11 +51,11 @@
         "fr": "Pékin"
       },
       "audio": {
-        "id": "audio-8ec0421c18d28989191ef786",
+        "id": "audio-2665fb8b8cd3958ab8af3059",
         "kind": "audio",
-        "relativePath": "assets/audio/8ec0421c18d28989191ef786.m4a",
-        "sha256": "911a6873184dfcddc6cad64021d40c6c8ea856d735c2050c90b44175e555255e",
-        "durationMilliseconds": 716
+        "relativePath": "assets/audio/2665fb8b8cd3958ab8af3059.m4a",
+        "sha256": "cc4c30329fa441d2ebc673a85802d83da7261e787b0e67af71bbc9333b733d31",
+        "durationMilliseconds": 720
       },
       "example": {
         "hanzi": "我住在北京。",
@@ -135,7 +135,13 @@
       "meaning": {
         "fr": "classificateur des livres"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-99725d9efd713622a00ae0de",
+        "kind": "audio",
+        "relativePath": "assets/audio/99725d9efd713622a00ae0de.m4a",
+        "sha256": "beb0e1a4f1c28d45ec75a9f0dbffb737f0add03e8781ced40b2efece626f7e26",
+        "durationMilliseconds": 610
+      },
       "example": {
         "hanzi": "这本书很好。",
         "pinyin": "Zhè běn shū hěn hǎo.",
@@ -222,10 +228,10 @@
         "fr": "pomme"
       },
       "audio": {
-        "id": "audio-963d81c2acddc20b211e6528",
+        "id": "audio-dc117840bab0af2dfcf52184",
         "kind": "audio",
-        "relativePath": "assets/audio/963d81c2acddc20b211e6528.m4a",
-        "sha256": "88107f6181e23904fd51fdfc8b4ab67e3df58d0d80057190b0d7e11ebad5f038",
+        "relativePath": "assets/audio/dc117840bab0af2dfcf52184.m4a",
+        "sha256": "88d3bba84ef22a7c335217780d68cc13433eb18bdfdde949bc0fd06385742a80",
         "durationMilliseconds": 775
       },
       "example": {
@@ -318,7 +324,13 @@
       "meaning": {
         "fr": "habiter"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-54da0824ead66d0c0565220e",
+        "kind": "audio",
+        "relativePath": "assets/audio/54da0824ead66d0c0565220e.m4a",
+        "sha256": "a9c56b37abf1cbf5355051a78afd8a56bf3e0e845c8fb26c1984ec503873a818",
+        "durationMilliseconds": 555
+      },
       "example": {
         "hanzi": "我住在北京。",
         "pinyin": "Wǒ zhù zài Běijīng.",
@@ -397,7 +409,13 @@
       "meaning": {
         "fr": "particule interrogative"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-55857288605c2683bb81bb67",
+        "kind": "audio",
+        "relativePath": "assets/audio/55857288605c2683bb81bb67.m4a",
+        "sha256": "60fa5dd9e2815539b79e646e7be6ecc4868e5793c130e91f52e9ad625a647f72",
+        "durationMilliseconds": 545
+      },
       "example": {
         "hanzi": "你喝茶吗？",
         "pinyin": "Nǐ hē chá ma?",
@@ -477,7 +495,13 @@
       "meaning": {
         "fr": "tu ; vous"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-5ef5b921ff0416283b990996",
+        "kind": "audio",
+        "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+        "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+        "durationMilliseconds": 555
+      },
       "example": {
         "hanzi": "你好！",
         "pinyin": "Nǐ hǎo!",
@@ -607,7 +631,13 @@
       "meaning": {
         "fr": "personne ; humain"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-b03cadac893c169213125dcc",
+        "kind": "audio",
+        "relativePath": "assets/audio/b03cadac893c169213125dcc.m4a",
+        "sha256": "4f21c50a951bffc80309c33baba6d98ee12d2e191f0c2d400a7f407d016db3bd",
+        "durationMilliseconds": 560
+      },
       "example": {
         "hanzi": "法国人",
         "pinyin": "Fǎguórén",
@@ -2111,7 +2141,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t3"
+        "correctChoiceID": "t3",
+        "promptAudio": {
+          "id": "audio-99725d9efd713622a00ae0de",
+          "kind": "audio",
+          "relativePath": "assets/audio/99725d9efd713622a00ae0de.m4a",
+          "sha256": "beb0e1a4f1c28d45ec75a9f0dbffb737f0add03e8781ced40b2efece626f7e26",
+          "durationMilliseconds": 610
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -2170,11 +2207,11 @@
         ],
         "correctChoiceID": "d",
         "promptAudio": {
-          "id": "audio-8ec0421c18d28989191ef786",
+          "id": "audio-2665fb8b8cd3958ab8af3059",
           "kind": "audio",
-          "relativePath": "assets/audio/8ec0421c18d28989191ef786.m4a",
-          "sha256": "911a6873184dfcddc6cad64021d40c6c8ea856d735c2050c90b44175e555255e",
-          "durationMilliseconds": 716
+          "relativePath": "assets/audio/2665fb8b8cd3958ab8af3059.m4a",
+          "sha256": "cc4c30329fa441d2ebc673a85802d83da7261e787b0e67af71bbc9333b733d31",
+          "durationMilliseconds": 720
         }
       },
       "metadata": {
@@ -2962,11 +2999,11 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-8ec0421c18d28989191ef786",
+          "id": "audio-2665fb8b8cd3958ab8af3059",
           "kind": "audio",
-          "relativePath": "assets/audio/8ec0421c18d28989191ef786.m4a",
-          "sha256": "911a6873184dfcddc6cad64021d40c6c8ea856d735c2050c90b44175e555255e",
-          "durationMilliseconds": 716
+          "relativePath": "assets/audio/2665fb8b8cd3958ab8af3059.m4a",
+          "sha256": "cc4c30329fa441d2ebc673a85802d83da7261e787b0e67af71bbc9333b733d31",
+          "durationMilliseconds": 720
         }
       },
       "back": {
@@ -2976,11 +3013,11 @@
           "fr": "Pékin"
         },
         "audio": {
-          "id": "audio-8ec0421c18d28989191ef786",
+          "id": "audio-2665fb8b8cd3958ab8af3059",
           "kind": "audio",
-          "relativePath": "assets/audio/8ec0421c18d28989191ef786.m4a",
-          "sha256": "911a6873184dfcddc6cad64021d40c6c8ea856d735c2050c90b44175e555255e",
-          "durationMilliseconds": 716
+          "relativePath": "assets/audio/2665fb8b8cd3958ab8af3059.m4a",
+          "sha256": "cc4c30329fa441d2ebc673a85802d83da7261e787b0e67af71bbc9333b733d31",
+          "durationMilliseconds": 720
         }
       },
       "tags": [
@@ -2994,7 +3031,13 @@
         "hanzi": "本",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-99725d9efd713622a00ae0de",
+          "kind": "audio",
+          "relativePath": "assets/audio/99725d9efd713622a00ae0de.m4a",
+          "sha256": "beb0e1a4f1c28d45ec75a9f0dbffb737f0add03e8781ced40b2efece626f7e26",
+          "durationMilliseconds": 610
+        }
       },
       "back": {
         "hanzi": "本",
@@ -3002,7 +3045,13 @@
         "text": {
           "fr": "classificateur des livres"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-99725d9efd713622a00ae0de",
+          "kind": "audio",
+          "relativePath": "assets/audio/99725d9efd713622a00ae0de.m4a",
+          "sha256": "beb0e1a4f1c28d45ec75a9f0dbffb737f0add03e8781ced40b2efece626f7e26",
+          "durationMilliseconds": 610
+        }
       },
       "tags": [
         "catalog"
@@ -3016,10 +3065,10 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-963d81c2acddc20b211e6528",
+          "id": "audio-dc117840bab0af2dfcf52184",
           "kind": "audio",
-          "relativePath": "assets/audio/963d81c2acddc20b211e6528.m4a",
-          "sha256": "88107f6181e23904fd51fdfc8b4ab67e3df58d0d80057190b0d7e11ebad5f038",
+          "relativePath": "assets/audio/dc117840bab0af2dfcf52184.m4a",
+          "sha256": "88d3bba84ef22a7c335217780d68cc13433eb18bdfdde949bc0fd06385742a80",
           "durationMilliseconds": 775
         }
       },
@@ -3030,10 +3079,10 @@
           "fr": "pomme"
         },
         "audio": {
-          "id": "audio-963d81c2acddc20b211e6528",
+          "id": "audio-dc117840bab0af2dfcf52184",
           "kind": "audio",
-          "relativePath": "assets/audio/963d81c2acddc20b211e6528.m4a",
-          "sha256": "88107f6181e23904fd51fdfc8b4ab67e3df58d0d80057190b0d7e11ebad5f038",
+          "relativePath": "assets/audio/dc117840bab0af2dfcf52184.m4a",
+          "sha256": "88d3bba84ef22a7c335217780d68cc13433eb18bdfdde949bc0fd06385742a80",
           "durationMilliseconds": 775
         }
       },
@@ -3048,7 +3097,13 @@
         "hanzi": "住",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-54da0824ead66d0c0565220e",
+          "kind": "audio",
+          "relativePath": "assets/audio/54da0824ead66d0c0565220e.m4a",
+          "sha256": "a9c56b37abf1cbf5355051a78afd8a56bf3e0e845c8fb26c1984ec503873a818",
+          "durationMilliseconds": 555
+        }
       },
       "back": {
         "hanzi": "住",
@@ -3056,7 +3111,13 @@
         "text": {
           "fr": "habiter"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-54da0824ead66d0c0565220e",
+          "kind": "audio",
+          "relativePath": "assets/audio/54da0824ead66d0c0565220e.m4a",
+          "sha256": "a9c56b37abf1cbf5355051a78afd8a56bf3e0e845c8fb26c1984ec503873a818",
+          "durationMilliseconds": 555
+        }
       },
       "tags": [
         "catalog"
@@ -3069,7 +3130,13 @@
         "hanzi": "吗",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-55857288605c2683bb81bb67",
+          "kind": "audio",
+          "relativePath": "assets/audio/55857288605c2683bb81bb67.m4a",
+          "sha256": "60fa5dd9e2815539b79e646e7be6ecc4868e5793c130e91f52e9ad625a647f72",
+          "durationMilliseconds": 545
+        }
       },
       "back": {
         "hanzi": "吗",
@@ -3077,7 +3144,13 @@
         "text": {
           "fr": "particule interrogative"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-55857288605c2683bb81bb67",
+          "kind": "audio",
+          "relativePath": "assets/audio/55857288605c2683bb81bb67.m4a",
+          "sha256": "60fa5dd9e2815539b79e646e7be6ecc4868e5793c130e91f52e9ad625a647f72",
+          "durationMilliseconds": 545
+        }
       },
       "tags": [
         "catalog"
@@ -3090,7 +3163,13 @@
         "hanzi": "你",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-5ef5b921ff0416283b990996",
+          "kind": "audio",
+          "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+          "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+          "durationMilliseconds": 555
+        }
       },
       "back": {
         "hanzi": "你",
@@ -3098,7 +3177,13 @@
         "text": {
           "fr": "tu ; vous"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-5ef5b921ff0416283b990996",
+          "kind": "audio",
+          "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+          "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+          "durationMilliseconds": 555
+        }
       },
       "tags": [
         "unit-01",
@@ -3147,7 +3232,13 @@
         "hanzi": "人",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-b03cadac893c169213125dcc",
+          "kind": "audio",
+          "relativePath": "assets/audio/b03cadac893c169213125dcc.m4a",
+          "sha256": "4f21c50a951bffc80309c33baba6d98ee12d2e191f0c2d400a7f407d016db3bd",
+          "durationMilliseconds": 560
+        }
       },
       "back": {
         "hanzi": "人",
@@ -3155,7 +3246,13 @@
         "text": {
           "fr": "personne ; humain"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-b03cadac893c169213125dcc",
+          "kind": "audio",
+          "relativePath": "assets/audio/b03cadac893c169213125dcc.m4a",
+          "sha256": "4f21c50a951bffc80309c33baba6d98ee12d2e191f0c2d400a7f407d016db3bd",
+          "durationMilliseconds": 560
+        }
       },
       "tags": [
         "unit-01",

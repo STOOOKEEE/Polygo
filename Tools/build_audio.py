@@ -7,6 +7,13 @@ dictation, tone, conversation and speaking exercises -- carries a clip from
 `Content/assets/audio/`. A clip is named after a hash of its voice, text and
 pinyin, so one file serves every identical line said by the same voice.
 
+Kokoro does not realise the tones of an isolated word reliably (a lone second
+or third tone comes out flat), so a word clip -- a vocabulary word, a card, a
+word prompt -- keeps Kokoro's voice but gets the canonical pitch contour of
+each of its tones (WORLD analysis and resynthesis). The result is measured with
+a separate pitch tracker; a word whose tones cannot be heard gets no clip and
+the device voice says it.
+
 `content_tool.py generate` attaches the clips that exist and needs no speech
 engine. Running this script creates the missing clips with Kokoro-82M v1.1-zh
 (Apache 2.0, see docs/AUDIO.md), deletes the clips no lesson uses, attaches
@@ -46,11 +53,29 @@ SPEAKER_VOICES = {"Mina": "female", "Lin": "female", "Tao": "male", "An": "male"
 # examples use the male one so the learner hears both from the first lesson.
 NARRATOR = "female"
 EXAMPLE_VOICE = "male"
+# Pitch of Chao levels 1 and 5 for each voice, in Hz: the 5th and 95th
+# percentiles of F0 over 60 dialogue clips of that voice.
+TONE_RANGE = {"female": (195.0, 380.0), "male": (87.0, 159.0)}
+# Each tone as Chao levels (1 low .. 5 high) at points of the voiced syllable
+# (0 start .. 1 end), as said in isolation: a final third tone dips fully.
+TONE_SHAPES = {
+    1: [(0.0, 5.0), (1.0, 5.0)],
+    2: [(0.0, 3.0), (0.3, 2.8), (1.0, 5.0)],
+    3: [(0.0, 2.5), (0.45, 1.0), (1.0, 4.0)],
+    4: [(0.0, 5.0), (0.15, 5.0), (1.0, 1.0)],
+}
+HALF_THIRD = [(0.0, 2.0), (0.6, 1.0), (1.0, 1.0)]
+# A neutral syllable is short and level, pitched after the tone before it.
+NEUTRAL_AFTER = {1: 2.2, 2: 3.0, 3: 4.0, 4: 1.5, None: 2.5}
+# Changes when the contour method does, so the word clips are made again.
+CONTOUR_VERSION = "world-contour-4"
 # The characters' names are written in Latin letters and untoned pinyin. A
 # clip says them as these Mandarin syllables.
 NAME_READINGS = {"Mina": ("米娜", "mǐ nà"), "Tao": ("涛", "tāo"), "Lin": ("林", "lín"), "An": ("安", "ān")}
 # Speech punctuation that a clip may contain besides Hanzi and names.
 _PUNCTUATION = set("，。！？、；：“”‘’（）《》…—·,.!?;:\"'() ")
+# Punctuation that makes a prompt a sentence rather than an isolated word.
+_SENTENCE_PUNCTUATION = set("，。！？、；：…,.!?;:")
 _NAME = re.compile(r"[A-Za-z]+")
 _TONE_MARKS = {"\u0304", "\u0301", "\u030c", "\u0300"}
 SAMPLE_RATE = 24000
@@ -72,12 +97,8 @@ def spoken_text(text: str) -> str:
 
 
 def speakable(text: Any) -> bool:
-    """Whether a text gets a clip.
-
-    Only Hanzi, speech punctuation and the characters' names qualify, and at
-    least two syllables: Kokoro does not realise the tone of a lone syllable
-    reliably, so single characters stay with the device voice.
-    """
+    """Whether a text gets a clip: only Hanzi, speech punctuation and the
+    characters' names qualify."""
     if not isinstance(text, str) or not text.strip():
         return False
     if any(name not in NAME_READINGS for name in _NAME.findall(text)):
@@ -85,7 +106,7 @@ def speakable(text: Any) -> bool:
     rest = _NAME.sub("", text)
     if not all(is_hanzi(char) or char in _PUNCTUATION for char in rest):
         return False
-    return sum(map(is_hanzi, spoken_text(text))) >= 2
+    return any(map(is_hanzi, spoken_text(text)))
 
 
 def numbered_pinyin(pinyin: Any, text: str) -> str:
@@ -114,11 +135,13 @@ class Clip:
     text: str
     voice: str
     pinyin: str
+    # An isolated word: said with the canonical contour of its tones.
+    word: bool = False
 
     @property
     def name(self) -> str:
-        key = "\n".join((ENGINE, VOICES[self.voice], self.text, self.pinyin))
-        return hashlib.sha256(key.encode("utf-8")).hexdigest()[:24]
+        parts = (ENGINE, VOICES[self.voice], self.text, self.pinyin) + ((CONTOUR_VERSION,) if self.word else ())
+        return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest()[:24]
 
     @property
     def file_name(self) -> str:
@@ -132,7 +155,8 @@ class Slot:
     text: str
     voice: str
     pinyin: Any
-    tone_drill: bool = False
+    # An isolated word or syllable, rather than a sentence.
+    word: bool = False
 
 
 def _voice_of(speaker: Any, where: str) -> str:
@@ -147,6 +171,11 @@ def _other(voice: str) -> str:
     return "male" if voice == "female" else "female"
 
 
+def _is_word(text: Any) -> bool:
+    """A prompt without sentence punctuation is a word, not a sentence."""
+    return isinstance(text, str) and not _SENTENCE_PUNCTUATION.intersection(text)
+
+
 def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
     """Every audio field of a lesson that this tool manages."""
     lesson_id = lesson.get("id", "?")
@@ -156,16 +185,17 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
             for line in block.get("lines", []):
                 speaker_of.setdefault(line["hanzi"], line["speaker"])
     for entry in lesson.get("vocabulary", []):
-        yield Slot(entry, "audio", entry["hanzi"], NARRATOR, entry.get("pinyin"))
+        yield Slot(entry, "audio", entry["hanzi"], NARRATOR, entry.get("pinyin"), word=True)
         example = entry.get("example")
         if isinstance(example, dict):
             yield Slot(example, "audio", example["hanzi"], EXAMPLE_VOICE, example.get("pinyin"))
     vocabulary = {entry["id"]: entry for entry in lesson.get("vocabulary", [])}
+    words = {entry["hanzi"] for entry in vocabulary.values()}
     for card in lesson.get("cards", []):
         entry = vocabulary.get(card.get("vocabularyID"))
         for side in ("front", "back"):
             if entry is not None and isinstance(card.get(side), dict):
-                yield Slot(card[side], "audio", entry["hanzi"], NARRATOR, entry.get("pinyin"))
+                yield Slot(card[side], "audio", entry["hanzi"], NARRATOR, entry.get("pinyin"), word=True)
     for block in lesson.get("blocks", []):
         kind = block.get("kind")
         where = f"{lesson_id}.{block.get('id', kind)}"
@@ -180,7 +210,8 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
             spec_kind = spec.get("kind")
             where = f"{lesson_id}.{spec['header']['id']}"
             if spec_kind in ("listeningChoice", "dictation", "toneDiscrimination"):
-                yield Slot(spec, "promptAudio", spec.get("promptText"), NARRATOR, None, spec_kind == "toneDiscrimination")
+                text = spec.get("promptText")
+                yield Slot(spec, "promptAudio", text, NARRATOR, None, word=_is_word(text))
             elif spec_kind == "conversationChoice":
                 voice = _voice_of(spec.get("speaker"), where)
                 yield Slot(spec, "promptAudio", spec.get("promptText"), voice, None)
@@ -188,7 +219,7 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
                     yield Slot(reply, "audio", reply["hanzi"], _other(voice), reply.get("pinyin"))
             elif spec_kind == "speaking":
                 text = spec["referenceText"]
-                yield Slot(spec, "referenceAudio", text, _voice_of(speaker_of.get(text), where), spec.get("referencePinyin"))
+                yield Slot(spec, "referenceAudio", text, _voice_of(speaker_of.get(text), where), spec.get("referencePinyin"), word=text in words)
             elif spec_kind == "dialogueOrder":
                 for line in spec.get("lines", []):
                     yield Slot(line, "audio", line["hanzi"], _voice_of(line.get("speaker"), where), line.get("pinyin"))
@@ -196,14 +227,17 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
 
 def pinyin_index(lessons: dict[str, dict[str, Any]]) -> dict[str, str]:
     """The pinyin authored for each text anywhere in the course, for prompts
-    that carry none: the most frequent spelling, ties broken alphabetically."""
+    that carry none: the most frequent spelling, ties broken alphabetically.
+    Module 0's carriers count as authored pinyin."""
     seen: dict[str, Counter[str]] = {}
     for lesson in lessons.values():
-        for slot in slots(lesson):
-            if speakable(slot.text):
-                numbered = numbered_pinyin(slot.pinyin, slot.text)
+        pairs = [(slot.text, slot.pinyin) for slot in slots(lesson)]
+        pairs += list(lesson.get("metadata", {}).get("carriers", {}).items())
+        for text, pinyin in pairs:
+            if speakable(text):
+                numbered = numbered_pinyin(pinyin, text)
                 if numbered:
-                    seen.setdefault(slot.text.strip(), Counter())[numbered] += 1
+                    seen.setdefault(text.strip(), Counter())[numbered] += 1
     return {text: min(counts, key=lambda value: (-counts[value], value)) for text, counts in seen.items()}
 
 
@@ -225,7 +259,9 @@ def clip_for(slot: Slot, index: dict[str, str]) -> Clip | None:
     if not speakable(slot.text):
         return None
     text = slot.text.strip()
-    return Clip(text, slot.voice, numbered_pinyin(slot.pinyin, text) or indexed_pinyin(text, index))
+    # One syllable is a word wherever it is said.
+    word = slot.word or sum(map(is_hanzi, spoken_text(text))) == 1
+    return Clip(text, slot.voice, numbered_pinyin(slot.pinyin, text) or indexed_pinyin(text, index), word)
 
 
 def mp4_duration_ms(data: bytes) -> int | None:
@@ -278,19 +314,16 @@ def attach(lesson: dict[str, Any], index: dict[str, str], references: References
     return changed
 
 
-def wanted_clips(lessons: dict[str, dict[str, Any]]) -> tuple[dict[str, Clip], set[str]]:
-    """The clips the course uses, by name, and the names used by tone drills."""
+def wanted_clips(lessons: dict[str, dict[str, Any]]) -> dict[str, Clip]:
+    """The clips the course uses, by name."""
     index = pinyin_index(lessons)
     clips: dict[str, Clip] = {}
-    tone_drills: set[str] = set()
     for lesson in lessons.values():
         for slot in slots(lesson):
             clip = clip_for(slot, index)
             if clip is not None:
                 clips[clip.name] = clip
-                if slot.tone_drill:
-                    tone_drills.add(clip.name)
-    return clips, tone_drills
+    return clips
 
 
 def problems(root: Path, lessons: dict[str, dict[str, Any]]) -> list[str]:
@@ -432,48 +465,155 @@ def _syllable_spans(phonemes: str, durations: list[int]) -> list[tuple[int, int,
     return spans
 
 
-def tones_heard(numpy: Any, audio: Any, spans: list[tuple[int, int, int]]) -> bool:
-    """Whether the pitch of each full-tone syllable moves the way its tone does.
+def spoken_tones(numbered: str) -> list[int]:
+    """The tone said on each syllable of numbered pinyin (5 for neutral): in a
+    run of third tones, all but the last are said as second tones."""
+    tones = [int(syllable[-1]) for syllable in numbered.split()]
+    for position in range(len(tones) - 1):
+        if tones[position] == tones[position + 1] == 3:
+            tones[position] = 2
+    return tones
 
-    A coarse autocorrelation pitch track, in semitones around the clip's
-    median, is compared per syllable: tone 1 stays level, tone 2 rises, tone 3
-    dips or stays low, tone 4 falls. Neutral syllables are not checked.
+
+def _contour(tones: list[int], position: int) -> list[tuple[float, float]]:
+    tone = tones[position]
+    if tone == 5:
+        before = tones[position - 1] if position else None
+        level = NEUTRAL_AFTER[before if before != 5 else None]
+        return [(0.0, level), (1.0, level - 0.4)]
+    if tone == 3 and position < len(tones) - 1:
+        return HALF_THIRD
+    return TONE_SHAPES[tone]
+
+
+def impose_tones(numpy: Any, audio: Any, spans: list[tuple[int, int, int]], tones: list[int], voice: str) -> tuple[Any, list[tuple[int, int, int]]]:
+    """The clip said with the canonical contour of `tones`, and the loud part
+    (tone, start, end) of each syllable in it.
+
+    WORLD (pyworld) analyses the clip into pitch, spectral envelope and
+    aperiodicity; the pitch of each voiced syllable is replaced by its tone's
+    contour, scaled to the voice's range, smoothed over 25 ms, and the clip is
+    resynthesized: timbre and durations stay Kokoro's. Kokoro's durations place
+    the syllables relative to each other but not in absolute time: when the
+    voiced runs of the clip (unvoiced initials part them) are as many as the
+    syllables, each run is a syllable; otherwise Kokoro's syllables are
+    stretched onto the voiced part of the clip.
     """
-    frame, hop = int(0.04 * SAMPLE_RATE), int(0.005 * SAMPLE_RATE)
-    centres, pitches = [], []
-    peak = max(float(numpy.sqrt(numpy.mean(audio[i:i + frame] ** 2))) for i in range(0, max(1, len(audio) - frame), hop))
-    for i in range(0, max(1, len(audio) - frame), hop):
-        window = audio[i:i + frame] * numpy.hanning(frame)
-        if numpy.sqrt(numpy.mean(window ** 2)) < 0.12 * peak:
-            continue
-        correlation = numpy.correlate(window, window, "full")[frame - 1:]
-        low, high = SAMPLE_RATE // 450, SAMPLE_RATE // 65
-        lag = low + int(numpy.argmax(correlation[low:high]))
-        if correlation[0] > 0 and correlation[lag] / correlation[0] > 0.4:
-            centres.append(i + frame // 2)
-            pitches.append(SAMPLE_RATE / lag)
-    if not pitches:
-        return False
-    centres_array, semitones = numpy.array(centres), 12 * numpy.log2(numpy.array(pitches) / numpy.median(pitches))
+    try:
+        import pyworld
+    except ImportError as exc:
+        raise AudioError(f"pyworld is not installed ({exc}); see docs/AUDIO.md") from exc
+    signal = audio.astype(numpy.float64)
+    frame_ms = 5.0
+    f0, times = pyworld.harvest(signal, SAMPLE_RATE, f0_floor=60.0, f0_ceil=600.0, frame_period=frame_ms)
+    envelope = pyworld.cheaptrick(signal, f0, times, SAMPLE_RATE)
+    aperiodicity = pyworld.d4c(signal, f0, times, SAMPLE_RATE)
+    hop = SAMPLE_RATE * frame_ms / 1000
+    window = int(0.02 * SAMPLE_RATE)
+    energy = numpy.sqrt(numpy.convolve(signal ** 2, numpy.ones(window) / window, mode="same"))
+    positions = numpy.arange(len(f0)) * hop
+    frame_energy = energy[numpy.minimum(positions.astype(int), len(energy) - 1)]
+    # Harvest also finds voicing in near-silence and in fricatives: speech is
+    # where DIO agrees and the clip is audible.
+    agreed, _ = pyworld.dio(signal, SAMPLE_RATE, f0_floor=60.0, f0_ceil=600.0, frame_period=frame_ms)
+    voiced = numpy.nonzero((f0 > 0) & (agreed[:len(f0)] > 0) & (frame_energy >= 0.05 * frame_energy.max()))[0]
+    if len(voiced) == 0 or len(spans) != len(tones):
+        raise AudioError("no voiced syllables to shape")
+    first, last = voiced[0] * hop, (voiced[-1] + 1) * hop
+    start, end = spans[0][1], spans[-1][2]
+    scale = (last - first) / max(1, end - start)
+    bounds = [first] + [first + (b - start) * scale for _, _, b in spans[:-1]] + [last]
+    # Each inner boundary moves to the quietest 5 ms within 60 ms: the
+    # consonant or the transition between two vowels.
+    reach = int(0.06 * SAMPLE_RATE)
+    for position in range(1, len(bounds) - 1):
+        low_edge = max(int(bounds[position - 1]) + reach // 2, int(bounds[position]) - reach)
+        high_edge = min(int(bounds[position + 1]) - reach // 2, int(bounds[position]) + reach)
+        if low_edge < high_edge:
+            bounds[position] = low_edge + int(numpy.argmin(energy[low_edge:high_edge:int(hop)])) * int(hop)
+    target = f0.copy()
+    low, high = TONE_RANGE[voice]
+    cores = []
+    for position, tone in enumerate(tones):
+        frames = numpy.nonzero((positions >= bounds[position]) & (positions < bounds[position + 1]) & (f0 > 0))[0]
+        spoken = frames[agreed[frames] > 0]
+        if len(spoken) == 0:
+            raise AudioError("a syllable has no voiced frame")
+        # The contour spans the loud voiced part of the syllable, where it is
+        # heard; the quiet voicing around it holds the contour's ends.
+        loud = spoken[frame_energy[spoken] >= 0.2 * frame_energy[spoken].max()]
+        where = numpy.clip((frames - loud[0]) / max(1, loud[-1] - loud[0]), 0.0, 1.0)
+        points = _contour(tones, position)
+        levels = numpy.interp(where, [at for at, _ in points], [level for _, level in points])
+        target[frames] = low * (high / low) ** ((levels - 1) / 4)
+        cores.append((tone, int(loud[0] * hop), int((loud[-1] + 1) * hop)))
+    is_voiced = (target > 0).astype(numpy.float64)
+    kernel = numpy.ones(5)
+    total = numpy.convolve(numpy.log(numpy.maximum(target, 1.0)) * is_voiced, kernel, mode="same")
+    count = numpy.convolve(is_voiced, kernel, mode="same")
+    smoothed = numpy.where(target > 0, numpy.exp(total / numpy.maximum(count, 1.0)), 0.0)
+    shaped = pyworld.synthesize(smoothed, envelope, aperiodicity, SAMPLE_RATE, frame_ms)
+    return shaped.astype(numpy.float32), cores
+
+
+@dataclass(frozen=True)
+class Pitch:
+    """A syllable's measured pitch, in Chao levels of the voice's range
+    (1 low .. 5 high; one level is about 3 semitones)."""
+    tone: int
+    head: float
+    tail: float
+    dip: float
+    mean: float
+
+    def heard(self) -> bool:
+        """Tone 1 stays high and level, tone 2 rises, tone 3 goes low and
+        either rises again or stays low, tone 4 falls."""
+        if self.tone == 1:
+            return abs(self.tail - self.head) < 0.7 and self.dip > min(self.head, self.tail) - 1.0 and self.mean >= 3.5
+        if self.tone == 2:
+            return self.tail - self.head >= 0.7
+        if self.tone == 3:
+            return self.dip <= 1.8 and (self.tail - self.dip >= 1 or self.mean <= 2)
+        if self.tone == 4:
+            return self.head - self.tail >= 0.9
+        return True
+
+
+def measure_pitch(numpy: Any, audio: Any, spans: list[tuple[int, int, int]], voice: str) -> list[Pitch] | None:
+    """Each full-tone syllable's pitch, tracked by DIO and StoneMask (another
+    estimator than the Harvest that shaped it), or None when a syllable has
+    too few voiced frames."""
+    import pyworld
+    signal = audio.astype(numpy.float64)
+    f0, times = pyworld.dio(signal, SAMPLE_RATE, f0_floor=60.0, f0_ceil=600.0, frame_period=5.0)
+    f0 = pyworld.stonemask(signal, f0, times, SAMPLE_RATE)
+    centres = times * SAMPLE_RATE
+    low_hz, high_hz = TONE_RANGE[voice]
+    measured = []
     for tone, start, end in spans:
         if tone == 5:
             continue
-        inside = semitones[(centres_array >= start + (end - start) * 0.15) & (centres_array <= end - (end - start) * 0.1)]
-        if len(inside) < 4:
-            return False
+        pitches = f0[(centres >= start) & (centres < end) & (f0 > 0)]
+        if len(pitches) < 8:
+            return None
+        inside = 1 + 4 * numpy.log2(pitches / low_hz) / numpy.log2(high_hz / low_hz)
         quarter = max(1, len(inside) // 4)
-        head, tail = float(numpy.mean(inside[:quarter])), float(numpy.mean(inside[-quarter:]))
-        middle = inside[len(inside) // 5: len(inside) - len(inside) // 5] if len(inside) >= 5 else inside
-        dip = float(numpy.min(middle))
-        if tone == 1 and not (abs(tail - head) < 2 and dip > min(head, tail) - 1.5):
-            return False
-        if tone == 2 and not (tail - head >= 2):
-            return False
-        if tone == 3 and not (dip <= min(head, tail) - 1.5 or float(numpy.mean(inside)) <= -2):
-            return False
-        if tone == 4 and not (head - tail >= 2.5):
-            return False
-    return True
+        middle = inside[len(inside) // 5: len(inside) - len(inside) // 5]
+        # The 10th percentile, not the minimum: one octave slip is not a dip.
+        measured.append(Pitch(
+            tone, float(numpy.mean(inside[:quarter])), float(numpy.mean(inside[-quarter:])), float(numpy.percentile(middle, 10)), float(numpy.mean(inside)),
+        ))
+    return measured
+
+
+def decode(path: Path, numpy: Any) -> Any:
+    """The samples of an encoded clip, as the app plays them."""
+    raw = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(path), "-f", "f32le", "-ac", "1", "-ar", str(SAMPLE_RATE), "-"],
+        capture_output=True, check=True,
+    ).stdout
+    return numpy.frombuffer(raw, dtype="<f4").astype(numpy.float32)
 
 
 def encode(numpy: Any, audio: Any, target: Path) -> None:
@@ -512,18 +652,44 @@ def main(argv: list[str]) -> int:
     directory = args.root / AUDIO_DIR
     directory.mkdir(parents=True, exist_ok=True)
     try:
-        clips, tone_drills = wanted_clips(all_lesson_files(args.root))
+        clips = wanted_clips(all_lesson_files(args.root))
         missing = sorted(name for name in clips if not (directory / clips[name].file_name).exists())
         rejected: list[Clip] = []
+        unshaped: list[Clip] = []
+        measured: list[Pitch] = []
         if missing:
             engine = Kokoro()
+
+            def heard(target: Path, cores: list[tuple[int, int, int]], voice: str) -> list[Pitch] | None:
+                pitch = measure_pitch(engine.numpy, decode(target, engine.numpy), cores, voice)
+                return pitch if pitch is not None and all(syllable.heard() for syllable in pitch) else None
+
             for done, name in enumerate(missing, start=1):
                 clip = clips[name]
+                target = directory / clip.file_name
                 audio, spans = engine.say(clip)
-                if name in tone_drills and not tones_heard(engine.numpy, audio, spans):
-                    rejected.append(clip)
-                    continue
-                encode(engine.numpy, audio, directory / clip.file_name)
+                if not clip.word:
+                    encode(engine.numpy, audio, target)
+                else:
+                    tones = spoken_tones(clip.pinyin)
+                    try:
+                        shaped, cores = impose_tones(engine.numpy, audio, spans, tones, clip.voice)
+                    except AudioError:
+                        rejected.append(clip)
+                        continue
+                    # The shaped clip, else Kokoro's own when its tones are
+                    # heard, else none: the device voice says the word.
+                    encode(engine.numpy, shaped, target)
+                    pitch = heard(target, cores, clip.voice)
+                    if pitch is None:
+                        encode(engine.numpy, audio, target)
+                        pitch = heard(target, cores, clip.voice)
+                        if pitch is None:
+                            target.unlink()
+                            rejected.append(clip)
+                            continue
+                        unshaped.append(clip)
+                    measured += pitch
                 if done % 50 == 0 or done == len(missing):
                     print(f"{done}/{len(missing)} clips", flush=True)
         for path in sorted(directory.glob("*.m4a")):
@@ -538,8 +704,17 @@ def main(argv: list[str]) -> int:
     size = sum(path.stat().st_size for path in present)
     duration = sum(mp4_duration_ms(path.read_bytes()) or 0 for path in present)
     print(f"{len(present)} clips, {size / 1_000_000:.1f} MB, {duration / 60000:.1f} min")
+    for tone in range(1, 5):
+        of_tone = [syllable for syllable in measured if syllable.tone == tone]
+        if of_tone:
+            mean = sum(syllable.mean for syllable in of_tone) / len(of_tone)
+            rise = sum(syllable.tail - syllable.head for syllable in of_tone) / len(of_tone)
+            dip = sum(min(syllable.head, syllable.tail) - syllable.dip for syllable in of_tone) / len(of_tone)
+            print(f"tone {tone}: {len(of_tone)} syllables, Chao level {mean:.1f}, end - start {rise:+.1f}, dip {dip:.1f}")
+    for clip in unshaped:
+        print(f"shaped tones not heard, Kokoro's own kept: {clip.text} {clip.pinyin} ({clip.voice})")
     for clip in rejected:
-        print(f"tone check failed, device voice kept: {clip.text} ({clip.voice})")
+        print(f"tones not heard, device voice kept: {clip.text} {clip.pinyin} ({clip.voice})")
     return 0
 
 

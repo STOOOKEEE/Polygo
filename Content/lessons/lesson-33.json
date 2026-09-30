@@ -49,7 +49,13 @@
       "meaning": {
         "fr": "chien"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-1c79a2d1d5c7886068816ee8",
+        "kind": "audio",
+        "relativePath": "assets/audio/1c79a2d1d5c7886068816ee8.m4a",
+        "sha256": "3ee2a5e2cc356812dcd92d61224a99b0e09a2042181f64e23ce68aff5f82a32d",
+        "durationMilliseconds": 535
+      },
       "example": {
         "hanzi": "那只狗在门外。",
         "pinyin": "Nà zhī gǒu zài mén wài.",
@@ -142,10 +148,10 @@
         "fr": "connaître ; faire connaissance"
       },
       "audio": {
-        "id": "audio-551b2bbacd12a7281bdd1e98",
+        "id": "audio-303454b0bc9ad1a59808fb6a",
         "kind": "audio",
-        "relativePath": "assets/audio/551b2bbacd12a7281bdd1e98.m4a",
-        "sha256": "a88f3aa6f168e1705bd1149ecd4ae9d73591d4c67b2d9e373db3ca24a13b8c8b",
+        "relativePath": "assets/audio/303454b0bc9ad1a59808fb6a.m4a",
+        "sha256": "73f2843ae696664c7bcc20e051623a97afc7475be015a03e4b18ca2ad3bb8068",
         "durationMilliseconds": 820
       },
       "example": {
@@ -220,7 +226,13 @@
       "meaning": {
         "fr": "qui"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-d20fee782b16f6fae777aff7",
+        "kind": "audio",
+        "relativePath": "assets/audio/d20fee782b16f6fae777aff7.m4a",
+        "sha256": "fbba5029ac090ca6c007ea7bb71f1b22c3bdf693a2919bd292ad1b229fc3f350",
+        "durationMilliseconds": 555
+      },
       "example": {
         "hanzi": "谁在门外？",
         "pinyin": "Shuí zài mén wài?",
@@ -299,7 +311,13 @@
       "meaning": {
         "fr": "ensoleillé ; beau temps"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-d0c9e9052b0cd4496c7b6d71",
+        "kind": "audio",
+        "relativePath": "assets/audio/d0c9e9052b0cd4496c7b6d71.m4a",
+        "sha256": "de35e5289856750f51df969c45aa07bc7fa90f1087aa081e7951e3f30769b8c3",
+        "durationMilliseconds": 565
+      },
       "example": {
         "hanzi": "今天天气很晴朗。",
         "pinyin": "Jīntiān tiānqì hěn qínglǎng.",
@@ -380,10 +398,10 @@
         "fr": "préparer ; être prêt"
       },
       "audio": {
-        "id": "audio-1bdc496a8b10fb8c9efb62dc",
+        "id": "audio-e5c68309b8bd1413cb1ed0a6",
         "kind": "audio",
-        "relativePath": "assets/audio/1bdc496a8b10fb8c9efb62dc.m4a",
-        "sha256": "63fe4351fae2c71b49d329f317b835ecddcb5b4906b5d1b2022f935248271790",
+        "relativePath": "assets/audio/e5c68309b8bd1413cb1ed0a6.m4a",
+        "sha256": "f07f25b7519616a306c1db41bfa6596e31c435e1ab92167b8af0646ec08c6af1",
         "durationMilliseconds": 715
       },
       "example": {
@@ -517,7 +535,13 @@
       "meaning": {
         "fr": "être ; c'est"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-f872ad3f6bca650f34f30a94",
+        "kind": "audio",
+        "relativePath": "assets/audio/f872ad3f6bca650f34f30a94.m4a",
+        "sha256": "85889a9c5abbda676b2f8da0e793fb7a9e9e9bade2bb9a567a830add5c0b243c",
+        "durationMilliseconds": 565
+      },
       "example": {
         "hanzi": "我是法国人。",
         "pinyin": "Wǒ shì Fǎguórén.",
@@ -602,11 +626,11 @@
         "fr": "temps (météo)"
       },
       "audio": {
-        "id": "audio-b361fd7274e6bdd010ab32a4",
+        "id": "audio-a04968db3e9e1550f131e275",
         "kind": "audio",
-        "relativePath": "assets/audio/b361fd7274e6bdd010ab32a4.m4a",
-        "sha256": "3b44607391472104014a37f42dc4cd593c89daf11d57fce1c1d0d843cd841080",
-        "durationMilliseconds": 821
+        "relativePath": "assets/audio/a04968db3e9e1550f131e275.m4a",
+        "sha256": "726067ba8ef46dec2c3e836f53c4468fb1c54a334a503c98675389b8382fb7f7",
+        "durationMilliseconds": 825
       },
       "example": {
         "hanzi": "今天的天气很好。",
@@ -2216,7 +2240,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t3"
+        "correctChoiceID": "t3",
+        "promptAudio": {
+          "id": "audio-1c79a2d1d5c7886068816ee8",
+          "kind": "audio",
+          "relativePath": "assets/audio/1c79a2d1d5c7886068816ee8.m4a",
+          "sha256": "3ee2a5e2cc356812dcd92d61224a99b0e09a2042181f64e23ce68aff5f82a32d",
+          "durationMilliseconds": 535
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -2275,10 +2306,10 @@
         ],
         "correctChoiceID": "a",
         "promptAudio": {
-          "id": "audio-551b2bbacd12a7281bdd1e98",
+          "id": "audio-303454b0bc9ad1a59808fb6a",
           "kind": "audio",
-          "relativePath": "assets/audio/551b2bbacd12a7281bdd1e98.m4a",
-          "sha256": "a88f3aa6f168e1705bd1149ecd4ae9d73591d4c67b2d9e373db3ca24a13b8c8b",
+          "relativePath": "assets/audio/303454b0bc9ad1a59808fb6a.m4a",
+          "sha256": "73f2843ae696664c7bcc20e051623a97afc7475be015a03e4b18ca2ad3bb8068",
           "durationMilliseconds": 820
         }
       },
@@ -2338,7 +2369,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "d",
+        "promptAudio": {
+          "id": "audio-d20fee782b16f6fae777aff7",
+          "kind": "audio",
+          "relativePath": "assets/audio/d20fee782b16f6fae777aff7.m4a",
+          "sha256": "fbba5029ac090ca6c007ea7bb71f1b22c3bdf693a2919bd292ad1b229fc3f350",
+          "durationMilliseconds": 555
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -3057,7 +3095,13 @@
         "hanzi": "狗",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-1c79a2d1d5c7886068816ee8",
+          "kind": "audio",
+          "relativePath": "assets/audio/1c79a2d1d5c7886068816ee8.m4a",
+          "sha256": "3ee2a5e2cc356812dcd92d61224a99b0e09a2042181f64e23ce68aff5f82a32d",
+          "durationMilliseconds": 535
+        }
       },
       "back": {
         "hanzi": "狗",
@@ -3065,7 +3109,13 @@
         "text": {
           "fr": "chien"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-1c79a2d1d5c7886068816ee8",
+          "kind": "audio",
+          "relativePath": "assets/audio/1c79a2d1d5c7886068816ee8.m4a",
+          "sha256": "3ee2a5e2cc356812dcd92d61224a99b0e09a2042181f64e23ce68aff5f82a32d",
+          "durationMilliseconds": 535
+        }
       },
       "tags": [
         "catalog"
@@ -3079,10 +3129,10 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-551b2bbacd12a7281bdd1e98",
+          "id": "audio-303454b0bc9ad1a59808fb6a",
           "kind": "audio",
-          "relativePath": "assets/audio/551b2bbacd12a7281bdd1e98.m4a",
-          "sha256": "a88f3aa6f168e1705bd1149ecd4ae9d73591d4c67b2d9e373db3ca24a13b8c8b",
+          "relativePath": "assets/audio/303454b0bc9ad1a59808fb6a.m4a",
+          "sha256": "73f2843ae696664c7bcc20e051623a97afc7475be015a03e4b18ca2ad3bb8068",
           "durationMilliseconds": 820
         }
       },
@@ -3093,10 +3143,10 @@
           "fr": "connaître ; faire connaissance"
         },
         "audio": {
-          "id": "audio-551b2bbacd12a7281bdd1e98",
+          "id": "audio-303454b0bc9ad1a59808fb6a",
           "kind": "audio",
-          "relativePath": "assets/audio/551b2bbacd12a7281bdd1e98.m4a",
-          "sha256": "a88f3aa6f168e1705bd1149ecd4ae9d73591d4c67b2d9e373db3ca24a13b8c8b",
+          "relativePath": "assets/audio/303454b0bc9ad1a59808fb6a.m4a",
+          "sha256": "73f2843ae696664c7bcc20e051623a97afc7475be015a03e4b18ca2ad3bb8068",
           "durationMilliseconds": 820
         }
       },
@@ -3111,7 +3161,13 @@
         "hanzi": "谁",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-d20fee782b16f6fae777aff7",
+          "kind": "audio",
+          "relativePath": "assets/audio/d20fee782b16f6fae777aff7.m4a",
+          "sha256": "fbba5029ac090ca6c007ea7bb71f1b22c3bdf693a2919bd292ad1b229fc3f350",
+          "durationMilliseconds": 555
+        }
       },
       "back": {
         "hanzi": "谁",
@@ -3119,7 +3175,13 @@
         "text": {
           "fr": "qui"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-d20fee782b16f6fae777aff7",
+          "kind": "audio",
+          "relativePath": "assets/audio/d20fee782b16f6fae777aff7.m4a",
+          "sha256": "fbba5029ac090ca6c007ea7bb71f1b22c3bdf693a2919bd292ad1b229fc3f350",
+          "durationMilliseconds": 555
+        }
       },
       "tags": [
         "catalog"
@@ -3132,7 +3194,13 @@
         "hanzi": "晴",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-d0c9e9052b0cd4496c7b6d71",
+          "kind": "audio",
+          "relativePath": "assets/audio/d0c9e9052b0cd4496c7b6d71.m4a",
+          "sha256": "de35e5289856750f51df969c45aa07bc7fa90f1087aa081e7951e3f30769b8c3",
+          "durationMilliseconds": 565
+        }
       },
       "back": {
         "hanzi": "晴",
@@ -3140,7 +3208,13 @@
         "text": {
           "fr": "ensoleillé ; beau temps"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-d0c9e9052b0cd4496c7b6d71",
+          "kind": "audio",
+          "relativePath": "assets/audio/d0c9e9052b0cd4496c7b6d71.m4a",
+          "sha256": "de35e5289856750f51df969c45aa07bc7fa90f1087aa081e7951e3f30769b8c3",
+          "durationMilliseconds": 565
+        }
       },
       "tags": [
         "catalog"
@@ -3154,10 +3228,10 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-1bdc496a8b10fb8c9efb62dc",
+          "id": "audio-e5c68309b8bd1413cb1ed0a6",
           "kind": "audio",
-          "relativePath": "assets/audio/1bdc496a8b10fb8c9efb62dc.m4a",
-          "sha256": "63fe4351fae2c71b49d329f317b835ecddcb5b4906b5d1b2022f935248271790",
+          "relativePath": "assets/audio/e5c68309b8bd1413cb1ed0a6.m4a",
+          "sha256": "f07f25b7519616a306c1db41bfa6596e31c435e1ab92167b8af0646ec08c6af1",
           "durationMilliseconds": 715
         }
       },
@@ -3168,10 +3242,10 @@
           "fr": "préparer ; être prêt"
         },
         "audio": {
-          "id": "audio-1bdc496a8b10fb8c9efb62dc",
+          "id": "audio-e5c68309b8bd1413cb1ed0a6",
           "kind": "audio",
-          "relativePath": "assets/audio/1bdc496a8b10fb8c9efb62dc.m4a",
-          "sha256": "63fe4351fae2c71b49d329f317b835ecddcb5b4906b5d1b2022f935248271790",
+          "relativePath": "assets/audio/e5c68309b8bd1413cb1ed0a6.m4a",
+          "sha256": "f07f25b7519616a306c1db41bfa6596e31c435e1ab92167b8af0646ec08c6af1",
           "durationMilliseconds": 715
         }
       },
@@ -3186,7 +3260,13 @@
         "hanzi": "是",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-f872ad3f6bca650f34f30a94",
+          "kind": "audio",
+          "relativePath": "assets/audio/f872ad3f6bca650f34f30a94.m4a",
+          "sha256": "85889a9c5abbda676b2f8da0e793fb7a9e9e9bade2bb9a567a830add5c0b243c",
+          "durationMilliseconds": 565
+        }
       },
       "back": {
         "hanzi": "是",
@@ -3194,7 +3274,13 @@
         "text": {
           "fr": "être ; c'est"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-f872ad3f6bca650f34f30a94",
+          "kind": "audio",
+          "relativePath": "assets/audio/f872ad3f6bca650f34f30a94.m4a",
+          "sha256": "85889a9c5abbda676b2f8da0e793fb7a9e9e9bade2bb9a567a830add5c0b243c",
+          "durationMilliseconds": 565
+        }
       },
       "tags": [
         "unit-01",
@@ -3244,11 +3330,11 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-b361fd7274e6bdd010ab32a4",
+          "id": "audio-a04968db3e9e1550f131e275",
           "kind": "audio",
-          "relativePath": "assets/audio/b361fd7274e6bdd010ab32a4.m4a",
-          "sha256": "3b44607391472104014a37f42dc4cd593c89daf11d57fce1c1d0d843cd841080",
-          "durationMilliseconds": 821
+          "relativePath": "assets/audio/a04968db3e9e1550f131e275.m4a",
+          "sha256": "726067ba8ef46dec2c3e836f53c4468fb1c54a334a503c98675389b8382fb7f7",
+          "durationMilliseconds": 825
         }
       },
       "back": {
@@ -3258,11 +3344,11 @@
           "fr": "temps (météo)"
         },
         "audio": {
-          "id": "audio-b361fd7274e6bdd010ab32a4",
+          "id": "audio-a04968db3e9e1550f131e275",
           "kind": "audio",
-          "relativePath": "assets/audio/b361fd7274e6bdd010ab32a4.m4a",
-          "sha256": "3b44607391472104014a37f42dc4cd593c89daf11d57fce1c1d0d843cd841080",
-          "durationMilliseconds": 821
+          "relativePath": "assets/audio/a04968db3e9e1550f131e275.m4a",
+          "sha256": "726067ba8ef46dec2c3e836f53c4468fb1c54a334a503c98675389b8382fb7f7",
+          "durationMilliseconds": 825
         }
       },
       "tags": [

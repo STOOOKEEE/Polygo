@@ -26,7 +26,7 @@ import unicodedata
 from typing import Any, Callable
 
 from exercise_expansion import EXERCISE_BUDGET, PHASES
-from exercise_kinds import MATCHING_PAIRS, POLYPHONES, pinyin_tones, tone_choice_id, tone_label
+from exercise_kinds import MATCHING_PAIRS, POLYPHONES, pinyin_tones, tone_choice_id, tone_label, tone_options_problem
 from pinyin_format import FINALS, INITIALS, PinyinError, syllables, untoned
 from review_lessons import renumber
 
@@ -202,6 +202,9 @@ def _exercise(lesson_id: str, number: int, lesson_number: int, objectives: list[
         answer = "".join(str(tone) for tone in tones)
         if answer not in options or any(len(option) != len(tones) or not option.isdigit() for option in options):
             raise PinyinError(f"{where}: options must all have {len(tones)} tones and offer {answer}")
+        problem = tone_options_problem(tones, [[int(digit) for digit in option] for option in options])
+        if problem:
+            raise PinyinError(f"{where}: the tone options {problem}")
         texts(
             "Écoute la syllabe, puis choisis son ton." if len(tones) == 1 else "Écoute le mot, puis choisis ses deux tons.",
             "Appuie sur l’écoute, puis choisis la mélodie que tu entends.",

@@ -80,16 +80,44 @@ def tone_label(tones: list[int]) -> str:
     return " puis ".join(_TONE_SHORT[tone] for tone in tones).capitalize()
 
 
+def tone_confusions(tones: list[int]) -> list[list[int]]:
+    """The patterns most often heard instead of `tones`: tone 2 and tone 3
+    swapped on one syllable (never 3-3, which is spoken 2-3)."""
+    result = []
+    for position, tone in enumerate(tones):
+        if tone in (2, 3):
+            pattern = [*tones[:position], 5 - tone, *tones[position + 1:]]
+            if not any(left == right == 3 for left, right in zip(pattern, pattern[1:])):
+                result.append(pattern)
+    return result
+
+
+def tone_options_problem(tones: list[int], options: list[list[int]]) -> str | None:
+    """Why `options` do not test the tones of `tones` fairly, else None: one
+    syllable offers the four tones, two syllables offer a 2/3 swap."""
+    if len(tones) == 1:
+        return None if all([tone] in options for tone in range(1, 5)) else "must offer the four tones 1 to 4"
+    confusions = tone_confusions(tones)
+    if confusions and not any(pattern in options for pattern in confusions):
+        return "must offer the answer with tone 2 and tone 3 swapped on one syllable"
+    return None
+
+
 def tone_options(tones: list[int], rng: random.Random) -> list[list[int]]:
     """The correct pattern and three others, ordered by tone digits.
 
     One syllable offers the four tones. Two syllables offer the patterns that
-    differ from the answer by one syllable first, then by two; patterns that
-    end in 3-3 are never offered because they sound like 2-3.
+    differ from the answer by one syllable first, then by two, and always one
+    that swaps tone 2 and tone 3; patterns that end in 3-3 are never offered
+    because they sound like 2-3.
     """
     if len(tones) == 1:
         return [[tone] for tone in range(1, 5)]
     patterns = [[first, second] for first in range(1, 5) for second in range(5) if [first, second] != tones and not first == second == 3]
     rng.shuffle(patterns)
     patterns.sort(key=lambda pattern: sum(left != right for left, right in zip(pattern, tones)))
-    return sorted([tones] + patterns[:3])
+    picked = patterns[:3]
+    confusions = tone_confusions(tones)
+    if confusions and not any(pattern in picked for pattern in confusions):
+        picked[-1] = confusions[0]
+    return sorted([tones] + picked)

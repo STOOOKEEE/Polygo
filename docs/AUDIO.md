@@ -107,36 +107,65 @@ chaque texte (sandhi 3-3, 不 et 一 appliqués ensuite), vérifié par exemple 
 
 Une syllabe isolée n’est pas fiable : sur 妈/麻/马/骂 et d’autres quadruplets,
 les tons 2 et 3 restent plats ou montent-descendent, quels que soient la voix,
-la vitesse ou une phrase porteuse. Les textes d’une seule syllabe (mots d’un
-caractère, porteurs du module 0) gardent donc la voix du système, jamais
-pire que l’existant. Les invites `toneDiscrimination` de plusieurs syllabes
-ne reçoivent un clip que si chaque ton plein y est entendu (niveau, montée,
-creux ou descente mesurés) ; sinon elles restent aussi en synthèse locale.
+la vitesse ou une phrase porteuse ; un mot court (你好, 妈妈, 学习, 电影, 水果…)
+sort souvent avec des tons faux. Pour que tous les mots aient la même voix que
+les phrases, un mot isolé est façonné : Kokoro le dit, puis WORLD (analyse et
+resynthèse, via pyworld) remplace la hauteur de chaque syllabe par le contour
+canonique de son ton, le timbre et les durées restant ceux de Kokoro.
+
+- Échelle : niveaux de Chao 1 à 5 posés sur la tessiture de la voix, du 5e au
+  95e centile de F0 de 60 répliques (`zf_093` 195–380 Hz, `zm_011` 87–159 Hz).
+- Contours (en isolation) : ton 1 = 55 ; ton 2 = 3 → 5 avec un léger creux au
+  départ ; ton 3 final = 2,5 → 1 → 4 (creux complet), non final = 2 → 1 (demi
+  3e ton) ; ton 4 = 5 → 1 ; ton neutre bref et plat, placé selon le ton
+  précédent. Les chaînes de 3e tons suivent le sandhi (你好 = 2-3), 不 et 一
+  gardent leur ton écrit dans le pinyin.
+- Le contour couvre la partie voisée et sonore de chaque syllabe ; les
+  frontières viennent des durées de Kokoro, étirées sur la parole puis
+  recalées sur le creux d’énergie le plus proche (consonne), et le contour est
+  lissé sur 25 ms.
+- Contrôle : chaque clip est décodé tel que l’app le joue, et sa hauteur est
+  mesurée par un autre estimateur (DIO + StoneMask) que celui qui l’a façonné
+  (Harvest). Ton 1 haut et plat, ton 2 qui monte d’au moins 0,7 niveau (~2 demi-
+  tons), ton 3 qui descend sous le niveau 1,8 puis remonte ou reste bas, ton 4
+  qui descend d’au moins 0,9 niveau. Si le clip façonné échoue, le clip brut de
+  Kokoro est gardé s’il passe le même contrôle (报纸) ; sinon le mot garde la
+  voix du système.
+
+Mesures sur les 450 syllabes à ton plein des 332 clips de mots (niveaux de
+Chao, 1 niveau ≈ 3 demi-tons) : ton 1 (104) moyenne 5,0, fin − début 0,0 ;
+ton 2 (92) moyenne 3,6, +1,7 ; ton 3 (98) moyenne 1,9, creux 0,7 sous le plus
+bas des bords puis +0,7 ; ton 4 (156) moyenne 3,2, −3,3. L’écoute humaine
+n’a pas été faite dans cette passe.
 
 ### Couverture et voix
 
-Un clip existe pour chaque texte d’au moins deux syllabes : répliques de
-dialogue et de `dialogueOrder`, paragraphes de lecture, mots, exemples et
-cartes, invites `listeningChoice`, `dictation`, `toneDiscrimination`,
-`conversationChoice` (et ses réponses) et modèle `speaking`. Voix : Mina et Lin
-→ féminine, Tao et An → masculine ; mots, lectures et invites d’écoute →
-féminine ; exemples de vocabulaire → masculine (les deux voix dès la première
-leçon) ; réponse de conversation → l’autre voix que la réplique ; modèle oral →
-voix du personnage qui dit la phrase dans le dialogue, sinon féminine. Les noms
-écrits en latin sont dits 米娜 mǐ nà, 涛 tāo, 林 lín, 安 ān. Un clip est nommé
-par le SHA-256 de (moteur, voix, texte, pinyin) : un texte identique dit par la
-même voix n’a qu’un fichier.
+Un clip existe pour chaque texte en hanzi : répliques de dialogue et de
+`dialogueOrder`, paragraphes de lecture, mots, exemples et cartes, invites
+`listeningChoice`, `dictation`, `toneDiscrimination`, `conversationChoice` (et
+ses réponses) et modèle `speaking`. Est un mot (clip façonné) : une entrée de
+vocabulaire et ses cartes, une invite d’écoute, de dictée ou de ton sans
+ponctuation de phrase, un modèle oral qui est un mot de la leçon, et tout texte
+d’une syllabe. Voix : Mina et Lin → féminine, Tao et An → masculine ; mots,
+lectures et invites d’écoute → féminine ; exemples de vocabulaire → masculine
+(les deux voix dès la première leçon) ; réponse de conversation → l’autre voix
+que la réplique ; modèle oral → voix du personnage qui dit la phrase dans le
+dialogue, sinon féminine. Les noms écrits en latin sont dits 米娜 mǐ nà, 涛 tāo,
+林 lín, 安 ān. Un clip est nommé par le SHA-256 de (moteur, voix, texte,
+pinyin), plus la version du façonnage pour un mot : un texte identique dit par
+la même voix n’a qu’un fichier.
 
-Restent en voix système : les textes d’une syllabe, les tuiles `wordOrder`, les
-paires `matching`, les choix `choice`, et les invites de ton refusées par le
-contrôle ci-dessus. Le clip refusé est celui du mot entier, donc le mot garde
-aussi la voix système dans le vocabulaire et les cartes : sur 45 invites de ton
-de plusieurs syllabes, 17 ont un clip et 28 sont refusées (par exemple 你好,
-妈妈, 学习, 电影, 水果 ; la liste complète est imprimée par le générateur).
+Restent en voix système : les tuiles `wordOrder`, les paires `matching`, les
+choix `choice`, et 14 mots dont le contrôle échoue (surtout une consonne sourde
+suivie d’une voyelle brève) : 不客气, 什么, 一起, 出租车, 对不起, 机场, 时间,
+火车站, 学校, 自行车, 西瓜, 踢足球, 鱼, 鸡蛋 (liste imprimée par le
+générateur).
 
-Bilan de la génération : 1 404 clips (766 en voix féminine, 638 en voix
-masculine), 68 minutes, 22,4 Mo (25 Mo sur disque). Une régénération des
-mêmes clips donne des fichiers identiques octet pour octet.
+Bilan de la génération : 1 607 clips (968 en voix féminine, 639 en voix
+masculine), dont 332 mots (187 d’une syllabe), 70 minutes, 23,3 Mo (26 Mo sur
+disque), contre 1 404 clips et 22,4 Mo quand les mots d’une syllabe et 28 mots
+de deux syllabes gardaient la voix du système. Une régénération des mêmes
+clips donne des fichiers identiques octet pour octet (vérifié sur 40 mots).
 
 ### Format
 
@@ -163,14 +192,21 @@ demande aucun moteur. Pour créer les clips manquants (Python 3.12, ffmpeg) :
 uv venv --python 3.12 ~/.cache/polygo-tts-venv
 VIRTUAL_ENV=~/.cache/polygo-tts-venv uv pip install \
   --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple \
-  --index-strategy unsafe-best-match torch "kokoro==0.9.4" "misaki[zh]==0.9.4" soundfile
+  --index-strategy unsafe-best-match torch "kokoro==0.9.4" "misaki[zh]==0.9.4" soundfile \
+  "pyworld==0.3.5" "setuptools<81"
 cd Tools && ~/.cache/polygo-tts-venv/bin/python build_audio.py --root ../Content
 ```
 
+pyworld (licence MIT) enveloppe le vocodeur WORLD de Masanori Morise (licence
+BSD modifiée) ; il sert seulement à la génération et n’est jamais embarqué.
+Il importe encore `pkg_resources`, d’où `setuptools<81`.
+
 Le script télécharge le modèle à la révision figée, vérifie son SHA-256,
-synthétise uniquement les clips absents (graine fixe par phrase), supprime les
-clips inutilisés, rattache et lance le lint. Le lint refuse une référence
-périmée ou manquante et un clip qu’aucune leçon n’utilise.
+synthétise uniquement les clips absents (graine fixe par phrase), façonne et
+contrôle les mots, supprime les clips inutilisés, rattache et lance le lint. Le
+lint refuse une référence périmée ou manquante et un clip qu’aucune leçon
+n’utilise. Un mot refusé n’a pas de fichier : il est réessayé (et de nouveau
+refusé) à chaque passe.
 
 ## Sons de réponse
 

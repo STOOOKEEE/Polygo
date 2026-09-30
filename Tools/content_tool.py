@@ -39,7 +39,9 @@ from exercise_kinds import (
     MIN_NEW_KINDS,
     NEW_KINDS,
     entry_tones,
+    pinyin_tones,
     tone_choice_id,
+    tone_options_problem,
 )
 from review_lessons import (
     BOSS,
@@ -66,7 +68,7 @@ from grammar_syllabus import (
     taught_context,
 )
 from build_audio import AudioError, References as AudioReferences, attach as attach_clips, pinyin_index as audio_pinyin_index, problems as audio_problems
-from pinyin_format import Lexicon, PinyinError, format_lessons, segmentation_problems
+from pinyin_format import Lexicon, PinyinError, format_lessons, lenient_syllables, segmentation_problems
 from pinyin_module import add_to_course, build_lessons, check_lesson, check_structure, is_pinyin
 from situations import (
     SituationError,
@@ -1362,6 +1364,85 @@ def lint_new_kind(spec: dict[str, Any], lesson: dict[str, Any], where: str) -> N
             check(source is not None and source.get("pinyin") == reply.get("pinyin"), "has a reply that is not a dialogue line")
 
 
+# A choice label that names one tone: « 3 — descend puis remonte », « Ton 2 ˊ ».
+_TONE_LABEL = re.compile(r"^(?:ton\s+)?([0-4]|neutre)\b", re.IGNORECASE)
+_TONE_PROMPT = re.compile(r"\bquel ton porte\b|\bquel est le \w+ ton de\b", re.IGNORECASE)
+_LATIN_WORD = re.compile(r"[A-Za-z\u00c0-\u024f]+")
+
+
+def _pinyin_readings(lessons: dict[str, dict[str, Any]]) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+    """The tone-marked syllables the course gives each Hanzi, and the pinyin
+    of each word, lower-cased: vocabulary rows and module 0 carriers."""
+    by_char: dict[str, set[str]] = {}
+    by_word: dict[str, set[str]] = {}
+    pairs = [(entry.get("hanzi"), entry.get("pinyin")) for lesson in lessons.values() for entry in lesson.get("vocabulary", []) if isinstance(entry, dict)]
+    pairs += [pair for lesson in lessons.values() for pair in lesson.get("metadata", {}).get("carriers", {}).items()]
+    for hanzi, pinyin in pairs:
+        if not isinstance(hanzi, str) or not isinstance(pinyin, str):
+            continue
+        parts = lenient_syllables(pinyin)
+        if any(pinyin_tones(parts)):
+            by_word.setdefault(hanzi, set()).update({pinyin.lower(), pinyin.lower().replace(" ", "")})
+        if len(parts) == len(hanzi):
+            for char, part in zip(hanzi, parts):
+                if pinyin_tones([part])[0]:
+                    by_char.setdefault(char, set()).add(part.lower())
+    return by_char, by_word
+
+
+def tone_reveal_problems(lessons: dict[str, dict[str, Any]]) -> list[str]:
+    """Tone and dictation questions that give their answer away, or tone
+    questions without the plausible confusions.
+
+    A tone question (`toneDiscrimination`, or a choice whose prompt asks a
+    tone or whose labels are tone numbers) never shows the tone-marked pinyin
+    of the asked Hanzi in its prompt, instruction or choices. A dictation never
+    shows it, nor the spoken Hanzi, in its prompt or instruction. One asked
+    syllable offers the four tones; two syllables offer a 2/3 swap.
+    """
+    by_char, by_word = _pinyin_readings(lessons)
+    found: list[str] = []
+
+    def revealed(asked: str, texts: list[str]) -> set[str]:
+        forbidden = set().union(*(by_char.get(char, set()) for char in asked), by_word.get(asked, set()))
+        return {word for text in texts for word in _LATIN_WORD.findall(text.lower())} & forbidden
+
+    for lesson_id, lesson in sorted(lessons.items()):
+        for spec in exercise_specs(lesson):
+            kind = spec.get("kind")
+            header = spec.get("header", {})
+            prompt, instruction = _label({"label": header.get("prompt")}), _label({"label": header.get("instruction")})
+            where = f"lessons/{lesson_id}.json {header.get('id')}"
+            labels = [_label(choice) for choice in spec.get("choices", [])]
+            if kind == "dictation":
+                spoken = _hanzi_only(spec.get("promptText"))
+                shown = revealed(spoken, [prompt, instruction])
+                if shown or (spoken and spoken in prompt + instruction):
+                    found.append(f"{where}: shows the dictated text before the answer ({', '.join(sorted(shown)) or spoken})")
+                continue
+            tone_labels = [_TONE_LABEL.match(label) for label in labels]
+            if kind == "toneDiscrimination":
+                asked = _hanzi_only(spec.get("promptText"))
+                options = [[int(digit) for digit in choice["id"][1:]] for choice in spec["choices"]]
+                answer = [int(digit) for digit in spec["correctChoiceID"][1:]]
+            elif kind == "choice" and (_TONE_PROMPT.search(prompt) or (labels and all(tone_labels))):
+                asked = _hanzi_only(prompt)
+                if not all(tone_labels):
+                    found.append(f"{where}: asks a tone but its choices are not tone numbers")
+                    continue
+                options = [[0 if match.group(1).lower() == "neutre" else int(match.group(1))] for match in tone_labels]
+                answer = options[0]  # one tone per label: one syllable is asked
+            else:
+                continue
+            shown = revealed(asked, [prompt, instruction, *labels])
+            if shown:
+                found.append(f"{where}: shows the pinyin of the asked tone before the answer ({', '.join(sorted(shown))})")
+            problem = tone_options_problem(answer, options)
+            if problem:
+                found.append(f"{where}: the tone choices {problem}")
+    return found
+
+
 def exercise_subject(spec: dict[str, Any]) -> str:
     """What an exercise is about, beyond its prompt: the text it plays, the words it pairs or the lines it orders."""
     if spec.get("promptText"):
@@ -1729,6 +1810,9 @@ def lint_bundle(root: Path) -> None:
             "segmentation (run `content_tool.py generate`):\n  " + "\n  ".join(problems[:20])
             + (f"\n  … {len(problems) - 20} more" if len(problems) > 20 else "")
         )
+    problems = tone_reveal_problems(lessons)
+    if problems:
+        raise ContentError("tone and dictation questions:\n  " + "\n  ".join(problems))
     problems = pinyin_problems(root, lessons)
     if problems:
         raise ContentError(

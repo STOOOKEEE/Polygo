@@ -481,7 +481,13 @@ Les six familles `matching`, `dictation`, `toneDiscrimination`, `translation`,
   son ton (1 à 4) ou son motif de deux tons. L'ID d'un choix épelle le motif
   (`t4`, `t42`, `t40` pour un ton neutre final) et doit être celui des
   `toneNumbers` du mot lu. Les mots dont la voix pourrait varier sont exclus :
-  suite 3-3 (sandhi), 不, 一, syllabe neutre isolée, caractères polyphones ;
+  suite 3-3 (sandhi), 不, 一, syllabe neutre isolée, caractères polyphones.
+  Une syllabe propose toujours les quatre tons ; deux syllabes proposent au
+  moins le motif où un ton 2 et un ton 3 sont échangés (`t43` → `t42`), la
+  confusion la plus courante. Ni l'énoncé, ni la consigne, ni les choix ne
+  montrent le pinyin accentué du mot (le lint le refuse, comme pour une
+  question `choice` « Quel ton porte… », qui écrit `早 (zao)` sans accent, et
+  pour une `dictation`, dont l'énoncé ne montre ni la réponse ni son pinyin) ;
 * `translation` : le `header.prompt` donne la phrase française ; `tokens`
   contient les tuiles de la phrase et au moins une tuile en trop ;
   `correctOrder` ne cite que les tuiles de la phrase et `acceptedOrders` d'autres
@@ -504,9 +510,9 @@ une auto-évaluation ne devient pas un score de prononciation. L'exercice oral
 est required: false lorsqu'aucun service de prononciation n'est configuré et
 peut être skipped.
 
-Une écoute joue promptAudio, le clip embarqué de promptText. Sans clip (texte
-d'une syllabe, invite de ton refusée par le contrôle de tons), promptText est
-lu par le TTS local.
+Une écoute joue promptAudio, le clip embarqué de promptText. Sans clip (mot
+dont les tons ne s'entendent pas une fois façonnés, voir AUDIO.md), promptText
+est lu par le TTS local.
 
 ## Vocabulaire, scripts et cartes
 
@@ -827,10 +833,11 @@ Les trois guides livrés sont :
 | guide-hanzi-guo | assets/handwriting/guide-hanzi-guo.json | b1273af6e93c964c2ef1ba0a4735e4d0a32552c2957f43b300e43f59ddbb196e |
 
 Les champs audio sont gérés par `Tools/build_audio.py` et rattachés par
-`content_tool.py generate` : chaque texte d'au moins deux syllabes (répliques,
-paragraphes, mots, exemples, cartes, invites d'écoute, de dictée, de ton, de
-conversation et modèles oraux) pointe vers `assets/audio/<hash>.m4a` avec son
-SHA-256 et sa durée ; les autres restent null et utilisent le TTS local. Le
+`content_tool.py generate` : chaque texte en hanzi (répliques, paragraphes,
+mots, exemples, cartes, invites d'écoute, de dictée, de ton, de conversation
+et modèles oraux) pointe vers `assets/audio/<hash>.m4a` avec son SHA-256 et sa
+durée ; un mot dont le contrôle de tons échoue reste null et utilise le TTS
+local. Le
 lint refuse une référence périmée ou absente et un clip orphelin. Voir
 [AUDIO.md](AUDIO.md) pour les voix, la licence et la régénération.
 

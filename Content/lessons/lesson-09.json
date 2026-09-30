@@ -49,7 +49,13 @@
       "meaning": {
         "fr": "film"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-b54bd12731b27f8b7167bfb1",
+        "kind": "audio",
+        "relativePath": "assets/audio/b54bd12731b27f8b7167bfb1.m4a",
+        "sha256": "f0558aa0acec81bee997e7b8414f7e0a7e9c143b7e1fbae239dc709f08a22fb6",
+        "durationMilliseconds": 765
+      },
       "example": {
         "hanzi": "我们周末看电影。",
         "pinyin": "Wǒmen zhōumò kàn diànyǐng.",
@@ -128,7 +134,13 @@
       "meaning": {
         "fr": "savoir faire ; pouvoir"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-5520b280d4b3c11e57377224",
+        "kind": "audio",
+        "relativePath": "assets/audio/5520b280d4b3c11e57377224.m4a",
+        "sha256": "98cbce0a6b26867683699934caca4ce9fbf48c98aad93ad25fba84be08c2b60a",
+        "durationMilliseconds": 600
+      },
       "example": {
         "hanzi": "我会说汉语。",
         "pinyin": "Wǒ huì shuō Hànyǔ.",
@@ -207,7 +219,13 @@
       "meaning": {
         "fr": "particule d’accompli ou de changement"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-9615c611bb9ecbbc1551421e",
+        "kind": "audio",
+        "relativePath": "assets/audio/9615c611bb9ecbbc1551421e.m4a",
+        "sha256": "d7529a19b8b84db0ebd6615e6dd04661824d4e24966a2518604f64ddc3c9a52a",
+        "durationMilliseconds": 575
+      },
       "example": {
         "hanzi": "我看了电影。",
         "pinyin": "Wǒ kàn le diànyǐng.",
@@ -286,7 +304,13 @@
       "meaning": {
         "fr": "depuis ; de"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-dc2460f63fb11564477d4781",
+        "kind": "audio",
+        "relativePath": "assets/audio/dc2460f63fb11564477d4781.m4a",
+        "sha256": "a77337637ad3d12f65571248be433344358ac23051f4707c900e40d4e9f26013",
+        "durationMilliseconds": 575
+      },
       "example": {
         "hanzi": "我从家走到学校。",
         "pinyin": "Wǒ cóng jiā zǒu dào xuéxiào.",
@@ -379,13 +403,7 @@
       "meaning": {
         "fr": "gare"
       },
-      "audio": {
-        "id": "audio-5ba40e2416c867e2be811d07",
-        "kind": "audio",
-        "relativePath": "assets/audio/5ba40e2416c867e2be811d07.m4a",
-        "sha256": "85f7047fb6a3a025d13fb3eccc5d94faa8ab7768368b1ff815b6b496fa2cf220",
-        "durationMilliseconds": 1158
-      },
+      "audio": null,
       "example": {
         "hanzi": "火车站在前面。",
         "pinyin": "Huǒchēzhàn zài qiánmiàn.",
@@ -459,7 +477,13 @@
       "meaning": {
         "fr": "je ; moi"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-159e1e58fd505c05d772f1e7",
+        "kind": "audio",
+        "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+        "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+        "durationMilliseconds": 560
+      },
       "example": {
         "hanzi": "我叫安。",
         "pinyin": "Wǒ jiào Ān.",
@@ -542,7 +566,13 @@
       "meaning": {
         "fr": "être à ; se trouver"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-ffc613f5f1501a996a7429de",
+        "kind": "audio",
+        "relativePath": "assets/audio/ffc613f5f1501a996a7429de.m4a",
+        "sha256": "be585eb3760886e1cb50233350c0b401bd8ed6de8573672efd8ddea1d6e814cf",
+        "durationMilliseconds": 565
+      },
       "example": {
         "hanzi": "我在家。",
         "pinyin": "Wǒ zài jiā.",
@@ -1805,13 +1835,6 @@
         "promptText": "电影",
         "choices": [
           {
-            "id": "t13",
-            "label": {
-              "fr": "Ton 1 ¯ puis ton 3 ˇ"
-            },
-            "audio": null
-          },
-          {
             "id": "t23",
             "label": {
               "fr": "Ton 2 ˊ puis ton 3 ˇ"
@@ -1826,6 +1849,13 @@
             "audio": null
           },
           {
+            "id": "t42",
+            "label": {
+              "fr": "Ton 4 ˋ puis ton 2 ˊ"
+            },
+            "audio": null
+          },
+          {
             "id": "t43",
             "label": {
               "fr": "Ton 4 ˋ puis ton 3 ˇ"
@@ -1833,7 +1863,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "t43"
+        "correctChoiceID": "t43",
+        "promptAudio": {
+          "id": "audio-b54bd12731b27f8b7167bfb1",
+          "kind": "audio",
+          "relativePath": "assets/audio/b54bd12731b27f8b7167bfb1.m4a",
+          "sha256": "f0558aa0acec81bee997e7b8414f7e0a7e9c143b7e1fbae239dc709f08a22fb6",
+          "durationMilliseconds": 765
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -1890,7 +1927,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "a"
+        "correctChoiceID": "a",
+        "promptAudio": {
+          "id": "audio-5520b280d4b3c11e57377224",
+          "kind": "audio",
+          "relativePath": "assets/audio/5520b280d4b3c11e57377224.m4a",
+          "sha256": "98cbce0a6b26867683699934caca4ce9fbf48c98aad93ad25fba84be08c2b60a",
+          "durationMilliseconds": 600
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -1948,7 +1992,14 @@
             "audio": null
           }
         ],
-        "correctChoiceID": "d"
+        "correctChoiceID": "d",
+        "promptAudio": {
+          "id": "audio-9615c611bb9ecbbc1551421e",
+          "kind": "audio",
+          "relativePath": "assets/audio/9615c611bb9ecbbc1551421e.m4a",
+          "sha256": "d7529a19b8b84db0ebd6615e6dd04661824d4e24966a2518604f64ddc3c9a52a",
+          "durationMilliseconds": 575
+        }
       },
       "metadata": {
         "stage": "discover",
@@ -2657,7 +2708,13 @@
         "hanzi": "电影",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-b54bd12731b27f8b7167bfb1",
+          "kind": "audio",
+          "relativePath": "assets/audio/b54bd12731b27f8b7167bfb1.m4a",
+          "sha256": "f0558aa0acec81bee997e7b8414f7e0a7e9c143b7e1fbae239dc709f08a22fb6",
+          "durationMilliseconds": 765
+        }
       },
       "back": {
         "hanzi": "电影",
@@ -2665,7 +2722,13 @@
         "text": {
           "fr": "film"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-b54bd12731b27f8b7167bfb1",
+          "kind": "audio",
+          "relativePath": "assets/audio/b54bd12731b27f8b7167bfb1.m4a",
+          "sha256": "f0558aa0acec81bee997e7b8414f7e0a7e9c143b7e1fbae239dc709f08a22fb6",
+          "durationMilliseconds": 765
+        }
       },
       "tags": [
         "catalog"
@@ -2678,7 +2741,13 @@
         "hanzi": "会",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-5520b280d4b3c11e57377224",
+          "kind": "audio",
+          "relativePath": "assets/audio/5520b280d4b3c11e57377224.m4a",
+          "sha256": "98cbce0a6b26867683699934caca4ce9fbf48c98aad93ad25fba84be08c2b60a",
+          "durationMilliseconds": 600
+        }
       },
       "back": {
         "hanzi": "会",
@@ -2686,7 +2755,13 @@
         "text": {
           "fr": "savoir faire ; pouvoir"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-5520b280d4b3c11e57377224",
+          "kind": "audio",
+          "relativePath": "assets/audio/5520b280d4b3c11e57377224.m4a",
+          "sha256": "98cbce0a6b26867683699934caca4ce9fbf48c98aad93ad25fba84be08c2b60a",
+          "durationMilliseconds": 600
+        }
       },
       "tags": [
         "catalog"
@@ -2699,7 +2774,13 @@
         "hanzi": "了",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-9615c611bb9ecbbc1551421e",
+          "kind": "audio",
+          "relativePath": "assets/audio/9615c611bb9ecbbc1551421e.m4a",
+          "sha256": "d7529a19b8b84db0ebd6615e6dd04661824d4e24966a2518604f64ddc3c9a52a",
+          "durationMilliseconds": 575
+        }
       },
       "back": {
         "hanzi": "了",
@@ -2707,7 +2788,13 @@
         "text": {
           "fr": "particule d’accompli ou de changement"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-9615c611bb9ecbbc1551421e",
+          "kind": "audio",
+          "relativePath": "assets/audio/9615c611bb9ecbbc1551421e.m4a",
+          "sha256": "d7529a19b8b84db0ebd6615e6dd04661824d4e24966a2518604f64ddc3c9a52a",
+          "durationMilliseconds": 575
+        }
       },
       "tags": [
         "catalog"
@@ -2720,7 +2807,13 @@
         "hanzi": "从",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-dc2460f63fb11564477d4781",
+          "kind": "audio",
+          "relativePath": "assets/audio/dc2460f63fb11564477d4781.m4a",
+          "sha256": "a77337637ad3d12f65571248be433344358ac23051f4707c900e40d4e9f26013",
+          "durationMilliseconds": 575
+        }
       },
       "back": {
         "hanzi": "从",
@@ -2728,7 +2821,13 @@
         "text": {
           "fr": "depuis ; de"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-dc2460f63fb11564477d4781",
+          "kind": "audio",
+          "relativePath": "assets/audio/dc2460f63fb11564477d4781.m4a",
+          "sha256": "a77337637ad3d12f65571248be433344358ac23051f4707c900e40d4e9f26013",
+          "durationMilliseconds": 575
+        }
       },
       "tags": [
         "catalog"
@@ -2741,13 +2840,7 @@
         "hanzi": "火车站",
         "pinyin": null,
         "text": null,
-        "audio": {
-          "id": "audio-5ba40e2416c867e2be811d07",
-          "kind": "audio",
-          "relativePath": "assets/audio/5ba40e2416c867e2be811d07.m4a",
-          "sha256": "85f7047fb6a3a025d13fb3eccc5d94faa8ab7768368b1ff815b6b496fa2cf220",
-          "durationMilliseconds": 1158
-        }
+        "audio": null
       },
       "back": {
         "hanzi": "火车站",
@@ -2755,13 +2848,7 @@
         "text": {
           "fr": "gare"
         },
-        "audio": {
-          "id": "audio-5ba40e2416c867e2be811d07",
-          "kind": "audio",
-          "relativePath": "assets/audio/5ba40e2416c867e2be811d07.m4a",
-          "sha256": "85f7047fb6a3a025d13fb3eccc5d94faa8ab7768368b1ff815b6b496fa2cf220",
-          "durationMilliseconds": 1158
-        }
+        "audio": null
       },
       "tags": [
         "catalog"
@@ -2774,7 +2861,13 @@
         "hanzi": "我",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-159e1e58fd505c05d772f1e7",
+          "kind": "audio",
+          "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+          "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+          "durationMilliseconds": 560
+        }
       },
       "back": {
         "hanzi": "我",
@@ -2782,7 +2875,13 @@
         "text": {
           "fr": "je ; moi"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-159e1e58fd505c05d772f1e7",
+          "kind": "audio",
+          "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+          "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+          "durationMilliseconds": 560
+        }
       },
       "tags": [
         "unit-01",
@@ -2831,7 +2930,13 @@
         "hanzi": "在",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-ffc613f5f1501a996a7429de",
+          "kind": "audio",
+          "relativePath": "assets/audio/ffc613f5f1501a996a7429de.m4a",
+          "sha256": "be585eb3760886e1cb50233350c0b401bd8ed6de8573672efd8ddea1d6e814cf",
+          "durationMilliseconds": 565
+        }
       },
       "back": {
         "hanzi": "在",
@@ -2839,7 +2944,13 @@
         "text": {
           "fr": "être à ; se trouver"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-ffc613f5f1501a996a7429de",
+          "kind": "audio",
+          "relativePath": "assets/audio/ffc613f5f1501a996a7429de.m4a",
+          "sha256": "be585eb3760886e1cb50233350c0b401bd8ed6de8573672efd8ddea1d6e814cf",
+          "durationMilliseconds": 565
+        }
       },
       "tags": [
         "catalog"

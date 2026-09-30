@@ -107,7 +107,13 @@
       "meaning": {
         "fr": "tu ; vous"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-5ef5b921ff0416283b990996",
+        "kind": "audio",
+        "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+        "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+        "durationMilliseconds": 555
+      },
       "example": {
         "hanzi": "你好！",
         "pinyin": "Nǐ hǎo!",
@@ -179,7 +185,13 @@
       "meaning": {
         "fr": "je ; moi"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-159e1e58fd505c05d772f1e7",
+        "kind": "audio",
+        "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+        "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+        "durationMilliseconds": 560
+      },
       "example": {
         "hanzi": "我叫安。",
         "pinyin": "Wǒ jiào Ān.",
@@ -321,7 +333,13 @@
       "meaning": {
         "fr": "s'appeler ; appeler"
       },
-      "audio": null,
+      "audio": {
+        "id": "audio-7e6b5a542baeb00c64a2f0fa",
+        "kind": "audio",
+        "relativePath": "assets/audio/7e6b5a542baeb00c64a2f0fa.m4a",
+        "sha256": "223d9cf16cdec6b6a6706b88c763a4ce0a5ff67ef6a328c0c69b176174b5b1c0",
+        "durationMilliseconds": 560
+      },
       "example": {
         "hanzi": "我叫安。",
         "pinyin": "Wǒ jiào Ān.",
@@ -464,13 +482,7 @@
       "meaning": {
         "fr": "quoi ; quel"
       },
-      "audio": {
-        "id": "audio-f529ae7de3d14dd7440f64d6",
-        "kind": "audio",
-        "relativePath": "assets/audio/f529ae7de3d14dd7440f64d6.m4a",
-        "sha256": "af448bf57b1bfb0bc7b302f5649bcfa3f2f303bade6df2b913ecbfb8bb11189c",
-        "durationMilliseconds": 681
-      },
+      "audio": null,
       "example": {
         "hanzi": "你叫什么名字？",
         "pinyin": "Nǐ jiào shénme míngzi?",
@@ -632,11 +644,11 @@
         "fr": "nom ; prénom"
       },
       "audio": {
-        "id": "audio-7218f36df96d7d30489a033f",
+        "id": "audio-ef70f59484c2e0ebba7982b3",
         "kind": "audio",
-        "relativePath": "assets/audio/7218f36df96d7d30489a033f.m4a",
-        "sha256": "9d23129a5d13cb1f726990fd2c6606a26c8f6fad394517eb0f0c73fddd7b3c2c",
-        "durationMilliseconds": 838
+        "relativePath": "assets/audio/ef70f59484c2e0ebba7982b3.m4a",
+        "sha256": "174bb5376f70f42d91e1bbf9dd44af2d777dc616b58e6232e230e59820cc8a6c",
+        "durationMilliseconds": 840
       },
       "example": {
         "hanzi": "我的名字是安。",
@@ -1285,10 +1297,10 @@
         "header": {
           "id": "ex-l2-tone",
           "prompt": {
-            "fr": "Quel est le premier ton de 名字 (míngzi) ?"
+            "fr": "Quel est le premier ton de 名字 (mingzi) ?"
           },
           "instruction": {
-            "fr": "Choisis le numéro de míng. La deuxième syllabe est légère."
+            "fr": "Choisis le numéro de la première syllabe, 名. La deuxième syllabe est légère."
           },
           "objectiveIDs": [
             "l2-name-answer"
@@ -1307,6 +1319,13 @@
             "id": "l2-tone-2",
             "label": {
               "fr": "2 — montant"
+            },
+            "audio": null
+          },
+          {
+            "id": "l2-tone-3",
+            "label": {
+              "fr": "3 — descend puis remonte"
             },
             "audio": null
           },
@@ -1927,7 +1946,13 @@
         "hanzi": "你",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-5ef5b921ff0416283b990996",
+          "kind": "audio",
+          "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+          "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+          "durationMilliseconds": 555
+        }
       },
       "back": {
         "hanzi": "你",
@@ -1935,7 +1960,13 @@
         "text": {
           "fr": "tu ; vous"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-5ef5b921ff0416283b990996",
+          "kind": "audio",
+          "relativePath": "assets/audio/5ef5b921ff0416283b990996.m4a",
+          "sha256": "03109c078d8b920bc171e83c2c05d75a1adcd7830bc07920d1acf1a3b7b00c2d",
+          "durationMilliseconds": 555
+        }
       },
       "tags": [
         "unit-01",
@@ -1984,7 +2015,13 @@
         "hanzi": "我",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-159e1e58fd505c05d772f1e7",
+          "kind": "audio",
+          "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+          "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+          "durationMilliseconds": 560
+        }
       },
       "back": {
         "hanzi": "我",
@@ -1992,7 +2029,13 @@
         "text": {
           "fr": "je ; moi"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-159e1e58fd505c05d772f1e7",
+          "kind": "audio",
+          "relativePath": "assets/audio/159e1e58fd505c05d772f1e7.m4a",
+          "sha256": "c24db2b9249cf77dc1cb56097a1b38ccd33a0b5efae9d4bc6e52c0d03be0783f",
+          "durationMilliseconds": 560
+        }
       },
       "tags": [
         "unit-01",
@@ -2041,7 +2084,13 @@
         "hanzi": "叫",
         "pinyin": null,
         "text": null,
-        "audio": null
+        "audio": {
+          "id": "audio-7e6b5a542baeb00c64a2f0fa",
+          "kind": "audio",
+          "relativePath": "assets/audio/7e6b5a542baeb00c64a2f0fa.m4a",
+          "sha256": "223d9cf16cdec6b6a6706b88c763a4ce0a5ff67ef6a328c0c69b176174b5b1c0",
+          "durationMilliseconds": 560
+        }
       },
       "back": {
         "hanzi": "叫",
@@ -2049,7 +2098,13 @@
         "text": {
           "fr": "s'appeler ; appeler"
         },
-        "audio": null
+        "audio": {
+          "id": "audio-7e6b5a542baeb00c64a2f0fa",
+          "kind": "audio",
+          "relativePath": "assets/audio/7e6b5a542baeb00c64a2f0fa.m4a",
+          "sha256": "223d9cf16cdec6b6a6706b88c763a4ce0a5ff67ef6a328c0c69b176174b5b1c0",
+          "durationMilliseconds": 560
+        }
       },
       "tags": [
         "unit-01",
@@ -2098,13 +2153,7 @@
         "hanzi": "什么",
         "pinyin": null,
         "text": null,
-        "audio": {
-          "id": "audio-f529ae7de3d14dd7440f64d6",
-          "kind": "audio",
-          "relativePath": "assets/audio/f529ae7de3d14dd7440f64d6.m4a",
-          "sha256": "af448bf57b1bfb0bc7b302f5649bcfa3f2f303bade6df2b913ecbfb8bb11189c",
-          "durationMilliseconds": 681
-        }
+        "audio": null
       },
       "back": {
         "hanzi": "什么",
@@ -2112,13 +2161,7 @@
         "text": {
           "fr": "quoi ; quel"
         },
-        "audio": {
-          "id": "audio-f529ae7de3d14dd7440f64d6",
-          "kind": "audio",
-          "relativePath": "assets/audio/f529ae7de3d14dd7440f64d6.m4a",
-          "sha256": "af448bf57b1bfb0bc7b302f5649bcfa3f2f303bade6df2b913ecbfb8bb11189c",
-          "durationMilliseconds": 681
-        }
+        "audio": null
       },
       "tags": [
         "unit-01",
@@ -2168,11 +2211,11 @@
         "pinyin": null,
         "text": null,
         "audio": {
-          "id": "audio-7218f36df96d7d30489a033f",
+          "id": "audio-ef70f59484c2e0ebba7982b3",
           "kind": "audio",
-          "relativePath": "assets/audio/7218f36df96d7d30489a033f.m4a",
-          "sha256": "9d23129a5d13cb1f726990fd2c6606a26c8f6fad394517eb0f0c73fddd7b3c2c",
-          "durationMilliseconds": 838
+          "relativePath": "assets/audio/ef70f59484c2e0ebba7982b3.m4a",
+          "sha256": "174bb5376f70f42d91e1bbf9dd44af2d777dc616b58e6232e230e59820cc8a6c",
+          "durationMilliseconds": 840
         }
       },
       "back": {
@@ -2182,11 +2225,11 @@
           "fr": "nom ; prénom"
         },
         "audio": {
-          "id": "audio-7218f36df96d7d30489a033f",
+          "id": "audio-ef70f59484c2e0ebba7982b3",
           "kind": "audio",
-          "relativePath": "assets/audio/7218f36df96d7d30489a033f.m4a",
-          "sha256": "9d23129a5d13cb1f726990fd2c6606a26c8f6fad394517eb0f0c73fddd7b3c2c",
-          "durationMilliseconds": 838
+          "relativePath": "assets/audio/ef70f59484c2e0ebba7982b3.m4a",
+          "sha256": "174bb5376f70f42d91e1bbf9dd44af2d777dc616b58e6232e230e59820cc8a6c",
+          "durationMilliseconds": 840
         }
       },
       "tags": [
