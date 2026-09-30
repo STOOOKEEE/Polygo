@@ -157,6 +157,8 @@ class Slot:
     pinyin: Any
     # An isolated word or syllable, rather than a sentence.
     word: bool = False
+    # A module 0 (pinyin-*) exercise: a lone syllable keeps the device voice.
+    syllable_drill: bool = False
 
 
 def _voice_of(speaker: Any, where: str) -> str:
@@ -179,6 +181,8 @@ def _is_word(text: Any) -> bool:
 def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
     """Every audio field of a lesson that this tool manages."""
     lesson_id = lesson.get("id", "?")
+    # Vocabulary is canonical across lessons; only module 0's exercises drill syllables.
+    drill = str(lesson_id).startswith("pinyin-")
     speaker_of: dict[str, str] = {}
     for block in lesson.get("blocks", []):
         if block.get("kind") == "dialogue":
@@ -211,7 +215,7 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
             where = f"{lesson_id}.{spec['header']['id']}"
             if spec_kind in ("listeningChoice", "dictation", "toneDiscrimination"):
                 text = spec.get("promptText")
-                yield Slot(spec, "promptAudio", text, NARRATOR, None, word=_is_word(text))
+                yield Slot(spec, "promptAudio", text, NARRATOR, None, word=_is_word(text), syllable_drill=drill)
             elif spec_kind == "conversationChoice":
                 voice = _voice_of(spec.get("speaker"), where)
                 yield Slot(spec, "promptAudio", spec.get("promptText"), voice, None)
@@ -219,7 +223,7 @@ def slots(lesson: dict[str, Any]) -> Iterator[Slot]:
                     yield Slot(reply, "audio", reply["hanzi"], _other(voice), reply.get("pinyin"))
             elif spec_kind == "speaking":
                 text = spec["referenceText"]
-                yield Slot(spec, "referenceAudio", text, _voice_of(speaker_of.get(text), where), spec.get("referencePinyin"), word=text in words)
+                yield Slot(spec, "referenceAudio", text, _voice_of(speaker_of.get(text), where), spec.get("referencePinyin"), word=text in words, syllable_drill=drill)
             elif spec_kind == "dialogueOrder":
                 for line in spec.get("lines", []):
                     yield Slot(line, "audio", line["hanzi"], _voice_of(line.get("speaker"), where), line.get("pinyin"))
@@ -259,8 +263,13 @@ def clip_for(slot: Slot, index: dict[str, str]) -> Clip | None:
     if not speakable(slot.text):
         return None
     text = slot.text.strip()
+    one_syllable = sum(map(is_hanzi, spoken_text(text))) == 1
+    # Pitch-shaped Kokoro sounded worse than the device voice on module 0's
+    # syllable drills (listened on an iPhone): those get no clip.
+    if slot.syllable_drill and one_syllable:
+        return None
     # One syllable is a word wherever it is said.
-    word = slot.word or sum(map(is_hanzi, spoken_text(text))) == 1
+    word = slot.word or one_syllable
     return Clip(text, slot.voice, numbered_pinyin(slot.pinyin, text) or indexed_pinyin(text, index), word)
 
 

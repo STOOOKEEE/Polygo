@@ -161,11 +161,20 @@ suivie d’une voyelle brève) : 不客气, 什么, 一起, 出租车, 对不起
 火车站, 学校, 自行车, 西瓜, 踢足球, 鱼, 鸡蛋 (liste imprimée par le
 générateur).
 
-Bilan de la génération : 1 607 clips (968 en voix féminine, 639 en voix
-masculine), dont 332 mots (187 d’une syllabe), 70 minutes, 23,3 Mo (26 Mo sur
-disque), contre 1 404 clips et 22,4 Mo quand les mots d’une syllabe et 28 mots
-de deux syllabes gardaient la voix du système. Une régénération des mêmes
-clips donne des fichiers identiques octet pour octet (vérifié sur 40 mots).
+Les exercices du module 0 (leçons `pinyin-*`) dont l’invite ou le modèle oral
+est une seule syllabe (妈/麻/马/骂, 爸, 七…, en `toneDiscrimination`,
+`dictation`, `listeningChoice` ou `speaking`) n’ont pas de clip non plus et
+passent par la voix système : à l’écoute sur iPhone, le Kokoro façonné y
+sonnait moins bien que la voix système. Cela touche 75 invites. Le
+vocabulaire de ces leçons (canonique d’une leçon à l’autre), leurs mots de
+plusieurs syllabes et tous les mots d’une syllabe des autres leçons (早…)
+gardent Kokoro.
+
+Bilan de la génération : 1 583 clips (944 en voix féminine, 639 en voix
+masculine), dont 308 mots (163 d’une syllabe), 70 minutes, 23,2 Mo, contre
+1 404 clips et 22,4 Mo quand les mots d’une syllabe et 28 mots de deux
+syllabes gardaient la voix du système. Une régénération des mêmes clips donne
+des fichiers identiques octet pour octet (vérifié sur 40 mots).
 
 ### Format
 
