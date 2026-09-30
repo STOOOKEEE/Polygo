@@ -246,7 +246,7 @@ public enum MandarinSpeechText {
         isHanzi(scalar) || isMandarinConnector(scalar)
     }
 
-    private static func isHanzi(_ scalar: UnicodeScalar) -> Bool {
+    static func isHanzi(_ scalar: UnicodeScalar) -> Bool {
         (0x3400...0x4DBF).contains(scalar.value)
             || (0x4E00...0x9FFF).contains(scalar.value)
             || (0xF900...0xFAFF).contains(scalar.value)

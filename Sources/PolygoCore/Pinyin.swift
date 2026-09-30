@@ -80,7 +80,7 @@ public enum MandarinToneMarkers {
         }.joined(separator: " ")
     }
 
-    private static func tone(in syllable: String) -> Int {
+    static func tone(in syllable: String) -> Int {
         let firstTone = "āēīōūǖĀĒĪŌŪǕ"
         let secondTone = "áéíóúǘÁÉÍÓÚǗ"
         let thirdTone = "ǎěǐǒǔǚǍĚǏǑǓǙ"
