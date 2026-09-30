@@ -60,10 +60,12 @@ final class PolygoAppUITests: XCTestCase {
         tapWhenVisible(greeting)
         let wordDetail = app.buttons["word.popover.detail"]
         XCTAssertTrue(wordDetail.waitForExistence(timeout: timeout), "Toucher un mot doit afficher sa bulle")
-        XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Pinyin : nǐ hǎo")).firstMatch.exists,
-            "La bulle doit afficher le pinyin du mot"
-        )
+        let wordPinyin = app.staticTexts["word.popover.pinyin"]
+        XCTAssertTrue(wordPinyin.waitForExistence(timeout: timeout), "La bulle doit afficher le pinyin du mot")
+        XCTAssertTrue(wordPinyin.label.contains("nǐ hǎo"), "La bulle doit afficher le pinyin de 你好")
+        let wordMeaning = app.staticTexts["word.popover.meaning"]
+        XCTAssertTrue(wordMeaning.waitForExistence(timeout: timeout), "La bulle doit afficher le sens du mot")
+        XCTAssertTrue(wordMeaning.label.contains("bonjour"), "La bulle doit afficher le sens français de 你好")
         XCTAssertFalse(element(containing: "Fiche mot", type: .any).exists, "Toucher un mot ne doit pas ouvrir sa fiche")
         attachScreenshot(named: "ios-lesson-word-bubble")
         app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.97)).tap()

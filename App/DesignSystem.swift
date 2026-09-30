@@ -998,6 +998,7 @@ private struct ChineseWordPopover: View {
                     .font(.title3)
                     .foregroundStyle(SylluneColor.jadeDeep)
                     .accessibilityLabel("Pinyin : \(pinyin)")
+                    .accessibilityIdentifier("word.popover.pinyin")
             }
             if let meaning {
                 Text(meaning)
@@ -1005,6 +1006,7 @@ private struct ChineseWordPopover: View {
                     .foregroundStyle(SylluneColor.ink)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityLabel("Traduction : \(meaning)")
+                    .accessibilityIdentifier("word.popover.meaning")
             } else if entry == nil {
                 ProgressView()
                     .accessibilityLabel("Chargement du mot")

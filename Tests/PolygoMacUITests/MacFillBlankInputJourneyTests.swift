@@ -91,9 +91,11 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         word.click()
         let wordDetail = app.buttons["word.popover.detail"]
         XCTAssertTrue(wordDetail.waitForExistence(timeout: timeout), "Cliquer un mot d’une réplique doit afficher sa bulle")
+        let wordPinyin = app.staticTexts["word.popover.pinyin"]
+        XCTAssertTrue(wordPinyin.waitForExistence(timeout: timeout), "La bulle doit afficher le pinyin du mot")
         XCTAssertTrue(
-            app.staticTexts.matching(NSPredicate(format: "label == %@", "Pinyin : míngzi")).firstMatch.exists,
-            "La bulle doit afficher le pinyin du mot"
+            "\(wordPinyin.label) \(String(describing: wordPinyin.value ?? ""))".contains("míngzi"),
+            "La bulle doit afficher le pinyin groupé du mot 名字"
         )
         XCTAssertFalse(text(containing: "Fiche mot").exists, "Cliquer un mot ne doit pas ouvrir de fiche mot")
         XCTAssertEqual(firstLine.value as? String, "Pinyin et traduction affichés", "Cliquer un mot ne doit pas masquer la réplique")
