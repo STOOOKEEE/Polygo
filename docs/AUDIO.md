@@ -383,13 +383,14 @@ ne fabriquent ni note de prononciation ni auto-évaluation positive.
 
 ## Validation Apple
 
-Le conteneur Linux ne possède ni SDK Apple ni Xcode. Le [run Apple
-34225700577](https://github.com/STOOOKEEE/Polygo/actions/runs/34225700577), sur le
-commit historique `906135d`, a validé 47/47 tests portables, 2/2 tests UI
-macOS et 7/7 tests UI iOS ; il couvre le chemin oral non configuré et le
-passage sans évaluation, mais ne valide pas le bundle final de 94 leçons. Les
-permissions, la disponibilité des voix,
-l’interruption audio et le parcours enregistrement/réécoute/transcription avec
-un fournisseur configuré restent à vérifier sur appareil. Les fixtures du
-protocole vérifient déjà les états terminé, non configuré et sans résultat ; la
-correction par fournisseur externe reste à brancher, sans score fabriqué.
+Le conteneur Linux ne possède ni SDK Apple ni Xcode : l’analyseur y est testé
+en Swift portable (`PronunciationAnalyzerTests`), le service et la carte de
+résultat sont compilés par la CI Apple. Le [run
+36706007488](https://github.com/STOOOKEEE/Polygo/actions/runs/36706007488)
+(commit `5b0fae7`) a compilé iOS et macOS, passé les tests UI macOS, le
+parcours oral enregistrement → analyse → « Continuer » sur iPhone
+(`LessonReviewJourneyTests`) et sur iPad (`ZZLessonRegressionJourneyTests`).
+Ces tests UI acceptent « Résultat incertain » ou « Analyse impossible » et
+vérifient qu’aucun faux « Correct » n’apparaît. La précision sur une vraie voix
+d’apprenant, les permissions, la dictée en mandarin et l’interruption audio
+restent à vérifier sur appareil.
