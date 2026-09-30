@@ -506,11 +506,9 @@ public struct TodayView: View {
 public struct LearningPathView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.sylluneReduceMotion) private var reduceMotion
-    /// Units the learner opened or closed, as `unit-id=1` / `unit-id=0`
-    /// pairs; the other units follow `isExpanded(_:openLessonIDs:)`.
-    @SceneStorage("learningPath.unitChoices") private var unitChoices = ""
+    @State private var revealedLockedLessonID: LessonID?
     @State private var currentNodeRealized = false
-    @State private var currentNodeFits = false
+    @State private var currentNodeFitsWithBubble = false
     @State private var currentNodeVisible = true
     @State private var currentNodeIsAbove = false
 
@@ -519,19 +517,20 @@ public struct LearningPathView: View {
         GeometryReader { geometry in
             let columnWidth = max(0, min(LearningPathLayout.maxColumnWidth, geometry.size.width - 40))
             let currentLessonID = model.resumeLessonID
-            let openLessonIDs = [currentLessonID, nextMainLessonID].compactMap { $0 }
             ScrollViewReader { proxy in
                 ScrollView {
-                    LazyVStack(spacing: 16) {
+                    LazyVStack(spacing: 28) {
                         if let course = model.course {
                             pathHeader(course)
-                            ForEach(course.modules.sorted(by: { $0.order < $1.order }), id: \.id) { module in
-                                let expanded = isExpanded(module, openLessonIDs: openLessonIDs)
+                            let modules = course.modules.sorted(by: { $0.order < $1.order })
+                            ForEach(Array(modules.enumerated()), id: \.element.id) { position, module in
                                 LearningPathUnit(
                                     module: module,
+                                    position: position,
+                                    columnWidth: columnWidth,
                                     currentLessonID: currentLessonID,
-                                    isExpanded: expanded,
-                                    toggle: { setExpanded(!expanded, for: module) },
+                                    showsMascot: position == 0 || module.lessonIDs.contains(where: { $0 == currentLessonID }),
+                                    revealedLockedLessonID: $revealedLockedLessonID,
                                     model: model
                                 )
                                 .id(module.id)
@@ -555,7 +554,7 @@ public struct LearningPathView: View {
                 .overlay(alignment: .bottomTrailing) {
                     if let currentLessonID, !currentNodeVisible {
                         backToCurrentButton {
-                            Task { await scrollToLesson(currentLessonID, proxy: proxy, animated: true, expandsUnit: true) }
+                            Task { await scrollToLesson(currentLessonID, proxy: proxy, animated: true) }
                         }
                         .transition(.opacity)
                     }
@@ -578,7 +577,7 @@ public struct LearningPathView: View {
                 Label("TON CHEMIN", systemImage: "point.topleft.down.curvedto.point.bottomright.up")
                     .font(.caption.weight(.bold))
                     .tracking(1.1)
-                    .foregroundStyle(SylluneColor.jadeDeep)
+                    .foregroundStyle(SylluneColor.pathViolet)
                 Spacer(minLength: 8)
                 Text("\(completed) sur \(total) terminées")
                     .font(.caption.weight(.semibold))
@@ -598,10 +597,9 @@ public struct LearningPathView: View {
                 .padding(.top, 12)
             }
             .font(.callout)
-            .tint(SylluneColor.jadeDeep)
         }
         .padding(16)
-        .sylluneCard(radius: 24)
+        .sylluneCard(radius: 22)
     }
 
     private func pathIntroHeading(_ course: CourseManifest) -> some View {
@@ -663,7 +661,7 @@ public struct LearningPathView: View {
                 .foregroundStyle(SylluneColor.inkOnJade)
                 .frame(width: 54, height: 54)
                 .background(SylluneColor.jadeButton, in: Circle())
-                .shadow(color: .black.opacity(0.16), radius: 6, x: 0, y: 3)
+                .shadow(color: .black.opacity(0.22), radius: 8, x: 0, y: 4)
         }
         .buttonStyle(.plain)
         .padding(20)
@@ -677,52 +675,12 @@ public struct LearningPathView: View {
         }.count
     }
 
-    // MARK: Units
-
-    /// Module 0 is optional, so a beginner has two open fronts: the pinyin
-    /// lesson and the first lesson of the main track.
-    private var nextMainLessonID: LessonID? {
-        model.orderedLessonIDs.first { lessonID in
-            !lessonID.rawValue.hasPrefix("pinyin-")
-                && model.snapshot.lessonProgress[lessonID]?.completedAt == nil
-                && model.isLessonUnlocked(lessonID)
-        }
-    }
-
-    private var unitChoiceMap: [String: Bool] {
-        var choices: [String: Bool] = [:]
-        for pair in unitChoices.split(separator: ";") {
-            let parts = pair.split(separator: "=")
-            if parts.count == 2 {
-                choices[String(parts[0])] = parts[1] == "1"
-            }
-        }
-        return choices
-    }
-
-    /// A unit the learner has not opened or closed yet is expanded when it
-    /// holds an open lesson; finished and future units stay collapsed.
-    private func isExpanded(_ module: ModuleSummary, openLessonIDs: [LessonID]) -> Bool {
-        unitChoiceMap[module.id.rawValue] ?? module.lessonIDs.contains { openLessonIDs.contains($0) }
-    }
-
-    private func setExpanded(_ expanded: Bool, for module: ModuleSummary) {
-        var choices = unitChoiceMap
-        choices[module.id.rawValue] = expanded
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
-            unitChoices = choices.keys.sorted()
-                .map { "\($0)=\(choices[$0] == true ? 1 : 0)" }
-                .joined(separator: ";")
-        }
-    }
-
-    // MARK: Scrolling
-
     /// The current node reports its frame in the scroll view's space; a nil
-    /// frame means its row is not realized: off-screen or in a collapsed unit.
+    /// frame means its lazy unit is not realized, hence off-screen.
     private func updateCurrentNode(_ frame: CGRect?, viewportHeight: CGFloat) {
         currentNodeRealized = frame != nil
-        currentNodeFits = frame.map { $0.minY >= 0 && $0.maxY <= viewportHeight } ?? false
+        // Room below the node for its bubble (~140 pt).
+        currentNodeFitsWithBubble = frame.map { $0.minY >= 0 && $0.maxY + 140 <= viewportHeight } ?? false
         let visible = frame.map { $0.maxY > 0 && $0.minY < viewportHeight } ?? false
         if let frame, !visible {
             currentNodeIsAbove = frame.midY < 0
@@ -733,28 +691,23 @@ public struct LearningPathView: View {
         }
     }
 
-    /// Opening the path keeps the header in view when the current step
-    /// already fits; otherwise it centers the current step. A unit the
-    /// learner collapsed stays collapsed.
+    /// Opening the path keeps the header in view when the current step and
+    /// its bubble already fit; otherwise it centers the current step.
     @MainActor
     private func revealLesson(_ lessonID: LessonID, proxy: ScrollViewProxy) async {
         // Give the lazy stack a layout pass to report the current node.
         try? await Task.sleep(for: .milliseconds(50))
-        guard !Task.isCancelled, !currentNodeFits else { return }
-        await scrollToLesson(lessonID, proxy: proxy, animated: false, expandsUnit: false)
+        guard !Task.isCancelled, !currentNodeFitsWithBubble else { return }
+        await scrollToLesson(lessonID, proxy: proxy, animated: false)
     }
 
     @MainActor
-    private func scrollToLesson(_ lessonID: LessonID, proxy: ScrollViewProxy, animated: Bool, expandsUnit: Bool) async {
-        // Units are lazy and collapsible: open and bring the lesson's unit on
-        // screen first so its row exists before centering on it.
+    private func scrollToLesson(_ lessonID: LessonID, proxy: ScrollViewProxy, animated: Bool) async {
+        // Units are lazy: bring the lesson's unit on screen first so its row
+        // exists before centering on it.
         if !currentNodeRealized,
-           let module = model.course?.modules.first(where: { $0.lessonIDs.contains(lessonID) }) {
-            if unitChoiceMap[module.id.rawValue] == false {
-                guard expandsUnit else { return }
-                setExpanded(true, for: module)
-            }
-            proxy.scrollTo(module.id, anchor: .top)
+           let moduleID = model.course?.modules.first(where: { $0.lessonIDs.contains(lessonID) })?.id {
+            proxy.scrollTo(moduleID, anchor: .top)
             try? await Task.sleep(for: .milliseconds(80))
             guard !Task.isCancelled else { return }
         }
@@ -765,8 +718,11 @@ public struct LearningPathView: View {
 }
 
 private enum LearningPathLayout {
-    static let maxColumnWidth: CGFloat = 600
+    static let maxColumnWidth: CGFloat = 520
     static let coordinateSpace = "learningPath.scroll"
+    /// One period of the gentle sine the nodes follow, as fractions of the
+    /// available amplitude.
+    static let wave: [CGFloat] = [0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7]
 }
 
 private struct CurrentPathNodeFrameKey: PreferenceKey {
@@ -776,8 +732,7 @@ private struct CurrentPathNodeFrameKey: PreferenceKey {
     }
 }
 
-/// Where a lesson stands for the learner. Home and Parcours draw it with the
-/// same node so both screens read alike.
+/// Where a lesson stands for the learner, as drawn by Home's lesson rows.
 private enum LessonPathStatus {
     case completed
     case current
@@ -815,14 +770,12 @@ private enum LessonPathStatus {
     }
 }
 
-/// A flat lesson node: theme symbol on a status fill, a check or lock badge,
-/// and an exercise ring for the current lesson. Unit challenges wear a sun
-/// outline.
+/// A flat lesson node for Home's rows: theme symbol on a status fill and a
+/// check or lock badge. Unit challenges wear a sun outline.
 private struct LessonPathNode: View {
     let lessonID: LessonID
     let status: LessonPathStatus
     let diameter: CGFloat
-    var progress: Double? = nil
 
     var body: some View {
         Circle()
@@ -841,19 +794,6 @@ private struct LessonPathNode: View {
                 Image(systemName: lessonPathSymbol(for: lessonID))
                     .font(.system(size: diameter * 0.4, weight: .semibold))
                     .foregroundStyle(status.foreground)
-            }
-            .overlay {
-                if let progress {
-                    ZStack {
-                        Circle()
-                            .stroke(SylluneColor.progressTrack, lineWidth: 3)
-                        Circle()
-                            .trim(from: 0, to: min(1, max(0, progress)))
-                            .stroke(SylluneColor.jade, style: StrokeStyle(lineWidth: 3, lineCap: .round))
-                            .rotationEffect(.degrees(-90))
-                    }
-                    .padding(-6)
-                }
             }
             .overlay(alignment: .bottomTrailing) { badge }
             .accessibilityHidden(true)
@@ -879,132 +819,283 @@ private struct LessonPathNode: View {
     }
 }
 
-/// One unit of the path: a card whose header folds the lesson list.
+private struct PathNodePressedKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+private extension EnvironmentValues {
+    var pathNodePressed: Bool {
+        get { self[PathNodePressedKey.self] }
+        set { self[PathNodePressedKey.self] = newValue }
+    }
+}
+
+/// Hands the pressed state to the node so only its top face sinks into its
+/// depth, like a physical key.
+private struct PathNodeButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        // The whole row, including the gap between node and bubble, is the
+        // tap target; a custom style otherwise only hits drawn pixels.
+        configuration.label
+            .contentShape(Rectangle())
+            .environment(\.pathNodePressed, configuration.isPressed)
+    }
+}
+
+private enum PathNodeBadge {
+    case completed
+    case locked
+}
+
+private struct PathNodeFace: View {
+    let symbol: String
+    let face: Color
+    let foreground: Color
+    let badge: PathNodeBadge?
+    let diameter: CGFloat
+    let ringProgress: Double?
+    @Environment(\.pathNodePressed) private var pressed
+    @Environment(\.sylluneReduceMotion) private var reduceMotion
+
+    private var depth: CGFloat { max(5, diameter * 0.08) }
+
+    var body: some View {
+        ZStack {
+            if let ringProgress {
+                ZStack {
+                    Circle()
+                        .stroke(face.opacity(0.22), lineWidth: 7)
+                    Circle()
+                        .trim(from: 0, to: min(1, max(0, ringProgress)))
+                        .stroke(face, style: StrokeStyle(lineWidth: 7, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                }
+                .frame(width: diameter + 16, height: diameter + 16)
+            }
+            Circle()
+                .fill(face)
+                .overlay(Circle().fill(Color.black.opacity(0.28)))
+                .frame(width: diameter, height: diameter)
+                .offset(y: depth)
+            topFace
+                .frame(width: diameter, height: diameter)
+                .offset(y: pressed ? depth : 0)
+        }
+        .frame(width: diameter + 22, height: diameter + 22)
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.08), value: pressed)
+        .accessibilityHidden(true)
+    }
+
+    private var topFace: some View {
+        Circle()
+            .fill(face)
+            .overlay(
+                Circle().fill(
+                    LinearGradient(
+                        colors: [Color.white.opacity(0.3), Color.white.opacity(0)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+            )
+            .overlay(alignment: .topLeading) {
+                Ellipse()
+                    .fill(Color.white.opacity(0.35))
+                    .frame(width: diameter * 0.32, height: diameter * 0.15)
+                    .rotationEffect(.degrees(-30))
+                    .offset(x: diameter * 0.17, y: diameter * 0.16)
+            }
+            .overlay {
+                Image(systemName: symbol)
+                    .font(.system(size: diameter * 0.36, weight: .bold))
+                    .foregroundStyle(foreground)
+            }
+            .overlay(alignment: .bottomTrailing) {
+                if let badge {
+                    Image(systemName: badge == .completed ? "checkmark" : "lock.fill")
+                        .font(.system(size: 12, weight: .black))
+                        .foregroundStyle(badge == .completed ? SylluneColor.inkOnSuccess : SylluneColor.inkMuted)
+                        .frame(width: 26, height: 26)
+                        .background(badge == .completed ? SylluneColor.success : SylluneColor.surface, in: Circle())
+                        .overlay(Circle().stroke(SylluneColor.canvas, lineWidth: 2.5))
+                        .offset(x: 4, y: 4)
+                }
+            }
+    }
+}
+
+/// Upward speech-bubble tail, drawn over the bubble's top edge.
+private struct BubblePointer: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.closeSubpath()
+        return path
+    }
+}
+
 private struct LearningPathUnit: View {
     let module: ModuleSummary
+    let position: Int
+    let columnWidth: CGFloat
     let currentLessonID: LessonID?
-    let isExpanded: Bool
-    let toggle: () -> Void
+    let showsMascot: Bool
+    @Binding var revealedLockedLessonID: LessonID?
     @ObservedObject var model: AppModel
+    @Environment(\.sylluneReduceMotion) private var reduceMotion
 
-    @ScaledMetric(relativeTo: .body) private var scaledNodeDiameter: CGFloat = 44
-    @ScaledMetric(relativeTo: .title) private var mascotSize: CGFloat = 48
+    @ScaledMetric(relativeTo: .body) private var scaledNodeDiameter: CGFloat = 76
+    @ScaledMetric(relativeTo: .body) private var rowSpacing: CGFloat = 22
+    @ScaledMetric(relativeTo: .title) private var mascotSize: CGFloat = 64
 
-    private let rowPadding: CGFloat = 10
-    private var nodeDiameter: CGFloat { min(scaledNodeDiameter, 72) }
-    private var holdsCurrentLesson: Bool { module.lessonIDs.contains { $0 == currentLessonID } }
+    private var accent: Color { SylluneColor.pathAccent(for: position) }
+    private var accentForeground: Color { SylluneColor.pathAccentForeground(for: position) }
+    private var nodeDiameter: CGFloat { min(scaledNodeDiameter, 116) }
+    private var nodeFrame: CGFloat { nodeDiameter + 22 }
+    private var amplitude: CGFloat { max(0, min(100, (columnWidth - nodeFrame) / 2 - 8)) }
+    private var bubbleWidth: CGFloat { max(0, min(300, columnWidth - 16)) }
 
     var body: some View {
         let completedCount = module.lessonIDs.filter {
             model.snapshot.lessonProgress[$0]?.completedAt != nil
         }.count
-        VStack(alignment: .leading, spacing: 0) {
-            header(completedCount: completedCount)
-            if isExpanded {
-                VStack(spacing: 0) {
-                    ForEach(Array(module.lessonIDs.enumerated()), id: \.element) { index, lessonID in
-                        lessonRow(lessonID, index: index, isLast: index == module.lessonIDs.count - 1)
-                    }
+        VStack(spacing: 22) {
+            banner(completedCount: completedCount)
+            VStack(spacing: 0) {
+                ForEach(Array(module.lessonIDs.enumerated()), id: \.element) { index, lessonID in
+                    lessonRow(lessonID, index: index)
                 }
-                .padding(.horizontal, 8)
-                .padding(.bottom, 12)
+                chestRow(completed: completedCount == module.lessonIDs.count)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .sylluneCard(style: holdsCurrentLesson ? .interactive : .standard, radius: 24)
+        .padding(.top, showsMascot ? mascotSize * 0.7 : 0)
+        .background(alignment: .top) { watermark }
     }
 
-    // MARK: Unit header
+    // MARK: Unit banner
 
-    private func header(completedCount: Int) -> some View {
+    private func banner(completedCount: Int) -> some View {
         let title = module.displayName?.resolve(preferred: model.preferredLanguageCodes)
             ?? module.title.resolve(preferred: model.preferredLanguageCodes)
             ?? "Unité"
-        let total = module.lessonIDs.count
-        let finished = total > 0 && completedCount == total
-        return Button(action: toggle) {
-            HStack(alignment: .center, spacing: 14) {
-                unitMark(finished: finished)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("UNITÉ \(module.order)")
-                        .font(.caption.weight(.bold))
-                        .tracking(0.8)
-                        .foregroundStyle(SylluneColor.jadeDeep)
-                    Text(title)
-                        .font(.headline)
-                        .foregroundStyle(SylluneColor.ink)
-                        .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
-                    HStack(spacing: 8) {
-                        SylluneProgressBar(
-                            value: total == 0 ? 0 : Double(completedCount) / Double(total),
-                            tint: finished ? SylluneColor.success : SylluneColor.jade
+        let lessonCount = "\(module.lessonIDs.count) étapes"
+        let completedText = completedCount > 1 ? "\(completedCount) terminées" : "\(completedCount) terminée"
+        let shape = RoundedRectangle(cornerRadius: 22, style: .continuous)
+        return HStack(alignment: .center, spacing: 12) {
+            Text("\(module.order)")
+                .font(.headline.weight(.heavy))
+                .monospacedDigit()
+                .foregroundStyle(accent)
+                .frame(minWidth: 38, minHeight: 38)
+                .background(accentForeground, in: Circle())
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.title3.weight(.bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                Text("\(lessonCount) · \(completedText)")
+                    .font(.caption.weight(.semibold))
+                    .opacity(0.88)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .foregroundStyle(accentForeground)
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background {
+            shape
+                .fill(accent)
+                .overlay(
+                    shape.fill(
+                        LinearGradient(
+                            colors: [Color.white.opacity(0.2), Color.white.opacity(0)],
+                            startPoint: .top,
+                            endPoint: .bottom
                         )
-                        .frame(maxWidth: 110)
-                        Text("\(completedCount)/\(total) leçons")
-                            .font(.caption.weight(.semibold))
-                            .monospacedDigit()
-                            .foregroundStyle(SylluneColor.inkMuted)
-                    }
-                }
-                Spacer(minLength: 8)
-                if holdsCurrentLesson {
-                    TaviMascot(pose: finished ? .celebration : .encouragement)
-                        .frame(width: mascotSize, height: mascotSize)
-                        .accessibilityHidden(true)
-                }
-                Image(systemName: "chevron.down")
-                    .font(.callout.weight(.bold))
-                    .foregroundStyle(SylluneColor.inkMuted)
-                    .rotationEffect(.degrees(isExpanded ? 0 : -90))
-                    .frame(minWidth: 28, minHeight: 44)
-            }
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .contentShape(Rectangle())
+                    )
+                )
         }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Unité \(module.order), \(title), \(completedCount) sur \(total) leçons terminées")
-        .accessibilityValue(isExpanded ? "Dépliée" : "Repliée")
-        .accessibilityHint(isExpanded ? "Masque les leçons de l’unité" : "Affiche les leçons de l’unité")
+        .background {
+            shape
+                .fill(accent)
+                .overlay(shape.fill(Color.black.opacity(0.28)))
+                .offset(y: 5)
+        }
+        .overlay(alignment: .topLeading) {
+            if showsMascot {
+                TaviMascot(pose: mascotPose(completedCount: completedCount))
+                    .frame(width: mascotSize, height: mascotSize)
+                    .offset(x: 10, y: -mascotSize * 0.72)
+                    .accessibilityHidden(true)
+                    .allowsHitTesting(false)
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Unité \(module.order), \(title), \(lessonCount), \(completedText)")
         .accessibilityAddTraits(.isHeader)
-        .accessibilityIdentifier("learningPath.unit.\(module.id.rawValue)")
     }
 
-    private func unitMark(finished: Bool) -> some View {
-        Group {
-            if finished {
-                Image(systemName: "checkmark")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(SylluneColor.success)
-            } else {
-                Text("\(module.order)")
-                    .font(.headline.weight(.bold))
-                    .monospacedDigit()
-                    .foregroundStyle(SylluneColor.jadeDeep)
-            }
+    private func mascotPose(completedCount: Int) -> TaviPose {
+        if completedCount == module.lessonIDs.count { return .celebration }
+        if module.lessonIDs.contains(where: { $0 == currentLessonID }) { return .encouragement }
+        return .welcome
+    }
+
+    /// A large Hanzi from the unit's first loaded lesson, drawn faintly behind
+    /// the track as a decorative landmark.
+    @ViewBuilder
+    private var watermark: some View {
+        if let firstLessonID = module.lessonIDs.first,
+           let glyph = model.loadedLessons[firstLessonID]?.vocabulary.first?.hanzi.first {
+            Text(String(glyph))
+                .font(.system(size: min(columnWidth * 0.75, 340), weight: .black))
+                .foregroundStyle(SylluneColor.ink.opacity(0.05))
+                .padding(.top, 150)
+                .accessibilityHidden(true)
+                .allowsHitTesting(false)
         }
-        .padding(8)
-        .frame(minWidth: 44, minHeight: 44)
-        .background(
-            finished ? SylluneColor.success.opacity(0.14) : SylluneColor.jade.opacity(0.14),
-            in: RoundedRectangle(cornerRadius: 12, style: .continuous)
-        )
+    }
+
+    // MARK: Track
+
+    private func horizontalOffset(for index: Int) -> CGFloat {
+        let direction: CGFloat = position.isMultiple(of: 2) ? 1 : -1
+        return LearningPathLayout.wave[index % LearningPathLayout.wave.count] * amplitude * direction
+    }
+
+    /// Draws the track from this row's node center down to the next row's
+    /// node center. Every row puts its node at the top, so the next center is
+    /// the same distance below this row's bottom edge.
+    private func trackSegment(from startX: CGFloat, to endX: CGFloat, reached: Bool) -> some View {
+        GeometryReader { proxy in
+            let center = proxy.size.width / 2
+            let start = CGPoint(x: center + startX, y: nodeFrame / 2)
+            let end = CGPoint(x: center + endX, y: proxy.size.height + nodeFrame / 2)
+            let bend = (end.y - start.y) / 2
+            Path { path in
+                path.move(to: start)
+                path.addCurve(
+                    to: end,
+                    control1: CGPoint(x: start.x, y: start.y + bend),
+                    control2: CGPoint(x: end.x, y: end.y - bend)
+                )
+            }
+            .stroke(
+                reached ? accent : SylluneColor.progressTrack,
+                style: StrokeStyle(lineWidth: 10, lineCap: .round)
+            )
+        }
         .accessibilityHidden(true)
+        .allowsHitTesting(false)
     }
 
-    // MARK: Lesson rows
-
-    /// Reviews and unit challenges carry a word next to their symbol, so they
-    /// stand apart from daily lessons without relying on colour.
-    private func lessonKind(_ lessonID: LessonID) -> (label: String, color: Color)? {
-        if lessonID.rawValue.hasPrefix("review-") { return ("Révision", SylluneColor.sky) }
-        if lessonID.rawValue.hasPrefix("boss-") { return ("Défi de l’unité", SylluneColor.coral) }
-        return nil
-    }
+    // MARK: Lesson nodes
 
     @ViewBuilder
-    private func lessonRow(_ lessonID: LessonID, index: Int, isLast: Bool) -> some View {
+    private func lessonRow(_ lessonID: LessonID, index: Int) -> some View {
         let progress = model.snapshot.lessonProgress[lessonID]
         let unlocked = model.isLessonUnlocked(lessonID)
         let completed = progress?.completedAt != nil
@@ -1013,7 +1104,6 @@ private struct LearningPathUnit: View {
         let title = model.loadedLessons[lessonID]?.title.resolve(
             preferred: model.preferredLanguageCodes
         ) ?? "Leçon \(index + 1)"
-        let kind = lessonKind(lessonID)
         let status = completed
             ? "Terminée"
             : active
@@ -1022,17 +1112,16 @@ private struct LearningPathUnit: View {
                     ? "À commencer"
                     : "Verrouillée"
         let progressText = lessonProgressText(lessonID, completed: completed)
-        let detail = completed
-            ? "Terminée"
-            : unlocked ? progressText : "Verrouillée · termine l’étape précédente"
-        let accessibilityTitle = kind.map { "\($0.label), \(title)" } ?? title
-        let rowShape = RoundedRectangle(cornerRadius: 16, style: .continuous)
-        let content = HStack(alignment: .top, spacing: 14) {
-            LessonPathNode(
-                lessonID: lessonID,
-                status: LessonPathStatus(completed: completed, unlocked: unlocked, current: isCurrent),
+        let nodeX = horizontalOffset(for: index)
+        let badge: PathNodeBadge? = completed ? .completed : (unlocked ? nil : .locked)
+        let content = VStack(spacing: 12) {
+            PathNodeFace(
+                symbol: lessonPathSymbol(for: lessonID),
+                face: unlocked ? accent : SylluneColor.progressTrack,
+                foreground: unlocked ? accentForeground : SylluneColor.inkMuted,
+                badge: badge,
                 diameter: nodeDiameter,
-                progress: isCurrent ? exerciseFraction(lessonID) : nil
+                ringProgress: isCurrent ? exerciseFraction(lessonID) : nil
             )
             .background {
                 if isCurrent {
@@ -1044,64 +1133,52 @@ private struct LearningPathUnit: View {
                     }
                 }
             }
-            VStack(alignment: .leading, spacing: 3) {
-                if let kind {
-                    Text(kind.label.uppercased())
-                        .font(.caption2.weight(.bold))
-                        .tracking(0.8)
-                        .foregroundStyle(kind.color)
-                }
-                Text(title)
-                    .font(.body.weight(isCurrent ? .semibold : .medium))
-                    .foregroundStyle(unlocked ? SylluneColor.ink : SylluneColor.inkMuted)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text(detail)
-                    .font(.caption)
-                    .foregroundStyle(completed ? SylluneColor.success : isCurrent ? SylluneColor.jadeDeep : SylluneColor.inkMuted)
-                    .fixedSize(horizontal: false, vertical: true)
-                if isCurrent {
-                    Label(active ? "Continuer" : "Commencer", systemImage: "arrow.right")
-                        .font(.callout.weight(.bold))
-                        .foregroundStyle(SylluneColor.inkOnJade)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 8)
-                        .background(SylluneColor.jadeButton, in: Capsule())
-                        .padding(.top, 6)
-                }
-            }
-            Spacer(minLength: 4)
-            if unlocked && !isCurrent {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(SylluneColor.inkMuted)
-                    .frame(minWidth: 24, minHeight: nodeDiameter)
+            .offset(x: nodeX)
+            if isCurrent {
+                bubble(
+                    title: title,
+                    detail: nil,
+                    action: active ? "Continuer · \(progressText)" : "Commencer",
+                    nodeX: nodeX
+                )
+            } else if !unlocked && revealedLockedLessonID == lessonID {
+                bubble(
+                    title: title,
+                    detail: "Termine l’étape précédente pour la déverrouiller.",
+                    action: nil,
+                    nodeX: nodeX
+                )
             }
         }
-        .padding(rowPadding)
-        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-        .background(isCurrent ? SylluneColor.jade.opacity(0.12) : Color.clear, in: rowShape)
-        .contentShape(rowShape)
+        .frame(width: columnWidth)
 
         Group {
             if unlocked {
                 NavigationLink(value: AppRoute.lesson(lessonID)) { content }
-                    .buttonStyle(.plain)
+                    .buttonStyle(PathNodeButtonStyle())
                     .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
-                    .accessibilityLabel("\(accessibilityTitle), \(status), \(progressText)")
+                    .accessibilityLabel("\(title), \(status), \(progressText)")
                     .accessibilityHint(active ? "Reprend cette leçon" : "Ouvre cette leçon")
             } else {
-                content
-                    .accessibilityElement(children: .ignore)
-                    .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
-                    .accessibilityLabel("\(accessibilityTitle), \(status), \(progressText)")
-                    .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
+                // Locked nodes only reveal why they are locked; they are not
+                // announced as buttons.
+                Button {
+                    withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
+                        revealedLockedLessonID = revealedLockedLessonID == lessonID ? nil : lessonID
+                    }
+                } label: {
+                    content
+                }
+                .buttonStyle(PathNodeButtonStyle())
+                .accessibilityRemoveTraits(.isButton)
+                .accessibilityIdentifier("learningPath.lesson.\(lessonID.rawValue)")
+                .accessibilityLabel("\(title), \(status), \(progressText)")
+                .accessibilityHint("Termine l’étape précédente pour déverrouiller cette leçon")
             }
         }
+        .padding(.bottom, rowSpacing)
         .background(alignment: .topLeading) {
-            if !isLast {
-                connector(reached: completed)
-            }
+            trackSegment(from: nodeX, to: horizontalOffset(for: index + 1), reached: completed)
         }
         .id(lessonID)
         .task(id: lessonID) {
@@ -1109,18 +1186,67 @@ private struct LearningPathUnit: View {
         }
     }
 
-    /// Joins this row's node to the next row's node, in success colour once
-    /// the lesson is done.
-    private func connector(reached: Bool) -> some View {
-        Capsule()
-            .fill(reached ? SylluneColor.success : SylluneColor.progressTrack)
-            .frame(width: 3)
-            .frame(maxHeight: .infinity)
-            .padding(.top, rowPadding + nodeDiameter + 4)
-            .padding(.bottom, -(rowPadding - 4))
-            .offset(x: rowPadding + nodeDiameter / 2 - 1.5)
-            .accessibilityHidden(true)
-            .allowsHitTesting(false)
+    private func bubble(title: String, detail: String?, action: String?, nodeX: CGFloat) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 18, style: .continuous)
+        let limit = max(0, (columnWidth - bubbleWidth) / 2)
+        let bubbleX = min(max(nodeX, -limit), limit)
+        let tailLimit = max(0, bubbleWidth / 2 - 24)
+        let tailX = min(max(nodeX - bubbleX, -tailLimit), tailLimit)
+        return VStack(spacing: 8) {
+            Text(title)
+                .font(.headline)
+                .foregroundStyle(SylluneColor.ink)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+            if let detail {
+                Text(detail)
+                    .font(.callout)
+                    .foregroundStyle(SylluneColor.inkMuted)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            if let action {
+                Text(action)
+                    .font(.callout.weight(.bold))
+                    .foregroundStyle(accentForeground)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(accent, in: Capsule())
+            }
+        }
+        .padding(14)
+        .frame(width: bubbleWidth)
+        .background(SylluneColor.surface, in: shape)
+        .overlay(shape.stroke(action == nil ? SylluneColor.border : accent.opacity(0.55), lineWidth: 1.5))
+        .overlay(alignment: .top) {
+            BubblePointer()
+                .fill(SylluneColor.surface)
+                .frame(width: 20, height: 10)
+                .offset(x: tailX, y: -8.5)
+        }
+        .shadow(color: .black.opacity(0.12), radius: 8, x: 0, y: 4)
+        .offset(x: bubbleX)
+        .accessibilityHidden(true)
+    }
+
+    // MARK: Unit end
+
+    private func chestRow(completed: Bool) -> some View {
+        PathNodeFace(
+            symbol: "gift.fill",
+            face: completed ? SylluneColor.sun : SylluneColor.progressTrack,
+            foreground: completed ? SylluneColor.inkOnSun : SylluneColor.inkMuted,
+            badge: nil,
+            diameter: nodeDiameter * 0.82,
+            ringProgress: nil
+        )
+        .frame(width: nodeFrame, height: nodeFrame)
+        .offset(x: horizontalOffset(for: module.lessonIDs.count))
+        .frame(width: columnWidth)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(completed ? "Fin de l’unité · terminée" : "Fin de l’unité · à compléter")
     }
 
     // MARK: Progress
