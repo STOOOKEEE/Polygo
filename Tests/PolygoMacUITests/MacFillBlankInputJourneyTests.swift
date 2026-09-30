@@ -76,6 +76,16 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         // The dialogue comes right before the fill-in built on its lines.
         let dialogue = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l2-dialogue").firstMatch
         XCTAssertTrue(dialogue.waitForExistence(timeout: timeout), "Le dialogue L2 doit précéder l’exercice à trou")
+        // Clicking a line, on its characters, reveals its pinyin and
+        // translation in place and never opens a word page.
+        let firstLine = app.descendants(matching: .any).matching(identifier: "dialogue.line.0").firstMatch
+        XCTAssertTrue(scrollIntoView(firstLine), "La première réplique doit être visible")
+        firstLine.click()
+        XCTAssertTrue(
+            waitForValue(firstLine, "Pinyin et traduction affichés"),
+            "Cliquer une réplique doit afficher son pinyin et sa traduction"
+        )
+        XCTAssertFalse(text(containing: "Fiche mot").exists, "Cliquer une réplique ne doit pas ouvrir de fiche mot")
         attachScreenshot(named: "mac-lesson-dialogue")
         continueThroughTeaching()
 
