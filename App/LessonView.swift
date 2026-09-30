@@ -30,6 +30,9 @@ public struct LessonView: View {
 
     private var exercises: [ExerciseBlock] { flow?.exercises ?? [] }
 
+    /// Scroll target of the feedback card.
+    private static let feedbackAnchor = "lesson.feedback"
+
     /// First-try results of the current attempt, as the journal records them.
     private func sessionStats(_ flow: LessonFlow) -> LessonSessionStats {
         LessonSessionStats(exercises: flow.exercises, firstAttempts: model.snapshot.lessonProgress[lessonID]?.firstAttemptResults ?? [:])
@@ -184,17 +187,29 @@ public struct LessonView: View {
     /// whole lesson, the content, and one primary action at the bottom.
     @ViewBuilder private func stepView(_ lesson: LessonDocument, flow: LessonFlow) -> some View {
         let step = flow.steps[currentStep]
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-                switch step {
-                case .teaching(let teaching): teachingContent(teaching, lesson: lesson)
-                case .exercise(let index, let block): exerciseContent(lesson, flow: flow, exerciseIndex: index, spec: block.spec)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    switch step {
+                    case .teaching(let teaching): teachingContent(teaching, lesson: lesson)
+                    case .exercise(let index, let block): exerciseContent(lesson, flow: flow, exerciseIndex: index, spec: block.spec)
+                    }
+                }
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.25), value: evaluation)
+                .frame(maxWidth: 720, alignment: .leading)
+                .frame(maxWidth: .infinity)
+                .padding(20)
+            }
+            // The verdict and Tavi's reaction sit under the answers: bring
+            // them into view once the new feedback is laid out.
+            .onChange(of: evaluation) { _, newValue in
+                guard newValue != nil else { return }
+                DispatchQueue.main.async {
+                    withAnimation(reduceMotion ? nil : .easeOut(duration: 0.3)) {
+                        proxy.scrollTo(Self.feedbackAnchor, anchor: .bottom)
+                    }
                 }
             }
-            .animation(reduceMotion ? nil : .easeOut(duration: 0.25), value: evaluation)
-            .frame(maxWidth: 720, alignment: .leading)
-            .frame(maxWidth: .infinity)
-            .padding(20)
         }
         // A new step starts at the top of its content.
         .id(step.id)
@@ -357,6 +372,7 @@ public struct LessonView: View {
                     nextPhase: flow.phaseStarting(afterExercise: exerciseIndex)
                 )
             )
+            .id(Self.feedbackAnchor)
             .transition(reduceMotion ? AnyTransition.identity : AnyTransition.opacity.combined(with: AnyTransition.scale(scale: 0.97, anchor: .top)))
         }
     }
@@ -711,6 +727,8 @@ public struct LessonView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(successCount == exercises.count ? "Leçon terminée" : "Leçon enregistrée")
                             .font(.largeTitle.weight(.semibold))
+                            // « enregistrée » alone is wider than the column beside Tavi on an iPhone.
+                            .minimumScaleFactor(0.7)
                             .foregroundStyle(SylluneColor.ink)
                         Text("\(successCount) / \(exercises.count) exercices réussis. Les erreurs restent disponibles pour une nouvelle tentative.")
                             .font(.body)
