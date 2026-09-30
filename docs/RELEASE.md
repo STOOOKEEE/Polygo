@@ -95,6 +95,8 @@ captures du dépôt en proviennent (iPhone 16 Pro réduit à 603 × 1311, Mac
 | [séance J1 Mac](screenshots/daily-plan-day-one-macos.png) | 1600 × 900 | `67bd9b0ce8df676e8faf30d8b9191ef4bba4e3cfec78297cce7d0ca897bcfbe0` |
 | [lecture L5 Mac](screenshots/daily-plan-reading-macos.png) | 1600 × 900 | `8f8003e4da81bb50ed455f5ac8dc9d5be84b6145d4edc4c222cb2d454f72af1a` |
 | [séance J2 Mac](screenshots/daily-plan-day-two-macos.png) | 1600 × 900 | `18a7d16bf79231ce34eea900b00b5fbc262461ca9cd91b7eba7f0e3692422784` |
+| [retour avec Tavi, L5 Mac](screenshots/lesson-feedback-macos-dark.png) | 1600 × 900 | `d19250bedf4a6c93f014f081949eed63a1825f8d9da9513b5a794429647d3cdf` |
+| [bilan « Mots appris », L2 Mac](screenshots/lesson-completion-macos-dark.png) | 1600 × 900 | `2ebac1fbc87e47d5a56d4b0ab764f5d0643081c1a820742c78063e3b357912c9` |
 
 Les captures du dialogue, des nouveaux mots et de la lecture L5 montrent la
 leçon en une seule suite d’étapes (apprentissage juste avant les exercices qui
@@ -106,6 +108,10 @@ et sombre) et de pièces après complétion proviennent des runs
 sur `e85508f` (accueil iPhone) et
 [36625246917](https://github.com/STOOOKEEE/Polygo/actions/runs/36625246917)
 sur `7500d23` (les autres).
+Les captures du retour avec Tavi (barre découpée en phases, série, réplique) et
+du bilan « Mots appris » proviennent du
+[run 36654360774](https://github.com/STOOOKEEE/Polygo/actions/runs/36654360774)
+sur `d050c5b`.
 
 Le conteneur Linux ne fournit ni Xcode, ni SwiftUI, ni SDK Apple. Les builds
 Apple, les méthodes UI, l’audit VoiceOver/Dynamic Type sur appareil, les
