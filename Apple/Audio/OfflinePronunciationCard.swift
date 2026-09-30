@@ -154,6 +154,7 @@ private struct ToneChip: View {
 /// One small plot per syllable: the expected tone shape dashed, the
 /// learner's pitch solid, both in semitones around the learner's own level.
 private struct ToneContourChart: View {
+    let syllables: [SyllableToneAssessment]
     let range = 8.0
 
     var body: some View {
