@@ -62,7 +62,7 @@ public struct AppDependencies {
             scheduler: SM2Scheduler(),
             audio: AppleAudioService(contentRootURL: contentRoot),
             handwriting: handwriting,
-            pronunciation: UnconfiguredSpeechPronunciationService()
+            pronunciation: OfflineSpeechPronunciationService()
         )
     }
 

@@ -21,10 +21,11 @@ public enum SpeechAudioConversionError: Error, LocalizedError, Sendable {
     }
 }
 
-/// Converts a temporary AVFoundation recording to a provider-friendly WAV.
-/// The output is signed 16-bit PCM, 16 kHz, mono. The returned file remains
-/// temporary and is owned by the caller, which must delete it after upload or
-/// analysis. No network operation happens here.
+/// Converts a temporary AVFoundation recording to 16 kHz mono: a
+/// provider-friendly WAV (signed 16-bit PCM) or Float samples in memory for
+/// the offline analyzer. A returned file remains temporary and is owned by
+/// the caller, which must delete it after upload or analysis. No network
+/// operation happens here.
 public enum SpeechAudioConverter {
     public static let targetSampleRate = 16_000.0
     public static let targetChannelCount: AVAudioChannelCount = 1
@@ -42,31 +43,12 @@ public enum SpeechAudioConverter {
         outputURL: URL? = nil,
         fileManager: FileManager = .default
     ) throws -> URL {
-        guard fileManager.fileExists(atPath: inputURL.path) else {
-            throw SpeechAudioConversionError.inputMissing
-        }
-
-        let source: AVAudioFile
-        do {
-            source = try AVAudioFile(forReading: inputURL)
-        } catch {
-            throw SpeechAudioConversionError.invalidInputFormat
-        }
-        guard source.length > 0 else {
-            throw SpeechAudioConversionError.invalidInputFormat
-        }
-
+        let source = try openSource(inputURL, fileManager: fileManager)
         guard let targetFormat = AVAudioFormat(
             commonFormat: targetCommonFormat,
             sampleRate: targetSampleRate,
             channels: targetChannelCount,
             interleaved: true
-        ) else {
-            throw SpeechAudioConversionError.converterUnavailable
-        }
-        guard let converter = AVAudioConverter(
-            from: source.processingFormat,
-            to: targetFormat
         ) else {
             throw SpeechAudioConversionError.converterUnavailable
         }
@@ -84,6 +66,67 @@ public enum SpeechAudioConverter {
             )
         } catch {
             throw SpeechAudioConversionError.conversionFailed(error.localizedDescription)
+        }
+
+        try convert(source, to: targetFormat) { buffer in
+            do {
+                try destination.write(from: buffer)
+            } catch {
+                throw SpeechAudioConversionError.conversionFailed(error.localizedDescription)
+            }
+        }
+        return destinationURL
+    }
+
+    /// The recording as 16 kHz mono Float samples, kept in memory only.
+    public static func monoSamples16k(
+        from inputURL: URL,
+        fileManager: FileManager = .default
+    ) throws -> [Float] {
+        let source = try openSource(inputURL, fileManager: fileManager)
+        guard let targetFormat = AVAudioFormat(
+            commonFormat: .pcmFormatFloat32,
+            sampleRate: targetSampleRate,
+            channels: targetChannelCount,
+            interleaved: false
+        ) else {
+            throw SpeechAudioConversionError.converterUnavailable
+        }
+        var samples: [Float] = []
+        samples.reserveCapacity(Int(Double(source.length) * targetSampleRate / max(source.processingFormat.sampleRate, 1)))
+        try convert(source, to: targetFormat) { buffer in
+            guard let channel = buffer.floatChannelData?[0] else { return }
+            samples.append(contentsOf: UnsafeBufferPointer(start: channel, count: Int(buffer.frameLength)))
+        }
+        return samples
+    }
+
+    private static func openSource(_ inputURL: URL, fileManager: FileManager) throws -> AVAudioFile {
+        guard fileManager.fileExists(atPath: inputURL.path) else {
+            throw SpeechAudioConversionError.inputMissing
+        }
+        let source: AVAudioFile
+        do {
+            source = try AVAudioFile(forReading: inputURL)
+        } catch {
+            throw SpeechAudioConversionError.invalidInputFormat
+        }
+        guard source.length > 0 else {
+            throw SpeechAudioConversionError.invalidInputFormat
+        }
+        return source
+    }
+
+    private static func convert(
+        _ source: AVAudioFile,
+        to targetFormat: AVAudioFormat,
+        consume: (AVAudioPCMBuffer) throws -> Void
+    ) throws {
+        guard let converter = AVAudioConverter(
+            from: source.processingFormat,
+            to: targetFormat
+        ) else {
+            throw SpeechAudioConversionError.converterUnavailable
         }
 
         let inputFrameCapacity: AVAudioFrameCount = 4_096
@@ -139,11 +182,7 @@ public enum SpeechAudioConverter {
                 throw SpeechAudioConversionError.conversionFailed(conversionError.localizedDescription)
             }
             if outputBuffer.frameLength > 0 {
-                do {
-                    try destination.write(from: outputBuffer)
-                } catch {
-                    throw SpeechAudioConversionError.conversionFailed(error.localizedDescription)
-                }
+                try consume(outputBuffer)
             }
             if status == .error {
                 throw SpeechAudioConversionError.conversionFailed("Le convertisseur a renvoyé une erreur")
@@ -152,7 +191,5 @@ public enum SpeechAudioConverter {
                 sourceFinished = true
             }
         }
-
-        return destinationURL
     }
 }

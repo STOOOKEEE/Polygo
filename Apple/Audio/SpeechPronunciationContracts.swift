@@ -78,6 +78,9 @@ public struct SpeechPronunciationReport: Codable, Hashable, Sendable {
     public let words: [SpeechPronunciationWordScore]
     public let sounds: [SpeechPronunciationSoundScore]
     public let tones: [SpeechPronunciationToneScore]
+    /// Syllable-by-syllable detail of the offline analyzer: tones heard,
+    /// pitch contours and the word check. Remote providers leave it nil.
+    public let analysis: PronunciationAnalysis?
 
     public init(
         provider: SpeechPronunciationProvider,
@@ -85,7 +88,8 @@ public struct SpeechPronunciationReport: Codable, Hashable, Sendable {
         providerScore: Double? = nil,
         words: [SpeechPronunciationWordScore] = [],
         sounds: [SpeechPronunciationSoundScore] = [],
-        tones: [SpeechPronunciationToneScore] = []
+        tones: [SpeechPronunciationToneScore] = [],
+        analysis: PronunciationAnalysis? = nil
     ) {
         self.provider = provider
         self.verdict = verdict
@@ -93,6 +97,7 @@ public struct SpeechPronunciationReport: Codable, Hashable, Sendable {
         self.words = words
         self.sounds = sounds
         self.tones = tones
+        self.analysis = analysis
     }
 
     /// Only a provider-completed pass or retry with its own score can become
@@ -154,18 +159,20 @@ public struct SpeechPronunciationResult: Codable, Hashable, Sendable {
 
 /// Provider-independent pronunciation evaluation. Implementations may be
 /// local or remote; this contract performs no transport or authentication.
+/// `transcript` is the on-device transcription of the same recording, nil
+/// when dictation is not permitted or not available.
 public protocol SpeechPronunciationService: Sendable {
     var provider: SpeechPronunciationProvider? { get }
 
     func evaluate(
         recording: Recording,
-        exercise: SpeakingExercise
+        exercise: SpeakingExercise,
+        transcript: SpeechTranscript?
     ) async -> SpeechPronunciationResult
 }
 
-/// Live composition before a provider has been selected. It deliberately
-/// returns an unconfigured state instead of pretending that local speech
-/// transcription measures sounds or tones.
+/// Composition without a provider, for previews and tests of the fallback
+/// path. It returns an unconfigured state and never a score.
 public struct UnconfiguredSpeechPronunciationService: SpeechPronunciationService, Sendable {
     public let provider: SpeechPronunciationProvider?
 
@@ -175,14 +182,17 @@ public struct UnconfiguredSpeechPronunciationService: SpeechPronunciationService
 
     public func evaluate(
         recording: Recording,
-        exercise: SpeakingExercise
+        exercise: SpeakingExercise,
+        transcript: SpeechTranscript?
     ) async -> SpeechPronunciationResult {
         .unconfigured(provider: provider)
     }
 }
 
-/// The offline slot is explicit but intentionally unavailable until a real
-/// phonetic model is integrated. No offline phoneme or tone score is inferred.
+/// On-device analysis: the recording is read into memory at 16 kHz mono,
+/// its pitch is tracked syllable by syllable to check the tones, and the
+/// transcript, when there is one, is compared with the expected words.
+/// Nothing leaves the device. Consonants and vowels are not evaluated.
 public struct OfflineSpeechPronunciationService: SpeechPronunciationService, Sendable {
     public let provider: SpeechPronunciationProvider? = .offline
 
@@ -190,9 +200,31 @@ public struct OfflineSpeechPronunciationService: SpeechPronunciationService, Sen
 
     public func evaluate(
         recording: Recording,
-        exercise: SpeakingExercise
+        exercise: SpeakingExercise,
+        transcript: SpeechTranscript?
     ) async -> SpeechPronunciationResult {
-        .unavailable(provider: .offline)
+        let samples: [Float]
+        do {
+            samples = try SpeechAudioConverter.monoSamples16k(from: recording.fileURL)
+        } catch {
+            return .failed(provider: .offline, message: error.localizedDescription)
+        }
+        guard !Task.isCancelled else {
+            return .failed(provider: .offline, message: "Analyse annulée.")
+        }
+        let analysis = PronunciationAnalyzer().analyze(
+            samples: samples,
+            sampleRate: SpeechAudioConverter.targetSampleRate,
+            exercise: exercise,
+            transcript: transcript?.rawText
+        )
+        let report = SpeechPronunciationReport(
+            provider: .offline,
+            verdict: analysis.verdict,
+            providerScore: analysis.score,
+            analysis: analysis
+        )
+        return SpeechPronunciationResult(status: .completed, report: report, message: analysis.summary)
     }
 }
 
@@ -210,7 +242,8 @@ public struct FixedSpeechPronunciationService: SpeechPronunciationService, Senda
 
     public func evaluate(
         recording: Recording,
-        exercise: SpeakingExercise
+        exercise: SpeakingExercise,
+        transcript: SpeechTranscript?
     ) async -> SpeechPronunciationResult {
         result
     }

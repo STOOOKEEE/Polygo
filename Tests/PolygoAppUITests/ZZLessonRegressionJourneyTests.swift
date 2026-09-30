@@ -200,8 +200,8 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
         tapWhenVisible(button(exactly: "Continuer"))
 
         // Oral surface: model playback, explicit stop, speed choice, and a
-        // permission-safe fallback. The copy must explain that no phoneme or
-        // tone score is being inferred.
+        // permission-safe fallback. The copy must say what the offline
+        // analysis measures (tones and words) and what it does not.
         XCTAssertTrue(text(containing: "你好").waitForExistence(timeout: timeout), "La cible orale doit être visible")
         XCTAssertTrue(text(containing: "nǐ hǎo").waitForExistence(timeout: timeout), "Le pinyin oral doit être visible")
         assertFocusedChromeHidden()
@@ -243,14 +243,14 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
             dismissPermissionPrompts()
         }
 
-        // Without a configured provider, the exercise remains explicitly
-        // unevaluated. There is no synthetic learner rating and no false
-        // Correct feedback; "Continuer" records it as skipped in one tap.
+        // A silent simulator recording leaves the offline analysis
+        // inconclusive: no synthetic learner rating and no false Correct
+        // feedback; "Continuer" records it as skipped in one tap.
         let resultDetails = button(exactly: "Voir les résultats")
         if resultDetails.waitForExistence(timeout: 3) {
             tapWhenVisible(resultDetails)
             XCTAssertTrue(
-                text(containingAny: ["Auto-écoute", "Résultat incertain", "Transcription locale", "ne mesurent pas tes phonèmes ni tes tons"]).waitForExistence(timeout: timeout),
+                text(containingAny: ["Auto-écoute", "Résultat incertain", "Analyse impossible", "Transcription locale", "ne juge ni les consonnes ni les voyelles"]).waitForExistence(timeout: timeout),
                 "Le détail oral doit rester descriptif et sans faux score"
             )
         }

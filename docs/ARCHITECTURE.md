@@ -918,14 +918,16 @@ contrat reste donc compatible avec la cible iOS 17/macOS 14. Les textes et
 résultats de transcription sont stockés localement avec l’événement, jamais
 envoyés à un service Polygo.
 
-L’analyse de prononciation est un protocole séparé de la transcription :
+L’analyse de prononciation est un protocole séparé de la transcription ; elle
+reçoit la transcription locale de la même prise quand elle existe :
 
 ```swift
 public protocol SpeechPronunciationService: Sendable {
     var provider: SpeechPronunciationProvider? { get }
     func evaluate(
         recording: Recording,
-        exercise: SpeakingExercise
+        exercise: SpeakingExercise,
+        transcript: SpeechTranscript?
     ) async -> SpeechPronunciationResult
 }
 ```
@@ -934,10 +936,13 @@ public protocol SpeechPronunciationService: Sendable {
 `unavailable` et `failed`. Seul un rapport `completed` avec verdict et score
 fournis par le moteur peut produire une réponse orale évaluée ; un état
 incertain ou sans fournisseur reste sans note et peut être passé explicitement.
-La composition actuelle injecte `UnconfiguredSpeechPronunciationService` ; les
-implémentations iFlytek ou SpeechSuper restent à placer derrière un serveur
-proxy avec des credentials conservés côté serveur. `FixedSpeechPronunciationService`
-est réservé aux fixtures et aux tests de l’interface.
+La composition actuelle injecte `OfflineSpeechPronunciationService` : le
+`PronunciationAnalyzer` portable (PolygoCore) mesure les tons par la hauteur
+de la voix et compare les mots à la transcription, sur l’appareil (voir
+docs/AUDIO.md). Des adaptateurs iFlytek ou SpeechSuper resteraient à placer
+derrière un serveur proxy avec des credentials conservés côté serveur.
+`FixedSpeechPronunciationService` et `UnconfiguredSpeechPronunciationService`
+sont réservés aux fixtures et aux tests de l’interface.
 
 ### Écriture manuscrite
 

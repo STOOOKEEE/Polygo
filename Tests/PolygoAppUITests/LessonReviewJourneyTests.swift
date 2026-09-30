@@ -376,8 +376,8 @@ final class LessonReviewJourneyTests: XCTestCase {
     }
 
     private func answerSpeaking(_: ExerciseFixture) {
-        let disclaimer = element(containing: "ne mesurent pas tes phonèmes ni tes tons", type: .any)
-        XCTAssertTrue(disclaimer.waitForExistence(timeout: timeout), "L’oral ne doit pas prétendre noter phonèmes ou tons")
+        let disclaimer = element(containing: "ne juge ni les consonnes ni les voyelles", type: .any)
+        XCTAssertTrue(disclaimer.waitForExistence(timeout: timeout), "L’oral doit dire ce que l’analyse ne mesure pas")
         assertFocusedChromeHidden()
 
         let record = button(exactly: "Enregistrer")
@@ -394,9 +394,9 @@ final class LessonReviewJourneyTests: XCTestCase {
             dismissPermissionPrompts()
         }
 
-        // The oral surface no longer invents a learner rating when no
-        // pronunciation provider can conclude. The lesson action bar keeps
-        // the exercise explicitly unevaluated and lets the learner continue.
+        // The oral surface never invents a learner rating: a silent
+        // simulator recording leaves the offline analysis inconclusive, and
+        // the lesson action bar lets the learner continue without a score.
         let resultDetails = button(exactly: "Voir les résultats")
         if resultDetails.waitForExistence(timeout: 2) {
             tapWhenVisible(resultDetails)

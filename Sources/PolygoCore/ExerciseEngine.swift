@@ -149,7 +149,7 @@ public struct DefaultExerciseEngine: ExerciseEngine, Sendable {
                             id,
                             .correct,
                             providerScore,
-                            "La prononciation est validée par " + assessment.providerID + ".",
+                            "La prononciation est validée.",
                             accepted: true,
                             answer: speech.normalizedTranscript
                         )

@@ -196,36 +196,118 @@ pendant un enregistrement.
 ## Évaluation de prononciation
 
 La vue accepte un `SpeechPronunciationService` séparé de `AudioService`. Son
-protocole reçoit l’enregistrement temporaire et l’exercice, puis renvoie un
-`SpeechPronunciationResult`. Un rapport terminé peut fournir un verdict, un
-score global et des lignes par mot, son et ton ; les états `unconfigured`,
-`unavailable` et `failed` ne contiennent aucun score de remplacement.
+protocole reçoit l’enregistrement temporaire, l’exercice et la transcription
+locale de la même prise (nil sans dictée), puis renvoie un
+`SpeechPronunciationResult`. Un rapport terminé fournit un verdict, un score
+global et son détail ; les états `unconfigured`, `unavailable` et `failed` ne
+contiennent aucun score de remplacement.
 
-La composition livrée utilise `UnconfiguredSpeechPronunciationService` tant
-qu’aucun fournisseur n’est choisi et configuré. `OfflineSpeechPronunciationService`
-reste un emplacement explicite, mais ne déduit aucun score sans modèle
-phonétique. `FixedSpeechPronunciationService` sert uniquement aux tests et aux
-prévisualisations ; il permet d’injecter des rapports fixture sans compte,
-réseau ou appel payant. Les tests portables couvrent les verdicts fournisseur
-réussi, à corriger et incertain, leurs scores, la compatibilité Codable et le
-passage `skipped`.
+### Analyse hors ligne
 
-La transcription Apple et sa confiance restent des informations descriptives.
-Une transcription seule, même identique à la phrase cible, ne constitue pas
-une note de prononciation dans le parcours actuel. La vue ne crée une réponse
-évaluable qu’avec un rapport terminé qui contient son score de fournisseur ;
-un rapport incertain ou l’absence de fournisseur laisse l’exercice sans note.
-Le bouton « Continuer » enregistre alors un état `skipped`, qui ne compte pas
-comme une réussite, et passe directement à l’exercice suivant. Dans les quatre
-leçons livrées, l’exercice oral est optionnel : `skipped` est compté séparément
-dans le bilan (`skippedCount`) et ne bloque ni la complétion fondée sur les
-exercices requis ni le déblocage de la leçon suivante.
+La composition livrée (iOS et macOS) utilise
+`OfflineSpeechPronunciationService` : gratuite, sans réseau, sans modèle
+téléchargé. Le service lit l’enregistrement avec AVAudioFile, le convertit en
+mémoire en 16 kHz mono (`SpeechAudioConverter.monoSamples16k`) et appelle
+`PronunciationAnalyzer` (PolygoCore, Swift portable testé sous Linux). Rien ne
+quitte l’appareil et aucun fichier supplémentaire n’est écrit.
 
-Les adaptateurs iFlytek ou SpeechSuper pourront implémenter ce protocole
-derrière un serveur proxy. Le protocole, l’interface et les fixtures sont prêts
-pour cette intégration, mais aucun fournisseur externe n’est activé dans la
-composition actuelle : aucun compte, credential ou proxy n’est disponible.
-Les clés et secrets ne doivent jamais être embarqués dans l’app.
+1. **Tons attendus** (`MandarinToneTargets`) : les tons du `referencePinyin`,
+   alignés sur les caractères, puis le sandhi de la parole : chaîne de 3e tons
+   → 2e ton avant le dernier (les deux sont acceptés en tête d’une chaîne de
+   trois), 不 devant un 4e ton → bú, 一 → yí devant un 4e ton et yì devant les
+   autres (1er ton gardé après 第/十 et en fin de groupe). Un ton neutre n’est
+   pas noté. La ponctuation coupe les chaînes.
+2. **Hauteur** (`PitchTracker`) : YIN sur le signal ramené à 8 kHz, trame de
+   10 ms, 60–500 Hz, voisement par apériodicité et niveau (35 dB sous la
+   trame la plus forte), réparation des sauts d’octave, médiane glissante.
+   Les hauteurs sont exprimées en demi-tons autour de la médiane du locuteur :
+   une voix grave ou aiguë est traitée pareil.
+3. **Syllabes** : les pauses et les creux d’intensité sont des frontières
+   candidates ; une programmation dynamique en choisit autant qu’il y a de
+   syllabes attendues en gardant des durées plausibles. Trop de frontières
+   devinées, de longues pauses en trop ou trop peu de voix donnent « Résultat
+   incertain », sans score.
+4. **Ton entendu** : sur chaque syllabe (début et fin rognés), niveau,
+   niveau par rapport aux voisines, pente, courbure, départ, arrivée et creux
+   alimentent une régression logistique à quatre classes, entraînée sur les
+   clips Kokoro et sur des contours de manuel (parole lente d’apprenant).
+5. **Mots** : la transcription locale est comparée caractère par caractère
+   (plus longue sous-suite commune, `TextNormalizer`, chiffres ramenés aux
+   caractères) ; les caractères manquants et en trop sont listés.
+6. **Verdict** : score = part des tons mesurés entendus comme attendu, moyennée
+   avec le score des mots quand une transcription existe. Réussi si au moins la
+   moitié des tons (`minimumToneScore` 0,5) et 75 % des caractères
+   (`minimumWordScore`) sont justes ; sinon à corriger. Sans transcription, le
+   score porte sur les tons seuls et la carte l’indique, avec le chemin pour
+   activer la dictée en mandarin (iOS : Réglages › Général › Clavier ›
+   Claviers › Chinois simplifié, puis Dictée ; macOS : Réglages Système ›
+   Clavier › Dictée).
+
+La carte de résultat affiche verdict et score sur 100, une pastille par
+syllabe (ton attendu → entendu, vert ou orange), une petite courbe par
+syllabe (forme attendue en pointillés, voix de l’apprenant en trait), les
+corrections en français (« hǎo : attendu ton 3 (bas, descend-remonte),
+entendu ton 2 (monte) ») et le contrôle des mots.
+
+### Précision mesurée
+
+Mesure sur les 1 388 clips Kokoro embarqués d’au moins deux syllabes
+(12 186 syllabes à ton plein, clips décodés en 16 kHz mono). Précision par
+ton en validation croisée (classifieur entraîné sur une moitié des clips,
+mesuré sur l’autre, puis l’inverse) :
+
+| Ton attendu | Ensemble | Voix féminine `zf_093` | Voix masculine `zm_011` |
+|---|---|---|---|
+| 1 | 66 % | 60 % | 76 % |
+| 2 | 59 % | 51 % | 72 % |
+| 3 | 48 % | 49 % | 47 % |
+| 4 | 63 % | 58 % | 71 % |
+| Total | 58,9 % | 54,5 % | 66,2 % |
+
+Le modèle livré, entraîné sur tous les clips et exécuté en Swift (build
+release, environ 260 fois plus vite que le temps réel sous Linux), obtient
+59,1 % : l’écart avec la validation croisée est négligeable.
+
+Ce chiffre borne l’analyseur *et* la voix de synthèse : le contrôle qualité
+ci-dessus trouvait déjà que Kokoro ne réalise que 50 à 67 % des tons attendus.
+Avec les frontières de syllabes prédites par Kokoro au lieu de la
+segmentation acoustique (223 clips), la précision n’augmente pas (59 % contre
+62 %) : la segmentation n’est pas le facteur limitant. Le sandhi calculé
+concorde avec celui du frontal Kokoro sur 98,6 % des syllabes. Un bruit blanc
+à 20 dB de rapport signal/bruit ne dégrade pas le résultat (400 clips). Au
+niveau de la phrase, 76 % des clips obtiennent « réussi », 23 % « à
+corriger », 1,4 % « incertain » ; des tons tirés au hasard ne réussissent que
+dans 12 % des cas. Sur des contours synthétiques nets (tests unitaires, voix
+à 110 et 220 Hz, bruit), les quatre tons sont reconnus.
+
+### Limites
+
+- Seuls les tons et les mots sont évalués : ni consonnes, ni voyelles, ni
+  aspiration (b/p, z/zh…). Un ton juste sur une syllabe mal articulée passe.
+- Environ quatre tons sur dix peuvent être mal reconnus sur une parole
+  naturelle, surtout les 3e tons (souvent réalisés bas et courts) : le seuil
+  est volontairement bas et le résultat reste indicatif. L’exercice oral reste
+  `required: false` dans le contenu.
+- Une syllabe isolée n’a pas de repère de niveau : le ton 1 et un 3e ton bas
+  se distinguent mal.
+- La comparaison des mots dépend de la dictée Apple : un homophone mal
+  transcrit (他/她, 在/再) compte comme une erreur.
+
+`FixedSpeechPronunciationService` et `UnconfiguredSpeechPronunciationService`
+servent uniquement aux tests et aux prévisualisations.
+
+La transcription seule, même identique à la phrase cible, ne constitue pas une
+note. La vue ne crée une réponse évaluable qu’avec un rapport terminé qui
+contient son score ; un rapport incertain laisse l’exercice sans note. Le
+bouton « Continuer » enregistre alors un état `skipped`, qui ne compte pas
+comme une réussite, et passe directement à l’exercice suivant. L’exercice oral
+est optionnel : `skipped` est compté séparément dans le bilan
+(`skippedCount`) et ne bloque ni la complétion fondée sur les exercices requis
+ni le déblocage de la leçon suivante.
+
+Des adaptateurs iFlytek ou SpeechSuper pourraient implémenter le même
+protocole derrière un serveur proxy ; aucun n’est activé et les clés ne
+doivent jamais être embarquées dans l’app.
 
 ## TTS Mandarin de repli et disponibilité hors ligne
 
@@ -237,13 +319,13 @@ récupérable. La synthèse Apple ne requiert pas de serveur Polygo, mais les
 voix, leur qualité et leur disponibilité hors ligne dépendent du système et des
 paquets de voix installés par l’utilisateur.
 
-La transcription Apple et sa confiance restent des informations descriptives ;
-elles ne sont pas converties en score de phonème ou de ton. Les variantes
-`acceptedTranscripts` restent décodables pour les réponses historiques, mais
-une transcription seule ne constitue pas une note dans le parcours oral actuel.
+La transcription Apple sert au contrôle des mots de l’analyse hors ligne ;
+elle n’est jamais convertie en score de phonème ou de ton. Les variantes
+`acceptedTranscripts` restent décodables pour les réponses historiques et une
+transcription identique à l’une d’elles compte comme tous les mots justes.
 Quand Speech n’est pas autorisé, quand le modèle local n’existe pas ou quand
-aucune transcription exploitable n’est fournie, `SpeechPracticeView` conserve
-l’état non évalué et propose clairement « Continuer ».
+aucune transcription n’est fournie, l’analyse note les tons seuls et
+`SpeechPracticeView` explique comment activer la dictée en mandarin.
 
 ## Permissions et traitement local
 

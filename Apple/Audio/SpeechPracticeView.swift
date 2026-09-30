@@ -130,10 +130,10 @@ public struct SpeechPracticeView: View {
             .accessibilityLabel("\(mandarinReferenceText), écouter la phrase cible en mandarin")
             .accessibilityHint("Lit la phrase cible avec la voix locale")
 
-            DisclosureGroup("Comment comparer ma voix") {
+            DisclosureGroup("Comment ma voix est analysée") {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Repères de ton : \(MandarinToneMarkers.annotated(exercise.referencePinyin))")
-                    Text("Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
+                    Text(analysisExplanation)
                 }
                 .font(.caption)
                 .foregroundStyle(.secondary)
@@ -141,7 +141,7 @@ public struct SpeechPracticeView: View {
             }
             .font(.caption.weight(.semibold))
             .tint(.secondary)
-            .accessibilityLabel("Comment comparer ma voix. Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons.")
+            .accessibilityLabel("Comment ma voix est analysée. \(analysisExplanation)")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(12)
@@ -256,8 +256,8 @@ public struct SpeechPracticeView: View {
                     .foregroundStyle(.secondary)
             }
             Text(matches
-                 ? "Le texte reconnu correspond à la phrase attendue. Cela compare l’orthographe transcrite uniquement ; aucune note de prononciation ou de ton n’est calculée."
-                 : "Le texte reconnu diffère de la phrase attendue. Réécoute le modèle et réessaie ; cette comparaison ne mesure ni les phonèmes ni les tons.")
+                 ? "Le texte reconnu correspond à la phrase attendue."
+                 : "Le texte reconnu diffère de la phrase attendue. Réécoute le modèle et réessaie.")
                 .font(.callout)
                 .foregroundStyle(matches ? .green : .orange)
         }
@@ -267,7 +267,16 @@ public struct SpeechPracticeView: View {
         .accessibilityElement(children: .combine)
     }
 
+    @ViewBuilder
     private func pronunciationResultCard(_ result: SpeechPronunciationResult) -> some View {
+        if let report = result.report, let analysis = report.analysis {
+            OfflinePronunciationCard(analysis: analysis, transcriptionHelp: transcriptionHelp)
+        } else {
+            providerResultCard(result)
+        }
+    }
+
+    private func providerResultCard(_ result: SpeechPronunciationResult) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             if let report = result.report {
                 Label(
@@ -369,7 +378,7 @@ public struct SpeechPracticeView: View {
         switch provider {
         case .iflytek: return "iFlytek"
         case .speechSuper: return "SpeechSuper"
-        case .offline: return "Hors ligne"
+        case .offline: return "Analyse sur l’appareil"
         }
     }
 
@@ -446,6 +455,24 @@ public struct SpeechPracticeView: View {
     private var mandarinReferenceText: String {
         let target = PolygoCore.MandarinSpeechText.target(from: exercise.referenceText)
         return target.isEmpty ? exercise.referenceText.trimmingCharacters(in: .whitespacesAndNewlines) : target
+    }
+
+    private var analysisExplanation: String {
+        pronunciation.provider == .offline
+            ? "Après l’enregistrement, l’analyse suit la hauteur de ta voix syllabe par syllabe pour vérifier les tons, et compare la transcription locale aux mots attendus. Elle ne juge ni les consonnes ni les voyelles. Rien ne quitte l’appareil."
+            : "Les repères et la transcription aident à comparer le texte. Ils ne mesurent pas tes phonèmes ni tes tons."
+    }
+
+    /// Where to turn on Mandarin dictation, shown when no transcript exists.
+    private var transcriptionHelp: String {
+        let permission = speechPermission == .denied || speechPermission == .restricted
+            ? " Autorise aussi la reconnaissance vocale pour Syllune dans les réglages de confidentialité."
+            : ""
+#if os(macOS)
+        return "Pour vérifier aussi les mots, active la dictée en mandarin : Réglages Système › Clavier › Dictée, puis ajoute « Mandarin (Chine continentale) »." + permission
+#else
+        return "Pour vérifier aussi les mots, active la dictée en mandarin : Réglages › Général › Clavier › Claviers › Ajouter un clavier › Chinois (simplifié), puis active « Dictée » dans Réglages › Général › Clavier." + permission
+#endif
     }
 
     private func speakReference() {
@@ -670,9 +697,15 @@ public struct SpeechPracticeView: View {
         showEvaluationDetails = true
         statusMessage = nil
         analysisTask = Task { @MainActor in
-            async let localTranscript = transcribe(recording)
-            let result = await pronunciation.evaluate(recording: recording, exercise: exercise)
-            let capturedTranscript = await localTranscript
+            // The offline analyzer compares the words of the transcript, so
+            // dictation runs first; both stay on the device.
+            let capturedTranscript = await transcribe(recording)
+            guard !Task.isCancelled else { return }
+            let result = await pronunciation.evaluate(
+                recording: recording,
+                exercise: exercise,
+                transcript: capturedTranscript
+            )
             guard !Task.isCancelled else { return }
             transcript = capturedTranscript
             pronunciationResult = result
@@ -683,8 +716,10 @@ public struct SpeechPracticeView: View {
                   let report = result.report,
                   report.isAutomaticallyEvaluable else {
                 answer = nil
-                // Without a report the result card already shows this message.
-                statusMessage = result.report == nil ? nil : (result.message ?? analysisStatusMessage(result.status))
+                // The result card already shows the message of a missing
+                // report or of an offline analysis.
+                let cardShowsMessage = result.report == nil || result.report?.analysis != nil
+                statusMessage = cardShowsMessage ? nil : (result.message ?? analysisStatusMessage(result.status))
                 return
             }
             answer = .speech(SpeechAnswer(

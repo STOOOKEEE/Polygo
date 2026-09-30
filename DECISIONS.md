@@ -126,10 +126,13 @@ Le speaking et l’écriture ont donc un chemin hors ligne explicite :
 
 - audio de référence et enregistrement sont locaux ;
 - la transcription Speech est facultative et peut échouer sans bloquer la leçon ;
-- la tranche initiale n’annonce pas de score phonétique à partir de la
-  transcription : un `SpeechPronunciationService` distinct doit fournir un
-  verdict et un score ; sans fournisseur configuré, l’UI permet `skipped` sans
-  note ni réussite ;
+- la transcription seule ne donne pas de score phonétique : un
+  `SpeechPronunciationService` distinct fournit verdict et score. Le service
+  livré est hors ligne et gratuit : tons mesurés par la hauteur de la voix
+  (syllabe par syllabe, sandhi appliqué) et mots comparés à la transcription
+  locale ; il ne juge ni consonnes ni voyelles et répond « incertain » sans
+  score quand il ne peut pas conclure, ce qui laisse `skipped` sans note ni
+  réussite ;
 - le tracé chinois est conservé dans le format PencilKit sur iOS/iPadOS et dans
   le format de traits Polygo sur macOS natif ; il peut être auto-évalué ; la
   reconnaissance automatique des caractères n’est pas une condition de réussite.
