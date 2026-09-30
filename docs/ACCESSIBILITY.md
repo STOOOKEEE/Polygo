@@ -80,15 +80,18 @@ ChineseSelectableText(
 
 Les répliques, paragraphes et exemples du bundle portent leur `segmentation`
 (voir CONTENT_SCHEMA.md, « Segmentation des textes ») : chaque segment qui a un
-`vocabularyID` devient une cible, et sa fiche s'ouvre par cet ID même si la
-leçon qui définit le mot n'est pas encore chargée. Quand aucune segmentation de
-contenu n’est fournie, le composant cherche les
+`vocabularyID` devient une cible, et sa bulle comme sa fiche le retrouvent par
+cet ID même si la leçon qui définit le mot n'est pas encore chargée. Quand
+aucune segmentation de contenu n’est fournie, le composant cherche les
 entrées chargées dans le dictionnaire par correspondance gloutonne du mot le
 plus long. Il compare les formes simplifiées et traditionnelles, conserve la
-ponctuation, et rend chaque mot connu comme une cible indépendante. Un tap ou
-une activation VoiceOver ouvre `WordDetailView` et lance l’audio de la fiche ;
-un asset local est préféré et la synthèse vocale mandarin sert de repli. Une
-indisponibilité est affichée dans la fiche au lieu d’annoncer un son fictif.
+ponctuation, et rend chaque mot connu comme un bouton indépendant, dont l’indice
+annonce qu’il affiche le pinyin et la traduction. Un tap ou une activation
+VoiceOver ouvre une bulle (popover) lisible par VoiceOver : caractère, pinyin,
+traduction, bouton « Écouter ce mot » et « Voir la fiche », qui ouvre
+`WordDetailView`. L’audio préfère un asset local et la synthèse vocale mandarin
+sert de repli ; une indisponibilité est affichée au lieu d’annoncer un son
+fictif. Échap ou un tap hors de la bulle la ferme.
 
 Les caractères sont marqués `zh-CN`. Le pinyin, les tons, les traductions et
 les statuts sont des éléments séparés en `fr-FR`. Les actions audio annoncent

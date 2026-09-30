@@ -177,6 +177,12 @@ final class MacHomeJourneyTests: XCTestCase {
         let token = button(exactly: "你好")
         XCTAssertTrue(token.waitForExistence(timeout: timeout))
         token.click()
+        // The word first shows its pinyin and meaning in place; its page
+        // opens only from the bubble.
+        let showDetail = app.buttons["word.popover.detail"]
+        XCTAssertTrue(showDetail.waitForExistence(timeout: timeout), "Cliquer un mot doit afficher sa bulle")
+        XCTAssertFalse(text(containing: "Fiche mot").exists, "Cliquer un mot ne doit pas ouvrir sa fiche")
+        showDetail.click()
         let detail = text(containing: "Fiche mot")
         XCTAssertTrue(detail.waitForExistence(timeout: timeout))
         pressCommand("5")

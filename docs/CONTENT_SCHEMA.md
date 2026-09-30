@@ -408,8 +408,9 @@ comme vide ; les documents générés l'écrivent toujours. Chaque segment est
   un nom propre est `noun`.
 
 Un ID peut donc désigner un mot d'une autre leçon : `ChineseSelectableText`
-ouvre la fiche par son ID et `WordDetailView` cherche l'entrée dans toutes les
-leçons du cours (`AppModel.dictionaryEntries()`), chargées ou non.
+affiche la bulle du mot et ouvre sa fiche par son ID ; tous deux cherchent
+l'entrée dans toutes les leçons du cours (`AppModel.dictionaryEntries()`),
+chargées ou non.
 `content_tool.py generate` écrit la segmentation avec `Tools/pinyin_format.py`,
 juste après le pinyin ; `lint` refuse une segmentation absente ou vide, qui
 n'épelle pas son texte, ne lit pas son pinyin mot à mot, désigne un ID

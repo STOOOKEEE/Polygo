@@ -76,8 +76,7 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
         // The dialogue comes right before the fill-in built on its lines.
         let dialogue = app.staticTexts.matching(identifier: "lesson.step.teaching.block-l2-dialogue").firstMatch
         XCTAssertTrue(dialogue.waitForExistence(timeout: timeout), "Le dialogue L2 doit précéder l’exercice à trou")
-        // Clicking a line, on its characters, reveals its pinyin and
-        // translation in place and never opens a word page.
+        // The line's reveal control shows its pinyin and translation in place.
         let firstLine = app.descendants(matching: .any).matching(identifier: "dialogue.line.0").firstMatch
         XCTAssertTrue(scrollIntoView(firstLine), "La première réplique doit être visible")
         firstLine.click()
@@ -85,7 +84,23 @@ final class MacFillBlankInputJourneyTests: XCTestCase {
             waitForValue(firstLine, "Pinyin et traduction affichés"),
             "Cliquer une réplique doit afficher son pinyin et sa traduction"
         )
-        XCTAssertFalse(text(containing: "Fiche mot").exists, "Cliquer une réplique ne doit pas ouvrir de fiche mot")
+        // A word of the line shows its own pinyin and meaning in a bubble,
+        // without opening its page or hiding the line again.
+        let word = button(exactly: "名字")
+        XCTAssertTrue(scrollIntoView(word), "Le mot 名字 de la réplique doit être visible")
+        word.click()
+        let wordDetail = app.buttons["word.popover.detail"]
+        XCTAssertTrue(wordDetail.waitForExistence(timeout: timeout), "Cliquer un mot d’une réplique doit afficher sa bulle")
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "label == %@", "Pinyin : míngzi")).firstMatch.exists,
+            "La bulle doit afficher le pinyin du mot"
+        )
+        XCTAssertFalse(text(containing: "Fiche mot").exists, "Cliquer un mot ne doit pas ouvrir de fiche mot")
+        XCTAssertEqual(firstLine.value as? String, "Pinyin et traduction affichés", "Cliquer un mot ne doit pas masquer la réplique")
+        attachScreenshot(named: "mac-lesson-dialogue-word")
+        app.typeKey(XCUIKeyboardKey.escape, modifierFlags: [])
+        let closed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: wordDetail)
+        XCTAssertEqual(XCTWaiter.wait(for: [closed], timeout: timeout), .completed, "Échap doit fermer la bulle du mot")
         attachScreenshot(named: "mac-lesson-dialogue")
         continueThroughTeaching()
 

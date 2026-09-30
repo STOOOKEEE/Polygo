@@ -533,6 +533,8 @@ public struct ChineseSelectableText: View {
 
     @State private var isSpeaking = false
     @State private var statusMessage: String?
+    /// Token whose pinyin and meaning are shown in a popover over it.
+    @State private var presentedTokenID: Int?
     @State private var selectedVocabularyID: VocabularyID?
     @State private var commandRegistrationID: UUID?
 
@@ -683,7 +685,7 @@ public struct ChineseSelectableText: View {
         if let vocabularyID = token.vocabularyID, wordInteractionEnabled {
             Button {
                 if speechEnabled { speakToken(token.surface) }
-                openWord(vocabularyID)
+                presentedTokenID = token.id
             } label: {
                 Text(token.surface)
                     .font(font)
@@ -694,8 +696,28 @@ public struct ChineseSelectableText: View {
             .buttonStyle(.plain)
             .accessibilityLabel(token.surface)
             .accessibilityHint(speechEnabled
-                ? "Écoute ce mot en mandarin et ouvre sa fiche."
-                : "Ouvre la fiche de ce mot.")
+                ? "Écoute ce mot en mandarin et affiche son pinyin et sa traduction."
+                : "Affiche le pinyin et la traduction de ce mot.")
+            .popover(
+                isPresented: Binding(
+                    get: { presentedTokenID == token.id },
+                    set: { if !$0 { presentedTokenID = nil } }
+                ),
+                arrowEdge: .bottom
+            ) {
+                ChineseWordPopover(
+                    vocabularyID: vocabularyID,
+                    surface: token.surface,
+                    segmentPinyin: token.pinyin,
+                    entry: availableVocabulary.first { $0.id == vocabularyID }
+                ) {
+                    presentedTokenID = nil
+                    openWord(vocabularyID)
+                }
+                .environmentObject(model)
+                // Stays a bubble anchored to the word on iPhone too.
+                .presentationCompactAdaptation(.popover)
+            }
         } else if speechEnabled && PolygoCore.MandarinSpeechText.containsHanzi(token.surface) {
             Button {
                 speakToken(token.surface)
@@ -732,12 +754,14 @@ public struct ChineseSelectableText: View {
         (speechEnabled || wordInteractionEnabled) && containsChinese
     }
 
-    /// A word's card opens by its ID: `WordDetailView` finds the entry in
-    /// every lesson of the course, loaded or not.
+    /// A word's popover and card find it by its ID: `WordDetailView` finds
+    /// the entry in every lesson of the course, loaded or not.
     private struct ChineseToken: Identifiable {
         let id: Int
         let surface: String
         let vocabularyID: VocabularyID?
+        /// The segment's own pinyin, grouped for this word in context.
+        var pinyin: String? = nil
     }
 
     private var availableVocabulary: [VocabularyEntry] {
@@ -754,13 +778,13 @@ public struct ChineseSelectableText: View {
             // Latin text between words (names, French punctuation) wraps
             // word by word instead of forming one token wider than the row.
             return segmentation
-                .flatMap { segment -> [(surface: String, vocabularyID: VocabularyID?)] in
-                    guard segment.vocabularyID == nil else { return [(segment.surface, segment.vocabularyID)] }
-                    return Self.words(in: segment.surface).map { ($0, nil) }
+                .flatMap { segment -> [(surface: String, vocabularyID: VocabularyID?, pinyin: String?)] in
+                    guard segment.vocabularyID == nil else { return [(segment.surface, segment.vocabularyID, segment.pinyin)] }
+                    return Self.words(in: segment.surface).map { ($0, nil, nil) }
                 }
                 .enumerated()
                 .map { offset, token in
-                    ChineseToken(id: offset, surface: token.surface, vocabularyID: token.vocabularyID)
+                    ChineseToken(id: offset, surface: token.surface, vocabularyID: token.vocabularyID, pinyin: token.pinyin)
                 }
         }
 
@@ -922,5 +946,128 @@ public struct ChineseSelectableText: View {
 
     private func speakSlowly() {
         say(rate: .slow)
+    }
+}
+
+/// A tapped word's Hanzi, pinyin and meaning, shown in a bubble over the
+/// text. Its full card opens only from « Voir la fiche ».
+private struct ChineseWordPopover: View {
+    @EnvironmentObject private var model: AppModel
+    let vocabularyID: VocabularyID
+    let surface: String
+    let segmentPinyin: String?
+    let openDetail: () -> Void
+    @State private var entry: VocabularyEntry?
+    @State private var isPlaying = false
+    @State private var audioMessage: String?
+
+    init(
+        vocabularyID: VocabularyID,
+        surface: String,
+        segmentPinyin: String?,
+        entry: VocabularyEntry?,
+        openDetail: @escaping () -> Void
+    ) {
+        self.vocabularyID = vocabularyID
+        self.surface = surface
+        self.segmentPinyin = segmentPinyin
+        self.openDetail = openDetail
+        _entry = State(initialValue: entry)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 12) {
+                Text(surface)
+                    .font(.largeTitle.weight(.semibold))
+                    .foregroundStyle(SylluneColor.ink)
+                Spacer(minLength: 0)
+                Button(action: play) {
+                    Image(systemName: isPlaying ? "stop.fill" : "play.fill")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(SylluneColor.sky)
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.borderless)
+                .accessibilityLabel(isPlaying ? "Arrêter la lecture" : "Écouter ce mot")
+                .accessibilityIdentifier("word.popover.play")
+            }
+            if let pinyin {
+                Text(pinyin)
+                    .font(.title3)
+                    .foregroundStyle(SylluneColor.jadeDeep)
+                    .accessibilityLabel("Pinyin : \(pinyin)")
+            }
+            if let meaning {
+                Text(meaning)
+                    .font(.body)
+                    .foregroundStyle(SylluneColor.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Traduction : \(meaning)")
+            } else if entry == nil {
+                ProgressView()
+                    .accessibilityLabel("Chargement du mot")
+            }
+            if let audioMessage {
+                Text(audioMessage)
+                    .font(.caption)
+                    .foregroundStyle(SylluneColor.inkMuted)
+            }
+            Button("Voir la fiche", action: openDetail)
+                .buttonStyle(.bordered)
+                .tint(SylluneColor.skyButton)
+                .frame(minHeight: 44)
+                .accessibilityHint("Ouvre la fiche complète de ce mot.")
+                .accessibilityIdentifier("word.popover.detail")
+        }
+        .padding(16)
+        .frame(width: 280, alignment: .leading)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("word.popover")
+        .task {
+            guard entry == nil else { return }
+            entry = await model.dictionaryEntries().first { $0.id == vocabularyID }
+        }
+        .onDisappear {
+            if isPlaying {
+                model.dependencies.audio.stopSpeaking()
+                model.dependencies.audio.stopPlayback()
+            }
+        }
+    }
+
+    private var pinyin: String? {
+        let value = segmentPinyin ?? entry?.pinyin
+        return value?.isEmpty == false ? value : nil
+    }
+
+    private var meaning: String? {
+        guard let value = entry?.meaning.resolve(preferred: model.preferredLanguageCodes), !value.isEmpty else { return nil }
+        return value
+    }
+
+    private func play() {
+        let audio = model.dependencies.audio
+        audio.stopSpeaking()
+        audio.stopPlayback()
+        if isPlaying {
+            isPlaying = false
+            return
+        }
+        let target = PolygoCore.MandarinSpeechText.target(from: surface)
+        guard !target.isEmpty else { return }
+        isPlaying = true
+        audioMessage = nil
+        Task { @MainActor in
+            do {
+                // The word's clip when bundled, otherwise the local voice.
+                try await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal, asset: entry?.audio)
+            } catch is CancellationError {
+            } catch {
+                audioMessage = "Audio indisponible hors ligne."
+            }
+            isPlaying = false
+        }
     }
 }

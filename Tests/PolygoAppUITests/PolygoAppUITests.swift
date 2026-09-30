@@ -53,7 +53,22 @@ final class PolygoAppUITests: XCTestCase {
             app.staticTexts["lesson.step.teaching.block-l1-vocabulary.1"].waitForExistence(timeout: timeout),
             "Les nouveaux mots doivent suivre la situation"
         )
-        XCTAssertTrue(button(exactly: "你好").waitForExistence(timeout: timeout), "Le mot 你好 doit être touchable dans sa carte")
+        let greeting = button(exactly: "你好")
+        XCTAssertTrue(greeting.waitForExistence(timeout: timeout), "Le mot 你好 doit être touchable dans sa carte")
+        // On iPhone too, a word shows its pinyin and meaning in a bubble
+        // anchored to it instead of opening its page.
+        tapWhenVisible(greeting)
+        let wordDetail = app.buttons["word.popover.detail"]
+        XCTAssertTrue(wordDetail.waitForExistence(timeout: timeout), "Toucher un mot doit afficher sa bulle")
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "label == %@", "Pinyin : nǐ hǎo")).firstMatch.exists,
+            "La bulle doit afficher le pinyin du mot"
+        )
+        XCTAssertFalse(element(containing: "Fiche mot", type: .any).exists, "Toucher un mot ne doit pas ouvrir sa fiche")
+        attachScreenshot(named: "ios-lesson-word-bubble")
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.97)).tap()
+        let closed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: wordDetail)
+        XCTAssertEqual(XCTWaiter.wait(for: [closed], timeout: timeout), .completed, "Toucher ailleurs doit fermer la bulle")
         continueToExercise("ex-l1-tone")
         XCTAssertTrue(app.staticTexts["lesson.exercise.ex-l1-tone"].exists, "Le premier exercice doit suivre les mots")
 
