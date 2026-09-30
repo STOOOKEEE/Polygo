@@ -618,7 +618,10 @@ public struct LessonView: View {
                 // A speaking answer without an evaluable pronunciation
                 // assessment is recorded as skipped and leaves in one tap:
                 // there is no feedback to read.
-                if skips { advance() } else { self.evaluation = result }
+                if skips { advance() } else {
+                    self.evaluation = result
+                    AnswerSounds.play(for: result, audio: model.dependencies.audio)
+                }
             }
             self.isEvaluating = false
         }
@@ -658,6 +661,7 @@ public struct LessonView: View {
             guard self.answer == candidate, self.evaluation == nil else { return }
             self.evaluation = result
             self.answered[spec.id] = result
+            AnswerSounds.play(for: result, audio: model.dependencies.audio)
         }
     }
 
@@ -1444,6 +1448,7 @@ private struct DialogueBlockView: View {
         return Button {
             writtenResponse = line.hanzi
             responseResult = isCorrect
+            AnswerSounds.play(isCorrect ? .correct : .incorrect, audio: model.dependencies.audio)
         } label: {
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {

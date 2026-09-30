@@ -564,6 +564,18 @@ public extension ExerciseEvaluation {
     /// handwriting answer carries no score; its acceptance is a deliberate
     /// learner decision and counts.
     var countsAsCorrect: Bool { accepted && (outcome == .selfReported || score >= 0.8) }
+
+    /// The sound that answers a check: none for a skipped or incomplete
+    /// answer, nor for a self-reported one the learner judged themselves.
+    var feedbackSound: AnswerFeedbackSound? {
+        guard isScored, outcome != .selfReported else { return nil }
+        return accepted ? .correct : .incorrect
+    }
+}
+
+/// Short interface sound played when an answer is checked.
+public enum AnswerFeedbackSound: Hashable, Sendable {
+    case correct, incorrect
 }
 
 public protocol ExerciseEngine: Sendable {

@@ -174,7 +174,7 @@ Les séances quotidiennes ajoutent six familles, rendues par `App/ExerciseKindVi
 - `dialogueOrder` : répliques (locuteur, caractères, pinyin) touchées dans l’ordre de la conversation, pastille de position, toucher pour retirer (`lesson.exercise.<id>.line.<id>`) ;
 - `conversationChoice` : réplique de l’interlocuteur avec son bouton audio (`.prompt.play`), puis trois réponses écoutables une à une avant d’être choisies (`.reply.<id>` et `.reply.<id>.play`).
 
-Après une erreur, afficher la réponse et une explication courte (« 你 est le pronom tu ; le ton 3 descend puis remonte »), puis `Réessayer` ou `Continuer`. Une réponse correcte est confirmée par texte, icône et couleur. Un exercice sans audio local affiche une erreur de chargement avec `Réessayer` et `Continuer sans audio` seulement si le texte suffit réellement à le faire.
+Après une erreur, afficher la réponse et une explication courte (« 你 est le pronom tu ; le ton 3 descend puis remonte »), puis `Réessayer` ou `Continuer`. Une réponse correcte est confirmée par texte, icône et couleur. Au moment de la vérification, un court son original accompagne le verdict (carillon montant si juste, deux notes graves et douces si faux) ; il se désactive dans Réglages › « Sons de réponse » (voir docs/AUDIO.md). Un exercice sans audio local affiche une erreur de chargement avec `Réessayer` et `Continuer sans audio` seulement si le texte suffit réellement à le faire.
 
 ### Fiche mot
 

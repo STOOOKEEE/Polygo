@@ -172,6 +172,27 @@ synthétise uniquement les clips absents (graine fixe par phrase), supprime les
 clips inutilisés, rattache et lance le lint. Le lint refuse une référence
 périmée ou manquante et un clip qu’aucune leçon n’utilise.
 
+## Sons de réponse
+
+`Sounds/answer-correct.m4a` (carillon montant do6 → sol6, 0,34 s) et
+`Sounds/answer-incorrect.m4a` (deux notes graves mi4 → do4, 0,36 s) sont des
+sons originaux synthétisés pour Syllune avec ffmpeg (`aevalsrc` : sinus et
+harmonique avec décroissance exponentielle), crête vers −3 dBFS, AAC mono
+64 kbit/s, environ 4 Ko chacun. Ils relèvent de la licence du projet. Le
+dossier est une ressource des deux apps (`project.yml`).
+
+`AnswerSounds` (App) joue le son quand une réponse est vérifiée : « Vérifier »
+d’une leçon, participation au dialogue, pratique orale et écriture.
+`ExerciseEvaluation.feedbackSound` (PolygoCore) choisit le son : aucun pour une
+réponse passée, incomplète ou auto-évaluée. Le réglage « Sons de réponse »
+(`syllune.answerSounds`, activé par défaut) les coupe.
+
+La lecture passe par `AudioService.playEffect(at:)`, sur un lecteur distinct
+du clip mandarin : un clip ou une voix en cours n’est jamais arrêté, le son
+s’y mélange. Sinon, sur iOS, la session passe en `.ambient` : le son se mêle
+à la musique d’une autre app et respecte le mode silencieux. Rien n’est joué
+pendant un enregistrement.
+
 ## Évaluation de prononciation
 
 La vue accepte un `SpeechPronunciationService` séparé de `AudioService`. Son

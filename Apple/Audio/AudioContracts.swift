@@ -249,6 +249,10 @@ public protocol AudioService: Sendable {
     func stopPlayback()
     func playbackStates() -> AsyncStream<AudioPlaybackState>
 
+    /// Plays a short interface sound (answer feedback) over whatever the
+    /// service is playing, without stopping it; skipped while recording.
+    func playEffect(at url: URL)
+
     /// Starts a temporary capture and returns when the user stops it or the
     /// request reaches its maximum duration. Call `stopRecording()` from the
     /// stop button; cancelling the surrounding task also stops the recorder.
@@ -287,6 +291,8 @@ public extension AudioService {
     }
 
     func delete(recording: Recording) async throws {}
+
+    func playEffect(at url: URL) {}
 
     func speak(
         text: String,

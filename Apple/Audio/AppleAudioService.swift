@@ -55,6 +55,8 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
     private var queuedClipIDs: Set<UUID> = []
     private var cancelledClipIDs: Set<UUID> = []
     private var narrationID: UUID?
+    // Answer sounds play on their own player so they never replace a clip.
+    private var effectPlayer: AVAudioPlayer?
 
     // AVAudioRecorder state is main-queue confined. The admission sets are
     // protected separately because cancellation may arrive while the request
@@ -635,6 +637,25 @@ public final class AppleAudioService: NSObject, AudioService, AVAudioPlayerDeleg
                 self?.streamContinuations.removeValue(forKey: streamID)
                 self?.streamLock.unlock()
             }
+        }
+    }
+
+    public func playEffect(at url: URL) {
+        performOnMain { [weak self] in
+            guard let self, self.recorder == nil else { return }
+            #if os(iOS)
+            // A playing Mandarin clip or voice keeps its playback session and
+            // the effect mixes into it. Otherwise an ambient session mixes
+            // with other apps and follows the silent switch.
+            if self.player?.isPlaying != true, !self.synthesizer.isSpeaking {
+                let session = AVAudioSession.sharedInstance()
+                guard (try? session.setCategory(.ambient)) != nil,
+                      (try? session.setActive(true)) != nil else { return }
+            }
+            #endif
+            guard let effect = try? AVAudioPlayer(contentsOf: url) else { return }
+            self.effectPlayer = effect
+            effect.play()
         }
     }
 

@@ -75,6 +75,7 @@ public struct OralView: View {
                 lessonID: lessonID,
                 blockID: blockID
             )
+            if let evaluation { AnswerSounds.play(for: evaluation, audio: model.dependencies.audio) }
         }
     }
 
@@ -149,7 +150,10 @@ public struct WritingView: View {
     private func submit() {
         if evaluation != nil { return }
         guard let exercise, let answer, let lessonID, let blockID else { return }
-        Task { evaluation = await model.evaluate(.handwriting(exercise), answer: answer, lessonID: lessonID, blockID: blockID) }
+        Task {
+            evaluation = await model.evaluate(.handwriting(exercise), answer: answer, lessonID: lessonID, blockID: blockID)
+            if let evaluation { AnswerSounds.play(for: evaluation, audio: model.dependencies.audio) }
+        }
     }
 }
 

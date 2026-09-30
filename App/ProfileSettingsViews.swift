@@ -131,6 +131,7 @@ public struct SettingsView: View {
     @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @AppStorage("syllune.appearance") private var storedAppearance = AppearanceMode.system.rawValue
     @AppStorage("syllune.reduceMotion") private var storedReduceMotion = false
+    @AppStorage(AnswerSounds.storageKey) private var answerSounds = true
 
     public init() {}
     public var body: some View {
@@ -158,6 +159,7 @@ public struct SettingsView: View {
             }
             Section("Audio et oral") {
                 Picker("Vitesse", selection: $speed) { Text("0,75×").tag(0.75); Text("1×").tag(1.0) }.onChange(of: speed) { _, _ in savePreferences() }
+                Toggle("Sons de réponse", isOn: $answerSounds)
                 Label("Le microphone sera demandé au premier exercice oral.", systemImage: "mic").font(.callout)
                 Text("Les enregistrements restent locaux.").font(.caption).foregroundStyle(SylluneColor.inkMuted)
             }

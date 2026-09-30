@@ -142,6 +142,25 @@ final class ExerciseAndProgressTests: XCTestCase {
         }
     }
 
+    func testFeedbackSoundFollowsAcceptanceOnlyForJudgedAnswers() throws {
+        func sound(_ outcome: EvaluationOutcome, accepted: Bool) throws -> AnswerFeedbackSound? {
+            try ExerciseEvaluation(
+                exerciseID: exerciseID("sound"),
+                outcome: outcome,
+                score: accepted ? 1 : 0,
+                feedback: .unchecked(["fr": "retour"]),
+                accepted: accepted
+            ).feedbackSound
+        }
+        XCTAssertEqual(try sound(.correct, accepted: true), .correct)
+        XCTAssertEqual(try sound(.incorrect, accepted: false), .incorrect)
+        XCTAssertEqual(try sound(.partial, accepted: true), .correct)
+        XCTAssertEqual(try sound(.partial, accepted: false), .incorrect)
+        XCTAssertNil(try sound(.selfReported, accepted: true))
+        XCTAssertNil(try sound(.skipped, accepted: false))
+        XCTAssertNil(try sound(.unavailable, accepted: false))
+    }
+
     func testSpeakingComparesTextOnlyAndExposesSelfRatingWhenTranscriptDiffers() {
         let spec = ExerciseSpec.speaking(
             SpeakingExercise(
