@@ -98,6 +98,11 @@ public enum SpeechAudioConverter {
             guard let channel = buffer.floatChannelData?[0] else { return }
             samples.append(contentsOf: UnsafeBufferPointer(start: channel, count: Int(buffer.frameLength)))
         }
+        // A recording whose file exists but decodes to nothing is empty,
+        // not a conversion failure.
+        guard !samples.isEmpty else {
+            throw SpeechAudioConversionError.invalidInputFormat
+        }
         return samples
     }
 
@@ -160,10 +165,22 @@ public enum SpeechAudioConverter {
                     inputStatus.pointee = .endOfStream
                     return nil
                 }
+                // AVAudioFile.length is only an estimate for compressed
+                // recordings (AAC): stop at the announced end, and treat
+                // eofErr (-39) from a read past the real end as end of stream.
+                let remaining = source.length - source.framePosition
+                guard remaining > 0 else {
+                    sourceFinished = true
+                    inputStatus.pointee = .endOfStream
+                    return nil
+                }
+                let frameCount = AVAudioFrameCount(min(Int64(inputFrameCapacity), remaining))
                 do {
-                    try source.read(into: inputBuffer)
+                    try source.read(into: inputBuffer, frameCount: frameCount)
                 } catch {
-                    readError = error
+                    if (error as NSError).code != endOfFileErrorCode {
+                        readError = error
+                    }
                     sourceFinished = true
                     inputStatus.pointee = .endOfStream
                     return nil
@@ -192,4 +209,8 @@ public enum SpeechAudioConverter {
             }
         }
     }
+
+    /// eofErr / kAudioFileEndOfFileError, reported by AVAudioFile when a
+    /// compressed file ends before its estimated length.
+    private static let endOfFileErrorCode = -39
 }
