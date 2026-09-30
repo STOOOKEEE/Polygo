@@ -625,11 +625,10 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
     }
 
     private func firstExercisePrompt() -> XCUIElement {
-        // ChineseSelectableText exposes the authored prompt and its Chinese
-        // token as separate accessibility elements. Match the stable authored
-        // prefix so the assertion follows the visible exercise through
-        // restart/background/relaunch without depending on token grouping.
-        text(containing: "Quel ton porte")
+        // ChineseSelectableText splits the authored prompt into word and
+        // Chinese tokens. Match the exercise's stable identifier so the
+        // assertion follows it through restart/background/relaunch.
+        app.staticTexts.matching(identifier: "lesson.exercise.ex-l1-tone").firstMatch
     }
 
     private func text(containingAny values: [String]) -> XCUIElement {
