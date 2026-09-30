@@ -1610,6 +1610,17 @@ public struct WordDetailView: View {
         }
         .background(SylluneColor.canvas)
         .navigationTitle("Fiche mot")
+        #if os(macOS)
+        // macOS shows no back control over a lesson or a sheet: the fiche
+        // offers its own way back, also bound to Esc.
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Fermer") { dismiss() }
+                    .keyboardShortcut(.cancelAction)
+                    .accessibilityIdentifier("word.close")
+            }
+        }
+        #endif
         .onReceive(NotificationCenter.default.publisher(for: .sylluneEscape)) { _ in dismiss() }
         .task {
             let loadedEntry = await model.dictionaryEntries().first(where: { $0.id == vocabularyID })

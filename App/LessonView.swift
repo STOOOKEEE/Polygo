@@ -1109,7 +1109,6 @@ private struct LessonPhaseProgressBar: View {
 
 private struct DialogueBlockView: View {
     let value: DialogueBlock
-    let vocabulary: [VocabularyEntry]
     let languageCodes: [String]
     /// Hanzi of the learner's last participation choice, persisted with the
     /// lesson checkpoint.
@@ -1289,57 +1288,41 @@ private struct DialogueBlockView: View {
                     let isRevealed = revealedLines.contains(index)
                     let translation = line.translation.resolve(preferred: languageCodes) ?? ""
                     HStack(alignment: .top, spacing: 6) {
-                        // Words open their fiche; tapping elsewhere on the
-                        // line, or its reveal control, shows pinyin and
-                        // translation.
-                        VStack(alignment: alignment, spacing: 4) {
-                            ChineseSelectableText(
-                                hanzi: line.hanzi,
-                                font: .title3.weight(.semibold),
-                                speechEnabled: false,
-                                vocabulary: vocabulary,
-                                segmentation: line.segmentation,
-                                wordInteractionEnabled: true
-                            )
-                            .foregroundStyle(SylluneColor.ink)
-                            if isRevealed && !line.pinyin.isEmpty {
-                                Text(line.pinyin)
-                                    .font(.caption)
-                                    .foregroundStyle(SylluneColor.jadeDeep)
+                        // The whole line reveals its pinyin and translation;
+                        // words stay plain text so no tap opens a fiche.
+                        Button {
+                            toggleReveal(index)
+                        } label: {
+                            VStack(alignment: alignment, spacing: 4) {
+                                Text(line.hanzi)
+                                    .font(.title3.weight(.semibold))
+                                    .foregroundStyle(SylluneColor.ink)
+                                if isRevealed && !line.pinyin.isEmpty {
+                                    Text(line.pinyin)
+                                        .font(.caption)
+                                        .foregroundStyle(SylluneColor.jadeDeep)
+                                }
+                                if isRevealed && !translation.isEmpty {
+                                    Text(translation)
+                                        .font(.callout)
+                                        .foregroundStyle(SylluneColor.inkMuted)
+                                }
                             }
-                            if isRevealed && !translation.isEmpty {
-                                Text(translation)
-                                    .font(.callout)
-                                    .foregroundStyle(SylluneColor.inkMuted)
-                            }
+                            .multilineTextAlignment(textAlignment)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .contentShape(Rectangle())
                         }
-                        .multilineTextAlignment(textAlignment)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .contentShape(Rectangle())
-                        .onTapGesture { toggleReveal(index) }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("dialogue.line.\(index)")
+                        .accessibilityLabel(
+                            isRevealed
+                                ? [line.hanzi, "Pinyin : \(line.pinyin)", "Traduction : \(translation)"].joined(separator: ". ")
+                                : line.hanzi
+                        )
+                        .accessibilityHint("Affiche le pinyin et la traduction")
+                        .accessibilityValue(isRevealed ? "Pinyin et traduction affichés" : "Pinyin et traduction masqués")
 
-                        HStack(spacing: 0) {
-                            Button {
-                                toggleReveal(index)
-                            } label: {
-                                Image(systemName: isRevealed ? "eye.slash" : "eye")
-                                    .font(.callout.weight(.semibold))
-                                    .foregroundStyle(SylluneColor.inkMuted)
-                                    .frame(width: 32, height: 32)
-                                    .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.borderless)
-                            .accessibilityIdentifier("dialogue.line.\(index)")
-                            .accessibilityLabel(
-                                isRevealed
-                                    ? [line.hanzi, "Pinyin : \(line.pinyin)", "Traduction : \(translation)"].joined(separator: ". ")
-                                    : line.hanzi
-                            )
-                            .accessibilityHint("Affiche le pinyin et la traduction")
-                            .accessibilityValue(isRevealed ? "Pinyin et traduction affichés" : "Pinyin et traduction masqués")
-
-                            lineAudioButton(line, index: index)
-                        }
+                        lineAudioButton(line, index: index)
                     }
                 }
             }
@@ -1352,6 +1335,10 @@ private struct DialogueBlockView: View {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(isCurrent ? accent : Color.clear, lineWidth: 2)
             )
+            // The speaker name and padding reveal the line too; its buttons
+            // keep their own taps.
+            .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .onTapGesture { if !isMasked { toggleReveal(index) } }
             if isLeading { Spacer(minLength: 40) }
         }
     }
@@ -1773,7 +1760,6 @@ private struct PedagogicalBlockView: View {
         case .dialogue(let value):
             DialogueBlockView(
                 value: value,
-                vocabulary: vocabulary,
                 languageCodes: languageCodes,
                 writtenResponse: dialogueDraft ?? .constant(""),
                 responseResult: dialogueResult ?? .constant(nil)
