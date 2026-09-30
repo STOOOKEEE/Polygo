@@ -518,6 +518,11 @@ final class ZZLessonRegressionJourneyTests: XCTestCase {
 
     private func leaveLessonBeforeSelectingTab() {
         let close = button(identifier: "lesson.close")
+        // A lesson opened from onboarding may still be appearing: neither its
+        // close button nor the tab bar exists yet.
+        if !close.exists && !app.buttons["BottomTab.today"].exists {
+            _ = close.waitForExistence(timeout: 5)
+        }
         guard close.exists else { return }
         close.tap()
     }
