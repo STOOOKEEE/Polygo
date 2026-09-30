@@ -52,7 +52,9 @@ jours de rappel utilisent des cibles d’au moins 44 points et une grille
 adaptative.
 
 `SylluneFlowLayout` mesure les tokens et les place sur plusieurs lignes quand
-la largeur diminue. La barre de navigation basse utilise cinq boutons
+la largeur diminue ; un token plus large que la ligne reçoit cette largeur et
+son texte passe à la ligne. Le texte français mêlé au chinois est découpé en
+mots. La barre de navigation basse utilise cinq boutons
 indépendants avec leur état sélectionné ; elle devient défilante si ses
 libellés ne tiennent plus. Les poses de Tavi et les illustrations de pièces
 sont décoratives et masquées à l’accessibilité ; le solde reste annoncé

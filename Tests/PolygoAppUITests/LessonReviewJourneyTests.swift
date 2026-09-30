@@ -633,6 +633,20 @@ final class LessonReviewJourneyTests: XCTestCase {
                         throw FixtureError.missing("handwriting canvas for \(exercise.header.id)")
                     }
 
+                    if exercise.header.id == "ex-l1-reading-last-word" {
+                        // The prompt mixes French and Hanzi: it must wrap
+                        // word by word instead of running off the screen.
+                        let window = app.windows.firstMatch.frame
+                        let tokens = [
+                            NSPredicate(format: "label BEGINSWITH %@", "échange »"),
+                            NSPredicate(format: "label == %@", "再见")
+                        ]
+                        for predicate in tokens {
+                            let token = app.descendants(matching: .any).matching(predicate).firstMatch
+                            XCTAssertTrue(token.exists, "Le prompt doit afficher \(predicate)")
+                            XCTAssertLessThanOrEqual(token.frame.maxX, window.maxX + 0.5, "\(predicate) doit rester dans la largeur de l’écran")
+                        }
+                    }
                     try answer(exercise)
                     evaluateAndAdvance(isLast: false)
                     moved = true

@@ -354,7 +354,8 @@ public extension View {
 /// A portable wrapping layout for Chinese tokens. `HStack` keeps every token
 /// on one line, which cuts phrases off at large Dynamic Type sizes. This
 /// layout measures each child and starts a new row when the available width is
-/// exhausted on iPhone, iPad, or a narrow Mac window.
+/// exhausted on iPhone, iPad, or a narrow Mac window. A child wider than the
+/// available width is proposed that width, so its text wraps inside it.
 public struct SylluneFlowLayout: Layout {
     public var horizontalSpacing: CGFloat
     public var verticalSpacing: CGFloat
@@ -383,47 +384,47 @@ public struct SylluneFlowLayout: Layout {
     ) {
         let rows = makeRows(subviews: subviews, maximumWidth: bounds.width)
         var y = bounds.minY
-        var index = 0
 
         for row in rows {
             var x = bounds.minX
-            for _ in row.indices {
-                let subview = subviews[index]
-                let size = subview.sizeThatFits(.unspecified)
-                subview.place(
+            for (index, size) in zip(row.indices, row.sizes) {
+                subviews[index].place(
                     at: CGPoint(x: x + size.width / 2, y: y + row.height / 2),
                     anchor: .center,
                     proposal: ProposedViewSize(size)
                 )
                 x += size.width + horizontalSpacing
-                index += 1
             }
             y += row.height + verticalSpacing
         }
     }
 
     private struct Row {
-        var indices: [Int]
-        var width: CGFloat
-        var height: CGFloat
+        var indices: [Int] = []
+        var sizes: [CGSize] = []
+        var width: CGFloat = 0
+        var height: CGFloat = 0
     }
 
     private func makeRows(subviews: Subviews, maximumWidth: CGFloat) -> [Row] {
         guard !subviews.isEmpty else { return [] }
         let width = max(0, maximumWidth)
         var rows: [Row] = []
-        var row = Row(indices: [], width: 0, height: 0)
+        var row = Row()
 
         for index in subviews.indices {
-            let size = subviews[index].sizeThatFits(.unspecified)
-            let spacing = row.indices.isEmpty ? 0 : horizontalSpacing
-            if !row.indices.isEmpty && row.width + spacing + size.width > width {
-                rows.append(row)
-                row = Row(indices: [], width: 0, height: 0)
+            var size = subviews[index].sizeThatFits(.unspecified)
+            if size.width > width {
+                size = subviews[index].sizeThatFits(ProposedViewSize(width: width, height: nil))
+                size.width = min(size.width, width)
             }
-            let nextSpacing = row.indices.isEmpty ? 0 : horizontalSpacing
+            if !row.indices.isEmpty && row.width + horizontalSpacing + size.width > width {
+                rows.append(row)
+                row = Row()
+            }
+            row.width += (row.indices.isEmpty ? 0 : horizontalSpacing) + size.width
             row.indices.append(index)
-            row.width += nextSpacing + size.width
+            row.sizes.append(size)
             row.height = max(row.height, size.height)
         }
         if !row.indices.isEmpty { rows.append(row) }
@@ -750,9 +751,17 @@ public struct ChineseSelectableText: View {
 
     private var tokens: [ChineseToken] {
         if !segmentation.isEmpty {
-            return segmentation.enumerated().map { offset, segment in
-                ChineseToken(id: offset, surface: segment.surface, vocabularyID: segment.vocabularyID)
-            }
+            // Latin text between words (names, French punctuation) wraps
+            // word by word instead of forming one token wider than the row.
+            return segmentation
+                .flatMap { segment -> [(surface: String, vocabularyID: VocabularyID?)] in
+                    guard segment.vocabularyID == nil else { return [(segment.surface, segment.vocabularyID)] }
+                    return Self.words(in: segment.surface).map { ($0, nil) }
+                }
+                .enumerated()
+                .map { offset, token in
+                    ChineseToken(id: offset, surface: token.surface, vocabularyID: token.vocabularyID)
+                }
         }
 
         let dictionary: [(surface: String, entry: VocabularyEntry)] = availableVocabulary
@@ -781,8 +790,8 @@ public struct ChineseSelectableText: View {
                     cursor = next
                 } else {
                     // Keep French instructions and punctuation in readable
-                    // runs while preserving one tappable token per unknown
-                    // Hanzi character.
+                    // words, wrapping between them, while preserving one
+                    // tappable token per unknown Hanzi character.
                     var end = next
                     while end < text.endIndex {
                         let following = text.index(after: end)
@@ -790,12 +799,53 @@ public struct ChineseSelectableText: View {
                         if PolygoCore.MandarinSpeechText.containsHanzi(value) { break }
                         end = following
                     }
-                    result.append(ChineseToken(id: result.count, surface: String(text[cursor..<end]), vocabularyID: nil))
+                    for word in Self.words(in: text[cursor..<end]) {
+                        result.append(ChineseToken(id: result.count, surface: word, vocabularyID: nil))
+                    }
                     cursor = end
                 }
             }
         }
         return result
+    }
+
+    /// Splits text into wrapping units. Each word keeps its following spaces,
+    /// so only a space opening the text can start a unit; non-breaking spaces
+    /// do not split. Closing punctuation (`»`, `?`, `!`) stays with what
+    /// precedes it and opening punctuation (`«`) with the next word.
+    private static func words<S: StringProtocol>(in text: S) -> [String] {
+        func breaks(_ character: Character) -> Bool {
+            character.isWhitespace && !["\u{00A0}", "\u{202F}", "\u{2007}"].contains(character)
+        }
+
+        var pieces: [String] = []
+        var current = ""
+        for character in text {
+            if let last = current.last, breaks(last), !breaks(character) {
+                pieces.append(current)
+                current = ""
+            }
+            current.append(character)
+        }
+        if !current.isEmpty { pieces.append(current) }
+
+        var words: [String] = []
+        var opening = ""
+        for piece in pieces {
+            let core = piece.filter { !breaks($0) }
+            let isPunctuation = !core.isEmpty && core.allSatisfy { !$0.isLetter && !$0.isNumber }
+            if isPunctuation && core.allSatisfy({ "«“‘‹„([{¿¡".contains($0) }) {
+                opening += piece
+            } else if isPunctuation, let last = words.last {
+                words[words.count - 1] = last + opening + piece
+                opening = ""
+            } else {
+                words.append(opening + piece)
+                opening = ""
+            }
+        }
+        if !opening.isEmpty { words.append(opening) }
+        return words
     }
 
     private func registerKeyboardPhrase() {
