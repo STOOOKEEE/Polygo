@@ -496,11 +496,14 @@ struct BottomNavigationShell: View {
     }
 
     /// Shows a route and records it without a second application from the
-    /// route observer.
+    /// route observer. The route is recorded even when it is already the
+    /// selected one: a lesson opened by a link records itself for restoration
+    /// without changing the selected route.
     private func open(_ route: AppRoute) {
         apply(route: route)
-        guard model.selectedRoute != route else { return }
-        pendingTabRootRoute = route
+        if model.selectedRoute != route {
+            pendingTabRootRoute = route
+        }
         model.persistRoute(route)
     }
 
