@@ -698,13 +698,12 @@ public struct ChineseSelectableText: View {
             .accessibilityHint(speechEnabled
                 ? "Écoute ce mot en mandarin et affiche son pinyin et sa traduction."
                 : "Affiche le pinyin et la traduction de ce mot.")
-            .popover(
-                isPresented: Binding(
-                    get: { presentedTokenID == token.id },
-                    set: { if !$0 { presentedTokenID = nil } }
-                ),
-                arrowEdge: .bottom
-            ) {
+            // No fixed arrow edge: the system opens the bubble on the side
+            // with room, so a word near the top keeps its bubble whole.
+            .popover(isPresented: Binding(
+                get: { presentedTokenID == token.id },
+                set: { if !$0 { presentedTokenID = nil } }
+            )) {
                 ChineseWordPopover(
                     vocabularyID: vocabularyID,
                     surface: token.surface,
