@@ -165,10 +165,13 @@ Les exercices du module 0 (leçons `pinyin-*`) dont l’invite ou le modèle ora
 est une seule syllabe (妈/麻/马/骂, 爸, 七…, en `toneDiscrimination`,
 `dictation`, `listeningChoice` ou `speaking`) n’ont pas de clip non plus et
 passent par la voix système : à l’écoute sur iPhone, le Kokoro façonné y
-sonnait moins bien que la voix système. Cela touche 75 invites. Le
-vocabulaire de ces leçons (canonique d’une leçon à l’autre), leurs mots de
-plusieurs syllabes et tous les mots d’une syllabe des autres leçons (早…)
-gardent Kokoro.
+sonnait moins bien que la voix système. Cela touche 75 invites. Dans l’app,
+une invite d’écoute, de dictée ou de ton réduite à une syllabe sans clip est
+lue par le même appel que la réponse touchée (texte mandarin extrait, voix
+zh-CN, vitesse normale) et n’a pas de bouton « Lent » : la voix système
+ralentie déformait la syllabe isolée. Le vocabulaire de ces leçons (canonique
+d’une leçon à l’autre), leurs mots de plusieurs syllabes et tous les mots d’une
+syllabe des autres leçons (早…) gardent Kokoro.
 
 Bilan de la génération : 1 583 clips (944 en voix féminine, 639 en voix
 masculine), dont 308 mots (163 d’une syllabe), 70 minutes, 23,2 Mo, contre
@@ -188,9 +191,9 @@ hors ligne.
 
 Le bouton « Lent » (tortue, `SlowAudioToggle`, mémorisé dans
 `@AppStorage("audio.slowMode")`) est présent dans les dialogues, les lectures,
-les écoutes, dictées, exercices de ton et conversations ; la fiche mot et le
-texte chinois ont un bouton « Lentement ». Le modèle oral garde son sélecteur
-Normale / Lente.
+les écoutes, dictées, exercices de ton (sauf sur une syllabe isolée sans clip)
+et conversations ; la fiche mot et le texte chinois ont un bouton
+« Lentement ». Le modèle oral garde son sélecteur Normale / Lente.
 
 ### Régénérer
 

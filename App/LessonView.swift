@@ -1881,9 +1881,8 @@ private struct ChoiceAnswerView: View {
                 } ?? false
                 Button {
                     answer = .choice(choiceID: choice.id)
-                    let target = PolygoCore.MandarinSpeechText.target(from: choice.label.resolve(preferred: ["fr", "en"]) ?? "")
-                    guard !target.isEmpty else { return }
-                    Task { try? await model.dependencies.audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal) }
+                    let label = choice.label.resolve(preferred: ["fr", "en"]) ?? ""
+                    Task { try? await Self.speak(label, audio: model.dependencies.audio) }
                 } label: {
                     HStack {
                         ChineseSelectableText(choice.label.resolve(preferred: ["fr", "en"]) ?? "", font: .title3, speechEnabled: false)
@@ -1910,6 +1909,14 @@ private struct ChoiceAnswerView: View {
             }
         }
     }
+
+    /// Says the Mandarin of a tapped answer. A question's lone syllable is
+    /// said through this same call, so the learner hears both identically.
+    static func speak(_ label: String, audio: any AudioService) async throws {
+        let target = PolygoCore.MandarinSpeechText.target(from: label)
+        guard !target.isEmpty else { return }
+        try await audio.speak(text: target, localeIdentifier: "zh-CN", rate: .normal)
+    }
 }
 
 private struct ListeningAnswerView: View {
@@ -1929,12 +1936,16 @@ private struct ListeningAnswerView: View {
                     }
                     Task {
                         do {
-                            try await model.dependencies.audio.speak(
-                                text: promptText,
-                                localeIdentifier: "zh-CN",
-                                rate: SlowAudioToggle.rate(slow: slowAudio),
-                                asset: exercise.promptAudio
-                            )
+                            if promptIsLoneSyllable {
+                                try await ChoiceAnswerView.speak(promptText, audio: model.dependencies.audio)
+                            } else {
+                                try await model.dependencies.audio.speak(
+                                    text: promptText,
+                                    localeIdentifier: "zh-CN",
+                                    rate: SlowAudioToggle.rate(slow: slowAudio),
+                                    asset: exercise.promptAudio
+                                )
+                            }
                             audioMessage = "Lecture terminée."
                         } catch is CancellationError {
                             audioMessage = "Lecture arrêtée."
@@ -1945,11 +1956,22 @@ private struct ListeningAnswerView: View {
                 } label: { Label(listenTitle, systemImage: "speaker.wave.2.fill") }
                     .accessibilityIdentifier("lesson.exercise.\(exercise.header.id.rawValue).listen")
                     .buttonStyle(.borderedProminent).tint(SylluneColor.sky)
-                SlowAudioToggle()
+                if !promptIsLoneSyllable {
+                    SlowAudioToggle()
+                }
             }
             if let audioMessage { Text(audioMessage).font(.caption).foregroundStyle(SylluneColor.inkMuted) }
             ChoiceAnswerView(exercise: ChoiceExercise(header: exercise.header, choices: exercise.choices, correctChoiceID: exercise.correctChoiceID), answer: $answer)
         }
+    }
+
+    /// A lone syllable without a clip, as in module 0's tone, dictation and
+    /// listening drills. It plays exactly like the answers that repeat it:
+    /// the slowed system voice distorted a single syllable.
+    private var promptIsLoneSyllable: Bool {
+        guard exercise.promptAudio == nil, let promptText = exercise.promptText else { return false }
+        let target = PolygoCore.MandarinSpeechText.target(from: promptText)
+        return target.count == 1 && PolygoCore.MandarinSpeechText.containsHanzi(target)
     }
 }
 
