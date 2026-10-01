@@ -6,6 +6,7 @@ public struct LessonView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.sylluneShellDestinationReplacement) private var replaceShellDestination
     @Environment(\.sylluneReduceMotion) private var reduceMotion
     public let lessonID: LessonID
     @State private var lesson: LessonDocument?
@@ -803,8 +804,7 @@ public struct LessonView: View {
         if hasWords {
             Button("Revoir les mots") {
                 // The lesson's cards join the review queue on completion.
-                dismiss()
-                model.persistRoute(.cards)
+                replaceShellDestination?(.cards)
             }
             .buttonStyle(.bordered)
             .accessibilityIdentifier("lesson.completion.reviewWords")
@@ -847,8 +847,7 @@ public struct LessonView: View {
                 .controlSize(.large)
                 .accessibilityIdentifier("lesson.completion.path")
             Button("Continuer vers la leçon suivante") {
-                dismiss()
-                model.persistRoute(.lesson(nextLessonID))
+                replaceShellDestination?(.lesson(nextLessonID))
             }
             .buttonStyle(SyllunePrimaryButtonStyle())
             .accessibilityIdentifier("lesson.completion.next")
@@ -860,8 +859,7 @@ public struct LessonView: View {
     }
 
     private func returnToPath() {
-        dismiss()
-        model.persistRoute(.path)
+        replaceShellDestination?(.path)
     }
 
     /// First-try accuracy, time and best run. Hidden when the attempt has no

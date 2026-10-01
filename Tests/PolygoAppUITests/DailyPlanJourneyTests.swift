@@ -15,21 +15,7 @@ final class DailyPlanJourneyTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         profileID = "ui-ios-daily-\(UUID().uuidString.lowercased())"
-        let seedJournal = try makeSeedProgressAfterStarterLessons()
         app = XCUIApplication()
-        app.launchArguments = [
-            "-syllune.profile.id", profileID,
-            "-syllune.last.route", "today",
-            "-AppleLanguages", "(fr)",
-            "-AppleLocale", "fr_FR",
-            "-syllune.appearance", "dark",
-            "-syllune.reduceMotion", "true"
-        ]
-        // The UI-test runner has a different sandbox from the application.
-        // AppDependencies imports this complete journal into the app's own
-        // Application Support directory during the first Debug launch.
-        app.launchEnvironment["SYLLUNE_PROGRESS_FIXTURE_JSONL"] = String(decoding: seedJournal, as: UTF8.self)
-        app.launch()
     }
 
     override func tearDownWithError() throws {
@@ -38,6 +24,7 @@ final class DailyPlanJourneyTests: XCTestCase {
     }
 
     func testDailyPlanOpensLessonFivePersistsListeningAnswerAndAdvancesToDayTwo() throws {
+        try launch(reduceMotion: true)
         let lesson = try loadLessonFixture()
         let listening = try XCTUnwrap(
             lesson.exercises.first(where: { $0.header.id == "ex-l5-listen" }),
@@ -215,6 +202,112 @@ final class DailyPlanJourneyTests: XCTestCase {
         XCTAssertFalse(element(containing: "+10 pièces").exists, "La relance ne doit pas réannoncer la récompense historique")
     }
 
+    /// Each way out of a finished lesson must land on visible content, with
+    /// the animations of a learner's iPhone: an animated pop racing another
+    /// navigation used to leave a black pushed screen on Aujourd’hui.
+    func testLessonCompletionActionsNeverLeaveAnEmptyScreen() throws {
+        try launch(reduceMotion: false)
+        let lesson = try loadLessonFixture()
+        XCTAssertTrue(element(containing: "Jour 9 sur 90").waitForExistence(timeout: timeout), "Aujourd’hui doit afficher J9/90")
+        app.launchEnvironment.removeValue(forKey: "SYLLUNE_PROGRESS_FIXTURE_JSONL")
+
+        let openLesson = app.buttons.matching(identifier: "home.primaryAction").firstMatch
+        XCTAssertTrue(openLesson.waitForExistence(timeout: timeout), "Aujourd’hui doit proposer la séance du jour")
+        openLesson.tap()
+        try finishLessonFive(lesson)
+
+        let next = app.buttons.matching(identifier: "lesson.completion.next").firstMatch
+        XCTAssertTrue(next.waitForExistence(timeout: timeout), "Le bilan doit proposer la leçon suivante")
+        next.tap()
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH %@", "lesson.step.")).firstMatch.waitForExistence(timeout: timeout),
+            "La leçon suivante doit s’ouvrir sur sa première étape"
+        )
+        XCTAssertFalse(element(containing: "Leçon terminée").exists, "La leçon suivante ne doit pas garder le bilan de L5")
+        let close = app.buttons.matching(identifier: "lesson.close").firstMatch
+        XCTAssertTrue(close.waitForExistence(timeout: timeout), "La leçon suivante doit pouvoir être quittée")
+        close.tap()
+        assertTodayVisible("Quitter la leçon suivante doit revenir à Aujourd’hui")
+
+        // Reopen L5's recap on Aujourd’hui, as a resumed session does.
+        app.terminate()
+        let routeIndex = try XCTUnwrap(app.launchArguments.firstIndex(of: "-syllune.last.route"))
+        app.launchArguments[routeIndex + 1] = "lesson/lesson-05"
+        app.launch()
+        let reviewWords = app.buttons.matching(identifier: "lesson.completion.reviewWords").firstMatch
+        XCTAssertTrue(reviewWords.waitForExistence(timeout: timeout), "Le bilan de L5 doit proposer de revoir ses mots")
+        reviewWords.tap()
+        let cards = app.buttons["BottomTab.cards"]
+        XCTAssertTrue(cards.waitForExistence(timeout: timeout), "Revoir les mots doit ouvrir les cartes")
+        XCTAssertTrue(cards.isSelected, "Revoir les mots doit sélectionner l’onglet Cartes")
+        app.buttons["BottomTab.today"].tap()
+        assertTodayVisible("Aujourd’hui doit rester affiché après Revoir les mots")
+    }
+
+    private func launch(reduceMotion: Bool) throws {
+        let seedJournal = try makeSeedProgressAfterStarterLessons(reduceMotion: reduceMotion)
+        app.launchArguments = [
+            "-syllune.profile.id", profileID,
+            "-syllune.last.route", "today",
+            "-AppleLanguages", "(fr)",
+            "-AppleLocale", "fr_FR",
+            "-syllune.appearance", "dark",
+            "-syllune.reduceMotion", reduceMotion ? "true" : "false"
+        ]
+        // The UI-test runner has a different sandbox from the application.
+        // AppDependencies imports this complete journal into the app's own
+        // Application Support directory during the first Debug launch.
+        app.launchEnvironment["SYLLUNE_PROGRESS_FIXTURE_JSONL"] = String(decoding: seedJournal, as: UTF8.self)
+        app.launch()
+    }
+
+    /// Answers L5's listening, oral and reading steps, then waits for its recap.
+    private func finishLessonFive(_ lesson: DailyLessonFixture) throws {
+        XCTAssertTrue(
+            app.staticTexts.matching(identifier: "lesson.exercise.ex-l5-listen").firstMatch.waitForExistence(timeout: timeout),
+            "La séance doit reprendre sur l’écoute de L5"
+        )
+        try answerCorrectly("ex-l5-listen", in: lesson)
+        let continueAfterListening = button(exactly: "Continuer")
+        XCTAssertTrue(continueAfterListening.waitForExistence(timeout: timeout), "L’écoute réussie doit proposer Continuer")
+        continueAfterListening.tap()
+
+        XCTAssertTrue(
+            app.staticTexts.matching(identifier: "lesson.exercise.ex-l5-speak").firstMatch.waitForExistence(timeout: timeout),
+            "L’avancement doit afficher l’activité orale"
+        )
+        button(exactly: "Continuer").tap()
+        let continueReading = app.buttons.matching(identifier: "lesson.step.continue").firstMatch
+        XCTAssertTrue(continueReading.waitForExistence(timeout: timeout), "Le texte doit précéder sa question")
+        continueReading.tap()
+
+        try answerCorrectly("ex-l5-reading", in: lesson)
+        let finish = button(exactly: "Terminer")
+        XCTAssertTrue(finish.waitForExistence(timeout: timeout), "La dernière activité doit proposer Terminer")
+        finish.tap()
+        XCTAssertTrue(element(containing: "Mots appris").waitForExistence(timeout: timeout), "Le bilan de L5 doit s’afficher")
+    }
+
+    private func answerCorrectly(_ exerciseID: String, in lesson: DailyLessonFixture) throws {
+        let exercise = try XCTUnwrap(lesson.exercises.first { $0.header.id == exerciseID }, "\(exerciseID) doit exister dans L5")
+        let choice = try XCTUnwrap(exercise.choices?.first { $0.id == exercise.correctChoiceID }, "La réponse de \(exerciseID) doit exister")
+        let answer = element(containing: choice.label["fr"] ?? choice.label.values.first ?? "", type: .button)
+        XCTAssertTrue(answer.waitForExistence(timeout: timeout), "La bonne réponse de \(exerciseID) doit être proposée")
+        answer.tap()
+        let verify = button(exactly: "Vérifier")
+        XCTAssertTrue(verify.waitForExistence(timeout: timeout), "La réponse de \(exerciseID) doit pouvoir être vérifiée")
+        verify.tap()
+        XCTAssertTrue(element(containing: "Correct").waitForExistence(timeout: timeout), "La réponse de \(exerciseID) doit être évaluée")
+    }
+
+    /// Aujourd’hui shows its content, not an empty pushed screen.
+    private func assertTodayVisible(_ message: String) {
+        XCTAssertTrue(element(containing: "Jour 10 sur 90").waitForExistence(timeout: timeout), message)
+        let primary = app.buttons.matching(identifier: "home.primaryAction").firstMatch
+        XCTAssertTrue(primary.waitForExistence(timeout: timeout), message)
+        XCTAssertTrue(primary.isHittable, message)
+    }
+
     private func element(containing value: String, type: XCUIElement.ElementType = .any) -> XCUIElement {
         app.descendants(matching: type)
             .matching(NSPredicate(format: "label CONTAINS[c] %@", value))
@@ -288,7 +381,7 @@ final class DailyPlanJourneyTests: XCTestCase {
         ])
     }
 
-    private func makeSeedProgressAfterStarterLessons() throws -> Data {
+    private func makeSeedProgressAfterStarterLessons(reduceMotion: Bool) throws -> Data {
         let now = Date().timeIntervalSinceReferenceDate
         let lessonFixture = try loadLessonFixture()
         let learnerProfile: [String: Any] = [
@@ -306,7 +399,7 @@ final class DailyPlanJourneyTests: XCTestCase {
                 "autoPlayAudio": false,
                 "reminderDays": [1, 2, 3, 4, 5, 6, 7],
                 "appearance": "dark",
-                "reduceMotion": true
+                "reduceMotion": reduceMotion
             ],
             "createdAt": now,
             "displayName": "Daily iPhone",

@@ -366,6 +366,9 @@ struct BottomNavigationShell: View {
             .environment(\.sylluneShellWordNavigation, { id in
                 pushWord(id)
             })
+            .environment(\.sylluneShellDestinationReplacement, { route in
+                replaceTopDestination(with: route)
+            })
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 if !exerciseChromeHidden {
                     bottomNavigation
@@ -489,10 +492,16 @@ struct BottomNavigationShell: View {
     }
 
     private func openSettings() {
-        apply(route: .settings)
-        guard model.selectedRoute != .settings else { return }
-        pendingTabRootRoute = .settings
-        model.persistRoute(.settings)
+        open(.settings)
+    }
+
+    /// Shows a route and records it without a second application from the
+    /// route observer.
+    private func open(_ route: AppRoute) {
+        apply(route: route)
+        guard model.selectedRoute != route else { return }
+        pendingTabRootRoute = route
+        model.persistRoute(route)
     }
 
     private func pathBinding(for tab: BottomTab) -> Binding<[AppRoute]> {
@@ -528,6 +537,15 @@ struct BottomNavigationShell: View {
         guard path.last != route else { return }
         path.append(route)
         setPath(path, for: selectedTab)
+    }
+
+    /// Leaves the active tab's top destination for `route` in one path
+    /// update. Dismissing the destination while the route pushes or selects
+    /// another one lets the animated pop race the new path, which can leave
+    /// an empty pushed screen behind.
+    private func replaceTopDestination(with route: AppRoute) {
+        setPath(Array(path(for: selectedTab).dropLast()), for: selectedTab)
+        open(route)
     }
 
     private func apply(route: AppRoute) {

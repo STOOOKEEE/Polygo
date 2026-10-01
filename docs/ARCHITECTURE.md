@@ -1042,7 +1042,10 @@ horizontaux bas. Changer d’onglet conserve son détail ; retoucher l’onglet
 actif remet sa pile à la racine. Les fiches de mots ouvertes depuis le contenu
 utilisent cette même pile, sans lecture audio supplémentaire par le shell.
 Un retour explicite à une racine termine le détail quitté, contrairement à un
-simple changement d’onglet.
+simple changement d’onglet. Les actions du bilan d’une leçon (leçon suivante,
+parcours, cartes) remplacent la leçon terminée en une seule mise à jour de la
+pile : un retour animé suivi d’un second changement de pile pouvait laisser un
+écran poussé vide.
 
 Une préférence de vue signale la présence d’une leçon ou d’une pratique
 autonome Oral/Écriture. Le shell masque alors la barre basse et son unique

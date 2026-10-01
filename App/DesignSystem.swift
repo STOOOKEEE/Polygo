@@ -128,6 +128,19 @@ extension EnvironmentValues {
     }
 }
 
+private struct SylluneShellDestinationReplacementKey: EnvironmentKey {
+    static let defaultValue: ((AppRoute) -> Void)? = nil
+}
+
+extension EnvironmentValues {
+    /// Leaves the shell's top destination for a route in one navigation
+    /// update, as a finished lesson does.
+    var sylluneShellDestinationReplacement: ((AppRoute) -> Void)? {
+        get { self[SylluneShellDestinationReplacementKey.self] }
+        set { self[SylluneShellDestinationReplacementKey.self] = newValue }
+    }
+}
+
 /// The app commands use the same local speech service as the visible audio
 /// controls. The most recently visible Chinese phrase owns the keyboard
 /// command; unregistering it on disappearance prevents stale text from being
